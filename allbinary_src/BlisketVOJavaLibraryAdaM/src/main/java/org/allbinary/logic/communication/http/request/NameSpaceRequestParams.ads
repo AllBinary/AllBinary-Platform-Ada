@@ -40,6 +40,8 @@ with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.Com
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.allbinary.logic.communication.http.request.RequestParams_Package; use org.allbinary.logic.communication.http.request.RequestParams_Package;
+with org.allbinary.logic.communication.http.request.NameSpaceRequestParamData_Package; use org.allbinary.logic.communication.http.request.NameSpaceRequestParamData_Package;
+with org.allbinary.logic.communication.http.request.NameSpaceRequestParam_Package; use org.allbinary.logic.communication.http.request.NameSpaceRequestParam_Package;
 
 package org.allbinary.logic.communication.http.request.NameSpaceRequestParams_Package is
 
@@ -87,7 +89,6 @@ package org.allbinary.logic.communication.http.request.NameSpaceRequestParams_Pa
    function addNameSpace (This : in out NameSpaceRequestParams; key : Unbounded_String; value : Unbounded_String; document : Document_Access) return Document_Access;
    procedure addNameSpace (This : in out NameSpaceRequestParams; key : Unbounded_String; value : Unbounded_String; document : Document_Access);
    function toHashMap (This : in out NameSpaceRequestParams) return HashMap_Access;
-   procedure toHashMap (This : in out NameSpaceRequestParams);
 
 end org.allbinary.logic.communication.http.request.NameSpaceRequestParams_Package;
 

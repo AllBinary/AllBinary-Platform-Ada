@@ -48,7 +48,7 @@ package body admin.taghelpers.BasicGroupItemsRequestHelper_Package is
    function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return BasicGroupItemsRequestHelper_Access is
       This : constant BasicGroupItemsRequestHelper_Access := new BasicGroupItemsRequestHelper;
    begin
-      Initialize (This.all, hashMap, pageContext);
+      BasicGroupItemsRequestHelper_Package.Initialize (This.all, hashMap, pageContext);
       return This;
    end Create;
 
@@ -186,34 +186,6 @@ package body admin.taghelpers.BasicGroupItemsRequestHelper_Package is
             return error;
                 end;
         end;
-   end update;
-
-   procedure getHashMap (This : in out BasicGroupItemsRequestHelper) is
-      Java_Result : constant HashMap_Access := BasicGroupItemsRequestHelper'Class (This).getHashMap;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getHashMap;
-
-   procedure insert (This : in out BasicGroupItemsRequestHelper) is
-      Java_Result : constant Unbounded_String := BasicGroupItemsRequestHelper'Class (This).insert;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end insert;
-
-   procedure delete (This : in out BasicGroupItemsRequestHelper) is
-      Java_Result : constant Unbounded_String := BasicGroupItemsRequestHelper'Class (This).delete;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end delete;
-
-   procedure update (This : in out BasicGroupItemsRequestHelper) is
-      Java_Result : constant Unbounded_String := BasicGroupItemsRequestHelper'Class (This).update;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end update;
 
 end admin.taghelpers.BasicGroupItemsRequestHelper_Package;

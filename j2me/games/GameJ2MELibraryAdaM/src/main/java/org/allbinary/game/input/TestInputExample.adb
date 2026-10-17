@@ -29,7 +29,7 @@ package body org.allbinary.game.input.TestInputExample_Package is
    function Create return TestInputExample_Access is
       This : constant TestInputExample_Access := new TestInputExample;
    begin
-      Initialize (This.all);
+      TestInputExample_Package.Initialize (This.all);
       return This;
    end Create;
 

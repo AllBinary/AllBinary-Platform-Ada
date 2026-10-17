@@ -45,13 +45,10 @@ package org.allbinary.graphics.CustomGPoint_Package is
    procedure getInstance3 (x : Integer; y : Integer);
    procedure setX (This : in out CustomGPoint; x : Integer);
    function getX (This : in out CustomGPoint) return Integer;
-   procedure getX (This : in out CustomGPoint);
    procedure setY (This : in out CustomGPoint; y : Integer);
    function getY (This : in out CustomGPoint) return Integer;
-   procedure getY (This : in out CustomGPoint);
    procedure setZ (This : in out CustomGPoint; z : Integer);
    function getZ (This : in out CustomGPoint) return Integer;
-   procedure getZ (This : in out CustomGPoint);
 
 end org.allbinary.graphics.CustomGPoint_Package;
 

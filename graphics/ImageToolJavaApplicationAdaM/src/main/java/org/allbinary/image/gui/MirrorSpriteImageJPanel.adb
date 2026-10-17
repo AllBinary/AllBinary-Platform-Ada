@@ -48,7 +48,7 @@ package body org.allbinary.image.gui.MirrorSpriteImageJPanel_Package is
    function Create (imageProcessorInput : ImageProcessorInput_Access) return MirrorSpriteImageJPanel_Access is
       This : constant MirrorSpriteImageJPanel_Access := new MirrorSpriteImageJPanel;
    begin
-      Initialize (This.all, imageProcessorInput);
+      MirrorSpriteImageJPanel_Package.Initialize (This.all, imageProcessorInput);
       return This;
    end Create;
 
@@ -185,13 +185,6 @@ package body org.allbinary.image.gui.MirrorSpriteImageJPanel_Package is
    begin
         This.imageProcessorInput := imageProcessorInput;
    end setImageProcessorInput;
-
-   procedure getImageProcessorInput (This : in out MirrorSpriteImageJPanel) is
-      Java_Result : constant ImageProcessorInput_Access := MirrorSpriteImageJPanel'Class (This).getImageProcessorInput;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getImageProcessorInput;
 
 end org.allbinary.image.gui.MirrorSpriteImageJPanel_Package;
 

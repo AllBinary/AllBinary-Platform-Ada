@@ -36,7 +36,7 @@ package body org.allbinary.logic.visual.dhtml.style.StylesValidationFactory_Pack
    function Create return StylesValidationFactory_Access is
       This : constant StylesValidationFactory_Access := new StylesValidationFactory;
    begin
-      Initialize (This.all);
+      StylesValidationFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -86,13 +86,6 @@ package body org.allbinary.logic.visual.dhtml.style.StylesValidationFactory_Pack
    begin
         stylesDocument := Document_Access (hashMap.get (NameSpaceRequestParamData_Package.DOCUMENT));
         return StylesValidationFactory_Package.getInstance.getInstance (stylesDocument);
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant StylesValidationFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
    procedure getInstance (This : in out StylesValidationFactory; document : Document_Access) is

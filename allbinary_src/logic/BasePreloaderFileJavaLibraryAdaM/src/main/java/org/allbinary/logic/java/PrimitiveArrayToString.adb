@@ -28,7 +28,7 @@ package body org.allbinary.logic.java.PrimitiveArrayToString_Package is
    function Create return PrimitiveArrayToString_Access is
       This : constant PrimitiveArrayToString_Access := new PrimitiveArrayToString;
    begin
-      Initialize (This.all);
+      PrimitiveArrayToString_Package.Initialize (This.all);
       return This;
    end Create;
 

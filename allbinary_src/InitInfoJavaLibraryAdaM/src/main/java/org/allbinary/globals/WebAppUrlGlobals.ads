@@ -42,14 +42,10 @@ package org.allbinary.globals.WebAppUrlGlobals_Package is
    procedure Initialize (This : in out WebAppUrlGlobals'Class);
    function Create return WebAppUrlGlobals_Access;
    function isTestingMode (This : in out WebAppUrlGlobals) return Boolean;
-   procedure isTestingMode (This : in out WebAppUrlGlobals);
    function getWebappPath (This : in out WebAppUrlGlobals) return Unbounded_String;
-   procedure getWebappPath (This : in out WebAppUrlGlobals);
-   procedure setWebappPath (This : in out WebAppUrlGlobals; path : Unbounded_String);
+   procedure setWebappPath (This : in out WebAppUrlGlobals; path_Param : Unbounded_String);
    function getTestHtmlPath (This : in out WebAppUrlGlobals) return Unbounded_String;
-   procedure getTestHtmlPath (This : in out WebAppUrlGlobals);
    function getMainPath (This : in out WebAppUrlGlobals) return Unbounded_String;
-   procedure getMainPath (This : in out WebAppUrlGlobals);
 
 end org.allbinary.globals.WebAppUrlGlobals_Package;
 

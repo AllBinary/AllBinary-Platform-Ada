@@ -45,7 +45,6 @@ package org.allbinary.media.audio.PlayerStateUtil_Package is
    procedure Initialize (This : in out PlayerStateUtil'Class);
    function Create return PlayerStateUtil_Access;
    function getInstance return PlayerStateUtil_Access;
-   procedure getInstance;
    function convert (This : in out PlayerStateUtil; state : Integer) return Unbounded_String;
    procedure convert (This : in out PlayerStateUtil; state : Integer);
 

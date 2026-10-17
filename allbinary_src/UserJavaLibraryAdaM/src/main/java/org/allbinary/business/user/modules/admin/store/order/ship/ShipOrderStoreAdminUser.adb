@@ -29,7 +29,7 @@ package body org.allbinary.business.user.modules.admin.store.order.ship.ShipOrde
    function Create return ShipOrderStoreAdminUser_Access is
       This : constant ShipOrderStoreAdminUser_Access := new ShipOrderStoreAdminUser;
    begin
-      Initialize (This.all);
+      ShipOrderStoreAdminUser_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -42,7 +42,7 @@ package body org.allbinary.business.user.modules.admin.store.order.ship.ShipOrde
    function Create (userHashMap : HashMap_Access) return ShipOrderStoreAdminUser_Access is
       This : constant ShipOrderStoreAdminUser_Access := new ShipOrderStoreAdminUser;
    begin
-      Initialize (This.all, userHashMap);
+      ShipOrderStoreAdminUser_Package.Initialize (This.all, userHashMap);
       return This;
    end Create;
 

@@ -30,7 +30,7 @@ package body org.allbinary.media.graphics.geography.map.CellPositionsUtil_Packag
    function Create return CellPositionsUtil_Access is
       This : constant CellPositionsUtil_Access := new CellPositionsUtil;
    begin
-      Initialize (This.all);
+      CellPositionsUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -111,13 +111,6 @@ package body org.allbinary.media.graphics.geography.map.CellPositionsUtil_Packag
         end loop;
         return reusableSurroundingList;
    end getAllSurroundingAt;
-
-   procedure getInstance is
-      Java_Result : constant CellPositionsUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure getAll (This : in out CellPositionsUtil; geographicMapInterface : BasicGeographicMap_Access; topRightGeographicMapCellPosition : GeographicMapCellPosition_Access; columns : Integer; rows : Integer; reusableList : BasicArrayList_Access) is
       Java_Result : constant BasicArrayList_Access := CellPositionsUtil'Class (This).getAll (geographicMapInterface, topRightGeographicMapCellPosition, columns, rows, reusableList);

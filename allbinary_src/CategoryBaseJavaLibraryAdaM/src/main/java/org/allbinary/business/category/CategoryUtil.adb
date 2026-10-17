@@ -30,7 +30,7 @@ package body org.allbinary.business.category.CategoryUtil_Package is
    function Create return CategoryUtil_Access is
       This : constant CategoryUtil_Access := new CategoryUtil;
    begin
-      Initialize (This.all);
+      CategoryUtil_Package.Initialize (This.all);
       return This;
    end Create;
 

@@ -29,6 +29,9 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 with jsinterop.annotations.JsMethod_Package; use jsinterop.annotations.JsMethod_Package;
 with jsinterop.annotations.JsConstructor_Package; use jsinterop.annotations.JsConstructor_Package;
 with jsinterop.annotations.JsProperty_Package; use jsinterop.annotations.JsProperty_Package;
+with org.allbinary.math.Angle_Package; use org.allbinary.math.Angle_Package;
+with org.allbinary.math.NamedAngle_Package; use org.allbinary.math.NamedAngle_Package;
+with org.allbinary.math.FrameUtil_Package; use org.allbinary.math.FrameUtil_Package;
 
 package org.allbinary.math.AngleFactory_Package is
 
@@ -65,13 +68,11 @@ package org.allbinary.math.AngleFactory_Package is
    procedure Initialize (This : in out AngleFactory'Class);
    function Create return AngleFactory_Access;
    function getInstance return AngleFactory_Access;
-   procedure getInstance;
    function getAt (This : in out AngleFactory; index : Integer) return Angle_Access;
    procedure getAt (This : in out AngleFactory; index : Integer);
    function getClosestDirection (This : in out AngleFactory; angle : Integer) return Angle_Access;
    procedure getClosestDirection (This : in out AngleFactory; angle : Integer);
    function getGeneralDirection (This : in out AngleFactory) return Angle_Access;
-   procedure getGeneralDirection (This : in out AngleFactory);
    procedure main (args : Unbounded_String_Array_Access);
 
 end org.allbinary.math.AngleFactory_Package;

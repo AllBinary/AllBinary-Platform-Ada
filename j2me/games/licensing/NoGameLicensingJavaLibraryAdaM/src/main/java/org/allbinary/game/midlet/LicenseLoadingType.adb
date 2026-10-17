@@ -30,7 +30,7 @@ package body org.allbinary.game.midlet.LicenseLoadingType_Package is
    function Create (name : Unbounded_String) return LicenseLoadingType_Access is
       This : constant LicenseLoadingType_Access := new LicenseLoadingType;
    begin
-      Initialize (This.all, name);
+      LicenseLoadingType_Package.Initialize (This.all, name);
       return This;
    end Create;
 

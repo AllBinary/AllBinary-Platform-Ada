@@ -33,7 +33,7 @@ package body org.allbinary.animation.VectorBaseRotationAnimation_Package is
    function Create (angleInfo : AngleInfo_Access; currentPoints : Integer_Array_Access_Array_Access_Array_Access; basicColor : BasicColor_Access; animationBehavior : AnimationBehavior_Access) return VectorBaseRotationAnimation_Access is
       This : constant VectorBaseRotationAnimation_Access := new VectorBaseRotationAnimation;
    begin
-      Initialize (This.all, angleInfo, currentPoints, basicColor, animationBehavior);
+      VectorBaseRotationAnimation_Package.Initialize (This.all, angleInfo, currentPoints, basicColor, animationBehavior);
       return This;
    end Create;
 
@@ -127,34 +127,6 @@ package body org.allbinary.animation.VectorBaseRotationAnimation_Package is
         This.currentPoints := currentPoints;
         This.circularIndexUtil := CircularIndexUtil_Package.createInstance (This.currentPoints'Length);
    end setPoints;
-
-   procedure getAnimationSize (This : in out VectorBaseRotationAnimation) is
-      Java_Result : constant Integer := VectorBaseRotationAnimation'Class (This).getAnimationSize;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getAnimationSize;
-
-   procedure getFrame (This : in out VectorBaseRotationAnimation) is
-      Java_Result : constant Integer := VectorBaseRotationAnimation'Class (This).getFrame;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getFrame;
-
-   procedure getSize (This : in out VectorBaseRotationAnimation) is
-      Java_Result : constant Integer := VectorBaseRotationAnimation'Class (This).getSize;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSize;
-
-   procedure getSequence (This : in out VectorBaseRotationAnimation) is
-      Java_Result : constant Integer_Array_Access := VectorBaseRotationAnimation'Class (This).getSequence;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSequence;
 
    procedure getPoints (This : in out VectorBaseRotationAnimation; frame : Integer) is
       Java_Result : constant Integer_Array_Access_Array_Access := VectorBaseRotationAnimation'Class (This).getPoints (frame);

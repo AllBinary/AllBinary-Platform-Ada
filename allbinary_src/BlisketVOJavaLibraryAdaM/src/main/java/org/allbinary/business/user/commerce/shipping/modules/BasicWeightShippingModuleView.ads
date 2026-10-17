@@ -51,19 +51,14 @@ package org.allbinary.business.user.commerce.shipping.modules.BasicWeightShippin
    procedure Initialize (This : in out BasicWeightShippingModuleView'Class);
    function Create return BasicWeightShippingModuleView_Access;
    function isValid (This : in out BasicWeightShippingModuleView) return Boolean;
-   procedure isValid (This : in out BasicWeightShippingModuleView);
    function toValidationInfoDoc (This : in out BasicWeightShippingModuleView) return Document_Access;
-   procedure toValidationInfoDoc (This : in out BasicWeightShippingModuleView);
    function toValidationInfoNode (This : in out BasicWeightShippingModuleView; document : Document_Access) return Node_Access;
    procedure toValidationInfoNode (This : in out BasicWeightShippingModuleView; document : Document_Access);
    function validationInfo (This : in out BasicWeightShippingModuleView) return Unbounded_String;
-   procedure validationInfo (This : in out BasicWeightShippingModuleView);
    function toXmlNode (This : in out BasicWeightShippingModuleView; document : Document_Access) return Node_Access;
    procedure toXmlNode (This : in out BasicWeightShippingModuleView; document : Document_Access);
    function toXmlDoc (This : in out BasicWeightShippingModuleView) return Document_Access;
-   procedure toXmlDoc (This : in out BasicWeightShippingModuleView);
    function view (This : in out BasicWeightShippingModuleView) return Unbounded_String;
-   procedure view (This : in out BasicWeightShippingModuleView);
 
 end org.allbinary.business.user.commerce.shipping.modules.BasicWeightShippingModuleView_Package;
 

@@ -33,7 +33,7 @@ package body org.allbinary.animation.image.AllBinaryAdjustedAndroidImageRotation
    function Create (originalImage : Image_Access; image : Image_Access; angleInfo : AngleInfo_Access; totalAngle : Short_Integer; dx : Integer; dy : Integer; animationBehavior : AnimationBehavior_Access) return AllBinaryAdjustedAndroidImageRotationAnimation_Access is
       This : constant AllBinaryAdjustedAndroidImageRotationAnimation_Access := new AllBinaryAdjustedAndroidImageRotationAnimation;
    begin
-      Initialize (This.all, originalImage, image, angleInfo, totalAngle, dx, dy, animationBehavior);
+      AllBinaryAdjustedAndroidImageRotationAnimation_Package.Initialize (This.all, originalImage, image, angleInfo, totalAngle, dx, dy, animationBehavior);
       return This;
    end Create;
 
@@ -68,20 +68,6 @@ package body org.allbinary.animation.image.AllBinaryAdjustedAndroidImageRotation
    begin
         AllBinaryFlickerAndroidImageRotationAnimation (This).paintXY (graphics, (x) + (This.dx), (y) + (This.dy));
    end paintXY;
-
-   procedure getDx (This : in out AllBinaryAdjustedAndroidImageRotationAnimation) is
-      Java_Result : constant Integer := AllBinaryAdjustedAndroidImageRotationAnimation'Class (This).getDx;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getDx;
-
-   procedure getDy (This : in out AllBinaryAdjustedAndroidImageRotationAnimation) is
-      Java_Result : constant Integer := AllBinaryAdjustedAndroidImageRotationAnimation'Class (This).getDy;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getDy;
 
 end org.allbinary.animation.image.AllBinaryAdjustedAndroidImageRotationAnimation_Package;
 

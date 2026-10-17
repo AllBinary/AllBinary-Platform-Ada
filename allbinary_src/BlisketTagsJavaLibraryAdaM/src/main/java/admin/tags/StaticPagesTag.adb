@@ -34,7 +34,7 @@ package body admin.tags.StaticPagesTag_Package is
    function Create return StaticPagesTag_Access is
       This : constant StaticPagesTag_Access := new StaticPagesTag;
    begin
-      Initialize (This.all);
+      StaticPagesTag_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -124,27 +124,6 @@ package body admin.tags.StaticPagesTag_Package is
             return SKIP_BODY;
                 end;
         end;
-   end doStartTag;
-
-   procedure generateStaticPages (This : in out StaticPagesTag) is
-      Java_Result : constant Unbounded_String := StaticPagesTag'Class (This).generateStaticPages;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end generateStaticPages;
-
-   procedure makePublic (This : in out StaticPagesTag) is
-      Java_Result : constant Unbounded_String := StaticPagesTag'Class (This).makePublic;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end makePublic;
-
-   procedure doStartTag (This : in out StaticPagesTag) is
-      Java_Result : constant Integer := StaticPagesTag'Class (This).doStartTag;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end doStartTag;
 
 end admin.tags.StaticPagesTag_Package;

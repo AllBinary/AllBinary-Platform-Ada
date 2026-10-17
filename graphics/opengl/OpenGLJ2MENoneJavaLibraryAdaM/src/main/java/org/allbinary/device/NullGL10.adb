@@ -28,7 +28,7 @@ package body org.allbinary.device.NullGL10_Package is
    function Create return NullGL10_Access is
       This : constant NullGL10_Access := new NullGL10;
    begin
-      Initialize (This.all);
+      NullGL10_Package.Initialize (This.all);
       return This;
    end Create;
 

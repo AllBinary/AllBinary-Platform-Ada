@@ -60,7 +60,6 @@ package org.allbinary.game.layer.waypoint.WaypointSelectedLogHelper_Package is
    procedure Initialize (This : in out WaypointSelectedLogHelper'Class);
    function Create return WaypointSelectedLogHelper_Access;
    function getInstance return WaypointSelectedLogHelper_Access;
-   procedure getInstance;
    procedure onWaypointEvent (This : in out WaypointSelectedLogHelper; associatedAdvancedRTSGameLayer : PathFindingLayerInterface_Access; advancedRTSGameLayer : PathFindingLayerInterface_Access);
    procedure addWaypointFromBuilding (This : in out WaypointSelectedLogHelper; associatedAdvancedRTSGameLayer : PathFindingLayerInterface_Access; advancedRTSGameLayer : PathFindingLayerInterface_Access);
    procedure addWaypointFromBuildingList (This : in out WaypointSelectedLogHelper; associatedAdvancedRTSGameLayer : PathFindingLayerInterface_Access; advancedRTSGameLayer : PathFindingLayerInterface_Access; list : BasicArrayList_Access);

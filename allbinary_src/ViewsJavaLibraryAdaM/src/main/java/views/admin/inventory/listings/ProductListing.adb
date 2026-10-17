@@ -13,7 +13,7 @@
 --  Generated Code Do Not Modify
 
 
-package body views.admin.inventory_Case.listings.ProductListing_Package is
+package body views.admin.inventory.listings.ProductListing_Package is
 
    procedure Initialize_Fields (This : in out ProductListing'Class) is
    begin
@@ -41,7 +41,7 @@ package body views.admin.inventory_Case.listings.ProductListing_Package is
    function Create (searchRequest : SearchRequest_Access) return ProductListing_Access is
       This : constant ProductListing_Access := new ProductListing;
    begin
-      Initialize (This.all, searchRequest);
+      ProductListing_Package.Initialize (This.all, searchRequest);
       return This;
    end Create;
 
@@ -234,7 +234,8 @@ package body views.admin.inventory_Case.listings.ProductListing_Package is
    end generateAll;
 
    --  throws Exception
-   function generateAll (This : in out ProductListing; storeName : Unbounded_String) return Unbounded_String is
+   function generateAll (This : in out ProductListing; storeName_Param : Unbounded_String) return Unbounded_String is
+      storeName : Unbounded_String := storeName_Param;
       stringBuffer : StringMaker_Access;
       storeFrontVector : BasicArrayList_Access;
       size : Integer;
@@ -279,20 +280,13 @@ package body views.admin.inventory_Case.listings.ProductListing_Package is
       null;
    end getHashSet;
 
-   procedure generateAll (This : in out ProductListing) is
-      Java_Result : constant Unbounded_String := ProductListing'Class (This).generateAll;
+   procedure generateAll (This : in out ProductListing; storeName_Param : Unbounded_String) is
+      Java_Result : constant Unbounded_String := ProductListing'Class (This).generateAll (storeName_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end generateAll;
 
-   procedure generateAll (This : in out ProductListing; storeName : Unbounded_String) is
-      Java_Result : constant Unbounded_String := ProductListing'Class (This).generateAll (storeName);
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end generateAll;
-
-end views.admin.inventory_Case.listings.ProductListing_Package;
+end views.admin.inventory.listings.ProductListing_Package;
 
 

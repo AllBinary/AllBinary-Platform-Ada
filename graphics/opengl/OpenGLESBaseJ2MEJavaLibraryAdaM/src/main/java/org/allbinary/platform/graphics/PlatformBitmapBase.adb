@@ -28,7 +28,7 @@ package body org.allbinary.platform.graphics.PlatformBitmapBase_Package is
    function Create return PlatformBitmapBase_Access is
       This : constant PlatformBitmapBase_Access := new PlatformBitmapBase;
    begin
-      Initialize (This.all);
+      PlatformBitmapBase_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -36,13 +36,6 @@ package body org.allbinary.platform.graphics.PlatformBitmapBase_Package is
    function getImage (This : in out PlatformBitmapBase) return Image_Access is
    begin
         return NullImage_Package.NULL_IMAGE;
-   end getImage;
-
-   procedure getImage (This : in out PlatformBitmapBase) is
-      Java_Result : constant Image_Access := PlatformBitmapBase'Class (This).getImage;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getImage;
 
 end org.allbinary.platform.graphics.PlatformBitmapBase_Package;

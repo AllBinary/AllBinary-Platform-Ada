@@ -32,7 +32,7 @@ package body org.allbinary.game.score.HighScoresCanvasInputProcessor_Package is
    function Create (highScoresCanvas : HighScoresCanvas_Access) return HighScoresCanvasInputProcessor_Access is
       This : constant HighScoresCanvasInputProcessor_Access := new HighScoresCanvasInputProcessor;
    begin
-      Initialize (This.all, highScoresCanvas);
+      HighScoresCanvasInputProcessor_Package.Initialize (This.all, highScoresCanvas);
       return This;
    end Create;
 
@@ -72,13 +72,6 @@ package body org.allbinary.game.score.HighScoresCanvasInputProcessor_Package is
    function getHighScoresCanvas (This : in out HighScoresCanvasInputProcessor) return HighScoresCanvas_Access is
    begin
         return This.highScoresCanvas;
-   end getHighScoresCanvas;
-
-   procedure getHighScoresCanvas (This : in out HighScoresCanvasInputProcessor) is
-      Java_Result : constant HighScoresCanvas_Access := HighScoresCanvasInputProcessor'Class (This).getHighScoresCanvas;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getHighScoresCanvas;
 
 end org.allbinary.game.score.HighScoresCanvasInputProcessor_Package;

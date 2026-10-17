@@ -34,7 +34,7 @@ package body admin.tags.QuoteRequestTag_Package is
    function Create return QuoteRequestTag_Access is
       This : constant QuoteRequestTag_Access := new QuoteRequestTag;
    begin
-      Initialize (This.all);
+      QuoteRequestTag_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -90,20 +90,6 @@ package body admin.tags.QuoteRequestTag_Package is
             return SKIP_BODY;
                 end;
         end;
-   end doStartTag;
-
-   procedure email (This : in out QuoteRequestTag) is
-      Java_Result : constant Unbounded_String := QuoteRequestTag'Class (This).email;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end email;
-
-   procedure doStartTag (This : in out QuoteRequestTag) is
-      Java_Result : constant Integer := QuoteRequestTag'Class (This).doStartTag;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end doStartTag;
 
 end admin.tags.QuoteRequestTag_Package;

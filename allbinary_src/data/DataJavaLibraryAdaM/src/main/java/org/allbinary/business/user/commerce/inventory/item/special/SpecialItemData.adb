@@ -28,7 +28,7 @@ package body org.allbinary.business.user.commerce.inventory.item.special.Special
    function Create return SpecialItemData_Access is
       This : constant SpecialItemData_Access := new SpecialItemData;
    begin
-      Initialize (This.all);
+      SpecialItemData_Package.Initialize (This.all);
       return This;
    end Create;
 

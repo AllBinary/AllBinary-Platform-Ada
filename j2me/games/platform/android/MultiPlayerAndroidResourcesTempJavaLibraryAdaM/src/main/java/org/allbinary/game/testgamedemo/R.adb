@@ -21,7 +21,7 @@ package body org.allbinary.game.testgamedemo.R_Package is
    function Create return R_Access is
       This : constant R_Access := new R;
    begin
-      Initialize (This.all);
+      R_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -44,7 +44,7 @@ package body org.allbinary.game.testgamedemo.attr_Package is
    function Create return attr_Access is
       This : constant attr_Access := new attr;
    begin
-      Initialize (This.all);
+      attr_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -67,7 +67,7 @@ package body org.allbinary.game.testgamedemo.drawable_Package is
    function Create return drawable_Access is
       This : constant drawable_Access := new drawable;
    begin
-      Initialize (This.all);
+      drawable_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -95,7 +95,7 @@ package body org.allbinary.game.testgamedemo.id_Package is
    function Create return id_Access is
       This : constant id_Access := new id;
    begin
-      Initialize (This.all);
+      id_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -127,7 +127,7 @@ package body org.allbinary.game.testgamedemo.layout_Package is
    function Create return layout_Access is
       This : constant layout_Access := new layout;
    begin
-      Initialize (This.all);
+      layout_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -156,7 +156,7 @@ package body org.allbinary.game.testgamedemo.raw_Package is
    function Create return raw_Access is
       This : constant raw_Access := new raw;
    begin
-      Initialize (This.all);
+      raw_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -226,7 +226,7 @@ package body org.allbinary.game.testgamedemo.string_Package is
    function Create return string_Access is
       This : constant string_Access := new string;
    begin
-      Initialize (This.all);
+      string_Package.Initialize (This.all);
       return This;
    end Create;
 

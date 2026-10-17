@@ -22,6 +22,7 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.graphics.displayable.DisplayInfoSingleton_Package; use org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.input.motion.button.CommonButtons_Package; use org.allbinary.input.motion.button.CommonButtons_Package;
 
 package org.allbinary.input.motion.button.TouchButtonLocationHelper_Package is
 
@@ -45,19 +46,12 @@ package org.allbinary.input.motion.button.TouchButtonLocationHelper_Package is
    procedure Initialize (This : in out TouchButtonLocationHelper'Class);
    function Create return TouchButtonLocationHelper_Access;
    function getTotalColumns (This : in out TouchButtonLocationHelper) return Integer;
-   procedure getTotalColumns (This : in out TouchButtonLocationHelper);
    function getTotalRows (This : in out TouchButtonLocationHelper) return Integer;
-   procedure getTotalRows (This : in out TouchButtonLocationHelper);
    function getColumnsRemainder (This : in out TouchButtonLocationHelper) return Integer;
-   procedure getColumnsRemainder (This : in out TouchButtonLocationHelper);
    function getRowsRemainder (This : in out TouchButtonLocationHelper) return Integer;
-   procedure getRowsRemainder (This : in out TouchButtonLocationHelper);
    function getColumnsRemainderHalf (This : in out TouchButtonLocationHelper) return Integer;
-   procedure getColumnsRemainderHalf (This : in out TouchButtonLocationHelper);
    function getRowsRemainderHalf (This : in out TouchButtonLocationHelper) return Integer;
-   procedure getRowsRemainderHalf (This : in out TouchButtonLocationHelper);
    function toString (This : in out TouchButtonLocationHelper) return Unbounded_String;
-   procedure toString (This : in out TouchButtonLocationHelper);
 
 end org.allbinary.input.motion.button.TouchButtonLocationHelper_Package;
 

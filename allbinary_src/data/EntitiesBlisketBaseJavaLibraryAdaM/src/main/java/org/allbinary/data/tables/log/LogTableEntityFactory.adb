@@ -36,7 +36,7 @@ package body org.allbinary.data.tables.log.LogTableEntityFactory_Package is
    function Create return LogTableEntityFactory_Access is
       This : constant LogTableEntityFactory_Access := new LogTableEntityFactory;
    begin
-      Initialize (This.all);
+      LogTableEntityFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -57,20 +57,6 @@ package body org.allbinary.data.tables.log.LogTableEntityFactory_Package is
             return null;
                 end;
         end;
-   end getLogTableEntityInstance;
-
-   procedure getInstance is
-      Java_Result : constant LogTableEntityFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure getLogTableEntityInstance (This : in out LogTableEntityFactory) is
-      Java_Result : constant LogTableEntity_Access := LogTableEntityFactory'Class (This).getLogTableEntityInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getLogTableEntityInstance;
 
 begin

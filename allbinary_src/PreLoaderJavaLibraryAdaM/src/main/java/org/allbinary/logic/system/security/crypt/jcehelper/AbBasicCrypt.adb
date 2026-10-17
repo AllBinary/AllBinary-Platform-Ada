@@ -47,7 +47,7 @@ package body org.allbinary.logic.system.security.crypt.jcehelper.AbBasicCrypt_Pa
    function Create (algorithm : Unbounded_String; key : Unbounded_String) return AbBasicCrypt_Access is
       This : constant AbBasicCrypt_Access := new AbBasicCrypt;
    begin
-      Initialize (This.all, algorithm, key);
+      AbBasicCrypt_Package.Initialize (This.all, algorithm, key);
       return This;
    end Create;
 

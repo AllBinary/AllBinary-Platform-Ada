@@ -33,7 +33,7 @@ package body admin.taghelpers.SpecialItemsHelper_Package is
    function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return SpecialItemsHelper_Access is
       This : constant SpecialItemsHelper_Access := new SpecialItemsHelper;
    begin
-      Initialize (This.all, hashMap, pageContext);
+      SpecialItemsHelper_Package.Initialize (This.all, hashMap, pageContext);
       return This;
    end Create;
 
@@ -135,34 +135,6 @@ package body admin.taghelpers.SpecialItemsHelper_Package is
             return error;
                 end;
         end;
-   end backup;
-
-   procedure create (This : in out SpecialItemsHelper) is
-      Java_Result : constant Unbounded_String := SpecialItemsHelper'Class (This).create;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end create;
-
-   procedure drop (This : in out SpecialItemsHelper) is
-      Java_Result : constant Unbounded_String := SpecialItemsHelper'Class (This).drop;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end drop;
-
-   procedure restore (This : in out SpecialItemsHelper) is
-      Java_Result : constant Unbounded_String := SpecialItemsHelper'Class (This).restore;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end restore;
-
-   procedure backup (This : in out SpecialItemsHelper) is
-      Java_Result : constant Unbounded_String := SpecialItemsHelper'Class (This).backup;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end backup;
 
 end admin.taghelpers.SpecialItemsHelper_Package;

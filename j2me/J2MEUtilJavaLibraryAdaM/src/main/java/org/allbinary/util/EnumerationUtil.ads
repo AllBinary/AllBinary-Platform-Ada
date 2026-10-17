@@ -23,6 +23,8 @@ with AllBinary_Java; use AllBinary_Java;
 with jsinterop.annotations.JsType_Package; use jsinterop.annotations.JsType_Package;
 --  with java.util.Enumeration_Package; use java.util.Enumeration_Package;
 with jsinterop.annotations.JsMethod_Package; use jsinterop.annotations.JsMethod_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 
 package org.allbinary.util.EnumerationUtil_Package is
 
@@ -40,7 +42,6 @@ package org.allbinary.util.EnumerationUtil_Package is
    procedure Initialize (This : in out EnumerationUtil'Class);
    function Create return EnumerationUtil_Access;
    function getInstance return EnumerationUtil_Access;
-   procedure getInstance;
    function hasMoreElements (This : in out EnumerationUtil; enumeration : Enumeration_Access) return Boolean;
    procedure hasMoreElements (This : in out EnumerationUtil; enumeration : Enumeration_Access);
    function nextElement (This : in out EnumerationUtil; enumeration : Enumeration_Access) return Java_Object_Access;

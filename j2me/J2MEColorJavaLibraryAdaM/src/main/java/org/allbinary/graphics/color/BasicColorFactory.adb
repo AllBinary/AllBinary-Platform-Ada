@@ -57,7 +57,7 @@ package body org.allbinary.graphics.color.BasicColorFactory_Package is
    function Create return BasicColorFactory_Access is
       This : constant BasicColorFactory_Access := new BasicColorFactory;
    begin
-      Initialize (This.all);
+      BasicColorFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -88,13 +88,6 @@ package body org.allbinary.graphics.color.BasicColorFactory_Package is
         ALPHA_MASK := 16#FF000000#;
         return BasicColor_Package.Create (alphaValue, ((((Java_And ((Java_Shift_Left (alphaValue, 24)), ALPHA_MASK))) + ((Java_And ((Java_Shift_Left (r, 16)), 16#00FF0000#)))) + ((Java_And ((Java_Shift_Left (g, 8)), 16#0000FF00#)))) + ((Java_And (b, 16#000000FF#))), StringUtil_Package.getInstance.EMPTY_STRING);
    end createInstanceARGB;
-
-   procedure getInstance is
-      Java_Result : constant BasicColorFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure createInstance (This : in out BasicColorFactory; value : Integer) is
       Java_Result : constant BasicColor_Access := BasicColorFactory'Class (This).createInstance (value);

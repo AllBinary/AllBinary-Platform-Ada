@@ -34,7 +34,7 @@ package body views.generic_Id.address.billing.DeleteValidationView_Package is
    function Create (transformInfoInterface : TransformInfoInterface_Access) return DeleteValidationView_Access is
       This : constant DeleteValidationView_Access := new DeleteValidationView;
    begin
-      Initialize (This.all, transformInfoInterface);
+      DeleteValidationView_Package.Initialize (This.all, transformInfoInterface);
       return This;
    end Create;
 
@@ -66,27 +66,6 @@ package body views.generic_Id.address.billing.DeleteValidationView_Package is
    begin
         return null;
    end toValidationInfoNode;
-
-   procedure isValid (This : in out DeleteValidationView) is
-      Java_Result : constant Boolean := DeleteValidationView'Class (This).isValid;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isValid;
-
-   procedure validationInfo (This : in out DeleteValidationView) is
-      Java_Result : constant Unbounded_String := DeleteValidationView'Class (This).validationInfo;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end validationInfo;
-
-   procedure toValidationInfoDoc (This : in out DeleteValidationView) is
-      Java_Result : constant Document_Access := DeleteValidationView'Class (This).toValidationInfoDoc;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toValidationInfoDoc;
 
    procedure toValidationInfoNode (This : in out DeleteValidationView; document : Document_Access) is
       Java_Result : constant Node_Access := DeleteValidationView'Class (This).toValidationInfoNode (document);

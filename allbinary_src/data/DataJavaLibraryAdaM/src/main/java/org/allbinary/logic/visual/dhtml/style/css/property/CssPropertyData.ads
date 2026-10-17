@@ -38,7 +38,6 @@ package org.allbinary.logic.visual.dhtml.style.css.property.CssPropertyData_Pack
    procedure Initialize (This : in out CssPropertyData'Class);
    function Create return CssPropertyData_Access;
    function getInstance return CssPropertyData_Access;
-   procedure getInstance;
 
 end org.allbinary.logic.visual.dhtml.style.css.property.CssPropertyData_Package;
 

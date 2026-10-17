@@ -35,7 +35,7 @@ package body org.allbinary.graphics.color.BasicColorSetUtil_Package is
    function Create return BasicColorSetUtil_Access is
       This : constant BasicColorSetUtil_Access := new BasicColorSetUtil;
    begin
-      Initialize (This.all);
+      BasicColorSetUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -48,13 +48,6 @@ package body org.allbinary.graphics.color.BasicColorSetUtil_Package is
    begin
         graphics.setColor (value);
    end setBasicColorP3;
-
-   procedure getInstance is
-      Java_Result : constant BasicColorSetUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

@@ -49,7 +49,7 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
    function Create (node : Node_Access) return GenericProfile_Access is
       This : constant GenericProfile_Access := new GenericProfile;
    begin
-      Initialize (This.all, node);
+      GenericProfile_Package.Initialize (This.all, node);
       return This;
    end Create;
 
@@ -64,7 +64,7 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
    function Create (name : Unbounded_String) return GenericProfile_Access is
       This : constant GenericProfile_Access := new GenericProfile;
    begin
-      Initialize (This.all, name);
+      GenericProfile_Package.Initialize (This.all, name);
       return This;
    end Create;
 
@@ -121,33 +121,12 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
         This.genericProfileActions := genericProfileActions;
    end setGenericProfileActions;
 
-   procedure getGenericProfileDataWorkerTypeVector (This : in out GenericProfile) is
-      Java_Result : constant BasicArrayList_Access := GenericProfile'Class (This).getGenericProfileDataWorkerTypeVector;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getGenericProfileDataWorkerTypeVector;
-
    procedure toXmlNode (This : in out GenericProfile; document : Document_Access) is
       Java_Result : constant Node_Access := GenericProfile'Class (This).toXmlNode (document);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end toXmlNode;
-
-   procedure getName (This : in out GenericProfile) is
-      Java_Result : constant Unbounded_String := GenericProfile'Class (This).getName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getName;
-
-   procedure getGenericProfileActions (This : in out GenericProfile) is
-      Java_Result : constant GenericProfileActions_Access := GenericProfile'Class (This).getGenericProfileActions;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getGenericProfileActions;
 
 end org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfile_Package;
 

@@ -32,7 +32,7 @@ package body org.allbinary.media.image.search.ImageComparisonSearchResultsEvent_
    function Create (anyType : Java_Object_Access; imageComparisonSearch : ImageComparisonSearch_Access) return ImageComparisonSearchResultsEvent_Access is
       This : constant ImageComparisonSearchResultsEvent_Access := new ImageComparisonSearchResultsEvent;
    begin
-      Initialize (This.all, anyType, imageComparisonSearch);
+      ImageComparisonSearchResultsEvent_Package.Initialize (This.all, anyType, imageComparisonSearch);
       return This;
    end Create;
 
@@ -45,13 +45,6 @@ package body org.allbinary.media.image.search.ImageComparisonSearchResultsEvent_
    begin
         This.imageComparisonSearch := imageComparisonSearch;
    end setImageComparisonSearch;
-
-   procedure getImageComparisonSearch (This : in out ImageComparisonSearchResultsEvent) is
-      Java_Result : constant ImageComparisonSearch_Access := ImageComparisonSearchResultsEvent'Class (This).getImageComparisonSearch;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getImageComparisonSearch;
 
 end org.allbinary.media.image.search.ImageComparisonSearchResultsEvent_Package;
 

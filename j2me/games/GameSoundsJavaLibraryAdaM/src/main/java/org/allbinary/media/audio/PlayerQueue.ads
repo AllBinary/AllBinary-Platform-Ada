@@ -26,6 +26,8 @@ with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.s
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.media.audio.Sound_Package; use org.allbinary.media.audio.Sound_Package;
+with org.allbinary.media.audio.NoSound_Package; use org.allbinary.media.audio.NoSound_Package;
 
 package org.allbinary.media.audio.PlayerQueue_Package is
 
@@ -52,10 +54,8 @@ package org.allbinary.media.audio.PlayerQueue_Package is
    function Create (max : Integer) return PlayerQueue_Access;
    procedure add (This : in out PlayerQueue; sound : Sound_Access);
    function process (This : in out PlayerQueue) return Boolean;
-   procedure process (This : in out PlayerQueue);
    procedure clear (This : in out PlayerQueue);
    function toString (This : in out PlayerQueue) return Unbounded_String;
-   procedure toString (This : in out PlayerQueue);
 
 end org.allbinary.media.audio.PlayerQueue_Package;
 

@@ -23,7 +23,7 @@ package body org.allbinary.graphics.form.item.ABStringComponent_Package is
    function Create (backgroundBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access) return ABStringComponent_Access is
       This : constant ABStringComponent_Access := new ABStringComponent;
    begin
-      Initialize (This.all, backgroundBasicColor, foregroundBasicColor);
+      ABStringComponent_Package.Initialize (This.all, backgroundBasicColor, foregroundBasicColor);
       return This;
    end Create;
 
@@ -36,20 +36,6 @@ package body org.allbinary.graphics.form.item.ABStringComponent_Package is
    begin
         null;
    end setForegroundBasicColor;
-
-   procedure getBackgroundBasicColor (This : in out ABStringComponent) is
-      Java_Result : constant BasicColor_Access := ABStringComponent'Class (This).getBackgroundBasicColor;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getBackgroundBasicColor;
-
-   procedure getForegroundBasicColor (This : in out ABStringComponent) is
-      Java_Result : constant BasicColor_Access := ABStringComponent'Class (This).getForegroundBasicColor;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getForegroundBasicColor;
 
 begin
    null;

@@ -39,7 +39,6 @@ package org.allbinary.thread.ThreadPoolStrings_Package is
    procedure Initialize (This : in out ThreadPoolStrings'Class);
    function Create return ThreadPoolStrings_Access;
    function getInstance return ThreadPoolStrings_Access;
-   procedure getInstance;
 
 end org.allbinary.thread.ThreadPoolStrings_Package;
 

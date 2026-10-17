@@ -29,7 +29,7 @@ package body org.allbinary.input.automation.robot.osgi.InputAutomationRobotServi
    function Create (bundleContext : BundleContext_Access) return InputAutomationRobotServiceConsumer_Access is
       This : constant InputAutomationRobotServiceConsumer_Access := new InputAutomationRobotServiceConsumer;
    begin
-      Initialize (This.all, bundleContext);
+      InputAutomationRobotServiceConsumer_Package.Initialize (This.all, bundleContext);
       return This;
    end Create;
 

@@ -44,7 +44,6 @@ package tags.generic_Id.user.UserTag_Package is
    function Create return UserTag_Access;
    procedure setRole (This : in out UserTag; value : Unbounded_String);
    function doStartTag (This : in out UserTag) return Integer;
-   procedure doStartTag (This : in out UserTag);
 
 end tags.generic_Id.user.UserTag_Package;
 

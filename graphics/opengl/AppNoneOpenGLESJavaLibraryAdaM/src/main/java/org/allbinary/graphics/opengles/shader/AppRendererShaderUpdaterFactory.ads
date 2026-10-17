@@ -21,6 +21,8 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.graphics.opengles.shader.ShaderUpdater_Package; use org.allbinary.graphics.opengles.shader.ShaderUpdater_Package;
+with org.allbinary.graphics.opengles.shader.ShaderComposite_Package; use org.allbinary.graphics.opengles.shader.ShaderComposite_Package;
+with org.allbinary.graphics.opengles.shader.ShaderOpenGLProcessor_Package; use org.allbinary.graphics.opengles.shader.ShaderOpenGLProcessor_Package;
 
 package org.allbinary.graphics.opengles.shader.AppRendererShaderUpdaterFactory_Package is
 
@@ -40,9 +42,7 @@ package org.allbinary.graphics.opengles.shader.AppRendererShaderUpdaterFactory_P
    procedure Initialize (This : in out AppRendererShaderUpdaterFactory'Class);
    function Create return AppRendererShaderUpdaterFactory_Access;
    function getInstance return AppRendererShaderUpdaterFactory_Access;
-   procedure getInstance;
    function getTestShaders (This : in out AppRendererShaderUpdaterFactory) return ShaderOpenGLProcessor_Access_Array_Access;
-   procedure getTestShaders (This : in out AppRendererShaderUpdaterFactory);
    procedure setShaderComposite (This : in out AppRendererShaderUpdaterFactory; object3d : Java_Object_Access);
 
 end org.allbinary.graphics.opengles.shader.AppRendererShaderUpdaterFactory_Package;

@@ -38,7 +38,7 @@ package body org.allbinary.image.opengles.OpenGLESImageProperties_Package is
    function Create return OpenGLESImageProperties_Access is
       This : constant OpenGLESImageProperties_Access := new OpenGLESImageProperties;
    begin
-      Initialize (This.all);
+      OpenGLESImageProperties_Package.Initialize (This.all);
       return This;
    end Create;
 

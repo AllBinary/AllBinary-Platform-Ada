@@ -31,7 +31,7 @@ package body org.allbinary.business.init.InstallerInfo_Package is
    function Create return InstallerInfo_Access is
       This : constant InstallerInfo_Access := new InstallerInfo;
    begin
-      Initialize (This.all);
+      InstallerInfo_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -154,20 +154,6 @@ package body org.allbinary.business.init.InstallerInfo_Package is
         end if;
         return False;
    end isValid;
-
-   procedure getUserName (This : in out InstallerInfo) is
-      Java_Result : constant Unbounded_String := InstallerInfo'Class (This).getUserName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getUserName;
-
-   procedure getPassword (This : in out InstallerInfo) is
-      Java_Result : constant Unbounded_String := InstallerInfo'Class (This).getPassword;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getPassword;
 
    procedure isValid (This : in out InstallerInfo; userName : Unbounded_String; password : Unbounded_String) is
       Java_Result : constant Boolean := InstallerInfo'Class (This).isValid (userName, password);

@@ -34,7 +34,7 @@ package body org.allbinary.game.ag.ai.scroller.FlockingAI_Package is
    function Create (hashtable : ABHashtable_Access; ownerLayerInterface : AllBinaryLayer_Access; gameInput : GameInput_Access) return FlockingAI_Access is
       This : constant FlockingAI_Access := new FlockingAI;
    begin
-      Initialize (This.all, hashtable, ownerLayerInterface, gameInput);
+      FlockingAI_Package.Initialize (This.all, hashtable, ownerLayerInterface, gameInput);
       return This;
    end Create;
 

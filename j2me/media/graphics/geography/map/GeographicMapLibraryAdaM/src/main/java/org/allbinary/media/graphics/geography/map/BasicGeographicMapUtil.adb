@@ -29,7 +29,7 @@ package body org.allbinary.media.graphics.geography.map.BasicGeographicMapUtil_P
    function Create return BasicGeographicMapUtil_Access is
       This : constant BasicGeographicMapUtil_Access := new BasicGeographicMapUtil;
    begin
-      Initialize (This.all);
+      BasicGeographicMapUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -146,13 +146,6 @@ package body org.allbinary.media.graphics.geography.map.BasicGeographicMapUtil_P
             geographicMapInterface.getAllBinaryTiledLayer.setPosition (x, y, geographicMapInterface.getAllBinaryTiledLayer.getZP);
         end loop;
    end setPosition;
-
-   procedure getInstance is
-      Java_Result : constant BasicGeographicMapUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure getBorderingRow (This : in out BasicGeographicMapUtil; direction : Integer; oldGeographicMapCellPosition : GeographicMapCellPosition_Access) is
       Java_Result : constant Integer := BasicGeographicMapUtil'Class (This).getBorderingRow (direction, oldGeographicMapCellPosition);

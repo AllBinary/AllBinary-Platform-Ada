@@ -28,7 +28,7 @@ package body org.allbinary.layer.LayerManagerLoggingBase_Package is
    function Create return LayerManagerLoggingBase_Access is
       This : constant LayerManagerLoggingBase_Access := new LayerManagerLoggingBase;
    begin
-      Initialize (This.all);
+      LayerManagerLoggingBase_Package.Initialize (This.all);
       return This;
    end Create;
 

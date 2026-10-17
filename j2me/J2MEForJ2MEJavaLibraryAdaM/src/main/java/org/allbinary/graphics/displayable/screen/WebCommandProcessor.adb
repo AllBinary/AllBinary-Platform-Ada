@@ -31,7 +31,7 @@ package body org.allbinary.graphics.displayable.screen.WebCommandProcessor_Packa
    function Create return WebCommandProcessor_Access is
       This : constant WebCommandProcessor_Access := new WebCommandProcessor;
    begin
-      Initialize (This.all);
+      WebCommandProcessor_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -56,13 +56,6 @@ package body org.allbinary.graphics.displayable.screen.WebCommandProcessor_Packa
                 end;
         end;
    end process;
-
-   procedure getInstance is
-      Java_Result : constant WebCommandProcessor_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

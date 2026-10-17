@@ -33,7 +33,7 @@ package body org.allbinary.logic.control.workflow.WorkFlowWrapper_Package is
    function Create (anyType : Java_Object_Access) return WorkFlowWrapper_Access is
       This : constant WorkFlowWrapper_Access := new WorkFlowWrapper;
    begin
-      Initialize (This.all, anyType);
+      WorkFlowWrapper_Package.Initialize (This.all, anyType);
       return This;
    end Create;
 
@@ -118,34 +118,6 @@ package body org.allbinary.logic.control.workflow.WorkFlowWrapper_Package is
             Java_Throw (Java_New_Exception ("Exception", error));
                 end;
         end;
-   end process;
-
-   procedure getWorkFlowObject (This : in out WorkFlowWrapper) is
-      Java_Result : constant Java_Object_Access := WorkFlowWrapper'Class (This).getWorkFlowObject;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getWorkFlowObject;
-
-   procedure getName (This : in out WorkFlowWrapper) is
-      Java_Result : constant Unbounded_String := WorkFlowWrapper'Class (This).getName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getName;
-
-   procedure getStoreName (This : in out WorkFlowWrapper) is
-      Java_Result : constant Unbounded_String := WorkFlowWrapper'Class (This).getStoreName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getStoreName;
-
-   procedure process (This : in out WorkFlowWrapper) is
-      Java_Result : constant Integer := WorkFlowWrapper'Class (This).process;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end process;
 
 end org.allbinary.logic.control.workflow.WorkFlowWrapper_Package;

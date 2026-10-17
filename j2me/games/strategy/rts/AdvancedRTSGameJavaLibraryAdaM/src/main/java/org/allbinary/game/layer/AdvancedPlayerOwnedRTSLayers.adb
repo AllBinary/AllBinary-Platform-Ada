@@ -37,7 +37,7 @@ package body org.allbinary.game.layer.AdvancedPlayerOwnedRTSLayers_Package is
    function Create return AdvancedPlayerOwnedRTSLayers_Access is
       This : constant AdvancedPlayerOwnedRTSLayers_Access := new AdvancedPlayerOwnedRTSLayers;
    begin
-      Initialize (This.all);
+      AdvancedPlayerOwnedRTSLayers_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -182,76 +182,6 @@ package body org.allbinary.game.layer.AdvancedPlayerOwnedRTSLayers_Package is
    function getBuildingList (This : in out AdvancedPlayerOwnedRTSLayers) return BasicArrayList_Access is
    begin
         return This.buildingList;
-   end getBuildingList;
-
-   procedure getUnitsList (This : in out AdvancedPlayerOwnedRTSLayers) is
-      Java_Result : constant BasicArrayList_Access := AdvancedPlayerOwnedRTSLayers'Class (This).getUnitsList;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getUnitsList;
-
-   procedure getWaypointsList (This : in out AdvancedPlayerOwnedRTSLayers) is
-      Java_Result : constant BasicArrayList_Access := AdvancedPlayerOwnedRTSLayers'Class (This).getWaypointsList;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getWaypointsList;
-
-   procedure getBaseList (This : in out AdvancedPlayerOwnedRTSLayers) is
-      Java_Result : constant BasicArrayList_Access := AdvancedPlayerOwnedRTSLayers'Class (This).getBaseList;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getBaseList;
-
-   procedure getGarrisonList (This : in out AdvancedPlayerOwnedRTSLayers) is
-      Java_Result : constant BasicArrayList_Access := AdvancedPlayerOwnedRTSLayers'Class (This).getGarrisonList;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getGarrisonList;
-
-   procedure getHouseList (This : in out AdvancedPlayerOwnedRTSLayers) is
-      Java_Result : constant BasicArrayList_Access := AdvancedPlayerOwnedRTSLayers'Class (This).getHouseList;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getHouseList;
-
-   procedure getLabList (This : in out AdvancedPlayerOwnedRTSLayers) is
-      Java_Result : constant BasicArrayList_Access := AdvancedPlayerOwnedRTSLayers'Class (This).getLabList;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getLabList;
-
-   procedure getFactoryList (This : in out AdvancedPlayerOwnedRTSLayers) is
-      Java_Result : constant BasicArrayList_Access := AdvancedPlayerOwnedRTSLayers'Class (This).getFactoryList;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getFactoryList;
-
-   procedure getTotalBuildings (This : in out AdvancedPlayerOwnedRTSLayers) is
-      Java_Result : constant Integer := AdvancedPlayerOwnedRTSLayers'Class (This).getTotalBuildings;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTotalBuildings;
-
-   procedure toString (This : in out AdvancedPlayerOwnedRTSLayers) is
-      Java_Result : constant Unbounded_String := AdvancedPlayerOwnedRTSLayers'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toString;
-
-   procedure getBuildingList (This : in out AdvancedPlayerOwnedRTSLayers) is
-      Java_Result : constant BasicArrayList_Access := AdvancedPlayerOwnedRTSLayers'Class (This).getBuildingList;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getBuildingList;
 
 end org.allbinary.game.layer.AdvancedPlayerOwnedRTSLayers_Package;

@@ -40,7 +40,6 @@ package org.allbinary.game.input.NoPlayerGameInput_Package is
    procedure Initialize (This : in out NoPlayerGameInput'Class);
    function Create return NoPlayerGameInput_Access;
    function getInstance return NoPlayerGameInput_Access;
-   procedure getInstance;
    procedure onDownGameKeyEvent (This : in out NoPlayerGameInput; gameKeyEvent : GameKeyEvent_Access);
    procedure onUpGameKeyEvent (This : in out NoPlayerGameInput; gameKeyEvent : GameKeyEvent_Access);
 

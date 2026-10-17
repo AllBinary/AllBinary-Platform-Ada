@@ -37,7 +37,6 @@ package org.osgi.framework.BaseServiceReference_Package is
    function getProperty (This : in out BaseServiceReference; key : Unbounded_String) return Java_Object_Access;
    procedure getProperty (This : in out BaseServiceReference; key : Unbounded_String);
    function getPropertyKeys (This : in out BaseServiceReference) return Unbounded_String_Array_Access;
-   procedure getPropertyKeys (This : in out BaseServiceReference);
    function compareTo (This : in out BaseServiceReference; o : Java_Object_Access) return Integer;
    procedure compareTo (This : in out BaseServiceReference; o : Java_Object_Access);
 

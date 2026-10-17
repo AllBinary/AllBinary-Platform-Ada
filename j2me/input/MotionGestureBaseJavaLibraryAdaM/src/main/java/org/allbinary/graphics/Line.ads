@@ -20,6 +20,8 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
+with org.allbinary.graphics.GPoint_Package; use org.allbinary.graphics.GPoint_Package;
+with org.allbinary.graphics.PointFactory_Package; use org.allbinary.graphics.PointFactory_Package;
 
 package org.allbinary.graphics.Line_Package is
 
@@ -39,16 +41,11 @@ package org.allbinary.graphics.Line_Package is
    procedure Initialize (This : in out Line'Class; p1 : GPoint_Access; p2 : GPoint_Access);
    function Create (p1 : GPoint_Access; p2 : GPoint_Access) return Line_Access;
    function getGradient (This : in out Line) return Long_Float;
-   procedure getGradient (This : in out Line);
    procedure update (This : in out Line);
    function getDeltaX (This : in out Line) return Long_Float;
-   procedure getDeltaX (This : in out Line);
    function getDeltaY (This : in out Line) return Long_Float;
-   procedure getDeltaY (This : in out Line);
    function getP1 (This : in out Line) return GPoint_Access;
-   procedure getP1 (This : in out Line);
    function getP2 (This : in out Line) return GPoint_Access;
-   procedure getP2 (This : in out Line);
    procedure setP1 (This : in out Line; p1 : GPoint_Access);
    procedure setP2 (This : in out Line; p2 : GPoint_Access);
 

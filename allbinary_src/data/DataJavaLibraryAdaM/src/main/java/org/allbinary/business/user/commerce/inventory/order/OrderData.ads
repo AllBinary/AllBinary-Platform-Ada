@@ -21,7 +21,7 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 
-package org.allbinary.business.user.commerce.inventory.order_Case.OrderData_Package is
+package org.allbinary.business.user.commerce.inventory.order.OrderData_Package is
 
 
    type OrderData is tagged;
@@ -41,6 +41,6 @@ package org.allbinary.business.user.commerce.inventory.order_Case.OrderData_Pack
    procedure Initialize (This : in out OrderData'Class);
    function Create return OrderData_Access;
 
-end org.allbinary.business.user.commerce.inventory.order_Case.OrderData_Package;
+end org.allbinary.business.user.commerce.inventory.order.OrderData_Package;
 
 

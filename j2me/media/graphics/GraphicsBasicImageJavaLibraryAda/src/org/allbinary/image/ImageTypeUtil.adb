@@ -36,11 +36,12 @@ package body org.allbinary.image.ImageTypeUtil_Package is
    function Create return ImageTypeUtil_Access is
       This : constant ImageTypeUtil_Access := new ImageTypeUtil;
    begin
-      Initialize (This.all);
+      ImageTypeUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
-   function isSupported (This : in out ImageTypeUtil; mediaFileType : Unbounded_String) return Boolean is
+   function isSupported (This : in out ImageTypeUtil; mediaFileType_Param : Unbounded_String) return Boolean is
+      mediaFileType : Unbounded_String := mediaFileType_Param;
       name : Unbounded_String;
       index : Integer;
    begin
@@ -59,19 +60,12 @@ package body org.allbinary.image.ImageTypeUtil_Package is
         return ImageTypeUtil_Package.SINGLETON;
    end getInstance;
 
-   procedure isSupported (This : in out ImageTypeUtil; mediaFileType : Unbounded_String) is
-      Java_Result : constant Boolean := ImageTypeUtil'Class (This).isSupported (mediaFileType);
+   procedure isSupported (This : in out ImageTypeUtil; mediaFileType_Param : Unbounded_String) is
+      Java_Result : constant Boolean := ImageTypeUtil'Class (This).isSupported (mediaFileType_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isSupported;
-
-   procedure getInstance is
-      Java_Result : constant ImageTypeUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

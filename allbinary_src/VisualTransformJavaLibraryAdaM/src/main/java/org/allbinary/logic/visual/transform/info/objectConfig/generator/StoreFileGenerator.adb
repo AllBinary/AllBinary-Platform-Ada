@@ -85,7 +85,7 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.generator.St
    function Create (transformInfoInterface : TransformInfoInterface_Access) return StoreFileGenerator_Access is
       This : constant StoreFileGenerator_Access := new StoreFileGenerator;
    begin
-      Initialize (This.all, transformInfoInterface);
+      StoreFileGenerator_Package.Initialize (This.all, transformInfoInterface);
       return This;
    end Create;
 

@@ -21,6 +21,7 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.image.BasicArrayListD_Package; use org.allbinary.image.BasicArrayListD_Package;
 
 package org.allbinary.image.ImageTypeUtil_Package is
 
@@ -41,10 +42,9 @@ package org.allbinary.image.ImageTypeUtil_Package is
 
    procedure Initialize (This : in out ImageTypeUtil'Class);
    function Create return ImageTypeUtil_Access;
-   function isSupported (This : in out ImageTypeUtil; mediaFileType : Unbounded_String) return Boolean;
-   procedure isSupported (This : in out ImageTypeUtil; mediaFileType : Unbounded_String);
+   function isSupported (This : in out ImageTypeUtil; mediaFileType_Param : Unbounded_String) return Boolean;
+   procedure isSupported (This : in out ImageTypeUtil; mediaFileType_Param : Unbounded_String);
    function getInstance return ImageTypeUtil_Access;
-   procedure getInstance;
 
 end org.allbinary.image.ImageTypeUtil_Package;
 

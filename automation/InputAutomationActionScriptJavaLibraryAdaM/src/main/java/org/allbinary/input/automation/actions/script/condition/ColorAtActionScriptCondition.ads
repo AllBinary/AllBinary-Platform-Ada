@@ -43,6 +43,8 @@ with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.w3c.dom.NodeList_Package; use org.w3c.dom.NodeList_Package;
 with org.allbinary.input.automation.actions.script.condition.BasicProfileActionScriptCondition_Package; use org.allbinary.input.automation.actions.script.condition.BasicProfileActionScriptCondition_Package;
 with org.allbinary.input.automation.actions.script.condition.ColorAtActionScriptConditionInterface_Package; use org.allbinary.input.automation.actions.script.condition.ColorAtActionScriptConditionInterface_Package;
+with org.allbinary.input.automation.actions.script.condition.ColorAtActionScriptConditionJPanel_Package; use org.allbinary.input.automation.actions.script.condition.ColorAtActionScriptConditionJPanel_Package;
+with org.allbinary.input.automation.actions.script.condition.ColorAtActionScriptConditionData_Package; use org.allbinary.input.automation.actions.script.condition.ColorAtActionScriptConditionData_Package;
 
 package org.allbinary.input.automation.actions.script.condition.ColorAtActionScriptCondition_Package is
 
@@ -81,18 +83,15 @@ package org.allbinary.input.automation.actions.script.condition.ColorAtActionScr
    function Create (node : Node_Access) return ColorAtActionScriptCondition_Access;
    procedure init (This : in out ColorAtActionScriptCondition);
    function getPoint (This : in out ColorAtActionScriptCondition) return Point_Access;
-   procedure getPoint (This : in out ColorAtActionScriptCondition);
    procedure setPoint (This : in out ColorAtActionScriptCondition; point : Point_Access);
    procedure showDialog (This : in out ColorAtActionScriptCondition);
    function toHashMap (This : in out ColorAtActionScriptCondition) return HashMap_Access;
-   procedure toHashMap (This : in out ColorAtActionScriptCondition);
    function toXmlNode (This : in out ColorAtActionScriptCondition; document : Document_Access) return Node_Access;
    procedure toXmlNode (This : in out ColorAtActionScriptCondition; document : Document_Access);
    function shouldProcess (This : in out ColorAtActionScriptCondition; frame : Long_Long_Integer) return Boolean;
    procedure shouldProcess (This : in out ColorAtActionScriptCondition; frame : Long_Long_Integer);
    procedure log (This : in out ColorAtActionScriptCondition);
    function getColorRangeInterface (This : in out ColorAtActionScriptCondition) return ColorRangeInterface_Access;
-   procedure getColorRangeInterface (This : in out ColorAtActionScriptCondition);
    procedure setColorRangeInterface (This : in out ColorAtActionScriptCondition; colorRangeInterface : ColorRangeInterface_Access);
 
 end org.allbinary.input.automation.actions.script.condition.ColorAtActionScriptCondition_Package;

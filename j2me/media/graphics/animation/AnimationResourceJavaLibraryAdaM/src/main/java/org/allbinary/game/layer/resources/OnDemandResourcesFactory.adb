@@ -28,7 +28,7 @@ package body org.allbinary.game.layer.resources.OnDemandResourcesFactory_Package
    function Create return OnDemandResourcesFactory_Access is
       This : constant OnDemandResourcesFactory_Access := new OnDemandResourcesFactory;
    begin
-      Initialize (This.all);
+      OnDemandResourcesFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -42,13 +42,6 @@ package body org.allbinary.game.layer.resources.OnDemandResourcesFactory_Package
    begin
         return OnDemandResources_Package.NULL_ON_DEMAND_RESOURCES;
    end remove;
-
-   procedure size (This : in out OnDemandResourcesFactory) is
-      Java_Result : constant Integer := OnDemandResourcesFactory'Class (This).size;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end size;
 
    procedure remove (This : in out OnDemandResourcesFactory; layerId : Integer) is
       Java_Result : constant OnDemandResources_Access := OnDemandResourcesFactory'Class (This).remove (layerId);

@@ -8,6 +8,8 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
+with org.allbinary.animation.PathParser_Package; use org.allbinary.animation.PathParser_Package;
+with org.allbinary.animation.FixedPoint_Package; use org.allbinary.animation.FixedPoint_Package;
 
 package org.allbinary.animation.PolygonRasterizer_Package is
 
@@ -23,7 +25,6 @@ package org.allbinary.animation.PolygonRasterizer_Package is
    procedure Initialize (This : in out PolygonRasterizer'Class);
    function Create return PolygonRasterizer_Access;
    function getInstance return PolygonRasterizer_Access;
-   procedure getInstance;
    function getPixelBuffer (This : in out PolygonRasterizer; svgPath : Unbounded_String; pathX : Integer_Array_Access; pathY : Integer_Array_Access; pixelBuffer : Integer_Array_Access; width : Integer; height : Integer) return Integer_Array_Access;
    procedure getPixelBuffer (This : in out PolygonRasterizer; svgPath : Unbounded_String; pathX : Integer_Array_Access; pathY : Integer_Array_Access; pixelBuffer : Integer_Array_Access; width : Integer; height : Integer);
    procedure fillPolygon (This : in out PolygonRasterizer; polyX : Integer_Array_Access; polyY : Integer_Array_Access; numPoints : Integer; buffer : Integer_Array_Access; width : Integer; height : Integer; colorRGB : Integer);

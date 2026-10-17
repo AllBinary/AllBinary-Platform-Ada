@@ -27,6 +27,8 @@ with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbin
 with org.allbinary.logic.util.event.EventListenerInterface_Package; use org.allbinary.logic.util.event.EventListenerInterface_Package;
 with org.allbinary.logic.util.event.EventStrings_Package; use org.allbinary.logic.util.event.EventStrings_Package;
 with org.allbinary.logic.util.event.handler.BasicEventHandler_Package; use org.allbinary.logic.util.event.handler.BasicEventHandler_Package;
+with org.allbinary.media.graphics.geography.map.event.GeographicMapCellPositionEvent_Package; use org.allbinary.media.graphics.geography.map.event.GeographicMapCellPositionEvent_Package;
+with org.allbinary.media.graphics.geography.map.event.GeographicMapCellPositionEventListenerInterface_Package; use org.allbinary.media.graphics.geography.map.event.GeographicMapCellPositionEventListenerInterface_Package;
 
 package org.allbinary.media.graphics.geography.map.event.GeographicMapCellPositionEventHandler_Package is
 
@@ -51,7 +53,6 @@ package org.allbinary.media.graphics.geography.map.event.GeographicMapCellPositi
    procedure Initialize (This : in out GeographicMapCellPositionEventHandler'Class);
    function Create return GeographicMapCellPositionEventHandler_Access;
    function getInstance return GeographicMapCellPositionEventHandler_Access;
-   procedure getInstance;
    procedure addListener (This : in out GeographicMapCellPositionEventHandler; miniMapLayer : MiniMapLayer_Access);
    procedure removeAllListeners (This : in out GeographicMapCellPositionEventHandler);
    procedure removeListener (This : in out GeographicMapCellPositionEventHandler; eventListenerInterface : EventListenerInterface_Access);

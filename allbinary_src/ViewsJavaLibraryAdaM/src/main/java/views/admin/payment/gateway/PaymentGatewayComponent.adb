@@ -33,7 +33,7 @@ package body views.admin.payment.gateway.PaymentGatewayComponent_Package is
    function Create (transformInfoInterface : TransformInfoInterface_Access; paymentGatewayInterface : PaymentGatewayInterface_Access) return PaymentGatewayComponent_Access is
       This : constant PaymentGatewayComponent_Access := new PaymentGatewayComponent;
    begin
-      Initialize (This.all, transformInfoInterface, paymentGatewayInterface);
+      PaymentGatewayComponent_Package.Initialize (This.all, transformInfoInterface, paymentGatewayInterface);
       return This;
    end Create;
 
@@ -67,13 +67,6 @@ package body views.admin.payment.gateway.PaymentGatewayComponent_Package is
             return error;
                 end;
         end;
-   end view;
-
-   procedure view (This : in out PaymentGatewayComponent) is
-      Java_Result : constant Unbounded_String := PaymentGatewayComponent'Class (This).view;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end view;
 
 end views.admin.payment.gateway.PaymentGatewayComponent_Package;

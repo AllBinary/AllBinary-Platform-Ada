@@ -36,7 +36,7 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.generator.Tr
    function Create return TransformInfoObjectConfigGeneratorFactory_Access is
       This : constant TransformInfoObjectConfigGeneratorFactory_Access := new TransformInfoObjectConfigGeneratorFactory;
    begin
-      Initialize (This.all);
+      TransformInfoObjectConfigGeneratorFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -57,13 +57,6 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.generator.Tr
         else
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("No Such TransformInfoObjectConfigGenerator Type")));
         end if;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant TransformInfoObjectConfigGeneratorFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
    procedure getInstance (This : in out TransformInfoObjectConfigGeneratorFactory; transformInfoInterface : TransformInfoInterface_Access) is

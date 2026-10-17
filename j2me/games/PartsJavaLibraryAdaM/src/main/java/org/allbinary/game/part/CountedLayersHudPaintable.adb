@@ -42,7 +42,7 @@ package body org.allbinary.game.part.CountedLayersHudPaintable_Package is
    function Create (partInterfaceArray : PartInterface_Access_Array_Access; dropSize : Integer; startIndex : Integer; countedTotalStringColor : Integer; countedPartsBorder : Integer) return CountedLayersHudPaintable_Access is
       This : constant CountedLayersHudPaintable_Access := new CountedLayersHudPaintable;
    begin
-      Initialize (This.all, partInterfaceArray, dropSize, startIndex, countedTotalStringColor, countedPartsBorder);
+      CountedLayersHudPaintable_Package.Initialize (This.all, partInterfaceArray, dropSize, startIndex, countedTotalStringColor, countedPartsBorder);
       return This;
    end Create;
 

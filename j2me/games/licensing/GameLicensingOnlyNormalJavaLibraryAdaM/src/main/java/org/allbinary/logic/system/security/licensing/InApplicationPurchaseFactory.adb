@@ -27,7 +27,7 @@ package body org.allbinary.logic.system.security.licensing.InApplicationPurchase
    function Create return InApplicationPurchaseFactory_Access is
       This : constant InApplicationPurchaseFactory_Access := new InApplicationPurchaseFactory;
    begin
-      Initialize (This.all);
+      InApplicationPurchaseFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -91,33 +91,12 @@ package body org.allbinary.logic.system.security.licensing.InApplicationPurchase
         return False;
    end isEnabled;
 
-   procedure getInstance is
-      Java_Result : constant InApplicationPurchaseFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
    procedure isPurchased (This : in out InApplicationPurchaseFactory; lockableFeature : LockableFeature_Access) is
       Java_Result : constant Boolean := InApplicationPurchaseFactory'Class (This).isPurchased (lockableFeature);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isPurchased;
-
-   procedure getUserName (This : in out InApplicationPurchaseFactory) is
-      Java_Result : constant Unbounded_String := InApplicationPurchaseFactory'Class (This).getUserName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getUserName;
-
-   procedure isEnabled (This : in out InApplicationPurchaseFactory) is
-      Java_Result : constant Boolean := InApplicationPurchaseFactory'Class (This).isEnabled;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isEnabled;
 
 begin
    null;

@@ -24,6 +24,9 @@ with org.allbinary.game.configuration.feature.Features_Package; use org.allbinar
 with org.allbinary.game.configuration.feature.GameFeatureFactory_Package; use org.allbinary.game.configuration.feature.GameFeatureFactory_Package;
 with org.allbinary.graphics.opengles.OpenGLFeatureUtil_Package; use org.allbinary.graphics.opengles.OpenGLFeatureUtil_Package;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
+with org.allbinary.game.collision.CollisionProcessor_Package; use org.allbinary.game.collision.CollisionProcessor_Package;
+with org.allbinary.game.collision.Collision2DProcessor_Package; use org.allbinary.game.collision.Collision2DProcessor_Package;
+with org.allbinary.game.collision.CollisionThreedProcessor_Package; use org.allbinary.game.collision.CollisionThreedProcessor_Package;
 
 package org.allbinary.game.collision.LayerCollisionUtil_Package is
 
@@ -45,7 +48,6 @@ package org.allbinary.game.collision.LayerCollisionUtil_Package is
    procedure Initialize (This : in out LayerCollisionUtil'Class);
    function Create return LayerCollisionUtil_Access;
    function getInstance return LayerCollisionUtil_Access;
-   procedure getInstance;
    function isCollision (This : in out LayerCollisionUtil; myLayer : AllBinaryLayer_Access; myLayer2 : AllBinaryLayer_Access) return Boolean;
    procedure isCollision (This : in out LayerCollisionUtil; myLayer : AllBinaryLayer_Access; myLayer2 : AllBinaryLayer_Access);
 

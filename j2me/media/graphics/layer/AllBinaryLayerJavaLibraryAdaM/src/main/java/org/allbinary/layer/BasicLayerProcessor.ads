@@ -24,6 +24,8 @@ with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.lo
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
+with org.allbinary.layer.AllBinaryLayerManager_Package; use org.allbinary.layer.AllBinaryLayerManager_Package;
 
 package org.allbinary.layer.BasicLayerProcessor_Package is
 
@@ -48,7 +50,6 @@ package org.allbinary.layer.BasicLayerProcessor_Package is
    procedure add (This : in out BasicLayerProcessor; layerInterface : AllBinaryLayer_Access);
    procedure process (This : in out BasicLayerProcessor; allBinaryLayerManager : AllBinaryLayerManager_Access);
    function getList (This : in out BasicLayerProcessor) return BasicArrayList_Access;
-   procedure getList (This : in out BasicLayerProcessor);
 
 end org.allbinary.layer.BasicLayerProcessor_Package;
 

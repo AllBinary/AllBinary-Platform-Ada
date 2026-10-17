@@ -33,7 +33,7 @@ package body org.allbinary.business.context.modules.storefront.statistics.RealTi
    function Create (storeFrontStatisticsInterface : StoreFrontStatisticsInterface_Access; userRole : UserRole_Access) return RealTimeStoreFrontStatisticsView_Access is
       This : constant RealTimeStoreFrontStatisticsView_Access := new RealTimeStoreFrontStatisticsView;
    begin
-      Initialize (This.all, storeFrontStatisticsInterface, userRole);
+      RealTimeStoreFrontStatisticsView_Package.Initialize (This.all, storeFrontStatisticsInterface, userRole);
       return This;
    end Create;
 

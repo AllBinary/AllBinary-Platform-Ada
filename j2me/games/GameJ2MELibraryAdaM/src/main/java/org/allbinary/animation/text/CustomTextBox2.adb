@@ -30,7 +30,7 @@ package body org.allbinary.animation.text.CustomTextBox2_Package is
    function Create (cmdListener : CommandListener_Access; label : Unbounded_String; text : Unbounded_String; maxSize : Integer; constraints : Integer; font : Font_Access; backgroundBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access) return CustomTextBox2_Access is
       This : constant CustomTextBox2_Access := new CustomTextBox2;
    begin
-      Initialize (This.all, cmdListener, label, text, maxSize, constraints, font, backgroundBasicColor, foregroundBasicColor);
+      CustomTextBox2_Package.Initialize (This.all, cmdListener, label, text, maxSize, constraints, font, backgroundBasicColor, foregroundBasicColor);
       return This;
    end Create;
 

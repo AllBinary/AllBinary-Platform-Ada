@@ -33,7 +33,7 @@ package body org.allbinary.game.layer.CollidableVehicleBehavior_Package is
    function Create (collidable : Boolean) return CollidableVehicleBehavior_Access is
       This : constant CollidableVehicleBehavior_Access := new CollidableVehicleBehavior;
    begin
-      Initialize (This.all, collidable);
+      CollidableVehicleBehavior_Package.Initialize (This.all, collidable);
       return This;
    end Create;
 

@@ -24,6 +24,8 @@ with org.allbinary.logic.communication.log.ForcedLogUtil_Package; use org.allbin
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.game.health.HealthInterface_Package; use org.allbinary.game.health.HealthInterface_Package;
+with org.allbinary.game.health.NullHealthListener_Package; use org.allbinary.game.health.NullHealthListener_Package;
+with org.allbinary.game.health.HealthListenerInterface_Package; use org.allbinary.game.health.HealthListenerInterface_Package;
 
 package org.allbinary.game.health.Health_Package is
 
@@ -51,19 +53,14 @@ package org.allbinary.game.health.Health_Package is
    procedure heal (This : in out Health; ahealth : Integer);
    procedure healMax (This : in out Health);
    function isDamaged (This : in out Health) return Boolean;
-   procedure isDamaged (This : in out Health);
    procedure damage (This : in out Health; ahealth : Integer);
    function isAlive (This : in out Health) return Boolean;
-   procedure isAlive (This : in out Health);
    function getMaxHealth (This : in out Health) return Integer;
-   procedure getMaxHealth (This : in out Health);
    procedure setMaxHealth (This : in out Health; maxHealth : Integer);
    procedure setHealth (This : in out Health; health : Integer);
    function getHealth (This : in out Health) return Integer;
-   procedure getHealth (This : in out Health);
    procedure addListener (This : in out Health; healthGraphic : HealthListenerInterface_Access);
    function toString (This : in out Health) return Unbounded_String;
-   procedure toString (This : in out Health);
 
 end org.allbinary.game.health.Health_Package;
 

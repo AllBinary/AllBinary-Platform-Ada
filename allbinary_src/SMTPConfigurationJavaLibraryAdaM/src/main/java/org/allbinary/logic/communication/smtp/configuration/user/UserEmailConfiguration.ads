@@ -48,7 +48,6 @@ package org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfi
    procedure Initialize (This : in out UserEmailConfiguration'Class);
    function Create return UserEmailConfiguration_Access;
    function getUserEmailEventsConfigurationInterface (This : in out UserEmailConfiguration) return UserEmailEventsConfigurationInterface_Access;
-   procedure getUserEmailEventsConfigurationInterface (This : in out UserEmailConfiguration);
    procedure setUserEmailEventsConfigurationInterface (This : in out UserEmailConfiguration; userEmailEventsConfigurationInterface : UserEmailEventsConfigurationInterface_Access);
 
 end org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfiguration_Package;

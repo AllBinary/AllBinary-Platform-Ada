@@ -22,6 +22,7 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.data.tables.user.commerce.inventory.item.options.XmlOptionItemsEntity_Package; use org.allbinary.data.tables.user.commerce.inventory.item.options.XmlOptionItemsEntity_Package;
 
 package org.allbinary.data.tables.user.commerce.inventory.item.options.XmlOptionItemsEntityFactory_Package is
 
@@ -41,9 +42,7 @@ package org.allbinary.data.tables.user.commerce.inventory.item.options.XmlOption
    procedure Initialize (This : in out XmlOptionItemsEntityFactory'Class);
    function Create return XmlOptionItemsEntityFactory_Access;
    function getInstance return XmlOptionItemsEntityFactory_Access;
-   procedure getInstance;
    function getXmlOptionItemsEntityInstance (This : in out XmlOptionItemsEntityFactory) return XmlOptionItemsEntity_Access;
-   procedure getXmlOptionItemsEntityInstance (This : in out XmlOptionItemsEntityFactory);
 
 end org.allbinary.data.tables.user.commerce.inventory.item.options.XmlOptionItemsEntityFactory_Package;
 

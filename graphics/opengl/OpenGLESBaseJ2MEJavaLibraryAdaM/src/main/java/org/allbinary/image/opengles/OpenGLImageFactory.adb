@@ -28,7 +28,7 @@ package body org.allbinary.image.opengles.OpenGLImageFactory_Package is
    function Create return OpenGLImageFactory_Access is
       This : constant OpenGLImageFactory_Access := new OpenGLImageFactory;
    begin
-      Initialize (This.all);
+      OpenGLImageFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

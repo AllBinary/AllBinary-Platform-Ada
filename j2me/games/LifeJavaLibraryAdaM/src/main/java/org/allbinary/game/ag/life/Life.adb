@@ -52,7 +52,7 @@ package body org.allbinary.game.ag.life.Life_Package is
    function Create (lives : Short_Integer; maxlives : Short_Integer) return Life_Access is
       This : constant Life_Access := new Life;
    begin
-      Initialize (This.all, lives, maxlives);
+      Life_Package.Initialize (This.all, lives, maxlives);
       return This;
    end Create;
 
@@ -125,48 +125,6 @@ package body org.allbinary.game.ag.life.Life_Package is
    begin
         This.startLives := startLives;
    end setStartLives;
-
-   procedure createLife is
-      Java_Result : constant Life_Access := createLife;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end createLife;
-
-   procedure get (This : in out Life) is
-      Java_Result : constant Short_Integer := Life'Class (This).get;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end get;
-
-   procedure isAlive (This : in out Life) is
-      Java_Result : constant Boolean := Life'Class (This).isAlive;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isAlive;
-
-   procedure getMaxlives (This : in out Life) is
-      Java_Result : constant Short_Integer := Life'Class (This).getMaxlives;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getMaxlives;
-
-   procedure reachedLimit (This : in out Life) is
-      Java_Result : constant Boolean := Life'Class (This).reachedLimit;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end reachedLimit;
-
-   procedure getStartLives (This : in out Life) is
-      Java_Result : constant Short_Integer := Life'Class (This).getStartLives;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getStartLives;
 
 begin
    null;

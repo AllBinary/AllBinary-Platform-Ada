@@ -36,7 +36,6 @@ package org.allbinary.game.layer.pickup.PickedUpLayerType_Package is
    procedure Initialize (This : in out PickedUpLayerType'Class; name : Unbounded_String);
    function Create (name : Unbounded_String) return PickedUpLayerType_Access;
    function toString (This : in out PickedUpLayerType) return Unbounded_String;
-   procedure toString (This : in out PickedUpLayerType);
 
 end org.allbinary.game.layer.pickup.PickedUpLayerType_Package;
 

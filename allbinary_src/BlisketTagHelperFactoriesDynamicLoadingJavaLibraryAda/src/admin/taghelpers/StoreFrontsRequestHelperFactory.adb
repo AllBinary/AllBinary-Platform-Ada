@@ -30,7 +30,7 @@ package body admin.taghelpers.StoreFrontsRequestHelperFactory_Package is
    function Create return StoreFrontsRequestHelperFactory_Access is
       This : constant StoreFrontsRequestHelperFactory_Access := new StoreFrontsRequestHelperFactory;
    begin
-      Initialize (This.all);
+      StoreFrontsRequestHelperFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

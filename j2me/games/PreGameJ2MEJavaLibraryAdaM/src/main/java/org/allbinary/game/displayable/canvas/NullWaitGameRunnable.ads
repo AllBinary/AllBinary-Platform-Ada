@@ -36,7 +36,6 @@ package org.allbinary.game.displayable.canvas.NullWaitGameRunnable_Package is
    procedure Initialize (This : in out NullWaitGameRunnable'Class);
    function Create return NullWaitGameRunnable_Access;
    function getInstance return GameRunnable_Access;
-   procedure getInstance;
 
 end org.allbinary.game.displayable.canvas.NullWaitGameRunnable_Package;
 

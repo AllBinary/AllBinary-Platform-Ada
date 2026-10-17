@@ -62,7 +62,6 @@ package org.allbinary.game.layer.hud.basic.VelocityWidget_Package is
    function Create (powerOfTenVelocity : Integer; location : Integer; direction : Integer; basicColor : BasicColor_Access) return VelocityWidget_Access;
    procedure updateMeasurement (This : in out VelocityWidget; graphics : Graphics_Access);
    function get (This : in out VelocityWidget) return Integer;
-   procedure get (This : in out VelocityWidget);
    procedure add (This : in out VelocityWidget; value : Integer);
    procedure set (This : in out VelocityWidget; value : Integer);
    procedure reduce (This : in out VelocityWidget; value : Integer);

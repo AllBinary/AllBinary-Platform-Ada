@@ -16,7 +16,7 @@ package body org.platform.opengl.OpenGLGLUUtils_Package is
    function Create return OpenGLGLUUtils_Access is
       This : constant OpenGLGLUUtils_Access := new OpenGLGLUUtils;
    begin
-      Initialize (This.all);
+      OpenGLGLUUtils_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -40,13 +40,6 @@ package body org.platform.opengl.OpenGLGLUUtils_Package is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end texImage2D;
-
-   procedure getInstance is
-      Java_Result : constant OpenGLGLUUtils_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure makeByteBuffer (This : in out OpenGLGLUUtils; bmp : OpenGLBitmap_Access; flip : Boolean) is
       Java_Result : constant ByteBuffer_Access := OpenGLGLUUtils'Class (This).makeByteBuffer (bmp, flip);

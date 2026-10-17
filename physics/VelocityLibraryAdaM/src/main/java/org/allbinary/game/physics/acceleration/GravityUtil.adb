@@ -30,7 +30,7 @@ package body org.allbinary.game.physics.acceleration.GravityUtil_Package is
    function Create return GravityUtil_Access is
       This : constant GravityUtil_Access := new GravityUtil;
    begin
-      Initialize (This.all);
+      GravityUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -44,13 +44,6 @@ package body org.allbinary.game.physics.acceleration.GravityUtil_Package is
    begin
         velocityProperties.getVelocityYBasicDecimalP.addint (customGravity);
    end process;
-
-   procedure getInstance is
-      Java_Result : constant GravityUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

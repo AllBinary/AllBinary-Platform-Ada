@@ -33,7 +33,7 @@ package body org.allbinary.logic.util.cache.CacheType_Package is
    function Create (vendor : Unbounded_String; type_Id : Unbounded_String) return CacheType_Access is
       This : constant CacheType_Access := new CacheType;
    begin
-      Initialize (This.all, vendor, type_Id);
+      CacheType_Package.Initialize (This.all, vendor, type_Id);
       return This;
    end Create;
 
@@ -56,27 +56,6 @@ package body org.allbinary.logic.util.cache.CacheType_Package is
         stringBuffer.append (To_Unbounded_String (" Type: "));
         stringBuffer.append (This.getType);
         return stringBuffer.toString;
-   end toString;
-
-   procedure getVendor (This : in out CacheType) is
-      Java_Result : constant Unbounded_String := CacheType'Class (This).getVendor;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getVendor;
-
-   procedure getType (This : in out CacheType) is
-      Java_Result : constant Unbounded_String := CacheType'Class (This).getType;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getType;
-
-   procedure toString (This : in out CacheType) is
-      Java_Result : constant Unbounded_String := CacheType'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end toString;
 
 end org.allbinary.logic.util.cache.CacheType_Package;

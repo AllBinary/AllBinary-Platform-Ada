@@ -30,7 +30,7 @@ package body org.allbinary.image.opengles.OpenGLImageSpecificFactory_Package is
    function Create return OpenGLImageSpecificFactory_Access is
       This : constant OpenGLImageSpecificFactory_Access := new OpenGLImageSpecificFactory;
    begin
-      Initialize (This.all);
+      OpenGLImageSpecificFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -49,20 +49,6 @@ package body org.allbinary.image.opengles.OpenGLImageSpecificFactory_Package is
    function getImageFactory (This : in out OpenGLImageSpecificFactory) return OpenGLImageFactory_Access is
    begin
         return This.imageFactory;
-   end getImageFactory;
-
-   procedure getInstance is
-      Java_Result : constant OpenGLImageSpecificFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure getImageFactory (This : in out OpenGLImageSpecificFactory) is
-      Java_Result : constant OpenGLImageFactory_Access := OpenGLImageSpecificFactory'Class (This).getImageFactory;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getImageFactory;
 
 begin

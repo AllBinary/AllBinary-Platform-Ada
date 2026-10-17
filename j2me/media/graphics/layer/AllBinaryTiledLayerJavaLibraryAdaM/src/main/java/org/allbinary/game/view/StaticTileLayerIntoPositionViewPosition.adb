@@ -29,7 +29,7 @@ package body org.allbinary.game.view.StaticTileLayerIntoPositionViewPosition_Pac
    function Create return StaticTileLayerIntoPositionViewPosition_Access is
       This : constant StaticTileLayerIntoPositionViewPosition_Access := new StaticTileLayerIntoPositionViewPosition;
    begin
-      Initialize (This.all);
+      StaticTileLayerIntoPositionViewPosition_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -52,27 +52,6 @@ package body org.allbinary.game.view.StaticTileLayerIntoPositionViewPosition_Pac
    begin
         StaticTileLayerIntoPositionViewPosition_Package.tiledLayer := tiledLayer;
    end setTiledLayer;
-
-   procedure getX (This : in out StaticTileLayerIntoPositionViewPosition) is
-      Java_Result : constant Integer := StaticTileLayerIntoPositionViewPosition'Class (This).getX;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getX;
-
-   procedure getY (This : in out StaticTileLayerIntoPositionViewPosition) is
-      Java_Result : constant Integer := StaticTileLayerIntoPositionViewPosition'Class (This).getY;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getY;
-
-   procedure getZ (This : in out StaticTileLayerIntoPositionViewPosition) is
-      Java_Result : constant Integer := StaticTileLayerIntoPositionViewPosition'Class (This).getZ;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getZ;
 
 begin
    null;

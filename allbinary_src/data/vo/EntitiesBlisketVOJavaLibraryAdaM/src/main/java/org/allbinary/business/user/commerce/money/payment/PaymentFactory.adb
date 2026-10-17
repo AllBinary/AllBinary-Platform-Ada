@@ -30,7 +30,7 @@ package body org.allbinary.business.user.commerce.money.payment.PaymentFactory_P
    function Create return PaymentFactory_Access is
       This : constant PaymentFactory_Access := new PaymentFactory;
    begin
-      Initialize (This.all);
+      PaymentFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

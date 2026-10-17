@@ -35,6 +35,9 @@ with org.allbinary.layer.AllBinaryLayerManager_Package; use org.allbinary.layer.
 with org.allbinary.game.layer.RTSPlayerLayerInterface_Package; use org.allbinary.game.layer.RTSPlayerLayerInterface_Package;
 with org.allbinary.game.multiplayer.layer.RemoteInfo_Package; use org.allbinary.game.multiplayer.layer.RemoteInfo_Package;
 with org.allbinary.media.audio.AttackSound_Package; use org.allbinary.media.audio.AttackSound_Package;
+with org.allbinary.game.layer.waypoint.CollidableWaypointBehavior_Package; use org.allbinary.game.layer.waypoint.CollidableWaypointBehavior_Package;
+with org.allbinary.game.layer.waypoint.Waypoint_Package; use org.allbinary.game.layer.waypoint.Waypoint_Package;
+with org.allbinary.game.layer.waypoint.WaypointCellPositionHistory_Package; use org.allbinary.game.layer.waypoint.WaypointCellPositionHistory_Package;
 
 package org.allbinary.game.layer.waypoint.WaypointLayer_Package is
 
@@ -70,11 +73,8 @@ package org.allbinary.game.layer.waypoint.WaypointLayer_Package is
    procedure getDamage (This : in out WaypointLayer; damageType : Integer);
    procedure setDestroyed (This : in out WaypointLayer; destroyed : Boolean);
    function getType (This : in out WaypointLayer) return Integer;
-   procedure getType (This : in out WaypointLayer);
    function getStaticType return Integer;
-   procedure getStaticType;
    function isSelfUpgradeable (This : in out WaypointLayer) return Boolean;
-   procedure isSelfUpgradeable (This : in out WaypointLayer);
 
 end org.allbinary.game.layer.waypoint.WaypointLayer_Package;
 

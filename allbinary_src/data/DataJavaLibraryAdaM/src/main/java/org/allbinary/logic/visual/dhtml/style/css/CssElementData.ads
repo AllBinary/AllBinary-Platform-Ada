@@ -37,7 +37,6 @@ package org.allbinary.logic.visual.dhtml.style.css.CssElementData_Package is
    procedure Initialize (This : in out CssElementData'Class);
    function Create return CssElementData_Access;
    function getInstance return CssElementData_Access;
-   procedure getInstance;
 
 end org.allbinary.logic.visual.dhtml.style.css.CssElementData_Package;
 

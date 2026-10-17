@@ -34,7 +34,7 @@ package body org.allbinary.game.paint.help.BasicInputMappingHelpPaintable_Packag
    function Create (gameInputMappingArray : GameInputMapping_Access_Array_Access; basicColor : BasicColor_Access) return BasicInputMappingHelpPaintable_Access is
       This : constant BasicInputMappingHelpPaintable_Access := new BasicInputMappingHelpPaintable;
    begin
-      Initialize (This.all, gameInputMappingArray, basicColor);
+      BasicInputMappingHelpPaintable_Package.Initialize (This.all, gameInputMappingArray, basicColor);
       return This;
    end Create;
 

@@ -44,7 +44,7 @@ package body org.allbinary.game.GameInfo_Package is
    function Create (gameType : GameType_Access; gameMode : GameMode_Access; playerType : PlayerType_Access; highestLevel : Integer; currentLevel : Integer) return GameInfo_Access is
       This : constant GameInfo_Access := new GameInfo;
    begin
-      Initialize (This.all, gameType, gameMode, playerType, highestLevel, currentLevel);
+      GameInfo_Package.Initialize (This.all, gameType, gameMode, playerType, highestLevel, currentLevel);
       return This;
    end Create;
 
@@ -146,62 +146,6 @@ package body org.allbinary.game.GameInfo_Package is
         stringBuffer.append (commonSeps.EQUALS);
         stringBuffer.appendint (This.currentLevel);
         return stringBuffer.toString;
-   end toString;
-
-   procedure getGameType (This : in out GameInfo) is
-      Java_Result : constant GameType_Access := GameInfo'Class (This).getGameType;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getGameType;
-
-   procedure getGameMode (This : in out GameInfo) is
-      Java_Result : constant GameMode_Access := GameInfo'Class (This).getGameMode;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getGameMode;
-
-   procedure getPlayerType (This : in out GameInfo) is
-      Java_Result : constant PlayerType_Access := GameInfo'Class (This).getPlayerType;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getPlayerType;
-
-   procedure getHighestLevel (This : in out GameInfo) is
-      Java_Result : constant Integer := GameInfo'Class (This).getHighestLevel;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getHighestLevel;
-
-   procedure getCurrentLevel (This : in out GameInfo) is
-      Java_Result : constant Integer := GameInfo'Class (This).getCurrentLevel;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getCurrentLevel;
-
-   procedure isLastLevel (This : in out GameInfo) is
-      Java_Result : constant Boolean := GameInfo'Class (This).isLastLevel;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isLastLevel;
-
-   procedure toHashtable (This : in out GameInfo) is
-      Java_Result : constant ABHashtable_Access := GameInfo'Class (This).toHashtable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toHashtable;
-
-   procedure toString (This : in out GameInfo) is
-      Java_Result : constant Unbounded_String := GameInfo'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end toString;
 
 begin

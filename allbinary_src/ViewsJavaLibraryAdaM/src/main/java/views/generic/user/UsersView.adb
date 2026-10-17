@@ -32,7 +32,7 @@ package body views.generic_Id.user.UsersView_Package is
    function Create (transformInfoInterface : TransformInfoInterface_Access) return UsersView_Access is
       This : constant UsersView_Access := new UsersView;
    begin
-      Initialize (This.all, transformInfoInterface);
+      UsersView_Package.Initialize (This.all, transformInfoInterface);
       return This;
    end Create;
 
@@ -99,13 +99,6 @@ package body views.generic_Id.user.UsersView_Package is
    begin
       null;
    end toXmlNode;
-
-   procedure view (This : in out UsersView) is
-      Java_Result : constant Unbounded_String := UsersView'Class (This).view;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end view;
 
 end views.generic_Id.user.UsersView_Package;
 

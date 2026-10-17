@@ -40,7 +40,7 @@ package body org.allbinary.graphics.paint.SimpleTextPaintable_Package is
    function Create (text : Unbounded_String; basicColor : BasicColor_Access) return SimpleTextPaintable_Access is
       This : constant SimpleTextPaintable_Access := new SimpleTextPaintable;
    begin
-      Initialize (This.all, text, basicColor);
+      SimpleTextPaintable_Package.Initialize (This.all, text, basicColor);
       return This;
    end Create;
 
@@ -81,20 +81,6 @@ package body org.allbinary.graphics.paint.SimpleTextPaintable_Package is
    function getText (This : in out SimpleTextPaintable) return Unbounded_String is
    begin
         return This.text;
-   end getText;
-
-   procedure getBasicColorP (This : in out SimpleTextPaintable) is
-      Java_Result : constant BasicColor_Access := SimpleTextPaintable'Class (This).getBasicColorP;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getBasicColorP;
-
-   procedure getText (This : in out SimpleTextPaintable) is
-      Java_Result : constant Unbounded_String := SimpleTextPaintable'Class (This).getText;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getText;
 
 end org.allbinary.graphics.paint.SimpleTextPaintable_Package;

@@ -28,7 +28,7 @@ package body org.allbinary.input.motion.button.TouchButtonsBuilderFactory_Packag
    function Create return TouchButtonsBuilderFactory_Access is
       This : constant TouchButtonsBuilderFactory_Access := new TouchButtonsBuilderFactory;
    begin
-      Initialize (This.all);
+      TouchButtonsBuilderFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -36,13 +36,6 @@ package body org.allbinary.input.motion.button.TouchButtonsBuilderFactory_Packag
    function getInstance (This : in out TouchButtonsBuilderFactory) return BaseTouchInput_Access is
    begin
         return NoButtonsTouchInputFactory_Package.getInstance;
-   end getInstance;
-
-   procedure getInstance (This : in out TouchButtonsBuilderFactory) is
-      Java_Result : constant BaseTouchInput_Access := TouchButtonsBuilderFactory'Class (This).getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

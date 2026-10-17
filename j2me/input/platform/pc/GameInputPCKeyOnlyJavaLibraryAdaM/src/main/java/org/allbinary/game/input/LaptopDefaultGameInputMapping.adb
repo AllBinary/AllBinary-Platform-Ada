@@ -82,7 +82,7 @@ package body org.allbinary.game.input.LaptopDefaultGameInputMapping_Package is
    function Create return LaptopDefaultGameInputMapping_Access is
       This : constant LaptopDefaultGameInputMapping_Access := new LaptopDefaultGameInputMapping;
    begin
-      Initialize (This.all);
+      LaptopDefaultGameInputMapping_Package.Initialize (This.all);
       return This;
    end Create;
 

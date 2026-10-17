@@ -40,7 +40,6 @@ package org.allbinary.animation.caption.CaptionAnimationHelperBase_Package is
    procedure Initialize (This : in out CaptionAnimationHelperBase'Class);
    function Create return CaptionAnimationHelperBase_Access;
    function isShowing (This : in out CaptionAnimationHelperBase) return Boolean;
-   procedure isShowing (This : in out CaptionAnimationHelperBase);
    procedure tick (This : in out CaptionAnimationHelperBase);
    procedure update (This : in out CaptionAnimationHelperBase; message : Unbounded_String; basicColor : BasicColor_Access);
    procedure paintXY (This : in out CaptionAnimationHelperBase; graphics : Graphics_Access; x : Integer; y : Integer);

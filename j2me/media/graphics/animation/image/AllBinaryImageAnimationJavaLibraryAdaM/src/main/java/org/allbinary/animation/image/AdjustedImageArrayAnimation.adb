@@ -33,7 +33,7 @@ package body org.allbinary.animation.image.AdjustedImageArrayAnimation_Package i
    function Create (imageArray : Image_Access_Array_Access; dx : Integer; dy : Integer; animationBehavior : AnimationBehavior_Access) return AdjustedImageArrayAnimation_Access is
       This : constant AdjustedImageArrayAnimation_Access := new AdjustedImageArrayAnimation;
    begin
-      Initialize (This.all, imageArray, dx, dy, animationBehavior);
+      AdjustedImageArrayAnimation_Package.Initialize (This.all, imageArray, dx, dy, animationBehavior);
       return This;
    end Create;
 
@@ -67,20 +67,6 @@ package body org.allbinary.animation.image.AdjustedImageArrayAnimation_Package i
    function getDy (This : in out AdjustedImageArrayAnimation) return Integer is
    begin
         return This.dy;
-   end getDy;
-
-   procedure getDx (This : in out AdjustedImageArrayAnimation) is
-      Java_Result : constant Integer := AdjustedImageArrayAnimation'Class (This).getDx;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getDx;
-
-   procedure getDy (This : in out AdjustedImageArrayAnimation) is
-      Java_Result : constant Integer := AdjustedImageArrayAnimation'Class (This).getDy;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getDy;
 
 end org.allbinary.animation.image.AdjustedImageArrayAnimation_Package;

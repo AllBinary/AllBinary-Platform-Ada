@@ -59,7 +59,6 @@ package org.allbinary.graphics.draw.DrawVerticalStringUtil_Package is
    procedure Initialize (This : in out DrawVerticalStringUtil'Class);
    function Create return DrawVerticalStringUtil_Access;
    function getInstance return DrawVerticalStringUtil_Access;
-   procedure getInstance;
    procedure updateMeasurement (This : in out DrawVerticalStringUtil; graphics : Graphics_Access; string_Id : Unbounded_String);
    procedure paintVerticle (This : in out DrawVerticalStringUtil; graphics : Graphics_Access; string_Id : Unbounded_String; x : Integer; y : Integer; anchor : Integer);
    procedure drawCenterString (This : in out DrawVerticalStringUtil; graphics : Graphics_Access; string_Id : Unbounded_String; offset : Integer; length : Integer; x : Integer; y : Integer);

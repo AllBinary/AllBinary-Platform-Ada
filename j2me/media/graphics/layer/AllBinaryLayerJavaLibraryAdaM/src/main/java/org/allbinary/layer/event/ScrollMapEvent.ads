@@ -40,10 +40,8 @@ package org.allbinary.layer.event.ScrollMapEvent_Package is
    function Create (anyType : Java_Object_Access) return ScrollMapEvent_Access;
    procedure setDx (This : in out ScrollMapEvent; dx : Integer);
    function getDx (This : in out ScrollMapEvent) return Integer;
-   procedure getDx (This : in out ScrollMapEvent);
    procedure setDy (This : in out ScrollMapEvent; dy : Integer);
    function getDy (This : in out ScrollMapEvent) return Integer;
-   procedure getDy (This : in out ScrollMapEvent);
    procedure setDxDy (This : in out ScrollMapEvent; dx : Integer; dy : Integer);
 
 end org.allbinary.layer.event.ScrollMapEvent_Package;

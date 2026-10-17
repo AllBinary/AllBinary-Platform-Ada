@@ -34,7 +34,7 @@ package body admin.taghelpers.PaymentProcessHelper_Package is
    function Create (propertiesHashMap : HashMap_Access; pageContext : PageContext_Access) return PaymentProcessHelper_Access is
       This : constant PaymentProcessHelper_Access := new PaymentProcessHelper;
    begin
-      Initialize (This.all, propertiesHashMap, pageContext);
+      PaymentProcessHelper_Package.Initialize (This.all, propertiesHashMap, pageContext);
       return This;
    end Create;
 
@@ -42,13 +42,6 @@ package body admin.taghelpers.PaymentProcessHelper_Package is
    function process (This : in out PaymentProcessHelper) return Unbounded_String is
    begin
         return This.paymentProcessorComponent.view;
-   end process;
-
-   procedure process (This : in out PaymentProcessHelper) is
-      Java_Result : constant Unbounded_String := PaymentProcessHelper'Class (This).process;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end process;
 
 end admin.taghelpers.PaymentProcessHelper_Package;

@@ -36,7 +36,7 @@ package body org.allbinary.business.user.commerce.inventory.item.BasicItemView_P
    function Create (itemInterface : ItemInterface_Access; vector : BasicArrayList_Access) return BasicItemView_Access is
       This : constant BasicItemView_Access := new BasicItemView;
    begin
-      Initialize (This.all, itemInterface, vector);
+      BasicItemView_Package.Initialize (This.all, itemInterface, vector);
       return This;
    end Create;
 
@@ -101,20 +101,6 @@ package body org.allbinary.business.user.commerce.inventory.item.BasicItemView_P
    begin
       null;
    end toXmlNode;
-
-   procedure toXmlDoc (This : in out BasicItemView) is
-      Java_Result : constant Document_Access := BasicItemView'Class (This).toXmlDoc;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toXmlDoc;
-
-   procedure view (This : in out BasicItemView) is
-      Java_Result : constant Unbounded_String := BasicItemView'Class (This).view;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end view;
 
 end org.allbinary.business.user.commerce.inventory.item.BasicItemView_Package;
 

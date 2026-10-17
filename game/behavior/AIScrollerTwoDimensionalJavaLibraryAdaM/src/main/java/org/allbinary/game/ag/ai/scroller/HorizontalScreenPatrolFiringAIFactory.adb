@@ -28,7 +28,7 @@ package body org.allbinary.game.ag.ai.scroller.HorizontalScreenPatrolFiringAIFac
    function Create return HorizontalScreenPatrolFiringAIFactory_Access is
       This : constant HorizontalScreenPatrolFiringAIFactory_Access := new HorizontalScreenPatrolFiringAIFactory;
    begin
-      Initialize (This.all);
+      HorizontalScreenPatrolFiringAIFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

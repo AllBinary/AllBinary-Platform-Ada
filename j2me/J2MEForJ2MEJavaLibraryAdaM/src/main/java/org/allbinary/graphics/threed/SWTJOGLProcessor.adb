@@ -28,7 +28,7 @@ package body org.allbinary.graphics.threed.SWTJOGLProcessor_Package is
    function Create return SWTJOGLProcessor_Access is
       This : constant SWTJOGLProcessor_Access := new SWTJOGLProcessor;
    begin
-      Initialize (This.all);
+      SWTJOGLProcessor_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -137,34 +137,6 @@ package body org.allbinary.graphics.threed.SWTJOGLProcessor_Package is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end substringWidth;
-
-   procedure getInstance is
-      Java_Result : constant SWTJOGLProcessor_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure isHolderCreated (This : in out SWTJOGLProcessor) is
-      Java_Result : constant Boolean := SWTJOGLProcessor'Class (This).isHolderCreated;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isHolderCreated;
-
-   procedure isJOGL (This : in out SWTJOGLProcessor) is
-      Java_Result : constant Boolean := SWTJOGLProcessor'Class (This).isJOGL;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isJOGL;
-
-   procedure isPortraitRatioProcessor (This : in out SWTJOGLProcessor) is
-      Java_Result : constant Boolean := SWTJOGLProcessor'Class (This).isPortraitRatioProcessor;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isPortraitRatioProcessor;
 
    procedure charWidth (This : in out SWTJOGLProcessor; font : Font_Access; ch : Character) is
       Java_Result : constant Integer := SWTJOGLProcessor'Class (This).charWidth (font, ch);

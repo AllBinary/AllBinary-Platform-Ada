@@ -31,7 +31,7 @@ package body org.allbinary.logic.visual.transform.template.customizer.widgets.ti
    function Create return TitleValidation_Access is
       This : constant TitleValidation_Access := new TitleValidation;
    begin
-      Initialize (This.all);
+      TitleValidation_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -45,7 +45,7 @@ package body org.allbinary.logic.visual.transform.template.customizer.widgets.ti
    function Create (node : Node_Access) return TitleValidation_Access is
       This : constant TitleValidation_Access := new TitleValidation;
    begin
-      Initialize (This.all, node);
+      TitleValidation_Package.Initialize (This.all, node);
       return This;
    end Create;
 
@@ -59,7 +59,7 @@ package body org.allbinary.logic.visual.transform.template.customizer.widgets.ti
    function Create (hashMap : HashMap_Access) return TitleValidation_Access is
       This : constant TitleValidation_Access := new TitleValidation;
    begin
-      Initialize (This.all, hashMap);
+      TitleValidation_Package.Initialize (This.all, hashMap);
       return This;
    end Create;
 
@@ -120,27 +120,6 @@ package body org.allbinary.logic.visual.transform.template.customizer.widgets.ti
    begin
         return null;
    end toValidationInfoNode;
-
-   procedure isValid (This : in out TitleValidation) is
-      Java_Result : constant Boolean := TitleValidation'Class (This).isValid;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isValid;
-
-   procedure validationInfo (This : in out TitleValidation) is
-      Java_Result : constant Unbounded_String := TitleValidation'Class (This).validationInfo;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end validationInfo;
-
-   procedure toValidationInfoDoc (This : in out TitleValidation) is
-      Java_Result : constant Document_Access := TitleValidation'Class (This).toValidationInfoDoc;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toValidationInfoDoc;
 
    procedure toValidationInfoNode (This : in out TitleValidation; document : Document_Access) is
       Java_Result : constant Node_Access := TitleValidation'Class (This).toValidationInfoNode (document);

@@ -31,6 +31,8 @@ with org.allbinary.math.AngleFactory_Package; use org.allbinary.math.AngleFactor
 with org.allbinary.math.AngleInfo_Package; use org.allbinary.math.AngleInfo_Package;
 with org.allbinary.media.image.ImageCopyUtil_Package; use org.allbinary.media.image.ImageCopyUtil_Package;
 with org.allbinary.animation.image.BaseImageAnimationFactory_Package; use org.allbinary.animation.image.BaseImageAnimationFactory_Package;
+with org.allbinary.animation.image.AllBinaryJ2SEImageRotationAnimation_Package; use org.allbinary.animation.image.AllBinaryJ2SEImageRotationAnimation_Package;
+with org.allbinary.animation.image.AllBinaryAdjustedJ2SEImageRotationAnimation_Package; use org.allbinary.animation.image.AllBinaryAdjustedJ2SEImageRotationAnimation_Package;
 
 package org.allbinary.animation.image.AllBinaryJ2SEImageRotationAnimationFactory_Package is
 
@@ -59,11 +61,9 @@ package org.allbinary.animation.image.AllBinaryJ2SEImageRotationAnimationFactory
    function createDXY (image : Image_Access; width : Integer; height : Integer; dx : Integer; dy : Integer; angleIncrement : Short_Integer; animationBehaviorFactory : AnimationBehaviorFactory_Access; resizeCanvasForRotation : Boolean) return AllBinaryJ2SEImageRotationAnimationFactory_Access;
    procedure createDXY (image : Image_Access; width : Integer; height : Integer; dx : Integer; dy : Integer; angleIncrement : Short_Integer; animationBehaviorFactory : AnimationBehaviorFactory_Access; resizeCanvasForRotation : Boolean);
    function getCanvasImage (This : in out AllBinaryJ2SEImageRotationAnimationFactory) return Image_Access;
-   procedure getCanvasImage (This : in out AllBinaryJ2SEImageRotationAnimationFactory);
    function getInstance (This : in out AllBinaryJ2SEImageRotationAnimationFactory; instanceId : Integer) return Animation_Access;
    procedure getInstance (This : in out AllBinaryJ2SEImageRotationAnimationFactory; instanceId : Integer);
    function getAngleIncrement (This : in out AllBinaryJ2SEImageRotationAnimationFactory) return Short_Integer;
-   procedure getAngleIncrement (This : in out AllBinaryJ2SEImageRotationAnimationFactory);
 
 end org.allbinary.animation.image.AllBinaryJ2SEImageRotationAnimationFactory_Package;
 

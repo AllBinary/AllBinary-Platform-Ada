@@ -63,7 +63,7 @@ package body org.allbinary.input.motion.gesture.MotionGestureRecognizer_Package 
    function Create (id : Integer) return MotionGestureRecognizer_Access is
       This : constant MotionGestureRecognizer_Access := new MotionGestureRecognizer;
    begin
-      Initialize (This.all, id);
+      MotionGestureRecognizer_Package.Initialize (This.all, id);
       return This;
    end Create;
 
@@ -227,13 +227,6 @@ package body org.allbinary.input.motion.gesture.MotionGestureRecognizer_Package 
    begin
       null;
    end processScrolledMotionEvent;
-
-   procedure getMotionGesturesHandler (This : in out MotionGestureRecognizer) is
-      Java_Result : constant BasicMotionGesturesHandler_Access := MotionGestureRecognizer'Class (This).getMotionGesturesHandler;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getMotionGesturesHandler;
 
 end org.allbinary.input.motion.gesture.MotionGestureRecognizer_Package;
 

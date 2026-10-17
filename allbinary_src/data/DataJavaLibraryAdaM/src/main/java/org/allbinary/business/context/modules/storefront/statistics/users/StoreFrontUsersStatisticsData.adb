@@ -32,20 +32,13 @@ package body org.allbinary.business.context.modules.storefront.statistics.users.
    function Create return StoreFrontUsersStatisticsData_Access is
       This : constant StoreFrontUsersStatisticsData_Access := new StoreFrontUsersStatisticsData;
    begin
-      Initialize (This.all);
+      StoreFrontUsersStatisticsData_Package.Initialize (This.all);
       return This;
    end Create;
 
    function getInstance return StoreFrontUsersStatisticsData_Access is
    begin
         return StoreFrontUsersStatisticsData_Package.instance;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant StoreFrontUsersStatisticsData_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

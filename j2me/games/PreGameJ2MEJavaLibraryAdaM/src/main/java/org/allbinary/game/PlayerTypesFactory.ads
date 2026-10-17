@@ -20,6 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
+with org.allbinary.game.PlayerType_Package; use org.allbinary.game.PlayerType_Package;
 
 package org.allbinary.game.PlayerTypesFactory_Package is
 
@@ -39,7 +40,6 @@ package org.allbinary.game.PlayerTypesFactory_Package is
    procedure Initialize (This : in out PlayerTypesFactory'Class);
    function Create return PlayerTypesFactory_Access;
    function getInstance return PlayerTypesFactory_Access;
-   procedure getInstance;
 
 end org.allbinary.game.PlayerTypesFactory_Package;
 

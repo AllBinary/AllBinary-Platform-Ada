@@ -40,7 +40,6 @@ package org.allbinary.game.layer.capital.HudCapital_Package is
    function Create (moneyGraphic : NumberStringHud_Access) return HudCapital_Access;
    procedure removeMoney (This : in out HudCapital; points : Integer);
    function getTotalMoney (This : in out HudCapital) return Integer;
-   procedure getTotalMoney (This : in out HudCapital);
    procedure addMoney (This : in out HudCapital; points : Integer);
 
 end org.allbinary.game.layer.capital.HudCapital_Package;

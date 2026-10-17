@@ -31,7 +31,7 @@ package body org.allbinary.logic.io.file.FileFactory_Package is
    function Create (context : Context_Access) return FileFactory_Access is
       This : constant FileFactory_Access := new FileFactory;
    begin
-      Initialize (This.all, context);
+      FileFactory_Package.Initialize (This.all, context);
       return This;
    end Create;
 
@@ -73,26 +73,12 @@ package body org.allbinary.logic.io.file.FileFactory_Package is
         return AbFile_Package.createAbFileWithChild (file, childFilePath);
    end getInstance;
 
-   procedure getInstance is
-      Java_Result : constant FileFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
    procedure isFile (This : in out FileFactory; path : Unbounded_String) is
       Java_Result : constant Boolean := FileFactory'Class (This).isFile (path);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isFile;
-
-   procedure getContext (This : in out FileFactory) is
-      Java_Result : constant Context_Access := FileFactory'Class (This).getContext;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getContext;
 
    procedure getFile (This : in out FileFactory; filePath : Unbounded_String) is
       Java_Result : constant AbFile_Access := FileFactory'Class (This).getFile (filePath);

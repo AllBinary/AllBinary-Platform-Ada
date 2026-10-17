@@ -20,6 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
+with org.allbinary.graphics.form.item.ABCustomItem_Package; use org.allbinary.graphics.form.item.ABCustomItem_Package;
 
 package org.allbinary.graphics.form.item.CustomItemUtil_Package is
 
@@ -37,7 +38,6 @@ package org.allbinary.graphics.form.item.CustomItemUtil_Package is
    procedure Initialize (This : in out CustomItemUtil'Class);
    function Create return CustomItemUtil_Access;
    function getInstance return CustomItemUtil_Access;
-   procedure getInstance;
 
 end org.allbinary.graphics.form.item.CustomItemUtil_Package;
 

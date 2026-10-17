@@ -39,7 +39,6 @@ package org.allbinary.logic.math.vector.AxisMathVectorUtil_Package is
    procedure Initialize (This : in out AxisMathVectorUtil'Class);
    function Create return AxisMathVectorUtil_Access;
    function getInstance return AxisMathVectorUtil_Access;
-   procedure getInstance;
    function calculateX (This : in out AxisMathVectorUtil; magnitude : Long_Long_Integer; angle : Integer) return Long_Long_Integer;
    procedure calculateX (This : in out AxisMathVectorUtil; magnitude : Long_Long_Integer; angle : Integer);
    function calculateY (This : in out AxisMathVectorUtil; magnitude : Long_Long_Integer; angle : Integer) return Long_Long_Integer;

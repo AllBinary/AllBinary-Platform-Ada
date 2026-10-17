@@ -32,7 +32,7 @@ package body org.allbinary.game.input.AndroidNumberKeyToJ2MECanvasNumberKey_Pack
    function Create return AndroidNumberKeyToJ2MECanvasNumberKey_Access is
       This : constant AndroidNumberKeyToJ2MECanvasNumberKey_Access := new AndroidNumberKeyToJ2MECanvasNumberKey;
    begin
-      Initialize (This.all);
+      AndroidNumberKeyToJ2MECanvasNumberKey_Package.Initialize (This.all);
       return This;
    end Create;
 

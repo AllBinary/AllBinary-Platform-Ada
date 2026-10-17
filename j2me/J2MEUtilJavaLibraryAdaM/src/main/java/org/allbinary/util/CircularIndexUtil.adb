@@ -34,7 +34,7 @@ package body org.allbinary.util.CircularIndexUtil_Package is
    function Create (index : Integer; size : Integer) return CircularIndexUtil_Access is
       This : constant CircularIndexUtil_Access := new CircularIndexUtil;
    begin
-      Initialize (This.all, index, size);
+      CircularIndexUtil_Package.Initialize (This.all, index, size);
       return This;
    end Create;
 
@@ -98,27 +98,6 @@ package body org.allbinary.util.CircularIndexUtil_Package is
         return StringMaker_Package.Create.append (CommonLabels_Package.getInstance.INDEX_LABEL).appendint (This.index).append (To_Unbounded_String ("lastIndex: ")).appendint (This.lastIndex).append (To_Unbounded_String ("size: ")).appendint (This.size).toString;
    end toString;
 
-   procedure next (This : in out CircularIndexUtil) is
-      Java_Result : constant Integer := CircularIndexUtil'Class (This).next;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end next;
-
-   procedure previous (This : in out CircularIndexUtil) is
-      Java_Result : constant Integer := CircularIndexUtil'Class (This).previous;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end previous;
-
-   procedure getIndex (This : in out CircularIndexUtil) is
-      Java_Result : constant Integer := CircularIndexUtil'Class (This).getIndex;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getIndex;
-
    procedure createInstance (max : Integer) is
       Java_Result : constant CircularIndexUtil_Access := createInstance (max);
       pragma Unreferenced (Java_Result);
@@ -132,20 +111,6 @@ package body org.allbinary.util.CircularIndexUtil_Package is
    begin
       null;
    end createInstanceAt;
-
-   procedure getSize (This : in out CircularIndexUtil) is
-      Java_Result : constant Integer := CircularIndexUtil'Class (This).getSize;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSize;
-
-   procedure toString (This : in out CircularIndexUtil) is
-      Java_Result : constant Unbounded_String := CircularIndexUtil'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toString;
 
 begin
    null;

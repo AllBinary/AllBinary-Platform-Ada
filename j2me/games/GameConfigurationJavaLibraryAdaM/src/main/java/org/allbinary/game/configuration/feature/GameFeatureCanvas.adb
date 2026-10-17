@@ -31,7 +31,7 @@ package body org.allbinary.game.configuration.feature.GameFeatureCanvas_Package 
    function Create return GameFeatureCanvas_Access is
       This : constant GameFeatureCanvas_Access := new GameFeatureCanvas;
    begin
-      Initialize (This.all);
+      GameFeatureCanvas_Package.Initialize (This.all);
       return This;
    end Create;
 

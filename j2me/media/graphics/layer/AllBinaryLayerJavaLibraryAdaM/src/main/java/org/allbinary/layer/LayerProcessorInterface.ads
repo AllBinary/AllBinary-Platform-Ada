@@ -21,6 +21,9 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.layer.BasicLayerProcessorInterface_Package; use org.allbinary.layer.BasicLayerProcessorInterface_Package;
+with org.allbinary.layer.LayerManager_Package; use org.allbinary.layer.LayerManager_Package;
+with org.allbinary.layer.AllBinaryLayerManager_Package; use org.allbinary.layer.AllBinaryLayerManager_Package;
+with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
 
 package org.allbinary.layer.LayerProcessorInterface_Package is
 

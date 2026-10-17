@@ -31,20 +31,13 @@ package body org.allbinary.business.user.commerce.money.payment.gateway.PaymentG
    function Create (value_Case : Unbounded_String) return PaymentGatewayData_Access is
       This : constant PaymentGatewayData_Access := new PaymentGatewayData;
    begin
-      Initialize (This.all, value_Case);
+      PaymentGatewayData_Package.Initialize (This.all, value_Case);
       return This;
    end Create;
 
    function toString (This : in out PaymentGatewayData) return Unbounded_String is
    begin
         return This.key;
-   end toString;
-
-   procedure toString (This : in out PaymentGatewayData) is
-      Java_Result : constant Unbounded_String := PaymentGatewayData'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end toString;
 
 begin

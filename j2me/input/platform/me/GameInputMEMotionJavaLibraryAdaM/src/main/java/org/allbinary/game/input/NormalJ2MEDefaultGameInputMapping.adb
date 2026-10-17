@@ -56,7 +56,7 @@ package body org.allbinary.game.input.NormalJ2MEDefaultGameInputMapping_Package 
    function Create return NormalJ2MEDefaultGameInputMapping_Access is
       This : constant NormalJ2MEDefaultGameInputMapping_Access := new NormalJ2MEDefaultGameInputMapping;
    begin
-      Initialize (This.all);
+      NormalJ2MEDefaultGameInputMapping_Package.Initialize (This.all);
       return This;
    end Create;
 

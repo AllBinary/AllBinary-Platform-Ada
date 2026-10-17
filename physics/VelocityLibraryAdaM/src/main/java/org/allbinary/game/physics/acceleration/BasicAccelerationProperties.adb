@@ -33,7 +33,7 @@ package body org.allbinary.game.physics.acceleration.BasicAccelerationProperties
    function Create (forward : Integer; reverse_Id : Integer) return BasicAccelerationProperties_Access is
       This : constant BasicAccelerationProperties_Access := new BasicAccelerationProperties;
    begin
-      Initialize (This.all, forward, reverse_Id);
+      BasicAccelerationProperties_Package.Initialize (This.all, forward, reverse_Id);
       return This;
    end Create;
 
@@ -55,20 +55,6 @@ package body org.allbinary.game.physics.acceleration.BasicAccelerationProperties
    function getForward (This : in out BasicAccelerationProperties) return Integer is
    begin
         return This.forward;
-   end getForward;
-
-   procedure getReverse (This : in out BasicAccelerationProperties) is
-      Java_Result : constant Integer := BasicAccelerationProperties'Class (This).getReverse;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getReverse;
-
-   procedure getForward (This : in out BasicAccelerationProperties) is
-      Java_Result : constant Integer := BasicAccelerationProperties'Class (This).getForward;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getForward;
 
 end org.allbinary.game.physics.acceleration.BasicAccelerationProperties_Package;

@@ -43,16 +43,9 @@ package body org.allbinary.logic.communication.http.HttpData_Package is
    function Create return HttpData_Access is
       This : constant HttpData_Access := new HttpData;
    begin
-      Initialize (This.all);
+      HttpData_Package.Initialize (This.all);
       return This;
    end Create;
-
-   procedure getInstance is
-      Java_Result : constant HttpData_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

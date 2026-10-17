@@ -30,7 +30,7 @@ package body org.allbinary.logic.java.anyType.ConstructorUtil_Package is
    function Create return ConstructorUtil_Access is
       This : constant ConstructorUtil_Access := new ConstructorUtil;
    begin
-      Initialize (This.all);
+      ConstructorUtil_Package.Initialize (This.all);
       return This;
    end Create;
 

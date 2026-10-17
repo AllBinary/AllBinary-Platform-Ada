@@ -33,7 +33,7 @@ package body org.allbinary.logic.math.vector.Vertex_Package is
    function Create return Vertex_Access is
       This : constant Vertex_Access := new Vertex;
    begin
-      Initialize (This.all);
+      Vertex_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -52,13 +52,6 @@ package body org.allbinary.logic.math.vector.Vertex_Package is
         stringBuffer.append (positionStrings.Z_LABEL);
         stringBuffer.append (This.z.toString);
         return stringBuffer.toString;
-   end toString;
-
-   procedure toString (This : in out Vertex) is
-      Java_Result : constant Unbounded_String := Vertex'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end toString;
 
 end org.allbinary.logic.math.vector.Vertex_Package;

@@ -44,7 +44,6 @@ package org.allbinary.media.graphics.geography.map.topview.BasicTopViewGeographi
    procedure Initialize (This : in out BasicTopViewGeographicMapStrings'Class);
    function Create return BasicTopViewGeographicMapStrings_Access;
    function getInstance return BasicTopViewGeographicMapStrings_Access;
-   procedure getInstance;
 
 end org.allbinary.media.graphics.geography.map.topview.BasicTopViewGeographicMapStrings_Package;
 

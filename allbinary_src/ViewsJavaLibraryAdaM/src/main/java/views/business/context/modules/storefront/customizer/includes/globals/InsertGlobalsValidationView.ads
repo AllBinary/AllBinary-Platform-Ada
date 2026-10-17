@@ -53,13 +53,9 @@ package views.business.context.modules.storefront.customizer.includes.globals.In
    procedure Initialize (This : in out InsertGlobalsValidationView'Class; transformInfoInterface : TransformInfoInterface_Access);
    function Create (transformInfoInterface : TransformInfoInterface_Access) return InsertGlobalsValidationView_Access;
    function toXmlDoc (This : in out InsertGlobalsValidationView) return Document_Access;
-   procedure toXmlDoc (This : in out InsertGlobalsValidationView);
    function isValid (This : in out InsertGlobalsValidationView) return Boolean;
-   procedure isValid (This : in out InsertGlobalsValidationView);
    function validationInfo (This : in out InsertGlobalsValidationView) return Unbounded_String;
-   procedure validationInfo (This : in out InsertGlobalsValidationView);
    function toValidationInfoDoc (This : in out InsertGlobalsValidationView) return Document_Access;
-   procedure toValidationInfoDoc (This : in out InsertGlobalsValidationView);
    function toValidationInfoNode (This : in out InsertGlobalsValidationView; document : Document_Access) return Node_Access;
    procedure toValidationInfoNode (This : in out InsertGlobalsValidationView; document : Document_Access);
 

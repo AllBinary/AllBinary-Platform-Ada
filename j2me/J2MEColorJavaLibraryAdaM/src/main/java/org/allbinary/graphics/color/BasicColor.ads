@@ -25,6 +25,7 @@ with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.
 with jsinterop.annotations.JsMethod_Package; use jsinterop.annotations.JsMethod_Package;
 with jsinterop.annotations.JsConstructor_Package; use jsinterop.annotations.JsConstructor_Package;
 with jsinterop.annotations.JsProperty_Package; use jsinterop.annotations.JsProperty_Package;
+with org.allbinary.graphics.color.BasicColorUtil_Package; use org.allbinary.graphics.color.BasicColorUtil_Package;
 
 package org.allbinary.graphics.color.BasicColor_Package is
 
@@ -55,21 +56,13 @@ package org.allbinary.graphics.color.BasicColor_Package is
    procedure Initialize (This : in out BasicColor'Class; alphaValue : Integer; value : Integer; name : Unbounded_String);
    function Create (alphaValue : Integer; value : Integer; name : Unbounded_String) return BasicColor_Access;
    function intValue (This : in out BasicColor) return Integer;
-   procedure intValue (This : in out BasicColor);
    function toInt (This : in out BasicColor) return Integer;
-   procedure toInt (This : in out BasicColor);
    function toString (This : in out BasicColor) return Unbounded_String;
-   procedure toString (This : in out BasicColor);
    function getName (This : in out BasicColor) return Unbounded_String;
-   procedure getName (This : in out BasicColor);
    function getRedComponent (This : in out BasicColor) return Float;
-   procedure getRedComponent (This : in out BasicColor);
    function getGreenComponent (This : in out BasicColor) return Float;
-   procedure getGreenComponent (This : in out BasicColor);
    function getBlueComponent (This : in out BasicColor) return Float;
-   procedure getBlueComponent (This : in out BasicColor);
    function getAlphaComponent (This : in out BasicColor) return Float;
-   procedure getAlphaComponent (This : in out BasicColor);
 
 end org.allbinary.graphics.color.BasicColor_Package;
 

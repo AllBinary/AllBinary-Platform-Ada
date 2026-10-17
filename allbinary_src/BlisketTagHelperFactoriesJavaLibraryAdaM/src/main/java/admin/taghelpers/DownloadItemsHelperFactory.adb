@@ -32,7 +32,7 @@ package body admin.taghelpers.DownloadItemsHelperFactory_Package is
    function Create return DownloadItemsHelperFactory_Access is
       This : constant DownloadItemsHelperFactory_Access := new DownloadItemsHelperFactory;
    begin
-      Initialize (This.all);
+      DownloadItemsHelperFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

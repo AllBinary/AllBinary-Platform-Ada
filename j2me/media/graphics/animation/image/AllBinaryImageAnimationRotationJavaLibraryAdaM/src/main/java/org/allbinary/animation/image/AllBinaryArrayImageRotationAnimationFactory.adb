@@ -52,7 +52,7 @@ package body org.allbinary.animation.image.AllBinaryArrayImageRotationAnimationF
    function Create (image : Image_Access; width : Integer; height : Integer; angleIncrement : Integer; animationBehaviorFactory : AnimationBehaviorFactory_Access) return AllBinaryArrayImageRotationAnimationFactory_Access is
       This : constant AllBinaryArrayImageRotationAnimationFactory_Access := new AllBinaryArrayImageRotationAnimationFactory;
    begin
-      Initialize (This.all, image, width, height, angleIncrement, animationBehaviorFactory);
+      AllBinaryArrayImageRotationAnimationFactory_Package.Initialize (This.all, image, width, height, angleIncrement, animationBehaviorFactory);
       return This;
    end Create;
 
@@ -121,13 +121,6 @@ package body org.allbinary.animation.image.AllBinaryArrayImageRotationAnimationF
    begin
       null;
    end getInstance;
-
-   procedure getAngleIncrement (This : in out AllBinaryArrayImageRotationAnimationFactory) is
-      Java_Result : constant Integer := AllBinaryArrayImageRotationAnimationFactory'Class (This).getAngleIncrement;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getAngleIncrement;
 
 end org.allbinary.animation.image.AllBinaryArrayImageRotationAnimationFactory_Package;
 

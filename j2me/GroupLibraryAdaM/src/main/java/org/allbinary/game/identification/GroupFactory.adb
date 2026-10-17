@@ -32,7 +32,7 @@ package body org.allbinary.game.identification.GroupFactory_Package is
    function Create return GroupFactory_Access is
       This : constant GroupFactory_Access := new GroupFactory;
    begin
-      Initialize (This.all);
+      GroupFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -83,20 +83,6 @@ package body org.allbinary.game.identification.GroupFactory_Package is
             size := size + 1;
         end loop;
    end init;
-
-   procedure getInstance is
-      Java_Result : constant GroupFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure getNextGroup (This : in out GroupFactory) is
-      Java_Result : constant Group_Access := GroupFactory'Class (This).getNextGroup;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getNextGroup;
 
    procedure getNextGroupByName (This : in out GroupFactory; name : Unbounded_String) is
       Java_Result : constant Group_Access := GroupFactory'Class (This).getNextGroupByName (name);

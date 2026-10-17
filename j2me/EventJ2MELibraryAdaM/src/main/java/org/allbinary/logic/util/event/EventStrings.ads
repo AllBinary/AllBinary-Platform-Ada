@@ -40,7 +40,6 @@ package org.allbinary.logic.util.event.EventStrings_Package is
    procedure Initialize (This : in out EventStrings'Class);
    function Create return EventStrings_Access;
    function getInstance return EventStrings_Access;
-   procedure getInstance;
 
 end org.allbinary.logic.util.event.EventStrings_Package;
 

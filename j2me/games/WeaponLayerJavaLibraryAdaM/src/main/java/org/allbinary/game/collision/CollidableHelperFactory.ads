@@ -23,6 +23,8 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.configuration.feature.Features_Package; use org.allbinary.game.configuration.feature.Features_Package;
 with org.allbinary.game.configuration.feature.GameFeatureFactory_Package; use org.allbinary.game.configuration.feature.GameFeatureFactory_Package;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
+with org.allbinary.game.collision.SourceCollisionHelper_Package; use org.allbinary.game.collision.SourceCollisionHelper_Package;
+with org.allbinary.game.collision.CollisionHelper_Package; use org.allbinary.game.collision.CollisionHelper_Package;
 
 package org.allbinary.game.collision.CollidableHelperFactory_Package is
 
@@ -40,7 +42,6 @@ package org.allbinary.game.collision.CollidableHelperFactory_Package is
    procedure Initialize (This : in out CollidableHelperFactory'Class);
    function Create return CollidableHelperFactory_Access;
    function getInstance return CollisionHelper_Access;
-   procedure getInstance;
 
 end org.allbinary.game.collision.CollidableHelperFactory_Package;
 

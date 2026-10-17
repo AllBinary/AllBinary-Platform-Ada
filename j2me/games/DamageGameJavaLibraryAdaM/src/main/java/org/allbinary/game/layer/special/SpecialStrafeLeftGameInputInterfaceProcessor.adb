@@ -29,7 +29,7 @@ package body org.allbinary.game.layer.special.SpecialStrafeLeftGameInputInterfac
    function Create (collidableDestroyableDamageableLayer : SpecialGameInputInterface_Access) return SpecialStrafeLeftGameInputInterfaceProcessor_Access is
       This : constant SpecialStrafeLeftGameInputInterfaceProcessor_Access := new SpecialStrafeLeftGameInputInterfaceProcessor;
    begin
-      Initialize (This.all, collidableDestroyableDamageableLayer);
+      SpecialStrafeLeftGameInputInterfaceProcessor_Package.Initialize (This.all, collidableDestroyableDamageableLayer);
       return This;
    end Create;
 

@@ -30,7 +30,7 @@ package body org.allbinary.logic.communication.smtp.configuration.user.UserEmail
    function Create return UserEmailConfigurationData_Access is
       This : constant UserEmailConfigurationData_Access := new UserEmailConfigurationData;
    begin
-      Initialize (This.all);
+      UserEmailConfigurationData_Package.Initialize (This.all);
       return This;
    end Create;
 

@@ -28,7 +28,7 @@ package body org.allbinary.android.input.motion.GameInputMotionEventProcessorFac
    function Create return GameInputMotionEventProcessorFactory_Access is
       This : constant GameInputMotionEventProcessorFactory_Access := new GameInputMotionEventProcessorFactory;
    begin
-      Initialize (This.all);
+      GameInputMotionEventProcessorFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -42,13 +42,6 @@ package body org.allbinary.android.input.motion.GameInputMotionEventProcessorFac
         else
             return GameInputMotionEventProcessorAPI5_Package.getInstance;
         end if;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant BaseGameInputMotionEventProcessor_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 end org.allbinary.android.input.motion.GameInputMotionEventProcessorFactory_Package;

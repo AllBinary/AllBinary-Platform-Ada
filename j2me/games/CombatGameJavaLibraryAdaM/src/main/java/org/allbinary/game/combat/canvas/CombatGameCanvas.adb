@@ -29,7 +29,7 @@ package body org.allbinary.game.combat.canvas.CombatGameCanvas_Package is
    function Create (cmdListener : CommandListener_Access; gameLayerManager : AllBinaryGameLayerManager_Access; highScoresFactoryInterface : HighScoresFactoryInterface_Access; gameInitializationInterfaceFactoryInterface : BasicBuildGameInitializerFactory_Access; buffered : Boolean) return CombatGameCanvas_Access is
       This : constant CombatGameCanvas_Access := new CombatGameCanvas;
    begin
-      Initialize (This.all, cmdListener, gameLayerManager, highScoresFactoryInterface, gameInitializationInterfaceFactoryInterface, buffered);
+      CombatGameCanvas_Package.Initialize (This.all, cmdListener, gameLayerManager, highScoresFactoryInterface, gameInitializationInterfaceFactoryInterface, buffered);
       return This;
    end Create;
 

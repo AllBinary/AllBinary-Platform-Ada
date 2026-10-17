@@ -47,7 +47,7 @@ package body org.allbinary.logic.visual.theme.ThemeValidation_Package is
    function Create (transformInfoInterface : TransformInfoInterface_Access; cssStyleValidation : CssStyleValidation_Access; categoryThemePath : Unbounded_String) return ThemeValidation_Access is
       This : constant ThemeValidation_Access := new ThemeValidation;
    begin
-      Initialize (This.all, transformInfoInterface, cssStyleValidation, categoryThemePath);
+      ThemeValidation_Package.Initialize (This.all, transformInfoInterface, cssStyleValidation, categoryThemePath);
       return This;
    end Create;
 
@@ -81,7 +81,7 @@ package body org.allbinary.logic.visual.theme.ThemeValidation_Package is
    function Create (transformInfoInterface : TransformInfoInterface_Access; hashMap : HashMap_Access) return ThemeValidation_Access is
       This : constant ThemeValidation_Access := new ThemeValidation;
    begin
-      Initialize (This.all, transformInfoInterface, hashMap);
+      ThemeValidation_Package.Initialize (This.all, transformInfoInterface, hashMap);
       return This;
    end Create;
 
@@ -108,7 +108,7 @@ package body org.allbinary.logic.visual.theme.ThemeValidation_Package is
    function Create (storeThemeCategoryInterface : StoreThemeCategoryInterface_Access; node : Node_Access) return ThemeValidation_Access is
       This : constant ThemeValidation_Access := new ThemeValidation;
    begin
-      Initialize (This.all, storeThemeCategoryInterface, node);
+      ThemeValidation_Package.Initialize (This.all, storeThemeCategoryInterface, node);
       return This;
    end Create;
 
@@ -276,96 +276,12 @@ package body org.allbinary.logic.visual.theme.ThemeValidation_Package is
         return node;
    end toXmlNode;
 
-   procedure getTransformInfoInterface (This : in out ThemeValidation) is
-      Java_Result : constant TransformInfoInterface_Access := ThemeValidation'Class (This).getTransformInfoInterface;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTransformInfoInterface;
-
-   procedure getName (This : in out ThemeValidation) is
-      Java_Result : constant Unbounded_String := ThemeValidation'Class (This).getName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getName;
-
-   procedure getPreviewImageName (This : in out ThemeValidation) is
-      Java_Result : constant Unbounded_String := ThemeValidation'Class (This).getPreviewImageName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getPreviewImageName;
-
-   procedure getPreviewImagePath (This : in out ThemeValidation) is
-      Java_Result : constant Unbounded_String := ThemeValidation'Class (This).getPreviewImagePath;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getPreviewImagePath;
-
-   procedure getPath (This : in out ThemeValidation) is
-      Java_Result : constant Unbounded_String := ThemeValidation'Class (This).getPath;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getPath;
-
-   procedure getCssStyleValidation (This : in out ThemeValidation) is
-      Java_Result : constant CssStyleValidation_Access := ThemeValidation'Class (This).getCssStyleValidation;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getCssStyleValidation;
-
-   procedure isValid (This : in out ThemeValidation) is
-      Java_Result : constant Boolean := ThemeValidation'Class (This).isValid;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isValid;
-
-   procedure validationInfo (This : in out ThemeValidation) is
-      Java_Result : constant Unbounded_String := ThemeValidation'Class (This).validationInfo;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end validationInfo;
-
-   procedure toValidationInfoDoc (This : in out ThemeValidation) is
-      Java_Result : constant Document_Access := ThemeValidation'Class (This).toValidationInfoDoc;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toValidationInfoDoc;
-
    procedure toValidationInfoNode (This : in out ThemeValidation; document : Document_Access) is
       Java_Result : constant Node_Access := ThemeValidation'Class (This).toValidationInfoNode (document);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end toValidationInfoNode;
-
-   procedure getKey (This : in out ThemeValidation) is
-      Java_Result : constant Java_Object_Access := ThemeValidation'Class (This).getKey;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getKey;
-
-   procedure toVector (This : in out ThemeValidation) is
-      Java_Result : constant BasicArrayList_Access := ThemeValidation'Class (This).toVector;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toVector;
-
-   procedure toHashMap (This : in out ThemeValidation) is
-      Java_Result : constant HashMap_Access := ThemeValidation'Class (This).toHashMap;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toHashMap;
 
    procedure toXmlNode (This : in out ThemeValidation; document : Document_Access) is
       Java_Result : constant Node_Access := ThemeValidation'Class (This).toXmlNode (document);

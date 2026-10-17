@@ -38,7 +38,7 @@ package body org.allbinary.logic.system.os.SystemProperties_Package is
    function Create return SystemProperties_Access is
       This : constant SystemProperties_Access := new SystemProperties;
    begin
-      Initialize (This.all);
+      SystemProperties_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -60,41 +60,6 @@ package body org.allbinary.logic.system.os.SystemProperties_Package is
    function getUserHomePath (This : in out SystemProperties) return Unbounded_String is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
-   end getUserHomePath;
-
-   procedure getInstance is
-      Java_Result : constant SystemProperties_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure getName (This : in out SystemProperties) is
-      Java_Result : constant Unbounded_String := SystemProperties'Class (This).getName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getName;
-
-   procedure getArch (This : in out SystemProperties) is
-      Java_Result : constant Unbounded_String := SystemProperties'Class (This).getArch;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getArch;
-
-   procedure getVersion (This : in out SystemProperties) is
-      Java_Result : constant Unbounded_String := SystemProperties'Class (This).getVersion;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getVersion;
-
-   procedure getUserHomePath (This : in out SystemProperties) is
-      Java_Result : constant Unbounded_String := SystemProperties'Class (This).getUserHomePath;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getUserHomePath;
 
 begin

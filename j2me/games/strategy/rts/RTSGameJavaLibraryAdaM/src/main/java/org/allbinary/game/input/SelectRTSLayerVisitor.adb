@@ -31,7 +31,7 @@ package body org.allbinary.game.input.SelectRTSLayerVisitor_Package is
    function Create return SelectRTSLayerVisitor_Access is
       This : constant SelectRTSLayerVisitor_Access := new SelectRTSLayerVisitor;
    begin
-      Initialize (This.all);
+      SelectRTSLayerVisitor_Package.Initialize (This.all);
       return This;
    end Create;
 

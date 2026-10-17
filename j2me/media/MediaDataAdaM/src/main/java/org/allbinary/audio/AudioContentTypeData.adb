@@ -31,20 +31,13 @@ package body org.allbinary.audio.AudioContentTypeData_Package is
    function Create (name : Unbounded_String) return AudioContentTypeData_Access is
       This : constant AudioContentTypeData_Access := new AudioContentTypeData;
    begin
-      Initialize (This.all, name);
+      AudioContentTypeData_Package.Initialize (This.all, name);
       return This;
    end Create;
 
    function getName (This : in out AudioContentTypeData) return Unbounded_String is
    begin
         return This.name;
-   end getName;
-
-   procedure getName (This : in out AudioContentTypeData) is
-      Java_Result : constant Unbounded_String := AudioContentTypeData'Class (This).getName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getName;
 
 end org.allbinary.audio.AudioContentTypeData_Package;

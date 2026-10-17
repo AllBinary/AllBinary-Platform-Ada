@@ -31,7 +31,7 @@ package body org.allbinary.game.layer.weapon.WeaponLayerCircularPool_Package is
    function Create return WeaponLayerCircularPool_Access is
       This : constant WeaponLayerCircularPool_Access := new WeaponLayerCircularPool;
    begin
-      Initialize (This.all);
+      WeaponLayerCircularPool_Package.Initialize (This.all);
       return This;
    end Create;
 

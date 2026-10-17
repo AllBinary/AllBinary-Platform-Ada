@@ -49,7 +49,7 @@ package body org.allbinary.input.motion.button.TouchButton_Package is
    function Create (touchButtonInput : TouchButtonInput_Access; animationInterface : AnimationInterface_Access; rawRectangle : Rectangle_Access; cellPosition : CellPosition_Access; xBorder : Integer; yBorder : Integer) return TouchButton_Access is
       This : constant TouchButton_Access := new TouchButton;
    begin
-      Initialize (This.all, touchButtonInput, animationInterface, rawRectangle, cellPosition, xBorder, yBorder);
+      TouchButton_Package.Initialize (This.all, touchButtonInput, animationInterface, rawRectangle, cellPosition, xBorder, yBorder);
       return This;
    end Create;
 
@@ -112,34 +112,6 @@ package body org.allbinary.input.motion.button.TouchButton_Package is
         stringBuffer.append (To_Unbounded_String (" yBorder: "));
         stringBuffer.appendint (This.yBorder);
         return stringBuffer.toString;
-   end toString;
-
-   procedure getCellPositionP (This : in out TouchButton) is
-      Java_Result : constant CellPosition_Access := TouchButton'Class (This).getCellPositionP;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getCellPositionP;
-
-   procedure getRectangleP (This : in out TouchButton) is
-      Java_Result : constant Rectangle_Access := TouchButton'Class (This).getRectangleP;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getRectangleP;
-
-   procedure getTouchButtonInput (This : in out TouchButton) is
-      Java_Result : constant TouchButtonInput_Access := TouchButton'Class (This).getTouchButtonInput;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTouchButtonInput;
-
-   procedure toString (This : in out TouchButton) is
-      Java_Result : constant Unbounded_String := TouchButton'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end toString;
 
 end org.allbinary.input.motion.button.TouchButton_Package;

@@ -34,7 +34,7 @@ package body org.allbinary.game.physics.velocity.VelocityProperties_Package is
    function Create (maxForwardVelocity : Integer; maxReverseVelocity : Integer) return VelocityProperties_Access is
       This : constant VelocityProperties_Access := new VelocityProperties;
    begin
-      Initialize (This.all, maxForwardVelocity, maxReverseVelocity);
+      VelocityProperties_Package.Initialize (This.all, maxForwardVelocity, maxReverseVelocity);
       return This;
    end Create;
 
@@ -168,34 +168,6 @@ package body org.allbinary.game.physics.velocity.VelocityProperties_Package is
         BasicVelocityProperties (This).addVelocityi (magnitude, angle, otherAngle);
         This.limitXYToForwardAndReverseMaxVelocity;
    end addVelocityi;
-
-   procedure getMaxForwardVelocity (This : in out VelocityProperties) is
-      Java_Result : constant Integer := VelocityProperties'Class (This).getMaxForwardVelocity;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getMaxForwardVelocity;
-
-   procedure getMaxReverseVelocity (This : in out VelocityProperties) is
-      Java_Result : constant Integer := VelocityProperties'Class (This).getMaxReverseVelocity;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getMaxReverseVelocity;
-
-   procedure isOverXYMaxForwardVelocity (This : in out VelocityProperties) is
-      Java_Result : constant Boolean := VelocityProperties'Class (This).isOverXYMaxForwardVelocity;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isOverXYMaxForwardVelocity;
-
-   procedure isOverXYMaxReverseVelocity (This : in out VelocityProperties) is
-      Java_Result : constant Boolean := VelocityProperties'Class (This).isOverXYMaxReverseVelocity;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isOverXYMaxReverseVelocity;
 
    procedure isOverXYMaxVelocity (This : in out VelocityProperties; maxVelocity : Integer) is
       Java_Result : constant Boolean := VelocityProperties'Class (This).isOverXYMaxVelocity (maxVelocity);

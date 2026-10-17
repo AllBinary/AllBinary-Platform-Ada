@@ -33,6 +33,8 @@ with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.lo
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.input.motion.button.TouchButtonInput_Package; use org.allbinary.input.motion.button.TouchButtonInput_Package;
+with org.allbinary.input.motion.button.TouchButtonResource_Package; use org.allbinary.input.motion.button.TouchButtonResource_Package;
 
 package org.allbinary.input.motion.button.TouchButton_Package is
 
@@ -78,13 +80,9 @@ package org.allbinary.input.motion.button.TouchButton_Package is
    procedure paint (This : in out TouchButton; graphics : Graphics_Access);
    procedure updateRectangle (This : in out TouchButton);
    function getCellPosition (This : in out TouchButton) return CellPosition_Access;
-   procedure getCellPosition (This : in out TouchButton);
    function getRectangle (This : in out TouchButton) return Rectangle_Access;
-   procedure getRectangle (This : in out TouchButton);
    function getTouchButtonInput (This : in out TouchButton) return TouchButtonInput_Access;
-   procedure getTouchButtonInput (This : in out TouchButton);
    function toString (This : in out TouchButton) return Unbounded_String;
-   procedure toString (This : in out TouchButton);
 
 end org.allbinary.input.motion.button.TouchButton_Package;
 

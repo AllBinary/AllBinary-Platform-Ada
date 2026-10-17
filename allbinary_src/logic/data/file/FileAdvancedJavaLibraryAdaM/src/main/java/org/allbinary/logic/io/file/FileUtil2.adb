@@ -38,7 +38,7 @@ package body org.allbinary.logic.io.file.FileUtil2_Package is
    function Create return FileUtil2_Access is
       This : constant FileUtil2_Access := new FileUtil2;
    begin
-      Initialize (This.all);
+      FileUtil2_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -58,13 +58,6 @@ package body org.allbinary.logic.io.file.FileUtil2_Package is
         end;
         return SimpleFileUtil_Package.getInstance.loadFileAsList (inputStream, max, byteArray1);
    end loadFileAsList;
-
-   procedure getInstance is
-      Java_Result : constant FileUtil2_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure loadFileAsList (This : in out FileUtil2; file : AbFile_Access; max : Integer; byteArray1 : Short_Short_Integer_Array_Access) is
       Java_Result : constant BasicArrayList_Access := FileUtil2'Class (This).loadFileAsList (file, max, byteArray1);

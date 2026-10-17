@@ -65,13 +65,10 @@ package views.admin.inventory.EditValidationView_Package is
    function Create (transformInfoInterface : TransformInfoInterface_Access) return EditValidationView_Access;
    procedure getFormData (This : in out EditValidationView);
    function isValid (This : in out EditValidationView) return Boolean;
-   procedure isValid (This : in out EditValidationView);
    function toValidationInfoDoc (This : in out EditValidationView) return Document_Access;
-   procedure toValidationInfoDoc (This : in out EditValidationView);
    function toValidationInfoNode (This : in out EditValidationView; document : Document_Access) return Node_Access;
    procedure toValidationInfoNode (This : in out EditValidationView; document : Document_Access);
    function validationInfo (This : in out EditValidationView) return Unbounded_String;
-   procedure validationInfo (This : in out EditValidationView);
 
 end views.admin.inventory.EditValidationView_Package;
 

@@ -28,7 +28,7 @@ package body org.allbinary.game.displayable.canvas.NullDemoPaintable_Package is
    function Create return NullDemoPaintable_Access is
       This : constant NullDemoPaintable_Access := new NullDemoPaintable;
    begin
-      Initialize (This.all);
+      NullDemoPaintable_Package.Initialize (This.all);
       return This;
    end Create;
 

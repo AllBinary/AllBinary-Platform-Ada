@@ -37,9 +37,7 @@ package org.allbinary.logic.java.character_Id.CharArrayFactory_Package is
    procedure Initialize (This : in out CharArrayFactory'Class);
    function Create return CharArrayFactory_Access;
    function getInstance return CharArrayFactory_Access;
-   procedure getInstance;
    function getZeroCharArray (This : in out CharArrayFactory) return Character_Array_Access;
-   procedure getZeroCharArray (This : in out CharArrayFactory);
 
 end org.allbinary.logic.java.character_Id.CharArrayFactory_Package;
 

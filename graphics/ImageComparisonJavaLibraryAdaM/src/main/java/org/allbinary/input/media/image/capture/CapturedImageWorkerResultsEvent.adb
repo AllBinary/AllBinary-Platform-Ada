@@ -34,7 +34,7 @@ package body org.allbinary.input.media.image.capture.CapturedImageWorkerResultsE
    function Create (anyType : Java_Object_Access; frame : Long_Long_Integer; bufferedImage : BufferedImage_Access) return CapturedImageWorkerResultsEvent_Access is
       This : constant CapturedImageWorkerResultsEvent_Access := new CapturedImageWorkerResultsEvent;
    begin
-      Initialize (This.all, anyType, frame, bufferedImage);
+      CapturedImageWorkerResultsEvent_Package.Initialize (This.all, anyType, frame, bufferedImage);
       return This;
    end Create;
 
@@ -51,20 +51,6 @@ package body org.allbinary.input.media.image.capture.CapturedImageWorkerResultsE
    function getFrame (This : in out CapturedImageWorkerResultsEvent) return Long_Long_Integer is
    begin
         return This.frame;
-   end getFrame;
-
-   procedure getBufferedImage (This : in out CapturedImageWorkerResultsEvent) is
-      Java_Result : constant BufferedImage_Access := CapturedImageWorkerResultsEvent'Class (This).getBufferedImage;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getBufferedImage;
-
-   procedure getFrame (This : in out CapturedImageWorkerResultsEvent) is
-      Java_Result : constant Long_Long_Integer := CapturedImageWorkerResultsEvent'Class (This).getFrame;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getFrame;
 
 end org.allbinary.input.media.image.capture.CapturedImageWorkerResultsEvent_Package;

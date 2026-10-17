@@ -43,7 +43,7 @@ package body org.allbinary.logic.util.cache.IndexedBasicArrayListCache_Package i
    function Create return IndexedBasicArrayListCache_Access is
       This : constant IndexedBasicArrayListCache_Access := new IndexedBasicArrayListCache;
    begin
-      Initialize (This.all);
+      IndexedBasicArrayListCache_Package.Initialize (This.all);
       return This;
    end Create;
 

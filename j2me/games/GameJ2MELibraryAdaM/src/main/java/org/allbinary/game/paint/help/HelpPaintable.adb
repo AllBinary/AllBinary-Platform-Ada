@@ -42,7 +42,7 @@ package body org.allbinary.game.paint.help.HelpPaintable_Package is
    function Create (title : Unbounded_String; backgroundBasicColor : BasicColor_Access; basicColor : BasicColor_Access) return HelpPaintable_Access is
       This : constant HelpPaintable_Access := new HelpPaintable;
    begin
-      Initialize (This.all, title, backgroundBasicColor, basicColor);
+      HelpPaintable_Package.Initialize (This.all, title, backgroundBasicColor, basicColor);
       return This;
    end Create;
 

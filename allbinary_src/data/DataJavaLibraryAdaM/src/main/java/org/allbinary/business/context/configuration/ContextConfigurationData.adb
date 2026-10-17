@@ -38,16 +38,9 @@ package body org.allbinary.business.context.configuration.ContextConfigurationDa
    function Create return ContextConfigurationData_Access is
       This : constant ContextConfigurationData_Access := new ContextConfigurationData;
    begin
-      Initialize (This.all);
+      ContextConfigurationData_Package.Initialize (This.all);
       return This;
    end Create;
-
-   procedure getInstance is
-      Java_Result : constant ContextConfigurationData_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

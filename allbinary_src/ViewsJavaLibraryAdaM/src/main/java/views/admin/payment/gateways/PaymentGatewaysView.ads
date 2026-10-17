@@ -69,7 +69,6 @@ package views.admin.payment.gateways.PaymentGatewaysView_Package is
    procedure toXmlNode (This : in out PaymentGatewaysView; document : Document_Access);
    procedure addDomNodeInterfaces (This : in out PaymentGatewaysView);
    function view (This : in out PaymentGatewaysView) return Unbounded_String;
-   procedure view (This : in out PaymentGatewaysView);
 
 end views.admin.payment.gateways.PaymentGatewaysView_Package;
 

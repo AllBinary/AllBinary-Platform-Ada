@@ -38,7 +38,6 @@ package org.allbinary.game.ag.layer.hud.basic.HudResources_Package is
    procedure Initialize (This : in out HudResources'Class);
    function Create return HudResources_Access;
    function getInstance return HudResources_Access;
-   procedure getInstance;
 
 end org.allbinary.game.ag.layer.hud.basic.HudResources_Package;
 

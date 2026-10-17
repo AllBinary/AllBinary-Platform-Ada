@@ -23,6 +23,7 @@ with AllBinary_Java; use AllBinary_Java;
 with jsinterop.annotations.JsType_Package; use jsinterop.annotations.JsType_Package;
 with jsinterop.annotations.JsMethod_Package; use jsinterop.annotations.JsMethod_Package;
 with jsinterop.annotations.JsConstructor_Package; use jsinterop.annotations.JsConstructor_Package;
+with org.allbinary.math.AngleFactory_Package; use org.allbinary.math.AngleFactory_Package;
 
 package org.allbinary.math.FrameUtil_Package is
 
@@ -41,13 +42,12 @@ package org.allbinary.math.FrameUtil_Package is
    procedure Initialize (This : in out FrameUtil'Class);
    function Create return FrameUtil_Access;
    function getInstance return FrameUtil_Access;
-   procedure getInstance;
    function getFrameForAngle (This : in out FrameUtil; angle : Short_Integer; angleIncrement : Integer) return Integer;
    procedure getFrameForAngle (This : in out FrameUtil; angle : Short_Integer; angleIncrement : Integer);
    function getFrameAngle (This : in out FrameUtil; frame : Integer; angleIncrement : Integer) return Integer;
    procedure getFrameAngle (This : in out FrameUtil; frame : Integer; angleIncrement : Integer);
-   function adjustAngleToFrameAngle (This : in out FrameUtil; currentAngle : Integer) return Integer;
-   procedure adjustAngleToFrameAngle (This : in out FrameUtil; currentAngle : Integer);
+   function adjustAngleToFrameAngle (This : in out FrameUtil; currentAngle_Param : Integer) return Integer;
+   procedure adjustAngleToFrameAngle (This : in out FrameUtil; currentAngle_Param : Integer);
 
 end org.allbinary.math.FrameUtil_Package;
 

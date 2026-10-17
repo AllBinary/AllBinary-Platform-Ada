@@ -33,7 +33,7 @@ package body org.allbinary.graphics.color.ColorCacheable_Package is
    function Create (key : Java_Object_Access) return ColorCacheable_Access is
       This : constant ColorCacheable_Access := new ColorCacheable;
    begin
-      Initialize (This.all, key);
+      ColorCacheable_Package.Initialize (This.all, key);
       return This;
    end Create;
 
@@ -51,20 +51,6 @@ package body org.allbinary.graphics.color.ColorCacheable_Package is
    begin
         This.color := color;
    end setColor;
-
-   procedure getKey (This : in out ColorCacheable) is
-      Java_Result : constant Java_Object_Access := ColorCacheable'Class (This).getKey;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getKey;
-
-   procedure getColor (This : in out ColorCacheable) is
-      Java_Result : constant Color_Access := ColorCacheable'Class (This).getColor;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getColor;
 
 end org.allbinary.graphics.color.ColorCacheable_Package;
 

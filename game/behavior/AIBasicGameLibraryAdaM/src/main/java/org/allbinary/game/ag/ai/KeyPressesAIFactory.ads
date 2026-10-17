@@ -26,6 +26,8 @@ with org.allbinary.game.configuration.feature.InputFeatureFactory_Package; use o
 with org.allbinary.game.input.GameInput_Package; use org.allbinary.game.input.GameInput_Package;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
 with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
+with org.allbinary.game.ag.ai.MultiKeyPressesAI_Package; use org.allbinary.game.ag.ai.MultiKeyPressesAI_Package;
+with org.allbinary.game.ag.ai.KeyPressesAI_Package; use org.allbinary.game.ag.ai.KeyPressesAI_Package;
 
 package org.allbinary.game.ag.ai.KeyPressesAIFactory_Package is
 

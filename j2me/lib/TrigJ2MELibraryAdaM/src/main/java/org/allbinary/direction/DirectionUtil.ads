@@ -22,6 +22,8 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.math.Angle_Package; use org.allbinary.math.Angle_Package;
 with org.allbinary.math.AngleFactory_Package; use org.allbinary.math.AngleFactory_Package;
+with org.allbinary.direction.DirectionFactory_Package; use org.allbinary.direction.DirectionFactory_Package;
+with org.allbinary.direction.Direction_Package; use org.allbinary.direction.Direction_Package;
 
 package org.allbinary.direction.DirectionUtil_Package is
 
@@ -42,7 +44,6 @@ package org.allbinary.direction.DirectionUtil_Package is
    procedure Initialize (This : in out DirectionUtil'Class);
    function Create return DirectionUtil_Access;
    function getInstance return DirectionUtil_Access;
-   procedure getInstance;
    function getAngle (This : in out DirectionUtil; direction : Direction_Access) return Angle_Access;
    procedure getAngle (This : in out DirectionUtil; direction : Direction_Access);
    function getFrameAngle (This : in out DirectionUtil; direction : Direction_Access) return Angle_Access;

@@ -28,7 +28,7 @@ package body org.allbinary.game.ag.ai.sequence.NumberLayersSequenceAIFactory_Pac
    function Create return NumberLayersSequenceAIFactory_Access is
       This : constant NumberLayersSequenceAIFactory_Access := new NumberLayersSequenceAIFactory;
    begin
-      Initialize (This.all);
+      NumberLayersSequenceAIFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

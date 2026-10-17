@@ -36,7 +36,7 @@ package body org.allbinary.game.input.form.PrimaryWaypointHelper_Package is
    function Create return PrimaryWaypointHelper_Access is
       This : constant PrimaryWaypointHelper_Access := new PrimaryWaypointHelper;
    begin
-      Initialize (This.all);
+      PrimaryWaypointHelper_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -49,20 +49,6 @@ package body org.allbinary.game.input.form.PrimaryWaypointHelper_Package is
    begin
         This.waypointLayer := waypointLayer;
    end setWaypointLayer;
-
-   procedure getInstance is
-      Java_Result : constant PrimaryWaypointHelper_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure getWaypointLayer (This : in out PrimaryWaypointHelper) is
-      Java_Result : constant PathFindingLayerInterface_Access := PrimaryWaypointHelper'Class (This).getWaypointLayer;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getWaypointLayer;
 
 begin
    null;

@@ -40,7 +40,7 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
    function Create return GenericProfileActionJPanel_Access is
       This : constant GenericProfileActionJPanel_Access := new GenericProfileActionJPanel;
    begin
-      Initialize (This.all);
+      GenericProfileActionJPanel_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -150,20 +150,6 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
         This.getGenericProfileAction.getGenericProfileActionScript.addCondition (ProfileActionScriptConditionInterface_Access (ColorAtActionScriptCondition_Package.Create));
         This.updateProfileActionUI;
    end newColorAtJButtonActionPerformed;
-
-   procedure getGenericProfileAction (This : in out GenericProfileActionJPanel) is
-      Java_Result : constant GenericProfileAction_Access := GenericProfileActionJPanel'Class (This).getGenericProfileAction;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getGenericProfileAction;
-
-   procedure getGenericProfileActionScriptJPanel (This : in out GenericProfileActionJPanel) is
-      Java_Result : constant GenericProfileActionScriptJPanel_Access := GenericProfileActionJPanel'Class (This).getGenericProfileActionScriptJPanel;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getGenericProfileActionScriptJPanel;
 
 end org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileActionJPanel_Package;
 

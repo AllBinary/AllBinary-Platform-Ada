@@ -32,6 +32,7 @@ with org.allbinary.image.ImageCache_Package; use org.allbinary.image.ImageCache_
 with org.allbinary.image.ImageCacheFactory_Package; use org.allbinary.image.ImageCacheFactory_Package;
 with org.allbinary.image.PreResourceImageUtil_Package; use org.allbinary.image.PreResourceImageUtil_Package;
 with org.allbinary.thread.SynchObject_Package; use org.allbinary.thread.SynchObject_Package;
+with org.allbinary.image.opengles.OpenGLESImage_Package; use org.allbinary.image.opengles.OpenGLESImage_Package;
 
 package org.allbinary.image.opengles.OpenGLImageCache_Package is
 
@@ -62,12 +63,11 @@ package org.allbinary.image.opengles.OpenGLImageCache_Package is
    function Create return OpenGLImageCache_Access;
    procedure addListener (This : in out OpenGLImageCache; renderer : Java_Object_Access);
    procedure update (This : in out OpenGLImageCache; gl : GL10_Access);
-   function createImage (This : in out OpenGLImageCache; caller : Unbounded_String; width : Integer; height : Integer) return Image_Access;
-   procedure createImage (This : in out OpenGLImageCache; caller : Unbounded_String; width : Integer; height : Integer);
+   function createImage (This : in out OpenGLImageCache; caller : Unbounded_String; width_Param : Integer; height_Param : Integer) return Image_Access;
+   procedure createImage (This : in out OpenGLImageCache; caller : Unbounded_String; width_Param : Integer; height_Param : Integer);
    function createImageFromInputStream (This : in out OpenGLImageCache; key : Java_Object_Access; inputStream : InputStream_Access) return Image_Access;
    procedure createImageFromInputStream (This : in out OpenGLImageCache; key : Java_Object_Access; inputStream : InputStream_Access);
    function getGlP (This : in out OpenGLImageCache) return GL10_Access;
-   procedure getGlP (This : in out OpenGLImageCache);
    procedure init (This : in out OpenGLImageCache; image : Image_Access);
 
 end org.allbinary.image.opengles.OpenGLImageCache_Package;

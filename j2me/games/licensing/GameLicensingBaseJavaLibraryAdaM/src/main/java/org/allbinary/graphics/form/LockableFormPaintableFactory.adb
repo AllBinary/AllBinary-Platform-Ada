@@ -32,7 +32,7 @@ package body org.allbinary.graphics.form.LockableFormPaintableFactory_Package is
    function Create (lockedIndex : Integer) return LockableFormPaintableFactory_Access is
       This : constant LockableFormPaintableFactory_Access := new LockableFormPaintableFactory;
    begin
-      Initialize (This.all, lockedIndex);
+      LockableFormPaintableFactory_Package.Initialize (This.all, lockedIndex);
       return This;
    end Create;
 

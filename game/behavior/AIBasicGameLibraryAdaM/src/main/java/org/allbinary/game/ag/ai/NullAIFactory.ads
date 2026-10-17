@@ -25,6 +25,7 @@ with org.allbinary.game.ai.ArtificialIntelligenceInterfaceFactoryInterface_Packa
 with org.allbinary.game.input.GameInput_Package; use org.allbinary.game.input.GameInput_Package;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
 with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
+with org.allbinary.game.ag.ai.NullAI_Package; use org.allbinary.game.ag.ai.NullAI_Package;
 
 package org.allbinary.game.ag.ai.NullAIFactory_Package is
 
@@ -47,7 +48,6 @@ package org.allbinary.game.ag.ai.NullAIFactory_Package is
    function getInstance (This : in out NullAIFactory; hashtable : ABHashtable_Access; ownerLayerInterface : AllBinaryLayer_Access; gameInput : GameInput_Access) return ArtificialIntelligenceInterface_Access;
    procedure getInstance (This : in out NullAIFactory; hashtable : ABHashtable_Access; ownerLayerInterface : AllBinaryLayer_Access; gameInput : GameInput_Access);
    function getInstance return ArtificialIntelligenceInterface_Access;
-   procedure getInstance;
 
 end org.allbinary.game.ag.ai.NullAIFactory_Package;
 

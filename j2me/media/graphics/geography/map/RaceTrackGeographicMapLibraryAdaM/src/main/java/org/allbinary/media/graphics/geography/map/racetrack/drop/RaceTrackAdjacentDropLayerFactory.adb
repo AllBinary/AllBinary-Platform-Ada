@@ -32,7 +32,7 @@ package body org.allbinary.media.graphics.geography.map.racetrack.drop.RaceTrack
    function Create return RaceTrackAdjacentDropLayerFactory_Access is
       This : constant RaceTrackAdjacentDropLayerFactory_Access := new RaceTrackAdjacentDropLayerFactory;
    begin
-      Initialize (This.all);
+      RaceTrackAdjacentDropLayerFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -60,27 +60,6 @@ package body org.allbinary.media.graphics.geography.map.racetrack.drop.RaceTrack
    begin
         This.list.add (layerInterfaceFactoryInterface);
    end add;
-
-   procedure getInstance is
-      Java_Result : constant RaceTrackAdjacentDropLayerFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure getSize (This : in out RaceTrackAdjacentDropLayerFactory) is
-      Java_Result : constant Integer := RaceTrackAdjacentDropLayerFactory'Class (This).getSize;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSize;
-
-   procedure getRandomInstance (This : in out RaceTrackAdjacentDropLayerFactory) is
-      Java_Result : constant LayerInterfaceFactoryInterface_Access := RaceTrackAdjacentDropLayerFactory'Class (This).getRandomInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getRandomInstance;
 
 begin
    null;

@@ -28,6 +28,7 @@ with org.allbinary.logic.io.AbFileLocalInputStream_Package; use org.allbinary.lo
 with org.allbinary.logic.io.file.AbFile_Package; use org.allbinary.logic.io.file.AbFile_Package;
 with org.allbinary.logic.io.path.AbPath_Package; use org.allbinary.logic.io.path.AbPath_Package;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
+with org.allbinary.data.tree.dom.XslHelper_Package; use org.allbinary.data.tree.dom.XslHelper_Package;
 
 package org.allbinary.data.tree.dom.SimpleTransform_Package is
 
@@ -51,7 +52,6 @@ package org.allbinary.data.tree.dom.SimpleTransform_Package is
    procedure Initialize (This : in out SimpleTransform'Class; xsltFilePath : AbPath_Access; dataFilePath : AbPath_Access);
    function Create (xsltFilePath : AbPath_Access; dataFilePath : AbPath_Access) return SimpleTransform_Access;
    function transform (This : in out SimpleTransform) return Unbounded_String;
-   procedure transform (This : in out SimpleTransform);
 
 end org.allbinary.data.tree.dom.SimpleTransform_Package;
 

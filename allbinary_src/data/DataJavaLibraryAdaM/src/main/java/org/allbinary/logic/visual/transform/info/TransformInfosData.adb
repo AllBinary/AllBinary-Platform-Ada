@@ -35,20 +35,13 @@ package body org.allbinary.logic.visual.transform.info.TransformInfosData_Packag
    function Create return TransformInfosData_Access is
       This : constant TransformInfosData_Access := new TransformInfosData;
    begin
-      Initialize (This.all);
+      TransformInfosData_Package.Initialize (This.all);
       return This;
    end Create;
 
    function getInstance return TransformInfosData_Access is
    begin
         return TransformInfosData_Package.instance;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant TransformInfosData_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

@@ -32,7 +32,7 @@ package body org.allbinary.game.configuration.event.GameFeatureEvent_Package is
    function Create (anyType : Java_Object_Access; whatChanged : Unbounded_String) return GameFeatureEvent_Access is
       This : constant GameFeatureEvent_Access := new GameFeatureEvent;
    begin
-      Initialize (This.all, anyType, whatChanged);
+      GameFeatureEvent_Package.Initialize (This.all, anyType, whatChanged);
       return This;
    end Create;
 
@@ -44,20 +44,6 @@ package body org.allbinary.game.configuration.event.GameFeatureEvent_Package is
    function getGameOption (This : in out GameFeatureEvent) return Java_Object_Access is
    begin
         return This.getSource;
-   end getGameOption;
-
-   procedure getWhatChanged (This : in out GameFeatureEvent) is
-      Java_Result : constant Unbounded_String := GameFeatureEvent'Class (This).getWhatChanged;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getWhatChanged;
-
-   procedure getGameOption (This : in out GameFeatureEvent) is
-      Java_Result : constant Java_Object_Access := GameFeatureEvent'Class (This).getGameOption;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getGameOption;
 
 end org.allbinary.game.configuration.event.GameFeatureEvent_Package;

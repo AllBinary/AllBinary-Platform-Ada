@@ -34,6 +34,10 @@ with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.w3c.dom.NodeList_Package; use org.w3c.dom.NodeList_Package;
 with org.allbinary.input.automation.actions.script.condition.processors.input.BasicProfileActionScriptInput_Package; use org.allbinary.input.automation.actions.script.condition.processors.input.BasicProfileActionScriptInput_Package;
 with org.allbinary.input.automation.actions.script.condition.processors.input.MouseActionScriptInputInterface_Package; use org.allbinary.input.automation.actions.script.condition.processors.input.MouseActionScriptInputInterface_Package;
+with org.allbinary.input.automation.actions.script.condition.processors.input.Point_Package; use org.allbinary.input.automation.actions.script.condition.processors.input.Point_Package;
+with org.allbinary.input.automation.actions.script.condition.processors.input.MouseActionScriptInputJPanel_Package; use org.allbinary.input.automation.actions.script.condition.processors.input.MouseActionScriptInputJPanel_Package;
+with org.allbinary.input.automation.actions.script.condition.processors.input.MouseActionScriptInputData_Package; use org.allbinary.input.automation.actions.script.condition.processors.input.MouseActionScriptInputData_Package;
+with org.allbinary.input.automation.actions.script.condition.processors.input.MouseInputAutomationProcessor_Package; use org.allbinary.input.automation.actions.script.condition.processors.input.MouseInputAutomationProcessor_Package;
 
 package org.allbinary.input.automation.actions.script.condition.processors.input.MouseActionScriptInput_Package is
 
@@ -65,13 +69,10 @@ package org.allbinary.input.automation.actions.script.condition.processors.input
    function Create (node : Node_Access) return MouseActionScriptInput_Access;
    procedure setPoint (This : in out MouseActionScriptInput; point : Point_Access);
    function getPoint (This : in out MouseActionScriptInput) return Point_Access;
-   procedure getPoint (This : in out MouseActionScriptInput);
    function getButtonClicks (This : in out MouseActionScriptInput) return Integer;
-   procedure getButtonClicks (This : in out MouseActionScriptInput);
    procedure setButtonClicks (This : in out MouseActionScriptInput; buttons : Integer);
    procedure showDialog (This : in out MouseActionScriptInput);
    function toHashMap (This : in out MouseActionScriptInput) return HashMap_Access;
-   procedure toHashMap (This : in out MouseActionScriptInput);
    function toXmlNode (This : in out MouseActionScriptInput; document : Document_Access) return Node_Access;
    procedure toXmlNode (This : in out MouseActionScriptInput; document : Document_Access);
    procedure process (This : in out MouseActionScriptInput; frame : Long_Long_Integer);

@@ -44,7 +44,7 @@ package body org.allbinary.game.configuration.feature.Features_Package is
    function Create return Features_Access is
       This : constant Features_Access := new Features;
    begin
-      Initialize (This.all);
+      Features_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -145,13 +145,6 @@ package body org.allbinary.game.configuration.feature.Features_Package is
             This.add (gameFeature);
         end if;
    end toggle;
-
-   procedure getInstance is
-      Java_Result : constant Features_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure isDefault (This : in out Features; gameFeature : Feature_Access) is
       Java_Result : constant Boolean := Features'Class (This).isDefault (gameFeature);

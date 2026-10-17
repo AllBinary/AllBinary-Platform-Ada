@@ -54,7 +54,7 @@ package body org.allbinary.logic.communication.sql.AbSqlTableUtil_Package is
    function Create return AbSqlTableUtil_Access is
       This : constant AbSqlTableUtil_Access := new AbSqlTableUtil;
    begin
-      Initialize (This.all);
+      AbSqlTableUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -301,13 +301,6 @@ package body org.allbinary.logic.communication.sql.AbSqlTableUtil_Package is
                 end;
         end;
    end restoreTable;
-
-   procedure getInstance is
-      Java_Result : constant AbSqlTableUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure getOutputStream (This : in out AbSqlTableUtil; backupPath : Unbounded_String; tableName : Unbounded_String) is
       Java_Result : constant OutputStream_Access := AbSqlTableUtil'Class (This).getOutputStream (backupPath, tableName);

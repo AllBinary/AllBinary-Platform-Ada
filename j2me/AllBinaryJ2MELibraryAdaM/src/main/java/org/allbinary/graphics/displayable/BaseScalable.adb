@@ -28,7 +28,7 @@ package body org.allbinary.graphics.displayable.BaseScalable_Package is
    function Create return BaseScalable_Access is
       This : constant BaseScalable_Access := new BaseScalable;
    begin
-      Initialize (This.all);
+      BaseScalable_Package.Initialize (This.all);
       return This;
    end Create;
 

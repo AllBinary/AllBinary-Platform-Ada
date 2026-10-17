@@ -58,7 +58,7 @@ package body views.admin.orderhistory.DateRangeOrderHistoryView_Package is
    function Create (transformInfoInterface : TransformInfoInterface_Access) return DateRangeOrderHistoryView_Access is
       This : constant DateRangeOrderHistoryView_Access := new DateRangeOrderHistoryView;
    begin
-      Initialize (This.all, transformInfoInterface);
+      DateRangeOrderHistoryView_Package.Initialize (This.all, transformInfoInterface);
       return This;
    end Create;
 
@@ -317,13 +317,6 @@ package body views.admin.orderhistory.DateRangeOrderHistoryView_Package is
         end;
    end validationInfo;
 
-   procedure view (This : in out DateRangeOrderHistoryView) is
-      Java_Result : constant Unbounded_String := DateRangeOrderHistoryView'Class (This).view;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end view;
-
    procedure toXmlNode (This : in out DateRangeOrderHistoryView; document : Document_Access) is
       Java_Result : constant Node_Access := DateRangeOrderHistoryView'Class (This).toXmlNode (document);
       pragma Unreferenced (Java_Result);
@@ -331,33 +324,12 @@ package body views.admin.orderhistory.DateRangeOrderHistoryView_Package is
       null;
    end toXmlNode;
 
-   procedure isValid (This : in out DateRangeOrderHistoryView) is
-      Java_Result : constant Boolean := DateRangeOrderHistoryView'Class (This).isValid;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isValid;
-
-   procedure toValidationInfoDoc (This : in out DateRangeOrderHistoryView) is
-      Java_Result : constant Document_Access := DateRangeOrderHistoryView'Class (This).toValidationInfoDoc;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toValidationInfoDoc;
-
    procedure toValidationInfoNode (This : in out DateRangeOrderHistoryView; document : Document_Access) is
       Java_Result : constant Node_Access := DateRangeOrderHistoryView'Class (This).toValidationInfoNode (document);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end toValidationInfoNode;
-
-   procedure validationInfo (This : in out DateRangeOrderHistoryView) is
-      Java_Result : constant Unbounded_String := DateRangeOrderHistoryView'Class (This).validationInfo;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end validationInfo;
 
 end views.admin.orderhistory.DateRangeOrderHistoryView_Package;
 

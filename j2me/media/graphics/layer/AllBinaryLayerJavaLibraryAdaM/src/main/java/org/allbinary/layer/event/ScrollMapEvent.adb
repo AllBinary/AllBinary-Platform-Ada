@@ -32,7 +32,7 @@ package body org.allbinary.layer.event.ScrollMapEvent_Package is
    function Create (anyType : Java_Object_Access) return ScrollMapEvent_Access is
       This : constant ScrollMapEvent_Access := new ScrollMapEvent;
    begin
-      Initialize (This.all, anyType);
+      ScrollMapEvent_Package.Initialize (This.all, anyType);
       return This;
    end Create;
 
@@ -61,20 +61,6 @@ package body org.allbinary.layer.event.ScrollMapEvent_Package is
         This.dx := dx;
         This.dy := dy;
    end setDxDy;
-
-   procedure getDx (This : in out ScrollMapEvent) is
-      Java_Result : constant Integer := ScrollMapEvent'Class (This).getDx;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getDx;
-
-   procedure getDy (This : in out ScrollMapEvent) is
-      Java_Result : constant Integer := ScrollMapEvent'Class (This).getDy;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getDy;
 
 end org.allbinary.layer.event.ScrollMapEvent_Package;
 

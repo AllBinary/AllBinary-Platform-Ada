@@ -37,7 +37,7 @@ package body org.allbinary.business.installer.InitDb_Package is
    function Create return InitDb_Access is
       This : constant InitDb_Access := new InitDb;
    begin
-      Initialize (This.all);
+      InitDb_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -51,7 +51,7 @@ package body org.allbinary.business.installer.InitDb_Package is
    function Create (dbConnectionInfo : DbConnectionInfo_Access) return InitDb_Access is
       This : constant InitDb_Access := new InitDb;
    begin
-      Initialize (This.all, dbConnectionInfo);
+      InitDb_Package.Initialize (This.all, dbConnectionInfo);
       return This;
    end Create;
 
@@ -183,55 +183,6 @@ package body org.allbinary.business.installer.InitDb_Package is
             return False;
                 end;
         end;
-   end useNormalMainPath;
-
-   procedure getHelper (This : in out InitDb) is
-      Java_Result : constant Java_Object_Access := InitDb'Class (This).getHelper;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getHelper;
-
-   procedure getHostName (This : in out InitDb) is
-      Java_Result : constant Unbounded_String := InitDb'Class (This).getHostName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getHostName;
-
-   procedure addUsers (This : in out InitDb) is
-      Java_Result : constant Boolean := InitDb'Class (This).addUsers;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end addUsers;
-
-   procedure addDatabases (This : in out InitDb) is
-      Java_Result : constant Boolean := InitDb'Class (This).addDatabases;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end addDatabases;
-
-   procedure addTables (This : in out InitDb) is
-      Java_Result : constant Boolean := InitDb'Class (This).addTables;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end addTables;
-
-   procedure useTemporaryMainPath (This : in out InitDb) is
-      Java_Result : constant Boolean := InitDb'Class (This).useTemporaryMainPath;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end useTemporaryMainPath;
-
-   procedure useNormalMainPath (This : in out InitDb) is
-      Java_Result : constant Boolean := InitDb'Class (This).useNormalMainPath;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end useNormalMainPath;
 
 end org.allbinary.business.installer.InitDb_Package;

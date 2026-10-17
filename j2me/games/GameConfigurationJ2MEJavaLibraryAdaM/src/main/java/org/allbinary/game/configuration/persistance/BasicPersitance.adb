@@ -37,7 +37,7 @@ package body org.allbinary.game.configuration.persistance.BasicPersitance_Packag
    function Create (recordId : Unbounded_String) return BasicPersitance_Access is
       This : constant BasicPersitance_Access := new BasicPersitance;
    begin
-      Initialize (This.all, recordId);
+      BasicPersitance_Package.Initialize (This.all, recordId);
       return This;
    end Create;
 
@@ -114,20 +114,6 @@ package body org.allbinary.game.configuration.persistance.BasicPersitance_Packag
    begin
       null;
    end getRecordId;
-
-   procedure getList (This : in out BasicPersitance) is
-      Java_Result : constant BasicArrayList_Access := BasicPersitance'Class (This).getList;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getList;
-
-   procedure getIds (This : in out BasicPersitance) is
-      Java_Result : constant BasicArrayList_Access := BasicPersitance'Class (This).getIds;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getIds;
 
 end org.allbinary.game.configuration.persistance.BasicPersitance_Package;
 

@@ -41,7 +41,7 @@ package body org.allbinary.game.displayable.canvas.GameCanvasInputProcessor_Pack
    function Create (allBinaryGameCanvas : AllBinaryGameCanvas_Access) return GameCanvasInputProcessor_Access is
       This : constant GameCanvasInputProcessor_Access := new GameCanvasInputProcessor;
    begin
-      Initialize (This.all, allBinaryGameCanvas);
+      GameCanvasInputProcessor_Package.Initialize (This.all, allBinaryGameCanvas);
       return This;
    end Create;
 

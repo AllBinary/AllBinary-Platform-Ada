@@ -28,6 +28,7 @@ with org.allbinary.logic.java.bool.BooleanFactory_Package; use org.allbinary.log
 with org.allbinary.logic.math.SmallIntegerSingletonFactory_Package; use org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
 with org.allbinary.media.audio.ErrorSound_Package; use org.allbinary.media.audio.ErrorSound_Package;
 with org.allbinary.media.audio.PrimaryPlayerQueueFactory_Package; use org.allbinary.media.audio.PrimaryPlayerQueueFactory_Package;
+with org.allbinary.logic.system.security.licensing.LicenseStrings_Package; use org.allbinary.logic.system.security.licensing.LicenseStrings_Package;
 
 package org.allbinary.logic.system.security.licensing.LockedFeatureNotificationUtil_Package is
 
@@ -53,7 +54,6 @@ package org.allbinary.logic.system.security.licensing.LockedFeatureNotificationU
    procedure Initialize (This : in out LockedFeatureNotificationUtil'Class);
    function Create return LockedFeatureNotificationUtil_Access;
    function getInstance return LockedFeatureNotificationUtil_Access;
-   procedure getInstance;
    procedure fire (This : in out LockedFeatureNotificationUtil);
    procedure fireWithColor (This : in out LockedFeatureNotificationUtil; basicColor : BasicColor_Access);
 

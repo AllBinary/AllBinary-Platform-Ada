@@ -25,6 +25,7 @@ with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.media.audio.SoundInterface_Package; use org.allbinary.media.audio.SoundInterface_Package;
 with org.allbinary.media.audio.Runnable_Package; use org.allbinary.media.audio.Runnable_Package;
+with org.allbinary.media.audio.NoPlayer_Package; use org.allbinary.media.audio.NoPlayer_Package;
 
 package org.allbinary.media.audio.Sound_Package is
 
@@ -44,13 +45,10 @@ package org.allbinary.media.audio.Sound_Package is
    procedure Initialize (This : in out Sound'Class; resource : Unbounded_String);
    function Create (resource : Unbounded_String) return Sound_Access;
    function getResource (This : in out Sound) return Unbounded_String;
-   procedure getResource (This : in out Sound);
    function getPlayerP (This : in out Sound) return Player_Access;
-   procedure getPlayerP (This : in out Sound);
    procedure setPlayerP (This : in out Sound; player : Player_Access);
    procedure init (This : in out Sound);
    function getDuration (This : in out Sound) return Integer;
-   procedure getDuration (This : in out Sound);
    procedure run (This : in out Sound);
 
 end org.allbinary.media.audio.Sound_Package;

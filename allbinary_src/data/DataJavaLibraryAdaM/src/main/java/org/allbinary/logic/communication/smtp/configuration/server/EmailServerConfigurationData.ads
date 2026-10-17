@@ -21,7 +21,7 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 
-package org.allbinary.logic.communication.smtp.configuration.server_Case.EmailServerConfigurationData_Package is
+package org.allbinary.logic.communication.smtp.configuration.server.EmailServerConfigurationData_Package is
 
 
    type EmailServerConfigurationData is tagged;
@@ -38,6 +38,6 @@ package org.allbinary.logic.communication.smtp.configuration.server_Case.EmailSe
    procedure Initialize (This : in out EmailServerConfigurationData'Class);
    function Create return EmailServerConfigurationData_Access;
 
-end org.allbinary.logic.communication.smtp.configuration.server_Case.EmailServerConfigurationData_Package;
+end org.allbinary.logic.communication.smtp.configuration.server.EmailServerConfigurationData_Package;
 
 

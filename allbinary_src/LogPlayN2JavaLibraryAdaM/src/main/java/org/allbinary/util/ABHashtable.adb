@@ -29,7 +29,7 @@ package body org.allbinary.util.ABHashtable_Package is
    function Create return ABHashtable_Access is
       This : constant ABHashtable_Access := new ABHashtable;
    begin
-      Initialize (This.all);
+      ABHashtable_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -93,27 +93,6 @@ package body org.allbinary.util.ABHashtable_Package is
         return Hashtable (This).hashCode;
    end hashCode;
 
-   procedure size (This : in out ABHashtable) is
-      Java_Result : constant Integer := ABHashtable'Class (This).size;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end size;
-
-   procedure isEmpty (This : in out ABHashtable) is
-      Java_Result : constant Boolean := ABHashtable'Class (This).isEmpty;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isEmpty;
-
-   procedure elements (This : in out ABHashtable) is
-      Java_Result : constant Enumeration_Access := ABHashtable'Class (This).elements;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end elements;
-
    procedure contains (This : in out ABHashtable; value : Java_Object_Access) is
       Java_Result : constant Boolean := ABHashtable'Class (This).contains (value);
       pragma Unreferenced (Java_Result);
@@ -142,33 +121,12 @@ package body org.allbinary.util.ABHashtable_Package is
       null;
    end get;
 
-   procedure clone (This : in out ABHashtable) is
-      Java_Result : constant Java_Object_Access := ABHashtable'Class (This).clone;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end clone;
-
-   procedure toString (This : in out ABHashtable) is
-      Java_Result : constant Unbounded_String := ABHashtable'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toString;
-
    procedure equals (This : in out ABHashtable; obj : Java_Object_Access) is
       Java_Result : constant Boolean := ABHashtable'Class (This).equals (obj);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end equals;
-
-   procedure hashCode (This : in out ABHashtable) is
-      Java_Result : constant Integer := ABHashtable'Class (This).hashCode;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end hashCode;
 
 end org.allbinary.util.ABHashtable_Package;
 

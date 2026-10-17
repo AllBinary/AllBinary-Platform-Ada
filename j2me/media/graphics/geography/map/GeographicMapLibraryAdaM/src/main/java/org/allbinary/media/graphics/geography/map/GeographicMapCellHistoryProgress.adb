@@ -34,7 +34,7 @@ package body org.allbinary.media.graphics.geography.map.GeographicMapCellHistory
    function Create (geographicMapCellHistoryArray : GeographicMapCellHistory_Access_Array_Access) return GeographicMapCellHistoryProgress_Access is
       This : constant GeographicMapCellHistoryProgress_Access := new GeographicMapCellHistoryProgress;
    begin
-      Initialize (This.all, geographicMapCellHistoryArray);
+      GeographicMapCellHistoryProgress_Package.Initialize (This.all, geographicMapCellHistoryArray);
       return This;
    end Create;
 
@@ -63,13 +63,6 @@ package body org.allbinary.media.graphics.geography.map.GeographicMapCellHistory
             end if;
         end loop;
         return isProgressing;
-   end isAnyProgress;
-
-   procedure isAnyProgress (This : in out GeographicMapCellHistoryProgress) is
-      Java_Result : constant Boolean := GeographicMapCellHistoryProgress'Class (This).isAnyProgress;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end isAnyProgress;
 
 end org.allbinary.media.graphics.geography.map.GeographicMapCellHistoryProgress_Package;

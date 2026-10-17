@@ -72,17 +72,12 @@ package views.HttpComponentView_Package is
    procedure Initialize (This : in out HttpComponentView'Class; transformInfoInterface : TransformInfoInterface_Access);
    function Create (transformInfoInterface : TransformInfoInterface_Access) return HttpComponentView_Access;
    function getTypeId (This : in out HttpComponentView) return Integer;
-   procedure getTypeId (This : in out HttpComponentView);
    function getTransformDocumentInterface (This : in out HttpComponentView) return TransformDocumentInterface_Access;
-   procedure getTransformDocumentInterface (This : in out HttpComponentView);
    procedure setTransformDocumentInterface (This : in out HttpComponentView; transformDocumentInterface : TransformDocumentInterface_Access);
    procedure addDomNodeInterface (This : in out HttpComponentView; domNodeInterface : DomNodeInterface_Access);
    function toXmlDoc (This : in out HttpComponentView) return Document_Access;
-   procedure toXmlDoc (This : in out HttpComponentView);
    function getDoc (This : in out HttpComponentView) return Document_Access;
-   procedure getDoc (This : in out HttpComponentView);
    function view (This : in out HttpComponentView) return Unbounded_String;
-   procedure view (This : in out HttpComponentView);
 
 end views.HttpComponentView_Package;
 

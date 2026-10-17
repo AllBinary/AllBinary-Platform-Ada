@@ -36,7 +36,7 @@ package body org.allbinary.graphics.canvas.transition.progress.ProgressRunnable_
    function Create (midletActivity : Activity_Access; progressCanvas : ProgressCanvas_Access) return ProgressRunnable_Access is
       This : constant ProgressRunnable_Access := new ProgressRunnable;
    begin
-      Initialize (This.all, midletActivity, progressCanvas);
+      ProgressRunnable_Package.Initialize (This.all, midletActivity, progressCanvas);
       return This;
    end Create;
 

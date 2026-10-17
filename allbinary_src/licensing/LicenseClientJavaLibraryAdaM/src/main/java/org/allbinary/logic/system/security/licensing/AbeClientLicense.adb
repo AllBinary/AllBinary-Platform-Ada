@@ -60,7 +60,7 @@ package body org.allbinary.logic.system.security.licensing.AbeClientLicense_Pack
    function Create (hashtable : ABHashtable_Access) return AbeClientLicense_Access is
       This : constant AbeClientLicense_Access := new AbeClientLicense;
    begin
-      Initialize (This.all, hashtable);
+      AbeClientLicense_Package.Initialize (This.all, hashtable);
       return This;
    end Create;
 
@@ -157,61 +157,12 @@ package body org.allbinary.logic.system.security.licensing.AbeClientLicense_Pack
       null;
    end hasRequiredKeys;
 
-   procedure hasKey (This : in out AbeClientLicense) is
-      Java_Result : constant Boolean := AbeClientLicense'Class (This).hasKey;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end hasKey;
-
    procedure getKey (This : in out AbeClientLicense; keyName : Unbounded_String) is
       Java_Result : constant Unbounded_String := AbeClientLicense'Class (This).getKey (keyName);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getKey;
-
-   procedure getLicenseId (This : in out AbeClientLicense) is
-      Java_Result : constant Unbounded_String := AbeClientLicense'Class (This).getLicenseId;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getLicenseId;
-
-   procedure getServers (This : in out AbeClientLicense) is
-      Java_Result : constant BasicArrayList_Access := AbeClientLicense'Class (This).getServers;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getServers;
-
-   procedure isValid (This : in out AbeClientLicense) is
-      Java_Result : constant Boolean := AbeClientLicense'Class (This).isValid;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isValid;
-
-   procedure toString (This : in out AbeClientLicense) is
-      Java_Result : constant Unbounded_String := AbeClientLicense'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toString;
-
-   procedure getSpecial (This : in out AbeClientLicense) is
-      Java_Result : constant Unbounded_String := AbeClientLicense'Class (This).getSpecial;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSpecial;
-
-   procedure getLicenseType (This : in out AbeClientLicense) is
-      Java_Result : constant LicenseType_Access := AbeClientLicense'Class (This).getLicenseType;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getLicenseType;
 
 end org.allbinary.logic.system.security.licensing.AbeClientLicense_Package;
 

@@ -34,7 +34,7 @@ package body org.allbinary.gui.swing.workers.JListSwingWorker_Package is
    function Create (jList : JList_Access; listModel : ListModel_Access) return JListSwingWorker_Access is
       This : constant JListSwingWorker_Access := new JListSwingWorker;
    begin
-      Initialize (This.all, jList, listModel);
+      JListSwingWorker_Package.Initialize (This.all, jList, listModel);
       return This;
    end Create;
 
@@ -67,27 +67,6 @@ package body org.allbinary.gui.swing.workers.JListSwingWorker_Package is
    begin
         This.listModel := listModel;
    end setListModel;
-
-   procedure doInBackground (This : in out JListSwingWorker) is
-      Java_Result : constant Java_Object_Access := JListSwingWorker'Class (This).doInBackground;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end doInBackground;
-
-   procedure getJList (This : in out JListSwingWorker) is
-      Java_Result : constant JList_Access := JListSwingWorker'Class (This).getJList;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getJList;
-
-   procedure getListModel (This : in out JListSwingWorker) is
-      Java_Result : constant ListModel_Access := JListSwingWorker'Class (This).getListModel;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getListModel;
 
 end org.allbinary.gui.swing.workers.JListSwingWorker_Package;
 

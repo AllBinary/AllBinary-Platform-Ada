@@ -28,7 +28,7 @@ package body org.allbinary.globals.UrlGlobalsInterface_Package is
    function Create return UrlGlobalsInterface_Access is
       This : constant UrlGlobalsInterface_Access := new UrlGlobalsInterface;
    begin
-      Initialize (This.all);
+      UrlGlobalsInterface_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -52,34 +52,6 @@ package body org.allbinary.globals.UrlGlobalsInterface_Package is
    function isTestingMode (This : in out UrlGlobalsInterface) return Boolean is
    begin
         return False;
-   end isTestingMode;
-
-   procedure getMainPath (This : in out UrlGlobalsInterface) is
-      Java_Result : constant Unbounded_String := UrlGlobalsInterface'Class (This).getMainPath;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getMainPath;
-
-   procedure getTestHtmlPath (This : in out UrlGlobalsInterface) is
-      Java_Result : constant Unbounded_String := UrlGlobalsInterface'Class (This).getTestHtmlPath;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTestHtmlPath;
-
-   procedure getWebappPath (This : in out UrlGlobalsInterface) is
-      Java_Result : constant Unbounded_String := UrlGlobalsInterface'Class (This).getWebappPath;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getWebappPath;
-
-   procedure isTestingMode (This : in out UrlGlobalsInterface) is
-      Java_Result : constant Boolean := UrlGlobalsInterface'Class (This).isTestingMode;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end isTestingMode;
 
 end org.allbinary.globals.UrlGlobalsInterface_Package;

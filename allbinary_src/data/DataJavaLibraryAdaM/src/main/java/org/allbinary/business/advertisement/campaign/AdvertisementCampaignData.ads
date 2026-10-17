@@ -39,7 +39,6 @@ package org.allbinary.business.advertisement.campaign.AdvertisementCampaignData_
    procedure Initialize (This : in out AdvertisementCampaignData'Class);
    function Create return AdvertisementCampaignData_Access;
    function getInstance return AdvertisementCampaignData_Access;
-   procedure getInstance;
 
 end org.allbinary.business.advertisement.campaign.AdvertisementCampaignData_Package;
 

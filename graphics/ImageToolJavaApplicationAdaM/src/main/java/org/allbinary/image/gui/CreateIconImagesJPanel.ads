@@ -66,7 +66,6 @@ package org.allbinary.image.gui.CreateIconImagesJPanel_Package is
    function Create (imageProcessorInput : ImageProcessorInput_Access) return CreateIconImagesJPanel_Access;
    procedure process (This : in out CreateIconImagesJPanel);
    function getImageProcessorInput (This : in out CreateIconImagesJPanel) return ImageProcessorInput_Access;
-   procedure getImageProcessorInput (This : in out CreateIconImagesJPanel);
    procedure setImageProcessorInput (This : in out CreateIconImagesJPanel; imageProcessorInput : ImageProcessorInput_Access);
    procedure initComponents (This : in out CreateIconImagesJPanel);
    procedure aboveJButtonActionPerformed (This : in out CreateIconImagesJPanel; evt : ActionEvent_Access);

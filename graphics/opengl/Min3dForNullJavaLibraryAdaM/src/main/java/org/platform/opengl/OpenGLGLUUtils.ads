@@ -29,7 +29,6 @@ package org.platform.opengl.OpenGLGLUUtils_Package is
    procedure Initialize (This : in out OpenGLGLUUtils'Class);
    function Create return OpenGLGLUUtils_Access;
    function getInstance return OpenGLGLUUtils_Access;
-   procedure getInstance;
    function makeByteBuffer (This : in out OpenGLGLUUtils; bmp : OpenGLBitmap_Access; flip : Boolean) return ByteBuffer_Access;
    procedure makeByteBuffer (This : in out OpenGLGLUUtils; bmp : OpenGLBitmap_Access; flip : Boolean);
    procedure texImage2D (This : in out OpenGLGLUUtils; gl : GL10_Access; glVersion : Unbounded_String; target : Integer; level : Integer; generateMipMap : Boolean; openGLESImage : OpenGLESImage_Access; border : Integer; flip : Boolean);

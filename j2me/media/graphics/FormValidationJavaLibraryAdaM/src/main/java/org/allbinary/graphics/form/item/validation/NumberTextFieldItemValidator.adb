@@ -38,7 +38,7 @@ package body org.allbinary.graphics.form.item.validation.NumberTextFieldItemVali
    function Create (textFieldItem : ABTextFieldItem_Access; maxChars : Integer; min : Integer; max : Integer) return NumberTextFieldItemValidator_Access is
       This : constant NumberTextFieldItemValidator_Access := new NumberTextFieldItemValidator;
    begin
-      Initialize (This.all, textFieldItem, maxChars, min, max);
+      NumberTextFieldItemValidator_Package.Initialize (This.all, textFieldItem, maxChars, min, max);
       return This;
    end Create;
 
@@ -142,20 +142,6 @@ package body org.allbinary.graphics.form.item.validation.NumberTextFieldItemVali
    begin
       null;
    end toNumberVector;
-
-   procedure isValid (This : in out NumberTextFieldItemValidator) is
-      Java_Result : constant Boolean := NumberTextFieldItemValidator'Class (This).isValid;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isValid;
-
-   procedure toList (This : in out NumberTextFieldItemValidator) is
-      Java_Result : constant BasicArrayList_Access := NumberTextFieldItemValidator'Class (This).toList;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toList;
 
 end org.allbinary.graphics.form.item.validation.NumberTextFieldItemValidator_Package;
 

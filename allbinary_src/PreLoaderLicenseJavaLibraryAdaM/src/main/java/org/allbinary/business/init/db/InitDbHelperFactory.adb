@@ -30,7 +30,7 @@ package body org.allbinary.business.init.db.InitDbHelperFactory_Package is
    function Create return InitDbHelperFactory_Access is
       This : constant InitDbHelperFactory_Access := new InitDbHelperFactory;
    begin
-      Initialize (This.all);
+      InitDbHelperFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

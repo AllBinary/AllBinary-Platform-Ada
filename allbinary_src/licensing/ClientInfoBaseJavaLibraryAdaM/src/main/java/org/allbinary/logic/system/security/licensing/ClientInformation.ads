@@ -33,6 +33,7 @@ with org.allbinary.util.BasicArrayListUtil_Package; use org.allbinary.util.Basic
 with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
 with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package; use org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+with org.allbinary.logic.system.security.licensing.AbeClientInformationData_Package; use org.allbinary.logic.system.security.licensing.AbeClientInformationData_Package;
 
 package org.allbinary.logic.system.security.licensing.ClientInformation_Package is
 
@@ -70,35 +71,25 @@ package org.allbinary.logic.system.security.licensing.ClientInformation_Package 
    function Create (name : Unbounded_String; version : Unbounded_String; specialName : Unbounded_String; shortName : Unbounded_String) return ClientInformation_Access;
    procedure init (This : in out ClientInformation);
    function getOperatingSystemInterface (This : in out ClientInformation) return GenericOperatingSystem_Access;
-   procedure getOperatingSystemInterface (This : in out ClientInformation);
    function getName (This : in out ClientInformation) return Unbounded_String;
-   procedure getName (This : in out ClientInformation);
    function getSpecialName (This : in out ClientInformation) return Unbounded_String;
-   procedure getSpecialName (This : in out ClientInformation);
    function getVersion (This : in out ClientInformation) return Unbounded_String;
-   procedure getVersion (This : in out ClientInformation);
    function getLicenseId (This : in out ClientInformation) return Unbounded_String;
-   procedure getLicenseId (This : in out ClientInformation);
    function getLicenseServers (This : in out ClientInformation) return BasicArrayList_Access;
-   procedure getLicenseServers (This : in out ClientInformation);
    function getLicenseServer (This : in out ClientInformation; index : Integer) return Unbounded_String;
    procedure getLicenseServer (This : in out ClientInformation; index : Integer);
    function getNumberOfLicenseServers (This : in out ClientInformation) return Integer;
-   procedure getNumberOfLicenseServers (This : in out ClientInformation);
    function toHashtable (This : in out ClientInformation) return ABHashtable_Access;
-   procedure toHashtable (This : in out ClientInformation);
    function isSameId (This : in out ClientInformation; alicenseId : Unbounded_String) return Boolean;
    procedure isSameId (This : in out ClientInformation; alicenseId : Unbounded_String);
    function isLargerOrDifferentServerList (This : in out ClientInformation; list : BasicArrayList_Access) return Boolean;
    procedure isLargerOrDifferentServerList (This : in out ClientInformation; list : BasicArrayList_Access);
    procedure setHardSale (This : in out ClientInformation; hardSale : Boolean);
    function isHardSale (This : in out ClientInformation) return Boolean;
-   procedure isHardSale (This : in out ClientInformation);
    procedure setOperatingSystemInterface (This : in out ClientInformation; operatingSystemInterface : GenericOperatingSystem_Access);
    procedure setLicenseId (This : in out ClientInformation; licenseId : Unbounded_String);
    procedure setLicenseServers (This : in out ClientInformation; licenseServers : BasicArrayList_Access);
    function toShortString (This : in out ClientInformation) return Unbounded_String;
-   procedure toShortString (This : in out ClientInformation);
 
 end org.allbinary.logic.system.security.licensing.ClientInformation_Package;
 

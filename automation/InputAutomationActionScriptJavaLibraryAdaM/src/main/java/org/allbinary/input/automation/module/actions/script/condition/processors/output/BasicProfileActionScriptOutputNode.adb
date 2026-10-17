@@ -31,7 +31,7 @@ package body org.allbinary.input.automation.module.actions.script.condition.proc
    function Create (node : Node_Access) return BasicProfileActionScriptOutputNode_Access is
       This : constant BasicProfileActionScriptOutputNode_Access := new BasicProfileActionScriptOutputNode;
    begin
-      Initialize (This.all, node);
+      BasicProfileActionScriptOutputNode_Package.Initialize (This.all, node);
       return This;
    end Create;
 
@@ -45,7 +45,7 @@ package body org.allbinary.input.automation.module.actions.script.condition.proc
    function Create return BasicProfileActionScriptOutputNode_Access is
       This : constant BasicProfileActionScriptOutputNode_Access := new BasicProfileActionScriptOutputNode;
    begin
-      Initialize (This.all);
+      BasicProfileActionScriptOutputNode_Package.Initialize (This.all);
       return This;
    end Create;
 

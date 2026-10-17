@@ -28,7 +28,7 @@ package body org.allbinary.media.graphics.geography.map.racetrack.RaceTracksPath
    function Create return RaceTracksPathPrinter_Access is
       This : constant RaceTracksPathPrinter_Access := new RaceTracksPathPrinter;
    begin
-      Initialize (This.all);
+      RaceTracksPathPrinter_Package.Initialize (This.all);
       return This;
    end Create;
 

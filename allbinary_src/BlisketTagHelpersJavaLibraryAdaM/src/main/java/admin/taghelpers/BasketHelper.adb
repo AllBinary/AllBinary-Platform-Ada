@@ -44,7 +44,7 @@ package body admin.taghelpers.BasketHelper_Package is
    function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return BasketHelper_Access is
       This : constant BasketHelper_Access := new BasketHelper;
    begin
-      Initialize (This.all, hashMap, pageContext);
+      BasketHelper_Package.Initialize (This.all, hashMap, pageContext);
       return This;
    end Create;
 
@@ -69,13 +69,6 @@ package body admin.taghelpers.BasketHelper_Package is
             return True;
                 end;
         end;
-   end isBasketEmpty;
-
-   procedure isBasketEmpty (This : in out BasketHelper) is
-      Java_Result : constant Boolean := BasketHelper'Class (This).isBasketEmpty;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end isBasketEmpty;
 
 end admin.taghelpers.BasketHelper_Package;

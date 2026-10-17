@@ -61,7 +61,6 @@ package org.allbinary.game.ag.layer.hud.basic.level.LevelHudWidget_Package is
    procedure nextLevel (This : in out LevelHudWidget);
    procedure previousLevel (This : in out LevelHudWidget);
    function isComplete (This : in out LevelHudWidget) return Boolean;
-   procedure isComplete (This : in out LevelHudWidget);
    procedure paint (This : in out LevelHudWidget; graphics : Graphics_Access);
    procedure paintThreed (This : in out LevelHudWidget; graphics : Graphics_Access);
 

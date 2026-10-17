@@ -33,7 +33,7 @@ package body views.admin.workflow.WorkFlowsView_Package is
    function Create (transformInfoInterface : TransformInfoInterface_Access) return WorkFlowsView_Access is
       This : constant WorkFlowsView_Access := new WorkFlowsView;
    begin
-      Initialize (This.all, transformInfoInterface);
+      WorkFlowsView_Package.Initialize (This.all, transformInfoInterface);
       return This;
    end Create;
 
@@ -86,13 +86,6 @@ package body views.admin.workflow.WorkFlowsView_Package is
                 end;
         end;
    end toXmlNode;
-
-   procedure view (This : in out WorkFlowsView) is
-      Java_Result : constant Unbounded_String := WorkFlowsView'Class (This).view;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end view;
 
    procedure toXmlNode (This : in out WorkFlowsView; document : Document_Access) is
       Java_Result : constant Node_Access := WorkFlowsView'Class (This).toXmlNode (document);

@@ -28,7 +28,7 @@ package body org.allbinary.globals.GLOBALS2_Package is
    function Create return GLOBALS2_Access is
       This : constant GLOBALS2_Access := new GLOBALS2;
    begin
-      Initialize (This.all);
+      GLOBALS2_Package.Initialize (This.all);
       return This;
    end Create;
 

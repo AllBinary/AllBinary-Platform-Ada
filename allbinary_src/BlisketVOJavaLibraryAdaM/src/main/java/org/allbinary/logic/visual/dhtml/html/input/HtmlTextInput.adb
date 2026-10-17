@@ -31,7 +31,7 @@ package body org.allbinary.logic.visual.dhtml.html.input.HtmlTextInput_Package i
    function Create (before : Unbounded_String; name : Unbounded_String; value : Unbounded_String; after : Unbounded_String) return HtmlTextInput_Access is
       This : constant HtmlTextInput_Access := new HtmlTextInput;
    begin
-      Initialize (This.all, before, name, value, after);
+      HtmlTextInput_Package.Initialize (This.all, before, name, value, after);
       return This;
    end Create;
 

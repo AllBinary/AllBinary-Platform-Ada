@@ -31,7 +31,7 @@ package body org.allbinary.logic.communication.smtp.queue.FileEmailQueue_Package
    function Create return FileEmailQueue_Access is
       This : constant FileEmailQueue_Access := new FileEmailQueue;
    begin
-      Initialize (This.all);
+      FileEmailQueue_Package.Initialize (This.all);
       return This;
    end Create;
 

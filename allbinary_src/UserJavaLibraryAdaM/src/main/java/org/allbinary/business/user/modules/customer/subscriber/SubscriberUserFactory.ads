@@ -23,6 +23,7 @@ with AllBinary_Java; use AllBinary_Java;
 --  with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.business.user.UserFactoryInterface_Package; use org.allbinary.business.user.UserFactoryInterface_Package;
 with org.allbinary.business.user.UserInterface_Package; use org.allbinary.business.user.UserInterface_Package;
+with org.allbinary.business.user.modules.customer.subscriber.SubscriberUser_Package; use org.allbinary.business.user.modules.customer.subscriber.SubscriberUser_Package;
 
 package org.allbinary.business.user.modules.customer.subscriber.SubscriberUserFactory_Package is
 
@@ -39,7 +40,6 @@ package org.allbinary.business.user.modules.customer.subscriber.SubscriberUserFa
    procedure Initialize (This : in out SubscriberUserFactory'Class);
    function Create return SubscriberUserFactory_Access;
    function getInstance (This : in out SubscriberUserFactory) return UserInterface_Access;
-   procedure getInstance (This : in out SubscriberUserFactory);
    function getInstance (This : in out SubscriberUserFactory; hashMap : HashMap_Access) return UserInterface_Access;
    procedure getInstance (This : in out SubscriberUserFactory; hashMap : HashMap_Access);
 

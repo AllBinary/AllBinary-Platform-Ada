@@ -36,7 +36,6 @@ package org.allbinary.input.motion.button.TouchButtonDownResource_Package is
    procedure Initialize (This : in out TouchButtonDownResource'Class);
    function Create return TouchButtonDownResource_Access;
    function getInstance return TouchButtonResource_Access;
-   procedure getInstance;
 
 end org.allbinary.input.motion.button.TouchButtonDownResource_Package;
 

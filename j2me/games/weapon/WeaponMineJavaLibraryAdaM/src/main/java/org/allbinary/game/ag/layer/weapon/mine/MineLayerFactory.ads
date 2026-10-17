@@ -23,6 +23,7 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
 with org.allbinary.layer.AllBinaryLayerFactoryInterface_Package; use org.allbinary.layer.AllBinaryLayerFactoryInterface_Package;
 with org.allbinary.view.ViewPositionFactoryInterface_Package; use org.allbinary.view.ViewPositionFactoryInterface_Package;
+with org.allbinary.game.ag.layer.weapon.mine.MineLayer_Package; use org.allbinary.game.ag.layer.weapon.mine.MineLayer_Package;
 
 package org.allbinary.game.ag.layer.weapon.mine.MineLayerFactory_Package is
 
@@ -42,7 +43,6 @@ package org.allbinary.game.ag.layer.weapon.mine.MineLayerFactory_Package is
    procedure Initialize (This : in out MineLayerFactory'Class; viewPositionFactoryInterface : ViewPositionFactoryInterface_Access);
    function Create (viewPositionFactoryInterface : ViewPositionFactoryInterface_Access) return MineLayerFactory_Access;
    function getInstance (This : in out MineLayerFactory) return AllBinaryLayer_Access;
-   procedure getInstance (This : in out MineLayerFactory);
 
 end org.allbinary.game.ag.layer.weapon.mine.MineLayerFactory_Package;
 

@@ -36,7 +36,7 @@ package body org.allbinary.data.tables.category.CategoryEntityFactory_Package is
    function Create return CategoryEntityFactory_Access is
       This : constant CategoryEntityFactory_Access := new CategoryEntityFactory;
    begin
-      Initialize (This.all);
+      CategoryEntityFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -57,20 +57,6 @@ package body org.allbinary.data.tables.category.CategoryEntityFactory_Package is
             return null;
                 end;
         end;
-   end getCategoryEntityInstance;
-
-   procedure getInstance is
-      Java_Result : constant CategoryEntityFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure getCategoryEntityInstance (This : in out CategoryEntityFactory) is
-      Java_Result : constant CategoryEntity_Access := CategoryEntityFactory'Class (This).getCategoryEntityInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getCategoryEntityInstance;
 
 begin

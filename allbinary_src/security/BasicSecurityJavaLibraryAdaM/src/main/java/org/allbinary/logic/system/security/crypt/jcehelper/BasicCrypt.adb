@@ -46,7 +46,7 @@ package body org.allbinary.logic.system.security.crypt.jcehelper.BasicCrypt_Pack
    function Create (keyAsString : Unbounded_String) return BasicCrypt_Access is
       This : constant BasicCrypt_Access := new BasicCrypt;
    begin
-      Initialize (This.all, keyAsString);
+      BasicCrypt_Package.Initialize (This.all, keyAsString);
       return This;
    end Create;
 
@@ -80,7 +80,8 @@ package body org.allbinary.logic.system.security.crypt.jcehelper.BasicCrypt_Pack
         end;
    end decrypt;
 
-   function mutilate (This : in out BasicCrypt; array_Id : Short_Short_Integer_Array_Access) return Short_Short_Integer_Array_Access is
+   function mutilate (This : in out BasicCrypt; array_Id_Param : Short_Short_Integer_Array_Access) return Short_Short_Integer_Array_Access is
+      array_Id : Short_Short_Integer_Array_Access := array_Id_Param;
       value : Short_Short_Integer;
       index : Integer;
    begin
@@ -106,8 +107,8 @@ package body org.allbinary.logic.system.security.crypt.jcehelper.BasicCrypt_Pack
       null;
    end decrypt;
 
-   procedure mutilate (This : in out BasicCrypt; array_Id : Short_Short_Integer_Array_Access) is
-      Java_Result : constant Short_Short_Integer_Array_Access := BasicCrypt'Class (This).mutilate (array_Id);
+   procedure mutilate (This : in out BasicCrypt; array_Id_Param : Short_Short_Integer_Array_Access) is
+      Java_Result : constant Short_Short_Integer_Array_Access := BasicCrypt'Class (This).mutilate (array_Id_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -30,6 +30,10 @@ with org.allbinary.logic.io.path.AbPath_Package; use org.allbinary.logic.io.path
 with org.allbinary.logic.io.path.AbPathData_Package; use org.allbinary.logic.io.path.AbPathData_Package;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
+with org.allbinary.business.user.modules.configuration.UserConfigurationData_Package; use org.allbinary.business.user.modules.configuration.UserConfigurationData_Package;
+with org.allbinary.business.user.modules.configuration.UserConfigurationView_Package; use org.allbinary.business.user.modules.configuration.UserConfigurationView_Package;
+with org.allbinary.business.user.modules.configuration.UserConfigurationInterface_Package; use org.allbinary.business.user.modules.configuration.UserConfigurationInterface_Package;
+with org.allbinary.business.user.modules.configuration.UserConfiguration_Package; use org.allbinary.business.user.modules.configuration.UserConfiguration_Package;
 
 package org.allbinary.business.user.modules.configuration.UserConfigurationInterfaceFactory_Package is
 
@@ -59,7 +63,6 @@ package org.allbinary.business.user.modules.configuration.UserConfigurationInter
    function getInstance (userRole : UserRole_Access) return UserConfigurationInterface_Access;
    procedure getInstance (userRole : UserRole_Access);
    function getInstance return UserConfigurationInterface_Access;
-   procedure getInstance;
 
 end org.allbinary.business.user.modules.configuration.UserConfigurationInterfaceFactory_Package;
 

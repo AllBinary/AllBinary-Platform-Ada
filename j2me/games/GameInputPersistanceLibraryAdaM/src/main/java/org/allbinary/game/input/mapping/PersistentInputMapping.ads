@@ -36,6 +36,7 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.EnumerationUtil_Package; use org.allbinary.util.EnumerationUtil_Package;
+with org.allbinary.game.input.mapping.InputToGameKeyMapping_Package; use org.allbinary.game.input.mapping.InputToGameKeyMapping_Package;
 
 package org.allbinary.game.input.mapping.PersistentInputMapping_Package is
 
@@ -74,22 +75,16 @@ package org.allbinary.game.input.mapping.PersistentInputMapping_Package is
    procedure Initialize (This : in out PersistentInputMapping'Class; name : Unbounded_String);
    function Create (name : Unbounded_String) return PersistentInputMapping_Access;
    function getNullInstance return PersistentInputMapping_Access;
-   procedure getNullInstance;
    function getTotalMapped (This : in out PersistentInputMapping) return Integer;
-   procedure getTotalMapped (This : in out PersistentInputMapping);
    function isDefaultNew (This : in out PersistentInputMapping) return Boolean;
-   procedure isDefaultNew (This : in out PersistentInputMapping);
    function getDefault (This : in out PersistentInputMapping) return InputToGameKeyMapping_Access;
-   procedure getDefault (This : in out PersistentInputMapping);
    procedure setDefault (This : in out PersistentInputMapping; abeClientInformation : AbeClientInformationInterface_Access);
    procedure update (This : in out PersistentInputMapping; abeClientInformation : AbeClientInformationInterface_Access);
    procedure save (This : in out PersistentInputMapping; abeClientInformation : AbeClientInformationInterface_Access);
    procedure init (This : in out PersistentInputMapping; abeClientInformation : AbeClientInformationInterface_Access);
    procedure setInputMappingEventListenerInterface (This : in out PersistentInputMapping; inputMappingEventListenerInterface : InputMappingEventListenerInterface_Access);
    function getInputMappingEventListenerInterface (This : in out PersistentInputMapping) return InputMappingEventListenerInterface_Access;
-   procedure getInputMappingEventListenerInterface (This : in out PersistentInputMapping);
    function getInputMapping (This : in out PersistentInputMapping) return InputToGameKeyMapping_Access;
-   procedure getInputMapping (This : in out PersistentInputMapping);
    function isDelete (This : in out PersistentInputMapping; input : Input_Access) return Boolean;
    procedure isDelete (This : in out PersistentInputMapping; input : Input_Access);
    function isSystemInput (This : in out PersistentInputMapping; input : Input_Access) return Boolean;

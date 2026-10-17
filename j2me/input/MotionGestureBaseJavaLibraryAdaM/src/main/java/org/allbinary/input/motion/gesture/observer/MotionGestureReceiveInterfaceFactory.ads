@@ -22,6 +22,9 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.input.motion.gesture.configuration.MotionGestureConfiguration_Package; use org.allbinary.input.motion.gesture.configuration.MotionGestureConfiguration_Package;
 with org.allbinary.input.motion.gesture.configuration.MotionGestureConfigurationFactory_Package; use org.allbinary.input.motion.gesture.configuration.MotionGestureConfigurationFactory_Package;
+with org.allbinary.input.motion.gesture.observer.ResolveCompleteMotionGestureListener_Package; use org.allbinary.input.motion.gesture.observer.ResolveCompleteMotionGestureListener_Package;
+with org.allbinary.input.motion.gesture.observer.NullCompleteMotionGestureReceiver_Package; use org.allbinary.input.motion.gesture.observer.NullCompleteMotionGestureReceiver_Package;
+with org.allbinary.input.motion.gesture.observer.CompleteMotionGestureListenerInterface_Package; use org.allbinary.input.motion.gesture.observer.CompleteMotionGestureListenerInterface_Package;
 
 package org.allbinary.input.motion.gesture.observer.MotionGestureReceiveInterfaceFactory_Package is
 
@@ -38,7 +41,6 @@ package org.allbinary.input.motion.gesture.observer.MotionGestureReceiveInterfac
    procedure Initialize (This : in out MotionGestureReceiveInterfaceFactory'Class);
    function Create return MotionGestureReceiveInterfaceFactory_Access;
    function getInstance return CompleteMotionGestureListenerInterface_Access;
-   procedure getInstance;
 
 end org.allbinary.input.motion.gesture.observer.MotionGestureReceiveInterfaceFactory_Package;
 

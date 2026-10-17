@@ -21,13 +21,14 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.util.Enumeration_Package; use java.util.Enumeration_Package;
---  with java.util.Hashtable_Package; use java.util.Hashtable_Package;
+with java.util.Hashtable_Package; use java.util.Hashtable_Package;
 --  with java.util.Map_Package; use java.util.Map_Package;
 --  with java.util.Set_Package; use java.util.Set_Package;
 with jsinterop.annotations.JsType_Package; use jsinterop.annotations.JsType_Package;
 
 package org.allbinary.util.ABHashtable_Package is
 
+   package Hashtable_Package renames Standard.java.util.Hashtable_Package;
    package JsType_Package renames Standard.jsinterop.annotations.JsType_Package;
 
    type ABHashtable is tagged;
@@ -40,11 +41,8 @@ package org.allbinary.util.ABHashtable_Package is
    procedure Initialize (This : in out ABHashtable'Class);
    function Create return ABHashtable_Access;
    function size (This : in out ABHashtable) return Integer;
-   procedure size (This : in out ABHashtable);
    function isEmpty (This : in out ABHashtable) return Boolean;
-   procedure isEmpty (This : in out ABHashtable);
    function elements (This : in out ABHashtable) return Enumeration_Access;
-   procedure elements (This : in out ABHashtable);
    function contains (This : in out ABHashtable; value : Java_Object_Access) return Boolean;
    procedure contains (This : in out ABHashtable; value : Java_Object_Access);
    function containsValue (This : in out ABHashtable; value : Java_Object_Access) return Boolean;
@@ -55,13 +53,10 @@ package org.allbinary.util.ABHashtable_Package is
    procedure get (This : in out ABHashtable; key : Java_Object_Access);
    procedure clear (This : in out ABHashtable);
    function clone (This : in out ABHashtable) return Java_Object_Access;
-   procedure clone (This : in out ABHashtable);
    function toString (This : in out ABHashtable) return Unbounded_String;
-   procedure toString (This : in out ABHashtable);
    function equals (This : in out ABHashtable; obj : Java_Object_Access) return Boolean;
    procedure equals (This : in out ABHashtable; obj : Java_Object_Access);
    function hashCode (This : in out ABHashtable) return Integer;
-   procedure hashCode (This : in out ABHashtable);
 
 end org.allbinary.util.ABHashtable_Package;
 

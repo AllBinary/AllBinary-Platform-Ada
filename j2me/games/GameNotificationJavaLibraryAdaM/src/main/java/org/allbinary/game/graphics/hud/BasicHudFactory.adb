@@ -45,16 +45,9 @@ package body org.allbinary.game.graphics.hud.BasicHudFactory_Package is
    function Create return BasicHudFactory_Access is
       This : constant BasicHudFactory_Access := new BasicHudFactory;
    begin
-      Initialize (This.all);
+      BasicHudFactory_Package.Initialize (This.all);
       return This;
    end Create;
-
-   procedure getInstance is
-      Java_Result : constant BasicHudFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

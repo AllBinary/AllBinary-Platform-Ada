@@ -47,7 +47,7 @@ package body org.allbinary.game.score.displayable.HighScoreTextBox_Package is
    function Create (highScoresFactoryInterface : HighScoresFactoryInterface_Access; highScoresHelper : HighScoresHelperBaseInterface_Access; abeClientInformation : AbeClientInformationInterface_Access; gameInfo : GameInfo_Access; cmdListener : CommandListener_Access; name : Unbounded_String; highScore : HighScore_Access; backgrounBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access) return HighScoreTextBox_Access is
       This : constant HighScoreTextBox_Access := new HighScoreTextBox;
    begin
-      Initialize (This.all, highScoresFactoryInterface, highScoresHelper, abeClientInformation, gameInfo, cmdListener, name, highScore, backgrounBasicColor, foregroundBasicColor);
+      HighScoreTextBox_Package.Initialize (This.all, highScoresFactoryInterface, highScoresHelper, abeClientInformation, gameInfo, cmdListener, name, highScore, backgrounBasicColor, foregroundBasicColor);
       return This;
    end Create;
 

@@ -21,6 +21,7 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.score.HighScoresResultsListener_Package; use org.allbinary.game.score.HighScoresResultsListener_Package;
+with org.allbinary.game.score.HighScores_Package; use org.allbinary.game.score.HighScores_Package;
 
 package org.allbinary.game.score.HighScoresHelperBaseInterface_Package is
 

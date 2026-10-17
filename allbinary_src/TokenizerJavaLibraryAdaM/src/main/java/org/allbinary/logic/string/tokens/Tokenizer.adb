@@ -35,7 +35,7 @@ package body org.allbinary.logic.string_Id.tokens.Tokenizer_Package is
    function Create (sep : Unbounded_String) return Tokenizer_Access is
       This : constant Tokenizer_Access := new Tokenizer;
    begin
-      Initialize (This.all, sep);
+      Tokenizer_Package.Initialize (This.all, sep);
       return This;
    end Create;
 

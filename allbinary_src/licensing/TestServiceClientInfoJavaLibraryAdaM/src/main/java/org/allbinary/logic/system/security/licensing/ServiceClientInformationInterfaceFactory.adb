@@ -28,7 +28,7 @@ package body org.allbinary.logic.system.security.licensing.ServiceClientInformat
    function Create return ServiceClientInformationInterfaceFactory_Access is
       This : constant ServiceClientInformationInterfaceFactory_Access := new ServiceClientInformationInterfaceFactory;
    begin
-      Initialize (This.all);
+      ServiceClientInformationInterfaceFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -36,13 +36,6 @@ package body org.allbinary.logic.system.security.licensing.ServiceClientInformat
    function getInstance return AbeClientInformationInterface_Access is
    begin
         return ServiceClientInformationInterfaceFactory_Package.instance;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant AbeClientInformationInterface_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

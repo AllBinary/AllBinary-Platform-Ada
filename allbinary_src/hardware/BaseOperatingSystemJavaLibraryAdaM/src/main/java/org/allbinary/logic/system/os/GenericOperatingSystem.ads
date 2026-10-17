@@ -26,6 +26,7 @@ with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.s
 with org.allbinary.logic.string_Id.StringValidationUtil_Package; use org.allbinary.logic.string_Id.StringValidationUtil_Package;
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.logic.system.os.OperatingSystemInterface_Package; use org.allbinary.logic.system.os.OperatingSystemInterface_Package;
+with org.allbinary.logic.system.os.SystemProperties_Package; use org.allbinary.logic.system.os.SystemProperties_Package;
 
 package org.allbinary.logic.system.os.GenericOperatingSystem_Package is
 
@@ -51,25 +52,15 @@ package org.allbinary.logic.system.os.GenericOperatingSystem_Package is
    procedure Initialize (This : in out GenericOperatingSystem'Class);
    function Create return GenericOperatingSystem_Access;
    function getName (This : in out GenericOperatingSystem) return Unbounded_String;
-   procedure getName (This : in out GenericOperatingSystem);
    function getVersion (This : in out GenericOperatingSystem) return Unbounded_String;
-   procedure getVersion (This : in out GenericOperatingSystem);
    function getArch (This : in out GenericOperatingSystem) return Unbounded_String;
-   procedure getArch (This : in out GenericOperatingSystem);
    function getCharacterSet (This : in out GenericOperatingSystem) return CharacterSet_Access;
-   procedure getCharacterSet (This : in out GenericOperatingSystem);
    function isOverScan (This : in out GenericOperatingSystem) return Boolean;
-   procedure isOverScan (This : in out GenericOperatingSystem);
    function getOverScanXPercent (This : in out GenericOperatingSystem) return Integer;
-   procedure getOverScanXPercent (This : in out GenericOperatingSystem);
    function getOverScanYPercent (This : in out GenericOperatingSystem) return Integer;
-   procedure getOverScanYPercent (This : in out GenericOperatingSystem);
    function isScalable (This : in out GenericOperatingSystem) return Boolean;
-   procedure isScalable (This : in out GenericOperatingSystem);
    function isAutoHide (This : in out GenericOperatingSystem) return Boolean;
-   procedure isAutoHide (This : in out GenericOperatingSystem);
    function toString (This : in out GenericOperatingSystem) return Unbounded_String;
-   procedure toString (This : in out GenericOperatingSystem);
 
 end org.allbinary.logic.system.os.GenericOperatingSystem_Package;
 

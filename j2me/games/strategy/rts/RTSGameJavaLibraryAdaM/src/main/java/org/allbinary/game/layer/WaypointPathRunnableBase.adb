@@ -33,7 +33,7 @@ package body org.allbinary.game.layer.WaypointPathRunnableBase_Package is
    function Create return WaypointPathRunnableBase_Access is
       This : constant WaypointPathRunnableBase_Access := new WaypointPathRunnableBase;
    begin
-      Initialize (This.all);
+      WaypointPathRunnableBase_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -104,34 +104,6 @@ package body org.allbinary.game.layer.WaypointPathRunnableBase_Package is
    begin
         null;
    end reset;
-
-   procedure isRunning (This : in out WaypointPathRunnableBase) is
-      Java_Result : constant Boolean := WaypointPathRunnableBase'Class (This).isRunning;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isRunning;
-
-   procedure getTargetLayer (This : in out WaypointPathRunnableBase) is
-      Java_Result : constant PathFindingLayerInterface_Access := WaypointPathRunnableBase'Class (This).getTargetLayer;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTargetLayer;
-
-   procedure getPriority (This : in out WaypointPathRunnableBase) is
-      Java_Result : constant Integer := WaypointPathRunnableBase'Class (This).getPriority;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getPriority;
-
-   procedure isDone (This : in out WaypointPathRunnableBase) is
-      Java_Result : constant Boolean := WaypointPathRunnableBase'Class (This).isDone;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isDone;
 
 end org.allbinary.game.layer.WaypointPathRunnableBase_Package;
 

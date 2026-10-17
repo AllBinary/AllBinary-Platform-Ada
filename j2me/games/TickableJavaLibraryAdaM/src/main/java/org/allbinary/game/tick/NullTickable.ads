@@ -40,10 +40,8 @@ package org.allbinary.game.tick.NullTickable_Package is
    procedure Initialize (This : in out NullTickable'Class);
    function Create return NullTickable_Access;
    function getInstance return NullTickable_Access;
-   procedure getInstance;
    procedure processTick (This : in out NullTickable; allBinaryLayerManager : AllBinaryLayerManager_Access);
    function getName (This : in out NullTickable) return Unbounded_String;
-   procedure getName (This : in out NullTickable);
 
 end org.allbinary.game.tick.NullTickable_Package;
 

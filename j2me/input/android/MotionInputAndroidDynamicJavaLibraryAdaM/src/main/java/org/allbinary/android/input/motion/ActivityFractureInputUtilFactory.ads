@@ -46,7 +46,6 @@ package org.allbinary.android.input.motion.ActivityFractureInputUtilFactory_Pack
    procedure Initialize (This : in out ActivityFractureInputUtilFactory'Class);
    function Create return ActivityFractureInputUtilFactory_Access;
    function getInstance return ActivityFractureUtil_Access;
-   procedure getInstance;
 
 end org.allbinary.android.input.motion.ActivityFractureInputUtilFactory_Package;
 

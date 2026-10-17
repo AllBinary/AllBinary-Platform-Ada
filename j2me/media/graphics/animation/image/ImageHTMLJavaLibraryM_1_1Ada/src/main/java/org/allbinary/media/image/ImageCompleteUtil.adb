@@ -30,7 +30,7 @@ package body org.allbinary.media.image.ImageCompleteUtil_Package is
    function Create return ImageCompleteUtil_Access is
       This : constant ImageCompleteUtil_Access := new ImageCompleteUtil;
    begin
-      Initialize (This.all);
+      ImageCompleteUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -80,13 +80,6 @@ package body org.allbinary.media.image.ImageCompleteUtil_Package is
    begin
         null;
    end waitForAll;
-
-   procedure getInstance is
-      Java_Result : constant ImageCompleteUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure isReady_Case (This : in out ImageCompleteUtil; image : Image_Access; name : Unbounded_String; timeDelayHelper : TimeDelayHelper_Access) is
       Java_Result : constant Boolean := ImageCompleteUtil'Class (This).isReady_Case (image, name, timeDelayHelper);

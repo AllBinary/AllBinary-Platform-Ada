@@ -29,7 +29,6 @@ package org.allbinary.graphics.form.item.ABCustomImageItem_Package is
    procedure Initialize (This : in out ABCustomImageItem'Class; label : Unbounded_String; image : Image_Access; layout : Integer; altText : Unbounded_String; basicColor : BasicColor_Access; yOffset : Integer);
    function Create (label : Unbounded_String; image : Image_Access; layout : Integer; altText : Unbounded_String; basicColor : BasicColor_Access; yOffset : Integer) return ABCustomImageItem_Access;
    function getImage (This : in out ABCustomImageItem) return Image_Access;
-   procedure getImage (This : in out ABCustomImageItem);
 
 end org.allbinary.graphics.form.item.ABCustomImageItem_Package;
 

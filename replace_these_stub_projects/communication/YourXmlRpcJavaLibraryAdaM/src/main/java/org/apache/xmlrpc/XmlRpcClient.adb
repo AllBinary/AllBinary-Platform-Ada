@@ -19,7 +19,7 @@ package body org.apache.xmlrpc.XmlRpcClient_Package is
    function Create (url : Unbounded_String) return XmlRpcClient_Access is
       This : constant XmlRpcClient_Access := new XmlRpcClient;
    begin
-      Initialize (This.all, url);
+      XmlRpcClient_Package.Initialize (This.all, url);
       return This;
    end Create;
 
@@ -44,13 +44,6 @@ package body org.apache.xmlrpc.XmlRpcClient_Package is
    begin
         return NullUtil_Package.getInstance.NULL_OBJECT;
    end execute;
-
-   procedure getURL (This : in out XmlRpcClient) is
-      Java_Result : constant URL_Access := XmlRpcClient'Class (This).getURL;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getURL;
 
    procedure execute (This : in out XmlRpcClient; method : Unbounded_String; params : BasicArrayList_Access) is
       Java_Result : constant Java_Object_Access := XmlRpcClient'Class (This).execute (method, params);

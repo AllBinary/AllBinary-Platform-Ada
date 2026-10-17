@@ -13,7 +13,7 @@
 --  Generated Code Do Not Modify
 
 
-package body org.allbinary.business.user.commerce.money.payment_Case.gateway.PaymentGatewayPageData_Package is
+package body org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayPageData_Package is
 
    procedure Initialize_Fields (This : in out PaymentGatewayPageData'Class) is
    begin
@@ -86,7 +86,7 @@ package body org.allbinary.business.user.commerce.money.payment_Case.gateway.Pay
    function Create (location : Unbounded_String; paymentMethod : Unbounded_String) return PaymentGatewayPageData_Access is
       This : constant PaymentGatewayPageData_Access := new PaymentGatewayPageData;
    begin
-      Initialize (This.all, location, paymentMethod);
+      PaymentGatewayPageData_Package.Initialize (This.all, location, paymentMethod);
       return This;
    end Create;
 
@@ -98,6 +98,6 @@ begin
    PAYMENTOPTIONS := To_Unbounded_String ("PaymentOptions") & Java_Image (PaymentGatewayPageData_Package.EXTENSION);
    STARTCHECKOUT := To_Unbounded_String ("StartCheckout") & Java_Image (PaymentGatewayPageData_Package.EXTENSION);
 
-end org.allbinary.business.user.commerce.money.payment_Case.gateway.PaymentGatewayPageData_Package;
+end org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayPageData_Package;
 
 

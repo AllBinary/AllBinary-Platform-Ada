@@ -50,7 +50,6 @@ package views.business.context.modules.storefront.generator.GeneratorStoreFrontC
    function view (This : in out GeneratorStoreFrontContextView; group : Unbounded_String) return Unbounded_String;
    procedure view (This : in out GeneratorStoreFrontContextView; group : Unbounded_String);
    function view (This : in out GeneratorStoreFrontContextView) return Unbounded_String;
-   procedure view (This : in out GeneratorStoreFrontContextView);
 
 end views.business.context.modules.storefront.generator.GeneratorStoreFrontContextView_Package;
 

@@ -24,6 +24,7 @@ with jsinterop.annotations.JsType_Package; use jsinterop.annotations.JsType_Pack
 with jsinterop.annotations.JsMethod_Package; use jsinterop.annotations.JsMethod_Package;
 with jsinterop.annotations.JsConstructor_Package; use jsinterop.annotations.JsConstructor_Package;
 with jsinterop.annotations.JsProperty_Package; use jsinterop.annotations.JsProperty_Package;
+with org.allbinary.graphics.GPoint_Package; use org.allbinary.graphics.GPoint_Package;
 
 package org.allbinary.graphics.PointFactory_Package is
 
@@ -45,7 +46,6 @@ package org.allbinary.graphics.PointFactory_Package is
    procedure Initialize (This : in out PointFactory'Class);
    function Create return PointFactory_Access;
    function getInstance return PointFactory_Access;
-   procedure getInstance;
    procedure init (This : in out PointFactory);
    function createXY (This : in out PointFactory; x : Integer; y : Integer) return GPoint_Access;
    procedure createXY (This : in out PointFactory; x : Integer; y : Integer);

@@ -47,7 +47,6 @@ package admin.taghelpers.CustomLoaderHelper_Package is
    procedure Initialize (This : in out CustomLoaderHelper'Class; hashMap : HashMap_Access; pageContext : PageContext_Access);
    function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return CustomLoaderHelper_Access;
    function getWebappPath (This : in out CustomLoaderHelper) return Unbounded_String;
-   procedure getWebappPath (This : in out CustomLoaderHelper);
    procedure setWebappPath (This : in out CustomLoaderHelper; path : Unbounded_String);
 
 end admin.taghelpers.CustomLoaderHelper_Package;

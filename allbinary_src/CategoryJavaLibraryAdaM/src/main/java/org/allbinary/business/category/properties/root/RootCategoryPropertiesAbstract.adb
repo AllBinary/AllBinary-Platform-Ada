@@ -32,7 +32,7 @@ package body org.allbinary.business.category.properties.root.RootCategoryPropert
    function Create return RootCategoryPropertiesAbstract_Access is
       This : constant RootCategoryPropertiesAbstract_Access := new RootCategoryPropertiesAbstract;
    begin
-      Initialize (This.all);
+      RootCategoryPropertiesAbstract_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -137,41 +137,6 @@ package body org.allbinary.business.category.properties.root.RootCategoryPropert
         return Null_Unbounded_String;
    end validationInfo;
 
-   procedure getKey (This : in out RootCategoryPropertiesAbstract) is
-      Java_Result : constant Java_Object_Access := RootCategoryPropertiesAbstract'Class (This).getKey;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getKey;
-
-   procedure getValue (This : in out RootCategoryPropertiesAbstract) is
-      Java_Result : constant Unbounded_String := RootCategoryPropertiesAbstract'Class (This).getValue;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getValue;
-
-   procedure getRootFilePath (This : in out RootCategoryPropertiesAbstract) is
-      Java_Result : constant AbPath_Access := RootCategoryPropertiesAbstract'Class (This).getRootFilePath;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getRootFilePath;
-
-   procedure isRealRoot (This : in out RootCategoryPropertiesAbstract) is
-      Java_Result : constant Boolean := RootCategoryPropertiesAbstract'Class (This).isRealRoot;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isRealRoot;
-
-   procedure isRoot (This : in out RootCategoryPropertiesAbstract) is
-      Java_Result : constant Boolean := RootCategoryPropertiesAbstract'Class (This).isRoot;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isRoot;
-
    procedure getWebAppPath (This : in out RootCategoryPropertiesAbstract; categoryHierarchyInterface : CategoryHierarchyInterface_Access) is
       Java_Result : constant Unbounded_String := RootCategoryPropertiesAbstract'Class (This).getWebAppPath (categoryHierarchyInterface);
       pragma Unreferenced (Java_Result);
@@ -186,54 +151,12 @@ package body org.allbinary.business.category.properties.root.RootCategoryPropert
       null;
    end getPath;
 
-   procedure getFileName (This : in out RootCategoryPropertiesAbstract) is
-      Java_Result : constant Unbounded_String := RootCategoryPropertiesAbstract'Class (This).getFileName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getFileName;
-
-   procedure isValid (This : in out RootCategoryPropertiesAbstract) is
-      Java_Result : constant Boolean := RootCategoryPropertiesAbstract'Class (This).isValid;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isValid;
-
-   procedure toHashMap (This : in out RootCategoryPropertiesAbstract) is
-      Java_Result : constant HashMap_Access := RootCategoryPropertiesAbstract'Class (This).toHashMap;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toHashMap;
-
-   procedure toVector (This : in out RootCategoryPropertiesAbstract) is
-      Java_Result : constant BasicArrayList_Access := RootCategoryPropertiesAbstract'Class (This).toVector;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toVector;
-
-   procedure toValidationInfoDoc (This : in out RootCategoryPropertiesAbstract) is
-      Java_Result : constant Document_Access := RootCategoryPropertiesAbstract'Class (This).toValidationInfoDoc;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toValidationInfoDoc;
-
    procedure toValidationInfoNode (This : in out RootCategoryPropertiesAbstract; document : Document_Access) is
       Java_Result : constant Node_Access := RootCategoryPropertiesAbstract'Class (This).toValidationInfoNode (document);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end toValidationInfoNode;
-
-   procedure validationInfo (This : in out RootCategoryPropertiesAbstract) is
-      Java_Result : constant Unbounded_String := RootCategoryPropertiesAbstract'Class (This).validationInfo;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end validationInfo;
 
 end org.allbinary.business.category.properties.root.RootCategoryPropertiesAbstract_Package;
 

@@ -30,7 +30,7 @@ package body org.allbinary.game.input.motion.action.GameKeyCompleteMotionGesture
    function Create return GameKeyCompleteMotionGestureInputEventFactory_Access is
       This : constant GameKeyCompleteMotionGestureInputEventFactory_Access := new GameKeyCompleteMotionGestureInputEventFactory;
    begin
-      Initialize (This.all);
+      GameKeyCompleteMotionGestureInputEventFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -55,13 +55,6 @@ package body org.allbinary.game.input.motion.action.GameKeyCompleteMotionGesture
             gameKeyCompleteMotionGestureInputEvent.update;
         end loop;
    end updateAll;
-
-   procedure getInstance is
-      Java_Result : constant GameKeyCompleteMotionGestureInputEventFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

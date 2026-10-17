@@ -33,6 +33,7 @@ with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.s
 with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
+with org.allbinary.business.category.store.theme.StoreThemeCategory_Package; use org.allbinary.business.category.store.theme.StoreThemeCategory_Package;
 
 package org.allbinary.business.category.store.theme.StoreThemeCategoryFactory_Package is
 
@@ -63,7 +64,6 @@ package org.allbinary.business.category.store.theme.StoreThemeCategoryFactory_Pa
    procedure Initialize (This : in out StoreThemeCategoryFactory'Class; transformInfoInterface : TransformInfoInterface_Access);
    function Create (transformInfoInterface : TransformInfoInterface_Access) return StoreThemeCategoryFactory_Access;
    function getRootInstance (This : in out StoreThemeCategoryFactory) return CategoryInterface_Access;
-   procedure getRootInstance (This : in out StoreThemeCategoryFactory);
    function getRootInstance (This : in out StoreThemeCategoryFactory; categoryAbPath : AbPath_Access) return CategoryInterface_Access;
    procedure getRootInstance (This : in out StoreThemeCategoryFactory; categoryAbPath : AbPath_Access);
    function getRootInstanceFromNode (This : in out StoreThemeCategoryFactory; node : Node_Access) return CategoryInterface_Access;

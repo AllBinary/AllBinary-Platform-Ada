@@ -39,7 +39,6 @@ package org.allbinary.ag.weapon.media.audio.DropWeaponSound_Package is
    procedure Initialize (This : in out DropWeaponSound'Class);
    function Create return DropWeaponSound_Access;
    function getInstance return Sound_Access;
-   procedure getInstance;
 
 end org.allbinary.ag.weapon.media.audio.DropWeaponSound_Package;
 

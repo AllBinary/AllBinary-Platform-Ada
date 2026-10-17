@@ -36,7 +36,6 @@ package org.allbinary.game.score.NoScoreable_Package is
    procedure Initialize (This : in out NoScoreable'Class);
    function Create return NoScoreable_Access;
    function getInstance return NoScoreable_Access;
-   procedure getInstance;
    procedure addPoints (This : in out NoScoreable; points : Integer);
    procedure removePoints (This : in out NoScoreable; points : Integer);
 

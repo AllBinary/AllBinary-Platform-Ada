@@ -60,7 +60,7 @@ package body org.allbinary.input.automation.module.game.MeteredGameObject_Packag
    function Create (bufferedImage : BufferedImage_Access_Array_Access; minX : Integer; maxX : Integer; y : Integer) return MeteredGameObject_Access is
       This : constant MeteredGameObject_Access := new MeteredGameObject;
    begin
-      Initialize (This.all, bufferedImage, minX, maxX, y);
+      MeteredGameObject_Package.Initialize (This.all, bufferedImage, minX, maxX, y);
       return This;
    end Create;
 
@@ -157,62 +157,6 @@ package body org.allbinary.input.automation.module.game.MeteredGameObject_Packag
    begin
         This.size := size;
    end setSize;
-
-   procedure isGood (This : in out MeteredGameObject) is
-      Java_Result : constant Boolean := MeteredGameObject'Class (This).isGood;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isGood;
-
-   procedure isDropping (This : in out MeteredGameObject) is
-      Java_Result : constant Boolean := MeteredGameObject'Class (This).isDropping;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isDropping;
-
-   procedure getRatios (This : in out MeteredGameObject) is
-      Java_Result : constant Long_Float_Array_Access := MeteredGameObject'Class (This).getRatios;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getRatios;
-
-   procedure toString (This : in out MeteredGameObject) is
-      Java_Result : constant Unbounded_String := MeteredGameObject'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toString;
-
-   procedure getMinX (This : in out MeteredGameObject) is
-      Java_Result : constant Integer := MeteredGameObject'Class (This).getMinX;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getMinX;
-
-   procedure getMaxX (This : in out MeteredGameObject) is
-      Java_Result : constant Integer := MeteredGameObject'Class (This).getMaxX;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getMaxX;
-
-   procedure getY (This : in out MeteredGameObject) is
-      Java_Result : constant Integer := MeteredGameObject'Class (This).getY;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getY;
-
-   procedure getSize (This : in out MeteredGameObject) is
-      Java_Result : constant Integer := MeteredGameObject'Class (This).getSize;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSize;
 
 end org.allbinary.input.automation.module.game.MeteredGameObject_Package;
 

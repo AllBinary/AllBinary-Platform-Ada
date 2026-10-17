@@ -38,6 +38,9 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.w3c.dom.NodeList_Package; use org.w3c.dom.NodeList_Package;
+with org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfilesData_Package; use org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfilesData_Package;
+with org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfileData_Package; use org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfileData_Package;
+with org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfile_Package; use org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfile_Package;
 
 package org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfiles_Package is
 
@@ -73,7 +76,6 @@ package org.allbinary.input.automation.module.generic_Id.configuration.profile.G
    function Create (fileName : Unbounded_String) return GenericProfiles_Access;
    procedure initProfiles (This : in out GenericProfiles; node : Node_Access);
    function getDefaultListModelHelper (This : in out GenericProfiles) return DefaultListModelHelper_Access;
-   procedure getDefaultListModelHelper (This : in out GenericProfiles);
    function get (This : in out GenericProfiles; name : Unbounded_String) return GenericProfile_Access;
    procedure get (This : in out GenericProfiles; name : Unbounded_String);
    procedure add (This : in out GenericProfiles; name : Unbounded_String);
@@ -81,7 +83,6 @@ package org.allbinary.input.automation.module.generic_Id.configuration.profile.G
    function toXmlNode (This : in out GenericProfiles; document : Document_Access) return Node_Access;
    procedure toXmlNode (This : in out GenericProfiles; document : Document_Access);
    function toXmlDoc (This : in out GenericProfiles) return Document_Access;
-   procedure toXmlDoc (This : in out GenericProfiles);
    procedure save (This : in out GenericProfiles);
 
 end org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfiles_Package;

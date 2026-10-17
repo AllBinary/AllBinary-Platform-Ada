@@ -17,7 +17,7 @@ package body org.allbinary.logic.util.cache.PoolTypeFactory_Package is
    function Create return PoolTypeFactory_Access is
       This : constant PoolTypeFactory_Access := new PoolTypeFactory;
    begin
-      Initialize (This.all);
+      PoolTypeFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -25,13 +25,6 @@ package body org.allbinary.logic.util.cache.PoolTypeFactory_Package is
    function getInstance return PoolTypeFactory_Access is
    begin
         return PoolTypeFactory_Package.instance;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant PoolTypeFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

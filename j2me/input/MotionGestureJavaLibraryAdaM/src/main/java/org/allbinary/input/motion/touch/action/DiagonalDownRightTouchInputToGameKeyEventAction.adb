@@ -37,16 +37,9 @@ package body org.allbinary.input.motion.touch.action.DiagonalDownRightTouchInput
    function Create return DiagonalDownRightTouchInputToGameKeyEventAction_Access is
       This : constant DiagonalDownRightTouchInputToGameKeyEventAction_Access := new DiagonalDownRightTouchInputToGameKeyEventAction;
    begin
-      Initialize (This.all);
+      DiagonalDownRightTouchInputToGameKeyEventAction_Package.Initialize (This.all);
       return This;
    end Create;
-
-   procedure getInstance is
-      Java_Result : constant GameKeyCompleteMotionGestureInputEvent_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

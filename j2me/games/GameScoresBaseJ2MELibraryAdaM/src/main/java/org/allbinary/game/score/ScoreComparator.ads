@@ -46,7 +46,6 @@ package org.allbinary.game.score.ScoreComparator_Package is
    procedure Initialize (This : in out ScoreComparator'Class; isHighestBest : Boolean);
    function Create (isHighestBest : Boolean) return ScoreComparator_Access;
    function getBestScore (This : in out ScoreComparator) return Long_Long_Integer;
-   procedure getBestScore (This : in out ScoreComparator);
    function compare (This : in out ScoreComparator; recordOne : Short_Short_Integer_Array_Access; recordTwo : Short_Short_Integer_Array_Access) return Integer;
    procedure compare (This : in out ScoreComparator; recordOne : Short_Short_Integer_Array_Access; recordTwo : Short_Short_Integer_Array_Access);
    function getHighTooLow (This : in out ScoreComparator; scoreOne : Long_Long_Integer; scoreTwo : Long_Long_Integer) return Integer;

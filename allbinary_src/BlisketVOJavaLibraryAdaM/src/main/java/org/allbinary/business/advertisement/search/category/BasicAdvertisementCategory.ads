@@ -37,7 +37,6 @@ package org.allbinary.business.advertisement.search.category.BasicAdvertisementC
    procedure Initialize (This : in out BasicAdvertisementCategory'Class; categoryId : Unbounded_String);
    function Create (categoryId : Unbounded_String) return BasicAdvertisementCategory_Access;
    function toString (This : in out BasicAdvertisementCategory) return Unbounded_String;
-   procedure toString (This : in out BasicAdvertisementCategory);
 
 end org.allbinary.business.advertisement.search.category.BasicAdvertisementCategory_Package;
 

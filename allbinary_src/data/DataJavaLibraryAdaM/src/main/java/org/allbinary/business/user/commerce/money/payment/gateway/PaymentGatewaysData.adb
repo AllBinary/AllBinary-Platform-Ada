@@ -30,7 +30,7 @@ package body org.allbinary.business.user.commerce.money.payment.gateway.PaymentG
    function Create return PaymentGatewaysData_Access is
       This : constant PaymentGatewaysData_Access := new PaymentGatewaysData;
    begin
-      Initialize (This.all);
+      PaymentGatewaysData_Package.Initialize (This.all);
       return This;
    end Create;
 

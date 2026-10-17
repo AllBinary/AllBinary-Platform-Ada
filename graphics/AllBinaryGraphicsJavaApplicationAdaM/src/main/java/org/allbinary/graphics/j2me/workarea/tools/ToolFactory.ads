@@ -23,6 +23,8 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.graphics.j2me.StatusFactory_Package; use org.allbinary.graphics.j2me.StatusFactory_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.graphics.j2me.workarea.tools.GraphicsItemInterfaceFactoryInterface_Package; use org.allbinary.graphics.j2me.workarea.tools.GraphicsItemInterfaceFactoryInterface_Package;
+with org.allbinary.graphics.j2me.workarea.tools.GraphicItemFactory_Package; use org.allbinary.graphics.j2me.workarea.tools.GraphicItemFactory_Package;
 
 package org.allbinary.graphics.j2me.workarea.tools.ToolFactory_Package is
 
@@ -47,10 +49,8 @@ package org.allbinary.graphics.j2me.workarea.tools.ToolFactory_Package is
    procedure Initialize (This : in out ToolFactory'Class);
    function Create return ToolFactory_Access;
    function getInstance return ToolFactory_Access;
-   procedure getInstance;
    procedure setSelectedTool (This : in out ToolFactory; tool : Unbounded_String);
    function getSelectedToolFactory (This : in out ToolFactory) return GraphicsItemInterfaceFactoryInterface_Access;
-   procedure getSelectedToolFactory (This : in out ToolFactory);
 
 end org.allbinary.graphics.j2me.workarea.tools.ToolFactory_Package;
 

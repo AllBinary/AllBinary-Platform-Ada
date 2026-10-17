@@ -39,7 +39,7 @@ package body org.allbinary.graphics.j2me.dialog.RotateJDialog_Package is
    function Create (parent : Frame_Access; modal : Boolean) return RotateJDialog_Access is
       This : constant RotateJDialog_Access := new RotateJDialog;
    begin
-      Initialize (This.all, parent, modal);
+      RotateJDialog_Package.Initialize (This.all, parent, modal);
       return This;
    end Create;
 

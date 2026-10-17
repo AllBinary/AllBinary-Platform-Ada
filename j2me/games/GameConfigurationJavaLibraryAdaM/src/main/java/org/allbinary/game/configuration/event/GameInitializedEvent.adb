@@ -32,7 +32,7 @@ package body org.allbinary.game.configuration.event.GameInitializedEvent_Package
    function Create (anyType : Java_Object_Access) return GameInitializedEvent_Access is
       This : constant GameInitializedEvent_Access := new GameInitializedEvent;
    begin
-      Initialize (This.all, anyType);
+      GameInitializedEvent_Package.Initialize (This.all, anyType);
       return This;
    end Create;
 
@@ -56,20 +56,6 @@ package body org.allbinary.game.configuration.event.GameInitializedEvent_Package
    function getResourceLoadingLevel (This : in out GameInitializedEvent) return ResourceLoadingLevel_Access is
    begin
         return This.resourceLoadingLevel;
-   end getResourceLoadingLevel;
-
-   procedure getLevel (This : in out GameInitializedEvent) is
-      Java_Result : constant Integer := GameInitializedEvent'Class (This).getLevel;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getLevel;
-
-   procedure getResourceLoadingLevel (This : in out GameInitializedEvent) is
-      Java_Result : constant ResourceLoadingLevel_Access := GameInitializedEvent'Class (This).getResourceLoadingLevel;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getResourceLoadingLevel;
 
 end org.allbinary.game.configuration.event.GameInitializedEvent_Package;

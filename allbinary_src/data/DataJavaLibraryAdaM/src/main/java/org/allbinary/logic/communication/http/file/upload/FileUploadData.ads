@@ -21,7 +21,7 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 
-package org.allbinary.logic.communication.http.file_Case.upload.FileUploadData_Package is
+package org.allbinary.logic.communication.http.file.upload.FileUploadData_Package is
 
 
    type FileUploadData is tagged;
@@ -39,8 +39,7 @@ package org.allbinary.logic.communication.http.file_Case.upload.FileUploadData_P
    procedure Initialize (This : in out FileUploadData'Class);
    function Create return FileUploadData_Access;
    function getInstance return FileUploadData_Access;
-   procedure getInstance;
 
-end org.allbinary.logic.communication.http.file_Case.upload.FileUploadData_Package;
+end org.allbinary.logic.communication.http.file.upload.FileUploadData_Package;
 
 

@@ -36,7 +36,7 @@ package body org.allbinary.data.tables.user.commerce.inventory.item.groups.Basic
    function Create return BasicGroupItemsEntityFactory_Access is
       This : constant BasicGroupItemsEntityFactory_Access := new BasicGroupItemsEntityFactory;
    begin
-      Initialize (This.all);
+      BasicGroupItemsEntityFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -57,20 +57,6 @@ package body org.allbinary.data.tables.user.commerce.inventory.item.groups.Basic
             return null;
                 end;
         end;
-   end getBasicGroupItemsEntityInstance;
-
-   procedure getInstance is
-      Java_Result : constant BasicGroupItemsEntityFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure getBasicGroupItemsEntityInstance (This : in out BasicGroupItemsEntityFactory) is
-      Java_Result : constant BasicGroupItemsEntity_Access := BasicGroupItemsEntityFactory'Class (This).getBasicGroupItemsEntityInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getBasicGroupItemsEntityInstance;
 
 begin

@@ -22,6 +22,7 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
 with org.allbinary.layer.AllBinaryLayerFactoryInterface_Package; use org.allbinary.layer.AllBinaryLayerFactoryInterface_Package;
+with org.allbinary.game.ag.layer.pickup.health.HealLayer_Package; use org.allbinary.game.ag.layer.pickup.health.HealLayer_Package;
 
 package org.allbinary.game.ag.layer.pickup.health.HealLayerFactory_Package is
 
@@ -38,7 +39,6 @@ package org.allbinary.game.ag.layer.pickup.health.HealLayerFactory_Package is
    procedure Initialize (This : in out HealLayerFactory'Class);
    function Create return HealLayerFactory_Access;
    function getInstance (This : in out HealLayerFactory) return AllBinaryLayer_Access;
-   procedure getInstance (This : in out HealLayerFactory);
 
 end org.allbinary.game.ag.layer.pickup.health.HealLayerFactory_Package;
 

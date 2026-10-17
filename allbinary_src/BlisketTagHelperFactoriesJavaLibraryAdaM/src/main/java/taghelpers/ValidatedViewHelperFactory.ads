@@ -25,6 +25,7 @@ with AllBinary_Java; use AllBinary_Java;
 with admin.taghelpers.TagHelperFactory_Package; use admin.taghelpers.TagHelperFactory_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.system.security.licensing.LicensingException_Package; use org.allbinary.logic.system.security.licensing.LicensingException_Package;
+with taghelpers.ValidationViewHelper_Package; use taghelpers.ValidationViewHelper_Package;
 
 package taghelpers.ValidatedViewHelperFactory_Package is
 

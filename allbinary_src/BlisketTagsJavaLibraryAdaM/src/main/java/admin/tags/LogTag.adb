@@ -32,7 +32,7 @@ package body admin.tags.LogTag_Package is
    function Create return LogTag_Access is
       This : constant LogTag_Access := new LogTag;
    begin
-      Initialize (This.all);
+      LogTag_Package.Initialize (This.all);
       return This;
    end Create;
 

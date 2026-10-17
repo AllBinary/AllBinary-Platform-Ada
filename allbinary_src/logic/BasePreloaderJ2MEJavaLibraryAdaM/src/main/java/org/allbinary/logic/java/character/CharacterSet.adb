@@ -30,20 +30,13 @@ package body org.allbinary.logic.java.character_Id.CharacterSet_Package is
    function Create return CharacterSet_Access is
       This : constant CharacterSet_Access := new CharacterSet;
    begin
-      Initialize (This.all);
+      CharacterSet_Package.Initialize (This.all);
       return This;
    end Create;
 
    function toString (This : in out CharacterSet) return Unbounded_String is
    begin
         return To_Unbounded_String ("Default Character Set: Empty Implementation");
-   end toString;
-
-   procedure toString (This : in out CharacterSet) is
-      Java_Result : constant Unbounded_String := CharacterSet'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end toString;
 
 end org.allbinary.logic.java.character_Id.CharacterSet_Package;

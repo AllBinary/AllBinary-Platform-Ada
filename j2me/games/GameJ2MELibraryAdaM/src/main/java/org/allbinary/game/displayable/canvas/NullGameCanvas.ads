@@ -55,16 +55,12 @@ package org.allbinary.game.displayable.canvas.NullGameCanvas_Package is
    procedure Initialize (This : in out NullGameCanvas'Class; gameLayerManager : AllBinaryGameLayerManager_Access);
    function Create (gameLayerManager : AllBinaryGameLayerManager_Access) return NullGameCanvas_Access;
    function createNull return NullGameCanvas_Access;
-   procedure createNull;
    function getInstance return NullGameCanvas_Access;
-   procedure getInstance;
    function createCanvas (gameLayerManager : AllBinaryGameLayerManager_Access) return NullGameCanvas_Access;
    procedure createCanvas (gameLayerManager : AllBinaryGameLayerManager_Access);
    function isGameOver (This : in out NullGameCanvas) return Boolean;
-   procedure isGameOver (This : in out NullGameCanvas);
    procedure setRunning (This : in out NullGameCanvas; running : Boolean);
    function isRunning (This : in out NullGameCanvas) return Boolean;
-   procedure isRunning (This : in out NullGameCanvas);
    procedure pause (This : in out NullGameCanvas);
    procedure unPause (This : in out NullGameCanvas);
    procedure initCommands (This : in out NullGameCanvas; cmdListener : CommandListener_Access);
@@ -72,7 +68,6 @@ package org.allbinary.game.displayable.canvas.NullGameCanvas_Package is
    procedure draw (This : in out NullGameCanvas; graphics : Graphics_Access);
    procedure run (This : in out NullGameCanvas);
    function getType (This : in out NullGameCanvas) return Integer;
-   procedure getType (This : in out NullGameCanvas);
 
 end org.allbinary.game.displayable.canvas.NullGameCanvas_Package;
 

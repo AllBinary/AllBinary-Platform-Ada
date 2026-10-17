@@ -28,6 +28,8 @@ with org.allbinary.graphics.Anchor_Package; use org.allbinary.graphics.Anchor_Pa
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
 with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.media.image.ImageUtil_Package; use org.allbinary.media.image.ImageUtil_Package;
+with org.allbinary.media.image.ImageCreationUtil_Package; use org.allbinary.media.image.ImageCreationUtil_Package;
 
 package org.allbinary.media.image.ImageModifierUtil_Package is
 
@@ -50,7 +52,6 @@ package org.allbinary.media.image.ImageModifierUtil_Package is
    procedure Initialize (This : in out ImageModifierUtil'Class);
    function Create return ImageModifierUtil_Access;
    function getInstanceOrCreate return ImageModifierUtil_Access;
-   procedure getInstanceOrCreate;
    procedure setBasicColorP (This : in out ImageModifierUtil; basicColor : BasicColor_Access);
    procedure setColor (This : in out ImageModifierUtil; unusedOriginalImage : Image_Access; image : Image_Access; imageIndex : Integer; basicColor : BasicColor_Access);
    procedure changeColor (This : in out ImageModifierUtil; unusedOriginalImage : Image_Access; image : Image_Access; imageIndex : Integer; basicColor : BasicColor_Access);

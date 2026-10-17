@@ -20,6 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
+with org.allbinary.graphics.opengles.shader.OpenGLObject3dProcessor_Package; use org.allbinary.graphics.opengles.shader.OpenGLObject3dProcessor_Package;
 
 package org.allbinary.graphics.opengles.shader.NullOpenGLTextureProcessor_Package is
 
@@ -35,7 +36,6 @@ package org.allbinary.graphics.opengles.shader.NullOpenGLTextureProcessor_Packag
    procedure Initialize (This : in out NullOpenGLTextureProcessor'Class);
    function Create return NullOpenGLTextureProcessor_Access;
    function getInstance return OpenGLObject3dProcessor_Access;
-   procedure getInstance;
 
 end org.allbinary.graphics.opengles.shader.NullOpenGLTextureProcessor_Package;
 

@@ -30,7 +30,7 @@ package body org.allbinary.logic.visual.dhtml.html.HtmlAnchor_Package is
    function Create return HtmlAnchor_Access is
       This : constant HtmlAnchor_Access := new HtmlAnchor;
    begin
-      Initialize (This.all);
+      HtmlAnchor_Package.Initialize (This.all);
       return This;
    end Create;
 

@@ -33,7 +33,7 @@ package body org.allbinary.media.graphics.geography.map.racetrack.RaceTrackFrict
    function Create (roadFriction : Integer; groundFriction : Integer) return RaceTrackFrictionProperties_Access is
       This : constant RaceTrackFrictionProperties_Access := new RaceTrackFrictionProperties;
    begin
-      Initialize (This.all, roadFriction, groundFriction);
+      RaceTrackFrictionProperties_Package.Initialize (This.all, roadFriction, groundFriction);
       return This;
    end Create;
 
@@ -45,20 +45,6 @@ package body org.allbinary.media.graphics.geography.map.racetrack.RaceTrackFrict
    function getGroundFrictionNominator (This : in out RaceTrackFrictionProperties) return Integer is
    begin
         return This.GROUND_FRICTION_NOMINATOR;
-   end getGroundFrictionNominator;
-
-   procedure getRoadFrictionNominator (This : in out RaceTrackFrictionProperties) is
-      Java_Result : constant Integer := RaceTrackFrictionProperties'Class (This).getRoadFrictionNominator;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getRoadFrictionNominator;
-
-   procedure getGroundFrictionNominator (This : in out RaceTrackFrictionProperties) is
-      Java_Result : constant Integer := RaceTrackFrictionProperties'Class (This).getGroundFrictionNominator;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getGroundFrictionNominator;
 
 end org.allbinary.media.graphics.geography.map.racetrack.RaceTrackFrictionProperties_Package;

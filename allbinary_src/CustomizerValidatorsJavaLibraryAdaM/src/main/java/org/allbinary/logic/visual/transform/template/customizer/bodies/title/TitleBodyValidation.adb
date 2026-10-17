@@ -40,7 +40,7 @@ package body org.allbinary.logic.visual.transform.template.customizer.bodies.tit
    function Create return TitleBodyValidation_Access is
       This : constant TitleBodyValidation_Access := new TitleBodyValidation;
    begin
-      Initialize (This.all);
+      TitleBodyValidation_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -75,7 +75,7 @@ package body org.allbinary.logic.visual.transform.template.customizer.bodies.tit
    function Create (document : Document_Access) return TitleBodyValidation_Access is
       This : constant TitleBodyValidation_Access := new TitleBodyValidation;
    begin
-      Initialize (This.all, document);
+      TitleBodyValidation_Package.Initialize (This.all, document);
       return This;
    end Create;
 
@@ -93,7 +93,7 @@ package body org.allbinary.logic.visual.transform.template.customizer.bodies.tit
    function Create (hashMap : HashMap_Access) return TitleBodyValidation_Access is
       This : constant TitleBodyValidation_Access := new TitleBodyValidation;
    begin
-      Initialize (This.all, hashMap);
+      TitleBodyValidation_Package.Initialize (This.all, hashMap);
       return This;
    end Create;
 
@@ -181,27 +181,6 @@ package body org.allbinary.logic.visual.transform.template.customizer.bodies.tit
         node.appendChild (This.titleValidation.toXmlNode (document));
         return node;
    end toXmlNode;
-
-   procedure isValid (This : in out TitleBodyValidation) is
-      Java_Result : constant Boolean := TitleBodyValidation'Class (This).isValid;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isValid;
-
-   procedure validationInfo (This : in out TitleBodyValidation) is
-      Java_Result : constant Unbounded_String := TitleBodyValidation'Class (This).validationInfo;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end validationInfo;
-
-   procedure toValidationInfoDoc (This : in out TitleBodyValidation) is
-      Java_Result : constant Document_Access := TitleBodyValidation'Class (This).toValidationInfoDoc;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toValidationInfoDoc;
 
    procedure toValidationInfoNode (This : in out TitleBodyValidation; document : Document_Access) is
       Java_Result : constant Node_Access := TitleBodyValidation'Class (This).toValidationInfoNode (document);

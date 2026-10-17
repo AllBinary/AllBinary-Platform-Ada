@@ -34,7 +34,7 @@ package body org.allbinary.input.motion.GestureOnlyMotionRecognizer_Package is
    function Create return GestureOnlyMotionRecognizer_Access is
       This : constant GestureOnlyMotionRecognizer_Access := new GestureOnlyMotionRecognizer;
    begin
-      Initialize (This.all);
+      GestureOnlyMotionRecognizer_Package.Initialize (This.all);
       return This;
    end Create;
 

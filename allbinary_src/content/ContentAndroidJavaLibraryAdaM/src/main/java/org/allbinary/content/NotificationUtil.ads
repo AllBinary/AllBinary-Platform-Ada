@@ -30,6 +30,9 @@ with org.allbinary.android.AndroidInfoFactory_Package; use org.allbinary.android
 with org.allbinary.data.resource.ResourceUtil_Package; use org.allbinary.data.resource.ResourceUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.content.NotificationBuilder_Package; use org.allbinary.content.NotificationBuilder_Package;
+with org.allbinary.content.NotificationBuilderAPI23_Package; use org.allbinary.content.NotificationBuilderAPI23_Package;
+with org.allbinary.content.CommandUriAction_Package; use org.allbinary.content.CommandUriAction_Package;
 
 package org.allbinary.content.NotificationUtil_Package is
 
@@ -58,7 +61,6 @@ package org.allbinary.content.NotificationUtil_Package is
    procedure Initialize (This : in out NotificationUtil'Class);
    function Create return NotificationUtil_Access;
    function getInstance return NotificationUtil_Access;
-   procedure getInstance;
    procedure notify (This : in out NotificationUtil; command : Command_Access; resource : Unbounded_String; message : Unbounded_String);
 
 end org.allbinary.content.NotificationUtil_Package;

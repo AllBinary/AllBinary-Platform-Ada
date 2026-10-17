@@ -40,7 +40,6 @@ package org.allbinary.content.CommandUriAction_Package is
    procedure Initialize (This : in out CommandUriAction'Class);
    function Create return CommandUriAction_Access;
    function getInstance return CommandUriAction_Access;
-   procedure getInstance;
    procedure add (This : in out CommandUriAction; command : Command_Access; url : Unbounded_String);
    procedure process (This : in out CommandUriAction; command : Command_Access);
 

@@ -17,7 +17,7 @@ package body org.allbinary.media.image.BufferedImageUtil2_Package is
    function Create return BufferedImageUtil2_Access is
       This : constant BufferedImageUtil2_Access := new BufferedImageUtil2;
    begin
-      Initialize (This.all);
+      BufferedImageUtil2_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -62,13 +62,6 @@ package body org.allbinary.media.image.BufferedImageUtil2_Package is
         g.dispose;
         return bufferedImage;
    end createSpriteImage;
-
-   procedure getInstance is
-      Java_Result : constant BufferedImageUtil2_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure createSpriteImage (This : in out BufferedImageUtil2; bufferedImageArray : BufferedImage_Access_Array_Access) is
       Java_Result : constant BufferedImage_Access := BufferedImageUtil2'Class (This).createSpriteImage (bufferedImageArray);

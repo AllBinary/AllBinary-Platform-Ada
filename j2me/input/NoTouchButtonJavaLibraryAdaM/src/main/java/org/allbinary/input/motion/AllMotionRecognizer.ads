@@ -42,7 +42,6 @@ package org.allbinary.input.motion.AllMotionRecognizer_Package is
    procedure processMovedMotionEvent (This : in out AllMotionRecognizer; x : Integer; y : Integer; deviceId : Integer; modifiers : Integer);
    procedure processScrolledMotionEvent (This : in out AllMotionRecognizer; x : Integer; y : Integer; deviceId : Integer; modifiers : Integer);
    function getId (This : in out AllMotionRecognizer) return Integer;
-   procedure getId (This : in out AllMotionRecognizer);
 
 end org.allbinary.input.motion.AllMotionRecognizer_Package;
 

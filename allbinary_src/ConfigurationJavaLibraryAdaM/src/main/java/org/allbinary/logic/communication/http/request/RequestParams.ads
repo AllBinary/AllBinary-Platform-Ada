@@ -32,6 +32,7 @@ with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
+with org.allbinary.logic.communication.http.request.RequestData_Package; use org.allbinary.logic.communication.http.request.RequestData_Package;
 
 package org.allbinary.logic.communication.http.request.RequestParams_Package is
 
@@ -60,11 +61,9 @@ package org.allbinary.logic.communication.http.request.RequestParams_Package is
    function Create return RequestParams_Access;
    procedure setMap (This : in out RequestParams; map : Map_Access);
    function getMap (This : in out RequestParams) return Map_Access;
-   procedure getMap (This : in out RequestParams);
    function toXmlNode (This : in out RequestParams; document : Document_Access) return Node_Access;
    procedure toXmlNode (This : in out RequestParams; document : Document_Access);
    function toHashMap (This : in out RequestParams) return HashMap_Access;
-   procedure toHashMap (This : in out RequestParams);
 
 end org.allbinary.logic.communication.http.request.RequestParams_Package;
 

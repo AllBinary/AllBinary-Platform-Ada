@@ -31,7 +31,7 @@ package body org.allbinary.logic.util.cache.ImageCacheable_Package is
    function Create (name : Unbounded_String; anyType : Java_Object_Access) return ImageCacheable_Access is
       This : constant ImageCacheable_Access := new ImageCacheable;
    begin
-      Initialize (This.all, name, anyType);
+      ImageCacheable_Package.Initialize (This.all, name, anyType);
       return This;
    end Create;
 
@@ -43,20 +43,6 @@ package body org.allbinary.logic.util.cache.ImageCacheable_Package is
    function toString (This : in out ImageCacheable) return Unbounded_String is
    begin
         return This.name;
-   end toString;
-
-   procedure getKey (This : in out ImageCacheable) is
-      Java_Result : constant Java_Object_Access := ImageCacheable'Class (This).getKey;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getKey;
-
-   procedure toString (This : in out ImageCacheable) is
-      Java_Result : constant Unbounded_String := ImageCacheable'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end toString;
 
 end org.allbinary.logic.util.cache.ImageCacheable_Package;

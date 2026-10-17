@@ -42,7 +42,6 @@ package org.allbinary.logic.system.hardware.components.linux.Bridge_Package is
    function compareTo (This : in out Bridge; componentInterface : HardwareComponentInterface_Access) return Boolean;
    procedure compareTo (This : in out Bridge; componentInterface : HardwareComponentInterface_Access);
    function toString (This : in out Bridge) return Unbounded_String;
-   procedure toString (This : in out Bridge);
 
 end org.allbinary.logic.system.hardware.components.linux.Bridge_Package;
 

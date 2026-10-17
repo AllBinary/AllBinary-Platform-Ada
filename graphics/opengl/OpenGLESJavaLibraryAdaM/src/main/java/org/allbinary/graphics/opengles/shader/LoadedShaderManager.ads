@@ -20,6 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
+with org.allbinary.graphics.opengles.shader.ShaderManager_Package; use org.allbinary.graphics.opengles.shader.ShaderManager_Package;
 
 package org.allbinary.graphics.opengles.shader.LoadedShaderManager_Package is
 
@@ -35,7 +36,6 @@ package org.allbinary.graphics.opengles.shader.LoadedShaderManager_Package is
    procedure Initialize (This : in out LoadedShaderManager'Class);
    function Create return LoadedShaderManager_Access;
    function getInstance return ShaderManager_Access;
-   procedure getInstance;
 
 end org.allbinary.graphics.opengles.shader.LoadedShaderManager_Package;
 

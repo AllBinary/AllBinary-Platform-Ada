@@ -20,7 +20,7 @@ package body org.allbinary.graphics.OpenGLBitmap_Package is
    function Create (bitmap : Java_Object_Access) return OpenGLBitmap_Access is
       This : constant OpenGLBitmap_Access := new OpenGLBitmap;
    begin
-      Initialize (This.all, bitmap);
+      OpenGLBitmap_Package.Initialize (This.all, bitmap);
       return This;
    end Create;
 

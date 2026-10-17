@@ -42,7 +42,7 @@ package body org.allbinary.game.layer.pickup.PickupBehavior_Package is
    function Create (ownerLayerInterface : CollidableCompositeLayer_Access; countedIndex : Integer) return PickupBehavior_Access is
       This : constant PickupBehavior_Access := new PickupBehavior;
    begin
-      Initialize (This.all, ownerLayerInterface, countedIndex);
+      PickupBehavior_Package.Initialize (This.all, ownerLayerInterface, countedIndex);
       return This;
    end Create;
 
@@ -178,13 +178,6 @@ package body org.allbinary.game.layer.pickup.PickupBehavior_Package is
         return This.countedIndex;
    end getCountedIndex;
 
-   procedure getNullInstance is
-      Java_Result : constant PickupBehavior_Access := getNullInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getNullInstance;
-
    procedure getFirstAvailableCountedLayerInterfaceFactory (This : in out PickupBehavior; pickedUpLayerTypeArray : PickedUpLayerType_Access_Array_Access) is
       Java_Result : constant CountedLayerInterfaceFactoryPart_Access := PickupBehavior'Class (This).getFirstAvailableCountedLayerInterfaceFactory (pickedUpLayerTypeArray);
       pragma Unreferenced (Java_Result);
@@ -198,13 +191,6 @@ package body org.allbinary.game.layer.pickup.PickupBehavior_Package is
    begin
       null;
    end getCountedLayerInterfaceFactoryForSlot;
-
-   procedure getCountedIndex (This : in out PickupBehavior) is
-      Java_Result : constant Integer := PickupBehavior'Class (This).getCountedIndex;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getCountedIndex;
 
 begin
    null;

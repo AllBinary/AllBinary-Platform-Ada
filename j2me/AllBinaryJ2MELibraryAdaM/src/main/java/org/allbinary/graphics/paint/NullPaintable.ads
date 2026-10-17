@@ -36,7 +36,6 @@ package org.allbinary.graphics.paint.NullPaintable_Package is
    procedure Initialize (This : in out NullPaintable'Class);
    function Create return NullPaintable_Access;
    function getInstance return Paintable_Access;
-   procedure getInstance;
 
 end org.allbinary.graphics.paint.NullPaintable_Package;
 

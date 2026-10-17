@@ -30,7 +30,7 @@ package body org.allbinary.game.layer.capital.event.CapitalEventHandler_Package 
    function Create return CapitalEventHandler_Access is
       This : constant CapitalEventHandler_Access := new CapitalEventHandler;
    begin
-      Initialize (This.all);
+      CapitalEventHandler_Package.Initialize (This.all);
       return This;
    end Create;
 

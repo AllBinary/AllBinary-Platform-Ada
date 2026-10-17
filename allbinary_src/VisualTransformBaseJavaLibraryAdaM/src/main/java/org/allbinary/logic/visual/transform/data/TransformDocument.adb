@@ -53,7 +53,7 @@ package body org.allbinary.logic.visual.transform.data.TransformDocument_Package
    function Create return TransformDocument_Access is
       This : constant TransformDocument_Access := new TransformDocument;
    begin
-      Initialize (This.all);
+      TransformDocument_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -81,27 +81,6 @@ package body org.allbinary.logic.visual.transform.data.TransformDocument_Package
         stringBuffer.append (To_Unbounded_String ("" & ASCII.LF & "Document: "));
         stringBuffer.append (XmlDocumentHelper_Package.toString (This.document));
         return stringBuffer.toString;
-   end log;
-
-   procedure getBaseNode (This : in out TransformDocument) is
-      Java_Result : constant Node_Access := TransformDocument'Class (This).getBaseNode;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getBaseNode;
-
-   procedure getDoc (This : in out TransformDocument) is
-      Java_Result : constant Document_Access := TransformDocument'Class (This).getDoc;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getDoc;
-
-   procedure log (This : in out TransformDocument) is
-      Java_Result : constant Unbounded_String := TransformDocument'Class (This).log;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end log;
 
 end org.allbinary.logic.visual.transform.data.TransformDocument_Package;

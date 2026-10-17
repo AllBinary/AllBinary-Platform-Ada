@@ -35,7 +35,7 @@ package body org.allbinary.graphics.j2me.workarea.canvas.Grid_Package is
    function Create return Grid_Access is
       This : constant Grid_Access := new Grid;
    begin
-      Initialize (This.all);
+      Grid_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -52,7 +52,7 @@ package body org.allbinary.graphics.j2me.workarea.canvas.Grid_Package is
    function Create (grid : Grid_Access) return Grid_Access is
       This : constant Grid_Access := new Grid;
    begin
-      Initialize (This.all, grid);
+      Grid_Package.Initialize (This.all, grid);
       return This;
    end Create;
 
@@ -81,7 +81,8 @@ package body org.allbinary.graphics.j2me.workarea.canvas.Grid_Package is
         This.isGridOn := value;
    end showGrid;
 
-   procedure setZoom (This : in out Grid; zoom : Integer) is
+   procedure setZoom (This : in out Grid; zoom_Param : Integer) is
+      zoom : Integer := zoom_Param;
    begin
         This.zoom := zoom;
         if (This.zoom) < (1) then
@@ -89,34 +90,6 @@ package body org.allbinary.graphics.j2me.workarea.canvas.Grid_Package is
         end if;
         This.isChanged := True;
    end setZoom;
-
-   procedure isGridOn (This : in out Grid) is
-      Java_Result : constant Boolean := Grid'Class (This).isGridOn;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isGridOn;
-
-   procedure isGridPossible (This : in out Grid) is
-      Java_Result : constant Boolean := Grid'Class (This).isGridPossible;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isGridPossible;
-
-   procedure getGrid (This : in out Grid) is
-      Java_Result : constant GPoint_Access := Grid'Class (This).getGrid;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getGrid;
-
-   procedure getZoom (This : in out Grid) is
-      Java_Result : constant Integer := Grid'Class (This).getZoom;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getZoom;
 
 end org.allbinary.graphics.j2me.workarea.canvas.Grid_Package;
 

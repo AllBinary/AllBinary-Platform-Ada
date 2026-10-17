@@ -76,12 +76,9 @@ package org.allbinary.data.tables.user.commerce.inventory.item.InventoryEntity_P
    function getWeight (This : in out InventoryEntity; id : Unbounded_String) return Unbounded_String;
    procedure getWeight (This : in out InventoryEntity; id : Unbounded_String);
    function createTableStatement (This : in out InventoryEntity) return Unbounded_String;
-   procedure createTableStatement (This : in out InventoryEntity);
    function createTable (This : in out InventoryEntity) return Unbounded_String;
-   procedure createTable (This : in out InventoryEntity);
    procedure update (This : in out InventoryEntity; updatedValues : HashMap_Access);
    function dropTable (This : in out InventoryEntity) return Unbounded_String;
-   procedure dropTable (This : in out InventoryEntity);
 
 end org.allbinary.data.tables.user.commerce.inventory.item.InventoryEntity_Package;
 

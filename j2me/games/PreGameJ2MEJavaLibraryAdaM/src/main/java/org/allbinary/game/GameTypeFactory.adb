@@ -33,7 +33,7 @@ package body org.allbinary.game.GameTypeFactory_Package is
    function Create return GameTypeFactory_Access is
       This : constant GameTypeFactory_Access := new GameTypeFactory;
    begin
-      Initialize (This.all);
+      GameTypeFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -41,13 +41,6 @@ package body org.allbinary.game.GameTypeFactory_Package is
    function getInstance return GameTypeFactory_Access is
    begin
         return GameTypeFactory_Package.instance;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant GameTypeFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

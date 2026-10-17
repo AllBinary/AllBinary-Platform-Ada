@@ -47,10 +47,8 @@ package org.allbinary.game.layer.FakeLayerManager_Package is
    procedure Initialize (This : in out FakeLayerManager'Class; gameInfo : GameInfo_Access);
    function Create (gameInfo : GameInfo_Access) return FakeLayerManager_Access;
    function getGeographicMapInterface (This : in out FakeLayerManager) return BasicGeographicMap_Access_Array_Access;
-   procedure getGeographicMapInterface (This : in out FakeLayerManager);
    procedure setGeographicMapInterface (This : in out FakeLayerManager; geographicMapInterfaceArray : BasicGeographicMap_Access_Array_Access);
    function geographicMapCellTypeArray (This : in out FakeLayerManager) return GeographicMapCellType_Access_Array_Access;
-   procedure geographicMapCellTypeArray (This : in out FakeLayerManager);
 
 end org.allbinary.game.layer.FakeLayerManager_Package;
 

@@ -30,7 +30,7 @@ package body org.allbinary.business.context.modules.storefront.StoreFrontFactory
    function Create return StoreFrontFactory_Access is
       This : constant StoreFrontFactory_Access := new StoreFrontFactory;
    begin
-      Initialize (This.all);
+      StoreFrontFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

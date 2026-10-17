@@ -21,6 +21,7 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with javax.sound.sampled.Control_Package; use javax.sound.sampled.Control_Package;
+with org.allbinary.media.audio.Type_Package; use org.allbinary.media.audio.Type_Package;
 
 package org.allbinary.media.audio.NullJ2SEControl_Package is
 

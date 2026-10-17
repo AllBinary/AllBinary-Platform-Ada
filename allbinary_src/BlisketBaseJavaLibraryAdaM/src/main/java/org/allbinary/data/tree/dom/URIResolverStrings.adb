@@ -36,7 +36,7 @@ package body org.allbinary.data.tree.dom.URIResolverStrings_Package is
    function Create return URIResolverStrings_Access is
       This : constant URIResolverStrings_Access := new URIResolverStrings;
    begin
-      Initialize (This.all);
+      URIResolverStrings_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -44,13 +44,6 @@ package body org.allbinary.data.tree.dom.URIResolverStrings_Package is
    function getInstance return URIResolverStrings_Access is
    begin
         return URIResolverStrings_Package.instance;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant URIResolverStrings_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

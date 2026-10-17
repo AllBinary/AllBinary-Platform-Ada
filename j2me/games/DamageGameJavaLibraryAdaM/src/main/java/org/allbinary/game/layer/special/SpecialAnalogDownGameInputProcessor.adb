@@ -29,7 +29,7 @@ package body org.allbinary.game.layer.special.SpecialAnalogDownGameInputProcesso
    function Create (collidableDestroyableDamageableLayer : CollidableDestroyableDamageableLayer_Access) return SpecialAnalogDownGameInputProcessor_Access is
       This : constant SpecialAnalogDownGameInputProcessor_Access := new SpecialAnalogDownGameInputProcessor;
    begin
-      Initialize (This.all, collidableDestroyableDamageableLayer);
+      SpecialAnalogDownGameInputProcessor_Package.Initialize (This.all, collidableDestroyableDamageableLayer);
       return This;
    end Create;
 

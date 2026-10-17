@@ -28,6 +28,7 @@ with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package
 with org.allbinary.logic.io.path.AbPath_Package; use org.allbinary.logic.io.path.AbPath_Package;
 with org.allbinary.logic.java.bool.BooleanUtil_Package; use org.allbinary.logic.java.bool.BooleanUtil_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.business.init.InitInfoEntity_Package; use org.allbinary.business.init.InitInfoEntity_Package;
 
 package org.allbinary.business.init.InitInfo_Package is
 
@@ -58,20 +59,15 @@ package org.allbinary.business.init.InitInfo_Package is
    procedure Initialize (This : in out InitInfo'Class);
    function Create return InitInfo_Access;
    function getInstance return InitInfo_Access;
-   procedure getInstance;
    procedure set (This : in out InitInfo);
    procedure set (This : in out InitInfo; hashMap : HashMap_Access);
    procedure get (This : in out InitInfo);
    procedure setHasRead (This : in out InitInfo; value : Boolean);
    procedure updateIfNeeded (This : in out InitInfo);
    function isTesting (This : in out InitInfo) return Boolean;
-   procedure isTesting (This : in out InitInfo);
    function getTesting (This : in out InitInfo) return Unbounded_String;
-   procedure getTesting (This : in out InitInfo);
    function getTestHtmlPath (This : in out InitInfo) return Unbounded_String;
-   procedure getTestHtmlPath (This : in out InitInfo);
    function getMainPath (This : in out InitInfo) return Unbounded_String;
-   procedure getMainPath (This : in out InitInfo);
    procedure setTesting (This : in out InitInfo; value : Unbounded_String);
    procedure setTestHtmlPath (This : in out InitInfo; value : AbPath_Access);
    procedure setMainPath (This : in out InitInfo; value : AbPath_Access);
@@ -82,7 +78,6 @@ package org.allbinary.business.init.InitInfo_Package is
    function isTestingValid (This : in out InitInfo; testing_Case : Unbounded_String) return Boolean;
    procedure isTestingValid (This : in out InitInfo; testing_Case : Unbounded_String);
    function toHashMap (This : in out InitInfo) return HashMap_Access;
-   procedure toHashMap (This : in out InitInfo);
 
 end org.allbinary.business.init.InitInfo_Package;
 

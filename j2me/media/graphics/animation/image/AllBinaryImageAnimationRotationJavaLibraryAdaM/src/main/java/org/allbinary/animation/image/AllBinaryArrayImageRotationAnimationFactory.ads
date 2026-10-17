@@ -30,6 +30,8 @@ with org.allbinary.math.AngleFactory_Package; use org.allbinary.math.AngleFactor
 with org.allbinary.math.AngleInfo_Package; use org.allbinary.math.AngleInfo_Package;
 with org.allbinary.media.image.ImageToRotationImageArrayUtil_Package; use org.allbinary.media.image.ImageToRotationImageArrayUtil_Package;
 with org.allbinary.animation.image.BaseImageAnimationFactory_Package; use org.allbinary.animation.image.BaseImageAnimationFactory_Package;
+with org.allbinary.animation.image.ImageArrayRotationAnimation_Package; use org.allbinary.animation.image.ImageArrayRotationAnimation_Package;
+with org.allbinary.animation.image.AdjustedImageArrayRotationAnimation_Package; use org.allbinary.animation.image.AdjustedImageArrayRotationAnimation_Package;
 
 package org.allbinary.animation.image.AllBinaryArrayImageRotationAnimationFactory_Package is
 
@@ -63,7 +65,6 @@ package org.allbinary.animation.image.AllBinaryArrayImageRotationAnimationFactor
    procedure getInstance (This : in out AllBinaryArrayImageRotationAnimationFactory; instanceId : Integer);
    procedure setImageArray (This : in out AllBinaryArrayImageRotationAnimationFactory; imageArray : Image_Access_Array_Access);
    function getAngleIncrement (This : in out AllBinaryArrayImageRotationAnimationFactory) return Integer;
-   procedure getAngleIncrement (This : in out AllBinaryArrayImageRotationAnimationFactory);
 
 end org.allbinary.animation.image.AllBinaryArrayImageRotationAnimationFactory_Package;
 

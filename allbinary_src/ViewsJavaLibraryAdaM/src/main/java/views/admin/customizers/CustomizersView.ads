@@ -82,7 +82,6 @@ package views.admin.customizers.CustomizersView_Package is
    procedure toXmlNode (This : in out CustomizersView; document : Document_Access);
    procedure addDomNodeInterfaces (This : in out CustomizersView);
    function view (This : in out CustomizersView) return Unbounded_String;
-   procedure view (This : in out CustomizersView);
 
 end views.admin.customizers.CustomizersView_Package;
 

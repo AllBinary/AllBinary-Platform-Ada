@@ -31,7 +31,7 @@ package body org.allbinary.game.configuration.event.GameFeatureEventHandler_Pack
    function Create return GameFeatureEventHandler_Access is
       This : constant GameFeatureEventHandler_Access := new GameFeatureEventHandler;
    begin
-      Initialize (This.all);
+      GameFeatureEventHandler_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -47,13 +47,6 @@ package body org.allbinary.game.configuration.event.GameFeatureEventHandler_Pack
         gameFeatureListenerInterface := (GameFeatureListenerInterface_Access (eventListenerInterface));
         gameFeatureListenerInterface.onGameFeatureChange (GameFeatureEvent_Access (eventObject));
    end process;
-
-   procedure getInstance is
-      Java_Result : constant GameFeatureEventHandler_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

@@ -39,7 +39,6 @@ package org.allbinary.android.NullParcelable_Package is
    procedure Initialize (This : in out NullParcelable'Class);
    function Create return NullParcelable_Access;
    function describeContents (This : in out NullParcelable) return Integer;
-   procedure describeContents (This : in out NullParcelable);
    procedure writeToParcel (This : in out NullParcelable; dest : Parcel_Access; flags : Integer);
 
 end org.allbinary.android.NullParcelable_Package;

@@ -49,12 +49,9 @@ package org.allbinary.game.configuration.GameConfigurationTextInput_Package is
    procedure update (textField : TextField_Access);
    procedure setText (This : in out GameConfigurationTextInput; text : Unbounded_String);
    function getText (This : in out GameConfigurationTextInput) return Unbounded_String;
-   procedure getText (This : in out GameConfigurationTextInput);
    procedure setLabel (This : in out GameConfigurationTextInput; label : Unbounded_String);
    function getLabel (This : in out GameConfigurationTextInput) return Unbounded_String;
-   procedure getLabel (This : in out GameConfigurationTextInput);
    function getHashtable return ABHashtable_Access;
-   procedure getHashtable;
 
 end org.allbinary.game.configuration.GameConfigurationTextInput_Package;
 

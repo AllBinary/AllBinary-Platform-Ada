@@ -36,7 +36,7 @@ package body views.business.context.modules.storefront.customizer.StoreCustomize
    function Create return StoreCustomizerComponentUtil_Access is
       This : constant StoreCustomizerComponentUtil_Access := new StoreCustomizerComponentUtil;
    begin
-      Initialize (This.all);
+      StoreCustomizerComponentUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -85,13 +85,6 @@ package body views.business.context.modules.storefront.customizer.StoreCustomize
             TransformGeneratorUtil_Package.getInstance.generate (abeClientInformation, nextTransformInfoInterface, specifiedTransformInfoInterface);
         end loop;
    end generate;
-
-   procedure getInstance is
-      Java_Result : constant StoreCustomizerComponentUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure generate (This : in out StoreCustomizerComponentUtil; abeClientInformation : AbeClientInformationInterface_Access; transformInfoInterface : TransformInfoInterface_Access) is
       Java_Result : constant Unbounded_String := StoreCustomizerComponentUtil'Class (This).generate (abeClientInformation, transformInfoInterface);

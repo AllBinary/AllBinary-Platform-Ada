@@ -30,7 +30,7 @@ package body org.allbinary.input.automation.actions.script.condition.AlwaysActio
    function Create return AlwaysActionScriptConditionData_Access is
       This : constant AlwaysActionScriptConditionData_Access := new AlwaysActionScriptConditionData;
    begin
-      Initialize (This.all);
+      AlwaysActionScriptConditionData_Package.Initialize (This.all);
       return This;
    end Create;
 

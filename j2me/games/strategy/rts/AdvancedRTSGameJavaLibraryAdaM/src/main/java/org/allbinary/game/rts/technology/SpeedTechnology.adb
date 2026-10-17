@@ -32,7 +32,7 @@ package body org.allbinary.game.rts.technology.SpeedTechnology_Package is
    function Create (maxLevel : Integer) return SpeedTechnology_Access is
       This : constant SpeedTechnology_Access := new SpeedTechnology;
    begin
-      Initialize (This.all, maxLevel);
+      SpeedTechnology_Package.Initialize (This.all, maxLevel);
       return This;
    end Create;
 
@@ -101,76 +101,6 @@ package body org.allbinary.game.rts.technology.SpeedTechnology_Package is
    function isSelfUpgradeable (This : in out SpeedTechnology) return Boolean is
    begin
         return False;
-   end isSelfUpgradeable;
-
-   procedure isCompleted (This : in out SpeedTechnology) is
-      Java_Result : constant Boolean := SpeedTechnology'Class (This).isCompleted;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isCompleted;
-
-   procedure getPercentComplete (This : in out SpeedTechnology) is
-      Java_Result : constant Integer := SpeedTechnology'Class (This).getPercentComplete;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getPercentComplete;
-
-   procedure getLevel (This : in out SpeedTechnology) is
-      Java_Result : constant Integer := SpeedTechnology'Class (This).getLevel;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getLevel;
-
-   procedure getMaxLevel (This : in out SpeedTechnology) is
-      Java_Result : constant Integer := SpeedTechnology'Class (This).getMaxLevel;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getMaxLevel;
-
-   procedure getCost (This : in out SpeedTechnology) is
-      Java_Result : constant Integer := SpeedTechnology'Class (This).getCost;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getCost;
-
-   procedure getDowngradeCost (This : in out SpeedTechnology) is
-      Java_Result : constant Integer := SpeedTechnology'Class (This).getDowngradeCost;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getDowngradeCost;
-
-   procedure isDowngradeable (This : in out SpeedTechnology) is
-      Java_Result : constant Boolean := SpeedTechnology'Class (This).isDowngradeable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isDowngradeable;
-
-   procedure getUpgradeCost (This : in out SpeedTechnology) is
-      Java_Result : constant Integer := SpeedTechnology'Class (This).getUpgradeCost;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getUpgradeCost;
-
-   procedure isUpgradeable (This : in out SpeedTechnology) is
-      Java_Result : constant Boolean := SpeedTechnology'Class (This).isUpgradeable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isUpgradeable;
-
-   procedure isSelfUpgradeable (This : in out SpeedTechnology) is
-      Java_Result : constant Boolean := SpeedTechnology'Class (This).isSelfUpgradeable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end isSelfUpgradeable;
 
 end org.allbinary.game.rts.technology.SpeedTechnology_Package;

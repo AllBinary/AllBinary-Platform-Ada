@@ -37,7 +37,6 @@ package org.allbinary.business.page.PageData_Package is
    procedure Initialize (This : in out PageData'Class);
    function Create return PageData_Access;
    function getInstance return PageData_Access;
-   procedure getInstance;
 
 end org.allbinary.business.page.PageData_Package;
 

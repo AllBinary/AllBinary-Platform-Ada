@@ -31,7 +31,7 @@ package body views.business.context.modules.storefront.customizer.hedges.header.
    function Create (transformInfoInterface : TransformInfoInterface_Access) return EditHeaderValidationView_Access is
       This : constant EditHeaderValidationView_Access := new EditHeaderValidationView;
    begin
-      Initialize (This.all, transformInfoInterface);
+      EditHeaderValidationView_Package.Initialize (This.all, transformInfoInterface);
       return This;
    end Create;
 
@@ -84,27 +84,6 @@ package body views.business.context.modules.storefront.customizer.hedges.header.
    begin
         return null;
    end toValidationInfoNode;
-
-   procedure isValid (This : in out EditHeaderValidationView) is
-      Java_Result : constant Boolean := EditHeaderValidationView'Class (This).isValid;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isValid;
-
-   procedure validationInfo (This : in out EditHeaderValidationView) is
-      Java_Result : constant Unbounded_String := EditHeaderValidationView'Class (This).validationInfo;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end validationInfo;
-
-   procedure toValidationInfoDoc (This : in out EditHeaderValidationView) is
-      Java_Result : constant Document_Access := EditHeaderValidationView'Class (This).toValidationInfoDoc;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toValidationInfoDoc;
 
    procedure toValidationInfoNode (This : in out EditHeaderValidationView; document : Document_Access) is
       Java_Result : constant Node_Access := EditHeaderValidationView'Class (This).toValidationInfoNode (document);

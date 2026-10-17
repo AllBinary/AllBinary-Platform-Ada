@@ -37,7 +37,7 @@ package body org.allbinary.media.image.ImagesRatioUtil_Package is
    function Create return ImagesRatioUtil_Access is
       This : constant ImagesRatioUtil_Access := new ImagesRatioUtil;
    begin
-      Initialize (This.all);
+      ImagesRatioUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -143,13 +143,6 @@ package body org.allbinary.media.image.ImagesRatioUtil_Package is
         end loop;
         return fudgedBufferedImageArray;
    end fudge;
-
-   procedure getInstance is
-      Java_Result : constant ImagesRatioUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure isEqual (This : in out ImagesRatioUtil; bufferedImageArray : BufferedImage_Access_Array_Access; totalImages : Integer) is
       Java_Result : constant Boolean := ImagesRatioUtil'Class (This).isEqual (bufferedImageArray, totalImages);

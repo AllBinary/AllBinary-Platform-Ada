@@ -32,7 +32,7 @@ package body org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeogr
    function Create (raceTrackInfo : RaceTrackInfo_Access; raceTrackData : RaceTrackData_Access; tiledLayerFactoryInterface : AllBinaryTiledLayerFactoryInterface_Access; geographicMapCellPositionFactoryInterface : GeographicMapCellPositionFactoryInterface_Access; geographicMapCellPositionBaseFactory : GeographicMapCellPositionBaseFactory_Access; geographicMapCellTypeFactory : GeographicMapCellTypeFactory_Access; customMapGeneratorBaseFactory : CustomMapGeneratorBaseFactory_Access) return RaceTrackGeographicMap_Access is
       This : constant RaceTrackGeographicMap_Access := new RaceTrackGeographicMap;
    begin
-      Initialize (This.all, raceTrackInfo, raceTrackData, tiledLayerFactoryInterface, geographicMapCellPositionFactoryInterface, geographicMapCellPositionBaseFactory, geographicMapCellTypeFactory, customMapGeneratorBaseFactory);
+      RaceTrackGeographicMap_Package.Initialize (This.all, raceTrackInfo, raceTrackData, tiledLayerFactoryInterface, geographicMapCellPositionFactoryInterface, geographicMapCellPositionBaseFactory, geographicMapCellTypeFactory, customMapGeneratorBaseFactory);
       return This;
    end Create;
 
@@ -74,13 +74,6 @@ package body org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeogr
         end if;
         return True;
    end isValid;
-
-   procedure getCustomMapGenerator (This : in out RaceTrackGeographicMap) is
-      Java_Result : constant CustomMapGeneratorBase_Access := RaceTrackGeographicMap'Class (This).getCustomMapGenerator;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getCustomMapGenerator;
 
    procedure isValid (This : in out RaceTrackGeographicMap; geographicMapCellPosition : GeographicMapCellPosition_Access) is
       Java_Result : constant Boolean := RaceTrackGeographicMap'Class (This).isValid (geographicMapCellPosition);

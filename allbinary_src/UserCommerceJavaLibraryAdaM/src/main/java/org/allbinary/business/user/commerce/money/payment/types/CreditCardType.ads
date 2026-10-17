@@ -37,7 +37,6 @@ package org.allbinary.business.user.commerce.money.payment.types.CreditCardType_
    procedure Initialize (This : in out CreditCardType'Class; cardType : Unbounded_String);
    function Create (cardType : Unbounded_String) return CreditCardType_Access;
    function toString (This : in out CreditCardType) return Unbounded_String;
-   procedure toString (This : in out CreditCardType);
 
 end org.allbinary.business.user.commerce.money.payment.types.CreditCardType_Package;
 

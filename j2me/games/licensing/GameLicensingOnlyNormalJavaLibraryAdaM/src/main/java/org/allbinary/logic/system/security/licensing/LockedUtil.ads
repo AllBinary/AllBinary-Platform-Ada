@@ -21,6 +21,7 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.system.security.licensing.LockedUtilInterface_Package; use org.allbinary.logic.system.security.licensing.LockedUtilInterface_Package;
+with org.allbinary.logic.system.security.licensing.LockableFeature_Package; use org.allbinary.logic.system.security.licensing.LockableFeature_Package;
 
 package org.allbinary.logic.system.security.licensing.LockedUtil_Package is
 
@@ -36,9 +37,7 @@ package org.allbinary.logic.system.security.licensing.LockedUtil_Package is
    procedure Initialize (This : in out LockedUtil'Class);
    function Create return LockedUtil_Access;
    function getInstance return LockedUtil_Access;
-   procedure getInstance;
    function isLocked (This : in out LockedUtil) return Boolean;
-   procedure isLocked (This : in out LockedUtil);
    function isLockedFeature (This : in out LockedUtil; lockableFeatrue : LockableFeature_Access) return Boolean;
    procedure isLockedFeature (This : in out LockedUtil; lockableFeatrue : LockableFeature_Access);
 

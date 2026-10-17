@@ -48,7 +48,6 @@ package org.allbinary.logic.system.security.crypt.jcehelper.KeySpecFactory_Packa
    procedure Initialize (This : in out KeySpecFactory'Class);
    function Create return KeySpecFactory_Access;
    function getInstance return KeySpecFactory_Access;
-   procedure getInstance;
    function getInstance (This : in out KeySpecFactory; algorithm : Unbounded_String; keyData : Short_Short_Integer_Array_Access) return KeySpec_Access;
    procedure getInstance (This : in out KeySpecFactory; algorithm : Unbounded_String; keyData : Short_Short_Integer_Array_Access);
 

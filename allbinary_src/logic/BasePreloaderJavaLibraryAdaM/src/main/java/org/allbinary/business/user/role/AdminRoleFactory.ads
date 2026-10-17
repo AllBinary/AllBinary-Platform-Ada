@@ -22,6 +22,7 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.business.user.role.BasicUserRoleFactory_Package; use org.allbinary.business.user.role.BasicUserRoleFactory_Package;
 
 package org.allbinary.business.user.role.AdminRoleFactory_Package is
 
@@ -51,29 +52,17 @@ package org.allbinary.business.user.role.AdminRoleFactory_Package is
    procedure Initialize (This : in out AdminRoleFactory'Class);
    function Create return AdminRoleFactory_Access;
    function getInstance return AdminRoleFactory_Access;
-   procedure getInstance;
    function getProductManagementRoles (This : in out AdminRoleFactory) return BasicArrayList_Access;
-   procedure getProductManagementRoles (This : in out AdminRoleFactory);
    function getAdminRoles (This : in out AdminRoleFactory) return BasicArrayList_Access;
-   procedure getAdminRoles (This : in out AdminRoleFactory);
    function getStoreAdminRoles (This : in out AdminRoleFactory) return BasicArrayList_Access;
-   procedure getStoreAdminRoles (This : in out AdminRoleFactory);
    function getStoreManagementRoles (This : in out AdminRoleFactory) return BasicArrayList_Access;
-   procedure getStoreManagementRoles (This : in out AdminRoleFactory);
    function getReviewManagementRoles (This : in out AdminRoleFactory) return BasicArrayList_Access;
-   procedure getReviewManagementRoles (This : in out AdminRoleFactory);
    function getCustomerManagementRoles (This : in out AdminRoleFactory) return BasicArrayList_Access;
-   procedure getCustomerManagementRoles (This : in out AdminRoleFactory);
    function getWorkflowManagementRoles (This : in out AdminRoleFactory) return BasicArrayList_Access;
-   procedure getWorkflowManagementRoles (This : in out AdminRoleFactory);
    function getWebManagementRoles (This : in out AdminRoleFactory) return BasicArrayList_Access;
-   procedure getWebManagementRoles (This : in out AdminRoleFactory);
    function getShippingManagementRoles (This : in out AdminRoleFactory) return BasicArrayList_Access;
-   procedure getShippingManagementRoles (This : in out AdminRoleFactory);
    function getAdjusterManagementRoles (This : in out AdminRoleFactory) return BasicArrayList_Access;
-   procedure getAdjusterManagementRoles (This : in out AdminRoleFactory);
    function getOrderManagementRoles (This : in out AdminRoleFactory) return BasicArrayList_Access;
-   procedure getOrderManagementRoles (This : in out AdminRoleFactory);
 
 end org.allbinary.business.user.role.AdminRoleFactory_Package;
 

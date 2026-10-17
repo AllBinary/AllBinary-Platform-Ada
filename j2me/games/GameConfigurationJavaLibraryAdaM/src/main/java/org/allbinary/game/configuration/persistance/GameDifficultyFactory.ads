@@ -37,10 +37,8 @@ package org.allbinary.game.configuration.persistance.GameDifficultyFactory_Packa
    procedure Initialize (This : in out GameDifficultyFactory'Class);
    function Create return GameDifficultyFactory_Access;
    function getInstance return GameDifficultyFactory_Access;
-   procedure getInstance;
    procedure setLevel (This : in out GameDifficultyFactory; level : Integer);
    function getLevel (This : in out GameDifficultyFactory) return Integer;
-   procedure getLevel (This : in out GameDifficultyFactory);
 
 end org.allbinary.game.configuration.persistance.GameDifficultyFactory_Package;
 

@@ -59,7 +59,6 @@ package org.allbinary.input.automation.log.FrameLog_Package is
    procedure addAction (This : in out FrameLog; action : Unbounded_String);
    procedure write (This : in out FrameLog);
    function getFrame (This : in out FrameLog) return Long_Long_Integer;
-   procedure getFrame (This : in out FrameLog);
 
 end org.allbinary.input.automation.log.FrameLog_Package;
 

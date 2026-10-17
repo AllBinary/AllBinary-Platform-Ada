@@ -23,6 +23,7 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+with org.allbinary.game.terrain.BasicTerrainInfo_Package; use org.allbinary.game.terrain.BasicTerrainInfo_Package;
 
 package org.allbinary.game.terrain.TerrainEvent_Package is
 
@@ -42,9 +43,7 @@ package org.allbinary.game.terrain.TerrainEvent_Package is
    procedure Initialize (This : in out TerrainEvent'Class; basicTerrainInfo : Java_Object_Access);
    function Create (basicTerrainInfo : Java_Object_Access) return TerrainEvent_Access;
    function toString (This : in out TerrainEvent) return Unbounded_String;
-   procedure toString (This : in out TerrainEvent);
    function getBasicTerrainInfo (This : in out TerrainEvent) return BasicTerrainInfo_Access;
-   procedure getBasicTerrainInfo (This : in out TerrainEvent);
    procedure setBasicTerrainInfo (This : in out TerrainEvent; basicTerrainInfo : BasicTerrainInfo_Access);
    procedure setBasicTerrainInfoForCircularStaticPool (This : in out TerrainEvent; basicTerrainInfo : BasicTerrainInfo_Access);
 

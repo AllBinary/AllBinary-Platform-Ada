@@ -21,7 +21,7 @@ package body org.allbinary.AndroidResources_Package is
    function Create return AndroidResources_Access is
       This : constant AndroidResources_Access := new AndroidResources;
    begin
-      Initialize (This.all);
+      AndroidResources_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -29,13 +29,6 @@ package body org.allbinary.AndroidResources_Package is
    function getInstance return AndroidResources_Access is
    begin
         return AndroidResources_Package.instance;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant AndroidResources_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

@@ -37,7 +37,7 @@ package body admin.taghelpers.WorkFlowHelper_Package is
    function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return WorkFlowHelper_Access is
       This : constant WorkFlowHelper_Access := new WorkFlowHelper;
    begin
-      Initialize (This.all, hashMap, pageContext);
+      WorkFlowHelper_Package.Initialize (This.all, hashMap, pageContext);
       return This;
    end Create;
 
@@ -129,34 +129,6 @@ package body admin.taghelpers.WorkFlowHelper_Package is
             return error;
                 end;
         end;
-   end backup;
-
-   procedure drop (This : in out WorkFlowHelper) is
-      Java_Result : constant Unbounded_String := WorkFlowHelper'Class (This).drop;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end drop;
-
-   procedure create (This : in out WorkFlowHelper) is
-      Java_Result : constant Unbounded_String := WorkFlowHelper'Class (This).create;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end create;
-
-   procedure restore (This : in out WorkFlowHelper) is
-      Java_Result : constant Unbounded_String := WorkFlowHelper'Class (This).restore;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end restore;
-
-   procedure backup (This : in out WorkFlowHelper) is
-      Java_Result : constant Unbounded_String := WorkFlowHelper'Class (This).backup;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end backup;
 
 end admin.taghelpers.WorkFlowHelper_Package;

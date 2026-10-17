@@ -22,6 +22,7 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.io.path.AbPathData_Package; use org.allbinary.logic.io.path.AbPathData_Package;
 with org.allbinary.logic.string_Id.StringValidationUtil_Package; use org.allbinary.logic.string_Id.StringValidationUtil_Package;
+with org.allbinary.logic.io.file.FilePathData_Package; use org.allbinary.logic.io.file.FilePathData_Package;
 
 package org.allbinary.logic.io.file.FilePathUtil_Package is
 
@@ -37,8 +38,8 @@ package org.allbinary.logic.io.file.FilePathUtil_Package is
 
    procedure Initialize (This : in out FilePathUtil'Class);
    function Create return FilePathUtil_Access;
-   function adjust (path : Unbounded_String) return Unbounded_String;
-   procedure adjust (path : Unbounded_String);
+   function adjust (path_Param : Unbounded_String) return Unbounded_String;
+   procedure adjust (path_Param : Unbounded_String);
 
 end org.allbinary.logic.io.file.FilePathUtil_Package;
 

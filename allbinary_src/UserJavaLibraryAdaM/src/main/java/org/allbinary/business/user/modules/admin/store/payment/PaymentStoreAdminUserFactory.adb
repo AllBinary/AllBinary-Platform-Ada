@@ -30,7 +30,7 @@ package body org.allbinary.business.user.modules.admin.store.payment.PaymentStor
    function Create return PaymentStoreAdminUserFactory_Access is
       This : constant PaymentStoreAdminUserFactory_Access := new PaymentStoreAdminUserFactory;
    begin
-      Initialize (This.all);
+      PaymentStoreAdminUserFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -44,13 +44,6 @@ package body org.allbinary.business.user.modules.admin.store.payment.PaymentStor
    function getInstance (This : in out PaymentStoreAdminUserFactory; hashMap : HashMap_Access) return UserInterface_Access is
    begin
         return PaymentStoreAdminUser_Package.Create (hashMap);
-   end getInstance;
-
-   procedure getInstance (This : in out PaymentStoreAdminUserFactory) is
-      Java_Result : constant UserInterface_Access := PaymentStoreAdminUserFactory'Class (This).getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
    procedure getInstance (This : in out PaymentStoreAdminUserFactory; hashMap : HashMap_Access) is

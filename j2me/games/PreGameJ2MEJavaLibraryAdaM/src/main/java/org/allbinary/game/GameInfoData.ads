@@ -42,7 +42,6 @@ package org.allbinary.game.GameInfoData_Package is
    procedure Initialize (This : in out GameInfoData'Class);
    function Create return GameInfoData_Access;
    function getInstance return GameInfoData_Access;
-   procedure getInstance;
 
 end org.allbinary.game.GameInfoData_Package;
 

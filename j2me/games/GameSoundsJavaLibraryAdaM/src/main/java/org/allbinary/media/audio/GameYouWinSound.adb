@@ -29,20 +29,13 @@ package body org.allbinary.media.audio.GameYouWinSound_Package is
    function Create return GameYouWinSound_Access is
       This : constant GameYouWinSound_Access := new GameYouWinSound;
    begin
-      Initialize (This.all);
+      GameYouWinSound_Package.Initialize (This.all);
       return This;
    end Create;
 
    function getInstance return Sound_Access is
    begin
         return GameYouWinSound_Package.soundInterface;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant Sound_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

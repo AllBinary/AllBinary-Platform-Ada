@@ -37,7 +37,6 @@ package org.allbinary.image.ImageFactory_Package is
    procedure Initialize (This : in out ImageFactory'Class);
    function Create return ImageFactory_Access;
    function getInstance return ImageFactory_Access;
-   procedure getInstance;
    function createImageUrl (This : in out ImageFactory; url : Unbounded_String) return Image_Access;
    procedure createImageUrl (This : in out ImageFactory; url : Unbounded_String);
    function createImage (This : in out ImageFactory; caller : Unbounded_String; width : Integer; height : Integer) return Image_Access;

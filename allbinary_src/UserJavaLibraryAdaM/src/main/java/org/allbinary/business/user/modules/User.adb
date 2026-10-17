@@ -55,7 +55,7 @@ package body org.allbinary.business.user.modules.User_Package is
    function Create return User_Access is
       This : constant User_Access := new User;
    begin
-      Initialize (This.all);
+      User_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -70,7 +70,7 @@ package body org.allbinary.business.user.modules.User_Package is
    function Create (request : HttpServletRequest_Access) return User_Access is
       This : constant User_Access := new User;
    begin
-      Initialize (This.all, request);
+      User_Package.Initialize (This.all, request);
       return This;
    end Create;
 
@@ -85,7 +85,7 @@ package body org.allbinary.business.user.modules.User_Package is
    function Create (userHashMap : HashMap_Access) return User_Access is
       This : constant User_Access := new User;
    begin
-      Initialize (This.all, userHashMap);
+      User_Package.Initialize (This.all, userHashMap);
       return This;
    end Create;
 
@@ -551,222 +551,12 @@ package body org.allbinary.business.user.modules.User_Package is
         This.userConfigurationInterface := userConfigurationInterface;
    end setUserConfigurationInterface;
 
-   procedure isValid (This : in out User) is
-      Java_Result : constant Boolean := User'Class (This).isValid;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isValid;
-
-   procedure validationInfo (This : in out User) is
-      Java_Result : constant Unbounded_String := User'Class (This).validationInfo;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end validationInfo;
-
-   procedure getUserName (This : in out User) is
-      Java_Result : constant Unbounded_String := User'Class (This).getUserName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getUserName;
-
-   procedure getPrefixName (This : in out User) is
-      Java_Result : constant Unbounded_String := User'Class (This).getPrefixName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getPrefixName;
-
-   procedure getFirstName (This : in out User) is
-      Java_Result : constant Unbounded_String := User'Class (This).getFirstName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getFirstName;
-
-   procedure getLastName (This : in out User) is
-      Java_Result : constant Unbounded_String := User'Class (This).getLastName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getLastName;
-
-   procedure getMiddleName (This : in out User) is
-      Java_Result : constant Unbounded_String := User'Class (This).getMiddleName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getMiddleName;
-
-   procedure getSuffixName (This : in out User) is
-      Java_Result : constant Unbounded_String := User'Class (This).getSuffixName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSuffixName;
-
-   procedure getCompany (This : in out User) is
-      Java_Result : constant Unbounded_String := User'Class (This).getCompany;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getCompany;
-
-   procedure getPositionAtCompany (This : in out User) is
-      Java_Result : constant Unbounded_String := User'Class (This).getPositionAtCompany;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getPositionAtCompany;
-
-   procedure getMainEmail (This : in out User) is
-      Java_Result : constant Unbounded_String := User'Class (This).getMainEmail;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getMainEmail;
-
-   procedure getSecondaryEmail (This : in out User) is
-      Java_Result : constant Unbounded_String := User'Class (This).getSecondaryEmail;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSecondaryEmail;
-
-   procedure getHomePhone (This : in out User) is
-      Java_Result : constant Unbounded_String := User'Class (This).getHomePhone;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getHomePhone;
-
-   procedure getCellPhone (This : in out User) is
-      Java_Result : constant Unbounded_String := User'Class (This).getCellPhone;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getCellPhone;
-
-   procedure getWorkPhone (This : in out User) is
-      Java_Result : constant Unbounded_String := User'Class (This).getWorkPhone;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getWorkPhone;
-
-   procedure getOtherContact (This : in out User) is
-      Java_Result : constant Unbounded_String := User'Class (This).getOtherContact;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getOtherContact;
-
-   procedure getElectronicContact (This : in out User) is
-      Java_Result : constant Unbounded_String := User'Class (This).getElectronicContact;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getElectronicContact;
-
-   procedure getFax (This : in out User) is
-      Java_Result : constant Unbounded_String := User'Class (This).getFax;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getFax;
-
-   procedure getRole (This : in out User) is
-      Java_Result : constant UserRole_Access := User'Class (This).getRole;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getRole;
-
-   procedure getPermissions (This : in out User) is
-      Java_Result : constant Unbounded_String := User'Class (This).getPermissions;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getPermissions;
-
-   procedure getEncryption (This : in out User) is
-      Java_Result : constant Unbounded_String := User'Class (This).getEncryption;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getEncryption;
-
-   procedure getSecret (This : in out User) is
-      Java_Result : constant Unbounded_String := User'Class (This).getSecret;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSecret;
-
-   procedure getPassword (This : in out User) is
-      Java_Result : constant Unbounded_String := User'Class (This).getPassword;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getPassword;
-
-   procedure toVector (This : in out User) is
-      Java_Result : constant BasicArrayList_Access := User'Class (This).toVector;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toVector;
-
-   procedure toHashMap (This : in out User) is
-      Java_Result : constant HashMap_Access := User'Class (This).toHashMap;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toHashMap;
-
-   procedure toPasswordHashMap (This : in out User) is
-      Java_Result : constant HashMap_Access := User'Class (This).toPasswordHashMap;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toPasswordHashMap;
-
-   procedure isSessionValid (This : in out User) is
-      Java_Result : constant Boolean := User'Class (This).isSessionValid;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isSessionValid;
-
-   procedure getKey (This : in out User) is
-      Java_Result : constant Java_Object_Access := User'Class (This).getKey;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getKey;
-
-   procedure toValidationInfoDoc (This : in out User) is
-      Java_Result : constant Document_Access := User'Class (This).toValidationInfoDoc;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toValidationInfoDoc;
-
    procedure toValidationInfoNode (This : in out User; document : Document_Access) is
       Java_Result : constant Node_Access := User'Class (This).toValidationInfoNode (document);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end toValidationInfoNode;
-
-   procedure getUserConfigurationInterface (This : in out User) is
-      Java_Result : constant UserConfigurationInterface_Access := User'Class (This).getUserConfigurationInterface;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getUserConfigurationInterface;
 
 end org.allbinary.business.user.modules.User_Package;
 

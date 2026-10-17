@@ -22,6 +22,7 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.lang.reflect.Method_Package; use java.lang.reflect.Method_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.java.anyType.ParamsUtil_Package; use org.allbinary.logic.java.anyType.ParamsUtil_Package;
 
 package org.allbinary.logic.java.anyType.MethodUtil_Package is
 

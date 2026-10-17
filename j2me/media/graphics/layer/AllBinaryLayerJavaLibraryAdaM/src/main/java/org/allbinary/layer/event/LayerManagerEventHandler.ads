@@ -26,6 +26,9 @@ with org.allbinary.logic.util.event.EventStrings_Package; use org.allbinary.logi
 with org.allbinary.logic.util.event.handler.BasicEventHandler_Package; use org.allbinary.logic.util.event.handler.BasicEventHandler_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.layer.event.LayerManagerEventListener_Package; use org.allbinary.layer.event.LayerManagerEventListener_Package;
+with org.allbinary.layer.event.LayerManagerEvent_Package; use org.allbinary.layer.event.LayerManagerEvent_Package;
+with org.allbinary.layer.event.LayerManagerEventListenerInterface_Package; use org.allbinary.layer.event.LayerManagerEventListenerInterface_Package;
 
 package org.allbinary.layer.event.LayerManagerEventHandler_Package is
 
@@ -51,7 +54,6 @@ package org.allbinary.layer.event.LayerManagerEventHandler_Package is
    procedure Initialize (This : in out LayerManagerEventHandler'Class);
    function Create return LayerManagerEventHandler_Access;
    function getInstance return LayerManagerEventHandler_Access;
-   procedure getInstance;
    procedure addListener (This : in out LayerManagerEventHandler; layerManagerEventListener : LayerManagerEventListener_Access);
    procedure removeAllListeners (This : in out LayerManagerEventHandler);
    procedure removeListener (This : in out LayerManagerEventHandler; eventListenerInterface : EventListenerInterface_Access);

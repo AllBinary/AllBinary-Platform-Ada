@@ -48,7 +48,6 @@ package org.allbinary.input.gyro.OrientationMotionGestureFactory_Package is
    procedure Initialize (This : in out OrientationMotionGestureFactory'Class);
    function Create return OrientationMotionGestureFactory_Access;
    function getInstance return OrientationMotionGestureFactory_Access;
-   procedure getInstance;
 
 end org.allbinary.input.gyro.OrientationMotionGestureFactory_Package;
 

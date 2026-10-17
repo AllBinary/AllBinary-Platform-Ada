@@ -24,6 +24,9 @@ with org.allbinary.game.layer.AllBinaryTiledLayer_Package; use org.allbinary.gam
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
 with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.media.graphics.geography.map.GeographicMapCellTypeFactory_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellTypeFactory_Package;
+with org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package;
+with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
 
 package org.allbinary.media.graphics.geography.map.SimpleGeographicMap_Package is
 
@@ -51,21 +54,16 @@ package org.allbinary.media.graphics.geography.map.SimpleGeographicMap_Package i
    procedure Initialize (This : in out SimpleGeographicMap'Class; id : Integer; name : Unbounded_String; cellTypeIdToGeographicMapCellType : Integer_Array_Access; tiledLayer : AllBinaryTiledLayer_Access; foregroundBasicColor : BasicColor_Access; backgroundBasicColor : BasicColor_Access);
    function Create (id : Integer; name : Unbounded_String; cellTypeIdToGeographicMapCellType : Integer_Array_Access; tiledLayer : AllBinaryTiledLayer_Access; foregroundBasicColor : BasicColor_Access; backgroundBasicColor : BasicColor_Access) return SimpleGeographicMap_Access;
    function getId (This : in out SimpleGeographicMap) return Integer;
-   procedure getId (This : in out SimpleGeographicMap);
    function getName (This : in out SimpleGeographicMap) return Unbounded_String;
-   procedure getName (This : in out SimpleGeographicMap);
    procedure reset (This : in out SimpleGeographicMap);
    function getAllBinaryTiledLayer (This : in out SimpleGeographicMap) return AllBinaryTiledLayer_Access;
-   procedure getAllBinaryTiledLayer (This : in out SimpleGeographicMap);
    function getCellTypeAt (This : in out SimpleGeographicMap; cellPosition : GeographicMapCellPosition_Access) return GeographicMapCellType_Access;
    procedure getCellTypeAt (This : in out SimpleGeographicMap; cellPosition : GeographicMapCellPosition_Access);
    function getCellTypeFromMapCellTypeInt (This : in out SimpleGeographicMap; cellTypeId : Integer) return Integer;
    procedure getCellTypeFromMapCellTypeInt (This : in out SimpleGeographicMap; cellTypeId : Integer);
    function getForegroundBasicColor (This : in out SimpleGeographicMap) return BasicColor_Access;
-   procedure getForegroundBasicColor (This : in out SimpleGeographicMap);
    procedure setForegroundBasicColor (This : in out SimpleGeographicMap; foregroundBasicColor : BasicColor_Access);
    function getBackgroundBasicColor (This : in out SimpleGeographicMap) return BasicColor_Access;
-   procedure getBackgroundBasicColor (This : in out SimpleGeographicMap);
    procedure setBackgroundBasicColor (This : in out SimpleGeographicMap; backgroundBasicColor : BasicColor_Access);
 
 end org.allbinary.media.graphics.geography.map.SimpleGeographicMap_Package;

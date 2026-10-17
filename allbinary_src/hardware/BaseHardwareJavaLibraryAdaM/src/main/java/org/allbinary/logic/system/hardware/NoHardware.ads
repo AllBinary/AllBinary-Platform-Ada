@@ -44,11 +44,9 @@ package org.allbinary.logic.system.hardware.NoHardware_Package is
    procedure Initialize (This : in out NoHardware'Class);
    function Create return NoHardware_Access;
    function getInstance return HardwareInterface_Access;
-   procedure getInstance;
    function getComponent (This : in out NoHardware; index : Integer) return HardwareComponentInterface_Access;
    procedure getComponent (This : in out NoHardware; index : Integer);
    function toString (This : in out NoHardware) return Unbounded_String;
-   procedure toString (This : in out NoHardware);
    function compareTo (This : in out NoHardware; hardwareInterface : HardwareInterface_Access) return Boolean;
    procedure compareTo (This : in out NoHardware; hardwareInterface : HardwareInterface_Access);
    function difference (This : in out NoHardware; hardwareInterface : HardwareInterface_Access) return ABHashtable_Access;

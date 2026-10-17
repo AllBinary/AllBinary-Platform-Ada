@@ -41,7 +41,6 @@ package org.platform.ThreedObjResources_Package is
    procedure Initialize (This : in out ThreedObjResources'Class);
    function Create return ThreedObjResources_Access;
    function getInstance return ThreedObjResources_Access;
-   procedure getInstance;
    function get (This : in out ThreedObjResources; resourceName : Unbounded_String) return Unbounded_String;
    procedure get (This : in out ThreedObjResources; resourceName : Unbounded_String);
 

@@ -57,7 +57,7 @@ package body org.allbinary.animation.image.sprite.ImageCaptionIndexedAnimationFa
    function Create (captionImage : Image_Access; spriteMovieImage : Image_Access; soundInterface : Sound_Access; frameWidth : Integer; frameHeight : Integer; captionDx : Integer; captionDy : Integer; dx : Integer; dy : Integer; time : Integer; animationBehaviorFactory : AnimationBehaviorFactory_Access) return ImageCaptionIndexedAnimationFactory_Access is
       This : constant ImageCaptionIndexedAnimationFactory_Access := new ImageCaptionIndexedAnimationFactory;
    begin
-      Initialize (This.all, captionImage, spriteMovieImage, soundInterface, frameWidth, frameHeight, captionDx, captionDy, dx, dy, time, animationBehaviorFactory);
+      ImageCaptionIndexedAnimationFactory_Package.Initialize (This.all, captionImage, spriteMovieImage, soundInterface, frameWidth, frameHeight, captionDx, captionDy, dx, dy, time, animationBehaviorFactory);
       return This;
    end Create;
 

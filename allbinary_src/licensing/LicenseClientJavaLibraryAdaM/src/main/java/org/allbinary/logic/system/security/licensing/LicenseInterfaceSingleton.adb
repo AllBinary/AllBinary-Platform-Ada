@@ -28,7 +28,7 @@ package body org.allbinary.logic.system.security.licensing.LicenseInterfaceSingl
    function Create return LicenseInterfaceSingleton_Access is
       This : constant LicenseInterfaceSingleton_Access := new LicenseInterfaceSingleton;
    begin
-      Initialize (This.all);
+      LicenseInterfaceSingleton_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -44,13 +44,6 @@ package body org.allbinary.logic.system.security.licensing.LicenseInterfaceSingl
             LicenseInterfaceSingleton_Package.licenseInterface := licenseInterface;
         end if;
    end init;
-
-   procedure getInstance is
-      Java_Result : constant AbeLicenseInterface_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

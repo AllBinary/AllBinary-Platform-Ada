@@ -29,7 +29,7 @@ package body org.allbinary.game.behavior.topview.GeographicMapTopViewLayerBehavi
    function Create (maxGravityActionIndex : Integer) return GeographicMapTopViewLayerBehavior_Access is
       This : constant GeographicMapTopViewLayerBehavior_Access := new GeographicMapTopViewLayerBehavior;
    begin
-      Initialize (This.all, maxGravityActionIndex);
+      GeographicMapTopViewLayerBehavior_Package.Initialize (This.all, maxGravityActionIndex);
       return This;
    end Create;
 

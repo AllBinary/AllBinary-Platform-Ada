@@ -48,7 +48,7 @@ package body org.allbinary.input.motion.button.CancelTouchButtonInputFactory_Pac
    function Create return CancelTouchButtonInputFactory_Access is
       This : constant CancelTouchButtonInputFactory_Access := new CancelTouchButtonInputFactory;
    begin
-      Initialize (This.all);
+      CancelTouchButtonInputFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -56,13 +56,6 @@ package body org.allbinary.input.motion.button.CancelTouchButtonInputFactory_Pac
    begin
         return This.cancelInputArray (touchButtonInput.getId);
    end getCancel;
-
-   procedure getInstance is
-      Java_Result : constant CancelTouchButtonInputFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure getCancel (This : in out CancelTouchButtonInputFactory; touchButtonInput : TouchButtonInput_Access) is
       Java_Result : constant TouchButtonInput_Access := CancelTouchButtonInputFactory'Class (This).getCancel (touchButtonInput);

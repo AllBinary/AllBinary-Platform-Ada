@@ -23,6 +23,7 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.GameType_Package; use org.allbinary.game.GameType_Package;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
 with org.allbinary.game.layer.RTSPlayerLayerInterface_Package; use org.allbinary.game.layer.RTSPlayerLayerInterface_Package;
+with org.allbinary.game.layer.AdvancedPlayerOwnedRTSLayers_Package; use org.allbinary.game.layer.AdvancedPlayerOwnedRTSLayers_Package;
 
 package org.allbinary.game.layer.AdvancedRTSPlayerLayerInterface_Package is
 

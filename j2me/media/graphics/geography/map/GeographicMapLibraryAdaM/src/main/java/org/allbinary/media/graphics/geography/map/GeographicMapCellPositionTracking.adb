@@ -34,7 +34,7 @@ package body org.allbinary.media.graphics.geography.map.GeographicMapCellPositio
    function Create return GeographicMapCellPositionTracking_Access is
       This : constant GeographicMapCellPositionTracking_Access := new GeographicMapCellPositionTracking;
    begin
-      Initialize (This.all);
+      GeographicMapCellPositionTracking_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -98,27 +98,6 @@ package body org.allbinary.media.graphics.geography.map.GeographicMapCellPositio
    begin
       null;
    end updateStart;
-
-   procedure updateEnd (This : in out GeographicMapCellPositionTracking) is
-      Java_Result : constant Boolean := GeographicMapCellPositionTracking'Class (This).updateEnd;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end updateEnd;
-
-   procedure getPreviousGeographicMapCellPosition (This : in out GeographicMapCellPositionTracking) is
-      Java_Result : constant GeographicMapCellPosition_Access := GeographicMapCellPositionTracking'Class (This).getPreviousGeographicMapCellPosition;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getPreviousGeographicMapCellPosition;
-
-   procedure getCurrentGeographicMapCellPosition (This : in out GeographicMapCellPositionTracking) is
-      Java_Result : constant GeographicMapCellPosition_Access := GeographicMapCellPositionTracking'Class (This).getCurrentGeographicMapCellPosition;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getCurrentGeographicMapCellPosition;
 
 end org.allbinary.media.graphics.geography.map.GeographicMapCellPositionTracking_Package;
 

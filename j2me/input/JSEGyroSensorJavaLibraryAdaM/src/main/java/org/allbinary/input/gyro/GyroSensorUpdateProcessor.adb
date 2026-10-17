@@ -29,7 +29,7 @@ package body org.allbinary.input.gyro.GyroSensorUpdateProcessor_Package is
    function Create return GyroSensorUpdateProcessor_Access is
       This : constant GyroSensorUpdateProcessor_Access := new GyroSensorUpdateProcessor;
    begin
-      Initialize (This.all);
+      GyroSensorUpdateProcessor_Package.Initialize (This.all);
       return This;
    end Create;
 

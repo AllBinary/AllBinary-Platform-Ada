@@ -36,16 +36,9 @@ package body org.allbinary.logic.visual.dhtml.style.color.ColorsData_Package is
    function Create return ColorsData_Access is
       This : constant ColorsData_Access := new ColorsData;
    begin
-      Initialize (This.all);
+      ColorsData_Package.Initialize (This.all);
       return This;
    end Create;
-
-   procedure getInstance is
-      Java_Result : constant ColorsData_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

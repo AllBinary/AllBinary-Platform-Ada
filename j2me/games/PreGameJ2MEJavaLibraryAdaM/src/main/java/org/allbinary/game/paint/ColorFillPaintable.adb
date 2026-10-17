@@ -31,7 +31,7 @@ package body org.allbinary.game.paint.ColorFillPaintable_Package is
    function Create (basicColor : BasicColor_Access) return ColorFillPaintable_Access is
       This : constant ColorFillPaintable_Access := new ColorFillPaintable;
    begin
-      Initialize (This.all, basicColor);
+      ColorFillPaintable_Package.Initialize (This.all, basicColor);
       return This;
    end Create;
 

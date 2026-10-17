@@ -32,7 +32,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoBasic_Packag
    function Create (storeFrontInterface : StoreFrontInterface_Access; propertiesHashMap : HashMap_Access; pageContext : PageContext_Access) return TransformInfoBasic_Access is
       This : constant TransformInfoBasic_Access := new TransformInfoBasic;
    begin
-      Initialize (This.all, storeFrontInterface, propertiesHashMap, pageContext);
+      TransformInfoBasic_Package.Initialize (This.all, storeFrontInterface, propertiesHashMap, pageContext);
       return This;
    end Create;
 
@@ -188,125 +188,6 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoBasic_Packag
    function toHashMap (This : in out TransformInfoBasic) return HashMap_Access is
    begin
         return null;
-   end toHashMap;
-
-   procedure getStoreName (This : in out TransformInfoBasic) is
-      Java_Result : constant Unbounded_String := TransformInfoBasic'Class (This).getStoreName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getStoreName;
-
-   procedure log (This : in out TransformInfoBasic) is
-      Java_Result : constant Unbounded_String := TransformInfoBasic'Class (This).log;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end log;
-
-   procedure getName (This : in out TransformInfoBasic) is
-      Java_Result : constant Unbounded_String := TransformInfoBasic'Class (This).getName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getName;
-
-   procedure getObjectFile (This : in out TransformInfoBasic) is
-      Java_Result : constant Unbounded_String := TransformInfoBasic'Class (This).getObjectFile;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getObjectFile;
-
-   procedure getObject (This : in out TransformInfoBasic) is
-      Java_Result : constant Java_Object_Access := TransformInfoBasic'Class (This).getObject;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getObject;
-
-   procedure getObjectConfigInterface (This : in out TransformInfoBasic) is
-      Java_Result : constant TransformInfoObjectConfigInterface_Access := TransformInfoBasic'Class (This).getObjectConfigInterface;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getObjectConfigInterface;
-
-   procedure getTemplateFilePath (This : in out TransformInfoBasic) is
-      Java_Result : constant AbPath_Access := TransformInfoBasic'Class (This).getTemplateFilePath;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTemplateFilePath;
-
-   procedure getTemplateFile (This : in out TransformInfoBasic) is
-      Java_Result : constant Unbounded_String := TransformInfoBasic'Class (This).getTemplateFile;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTemplateFile;
-
-   procedure getTemplate (This : in out TransformInfoBasic) is
-      Java_Result : constant Unbounded_String := TransformInfoBasic'Class (This).getTemplate;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTemplate;
-
-   procedure getDataFilePath (This : in out TransformInfoBasic) is
-      Java_Result : constant AbPath_Access := TransformInfoBasic'Class (This).getDataFilePath;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getDataFilePath;
-
-   procedure getDataFile (This : in out TransformInfoBasic) is
-      Java_Result : constant Unbounded_String := TransformInfoBasic'Class (This).getDataFile;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getDataFile;
-
-   procedure getDataDocument (This : in out TransformInfoBasic) is
-      Java_Result : constant Document_Access := TransformInfoBasic'Class (This).getDataDocument;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getDataDocument;
-
-   procedure isChild (This : in out TransformInfoBasic) is
-      Java_Result : constant Boolean := TransformInfoBasic'Class (This).isChild;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isChild;
-
-   procedure getImportUriPath (This : in out TransformInfoBasic) is
-      Java_Result : constant Unbounded_String := TransformInfoBasic'Class (This).getImportUriPath;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getImportUriPath;
-
-   procedure getKey (This : in out TransformInfoBasic) is
-      Java_Result : constant Java_Object_Access := TransformInfoBasic'Class (This).getKey;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getKey;
-
-   procedure toVector (This : in out TransformInfoBasic) is
-      Java_Result : constant BasicArrayList_Access := TransformInfoBasic'Class (This).toVector;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toVector;
-
-   procedure toHashMap (This : in out TransformInfoBasic) is
-      Java_Result : constant HashMap_Access := TransformInfoBasic'Class (This).toHashMap;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end toHashMap;
 
 end org.allbinary.logic.visual.transform.info.TransformInfoBasic_Package;

@@ -29,7 +29,7 @@ package body org.allbinary.business.user.modules.admin.store.payment.PaymentStor
    function Create return PaymentStoreAdminUser_Access is
       This : constant PaymentStoreAdminUser_Access := new PaymentStoreAdminUser;
    begin
-      Initialize (This.all);
+      PaymentStoreAdminUser_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -42,7 +42,7 @@ package body org.allbinary.business.user.modules.admin.store.payment.PaymentStor
    function Create (userHashMap : HashMap_Access) return PaymentStoreAdminUser_Access is
       This : constant PaymentStoreAdminUser_Access := new PaymentStoreAdminUser;
    begin
-      Initialize (This.all, userHashMap);
+      PaymentStoreAdminUser_Package.Initialize (This.all, userHashMap);
       return This;
    end Create;
 

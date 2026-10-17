@@ -47,7 +47,7 @@ package body org.allbinary.image.gui.RotationSpriteImageJPanel_Package is
    function Create (imageProcessorInput : ImageProcessorInput_Access) return RotationSpriteImageJPanel_Access is
       This : constant RotationSpriteImageJPanel_Access := new RotationSpriteImageJPanel;
    begin
-      Initialize (This.all, imageProcessorInput);
+      RotationSpriteImageJPanel_Package.Initialize (This.all, imageProcessorInput);
       return This;
    end Create;
 
@@ -184,13 +184,6 @@ package body org.allbinary.image.gui.RotationSpriteImageJPanel_Package is
    begin
         This.imageProcessorInput := imageProcessorInput;
    end setImageProcessorInput;
-
-   procedure getImageProcessorInput (This : in out RotationSpriteImageJPanel) is
-      Java_Result : constant ImageProcessorInput_Access := RotationSpriteImageJPanel'Class (This).getImageProcessorInput;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getImageProcessorInput;
 
 end org.allbinary.image.gui.RotationSpriteImageJPanel_Package;
 

@@ -35,7 +35,6 @@ package org.allbinary.animation.AnimationBehavior_Package is
    procedure Initialize (This : in out AnimationBehavior'Class);
    function Create return AnimationBehavior_Access;
    function getInstance return AnimationBehavior_Access;
-   procedure getInstance;
    procedure reset (This : in out AnimationBehavior);
 
 end org.allbinary.animation.AnimationBehavior_Package;

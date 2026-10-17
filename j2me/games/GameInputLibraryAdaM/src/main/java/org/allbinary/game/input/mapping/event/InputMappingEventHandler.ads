@@ -23,6 +23,8 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbinary.logic.util.event.AllBinaryEventObject_Package;
 with org.allbinary.logic.util.event.EventListenerInterface_Package; use org.allbinary.logic.util.event.EventListenerInterface_Package;
 with org.allbinary.logic.util.event.handler.BasicEventHandler_Package; use org.allbinary.logic.util.event.handler.BasicEventHandler_Package;
+with org.allbinary.game.input.mapping.event.InputMappingEventListenerInterface_Package; use org.allbinary.game.input.mapping.event.InputMappingEventListenerInterface_Package;
+with org.allbinary.game.input.mapping.event.InputMappingEvent_Package; use org.allbinary.game.input.mapping.event.InputMappingEvent_Package;
 
 package org.allbinary.game.input.mapping.event.InputMappingEventHandler_Package is
 
@@ -41,7 +43,6 @@ package org.allbinary.game.input.mapping.event.InputMappingEventHandler_Package 
    procedure Initialize (This : in out InputMappingEventHandler'Class);
    function Create return InputMappingEventHandler_Access;
    function getInstance return InputMappingEventHandler_Access;
-   procedure getInstance;
    procedure process (This : in out InputMappingEventHandler; eventObject : AllBinaryEventObject_Access; eventListenerInterface : EventListenerInterface_Access);
 
 end org.allbinary.game.input.mapping.event.InputMappingEventHandler_Package;

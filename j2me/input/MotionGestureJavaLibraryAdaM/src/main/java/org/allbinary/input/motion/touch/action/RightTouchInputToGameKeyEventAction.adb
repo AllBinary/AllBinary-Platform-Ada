@@ -37,16 +37,9 @@ package body org.allbinary.input.motion.touch.action.RightTouchInputToGameKeyEve
    function Create return RightTouchInputToGameKeyEventAction_Access is
       This : constant RightTouchInputToGameKeyEventAction_Access := new RightTouchInputToGameKeyEventAction;
    begin
-      Initialize (This.all);
+      RightTouchInputToGameKeyEventAction_Package.Initialize (This.all);
       return This;
    end Create;
-
-   procedure getInstance is
-      Java_Result : constant GameKeyCompleteMotionGestureInputEvent_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

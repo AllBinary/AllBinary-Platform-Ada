@@ -38,7 +38,6 @@ package org.allbinary.media.image.ImageJ2SEUtil_Package is
    procedure Initialize (This : in out ImageJ2SEUtil'Class);
    function Create return ImageJ2SEUtil_Access;
    function getInstance return ImageJ2SEUtil_Access;
-   procedure getInstance;
 
 end org.allbinary.media.image.ImageJ2SEUtil_Package;
 

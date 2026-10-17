@@ -36,7 +36,7 @@ package body org.allbinary.logic.communication.http.AcceptableResponseGenerator_
    function Create return AcceptableResponseGenerator_Access is
       This : constant AcceptableResponseGenerator_Access := new AcceptableResponseGenerator;
    begin
-      Initialize (This.all);
+      AcceptableResponseGenerator_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -81,13 +81,6 @@ package body org.allbinary.logic.communication.http.AcceptableResponseGenerator_
                 end;
         end;
    end get;
-
-   procedure getInstance is
-      Java_Result : constant AcceptableResponseGenerator_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure get (This : in out AcceptableResponseGenerator; httpServletRequest : HttpServletRequest_Access) is
       Java_Result : constant Unbounded_String := AcceptableResponseGenerator'Class (This).get (httpServletRequest);

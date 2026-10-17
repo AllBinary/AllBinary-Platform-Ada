@@ -30,7 +30,7 @@ package body org.allbinary.logic.java.anyType.MethodUtil_Package is
    function Create return MethodUtil_Access is
       This : constant MethodUtil_Access := new MethodUtil;
    begin
-      Initialize (This.all);
+      MethodUtil_Package.Initialize (This.all);
       return This;
    end Create;
 

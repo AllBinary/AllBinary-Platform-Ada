@@ -28,6 +28,8 @@ with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMap
 with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.HashtableUtil_Package; use org.allbinary.util.HashtableUtil_Package;
+with org.allbinary.media.graphics.geography.map.topview.BasicTopViewGeographicMapCellType_Package; use org.allbinary.media.graphics.geography.map.topview.BasicTopViewGeographicMapCellType_Package;
+with org.allbinary.media.graphics.geography.map.topview.BasicTopViewGeographicMapStrings_Package; use org.allbinary.media.graphics.geography.map.topview.BasicTopViewGeographicMapStrings_Package;
 
 package org.allbinary.media.graphics.geography.map.topview.BasicTopViewGeographicMapCellTypeFactory_Package is
 
@@ -59,15 +61,11 @@ package org.allbinary.media.graphics.geography.map.topview.BasicTopViewGeographi
    procedure Initialize (This : in out BasicTopViewGeographicMapCellTypeFactory'Class; tileTypeToTileIdsMap : ABHashtable_Access; maxTileId : Integer);
    function Create (tileTypeToTileIdsMap : ABHashtable_Access; maxTileId : Integer) return BasicTopViewGeographicMapCellTypeFactory_Access;
    function getStartType (This : in out BasicTopViewGeographicMapCellTypeFactory) return Integer;
-   procedure getStartType (This : in out BasicTopViewGeographicMapCellTypeFactory);
    function getEndType (This : in out BasicTopViewGeographicMapCellTypeFactory) return Integer;
-   procedure getEndType (This : in out BasicTopViewGeographicMapCellTypeFactory);
    function getEmptyType (This : in out BasicTopViewGeographicMapCellTypeFactory) return Integer;
-   procedure getEmptyType (This : in out BasicTopViewGeographicMapCellTypeFactory);
    function isPath (This : in out BasicTopViewGeographicMapCellTypeFactory; cellType : GeographicMapCellType_Access) return Boolean;
    procedure isPath (This : in out BasicTopViewGeographicMapCellTypeFactory; cellType : GeographicMapCellType_Access);
    function toString (This : in out BasicTopViewGeographicMapCellTypeFactory) return Unbounded_String;
-   procedure toString (This : in out BasicTopViewGeographicMapCellTypeFactory);
 
 end org.allbinary.media.graphics.geography.map.topview.BasicTopViewGeographicMapCellTypeFactory_Package;
 

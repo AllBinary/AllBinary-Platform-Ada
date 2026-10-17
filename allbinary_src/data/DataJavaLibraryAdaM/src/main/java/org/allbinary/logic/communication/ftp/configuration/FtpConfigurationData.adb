@@ -30,7 +30,7 @@ package body org.allbinary.logic.communication.ftp.configuration.FtpConfiguratio
    function Create return FtpConfigurationData_Access is
       This : constant FtpConfigurationData_Access := new FtpConfigurationData;
    begin
-      Initialize (This.all);
+      FtpConfigurationData_Package.Initialize (This.all);
       return This;
    end Create;
 

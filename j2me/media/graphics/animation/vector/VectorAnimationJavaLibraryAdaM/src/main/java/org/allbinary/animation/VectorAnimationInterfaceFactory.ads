@@ -24,6 +24,9 @@ with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics
 with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
 with org.allbinary.media.ScaleProperties_Package; use org.allbinary.media.ScaleProperties_Package;
 with org.allbinary.animation.AnimationInterfaceFactoryInterface_Package; use org.allbinary.animation.AnimationInterfaceFactoryInterface_Package;
+with org.allbinary.animation.AnimationBehaviorFactory_Package; use org.allbinary.animation.AnimationBehaviorFactory_Package;
+with org.allbinary.animation.VectorAnimation_Package; use org.allbinary.animation.VectorAnimation_Package;
+with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Animation_Package;
 
 package org.allbinary.animation.VectorAnimationInterfaceFactory_Package is
 
@@ -48,7 +51,6 @@ package org.allbinary.animation.VectorAnimationInterfaceFactory_Package is
    procedure getInstance (This : in out VectorAnimationInterfaceFactory; instanceId : Integer);
    procedure setBasicColorP (This : in out VectorAnimationInterfaceFactory; basicColor : BasicColor_Access);
    function getBasicColorP (This : in out VectorAnimationInterfaceFactory) return BasicColor_Access;
-   procedure getBasicColorP (This : in out VectorAnimationInterfaceFactory);
    procedure setInitialScale (This : in out VectorAnimationInterfaceFactory; scaleProperties : ScaleProperties_Access);
 
 end org.allbinary.animation.VectorAnimationInterfaceFactory_Package;

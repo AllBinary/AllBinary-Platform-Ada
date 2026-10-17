@@ -39,7 +39,7 @@ package body org.allbinary.media.audio.music.MusicManager_Package is
    function Create (musicServiceClass : Ada.Tags.Tag; songList : BasicArrayList_Access) return MusicManager_Access is
       This : constant MusicManager_Access := new MusicManager;
    begin
-      Initialize (This.all, musicServiceClass, songList);
+      MusicManager_Package.Initialize (This.all, musicServiceClass, songList);
       return This;
    end Create;
 
@@ -197,7 +197,7 @@ package body org.allbinary.media.audio.music.MusicManagerPlayerListener_Package 
    function Create return MusicManagerPlayerListener_Access is
       This : constant MusicManagerPlayerListener_Access := new MusicManagerPlayerListener;
    begin
-      Initialize (This.all);
+      MusicManagerPlayerListener_Package.Initialize (This.all);
       return This;
    end Create;
 

@@ -44,7 +44,7 @@ package body admin.tags.FileAuthenticationTag_Package is
    function Create return FileAuthenticationTag_Access is
       This : constant FileAuthenticationTag_Access := new FileAuthenticationTag;
    begin
-      Initialize (This.all);
+      FileAuthenticationTag_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -516,83 +516,6 @@ package body admin.tags.FileAuthenticationTag_Package is
             return SKIP_BODY;
                 end;
         end;
-   end doStartTag;
-
-   procedure changePassword (This : in out FileAuthenticationTag) is
-      Java_Result : constant Boolean := FileAuthenticationTag'Class (This).changePassword;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end changePassword;
-
-   procedure invalidateSession (This : in out FileAuthenticationTag) is
-      Java_Result : constant Integer := FileAuthenticationTag'Class (This).invalidateSession;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end invalidateSession;
-
-   procedure isSessionOld (This : in out FileAuthenticationTag) is
-      Java_Result : constant Boolean := FileAuthenticationTag'Class (This).isSessionOld;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isSessionOld;
-
-   procedure isRarelyUsedSession (This : in out FileAuthenticationTag) is
-      Java_Result : constant Boolean := FileAuthenticationTag'Class (This).isRarelyUsedSession;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isRarelyUsedSession;
-
-   procedure isRoleValid (This : in out FileAuthenticationTag) is
-      Java_Result : constant Boolean := FileAuthenticationTag'Class (This).isRoleValid;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isRoleValid;
-
-   procedure validRole (This : in out FileAuthenticationTag) is
-      Java_Result : constant Unbounded_String := FileAuthenticationTag'Class (This).validRole;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end validRole;
-
-   procedure invalidRole (This : in out FileAuthenticationTag) is
-      Java_Result : constant Unbounded_String := FileAuthenticationTag'Class (This).invalidRole;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end invalidRole;
-
-   procedure isAuthenticationSessionValid (This : in out FileAuthenticationTag) is
-      Java_Result : constant Boolean := FileAuthenticationTag'Class (This).isAuthenticationSessionValid;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isAuthenticationSessionValid;
-
-   procedure processIfNewLogin (This : in out FileAuthenticationTag) is
-      Java_Result : constant Boolean := FileAuthenticationTag'Class (This).processIfNewLogin;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end processIfNewLogin;
-
-   procedure processInvalidation (This : in out FileAuthenticationTag) is
-      Java_Result : constant Boolean := FileAuthenticationTag'Class (This).processInvalidation;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end processInvalidation;
-
-   procedure doStartTag (This : in out FileAuthenticationTag) is
-      Java_Result : constant Integer := FileAuthenticationTag'Class (This).doStartTag;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end doStartTag;
 
 end admin.tags.FileAuthenticationTag_Package;

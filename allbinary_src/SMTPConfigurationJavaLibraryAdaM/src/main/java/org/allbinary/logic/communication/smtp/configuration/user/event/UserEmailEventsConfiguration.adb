@@ -33,7 +33,7 @@ package body org.allbinary.logic.communication.smtp.configuration.user.event.Use
    function Create return UserEmailEventsConfiguration_Access is
       This : constant UserEmailEventsConfiguration_Access := new UserEmailEventsConfiguration;
    begin
-      Initialize (This.all);
+      UserEmailEventsConfiguration_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -47,7 +47,7 @@ package body org.allbinary.logic.communication.smtp.configuration.user.event.Use
    function Create (hashMap : HashMap_Access) return UserEmailEventsConfiguration_Access is
       This : constant UserEmailEventsConfiguration_Access := new UserEmailEventsConfiguration;
    begin
-      Initialize (This.all, hashMap);
+      UserEmailEventsConfiguration_Package.Initialize (This.all, hashMap);
       return This;
    end Create;
 
@@ -79,13 +79,6 @@ package body org.allbinary.logic.communication.smtp.configuration.user.event.Use
         userEmailEventConfigurationInterface := UserEmailEventConfigurationInterface_Access (This.emailEventHashMap.get (userEmailEventNameData.toString));
         return UserEmailEventListenerFactory_Package.getInstance (abeClientInformation, userEmailEventConfigurationInterface, userInterface);
    end getEventListener;
-
-   procedure getEventConfigurationHashMap (This : in out UserEmailEventsConfiguration) is
-      Java_Result : constant HashMap_Access := UserEmailEventsConfiguration'Class (This).getEventConfigurationHashMap;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getEventConfigurationHashMap;
 
    procedure getEventListener (This : in out UserEmailEventsConfiguration; abeClientInformation : AbeClientInformationInterface_Access; userEmailEventNameData : UserEmailEventNameData_Access; userInterface : UserInterface_Access) is
       Java_Result : constant UserEmailEventListenerInterface_Access := UserEmailEventsConfiguration'Class (This).getEventListener (abeClientInformation, userEmailEventNameData, userInterface);

@@ -30,7 +30,7 @@ package body org.allbinary.media.image.CanvasTrimUtil_Package is
    function Create return CanvasTrimUtil_Access is
       This : constant CanvasTrimUtil_Access := new CanvasTrimUtil;
    begin
-      Initialize (This.all);
+      CanvasTrimUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -58,13 +58,6 @@ package body org.allbinary.media.image.CanvasTrimUtil_Package is
             visitor.visit (subBufferedImageArray (index), This.stringUtil.EMPTY_STRING, index);
         end loop;
    end process;
-
-   procedure getInstance is
-      Java_Result : constant CanvasTrimUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

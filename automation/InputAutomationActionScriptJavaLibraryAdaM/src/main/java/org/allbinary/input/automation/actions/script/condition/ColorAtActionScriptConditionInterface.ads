@@ -21,6 +21,7 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.media.image.analysis.ColorRangeInterface_Package; use org.allbinary.media.image.analysis.ColorRangeInterface_Package;
+with org.allbinary.input.automation.actions.script.condition.Point_Package; use org.allbinary.input.automation.actions.script.condition.Point_Package;
 
 package org.allbinary.input.automation.actions.script.condition.ColorAtActionScriptConditionInterface_Package is
 

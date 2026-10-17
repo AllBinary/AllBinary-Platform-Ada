@@ -29,7 +29,7 @@ package body org.allbinary.logic.io.AbFileLocalInputStream_Package is
    function Create (file : AbFile_Access) return AbFileLocalInputStream_Access is
       This : constant AbFileLocalInputStream_Access := new AbFileLocalInputStream;
    begin
-      Initialize (This.all, file);
+      AbFileLocalInputStream_Package.Initialize (This.all, file);
       return This;
    end Create;
 

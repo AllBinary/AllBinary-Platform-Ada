@@ -34,7 +34,7 @@ package body tags.ValidationTransformTag_Package is
    function Create return ValidationTransformTag_Access is
       This : constant ValidationTransformTag_Access := new ValidationTransformTag;
    begin
-      Initialize (This.all);
+      ValidationTransformTag_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -165,34 +165,6 @@ package body tags.ValidationTransformTag_Package is
         end if;
         This.logic := True;
         return TransformTag (This).doEndTag;
-   end doEndTag;
-
-   procedure isValid (This : in out ValidationTransformTag) is
-      Java_Result : constant Boolean := ValidationTransformTag'Class (This).isValid;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isValid;
-
-   procedure validationInfo (This : in out ValidationTransformTag) is
-      Java_Result : constant Unbounded_String := ValidationTransformTag'Class (This).validationInfo;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end validationInfo;
-
-   procedure doStartTag (This : in out ValidationTransformTag) is
-      Java_Result : constant Integer := ValidationTransformTag'Class (This).doStartTag;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end doStartTag;
-
-   procedure doEndTag (This : in out ValidationTransformTag) is
-      Java_Result : constant Integer := ValidationTransformTag'Class (This).doEndTag;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end doEndTag;
 
 end tags.ValidationTransformTag_Package;

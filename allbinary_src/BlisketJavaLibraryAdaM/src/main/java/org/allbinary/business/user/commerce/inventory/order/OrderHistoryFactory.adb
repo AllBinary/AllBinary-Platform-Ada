@@ -31,7 +31,7 @@ package body org.allbinary.business.user.commerce.inventory.order.OrderHistoryFa
    function Create return OrderHistoryFactory_Access is
       This : constant OrderHistoryFactory_Access := new OrderHistoryFactory;
    begin
-      Initialize (This.all);
+      OrderHistoryFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

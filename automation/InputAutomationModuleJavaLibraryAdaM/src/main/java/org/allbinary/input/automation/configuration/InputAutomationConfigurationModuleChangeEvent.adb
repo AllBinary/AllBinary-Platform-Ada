@@ -31,7 +31,7 @@ package body org.allbinary.input.automation.configuration.InputAutomationConfigu
    function Create (inputAutomationModuleConfiguration : InputAutomationModuleConfiguration_Access) return InputAutomationConfigurationModuleChangeEvent_Access is
       This : constant InputAutomationConfigurationModuleChangeEvent_Access := new InputAutomationConfigurationModuleChangeEvent;
    begin
-      Initialize (This.all, inputAutomationModuleConfiguration);
+      InputAutomationConfigurationModuleChangeEvent_Package.Initialize (This.all, inputAutomationModuleConfiguration);
       return This;
    end Create;
 
@@ -44,13 +44,6 @@ package body org.allbinary.input.automation.configuration.InputAutomationConfigu
    begin
         This.inputAutomationModuleConfiguration := inputAutomationModuleConfiguration;
    end setInputAutomationModuleConfiguration;
-
-   procedure getInputAutomationModuleConfiguration (This : in out InputAutomationConfigurationModuleChangeEvent) is
-      Java_Result : constant InputAutomationModuleConfiguration_Access := InputAutomationConfigurationModuleChangeEvent'Class (This).getInputAutomationModuleConfiguration;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInputAutomationModuleConfiguration;
 
 end org.allbinary.input.automation.configuration.InputAutomationConfigurationModuleChangeEvent_Package;
 

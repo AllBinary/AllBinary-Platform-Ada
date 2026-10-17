@@ -54,7 +54,6 @@ package org.allbinary.game.layer.pickup.IconLayer_Package is
    procedure paint (This : in out IconLayer; graphics : Graphics_Access);
    procedure paintThreed (This : in out IconLayer; graphics : Graphics_Access);
    function getAnimationInterface (This : in out IconLayer) return Animation_Access;
-   procedure getAnimationInterface (This : in out IconLayer);
 
 end org.allbinary.game.layer.pickup.IconLayer_Package;
 

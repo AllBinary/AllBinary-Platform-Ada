@@ -33,7 +33,7 @@ package body org.allbinary.logic.system.security.licensing.client.AbeLicenseClie
    function Create return AbeLicenseClient_Access is
       This : constant AbeLicenseClient_Access := new AbeLicenseClient;
    begin
-      Initialize (This.all);
+      AbeLicenseClient_Package.Initialize (This.all);
       return This;
    end Create;
 

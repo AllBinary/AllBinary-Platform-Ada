@@ -34,7 +34,7 @@ package body org.allbinary.game.input.PCGameKey_Package is
    function Create (keyCode : Integer; name : Unbounded_String) return PCGameKey_Access is
       This : constant PCGameKey_Access := new PCGameKey;
    begin
-      Initialize (This.all, keyCode, name);
+      PCGameKey_Package.Initialize (This.all, keyCode, name);
       return This;
    end Create;
 
@@ -53,13 +53,6 @@ package body org.allbinary.game.input.PCGameKey_Package is
             return StringUtil_Package.getInstance.EMPTY_STRING;
         end if;
    end getString;
-
-   procedure toString (This : in out PCGameKey) is
-      Java_Result : constant Unbounded_String := PCGameKey'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toString;
 
    procedure getString (keyCode : Integer) is
       Java_Result : constant Unbounded_String := getString (keyCode);

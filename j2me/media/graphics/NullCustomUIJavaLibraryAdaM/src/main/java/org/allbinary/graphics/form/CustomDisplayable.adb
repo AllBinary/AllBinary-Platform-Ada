@@ -16,7 +16,7 @@ package body org.allbinary.graphics.form.CustomDisplayable_Package is
    function Create return CustomDisplayable_Access is
       This : constant CustomDisplayable_Access := new CustomDisplayable;
    begin
-      Initialize (This.all);
+      CustomDisplayable_Package.Initialize (This.all);
       return This;
    end Create;
 

@@ -36,7 +36,6 @@ package org.allbinary.business.user.commerce.money.payment.types.AuthorizationTy
    procedure Initialize (This : in out AuthorizationType'Class; name : Unbounded_String);
    function Create (name : Unbounded_String) return AuthorizationType_Access;
    function toString (This : in out AuthorizationType) return Unbounded_String;
-   procedure toString (This : in out AuthorizationType);
 
 end org.allbinary.business.user.commerce.money.payment.types.AuthorizationType_Package;
 

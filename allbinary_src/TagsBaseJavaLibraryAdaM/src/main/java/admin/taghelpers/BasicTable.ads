@@ -39,13 +39,9 @@ package admin.taghelpers.BasicTable_Package is
    procedure Initialize (This : in out BasicTable'Class);
    function Create return BasicTable_Access;
    function drop (This : in out BasicTable) return Unbounded_String;
-   procedure drop (This : in out BasicTable);
    function create (This : in out BasicTable) return Unbounded_String;
-   procedure create (This : in out BasicTable);
    function restore (This : in out BasicTable) return Unbounded_String;
-   procedure restore (This : in out BasicTable);
    function backup (This : in out BasicTable) return Unbounded_String;
-   procedure backup (This : in out BasicTable);
 
 end admin.taghelpers.BasicTable_Package;
 

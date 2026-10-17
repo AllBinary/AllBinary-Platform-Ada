@@ -69,7 +69,7 @@ package body org.allbinary.media.audio.AndroidMediaPlayerWrapper_Package is
    function Create (resource : Unbounded_String) return AndroidMediaPlayerWrapper_Access is
       This : constant AndroidMediaPlayerWrapper_Access := new AndroidMediaPlayerWrapper;
    begin
-      Initialize (This.all, resource);
+      AndroidMediaPlayerWrapper_Package.Initialize (This.all, resource);
       return This;
    end Create;
 
@@ -187,34 +187,6 @@ package body org.allbinary.media.audio.AndroidMediaPlayerWrapper_Package is
    function getMediaPlayer (This : in out AndroidMediaPlayerWrapper) return MediaPlayer_Access is
    begin
         return This.mediaPlayer;
-   end getMediaPlayer;
-
-   procedure createPlayerWrapper is
-      Java_Result : constant AndroidMediaPlayerWrapper_Access := createPlayerWrapper;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end createPlayerWrapper;
-
-   procedure getState (This : in out AndroidMediaPlayerWrapper) is
-      Java_Result : constant Integer := AndroidMediaPlayerWrapper'Class (This).getState;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getState;
-
-   procedure getDuration (This : in out AndroidMediaPlayerWrapper) is
-      Java_Result : constant Long_Long_Integer := AndroidMediaPlayerWrapper'Class (This).getDuration;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getDuration;
-
-   procedure getMediaPlayer (This : in out AndroidMediaPlayerWrapper) is
-      Java_Result : constant MediaPlayer_Access := AndroidMediaPlayerWrapper'Class (This).getMediaPlayer;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getMediaPlayer;
 
 begin

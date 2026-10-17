@@ -36,7 +36,7 @@ package body org.allbinary.logic.io.path.AbFilePath_Package is
    function Create (aPath : Unbounded_String) return AbFilePath_Access is
       This : constant AbFilePath_Access := new AbFilePath;
    begin
-      Initialize (This.all, aPath);
+      AbFilePath_Package.Initialize (This.all, aPath);
       return This;
    end Create;
 

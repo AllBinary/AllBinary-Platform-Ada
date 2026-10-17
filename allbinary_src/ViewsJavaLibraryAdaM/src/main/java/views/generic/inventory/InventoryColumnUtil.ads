@@ -51,7 +51,6 @@ package views.generic_Id.inventory.InventoryColumnUtil_Package is
    procedure Initialize (This : in out InventoryColumnUtil'Class);
    function Create return InventoryColumnUtil_Access;
    function getInstance return InventoryColumnUtil_Access;
-   procedure getInstance;
    function getColumnWhereLike (This : in out InventoryColumnUtil; inventoryEntity : InventoryEntity_Access; category : Unbounded_String; column : Unbounded_String) return BasicArrayList_Access;
    procedure getColumnWhereLike (This : in out InventoryColumnUtil; inventoryEntity : InventoryEntity_Access; category : Unbounded_String; column : Unbounded_String);
 

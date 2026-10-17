@@ -21,6 +21,8 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.graphics.j2me.workarea.tools.JPanel_Package; use org.allbinary.graphics.j2me.workarea.tools.JPanel_Package;
+with org.allbinary.graphics.j2me.workarea.tools.LinesGraphicItem_Package; use org.allbinary.graphics.j2me.workarea.tools.LinesGraphicItem_Package;
+with org.allbinary.graphics.j2me.workarea.tools.ToolFactory_Package; use org.allbinary.graphics.j2me.workarea.tools.ToolFactory_Package;
 
 package org.allbinary.graphics.j2me.workarea.tools.ToolJPanel_Package is
 

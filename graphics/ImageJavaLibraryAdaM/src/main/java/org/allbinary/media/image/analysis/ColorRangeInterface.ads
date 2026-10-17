@@ -20,6 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
+with org.allbinary.media.image.analysis.Color_Package; use org.allbinary.media.image.analysis.Color_Package;
 
 package org.allbinary.media.image.analysis.ColorRangeInterface_Package is
 

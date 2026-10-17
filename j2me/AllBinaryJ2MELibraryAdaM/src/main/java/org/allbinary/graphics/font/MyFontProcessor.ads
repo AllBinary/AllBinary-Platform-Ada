@@ -41,7 +41,6 @@ package org.allbinary.graphics.font.MyFontProcessor_Package is
    function defaultStringWidth (font : Font_Access; size : Integer) return Integer;
    procedure defaultStringWidth (font : Font_Access; size : Integer);
    function getInstance return MyFontProcessor_Access;
-   procedure getInstance;
    procedure process (This : in out MyFontProcessor; graphics : Graphics_Access);
 
 end org.allbinary.graphics.font.MyFontProcessor_Package;

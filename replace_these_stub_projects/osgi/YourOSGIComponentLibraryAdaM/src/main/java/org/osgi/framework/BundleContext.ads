@@ -9,6 +9,9 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.util.Dictionary_Package; use java.util.Dictionary_Package;
+with org.osgi.framework.Bundle_Package; use org.osgi.framework.Bundle_Package;
+with org.osgi.framework.ServiceRegistration_Package; use org.osgi.framework.ServiceRegistration_Package;
+with org.osgi.framework.ServiceReference_Package; use org.osgi.framework.ServiceReference_Package;
 
 package org.osgi.framework.BundleContext_Package is
 

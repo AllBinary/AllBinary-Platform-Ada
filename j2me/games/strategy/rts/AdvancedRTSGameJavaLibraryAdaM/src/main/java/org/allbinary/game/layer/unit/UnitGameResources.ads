@@ -55,7 +55,6 @@ package org.allbinary.game.layer.unit.UnitGameResources_Package is
    function Create return UnitGameResources_Access;
    procedure append (This : in out UnitGameResources; ROOT : Unbounded_String; sizeString : Unbounded_String);
    function getString (This : in out UnitGameResources) return Unbounded_String;
-   procedure getString (This : in out UnitGameResources);
 
 end org.allbinary.game.layer.unit.UnitGameResources_Package;
 

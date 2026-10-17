@@ -29,7 +29,7 @@ package body org.allbinary.game.layer.CollidableRTSBehavior_Package is
    function Create (collidable : Boolean) return CollidableRTSBehavior_Access is
       This : constant CollidableRTSBehavior_Access := new CollidableRTSBehavior;
    begin
-      Initialize (This.all, collidable);
+      CollidableRTSBehavior_Package.Initialize (This.all, collidable);
       return This;
    end Create;
 

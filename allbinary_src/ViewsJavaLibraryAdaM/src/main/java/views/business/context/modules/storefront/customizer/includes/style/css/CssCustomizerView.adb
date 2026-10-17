@@ -32,7 +32,7 @@ package body views.business.context.modules.storefront.customizer.includes.style
    function Create (transformInfoInterface : TransformInfoInterface_Access) return CssCustomizerView_Access is
       This : constant CssCustomizerView_Access := new CssCustomizerView;
    begin
-      Initialize (This.all, transformInfoInterface);
+      CssCustomizerView_Package.Initialize (This.all, transformInfoInterface);
       return This;
    end Create;
 
@@ -59,13 +59,6 @@ package body views.business.context.modules.storefront.customizer.includes.style
             Java_Throw (e);
                 end;
         end;
-   end view;
-
-   procedure view (This : in out CssCustomizerView) is
-      Java_Result : constant Unbounded_String := CssCustomizerView'Class (This).view;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end view;
 
 end views.business.context.modules.storefront.customizer.includes.style.css.CssCustomizerView_Package;

@@ -20,6 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
+with org.allbinary.game.layer.waypoint.WaypointInfoHudPaintable_Package; use org.allbinary.game.layer.waypoint.WaypointInfoHudPaintable_Package;
 
 package org.allbinary.game.layer.waypoint.WaypointInfoHudPaintableSingleton_Package is
 
@@ -35,7 +36,6 @@ package org.allbinary.game.layer.waypoint.WaypointInfoHudPaintableSingleton_Pack
    procedure Initialize (This : in out WaypointInfoHudPaintableSingleton'Class);
    function Create return WaypointInfoHudPaintableSingleton_Access;
    function getInstance return WaypointInfoHudPaintable_Access;
-   procedure getInstance;
 
 end org.allbinary.game.layer.waypoint.WaypointInfoHudPaintableSingleton_Package;
 

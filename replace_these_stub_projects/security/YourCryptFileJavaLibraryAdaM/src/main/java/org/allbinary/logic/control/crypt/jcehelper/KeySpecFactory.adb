@@ -30,7 +30,7 @@ package body org.allbinary.logic.control.crypt.jcehelper.KeySpecFactory_Package 
    function Create return KeySpecFactory_Access is
       This : constant KeySpecFactory_Access := new KeySpecFactory;
    begin
-      Initialize (This.all);
+      KeySpecFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

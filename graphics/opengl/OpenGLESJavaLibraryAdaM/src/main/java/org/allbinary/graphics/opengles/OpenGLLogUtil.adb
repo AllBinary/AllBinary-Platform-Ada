@@ -19,7 +19,7 @@ package body org.allbinary.graphics.opengles.OpenGLLogUtil_Package is
    function Create return OpenGLLogUtil_Access is
       This : constant OpenGLLogUtil_Access := new OpenGLLogUtil;
    begin
-      Initialize (This.all);
+      OpenGLLogUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -74,13 +74,6 @@ package body org.allbinary.graphics.opengles.OpenGLLogUtil_Package is
             PreLogUtil_Package.put (stringBuffer.toString, This'Unchecked_Access, This.LOG_ERROR);
         end if;
    end logError;
-
-   procedure getInstance is
-      Java_Result : constant OpenGLLogUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

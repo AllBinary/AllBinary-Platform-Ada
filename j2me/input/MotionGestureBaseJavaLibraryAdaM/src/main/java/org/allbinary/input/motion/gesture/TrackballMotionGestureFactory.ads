@@ -22,6 +22,7 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.input.InputFactory_Package; use org.allbinary.game.input.InputFactory_Package;
 with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
+with org.allbinary.input.motion.gesture.MotionGestureInput_Package; use org.allbinary.input.motion.gesture.MotionGestureInput_Package;
 
 package org.allbinary.input.motion.gesture.TrackballMotionGestureFactory_Package is
 
@@ -44,7 +45,6 @@ package org.allbinary.input.motion.gesture.TrackballMotionGestureFactory_Package
    procedure Initialize (This : in out TrackballMotionGestureFactory'Class);
    function Create return TrackballMotionGestureFactory_Access;
    function getInstance return TrackballMotionGestureFactory_Access;
-   procedure getInstance;
 
 end org.allbinary.input.motion.gesture.TrackballMotionGestureFactory_Package;
 

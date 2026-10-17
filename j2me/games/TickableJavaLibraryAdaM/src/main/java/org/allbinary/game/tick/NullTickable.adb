@@ -29,7 +29,7 @@ package body org.allbinary.game.tick.NullTickable_Package is
    function Create return NullTickable_Access is
       This : constant NullTickable_Access := new NullTickable;
    begin
-      Initialize (This.all);
+      NullTickable_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -48,20 +48,6 @@ package body org.allbinary.game.tick.NullTickable_Package is
    function getName (This : in out NullTickable) return Unbounded_String is
    begin
         return This.NAME;
-   end getName;
-
-   procedure getInstance is
-      Java_Result : constant NullTickable_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure getName (This : in out NullTickable) is
-      Java_Result : constant Unbounded_String := NullTickable'Class (This).getName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getName;
 
 begin

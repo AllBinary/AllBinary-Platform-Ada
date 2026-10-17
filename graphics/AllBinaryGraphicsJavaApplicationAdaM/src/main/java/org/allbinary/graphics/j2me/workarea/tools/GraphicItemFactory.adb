@@ -38,7 +38,7 @@ package body org.allbinary.graphics.j2me.workarea.tools.GraphicItemFactory_Packa
    function Create return GraphicItemFactory_Access is
       This : constant GraphicItemFactory_Access := new GraphicItemFactory;
    begin
-      Initialize (This.all);
+      GraphicItemFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -69,13 +69,6 @@ package body org.allbinary.graphics.j2me.workarea.tools.GraphicItemFactory_Packa
             graphicItemHashMap.put (graphicItem.getTreeNode, graphicItem);
         end loop;
         return graphicItemHashMap;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant GraphicItemFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
    procedure getInstance (This : in out GraphicItemFactory; itemName : Unbounded_String) is

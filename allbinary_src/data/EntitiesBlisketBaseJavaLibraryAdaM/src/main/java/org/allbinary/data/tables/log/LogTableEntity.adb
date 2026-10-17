@@ -32,7 +32,7 @@ package body org.allbinary.data.tables.log.LogTableEntity_Package is
    function Create return LogTableEntity_Access is
       This : constant LogTableEntity_Access := new LogTableEntity;
    begin
-      Initialize (This.all);
+      LogTableEntity_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -49,20 +49,6 @@ package body org.allbinary.data.tables.log.LogTableEntity_Package is
    function createTable (This : in out LogTableEntity) return Unbounded_String is
    begin
         return AbSqlBean (This).createTable (This.createTableStatement);
-   end createTable;
-
-   procedure createTableStatement (This : in out LogTableEntity) is
-      Java_Result : constant Unbounded_String := LogTableEntity'Class (This).createTableStatement;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end createTableStatement;
-
-   procedure createTable (This : in out LogTableEntity) is
-      Java_Result : constant Unbounded_String := LogTableEntity'Class (This).createTable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end createTable;
 
 end org.allbinary.data.tables.log.LogTableEntity_Package;

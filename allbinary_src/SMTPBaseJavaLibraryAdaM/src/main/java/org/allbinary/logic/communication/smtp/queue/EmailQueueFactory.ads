@@ -20,6 +20,8 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
+with org.allbinary.logic.communication.smtp.queue.BasicEmailQueue_Package; use org.allbinary.logic.communication.smtp.queue.BasicEmailQueue_Package;
+with org.allbinary.logic.communication.smtp.queue.EmailQueueInterface_Package; use org.allbinary.logic.communication.smtp.queue.EmailQueueInterface_Package;
 
 package org.allbinary.logic.communication.smtp.queue.EmailQueueFactory_Package is
 
@@ -35,7 +37,6 @@ package org.allbinary.logic.communication.smtp.queue.EmailQueueFactory_Package i
    procedure Initialize (This : in out EmailQueueFactory'Class);
    function Create return EmailQueueFactory_Access;
    function getInstance return EmailQueueInterface_Access;
-   procedure getInstance;
 
 end org.allbinary.logic.communication.smtp.queue.EmailQueueFactory_Package;
 

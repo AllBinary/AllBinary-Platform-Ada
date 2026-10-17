@@ -34,16 +34,9 @@ package body org.allbinary.game.score.HighScoreCommandsFactory_Package is
    function Create return HighScoreCommandsFactory_Access is
       This : constant HighScoreCommandsFactory_Access := new HighScoreCommandsFactory;
    begin
-      Initialize (This.all);
+      HighScoreCommandsFactory_Package.Initialize (This.all);
       return This;
    end Create;
-
-   procedure getInstance is
-      Java_Result : constant HighScoreCommandsFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

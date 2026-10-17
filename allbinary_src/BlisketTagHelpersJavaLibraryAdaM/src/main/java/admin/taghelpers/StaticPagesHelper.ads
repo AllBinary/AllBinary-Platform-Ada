@@ -48,13 +48,9 @@ package admin.taghelpers.StaticPagesHelper_Package is
    procedure Initialize (This : in out StaticPagesHelper'Class; hashMap : HashMap_Access; pageContext : PageContext_Access);
    function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return StaticPagesHelper_Access;
    function drop (This : in out StaticPagesHelper) return Unbounded_String;
-   procedure drop (This : in out StaticPagesHelper);
    function create (This : in out StaticPagesHelper) return Unbounded_String;
-   procedure create (This : in out StaticPagesHelper);
    function restore (This : in out StaticPagesHelper) return Unbounded_String;
-   procedure restore (This : in out StaticPagesHelper);
    function backup (This : in out StaticPagesHelper) return Unbounded_String;
-   procedure backup (This : in out StaticPagesHelper);
 
 end admin.taghelpers.StaticPagesHelper_Package;
 

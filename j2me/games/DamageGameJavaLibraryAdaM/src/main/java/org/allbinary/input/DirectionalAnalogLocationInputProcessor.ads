@@ -67,7 +67,6 @@ package org.allbinary.input.DirectionalAnalogLocationInputProcessor_Package is
    function Create (inputProcessorArray : GameInputProcessor_Access_Array_Access) return DirectionalAnalogLocationInputProcessor_Access;
    procedure process (This : in out DirectionalAnalogLocationInputProcessor; allbinaryLayerManager : AllBinaryLayerManager_Access; analogLocationInput : AnalogLocationInput_Access);
    function getSourceId (This : in out DirectionalAnalogLocationInputProcessor) return Integer;
-   procedure getSourceId (This : in out DirectionalAnalogLocationInputProcessor);
 
 end org.allbinary.input.DirectionalAnalogLocationInputProcessor_Package;
 

@@ -33,7 +33,7 @@ package body org.allbinary.logic.communication.http.request.MultipartRequestPara
    function Create (request : HttpServletRequest_Access) return MultipartRequestParams_Access is
       This : constant MultipartRequestParams_Access := new MultipartRequestParams;
    begin
-      Initialize (This.all, request);
+      MultipartRequestParams_Package.Initialize (This.all, request);
       return This;
    end Create;
 
@@ -48,7 +48,7 @@ package body org.allbinary.logic.communication.http.request.MultipartRequestPara
    function Create (pageContext : PageContext_Access) return MultipartRequestParams_Access is
       This : constant MultipartRequestParams_Access := new MultipartRequestParams;
    begin
-      Initialize (This.all, pageContext);
+      MultipartRequestParams_Package.Initialize (This.all, pageContext);
       return This;
    end Create;
 
@@ -111,13 +111,6 @@ package body org.allbinary.logic.communication.http.request.MultipartRequestPara
         else
             return RequestParams (This).toHashMap;
         end if;
-   end toHashMap;
-
-   procedure toHashMap (This : in out MultipartRequestParams) is
-      Java_Result : constant HashMap_Access := MultipartRequestParams'Class (This).toHashMap;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end toHashMap;
 
 end org.allbinary.logic.communication.http.request.MultipartRequestParams_Package;

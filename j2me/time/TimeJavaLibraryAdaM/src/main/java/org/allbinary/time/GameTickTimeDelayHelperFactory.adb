@@ -35,16 +35,9 @@ package body org.allbinary.time.GameTickTimeDelayHelperFactory_Package is
    function Create return GameTickTimeDelayHelperFactory_Access is
       This : constant GameTickTimeDelayHelperFactory_Access := new GameTickTimeDelayHelperFactory;
    begin
-      Initialize (This.all);
+      GameTickTimeDelayHelperFactory_Package.Initialize (This.all);
       return This;
    end Create;
-
-   procedure getInstance is
-      Java_Result : constant GameTickTimeDelayHelper_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

@@ -57,7 +57,6 @@ package admin.tags.CustomLoaderTag_Package is
    procedure setWebappPath (This : in out CustomLoaderTag; value : Unbounded_String);
    procedure setCustomLoaderWebappPath (This : in out CustomLoaderTag);
    function doStartTag (This : in out CustomLoaderTag) return Integer;
-   procedure doStartTag (This : in out CustomLoaderTag);
 
 end admin.tags.CustomLoaderTag_Package;
 

@@ -45,7 +45,6 @@ package org.allbinary.game.input.form.AdvancedRTSGameLayerPositionFinder_Package
    procedure Initialize (This : in out AdvancedRTSGameLayerPositionFinder'Class);
    function Create return AdvancedRTSGameLayerPositionFinder_Access;
    function getInstance return AdvancedRTSGameLayerPositionFinder_Access;
-   procedure getInstance;
    function getLayerInterface (This : in out AdvancedRTSGameLayerPositionFinder; geographicMapCellPosition : GeographicMapCellPosition_Access) return AllBinaryLayer_Access;
    procedure getLayerInterface (This : in out AdvancedRTSGameLayerPositionFinder; geographicMapCellPosition : GeographicMapCellPosition_Access);
 

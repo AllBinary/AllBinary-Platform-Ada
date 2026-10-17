@@ -22,6 +22,7 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with javax.microedition.lcdui.Displayable_Package; use javax.microedition.lcdui.Displayable_Package;
 --  with javax.microedition.midlet.MIDlet_Package; use javax.microedition.midlet.MIDlet_Package;
+with org.allbinary.midlet.AllBinaryMidlet_Package; use org.allbinary.midlet.AllBinaryMidlet_Package;
 
 package org.allbinary.midlet.MidletCompositeInterface_Package is
 

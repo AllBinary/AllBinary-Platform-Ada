@@ -31,7 +31,7 @@ package body org.allbinary.game.ag.layer.pickup.points.PointsLayerCircularStatic
    function Create (allbinaryLayerFactoryInterface : AllBinaryLayerFactoryInterface_Access; total : Integer) return PointsLayerCircularStaticPool_Access is
       This : constant PointsLayerCircularStaticPool_Access := new PointsLayerCircularStaticPool;
    begin
-      Initialize (This.all, allbinaryLayerFactoryInterface, total);
+      PointsLayerCircularStaticPool_Package.Initialize (This.all, allbinaryLayerFactoryInterface, total);
       return This;
    end Create;
 

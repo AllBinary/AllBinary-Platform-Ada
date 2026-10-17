@@ -20,6 +20,8 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
+with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
+with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
 
 package org.allbinary.graphics.color.ColorTemperatureUtil_Package is
 
@@ -37,7 +39,6 @@ package org.allbinary.graphics.color.ColorTemperatureUtil_Package is
    procedure Initialize (This : in out ColorTemperatureUtil'Class);
    function Create return ColorTemperatureUtil_Access;
    function getInstance return ColorTemperatureUtil_Access;
-   procedure getInstance;
    function getBasicColor (This : in out ColorTemperatureUtil; thirdTemp : Integer) return BasicColor_Access;
    procedure getBasicColor (This : in out ColorTemperatureUtil; thirdTemp : Integer);
 

@@ -28,7 +28,7 @@ package body org.allbinary.input.motion.MotionRecognizer_Package is
    function Create return MotionRecognizer_Access is
       This : constant MotionRecognizer_Access := new MotionRecognizer;
    begin
-      Initialize (This.all);
+      MotionRecognizer_Package.Initialize (This.all);
       return This;
    end Create;
 

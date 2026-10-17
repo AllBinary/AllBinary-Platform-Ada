@@ -34,7 +34,7 @@ package body org.allbinary.android.input.motion.BaseGameInputMotionEventProcesso
    function Create return BaseGameInputMotionEventProcessor_Access is
       This : constant BaseGameInputMotionEventProcessor_Access := new BaseGameInputMotionEventProcessor;
    begin
-      Initialize (This.all);
+      BaseGameInputMotionEventProcessor_Package.Initialize (This.all);
       return This;
    end Create;
 

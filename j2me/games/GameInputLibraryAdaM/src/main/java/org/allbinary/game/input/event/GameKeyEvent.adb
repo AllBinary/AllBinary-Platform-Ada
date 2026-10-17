@@ -45,7 +45,7 @@ package body org.allbinary.game.input.event.GameKeyEvent_Package is
    function Create (anyType : Java_Object_Access; sourceId : Integer; originalKey : Integer; gameActionKey : Integer; key : Integer; repeated : Boolean) return GameKeyEvent_Access is
       This : constant GameKeyEvent_Access := new GameKeyEvent;
    begin
-      Initialize (This.all, anyType, sourceId, originalKey, gameActionKey, key, repeated);
+      GameKeyEvent_Package.Initialize (This.all, anyType, sourceId, originalKey, gameActionKey, key, repeated);
       return This;
    end Create;
 
@@ -109,48 +109,6 @@ package body org.allbinary.game.input.event.GameKeyEvent_Package is
    begin
       null;
    end createEvent;
-
-   procedure hasRepeatEvents (This : in out GameKeyEvent) is
-      Java_Result : constant Boolean := GameKeyEvent'Class (This).hasRepeatEvents;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end hasRepeatEvents;
-
-   procedure getKey (This : in out GameKeyEvent) is
-      Java_Result : constant Integer := GameKeyEvent'Class (This).getKey;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getKey;
-
-   procedure toString (This : in out GameKeyEvent) is
-      Java_Result : constant Unbounded_String := GameKeyEvent'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toString;
-
-   procedure getOriginalKey (This : in out GameKeyEvent) is
-      Java_Result : constant Integer := GameKeyEvent'Class (This).getOriginalKey;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getOriginalKey;
-
-   procedure getGameActionKey (This : in out GameKeyEvent) is
-      Java_Result : constant Integer := GameKeyEvent'Class (This).getGameActionKey;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getGameActionKey;
-
-   procedure getSourceId (This : in out GameKeyEvent) is
-      Java_Result : constant Integer := GameKeyEvent'Class (This).getSourceId;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSourceId;
 
 begin
    null;

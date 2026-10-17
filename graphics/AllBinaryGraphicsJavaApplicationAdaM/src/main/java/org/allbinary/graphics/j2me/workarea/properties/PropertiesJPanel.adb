@@ -44,7 +44,7 @@ package body org.allbinary.graphics.j2me.workarea.properties.PropertiesJPanel_Pa
    function Create return PropertiesJPanel_Access is
       This : constant PropertiesJPanel_Access := new PropertiesJPanel;
    begin
-      Initialize (This.all);
+      PropertiesJPanel_Package.Initialize (This.all);
       return This;
    end Create;
 

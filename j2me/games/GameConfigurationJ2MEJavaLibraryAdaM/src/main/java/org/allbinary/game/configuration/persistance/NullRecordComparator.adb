@@ -28,7 +28,7 @@ package body org.allbinary.game.configuration.persistance.NullRecordComparator_P
    function Create return NullRecordComparator_Access is
       This : constant NullRecordComparator_Access := new NullRecordComparator;
    begin
-      Initialize (This.all);
+      NullRecordComparator_Package.Initialize (This.all);
       return This;
    end Create;
 

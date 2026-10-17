@@ -35,7 +35,7 @@ package body org.allbinary.game.resource.ResourceLoadingLevelFactory_Package is
    function Create return ResourceLoadingLevelFactory_Access is
       This : constant ResourceLoadingLevelFactory_Access := new ResourceLoadingLevelFactory;
    begin
-      Initialize (This.all);
+      ResourceLoadingLevelFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -55,13 +55,6 @@ package body org.allbinary.game.resource.ResourceLoadingLevelFactory_Package is
         end loop;
         return To_Unbounded_String (Java_Image (level_Case));
    end getLevelString;
-
-   procedure getInstance is
-      Java_Result : constant ResourceLoadingLevelFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure getLevelString (This : in out ResourceLoadingLevelFactory; level_Case : Integer) is
       Java_Result : constant Unbounded_String := ResourceLoadingLevelFactory'Class (This).getLevelString (level_Case);

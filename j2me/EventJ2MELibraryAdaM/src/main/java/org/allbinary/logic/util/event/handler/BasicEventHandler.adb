@@ -34,7 +34,7 @@ package body org.allbinary.logic.util.event.handler.BasicEventHandler_Package is
    function Create return BasicEventHandler_Access is
       This : constant BasicEventHandler_Access := new BasicEventHandler;
    begin
-      Initialize (This.all);
+      BasicEventHandler_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -153,20 +153,6 @@ package body org.allbinary.logic.util.event.handler.BasicEventHandler_Package is
             index := index + 1;
         end loop;
         return stringBuffer.toString;
-   end toString;
-
-   procedure getEventListenerInterfaceListP (This : in out BasicEventHandler) is
-      Java_Result : constant BasicArrayList_Access := BasicEventHandler'Class (This).getEventListenerInterfaceListP;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getEventListenerInterfaceListP;
-
-   procedure toString (This : in out BasicEventHandler) is
-      Java_Result : constant Unbounded_String := BasicEventHandler'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end toString;
 
 end org.allbinary.logic.util.event.handler.BasicEventHandler_Package;

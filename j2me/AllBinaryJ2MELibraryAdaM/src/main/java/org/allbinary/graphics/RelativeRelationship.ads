@@ -22,6 +22,8 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListUtil_Package; use org.allbinary.util.BasicArrayListUtil_Package;
+with org.allbinary.graphics.PointFactory_Package; use org.allbinary.graphics.PointFactory_Package;
+with org.allbinary.graphics.GPoint_Package; use org.allbinary.graphics.GPoint_Package;
 
 package org.allbinary.graphics.RelativeRelationship_Package is
 
@@ -44,13 +46,9 @@ package org.allbinary.graphics.RelativeRelationship_Package is
    procedure Initialize (This : in out RelativeRelationship'Class; point : GPoint_Access; typesAllowedList : BasicArrayList_Access);
    function Create (point : GPoint_Access; typesAllowedList : BasicArrayList_Access) return RelativeRelationship_Access;
    function getX (This : in out RelativeRelationship) return Integer;
-   procedure getX (This : in out RelativeRelationship);
    function getY (This : in out RelativeRelationship) return Integer;
-   procedure getY (This : in out RelativeRelationship);
    function getZ (This : in out RelativeRelationship) return Integer;
-   procedure getZ (This : in out RelativeRelationship);
    function getTypesAllowedList (This : in out RelativeRelationship) return BasicArrayList_Access;
-   procedure getTypesAllowedList (This : in out RelativeRelationship);
    procedure setTypesAllowedList (This : in out RelativeRelationship; typesAllowedList : BasicArrayList_Access);
 
 end org.allbinary.graphics.RelativeRelationship_Package;

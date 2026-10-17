@@ -87,7 +87,7 @@ package body org.allbinary.game.displayable.canvas.DemoCanvas_Package is
    function Create (abeClientInformation : AbeClientInformationInterface_Access; commandListener : CommandListener_Access; highScoresFactoryInterface : HighScoresFactoryInterface_Access; paintable : Paintable_Access; overlayPaintable : InitUpdatePaintable_Access; gameInitializationInterfaceFactoryInterface : BasicBuildGameInitializerFactory_Access; isContinue : Boolean) return DemoCanvas_Access is
       This : constant DemoCanvas_Access := new DemoCanvas;
    begin
-      Initialize (This.all, abeClientInformation, commandListener, highScoresFactoryInterface, paintable, overlayPaintable, gameInitializationInterfaceFactoryInterface, isContinue);
+      DemoCanvas_Package.Initialize (This.all, abeClientInformation, commandListener, highScoresFactoryInterface, paintable, overlayPaintable, gameInitializationInterfaceFactoryInterface, isContinue);
       return This;
    end Create;
 
@@ -865,55 +865,6 @@ package body org.allbinary.game.displayable.canvas.DemoCanvas_Package is
         return DemoCanvas_Package.TYPE_Id;
    end getType;
 
-   procedure getCustomCommands (This : in out DemoCanvas) is
-      Java_Result : constant Java_Object_Access_Array_Access := DemoCanvas'Class (This).getCustomCommands;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getCustomCommands;
-
-   procedure getSourceId (This : in out DemoCanvas) is
-      Java_Result : constant Integer := DemoCanvas'Class (This).getSourceId;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSourceId;
-
-   procedure isPausable (This : in out DemoCanvas) is
-      Java_Result : constant Boolean := DemoCanvas'Class (This).isPausable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isPausable;
-
-   procedure isGameOver (This : in out DemoCanvas) is
-      Java_Result : constant Boolean := DemoCanvas'Class (This).isGameOver;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isGameOver;
-
-   procedure getLoadStateHashtable (This : in out DemoCanvas) is
-      Java_Result : constant ABHashtable_Access := DemoCanvas'Class (This).getLoadStateHashtable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getLoadStateHashtable;
-
-   procedure getCurrentStateHashtable (This : in out DemoCanvas) is
-      Java_Result : constant ABHashtable_Access := DemoCanvas'Class (This).getCurrentStateHashtable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getCurrentStateHashtable;
-
-   procedure getNextRandom (This : in out DemoCanvas) is
-      Java_Result : constant Integer := DemoCanvas'Class (This).getNextRandom;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getNextRandom;
-
    procedure createGameLayerManager (This : in out DemoCanvas; randomValue : Integer) is
       Java_Result : constant AllBinaryGameLayerManager_Access := DemoCanvas'Class (This).createGameLayerManager (randomValue);
       pragma Unreferenced (Java_Result);
@@ -927,153 +878,6 @@ package body org.allbinary.game.displayable.canvas.DemoCanvas_Package is
    begin
       null;
    end createRunnable;
-
-   procedure isReadyForStateChange (This : in out DemoCanvas) is
-      Java_Result : constant Boolean := DemoCanvas'Class (This).isReadyForStateChange;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isReadyForStateChange;
-
-   procedure getGameState (This : in out DemoCanvas) is
-      Java_Result : constant GameState_Access := DemoCanvas'Class (This).getGameState;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getGameState;
-
-   procedure getGameCanvasRunnableInterface (This : in out DemoCanvas) is
-      Java_Result : constant AllBinaryGameCanvas_Access := DemoCanvas'Class (This).getGameCanvasRunnableInterface;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getGameCanvasRunnableInterface;
-
-   procedure isDemoLoading (This : in out DemoCanvas) is
-      Java_Result : constant Boolean := DemoCanvas'Class (This).isDemoLoading;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isDemoLoading;
-
-   procedure getState (This : in out DemoCanvas) is
-      Java_Result : constant Integer := DemoCanvas'Class (This).getState;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getState;
-
-   procedure isHighScoreSubmitted (This : in out DemoCanvas) is
-      Java_Result : constant Boolean := DemoCanvas'Class (This).isHighScoreSubmitted;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isHighScoreSubmitted;
-
-   procedure getRealHighScoresPaintable (This : in out DemoCanvas) is
-      Java_Result : constant HighScoresPaintable_Access := DemoCanvas'Class (This).getRealHighScoresPaintable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getRealHighScoresPaintable;
-
-   procedure getSpecialAnimationInterface (This : in out DemoCanvas) is
-      Java_Result : constant SpecialAnimation_Access := DemoCanvas'Class (This).getSpecialAnimationInterface;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSpecialAnimationInterface;
-
-   procedure getPaintableInterface (This : in out DemoCanvas) is
-      Java_Result : constant PaintableInterface_Access := DemoCanvas'Class (This).getPaintableInterface;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getPaintableInterface;
-
-   procedure getDefaultPaintableInterface (This : in out DemoCanvas) is
-      Java_Result : constant Paintable_Access := DemoCanvas'Class (This).getDefaultPaintableInterface;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getDefaultPaintableInterface;
-
-   procedure getHighScoresFactoryInterface (This : in out DemoCanvas) is
-      Java_Result : constant HighScoresFactoryInterface_Access := DemoCanvas'Class (This).getHighScoresFactoryInterface;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getHighScoresFactoryInterface;
-
-   procedure getMenuInputProcessor (This : in out DemoCanvas) is
-      Java_Result : constant BasicMenuInputProcessor_Access := DemoCanvas'Class (This).getMenuInputProcessor;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getMenuInputProcessor;
-
-   procedure getMenuForm (This : in out DemoCanvas) is
-      Java_Result : constant ScrollSelectionForm_Access := DemoCanvas'Class (This).getMenuForm;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getMenuForm;
-
-   procedure isInitialized (This : in out DemoCanvas) is
-      Java_Result : constant Boolean := DemoCanvas'Class (This).isInitialized;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isInitialized;
-
-   procedure getOverlayPaintable (This : in out DemoCanvas) is
-      Java_Result : constant Paintable_Access := DemoCanvas'Class (This).getOverlayPaintable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getOverlayPaintable;
-
-   procedure getBasicGameDemoPaintable (This : in out DemoCanvas) is
-      Java_Result : constant StatePaintable_Access := DemoCanvas'Class (This).getBasicGameDemoPaintable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getBasicGameDemoPaintable;
-
-   procedure getTempWait (This : in out DemoCanvas) is
-      Java_Result : constant Integer := DemoCanvas'Class (This).getTempWait;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTempWait;
-
-   procedure isSingleThread (This : in out DemoCanvas) is
-      Java_Result : constant Boolean := DemoCanvas'Class (This).isSingleThread;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isSingleThread;
-
-   procedure isRunningInAnotherThread (This : in out DemoCanvas) is
-      Java_Result : constant Boolean := DemoCanvas'Class (This).isRunningInAnotherThread;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isRunningInAnotherThread;
-
-   procedure getGameInitializationInterfaceFactoryInterface (This : in out DemoCanvas) is
-      Java_Result : constant BasicBuildGameInitializerFactory_Access := DemoCanvas'Class (This).getGameInitializationInterfaceFactoryInterface;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getGameInitializationInterfaceFactoryInterface;
-
-   procedure getType (This : in out DemoCanvas) is
-      Java_Result : constant Integer := DemoCanvas'Class (This).getType;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getType;
 
 begin
    null;

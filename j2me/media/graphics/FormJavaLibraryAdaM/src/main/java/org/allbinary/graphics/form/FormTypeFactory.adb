@@ -33,7 +33,7 @@ package body org.allbinary.graphics.form.FormTypeFactory_Package is
    function Create return FormTypeFactory_Access is
       This : constant FormTypeFactory_Access := new FormTypeFactory;
    begin
-      Initialize (This.all);
+      FormTypeFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -55,20 +55,6 @@ package body org.allbinary.graphics.form.FormTypeFactory_Package is
             formType := This.HORIZONTAL_FORM;
         end if;
         return formType;
-   end getFormType;
-
-   procedure getInstance is
-      Java_Result : constant FormTypeFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure getFormType (This : in out FormTypeFactory) is
-      Java_Result : constant FormType_Access := FormTypeFactory'Class (This).getFormType;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getFormType;
 
 begin

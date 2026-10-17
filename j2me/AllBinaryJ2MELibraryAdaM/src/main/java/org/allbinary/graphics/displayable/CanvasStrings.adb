@@ -46,7 +46,7 @@ package body org.allbinary.graphics.displayable.CanvasStrings_Package is
    function Create return CanvasStrings_Access is
       This : constant CanvasStrings_Access := new CanvasStrings;
    begin
-      Initialize (This.all);
+      CanvasStrings_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -54,13 +54,6 @@ package body org.allbinary.graphics.displayable.CanvasStrings_Package is
    function getInstance return CanvasStrings_Access is
    begin
         return CanvasStrings_Package.instance;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant CanvasStrings_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

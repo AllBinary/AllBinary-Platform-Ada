@@ -29,6 +29,9 @@ with org.allbinary.game.layer.pickup.PickedUpLayerInterfaceFactoryInterface_Pack
 with org.allbinary.game.layer.pickup.PickedUpLayerTypeFactory_Package; use org.allbinary.game.layer.pickup.PickedUpLayerTypeFactory_Package;
 with org.allbinary.game.layer.pickup.PickupProcessorInterface_Package; use org.allbinary.game.layer.pickup.PickupProcessorInterface_Package;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
+with org.allbinary.game.ag.layer.pickup.points.PointsLayerCircularStaticPool_Package; use org.allbinary.game.ag.layer.pickup.points.PointsLayerCircularStaticPool_Package;
+with org.allbinary.game.ag.layer.pickup.points.PointsLayerFactory_Package; use org.allbinary.game.ag.layer.pickup.points.PointsLayerFactory_Package;
+with org.allbinary.game.ag.layer.pickup.points.PointsResources_Package; use org.allbinary.game.ag.layer.pickup.points.PointsResources_Package;
 
 package org.allbinary.game.ag.layer.pickup.points.Points30kPickedUpLayerInterfaceFactory_Package is
 
@@ -56,9 +59,7 @@ package org.allbinary.game.ag.layer.pickup.points.Points30kPickedUpLayerInterfac
    function Create return Points30kPickedUpLayerInterfaceFactory_Access;
    procedure init;
    function getTotal (This : in out Points30kPickedUpLayerInterfaceFactory) return Integer;
-   procedure getTotal (This : in out Points30kPickedUpLayerInterfaceFactory);
    function getInstance return PickedUpLayerInterfaceFactoryInterface_Access;
-   procedure getInstance;
    procedure process (This : in out Points30kPickedUpLayerInterfaceFactory; sourceLayerInterface : AllBinaryLayer_Access);
 
 end org.allbinary.game.ag.layer.pickup.points.Points30kPickedUpLayerInterfaceFactory_Package;

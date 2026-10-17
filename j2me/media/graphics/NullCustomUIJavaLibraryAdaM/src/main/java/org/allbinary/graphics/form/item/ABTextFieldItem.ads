@@ -33,14 +33,11 @@ package org.allbinary.graphics.form.item.ABTextFieldItem_Package is
    procedure Initialize (This : in out ABTextFieldItem'Class; canvas : Canvas_Access; visitor : Visitor_Access; label : Unbounded_String; value : Unbounded_String; maxSize : Integer; layout : Integer; altText : Unbounded_String; font : Font_Access; backgroundBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access);
    function Create (canvas : Canvas_Access; visitor : Visitor_Access; label : Unbounded_String; value : Unbounded_String; maxSize : Integer; layout : Integer; altText : Unbounded_String; font : Font_Access; backgroundBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access) return ABTextFieldItem_Access;
    function getLabel (This : in out ABTextFieldItem) return Unbounded_String;
-   procedure getLabel (This : in out ABTextFieldItem);
    procedure setLabel (This : in out ABTextFieldItem; label : Unbounded_String);
    function getString (This : in out ABTextFieldItem) return Unbounded_String;
-   procedure getString (This : in out ABTextFieldItem);
    procedure setString (This : in out ABTextFieldItem; string_Id : Unbounded_String);
    procedure setFocus (This : in out ABTextFieldItem; state : Boolean);
    function getFontHeight (This : in out ABTextFieldItem) return Integer;
-   procedure getFontHeight (This : in out ABTextFieldItem);
    procedure setBackgroundBasicColorP (This : in out ABTextFieldItem; basicColor : BasicColor_Access);
    procedure setForegroundBasicColorP (This : in out ABTextFieldItem; basicColor : BasicColor_Access);
 

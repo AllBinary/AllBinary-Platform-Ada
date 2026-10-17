@@ -24,6 +24,9 @@ with org.allbinary.input.automation.module.DefaultListModelHelper_Package; use o
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.JPanel_Package; use org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.JPanel_Package;
+with org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileActions_Package; use org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileActions_Package;
+with org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileActionJPanel_Package; use org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileActionJPanel_Package;
+with org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileAction_Package; use org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileAction_Package;
 
 package org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileActionsJPanel_Package is
 
@@ -65,10 +68,8 @@ package org.allbinary.input.automation.module.generic_Id.configuration.profile.a
    procedure deleteActionJButtonActionPerformed (This : in out GenericProfileActionsJPanel; evt : ActionEvent_Access);
    procedure selectFirstElement (This : in out GenericProfileActionsJPanel);
    function getGenericProfileActionJPanel (This : in out GenericProfileActionsJPanel) return GenericProfileActionJPanel_Access;
-   procedure getGenericProfileActionJPanel (This : in out GenericProfileActionsJPanel);
    procedure setGenericProfileActionJPanel (This : in out GenericProfileActionsJPanel; genericProfileActionJPanel : GenericProfileActionJPanel_Access);
    function getGenericProfileActions (This : in out GenericProfileActionsJPanel) return GenericProfileActions_Access;
-   procedure getGenericProfileActions (This : in out GenericProfileActionsJPanel);
    procedure setGenericProfileActions (This : in out GenericProfileActionsJPanel; genericProfileActions : GenericProfileActions_Access);
    procedure newActionJButtonActionPerformed (This : in out GenericProfileActionsJPanel; evt : ActionEvent_Access);
 

@@ -27,7 +27,7 @@ package body org.allbinary.game.layer.AdvancedRTSLayerUtil_Package is
    function Create return AdvancedRTSLayerUtil_Access is
       This : constant AdvancedRTSLayerUtil_Access := new AdvancedRTSLayerUtil;
    begin
-      Initialize (This.all);
+      AdvancedRTSLayerUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -44,13 +44,6 @@ package body org.allbinary.game.layer.AdvancedRTSLayerUtil_Package is
         hashtable.put (WorkWaypoint_Package.ID, SmallIntegerSingletonFactory_Package.getInstance.getAt (50));
         return hashtable;
    end createFakeRTSLayerHashtable;
-
-   procedure getInstance is
-      Java_Result : constant AdvancedRTSLayerUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure createFakeRTSLayerHashtable (This : in out AdvancedRTSLayerUtil; baseRaceTrackGeographicMap : BaseRaceTrackGeographicMap_Access) is
       Java_Result : constant ABHashtable_Access := AdvancedRTSLayerUtil'Class (This).createFakeRTSLayerHashtable (baseRaceTrackGeographicMap);

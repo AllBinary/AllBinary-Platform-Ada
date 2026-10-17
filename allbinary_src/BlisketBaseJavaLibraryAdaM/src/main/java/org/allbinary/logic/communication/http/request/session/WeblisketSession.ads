@@ -38,6 +38,7 @@ with org.allbinary.business.user.role.UserRoleData_Package; use org.allbinary.bu
 with org.allbinary.logic.java.bool.BooleanFactory_Package; use org.allbinary.logic.java.bool.BooleanFactory_Package;
 with org.allbinary.logic.string_Id.StringValidationUtil_Package; use org.allbinary.logic.string_Id.StringValidationUtil_Package;
 with org.allbinary.logic.communication.http.request.session.WeblisketSessionInterface_Package; use org.allbinary.logic.communication.http.request.session.WeblisketSessionInterface_Package;
+with org.allbinary.logic.communication.http.request.session.WeblisketSessionData_Package; use org.allbinary.logic.communication.http.request.session.WeblisketSessionData_Package;
 
 package org.allbinary.logic.communication.http.request.session.WeblisketSession_Package is
 
@@ -67,7 +68,6 @@ package org.allbinary.logic.communication.http.request.session.WeblisketSession_
    procedure Initialize (This : in out WeblisketSession'Class; hashMap : HashMap_Access; pageContext : PageContext_Access);
    function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return WeblisketSession_Access;
    function getId (This : in out WeblisketSession) return Unbounded_String;
-   procedure getId (This : in out WeblisketSession);
    procedure setPassword (This : in out WeblisketSession; password : Unbounded_String);
    procedure setUserName (This : in out WeblisketSession; userName : Unbounded_String);
    procedure setPaymentMethod (This : in out WeblisketSession; value : Unbounded_String);
@@ -77,31 +77,19 @@ package org.allbinary.logic.communication.http.request.session.WeblisketSession_
    procedure setTimeout (This : in out WeblisketSession; value : Unbounded_String);
    procedure setStoreName (This : in out WeblisketSession; value : Unbounded_String);
    function getWebAppPath (This : in out WeblisketSession) return Unbounded_String;
-   procedure getWebAppPath (This : in out WeblisketSession);
    function getUserName (This : in out WeblisketSession) return Unbounded_String;
-   procedure getUserName (This : in out WeblisketSession);
    function getPassword (This : in out WeblisketSession) return Unbounded_String;
-   procedure getPassword (This : in out WeblisketSession);
    function getPaymentMethod (This : in out WeblisketSession) return Unbounded_String;
-   procedure getPaymentMethod (This : in out WeblisketSession);
    function getAuthentication (This : in out WeblisketSession) return Unbounded_String;
-   procedure getAuthentication (This : in out WeblisketSession);
    function getAttempts (This : in out WeblisketSession) return Integer;
-   procedure getAttempts (This : in out WeblisketSession);
    function getTimeout (This : in out WeblisketSession) return Unbounded_String;
-   procedure getTimeout (This : in out WeblisketSession);
    function getStoreName (This : in out WeblisketSession) return Unbounded_String;
-   procedure getStoreName (This : in out WeblisketSession);
    function getRole (This : in out WeblisketSession) return UserRole_Access;
-   procedure getRole (This : in out WeblisketSession);
    function getOrder (This : in out WeblisketSession) return OrderInterface_Access;
-   procedure getOrder (This : in out WeblisketSession);
    procedure setAuthenticated (This : in out WeblisketSession; value : Boolean);
    procedure clear (This : in out WeblisketSession);
    function getCreationTime (This : in out WeblisketSession) return Long_Long_Integer;
-   procedure getCreationTime (This : in out WeblisketSession);
    function getLastAccessedTime (This : in out WeblisketSession) return Long_Long_Integer;
-   procedure getLastAccessedTime (This : in out WeblisketSession);
    procedure removeBasket (This : in out WeblisketSession);
 
 end org.allbinary.logic.communication.http.request.session.WeblisketSession_Package;

@@ -33,7 +33,7 @@ package body org.allbinary.media.image.comparison.motion.ConstrainedMotionRectan
    function Create (motionRectangleConstraintsInterface : MotionRectangleConstraintsInterface_Access; motionRectangles : MotionRectangles_Access) return ConstrainedMotionRectangles_Access is
       This : constant ConstrainedMotionRectangles_Access := new ConstrainedMotionRectangles;
    begin
-      Initialize (This.all, motionRectangleConstraintsInterface, motionRectangles);
+      ConstrainedMotionRectangles_Package.Initialize (This.all, motionRectangleConstraintsInterface, motionRectangles);
       return This;
    end Create;
 
@@ -94,13 +94,6 @@ package body org.allbinary.media.image.comparison.motion.ConstrainedMotionRectan
    begin
         This.motionRectangleConstraintsInterface := motionRectangleConstraintsInterface;
    end setMotionRectangleConstraintsInterface;
-
-   procedure getMotionRectangleConstraintsInterface (This : in out ConstrainedMotionRectangles) is
-      Java_Result : constant MotionRectangleConstraintsInterface_Access := ConstrainedMotionRectangles'Class (This).getMotionRectangleConstraintsInterface;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getMotionRectangleConstraintsInterface;
 
 begin
    null;

@@ -36,7 +36,7 @@ package body org.allbinary.data.tables.context.module.storefronts.StoreFrontsEnt
    function Create return StoreFrontsEntityFactory_Access is
       This : constant StoreFrontsEntityFactory_Access := new StoreFrontsEntityFactory;
    begin
-      Initialize (This.all);
+      StoreFrontsEntityFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -57,20 +57,6 @@ package body org.allbinary.data.tables.context.module.storefronts.StoreFrontsEnt
             return null;
                 end;
         end;
-   end getStoreFrontsEntityInstance;
-
-   procedure getInstance is
-      Java_Result : constant StoreFrontsEntityFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure getStoreFrontsEntityInstance (This : in out StoreFrontsEntityFactory) is
-      Java_Result : constant StoreFrontsEntity_Access := StoreFrontsEntityFactory'Class (This).getStoreFrontsEntityInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getStoreFrontsEntityInstance;
 
 begin

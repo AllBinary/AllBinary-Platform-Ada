@@ -43,9 +43,7 @@ package org.allbinary.input.motion.button.BaseTouchInput_Package is
    procedure Initialize (This : in out BaseTouchInput'Class);
    function Create return BaseTouchInput_Access;
    function getList (This : in out BaseTouchInput) return BasicArrayList_Access;
-   procedure getList (This : in out BaseTouchInput);
    function toString (This : in out BaseTouchInput) return Unbounded_String;
-   procedure toString (This : in out BaseTouchInput);
 
 end org.allbinary.input.motion.button.BaseTouchInput_Package;
 

@@ -30,7 +30,7 @@ package body org.allbinary.business.user.role.UserRoleData_Package is
    function Create return UserRoleData_Access is
       This : constant UserRoleData_Access := new UserRoleData;
    begin
-      Initialize (This.all);
+      UserRoleData_Package.Initialize (This.all);
       return This;
    end Create;
 

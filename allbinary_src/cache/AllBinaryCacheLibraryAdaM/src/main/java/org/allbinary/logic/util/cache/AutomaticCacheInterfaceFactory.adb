@@ -30,7 +30,7 @@ package body org.allbinary.logic.util.cache.AutomaticCacheInterfaceFactory_Packa
    function Create return AutomaticCacheInterfaceFactory_Access is
       This : constant AutomaticCacheInterfaceFactory_Access := new AutomaticCacheInterfaceFactory;
    begin
-      Initialize (This.all);
+      AutomaticCacheInterfaceFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

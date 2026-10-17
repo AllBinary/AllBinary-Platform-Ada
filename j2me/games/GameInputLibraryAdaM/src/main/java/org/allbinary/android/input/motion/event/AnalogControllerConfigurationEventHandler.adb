@@ -37,7 +37,7 @@ package body org.allbinary.android.input.motion.event.AnalogControllerConfigurat
    function Create return AnalogControllerConfigurationEventHandler_Access is
       This : constant AnalogControllerConfigurationEventHandler_Access := new AnalogControllerConfigurationEventHandler;
    begin
-      Initialize (This.all);
+      AnalogControllerConfigurationEventHandler_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -89,13 +89,6 @@ package body org.allbinary.android.input.motion.event.AnalogControllerConfigurat
         analogControllerConfigurationEventListenerInterface := (AnalogControllerConfigurationEventListenerInterface_Access (eventListenerInterface));
         analogControllerConfigurationEventListenerInterface.onAnalogControllerConfigurationEvent (AnalogControllerConfigurationEvent_Access (eventObject));
    end process;
-
-   procedure getInstance is
-      Java_Result : constant AnalogControllerConfigurationEventHandler_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

@@ -20,6 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
+with org.allbinary.logic.communication.http.AcceptableResponse_Package; use org.allbinary.logic.communication.http.AcceptableResponse_Package;
 
 package org.allbinary.logic.communication.http.AcceptableResponseFactory_Package is
 
@@ -39,7 +40,6 @@ package org.allbinary.logic.communication.http.AcceptableResponseFactory_Package
    procedure Initialize (This : in out AcceptableResponseFactory'Class);
    function Create return AcceptableResponseFactory_Access;
    function getInstance return AcceptableResponseFactory_Access;
-   procedure getInstance;
 
 end org.allbinary.logic.communication.http.AcceptableResponseFactory_Package;
 

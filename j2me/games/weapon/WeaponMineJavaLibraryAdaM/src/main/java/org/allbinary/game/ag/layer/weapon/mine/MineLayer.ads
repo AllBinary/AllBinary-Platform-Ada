@@ -31,6 +31,7 @@ with org.allbinary.media.audio.SecondaryPlayerQueueFactory_Package; use org.allb
 with org.allbinary.physics.movement.NoMovementFactory_Package; use org.allbinary.physics.movement.NoMovementFactory_Package;
 with org.allbinary.view.ViewPositionBase_Package; use org.allbinary.view.ViewPositionBase_Package;
 with org.allbinary.view.event.ViewPositionEventHandler_Package; use org.allbinary.view.event.ViewPositionEventHandler_Package;
+with org.allbinary.game.ag.layer.weapon.mine.MineWeaponResources_Package; use org.allbinary.game.ag.layer.weapon.mine.MineWeaponResources_Package;
 
 package org.allbinary.game.ag.layer.weapon.mine.MineLayer_Package is
 

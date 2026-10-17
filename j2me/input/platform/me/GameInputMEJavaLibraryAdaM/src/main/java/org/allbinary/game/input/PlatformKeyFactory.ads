@@ -21,6 +21,9 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
+with org.allbinary.game.input.J2MEGameKey_Package; use org.allbinary.game.input.J2MEGameKey_Package;
+with org.allbinary.game.input.J2MEKeyFactory_Package; use org.allbinary.game.input.J2MEKeyFactory_Package;
+with org.allbinary.game.input.Input_Package; use org.allbinary.game.input.Input_Package;
 
 package org.allbinary.game.input.PlatformKeyFactory_Package is
 
@@ -37,7 +40,6 @@ package org.allbinary.game.input.PlatformKeyFactory_Package is
    procedure Initialize (This : in out PlatformKeyFactory'Class);
    function Create return PlatformKeyFactory_Access;
    function getInstance return PlatformKeyFactory_Access;
-   procedure getInstance;
    function getString (This : in out PlatformKeyFactory; keyCode : Integer) return Unbounded_String;
    procedure getString (This : in out PlatformKeyFactory; keyCode : Integer);
    function isSubmission (This : in out PlatformKeyFactory; input : Input_Access) return Boolean;

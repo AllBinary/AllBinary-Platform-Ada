@@ -31,6 +31,8 @@ with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.s
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
+with org.allbinary.business.user.commerce.inventory.item.BasicItemData_Package; use org.allbinary.business.user.commerce.inventory.item.BasicItemData_Package;
+with org.allbinary.business.user.commerce.inventory.item.ItemInterface_Package; use org.allbinary.business.user.commerce.inventory.item.ItemInterface_Package;
 
 package org.allbinary.business.user.commerce.inventory.item.BasicItemView_Package is
 
@@ -62,9 +64,7 @@ package org.allbinary.business.user.commerce.inventory.item.BasicItemView_Packag
    function toXmlNode (This : in out BasicItemView; document : Document_Access) return Node_Access;
    procedure toXmlNode (This : in out BasicItemView; document : Document_Access);
    function toXmlDoc (This : in out BasicItemView) return Document_Access;
-   procedure toXmlDoc (This : in out BasicItemView);
    function view (This : in out BasicItemView) return Unbounded_String;
-   procedure view (This : in out BasicItemView);
 
 end org.allbinary.business.user.commerce.inventory.item.BasicItemView_Package;
 

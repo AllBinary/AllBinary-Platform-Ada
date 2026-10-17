@@ -37,7 +37,7 @@ package body org.allbinary.input.motion.gesture.observer.MotionEventCircularPool
    function Create (id : Integer) return MotionEventCircularPool_Access is
       This : constant MotionEventCircularPool_Access := new MotionEventCircularPool;
    begin
-      Initialize (This.all, id);
+      MotionEventCircularPool_Package.Initialize (This.all, id);
       return This;
    end Create;
 

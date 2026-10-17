@@ -47,11 +47,9 @@ package org.allbinary.input.KeySingletonFactory_Package is
    procedure Initialize (This : in out KeySingletonFactory'Class);
    function Create return KeySingletonFactory_Access;
    function getHashtable return ABHashtable_Access;
-   procedure getHashtable;
    function getInstance (index : Integer) return Integer;
    procedure getInstance (index : Integer);
    function getArray return Integer_Array_Access;
-   procedure getArray;
 
 end org.allbinary.input.KeySingletonFactory_Package;
 

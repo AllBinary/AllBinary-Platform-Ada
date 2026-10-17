@@ -30,7 +30,7 @@ package body org.allbinary.game.input.motion.action.SingleKeyPressGameKeyFromMot
    function Create return SingleKeyPressGameKeyFromMotionGestureEventListener_Access is
       This : constant SingleKeyPressGameKeyFromMotionGestureEventListener_Access := new SingleKeyPressGameKeyFromMotionGestureEventListener;
    begin
-      Initialize (This.all);
+      SingleKeyPressGameKeyFromMotionGestureEventListener_Package.Initialize (This.all);
       return This;
    end Create;
 

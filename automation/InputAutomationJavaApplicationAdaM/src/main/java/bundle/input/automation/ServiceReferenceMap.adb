@@ -31,7 +31,7 @@ package body bundle.input.automation.ServiceReferenceMap_Package is
    function Create (serviceReference : ServiceReference_Access) return ServiceReferenceMap_Access is
       This : constant ServiceReferenceMap_Access := new ServiceReferenceMap;
    begin
-      Initialize (This.all, serviceReference);
+      ServiceReferenceMap_Package.Initialize (This.all, serviceReference);
       return This;
    end Create;
 
@@ -104,20 +104,6 @@ package body bundle.input.automation.ServiceReferenceMap_Package is
         return stringBuffer.toString;
    end toString;
 
-   procedure size (This : in out ServiceReferenceMap) is
-      Java_Result : constant Integer := ServiceReferenceMap'Class (This).size;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end size;
-
-   procedure isEmpty (This : in out ServiceReferenceMap) is
-      Java_Result : constant Boolean := ServiceReferenceMap'Class (This).isEmpty;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isEmpty;
-
    procedure containsKey (This : in out ServiceReferenceMap; key : Java_Object_Access) is
       Java_Result : constant Boolean := ServiceReferenceMap'Class (This).containsKey (key);
       pragma Unreferenced (Java_Result);
@@ -152,27 +138,6 @@ package body bundle.input.automation.ServiceReferenceMap_Package is
    begin
       null;
    end remove;
-
-   procedure keySet (This : in out ServiceReferenceMap) is
-      Java_Result : constant Set_Access := ServiceReferenceMap'Class (This).keySet;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end keySet;
-
-   procedure values (This : in out ServiceReferenceMap) is
-      Java_Result : constant Collection_Access := ServiceReferenceMap'Class (This).values;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end values;
-
-   procedure entrySet (This : in out ServiceReferenceMap) is
-      Java_Result : constant Set_Access := ServiceReferenceMap'Class (This).entrySet;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end entrySet;
 
    procedure toString (map : Map_Access) is
       Java_Result : constant Unbounded_String := toString (map);

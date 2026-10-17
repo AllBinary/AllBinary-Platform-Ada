@@ -57,9 +57,7 @@ package admin.tags.PaymentTag_Package is
    function Create return PaymentTag_Access;
    procedure setStoreName (This : in out PaymentTag; value : Unbounded_String);
    function select_Id (This : in out PaymentTag) return Unbounded_String;
-   procedure select_Id (This : in out PaymentTag);
    function doStartTag (This : in out PaymentTag) return Integer;
-   procedure doStartTag (This : in out PaymentTag);
 
 end admin.tags.PaymentTag_Package;
 

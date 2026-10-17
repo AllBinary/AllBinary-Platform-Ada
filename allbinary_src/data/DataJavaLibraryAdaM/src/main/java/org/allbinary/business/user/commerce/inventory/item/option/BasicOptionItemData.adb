@@ -28,7 +28,7 @@ package body org.allbinary.business.user.commerce.inventory.item.option.BasicOpt
    function Create return BasicOptionItemData_Access is
       This : constant BasicOptionItemData_Access := new BasicOptionItemData;
    begin
-      Initialize (This.all);
+      BasicOptionItemData_Package.Initialize (This.all);
       return This;
    end Create;
 

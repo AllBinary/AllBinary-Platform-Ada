@@ -40,7 +40,7 @@ package body admin.taghelpers.XmlOptionItemsRequestHelper_Package is
    function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return XmlOptionItemsRequestHelper_Access is
       This : constant XmlOptionItemsRequestHelper_Access := new XmlOptionItemsRequestHelper;
    begin
-      Initialize (This.all, hashMap, pageContext);
+      XmlOptionItemsRequestHelper_Package.Initialize (This.all, hashMap, pageContext);
       return This;
    end Create;
 
@@ -154,34 +154,6 @@ package body admin.taghelpers.XmlOptionItemsRequestHelper_Package is
             return error;
                 end;
         end;
-   end update;
-
-   procedure getHashMap (This : in out XmlOptionItemsRequestHelper) is
-      Java_Result : constant HashMap_Access := XmlOptionItemsRequestHelper'Class (This).getHashMap;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getHashMap;
-
-   procedure insert (This : in out XmlOptionItemsRequestHelper) is
-      Java_Result : constant Unbounded_String := XmlOptionItemsRequestHelper'Class (This).insert;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end insert;
-
-   procedure delete (This : in out XmlOptionItemsRequestHelper) is
-      Java_Result : constant Unbounded_String := XmlOptionItemsRequestHelper'Class (This).delete;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end delete;
-
-   procedure update (This : in out XmlOptionItemsRequestHelper) is
-      Java_Result : constant Unbounded_String := XmlOptionItemsRequestHelper'Class (This).update;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end update;
 
 end admin.taghelpers.XmlOptionItemsRequestHelper_Package;

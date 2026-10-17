@@ -33,7 +33,7 @@ package body org.allbinary.logic.io.file.visitor.BooleanFileVisitor_Package is
    function Create (filterStringBasicArrayList : BasicArrayList_Access) return BooleanFileVisitor_Access is
       This : constant BooleanFileVisitor_Access := new BooleanFileVisitor;
    begin
-      Initialize (This.all, filterStringBasicArrayList);
+      BooleanFileVisitor_Package.Initialize (This.all, filterStringBasicArrayList);
       return This;
    end Create;
 
@@ -88,13 +88,6 @@ package body org.allbinary.logic.io.file.visitor.BooleanFileVisitor_Package is
    begin
       null;
    end visit;
-
-   procedure getFilterStringBasicArrayList (This : in out BooleanFileVisitor) is
-      Java_Result : constant BasicArrayList_Access := BooleanFileVisitor'Class (This).getFilterStringBasicArrayList;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getFilterStringBasicArrayList;
 
    procedure visit (This : in out BooleanFileVisitor; file : AbFile_Access; fileNameString : Unbounded_String) is
       Java_Result : constant Boolean := BooleanFileVisitor'Class (This).visit (file, fileNameString);

@@ -36,7 +36,6 @@ package javax.microedition.lcdui.PostLoadPlatformImage_Package is
    procedure Initialize (This : in out PostLoadPlatformImage'Class);
    function Create return PostLoadPlatformImage_Access;
    function getInstance return PostLoadPlatformImage_Access;
-   procedure getInstance;
 
 end javax.microedition.lcdui.PostLoadPlatformImage_Package;
 

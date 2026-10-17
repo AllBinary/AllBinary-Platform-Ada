@@ -37,7 +37,7 @@ package body org.allbinary.data.tables.generator.IdGeneratorEntity_Package is
    function Create return IdGeneratorEntity_Access is
       This : constant IdGeneratorEntity_Access := new IdGeneratorEntity;
    begin
-      Initialize (This.all);
+      IdGeneratorEntity_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -119,20 +119,6 @@ package body org.allbinary.data.tables.generator.IdGeneratorEntity_Package is
    begin
       null;
    end get;
-
-   procedure createTable (This : in out IdGeneratorEntity) is
-      Java_Result : constant Unbounded_String := IdGeneratorEntity'Class (This).createTable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end createTable;
-
-   procedure dropTable (This : in out IdGeneratorEntity) is
-      Java_Result : constant Unbounded_String := IdGeneratorEntity'Class (This).dropTable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end dropTable;
 
 end org.allbinary.data.tables.generator.IdGeneratorEntity_Package;
 

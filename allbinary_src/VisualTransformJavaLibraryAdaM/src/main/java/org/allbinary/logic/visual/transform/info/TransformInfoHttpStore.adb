@@ -34,7 +34,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoHttpStore_Pa
    function Create (propertiesHashMap : HashMap_Access; pageContext : PageContext_Access) return TransformInfoHttpStore_Access is
       This : constant TransformInfoHttpStore_Access := new TransformInfoHttpStore;
    begin
-      Initialize (This.all, propertiesHashMap, pageContext);
+      TransformInfoHttpStore_Package.Initialize (This.all, propertiesHashMap, pageContext);
       return This;
    end Create;
 
@@ -58,7 +58,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoHttpStore_Pa
    function Create (databaseHashMap : HashMap_Access; propertiesHashMap : HashMap_Access; pageContext : PageContext_Access) return TransformInfoHttpStore_Access is
       This : constant TransformInfoHttpStore_Access := new TransformInfoHttpStore;
    begin
-      Initialize (This.all, databaseHashMap, propertiesHashMap, pageContext);
+      TransformInfoHttpStore_Package.Initialize (This.all, databaseHashMap, propertiesHashMap, pageContext);
       return This;
    end Create;
 
@@ -76,7 +76,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoHttpStore_Pa
    function Create (storeFrontInterface : StoreFrontInterface_Access; propertiesHashMap : HashMap_Access; pageContext : PageContext_Access) return TransformInfoHttpStore_Access is
       This : constant TransformInfoHttpStore_Access := new TransformInfoHttpStore;
    begin
-      Initialize (This.all, storeFrontInterface, propertiesHashMap, pageContext);
+      TransformInfoHttpStore_Package.Initialize (This.all, storeFrontInterface, propertiesHashMap, pageContext);
       return This;
    end Create;
 
@@ -108,34 +108,6 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoHttpStore_Pa
    function getDataFilePath (This : in out TransformInfoHttpStore) return AbPath_Access is
    begin
         return AbPath_Package.Create (This.getPath, This.getDataFile);
-   end getDataFilePath;
-
-   procedure getPath (This : in out TransformInfoHttpStore) is
-      Java_Result : constant Unbounded_String := TransformInfoHttpStore'Class (This).getPath;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getPath;
-
-   procedure getTemplateFilePath (This : in out TransformInfoHttpStore) is
-      Java_Result : constant AbPath_Access := TransformInfoHttpStore'Class (This).getTemplateFilePath;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTemplateFilePath;
-
-   procedure getObjectConfigFilePath (This : in out TransformInfoHttpStore) is
-      Java_Result : constant AbPath_Access := TransformInfoHttpStore'Class (This).getObjectConfigFilePath;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getObjectConfigFilePath;
-
-   procedure getDataFilePath (This : in out TransformInfoHttpStore) is
-      Java_Result : constant AbPath_Access := TransformInfoHttpStore'Class (This).getDataFilePath;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getDataFilePath;
 
 end org.allbinary.logic.visual.transform.info.TransformInfoHttpStore_Package;

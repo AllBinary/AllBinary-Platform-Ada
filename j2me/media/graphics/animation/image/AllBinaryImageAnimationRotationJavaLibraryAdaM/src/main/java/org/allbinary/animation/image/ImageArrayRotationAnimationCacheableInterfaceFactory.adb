@@ -28,7 +28,7 @@ package body org.allbinary.animation.image.ImageArrayRotationAnimationCacheableI
    function Create return ImageArrayRotationAnimationCacheableInterfaceFactory_Access is
       This : constant ImageArrayRotationAnimationCacheableInterfaceFactory_Access := new ImageArrayRotationAnimationCacheableInterfaceFactory;
    begin
-      Initialize (This.all);
+      ImageArrayRotationAnimationCacheableInterfaceFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

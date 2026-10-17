@@ -30,7 +30,7 @@ package body org.allbinary.logic.util.cache.PoolInterfaceFactory_Package is
    function Create return PoolInterfaceFactory_Access is
       This : constant PoolInterfaceFactory_Access := new PoolInterfaceFactory;
    begin
-      Initialize (This.all);
+      PoolInterfaceFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

@@ -30,7 +30,7 @@ package body org.allbinary.business.context.modules.storefront.statistics.advert
    function Create (storeFrontInterface : StoreFrontInterface_Access) return StoreFrontAdvertisementsStatistics_Access is
       This : constant StoreFrontAdvertisementsStatistics_Access := new StoreFrontAdvertisementsStatistics;
    begin
-      Initialize (This.all, storeFrontInterface);
+      StoreFrontAdvertisementsStatistics_Package.Initialize (This.all, storeFrontInterface);
       return This;
    end Create;
 
@@ -49,27 +49,6 @@ package body org.allbinary.business.context.modules.storefront.statistics.advert
    function getKey (This : in out StoreFrontAdvertisementsStatistics) return Java_Object_Access is
    begin
         return null;
-   end getKey;
-
-   procedure toHashMap (This : in out StoreFrontAdvertisementsStatistics) is
-      Java_Result : constant HashMap_Access := StoreFrontAdvertisementsStatistics'Class (This).toHashMap;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toHashMap;
-
-   procedure toVector (This : in out StoreFrontAdvertisementsStatistics) is
-      Java_Result : constant BasicArrayList_Access := StoreFrontAdvertisementsStatistics'Class (This).toVector;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toVector;
-
-   procedure getKey (This : in out StoreFrontAdvertisementsStatistics) is
-      Java_Result : constant Java_Object_Access := StoreFrontAdvertisementsStatistics'Class (This).getKey;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getKey;
 
 end org.allbinary.business.context.modules.storefront.statistics.advertisements.StoreFrontAdvertisementsStatistics_Package;

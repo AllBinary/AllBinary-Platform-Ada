@@ -13,7 +13,7 @@
 --  Generated Code Do Not Modify
 
 
-package body org.allbinary.game.collision_Case.CollisionTypeFactory_Package is
+package body org.allbinary.game.collision.CollisionTypeFactory_Package is
 
    procedure Initialize_Fields (This : in out CollisionTypeFactory'Class) is
    begin
@@ -32,7 +32,7 @@ package body org.allbinary.game.collision_Case.CollisionTypeFactory_Package is
    function Create return CollisionTypeFactory_Access is
       This : constant CollisionTypeFactory_Access := new CollisionTypeFactory;
    begin
-      Initialize (This.all);
+      CollisionTypeFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -42,17 +42,10 @@ package body org.allbinary.game.collision_Case.CollisionTypeFactory_Package is
         return CollisionTypeFactory_Package.SINGLETON;
    end getInstance;
 
-   procedure getInstance is
-      Java_Result : constant CollisionTypeFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
 begin
    null;
    SINGLETON := CollisionTypeFactory_Package.Create;
 
-end org.allbinary.game.collision_Case.CollisionTypeFactory_Package;
+end org.allbinary.game.collision.CollisionTypeFactory_Package;
 
 

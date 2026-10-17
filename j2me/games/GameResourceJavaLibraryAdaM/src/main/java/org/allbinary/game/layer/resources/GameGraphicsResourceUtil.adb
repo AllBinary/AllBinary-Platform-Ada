@@ -53,7 +53,7 @@ package body org.allbinary.game.layer.resources.GameGraphicsResourceUtil_Package
    function Create return GameGraphicsResourceUtil_Access is
       This : constant GameGraphicsResourceUtil_Access := new GameGraphicsResourceUtil;
    begin
-      Initialize (This.all);
+      GameGraphicsResourceUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -114,33 +114,12 @@ package body org.allbinary.game.layer.resources.GameGraphicsResourceUtil_Package
         return This.name;
    end getName;
 
-   procedure getInstance is
-      Java_Result : constant GameGraphicsResourceUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure getString (This : in out GameGraphicsResourceUtil) is
-      Java_Result : constant Unbounded_String := GameGraphicsResourceUtil'Class (This).getString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getString;
-
    procedure getStringForFeature (This : in out GameGraphicsResourceUtil; graphicsFeature : GraphicsFeature_Access) is
       Java_Result : constant Unbounded_String := GameGraphicsResourceUtil'Class (This).getStringForFeature (graphicsFeature);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getStringForFeature;
-
-   procedure getName (This : in out GameGraphicsResourceUtil) is
-      Java_Result : constant Unbounded_String := GameGraphicsResourceUtil'Class (This).getName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getName;
 
 begin
    null;

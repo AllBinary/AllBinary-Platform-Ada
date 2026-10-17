@@ -36,7 +36,7 @@ package body org.allbinary.media.graphics.geography.pathfinding.PathFindingInfo_
    function Create (pathFindingNodeCostInfoFactoryInterface : PathFindingNodeCostInfoFactoryBase_Access; startPathFindingNodeList : BasicArrayList_Access; endPathFindingNodeList : BasicArrayList_Access) return PathFindingInfo_Access is
       This : constant PathFindingInfo_Access := new PathFindingInfo;
    begin
-      Initialize (This.all, pathFindingNodeCostInfoFactoryInterface, startPathFindingNodeList, endPathFindingNodeList);
+      PathFindingInfo_Package.Initialize (This.all, pathFindingNodeCostInfoFactoryInterface, startPathFindingNodeList, endPathFindingNodeList);
       return This;
    end Create;
 
@@ -73,34 +73,6 @@ package body org.allbinary.media.graphics.geography.pathfinding.PathFindingInfo_
    function getPathFindingNodeCostInfoFactoryInterface (This : in out PathFindingInfo) return PathFindingNodeCostInfoFactoryBase_Access is
    begin
         return This.pathFindingNodeCostInfoFactoryInterface;
-   end getPathFindingNodeCostInfoFactoryInterface;
-
-   procedure getStartPathFindingNodeList (This : in out PathFindingInfo) is
-      Java_Result : constant BasicArrayList_Access := PathFindingInfo'Class (This).getStartPathFindingNodeList;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getStartPathFindingNodeList;
-
-   procedure getEndPathFindingNodeList (This : in out PathFindingInfo) is
-      Java_Result : constant BasicArrayList_Access := PathFindingInfo'Class (This).getEndPathFindingNodeList;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getEndPathFindingNodeList;
-
-   procedure getPathFinder (This : in out PathFindingInfo) is
-      Java_Result : constant GeographicPathFinderBase_Access := PathFindingInfo'Class (This).getPathFinder;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getPathFinder;
-
-   procedure getPathFindingNodeCostInfoFactoryInterface (This : in out PathFindingInfo) is
-      Java_Result : constant PathFindingNodeCostInfoFactoryBase_Access := PathFindingInfo'Class (This).getPathFindingNodeCostInfoFactoryInterface;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getPathFindingNodeCostInfoFactoryInterface;
 
 begin

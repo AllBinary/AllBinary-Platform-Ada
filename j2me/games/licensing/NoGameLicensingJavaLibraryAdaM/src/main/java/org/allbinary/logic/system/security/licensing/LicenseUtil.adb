@@ -28,7 +28,7 @@ package body org.allbinary.logic.system.security.licensing.LicenseUtil_Package i
    function Create return LicenseUtil_Access is
       This : constant LicenseUtil_Access := new LicenseUtil;
    begin
-      Initialize (This.all);
+      LicenseUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -57,20 +57,6 @@ package body org.allbinary.logic.system.security.licensing.LicenseUtil_Package i
    begin
         return This.isRunning;
    end shouldWait;
-
-   procedure getInstance is
-      Java_Result : constant LicenseUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure isRunning (This : in out LicenseUtil) is
-      Java_Result : constant Boolean := LicenseUtil'Class (This).isRunning;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isRunning;
 
    procedure shouldWait (This : in out LicenseUtil; commandListener : CommandListener_Access) is
       Java_Result : constant Boolean := LicenseUtil'Class (This).shouldWait (commandListener);

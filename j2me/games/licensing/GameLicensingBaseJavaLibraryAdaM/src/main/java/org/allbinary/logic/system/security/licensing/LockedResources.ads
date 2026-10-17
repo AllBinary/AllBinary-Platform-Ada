@@ -37,7 +37,6 @@ package org.allbinary.logic.system.security.licensing.LockedResources_Package is
    procedure Initialize (This : in out LockedResources'Class);
    function Create return LockedResources_Access;
    function getInstance return LockedResources_Access;
-   procedure getInstance;
 
 end org.allbinary.logic.system.security.licensing.LockedResources_Package;
 

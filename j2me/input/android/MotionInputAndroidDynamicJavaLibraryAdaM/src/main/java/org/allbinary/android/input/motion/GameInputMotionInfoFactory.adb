@@ -28,7 +28,7 @@ package body org.allbinary.android.input.motion.GameInputMotionInfoFactory_Packa
    function Create return GameInputMotionInfoFactory_Access is
       This : constant GameInputMotionInfoFactory_Access := new GameInputMotionInfoFactory;
    begin
-      Initialize (This.all);
+      GameInputMotionInfoFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -42,13 +42,6 @@ package body org.allbinary.android.input.motion.GameInputMotionInfoFactory_Packa
         else
             return GameInputMotionInfoAPI5_Package.getInstance;
         end if;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant GameInputMotionInfo_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 end org.allbinary.android.input.motion.GameInputMotionInfoFactory_Package;

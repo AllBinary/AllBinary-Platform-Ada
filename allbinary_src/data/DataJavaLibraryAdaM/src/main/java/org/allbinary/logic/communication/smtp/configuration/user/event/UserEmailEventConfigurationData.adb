@@ -30,7 +30,7 @@ package body org.allbinary.logic.communication.smtp.configuration.user.event.Use
    function Create return UserEmailEventConfigurationData_Access is
       This : constant UserEmailEventConfigurationData_Access := new UserEmailEventConfigurationData;
    begin
-      Initialize (This.all);
+      UserEmailEventConfigurationData_Package.Initialize (This.all);
       return This;
    end Create;
 

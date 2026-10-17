@@ -31,7 +31,7 @@ package body org.allbinary.logic.java.proxy.InterfaceCastProxy_Package is
    function Create (anyType : Java_Object_Access) return InterfaceCastProxy_Access is
       This : constant InterfaceCastProxy_Access := new InterfaceCastProxy;
    begin
-      Initialize (This.all, anyType);
+      InterfaceCastProxy_Package.Initialize (This.all, anyType);
       return This;
    end Create;
 

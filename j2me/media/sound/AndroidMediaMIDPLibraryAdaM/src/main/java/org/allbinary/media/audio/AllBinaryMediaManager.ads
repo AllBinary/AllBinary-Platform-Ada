@@ -32,6 +32,13 @@ with org.allbinary.logic.ABSystemWrapper_Package; use org.allbinary.logic.ABSyst
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.media.audio.Sounds_Package; use org.allbinary.media.audio.Sounds_Package;
+with org.allbinary.media.audio.SoundsFactoryInterface_Package; use org.allbinary.media.audio.SoundsFactoryInterface_Package;
+with org.allbinary.media.audio.Sound_Package; use org.allbinary.media.audio.Sound_Package;
+with org.allbinary.media.audio.AndroidMediaPlayerWrapper_Package; use org.allbinary.media.audio.AndroidMediaPlayerWrapper_Package;
+with org.allbinary.media.audio.PlayerComposite_Package; use org.allbinary.media.audio.PlayerComposite_Package;
+with org.allbinary.media.audio.MediaPlayerUtil_Package; use org.allbinary.media.audio.MediaPlayerUtil_Package;
+with org.allbinary.media.audio.NoPlayer_Package; use org.allbinary.media.audio.NoPlayer_Package;
 
 package org.allbinary.media.audio.AllBinaryMediaManager_Package is
 
@@ -56,10 +63,8 @@ package org.allbinary.media.audio.AllBinaryMediaManager_Package is
    procedure Initialize (This : in out AllBinaryMediaManager'Class);
    function Create return AllBinaryMediaManager_Access;
    function isMuted return Boolean;
-   procedure isMuted;
    procedure setMuted (aMuted : Boolean);
    function update return Boolean;
-   procedure update;
    procedure init (soundsFactoryInterface : SoundsFactoryInterface_Access);
    procedure shutdown (soundsFactoryInterface : SoundsFactoryInterface_Access);
    function createPlayer (resource : Unbounded_String) return Player_Access;
@@ -68,7 +73,6 @@ package org.allbinary.media.audio.AllBinaryMediaManager_Package is
    procedure createPlayerFromInputStream (stream : InputStream_Access; type_Id : Unbounded_String);
    procedure playTone (frequency : Integer; time : Integer; volume : Integer);
    function isInitialized return Boolean;
-   procedure isInitialized;
 
 end org.allbinary.media.audio.AllBinaryMediaManager_Package;
 

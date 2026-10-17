@@ -51,11 +51,8 @@ package views.admin.user.NewUserView_Package is
    procedure Initialize (This : in out NewUserView'Class; transformInfoInterface : TransformInfoInterface_Access);
    function Create (transformInfoInterface : TransformInfoInterface_Access) return NewUserView_Access;
    function isValid (This : in out NewUserView) return Boolean;
-   procedure isValid (This : in out NewUserView);
    function validationInfo (This : in out NewUserView) return Unbounded_String;
-   procedure validationInfo (This : in out NewUserView);
    function toValidationInfoDoc (This : in out NewUserView) return Document_Access;
-   procedure toValidationInfoDoc (This : in out NewUserView);
    function toValidationInfoNode (This : in out NewUserView; document : Document_Access) return Node_Access;
    procedure toValidationInfoNode (This : in out NewUserView; document : Document_Access);
 

@@ -23,6 +23,8 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbinary.logic.util.event.AllBinaryEventObject_Package;
 with org.allbinary.logic.util.event.EventListenerInterface_Package; use org.allbinary.logic.util.event.EventListenerInterface_Package;
 with org.allbinary.logic.util.event.handler.BasicEventHandler_Package; use org.allbinary.logic.util.event.handler.BasicEventHandler_Package;
+with org.allbinary.layer.event.ScrollMapEventListenerInterface_Package; use org.allbinary.layer.event.ScrollMapEventListenerInterface_Package;
+with org.allbinary.layer.event.ScrollMapEvent_Package; use org.allbinary.layer.event.ScrollMapEvent_Package;
 
 package org.allbinary.layer.event.ScrollMapEventHandler_Package is
 
@@ -41,7 +43,6 @@ package org.allbinary.layer.event.ScrollMapEventHandler_Package is
    procedure Initialize (This : in out ScrollMapEventHandler'Class);
    function Create return ScrollMapEventHandler_Access;
    function getInstance return ScrollMapEventHandler_Access;
-   procedure getInstance;
    procedure process (This : in out ScrollMapEventHandler; eventObject : AllBinaryEventObject_Access; eventListenerInterface : EventListenerInterface_Access);
 
 end org.allbinary.layer.event.ScrollMapEventHandler_Package;

@@ -27,6 +27,10 @@ with org.allbinary.data.tree.dom.ModDomHelper_Package; use org.allbinary.data.tr
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.w3c.dom.NodeList_Package; use org.w3c.dom.NodeList_Package;
+with org.allbinary.logic.communication.ftp.configuration.FtpConfigurationInterface_Package; use org.allbinary.logic.communication.ftp.configuration.FtpConfigurationInterface_Package;
+with org.allbinary.logic.communication.ftp.configuration.FtpConfiguration_Package; use org.allbinary.logic.communication.ftp.configuration.FtpConfiguration_Package;
+with org.allbinary.logic.communication.ftp.configuration.FtpConfigurationData_Package; use org.allbinary.logic.communication.ftp.configuration.FtpConfigurationData_Package;
+with org.allbinary.logic.communication.ftp.configuration.FtpConfigurationMapping_Package; use org.allbinary.logic.communication.ftp.configuration.FtpConfigurationMapping_Package;
 
 package org.allbinary.logic.communication.ftp.configuration.FtpConfigurationView_Package is
 
@@ -51,7 +55,6 @@ package org.allbinary.logic.communication.ftp.configuration.FtpConfigurationView
    function toXmlNode (This : in out FtpConfigurationView; document : Document_Access) return Node_Access;
    procedure toXmlNode (This : in out FtpConfigurationView; document : Document_Access);
    function getFtpConfigurationInterface (This : in out FtpConfigurationView) return FtpConfigurationInterface_Access;
-   procedure getFtpConfigurationInterface (This : in out FtpConfigurationView);
    procedure setFtpConfigurationInterface (This : in out FtpConfigurationView; ftpConfigurationInterface : FtpConfigurationInterface_Access);
 
 end org.allbinary.logic.communication.ftp.configuration.FtpConfigurationView_Package;

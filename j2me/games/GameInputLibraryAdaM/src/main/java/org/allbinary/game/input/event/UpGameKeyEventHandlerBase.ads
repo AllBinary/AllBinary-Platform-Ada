@@ -28,6 +28,8 @@ with org.allbinary.logic.util.event.EventStrings_Package; use org.allbinary.logi
 with org.allbinary.logic.util.event.handler.BasicEventHandler_Package; use org.allbinary.logic.util.event.handler.BasicEventHandler_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.game.input.event.GameKeyEvent_Package; use org.allbinary.game.input.event.GameKeyEvent_Package;
+with org.allbinary.game.input.event.UpGameKeyEventListenerInterface_Package; use org.allbinary.game.input.event.UpGameKeyEventListenerInterface_Package;
 
 package org.allbinary.game.input.event.UpGameKeyEventHandlerBase_Package is
 
@@ -60,7 +62,6 @@ package org.allbinary.game.input.event.UpGameKeyEventHandlerBase_Package is
    procedure fireEvent (This : in out UpGameKeyEventHandlerBase; eventObject : AllBinaryEventObject_Access);
    procedure process (This : in out UpGameKeyEventHandlerBase; eventObject : AllBinaryEventObject_Access; eventListenerInterface : EventListenerInterface_Access);
    function toString (This : in out UpGameKeyEventHandlerBase) return Unbounded_String;
-   procedure toString (This : in out UpGameKeyEventHandlerBase);
 
 end org.allbinary.game.input.event.UpGameKeyEventHandlerBase_Package;
 

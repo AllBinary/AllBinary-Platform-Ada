@@ -47,11 +47,9 @@ package org.allbinary.logic.communication.sql.AbSqlTable_Package is
    function Create (databaseConnectionInfoInterface : DbConnectionInfo_Access) return AbSqlTable_Access;
    procedure setTableName (This : in out AbSqlTable; tableName : Unbounded_String);
    function getTableName (This : in out AbSqlTable) return Unbounded_String;
-   procedure getTableName (This : in out AbSqlTable);
    function createTable (This : in out AbSqlTable; data : Unbounded_String) return Unbounded_String;
    procedure createTable (This : in out AbSqlTable; data : Unbounded_String);
    function dropTable (This : in out AbSqlTable) return Unbounded_String;
-   procedure dropTable (This : in out AbSqlTable);
 
 end org.allbinary.logic.communication.sql.AbSqlTable_Package;
 

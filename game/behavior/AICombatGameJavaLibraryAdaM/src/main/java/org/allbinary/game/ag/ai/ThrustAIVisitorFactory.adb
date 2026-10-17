@@ -28,7 +28,7 @@ package body org.allbinary.game.ag.ai.ThrustAIVisitorFactory_Package is
    function Create return ThrustAIVisitorFactory_Access is
       This : constant ThrustAIVisitorFactory_Access := new ThrustAIVisitorFactory;
    begin
-      Initialize (This.all);
+      ThrustAIVisitorFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -36,13 +36,6 @@ package body org.allbinary.game.ag.ai.ThrustAIVisitorFactory_Package is
    function getInstance return ThrustAIVisitor_Access is
    begin
         return ThrustAIVisitorFactory_Package.instance;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant ThrustAIVisitor_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

@@ -51,27 +51,13 @@ package body org.allbinary.game.ag.layer.hud.basic.notification.NoGameNotificati
    function Create return NoGameNotificationHudSingleton_Access is
       This : constant NoGameNotificationHudSingleton_Access := new NoGameNotificationHudSingleton;
    begin
-      Initialize (This.all);
+      NoGameNotificationHudSingleton_Package.Initialize (This.all);
       return This;
    end Create;
 
    function getGameNotificationHud (This : in out NoGameNotificationHudSingleton) return GameNotificationHud_Access is
    begin
         return This.gameNotificationHud;
-   end getGameNotificationHud;
-
-   procedure getInstance is
-      Java_Result : constant NoGameNotificationHudSingleton_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure getGameNotificationHud (This : in out NoGameNotificationHudSingleton) is
-      Java_Result : constant GameNotificationHud_Access := NoGameNotificationHudSingleton'Class (This).getGameNotificationHud;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getGameNotificationHud;
 
 begin

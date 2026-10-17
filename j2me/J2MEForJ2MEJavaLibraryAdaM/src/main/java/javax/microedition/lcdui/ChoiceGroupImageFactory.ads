@@ -20,6 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
+with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
 
 package javax.microedition.lcdui.ChoiceGroupImageFactory_Package is
 
@@ -49,9 +50,7 @@ package javax.microedition.lcdui.ChoiceGroupImageFactory_Package is
    procedure Initialize (This : in out ChoiceGroupImageFactory'Class);
    function Create return ChoiceGroupImageFactory_Access;
    function getInstance return ChoiceGroupImageFactory_Access;
-   procedure getInstance;
    function getImageArray (This : in out ChoiceGroupImageFactory) return Image_Access_Array_Access;
-   procedure getImageArray (This : in out ChoiceGroupImageFactory);
    procedure init (This : in out ChoiceGroupImageFactory; imageArray : Image_Access_Array_Access);
 
 end javax.microedition.lcdui.ChoiceGroupImageFactory_Package;

@@ -37,7 +37,7 @@ package body org.allbinary.logic.communication.smtp.Email_Package is
    function Create (from : Unbounded_String; to : Unbounded_String; subject : Unbounded_String; server : Unbounded_String; textBody : Unbounded_String; htmlAttachment : Unbounded_String; contentBase : Unbounded_String) return Email_Access is
       This : constant Email_Access := new Email;
    begin
-      Initialize (This.all, from, to, subject, server, textBody, htmlAttachment, contentBase);
+      Email_Package.Initialize (This.all, from, to, subject, server, textBody, htmlAttachment, contentBase);
       return This;
    end Create;
 
@@ -52,7 +52,7 @@ package body org.allbinary.logic.communication.smtp.Email_Package is
    function Create (from : Unbounded_String; to : Unbounded_String; subject : Unbounded_String; server : Unbounded_String; textBody : Unbounded_String; htmlAttachment : Unbounded_String; contentBase : Unbounded_String; isDebug : Boolean) return Email_Access is
       This : constant Email_Access := new Email;
    begin
-      Initialize (This.all, from, to, subject, server, textBody, htmlAttachment, contentBase, isDebug);
+      Email_Package.Initialize (This.all, from, to, subject, server, textBody, htmlAttachment, contentBase, isDebug);
       return This;
    end Create;
 
@@ -234,47 +234,12 @@ package body org.allbinary.logic.communication.smtp.Email_Package is
         Java_Throw (Java_New_Exception ("Exception", CommonStrings_Package.getInstance.NOT_IMPLEMENTED));
    end toXmlDoc;
 
-   procedure getMimeMessage (This : in out Email) is
-      Java_Result : constant MimeMessage_Access := Email'Class (This).getMimeMessage;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getMimeMessage;
-
-   procedure getDebugInfo (This : in out Email) is
-      Java_Result : constant Unbounded_String := Email'Class (This).getDebugInfo;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getDebugInfo;
-
-   procedure log (This : in out Email) is
-      Java_Result : constant Unbounded_String := Email'Class (This).log;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end log;
-
-   procedure toHashMap (This : in out Email) is
-      Java_Result : constant HashMap_Access := Email'Class (This).toHashMap;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toHashMap;
-
    procedure toXmlNode (This : in out Email; document : Document_Access) is
       Java_Result : constant Node_Access := Email'Class (This).toXmlNode (document);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end toXmlNode;
-
-   procedure toXmlDoc (This : in out Email) is
-      Java_Result : constant Document_Access := Email'Class (This).toXmlDoc;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toXmlDoc;
 
 begin
    null;

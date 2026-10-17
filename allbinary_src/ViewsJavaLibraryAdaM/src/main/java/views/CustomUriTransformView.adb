@@ -40,7 +40,7 @@ package body views.CustomUriTransformView_Package is
    function Create (transformInfoInterface : TransformInfoInterface_Access) return CustomUriTransformView_Access is
       This : constant CustomUriTransformView_Access := new CustomUriTransformView;
    begin
-      Initialize (This.all, transformInfoInterface);
+      CustomUriTransformView_Package.Initialize (This.all, transformInfoInterface);
       return This;
    end Create;
 
@@ -107,48 +107,6 @@ package body views.CustomUriTransformView_Package is
             Java_Throw (e);
                 end;
         end;
-   end view;
-
-   procedure getTypeId (This : in out CustomUriTransformView) is
-      Java_Result : constant Integer := CustomUriTransformView'Class (This).getTypeId;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTypeId;
-
-   procedure getTransformInfoInterface (This : in out CustomUriTransformView) is
-      Java_Result : constant TransformInfoInterface_Access := CustomUriTransformView'Class (This).getTransformInfoInterface;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTransformInfoInterface;
-
-   procedure getTransformDocumentInterface (This : in out CustomUriTransformView) is
-      Java_Result : constant TransformDocumentInterface_Access := CustomUriTransformView'Class (This).getTransformDocumentInterface;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTransformDocumentInterface;
-
-   procedure toXmlDoc (This : in out CustomUriTransformView) is
-      Java_Result : constant Document_Access := CustomUriTransformView'Class (This).toXmlDoc;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toXmlDoc;
-
-   procedure getDoc (This : in out CustomUriTransformView) is
-      Java_Result : constant Document_Access := CustomUriTransformView'Class (This).getDoc;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getDoc;
-
-   procedure view (This : in out CustomUriTransformView) is
-      Java_Result : constant Unbounded_String := CustomUriTransformView'Class (This).view;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end view;
 
 end views.CustomUriTransformView_Package;

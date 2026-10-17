@@ -29,7 +29,7 @@ package body org.allbinary.graphics.opengles.OpenGLFeature_Package is
    function Create (name : Unbounded_String) return OpenGLFeature_Access is
       This : constant OpenGLFeature_Access := new OpenGLFeature;
    begin
-      Initialize (This.all, name);
+      OpenGLFeature_Package.Initialize (This.all, name);
       return This;
    end Create;
 

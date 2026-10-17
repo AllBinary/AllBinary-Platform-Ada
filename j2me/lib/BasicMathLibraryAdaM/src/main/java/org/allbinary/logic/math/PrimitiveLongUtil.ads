@@ -23,6 +23,8 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.logic.math.PrimitiveLongSingleton_Package; use org.allbinary.logic.math.PrimitiveLongSingleton_Package;
+with org.allbinary.logic.math.MathUtil_Package; use org.allbinary.logic.math.MathUtil_Package;
 
 package org.allbinary.logic.math.PrimitiveLongUtil_Package is
 
@@ -53,9 +55,7 @@ package org.allbinary.logic.math.PrimitiveLongUtil_Package is
    procedure getCharArray (This : in out PrimitiveLongUtil; value : Integer);
    procedure setCurrentTotalDigits (This : in out PrimitiveLongUtil; currentTotalDigits : Integer);
    function getCurrentTotalDigits (This : in out PrimitiveLongUtil) return Integer;
-   procedure getCurrentTotalDigits (This : in out PrimitiveLongUtil);
    function getMaxDigits (This : in out PrimitiveLongUtil) return Integer;
-   procedure getMaxDigits (This : in out PrimitiveLongUtil);
 
 end org.allbinary.logic.math.PrimitiveLongUtil_Package;
 

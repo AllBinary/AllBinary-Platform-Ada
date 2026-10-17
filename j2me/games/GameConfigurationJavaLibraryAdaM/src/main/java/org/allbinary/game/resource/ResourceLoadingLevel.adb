@@ -33,7 +33,7 @@ package body org.allbinary.game.resource.ResourceLoadingLevel_Package is
    function Create (name : Unbounded_String; level : Integer) return ResourceLoadingLevel_Access is
       This : constant ResourceLoadingLevel_Access := new ResourceLoadingLevel;
    begin
-      Initialize (This.all, name, level);
+      ResourceLoadingLevel_Package.Initialize (This.all, name, level);
       return This;
    end Create;
 
@@ -45,20 +45,6 @@ package body org.allbinary.game.resource.ResourceLoadingLevel_Package is
    function getName (This : in out ResourceLoadingLevel) return Unbounded_String is
    begin
         return This.name;
-   end getName;
-
-   procedure getLevel (This : in out ResourceLoadingLevel) is
-      Java_Result : constant Integer := ResourceLoadingLevel'Class (This).getLevel;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getLevel;
-
-   procedure getName (This : in out ResourceLoadingLevel) is
-      Java_Result : constant Unbounded_String := ResourceLoadingLevel'Class (This).getName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getName;
 
 end org.allbinary.game.resource.ResourceLoadingLevel_Package;

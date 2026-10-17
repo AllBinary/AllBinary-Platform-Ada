@@ -43,15 +43,10 @@ package admin.taghelpers.InitHelper_Package is
    procedure Initialize (This : in out InitHelper'Class; hashMap : HashMap_Access; pageContext : PageContext_Access);
    function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return InitHelper_Access;
    function drop (This : in out InitHelper) return Unbounded_String;
-   procedure drop (This : in out InitHelper);
    function create (This : in out InitHelper) return Unbounded_String;
-   procedure create (This : in out InitHelper);
    function view (This : in out InitHelper) return Unbounded_String;
-   procedure view (This : in out InitHelper);
    function restore (This : in out InitHelper) return Unbounded_String;
-   procedure restore (This : in out InitHelper);
    function backup (This : in out InitHelper) return Unbounded_String;
-   procedure backup (This : in out InitHelper);
 
 end admin.taghelpers.InitHelper_Package;
 

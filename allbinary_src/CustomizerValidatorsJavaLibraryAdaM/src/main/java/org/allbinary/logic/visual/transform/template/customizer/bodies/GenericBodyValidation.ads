@@ -35,6 +35,7 @@ with org.allbinary.logic.string_Id.StringValidationUtil_Package; use org.allbina
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.w3c.dom.NodeList_Package; use org.w3c.dom.NodeList_Package;
+with org.allbinary.logic.visual.transform.template.customizer.bodies.BodyData_Package; use org.allbinary.logic.visual.transform.template.customizer.bodies.BodyData_Package;
 
 package org.allbinary.logic.visual.transform.template.customizer.bodies.GenericBodyValidation_Package is
 
@@ -67,11 +68,8 @@ package org.allbinary.logic.visual.transform.template.customizer.bodies.GenericB
    function Create return GenericBodyValidation_Access;
    procedure getFormData (This : in out GenericBodyValidation; hashMap : HashMap_Access);
    function isValid (This : in out GenericBodyValidation) return Boolean;
-   procedure isValid (This : in out GenericBodyValidation);
    function validationInfo (This : in out GenericBodyValidation) return Unbounded_String;
-   procedure validationInfo (This : in out GenericBodyValidation);
    function toValidationInfoDoc (This : in out GenericBodyValidation) return Document_Access;
-   procedure toValidationInfoDoc (This : in out GenericBodyValidation);
    function toValidationInfoNode (This : in out GenericBodyValidation; document : Document_Access) return Node_Access;
    procedure toValidationInfoNode (This : in out GenericBodyValidation; document : Document_Access);
    function toXmlNode (This : in out GenericBodyValidation; document : Document_Access) return Node_Access;

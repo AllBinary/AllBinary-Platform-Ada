@@ -24,6 +24,7 @@ with org.allbinary.android.AndroidInfoFactory_Package; use org.allbinary.android
 with org.allbinary.android.input.api1.VirtualKeyboardAPI1_Package; use org.allbinary.android.input.api1.VirtualKeyboardAPI1_Package;
 with org.allbinary.android.input.api3.VirtualKeyboardAPI3_Package; use org.allbinary.android.input.api3.VirtualKeyboardAPI3_Package;
 with android.app.Activity_Package; use android.app.Activity_Package;
+with org.allbinary.android.input.VirtualKeyboard_Package; use org.allbinary.android.input.VirtualKeyboard_Package;
 
 package org.allbinary.android.input.VirtualKeyboardFactory_Package is
 
@@ -44,7 +45,6 @@ package org.allbinary.android.input.VirtualKeyboardFactory_Package is
    function Create return VirtualKeyboardFactory_Access;
    procedure init (activity : Activity_Access);
    function getInstance return VirtualKeyboard_Access;
-   procedure getInstance;
 
 end org.allbinary.android.input.VirtualKeyboardFactory_Package;
 

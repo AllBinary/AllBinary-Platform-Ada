@@ -42,7 +42,7 @@ package body org.allbinary.animation.caption.CaptionAnimation_Package is
    function Create (animationInterface : Animation_Access; overlayAnimationInterface : Animation_Access; captionDx : Integer; captionDy : Integer; dx : Integer; dy : Integer) return CaptionAnimation_Access is
       This : constant CaptionAnimation_Access := new CaptionAnimation;
    begin
-      Initialize (This.all, animationInterface, overlayAnimationInterface, captionDx, captionDy, dx, dy);
+      CaptionAnimation_Package.Initialize (This.all, animationInterface, overlayAnimationInterface, captionDx, captionDy, dx, dy);
       return This;
    end Create;
 

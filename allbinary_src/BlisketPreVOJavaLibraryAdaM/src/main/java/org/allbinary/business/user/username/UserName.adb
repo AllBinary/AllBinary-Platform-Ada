@@ -37,7 +37,7 @@ package body org.allbinary.business.user.username.UserName_Package is
    function Create return UserName_Access is
       This : constant UserName_Access := new UserName;
    begin
-      Initialize (This.all);
+      UserName_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -51,7 +51,7 @@ package body org.allbinary.business.user.username.UserName_Package is
    function Create (hashMap : HashMap_Access) return UserName_Access is
       This : constant UserName_Access := new UserName;
    begin
-      Initialize (This.all, hashMap);
+      UserName_Package.Initialize (This.all, hashMap);
       return This;
    end Create;
 
@@ -116,27 +116,6 @@ package body org.allbinary.business.user.username.UserName_Package is
         end if;
         return StringUtil_Package.getInstance.EMPTY_STRING;
    end getValidationInfo;
-
-   procedure getInstance is
-      Java_Result : constant UserName_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure isValid (This : in out UserName) is
-      Java_Result : constant Boolean := UserName'Class (This).isValid;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isValid;
-
-   procedure get (This : in out UserName) is
-      Java_Result : constant Unbounded_String := UserName'Class (This).get;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end get;
 
    procedure isValid (This : in out UserName; aUserName : Unbounded_String) is
       Java_Result : constant Boolean := UserName'Class (This).isValid (aUserName);

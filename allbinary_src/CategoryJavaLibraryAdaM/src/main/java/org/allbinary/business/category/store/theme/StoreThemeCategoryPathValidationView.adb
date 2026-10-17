@@ -29,7 +29,7 @@ package body org.allbinary.business.category.store.theme.StoreThemeCategoryPathV
    function Create (categoryInterface : StoreThemeCategoryInterface_Access) return StoreThemeCategoryPathValidationView_Access is
       This : constant StoreThemeCategoryPathValidationView_Access := new StoreThemeCategoryPathValidationView;
    begin
-      Initialize (This.all, categoryInterface);
+      StoreThemeCategoryPathValidationView_Package.Initialize (This.all, categoryInterface);
       return This;
    end Create;
 
@@ -57,33 +57,12 @@ package body org.allbinary.business.category.store.theme.StoreThemeCategoryPathV
         return To_Unbounded_String ("Error");
    end validationInfo;
 
-   procedure isValid (This : in out StoreThemeCategoryPathValidationView) is
-      Java_Result : constant Boolean := StoreThemeCategoryPathValidationView'Class (This).isValid;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isValid;
-
-   procedure toValidationInfoDoc (This : in out StoreThemeCategoryPathValidationView) is
-      Java_Result : constant Document_Access := StoreThemeCategoryPathValidationView'Class (This).toValidationInfoDoc;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toValidationInfoDoc;
-
    procedure toValidationInfoNode (This : in out StoreThemeCategoryPathValidationView; document : Document_Access) is
       Java_Result : constant Node_Access := StoreThemeCategoryPathValidationView'Class (This).toValidationInfoNode (document);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end toValidationInfoNode;
-
-   procedure validationInfo (This : in out StoreThemeCategoryPathValidationView) is
-      Java_Result : constant Unbounded_String := StoreThemeCategoryPathValidationView'Class (This).validationInfo;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end validationInfo;
 
 end org.allbinary.business.category.store.theme.StoreThemeCategoryPathValidationView_Package;
 

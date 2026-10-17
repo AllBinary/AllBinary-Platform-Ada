@@ -24,6 +24,7 @@ with AllBinary_Java; use AllBinary_Java;
 --  with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
 with org.allbinary.graphics.Anchor_Package; use org.allbinary.graphics.Anchor_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.media.image.ImageCreationUtil_Package; use org.allbinary.media.image.ImageCreationUtil_Package;
 
 package org.allbinary.media.image.ImageCopyUtil_Package is
 
@@ -45,7 +46,6 @@ package org.allbinary.media.image.ImageCopyUtil_Package is
    procedure Initialize (This : in out ImageCopyUtil'Class);
    function Create return ImageCopyUtil_Access;
    function getInstance return ImageCopyUtil_Access;
-   procedure getInstance;
    function createImageForRotation (This : in out ImageCopyUtil; originalImage : Image_Access) return Image_Access;
    procedure createImageForRotation (This : in out ImageCopyUtil; originalImage : Image_Access);
    function createImage (This : in out ImageCopyUtil; originalImage : Image_Access) return Image_Access;

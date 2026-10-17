@@ -39,7 +39,7 @@ package body org.allbinary.game.configuration.persistance.PersistanceStrings_Pac
    function Create return PersistanceStrings_Access is
       This : constant PersistanceStrings_Access := new PersistanceStrings;
    begin
-      Initialize (This.all);
+      PersistanceStrings_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -47,13 +47,6 @@ package body org.allbinary.game.configuration.persistance.PersistanceStrings_Pac
    function getInstance return PersistanceStrings_Access is
    begin
         return PersistanceStrings_Package.instance;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant PersistanceStrings_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

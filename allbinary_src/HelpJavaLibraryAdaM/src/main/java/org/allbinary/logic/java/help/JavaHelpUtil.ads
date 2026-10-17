@@ -29,6 +29,9 @@ with AllBinary_Java; use AllBinary_Java;
 --  with javax.help.HelpSet_Package; use javax.help.HelpSet_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.logic.java.help.Point_Package; use org.allbinary.logic.java.help.Point_Package;
+with org.allbinary.logic.java.help.Dimension_Package; use org.allbinary.logic.java.help.Dimension_Package;
+with org.allbinary.logic.java.help.JLabel_Package; use org.allbinary.logic.java.help.JLabel_Package;
 
 package org.allbinary.logic.java.help.JavaHelpUtil_Package is
 
@@ -52,7 +55,6 @@ package org.allbinary.logic.java.help.JavaHelpUtil_Package is
    procedure Initialize (This : in out JavaHelpUtil'Class);
    function Create return JavaHelpUtil_Access;
    function getInstance return JavaHelpUtil_Access;
-   procedure getInstance;
    function getHelpSet (This : in out JavaHelpUtil; filePath : Unbounded_String) return HelpSet_Access;
    procedure getHelpSet (This : in out JavaHelpUtil; filePath : Unbounded_String);
    function getHelpSet (This : in out JavaHelpUtil; url : URL_Access) return HelpSet_Access;

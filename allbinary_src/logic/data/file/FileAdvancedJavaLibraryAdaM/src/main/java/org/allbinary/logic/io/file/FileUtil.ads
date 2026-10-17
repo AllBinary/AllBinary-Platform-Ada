@@ -41,6 +41,10 @@ with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.s
 with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.logic.io.file.AbFile_Package; use org.allbinary.logic.io.file.AbFile_Package;
+with org.allbinary.logic.io.file.FilePathData_Package; use org.allbinary.logic.io.file.FilePathData_Package;
+with org.allbinary.logic.io.file.FileWrapperUtil_Package; use org.allbinary.logic.io.file.FileWrapperUtil_Package;
+with org.allbinary.logic.io.file.FileUtil2_Package; use org.allbinary.logic.io.file.FileUtil2_Package;
 
 package org.allbinary.logic.io.file.FileUtil_Package is
 
@@ -84,11 +88,10 @@ package org.allbinary.logic.io.file.FileUtil_Package is
    procedure Initialize (This : in out FileUtil'Class);
    function Create return FileUtil_Access;
    function getInstance return FileUtil_Access;
-   procedure getInstance;
    procedure write (This : in out FileUtil; inputStream : InputStream_Access; file : AbFile_Access);
-   procedure write (This : in out FileUtil; inputStream : InputStream_Access; dataOutputStream : AbDataOutputStream_Access);
-   procedure write (This : in out FileUtil; inputStream : InputStream_Access; dataOutputStream : AbDataOutputStream_Access; buffer : Short_Short_Integer_Array_Access);
-   procedure copy (This : in out FileUtil; dataInputStream : AbFileInputStream_Access; dataOutputStream : AbDataOutputStream_Access);
+   procedure write (This : in out FileUtil; inputStream : InputStream_Access; dataOutputStream_Param : AbDataOutputStream_Access);
+   procedure write (This : in out FileUtil; inputStream : InputStream_Access; dataOutputStream_Param : AbDataOutputStream_Access; buffer : Short_Short_Integer_Array_Access);
+   procedure copy (This : in out FileUtil; dataInputStream : AbFileInputStream_Access; dataOutputStream_Param : AbDataOutputStream_Access);
    function fixPath (This : in out FileUtil; file : AbFile_Access; path : AbPath_Access; realPath : AbPath_Access; cloud : Unbounded_String) return AbPath_Access;
    procedure fixPath (This : in out FileUtil; file : AbFile_Access; path : AbPath_Access; realPath : AbPath_Access; cloud : Unbounded_String);
    procedure copyToCloud (This : in out FileUtil; file : AbFile_Access; path : AbPath_Access; realPath : AbPath_Access; cloud : Unbounded_String);

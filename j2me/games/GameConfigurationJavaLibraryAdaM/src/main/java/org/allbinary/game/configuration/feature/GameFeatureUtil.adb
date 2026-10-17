@@ -33,7 +33,7 @@ package body org.allbinary.game.configuration.feature.GameFeatureUtil_Package is
    function Create return GameFeatureUtil_Access is
       This : constant GameFeatureUtil_Access := new GameFeatureUtil;
    begin
-      Initialize (This.all);
+      GameFeatureUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -224,13 +224,6 @@ package body org.allbinary.game.configuration.feature.GameFeatureUtil_Package is
             end loop;
         end if;
    end updateExclusiveList;
-
-   procedure getInstance is
-      Java_Result : constant GameFeatureUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure isExclusive (This : in out GameFeatureUtil; itemLabel : Unbounded_String) is
       Java_Result : constant Boolean := GameFeatureUtil'Class (This).isExclusive (itemLabel);

@@ -30,6 +30,8 @@ with org.allbinary.game.configuration.feature.Features_Package; use org.allbinar
 with org.allbinary.game.configuration.feature.MainFeatureFactory_Package; use org.allbinary.game.configuration.feature.MainFeatureFactory_Package;
 with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package; use org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package;
+with org.allbinary.graphics.opengles.OpenGLFeature_Package; use org.allbinary.graphics.opengles.OpenGLFeature_Package;
 
 package org.allbinary.graphics.opengles.OpenGLConfiguration_Package is
 
@@ -63,27 +65,20 @@ package org.allbinary.graphics.opengles.OpenGLConfiguration_Package is
    procedure Initialize (This : in out OpenGLConfiguration'Class);
    function Create return OpenGLConfiguration_Access;
    function getInstance return OpenGLConfiguration_Access;
-   procedure getInstance;
    procedure write (This : in out OpenGLConfiguration);
    procedure init (This : in out OpenGLConfiguration);
    procedure update (This : in out OpenGLConfiguration; gameFeature : Feature_Access; colorLocked : Boolean);
    procedure setOpenGL (This : in out OpenGLConfiguration; opengl : Boolean);
    function isOpenGL (This : in out OpenGLConfiguration) return Boolean;
-   procedure isOpenGL (This : in out OpenGLConfiguration);
    procedure setImageColor (This : in out OpenGLConfiguration; imageColor : OpenGLFeature_Access);
    function getImageColor (This : in out OpenGLConfiguration) return OpenGLFeature_Access;
-   procedure getImageColor (This : in out OpenGLConfiguration);
    procedure setColor (This : in out OpenGLConfiguration; color : OpenGLFeature_Access);
    function getColor (This : in out OpenGLConfiguration) return OpenGLFeature_Access;
-   procedure getColor (This : in out OpenGLConfiguration);
    procedure setVersionSelector (This : in out OpenGLConfiguration; versionSelector : OpenGLFeature_Access);
    function getVersionSelector (This : in out OpenGLConfiguration) return OpenGLFeature_Access;
-   procedure getVersionSelector (This : in out OpenGLConfiguration);
    procedure setType (This : in out OpenGLConfiguration; type_Id : OpenGLFeature_Access);
    function getType (This : in out OpenGLConfiguration) return OpenGLFeature_Access;
-   procedure getType (This : in out OpenGLConfiguration);
    function toString (This : in out OpenGLConfiguration) return Unbounded_String;
-   procedure toString (This : in out OpenGLConfiguration);
 
 end org.allbinary.graphics.opengles.OpenGLConfiguration_Package;
 

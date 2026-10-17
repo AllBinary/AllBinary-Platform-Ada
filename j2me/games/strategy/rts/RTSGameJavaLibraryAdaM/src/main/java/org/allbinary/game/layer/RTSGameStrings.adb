@@ -44,7 +44,7 @@ package body org.allbinary.game.layer.RTSGameStrings_Package is
    function Create return RTSGameStrings_Access is
       This : constant RTSGameStrings_Access := new RTSGameStrings;
    begin
-      Initialize (This.all);
+      RTSGameStrings_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -52,13 +52,6 @@ package body org.allbinary.game.layer.RTSGameStrings_Package is
    function getInstance return RTSGameStrings_Access is
    begin
         return RTSGameStrings_Package.instance;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant RTSGameStrings_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

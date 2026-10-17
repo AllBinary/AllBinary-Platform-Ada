@@ -86,13 +86,10 @@ package views.admin.inventory.AddFileValidationView_Package is
    procedure Initialize (This : in out AddFileValidationView'Class; transformInfoInterface : TransformInfoInterface_Access);
    function Create (transformInfoInterface : TransformInfoInterface_Access) return AddFileValidationView_Access;
    function isValid (This : in out AddFileValidationView) return Boolean;
-   procedure isValid (This : in out AddFileValidationView);
    function toValidationInfoDoc (This : in out AddFileValidationView) return Document_Access;
-   procedure toValidationInfoDoc (This : in out AddFileValidationView);
    function toValidationInfoNode (This : in out AddFileValidationView; document : Document_Access) return Node_Access;
    procedure toValidationInfoNode (This : in out AddFileValidationView; document : Document_Access);
    function validationInfo (This : in out AddFileValidationView) return Unbounded_String;
-   procedure validationInfo (This : in out AddFileValidationView);
    function isValid (This : in out AddFileValidationView; fileName : Unbounded_String; size : Long_Long_Integer) return Boolean;
    procedure isValid (This : in out AddFileValidationView; fileName : Unbounded_String; size : Long_Long_Integer);
    procedure validationInfo (This : in out AddFileValidationView; stringBuffer : StringMaker_Access; fileName : Unbounded_String; fileItemFieldName : Unbounded_String; size : Long_Long_Integer);

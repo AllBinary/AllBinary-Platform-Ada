@@ -20,8 +20,9 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
+with org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionKeys_Package; use org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionKeys_Package;
 
-package org.allbinary.business.user_Case.commerce.money.payment.gateway.transaction.PaymentTransactionKeysFactory_Package is
+package org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionKeysFactory_Package is
 
 
    type PaymentTransactionKeysFactory is tagged;
@@ -117,8 +118,7 @@ package org.allbinary.business.user_Case.commerce.money.payment.gateway.transact
    procedure Initialize (This : in out PaymentTransactionKeysFactory'Class);
    function Create return PaymentTransactionKeysFactory_Access;
    function getInstance return PaymentTransactionKeysFactory_Access;
-   procedure getInstance;
 
-end org.allbinary.business.user_Case.commerce.money.payment.gateway.transaction.PaymentTransactionKeysFactory_Package;
+end org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionKeysFactory_Package;
 
 

@@ -36,7 +36,7 @@ package body org.allbinary.game.layer.AllBinaryJ2METiledLayer_Package is
    function Create (dataId : Integer; tiledLayer : TiledLayer_Access; mapTwoDArray : Integer_Array_Access_Array_Access; debugColor : Integer) return AllBinaryJ2METiledLayer_Access is
       This : constant AllBinaryJ2METiledLayer_Access := new AllBinaryJ2METiledLayer;
    begin
-      Initialize (This.all, dataId, tiledLayer, mapTwoDArray, debugColor);
+      AllBinaryJ2METiledLayer_Package.Initialize (This.all, dataId, tiledLayer, mapTwoDArray, debugColor);
       return This;
    end Create;
 
@@ -154,47 +154,12 @@ package body org.allbinary.game.layer.AllBinaryJ2METiledLayer_Package is
         return This.tiledLayerP.getAnimatedTile (animationTileIndex);
    end getAnimatedTile;
 
-   procedure getTiledLayer (This : in out AllBinaryJ2METiledLayer) is
-      Java_Result : constant TiledLayer_Access := AllBinaryJ2METiledLayer'Class (This).getTiledLayer;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTiledLayer;
-
-   procedure getCellWidth (This : in out AllBinaryJ2METiledLayer) is
-      Java_Result : constant Integer := AllBinaryJ2METiledLayer'Class (This).getCellWidth;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getCellWidth;
-
-   procedure getCellHeight (This : in out AllBinaryJ2METiledLayer) is
-      Java_Result : constant Integer := AllBinaryJ2METiledLayer'Class (This).getCellHeight;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getCellHeight;
-
    procedure getCell (This : in out AllBinaryJ2METiledLayer; col : Integer; row : Integer) is
       Java_Result : constant Integer := AllBinaryJ2METiledLayer'Class (This).getCell (col, row);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getCell;
-
-   procedure getColumns (This : in out AllBinaryJ2METiledLayer) is
-      Java_Result : constant Integer := AllBinaryJ2METiledLayer'Class (This).getColumns;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getColumns;
-
-   procedure getRows (This : in out AllBinaryJ2METiledLayer) is
-      Java_Result : constant Integer := AllBinaryJ2METiledLayer'Class (This).getRows;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getRows;
 
    procedure getAnimatedTile (This : in out AllBinaryJ2METiledLayer; animationTileIndex : Integer) is
       Java_Result : constant Integer := AllBinaryJ2METiledLayer'Class (This).getAnimatedTile (animationTileIndex);

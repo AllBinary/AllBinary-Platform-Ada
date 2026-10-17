@@ -43,13 +43,10 @@ package views.generic_Id.inventory.AutoValidationInventoryView_Package is
    procedure Initialize (This : in out AutoValidationInventoryView'Class; transformInfoInterface : TransformInfoInterface_Access);
    function Create (transformInfoInterface : TransformInfoInterface_Access) return AutoValidationInventoryView_Access;
    function isValid (This : in out AutoValidationInventoryView) return Boolean;
-   procedure isValid (This : in out AutoValidationInventoryView);
    function toValidationInfoDoc (This : in out AutoValidationInventoryView) return Document_Access;
-   procedure toValidationInfoDoc (This : in out AutoValidationInventoryView);
    function toValidationInfoNode (This : in out AutoValidationInventoryView; document : Document_Access) return Node_Access;
    procedure toValidationInfoNode (This : in out AutoValidationInventoryView; document : Document_Access);
    function validationInfo (This : in out AutoValidationInventoryView) return Unbounded_String;
-   procedure validationInfo (This : in out AutoValidationInventoryView);
 
 end views.generic_Id.inventory.AutoValidationInventoryView_Package;
 

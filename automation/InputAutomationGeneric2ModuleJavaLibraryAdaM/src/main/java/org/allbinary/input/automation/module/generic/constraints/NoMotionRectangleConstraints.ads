@@ -22,6 +22,8 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.awt.image.BufferedImage_Package; use java.awt.image.BufferedImage_Package;
 with org.allbinary.input.automation.module.MotionRectangleConstraints_Package; use org.allbinary.input.automation.module.MotionRectangleConstraints_Package;
+with org.allbinary.input.automation.module.generic_Id.constraints.Dimension_Package; use org.allbinary.input.automation.module.generic_Id.constraints.Dimension_Package;
+with org.allbinary.input.automation.module.generic_Id.constraints.Rectangle_Package; use org.allbinary.input.automation.module.generic_Id.constraints.Rectangle_Package;
 
 package org.allbinary.input.automation.module.generic_Id.constraints.NoMotionRectangleConstraints_Package is
 

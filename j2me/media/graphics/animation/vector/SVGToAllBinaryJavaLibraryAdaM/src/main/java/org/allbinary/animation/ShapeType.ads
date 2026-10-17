@@ -36,7 +36,6 @@ package org.allbinary.animation.ShapeType_Package is
    procedure Initialize (This : in out ShapeType'Class; name : Unbounded_String);
    function Create (name : Unbounded_String) return ShapeType_Access;
    function getName (This : in out ShapeType) return Unbounded_String;
-   procedure getName (This : in out ShapeType);
 
 end org.allbinary.animation.ShapeType_Package;
 

@@ -29,7 +29,7 @@ package body org.allbinary.ai.OptimizedArtificialIntelligenceLayerManager_Packag
    function Create return OptimizedArtificialIntelligenceLayerManager_Access is
       This : constant OptimizedArtificialIntelligenceLayerManager_Access := new OptimizedArtificialIntelligenceLayerManager;
    begin
-      Initialize (This.all);
+      OptimizedArtificialIntelligenceLayerManager_Package.Initialize (This.all);
       return This;
    end Create;
 

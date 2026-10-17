@@ -30,7 +30,7 @@ package body org.allbinary.emulator.device.TrueTypeFontUtilBase_Package is
    function Create (scale : Integer) return TrueTypeFontUtilBase_Access is
       This : constant TrueTypeFontUtilBase_Access := new TrueTypeFontUtilBase;
    begin
-      Initialize (This.all, scale);
+      TrueTypeFontUtilBase_Package.Initialize (This.all, scale);
       return This;
    end Create;
 

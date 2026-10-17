@@ -40,7 +40,6 @@ package org.allbinary.logic.system.hardware.components.android.UnknownHardware_P
    function compareTo (This : in out UnknownHardware; componentInterface : HardwareComponentInterface_Access) return Boolean;
    procedure compareTo (This : in out UnknownHardware; componentInterface : HardwareComponentInterface_Access);
    function toString (This : in out UnknownHardware) return Unbounded_String;
-   procedure toString (This : in out UnknownHardware);
 
 end org.allbinary.logic.system.hardware.components.android.UnknownHardware_Package;
 

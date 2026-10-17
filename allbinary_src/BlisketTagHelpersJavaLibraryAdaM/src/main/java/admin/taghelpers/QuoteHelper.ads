@@ -97,15 +97,10 @@ package admin.taghelpers.QuoteHelper_Package is
    procedure emailUser (This : in out QuoteHelper; quoteRequest : QuoteRequest_Access);
    procedure emailAdmins (This : in out QuoteHelper; quoteRequest : QuoteRequest_Access);
    function email (This : in out QuoteHelper) return Unbounded_String;
-   procedure email (This : in out QuoteHelper);
    function drop (This : in out QuoteHelper) return Unbounded_String;
-   procedure drop (This : in out QuoteHelper);
    function create (This : in out QuoteHelper) return Unbounded_String;
-   procedure create (This : in out QuoteHelper);
    function restore (This : in out QuoteHelper) return Unbounded_String;
-   procedure restore (This : in out QuoteHelper);
    function backup (This : in out QuoteHelper) return Unbounded_String;
-   procedure backup (This : in out QuoteHelper);
 
 end admin.taghelpers.QuoteHelper_Package;
 

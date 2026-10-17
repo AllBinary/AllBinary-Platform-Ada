@@ -30,7 +30,7 @@ package body org.allbinary.business.user.commerce.money.payment.transaction.Paym
    function Create return PaymentTransactionData_Access is
       This : constant PaymentTransactionData_Access := new PaymentTransactionData;
    begin
-      Initialize (This.all);
+      PaymentTransactionData_Package.Initialize (This.all);
       return This;
    end Create;
 

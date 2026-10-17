@@ -29,7 +29,7 @@ package body org.allbinary.game.configuration.event.ChangedGameFeatureListener_P
    function Create return ChangedGameFeatureListener_Access is
       This : constant ChangedGameFeatureListener_Access := new ChangedGameFeatureListener;
    begin
-      Initialize (This.all);
+      ChangedGameFeatureListener_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -43,13 +43,6 @@ package body org.allbinary.game.configuration.event.ChangedGameFeatureListener_P
    begin
         return This.list.contains (gameConfiguration);
    end isChangedGameConfiguration;
-
-   procedure getInstance is
-      Java_Result : constant ChangedGameFeatureListener_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure isChangedGameConfiguration (This : in out ChangedGameFeatureListener; gameConfiguration : GameConfiguration_Access) is
       Java_Result : constant Boolean := ChangedGameFeatureListener'Class (This).isChangedGameConfiguration (gameConfiguration);

@@ -28,7 +28,7 @@ package body org.allbinary.image.PreResourceImageUtil_Package is
    function Create return PreResourceImageUtil_Access is
       This : constant PreResourceImageUtil_Access := new PreResourceImageUtil;
    begin
-      Initialize (This.all);
+      PreResourceImageUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -52,13 +52,6 @@ package body org.allbinary.image.PreResourceImageUtil_Package is
    begin
         null;
    end update;
-
-   procedure getInstance is
-      Java_Result : constant PreResourceImageUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure encapsulate (This : in out PreResourceImageUtil; image : Image_Access) is
       Java_Result : constant Image_Access := PreResourceImageUtil'Class (This).encapsulate (image);

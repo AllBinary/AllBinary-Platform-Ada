@@ -32,7 +32,7 @@ package body org.allbinary.game.input.SelectedRTSLayersPlayerGameInputProcessor_
    function Create (selectedRTSLayersPlayerGameInput : SelectedRTSLayersPlayerGameInput_Access) return SelectedRTSLayersPlayerGameInputProcessor_Access is
       This : constant SelectedRTSLayersPlayerGameInputProcessor_Access := new SelectedRTSLayersPlayerGameInputProcessor;
    begin
-      Initialize (This.all, selectedRTSLayersPlayerGameInput);
+      SelectedRTSLayersPlayerGameInputProcessor_Package.Initialize (This.all, selectedRTSLayersPlayerGameInput);
       return This;
    end Create;
 

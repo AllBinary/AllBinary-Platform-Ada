@@ -22,6 +22,7 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbinary.logic.util.event.AllBinaryEventObject_Package;
 with org.allbinary.logic.util.event.EventListenerInterface_Package; use org.allbinary.logic.util.event.EventListenerInterface_Package;
 with org.allbinary.logic.util.event.handler.BasicEventHandler_Package; use org.allbinary.logic.util.event.handler.BasicEventHandler_Package;
+with org.allbinary.game.rts.technology.event.TechEventListenerInterface_Package; use org.allbinary.game.rts.technology.event.TechEventListenerInterface_Package;
 
 package org.allbinary.game.rts.technology.event.TechEventHandler_Package is
 
@@ -40,7 +41,6 @@ package org.allbinary.game.rts.technology.event.TechEventHandler_Package is
    procedure Initialize (This : in out TechEventHandler'Class);
    function Create return TechEventHandler_Access;
    function getInstance return TechEventHandler_Access;
-   procedure getInstance;
    procedure process (This : in out TechEventHandler; eventObject : AllBinaryEventObject_Access; eventListenerInterface : EventListenerInterface_Access);
 
 end org.allbinary.game.rts.technology.event.TechEventHandler_Package;

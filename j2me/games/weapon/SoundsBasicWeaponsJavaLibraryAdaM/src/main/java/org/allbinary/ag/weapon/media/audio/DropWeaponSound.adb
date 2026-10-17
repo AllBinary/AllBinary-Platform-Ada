@@ -29,20 +29,13 @@ package body org.allbinary.ag.weapon.media.audio.DropWeaponSound_Package is
    function Create return DropWeaponSound_Access is
       This : constant DropWeaponSound_Access := new DropWeaponSound;
    begin
-      Initialize (This.all);
+      DropWeaponSound_Package.Initialize (This.all);
       return This;
    end Create;
 
    function getInstance return Sound_Access is
    begin
         return DropWeaponSound_Package.soundInterface;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant Sound_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

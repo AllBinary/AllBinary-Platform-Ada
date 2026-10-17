@@ -29,7 +29,7 @@ package body org.allbinary.business.time.modified.TimeLastModified_Package is
    function Create (time : Unbounded_String) return TimeLastModified_Access is
       This : constant TimeLastModified_Access := new TimeLastModified;
    begin
-      Initialize (This.all, time);
+      TimeLastModified_Package.Initialize (This.all, time);
       return This;
    end Create;
 
@@ -42,7 +42,7 @@ package body org.allbinary.business.time.modified.TimeLastModified_Package is
    function Create (time : Long_Long_Integer) return TimeLastModified_Access is
       This : constant TimeLastModified_Access := new TimeLastModified;
    begin
-      Initialize (This.all, time);
+      TimeLastModified_Package.Initialize (This.all, time);
       return This;
    end Create;
 

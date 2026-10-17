@@ -29,6 +29,8 @@ with org.allbinary.persistance.PlatformRecordIdUtil_Package; use org.allbinary.p
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.game.configuration.persistance.PersistanceStrings_Package; use org.allbinary.game.configuration.persistance.PersistanceStrings_Package;
+with org.allbinary.game.configuration.persistance.NullRecordStore_Package; use org.allbinary.game.configuration.persistance.NullRecordStore_Package;
 
 package org.allbinary.game.configuration.persistance.BasicPersitance_Package is
 
@@ -64,9 +66,7 @@ package org.allbinary.game.configuration.persistance.BasicPersitance_Package is
    function getRecordId (This : in out BasicPersitance; abeClientInformation : AbeClientInformationInterface_Access) return Unbounded_String;
    procedure getRecordId (This : in out BasicPersitance; abeClientInformation : AbeClientInformationInterface_Access);
    function getList (This : in out BasicPersitance) return BasicArrayList_Access;
-   procedure getList (This : in out BasicPersitance);
    function getIds (This : in out BasicPersitance) return BasicArrayList_Access;
-   procedure getIds (This : in out BasicPersitance);
    procedure clear (This : in out BasicPersitance);
 
 end org.allbinary.game.configuration.persistance.BasicPersitance_Package;

@@ -29,7 +29,7 @@ package body org.allbinary.android.AndroidInfoFactory_Package is
    function Create return AndroidInfoFactory_Access is
       This : constant AndroidInfoFactory_Access := new AndroidInfoFactory;
    begin
-      Initialize (This.all);
+      AndroidInfoFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -42,20 +42,6 @@ package body org.allbinary.android.AndroidInfoFactory_Package is
    function getVersion (This : in out AndroidInfoFactory) return Integer is
    begin
         return This.version;
-   end getVersion;
-
-   procedure getInstance is
-      Java_Result : constant AndroidInfoFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure getVersion (This : in out AndroidInfoFactory) is
-      Java_Result : constant Integer := AndroidInfoFactory'Class (This).getVersion;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getVersion;
 
 begin

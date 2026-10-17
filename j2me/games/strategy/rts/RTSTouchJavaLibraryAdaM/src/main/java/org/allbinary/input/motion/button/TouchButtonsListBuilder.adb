@@ -30,7 +30,7 @@ package body org.allbinary.input.motion.button.TouchButtonsListBuilder_Package i
    function Create return TouchButtonsListBuilder_Access is
       This : constant TouchButtonsListBuilder_Access := new TouchButtonsListBuilder;
    begin
-      Initialize (This.all);
+      TouchButtonsListBuilder_Package.Initialize (This.all);
       return This;
    end Create;
 

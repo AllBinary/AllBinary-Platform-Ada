@@ -27,6 +27,7 @@ with org.allbinary.media.graphics.geography.map.GeographicMapCellTypeFactory_Pac
 with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.EnumerationUtil_Package; use org.allbinary.util.EnumerationUtil_Package;
+with org.allbinary.media.graphics.geography.map.platform.BasicPlatormGeographicMapCellType_Package; use org.allbinary.media.graphics.geography.map.platform.BasicPlatormGeographicMapCellType_Package;
 
 package org.allbinary.media.graphics.geography.map.platform.BasicPlatormGeographicMapCellTypeFactory_Package is
 
@@ -53,11 +54,8 @@ package org.allbinary.media.graphics.geography.map.platform.BasicPlatormGeograph
    procedure Initialize (This : in out BasicPlatormGeographicMapCellTypeFactory'Class; tileTypeToTileIdsMap : ABHashtable_Access; maxTileId : Integer);
    function Create (tileTypeToTileIdsMap : ABHashtable_Access; maxTileId : Integer) return BasicPlatormGeographicMapCellTypeFactory_Access;
    function getStartType (This : in out BasicPlatormGeographicMapCellTypeFactory) return Integer;
-   procedure getStartType (This : in out BasicPlatormGeographicMapCellTypeFactory);
    function getEndType (This : in out BasicPlatormGeographicMapCellTypeFactory) return Integer;
-   procedure getEndType (This : in out BasicPlatormGeographicMapCellTypeFactory);
    function getEmptyType (This : in out BasicPlatormGeographicMapCellTypeFactory) return Integer;
-   procedure getEmptyType (This : in out BasicPlatormGeographicMapCellTypeFactory);
    function isPath (This : in out BasicPlatormGeographicMapCellTypeFactory; cellType : GeographicMapCellType_Access) return Boolean;
    procedure isPath (This : in out BasicPlatormGeographicMapCellTypeFactory; cellType : GeographicMapCellType_Access);
 

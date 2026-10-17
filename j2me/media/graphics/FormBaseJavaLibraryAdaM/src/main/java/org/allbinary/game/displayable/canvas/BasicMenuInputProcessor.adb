@@ -33,7 +33,7 @@ package body org.allbinary.game.displayable.canvas.BasicMenuInputProcessor_Packa
    function Create (gameKeyEventList : BasicArrayList_Access; playerInputId : Integer; gameCanvas : Canvas_Access) return BasicMenuInputProcessor_Access is
       This : constant BasicMenuInputProcessor_Access := new BasicMenuInputProcessor;
    begin
-      Initialize (This.all, gameKeyEventList, playerInputId, gameCanvas);
+      BasicMenuInputProcessor_Package.Initialize (This.all, gameKeyEventList, playerInputId, gameCanvas);
       return This;
    end Create;
 
@@ -61,20 +61,6 @@ package body org.allbinary.game.displayable.canvas.BasicMenuInputProcessor_Packa
    function processInputList (This : in out BasicMenuInputProcessor) return Integer is
    begin
         return -(1);
-   end processInputList;
-
-   procedure getCanvas (This : in out BasicMenuInputProcessor) is
-      Java_Result : constant MyCanvas_Access := BasicMenuInputProcessor'Class (This).getCanvas;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getCanvas;
-
-   procedure processInputList (This : in out BasicMenuInputProcessor) is
-      Java_Result : constant Integer := BasicMenuInputProcessor'Class (This).processInputList;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end processInputList;
 
 end org.allbinary.game.displayable.canvas.BasicMenuInputProcessor_Package;

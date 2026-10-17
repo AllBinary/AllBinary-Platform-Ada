@@ -29,7 +29,7 @@ package body org.allbinary.graphics.form.item.validation.UsernameValidator_Packa
    function Create (textFieldItem : ABTextFieldItem_Access; min : Integer; max : Integer; allowOnEmpty : Boolean) return UsernameValidator_Access is
       This : constant UsernameValidator_Access := new UsernameValidator;
    begin
-      Initialize (This.all, textFieldItem, min, max, allowOnEmpty);
+      UsernameValidator_Package.Initialize (This.all, textFieldItem, min, max, allowOnEmpty);
       return This;
    end Create;
 

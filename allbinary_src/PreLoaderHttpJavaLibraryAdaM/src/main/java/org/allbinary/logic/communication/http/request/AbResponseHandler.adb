@@ -31,7 +31,7 @@ package body org.allbinary.logic.communication.http.request.AbResponseHandler_Pa
    function Create return AbResponseHandler_Access is
       This : constant AbResponseHandler_Access := new AbResponseHandler;
    begin
-      Initialize (This.all);
+      AbResponseHandler_Package.Initialize (This.all);
       return This;
    end Create;
 

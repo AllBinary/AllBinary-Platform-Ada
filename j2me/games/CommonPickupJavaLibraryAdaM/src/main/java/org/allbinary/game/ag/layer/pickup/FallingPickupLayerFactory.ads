@@ -23,6 +23,7 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.multiplayer.layer.RemoteInfo_Package; use org.allbinary.game.multiplayer.layer.RemoteInfo_Package;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
 with org.allbinary.layer.AllBinaryLayerFactoryInterface_Package; use org.allbinary.layer.AllBinaryLayerFactoryInterface_Package;
+with org.allbinary.game.ag.layer.pickup.FallingPickupLayer_Package; use org.allbinary.game.ag.layer.pickup.FallingPickupLayer_Package;
 
 package org.allbinary.game.ag.layer.pickup.FallingPickupLayerFactory_Package is
 
@@ -40,7 +41,6 @@ package org.allbinary.game.ag.layer.pickup.FallingPickupLayerFactory_Package is
    procedure Initialize (This : in out FallingPickupLayerFactory'Class);
    function Create return FallingPickupLayerFactory_Access;
    function getInstance (This : in out FallingPickupLayerFactory) return AllBinaryLayer_Access;
-   procedure getInstance (This : in out FallingPickupLayerFactory);
 
 end org.allbinary.game.ag.layer.pickup.FallingPickupLayerFactory_Package;
 

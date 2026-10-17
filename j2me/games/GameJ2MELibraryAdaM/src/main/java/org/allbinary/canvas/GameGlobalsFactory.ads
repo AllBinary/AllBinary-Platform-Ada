@@ -43,7 +43,6 @@ package org.allbinary.canvas.GameGlobalsFactory_Package is
    procedure Initialize (This : in out GameGlobalsFactory'Class);
    function Create return GameGlobalsFactory_Access;
    function getInstance return GameGlobalsFactory_Access;
-   procedure getInstance;
 
 end org.allbinary.canvas.GameGlobalsFactory_Package;
 

@@ -23,6 +23,7 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.layer.behavior.GameLayerBehavior_Package; use org.allbinary.game.layer.behavior.GameLayerBehavior_Package;
 with org.allbinary.game.physics.acceleration.BasicAccelerationProperties_Package; use org.allbinary.game.physics.acceleration.BasicAccelerationProperties_Package;
 with org.allbinary.game.physics.velocity.VelocityProperties_Package; use org.allbinary.game.physics.velocity.VelocityProperties_Package;
+with org.allbinary.game.behavior.topview.InitialJumpBehavior_Package; use org.allbinary.game.behavior.topview.InitialJumpBehavior_Package;
 
 package org.allbinary.game.behavior.topview.TopViewGameLayerBehavior_Package is
 

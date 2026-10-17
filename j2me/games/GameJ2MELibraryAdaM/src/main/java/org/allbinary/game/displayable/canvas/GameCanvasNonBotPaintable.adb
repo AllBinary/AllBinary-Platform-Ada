@@ -32,7 +32,7 @@ package body org.allbinary.game.displayable.canvas.GameCanvasNonBotPaintable_Pac
    function Create (gameCanvas : AllBinaryGameCanvas_Access) return GameCanvasNonBotPaintable_Access is
       This : constant GameCanvasNonBotPaintable_Access := new GameCanvasNonBotPaintable;
    begin
-      Initialize (This.all, gameCanvas);
+      GameCanvasNonBotPaintable_Package.Initialize (This.all, gameCanvas);
       return This;
    end Create;
 

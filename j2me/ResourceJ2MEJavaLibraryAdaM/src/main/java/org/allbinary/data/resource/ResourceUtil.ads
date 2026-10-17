@@ -46,7 +46,6 @@ package org.allbinary.data.resource.ResourceUtil_Package is
    procedure Initialize (This : in out ResourceUtil'Class);
    function Create return ResourceUtil_Access;
    function getInstance return ResourceUtil_Access;
-   procedure getInstance;
    procedure setLoadingPaths (This : in out ResourceUtil; path : Unbounded_String; ext : Unbounded_String);
    function getResourceAsStream (This : in out ResourceUtil; resource : Unbounded_String) return InputStream_Access;
    procedure getResourceAsStream (This : in out ResourceUtil; resource : Unbounded_String);

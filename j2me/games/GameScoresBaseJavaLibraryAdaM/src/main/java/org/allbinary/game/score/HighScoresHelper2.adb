@@ -31,7 +31,7 @@ package body org.allbinary.game.score.HighScoresHelper2_Package is
    function Create return HighScoresHelper2_Access is
       This : constant HighScoresHelper2_Access := new HighScoresHelper2;
    begin
-      Initialize (This.all);
+      HighScoresHelper2_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -70,13 +70,6 @@ package body org.allbinary.game.score.HighScoresHelper2_Package is
         end loop;
         This.setSelectedHighScores (highScores);
    end selectHighScores;
-
-   procedure getSelectedHighScores (This : in out HighScoresHelper2) is
-      Java_Result : constant HighScores_Access := HighScoresHelper2'Class (This).getSelectedHighScores;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSelectedHighScores;
 
 end org.allbinary.game.score.HighScoresHelper2_Package;
 

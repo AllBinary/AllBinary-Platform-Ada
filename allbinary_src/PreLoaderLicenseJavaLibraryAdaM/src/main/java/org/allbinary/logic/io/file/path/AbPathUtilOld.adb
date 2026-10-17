@@ -38,7 +38,7 @@ package body org.allbinary.logic.io.file.path.AbPathUtilOld_Package is
    function Create return AbPathUtilOld_Access is
       This : constant AbPathUtilOld_Access := new AbPathUtilOld;
    begin
-      Initialize (This.all);
+      AbPathUtilOld_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -129,7 +129,8 @@ package body org.allbinary.logic.io.file.path.AbPathUtilOld_Package is
         end if;
    end isValidEnd;
 
-   function adjustStart (This : in out AbPathUtilOld; path : Unbounded_String) return Unbounded_String is
+   function adjustStart (This : in out AbPathUtilOld; path_Param : Unbounded_String) return Unbounded_String is
+      path : Unbounded_String := path_Param;
    begin
         if not (This.isValidStart (path)) then
             path := Java_Image (This.abPathData.SEPARATOR) & path;
@@ -137,7 +138,8 @@ package body org.allbinary.logic.io.file.path.AbPathUtilOld_Package is
         return path;
    end adjustStart;
 
-   function adjustEnd (This : in out AbPathUtilOld; path : Unbounded_String) return Unbounded_String is
+   function adjustEnd (This : in out AbPathUtilOld; path_Param : Unbounded_String) return Unbounded_String is
+      path : Unbounded_String := path_Param;
    begin
         if not (This.isValidEnd (path)) then
             path := path & Java_Image (This.abPathData.SEPARATOR);
@@ -145,7 +147,8 @@ package body org.allbinary.logic.io.file.path.AbPathUtilOld_Package is
         return path;
    end adjustEnd;
 
-   function adjust (This : in out AbPathUtilOld; path : Unbounded_String) return Unbounded_String is
+   function adjust (This : in out AbPathUtilOld; path_Param : Unbounded_String) return Unbounded_String is
+      path : Unbounded_String := path_Param;
    begin
         if StringValidationUtil_Package.getInstance.isEmpty (path) then
             return This.abPathData.SEPARATOR;
@@ -195,13 +198,6 @@ package body org.allbinary.logic.io.file.path.AbPathUtilOld_Package is
             return AbPath_Package.Create (categoryName, StringUtil_Package.getInstance.EMPTY_STRING);
         end if;
    end removeNameFromPath;
-
-   procedure getInstance is
-      Java_Result : constant AbPathUtilOld_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure getExtension (This : in out AbPathUtilOld; abFilePath : AbFilePath_Access) is
       Java_Result : constant Unbounded_String := AbPathUtilOld'Class (This).getExtension (abFilePath);
@@ -266,22 +262,22 @@ package body org.allbinary.logic.io.file.path.AbPathUtilOld_Package is
       null;
    end isValidEnd;
 
-   procedure adjustStart (This : in out AbPathUtilOld; path : Unbounded_String) is
-      Java_Result : constant Unbounded_String := AbPathUtilOld'Class (This).adjustStart (path);
+   procedure adjustStart (This : in out AbPathUtilOld; path_Param : Unbounded_String) is
+      Java_Result : constant Unbounded_String := AbPathUtilOld'Class (This).adjustStart (path_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end adjustStart;
 
-   procedure adjustEnd (This : in out AbPathUtilOld; path : Unbounded_String) is
-      Java_Result : constant Unbounded_String := AbPathUtilOld'Class (This).adjustEnd (path);
+   procedure adjustEnd (This : in out AbPathUtilOld; path_Param : Unbounded_String) is
+      Java_Result : constant Unbounded_String := AbPathUtilOld'Class (This).adjustEnd (path_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end adjustEnd;
 
-   procedure adjust (This : in out AbPathUtilOld; path : Unbounded_String) is
-      Java_Result : constant Unbounded_String := AbPathUtilOld'Class (This).adjust (path);
+   procedure adjust (This : in out AbPathUtilOld; path_Param : Unbounded_String) is
+      Java_Result : constant Unbounded_String := AbPathUtilOld'Class (This).adjust (path_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

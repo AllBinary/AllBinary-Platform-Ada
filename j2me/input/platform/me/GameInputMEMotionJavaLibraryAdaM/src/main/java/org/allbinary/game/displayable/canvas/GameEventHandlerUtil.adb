@@ -28,7 +28,7 @@ package body org.allbinary.game.displayable.canvas.GameEventHandlerUtil_Package 
    function Create return GameEventHandlerUtil_Access is
       This : constant GameEventHandlerUtil_Access := new GameEventHandlerUtil;
    begin
-      Initialize (This.all);
+      GameEventHandlerUtil_Package.Initialize (This.all);
       return This;
    end Create;
 

@@ -34,7 +34,7 @@ package body org.allbinary.data.tables.user.commerce.inventory.item.permissions.
    function Create return PermissionItemsEntity_Access is
       This : constant PermissionItemsEntity_Access := new PermissionItemsEntity;
    begin
-      Initialize (This.all);
+      PermissionItemsEntity_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -98,27 +98,6 @@ package body org.allbinary.data.tables.user.commerce.inventory.item.permissions.
    function dropTable (This : in out PermissionItemsEntity) return Unbounded_String is
    begin
         return AbSqlBean (This).dropTable;
-   end dropTable;
-
-   procedure createTableStatement (This : in out PermissionItemsEntity) is
-      Java_Result : constant Unbounded_String := PermissionItemsEntity'Class (This).createTableStatement;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end createTableStatement;
-
-   procedure createTable (This : in out PermissionItemsEntity) is
-      Java_Result : constant Unbounded_String := PermissionItemsEntity'Class (This).createTable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end createTable;
-
-   procedure dropTable (This : in out PermissionItemsEntity) is
-      Java_Result : constant Unbounded_String := PermissionItemsEntity'Class (This).dropTable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end dropTable;
 
 end org.allbinary.data.tables.user.commerce.inventory.item.permissions.PermissionItemsEntity_Package;

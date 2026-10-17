@@ -45,7 +45,6 @@ package tags.workflow.processing.basic.BasicWorkFlowTag_Package is
    procedure Initialize (This : in out BasicWorkFlowTag'Class);
    function Create return BasicWorkFlowTag_Access;
    function doStartTag (This : in out BasicWorkFlowTag) return Integer;
-   procedure doStartTag (This : in out BasicWorkFlowTag);
 
 end tags.workflow.processing.basic.BasicWorkFlowTag_Package;
 

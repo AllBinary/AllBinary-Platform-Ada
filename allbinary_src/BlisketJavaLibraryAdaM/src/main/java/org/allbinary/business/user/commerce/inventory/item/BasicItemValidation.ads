@@ -27,6 +27,7 @@ with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.
 with org.allbinary.logic.string_Id.StringValidationUtil_Package; use org.allbinary.logic.string_Id.StringValidationUtil_Package;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
+with org.allbinary.business.user.commerce.inventory.item.ItemInterface_Package; use org.allbinary.business.user.commerce.inventory.item.ItemInterface_Package;
 
 package org.allbinary.business.user.commerce.inventory.item.BasicItemValidation_Package is
 
@@ -53,11 +54,8 @@ package org.allbinary.business.user.commerce.inventory.item.BasicItemValidation_
    procedure Initialize (This : in out BasicItemValidation'Class; itemInterface : ItemInterface_Access);
    function Create (itemInterface : ItemInterface_Access) return BasicItemValidation_Access;
    function isValid (This : in out BasicItemValidation) return Boolean;
-   procedure isValid (This : in out BasicItemValidation);
    function validationInfo (This : in out BasicItemValidation) return Unbounded_String;
-   procedure validationInfo (This : in out BasicItemValidation);
    function toValidationInfoDoc (This : in out BasicItemValidation) return Document_Access;
-   procedure toValidationInfoDoc (This : in out BasicItemValidation);
    function toValidationInfoNode (This : in out BasicItemValidation; document : Document_Access) return Node_Access;
    procedure toValidationInfoNode (This : in out BasicItemValidation; document : Document_Access);
 

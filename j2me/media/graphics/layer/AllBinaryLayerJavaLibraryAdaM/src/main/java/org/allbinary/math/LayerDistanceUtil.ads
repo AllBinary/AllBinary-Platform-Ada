@@ -43,7 +43,6 @@ package org.allbinary.math.LayerDistanceUtil_Package is
    procedure Initialize (This : in out LayerDistanceUtil'Class);
    function Create return LayerDistanceUtil_Access;
    function getInstance return LayerDistanceUtil_Access;
-   procedure getInstance;
    function getDistance (This : in out LayerDistanceUtil; layerInterface : AllBinaryLayer_Access; layerInterface2 : AllBinaryLayer_Access) return Integer;
    procedure getDistance (This : in out LayerDistanceUtil; layerInterface : AllBinaryLayer_Access; layerInterface2 : AllBinaryLayer_Access);
    function getDistance3D (This : in out LayerDistanceUtil; layerInterface : AllBinaryLayer_Access; layerInterface2 : AllBinaryLayer_Access) return Integer;

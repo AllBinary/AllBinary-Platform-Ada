@@ -35,6 +35,8 @@ with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.
 with org.allbinary.logic.visual.transform.info.TransformInfoHttpStoreInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoHttpStoreInterface_Package;
 with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
 with org.allbinary.logic.visual.transform.info.template.TransformInfoTemplateData_Package; use org.allbinary.logic.visual.transform.info.template.TransformInfoTemplateData_Package;
+with org.allbinary.data.tree.dom.URIResolverStrings_Package; use org.allbinary.data.tree.dom.URIResolverStrings_Package;
+with org.allbinary.data.tree.dom.BasicUriResolver_Package; use org.allbinary.data.tree.dom.BasicUriResolver_Package;
 
 package org.allbinary.data.tree.dom.StoreUriResolver_Package is
 
@@ -67,7 +69,6 @@ package org.allbinary.data.tree.dom.StoreUriResolver_Package is
    function resolve (This : in out StoreUriResolver; href : Unbounded_String; base : Unbounded_String) return Source_Access;
    procedure resolve (This : in out StoreUriResolver; href : Unbounded_String; base : Unbounded_String);
    function toString (This : in out StoreUriResolver) return Unbounded_String;
-   procedure toString (This : in out StoreUriResolver);
 
 end org.allbinary.data.tree.dom.StoreUriResolver_Package;
 

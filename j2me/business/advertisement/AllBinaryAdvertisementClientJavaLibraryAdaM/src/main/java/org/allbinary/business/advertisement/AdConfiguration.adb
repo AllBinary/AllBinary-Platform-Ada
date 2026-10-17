@@ -35,7 +35,7 @@ package body org.allbinary.business.advertisement.AdConfiguration_Package is
    function Create (advertIdArray : Java_Object_Access_Array_Access) return AdConfiguration_Access is
       This : constant AdConfiguration_Access := new AdConfiguration;
    begin
-      Initialize (This.all, advertIdArray);
+      AdConfiguration_Package.Initialize (This.all, advertIdArray);
       return This;
    end Create;
 
@@ -67,20 +67,6 @@ package body org.allbinary.business.advertisement.AdConfiguration_Package is
    function isShowAds (This : in out AdConfiguration) return Boolean is
    begin
         return True;
-   end isShowAds;
-
-   procedure getValidAdSpots (This : in out AdConfiguration) is
-      Java_Result : constant Direction_Access_Array_Access := AdConfiguration'Class (This).getValidAdSpots;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getValidAdSpots;
-
-   procedure isShowAds (This : in out AdConfiguration) is
-      Java_Result : constant Boolean := AdConfiguration'Class (This).isShowAds;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end isShowAds;
 
 end org.allbinary.business.advertisement.AdConfiguration_Package;

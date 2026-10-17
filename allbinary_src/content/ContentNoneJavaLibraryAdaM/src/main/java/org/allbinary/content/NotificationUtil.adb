@@ -28,7 +28,7 @@ package body org.allbinary.content.NotificationUtil_Package is
    function Create return NotificationUtil_Access is
       This : constant NotificationUtil_Access := new NotificationUtil;
    begin
-      Initialize (This.all);
+      NotificationUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -42,13 +42,6 @@ package body org.allbinary.content.NotificationUtil_Package is
    begin
         null;
    end notify;
-
-   procedure getInstance is
-      Java_Result : constant NotificationUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

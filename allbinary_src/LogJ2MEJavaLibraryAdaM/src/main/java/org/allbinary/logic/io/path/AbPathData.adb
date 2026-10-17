@@ -38,16 +38,9 @@ package body org.allbinary.logic.io.path.AbPathData_Package is
    function Create return AbPathData_Access is
       This : constant AbPathData_Access := new AbPathData;
    begin
-      Initialize (This.all);
+      AbPathData_Package.Initialize (This.all);
       return This;
    end Create;
-
-   procedure getInstance is
-      Java_Result : constant AbPathData_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

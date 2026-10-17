@@ -37,7 +37,7 @@ package body org.allbinary.logic.communication.smtp.info.AdminEmailInfo_Package 
    function Create (subject : Unbounded_String; textBody : Unbounded_String) return AdminEmailInfo_Access is
       This : constant AdminEmailInfo_Access := new AdminEmailInfo;
    begin
-      Initialize (This.all, subject, textBody);
+      AdminEmailInfo_Package.Initialize (This.all, subject, textBody);
       return This;
    end Create;
 

@@ -26,6 +26,8 @@ with org.allbinary.game.input.GameInput_Package; use org.allbinary.game.input.Ga
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
 with org.allbinary.logic.math.SmallIntegerSingletonFactory_Package; use org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
 with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
+with org.allbinary.game.ag.ai.scroller.BasePatrolAI_Package; use org.allbinary.game.ag.ai.scroller.BasePatrolAI_Package;
+with org.allbinary.game.ag.ai.scroller.PacePatrolAI_Package; use org.allbinary.game.ag.ai.scroller.PacePatrolAI_Package;
 
 package org.allbinary.game.ag.ai.scroller.PacePatrolAIFactory_Package is
 

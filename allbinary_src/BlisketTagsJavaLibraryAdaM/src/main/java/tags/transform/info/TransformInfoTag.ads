@@ -75,11 +75,8 @@ package tags.transform.info.TransformInfoTag_Package is
    procedure setObjectConfig (This : in out TransformInfoTag; value : Unbounded_String);
    procedure setType (This : in out TransformInfoTag; value : Unbounded_String);
    function getName (This : in out TransformInfoTag) return Unbounded_String;
-   procedure getName (This : in out TransformInfoTag);
    function getObjectFile (This : in out TransformInfoTag) return Unbounded_String;
-   procedure getObjectFile (This : in out TransformInfoTag);
    function doStartTag (This : in out TransformInfoTag) return Integer;
-   procedure doStartTag (This : in out TransformInfoTag);
 
 end tags.transform.info.TransformInfoTag_Package;
 

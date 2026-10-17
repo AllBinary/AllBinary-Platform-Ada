@@ -42,7 +42,6 @@ package org.allbinary.logic.system.hardware.components.linux.Video_Package is
    function compareTo (This : in out Video; componentInterface : HardwareComponentInterface_Access) return Boolean;
    procedure compareTo (This : in out Video; componentInterface : HardwareComponentInterface_Access);
    function toString (This : in out Video) return Unbounded_String;
-   procedure toString (This : in out Video);
 
 end org.allbinary.logic.system.hardware.components.linux.Video_Package;
 

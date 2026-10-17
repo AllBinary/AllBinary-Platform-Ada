@@ -23,6 +23,8 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.GameInfo_Package; use org.allbinary.game.GameInfo_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.game.score.HighScoresFactoryInterface_Package; use org.allbinary.game.score.HighScoresFactoryInterface_Package;
+with org.allbinary.game.score.HighScoresResultsListener_Package; use org.allbinary.game.score.HighScoresResultsListener_Package;
+with org.allbinary.game.score.HighScoresHelperBaseInterface_Package; use org.allbinary.game.score.HighScoresHelperBaseInterface_Package;
 
 package org.allbinary.game.score.HighScoresBase_Package is
 
@@ -43,7 +45,6 @@ package org.allbinary.game.score.HighScoresBase_Package is
    procedure fetchHighScores (This : in out HighScoresBase; gameInfo : GameInfo_Access; highScoresResultsListener : HighScoresResultsListener_Access);
    procedure fetchHighScoresPreload (This : in out HighScoresBase; gameInfo : GameInfo_Access; highScoresResultsListener : HighScoresResultsListener_Access; preload : Boolean);
    function createHighScoresHelper (This : in out HighScoresBase) return HighScoresHelperBaseInterface_Access;
-   procedure createHighScoresHelper (This : in out HighScoresBase);
 
 end org.allbinary.game.score.HighScoresBase_Package;
 

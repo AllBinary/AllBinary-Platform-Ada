@@ -59,16 +59,9 @@ package body org.allbinary.input.motion.button.CommonButtons_Package is
    function Create return CommonButtons_Access is
       This : constant CommonButtons_Access := new CommonButtons;
    begin
-      Initialize (This.all);
+      CommonButtons_Package.Initialize (This.all);
       return This;
    end Create;
-
-   procedure getInstance is
-      Java_Result : constant CommonButtons_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

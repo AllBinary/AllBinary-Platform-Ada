@@ -35,7 +35,7 @@ package body org.allbinary.media.graphics.geography.pathfinding.PathGenerator_Pa
    function Create return PathGenerator_Access is
       This : constant PathGenerator_Access := new PathGenerator;
    begin
-      Initialize (This.all);
+      PathGenerator_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -92,13 +92,6 @@ package body org.allbinary.media.graphics.geography.pathfinding.PathGenerator_Pa
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end isValid;
-
-   procedure getInstance is
-      Java_Result : constant PathGenerator_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure getInstanceNoCache (This : in out PathGenerator; geographicMapInterface : BasicGeographicMap_Access; pathFindingInfo : PathFindingInfo_Access; totalPaths : Integer) is
       Java_Result : constant BasicArrayList_Access := PathGenerator'Class (This).getInstanceNoCache (geographicMapInterface, pathFindingInfo, totalPaths);

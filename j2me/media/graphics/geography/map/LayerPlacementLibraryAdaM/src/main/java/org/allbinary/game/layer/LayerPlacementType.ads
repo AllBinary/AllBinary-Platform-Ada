@@ -36,7 +36,6 @@ package org.allbinary.game.layer.LayerPlacementType_Package is
    procedure Initialize (This : in out LayerPlacementType'Class; type_Id : Integer);
    function Create (type_Id : Integer) return LayerPlacementType_Access;
    function getType (This : in out LayerPlacementType) return Integer;
-   procedure getType (This : in out LayerPlacementType);
    procedure setType (This : in out LayerPlacementType; type_Id : Integer);
 
 end org.allbinary.game.layer.LayerPlacementType_Package;

@@ -40,7 +40,6 @@ package org.allbinary.business.advertisement.search.AdvertisementSearchData_Pack
    procedure Initialize (This : in out AdvertisementSearchData'Class);
    function Create return AdvertisementSearchData_Access;
    function getInstance return AdvertisementSearchData_Access;
-   procedure getInstance;
 
 end org.allbinary.business.advertisement.search.AdvertisementSearchData_Package;
 

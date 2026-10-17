@@ -79,7 +79,7 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
    function Create (keyActionScriptInputInterface : KeyboardActionScriptInputInterface_Access) return KeyboardActionScriptInputJPanel_Access is
       This : constant KeyboardActionScriptInputJPanel_Access := new KeyboardActionScriptInputJPanel;
    begin
-      Initialize (This.all, keyActionScriptInputInterface);
+      KeyboardActionScriptInputJPanel_Package.Initialize (This.all, keyActionScriptInputInterface);
       return This;
    end Create;
 
@@ -364,20 +364,6 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
             This.normalJRadioButton.setSelected (False);
         end if;
    end pressJRadioButtonActionPerformed;
-
-   procedure getSelectedKey (This : in out KeyboardActionScriptInputJPanel) is
-      Java_Result : constant Integer := KeyboardActionScriptInputJPanel'Class (This).getSelectedKey;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSelectedKey;
-
-   procedure getKeyActionJDialog (This : in out KeyboardActionScriptInputJPanel) is
-      Java_Result : constant JDialog_Access := KeyboardActionScriptInputJPanel'Class (This).getKeyActionJDialog;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getKeyActionJDialog;
 
 end org.allbinary.input.automation.actions.script.condition.processors.input.KeyboardActionScriptInputJPanel_Package;
 

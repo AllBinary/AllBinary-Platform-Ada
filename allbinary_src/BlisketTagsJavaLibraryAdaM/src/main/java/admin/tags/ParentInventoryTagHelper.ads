@@ -38,7 +38,6 @@ package admin.tags.ParentInventoryTagHelper_Package is
    procedure Initialize (This : in out ParentInventoryTagHelper'Class);
    function Create return ParentInventoryTagHelper_Access;
    function getInstance return ParentInventoryTagHelper_Access;
-   procedure getInstance;
    procedure isValid (This : in out ParentInventoryTagHelper; tagClass : Java_Object_Access; parentTag : Tag_Access);
 
 end admin.tags.ParentInventoryTagHelper_Package;

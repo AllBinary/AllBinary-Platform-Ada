@@ -23,6 +23,8 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.configuration.feature.Features_Package; use org.allbinary.game.configuration.feature.Features_Package;
 with org.allbinary.game.configuration.feature.SensorFeatureFactory_Package; use org.allbinary.game.configuration.feature.SensorFeatureFactory_Package;
 with org.allbinary.logic.math.Orientation_Package; use org.allbinary.logic.math.Orientation_Package;
+with org.allbinary.input.gyro.AllBinaryOrientationSensor_Package; use org.allbinary.input.gyro.AllBinaryOrientationSensor_Package;
+with org.allbinary.input.gyro.NoGyroSensor_Package; use org.allbinary.input.gyro.NoGyroSensor_Package;
 
 package org.allbinary.input.gyro.OrientationToGameKeyEvent_Package is
 
@@ -44,7 +46,6 @@ package org.allbinary.input.gyro.OrientationToGameKeyEvent_Package is
    function Create return OrientationToGameKeyEvent_Access;
    procedure setAllBinaryGyroSensor (This : in out OrientationToGameKeyEvent; allBinaryGyroSensor : AllBinaryOrientationSensor_Access);
    function getAllBinaryGyroSensor (This : in out OrientationToGameKeyEvent) return AllBinaryOrientationSensor_Access;
-   procedure getAllBinaryGyroSensor (This : in out OrientationToGameKeyEvent);
    procedure process (This : in out OrientationToGameKeyEvent);
    procedure updateGameKeyEvents (This : in out OrientationToGameKeyEvent; orientation : Orientation_Access; yaw : Integer; pitch : Integer; roll : Integer);
 

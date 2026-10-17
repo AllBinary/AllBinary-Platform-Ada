@@ -28,7 +28,7 @@ package body org.allbinary.game.midlet.LicenseLevelUtil_Package is
    function Create return LicenseLevelUtil_Access is
       This : constant LicenseLevelUtil_Access := new LicenseLevelUtil;
    begin
-      Initialize (This.all);
+      LicenseLevelUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -42,13 +42,6 @@ package body org.allbinary.game.midlet.LicenseLevelUtil_Package is
    begin
         return demoLevel;
    end getMaxLevel;
-
-   procedure getInstance is
-      Java_Result : constant LicenseLevelUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure getMaxLevel (This : in out LicenseLevelUtil; maxLevel : Integer; demoLevel : Integer) is
       Java_Result : constant Integer := LicenseLevelUtil'Class (This).getMaxLevel (maxLevel, demoLevel);

@@ -32,7 +32,7 @@ package body org.allbinary.graphics.form.item.CommandTextItemArrayFactory_Packag
    function Create (visitorInterface : Visitor_Access) return CommandTextItemArrayFactory_Access is
       This : constant CommandTextItemArrayFactory_Access := new CommandTextItemArrayFactory;
    begin
-      Initialize (This.all, visitorInterface);
+      CommandTextItemArrayFactory_Package.Initialize (This.all, visitorInterface);
       return This;
    end Create;
 

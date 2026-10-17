@@ -29,7 +29,7 @@ package body org.allbinary.game.terrain.TerrainEventCircularStaticPool_Package i
    function Create return TerrainEventCircularStaticPool_Access is
       This : constant TerrainEventCircularStaticPool_Access := new TerrainEventCircularStaticPool;
    begin
-      Initialize (This.all);
+      TerrainEventCircularStaticPool_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -52,13 +52,6 @@ package body org.allbinary.game.terrain.TerrainEventCircularStaticPool_Package i
         trackingEvent.setBasicTerrainInfoForCircularStaticPool (basicTerrainInfo);
         return trackingEvent;
    end getNext;
-
-   procedure getInstance is
-      Java_Result : constant TerrainEventCircularStaticPool_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure getNext (This : in out TerrainEventCircularStaticPool; basicTerrainInfo : BasicTerrainInfo_Access) is
       Java_Result : constant TerrainEvent_Access := TerrainEventCircularStaticPool'Class (This).getNext (basicTerrainInfo);

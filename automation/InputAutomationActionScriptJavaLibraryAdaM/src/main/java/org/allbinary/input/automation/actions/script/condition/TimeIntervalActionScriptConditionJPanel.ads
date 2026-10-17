@@ -23,6 +23,7 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.input.automation.actions.script.condition.JPanel_Package; use org.allbinary.input.automation.actions.script.condition.JPanel_Package;
+with org.allbinary.input.automation.actions.script.condition.TimeIntervalActionScriptConditionInterface_Package; use org.allbinary.input.automation.actions.script.condition.TimeIntervalActionScriptConditionInterface_Package;
 
 package org.allbinary.input.automation.actions.script.condition.TimeIntervalActionScriptConditionJPanel_Package is
 
@@ -52,10 +53,8 @@ package org.allbinary.input.automation.actions.script.condition.TimeIntervalActi
    procedure set (This : in out TimeIntervalActionScriptConditionJPanel);
    procedure update (This : in out TimeIntervalActionScriptConditionJPanel);
    function getTimeIntervalJTextField (This : in out TimeIntervalActionScriptConditionJPanel) return JTextField_Access;
-   procedure getTimeIntervalJTextField (This : in out TimeIntervalActionScriptConditionJPanel);
    procedure setTimeIntervalJTextField (This : in out TimeIntervalActionScriptConditionJPanel; timeIntervalJTextField : JTextField_Access);
    function getTimeIntervalActionJDialog (This : in out TimeIntervalActionScriptConditionJPanel) return JDialog_Access;
-   procedure getTimeIntervalActionJDialog (This : in out TimeIntervalActionScriptConditionJPanel);
    procedure setTimeIntervalActionJDialog (This : in out TimeIntervalActionScriptConditionJPanel; timeIntervalActionJDialog : JDialog_Access);
    procedure initComponents (This : in out TimeIntervalActionScriptConditionJPanel);
    procedure okJButtonActionPerformed (This : in out TimeIntervalActionScriptConditionJPanel; evt : ActionEvent_Access);

@@ -32,7 +32,7 @@ package body org.allbinary.game.score.HighScoreCommandsBaseFactory_Package is
    function Create (HIGH_SCORE_COMMANDS : Command_Access_Array_Access) return HighScoreCommandsBaseFactory_Access is
       This : constant HighScoreCommandsBaseFactory_Access := new HighScoreCommandsBaseFactory;
    begin
-      Initialize (This.all, HIGH_SCORE_COMMANDS);
+      HighScoreCommandsBaseFactory_Package.Initialize (This.all, HIGH_SCORE_COMMANDS);
       return This;
    end Create;
 

@@ -20,7 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.util.Calendar_Package; use java.util.Calendar_Package;
+with java.util.Calendar_Package; use java.util.Calendar_Package;
 --  with java.util.HashMap_Package; use java.util.HashMap_Package;
 --  with java.util.Set_Package; use java.util.Set_Package;
 with org.allbinary.data.tree.dom.DomNodeInterface_Package; use org.allbinary.data.tree.dom.DomNodeInterface_Package;
@@ -30,9 +30,12 @@ with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.s
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
+with org.allbinary.business.user.commerce.inventory.item.download.DownloadableItem_Package; use org.allbinary.business.user.commerce.inventory.item.download.DownloadableItem_Package;
+with org.allbinary.business.user.commerce.inventory.item.download.DownloadItemData_Package; use org.allbinary.business.user.commerce.inventory.item.download.DownloadItemData_Package;
 
 package org.allbinary.business.user.commerce.inventory.item.download.DownloadableItemView_Package is
 
+   package Calendar_Package renames Standard.java.util.Calendar_Package;
    package DomNodeInterface_Package renames Standard.org.allbinary.data.tree.dom.DomNodeInterface_Package;
    package ModDomHelper_Package renames Standard.org.allbinary.data.tree.dom.ModDomHelper_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
@@ -57,9 +60,7 @@ package org.allbinary.business.user.commerce.inventory.item.download.Downloadabl
    function toXmlNode (This : in out DownloadableItemView; document : Document_Access) return Node_Access;
    procedure toXmlNode (This : in out DownloadableItemView; document : Document_Access);
    function toXmlDoc (This : in out DownloadableItemView) return Document_Access;
-   procedure toXmlDoc (This : in out DownloadableItemView);
    function view (This : in out DownloadableItemView) return Unbounded_String;
-   procedure view (This : in out DownloadableItemView);
 
 end org.allbinary.business.user.commerce.inventory.item.download.DownloadableItemView_Package;
 

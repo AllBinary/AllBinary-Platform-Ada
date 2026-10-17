@@ -28,6 +28,7 @@ with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.lo
 with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package; use org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.business.user.commerce.shipping.ShippingMethodsInterface_Package; use org.allbinary.business.user.commerce.shipping.ShippingMethodsInterface_Package;
+with org.allbinary.business.user.commerce.shipping.ShippingMethodsFactory_Package; use org.allbinary.business.user.commerce.shipping.ShippingMethodsFactory_Package;
 
 package org.allbinary.business.user.commerce.shipping.ShippingMethods_Package is
 
@@ -54,11 +55,9 @@ package org.allbinary.business.user.commerce.shipping.ShippingMethods_Package is
    procedure Initialize (This : in out ShippingMethods'Class; abeClientInformation : AbeClientInformationInterface_Access; storeFrontInterface : StoreFrontInterface_Access);
    function Create (abeClientInformation : AbeClientInformationInterface_Access; storeFrontInterface : StoreFrontInterface_Access) return ShippingMethods_Access;
    function get (This : in out ShippingMethods) return BasicArrayList_Access;
-   procedure get (This : in out ShippingMethods);
    function getShippingInterface (This : in out ShippingMethods; name : Unbounded_String) return ShippingInterface_Access;
    procedure getShippingInterface (This : in out ShippingMethods; name : Unbounded_String);
    function getDefault (This : in out ShippingMethods) return ShippingInterface_Access;
-   procedure getDefault (This : in out ShippingMethods);
 
 end org.allbinary.business.user.commerce.shipping.ShippingMethods_Package;
 

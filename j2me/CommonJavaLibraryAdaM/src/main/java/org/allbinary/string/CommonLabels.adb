@@ -43,7 +43,7 @@ package body org.allbinary.string_Id.CommonLabels_Package is
    function Create return CommonLabels_Access is
       This : constant CommonLabels_Access := new CommonLabels;
    begin
-      Initialize (This.all);
+      CommonLabels_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -51,13 +51,6 @@ package body org.allbinary.string_Id.CommonLabels_Package is
    function getInstance return CommonLabels_Access is
    begin
         return CommonLabels_Package.instance;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant CommonLabels_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

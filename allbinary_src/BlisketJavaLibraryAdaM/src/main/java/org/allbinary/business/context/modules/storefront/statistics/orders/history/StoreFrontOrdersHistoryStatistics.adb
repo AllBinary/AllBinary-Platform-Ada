@@ -58,7 +58,7 @@ package body org.allbinary.business.context.modules.storefront.statistics.orders
    function Create (storeFrontInterface : StoreFrontInterface_Access) return StoreFrontOrdersHistoryStatistics_Access is
       This : constant StoreFrontOrdersHistoryStatistics_Access := new StoreFrontOrdersHistoryStatistics;
    begin
-      Initialize (This.all, storeFrontInterface);
+      StoreFrontOrdersHistoryStatistics_Package.Initialize (This.all, storeFrontInterface);
       return This;
    end Create;
 
@@ -109,62 +109,6 @@ package body org.allbinary.business.context.modules.storefront.statistics.orders
    function getKey (This : in out StoreFrontOrdersHistoryStatistics) return Java_Object_Access is
    begin
         return null;
-   end getKey;
-
-   procedure getNumberOfOrders (This : in out StoreFrontOrdersHistoryStatistics) is
-      Java_Result : constant Long_Long_Integer := StoreFrontOrdersHistoryStatistics'Class (This).getNumberOfOrders;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getNumberOfOrders;
-
-   procedure getSubTotal (This : in out StoreFrontOrdersHistoryStatistics) is
-      Java_Result : constant Money_Access := StoreFrontOrdersHistoryStatistics'Class (This).getSubTotal;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSubTotal;
-
-   procedure getShippingCost (This : in out StoreFrontOrdersHistoryStatistics) is
-      Java_Result : constant Money_Access := StoreFrontOrdersHistoryStatistics'Class (This).getShippingCost;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getShippingCost;
-
-   procedure getTaxes (This : in out StoreFrontOrdersHistoryStatistics) is
-      Java_Result : constant Money_Access := StoreFrontOrdersHistoryStatistics'Class (This).getTaxes;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTaxes;
-
-   procedure getTotal (This : in out StoreFrontOrdersHistoryStatistics) is
-      Java_Result : constant Money_Access := StoreFrontOrdersHistoryStatistics'Class (This).getTotal;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTotal;
-
-   procedure toHashMap (This : in out StoreFrontOrdersHistoryStatistics) is
-      Java_Result : constant HashMap_Access := StoreFrontOrdersHistoryStatistics'Class (This).toHashMap;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toHashMap;
-
-   procedure toVector (This : in out StoreFrontOrdersHistoryStatistics) is
-      Java_Result : constant BasicArrayList_Access := StoreFrontOrdersHistoryStatistics'Class (This).toVector;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toVector;
-
-   procedure getKey (This : in out StoreFrontOrdersHistoryStatistics) is
-      Java_Result : constant Java_Object_Access := StoreFrontOrdersHistoryStatistics'Class (This).getKey;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getKey;
 
 end org.allbinary.business.context.modules.storefront.statistics.orders.history.StoreFrontOrdersHistoryStatistics_Package;

@@ -39,7 +39,6 @@ package org.allbinary.game.input.resource.TouchButtonDowngradeResource_Package i
    procedure Initialize (This : in out TouchButtonDowngradeResource'Class);
    function Create return TouchButtonDowngradeResource_Access;
    function getInstance return TouchButtonResource_Access;
-   procedure getInstance;
 
 end org.allbinary.game.input.resource.TouchButtonDowngradeResource_Package;
 

@@ -29,7 +29,7 @@ package body org.allbinary.game.layer.SpriteFactory_Package is
    function Create return SpriteFactory_Access is
       This : constant SpriteFactory_Access := new SpriteFactory;
    begin
-      Initialize (This.all);
+      SpriteFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -43,13 +43,6 @@ package body org.allbinary.game.layer.SpriteFactory_Package is
    begin
         return Sprite_Package.Create (image, frameWidth, frameHeight);
    end createSprite;
-
-   procedure getInstance is
-      Java_Result : constant SpriteFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure createSprite (This : in out SpriteFactory; image : Image_Access; frameWidth : Integer; frameHeight : Integer) is
       Java_Result : constant Sprite_Access := SpriteFactory'Class (This).createSprite (image, frameWidth, frameHeight);

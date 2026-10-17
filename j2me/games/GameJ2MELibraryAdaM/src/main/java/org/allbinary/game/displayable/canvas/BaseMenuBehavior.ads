@@ -22,6 +22,7 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.graphics.displayable.event.DisplayChangeEvent_Package; use org.allbinary.graphics.displayable.event.DisplayChangeEvent_Package;
 with org.allbinary.graphics.paint.NullPaintable_Package; use org.allbinary.graphics.paint.NullPaintable_Package;
+with org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package; use org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package;
 
 package org.allbinary.game.displayable.canvas.BaseMenuBehavior_Package is
 
@@ -39,7 +40,6 @@ package org.allbinary.game.displayable.canvas.BaseMenuBehavior_Package is
    procedure Initialize (This : in out BaseMenuBehavior'Class);
    function Create return BaseMenuBehavior_Access;
    function getInstance return BaseMenuBehavior_Access;
-   procedure getInstance;
    procedure onDisplayChangeEvent (This : in out BaseMenuBehavior; allBinaryGameCanvas : AllBinaryGameCanvas_Access; displayChangeEvent : DisplayChangeEvent_Access);
    procedure initSpecialPaint (This : in out BaseMenuBehavior; allBinaryGameCanvas : AllBinaryGameCanvas_Access);
    procedure initMenu (This : in out BaseMenuBehavior; allBinaryGameCanvas : AllBinaryGameCanvas_Access);

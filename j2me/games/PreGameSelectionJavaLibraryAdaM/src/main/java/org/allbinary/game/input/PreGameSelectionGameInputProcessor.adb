@@ -67,7 +67,7 @@ package body org.allbinary.game.input.PreGameSelectionGameInputProcessor_Package
    function Create (gameCanvas : AllBinaryGameCanvas_Access; preGameSelectorPaintable : PreGameSelectorPaintable_Access; nextGameState : GameState_Access; lockedIndex : Integer) return PreGameSelectionGameInputProcessor_Access is
       This : constant PreGameSelectionGameInputProcessor_Access := new PreGameSelectionGameInputProcessor;
    begin
-      Initialize (This.all, gameCanvas, preGameSelectorPaintable, nextGameState, lockedIndex);
+      PreGameSelectionGameInputProcessor_Package.Initialize (This.all, gameCanvas, preGameSelectorPaintable, nextGameState, lockedIndex);
       return This;
    end Create;
 
@@ -135,27 +135,6 @@ package body org.allbinary.game.input.PreGameSelectionGameInputProcessor_Package
    function getPlayerGameInput (This : in out PreGameSelectionGameInputProcessor) return PlayerGameInput_Access is
    begin
         return This.playerGameInput;
-   end getPlayerGameInput;
-
-   procedure getPreGameSelectorPaintable (This : in out PreGameSelectionGameInputProcessor) is
-      Java_Result : constant PreGameSelectorPaintable_Access := PreGameSelectionGameInputProcessor'Class (This).getPreGameSelectorPaintable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getPreGameSelectorPaintable;
-
-   procedure getName (This : in out PreGameSelectionGameInputProcessor) is
-      Java_Result : constant Unbounded_String := PreGameSelectionGameInputProcessor'Class (This).getName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getName;
-
-   procedure getPlayerGameInput (This : in out PreGameSelectionGameInputProcessor) is
-      Java_Result : constant PlayerGameInput_Access := PreGameSelectionGameInputProcessor'Class (This).getPlayerGameInput;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getPlayerGameInput;
 
 end org.allbinary.game.input.PreGameSelectionGameInputProcessor_Package;

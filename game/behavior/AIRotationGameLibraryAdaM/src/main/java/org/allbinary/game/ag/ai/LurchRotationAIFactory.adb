@@ -28,7 +28,7 @@ package body org.allbinary.game.ag.ai.LurchRotationAIFactory_Package is
    function Create return LurchRotationAIFactory_Access is
       This : constant LurchRotationAIFactory_Access := new LurchRotationAIFactory;
    begin
-      Initialize (This.all);
+      LurchRotationAIFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

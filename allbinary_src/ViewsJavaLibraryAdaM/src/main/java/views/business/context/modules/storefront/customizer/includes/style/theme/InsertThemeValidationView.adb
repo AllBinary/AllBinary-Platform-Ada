@@ -39,7 +39,7 @@ package body views.business.context.modules.storefront.customizer.includes.style
    function Create (transformInfoInterface : TransformInfoInterface_Access) return InsertThemeValidationView_Access is
       This : constant InsertThemeValidationView_Access := new InsertThemeValidationView;
    begin
-      Initialize (This.all, transformInfoInterface);
+      InsertThemeValidationView_Package.Initialize (This.all, transformInfoInterface);
       return This;
    end Create;
 
@@ -128,47 +128,12 @@ package body views.business.context.modules.storefront.customizer.includes.style
         end;
    end view;
 
-   procedure toXmlDoc (This : in out InsertThemeValidationView) is
-      Java_Result : constant Document_Access := InsertThemeValidationView'Class (This).toXmlDoc;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toXmlDoc;
-
-   procedure isValid (This : in out InsertThemeValidationView) is
-      Java_Result : constant Boolean := InsertThemeValidationView'Class (This).isValid;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isValid;
-
-   procedure validationInfo (This : in out InsertThemeValidationView) is
-      Java_Result : constant Unbounded_String := InsertThemeValidationView'Class (This).validationInfo;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end validationInfo;
-
-   procedure toValidationInfoDoc (This : in out InsertThemeValidationView) is
-      Java_Result : constant Document_Access := InsertThemeValidationView'Class (This).toValidationInfoDoc;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toValidationInfoDoc;
-
    procedure toValidationInfoNode (This : in out InsertThemeValidationView; document : Document_Access) is
       Java_Result : constant Node_Access := InsertThemeValidationView'Class (This).toValidationInfoNode (document);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end toValidationInfoNode;
-
-   procedure view (This : in out InsertThemeValidationView) is
-      Java_Result : constant Unbounded_String := InsertThemeValidationView'Class (This).view;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end view;
 
 end views.business.context.modules.storefront.customizer.includes.style.theme.InsertThemeValidationView_Package;
 

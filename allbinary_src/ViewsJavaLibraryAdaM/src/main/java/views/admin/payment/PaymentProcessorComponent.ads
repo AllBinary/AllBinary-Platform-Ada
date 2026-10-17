@@ -51,7 +51,6 @@ package views.admin.payment.PaymentProcessorComponent_Package is
    function Create (transformInfoInterface : TransformInfoInterface_Access) return PaymentProcessorComponent_Access;
    procedure addDomNodeInterfaces (This : in out PaymentProcessorComponent);
    function view (This : in out PaymentProcessorComponent) return Unbounded_String;
-   procedure view (This : in out PaymentProcessorComponent);
 
 end views.admin.payment.PaymentProcessorComponent_Package;
 

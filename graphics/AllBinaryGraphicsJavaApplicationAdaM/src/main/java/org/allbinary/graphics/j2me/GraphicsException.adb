@@ -43,7 +43,7 @@ package body org.allbinary.graphics.j2me.GraphicsException_Package is
    function Create (msg : Unbounded_String; obj : Java_Object_Access; method : Unbounded_String) return GraphicsException_Access is
       This : constant GraphicsException_Access := new GraphicsException;
    begin
-      Initialize (This.all, msg, obj, method);
+      GraphicsException_Package.Initialize (This.all, msg, obj, method);
       return This;
    end Create;
 
@@ -68,7 +68,7 @@ package body org.allbinary.graphics.j2me.GraphicsException_Package is
    function Create (msg : Unbounded_String; className : Unbounded_String; method : Unbounded_String) return GraphicsException_Access is
       This : constant GraphicsException_Access := new GraphicsException;
    begin
-      Initialize (This.all, msg, className, method);
+      GraphicsException_Package.Initialize (This.all, msg, className, method);
       return This;
    end Create;
 

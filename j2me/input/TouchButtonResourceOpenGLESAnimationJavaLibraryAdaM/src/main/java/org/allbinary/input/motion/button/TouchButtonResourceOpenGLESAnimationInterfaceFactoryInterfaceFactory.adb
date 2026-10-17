@@ -29,7 +29,7 @@ package body org.allbinary.input.motion.button.TouchButtonResourceOpenGLESAnimat
    function Create return TouchButtonResourceOpenGLESAnimationInterfaceFactoryInterfaceFactory_Access is
       This : constant TouchButtonResourceOpenGLESAnimationInterfaceFactoryInterfaceFactory_Access := new TouchButtonResourceOpenGLESAnimationInterfaceFactoryInterfaceFactory;
    begin
-      Initialize (This.all);
+      TouchButtonResourceOpenGLESAnimationInterfaceFactoryInterfaceFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -46,13 +46,6 @@ package body org.allbinary.input.motion.button.TouchButtonResourceOpenGLESAnimat
         else
             return False;
         end if;
-   end isFeature;
-
-   procedure isFeature (This : in out TouchButtonResourceOpenGLESAnimationInterfaceFactoryInterfaceFactory) is
-      Java_Result : constant Boolean := TouchButtonResourceOpenGLESAnimationInterfaceFactoryInterfaceFactory'Class (This).isFeature;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end isFeature;
 
 end org.allbinary.input.motion.button.TouchButtonResourceOpenGLESAnimationInterfaceFactoryInterfaceFactory_Package;

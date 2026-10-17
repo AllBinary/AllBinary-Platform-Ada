@@ -103,7 +103,7 @@ package body org.allbinary.graphics.j2me.workarea.canvas.CanvasDom_Package is
    function Create (canvasNode : Node_Access) return CanvasDom_Access is
       This : constant CanvasDom_Access := new CanvasDom;
    begin
-      Initialize (This.all, canvasNode);
+      CanvasDom_Package.Initialize (This.all, canvasNode);
       return This;
    end Create;
 
@@ -121,7 +121,7 @@ package body org.allbinary.graphics.j2me.workarea.canvas.CanvasDom_Package is
    function Create (canvasJPanel : CanvasJPanel_Access) return CanvasDom_Access is
       This : constant CanvasDom_Access := new CanvasDom;
    begin
-      Initialize (This.all, canvasJPanel);
+      CanvasDom_Package.Initialize (This.all, canvasJPanel);
       return This;
    end Create;
 
@@ -266,47 +266,12 @@ package body org.allbinary.graphics.j2me.workarea.canvas.CanvasDom_Package is
         return This.grid_Case;
    end getGrid;
 
-   procedure getAngle (This : in out CanvasDom) is
-      Java_Result : constant Long_Float := CanvasDom'Class (This).getAngle;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getAngle;
-
-   procedure getGraphicItemHashMap (This : in out CanvasDom) is
-      Java_Result : constant HashMap_Access := CanvasDom'Class (This).getGraphicItemHashMap;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getGraphicItemHashMap;
-
    procedure getPointNode (This : in out CanvasDom; point : GPoint_Access; pointName : Unbounded_String) is
       Java_Result : constant Node_Access := CanvasDom'Class (This).getPointNode (point, pointName);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getPointNode;
-
-   procedure toDom (This : in out CanvasDom) is
-      Java_Result : constant Node_Access := CanvasDom'Class (This).toDom;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toDom;
-
-   procedure getDimension (This : in out CanvasDom) is
-      Java_Result : constant IntegerDimension_Access := CanvasDom'Class (This).getDimension;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getDimension;
-
-   procedure getGrid (This : in out CanvasDom) is
-      Java_Result : constant Grid_Access := CanvasDom'Class (This).getGrid;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getGrid;
 
 begin
    null;

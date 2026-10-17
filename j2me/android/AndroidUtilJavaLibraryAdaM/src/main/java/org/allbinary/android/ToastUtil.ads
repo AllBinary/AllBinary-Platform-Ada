@@ -35,7 +35,6 @@ package org.allbinary.android.ToastUtil_Package is
    procedure Initialize (This : in out ToastUtil'Class);
    function Create return ToastUtil_Access;
    function getInstance return ToastUtil_Access;
-   procedure getInstance;
    procedure makeToast (This : in out ToastUtil; view : View_Access; context : Context_Access; message : Unbounded_String; time : Integer);
 
 end org.allbinary.android.ToastUtil_Package;

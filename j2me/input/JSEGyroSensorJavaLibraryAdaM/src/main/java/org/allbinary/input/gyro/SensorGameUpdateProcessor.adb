@@ -29,7 +29,7 @@ package body org.allbinary.input.gyro.SensorGameUpdateProcessor_Package is
    function Create return SensorGameUpdateProcessor_Access is
       This : constant SensorGameUpdateProcessor_Access := new SensorGameUpdateProcessor;
    begin
-      Initialize (This.all);
+      SensorGameUpdateProcessor_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -71,20 +71,6 @@ package body org.allbinary.input.gyro.SensorGameUpdateProcessor_Package is
         AccelerometerSensorFactory_Package.getInstance.setCompleteMotionGestureInputEventListener (NoCompleteMotionGestureInputEventListener_Package.getInstance);
         This.setInputSensor (NoAllBinarySensor_Package.getInstance);
    end setNoSensors;
-
-   procedure getInputSensor (This : in out SensorGameUpdateProcessor) is
-      Java_Result : constant AllBinarySensor_Access := SensorGameUpdateProcessor'Class (This).getInputSensor;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInputSensor;
-
-   procedure isAnySensor (This : in out SensorGameUpdateProcessor) is
-      Java_Result : constant Boolean := SensorGameUpdateProcessor'Class (This).isAnySensor;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isAnySensor;
 
 end org.allbinary.input.gyro.SensorGameUpdateProcessor_Package;
 

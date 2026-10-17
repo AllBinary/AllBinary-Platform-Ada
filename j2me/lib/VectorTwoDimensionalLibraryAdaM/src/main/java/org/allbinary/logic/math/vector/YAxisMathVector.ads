@@ -22,6 +22,7 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.math.BasicDecimal_Package; use org.allbinary.logic.math.BasicDecimal_Package;
 with org.allbinary.logic.math.vector.MathVector_Package; use org.allbinary.logic.math.vector.MathVector_Package;
+with org.allbinary.logic.math.vector.YAxisMathVectorUtil_Package; use org.allbinary.logic.math.vector.YAxisMathVectorUtil_Package;
 
 package org.allbinary.logic.math.vector.YAxisMathVector_Package is
 
@@ -37,7 +38,6 @@ package org.allbinary.logic.math.vector.YAxisMathVector_Package is
    procedure Initialize (This : in out YAxisMathVector'Class; magnitudeBasicDecimal : BasicDecimal_Access; direction : Integer);
    function Create (magnitudeBasicDecimal : BasicDecimal_Access; direction : Integer) return YAxisMathVector_Access;
    function getResult (This : in out YAxisMathVector) return BasicDecimal_Access;
-   procedure getResult (This : in out YAxisMathVector);
    procedure calculate (This : in out YAxisMathVector);
 
 end org.allbinary.logic.math.vector.YAxisMathVector_Package;

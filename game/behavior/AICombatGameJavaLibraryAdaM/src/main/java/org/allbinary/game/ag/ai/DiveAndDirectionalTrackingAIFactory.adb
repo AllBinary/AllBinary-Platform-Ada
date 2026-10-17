@@ -28,7 +28,7 @@ package body org.allbinary.game.ag.ai.DiveAndDirectionalTrackingAIFactory_Packag
    function Create return DiveAndDirectionalTrackingAIFactory_Access is
       This : constant DiveAndDirectionalTrackingAIFactory_Access := new DiveAndDirectionalTrackingAIFactory;
    begin
-      Initialize (This.all);
+      DiveAndDirectionalTrackingAIFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

@@ -34,7 +34,7 @@ package body org.allbinary.input.motion.gesture.observer.ResolveCompleteMotionGe
    function Create return ResolveCompleteMotionGestureListener_Access is
       This : constant ResolveCompleteMotionGestureListener_Access := new ResolveCompleteMotionGestureListener;
    begin
-      Initialize (This.all);
+      ResolveCompleteMotionGestureListener_Package.Initialize (This.all);
       return This;
    end Create;
 

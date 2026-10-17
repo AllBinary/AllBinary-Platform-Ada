@@ -28,7 +28,7 @@ package body org.allbinary.logic.java.JNDIUtil_Package is
    function Create return JNDIUtil_Access is
       This : constant JNDIUtil_Access := new JNDIUtil;
    begin
-      Initialize (This.all);
+      JNDIUtil_Package.Initialize (This.all);
       return This;
    end Create;
 

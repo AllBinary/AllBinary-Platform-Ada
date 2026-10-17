@@ -33,7 +33,7 @@ package body views.business.context.modules.storefront.customizer.includes.meta.
    function Create (transformInfoInterface : TransformInfoInterface_Access) return MetaView_Access is
       This : constant MetaView_Access := new MetaView;
    begin
-      Initialize (This.all, transformInfoInterface);
+      MetaView_Package.Initialize (This.all, transformInfoInterface);
       return This;
    end Create;
 
@@ -85,13 +85,6 @@ package body views.business.context.modules.storefront.customizer.includes.meta.
    begin
       null;
    end toXmlNode;
-
-   procedure view (This : in out MetaView) is
-      Java_Result : constant Unbounded_String := MetaView'Class (This).view;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end view;
 
 end views.business.context.modules.storefront.customizer.includes.meta.MetaView_Package;
 

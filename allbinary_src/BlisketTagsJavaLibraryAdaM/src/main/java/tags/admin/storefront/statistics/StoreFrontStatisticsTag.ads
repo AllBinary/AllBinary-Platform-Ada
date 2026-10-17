@@ -41,7 +41,6 @@ package tags.admin.storefront.statistics.StoreFrontStatisticsTag_Package is
    procedure Initialize (This : in out StoreFrontStatisticsTag'Class);
    function Create return StoreFrontStatisticsTag_Access;
    function doStartTag (This : in out StoreFrontStatisticsTag) return Integer;
-   procedure doStartTag (This : in out StoreFrontStatisticsTag);
 
 end tags.admin.storefront.statistics.StoreFrontStatisticsTag_Package;
 

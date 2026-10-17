@@ -25,6 +25,7 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.graphics.form.item.ABCustomItem_Package; use org.allbinary.graphics.form.item.ABCustomItem_Package;
 with org.allbinary.graphics.form.item.ABCustomItemInterface_Package; use org.allbinary.graphics.form.item.ABCustomItemInterface_Package;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.game.layer.AllBinaryTiledLayer_Package; use org.allbinary.game.layer.AllBinaryTiledLayer_Package;
 
 package org.allbinary.game.layer.TileLayerItem_Package is
 
@@ -45,13 +46,9 @@ package org.allbinary.game.layer.TileLayerItem_Package is
    function Create (label : Unbounded_String; tiledLayer : AllBinaryTiledLayer_Access; layout : Integer; altText : Unbounded_String; backgroundBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access) return TileLayerItem_Access;
    procedure setOwner (This : in out TileLayerItem; owner : Screen_Access);
    function getMinimumWidth (This : in out TileLayerItem) return Integer;
-   procedure getMinimumWidth (This : in out TileLayerItem);
    function getMinimumHeight (This : in out TileLayerItem) return Integer;
-   procedure getMinimumHeight (This : in out TileLayerItem);
    function getMinContentHeight (This : in out TileLayerItem) return Integer;
-   procedure getMinContentHeight (This : in out TileLayerItem);
    function getMinContentWidth (This : in out TileLayerItem) return Integer;
-   procedure getMinContentWidth (This : in out TileLayerItem);
    function getPrefContentHeight (This : in out TileLayerItem; width : Integer) return Integer;
    procedure getPrefContentHeight (This : in out TileLayerItem; width : Integer);
    function getPrefContentWidth (This : in out TileLayerItem; height : Integer) return Integer;

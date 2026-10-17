@@ -68,17 +68,12 @@ package views.admin.storefront.AddValidationStoreFrontView_Package is
    procedure Initialize (This : in out AddValidationStoreFrontView'Class; transformInfoInterface : TransformInfoInterface_Access);
    function Create (transformInfoInterface : TransformInfoInterface_Access) return AddValidationStoreFrontView_Access;
    function isValid (This : in out AddValidationStoreFrontView) return Boolean;
-   procedure isValid (This : in out AddValidationStoreFrontView);
    function getStoreViewsPath (This : in out AddValidationStoreFrontView) return Unbounded_String;
-   procedure getStoreViewsPath (This : in out AddValidationStoreFrontView);
    function validationInfo (This : in out AddValidationStoreFrontView) return Unbounded_String;
-   procedure validationInfo (This : in out AddValidationStoreFrontView);
    function toValidationInfoDoc (This : in out AddValidationStoreFrontView) return Document_Access;
-   procedure toValidationInfoDoc (This : in out AddValidationStoreFrontView);
    function toValidationInfoNode (This : in out AddValidationStoreFrontView; document : Document_Access) return Node_Access;
    procedure toValidationInfoNode (This : in out AddValidationStoreFrontView; document : Document_Access);
    function view (This : in out AddValidationStoreFrontView) return Unbounded_String;
-   procedure view (This : in out AddValidationStoreFrontView);
 
 end views.admin.storefront.AddValidationStoreFrontView_Package;
 

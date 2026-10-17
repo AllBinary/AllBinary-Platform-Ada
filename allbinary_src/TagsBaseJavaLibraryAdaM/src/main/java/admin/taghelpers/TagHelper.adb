@@ -29,7 +29,7 @@ package body admin.taghelpers.TagHelper_Package is
    function Create return TagHelper_Access is
       This : constant TagHelper_Access := new TagHelper;
    begin
-      Initialize (This.all);
+      TagHelper_Package.Initialize (This.all);
       return This;
    end Create;
 

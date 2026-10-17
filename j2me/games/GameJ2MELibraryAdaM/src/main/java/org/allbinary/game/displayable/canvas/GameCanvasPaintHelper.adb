@@ -32,7 +32,7 @@ package body org.allbinary.game.displayable.canvas.GameCanvasPaintHelper_Package
    function Create (gameCanvas : AllBinaryGameCanvas_Access) return GameCanvasPaintHelper_Access is
       This : constant GameCanvasPaintHelper_Access := new GameCanvasPaintHelper;
    begin
-      Initialize (This.all, gameCanvas);
+      GameCanvasPaintHelper_Package.Initialize (This.all, gameCanvas);
       return This;
    end Create;
 

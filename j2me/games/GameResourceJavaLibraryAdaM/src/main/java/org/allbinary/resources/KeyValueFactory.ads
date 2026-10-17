@@ -41,7 +41,6 @@ package org.allbinary.resources.KeyValueFactory_Package is
    procedure Initialize (This : in out KeyValueFactory'Class);
    function Create return KeyValueFactory_Access;
    function getInstance return KeyValueFactory_Access;
-   procedure getInstance;
    function get (This : in out KeyValueFactory; key : Unbounded_String) return Unbounded_String;
    procedure get (This : in out KeyValueFactory; key : Unbounded_String);
 

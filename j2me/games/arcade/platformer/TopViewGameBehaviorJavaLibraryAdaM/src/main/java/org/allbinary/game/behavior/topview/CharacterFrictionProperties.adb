@@ -36,7 +36,7 @@ package body org.allbinary.game.behavior.topview.CharacterFrictionProperties_Pac
    function Create (airFriction : Integer; waterFriction : Integer; collisionFriction : Integer) return CharacterFrictionProperties_Access is
       This : constant CharacterFrictionProperties_Access := new CharacterFrictionProperties;
    begin
-      Initialize (This.all, airFriction, waterFriction, collisionFriction);
+      CharacterFrictionProperties_Package.Initialize (This.all, airFriction, waterFriction, collisionFriction);
       return This;
    end Create;
 
@@ -53,27 +53,6 @@ package body org.allbinary.game.behavior.topview.CharacterFrictionProperties_Pac
    function getCOLLISION_FRICTION_NOMINATOR (This : in out CharacterFrictionProperties) return Integer is
    begin
         return This.COLLISION_FRICTION_NOMINATOR;
-   end getCOLLISION_FRICTION_NOMINATOR;
-
-   procedure getWATER_FRICTION_NOMINATOR (This : in out CharacterFrictionProperties) is
-      Java_Result : constant Integer := CharacterFrictionProperties'Class (This).getWATER_FRICTION_NOMINATOR;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getWATER_FRICTION_NOMINATOR;
-
-   procedure getAIR_FRICTION_NOMINATOR (This : in out CharacterFrictionProperties) is
-      Java_Result : constant Integer := CharacterFrictionProperties'Class (This).getAIR_FRICTION_NOMINATOR;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getAIR_FRICTION_NOMINATOR;
-
-   procedure getCOLLISION_FRICTION_NOMINATOR (This : in out CharacterFrictionProperties) is
-      Java_Result : constant Integer := CharacterFrictionProperties'Class (This).getCOLLISION_FRICTION_NOMINATOR;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getCOLLISION_FRICTION_NOMINATOR;
 
 end org.allbinary.game.behavior.topview.CharacterFrictionProperties_Package;

@@ -33,6 +33,7 @@ with org.allbinary.graphics.font.UpdateMyFontInterface_Package; use org.allbinar
 with org.allbinary.graphics.form.item.CommandTextItem_Package; use org.allbinary.graphics.form.item.CommandTextItem_Package;
 with org.allbinary.graphics.form.item.ABCustomItem_Package; use org.allbinary.graphics.form.item.ABCustomItem_Package;
 with org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package; use org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package;
+with org.allbinary.graphics.form.ItemPaintableFactory_Package; use org.allbinary.graphics.form.ItemPaintableFactory_Package;
 
 package org.allbinary.graphics.form.CommandCurrentSelectionForm_Package is
 
@@ -66,7 +67,6 @@ package org.allbinary.graphics.form.CommandCurrentSelectionForm_Package is
    procedure updateAll (This : in out CommandCurrentSelectionForm; graphics : Graphics_Access; items : ABCustomItem_Access_Array_Access);
    procedure updateAt (This : in out CommandCurrentSelectionForm; index : Integer; item : ABCustomItem_Access);
    function getSelectedCommand (This : in out CommandCurrentSelectionForm) return Command_Access;
-   procedure getSelectedCommand (This : in out CommandCurrentSelectionForm);
    function append (This : in out CommandCurrentSelectionForm; item : ABCustomItem_Access) return Integer;
    procedure append (This : in out CommandCurrentSelectionForm; item : ABCustomItem_Access);
    procedure delete (This : in out CommandCurrentSelectionForm; itemNum : Integer);

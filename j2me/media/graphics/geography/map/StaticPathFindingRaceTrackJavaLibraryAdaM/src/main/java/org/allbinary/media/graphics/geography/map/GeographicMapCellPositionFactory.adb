@@ -30,7 +30,7 @@ package body org.allbinary.media.graphics.geography.map.GeographicMapCellPositio
    function Create return GeographicMapCellPositionFactory_Access is
       This : constant GeographicMapCellPositionFactory_Access := new GeographicMapCellPositionFactory;
    begin
-      Initialize (This.all);
+      GeographicMapCellPositionFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -66,13 +66,6 @@ package body org.allbinary.media.graphics.geography.map.GeographicMapCellPositio
    begin
       null;
    end getInstance;
-
-   procedure getHashtable is
-      Java_Result : constant ABHashtable_Access := getHashtable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getHashtable;
 
 begin
    null;

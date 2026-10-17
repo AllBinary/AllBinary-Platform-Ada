@@ -31,7 +31,7 @@ package body org.allbinary.layer.LayerInterfaceFactory_Package is
    function Create return LayerInterfaceFactory_Access is
       This : constant LayerInterfaceFactory_Access := new LayerInterfaceFactory;
    begin
-      Initialize (This.all);
+      LayerInterfaceFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -63,13 +63,6 @@ package body org.allbinary.layer.LayerInterfaceFactory_Package is
    begin
         This.list.add (layerInterfaceFactoryInterface);
    end add;
-
-   procedure getInstance is
-      Java_Result : constant LayerInterfaceFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure getNexInstance (This : in out LayerInterfaceFactory; hashtable : ABHashtable_Access; x : Integer; y : Integer; z : Integer) is
       Java_Result : constant AllBinaryLayer_Access := LayerInterfaceFactory'Class (This).getNexInstance (hashtable, x, y, z);

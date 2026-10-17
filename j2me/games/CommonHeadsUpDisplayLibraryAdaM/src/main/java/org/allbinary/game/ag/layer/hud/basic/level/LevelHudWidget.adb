@@ -51,7 +51,7 @@ package body org.allbinary.game.ag.layer.hud.basic.level.LevelHudWidget_Package 
    function Create (maxlevel : Integer; location : Integer; direction : Integer) return LevelHudWidget_Access is
       This : constant LevelHudWidget_Access := new LevelHudWidget;
    begin
-      Initialize (This.all, maxlevel, location, direction);
+      LevelHudWidget_Package.Initialize (This.all, maxlevel, location, direction);
       return This;
    end Create;
 
@@ -116,13 +116,6 @@ package body org.allbinary.game.ag.layer.hud.basic.level.LevelHudWidget_Package 
    begin
       null;
    end createHud;
-
-   procedure isComplete (This : in out LevelHudWidget) is
-      Java_Result : constant Boolean := LevelHudWidget'Class (This).isComplete;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isComplete;
 
 end org.allbinary.game.ag.layer.hud.basic.level.LevelHudWidget_Package;
 

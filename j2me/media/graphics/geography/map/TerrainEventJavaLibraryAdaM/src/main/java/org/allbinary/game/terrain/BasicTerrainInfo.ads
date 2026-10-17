@@ -41,7 +41,6 @@ package org.allbinary.game.terrain.BasicTerrainInfo_Package is
    procedure Initialize (This : in out BasicTerrainInfo'Class; angle : Angle_Access);
    function Create (angle : Angle_Access) return BasicTerrainInfo_Access;
    function getAngle (This : in out BasicTerrainInfo) return Angle_Access;
-   procedure getAngle (This : in out BasicTerrainInfo);
    procedure setAngle (This : in out BasicTerrainInfo; angle : Angle_Access);
 
 end org.allbinary.game.terrain.BasicTerrainInfo_Package;

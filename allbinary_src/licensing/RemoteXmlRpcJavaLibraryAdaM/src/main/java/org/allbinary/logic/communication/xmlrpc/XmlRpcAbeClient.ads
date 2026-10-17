@@ -86,24 +86,17 @@ package org.allbinary.logic.communication.xmlrpc.XmlRpcAbeClient_Package is
    function tryAnother (This : in out XmlRpcAbeClient; anyType : Java_Object_Access) return Java_Object_Access;
    procedure tryAnother (This : in out XmlRpcAbeClient; anyType : Java_Object_Access);
    function getClientInfo (This : in out XmlRpcAbeClient) return AbeClientInformationInterface_Access;
-   procedure getClientInfo (This : in out XmlRpcAbeClient);
    function getClient (This : in out XmlRpcAbeClient) return XmlRpcHandler_Access;
-   procedure getClient (This : in out XmlRpcAbeClient);
    procedure setClient (This : in out XmlRpcAbeClient; client : XmlRpcClient_Access);
    function getServer (This : in out XmlRpcAbeClient) return Integer;
-   procedure getServer (This : in out XmlRpcAbeClient);
    procedure setServer (This : in out XmlRpcAbeClient; server : Integer);
    function getStart (This : in out XmlRpcAbeClient) return Integer;
-   procedure getStart (This : in out XmlRpcAbeClient);
    procedure setStart (This : in out XmlRpcAbeClient; start : Integer);
    function getMaxServers (This : in out XmlRpcAbeClient) return Integer;
-   procedure getMaxServers (This : in out XmlRpcAbeClient);
    procedure setMaxServers (This : in out XmlRpcAbeClient; maxServers : Integer);
    function isIsDone (This : in out XmlRpcAbeClient) return Boolean;
-   procedure isIsDone (This : in out XmlRpcAbeClient);
    procedure setIsDone (This : in out XmlRpcAbeClient; isDone : Boolean);
    function getRemoteMethod (This : in out XmlRpcAbeClient) return Unbounded_String;
-   procedure getRemoteMethod (This : in out XmlRpcAbeClient);
 
 end org.allbinary.logic.communication.xmlrpc.XmlRpcAbeClient_Package;
 

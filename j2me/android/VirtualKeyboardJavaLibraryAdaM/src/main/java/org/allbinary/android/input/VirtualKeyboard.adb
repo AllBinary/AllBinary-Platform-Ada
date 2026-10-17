@@ -28,7 +28,7 @@ package body org.allbinary.android.input.VirtualKeyboard_Package is
    function Create return VirtualKeyboard_Access is
       This : constant VirtualKeyboard_Access := new VirtualKeyboard;
    begin
-      Initialize (This.all);
+      VirtualKeyboard_Package.Initialize (This.all);
       return This;
    end Create;
 

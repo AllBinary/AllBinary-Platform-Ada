@@ -13,7 +13,7 @@
 --  Generated Code Do Not Modify
 
 
-package body org.allbinary.business.user.address_Case.BillingAddressData_Package is
+package body org.allbinary.business.user.address.BillingAddressData_Package is
 
    procedure Initialize_Fields (This : in out BillingAddressData'Class) is
    begin
@@ -30,7 +30,7 @@ package body org.allbinary.business.user.address_Case.BillingAddressData_Package
    function Create return BillingAddressData_Access is
       This : constant BillingAddressData_Access := new BillingAddressData;
    begin
-      Initialize (This.all);
+      BillingAddressData_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -54,6 +54,6 @@ begin
    CODE := To_Unbounded_String ("BILLINGADDRESS_CODE");
    COUNTRY := To_Unbounded_String ("BILLINGADDRESS_COUNTRY");
 
-end org.allbinary.business.user.address_Case.BillingAddressData_Package;
+end org.allbinary.business.user.address.BillingAddressData_Package;
 
 

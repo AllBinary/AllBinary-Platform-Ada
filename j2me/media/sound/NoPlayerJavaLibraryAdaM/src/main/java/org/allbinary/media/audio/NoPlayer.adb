@@ -31,7 +31,7 @@ package body org.allbinary.media.audio.NoPlayer_Package is
    function Create return NoPlayer_Access is
       This : constant NoPlayer_Access := new NoPlayer;
    begin
-      Initialize (This.all);
+      NoPlayer_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -55,26 +55,12 @@ package body org.allbinary.media.audio.NoPlayer_Package is
         return new Control_Access_Array'(0 .. (0) - 1 => null);
    end getControls;
 
-   procedure getContentType (This : in out NoPlayer) is
-      Java_Result : constant Unbounded_String := NoPlayer'Class (This).getContentType;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getContentType;
-
    procedure getControl (This : in out NoPlayer; controlType : Unbounded_String) is
       Java_Result : constant Control_Access := NoPlayer'Class (This).getControl (controlType);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getControl;
-
-   procedure getControls (This : in out NoPlayer) is
-      Java_Result : constant Control_Access_Array_Access := NoPlayer'Class (This).getControls;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getControls;
 
 begin
    null;

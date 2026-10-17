@@ -30,7 +30,7 @@ package body org.allbinary.input.automation.module.actions.script.condition.proc
    function Create return ImageActionScriptOutputData_Access is
       This : constant ImageActionScriptOutputData_Access := new ImageActionScriptOutputData;
    begin
-      Initialize (This.all);
+      ImageActionScriptOutputData_Package.Initialize (This.all);
       return This;
    end Create;
 

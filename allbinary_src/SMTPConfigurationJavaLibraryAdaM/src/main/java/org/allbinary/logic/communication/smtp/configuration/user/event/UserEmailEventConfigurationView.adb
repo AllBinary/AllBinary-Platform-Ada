@@ -41,7 +41,7 @@ package body org.allbinary.logic.communication.smtp.configuration.user.event.Use
    function Create (node : Node_Access) return UserEmailEventConfigurationView_Access is
       This : constant UserEmailEventConfigurationView_Access := new UserEmailEventConfigurationView;
    begin
-      Initialize (This.all, node);
+      UserEmailEventConfigurationView_Package.Initialize (This.all, node);
       return This;
    end Create;
 
@@ -55,7 +55,7 @@ package body org.allbinary.logic.communication.smtp.configuration.user.event.Use
    function Create (userEmailEventConfigurationInterface : UserEmailEventConfigurationInterface_Access) return UserEmailEventConfigurationView_Access is
       This : constant UserEmailEventConfigurationView_Access := new UserEmailEventConfigurationView;
    begin
-      Initialize (This.all, userEmailEventConfigurationInterface);
+      UserEmailEventConfigurationView_Package.Initialize (This.all, userEmailEventConfigurationInterface);
       return This;
    end Create;
 
@@ -87,13 +87,6 @@ package body org.allbinary.logic.communication.smtp.configuration.user.event.Use
    begin
       null;
    end toXmlNode;
-
-   procedure getUserEmailEventConfigurationInterface (This : in out UserEmailEventConfigurationView) is
-      Java_Result : constant UserEmailEventConfigurationInterface_Access := UserEmailEventConfigurationView'Class (This).getUserEmailEventConfigurationInterface;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getUserEmailEventConfigurationInterface;
 
 end org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventConfigurationView_Package;
 

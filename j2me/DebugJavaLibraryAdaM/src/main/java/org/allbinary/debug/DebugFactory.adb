@@ -28,7 +28,7 @@ package body org.allbinary.debug.DebugFactory_Package is
    function Create return DebugFactory_Access is
       This : constant DebugFactory_Access := new DebugFactory;
    begin
-      Initialize (This.all);
+      DebugFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -36,13 +36,6 @@ package body org.allbinary.debug.DebugFactory_Package is
    function getInstance return DebugInterface_Access is
    begin
         return NoDebug_Package.getInstance;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant DebugInterface_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 end org.allbinary.debug.DebugFactory_Package;

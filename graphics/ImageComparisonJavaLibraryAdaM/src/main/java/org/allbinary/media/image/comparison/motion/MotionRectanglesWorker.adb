@@ -37,7 +37,7 @@ package body org.allbinary.media.image.comparison.motion.MotionRectanglesWorker_
    function Create (motionRectangleConstraintsInterface : MotionRectangleConstraintsInterface_Access) return MotionRectanglesWorker_Access is
       This : constant MotionRectanglesWorker_Access := new MotionRectanglesWorker;
    begin
-      Initialize (This.all, motionRectangleConstraintsInterface);
+      MotionRectanglesWorker_Package.Initialize (This.all, motionRectangleConstraintsInterface);
       return This;
    end Create;
 
@@ -100,13 +100,6 @@ package body org.allbinary.media.image.comparison.motion.MotionRectanglesWorker_
                 end;
         end;
    end run;
-
-   procedure isRunning (This : in out MotionRectanglesWorker) is
-      Java_Result : constant Boolean := MotionRectanglesWorker'Class (This).isRunning;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isRunning;
 
 end org.allbinary.media.image.comparison.motion.MotionRectanglesWorker_Package;
 

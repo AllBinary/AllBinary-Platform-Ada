@@ -40,10 +40,8 @@ package org.allbinary.game.physics.velocity.VelocityProperties_Package is
    procedure Initialize (This : in out VelocityProperties'Class; maxForwardVelocity : Integer; maxReverseVelocity : Integer);
    function Create (maxForwardVelocity : Integer; maxReverseVelocity : Integer) return VelocityProperties_Access;
    function getMaxForwardVelocity (This : in out VelocityProperties) return Integer;
-   procedure getMaxForwardVelocity (This : in out VelocityProperties);
    procedure setMaxForwardVelocity (This : in out VelocityProperties; maxForwardVelocity : Integer);
    function getMaxReverseVelocity (This : in out VelocityProperties) return Integer;
-   procedure getMaxReverseVelocity (This : in out VelocityProperties);
    procedure setMaxReverseVelocity (This : in out VelocityProperties; maxReverseVelocity : Integer);
    procedure limitMaxXYForwardVelocity (This : in out VelocityProperties);
    procedure limitMaxXYReverseVelocity (This : in out VelocityProperties);
@@ -52,9 +50,7 @@ package org.allbinary.game.physics.velocity.VelocityProperties_Package is
    procedure limitMaxXForwardVelocity (This : in out VelocityProperties);
    procedure limitMaxXReverseVelocity (This : in out VelocityProperties);
    function isOverXYMaxForwardVelocity (This : in out VelocityProperties) return Boolean;
-   procedure isOverXYMaxForwardVelocity (This : in out VelocityProperties);
    function isOverXYMaxReverseVelocity (This : in out VelocityProperties) return Boolean;
-   procedure isOverXYMaxReverseVelocity (This : in out VelocityProperties);
    procedure limitXYToForwardAndReverseMaxVelocity (This : in out VelocityProperties);
    procedure limitMaxXYVelocity (This : in out VelocityProperties; maxVelocity : Integer);
    procedure limitMaxPositiveYVelocity (This : in out VelocityProperties; maxVelocity : Integer);

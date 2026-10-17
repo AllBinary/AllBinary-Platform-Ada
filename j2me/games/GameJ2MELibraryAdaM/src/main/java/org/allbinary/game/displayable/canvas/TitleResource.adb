@@ -28,7 +28,7 @@ package body org.allbinary.game.displayable.canvas.TitleResource_Package is
    function Create return TitleResource_Access is
       This : constant TitleResource_Access := new TitleResource;
    begin
-      Initialize (This.all);
+      TitleResource_Package.Initialize (This.all);
       return This;
    end Create;
 

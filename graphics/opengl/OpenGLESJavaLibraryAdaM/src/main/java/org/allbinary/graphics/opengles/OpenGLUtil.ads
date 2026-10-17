@@ -28,6 +28,8 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 with org.allbinary.thread.SynchObject_Package; use org.allbinary.thread.SynchObject_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.graphics.opengles.OpenGLCapabilities_Package; use org.allbinary.graphics.opengles.OpenGLCapabilities_Package;
+with org.allbinary.graphics.opengles.OpenGLLogUtil_Package; use org.allbinary.graphics.opengles.OpenGLLogUtil_Package;
 
 package org.allbinary.graphics.opengles.OpenGLUtil_Package is
 
@@ -74,7 +76,6 @@ package org.allbinary.graphics.opengles.OpenGLUtil_Package is
    procedure Initialize (This : in out OpenGLUtil'Class);
    function Create return OpenGLUtil_Access;
    function getInstance return OpenGLUtil_Access;
-   procedure getInstance;
    procedure onSurfaceCreated (This : in out OpenGLUtil; gl : GL10_Access);
    procedure onSurfaceCreated (This : in out OpenGLUtil; gl : GL10_Access; loadTextures : LoadTextures_Access);
    procedure onSurfaceChanged (This : in out OpenGLUtil; gl : GL10_Access; graphics : OpenGLESGraphics_Access);

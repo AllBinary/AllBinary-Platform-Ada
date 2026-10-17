@@ -39,16 +39,9 @@ package body org.allbinary.logic.visual.transform.template.customizer.widgets.ti
    function Create return TitleData_Access is
       This : constant TitleData_Access := new TitleData;
    begin
-      Initialize (This.all);
+      TitleData_Package.Initialize (This.all);
       return This;
    end Create;
-
-   procedure getInstance is
-      Java_Result : constant TitleData_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

@@ -37,16 +37,9 @@ package body org.allbinary.input.motion.touch.action.UpTouchInputToGameKeyEventA
    function Create return UpTouchInputToGameKeyEventAction_Access is
       This : constant UpTouchInputToGameKeyEventAction_Access := new UpTouchInputToGameKeyEventAction;
    begin
-      Initialize (This.all);
+      UpTouchInputToGameKeyEventAction_Package.Initialize (This.all);
       return This;
    end Create;
-
-   procedure getInstance is
-      Java_Result : constant GameKeyCompleteMotionGestureInputEvent_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

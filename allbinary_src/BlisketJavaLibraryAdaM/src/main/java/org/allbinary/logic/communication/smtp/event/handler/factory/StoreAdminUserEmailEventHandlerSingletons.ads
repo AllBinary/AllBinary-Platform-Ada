@@ -62,7 +62,6 @@ package org.allbinary.logic.communication.smtp.event.handler.factory.StoreAdminU
    procedure Initialize (This : in out StoreAdminUserEmailEventHandlerSingletons'Class);
    function Create return StoreAdminUserEmailEventHandlerSingletons_Access;
    function getInstance return StoreAdminUserEmailEventHandlerSingletons_Access;
-   procedure getInstance;
    function getInstance (This : in out StoreAdminUserEmailEventHandlerSingletons; userEmailEventNameData : UserEmailEventNameData_Access; abeClientInformation : AbeClientInformationInterface_Access; storeFrontInterface : StoreFrontInterface_Access) return UserEmailEventHandler_Access;
    procedure getInstance (This : in out StoreAdminUserEmailEventHandlerSingletons; userEmailEventNameData : UserEmailEventNameData_Access; abeClientInformation : AbeClientInformationInterface_Access; storeFrontInterface : StoreFrontInterface_Access);
 

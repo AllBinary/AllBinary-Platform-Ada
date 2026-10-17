@@ -32,7 +32,7 @@ package body org.allbinary.animation.NullRotationAnimationFactory_Package is
    function Create return NullRotationAnimationFactory_Access is
       This : constant NullRotationAnimationFactory_Access := new NullRotationAnimationFactory;
    begin
-      Initialize (This.all);
+      NullRotationAnimationFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -56,13 +56,6 @@ package body org.allbinary.animation.NullRotationAnimationFactory_Package is
    begin
         null;
    end setInitialScale;
-
-   procedure getFactoryInstance is
-      Java_Result : constant NullRotationAnimationFactory_Access := getFactoryInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getFactoryInstance;
 
    procedure getInstance (This : in out NullRotationAnimationFactory; instanceId : Integer) is
       Java_Result : constant Animation_Access := NullRotationAnimationFactory'Class (This).getInstance (instanceId);
@@ -101,7 +94,7 @@ package body org.allbinary.animation.NullRotationAnimation2_Package is
    function Create return NullRotationAnimation2_Access is
       This : constant NullRotationAnimation2_Access := new NullRotationAnimation2;
    begin
-      Initialize (This.all);
+      NullRotationAnimation2_Package.Initialize (This.all);
       return This;
    end Create;
     

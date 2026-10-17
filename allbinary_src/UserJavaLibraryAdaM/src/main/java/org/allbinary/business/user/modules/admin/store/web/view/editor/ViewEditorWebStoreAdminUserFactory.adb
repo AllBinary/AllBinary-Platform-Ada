@@ -30,7 +30,7 @@ package body org.allbinary.business.user.modules.admin.store.web.view.editor.Vie
    function Create return ViewEditorWebStoreAdminUserFactory_Access is
       This : constant ViewEditorWebStoreAdminUserFactory_Access := new ViewEditorWebStoreAdminUserFactory;
    begin
-      Initialize (This.all);
+      ViewEditorWebStoreAdminUserFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -44,13 +44,6 @@ package body org.allbinary.business.user.modules.admin.store.web.view.editor.Vie
    function getInstance (This : in out ViewEditorWebStoreAdminUserFactory; hashMap : HashMap_Access) return UserInterface_Access is
    begin
         return ViewEditorWebStoreAdminUser_Package.Create (hashMap);
-   end getInstance;
-
-   procedure getInstance (This : in out ViewEditorWebStoreAdminUserFactory) is
-      Java_Result : constant UserInterface_Access := ViewEditorWebStoreAdminUserFactory'Class (This).getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
    procedure getInstance (This : in out ViewEditorWebStoreAdminUserFactory; hashMap : HashMap_Access) is

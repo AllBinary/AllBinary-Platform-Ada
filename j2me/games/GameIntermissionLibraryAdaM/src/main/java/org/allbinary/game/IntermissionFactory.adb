@@ -32,7 +32,7 @@ package body org.allbinary.game.IntermissionFactory_Package is
    function Create return IntermissionFactory_Access is
       This : constant IntermissionFactory_Access := new IntermissionFactory;
    begin
-      Initialize (This.all);
+      IntermissionFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -40,13 +40,6 @@ package body org.allbinary.game.IntermissionFactory_Package is
    function getInstance return IntermissionFactory_Access is
    begin
         return IntermissionFactory_Package.instance;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant IntermissionFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

@@ -31,7 +31,7 @@ package body org.allbinary.globals.WebAppUrlGlobals_Package is
    function Create return WebAppUrlGlobals_Access is
       This : constant WebAppUrlGlobals_Access := new WebAppUrlGlobals;
    begin
-      Initialize (This.all);
+      WebAppUrlGlobals_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -46,7 +46,8 @@ package body org.allbinary.globals.WebAppUrlGlobals_Package is
         return This.path;
    end getWebappPath;
 
-   procedure setWebappPath (This : in out WebAppUrlGlobals; path : Unbounded_String) is
+   procedure setWebappPath (This : in out WebAppUrlGlobals; path_Param : Unbounded_String) is
+      path : Unbounded_String := path_Param;
    begin
         path := path;
         This.isWebappPathSet := True;
@@ -69,34 +70,6 @@ package body org.allbinary.globals.WebAppUrlGlobals_Package is
         else
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Webapp Path is not set")));
         end if;
-   end getMainPath;
-
-   procedure isTestingMode (This : in out WebAppUrlGlobals) is
-      Java_Result : constant Boolean := WebAppUrlGlobals'Class (This).isTestingMode;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isTestingMode;
-
-   procedure getWebappPath (This : in out WebAppUrlGlobals) is
-      Java_Result : constant Unbounded_String := WebAppUrlGlobals'Class (This).getWebappPath;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getWebappPath;
-
-   procedure getTestHtmlPath (This : in out WebAppUrlGlobals) is
-      Java_Result : constant Unbounded_String := WebAppUrlGlobals'Class (This).getTestHtmlPath;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTestHtmlPath;
-
-   procedure getMainPath (This : in out WebAppUrlGlobals) is
-      Java_Result : constant Unbounded_String := WebAppUrlGlobals'Class (This).getMainPath;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getMainPath;
 
 end org.allbinary.globals.WebAppUrlGlobals_Package;

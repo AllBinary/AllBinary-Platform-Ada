@@ -32,7 +32,7 @@ package body org.allbinary.input.automation.AbstractInputRobot_Package is
    function Create (helpSet : HelpSet_Access) return AbstractInputRobot_Access is
       This : constant AbstractInputRobot_Access := new AbstractInputRobot;
    begin
-      Initialize (This.all, helpSet);
+      AbstractInputRobot_Package.Initialize (This.all, helpSet);
       return This;
    end Create;
 
@@ -71,13 +71,6 @@ package body org.allbinary.input.automation.AbstractInputRobot_Package is
    begin
         This.helpSet := helpSet;
    end setHelpSet;
-
-   procedure getHelpSet (This : in out AbstractInputRobot) is
-      Java_Result : constant HelpSet_Access := AbstractInputRobot'Class (This).getHelpSet;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getHelpSet;
 
 end org.allbinary.input.automation.AbstractInputRobot_Package;
 

@@ -37,7 +37,6 @@ package org.allbinary.image.opengles.OpenGLImageCacheFactory_Package is
    procedure Initialize (This : in out OpenGLImageCacheFactory'Class);
    function Create return OpenGLImageCacheFactory_Access;
    function getInstance return ImageCache_Access;
-   procedure getInstance;
    procedure init;
 
 end org.allbinary.image.opengles.OpenGLImageCacheFactory_Package;

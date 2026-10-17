@@ -28,6 +28,7 @@ with org.allbinary.media.graphics.geography.map.BasicGeographicMapCellPositionFa
 with org.allbinary.media.graphics.geography.map.GeographicMapCellTypeFactory_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellTypeFactory_Package;
 with org.allbinary.media.graphics.geography.map.drop.DropCellPositionHistory_Package; use org.allbinary.media.graphics.geography.map.drop.DropCellPositionHistory_Package;
 with org.allbinary.media.graphics.geography.map.racetrack.CustomMapGeneratorBase_Package; use org.allbinary.media.graphics.geography.map.racetrack.CustomMapGeneratorBase_Package;
+with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMap_Package; use org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMap_Package;
 
 package org.allbinary.media.graphics.geography.map.racetrack.CustomMapGenerator_Package is
 
@@ -57,7 +58,6 @@ package org.allbinary.media.graphics.geography.map.racetrack.CustomMapGenerator_
    function getCustomType (This : in out CustomMapGenerator; column : Integer; row : Integer; currentType : Integer) return Integer;
    procedure getCustomType (This : in out CustomMapGenerator; column : Integer; row : Integer; currentType : Integer);
    function getCustomMapArray (This : in out CustomMapGenerator) return Integer_Array_Access_Array_Access;
-   procedure getCustomMapArray (This : in out CustomMapGenerator);
 
 end org.allbinary.media.graphics.geography.map.racetrack.CustomMapGenerator_Package;
 

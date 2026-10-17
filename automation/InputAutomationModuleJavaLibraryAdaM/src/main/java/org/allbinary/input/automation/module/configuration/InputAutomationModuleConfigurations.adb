@@ -57,7 +57,7 @@ package body org.allbinary.input.automation.module.configuration.InputAutomation
    function Create (abeClientInformation : AbeClientInformationInterface_Access; file : File_Access) return InputAutomationModuleConfigurations_Access is
       This : constant InputAutomationModuleConfigurations_Access := new InputAutomationModuleConfigurations;
    begin
-      Initialize (This.all, abeClientInformation, file);
+      InputAutomationModuleConfigurations_Package.Initialize (This.all, abeClientInformation, file);
       return This;
    end Create;
 
@@ -80,7 +80,7 @@ package body org.allbinary.input.automation.module.configuration.InputAutomation
    function Create (abeClientInformation : AbeClientInformationInterface_Access; document : Document_Access) return InputAutomationModuleConfigurations_Access is
       This : constant InputAutomationModuleConfigurations_Access := new InputAutomationModuleConfigurations;
    begin
-      Initialize (This.all, abeClientInformation, document);
+      InputAutomationModuleConfigurations_Package.Initialize (This.all, abeClientInformation, document);
       return This;
    end Create;
 
@@ -103,7 +103,7 @@ package body org.allbinary.input.automation.module.configuration.InputAutomation
    function Create (inputAutomationModuleConfigurationList : List_Access) return InputAutomationModuleConfigurations_Access is
       This : constant InputAutomationModuleConfigurations_Access := new InputAutomationModuleConfigurations;
    begin
-      Initialize (This.all, inputAutomationModuleConfigurationList);
+      InputAutomationModuleConfigurations_Package.Initialize (This.all, inputAutomationModuleConfigurationList);
       return This;
    end Create;
 
@@ -117,7 +117,7 @@ package body org.allbinary.input.automation.module.configuration.InputAutomation
    function Create return InputAutomationModuleConfigurations_Access is
       This : constant InputAutomationModuleConfigurations_Access := new InputAutomationModuleConfigurations;
    begin
-      Initialize (This.all);
+      InputAutomationModuleConfigurations_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -140,13 +140,6 @@ package body org.allbinary.input.automation.module.configuration.InputAutomation
    begin
         This.hashMap := hashMap;
    end setHashMap;
-
-   procedure getHashMap (This : in out InputAutomationModuleConfigurations) is
-      Java_Result : constant HashMap_Access := InputAutomationModuleConfigurations'Class (This).getHashMap;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getHashMap;
 
 end org.allbinary.input.automation.module.configuration.InputAutomationModuleConfigurations_Package;
 

@@ -24,6 +24,7 @@ with org.allbinary.game.layer.CollidableCompositeLayer_Package; use org.allbinar
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
 with org.allbinary.layer.AllBinaryLayerManager_Package; use org.allbinary.layer.AllBinaryLayerManager_Package;
 with org.allbinary.layer.LayerProcessor_Package; use org.allbinary.layer.LayerProcessor_Package;
+with org.allbinary.ai.OptimizedArtificialIntelligenceLayerManager_Package; use org.allbinary.ai.OptimizedArtificialIntelligenceLayerManager_Package;
 
 package org.allbinary.ai.OptimizedArtificialIntelligenceLayerProcessorForCollidableLayer_Package is
 

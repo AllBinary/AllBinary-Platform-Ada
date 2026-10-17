@@ -35,7 +35,7 @@ package body org.allbinary.image.opengles.OpenGLESGL11ExtImage_Package is
    function Create (image : Image_Access; bitmapFactory : PlatformBitmapBaseFactory_Access; textureFactory : PlatformTextureBaseFactory_Access) return OpenGLESGL11ExtImage_Access is
       This : constant OpenGLESGL11ExtImage_Access := new OpenGLESGL11ExtImage;
    begin
-      Initialize (This.all, image, bitmapFactory, textureFactory);
+      OpenGLESGL11ExtImage_Package.Initialize (This.all, image, bitmapFactory, textureFactory);
       return This;
    end Create;
 

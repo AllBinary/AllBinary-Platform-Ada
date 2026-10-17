@@ -36,7 +36,7 @@ package body org.allbinary.logic.control.workflow.StoreTagWorkFlowFactory_Packag
    function Create return StoreTagWorkFlowFactory_Access is
       This : constant StoreTagWorkFlowFactory_Access := new StoreTagWorkFlowFactory;
    begin
-      Initialize (This.all);
+      StoreTagWorkFlowFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -84,13 +84,6 @@ package body org.allbinary.logic.control.workflow.StoreTagWorkFlowFactory_Packag
             Java_Throw (e);
                 end;
         end;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant StoreTagWorkFlowFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
    procedure getInstance (This : in out StoreTagWorkFlowFactory; abeClientInformation : AbeClientInformationInterface_Access; propertiesHashMap : HashMap_Access; pageContext : PageContext_Access) is

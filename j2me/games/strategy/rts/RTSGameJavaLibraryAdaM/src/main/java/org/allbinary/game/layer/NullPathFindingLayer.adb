@@ -28,7 +28,7 @@ package body org.allbinary.game.layer.NullPathFindingLayer_Package is
    function Create return NullPathFindingLayer_Access is
       This : constant NullPathFindingLayer_Access := new NullPathFindingLayer;
    begin
-      Initialize (This.all);
+      NullPathFindingLayer_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -216,55 +216,6 @@ package body org.allbinary.game.layer.NullPathFindingLayer_Package is
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end getSourceId;
 
-   procedure getName (This : in out NullPathFindingLayer) is
-      Java_Result : constant Unbounded_String := NullPathFindingLayer'Class (This).getName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getName;
-
-   procedure getEndGeographicMapCellPositionList (This : in out NullPathFindingLayer) is
-      Java_Result : constant BasicArrayList_Access := NullPathFindingLayer'Class (This).getEndGeographicMapCellPositionList;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getEndGeographicMapCellPositionList;
-
-   procedure shouldHandleStartSameAsEnd (This : in out NullPathFindingLayer) is
-      Java_Result : constant Boolean := NullPathFindingLayer'Class (This).shouldHandleStartSameAsEnd;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end shouldHandleStartSameAsEnd;
-
-   procedure getGeographicMapCellPositionArea (This : in out NullPathFindingLayer) is
-      Java_Result : constant GeographicMapCellPositionAreaBase_Access := NullPathFindingLayer'Class (This).getGeographicMapCellPositionArea;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getGeographicMapCellPositionArea;
-
-   procedure getHudPaintable (This : in out NullPathFindingLayer) is
-      Java_Result : constant SelectionHudPaintable_Access := NullPathFindingLayer'Class (This).getHudPaintable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getHudPaintable;
-
-   procedure getParentLayer (This : in out NullPathFindingLayer) is
-      Java_Result : constant PathFindingLayerInterface_Access := NullPathFindingLayer'Class (This).getParentLayer;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getParentLayer;
-
-   procedure getRTSLayer2LogHelper (This : in out NullPathFindingLayer) is
-      Java_Result : constant RTSLayer2LogHelper_Access := NullPathFindingLayer'Class (This).getRTSLayer2LogHelper;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getRTSLayer2LogHelper;
-
    procedure getMoveOutOfBuildAreaPath (This : in out NullPathFindingLayer; geographicMapCellPosition : GeographicMapCellPosition_Access) is
       Java_Result : constant BasicArrayList_Access := NullPathFindingLayer'Class (This).getMoveOutOfBuildAreaPath (geographicMapCellPosition);
       pragma Unreferenced (Java_Result);
@@ -272,124 +223,12 @@ package body org.allbinary.game.layer.NullPathFindingLayer_Package is
       null;
    end getMoveOutOfBuildAreaPath;
 
-   procedure getSurroundingGeographicMapCellPositionList (This : in out NullPathFindingLayer) is
-      Java_Result : constant BasicArrayList_Access := NullPathFindingLayer'Class (This).getSurroundingGeographicMapCellPositionList;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSurroundingGeographicMapCellPositionList;
-
-   procedure isSelected (This : in out NullPathFindingLayer) is
-      Java_Result : constant Boolean := NullPathFindingLayer'Class (This).isSelected;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isSelected;
-
-   procedure shouldAddWaypointFromBuilding (This : in out NullPathFindingLayer) is
-      Java_Result : constant Boolean := NullPathFindingLayer'Class (This).shouldAddWaypointFromBuilding;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end shouldAddWaypointFromBuilding;
-
-   procedure isShowMoreCaptionStates (This : in out NullPathFindingLayer) is
-      Java_Result : constant Boolean := NullPathFindingLayer'Class (This).isShowMoreCaptionStates;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isShowMoreCaptionStates;
-
    procedure buildingChase (This : in out NullPathFindingLayer; allbinaryLayer : AllBinaryLayer_Access; cellPosition : GeographicMapCellPosition_Access) is
       Java_Result : constant Boolean := NullPathFindingLayer'Class (This).buildingChase (allbinaryLayer, cellPosition);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end buildingChase;
-
-   procedure getTrackingEvent (This : in out NullPathFindingLayer) is
-      Java_Result : constant TrackingEvent_Access := NullPathFindingLayer'Class (This).getTrackingEvent;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTrackingEvent;
-
-   procedure isWaypointListEmptyOrOnlyTargets (This : in out NullPathFindingLayer) is
-      Java_Result : constant Boolean := NullPathFindingLayer'Class (This).isWaypointListEmptyOrOnlyTargets;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isWaypointListEmptyOrOnlyTargets;
-
-   procedure getCurrentGeographicMapCellPosition (This : in out NullPathFindingLayer) is
-      Java_Result : constant GeographicMapCellPosition_Access := NullPathFindingLayer'Class (This).getCurrentGeographicMapCellPosition;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getCurrentGeographicMapCellPosition;
-
-   procedure getTopLeftGeographicMapCellPosition (This : in out NullPathFindingLayer) is
-      Java_Result : constant GeographicMapCellPosition_Access := NullPathFindingLayer'Class (This).getTopLeftGeographicMapCellPosition;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTopLeftGeographicMapCellPosition;
-
-   procedure getCaptionAnimationHelper (This : in out NullPathFindingLayer) is
-      Java_Result : constant CaptionAnimationHelperBase_Access := NullPathFindingLayer'Class (This).getCaptionAnimationHelper;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getCaptionAnimationHelper;
-
-   procedure getWaypointBehavior (This : in out NullPathFindingLayer) is
-      Java_Result : constant WaypointBehaviorBase_Access := NullPathFindingLayer'Class (This).getWaypointBehavior;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getWaypointBehavior;
-
-   procedure getWaypointLogHelper (This : in out NullPathFindingLayer) is
-      Java_Result : constant WaypointLogHelper_Access := NullPathFindingLayer'Class (This).getWaypointLogHelper;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getWaypointLogHelper;
-
-   procedure getWaypoint2LogHelper (This : in out NullPathFindingLayer) is
-      Java_Result : constant Waypoint2LogHelper_Access := NullPathFindingLayer'Class (This).getWaypoint2LogHelper;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getWaypoint2LogHelper;
-
-   procedure getWaypointRunnableLogHelper (This : in out NullPathFindingLayer) is
-      Java_Result : constant WaypointRunnableLogHelper_Access := NullPathFindingLayer'Class (This).getWaypointRunnableLogHelper;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getWaypointRunnableLogHelper;
-
-   procedure getGroupInterface (This : in out NullPathFindingLayer) is
-      Java_Result : constant Group_Access_Array_Access := NullPathFindingLayer'Class (This).getGroupInterface;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getGroupInterface;
-
-   procedure isDestroyed (This : in out NullPathFindingLayer) is
-      Java_Result : constant Boolean := NullPathFindingLayer'Class (This).isDestroyed;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isDestroyed;
-
-   procedure getSourceId (This : in out NullPathFindingLayer) is
-      Java_Result : constant Integer := NullPathFindingLayer'Class (This).getSourceId;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSourceId;
 
 begin
    null;

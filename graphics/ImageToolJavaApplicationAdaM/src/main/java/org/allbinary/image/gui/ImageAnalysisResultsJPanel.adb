@@ -60,7 +60,7 @@ package body org.allbinary.image.gui.ImageAnalysisResultsJPanel_Package is
    function Create (imageAnalysisResultsArray : ImageAnalysisResults_Access_Array_Access) return ImageAnalysisResultsJPanel_Access is
       This : constant ImageAnalysisResultsJPanel_Access := new ImageAnalysisResultsJPanel;
    begin
-      Initialize (This.all, imageAnalysisResultsArray);
+      ImageAnalysisResultsJPanel_Package.Initialize (This.all, imageAnalysisResultsArray);
       return This;
    end Create;
 

@@ -36,7 +36,7 @@ package body org.allbinary.data.tables.user.commerce.inventory.item.options.Basi
    function Create return BasicOptionItemsEntityFactory_Access is
       This : constant BasicOptionItemsEntityFactory_Access := new BasicOptionItemsEntityFactory;
    begin
-      Initialize (This.all);
+      BasicOptionItemsEntityFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -57,20 +57,6 @@ package body org.allbinary.data.tables.user.commerce.inventory.item.options.Basi
             return null;
                 end;
         end;
-   end getBasicOptionItemsEntityInstance;
-
-   procedure getInstance is
-      Java_Result : constant BasicOptionItemsEntityFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure getBasicOptionItemsEntityInstance (This : in out BasicOptionItemsEntityFactory) is
-      Java_Result : constant BasicOptionItemsEntity_Access := BasicOptionItemsEntityFactory'Class (This).getBasicOptionItemsEntityInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getBasicOptionItemsEntityInstance;
 
 begin

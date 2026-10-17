@@ -37,7 +37,7 @@ package body org.allbinary.game.combat.destroy.event.DestroyedEventHandler_Packa
    function Create return DestroyedEventHandler_Access is
       This : constant DestroyedEventHandler_Access := new DestroyedEventHandler;
    begin
-      Initialize (This.all);
+      DestroyedEventHandler_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -89,13 +89,6 @@ package body org.allbinary.game.combat.destroy.event.DestroyedEventHandler_Packa
         destroyedEventListenerInterface := DestroyedEventListenerInterface_Access (eventListenerInterface);
         destroyedEventListenerInterface.onDestroyed (DestroyedEvent_Access (eventObject));
    end process;
-
-   procedure getInstance is
-      Java_Result : constant DestroyedEventHandler_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

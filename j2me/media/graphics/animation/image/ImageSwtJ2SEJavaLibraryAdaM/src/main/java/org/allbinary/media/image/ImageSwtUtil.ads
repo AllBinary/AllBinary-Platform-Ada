@@ -41,7 +41,6 @@ package org.allbinary.media.image.ImageSwtUtil_Package is
    procedure Initialize (This : in out ImageSwtUtil'Class);
    function Create return ImageSwtUtil_Access;
    function getInstance return ImageSwtUtil_Access;
-   procedure getInstance;
 
 end org.allbinary.media.image.ImageSwtUtil_Package;
 

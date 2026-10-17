@@ -29,7 +29,7 @@ package body org.allbinary.game.ag.layer.hud.basic.NumberStringHudFactory_Packag
    function Create return NumberStringHudFactory_Access is
       This : constant NumberStringHudFactory_Access := new NumberStringHudFactory;
    begin
-      Initialize (This.all);
+      NumberStringHudFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -59,20 +59,6 @@ package body org.allbinary.game.ag.layer.hud.basic.NumberStringHudFactory_Packag
             Java_Throw (Java_New_Exception ("RuntimeException"));
                 end;
         end;
-   end createHud;
-
-   procedure getInstance is
-      Java_Result : constant NumberStringHudFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure createHud (This : in out NumberStringHudFactory) is
-      Java_Result : constant NumberStringHud_Access := NumberStringHudFactory'Class (This).createHud;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end createHud;
 
 begin

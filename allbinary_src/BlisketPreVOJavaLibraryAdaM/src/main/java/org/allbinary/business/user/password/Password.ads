@@ -60,11 +60,8 @@ package org.allbinary.business.user.password.Password_Package is
    function Create (password : Unbounded_String) return Password_Access;
    procedure set (This : in out Password; value : Unbounded_String);
    function get (This : in out Password) return Unbounded_String;
-   procedure get (This : in out Password);
    function isValid (This : in out Password) return Boolean;
-   procedure isValid (This : in out Password);
    function getValidationInfo (This : in out Password) return Unbounded_String;
-   procedure getValidationInfo (This : in out Password);
    function toVector (This : in out Password; secret : Unbounded_String) return BasicArrayList_Access;
    procedure toVector (This : in out Password; secret : Unbounded_String);
    function toHashMap (This : in out Password; secret : Unbounded_String) return HashMap_Access;

@@ -20,6 +20,8 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
+with org.allbinary.media.image.analysis.ColorRangeInterface_Package; use org.allbinary.media.image.analysis.ColorRangeInterface_Package;
+with org.allbinary.media.image.analysis.ColorRange_Package; use org.allbinary.media.image.analysis.ColorRange_Package;
 
 package org.allbinary.media.image.analysis.ImageColorRangeResults_Package is
 
@@ -38,18 +40,14 @@ package org.allbinary.media.image.analysis.ImageColorRangeResults_Package is
    procedure Initialize (This : in out ImageColorRangeResults'Class);
    function Create return ImageColorRangeResults_Access;
    function getColorRangeInterface (This : in out ImageColorRangeResults) return ColorRangeInterface_Access;
-   procedure getColorRangeInterface (This : in out ImageColorRangeResults);
    procedure setColorRangeInterface (This : in out ImageColorRangeResults; colorRangeInterface : ColorRangeInterface_Access);
    function getMatchingPixelsChecked (This : in out ImageColorRangeResults) return Long_Long_Integer;
-   procedure getMatchingPixelsChecked (This : in out ImageColorRangeResults);
    procedure setMatchingPixelsChecked (This : in out ImageColorRangeResults; matchingPixelsChecked : Long_Long_Integer);
    procedure addMatchingPixelsChecked (This : in out ImageColorRangeResults);
    function getTotalPixelsChecked (This : in out ImageColorRangeResults) return Long_Long_Integer;
-   procedure getTotalPixelsChecked (This : in out ImageColorRangeResults);
    procedure addTotalPixelsChecked (This : in out ImageColorRangeResults);
    procedure setTotalPixelsChecked (This : in out ImageColorRangeResults; totalPixelsChecked : Long_Long_Integer);
    function getPercent (This : in out ImageColorRangeResults) return Float;
-   procedure getPercent (This : in out ImageColorRangeResults);
 
 end org.allbinary.media.image.analysis.ImageColorRangeResults_Package;
 

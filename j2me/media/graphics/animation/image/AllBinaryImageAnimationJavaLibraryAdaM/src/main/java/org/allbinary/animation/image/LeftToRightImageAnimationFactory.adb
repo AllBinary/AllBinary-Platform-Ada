@@ -29,7 +29,7 @@ package body org.allbinary.animation.image.LeftToRightImageAnimationFactory_Pack
    function Create (image : Image_Access; sequenceArray : Integer_Array_Access; dx : Integer; dy : Integer; animationBehaviorFactory : AnimationBehaviorFactory_Access) return LeftToRightImageAnimationFactory_Access is
       This : constant LeftToRightImageAnimationFactory_Access := new LeftToRightImageAnimationFactory;
    begin
-      Initialize (This.all, image, sequenceArray, dx, dy, animationBehaviorFactory);
+      LeftToRightImageAnimationFactory_Package.Initialize (This.all, image, sequenceArray, dx, dy, animationBehaviorFactory);
       return This;
    end Create;
 

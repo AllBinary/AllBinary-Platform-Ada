@@ -33,7 +33,7 @@ package body org.allbinary.logic.math.PrimitiveLongSingleton_Package is
    function Create return PrimitiveLongSingleton_Access is
       This : constant PrimitiveLongSingleton_Access := new PrimitiveLongSingleton;
    begin
-      Initialize (This.all);
+      PrimitiveLongSingleton_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -56,13 +56,6 @@ package body org.allbinary.logic.math.PrimitiveLongSingleton_Package is
         end loop;
         Java_Throw (Java_New_Exception ("Exception", StringMaker_Package.Create.append (To_Unbounded_String ("numberAsChar was not in array: ")).appendchar (numberAsChar).toString));
    end getNumberFromChar;
-
-   procedure getInstance is
-      Java_Result : constant PrimitiveLongSingleton_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure getNumberFromChar (This : in out PrimitiveLongSingleton; numberAsChar : Character) is
       Java_Result : constant Short_Short_Integer := PrimitiveLongSingleton'Class (This).getNumberFromChar (numberAsChar);

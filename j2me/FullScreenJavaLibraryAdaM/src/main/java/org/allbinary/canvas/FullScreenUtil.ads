@@ -24,6 +24,7 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.configuration.feature.Features_Package; use org.allbinary.game.configuration.feature.Features_Package;
 with org.allbinary.game.configuration.feature.MainFeatureFactory_Package; use org.allbinary.game.configuration.feature.MainFeatureFactory_Package;
 --  with javax.microedition.lcdui.CommandListener_Package; use javax.microedition.lcdui.CommandListener_Package;
+with org.allbinary.canvas.RunnableCanvas_Package; use org.allbinary.canvas.RunnableCanvas_Package;
 
 package org.allbinary.canvas.FullScreenUtil_Package is
 
@@ -41,7 +42,6 @@ package org.allbinary.canvas.FullScreenUtil_Package is
    procedure Initialize (This : in out FullScreenUtil'Class);
    function Create return FullScreenUtil_Access;
    function getInstance return FullScreenUtil_Access;
-   procedure getInstance;
    procedure initOnRun (This : in out FullScreenUtil; fullScreenInterface : Canvas_Access; commandListener : CommandListener_Access);
    procedure init (This : in out FullScreenUtil; fullScreenInterface : Canvas_Access);
    function isScreenChange (This : in out FullScreenUtil; isFullScreen : Boolean) return Boolean;

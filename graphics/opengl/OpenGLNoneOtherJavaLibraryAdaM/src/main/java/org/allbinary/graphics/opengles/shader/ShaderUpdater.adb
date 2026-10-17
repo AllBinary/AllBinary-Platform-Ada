@@ -30,7 +30,7 @@ package body org.allbinary.graphics.opengles.shader.ShaderUpdater_Package is
    function Create return ShaderUpdater_Access is
       This : constant ShaderUpdater_Access := new ShaderUpdater;
    begin
-      Initialize (This.all);
+      ShaderUpdater_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -44,13 +44,6 @@ package body org.allbinary.graphics.opengles.shader.ShaderUpdater_Package is
    begin
         null;
    end onSurfaceCreated;
-
-   procedure getInstance is
-      Java_Result : constant ShaderUpdater_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

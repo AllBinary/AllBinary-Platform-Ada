@@ -44,18 +44,13 @@ package org.allbinary.animation.image.ImageArrayRotationAnimationInfo_Package is
    function Create (imageArray : Image_Access_Array_Access; angleIncrement : Integer; totalAngle : Integer; dx : Integer; dy : Integer) return ImageArrayRotationAnimationInfo_Access;
    procedure setImageArray (This : in out ImageArrayRotationAnimationInfo; imageArray : Image_Access_Array_Access);
    function getImageArray (This : in out ImageArrayRotationAnimationInfo) return Image_Access_Array_Access;
-   procedure getImageArray (This : in out ImageArrayRotationAnimationInfo);
    function getAngleInfoP (This : in out ImageArrayRotationAnimationInfo) return AngleInfo_Access;
-   procedure getAngleInfoP (This : in out ImageArrayRotationAnimationInfo);
    procedure setTotalAngle (This : in out ImageArrayRotationAnimationInfo; totalAngle : Integer);
    function getTotalAngle (This : in out ImageArrayRotationAnimationInfo) return Integer;
-   procedure getTotalAngle (This : in out ImageArrayRotationAnimationInfo);
    procedure setDx (This : in out ImageArrayRotationAnimationInfo; dx : Integer);
    function getDx (This : in out ImageArrayRotationAnimationInfo) return Integer;
-   procedure getDx (This : in out ImageArrayRotationAnimationInfo);
    procedure setDy (This : in out ImageArrayRotationAnimationInfo; dy : Integer);
    function getDy (This : in out ImageArrayRotationAnimationInfo) return Integer;
-   procedure getDy (This : in out ImageArrayRotationAnimationInfo);
 
 end org.allbinary.animation.image.ImageArrayRotationAnimationInfo_Package;
 

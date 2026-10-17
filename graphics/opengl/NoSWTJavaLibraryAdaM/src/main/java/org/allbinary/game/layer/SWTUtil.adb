@@ -28,7 +28,7 @@ package body org.allbinary.game.layer.SWTUtil_Package is
    function Create return SWTUtil_Access is
       This : constant SWTUtil_Access := new SWTUtil;
    begin
-      Initialize (This.all);
+      SWTUtil_Package.Initialize (This.all);
       return This;
    end Create;
 

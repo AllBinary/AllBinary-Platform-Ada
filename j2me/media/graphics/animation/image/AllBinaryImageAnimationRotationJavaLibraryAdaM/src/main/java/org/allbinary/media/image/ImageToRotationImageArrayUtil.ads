@@ -21,6 +21,7 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
+with org.allbinary.media.image.ImageRotationUtil_Package; use org.allbinary.media.image.ImageRotationUtil_Package;
 
 package org.allbinary.media.image.ImageToRotationImageArrayUtil_Package is
 
@@ -36,7 +37,6 @@ package org.allbinary.media.image.ImageToRotationImageArrayUtil_Package is
    procedure Initialize (This : in out ImageToRotationImageArrayUtil'Class);
    function Create return ImageToRotationImageArrayUtil_Access;
    function getInstance return ImageToRotationImageArrayUtil_Access;
-   procedure getInstance;
    function generate (This : in out ImageToRotationImageArrayUtil; image : Image_Access; angleIncrement : Integer; totalAngle : Integer) return Image_Access_Array_Access;
    procedure generate (This : in out ImageToRotationImageArrayUtil; image : Image_Access; angleIncrement : Integer; totalAngle : Integer);
 

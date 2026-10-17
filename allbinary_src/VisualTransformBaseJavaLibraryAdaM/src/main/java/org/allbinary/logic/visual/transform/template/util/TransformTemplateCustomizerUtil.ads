@@ -66,7 +66,6 @@ package org.allbinary.logic.visual.transform.template.util.TransformTemplateCust
    procedure Initialize (This : in out TransformTemplateCustomizerUtil'Class);
    function Create return TransformTemplateCustomizerUtil_Access;
    function getInstance return TransformTemplateCustomizerUtil_Access;
-   procedure getInstance;
    function getPageNameHack (This : in out TransformTemplateCustomizerUtil; viewName : Unbounded_String; storeName : Unbounded_String) return Unbounded_String;
    procedure getPageNameHack (This : in out TransformTemplateCustomizerUtil; viewName : Unbounded_String; storeName : Unbounded_String);
 

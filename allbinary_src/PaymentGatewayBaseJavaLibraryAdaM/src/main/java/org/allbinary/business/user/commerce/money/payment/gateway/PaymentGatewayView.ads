@@ -28,6 +28,9 @@ with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.lo
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
+with org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayInterface_Package; use org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayInterface_Package;
+with org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayMapping_Package; use org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayMapping_Package;
+with org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayData_Package; use org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayData_Package;
 
 package org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayView_Package is
 
@@ -53,9 +56,7 @@ package org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewa
    procedure Initialize (This : in out PaymentGatewayView'Class; paymentGatewayInterface : PaymentGatewayInterface_Access);
    function Create (paymentGatewayInterface : PaymentGatewayInterface_Access) return PaymentGatewayView_Access;
    function getPaymentGatewayInterface (This : in out PaymentGatewayView) return PaymentGatewayInterface_Access;
-   procedure getPaymentGatewayInterface (This : in out PaymentGatewayView);
    function toHashMap (This : in out PaymentGatewayView) return HashMap_Access;
-   procedure toHashMap (This : in out PaymentGatewayView);
    function toXmlNode (This : in out PaymentGatewayView; document : Document_Access) return Node_Access;
    procedure toXmlNode (This : in out PaymentGatewayView; document : Document_Access);
 

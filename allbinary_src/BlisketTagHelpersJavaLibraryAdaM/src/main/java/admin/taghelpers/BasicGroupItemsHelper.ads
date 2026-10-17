@@ -50,13 +50,9 @@ package admin.taghelpers.BasicGroupItemsHelper_Package is
    procedure Initialize (This : in out BasicGroupItemsHelper'Class; hashMap : HashMap_Access; pageContext : PageContext_Access);
    function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return BasicGroupItemsHelper_Access;
    function create (This : in out BasicGroupItemsHelper) return Unbounded_String;
-   procedure create (This : in out BasicGroupItemsHelper);
    function drop (This : in out BasicGroupItemsHelper) return Unbounded_String;
-   procedure drop (This : in out BasicGroupItemsHelper);
    function restore (This : in out BasicGroupItemsHelper) return Unbounded_String;
-   procedure restore (This : in out BasicGroupItemsHelper);
    function backup (This : in out BasicGroupItemsHelper) return Unbounded_String;
-   procedure backup (This : in out BasicGroupItemsHelper);
 
 end admin.taghelpers.BasicGroupItemsHelper_Package;
 

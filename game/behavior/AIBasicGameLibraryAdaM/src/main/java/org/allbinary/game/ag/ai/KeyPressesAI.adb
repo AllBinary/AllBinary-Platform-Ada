@@ -41,7 +41,7 @@ package body org.allbinary.game.ag.ai.KeyPressesAI_Package is
    function Create (hashtable : ABHashtable_Access; ownerLayerInterface : AllBinaryLayer_Access; gameInput : GameInput_Access) return KeyPressesAI_Access is
       This : constant KeyPressesAI_Access := new KeyPressesAI;
    begin
-      Initialize (This.all, hashtable, ownerLayerInterface, gameInput);
+      KeyPressesAI_Package.Initialize (This.all, hashtable, ownerLayerInterface, gameInput);
       return This;
    end Create;
 
@@ -86,13 +86,6 @@ package body org.allbinary.game.ag.ai.KeyPressesAI_Package is
    function isOn (This : in out KeyPressesAI) return Boolean is
    begin
         return This.on;
-   end isOn;
-
-   procedure isOn (This : in out KeyPressesAI) is
-      Java_Result : constant Boolean := KeyPressesAI'Class (This).isOn;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end isOn;
 
 end org.allbinary.game.ag.ai.KeyPressesAI_Package;

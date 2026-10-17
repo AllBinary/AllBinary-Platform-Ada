@@ -32,7 +32,7 @@ package body org.allbinary.game.input.motion.action.GameKeyCompleteMotionGesture
    function Create (name : Unbounded_String; motionGestureInput : MotionGestureInput_Access; inputToGameKeyMapping : InputToGameKeyMapping_Access) return GameKeyCompleteMotionGestureInputEvent_Access is
       This : constant GameKeyCompleteMotionGestureInputEvent_Access := new GameKeyCompleteMotionGestureInputEvent;
    begin
-      Initialize (This.all, name, motionGestureInput, inputToGameKeyMapping);
+      GameKeyCompleteMotionGestureInputEvent_Package.Initialize (This.all, name, motionGestureInput, inputToGameKeyMapping);
       return This;
    end Create;
 
@@ -64,27 +64,6 @@ package body org.allbinary.game.input.motion.action.GameKeyCompleteMotionGesture
    function getGameKey (This : in out GameKeyCompleteMotionGestureInputEvent) return GameKey_Access is
    begin
         return This.gameKey;
-   end getGameKey;
-
-   procedure getSourceId (This : in out GameKeyCompleteMotionGestureInputEvent) is
-      Java_Result : constant Integer := GameKeyCompleteMotionGestureInputEvent'Class (This).getSourceId;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSourceId;
-
-   procedure getGameKeyEvent (This : in out GameKeyCompleteMotionGestureInputEvent) is
-      Java_Result : constant GameKeyEvent_Access := GameKeyCompleteMotionGestureInputEvent'Class (This).getGameKeyEvent;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getGameKeyEvent;
-
-   procedure getGameKey (This : in out GameKeyCompleteMotionGestureInputEvent) is
-      Java_Result : constant GameKey_Access := GameKeyCompleteMotionGestureInputEvent'Class (This).getGameKey;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getGameKey;
 
 end org.allbinary.game.input.motion.action.GameKeyCompleteMotionGestureInputEvent_Package;

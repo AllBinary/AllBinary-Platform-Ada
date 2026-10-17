@@ -30,7 +30,7 @@ package body org.allbinary.game.layer.GameLayerUtil_Package is
    function Create return GameLayerUtil_Access is
       This : constant GameLayerUtil_Access := new GameLayerUtil;
    begin
-      Initialize (This.all);
+      GameLayerUtil_Package.Initialize (This.all);
       return This;
    end Create;
 

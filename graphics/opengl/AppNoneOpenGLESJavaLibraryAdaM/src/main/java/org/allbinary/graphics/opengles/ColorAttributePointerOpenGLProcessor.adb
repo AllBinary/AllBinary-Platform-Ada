@@ -36,7 +36,7 @@ package body org.allbinary.graphics.opengles.ColorAttributePointerOpenGLProcesso
    function Create return ColorAttributePointerOpenGLProcessor_Access is
       This : constant ColorAttributePointerOpenGLProcessor_Access := new ColorAttributePointerOpenGLProcessor;
    begin
-      Initialize (This.all);
+      ColorAttributePointerOpenGLProcessor_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -44,13 +44,6 @@ package body org.allbinary.graphics.opengles.ColorAttributePointerOpenGLProcesso
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end process;
-
-   procedure getInstance is
-      Java_Result : constant ColorAttributePointerOpenGLProcessor_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

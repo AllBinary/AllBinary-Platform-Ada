@@ -46,7 +46,7 @@ package body org.allbinary.game.layer.SelectionHudPaintable_Package is
    function Create return SelectionHudPaintable_Access is
       This : constant SelectionHudPaintable_Access := new SelectionHudPaintable;
    begin
-      Initialize (This.all);
+      SelectionHudPaintable_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -159,62 +159,6 @@ package body org.allbinary.game.layer.SelectionHudPaintable_Package is
         graphics.setColor (This.getColor);
         graphics.drawString (This.getName, This.textX, This.y, 0);
    end paint;
-
-   procedure getPrimitiveLongUtil (This : in out SelectionHudPaintable) is
-      Java_Result : constant PrimitiveLongUtil_Access := SelectionHudPaintable'Class (This).getPrimitiveLongUtil;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getPrimitiveLongUtil;
-
-   procedure getAnimationInterface (This : in out SelectionHudPaintable) is
-      Java_Result : constant Animation_Access := SelectionHudPaintable'Class (This).getAnimationInterface;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getAnimationInterface;
-
-   procedure getName (This : in out SelectionHudPaintable) is
-      Java_Result : constant Unbounded_String := SelectionHudPaintable'Class (This).getName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getName;
-
-   procedure getBasicColorP (This : in out SelectionHudPaintable) is
-      Java_Result : constant BasicColor_Access := SelectionHudPaintable'Class (This).getBasicColorP;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getBasicColorP;
-
-   procedure getColor (This : in out SelectionHudPaintable) is
-      Java_Result : constant Integer := SelectionHudPaintable'Class (This).getColor;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getColor;
-
-   procedure getWidth (This : in out SelectionHudPaintable) is
-      Java_Result : constant Integer := SelectionHudPaintable'Class (This).getWidth;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getWidth;
-
-   procedure getHeight (This : in out SelectionHudPaintable) is
-      Java_Result : constant Integer := SelectionHudPaintable'Class (This).getHeight;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getHeight;
-
-   procedure getX (This : in out SelectionHudPaintable) is
-      Java_Result : constant Integer := SelectionHudPaintable'Class (This).getX;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getX;
 
 end org.allbinary.game.layer.SelectionHudPaintable_Package;
 

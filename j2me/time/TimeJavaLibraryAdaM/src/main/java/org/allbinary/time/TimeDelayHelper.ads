@@ -44,7 +44,6 @@ package org.allbinary.time.TimeDelayHelper_Package is
    procedure Initialize (This : in out TimeDelayHelper'Class; delay_Id : Integer);
    function Create (delay_Id : Integer) return TimeDelayHelper_Access;
    function isTimeTNT (This : in out TimeDelayHelper) return Boolean;
-   procedure isTimeTNT (This : in out TimeDelayHelper);
    function isTimeSinceTNT (This : in out TimeDelayHelper; delay_Id : Integer) return Boolean;
    procedure isTimeSinceTNT (This : in out TimeDelayHelper; delay_Id : Integer);
    function isTime (This : in out TimeDelayHelper; currentTime : Long_Long_Integer) return Boolean;
@@ -54,7 +53,6 @@ package org.allbinary.time.TimeDelayHelper_Package is
    function isTimeSince (This : in out TimeDelayHelper; delay_Id : Integer; currentTime : Long_Long_Integer) return Boolean;
    procedure isTimeSince (This : in out TimeDelayHelper; delay_Id : Integer; currentTime : Long_Long_Integer);
    function getElapsedTNT (This : in out TimeDelayHelper) return Long_Long_Integer;
-   procedure getElapsedTNT (This : in out TimeDelayHelper);
    function getElapsed (This : in out TimeDelayHelper; currentTime : Long_Long_Integer) return Long_Long_Integer;
    procedure getElapsed (This : in out TimeDelayHelper; currentTime : Long_Long_Integer);
    function isElapsed (This : in out TimeDelayHelper; currentTime : Long_Long_Integer; time : Long_Long_Integer) return Boolean;
@@ -63,15 +61,12 @@ package org.allbinary.time.TimeDelayHelper_Package is
    procedure isElapsedTNT (This : in out TimeDelayHelper; time : Long_Long_Integer);
    procedure setStartTime (This : in out TimeDelayHelper; startTime : Long_Long_Integer);
    function getStartTime (This : in out TimeDelayHelper) return Long_Long_Integer;
-   procedure getStartTime (This : in out TimeDelayHelper);
    procedure setStartTimeTNT (This : in out TimeDelayHelper);
    procedure pause (This : in out TimeDelayHelper);
    function resume (This : in out TimeDelayHelper) return Boolean;
-   procedure resume (This : in out TimeDelayHelper);
    function toStringAt (This : in out TimeDelayHelper; currentTime : Long_Long_Integer) return Unbounded_String;
    procedure toStringAt (This : in out TimeDelayHelper; currentTime : Long_Long_Integer);
    function toString (This : in out TimeDelayHelper) return Unbounded_String;
-   procedure toString (This : in out TimeDelayHelper);
 
 end org.allbinary.time.TimeDelayHelper_Package;
 

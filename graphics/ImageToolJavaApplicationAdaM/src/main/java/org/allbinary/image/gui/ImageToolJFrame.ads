@@ -37,6 +37,16 @@ with org.allbinary.media.image.analysis.ImageAnalysisResults_Package; use org.al
 with org.allbinary.string_Id.CommonPhoneStrings_Package; use org.allbinary.string_Id.CommonPhoneStrings_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.image.gui.JFrame_Package; use org.allbinary.image.gui.JFrame_Package;
+with org.allbinary.image.gui.ImageUnifierJPanel_Package; use org.allbinary.image.gui.ImageUnifierJPanel_Package;
+with org.allbinary.image.gui.ImageAnalysisResultsJPanel_Package; use org.allbinary.image.gui.ImageAnalysisResultsJPanel_Package;
+with org.allbinary.image.gui.RotationSpriteImageJPanel_Package; use org.allbinary.image.gui.RotationSpriteImageJPanel_Package;
+with org.allbinary.image.gui.SpriteSplitterImageJPanel_Package; use org.allbinary.image.gui.SpriteSplitterImageJPanel_Package;
+with org.allbinary.image.gui.RotationImageJPanel_Package; use org.allbinary.image.gui.RotationImageJPanel_Package;
+with org.allbinary.image.gui.ResizeImageJPanel_Package; use org.allbinary.image.gui.ResizeImageJPanel_Package;
+with org.allbinary.image.gui.CreateIconImagesJPanel_Package; use org.allbinary.image.gui.CreateIconImagesJPanel_Package;
+with org.allbinary.image.gui.CanvasImageJPanel_Package; use org.allbinary.image.gui.CanvasImageJPanel_Package;
+with org.allbinary.image.gui.MirrorSpriteImageJPanel_Package; use org.allbinary.image.gui.MirrorSpriteImageJPanel_Package;
+with org.allbinary.image.gui.MirrorImageJPanel_Package; use org.allbinary.image.gui.MirrorImageJPanel_Package;
 
 package org.allbinary.image.gui.ImageToolJFrame_Package is
 
@@ -114,24 +124,17 @@ package org.allbinary.image.gui.ImageToolJFrame_Package is
    procedure generateMirrorSpriteMenuItemActionPerformed (This : in out ImageToolJFrame; evt : ActionEvent_Access);
    procedure mirrorJMenuItemActionPerformed (This : in out ImageToolJFrame; evt : ActionEvent_Access);
    function getColorRangeInterface (This : in out ImageToolJFrame) return ColorRangeInterface_Access;
-   procedure getColorRangeInterface (This : in out ImageToolJFrame);
    function getMaxBlueJTextField (This : in out ImageToolJFrame) return JTextField_Access;
-   procedure getMaxBlueJTextField (This : in out ImageToolJFrame);
    procedure setMaxBlueJTextField (This : in out ImageToolJFrame; maxBlueJTextField : JTextField_Access);
    function getMaxGreenJTextField (This : in out ImageToolJFrame) return JTextField_Access;
-   procedure getMaxGreenJTextField (This : in out ImageToolJFrame);
    procedure setMaxGreenJTextField (This : in out ImageToolJFrame; maxGreenJTextField : JTextField_Access);
    function getMaxRedJTextField (This : in out ImageToolJFrame) return JTextField_Access;
-   procedure getMaxRedJTextField (This : in out ImageToolJFrame);
    procedure setMaxRedJTextField (This : in out ImageToolJFrame; maxRedJTextField : JTextField_Access);
    function getMinBlueJTextField (This : in out ImageToolJFrame) return JTextField_Access;
-   procedure getMinBlueJTextField (This : in out ImageToolJFrame);
    procedure setMinBlueJTextField (This : in out ImageToolJFrame; minBlueJTextField : JTextField_Access);
    function getMinGreenJTextField (This : in out ImageToolJFrame) return JTextField_Access;
-   procedure getMinGreenJTextField (This : in out ImageToolJFrame);
    procedure setMinGreenJTextField (This : in out ImageToolJFrame; minGreenJTextField : JTextField_Access);
    function getMinRedJTextField (This : in out ImageToolJFrame) return JTextField_Access;
-   procedure getMinRedJTextField (This : in out ImageToolJFrame);
    procedure setMinRedJTextField (This : in out ImageToolJFrame; minRedJTextField : JTextField_Access);
 
 end org.allbinary.image.gui.ImageToolJFrame_Package;

@@ -59,11 +59,8 @@ package org.allbinary.logic.visual.transform.template.customizer.page.PageValida
    function Create return PageValidation_Access;
    procedure getFormData (This : in out PageValidation; hashMap : HashMap_Access);
    function isValid (This : in out PageValidation) return Boolean;
-   procedure isValid (This : in out PageValidation);
    function validationInfo (This : in out PageValidation) return Unbounded_String;
-   procedure validationInfo (This : in out PageValidation);
    function toValidationInfoDoc (This : in out PageValidation) return Document_Access;
-   procedure toValidationInfoDoc (This : in out PageValidation);
    function toValidationInfoNode (This : in out PageValidation; document : Document_Access) return Node_Access;
    procedure toValidationInfoNode (This : in out PageValidation; document : Document_Access);
    function toXmlNode (This : in out PageValidation; document : Document_Access) return Node_Access;

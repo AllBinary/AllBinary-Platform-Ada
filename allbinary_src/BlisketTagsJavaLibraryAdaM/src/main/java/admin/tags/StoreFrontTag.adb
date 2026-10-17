@@ -35,7 +35,7 @@ package body admin.tags.StoreFrontTag_Package is
    function Create return StoreFrontTag_Access is
       This : constant StoreFrontTag_Access := new StoreFrontTag;
    begin
-      Initialize (This.all);
+      StoreFrontTag_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -116,27 +116,6 @@ package body admin.tags.StoreFrontTag_Package is
             return SKIP_BODY;
                 end;
         end;
-   end doStartTag;
-
-   procedure getCurrentLocation (This : in out StoreFrontTag) is
-      Java_Result : constant Unbounded_String := StoreFrontTag'Class (This).getCurrentLocation;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getCurrentLocation;
-
-   procedure getCurrentHomeLocation (This : in out StoreFrontTag) is
-      Java_Result : constant Unbounded_String := StoreFrontTag'Class (This).getCurrentHomeLocation;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getCurrentHomeLocation;
-
-   procedure doStartTag (This : in out StoreFrontTag) is
-      Java_Result : constant Integer := StoreFrontTag'Class (This).doStartTag;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end doStartTag;
 
 end admin.tags.StoreFrontTag_Package;

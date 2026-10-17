@@ -31,20 +31,13 @@ package body org.allbinary.logic.system.os.windows.WindowsOS_Package is
    function Create return WindowsOS_Access is
       This : constant WindowsOS_Access := new WindowsOS;
    begin
-      Initialize (This.all);
+      WindowsOS_Package.Initialize (This.all);
       return This;
    end Create;
 
    function isAutoHide (This : in out WindowsOS) return Boolean is
    begin
         return True;
-   end isAutoHide;
-
-   procedure isAutoHide (This : in out WindowsOS) is
-      Java_Result : constant Boolean := WindowsOS'Class (This).isAutoHide;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end isAutoHide;
 
 end org.allbinary.logic.system.os.windows.WindowsOS_Package;

@@ -29,6 +29,9 @@ with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.C
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.time.TimeDelayHelper_Package; use org.allbinary.time.TimeDelayHelper_Package;
 with org.allbinary.media.image.comparison.motion.MotionRectanglesResultsListener_Package; use org.allbinary.media.image.comparison.motion.MotionRectanglesResultsListener_Package;
+with org.allbinary.media.image.comparison.motion.MotionRectanglesResultsEvent_Package; use org.allbinary.media.image.comparison.motion.MotionRectanglesResultsEvent_Package;
+with org.allbinary.media.image.comparison.motion.MotionRectangles_Package; use org.allbinary.media.image.comparison.motion.MotionRectangles_Package;
+with org.allbinary.media.image.comparison.motion.MotionRectanglesImageInputOutput_Package; use org.allbinary.media.image.comparison.motion.MotionRectanglesImageInputOutput_Package;
 
 package org.allbinary.media.image.comparison.motion.SaveMotionRectanglesResultsWorker_Package is
 
@@ -56,11 +59,9 @@ package org.allbinary.media.image.comparison.motion.SaveMotionRectanglesResultsW
    procedure Initialize (This : in out SaveMotionRectanglesResultsWorker'Class);
    function Create return SaveMotionRectanglesResultsWorker_Access;
    function getMotionRectanglesVector (This : in out SaveMotionRectanglesResultsWorker) return BasicArrayList_Access;
-   procedure getMotionRectanglesVector (This : in out SaveMotionRectanglesResultsWorker);
    procedure onMotionRectanglesImageComparisonResultsEvent (This : in out SaveMotionRectanglesResultsWorker; motionRectanglesResultsEvent : MotionRectanglesResultsEvent_Access);
    procedure onEvent (This : in out SaveMotionRectanglesResultsWorker; allBinaryEventObject : AllBinaryEventObject_Access);
    function isRunning (This : in out SaveMotionRectanglesResultsWorker) return Boolean;
-   procedure isRunning (This : in out SaveMotionRectanglesResultsWorker);
    procedure setRunning (This : in out SaveMotionRectanglesResultsWorker; running : Boolean);
    procedure run (This : in out SaveMotionRectanglesResultsWorker);
 

@@ -30,7 +30,7 @@ package body org.allbinary.input.motion.button.BasicTouchButtonCellPositionFacto
    function Create return BasicTouchButtonCellPositionFactory_Access is
       This : constant BasicTouchButtonCellPositionFactory_Access := new BasicTouchButtonCellPositionFactory;
    begin
-      Initialize (This.all);
+      BasicTouchButtonCellPositionFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

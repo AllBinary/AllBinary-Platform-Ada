@@ -33,7 +33,7 @@ package body org.allbinary.business.context.modules.storefronts.BasicStoreFronts
    function Create return BasicStoreFrontsEntity_Access is
       This : constant BasicStoreFrontsEntity_Access := new BasicStoreFrontsEntity;
    begin
-      Initialize (This.all);
+      BasicStoreFrontsEntity_Package.Initialize (This.all);
       return This;
    end Create;
 

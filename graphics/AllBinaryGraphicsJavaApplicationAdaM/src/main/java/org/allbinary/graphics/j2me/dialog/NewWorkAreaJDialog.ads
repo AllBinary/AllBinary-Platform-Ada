@@ -27,6 +27,11 @@ with org.allbinary.graphics.j2me.MyFrame_Package; use org.allbinary.graphics.j2m
 with org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package; use org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package;
 with org.allbinary.graphics.j2me.workarea.WorkAreaJPanelInterface_Package; use org.allbinary.graphics.j2me.workarea.WorkAreaJPanelInterface_Package;
 with org.allbinary.graphics.j2me.dialog.JDialog_Package; use org.allbinary.graphics.j2me.dialog.JDialog_Package;
+with org.allbinary.graphics.j2me.dialog.Dimension_Package; use org.allbinary.graphics.j2me.dialog.Dimension_Package;
+with org.allbinary.graphics.j2me.dialog.JTextField_Package; use org.allbinary.graphics.j2me.dialog.JTextField_Package;
+with org.allbinary.graphics.j2me.dialog.JButton_Package; use org.allbinary.graphics.j2me.dialog.JButton_Package;
+with org.allbinary.graphics.j2me.dialog.GridLayout_Package; use org.allbinary.graphics.j2me.dialog.GridLayout_Package;
+with org.allbinary.graphics.j2me.dialog.JLabel_Package; use org.allbinary.graphics.j2me.dialog.JLabel_Package;
 
 package org.allbinary.graphics.j2me.dialog.NewWorkAreaJDialog_Package is
 

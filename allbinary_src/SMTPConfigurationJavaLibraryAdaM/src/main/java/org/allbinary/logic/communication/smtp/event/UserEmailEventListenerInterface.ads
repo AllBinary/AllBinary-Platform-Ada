@@ -21,6 +21,7 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.util.EventListener_Package; use java.util.EventListener_Package;
+with org.allbinary.logic.communication.smtp.event.EmailEvent_Package; use org.allbinary.logic.communication.smtp.event.EmailEvent_Package;
 
 package org.allbinary.logic.communication.smtp.event.UserEmailEventListenerInterface_Package is
 

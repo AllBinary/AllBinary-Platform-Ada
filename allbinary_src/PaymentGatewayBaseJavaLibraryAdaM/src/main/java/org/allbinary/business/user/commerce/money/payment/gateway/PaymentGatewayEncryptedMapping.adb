@@ -31,7 +31,7 @@ package body org.allbinary.business.user.commerce.money.payment.gateway.PaymentG
    function Create (paymentGatewayInterface : PaymentGatewayInterface_Access) return PaymentGatewayEncryptedMapping_Access is
       This : constant PaymentGatewayEncryptedMapping_Access := new PaymentGatewayEncryptedMapping;
    begin
-      Initialize (This.all, paymentGatewayInterface);
+      PaymentGatewayEncryptedMapping_Package.Initialize (This.all, paymentGatewayInterface);
       return This;
    end Create;
 
@@ -50,27 +50,6 @@ package body org.allbinary.business.user.commerce.money.payment.gateway.PaymentG
    function getKey (This : in out PaymentGatewayEncryptedMapping) return Java_Object_Access is
    begin
         return Java_Object_Access (This.paymentGatewayInterface.getKey);
-   end getKey;
-
-   procedure toHashMap (This : in out PaymentGatewayEncryptedMapping) is
-      Java_Result : constant HashMap_Access := PaymentGatewayEncryptedMapping'Class (This).toHashMap;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toHashMap;
-
-   procedure toVector (This : in out PaymentGatewayEncryptedMapping) is
-      Java_Result : constant BasicArrayList_Access := PaymentGatewayEncryptedMapping'Class (This).toVector;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toVector;
-
-   procedure getKey (This : in out PaymentGatewayEncryptedMapping) is
-      Java_Result : constant Java_Object_Access := PaymentGatewayEncryptedMapping'Class (This).getKey;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getKey;
 
 end org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayEncryptedMapping_Package;

@@ -33,7 +33,7 @@ package body org.allbinary.data.tables.category.CategoryEntity_Package is
    function Create (categoryFactoryInterface : CategoryFactoryInterface_Access) return CategoryEntity_Access is
       This : constant CategoryEntity_Access := new CategoryEntity;
    begin
-      Initialize (This.all, categoryFactoryInterface);
+      CategoryEntity_Package.Initialize (This.all, categoryFactoryInterface);
       return This;
    end Create;
 
@@ -48,7 +48,7 @@ package body org.allbinary.data.tables.category.CategoryEntity_Package is
    function Create return CategoryEntity_Access is
       This : constant CategoryEntity_Access := new CategoryEntity;
    begin
-      Initialize (This.all);
+      CategoryEntity_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -126,27 +126,6 @@ package body org.allbinary.data.tables.category.CategoryEntity_Package is
    function dropTable (This : in out CategoryEntity) return Unbounded_String is
    begin
         return AbSqlBean (This).dropTable;
-   end dropTable;
-
-   procedure createTableStatement (This : in out CategoryEntity) is
-      Java_Result : constant Unbounded_String := CategoryEntity'Class (This).createTableStatement;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end createTableStatement;
-
-   procedure createTable (This : in out CategoryEntity) is
-      Java_Result : constant Unbounded_String := CategoryEntity'Class (This).createTable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end createTable;
-
-   procedure dropTable (This : in out CategoryEntity) is
-      Java_Result : constant Unbounded_String := CategoryEntity'Class (This).dropTable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end dropTable;
 
 end org.allbinary.data.tables.category.CategoryEntity_Package;

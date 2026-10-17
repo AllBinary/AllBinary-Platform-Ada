@@ -28,7 +28,7 @@ package body org.allbinary.logic.communication.http.file.upload.HttpFilePermissi
    function Create return HttpFilePermissionsUtil_Access is
       This : constant HttpFilePermissionsUtil_Access := new HttpFilePermissionsUtil;
    begin
-      Initialize (This.all);
+      HttpFilePermissionsUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -47,13 +47,6 @@ package body org.allbinary.logic.communication.http.file.upload.HttpFilePermissi
             file.createNewFile;
         end if;
    end create;
-
-   procedure getInstance is
-      Java_Result : constant HttpFilePermissionsUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

@@ -28,7 +28,7 @@ package body org.allbinary.input.accelerometer.AccelerometerSensorFactory_Packag
    function Create return AccelerometerSensorFactory_Access is
       This : constant AccelerometerSensorFactory_Access := new AccelerometerSensorFactory;
    begin
-      Initialize (This.all);
+      AccelerometerSensorFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -54,13 +54,6 @@ package body org.allbinary.input.accelerometer.AccelerometerSensorFactory_Packag
    function getInstance return AllBinaryOrientationSensor_Access is
    begin
         return AccelerometerSensorFactory_Package.allBinaryAccelerometerSensor;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant AllBinaryOrientationSensor_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

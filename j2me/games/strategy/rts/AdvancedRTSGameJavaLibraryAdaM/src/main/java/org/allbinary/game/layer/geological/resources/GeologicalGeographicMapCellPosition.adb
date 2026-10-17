@@ -32,20 +32,13 @@ package body org.allbinary.game.layer.geological.resources.GeologicalGeographicM
    function Create (column : Integer; row : Integer; columns : Integer; rows : Integer; width : Integer; height : Integer; geologicalResource : GeologicalResource_Access) return GeologicalGeographicMapCellPosition_Access is
       This : constant GeologicalGeographicMapCellPosition_Access := new GeologicalGeographicMapCellPosition;
    begin
-      Initialize (This.all, column, row, columns, rows, width, height, geologicalResource);
+      GeologicalGeographicMapCellPosition_Package.Initialize (This.all, column, row, columns, rows, width, height, geologicalResource);
       return This;
    end Create;
 
    function getGeologicalResource (This : in out GeologicalGeographicMapCellPosition) return GeologicalResource_Access is
    begin
         return This.geologicalResource;
-   end getGeologicalResource;
-
-   procedure getGeologicalResource (This : in out GeologicalGeographicMapCellPosition) is
-      Java_Result : constant GeologicalResource_Access := GeologicalGeographicMapCellPosition'Class (This).getGeologicalResource;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getGeologicalResource;
 
 end org.allbinary.game.layer.geological.resources.GeologicalGeographicMapCellPosition_Package;

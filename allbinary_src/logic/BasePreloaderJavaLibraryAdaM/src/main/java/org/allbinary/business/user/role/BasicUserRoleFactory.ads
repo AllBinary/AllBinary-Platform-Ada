@@ -20,6 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
+with org.allbinary.business.user.role.BasicUserRole_Package; use org.allbinary.business.user.role.BasicUserRole_Package;
 
 package org.allbinary.business.user.role.BasicUserRoleFactory_Package is
 
@@ -57,7 +58,6 @@ package org.allbinary.business.user.role.BasicUserRoleFactory_Package is
    procedure Initialize (This : in out BasicUserRoleFactory'Class);
    function Create return BasicUserRoleFactory_Access;
    function getInstance return BasicUserRoleFactory_Access;
-   procedure getInstance;
 
 end org.allbinary.business.user.role.BasicUserRoleFactory_Package;
 

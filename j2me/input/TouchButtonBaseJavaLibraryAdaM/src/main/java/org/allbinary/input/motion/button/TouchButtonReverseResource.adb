@@ -34,16 +34,9 @@ package body org.allbinary.input.motion.button.TouchButtonReverseResource_Packag
    function Create return TouchButtonReverseResource_Access is
       This : constant TouchButtonReverseResource_Access := new TouchButtonReverseResource;
    begin
-      Initialize (This.all);
+      TouchButtonReverseResource_Package.Initialize (This.all);
       return This;
    end Create;
-
-   procedure getInstance is
-      Java_Result : constant TouchButtonResource_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

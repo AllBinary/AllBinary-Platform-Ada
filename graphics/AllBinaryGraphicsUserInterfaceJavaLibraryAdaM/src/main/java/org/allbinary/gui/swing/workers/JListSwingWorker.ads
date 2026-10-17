@@ -21,6 +21,8 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.gui.swing.workers.SwingWorker_Package; use org.allbinary.gui.swing.workers.SwingWorker_Package;
+with org.allbinary.gui.swing.workers.JList_Package; use org.allbinary.gui.swing.workers.JList_Package;
+with org.allbinary.gui.swing.workers.ListModel_Package; use org.allbinary.gui.swing.workers.ListModel_Package;
 
 package org.allbinary.gui.swing.workers.JListSwingWorker_Package is
 
@@ -38,13 +40,10 @@ package org.allbinary.gui.swing.workers.JListSwingWorker_Package is
    procedure Initialize (This : in out JListSwingWorker'Class; jList : JList_Access; listModel : ListModel_Access);
    function Create (jList : JList_Access; listModel : ListModel_Access) return JListSwingWorker_Access;
    function doInBackground (This : in out JListSwingWorker) return Java_Object_Access;
-   procedure doInBackground (This : in out JListSwingWorker);
    procedure done (This : in out JListSwingWorker);
    function getJList (This : in out JListSwingWorker) return JList_Access;
-   procedure getJList (This : in out JListSwingWorker);
    procedure setJList (This : in out JListSwingWorker; jList : JList_Access);
    function getListModel (This : in out JListSwingWorker) return ListModel_Access;
-   procedure getListModel (This : in out JListSwingWorker);
    procedure setListModel (This : in out JListSwingWorker; listModel : ListModel_Access);
 
 end org.allbinary.gui.swing.workers.JListSwingWorker_Package;

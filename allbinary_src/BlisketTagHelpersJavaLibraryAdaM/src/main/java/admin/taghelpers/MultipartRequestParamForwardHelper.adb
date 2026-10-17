@@ -40,7 +40,7 @@ package body admin.taghelpers.MultipartRequestParamForwardHelper_Package is
    function Create (parentHelperTag : HelperTag_Access; page : Unbounded_String; command : Unbounded_String; paramVector : BasicArrayList_Access; pageContext : PageContext_Access) return MultipartRequestParamForwardHelper_Access is
       This : constant MultipartRequestParamForwardHelper_Access := new MultipartRequestParamForwardHelper;
    begin
-      Initialize (This.all, parentHelperTag, page, command, paramVector, pageContext);
+      MultipartRequestParamForwardHelper_Package.Initialize (This.all, parentHelperTag, page, command, paramVector, pageContext);
       return This;
    end Create;
 
@@ -115,20 +115,6 @@ package body admin.taghelpers.MultipartRequestParamForwardHelper_Package is
             return True;
         end if;
         return False;
-   end shouldForward;
-
-   procedure getParams (This : in out MultipartRequestParamForwardHelper) is
-      Java_Result : constant Unbounded_String := MultipartRequestParamForwardHelper'Class (This).getParams;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getParams;
-
-   procedure shouldForward (This : in out MultipartRequestParamForwardHelper) is
-      Java_Result : constant Boolean := MultipartRequestParamForwardHelper'Class (This).shouldForward;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end shouldForward;
 
 end admin.taghelpers.MultipartRequestParamForwardHelper_Package;

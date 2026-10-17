@@ -30,7 +30,7 @@ package body org.allbinary.input.automation.PointHelper_Package is
    function Create return PointHelper_Access is
       This : constant PointHelper_Access := new PointHelper;
    begin
-      Initialize (This.all);
+      PointHelper_Package.Initialize (This.all);
       return This;
    end Create;
 

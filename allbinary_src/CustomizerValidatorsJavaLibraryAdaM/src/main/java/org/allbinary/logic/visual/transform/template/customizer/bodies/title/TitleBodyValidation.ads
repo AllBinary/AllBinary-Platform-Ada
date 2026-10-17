@@ -74,11 +74,8 @@ package org.allbinary.logic.visual.transform.template.customizer.bodies.title.Ti
    function Create return TitleBodyValidation_Access;
    procedure getFormData (This : in out TitleBodyValidation; hashMap : HashMap_Access);
    function isValid (This : in out TitleBodyValidation) return Boolean;
-   procedure isValid (This : in out TitleBodyValidation);
    function validationInfo (This : in out TitleBodyValidation) return Unbounded_String;
-   procedure validationInfo (This : in out TitleBodyValidation);
    function toValidationInfoDoc (This : in out TitleBodyValidation) return Document_Access;
-   procedure toValidationInfoDoc (This : in out TitleBodyValidation);
    function toValidationInfoNode (This : in out TitleBodyValidation; document : Document_Access) return Node_Access;
    procedure toValidationInfoNode (This : in out TitleBodyValidation; document : Document_Access);
    function toXmlNode (This : in out TitleBodyValidation; document : Document_Access) return Node_Access;

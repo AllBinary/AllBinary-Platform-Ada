@@ -37,6 +37,7 @@ with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.C
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.logic.system.hardware.components.linux.CpuInfo_Package; use org.allbinary.logic.system.hardware.components.linux.CpuInfo_Package;
 
 package org.allbinary.logic.system.hardware.components.linux.Cpu_Package is
 
@@ -70,29 +71,20 @@ package org.allbinary.logic.system.hardware.components.linux.Cpu_Package is
    procedure Initialize (This : in out Cpu'Class; filePath : Unbounded_String);
    function Create (filePath : Unbounded_String) return Cpu_Access;
    procedure init (This : in out Cpu; filePath : Unbounded_String);
-   procedure init (This : in out Cpu; lineNumberReader : LineNumberReader_Access; filePath : Unbounded_String);
+   procedure init (This : in out Cpu; lineNumberReader_Param : LineNumberReader_Access; filePath : Unbounded_String);
    function getProcessor (This : in out Cpu) return Unbounded_String;
-   procedure getProcessor (This : in out Cpu);
    function getVendorId (This : in out Cpu) return Unbounded_String;
-   procedure getVendorId (This : in out Cpu);
    function getCpuFamily (This : in out Cpu) return Unbounded_String;
-   procedure getCpuFamily (This : in out Cpu);
    function getModel (This : in out Cpu) return Unbounded_String;
-   procedure getModel (This : in out Cpu);
    function getModelName (This : in out Cpu) return Unbounded_String;
-   procedure getModelName (This : in out Cpu);
    function getStepping (This : in out Cpu) return Unbounded_String;
-   procedure getStepping (This : in out Cpu);
    function getCpuSpeed (This : in out Cpu) return Unbounded_String;
-   procedure getCpuSpeed (This : in out Cpu);
    function getCacheSize (This : in out Cpu) return Unbounded_String;
-   procedure getCacheSize (This : in out Cpu);
    function compareTo (This : in out Cpu; cpuInterface : CpuInterface_Access) return Boolean;
    procedure compareTo (This : in out Cpu; cpuInterface : CpuInterface_Access);
    function compareTo (This : in out Cpu; componentInterface : HardwareComponentInterface_Access) return Boolean;
    procedure compareTo (This : in out Cpu; componentInterface : HardwareComponentInterface_Access);
    function toString (This : in out Cpu) return Unbounded_String;
-   procedure toString (This : in out Cpu);
 
 end org.allbinary.logic.system.hardware.components.linux.Cpu_Package;
 

@@ -34,7 +34,7 @@ package body org.allbinary.midlet.ProgressMidlet_Package is
    function Create (clientInformationFactory : ClientInformationFactory_Access) return ProgressMidlet_Access is
       This : constant ProgressMidlet_Access := new ProgressMidlet;
    begin
-      Initialize (This.all, clientInformationFactory);
+      ProgressMidlet_Package.Initialize (This.all, clientInformationFactory);
       return This;
    end Create;
 

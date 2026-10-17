@@ -31,7 +31,7 @@ package body org.allbinary.graphics.form.item.validation.AllCommandsVisitor_Pack
    function Create return AllCommandsVisitor_Access is
       This : constant AllCommandsVisitor_Access := new AllCommandsVisitor;
    begin
-      Initialize (This.all);
+      AllCommandsVisitor_Package.Initialize (This.all);
       return This;
    end Create;
 

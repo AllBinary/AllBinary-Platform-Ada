@@ -46,12 +46,10 @@ package org.allbinary.logic.communication.smtp.queue.BasicEmailQueue_Package is
    procedure Initialize (This : in out BasicEmailQueue'Class);
    function Create return BasicEmailQueue_Access;
    function getInstance return BasicEmailQueue_Access;
-   procedure getInstance;
    function offer (This : in out BasicEmailQueue; emailInterface : EmailInterface_Access) return Boolean;
    procedure offer (This : in out BasicEmailQueue; emailInterface : EmailInterface_Access);
    procedure remove (This : in out BasicEmailQueue; emailInterface : EmailInterface_Access);
    function remove (This : in out BasicEmailQueue) return EmailInterface_Access;
-   procedure remove (This : in out BasicEmailQueue);
    procedure post (This : in out BasicEmailQueue; emailInterface : EmailInterface_Access);
    procedure processAllUnsent (This : in out BasicEmailQueue);
    function send (This : in out BasicEmailQueue; emailInterface : EmailInterface_Access) return Boolean;

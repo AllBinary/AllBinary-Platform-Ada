@@ -20,6 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
+with org.allbinary.game.layer.geological.resources.GeologicalResourceInfoHudPaintable_Package; use org.allbinary.game.layer.geological.resources.GeologicalResourceInfoHudPaintable_Package;
 
 package org.allbinary.game.layer.geological.resources.GeologicalResourceInfoHudPaintableSingleton_Package is
 
@@ -35,7 +36,6 @@ package org.allbinary.game.layer.geological.resources.GeologicalResourceInfoHudP
    procedure Initialize (This : in out GeologicalResourceInfoHudPaintableSingleton'Class);
    function Create return GeologicalResourceInfoHudPaintableSingleton_Access;
    function getInstance return GeologicalResourceInfoHudPaintable_Access;
-   procedure getInstance;
 
 end org.allbinary.game.layer.geological.resources.GeologicalResourceInfoHudPaintableSingleton_Package;
 

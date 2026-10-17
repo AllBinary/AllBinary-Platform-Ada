@@ -46,7 +46,7 @@ package body admin.taghelpers.StoreFrontHelper_Package is
    function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return StoreFrontHelper_Access is
       This : constant StoreFrontHelper_Access := new StoreFrontHelper;
    begin
-      Initialize (This.all, hashMap, pageContext);
+      StoreFrontHelper_Package.Initialize (This.all, hashMap, pageContext);
       return This;
    end Create;
 
@@ -58,20 +58,6 @@ package body admin.taghelpers.StoreFrontHelper_Package is
    function getCurrentHomeLocation (This : in out StoreFrontHelper) return Unbounded_String is
    begin
         return This.currentHomeLocation;
-   end getCurrentHomeLocation;
-
-   procedure getCurrentLocation (This : in out StoreFrontHelper) is
-      Java_Result : constant Unbounded_String := StoreFrontHelper'Class (This).getCurrentLocation;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getCurrentLocation;
-
-   procedure getCurrentHomeLocation (This : in out StoreFrontHelper) is
-      Java_Result : constant Unbounded_String := StoreFrontHelper'Class (This).getCurrentHomeLocation;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getCurrentHomeLocation;
 
 end admin.taghelpers.StoreFrontHelper_Package;

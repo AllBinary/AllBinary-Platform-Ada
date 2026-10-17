@@ -44,11 +44,8 @@ package org.allbinary.business.context.modules.storefront.statistics.advertiseme
    procedure Initialize (This : in out StoreFrontAdvertisementsStatistics'Class; storeFrontInterface : StoreFrontInterface_Access);
    function Create (storeFrontInterface : StoreFrontInterface_Access) return StoreFrontAdvertisementsStatistics_Access;
    function toHashMap (This : in out StoreFrontAdvertisementsStatistics) return HashMap_Access;
-   procedure toHashMap (This : in out StoreFrontAdvertisementsStatistics);
    function toVector (This : in out StoreFrontAdvertisementsStatistics) return BasicArrayList_Access;
-   procedure toVector (This : in out StoreFrontAdvertisementsStatistics);
    function getKey (This : in out StoreFrontAdvertisementsStatistics) return Java_Object_Access;
-   procedure getKey (This : in out StoreFrontAdvertisementsStatistics);
 
 end org.allbinary.business.context.modules.storefront.statistics.advertisements.StoreFrontAdvertisementsStatistics_Package;
 

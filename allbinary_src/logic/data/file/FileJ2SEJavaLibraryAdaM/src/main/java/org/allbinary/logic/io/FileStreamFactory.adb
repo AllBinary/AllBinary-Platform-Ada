@@ -38,7 +38,7 @@ package body org.allbinary.logic.io.FileStreamFactory_Package is
    function Create return FileStreamFactory_Access is
       This : constant FileStreamFactory_Access := new FileStreamFactory;
    begin
-      Initialize (This.all);
+      FileStreamFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -75,13 +75,6 @@ package body org.allbinary.logic.io.FileStreamFactory_Package is
         file := AbFile_Package.createAbFileFromAbPath (FILEABPATH);
         file.delete;
    end delete;
-
-   procedure getInstance is
-      Java_Result : constant FileStreamFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure getFileInputStreamInstance (This : in out FileStreamFactory; path : Unbounded_String; fileName : Unbounded_String) is
       Java_Result : constant AbFileInputStream_Access := FileStreamFactory'Class (This).getFileInputStreamInstance (path, fileName);

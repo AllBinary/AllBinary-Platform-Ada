@@ -8,6 +8,8 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
+with org.allbinary.thread.NullPriorityRunnable_Package; use org.allbinary.thread.NullPriorityRunnable_Package;
+with org.allbinary.thread.PriorityRunnable_Package; use org.allbinary.thread.PriorityRunnable_Package;
 
 package org.allbinary.thread.ThreadObjectUtil_Package is
 
@@ -25,7 +27,6 @@ package org.allbinary.thread.ThreadObjectUtil_Package is
    procedure Initialize (This : in out ThreadObjectUtil'Class);
    function Create return ThreadObjectUtil_Access;
    function getInstance return ThreadObjectUtil_Access;
-   procedure getInstance;
    procedure notifyObject (This : in out ThreadObjectUtil; anyType : Java_Object_Access);
    procedure waitObject (This : in out ThreadObjectUtil; anyType : Java_Object_Access);
    procedure waitObjectFor (This : in out ThreadObjectUtil; anyType : Java_Object_Access; delay_Id : Long_Long_Integer);

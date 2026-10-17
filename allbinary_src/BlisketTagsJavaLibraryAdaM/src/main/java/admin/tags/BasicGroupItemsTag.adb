@@ -33,7 +33,7 @@ package body admin.tags.BasicGroupItemsTag_Package is
    function Create return BasicGroupItemsTag_Access is
       This : constant BasicGroupItemsTag_Access := new BasicGroupItemsTag;
    begin
-      Initialize (This.all);
+      BasicGroupItemsTag_Package.Initialize (This.all);
       return This;
    end Create;
 

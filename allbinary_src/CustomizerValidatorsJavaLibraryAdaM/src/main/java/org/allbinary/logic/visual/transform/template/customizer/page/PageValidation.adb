@@ -33,7 +33,7 @@ package body org.allbinary.logic.visual.transform.template.customizer.page.PageV
    function Create return PageValidation_Access is
       This : constant PageValidation_Access := new PageValidation;
    begin
-      Initialize (This.all);
+      PageValidation_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -50,7 +50,7 @@ package body org.allbinary.logic.visual.transform.template.customizer.page.PageV
    function Create (document : Document_Access) return PageValidation_Access is
       This : constant PageValidation_Access := new PageValidation;
    begin
-      Initialize (This.all, document);
+      PageValidation_Package.Initialize (This.all, document);
       return This;
    end Create;
 
@@ -65,7 +65,7 @@ package body org.allbinary.logic.visual.transform.template.customizer.page.PageV
    function Create (hashMap : HashMap_Access) return PageValidation_Access is
       This : constant PageValidation_Access := new PageValidation;
    begin
-      Initialize (This.all, hashMap);
+      PageValidation_Package.Initialize (This.all, hashMap);
       return This;
    end Create;
 
@@ -142,27 +142,6 @@ package body org.allbinary.logic.visual.transform.template.customizer.page.PageV
         node.appendChild (This.title.toXmlNode (document));
         return node;
    end toXmlNode;
-
-   procedure isValid (This : in out PageValidation) is
-      Java_Result : constant Boolean := PageValidation'Class (This).isValid;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isValid;
-
-   procedure validationInfo (This : in out PageValidation) is
-      Java_Result : constant Unbounded_String := PageValidation'Class (This).validationInfo;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end validationInfo;
-
-   procedure toValidationInfoDoc (This : in out PageValidation) is
-      Java_Result : constant Document_Access := PageValidation'Class (This).toValidationInfoDoc;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toValidationInfoDoc;
 
    procedure toValidationInfoNode (This : in out PageValidation; document : Document_Access) is
       Java_Result : constant Node_Access := PageValidation'Class (This).toValidationInfoNode (document);

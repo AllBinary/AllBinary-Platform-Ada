@@ -29,7 +29,7 @@ package body org.allbinary.ai.ArtificialIntelligenceLayerManager_Package is
    function Create return ArtificialIntelligenceLayerManager_Access is
       This : constant ArtificialIntelligenceLayerManager_Access := new ArtificialIntelligenceLayerManager;
    begin
-      Initialize (This.all);
+      ArtificialIntelligenceLayerManager_Package.Initialize (This.all);
       return This;
    end Create;
 

@@ -25,7 +25,7 @@ package body org.allbinary.input.motion.button.TouchButtonResource_Package is
    function Create (resource_Case : Unbounded_String; hint_Case : Unbounded_String) return TouchButtonResource_Access is
       This : constant TouchButtonResource_Access := new TouchButtonResource;
    begin
-      Initialize (This.all, resource_Case, hint_Case);
+      TouchButtonResource_Package.Initialize (This.all, resource_Case, hint_Case);
       return This;
    end Create;
 

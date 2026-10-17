@@ -55,7 +55,7 @@ package body org.allbinary.logic.system.os.GenericOperatingSystem_Package is
    function Create return GenericOperatingSystem_Access is
       This : constant GenericOperatingSystem_Access := new GenericOperatingSystem;
    begin
-      Initialize (This.all);
+      GenericOperatingSystem_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -120,76 +120,6 @@ package body org.allbinary.logic.system.os.GenericOperatingSystem_Package is
         osBuffer.append (StringUtil_Package.getInstance.toString (This.getCharacterSet));
         osBuffer.append (NEW_LINE);
         return osBuffer.toString;
-   end toString;
-
-   procedure getName (This : in out GenericOperatingSystem) is
-      Java_Result : constant Unbounded_String := GenericOperatingSystem'Class (This).getName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getName;
-
-   procedure getVersion (This : in out GenericOperatingSystem) is
-      Java_Result : constant Unbounded_String := GenericOperatingSystem'Class (This).getVersion;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getVersion;
-
-   procedure getArch (This : in out GenericOperatingSystem) is
-      Java_Result : constant Unbounded_String := GenericOperatingSystem'Class (This).getArch;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getArch;
-
-   procedure getCharacterSet (This : in out GenericOperatingSystem) is
-      Java_Result : constant CharacterSet_Access := GenericOperatingSystem'Class (This).getCharacterSet;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getCharacterSet;
-
-   procedure isOverScan (This : in out GenericOperatingSystem) is
-      Java_Result : constant Boolean := GenericOperatingSystem'Class (This).isOverScan;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isOverScan;
-
-   procedure getOverScanXPercent (This : in out GenericOperatingSystem) is
-      Java_Result : constant Integer := GenericOperatingSystem'Class (This).getOverScanXPercent;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getOverScanXPercent;
-
-   procedure getOverScanYPercent (This : in out GenericOperatingSystem) is
-      Java_Result : constant Integer := GenericOperatingSystem'Class (This).getOverScanYPercent;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getOverScanYPercent;
-
-   procedure isScalable (This : in out GenericOperatingSystem) is
-      Java_Result : constant Boolean := GenericOperatingSystem'Class (This).isScalable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isScalable;
-
-   procedure isAutoHide (This : in out GenericOperatingSystem) is
-      Java_Result : constant Boolean := GenericOperatingSystem'Class (This).isAutoHide;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isAutoHide;
-
-   procedure toString (This : in out GenericOperatingSystem) is
-      Java_Result : constant Unbounded_String := GenericOperatingSystem'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end toString;
 
 end org.allbinary.logic.system.os.GenericOperatingSystem_Package;

@@ -32,7 +32,7 @@ package body org.allbinary.logic.communication.smtp.queue.BasicEmailQueue_Packag
    function Create return BasicEmailQueue_Access is
       This : constant BasicEmailQueue_Access := new BasicEmailQueue;
    begin
-      Initialize (This.all);
+      BasicEmailQueue_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -111,26 +111,12 @@ package body org.allbinary.logic.communication.smtp.queue.BasicEmailQueue_Packag
         end;
    end send;
 
-   procedure getInstance is
-      Java_Result : constant BasicEmailQueue_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
    procedure offer (This : in out BasicEmailQueue; emailInterface : EmailInterface_Access) is
       Java_Result : constant Boolean := BasicEmailQueue'Class (This).offer (emailInterface);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end offer;
-
-   procedure remove (This : in out BasicEmailQueue) is
-      Java_Result : constant EmailInterface_Access := BasicEmailQueue'Class (This).remove;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end remove;
 
    procedure send (This : in out BasicEmailQueue; emailInterface : EmailInterface_Access) is
       Java_Result : constant Boolean := BasicEmailQueue'Class (This).send (emailInterface);

@@ -47,19 +47,14 @@ package org.allbinary.business.user.commerce.shipping.modules.PickUpShippingModu
    procedure Initialize (This : in out PickUpShippingModuleView'Class);
    function Create return PickUpShippingModuleView_Access;
    function isValid (This : in out PickUpShippingModuleView) return Boolean;
-   procedure isValid (This : in out PickUpShippingModuleView);
    function toValidationInfoDoc (This : in out PickUpShippingModuleView) return Document_Access;
-   procedure toValidationInfoDoc (This : in out PickUpShippingModuleView);
    function toValidationInfoNode (This : in out PickUpShippingModuleView; document : Document_Access) return Node_Access;
    procedure toValidationInfoNode (This : in out PickUpShippingModuleView; document : Document_Access);
    function toXmlDoc (This : in out PickUpShippingModuleView) return Document_Access;
-   procedure toXmlDoc (This : in out PickUpShippingModuleView);
    function toXmlNode (This : in out PickUpShippingModuleView; document : Document_Access) return Node_Access;
    procedure toXmlNode (This : in out PickUpShippingModuleView; document : Document_Access);
    function validationInfo (This : in out PickUpShippingModuleView) return Unbounded_String;
-   procedure validationInfo (This : in out PickUpShippingModuleView);
    function view (This : in out PickUpShippingModuleView) return Unbounded_String;
-   procedure view (This : in out PickUpShippingModuleView);
 
 end org.allbinary.business.user.commerce.shipping.modules.PickUpShippingModuleView_Package;
 

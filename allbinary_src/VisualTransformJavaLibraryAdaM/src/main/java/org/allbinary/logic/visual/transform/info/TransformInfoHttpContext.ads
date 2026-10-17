@@ -53,13 +53,9 @@ package org.allbinary.logic.visual.transform.info.TransformInfoHttpContext_Packa
    procedure Initialize (This : in out TransformInfoHttpContext'Class; databaseHashMap : HashMap_Access; propertiesHashMap : HashMap_Access; pageContext : PageContext_Access);
    function Create (databaseHashMap : HashMap_Access; propertiesHashMap : HashMap_Access; pageContext : PageContext_Access) return TransformInfoHttpContext_Access;
    function getPath (This : in out TransformInfoHttpContext) return Unbounded_String;
-   procedure getPath (This : in out TransformInfoHttpContext);
    function getTemplateFilePath (This : in out TransformInfoHttpContext) return AbPath_Access;
-   procedure getTemplateFilePath (This : in out TransformInfoHttpContext);
    function getObjectConfigFilePath (This : in out TransformInfoHttpContext) return AbPath_Access;
-   procedure getObjectConfigFilePath (This : in out TransformInfoHttpContext);
    function getDataFilePath (This : in out TransformInfoHttpContext) return AbPath_Access;
-   procedure getDataFilePath (This : in out TransformInfoHttpContext);
 
 end org.allbinary.logic.visual.transform.info.TransformInfoHttpContext_Package;
 

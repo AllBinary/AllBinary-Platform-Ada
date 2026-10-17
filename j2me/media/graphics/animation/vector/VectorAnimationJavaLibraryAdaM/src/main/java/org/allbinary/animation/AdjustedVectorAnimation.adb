@@ -34,7 +34,7 @@ package body org.allbinary.animation.AdjustedVectorAnimation_Package is
    function Create (currentPoints : Integer_Array_Access_Array_Access_Array_Access; basicColor : BasicColor_Access; dx : Integer; dy : Integer; animationBehavior : AnimationBehavior_Access) return AdjustedVectorAnimation_Access is
       This : constant AdjustedVectorAnimation_Access := new AdjustedVectorAnimation;
    begin
-      Initialize (This.all, currentPoints, basicColor, dx, dy, animationBehavior);
+      AdjustedVectorAnimation_Package.Initialize (This.all, currentPoints, basicColor, dx, dy, animationBehavior);
       return This;
    end Create;
 

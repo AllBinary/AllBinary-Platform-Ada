@@ -36,7 +36,7 @@ package body org.allbinary.graphics.CellPosition_Package is
    function Create (column : Integer; row : Integer; columns : Integer; rows : Integer) return CellPosition_Access is
       This : constant CellPosition_Access := new CellPosition;
    begin
-      Initialize (This.all, column, row, columns, rows);
+      CellPosition_Package.Initialize (This.all, column, row, columns, rows);
       return This;
    end Create;
 
@@ -79,27 +79,6 @@ package body org.allbinary.graphics.CellPosition_Package is
         return This.id;
    end getId;
 
-   procedure getColumn (This : in out CellPosition) is
-      Java_Result : constant Integer := CellPosition'Class (This).getColumn;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getColumn;
-
-   procedure getRow (This : in out CellPosition) is
-      Java_Result : constant Integer := CellPosition'Class (This).getRow;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getRow;
-
-   procedure toString (This : in out CellPosition) is
-      Java_Result : constant Unbounded_String := CellPosition'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toString;
-
    procedure toStringCellPosition (basicGeographicMapCellPosition : CellPosition_Access) is
       Java_Result : constant Unbounded_String := toStringCellPosition (basicGeographicMapCellPosition);
       pragma Unreferenced (Java_Result);
@@ -113,13 +92,6 @@ package body org.allbinary.graphics.CellPosition_Package is
    begin
       null;
    end toStringColRow;
-
-   procedure getId (This : in out CellPosition) is
-      Java_Result : constant Integer := CellPosition'Class (This).getId;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getId;
 
 end org.allbinary.graphics.CellPosition_Package;
 

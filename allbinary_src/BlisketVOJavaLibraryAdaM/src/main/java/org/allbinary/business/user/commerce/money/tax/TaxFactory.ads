@@ -83,7 +83,6 @@ package org.allbinary.business.user.commerce.money.tax.TaxFactory_Package is
    procedure Initialize (This : in out TaxFactory'Class);
    function Create return TaxFactory_Access;
    function getInstance return TaxFactory_Access;
-   procedure getInstance;
    function getInstance (This : in out TaxFactory; abeClientInformation : AbeClientInformationInterface_Access; storeFrontInterface : StoreFrontInterface_Access) return TaxModuleInterface_Access;
    procedure getInstance (This : in out TaxFactory; abeClientInformation : AbeClientInformationInterface_Access; storeFrontInterface : StoreFrontInterface_Access);
 

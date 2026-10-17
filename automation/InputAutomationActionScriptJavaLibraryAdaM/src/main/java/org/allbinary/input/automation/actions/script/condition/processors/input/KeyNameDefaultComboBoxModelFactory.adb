@@ -30,7 +30,7 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
    function Create return KeyNameDefaultComboBoxModelFactory_Access is
       This : constant KeyNameDefaultComboBoxModelFactory_Access := new KeyNameDefaultComboBoxModelFactory;
    begin
-      Initialize (This.all);
+      KeyNameDefaultComboBoxModelFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -47,13 +47,6 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
             defaultComboBoxModel.addElement (keyAsString);
         end loop;
         return defaultComboBoxModel;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant DefaultComboBoxModel_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 end org.allbinary.input.automation.actions.script.condition.processors.input.KeyNameDefaultComboBoxModelFactory_Package;

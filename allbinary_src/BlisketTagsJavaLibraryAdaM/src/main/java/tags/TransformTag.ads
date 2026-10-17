@@ -51,9 +51,7 @@ package tags.TransformTag_Package is
    procedure Initialize (This : in out TransformTag'Class);
    function Create return TransformTag_Access;
    function view (This : in out TransformTag) return Unbounded_String;
-   procedure view (This : in out TransformTag);
    function doStartTag (This : in out TransformTag) return Integer;
-   procedure doStartTag (This : in out TransformTag);
 
 end tags.TransformTag_Package;
 

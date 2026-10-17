@@ -20,6 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
+with org.allbinary.time.StupidTimer_Package; use org.allbinary.time.StupidTimer_Package;
 
 package org.allbinary.time.LicenseStupidTimerFactory_Package is
 
@@ -35,7 +36,6 @@ package org.allbinary.time.LicenseStupidTimerFactory_Package is
    procedure Initialize (This : in out LicenseStupidTimerFactory'Class);
    function Create return LicenseStupidTimerFactory_Access;
    function getInstance return StupidTimer_Access;
-   procedure getInstance;
 
 end org.allbinary.time.LicenseStupidTimerFactory_Package;
 

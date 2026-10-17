@@ -29,7 +29,7 @@ package body org.allbinary.game.displayable.canvas.BaseGameBehavior_Package is
    function Create return BaseGameBehavior_Access is
       This : constant BaseGameBehavior_Access := new BaseGameBehavior;
    begin
-      Initialize (This.all);
+      BaseGameBehavior_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -114,13 +114,6 @@ package body org.allbinary.game.displayable.canvas.BaseGameBehavior_Package is
    begin
         allBinaryGameCanvas.setHighScore2 (abeClientInformation, name, score, autoSubmit, isLast);
    end setHighScore;
-
-   procedure getInstance is
-      Java_Result : constant DemoGameBehavior_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

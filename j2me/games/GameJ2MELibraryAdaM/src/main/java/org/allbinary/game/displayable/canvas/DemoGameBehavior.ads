@@ -25,6 +25,7 @@ with org.allbinary.graphics.paint.NullPaintable_Package; use org.allbinary.graph
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package; use org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package; use org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package;
 
 package org.allbinary.game.displayable.canvas.DemoGameBehavior_Package is
 
@@ -47,7 +48,6 @@ package org.allbinary.game.displayable.canvas.DemoGameBehavior_Package is
    procedure Initialize (This : in out DemoGameBehavior'Class);
    function Create return DemoGameBehavior_Access;
    function getInstance return DemoGameBehavior_Access;
-   procedure getInstance;
    procedure init (This : in out DemoGameBehavior);
    procedure pause (This : in out DemoGameBehavior; allBinaryGameCanvas : AllBinaryGameCanvas_Access);
    procedure unPause (This : in out DemoGameBehavior; allBinaryGameCanvas : AllBinaryGameCanvas_Access);

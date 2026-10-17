@@ -35,7 +35,7 @@ package body org.allbinary.graphics.displayable.screen.ScreenRepaintProcessorFac
    function Create return ScreenRepaintProcessorFactory_Access is
       This : constant ScreenRepaintProcessorFactory_Access := new ScreenRepaintProcessorFactory;
    begin
-      Initialize (This.all);
+      ScreenRepaintProcessorFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -47,13 +47,6 @@ package body org.allbinary.graphics.displayable.screen.ScreenRepaintProcessorFac
             return Processor_Package.getInstance;
         end if;
    end create;
-
-   procedure getInstance is
-      Java_Result : constant ScreenRepaintProcessorFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure create (This : in out ScreenRepaintProcessorFactory; displayable : Displayable_Access) is
       Java_Result : constant Processor_Access := ScreenRepaintProcessorFactory'Class (This).create (displayable);

@@ -30,6 +30,7 @@ with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Packag
 with org.allbinary.logic.io.path.AbPathData_Package; use org.allbinary.logic.io.path.AbPathData_Package;
 with org.allbinary.logic.string_Id.regex.replace.Replace_Package; use org.allbinary.logic.string_Id.regex.replace.Replace_Package;
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.business.user.commerce.money.payment.types.BasicPaymentTypeUtil_Package; use org.allbinary.business.user.commerce.money.payment.types.BasicPaymentTypeUtil_Package;
 
 package org.allbinary.business.user.commerce.money.payment.types.BasicPaymentType_Package is
 
@@ -59,21 +60,13 @@ package org.allbinary.business.user.commerce.money.payment.types.BasicPaymentTyp
    function Create (paymentMethod : Unbounded_String) return BasicPaymentType_Access;
    procedure init (This : in out BasicPaymentType; paymentMethod : Unbounded_String);
    function getName (This : in out BasicPaymentType) return Unbounded_String;
-   procedure getName (This : in out BasicPaymentType);
    function getValue (This : in out BasicPaymentType) return Unbounded_String;
-   procedure getValue (This : in out BasicPaymentType);
    function getPaymentGatewayInterfaceFactoryInterface (This : in out BasicPaymentType) return PaymentGatewayInterfaceFactoryInterface_Access;
-   procedure getPaymentGatewayInterfaceFactoryInterface (This : in out BasicPaymentType);
    function getPaymentGatewayDomNodeFactoryInterface (This : in out BasicPaymentType) return PaymentGatewayDomNodeFactoryInterface_Access;
-   procedure getPaymentGatewayDomNodeFactoryInterface (This : in out BasicPaymentType);
    function getKey (This : in out BasicPaymentType) return Java_Object_Access;
-   procedure getKey (This : in out BasicPaymentType);
    function toVector (This : in out BasicPaymentType) return BasicArrayList_Access;
-   procedure toVector (This : in out BasicPaymentType);
    function toHashMap (This : in out BasicPaymentType) return HashMap_Access;
-   procedure toHashMap (This : in out BasicPaymentType);
    function toString (This : in out BasicPaymentType) return Unbounded_String;
-   procedure toString (This : in out BasicPaymentType);
 
 end org.allbinary.business.user.commerce.money.payment.types.BasicPaymentType_Package;
 

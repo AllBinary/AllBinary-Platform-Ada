@@ -47,11 +47,8 @@ package org.allbinary.media.graphics.geography.map.racetrack.drop.RaceTrackAdjac
    function Create return RaceTrackAdjacentDropLayerFactory_Access;
    procedure clear (This : in out RaceTrackAdjacentDropLayerFactory);
    function getInstance return RaceTrackAdjacentDropLayerFactory_Access;
-   procedure getInstance;
    function getSize (This : in out RaceTrackAdjacentDropLayerFactory) return Integer;
-   procedure getSize (This : in out RaceTrackAdjacentDropLayerFactory);
    function getRandomInstance (This : in out RaceTrackAdjacentDropLayerFactory) return LayerInterfaceFactoryInterface_Access;
-   procedure getRandomInstance (This : in out RaceTrackAdjacentDropLayerFactory);
    procedure add (This : in out RaceTrackAdjacentDropLayerFactory; layerInterfaceFactoryInterface : LayerInterfaceFactoryInterface_Access);
 
 end org.allbinary.media.graphics.geography.map.racetrack.drop.RaceTrackAdjacentDropLayerFactory_Package;

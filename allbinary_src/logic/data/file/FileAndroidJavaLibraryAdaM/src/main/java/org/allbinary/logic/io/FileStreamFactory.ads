@@ -23,6 +23,8 @@ with AllBinary_Java; use AllBinary_Java;
 with android.content.Context_Package; use android.content.Context_Package;
 with org.allbinary.data.resource.ResourceUtil_Package; use org.allbinary.data.resource.ResourceUtil_Package;
 with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.io.AbFileInputStream_Package; use org.allbinary.logic.io.AbFileInputStream_Package;
+with org.allbinary.logic.io.AbFileOutputStream_Package; use org.allbinary.logic.io.AbFileOutputStream_Package;
 
 package org.allbinary.logic.io.FileStreamFactory_Package is
 
@@ -43,14 +45,12 @@ package org.allbinary.logic.io.FileStreamFactory_Package is
    procedure Initialize (This : in out FileStreamFactory'Class; context : Context_Access);
    function Create (context : Context_Access) return FileStreamFactory_Access;
    function getInstance return FileStreamFactory_Access;
-   procedure getInstance;
    function getFileInputStreamInstance (This : in out FileStreamFactory; path : Unbounded_String; fileName : Unbounded_String) return AbFileInputStream_Access;
    procedure getFileInputStreamInstance (This : in out FileStreamFactory; path : Unbounded_String; fileName : Unbounded_String);
    function getFileOutputStreamInstance (This : in out FileStreamFactory; path : Unbounded_String; fileName : Unbounded_String) return AbFileOutputStream_Access;
    procedure getFileOutputStreamInstance (This : in out FileStreamFactory; path : Unbounded_String; fileName : Unbounded_String);
    procedure delete (This : in out FileStreamFactory; path : Unbounded_String; fileName : Unbounded_String);
    function getContext (This : in out FileStreamFactory) return Context_Access;
-   procedure getContext (This : in out FileStreamFactory);
 
 end org.allbinary.logic.io.FileStreamFactory_Package;
 

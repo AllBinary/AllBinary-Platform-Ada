@@ -28,7 +28,7 @@ package body org.allbinary.game.layer.pickup.IconLayerFactory_Package is
    function Create return IconLayerFactory_Access is
       This : constant IconLayerFactory_Access := new IconLayerFactory;
    begin
-      Initialize (This.all);
+      IconLayerFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

@@ -31,7 +31,7 @@ package body org.allbinary.game.behavior.topview.NonPlayerTopViewCharacterBehavi
    function Create return NonPlayerTopViewCharacterBehavior_Access is
       This : constant NonPlayerTopViewCharacterBehavior_Access := new NonPlayerTopViewCharacterBehavior;
    begin
-      Initialize (This.all);
+      NonPlayerTopViewCharacterBehavior_Package.Initialize (This.all);
       return This;
    end Create;
 

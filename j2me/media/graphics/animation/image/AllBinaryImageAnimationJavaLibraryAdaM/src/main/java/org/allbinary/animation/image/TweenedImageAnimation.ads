@@ -55,17 +55,13 @@ package org.allbinary.animation.image.TweenedImageAnimation_Package is
    procedure Initialize (This : in out TweenedImageAnimation'Class; image : Image_Access; dx : Integer; dy : Integer; totalFrames : Integer; animationBehavior : AnimationBehavior_Access);
    function Create (image : Image_Access; dx : Integer; dy : Integer; totalFrames : Integer; animationBehavior : AnimationBehavior_Access) return TweenedImageAnimation_Access;
    function getAnimationSize (This : in out TweenedImageAnimation) return Integer;
-   procedure getAnimationSize (This : in out TweenedImageAnimation);
    procedure nextFrame (This : in out TweenedImageAnimation);
    procedure previousFrame (This : in out TweenedImageAnimation);
    procedure setFrame (This : in out TweenedImageAnimation; index : Integer);
    function getFrame (This : in out TweenedImageAnimation) return Integer;
-   procedure getFrame (This : in out TweenedImageAnimation);
    function getSize (This : in out TweenedImageAnimation) return Integer;
-   procedure getSize (This : in out TweenedImageAnimation);
    procedure setSequence (This : in out TweenedImageAnimation; sequence : Integer_Array_Access);
    function getSequence (This : in out TweenedImageAnimation) return Integer_Array_Access;
-   procedure getSequence (This : in out TweenedImageAnimation);
    procedure paintXY (This : in out TweenedImageAnimation; graphics : Graphics_Access; x : Integer; y : Integer);
    procedure close (This : in out TweenedImageAnimation);
    procedure finalize (This : in out TweenedImageAnimation);

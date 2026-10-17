@@ -38,7 +38,6 @@ package org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostIn
    procedure Initialize (This : in out PathFindingNodeCostInfoData'Class);
    function Create return PathFindingNodeCostInfoData_Access;
    function getInstance return PathFindingNodeCostInfoData_Access;
-   procedure getInstance;
 
 end org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfoData_Package;
 

@@ -28,7 +28,7 @@ package body org.allbinary.logic.io.NullCloseable_Package is
    function Create return NullCloseable_Access is
       This : constant NullCloseable_Access := new NullCloseable;
    begin
-      Initialize (This.all);
+      NullCloseable_Package.Initialize (This.all);
       return This;
    end Create;
 

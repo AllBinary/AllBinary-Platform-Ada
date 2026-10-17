@@ -32,7 +32,7 @@ package body admin.taghelpers.CategoryRequestHelperFactory_Package is
    function Create return CategoryRequestHelperFactory_Access is
       This : constant CategoryRequestHelperFactory_Access := new CategoryRequestHelperFactory;
    begin
-      Initialize (This.all);
+      CategoryRequestHelperFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

@@ -47,7 +47,7 @@ package body org.allbinary.animation.image.AdjustedImageArrayRotationAnimation_P
    function Create (imageArray : Image_Access_Array_Access; angleInfo : AngleInfo_Access; totalAngle : Integer; dx : Integer; dy : Integer; animationBehavior : AnimationBehavior_Access) return AdjustedImageArrayRotationAnimation_Access is
       This : constant AdjustedImageArrayRotationAnimation_Access := new AdjustedImageArrayRotationAnimation;
    begin
-      Initialize (This.all, imageArray, angleInfo, totalAngle, dx, dy, animationBehavior);
+      AdjustedImageArrayRotationAnimation_Package.Initialize (This.all, imageArray, angleInfo, totalAngle, dx, dy, animationBehavior);
       return This;
    end Create;
 
@@ -96,20 +96,6 @@ package body org.allbinary.animation.image.AdjustedImageArrayRotationAnimation_P
    begin
       null;
    end createAnimation;
-
-   procedure getDx (This : in out AdjustedImageArrayRotationAnimation) is
-      Java_Result : constant Integer := AdjustedImageArrayRotationAnimation'Class (This).getDx;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getDx;
-
-   procedure getDy (This : in out AdjustedImageArrayRotationAnimation) is
-      Java_Result : constant Integer := AdjustedImageArrayRotationAnimation'Class (This).getDy;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getDy;
 
 end org.allbinary.animation.image.AdjustedImageArrayRotationAnimation_Package;
 

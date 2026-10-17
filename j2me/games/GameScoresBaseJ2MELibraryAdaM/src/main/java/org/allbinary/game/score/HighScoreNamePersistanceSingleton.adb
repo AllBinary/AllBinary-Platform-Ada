@@ -35,7 +35,7 @@ package body org.allbinary.game.score.HighScoreNamePersistanceSingleton_Package 
    function Create return HighScoreNamePersistanceSingleton_Access is
       This : constant HighScoreNamePersistanceSingleton_Access := new HighScoreNamePersistanceSingleton;
    begin
-      Initialize (This.all);
+      HighScoreNamePersistanceSingleton_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -202,26 +202,12 @@ package body org.allbinary.game.score.HighScoreNamePersistanceSingleton_Package 
         end;
    end save;
 
-   procedure getInstance is
-      Java_Result : constant HighScoreNamePersistanceSingleton_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
    procedure getRecordId (This : in out HighScoreNamePersistanceSingleton; abeClientInformation : AbeClientInformationInterface_Access) is
       Java_Result : constant Unbounded_String := HighScoreNamePersistanceSingleton'Class (This).getRecordId (abeClientInformation);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getRecordId;
-
-   procedure getIds (This : in out HighScoreNamePersistanceSingleton) is
-      Java_Result : constant BasicArrayList_Access := HighScoreNamePersistanceSingleton'Class (This).getIds;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getIds;
 
    procedure load (This : in out HighScoreNamePersistanceSingleton; abeClientInformation : AbeClientInformationInterface_Access; gameInfo : GameInfo_Access) is
       Java_Result : constant Unbounded_String := HighScoreNamePersistanceSingleton'Class (This).load (abeClientInformation, gameInfo);

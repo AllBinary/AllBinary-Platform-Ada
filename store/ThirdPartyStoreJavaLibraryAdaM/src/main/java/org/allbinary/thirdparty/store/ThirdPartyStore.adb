@@ -32,7 +32,7 @@ package body org.allbinary.thirdparty.store.ThirdPartyStore_Package is
    function Create (name : Unbounded_String) return ThirdPartyStore_Access is
       This : constant ThirdPartyStore_Access := new ThirdPartyStore;
    begin
-      Initialize (This.all, name);
+      ThirdPartyStore_Package.Initialize (This.all, name);
       return This;
    end Create;
 
@@ -54,20 +54,6 @@ package body org.allbinary.thirdparty.store.ThirdPartyStore_Package is
    function getName (This : in out ThirdPartyStore) return Unbounded_String is
    begin
         return This.name;
-   end getName;
-
-   procedure isAuthorized (This : in out ThirdPartyStore) is
-      Java_Result : constant Boolean := ThirdPartyStore'Class (This).isAuthorized;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isAuthorized;
-
-   procedure getName (This : in out ThirdPartyStore) is
-      Java_Result : constant Unbounded_String := ThirdPartyStore'Class (This).getName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getName;
 
 end org.allbinary.thirdparty.store.ThirdPartyStore_Package;

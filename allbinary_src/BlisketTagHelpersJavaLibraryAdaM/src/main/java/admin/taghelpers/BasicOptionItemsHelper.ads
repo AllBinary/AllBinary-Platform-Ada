@@ -50,13 +50,9 @@ package admin.taghelpers.BasicOptionItemsHelper_Package is
    procedure Initialize (This : in out BasicOptionItemsHelper'Class; hashMap : HashMap_Access; pageContext : PageContext_Access);
    function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return BasicOptionItemsHelper_Access;
    function create (This : in out BasicOptionItemsHelper) return Unbounded_String;
-   procedure create (This : in out BasicOptionItemsHelper);
    function drop (This : in out BasicOptionItemsHelper) return Unbounded_String;
-   procedure drop (This : in out BasicOptionItemsHelper);
    function restore (This : in out BasicOptionItemsHelper) return Unbounded_String;
-   procedure restore (This : in out BasicOptionItemsHelper);
    function backup (This : in out BasicOptionItemsHelper) return Unbounded_String;
-   procedure backup (This : in out BasicOptionItemsHelper);
 
 end admin.taghelpers.BasicOptionItemsHelper_Package;
 

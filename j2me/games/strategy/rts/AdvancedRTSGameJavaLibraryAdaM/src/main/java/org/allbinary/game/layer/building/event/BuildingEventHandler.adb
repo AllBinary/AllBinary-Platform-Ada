@@ -31,7 +31,7 @@ package body org.allbinary.game.layer.building.event.BuildingEventHandler_Packag
    function Create return BuildingEventHandler_Access is
       This : constant BuildingEventHandler_Access := new BuildingEventHandler;
    begin
-      Initialize (This.all);
+      BuildingEventHandler_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -47,13 +47,6 @@ package body org.allbinary.game.layer.building.event.BuildingEventHandler_Packag
         buildingEventListenerInterface := (BuildingEventListenerInterface_Access (eventListenerInterface));
         buildingEventListenerInterface.onBuildingEvent (RTSLayerEvent_Access (eventObject));
    end process;
-
-   procedure getInstance is
-      Java_Result : constant BuildingEventHandler_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

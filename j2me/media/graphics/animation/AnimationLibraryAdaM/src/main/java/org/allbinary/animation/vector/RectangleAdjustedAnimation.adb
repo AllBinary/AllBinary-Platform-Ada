@@ -39,7 +39,7 @@ package body org.allbinary.animation.vector.RectangleAdjustedAnimation_Package i
    function Create (width : Integer; height : Integer; offsetX : Integer; offsetY : Integer; basicColor : BasicColor_Access) return RectangleAdjustedAnimation_Access is
       This : constant RectangleAdjustedAnimation_Access := new RectangleAdjustedAnimation;
    begin
-      Initialize (This.all, width, height, offsetX, offsetY, basicColor);
+      RectangleAdjustedAnimation_Package.Initialize (This.all, width, height, offsetX, offsetY, basicColor);
       return This;
    end Create;
 

@@ -30,7 +30,7 @@ package body org.allbinary.gui.dialog.ExitCloseListener_Package is
    function Create return ExitCloseListener_Access is
       This : constant ExitCloseListener_Access := new ExitCloseListener;
    begin
-      Initialize (This.all);
+      ExitCloseListener_Package.Initialize (This.all);
       return This;
    end Create;
 

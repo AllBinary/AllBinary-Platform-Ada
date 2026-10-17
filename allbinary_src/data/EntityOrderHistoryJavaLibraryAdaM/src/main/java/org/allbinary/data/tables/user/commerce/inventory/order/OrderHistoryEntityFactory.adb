@@ -30,7 +30,7 @@ package body org.allbinary.data.tables.user.commerce.inventory.order.OrderHistor
    function Create return OrderHistoryEntityFactory_Access is
       This : constant OrderHistoryEntityFactory_Access := new OrderHistoryEntityFactory;
    begin
-      Initialize (This.all);
+      OrderHistoryEntityFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -53,13 +53,6 @@ package body org.allbinary.data.tables.user.commerce.inventory.order.OrderHistor
             return null;
                 end;
         end;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant OrderHistoryEntity_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 end org.allbinary.data.tables.user.commerce.inventory.order.OrderHistoryEntityFactory_Package;

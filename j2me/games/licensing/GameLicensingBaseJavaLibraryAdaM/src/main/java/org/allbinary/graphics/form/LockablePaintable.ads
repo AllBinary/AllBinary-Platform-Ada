@@ -48,9 +48,7 @@ package org.allbinary.graphics.form.LockablePaintable_Package is
    function Create (lockedIndex : Integer) return LockablePaintable_Access;
    procedure paint (This : in out LockablePaintable; graphics : Graphics_Access; currentIndex : Integer; x : Integer; y : Integer);
    function getLockedIndex (This : in out LockablePaintable) return Integer;
-   procedure getLockedIndex (This : in out LockablePaintable);
    function getAnimation (This : in out LockablePaintable) return Animation_Access;
-   procedure getAnimation (This : in out LockablePaintable);
 
 end org.allbinary.graphics.form.LockablePaintable_Package;
 

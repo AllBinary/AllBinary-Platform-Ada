@@ -20,6 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
+with org.allbinary.input.motion.button.TouchScreenType_Package; use org.allbinary.input.motion.button.TouchScreenType_Package;
 
 package org.allbinary.input.motion.button.TouchScreenTypesFactory_Package is
 
@@ -40,7 +41,6 @@ package org.allbinary.input.motion.button.TouchScreenTypesFactory_Package is
    procedure Initialize (This : in out TouchScreenTypesFactory'Class);
    function Create return TouchScreenTypesFactory_Access;
    function getInstance return TouchScreenTypesFactory_Access;
-   procedure getInstance;
 
 end org.allbinary.input.motion.button.TouchScreenTypesFactory_Package;
 

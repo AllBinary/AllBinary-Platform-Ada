@@ -29,7 +29,7 @@ package body admin.taghelpers.AuthenticationHelperUtil_Package is
    function Create return AuthenticationHelperUtil_Access is
       This : constant AuthenticationHelperUtil_Access := new AuthenticationHelperUtil;
    begin
-      Initialize (This.all);
+      AuthenticationHelperUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -69,13 +69,6 @@ package body admin.taghelpers.AuthenticationHelperUtil_Package is
             return False;
         end if;
    end isAuthorized;
-
-   procedure getInstance is
-      Java_Result : constant AuthenticationHelperUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure isAuthorized (This : in out AuthenticationHelperUtil; authenticationHelper : AuthenticationHelper_Access; filePath : Unbounded_String) is
       Java_Result : constant Boolean := AuthenticationHelperUtil'Class (This).isAuthorized (authenticationHelper, filePath);

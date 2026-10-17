@@ -20,6 +20,8 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
+with org.allbinary.logic.system.security.licensing.AbeNoLicense_Package; use org.allbinary.logic.system.security.licensing.AbeNoLicense_Package;
+with org.allbinary.logic.system.security.licensing.AbeLicenseInterface_Package; use org.allbinary.logic.system.security.licensing.AbeLicenseInterface_Package;
 
 package org.allbinary.logic.system.security.licensing.LicenseInterfaceSingleton_Package is
 
@@ -35,7 +37,6 @@ package org.allbinary.logic.system.security.licensing.LicenseInterfaceSingleton_
    procedure Initialize (This : in out LicenseInterfaceSingleton'Class);
    function Create return LicenseInterfaceSingleton_Access;
    function getInstance return AbeLicenseInterface_Access;
-   procedure getInstance;
    procedure init (licenseInterface : AbeLicenseInterface_Access);
 
 end org.allbinary.logic.system.security.licensing.LicenseInterfaceSingleton_Package;

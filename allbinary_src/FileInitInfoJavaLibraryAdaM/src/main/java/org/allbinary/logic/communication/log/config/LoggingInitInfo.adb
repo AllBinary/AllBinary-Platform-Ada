@@ -30,7 +30,7 @@ package body org.allbinary.logic.communication.log.config.LoggingInitInfo_Packag
    function Create return LoggingInitInfo_Access is
       This : constant LoggingInitInfo_Access := new LoggingInitInfo;
    begin
-      Initialize (This.all);
+      LoggingInitInfo_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -201,55 +201,6 @@ package body org.allbinary.logic.communication.log.config.LoggingInitInfo_Packag
             return To_Unbounded_String ("Error");
                 end;
         end;
-   end toString;
-
-   procedure getDoc is
-      Java_Result : constant Document_Access := getDoc;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getDoc;
-
-   procedure isValid (This : in out LoggingInitInfo) is
-      Java_Result : constant Boolean := LoggingInitInfo'Class (This).isValid;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isValid;
-
-   procedure get is
-      Java_Result : constant BasicArrayList_Access := get;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end get;
-
-   procedure getTypeNameList is
-      Java_Result : constant BasicArrayList_Access := getTypeNameList;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTypeNameList;
-
-   procedure getTypeList is
-      Java_Result : constant BasicArrayList_Access := getTypeList;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTypeList;
-
-   procedure getNumberOfLogConfigs (This : in out LoggingInitInfo) is
-      Java_Result : constant Integer := LoggingInitInfo'Class (This).getNumberOfLogConfigs;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getNumberOfLogConfigs;
-
-   procedure toString (This : in out LoggingInitInfo) is
-      Java_Result : constant Unbounded_String := LoggingInitInfo'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end toString;
 
 begin

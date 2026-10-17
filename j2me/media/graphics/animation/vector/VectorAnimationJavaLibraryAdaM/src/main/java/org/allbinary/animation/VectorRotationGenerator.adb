@@ -38,7 +38,7 @@ package body org.allbinary.animation.VectorRotationGenerator_Package is
    function Create return VectorRotationGenerator_Access is
       This : constant VectorRotationGenerator_Access := new VectorRotationGenerator;
    begin
-      Initialize (This.all);
+      VectorRotationGenerator_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -98,13 +98,6 @@ package body org.allbinary.animation.VectorRotationGenerator_Package is
         graphicsPipe.translate ((Java_Shift_Right_Arithmetic (width, 1)), (Java_Shift_Right_Arithmetic (height, 1)));
         return graphicsPipe.getMatrix;
    end getListAtAngle;
-
-   procedure getInstance is
-      Java_Result : constant VectorRotationGenerator_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure getInstance (This : in out VectorRotationGenerator; vectorRotationInfo : VectorInfo_Access) is
       Java_Result : constant Integer_Array_Access_Array_Access_Array_Access := VectorRotationGenerator'Class (This).getInstance (vectorRotationInfo);

@@ -28,7 +28,7 @@ package body org.allbinary.graphics.opengles.OpenGLESStrings_Package is
    function Create return OpenGLESStrings_Access is
       This : constant OpenGLESStrings_Access := new OpenGLESStrings;
    begin
-      Initialize (This.all);
+      OpenGLESStrings_Package.Initialize (This.all);
       return This;
    end Create;
 

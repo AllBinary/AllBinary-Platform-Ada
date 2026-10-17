@@ -38,7 +38,7 @@ package body org.allbinary.game.layer.MultiSelectPaintable_Package is
    function Create return MultiSelectPaintable_Access is
       This : constant MultiSelectPaintable_Access := new MultiSelectPaintable;
    begin
-      Initialize (This.all);
+      MultiSelectPaintable_Package.Initialize (This.all);
       return This;
    end Create;
 

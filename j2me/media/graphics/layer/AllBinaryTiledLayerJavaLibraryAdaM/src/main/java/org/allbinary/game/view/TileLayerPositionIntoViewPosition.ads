@@ -44,11 +44,8 @@ package org.allbinary.game.view.TileLayerPositionIntoViewPosition_Package is
    procedure Initialize (This : in out TileLayerPositionIntoViewPosition'Class);
    function Create return TileLayerPositionIntoViewPosition_Access;
    function getX (This : in out TileLayerPositionIntoViewPosition) return Integer;
-   procedure getX (This : in out TileLayerPositionIntoViewPosition);
    function getY (This : in out TileLayerPositionIntoViewPosition) return Integer;
-   procedure getY (This : in out TileLayerPositionIntoViewPosition);
    function getZ (This : in out TileLayerPositionIntoViewPosition) return Integer;
-   procedure getZ (This : in out TileLayerPositionIntoViewPosition);
    procedure setTiledLayer (This : in out TileLayerPositionIntoViewPosition; tiledLayer : AllBinaryTiledLayer_Access);
 
 end org.allbinary.game.view.TileLayerPositionIntoViewPosition_Package;

@@ -28,7 +28,7 @@ package body org.allbinary.graphics.j2me.workarea.tools.LinesGraphicItemFactory_
    function Create return LinesGraphicItemFactory_Access is
       This : constant LinesGraphicItemFactory_Access := new LinesGraphicItemFactory;
    begin
-      Initialize (This.all);
+      LinesGraphicItemFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

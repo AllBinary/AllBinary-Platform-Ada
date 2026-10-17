@@ -45,7 +45,7 @@ package body org.allbinary.game.layer.geological.resources.GeologicalGameResourc
    function Create return GeologicalGameResources_Access is
       This : constant GeologicalGameResources_Access := new GeologicalGameResources;
    begin
-      Initialize (This.all);
+      GeologicalGameResources_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -68,20 +68,6 @@ package body org.allbinary.game.layer.geological.resources.GeologicalGameResourc
    function getInstance return BasicGameResources_Access is
    begin
         return GeologicalGameResources_Package.instance;
-   end getInstance;
-
-   procedure getString (This : in out GeologicalGameResources) is
-      Java_Result : constant Unbounded_String := GeologicalGameResources'Class (This).getString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getString;
-
-   procedure getInstance is
-      Java_Result : constant BasicGameResources_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

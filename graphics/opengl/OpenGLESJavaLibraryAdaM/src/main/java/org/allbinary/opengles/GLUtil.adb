@@ -29,7 +29,7 @@ package body org.allbinary.opengles.GLUtil_Package is
    function Create return GLUtil_Access is
       This : constant GLUtil_Access := new GLUtil;
    begin
-      Initialize (This.all);
+      GLUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -121,13 +121,6 @@ package body org.allbinary.opengles.GLUtil_Package is
             i := (i) + (2);
         end loop;
    end rotateUVs;
-
-   procedure getInstance is
-      Java_Result : constant GLUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure makeFloatBuffer3 (This : in out GLUtil; p_a : Float; p_b : Float; p_c : Float) is
       Java_Result : constant FloatBuffer_Access := GLUtil'Class (This).makeFloatBuffer3 (p_a, p_b, p_c);

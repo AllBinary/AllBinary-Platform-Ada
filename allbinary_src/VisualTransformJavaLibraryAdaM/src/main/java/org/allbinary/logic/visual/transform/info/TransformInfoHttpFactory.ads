@@ -28,6 +28,9 @@ with org.allbinary.logic.communication.http.request.session.WeblisketSession_Pac
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.string_Id.StringValidationUtil_Package; use org.allbinary.logic.string_Id.StringValidationUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.logic.visual.transform.info.TransformInfoHttpContext_Package; use org.allbinary.logic.visual.transform.info.TransformInfoHttpContext_Package;
+with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
+with org.allbinary.logic.visual.transform.info.TransformInfoHttpStore_Package; use org.allbinary.logic.visual.transform.info.TransformInfoHttpStore_Package;
 
 package org.allbinary.logic.visual.transform.info.TransformInfoHttpFactory_Package is
 

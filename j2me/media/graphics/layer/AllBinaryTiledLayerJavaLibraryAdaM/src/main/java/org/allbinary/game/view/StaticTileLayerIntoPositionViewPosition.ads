@@ -46,11 +46,8 @@ package org.allbinary.game.view.StaticTileLayerIntoPositionViewPosition_Package 
    procedure Initialize (This : in out StaticTileLayerIntoPositionViewPosition'Class);
    function Create return StaticTileLayerIntoPositionViewPosition_Access;
    function getX (This : in out StaticTileLayerIntoPositionViewPosition) return Integer;
-   procedure getX (This : in out StaticTileLayerIntoPositionViewPosition);
    function getY (This : in out StaticTileLayerIntoPositionViewPosition) return Integer;
-   procedure getY (This : in out StaticTileLayerIntoPositionViewPosition);
    function getZ (This : in out StaticTileLayerIntoPositionViewPosition) return Integer;
-   procedure getZ (This : in out StaticTileLayerIntoPositionViewPosition);
    procedure setTiledLayer (tiledLayer : AllBinaryTiledLayer_Access);
 
 end org.allbinary.game.view.StaticTileLayerIntoPositionViewPosition_Package;

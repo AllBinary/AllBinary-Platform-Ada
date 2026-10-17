@@ -65,7 +65,7 @@ package body org.allbinary.game.displayable.canvas.NullGameCanvas_Package is
    function Create (gameLayerManager : AllBinaryGameLayerManager_Access) return NullGameCanvas_Access is
       This : constant NullGameCanvas_Access := new NullGameCanvas;
    begin
-      Initialize (This.all, gameLayerManager);
+      NullGameCanvas_Package.Initialize (This.all, gameLayerManager);
       return This;
    end Create;
 
@@ -131,47 +131,12 @@ package body org.allbinary.game.displayable.canvas.NullGameCanvas_Package is
         return NullGameCanvas_Package.TYPE_Id;
    end getType;
 
-   procedure createNull is
-      Java_Result : constant NullGameCanvas_Access := createNull;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end createNull;
-
-   procedure getInstance is
-      Java_Result : constant NullGameCanvas_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
    procedure createCanvas (gameLayerManager : AllBinaryGameLayerManager_Access) is
       Java_Result : constant NullGameCanvas_Access := createCanvas (gameLayerManager);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createCanvas;
-
-   procedure isGameOver (This : in out NullGameCanvas) is
-      Java_Result : constant Boolean := NullGameCanvas'Class (This).isGameOver;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isGameOver;
-
-   procedure isRunning (This : in out NullGameCanvas) is
-      Java_Result : constant Boolean := NullGameCanvas'Class (This).isRunning;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isRunning;
-
-   procedure getType (This : in out NullGameCanvas) is
-      Java_Result : constant Integer := NullGameCanvas'Class (This).getType;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getType;
 
 begin
    null;

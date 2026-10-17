@@ -30,7 +30,7 @@ package body org.allbinary.animation.SideScrollerAnimation_Package is
    function Create return SideScrollerAnimation_Access is
       This : constant SideScrollerAnimation_Access := new SideScrollerAnimation;
    begin
-      Initialize (This.all);
+      SideScrollerAnimation_Package.Initialize (This.all);
       return This;
    end Create;
 

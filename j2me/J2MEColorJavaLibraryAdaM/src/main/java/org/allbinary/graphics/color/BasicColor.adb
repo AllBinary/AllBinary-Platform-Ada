@@ -70,7 +70,7 @@ package body org.allbinary.graphics.color.BasicColor_Package is
    function Create (alphaValue : Integer; value : Integer; name : Unbounded_String) return BasicColor_Access is
       This : constant BasicColor_Access := new BasicColor;
    begin
-      Initialize (This.all, alphaValue, value, name);
+      BasicColor_Package.Initialize (This.all, alphaValue, value, name);
       return This;
    end Create;
 
@@ -125,62 +125,6 @@ package body org.allbinary.graphics.color.BasicColor_Package is
    function getAlphaComponent (This : in out BasicColor) return Float is
    begin
         return This.alphaComponent;
-   end getAlphaComponent;
-
-   procedure intValue (This : in out BasicColor) is
-      Java_Result : constant Integer := BasicColor'Class (This).intValue;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end intValue;
-
-   procedure toInt (This : in out BasicColor) is
-      Java_Result : constant Integer := BasicColor'Class (This).toInt;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toInt;
-
-   procedure toString (This : in out BasicColor) is
-      Java_Result : constant Unbounded_String := BasicColor'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toString;
-
-   procedure getName (This : in out BasicColor) is
-      Java_Result : constant Unbounded_String := BasicColor'Class (This).getName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getName;
-
-   procedure getRedComponent (This : in out BasicColor) is
-      Java_Result : constant Float := BasicColor'Class (This).getRedComponent;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getRedComponent;
-
-   procedure getGreenComponent (This : in out BasicColor) is
-      Java_Result : constant Float := BasicColor'Class (This).getGreenComponent;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getGreenComponent;
-
-   procedure getBlueComponent (This : in out BasicColor) is
-      Java_Result : constant Float := BasicColor'Class (This).getBlueComponent;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getBlueComponent;
-
-   procedure getAlphaComponent (This : in out BasicColor) is
-      Java_Result : constant Float := BasicColor'Class (This).getAlphaComponent;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getAlphaComponent;
 
 end org.allbinary.graphics.color.BasicColor_Package;

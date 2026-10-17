@@ -47,17 +47,14 @@ package org.allbinary.business.init.LicenseInitInfo_Package is
    procedure Initialize (This : in out LicenseInitInfo'Class);
    function Create return LicenseInitInfo_Access;
    function getLicenseId (This : in out LicenseInitInfo) return Unbounded_String;
-   procedure getLicenseId (This : in out LicenseInitInfo);
    function getServer (This : in out LicenseInitInfo; index : Integer) return Unbounded_String;
    procedure getServer (This : in out LicenseInitInfo; index : Integer);
    function getNumberOfServers (This : in out LicenseInitInfo) return Integer;
-   procedure getNumberOfServers (This : in out LicenseInitInfo);
    procedure setLicenseId (This : in out LicenseInitInfo; value : Unbounded_String);
    procedure clearServers (This : in out LicenseInitInfo);
    procedure setServer (This : in out LicenseInitInfo; value : Unbounded_String; index : Integer);
    procedure addServer (This : in out LicenseInitInfo; value : Unbounded_String);
    function getServerList (This : in out LicenseInitInfo) return BasicArrayList_Access;
-   procedure getServerList (This : in out LicenseInitInfo);
    procedure setServerList (This : in out LicenseInitInfo; servers : BasicArrayList_Access);
 
 end org.allbinary.business.init.LicenseInitInfo_Package;

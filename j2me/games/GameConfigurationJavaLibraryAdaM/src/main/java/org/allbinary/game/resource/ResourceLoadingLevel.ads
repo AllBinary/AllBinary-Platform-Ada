@@ -37,9 +37,7 @@ package org.allbinary.game.resource.ResourceLoadingLevel_Package is
    procedure Initialize (This : in out ResourceLoadingLevel'Class; name : Unbounded_String; level : Integer);
    function Create (name : Unbounded_String; level : Integer) return ResourceLoadingLevel_Access;
    function getLevel (This : in out ResourceLoadingLevel) return Integer;
-   procedure getLevel (This : in out ResourceLoadingLevel);
    function getName (This : in out ResourceLoadingLevel) return Unbounded_String;
-   procedure getName (This : in out ResourceLoadingLevel);
 
 end org.allbinary.game.resource.ResourceLoadingLevel_Package;
 

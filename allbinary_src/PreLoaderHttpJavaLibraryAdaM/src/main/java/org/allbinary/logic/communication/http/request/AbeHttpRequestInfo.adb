@@ -46,7 +46,7 @@ package body org.allbinary.logic.communication.http.request.AbeHttpRequestInfo_P
    function Create (hashMap : HashMap_Access) return AbeHttpRequestInfo_Access is
       This : constant AbeHttpRequestInfo_Access := new AbeHttpRequestInfo;
    begin
-      Initialize (This.all, hashMap);
+      AbeHttpRequestInfo_Package.Initialize (This.all, hashMap);
       return This;
    end Create;
 
@@ -78,7 +78,7 @@ package body org.allbinary.logic.communication.http.request.AbeHttpRequestInfo_P
    function Create (httpServletRequest : HttpServletRequest_Access) return AbeHttpRequestInfo_Access is
       This : constant AbeHttpRequestInfo_Access := new AbeHttpRequestInfo;
    begin
-      Initialize (This.all, httpServletRequest);
+      AbeHttpRequestInfo_Package.Initialize (This.all, httpServletRequest);
       return This;
    end Create;
 
@@ -111,27 +111,6 @@ package body org.allbinary.logic.communication.http.request.AbeHttpRequestInfo_P
    function toString (This : in out AbeHttpRequestInfo) return Unbounded_String is
    begin
         return StringMaker_Package.Create.append (This.NAME).append (This.commonSeps.COLON_SEP).append (This.abeHttpRequestInfoData.HTTP_USER_AGENT).append (This.commonSeps.COLON_SEP).append (This.httpUserAgent).append (This.commonSeps.SPACE).append (This.abeHttpRequestInfoData.REMOTE_ADDRESS).append (This.commonSeps.COLON_SEP).append (This.remoteAddress).append (This.commonSeps.SPACE).append (This.abeHttpRequestInfoData.REMOTE_HOST).append (This.commonSeps.COLON_SEP).append (This.remoteHost).append (This.commonSeps.SPACE).append (This.abeHttpRequestInfoData.REMOTE_HOST_BY_ADDRESS).append (This.commonSeps.COLON_SEP).append (This.remoteHostByAddr).append (This.commonSeps.SPACE).append (This.abeHttpRequestInfoData.REMOTE_PORT).append (This.commonSeps.COLON_SEP).append (This.remotePort).append (This.commonSeps.SPACE).append (This.abeHttpRequestInfoData.REQUEST_FILE_PATH).append (This.commonSeps.COLON_SEP).append (This.requestedFilePath).toString;
-   end toString;
-
-   procedure toHashMap (This : in out AbeHttpRequestInfo) is
-      Java_Result : constant HashMap_Access := AbeHttpRequestInfo'Class (This).toHashMap;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toHashMap;
-
-   procedure toVector (This : in out AbeHttpRequestInfo) is
-      Java_Result : constant BasicArrayList_Access := AbeHttpRequestInfo'Class (This).toVector;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toVector;
-
-   procedure toString (This : in out AbeHttpRequestInfo) is
-      Java_Result : constant Unbounded_String := AbeHttpRequestInfo'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end toString;
 
 end org.allbinary.logic.communication.http.request.AbeHttpRequestInfo_Package;

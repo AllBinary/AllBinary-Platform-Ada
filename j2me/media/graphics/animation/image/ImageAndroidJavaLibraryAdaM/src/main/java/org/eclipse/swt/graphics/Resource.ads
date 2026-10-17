@@ -23,7 +23,6 @@ package org.eclipse.swt.graphics.Resource_Package is
    function Create return Resource_Access;
    procedure dispose (This : in out Resource);
    function isDisposed (This : in out Resource) return Boolean;
-   procedure isDisposed (This : in out Resource);
 
 end org.eclipse.swt.graphics.Resource_Package;
 

@@ -28,7 +28,7 @@ package body org.allbinary.game.layer.special.AnalogInputBuilder_Package is
    function Create return AnalogInputBuilder_Access is
       This : constant AnalogInputBuilder_Access := new AnalogInputBuilder;
    begin
-      Initialize (This.all);
+      AnalogInputBuilder_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -57,13 +57,6 @@ package body org.allbinary.game.layer.special.AnalogInputBuilder_Package is
         inputProcessorArray (Canvas_Package.KEY_NUM0) := SpecialAnalogLeftTriggerGameInputProcessor_Package.Create (collidableDestroyableDamageableLayer);
         inputProcessorArray (Canvas_Package.KEY_NUM5) := SpecialAnalogRightTriggerGameInputProcessor_Package.Create (collidableDestroyableDamageableLayer);
    end enable;
-
-   procedure getInstance is
-      Java_Result : constant AnalogInputBuilder_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

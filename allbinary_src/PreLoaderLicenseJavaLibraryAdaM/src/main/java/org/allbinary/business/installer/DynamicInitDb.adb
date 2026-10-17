@@ -31,7 +31,7 @@ package body org.allbinary.business.installer.DynamicInitDb_Package is
    function Create (abeClientInformation : AbeClientInformationInterface_Access) return DynamicInitDb_Access is
       This : constant DynamicInitDb_Access := new DynamicInitDb;
    begin
-      Initialize (This.all, abeClientInformation);
+      DynamicInitDb_Package.Initialize (This.all, abeClientInformation);
       return This;
    end Create;
 
@@ -46,7 +46,7 @@ package body org.allbinary.business.installer.DynamicInitDb_Package is
    function Create (abeClientInformation : AbeClientInformationInterface_Access; databaseConnectionInfoInterface : DatabaseConnectionInfoInterface_Access) return DynamicInitDb_Access is
       This : constant DynamicInitDb_Access := new DynamicInitDb;
    begin
-      Initialize (This.all, abeClientInformation, databaseConnectionInfoInterface);
+      DynamicInitDb_Package.Initialize (This.all, abeClientInformation, databaseConnectionInfoInterface);
       return This;
    end Create;
 

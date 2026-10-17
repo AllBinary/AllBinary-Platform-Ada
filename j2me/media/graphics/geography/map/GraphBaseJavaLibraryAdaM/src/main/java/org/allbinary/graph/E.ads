@@ -23,7 +23,6 @@ package org.allbinary.graph.E_Package is
    procedure Initialize (This : in out E'Class);
    function Create return E_Access;
    function newInstance (This : in out E) return E_Access;
-   procedure newInstance (This : in out E);
 
 end org.allbinary.graph.E_Package;
 

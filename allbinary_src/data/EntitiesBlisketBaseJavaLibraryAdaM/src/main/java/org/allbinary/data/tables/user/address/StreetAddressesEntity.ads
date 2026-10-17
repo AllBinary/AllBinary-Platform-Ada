@@ -20,7 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.util.Calendar_Package; use java.util.Calendar_Package;
+with java.util.Calendar_Package; use java.util.Calendar_Package;
 --  with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
@@ -39,6 +39,7 @@ with org.allbinary.data.tables.user.address.StreetAddressesEntityInterface_Packa
 
 package org.allbinary.data.tables.user.address.StreetAddressesEntity_Package is
 
+   package Calendar_Package renames Standard.java.util.Calendar_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
    package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    package EntryData_Package renames Standard.org.allbinary.business.entry_Id.EntryData_Package;
@@ -70,22 +71,15 @@ package org.allbinary.data.tables.user.address.StreetAddressesEntity_Package is
    procedure add (This : in out StreetAddressesEntity; address : StreetAddress_Access; index : Unbounded_String);
    procedure update (This : in out StreetAddressesEntity; address : StreetAddress_Access);
    function getLastId (This : in out StreetAddressesEntity) return Unbounded_String;
-   procedure getLastId (This : in out StreetAddressesEntity);
    function get (This : in out StreetAddressesEntity) return BasicArrayList_Access;
-   procedure get (This : in out StreetAddressesEntity);
    function get (This : in out StreetAddressesEntity; index : Integer) return StreetAddress_Access;
    procedure get (This : in out StreetAddressesEntity; index : Integer);
    function getDefault (This : in out StreetAddressesEntity) return StreetAddress_Access;
-   procedure getDefault (This : in out StreetAddressesEntity);
    procedure setDefault (This : in out StreetAddressesEntity; value : Unbounded_String);
    function getUserName (This : in out StreetAddressesEntity) return Unbounded_String;
-   procedure getUserName (This : in out StreetAddressesEntity);
    function createTableStatement (This : in out StreetAddressesEntity) return Unbounded_String;
-   procedure createTableStatement (This : in out StreetAddressesEntity);
    function createTable (This : in out StreetAddressesEntity) return Unbounded_String;
-   procedure createTable (This : in out StreetAddressesEntity);
    function drop (This : in out StreetAddressesEntity) return Unbounded_String;
-   procedure drop (This : in out StreetAddressesEntity);
 
 end org.allbinary.data.tables.user.address.StreetAddressesEntity_Package;
 

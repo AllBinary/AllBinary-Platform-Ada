@@ -27,6 +27,10 @@ with org.allbinary.data.tree.dom.ModDomHelper_Package; use org.allbinary.data.tr
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.w3c.dom.NodeList_Package; use org.w3c.dom.NodeList_Package;
+with org.allbinary.logic.communication.smtp.configuration.server.EmailServerConfigurationInterface_Package; use org.allbinary.logic.communication.smtp.configuration.server.EmailServerConfigurationInterface_Package;
+with org.allbinary.logic.communication.smtp.configuration.server.EmailServerConfigurationData_Package; use org.allbinary.logic.communication.smtp.configuration.server.EmailServerConfigurationData_Package;
+with org.allbinary.logic.communication.smtp.configuration.server.EmailServerConfiguration_Package; use org.allbinary.logic.communication.smtp.configuration.server.EmailServerConfiguration_Package;
+with org.allbinary.logic.communication.smtp.configuration.server.EmailServerConfigurationMapping_Package; use org.allbinary.logic.communication.smtp.configuration.server.EmailServerConfigurationMapping_Package;
 
 package org.allbinary.logic.communication.smtp.configuration.server.EmailServerConfigurationView_Package is
 
@@ -49,7 +53,6 @@ package org.allbinary.logic.communication.smtp.configuration.server.EmailServerC
    procedure Initialize (This : in out EmailServerConfigurationView'Class; node : Node_Access);
    function Create (node : Node_Access) return EmailServerConfigurationView_Access;
    function getEmailConfigurationInterface (This : in out EmailServerConfigurationView) return EmailServerConfigurationInterface_Access;
-   procedure getEmailConfigurationInterface (This : in out EmailServerConfigurationView);
    function toXmlNode (This : in out EmailServerConfigurationView; document : Document_Access) return Node_Access;
    procedure toXmlNode (This : in out EmailServerConfigurationView; document : Document_Access);
 

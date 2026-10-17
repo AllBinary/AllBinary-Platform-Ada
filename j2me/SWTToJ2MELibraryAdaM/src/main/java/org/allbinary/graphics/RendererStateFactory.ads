@@ -38,13 +38,10 @@ package org.allbinary.graphics.RendererStateFactory_Package is
    procedure Initialize (This : in out RendererStateFactory'Class);
    function Create return RendererStateFactory_Access;
    function getInstance return RendererStateFactory_Access;
-   procedure getInstance;
    procedure setLoaded (This : in out RendererStateFactory; loaded : Boolean);
    function isLoaded (This : in out RendererStateFactory) return Boolean;
-   procedure isLoaded (This : in out RendererStateFactory);
    procedure setSurfaceChanged (This : in out RendererStateFactory; initialized : Boolean);
    function isSurfaceChanged (This : in out RendererStateFactory) return Boolean;
-   procedure isSurfaceChanged (This : in out RendererStateFactory);
 
 end org.allbinary.graphics.RendererStateFactory_Package;
 

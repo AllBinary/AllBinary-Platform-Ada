@@ -26,7 +26,7 @@ package body org.allbinary.media.graphics.geography.pathfinding.BasicGeographicM
    function Create return BasicGeographicMapExtractedPathCacheFactory_Access is
       This : constant BasicGeographicMapExtractedPathCacheFactory_Access := new BasicGeographicMapExtractedPathCacheFactory;
    begin
-      Initialize (This.all);
+      BasicGeographicMapExtractedPathCacheFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -56,20 +56,6 @@ package body org.allbinary.media.graphics.geography.pathfinding.BasicGeographicM
         list.clear;
         This.list.add (list);
    end release;
-
-   procedure getInstance is
-      Java_Result : constant BasicGeographicMapExtractedPathCacheFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure getPath (This : in out BasicGeographicMapExtractedPathCacheFactory) is
-      Java_Result : constant BasicArrayList_Access := BasicGeographicMapExtractedPathCacheFactory'Class (This).getPath;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getPath;
 
 begin
    null;

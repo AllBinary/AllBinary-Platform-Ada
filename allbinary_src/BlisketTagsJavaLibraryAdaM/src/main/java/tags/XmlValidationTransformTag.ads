@@ -45,9 +45,7 @@ package tags.XmlValidationTransformTag_Package is
    procedure Initialize (This : in out XmlValidationTransformTag'Class);
    function Create return XmlValidationTransformTag_Access;
    function isValid (This : in out XmlValidationTransformTag) return Boolean;
-   procedure isValid (This : in out XmlValidationTransformTag);
    function doStartTag (This : in out XmlValidationTransformTag) return Integer;
-   procedure doStartTag (This : in out XmlValidationTransformTag);
 
 end tags.XmlValidationTransformTag_Package;
 

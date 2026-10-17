@@ -39,7 +39,6 @@ package org.allbinary.logic.visual.transform.template.customizer.bodies.BodyData
    procedure Initialize (This : in out BodyData'Class);
    function Create return BodyData_Access;
    function getInstance return BodyData_Access;
-   procedure getInstance;
 
 end org.allbinary.logic.visual.transform.template.customizer.bodies.BodyData_Package;
 

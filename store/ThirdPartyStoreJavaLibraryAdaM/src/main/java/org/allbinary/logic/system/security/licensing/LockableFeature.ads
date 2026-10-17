@@ -36,7 +36,6 @@ package org.allbinary.logic.system.security.licensing.LockableFeature_Package is
    procedure Initialize (This : in out LockableFeature'Class; name : Unbounded_String);
    function Create (name : Unbounded_String) return LockableFeature_Access;
    function getName (This : in out LockableFeature) return Unbounded_String;
-   procedure getName (This : in out LockableFeature);
 
 end org.allbinary.logic.system.security.licensing.LockableFeature_Package;
 

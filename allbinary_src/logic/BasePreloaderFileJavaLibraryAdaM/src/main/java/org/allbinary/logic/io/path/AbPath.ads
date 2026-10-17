@@ -26,6 +26,8 @@ with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.logic.string_Id.StringValidationUtil_Package; use org.allbinary.logic.string_Id.StringValidationUtil_Package;
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.io.path.AbPathData_Package; use org.allbinary.logic.io.path.AbPathData_Package;
+with org.allbinary.logic.io.path.PathUtil_Package; use org.allbinary.logic.io.path.PathUtil_Package;
 
 package org.allbinary.logic.io.path.AbPath_Package is
 
@@ -57,23 +59,17 @@ package org.allbinary.logic.io.path.AbPath_Package is
    procedure Initialize (This : in out AbPath'Class; aPath : Unbounded_String; name : Unbounded_String);
    function Create (aPath : Unbounded_String; name : Unbounded_String) return AbPath_Access;
    function createAbPath return AbPath_Access;
-   procedure createAbPath;
    procedure init (This : in out AbPath);
    function getSchema (This : in out AbPath; aPath : Unbounded_String) return Unbounded_String;
    procedure getSchema (This : in out AbPath; aPath : Unbounded_String);
    function hasSchema (This : in out AbPath) return Boolean;
-   procedure hasSchema (This : in out AbPath);
    function getPathFromPath (This : in out AbPath; aPath : Unbounded_String) return Unbounded_String;
    procedure getPathFromPath (This : in out AbPath; aPath : Unbounded_String);
    procedure setName (This : in out AbPath; name : Unbounded_String);
    function getName (This : in out AbPath) return Unbounded_String;
-   procedure getName (This : in out AbPath);
    function toString (This : in out AbPath) return Unbounded_String;
-   procedure toString (This : in out AbPath);
    function toFileSystemString (This : in out AbPath) return Unbounded_String;
-   procedure toFileSystemString (This : in out AbPath);
    function getPath (This : in out AbPath) return Unbounded_String;
-   procedure getPath (This : in out AbPath);
    procedure setPath (This : in out AbPath; path : Unbounded_String);
 
 end org.allbinary.logic.io.path.AbPath_Package;

@@ -22,6 +22,7 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.logic.system.security.licensing.ThirdPartyInApplicationPurchaseInterface_Package; use org.allbinary.logic.system.security.licensing.ThirdPartyInApplicationPurchaseInterface_Package;
+with org.allbinary.logic.system.security.licensing.LockableFeature_Package; use org.allbinary.logic.system.security.licensing.LockableFeature_Package;
 
 package org.allbinary.logic.system.security.licensing.ThirdPartyInApplicationPurchase_Package is
 
@@ -48,9 +49,7 @@ package org.allbinary.logic.system.security.licensing.ThirdPartyInApplicationPur
    procedure requestReceipts (This : in out ThirdPartyInApplicationPurchase);
    procedure add (This : in out ThirdPartyInApplicationPurchase; lockableFeature : LockableFeature_Access);
    function getUserName (This : in out ThirdPartyInApplicationPurchase) return Unbounded_String;
-   procedure getUserName (This : in out ThirdPartyInApplicationPurchase);
    function isEnabled (This : in out ThirdPartyInApplicationPurchase) return Boolean;
-   procedure isEnabled (This : in out ThirdPartyInApplicationPurchase);
    procedure requestProducts (This : in out ThirdPartyInApplicationPurchase);
 
 end org.allbinary.logic.system.security.licensing.ThirdPartyInApplicationPurchase_Package;

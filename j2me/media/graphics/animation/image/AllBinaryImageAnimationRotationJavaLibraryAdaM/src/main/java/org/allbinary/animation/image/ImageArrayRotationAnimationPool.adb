@@ -29,7 +29,7 @@ package body org.allbinary.animation.image.ImageArrayRotationAnimationPool_Packa
    function Create (cacheableInterfaceFactoryInterface : CacheableInterfaceFactoryInterface_Access) return ImageArrayRotationAnimationPool_Access is
       This : constant ImageArrayRotationAnimationPool_Access := new ImageArrayRotationAnimationPool;
    begin
-      Initialize (This.all, cacheableInterfaceFactoryInterface);
+      ImageArrayRotationAnimationPool_Package.Initialize (This.all, cacheableInterfaceFactoryInterface);
       return This;
    end Create;
 
@@ -50,13 +50,6 @@ package body org.allbinary.animation.image.ImageArrayRotationAnimationPool_Packa
         imageArrayRotationAnimationCacheable.setImageArray (allBinaryImageRotationAnimationInfo.getImageArray);
         return cacheableInterface;
    end remove;
-
-   procedure getInstance is
-      Java_Result : constant PoolInterface_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure remove (This : in out ImageArrayRotationAnimationPool; key : Java_Object_Access) is
       Java_Result : constant CacheableInterface_Access := ImageArrayRotationAnimationPool'Class (This).remove (key);

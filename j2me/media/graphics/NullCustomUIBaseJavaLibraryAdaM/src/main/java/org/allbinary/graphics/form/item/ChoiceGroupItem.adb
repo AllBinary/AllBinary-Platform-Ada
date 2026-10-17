@@ -16,7 +16,7 @@ package body org.allbinary.graphics.form.item.ChoiceGroupItem_Package is
    function Create return ChoiceGroupItem_Access is
       This : constant ChoiceGroupItem_Access := new ChoiceGroupItem;
    begin
-      Initialize (This.all);
+      ChoiceGroupItem_Package.Initialize (This.all);
       return This;
    end Create;
 

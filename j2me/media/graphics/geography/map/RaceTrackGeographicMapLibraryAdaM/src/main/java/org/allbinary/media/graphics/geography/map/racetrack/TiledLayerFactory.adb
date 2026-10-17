@@ -28,7 +28,7 @@ package body org.allbinary.media.graphics.geography.map.racetrack.TiledLayerFact
    function Create return TiledLayerFactory_Access is
       This : constant TiledLayerFactory_Access := new TiledLayerFactory;
    begin
-      Initialize (This.all);
+      TiledLayerFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

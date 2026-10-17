@@ -51,7 +51,6 @@ package org.allbinary.input.media.image.capture.CapturedBufferedImagesCacheSingl
    procedure Initialize (This : in out CapturedBufferedImagesCacheSingleton'Class);
    function Create return CapturedBufferedImagesCacheSingleton_Access;
    function getInstance return CacheInterface_Access;
-   procedure getInstance;
 
 end org.allbinary.input.media.image.capture.CapturedBufferedImagesCacheSingleton_Package;
 

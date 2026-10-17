@@ -38,16 +38,9 @@ package body org.allbinary.business.advertisement.area.AdvertisementAreaData_Pac
    function Create return AdvertisementAreaData_Access is
       This : constant AdvertisementAreaData_Access := new AdvertisementAreaData;
    begin
-      Initialize (This.all);
+      AdvertisementAreaData_Package.Initialize (This.all);
       return This;
    end Create;
-
-   procedure getInstance is
-      Java_Result : constant AdvertisementAreaData_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

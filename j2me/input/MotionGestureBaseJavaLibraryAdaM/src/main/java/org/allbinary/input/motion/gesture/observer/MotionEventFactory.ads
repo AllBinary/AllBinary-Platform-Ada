@@ -26,6 +26,7 @@ with org.allbinary.input.motion.gesture.MotionGestureInput_Package; use org.allb
 with org.allbinary.input.motion.gesture.TouchMotionGestureFactory_Package; use org.allbinary.input.motion.gesture.TouchMotionGestureFactory_Package;
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbinary.logic.util.event.AllBinaryEventObject_Package;
 with org.allbinary.logic.util.event.AllBinaryEventObjectFactoryInterface_Package; use org.allbinary.logic.util.event.AllBinaryEventObjectFactoryInterface_Package;
+with org.allbinary.input.motion.gesture.observer.MotionGestureEvent_Package; use org.allbinary.input.motion.gesture.observer.MotionGestureEvent_Package;
 
 package org.allbinary.input.motion.gesture.observer.MotionEventFactory_Package is
 
@@ -50,7 +51,6 @@ package org.allbinary.input.motion.gesture.observer.MotionEventFactory_Package i
    procedure Initialize (This : in out MotionEventFactory'Class; source : Java_Object_Access; id : Integer);
    function Create (source : Java_Object_Access; id : Integer) return MotionEventFactory_Access;
    function getInstance (This : in out MotionEventFactory) return AllBinaryEventObject_Access;
-   procedure getInstance (This : in out MotionEventFactory);
 
 end org.allbinary.input.motion.gesture.observer.MotionEventFactory_Package;
 

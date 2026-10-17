@@ -31,6 +31,7 @@ with org.allbinary.input.automation.module.configuration.InputAutomationModuleCo
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package; use org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.input.automation.configuration.InputAutomationConfiguration_Package; use org.allbinary.input.automation.configuration.InputAutomationConfiguration_Package;
 
 package org.allbinary.input.automation.configuration.InputAutomationConfigurationFactory_Package is
 
@@ -53,7 +54,6 @@ package org.allbinary.input.automation.configuration.InputAutomationConfiguratio
    procedure Initialize (This : in out InputAutomationConfigurationFactory'Class);
    function Create return InputAutomationConfigurationFactory_Access;
    function getInstance return InputAutomationConfigurationFactory_Access;
-   procedure getInstance;
    procedure init (This : in out InputAutomationConfigurationFactory; abeClientInformation : AbeClientInformationInterface_Access);
 
 end org.allbinary.input.automation.configuration.InputAutomationConfigurationFactory_Package;

@@ -20,10 +20,11 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.util.Stack_Package; use java.util.Stack_Package;
+with java.util.Stack_Package; use java.util.Stack_Package;
 
 package org.allbinary.util.ABStack_Package is
 
+   package Stack_Package renames Standard.java.util.Stack_Package;
 
    type ABStack is tagged;
    type ABStack_Access is access all ABStack'Class;

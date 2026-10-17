@@ -17,7 +17,7 @@ package body org.allbinary.business.advertisement.AppNameLicensingAdConfiguratio
    function Create return AppNameLicensingAdConfiguration_Access is
       This : constant AppNameLicensingAdConfiguration_Access := new AppNameLicensingAdConfiguration;
    begin
-      Initialize (This.all);
+      AppNameLicensingAdConfiguration_Package.Initialize (This.all);
       return This;
    end Create;
 

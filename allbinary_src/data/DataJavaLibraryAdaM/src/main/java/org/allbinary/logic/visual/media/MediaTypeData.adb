@@ -37,16 +37,9 @@ package body org.allbinary.logic.visual.media.MediaTypeData_Package is
    function Create return MediaTypeData_Access is
       This : constant MediaTypeData_Access := new MediaTypeData;
    begin
-      Initialize (This.all);
+      MediaTypeData_Package.Initialize (This.all);
       return This;
    end Create;
-
-   procedure getInstance is
-      Java_Result : constant MediaTypeData_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

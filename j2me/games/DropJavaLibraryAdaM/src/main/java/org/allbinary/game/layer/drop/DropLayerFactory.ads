@@ -47,14 +47,10 @@ package org.allbinary.game.layer.drop.DropLayerFactory_Package is
    function Create return DropLayerFactory_Access;
    procedure clear (This : in out DropLayerFactory);
    function getInstance return DropLayerFactory_Access;
-   procedure getInstance;
    function getSize (This : in out DropLayerFactory) return Integer;
-   procedure getSize (This : in out DropLayerFactory);
    function getRandomInstance (This : in out DropLayerFactory) return PickedUpLayerInterfaceFactoryInterface_Access;
-   procedure getRandomInstance (This : in out DropLayerFactory);
    procedure add (This : in out DropLayerFactory; layerInterfaceFactoryInterface : PickedUpLayerInterfaceFactoryInterface_Access);
    function getList (This : in out DropLayerFactory) return BasicArrayList_Access;
-   procedure getList (This : in out DropLayerFactory);
 
 end org.allbinary.game.layer.drop.DropLayerFactory_Package;
 

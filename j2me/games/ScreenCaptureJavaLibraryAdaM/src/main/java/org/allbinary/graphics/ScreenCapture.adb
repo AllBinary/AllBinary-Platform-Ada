@@ -28,7 +28,7 @@ package body org.allbinary.graphics.ScreenCapture_Package is
    function Create return ScreenCapture_Access is
       This : constant ScreenCapture_Access := new ScreenCapture;
    begin
-      Initialize (This.all);
+      ScreenCapture_Package.Initialize (This.all);
       return This;
    end Create;
 

@@ -20,6 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
+with org.allbinary.business.user.commerce.money.payment.types.TransactionType_Package; use org.allbinary.business.user.commerce.money.payment.types.TransactionType_Package;
 
 package org.allbinary.business.user.commerce.money.payment.types.TransactionTypeFactory_Package is
 
@@ -42,7 +43,6 @@ package org.allbinary.business.user.commerce.money.payment.types.TransactionType
    procedure Initialize (This : in out TransactionTypeFactory'Class);
    function Create return TransactionTypeFactory_Access;
    function getInstance return TransactionTypeFactory_Access;
-   procedure getInstance;
 
 end org.allbinary.business.user.commerce.money.payment.types.TransactionTypeFactory_Package;
 

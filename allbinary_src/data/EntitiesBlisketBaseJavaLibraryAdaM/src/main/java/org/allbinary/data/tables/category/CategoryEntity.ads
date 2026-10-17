@@ -61,12 +61,9 @@ package org.allbinary.data.tables.category.CategoryEntity_Package is
    procedure insert (This : in out CategoryEntity; category : Category_Access);
    procedure delete (This : in out CategoryEntity; value : Unbounded_String);
    function createTableStatement (This : in out CategoryEntity) return Unbounded_String;
-   procedure createTableStatement (This : in out CategoryEntity);
    function createTable (This : in out CategoryEntity) return Unbounded_String;
-   procedure createTable (This : in out CategoryEntity);
    procedure update (This : in out CategoryEntity; updatedValues : HashMap_Access);
    function dropTable (This : in out CategoryEntity) return Unbounded_String;
-   procedure dropTable (This : in out CategoryEntity);
 
 end org.allbinary.data.tables.category.CategoryEntity_Package;
 

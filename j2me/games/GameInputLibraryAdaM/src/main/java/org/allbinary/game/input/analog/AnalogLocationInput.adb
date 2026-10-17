@@ -24,7 +24,7 @@ package body org.allbinary.game.input.analog.AnalogLocationInput_Package is
    function Create (playerId : Integer) return AnalogLocationInput_Access is
       This : constant AnalogLocationInput_Access := new AnalogLocationInput;
    begin
-      Initialize (This.all, playerId);
+      AnalogLocationInput_Package.Initialize (This.all, playerId);
       return This;
    end Create;
 
@@ -67,41 +67,6 @@ package body org.allbinary.game.input.analog.AnalogLocationInput_Package is
    begin
         This.leftTrigger := leftTrigger;
    end setLeftTrigger;
-
-   procedure getPlayerId (This : in out AnalogLocationInput) is
-      Java_Result : constant Integer := AnalogLocationInput'Class (This).getPlayerId;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getPlayerId;
-
-   procedure getCustomGPoint (This : in out AnalogLocationInput) is
-      Java_Result : constant CustomGPoint_Access := AnalogLocationInput'Class (This).getCustomGPoint;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getCustomGPoint;
-
-   procedure getRz (This : in out AnalogLocationInput) is
-      Java_Result : constant Integer := AnalogLocationInput'Class (This).getRz;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getRz;
-
-   procedure getRightTrigger (This : in out AnalogLocationInput) is
-      Java_Result : constant Integer := AnalogLocationInput'Class (This).getRightTrigger;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getRightTrigger;
-
-   procedure getLeftTrigger (This : in out AnalogLocationInput) is
-      Java_Result : constant Integer := AnalogLocationInput'Class (This).getLeftTrigger;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getLeftTrigger;
 
 begin
    null;

@@ -48,13 +48,9 @@ package admin.taghelpers.XmlOptionItemsHelper_Package is
    procedure Initialize (This : in out XmlOptionItemsHelper'Class; hashMap : HashMap_Access; pageContext : PageContext_Access);
    function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return XmlOptionItemsHelper_Access;
    function create (This : in out XmlOptionItemsHelper) return Unbounded_String;
-   procedure create (This : in out XmlOptionItemsHelper);
    function drop (This : in out XmlOptionItemsHelper) return Unbounded_String;
-   procedure drop (This : in out XmlOptionItemsHelper);
    function restore (This : in out XmlOptionItemsHelper) return Unbounded_String;
-   procedure restore (This : in out XmlOptionItemsHelper);
    function backup (This : in out XmlOptionItemsHelper) return Unbounded_String;
-   procedure backup (This : in out XmlOptionItemsHelper);
 
 end admin.taghelpers.XmlOptionItemsHelper_Package;
 

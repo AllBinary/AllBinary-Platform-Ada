@@ -28,7 +28,7 @@ package body org.allbinary.servlet.BlisketServletUtil_Package is
    function Create return BlisketServletUtil_Access is
       This : constant BlisketServletUtil_Access := new BlisketServletUtil;
    begin
-      Initialize (This.all);
+      BlisketServletUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -46,13 +46,6 @@ package body org.allbinary.servlet.BlisketServletUtil_Package is
         URLGLOBALS.init (urlGlobals);
         WebappClassLoaderInfo_Package.setLoader (This.getClass.getClassLoader);
    end init;
-
-   procedure getInstance is
-      Java_Result : constant BlisketServletUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

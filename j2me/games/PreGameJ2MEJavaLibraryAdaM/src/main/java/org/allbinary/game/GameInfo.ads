@@ -27,6 +27,12 @@ with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.Com
 with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
 with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
+with org.allbinary.game.GameTypeFactory_Package; use org.allbinary.game.GameTypeFactory_Package;
+with org.allbinary.game.GameMode_Package; use org.allbinary.game.GameMode_Package;
+with org.allbinary.game.PlayerTypesFactory_Package; use org.allbinary.game.PlayerTypesFactory_Package;
+with org.allbinary.game.GameInfoData_Package; use org.allbinary.game.GameInfoData_Package;
+with org.allbinary.game.GameType_Package; use org.allbinary.game.GameType_Package;
+with org.allbinary.game.PlayerType_Package; use org.allbinary.game.PlayerType_Package;
 
 package org.allbinary.game.GameInfo_Package is
 
@@ -61,25 +67,17 @@ package org.allbinary.game.GameInfo_Package is
    procedure Initialize (This : in out GameInfo'Class; gameType : GameType_Access; gameMode : GameMode_Access; playerType : PlayerType_Access; highestLevel : Integer; currentLevel : Integer);
    function Create (gameType : GameType_Access; gameMode : GameMode_Access; playerType : PlayerType_Access; highestLevel : Integer; currentLevel : Integer) return GameInfo_Access;
    function getGameType (This : in out GameInfo) return GameType_Access;
-   procedure getGameType (This : in out GameInfo);
    function getGameMode (This : in out GameInfo) return GameMode_Access;
-   procedure getGameMode (This : in out GameInfo);
    function getPlayerType (This : in out GameInfo) return PlayerType_Access;
-   procedure getPlayerType (This : in out GameInfo);
    function getHighestLevel (This : in out GameInfo) return Integer;
-   procedure getHighestLevel (This : in out GameInfo);
    procedure setHighestLevel (This : in out GameInfo; highestLevel : Integer);
    function getCurrentLevel (This : in out GameInfo) return Integer;
-   procedure getCurrentLevel (This : in out GameInfo);
    procedure setCurrentLevel (This : in out GameInfo; currentLevel : Integer);
    procedure nextGameLevel (This : in out GameInfo);
    procedure previousGameLevel (This : in out GameInfo);
    function isLastLevel (This : in out GameInfo) return Boolean;
-   procedure isLastLevel (This : in out GameInfo);
    function toHashtable (This : in out GameInfo) return ABHashtable_Access;
-   procedure toHashtable (This : in out GameInfo);
    function toString (This : in out GameInfo) return Unbounded_String;
-   procedure toString (This : in out GameInfo);
 
 end org.allbinary.game.GameInfo_Package;
 

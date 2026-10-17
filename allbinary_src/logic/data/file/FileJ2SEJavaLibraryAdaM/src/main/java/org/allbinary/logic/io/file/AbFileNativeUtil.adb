@@ -28,7 +28,7 @@ package body org.allbinary.logic.io.file.AbFileNativeUtil_Package is
    function Create return AbFileNativeUtil_Access is
       This : constant AbFileNativeUtil_Access := new AbFileNativeUtil;
    begin
-      Initialize (This.all);
+      AbFileNativeUtil_Package.Initialize (This.all);
       return This;
    end Create;
 

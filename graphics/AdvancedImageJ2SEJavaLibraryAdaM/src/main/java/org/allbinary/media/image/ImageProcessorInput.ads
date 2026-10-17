@@ -39,9 +39,7 @@ package org.allbinary.media.image.ImageProcessorInput_Package is
    procedure Initialize (This : in out ImageProcessorInput'Class; files : File_Access_Array_Access; bufferedImageArray : BufferedImage_Access_Array_Access);
    function Create (files : File_Access_Array_Access; bufferedImageArray : BufferedImage_Access_Array_Access) return ImageProcessorInput_Access;
    function getBufferedImageArray (This : in out ImageProcessorInput) return BufferedImage_Access_Array_Access;
-   procedure getBufferedImageArray (This : in out ImageProcessorInput);
    function getFiles (This : in out ImageProcessorInput) return File_Access_Array_Access;
-   procedure getFiles (This : in out ImageProcessorInput);
 
 end org.allbinary.media.image.ImageProcessorInput_Package;
 

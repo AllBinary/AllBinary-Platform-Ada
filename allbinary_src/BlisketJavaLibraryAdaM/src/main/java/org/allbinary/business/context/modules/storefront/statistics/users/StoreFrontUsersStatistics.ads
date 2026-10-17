@@ -31,6 +31,7 @@ with org.allbinary.data.tables.user.UserEntityFactory_Package; use org.allbinary
 with org.allbinary.data.tables.user.UserEntityInterface_Package; use org.allbinary.data.tables.user.UserEntityInterface_Package;
 with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatisticsInterface_Package; use org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatisticsInterface_Package;
+with org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatisticsData_Package; use org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatisticsData_Package;
 
 package org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatistics_Package is
 
@@ -58,15 +59,11 @@ package org.allbinary.business.context.modules.storefront.statistics.users.Store
    function getNewTotal (This : in out StoreFrontUsersStatistics; userRole : UserRole_Access) return Long_Long_Integer;
    procedure getNewTotal (This : in out StoreFrontUsersStatistics; userRole : UserRole_Access);
    function getNumberOfUsers (This : in out StoreFrontUsersStatistics) return Long_Long_Integer;
-   procedure getNumberOfUsers (This : in out StoreFrontUsersStatistics);
    function getNumberOfUsersByRole (This : in out StoreFrontUsersStatistics; role : Unbounded_String) return Long_Long_Integer;
    procedure getNumberOfUsersByRole (This : in out StoreFrontUsersStatistics; role : Unbounded_String);
    function toHashMap (This : in out StoreFrontUsersStatistics) return HashMap_Access;
-   procedure toHashMap (This : in out StoreFrontUsersStatistics);
    function toVector (This : in out StoreFrontUsersStatistics) return BasicArrayList_Access;
-   procedure toVector (This : in out StoreFrontUsersStatistics);
    function getKey (This : in out StoreFrontUsersStatistics) return Java_Object_Access;
-   procedure getKey (This : in out StoreFrontUsersStatistics);
 
 end org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatistics_Package;
 

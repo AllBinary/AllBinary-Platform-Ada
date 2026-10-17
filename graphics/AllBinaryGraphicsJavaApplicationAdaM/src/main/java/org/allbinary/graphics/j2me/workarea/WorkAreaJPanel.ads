@@ -42,6 +42,13 @@ with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.allbinary.graphics.j2me.workarea.JPanel_Package; use org.allbinary.graphics.j2me.workarea.JPanel_Package;
 with org.allbinary.graphics.j2me.workarea.WorkAreaJPanelInterface_Package; use org.allbinary.graphics.j2me.workarea.WorkAreaJPanelInterface_Package;
 with org.allbinary.graphics.j2me.workarea.Runnable_Package; use org.allbinary.graphics.j2me.workarea.Runnable_Package;
+with org.allbinary.graphics.j2me.workarea.WorkAreaJTreeJPanel_Package; use org.allbinary.graphics.j2me.workarea.WorkAreaJTreeJPanel_Package;
+with org.allbinary.graphics.j2me.workarea.Component_Package; use org.allbinary.graphics.j2me.workarea.Component_Package;
+with org.allbinary.graphics.j2me.workarea.Dimension_Package; use org.allbinary.graphics.j2me.workarea.Dimension_Package;
+with org.allbinary.graphics.j2me.workarea.WorkAreaDom_Package; use org.allbinary.graphics.j2me.workarea.WorkAreaDom_Package;
+with org.allbinary.graphics.j2me.workarea.GridLayout_Package; use org.allbinary.graphics.j2me.workarea.GridLayout_Package;
+with org.allbinary.graphics.j2me.workarea.GridBagLayout_Package; use org.allbinary.graphics.j2me.workarea.GridBagLayout_Package;
+with org.allbinary.graphics.j2me.workarea.GridBagConstraints_Package; use org.allbinary.graphics.j2me.workarea.GridBagConstraints_Package;
 
 package org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package is
 
@@ -83,13 +90,10 @@ package org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package is
    function Create (name : Unbounded_String; dimension : Dimension_Access; x : Integer; y : Integer) return WorkAreaJPanel_Access;
    procedure initMyComponents (This : in out WorkAreaJPanel; dimension : Dimension_Access);
    function getCanvasHashMap (This : in out WorkAreaJPanel) return HashMap_Access;
-   procedure getCanvasHashMap (This : in out WorkAreaJPanel);
    procedure play (This : in out WorkAreaJPanel);
    procedure stop (This : in out WorkAreaJPanel);
    function isPlaying (This : in out WorkAreaJPanel) return Boolean;
-   procedure isPlaying (This : in out WorkAreaJPanel);
    function getName (This : in out WorkAreaJPanel) return Unbounded_String;
-   procedure getName (This : in out WorkAreaJPanel);
    procedure setName (This : in out WorkAreaJPanel; value : Unbounded_String);
    procedure disableCanvas (This : in out WorkAreaJPanel);
    procedure enableCanvas (This : in out WorkAreaJPanel);
@@ -97,7 +101,6 @@ package org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package is
    procedure select_Id (This : in out WorkAreaJPanel);
    procedure changeZoom (This : in out WorkAreaJPanel; factor : Integer);
    function getCurrentFrame (This : in out WorkAreaJPanel) return CanvasJPanel_Access;
-   procedure getCurrentFrame (This : in out WorkAreaJPanel);
    procedure initDuplicate (This : in out WorkAreaJPanel; newCanvasJPanel : CanvasJPanel_Access);
    procedure duplicate (This : in out WorkAreaJPanel; treeNode : MutableTreeNode_Access);
    procedure autoRotate (This : in out WorkAreaJPanel; increments : Integer; totalAngle : Integer);
@@ -107,9 +110,7 @@ package org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package is
    procedure select_Id (This : in out WorkAreaJPanel; index : Integer);
    procedure select_Id (This : in out WorkAreaJPanel; treeNode : MutableTreeNode_Access);
    function getDocument return Document_Access;
-   procedure getDocument;
    function toDocument (This : in out WorkAreaJPanel) return Document_Access;
-   procedure toDocument (This : in out WorkAreaJPanel);
    procedure initComponents (This : in out WorkAreaJPanel);
    procedure innerJPanelKeyReleased (This : in out WorkAreaJPanel; evt : KeyEvent_Access);
    procedure innerJPanelKeyPressed (This : in out WorkAreaJPanel; evt : KeyEvent_Access);

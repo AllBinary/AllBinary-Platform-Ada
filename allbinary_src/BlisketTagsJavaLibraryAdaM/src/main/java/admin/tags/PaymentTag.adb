@@ -35,7 +35,7 @@ package body admin.tags.PaymentTag_Package is
    function Create return PaymentTag_Access is
       This : constant PaymentTag_Access := new PaymentTag;
    begin
-      Initialize (This.all);
+      PaymentTag_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -98,20 +98,6 @@ package body admin.tags.PaymentTag_Package is
             return SKIP_BODY;
                 end;
         end;
-   end doStartTag;
-
-   procedure select_Id (This : in out PaymentTag) is
-      Java_Result : constant Unbounded_String := PaymentTag'Class (This).select_Id;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end select_Id;
-
-   procedure doStartTag (This : in out PaymentTag) is
-      Java_Result : constant Integer := PaymentTag'Class (This).doStartTag;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end doStartTag;
 
 end admin.tags.PaymentTag_Package;

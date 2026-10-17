@@ -28,7 +28,7 @@ package body org.allbinary.media.graphics.geography.map.drop.BaseDropCellPositio
    function Create return BaseDropCellPositionGenerator_Access is
       This : constant BaseDropCellPositionGenerator_Access := new BaseDropCellPositionGenerator;
    begin
-      Initialize (This.all);
+      BaseDropCellPositionGenerator_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -55,13 +55,6 @@ package body org.allbinary.media.graphics.geography.map.drop.BaseDropCellPositio
    begin
         null;
    end processTick;
-
-   procedure getName (This : in out BaseDropCellPositionGenerator) is
-      Java_Result : constant Unbounded_String := BaseDropCellPositionGenerator'Class (This).getName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getName;
 
    procedure isDropAllowedAt (This : in out BaseDropCellPositionGenerator; geographicMapCellPosition : GeographicMapCellPosition_Access) is
       Java_Result : constant Boolean := BaseDropCellPositionGenerator'Class (This).isDropAllowedAt (geographicMapCellPosition);

@@ -29,7 +29,7 @@ package body javax.microedition.lcdui.PostLoadPlatformImage_Package is
    function Create return PostLoadPlatformImage_Access is
       This : constant PostLoadPlatformImage_Access := new PostLoadPlatformImage;
    begin
-      Initialize (This.all);
+      PostLoadPlatformImage_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -37,13 +37,6 @@ package body javax.microedition.lcdui.PostLoadPlatformImage_Package is
    function getInstance return PostLoadPlatformImage_Access is
    begin
         return PostLoadPlatformImage_Package.instance;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant PostLoadPlatformImage_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

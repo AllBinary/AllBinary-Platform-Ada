@@ -29,7 +29,7 @@ package body org.allbinary.game.configuration.GameConfigurationGauge_Package is
    function Create (gameConfiguration : GameConfiguration_Access) return GameConfigurationGauge_Access is
       This : constant GameConfigurationGauge_Access := new GameConfigurationGauge;
    begin
-      Initialize (This.all, gameConfiguration);
+      GameConfigurationGauge_Package.Initialize (This.all, gameConfiguration);
       return This;
    end Create;
 

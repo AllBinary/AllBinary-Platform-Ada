@@ -41,7 +41,6 @@ package org.allbinary.android.api19.ActivityFractureUtilAPI19_Package is
    procedure Initialize (This : in out ActivityFractureUtilAPI19'Class);
    function Create return ActivityFractureUtilAPI19_Access;
    function getInstance return ActivityFractureUtilAPI19_Access;
-   procedure getInstance;
    procedure setFullScreen (This : in out ActivityFractureUtilAPI19; activity : Activity_Access);
 
 end org.allbinary.android.api19.ActivityFractureUtilAPI19_Package;

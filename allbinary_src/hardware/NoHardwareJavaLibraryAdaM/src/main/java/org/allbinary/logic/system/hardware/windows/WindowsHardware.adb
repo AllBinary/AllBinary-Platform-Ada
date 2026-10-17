@@ -30,7 +30,7 @@ package body org.allbinary.logic.system.hardware.windows.WindowsHardware_Package
    function Create return WindowsHardware_Access is
       This : constant WindowsHardware_Access := new WindowsHardware;
    begin
-      Initialize (This.all);
+      WindowsHardware_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -192,13 +192,6 @@ package body org.allbinary.logic.system.hardware.windows.WindowsHardware_Package
    begin
       null;
    end getComponent;
-
-   procedure toString (This : in out WindowsHardware) is
-      Java_Result : constant Unbounded_String := WindowsHardware'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toString;
 
    procedure compareTo (This : in out WindowsHardware; hardwareInterface : HardwareInterface_Access) is
       Java_Result : constant Boolean := WindowsHardware'Class (This).compareTo (hardwareInterface);

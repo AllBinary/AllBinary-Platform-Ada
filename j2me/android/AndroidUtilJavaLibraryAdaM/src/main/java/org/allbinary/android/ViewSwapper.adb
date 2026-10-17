@@ -24,7 +24,7 @@ package body org.allbinary.android.ViewSwapper_Package is
    function Create (activity : Activity_Access; rootViewId : Integer) return ViewSwapper_Access is
       This : constant ViewSwapper_Access := new ViewSwapper;
    begin
-      Initialize (This.all, activity, rootViewId);
+      ViewSwapper_Package.Initialize (This.all, activity, rootViewId);
       return This;
    end Create;
 

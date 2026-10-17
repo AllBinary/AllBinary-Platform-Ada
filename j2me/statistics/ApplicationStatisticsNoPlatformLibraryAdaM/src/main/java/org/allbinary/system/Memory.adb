@@ -28,7 +28,7 @@ package body org.allbinary.system.Memory_Package is
    function Create return Memory_Access is
       This : constant Memory_Access := new Memory;
    begin
-      Initialize (This.all);
+      Memory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -36,13 +36,6 @@ package body org.allbinary.system.Memory_Package is
    function getInfo return Unbounded_String is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
-   end getInfo;
-
-   procedure getInfo is
-      Java_Result : constant Unbounded_String := getInfo;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInfo;
 
 end org.allbinary.system.Memory_Package;

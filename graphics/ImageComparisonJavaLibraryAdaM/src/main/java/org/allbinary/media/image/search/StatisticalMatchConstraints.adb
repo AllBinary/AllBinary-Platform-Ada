@@ -30,7 +30,7 @@ package body org.allbinary.media.image.search.StatisticalMatchConstraints_Packag
    function Create return StatisticalMatchConstraints_Access is
       This : constant StatisticalMatchConstraints_Access := new StatisticalMatchConstraints;
    begin
-      Initialize (This.all);
+      StatisticalMatchConstraints_Package.Initialize (This.all);
       return This;
    end Create;
 

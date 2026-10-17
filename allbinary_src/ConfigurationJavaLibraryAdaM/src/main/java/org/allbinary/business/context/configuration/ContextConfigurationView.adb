@@ -38,7 +38,7 @@ package body org.allbinary.business.context.configuration.ContextConfigurationVi
    function Create (node : Node_Access) return ContextConfigurationView_Access is
       This : constant ContextConfigurationView_Access := new ContextConfigurationView;
    begin
-      Initialize (This.all, node);
+      ContextConfigurationView_Package.Initialize (This.all, node);
       return This;
    end Create;
 
@@ -52,7 +52,7 @@ package body org.allbinary.business.context.configuration.ContextConfigurationVi
    function Create (contextConfigurationInterface : ContextConfigurationInterface_Access) return ContextConfigurationView_Access is
       This : constant ContextConfigurationView_Access := new ContextConfigurationView;
    begin
-      Initialize (This.all, contextConfigurationInterface);
+      ContextConfigurationView_Package.Initialize (This.all, contextConfigurationInterface);
       return This;
    end Create;
 
@@ -71,13 +71,6 @@ package body org.allbinary.business.context.configuration.ContextConfigurationVi
         node.appendChild (emailServerConfigurationView.toXmlNode (document));
         return node;
    end toXmlNode;
-
-   procedure getContextConfigurationInterface (This : in out ContextConfigurationView) is
-      Java_Result : constant ContextConfigurationInterface_Access := ContextConfigurationView'Class (This).getContextConfigurationInterface;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getContextConfigurationInterface;
 
    procedure toXmlNode (This : in out ContextConfigurationView; document : Document_Access) is
       Java_Result : constant Node_Access := ContextConfigurationView'Class (This).toXmlNode (document);

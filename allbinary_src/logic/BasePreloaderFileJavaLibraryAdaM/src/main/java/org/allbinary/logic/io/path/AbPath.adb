@@ -66,7 +66,7 @@ package body org.allbinary.logic.io.path.AbPath_Package is
    function Create (aPath : Unbounded_String; name : Unbounded_String) return AbPath_Access is
       This : constant AbPath_Access := new AbPath;
    begin
-      Initialize (This.all, aPath, name);
+      AbPath_Package.Initialize (This.all, aPath, name);
       return This;
    end Create;
 
@@ -172,13 +172,6 @@ package body org.allbinary.logic.io.path.AbPath_Package is
         This.path := path;
    end setPath;
 
-   procedure createAbPath is
-      Java_Result : constant AbPath_Access := createAbPath;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end createAbPath;
-
    procedure getSchema (This : in out AbPath; aPath : Unbounded_String) is
       Java_Result : constant Unbounded_String := AbPath'Class (This).getSchema (aPath);
       pragma Unreferenced (Java_Result);
@@ -186,47 +179,12 @@ package body org.allbinary.logic.io.path.AbPath_Package is
       null;
    end getSchema;
 
-   procedure hasSchema (This : in out AbPath) is
-      Java_Result : constant Boolean := AbPath'Class (This).hasSchema;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end hasSchema;
-
    procedure getPathFromPath (This : in out AbPath; aPath : Unbounded_String) is
       Java_Result : constant Unbounded_String := AbPath'Class (This).getPathFromPath (aPath);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getPathFromPath;
-
-   procedure getName (This : in out AbPath) is
-      Java_Result : constant Unbounded_String := AbPath'Class (This).getName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getName;
-
-   procedure toString (This : in out AbPath) is
-      Java_Result : constant Unbounded_String := AbPath'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toString;
-
-   procedure toFileSystemString (This : in out AbPath) is
-      Java_Result : constant Unbounded_String := AbPath'Class (This).toFileSystemString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toFileSystemString;
-
-   procedure getPath (This : in out AbPath) is
-      Java_Result : constant Unbounded_String := AbPath'Class (This).getPath;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getPath;
 
 begin
    null;

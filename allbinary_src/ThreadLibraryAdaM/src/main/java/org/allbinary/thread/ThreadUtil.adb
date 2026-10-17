@@ -30,7 +30,7 @@ package body org.allbinary.thread.ThreadUtil_Package is
    function Create return ThreadUtil_Access is
       This : constant ThreadUtil_Access := new ThreadUtil;
    begin
-      Initialize (This.all);
+      ThreadUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -57,13 +57,6 @@ package body org.allbinary.thread.ThreadUtil_Package is
             thread.join_Case;
         end if;
    end join_Case;
-
-   procedure getInstance is
-      Java_Result : constant ThreadUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure isRunning (This : in out ThreadUtil; thread : Thread_Access) is
       Java_Result : constant Boolean := ThreadUtil'Class (This).isRunning (thread);

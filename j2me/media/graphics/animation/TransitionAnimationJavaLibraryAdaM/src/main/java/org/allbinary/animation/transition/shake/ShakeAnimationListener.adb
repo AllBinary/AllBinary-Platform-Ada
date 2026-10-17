@@ -28,7 +28,7 @@ package body org.allbinary.animation.transition.shake.ShakeAnimationListener_Pac
    function Create return ShakeAnimationListener_Access is
       This : constant ShakeAnimationListener_Access := new ShakeAnimationListener;
    begin
-      Initialize (This.all);
+      ShakeAnimationListener_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -56,13 +56,6 @@ package body org.allbinary.animation.transition.shake.ShakeAnimationListener_Pac
    function getType (This : in out ShakeAnimationListener) return Integer is
    begin
         return 0;
-   end getType;
-
-   procedure getType (This : in out ShakeAnimationListener) is
-      Java_Result : constant Integer := ShakeAnimationListener'Class (This).getType;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getType;
 
 end org.allbinary.animation.transition.shake.ShakeAnimationListener_Package;

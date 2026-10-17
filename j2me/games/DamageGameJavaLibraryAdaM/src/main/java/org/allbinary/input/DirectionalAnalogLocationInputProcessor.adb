@@ -57,7 +57,7 @@ package body org.allbinary.input.DirectionalAnalogLocationInputProcessor_Package
    function Create (inputProcessorArray : GameInputProcessor_Access_Array_Access) return DirectionalAnalogLocationInputProcessor_Access is
       This : constant DirectionalAnalogLocationInputProcessor_Access := new DirectionalAnalogLocationInputProcessor;
    begin
-      Initialize (This.all, inputProcessorArray);
+      DirectionalAnalogLocationInputProcessor_Package.Initialize (This.all, inputProcessorArray);
       return This;
    end Create;
 
@@ -106,13 +106,6 @@ package body org.allbinary.input.DirectionalAnalogLocationInputProcessor_Package
    function getSourceId (This : in out DirectionalAnalogLocationInputProcessor) return Integer is
    begin
         return 0;
-   end getSourceId;
-
-   procedure getSourceId (This : in out DirectionalAnalogLocationInputProcessor) is
-      Java_Result : constant Integer := DirectionalAnalogLocationInputProcessor'Class (This).getSourceId;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getSourceId;
 
 end org.allbinary.input.DirectionalAnalogLocationInputProcessor_Package;

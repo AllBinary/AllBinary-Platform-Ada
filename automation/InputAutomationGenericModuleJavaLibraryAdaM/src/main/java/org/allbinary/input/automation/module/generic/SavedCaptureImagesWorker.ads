@@ -75,7 +75,6 @@ package org.allbinary.input.automation.module.generic_Id.SavedCaptureImagesWorke
    function Create (savedCaptureGenericProfileDataWorkerType : SavedCaptureGenericProfileDataWorkerType_Access) return SavedCaptureImagesWorker_Access;
    procedure setThread (This : in out SavedCaptureImagesWorker; thread : Thread_Access);
    function isRunning (This : in out SavedCaptureImagesWorker) return Boolean;
-   procedure isRunning (This : in out SavedCaptureImagesWorker);
    procedure setRunning (This : in out SavedCaptureImagesWorker; running : Boolean);
    procedure run (This : in out SavedCaptureImagesWorker);
 

@@ -16,7 +16,7 @@ package body org.allbinary.time.TimeTypeTest_Package is
    function Create return TimeTypeTest_Access is
       This : constant TimeTypeTest_Access := new TimeTypeTest;
    begin
-      Initialize (This.all);
+      TimeTypeTest_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -156,20 +156,13 @@ package body org.allbinary.time.TestableTimeTypeUtil_Package is
    function Create (hour : Integer) return TestableTimeTypeUtil_Access is
       This : constant TestableTimeTypeUtil_Access := new TestableTimeTypeUtil;
    begin
-      Initialize (This.all, hour);
+      TestableTimeTypeUtil_Package.Initialize (This.all, hour);
       return This;
    end Create;
     
    function getHourOfDay (This : in out TestableTimeTypeUtil) return Integer is
    begin
             return This.hour;
-   end getHourOfDay;
-
-   procedure getHourOfDay (This : in out TestableTimeTypeUtil) is
-      Java_Result : constant Integer := TestableTimeTypeUtil'Class (This).getHourOfDay;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getHourOfDay;
 
 end org.allbinary.time.TestableTimeTypeUtil_Package;

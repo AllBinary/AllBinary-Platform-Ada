@@ -54,7 +54,7 @@ package body org.allbinary.logic.string_Id.tokens.UniqueTokens_Package is
    function Create return UniqueTokens_Access is
       This : constant UniqueTokens_Access := new UniqueTokens;
    begin
-      Initialize (This.all);
+      UniqueTokens_Package.Initialize (This.all);
       return This;
    end Create;
 

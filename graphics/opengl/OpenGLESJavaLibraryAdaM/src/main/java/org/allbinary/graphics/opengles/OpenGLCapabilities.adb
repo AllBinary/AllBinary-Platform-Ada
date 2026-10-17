@@ -65,7 +65,7 @@ package body org.allbinary.graphics.opengles.OpenGLCapabilities_Package is
    function Create return OpenGLCapabilities_Access is
       This : constant OpenGLCapabilities_Access := new OpenGLCapabilities;
    begin
-      Initialize (This.all);
+      OpenGLCapabilities_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -330,20 +330,6 @@ package body org.allbinary.graphics.opengles.OpenGLCapabilities_Package is
         return stringBuffer.toString;
    end toString;
 
-   procedure getInstance is
-      Java_Result : constant OpenGLCapabilities_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure isInitialized (This : in out OpenGLCapabilities) is
-      Java_Result : constant Boolean := OpenGLCapabilities'Class (This).isInitialized;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isInitialized;
-
    procedure isExtension (This : in out OpenGLCapabilities; gameFeature : OpenGLFeature_Access) is
       Java_Result : constant Boolean := OpenGLCapabilities'Class (This).isExtension (gameFeature);
       pragma Unreferenced (Java_Result);
@@ -351,82 +337,12 @@ package body org.allbinary.graphics.opengles.OpenGLCapabilities_Package is
       null;
    end isExtension;
 
-   procedure isGlExtensionDrawTexture (This : in out OpenGLCapabilities) is
-      Java_Result : constant Boolean := OpenGLCapabilities'Class (This).isGlExtensionDrawTexture;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isGlExtensionDrawTexture;
-
-   procedure isGlExtensionGPUShader100 (This : in out OpenGLCapabilities) is
-      Java_Result : constant Boolean := OpenGLCapabilities'Class (This).isGlExtensionGPUShader100;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isGlExtensionGPUShader100;
-
-   procedure isGlExtensionGPUShader4 (This : in out OpenGLCapabilities) is
-      Java_Result : constant Boolean := OpenGLCapabilities'Class (This).isGlExtensionGPUShader4;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isGlExtensionGPUShader4;
-
-   procedure getGlVersion (This : in out OpenGLCapabilities) is
-      Java_Result : constant Unbounded_String := OpenGLCapabilities'Class (This).getGlVersion;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getGlVersion;
-
-   procedure getGlVersionString (This : in out OpenGLCapabilities) is
-      Java_Result : constant Unbounded_String := OpenGLCapabilities'Class (This).getGlVersionString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getGlVersionString;
-
-   procedure getGlShaderVersion (This : in out OpenGLCapabilities) is
-      Java_Result : constant Unbounded_String := OpenGLCapabilities'Class (This).getGlShaderVersion;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getGlShaderVersion;
-
-   procedure isGlThreedDrawTexture (This : in out OpenGLCapabilities) is
-      Java_Result : constant Boolean := OpenGLCapabilities'Class (This).isGlThreedDrawTexture;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isGlThreedDrawTexture;
-
-   procedure getGlRenderer (This : in out OpenGLCapabilities) is
-      Java_Result : constant Unbounded_String := OpenGLCapabilities'Class (This).getGlRenderer;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getGlRenderer;
-
-   procedure isVertexBufferObjectSupport (This : in out OpenGLCapabilities) is
-      Java_Result : constant Boolean := OpenGLCapabilities'Class (This).isVertexBufferObjectSupport;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isVertexBufferObjectSupport;
-
    procedure isTextureSizeValid (This : in out OpenGLCapabilities; widthAndHeight : Integer) is
       Java_Result : constant Boolean := OpenGLCapabilities'Class (This).isTextureSizeValid (widthAndHeight);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isTextureSizeValid;
-
-   procedure toString (This : in out OpenGLCapabilities) is
-      Java_Result : constant Unbounded_String := OpenGLCapabilities'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toString;
 
 begin
    null;

@@ -29,7 +29,7 @@ package body org.allbinary.game.layer.geological.resources.ResourceWaypointLayer
    function Create (remoteInfo : RemoteInfo_Access; parentLayer : PathFindingLayerInterface_Access; groupInterface : Group_Access_Array_Access; rootName : Unbounded_String; name : Unbounded_String; animationInterfaceFactoryInterface : AnimationInterfaceFactoryInterface_Access; proceduralAnimationInterfaceFactoryInterface : ProceduralAnimationInterfaceFactoryInterface_Access; rectangle : Rectangle_Access; x : Integer; y : Integer) return ResourceWaypointLayer_Access is
       This : constant ResourceWaypointLayer_Access := new ResourceWaypointLayer;
    begin
-      Initialize (This.all, remoteInfo, parentLayer, groupInterface, rootName, name, animationInterfaceFactoryInterface, proceduralAnimationInterfaceFactoryInterface, rectangle, x, y);
+      ResourceWaypointLayer_Package.Initialize (This.all, remoteInfo, parentLayer, groupInterface, rootName, name, animationInterfaceFactoryInterface, proceduralAnimationInterfaceFactoryInterface, rectangle, x, y);
       return This;
    end Create;
 
@@ -47,20 +47,6 @@ package body org.allbinary.game.layer.geological.resources.ResourceWaypointLayer
    begin
         rtsLayerHudPaintable := GeologicalResourceInfoHudPaintableSingleton_Package.getInstance;
         return rtsLayerHudPaintable;
-   end getHudPaintable;
-
-   procedure createHudPaintable (This : in out ResourceWaypointLayer) is
-      Java_Result : constant SelectionHudPaintable_Access := ResourceWaypointLayer'Class (This).createHudPaintable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end createHudPaintable;
-
-   procedure getHudPaintable (This : in out ResourceWaypointLayer) is
-      Java_Result : constant SelectionHudPaintable_Access := ResourceWaypointLayer'Class (This).getHudPaintable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getHudPaintable;
 
 end org.allbinary.game.layer.geological.resources.ResourceWaypointLayer_Package;

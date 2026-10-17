@@ -21,6 +21,7 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.math.Angle_Package; use org.allbinary.math.Angle_Package;
+with org.allbinary.direction.Direction_Package; use org.allbinary.direction.Direction_Package;
 
 package org.allbinary.direction.DirectionalInterface_Package is
 

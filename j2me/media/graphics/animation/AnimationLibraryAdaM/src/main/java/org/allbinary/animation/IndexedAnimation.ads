@@ -25,6 +25,7 @@ with org.allbinary.logic.math.PrimitiveIntUtil_Package; use org.allbinary.logic.
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Animation_Package;
 with org.allbinary.animation.IndexedAnimationInterface_Package; use org.allbinary.animation.IndexedAnimationInterface_Package;
+with org.allbinary.animation.AnimationBehavior_Package; use org.allbinary.animation.AnimationBehavior_Package;
 
 package org.allbinary.animation.IndexedAnimation_Package is
 
@@ -46,26 +47,18 @@ package org.allbinary.animation.IndexedAnimation_Package is
    procedure Initialize (This : in out IndexedAnimation'Class; animationBehavior : AnimationBehavior_Access);
    function Create (animationBehavior : AnimationBehavior_Access) return IndexedAnimation_Access;
    function getAnimationBehavior (This : in out IndexedAnimation) return AnimationBehavior_Access;
-   procedure getAnimationBehavior (This : in out IndexedAnimation);
    procedure reset (This : in out IndexedAnimation);
    procedure setFrame (This : in out IndexedAnimation; index : Integer);
    function getFrame (This : in out IndexedAnimation) return Integer;
-   procedure getFrame (This : in out IndexedAnimation);
    function getAnimationSize (This : in out IndexedAnimation) return Integer;
-   procedure getAnimationSize (This : in out IndexedAnimation);
    function getSize (This : in out IndexedAnimation) return Integer;
-   procedure getSize (This : in out IndexedAnimation);
    procedure previousFrame (This : in out IndexedAnimation);
    function isLastFrame (This : in out IndexedAnimation) return Boolean;
-   procedure isLastFrame (This : in out IndexedAnimation);
    procedure setSequence (This : in out IndexedAnimation; sequence : Integer_Array_Access);
    function getSequence (This : in out IndexedAnimation) return Integer_Array_Access;
-   procedure getSequence (This : in out IndexedAnimation);
    procedure setState (This : in out IndexedAnimation; indexedAnimation : IndexedAnimation_Access);
    function getWidth (This : in out IndexedAnimation) return Integer;
-   procedure getWidth (This : in out IndexedAnimation);
    function getHeight (This : in out IndexedAnimation) return Integer;
-   procedure getHeight (This : in out IndexedAnimation);
 
 end org.allbinary.animation.IndexedAnimation_Package;
 

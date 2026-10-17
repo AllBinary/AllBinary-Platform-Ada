@@ -36,7 +36,7 @@ package body org.allbinary.media.graphics.geography.map.topview.BasicTopViewGeog
    function Create return BasicTopViewGeographicMapStrings_Access is
       This : constant BasicTopViewGeographicMapStrings_Access := new BasicTopViewGeographicMapStrings;
    begin
-      Initialize (This.all);
+      BasicTopViewGeographicMapStrings_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -44,13 +44,6 @@ package body org.allbinary.media.graphics.geography.map.topview.BasicTopViewGeog
    function getInstance return BasicTopViewGeographicMapStrings_Access is
    begin
         return BasicTopViewGeographicMapStrings_Package.instance;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant BasicTopViewGeographicMapStrings_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

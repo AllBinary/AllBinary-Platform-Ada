@@ -28,6 +28,7 @@ with org.allbinary.game.input.GameInput_Package; use org.allbinary.game.input.Ga
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
 with org.allbinary.logic.util.visitor.Visitor_Package; use org.allbinary.logic.util.visitor.Visitor_Package;
 with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
+with org.allbinary.game.ag.ai.tactical.BasicRandomAI_Package; use org.allbinary.game.ag.ai.tactical.BasicRandomAI_Package;
 
 package org.allbinary.game.ag.ai.tactical.BasicRandomAIFactory_Package is
 

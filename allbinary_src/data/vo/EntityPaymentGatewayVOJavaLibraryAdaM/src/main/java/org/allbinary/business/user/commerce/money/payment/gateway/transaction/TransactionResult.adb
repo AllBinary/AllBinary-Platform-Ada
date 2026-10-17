@@ -54,22 +54,23 @@ package body org.allbinary.business.user.commerce.money.payment.gateway.transact
    function Create (result : Unbounded_String) return TransactionResult_Access is
       This : constant TransactionResult_Access := new TransactionResult;
    begin
-      Initialize (This.all, result);
+      TransactionResult_Package.Initialize (This.all, result);
       return This;
    end Create;
 
    --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
-   procedure Initialize (This : in out TransactionResult'Class; keyValuePairs : HashMap_Access) is
+   procedure Initialize (This : in out TransactionResult'Class; keyValuePairs_Param : HashMap_Access) is
+      keyValuePairs : HashMap_Access := keyValuePairs_Param;
    begin
       Initialize_Fields (This);
         keyValuePairs := keyValuePairs;
         This.result := To_Unbounded_String ("Needs to have the hashmap converted to string for other constructor");
    end Initialize;
 
-   function Create (keyValuePairs : HashMap_Access) return TransactionResult_Access is
+   function Create (keyValuePairs_Param : HashMap_Access) return TransactionResult_Access is
       This : constant TransactionResult_Access := new TransactionResult;
    begin
-      Initialize (This.all, keyValuePairs);
+      TransactionResult_Package.Initialize (This.all, keyValuePairs_Param);
       return This;
    end Create;
 
@@ -240,181 +241,6 @@ package body org.allbinary.business.user.commerce.money.payment.gateway.transact
    function getReason3 (This : in out TransactionResult) return Unbounded_String is
    begin
         return Unbounded_String (This.keyValuePairs.get (PaymentTransactionKeysFactory_Package.getInstance.REASON3.toString));
-   end getReason3;
-
-   procedure toString (This : in out TransactionResult) is
-      Java_Result : constant Unbounded_String := TransactionResult'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toString;
-
-   procedure toHashMap (This : in out TransactionResult) is
-      Java_Result : constant HashMap_Access := TransactionResult'Class (This).toHashMap;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toHashMap;
-
-   procedure getAllPossibleKeys (This : in out TransactionResult) is
-      Java_Result : constant BasicArrayList_Access := TransactionResult'Class (This).getAllPossibleKeys;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getAllPossibleKeys;
-
-   procedure getValues (This : in out TransactionResult) is
-      Java_Result : constant BasicArrayList_Access := TransactionResult'Class (This).getValues;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getValues;
-
-   procedure getPnRef (This : in out TransactionResult) is
-      Java_Result : constant Unbounded_String := TransactionResult'Class (This).getPnRef;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getPnRef;
-
-   procedure getRespMsg (This : in out TransactionResult) is
-      Java_Result : constant Unbounded_String := TransactionResult'Class (This).getRespMsg;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getRespMsg;
-
-   procedure getResult (This : in out TransactionResult) is
-      Java_Result : constant Unbounded_String := TransactionResult'Class (This).getResult;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getResult;
-
-   procedure getScore (This : in out TransactionResult) is
-      Java_Result : constant Unbounded_String := TransactionResult'Class (This).getScore;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getScore;
-
-   procedure getStatus (This : in out TransactionResult) is
-      Java_Result : constant Unbounded_String := TransactionResult'Class (This).getStatus;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getStatus;
-
-   procedure getFraudCode (This : in out TransactionResult) is
-      Java_Result : constant Unbounded_String := TransactionResult'Class (This).getFraudCode;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getFraudCode;
-
-   procedure getFraudMsg (This : in out TransactionResult) is
-      Java_Result : constant Unbounded_String := TransactionResult'Class (This).getFraudMsg;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getFraudMsg;
-
-   procedure getOrigResult (This : in out TransactionResult) is
-      Java_Result : constant Unbounded_String := TransactionResult'Class (This).getOrigResult;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getOrigResult;
-
-   procedure getAvsAddr (This : in out TransactionResult) is
-      Java_Result : constant Unbounded_String := TransactionResult'Class (This).getAvsAddr;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getAvsAddr;
-
-   procedure getAvsZip (This : in out TransactionResult) is
-      Java_Result : constant Unbounded_String := TransactionResult'Class (This).getAvsZip;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getAvsZip;
-
-   procedure getErrCode (This : in out TransactionResult) is
-      Java_Result : constant Unbounded_String := TransactionResult'Class (This).getErrCode;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getErrCode;
-
-   procedure getException1 (This : in out TransactionResult) is
-      Java_Result : constant Unbounded_String := TransactionResult'Class (This).getException1;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getException1;
-
-   procedure getException2 (This : in out TransactionResult) is
-      Java_Result : constant Unbounded_String := TransactionResult'Class (This).getException2;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getException2;
-
-   procedure getException3 (This : in out TransactionResult) is
-      Java_Result : constant Unbounded_String := TransactionResult'Class (This).getException3;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getException3;
-
-   procedure getException4 (This : in out TransactionResult) is
-      Java_Result : constant Unbounded_String := TransactionResult'Class (This).getException4;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getException4;
-
-   procedure getException5 (This : in out TransactionResult) is
-      Java_Result : constant Unbounded_String := TransactionResult'Class (This).getException5;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getException5;
-
-   procedure getException6 (This : in out TransactionResult) is
-      Java_Result : constant Unbounded_String := TransactionResult'Class (This).getException6;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getException6;
-
-   procedure getException7 (This : in out TransactionResult) is
-      Java_Result : constant Unbounded_String := TransactionResult'Class (This).getException7;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getException7;
-
-   procedure getReason1 (This : in out TransactionResult) is
-      Java_Result : constant Unbounded_String := TransactionResult'Class (This).getReason1;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getReason1;
-
-   procedure getReason2 (This : in out TransactionResult) is
-      Java_Result : constant Unbounded_String := TransactionResult'Class (This).getReason2;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getReason2;
-
-   procedure getReason3 (This : in out TransactionResult) is
-      Java_Result : constant Unbounded_String := TransactionResult'Class (This).getReason3;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getReason3;
 
 end org.allbinary.business.user.commerce.money.payment.gateway.transaction.TransactionResult_Package;

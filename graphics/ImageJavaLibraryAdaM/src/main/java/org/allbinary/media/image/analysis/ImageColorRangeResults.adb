@@ -33,7 +33,7 @@ package body org.allbinary.media.image.analysis.ImageColorRangeResults_Package i
    function Create return ImageColorRangeResults_Access is
       This : constant ImageColorRangeResults_Access := new ImageColorRangeResults;
    begin
-      Initialize (This.all);
+      ImageColorRangeResults_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -80,34 +80,6 @@ package body org.allbinary.media.image.analysis.ImageColorRangeResults_Package i
    function getPercent (This : in out ImageColorRangeResults) return Float is
    begin
         return ((Float (This.getMatchingPixelsChecked)) / (Float (This.getTotalPixelsChecked)));
-   end getPercent;
-
-   procedure getColorRangeInterface (This : in out ImageColorRangeResults) is
-      Java_Result : constant ColorRangeInterface_Access := ImageColorRangeResults'Class (This).getColorRangeInterface;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getColorRangeInterface;
-
-   procedure getMatchingPixelsChecked (This : in out ImageColorRangeResults) is
-      Java_Result : constant Long_Long_Integer := ImageColorRangeResults'Class (This).getMatchingPixelsChecked;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getMatchingPixelsChecked;
-
-   procedure getTotalPixelsChecked (This : in out ImageColorRangeResults) is
-      Java_Result : constant Long_Long_Integer := ImageColorRangeResults'Class (This).getTotalPixelsChecked;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTotalPixelsChecked;
-
-   procedure getPercent (This : in out ImageColorRangeResults) is
-      Java_Result : constant Float := ImageColorRangeResults'Class (This).getPercent;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getPercent;
 
 end org.allbinary.media.image.analysis.ImageColorRangeResults_Package;

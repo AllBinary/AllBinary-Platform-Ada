@@ -28,20 +28,13 @@ package body org.allbinary.media.audio.BuildingSound_Package is
    function Create return BuildingSound_Access is
       This : constant BuildingSound_Access := new BuildingSound;
    begin
-      Initialize (This.all);
+      BuildingSound_Package.Initialize (This.all);
       return This;
    end Create;
 
    function getInstance return Sound_Access is
    begin
         return BuildingSound_Package.soundInterface;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant Sound_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

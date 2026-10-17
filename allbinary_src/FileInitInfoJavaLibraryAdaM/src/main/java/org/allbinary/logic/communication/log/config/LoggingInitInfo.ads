@@ -33,6 +33,9 @@ with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArr
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.w3c.dom.NodeList_Package; use org.w3c.dom.NodeList_Package;
+with org.allbinary.logic.communication.log.config.LogConfigsData_Package; use org.allbinary.logic.communication.log.config.LogConfigsData_Package;
+with org.allbinary.logic.communication.log.config.LogConfigData_Package; use org.allbinary.logic.communication.log.config.LogConfigData_Package;
+with org.allbinary.logic.communication.log.config.LogConfig_Package; use org.allbinary.logic.communication.log.config.LogConfig_Package;
 
 package org.allbinary.logic.communication.log.config.LoggingInitInfo_Package is
 
@@ -64,24 +67,17 @@ package org.allbinary.logic.communication.log.config.LoggingInitInfo_Package is
    procedure Initialize (This : in out LoggingInitInfo'Class);
    function Create return LoggingInitInfo_Access;
    function getDoc return Document_Access;
-   procedure getDoc;
    procedure write;
    procedure read;
    procedure setHasRead (value : Boolean);
    procedure updateIfNeeded;
    function isValid (This : in out LoggingInitInfo) return Boolean;
-   procedure isValid (This : in out LoggingInitInfo);
    procedure set (logConfigInfoVector : BasicArrayList_Access);
    function get return BasicArrayList_Access;
-   procedure get;
    function getTypeNameList return BasicArrayList_Access;
-   procedure getTypeNameList;
    function getTypeList return BasicArrayList_Access;
-   procedure getTypeList;
    function getNumberOfLogConfigs (This : in out LoggingInitInfo) return Integer;
-   procedure getNumberOfLogConfigs (This : in out LoggingInitInfo);
    function toString (This : in out LoggingInitInfo) return Unbounded_String;
-   procedure toString (This : in out LoggingInitInfo);
 
 end org.allbinary.logic.communication.log.config.LoggingInitInfo_Package;
 

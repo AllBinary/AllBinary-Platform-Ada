@@ -13,7 +13,7 @@
 --  Generated Code Do Not Modify
 
 
-package body org.allbinary.business.category_Case.Category_Package is
+package body org.allbinary.business.category.Category_Package is
 
    procedure Initialize_Fields (This : in out Category'Class) is
    begin
@@ -43,7 +43,7 @@ package body org.allbinary.business.category_Case.Category_Package is
    function Create (categoryPropertiesFactoryInterface : CategoryPropertiesFactoryInterface_Access) return Category_Access is
       This : constant Category_Access := new Category;
    begin
-      Initialize (This.all, categoryPropertiesFactoryInterface);
+      Category_Package.Initialize (This.all, categoryPropertiesFactoryInterface);
       return This;
    end Create;
 
@@ -59,7 +59,7 @@ package body org.allbinary.business.category_Case.Category_Package is
    function Create (categoryPropertiesFactoryInterface : CategoryPropertiesFactoryInterface_Access; level : Integer) return Category_Access is
       This : constant Category_Access := new Category;
    begin
-      Initialize (This.all, categoryPropertiesFactoryInterface, level);
+      Category_Package.Initialize (This.all, categoryPropertiesFactoryInterface, level);
       return This;
    end Create;
 
@@ -75,7 +75,7 @@ package body org.allbinary.business.category_Case.Category_Package is
    function Create (rootCategoryInterface : CategoryInterface_Access; parentCategoryInterface : CategoryInterface_Access; categoryPropertiesFactoryInterface : CategoryPropertiesFactoryInterface_Access) return Category_Access is
       This : constant Category_Access := new Category;
    begin
-      Initialize (This.all, rootCategoryInterface, parentCategoryInterface, categoryPropertiesFactoryInterface);
+      Category_Package.Initialize (This.all, rootCategoryInterface, parentCategoryInterface, categoryPropertiesFactoryInterface);
       return This;
    end Create;
 
@@ -334,41 +334,6 @@ package body org.allbinary.business.category_Case.Category_Package is
         end if;
    end log;
 
-   procedure getKey (This : in out Category) is
-      Java_Result : constant Java_Object_Access := Category'Class (This).getKey;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getKey;
-
-   procedure getRootFilePath (This : in out Category) is
-      Java_Result : constant AbPath_Access := Category'Class (This).getRootFilePath;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getRootFilePath;
-
-   procedure getFilePath (This : in out Category) is
-      Java_Result : constant AbPath_Access := Category'Class (This).getFilePath;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getFilePath;
-
-   procedure getWebAppPath (This : in out Category) is
-      Java_Result : constant AbPath_Access := Category'Class (This).getWebAppPath;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getWebAppPath;
-
-   procedure getPath (This : in out Category) is
-      Java_Result : constant AbPath_Access := Category'Class (This).getPath;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getPath;
-
    procedure addChildProperty (This : in out Category; categoryPropertiesInterface : CategoryPropertiesInterface_Access) is
       Java_Result : constant Boolean := Category'Class (This).addChildProperty (categoryPropertiesInterface);
       pragma Unreferenced (Java_Result);
@@ -382,13 +347,6 @@ package body org.allbinary.business.category_Case.Category_Package is
    begin
       null;
    end addChild;
-
-   procedure getChildNodes (This : in out Category) is
-      Java_Result : constant BasicArrayList_Access := Category'Class (This).getChildNodes;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getChildNodes;
 
    procedure removeChild (This : in out Category; categoryInterface : CategoryInterface_Access) is
       Java_Result : constant Boolean := Category'Class (This).removeChild (categoryInterface);
@@ -404,41 +362,6 @@ package body org.allbinary.business.category_Case.Category_Package is
       null;
    end removeDuplicateChild;
 
-   procedure isLeaf (This : in out Category) is
-      Java_Result : constant Boolean := Category'Class (This).isLeaf;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isLeaf;
-
-   procedure getProperties (This : in out Category) is
-      Java_Result : constant CategoryPropertiesInterface_Access := Category'Class (This).getProperties;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getProperties;
-
-   procedure getHierarchy (This : in out Category) is
-      Java_Result : constant CategoryHierarchyInterface_Access := Category'Class (This).getHierarchy;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getHierarchy;
-
-   procedure isValid (This : in out Category) is
-      Java_Result : constant Boolean := Category'Class (This).isValid;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isValid;
-
-   procedure toValidationInfoDoc (This : in out Category) is
-      Java_Result : constant Document_Access := Category'Class (This).toValidationInfoDoc;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toValidationInfoDoc;
-
    procedure toValidationInfoNode (This : in out Category; document : Document_Access) is
       Java_Result : constant Node_Access := Category'Class (This).toValidationInfoNode (document);
       pragma Unreferenced (Java_Result);
@@ -446,31 +369,10 @@ package body org.allbinary.business.category_Case.Category_Package is
       null;
    end toValidationInfoNode;
 
-   procedure validationInfo (This : in out Category) is
-      Java_Result : constant Unbounded_String := Category'Class (This).validationInfo;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end validationInfo;
-
-   procedure toHashMap (This : in out Category) is
-      Java_Result : constant HashMap_Access := Category'Class (This).toHashMap;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toHashMap;
-
-   procedure toVector (This : in out Category) is
-      Java_Result : constant BasicArrayList_Access := Category'Class (This).toVector;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toVector;
-
 begin
    null;
    NOT_ROOT := To_Unbounded_String ("This is not the root so it has no file path.");
 
-end org.allbinary.business.category_Case.Category_Package;
+end org.allbinary.business.category.Category_Package;
 
 

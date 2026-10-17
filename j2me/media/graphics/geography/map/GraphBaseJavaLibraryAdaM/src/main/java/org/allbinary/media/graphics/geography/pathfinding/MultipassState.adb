@@ -31,7 +31,7 @@ package body org.allbinary.media.graphics.geography.pathfinding.MultipassState_P
    function Create return MultipassState_Access is
       This : constant MultipassState_Access := new MultipassState;
    begin
-      Initialize (This.all);
+      MultipassState_Package.Initialize (This.all);
       return This;
    end Create;
 

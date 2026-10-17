@@ -35,7 +35,7 @@ package body org.allbinary.input.media.image.InputImageType_Package is
    function Create (name : Unbounded_String; index : Integer) return InputImageType_Access is
       This : constant InputImageType_Access := new InputImageType;
    begin
-      Initialize (This.all, name, index);
+      InputImageType_Package.Initialize (This.all, name, index);
       return This;
    end Create;
 
@@ -64,40 +64,12 @@ package body org.allbinary.input.media.image.InputImageType_Package is
         return This.index;
    end getIndex;
 
-   procedure toString (This : in out InputImageType) is
-      Java_Result : constant Unbounded_String := InputImageType'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toString;
-
-   procedure getName (This : in out InputImageType) is
-      Java_Result : constant Unbounded_String := InputImageType'Class (This).getName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getName;
-
    procedure getInstance (imageTypeString : Unbounded_String) is
       Java_Result : constant InputImageType_Access := getInstance (imageTypeString);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInstance;
-
-   procedure getAllAsVector is
-      Java_Result : constant BasicArrayList_Access := getAllAsVector;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getAllAsVector;
-
-   procedure getIndex (This : in out InputImageType) is
-      Java_Result : constant Integer := InputImageType'Class (This).getIndex;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getIndex;
 
 begin
    null;

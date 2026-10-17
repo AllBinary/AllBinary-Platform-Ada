@@ -33,7 +33,7 @@ package body org.allbinary.game.layer.unit.UnitItemArrayFactory_Package is
    function Create (resources : BasicGameResources_Access_Array_Access) return UnitItemArrayFactory_Access is
       This : constant UnitItemArrayFactory_Access := new UnitItemArrayFactory;
    begin
-      Initialize (This.all, resources);
+      UnitItemArrayFactory_Package.Initialize (This.all, resources);
       return This;
    end Create;
 
@@ -97,20 +97,6 @@ package body org.allbinary.game.layer.unit.UnitItemArrayFactory_Package is
    begin
       null;
    end createNamedFlagItem;
-
-   procedure getItems (This : in out UnitItemArrayFactory) is
-      Java_Result : constant ABCustomItem_Access_Array_Access := UnitItemArrayFactory'Class (This).getItems;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getItems;
-
-   procedure getResources (This : in out UnitItemArrayFactory) is
-      Java_Result : constant BasicGameResources_Access_Array_Access := UnitItemArrayFactory'Class (This).getResources;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getResources;
 
    procedure indexOf (This : in out UnitItemArrayFactory; basicGameResources : BasicGameResources_Access) is
       Java_Result : constant Integer := UnitItemArrayFactory'Class (This).indexOf (basicGameResources);

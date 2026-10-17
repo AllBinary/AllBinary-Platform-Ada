@@ -31,7 +31,7 @@ package body org.allbinary.logic.system.security.licensing.client.XmlRpcAbeLicen
    function Create (clientInfo : AbeClientInformationInterface_Access) return XmlRpcAbeLicenseRetrievalClient_Access is
       This : constant XmlRpcAbeLicenseRetrievalClient_Access := new XmlRpcAbeLicenseRetrievalClient;
    begin
-      Initialize (This.all, clientInfo);
+      XmlRpcAbeLicenseRetrievalClient_Package.Initialize (This.all, clientInfo);
       return This;
    end Create;
 

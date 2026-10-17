@@ -39,7 +39,6 @@ package tags.generic_Id.basket.BasketTag_Package is
    procedure Initialize (This : in out BasketTag'Class);
    function Create return BasketTag_Access;
    function doStartTag (This : in out BasketTag) return Integer;
-   procedure doStartTag (This : in out BasketTag);
 
 end tags.generic_Id.basket.BasketTag_Package;
 

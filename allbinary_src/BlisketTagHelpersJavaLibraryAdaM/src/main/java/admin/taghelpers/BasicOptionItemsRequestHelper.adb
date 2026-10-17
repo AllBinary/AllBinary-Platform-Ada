@@ -43,7 +43,7 @@ package body admin.taghelpers.BasicOptionItemsRequestHelper_Package is
    function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return BasicOptionItemsRequestHelper_Access is
       This : constant BasicOptionItemsRequestHelper_Access := new BasicOptionItemsRequestHelper;
    begin
-      Initialize (This.all, hashMap, pageContext);
+      BasicOptionItemsRequestHelper_Package.Initialize (This.all, hashMap, pageContext);
       return This;
    end Create;
 
@@ -199,34 +199,6 @@ package body admin.taghelpers.BasicOptionItemsRequestHelper_Package is
             return error;
                 end;
         end;
-   end update;
-
-   procedure getHashMap (This : in out BasicOptionItemsRequestHelper) is
-      Java_Result : constant HashMap_Access := BasicOptionItemsRequestHelper'Class (This).getHashMap;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getHashMap;
-
-   procedure insert (This : in out BasicOptionItemsRequestHelper) is
-      Java_Result : constant Unbounded_String := BasicOptionItemsRequestHelper'Class (This).insert;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end insert;
-
-   procedure delete (This : in out BasicOptionItemsRequestHelper) is
-      Java_Result : constant Unbounded_String := BasicOptionItemsRequestHelper'Class (This).delete;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end delete;
-
-   procedure update (This : in out BasicOptionItemsRequestHelper) is
-      Java_Result : constant Unbounded_String := BasicOptionItemsRequestHelper'Class (This).update;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end update;
 
 end admin.taghelpers.BasicOptionItemsRequestHelper_Package;

@@ -37,16 +37,9 @@ package body org.allbinary.game.ag.layer.hud.basic.HudResources_Package is
    function Create return HudResources_Access is
       This : constant HudResources_Access := new HudResources;
    begin
-      Initialize (This.all);
+      HudResources_Package.Initialize (This.all);
       return This;
    end Create;
-
-   procedure getInstance is
-      Java_Result : constant HudResources_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

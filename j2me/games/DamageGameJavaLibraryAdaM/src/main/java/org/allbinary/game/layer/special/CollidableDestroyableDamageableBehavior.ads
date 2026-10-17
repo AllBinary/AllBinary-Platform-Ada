@@ -25,6 +25,7 @@ with org.allbinary.game.collision.CollidableInterfaceCompositeInterface_Package;
 with org.allbinary.game.combat.damage.DamageUtil_Package; use org.allbinary.game.combat.damage.DamageUtil_Package;
 with org.allbinary.game.layer.CollidableCompositeLayer_Package; use org.allbinary.game.layer.CollidableCompositeLayer_Package;
 with org.allbinary.logic.communication.log.ForcedLogUtil_Package; use org.allbinary.logic.communication.log.ForcedLogUtil_Package;
+with org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package; use org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package;
 
 package org.allbinary.game.layer.special.CollidableDestroyableDamageableBehavior_Package is
 

@@ -30,7 +30,7 @@ package body org.allbinary.business.user.modules.configuration.UserConfiguration
    function Create return UserConfigurationData_Access is
       This : constant UserConfigurationData_Access := new UserConfigurationData;
    begin
-      Initialize (This.all);
+      UserConfigurationData_Package.Initialize (This.all);
       return This;
    end Create;
 

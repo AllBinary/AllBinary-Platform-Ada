@@ -32,7 +32,7 @@ package body org.allbinary.game.configuration.persistance.GamePersistanceStrings
    function Create return GamePersistanceStrings_Access is
       This : constant GamePersistanceStrings_Access := new GamePersistanceStrings;
    begin
-      Initialize (This.all);
+      GamePersistanceStrings_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -40,13 +40,6 @@ package body org.allbinary.game.configuration.persistance.GamePersistanceStrings
    function getInstance return GamePersistanceStrings_Access is
    begin
         return GamePersistanceStrings_Package.instance;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant GamePersistanceStrings_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

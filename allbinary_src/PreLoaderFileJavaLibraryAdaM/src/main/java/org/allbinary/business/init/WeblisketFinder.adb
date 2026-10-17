@@ -38,7 +38,7 @@ package body org.allbinary.business.init.WeblisketFinder_Package is
    function Create return WeblisketFinder_Access is
       This : constant WeblisketFinder_Access := new WeblisketFinder;
    begin
-      Initialize (This.all);
+      WeblisketFinder_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -94,13 +94,6 @@ package body org.allbinary.business.init.WeblisketFinder_Package is
         vector := WeblisketFinder_Package.getInstance.findAll (stringUtil.EMPTY_STRING);
         Ada.Text_IO.Put_Line (Java_Image (vector.size));
    end main;
-
-   procedure getInstance is
-      Java_Result : constant WeblisketFinder_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure findAll (This : in out WeblisketFinder; path : Unbounded_String) is
       Java_Result : constant BasicArrayList_Access := WeblisketFinder'Class (This).findAll (path);

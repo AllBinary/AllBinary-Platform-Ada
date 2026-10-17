@@ -32,6 +32,8 @@ with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.w3c.dom.NodeList_Package; use org.w3c.dom.NodeList_Package;
 with org.allbinary.input.automation.actions.script.condition.BasicProfileActionScriptCondition_Package; use org.allbinary.input.automation.actions.script.condition.BasicProfileActionScriptCondition_Package;
 with org.allbinary.input.automation.actions.script.condition.TimeIntervalActionScriptConditionInterface_Package; use org.allbinary.input.automation.actions.script.condition.TimeIntervalActionScriptConditionInterface_Package;
+with org.allbinary.input.automation.actions.script.condition.TimeIntervalActionScriptConditionJPanel_Package; use org.allbinary.input.automation.actions.script.condition.TimeIntervalActionScriptConditionJPanel_Package;
+with org.allbinary.input.automation.actions.script.condition.TimeIntervalActionScriptConditionData_Package; use org.allbinary.input.automation.actions.script.condition.TimeIntervalActionScriptConditionData_Package;
 
 package org.allbinary.input.automation.actions.script.condition.TimeIntervalActionScriptCondition_Package is
 
@@ -62,12 +64,10 @@ package org.allbinary.input.automation.actions.script.condition.TimeIntervalActi
    procedure init (This : in out TimeIntervalActionScriptCondition);
    procedure showDialog (This : in out TimeIntervalActionScriptCondition);
    function toHashMap (This : in out TimeIntervalActionScriptCondition) return HashMap_Access;
-   procedure toHashMap (This : in out TimeIntervalActionScriptCondition);
    function toXmlNode (This : in out TimeIntervalActionScriptCondition; document : Document_Access) return Node_Access;
    procedure toXmlNode (This : in out TimeIntervalActionScriptCondition; document : Document_Access);
    procedure log (This : in out TimeIntervalActionScriptCondition);
    function getTimeDelayHelper (This : in out TimeIntervalActionScriptCondition) return TimeDelayHelper_Access;
-   procedure getTimeDelayHelper (This : in out TimeIntervalActionScriptCondition);
    procedure setTimeDelayHelper (This : in out TimeIntervalActionScriptCondition; timeHelper : TimeDelayHelper_Access);
    function shouldProcess (This : in out TimeIntervalActionScriptCondition; frame : Long_Long_Integer) return Boolean;
    procedure shouldProcess (This : in out TimeIntervalActionScriptCondition; frame : Long_Long_Integer);

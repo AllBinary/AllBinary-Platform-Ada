@@ -35,7 +35,7 @@ package body org.allbinary.logic.communication.http.request.session.BasicWeblisk
    function Create (pageContext : PageContext_Access) return BasicWeblisketSession_Access is
       This : constant BasicWeblisketSession_Access := new BasicWeblisketSession;
    begin
-      Initialize (This.all, pageContext);
+      BasicWeblisketSession_Package.Initialize (This.all, pageContext);
       return This;
    end Create;
 
@@ -147,83 +147,6 @@ package body org.allbinary.logic.communication.http.request.session.BasicWeblisk
    begin
         lastAccessedTime := This.session.getLastAccessedTime;
         return lastAccessedTime;
-   end getLastAccessedTime;
-
-   procedure getRole (This : in out BasicWeblisketSession) is
-      Java_Result : constant BasicUserRole_Access := BasicWeblisketSession'Class (This).getRole;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getRole;
-
-   procedure getWebAppPath (This : in out BasicWeblisketSession) is
-      Java_Result : constant Unbounded_String := BasicWeblisketSession'Class (This).getWebAppPath;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getWebAppPath;
-
-   procedure getUserName (This : in out BasicWeblisketSession) is
-      Java_Result : constant Unbounded_String := BasicWeblisketSession'Class (This).getUserName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getUserName;
-
-   procedure getPassword (This : in out BasicWeblisketSession) is
-      Java_Result : constant Unbounded_String := BasicWeblisketSession'Class (This).getPassword;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getPassword;
-
-   procedure getPaymentMethod (This : in out BasicWeblisketSession) is
-      Java_Result : constant Unbounded_String := BasicWeblisketSession'Class (This).getPaymentMethod;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getPaymentMethod;
-
-   procedure getAuthentication (This : in out BasicWeblisketSession) is
-      Java_Result : constant Unbounded_String := BasicWeblisketSession'Class (This).getAuthentication;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getAuthentication;
-
-   procedure getAttempts (This : in out BasicWeblisketSession) is
-      Java_Result : constant Integer := BasicWeblisketSession'Class (This).getAttempts;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getAttempts;
-
-   procedure getTimeout (This : in out BasicWeblisketSession) is
-      Java_Result : constant Unbounded_String := BasicWeblisketSession'Class (This).getTimeout;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTimeout;
-
-   procedure getStoreName (This : in out BasicWeblisketSession) is
-      Java_Result : constant Unbounded_String := BasicWeblisketSession'Class (This).getStoreName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getStoreName;
-
-   procedure getCreationTime (This : in out BasicWeblisketSession) is
-      Java_Result : constant Long_Long_Integer := BasicWeblisketSession'Class (This).getCreationTime;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getCreationTime;
-
-   procedure getLastAccessedTime (This : in out BasicWeblisketSession) is
-      Java_Result : constant Long_Long_Integer := BasicWeblisketSession'Class (This).getLastAccessedTime;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getLastAccessedTime;
 
 end org.allbinary.logic.communication.http.request.session.BasicWeblisketSession_Package;

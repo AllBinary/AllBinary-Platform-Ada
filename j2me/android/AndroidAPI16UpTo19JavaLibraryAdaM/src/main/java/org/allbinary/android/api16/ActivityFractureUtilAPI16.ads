@@ -41,7 +41,6 @@ package org.allbinary.android.api16.ActivityFractureUtilAPI16_Package is
    procedure Initialize (This : in out ActivityFractureUtilAPI16'Class);
    function Create return ActivityFractureUtilAPI16_Access;
    function getInstance return ActivityFractureUtilAPI16_Access;
-   procedure getInstance;
    procedure setFullScreen (This : in out ActivityFractureUtilAPI16; activity : Activity_Access);
 
 end org.allbinary.android.api16.ActivityFractureUtilAPI16_Package;

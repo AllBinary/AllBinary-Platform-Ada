@@ -54,11 +54,8 @@ package views.generic_Id.user.EditValidationUserView_Package is
    procedure Initialize (This : in out EditValidationUserView'Class; transformInfoInterface : TransformInfoInterface_Access);
    function Create (transformInfoInterface : TransformInfoInterface_Access) return EditValidationUserView_Access;
    function isValid (This : in out EditValidationUserView) return Boolean;
-   procedure isValid (This : in out EditValidationUserView);
    function validationInfo (This : in out EditValidationUserView) return Unbounded_String;
-   procedure validationInfo (This : in out EditValidationUserView);
    function toValidationInfoDoc (This : in out EditValidationUserView) return Document_Access;
-   procedure toValidationInfoDoc (This : in out EditValidationUserView);
    function toValidationInfoNode (This : in out EditValidationUserView; document : Document_Access) return Node_Access;
    procedure toValidationInfoNode (This : in out EditValidationUserView; document : Document_Access);
 

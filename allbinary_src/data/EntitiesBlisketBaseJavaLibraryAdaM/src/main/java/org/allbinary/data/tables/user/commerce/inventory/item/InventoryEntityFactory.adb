@@ -36,7 +36,7 @@ package body org.allbinary.data.tables.user.commerce.inventory.item.InventoryEnt
    function Create return InventoryEntityFactory_Access is
       This : constant InventoryEntityFactory_Access := new InventoryEntityFactory;
    begin
-      Initialize (This.all);
+      InventoryEntityFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -57,20 +57,6 @@ package body org.allbinary.data.tables.user.commerce.inventory.item.InventoryEnt
             return null;
                 end;
         end;
-   end getInventoryEntityInstance;
-
-   procedure getInstance is
-      Java_Result : constant InventoryEntityFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure getInventoryEntityInstance (This : in out InventoryEntityFactory) is
-      Java_Result : constant InventoryEntity_Access := InventoryEntityFactory'Class (This).getInventoryEntityInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInventoryEntityInstance;
 
 begin

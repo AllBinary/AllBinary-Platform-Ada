@@ -29,7 +29,7 @@ package body org.allbinary.media.graphics.geography.map.PathData_Package is
    function Create return PathData_Access is
       This : constant PathData_Access := new PathData;
    begin
-      Initialize (This.all);
+      PathData_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -37,13 +37,6 @@ package body org.allbinary.media.graphics.geography.map.PathData_Package is
    function getInstance return PathData_Access is
    begin
         return PathData_Package.instance;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant PathData_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

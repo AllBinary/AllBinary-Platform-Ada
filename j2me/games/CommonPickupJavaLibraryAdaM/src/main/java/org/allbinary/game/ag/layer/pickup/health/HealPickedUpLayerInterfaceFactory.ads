@@ -28,6 +28,9 @@ with org.allbinary.game.layer.pickup.PickedUpLayerInterfaceFactoryInterface_Pack
 with org.allbinary.game.layer.pickup.PickedUpLayerTypeFactory_Package; use org.allbinary.game.layer.pickup.PickedUpLayerTypeFactory_Package;
 with org.allbinary.game.layer.pickup.PickupProcessorInterface_Package; use org.allbinary.game.layer.pickup.PickupProcessorInterface_Package;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
+with org.allbinary.game.ag.layer.pickup.health.HealLayerCircularStaticPool_Package; use org.allbinary.game.ag.layer.pickup.health.HealLayerCircularStaticPool_Package;
+with org.allbinary.game.ag.layer.pickup.health.HealLayerFactory_Package; use org.allbinary.game.ag.layer.pickup.health.HealLayerFactory_Package;
+with org.allbinary.game.ag.layer.pickup.health.HealthResources_Package; use org.allbinary.game.ag.layer.pickup.health.HealthResources_Package;
 
 package org.allbinary.game.ag.layer.pickup.health.HealPickedUpLayerInterfaceFactory_Package is
 
@@ -54,9 +57,7 @@ package org.allbinary.game.ag.layer.pickup.health.HealPickedUpLayerInterfaceFact
    function Create return HealPickedUpLayerInterfaceFactory_Access;
    procedure init;
    function getTotal (This : in out HealPickedUpLayerInterfaceFactory) return Integer;
-   procedure getTotal (This : in out HealPickedUpLayerInterfaceFactory);
    function getInstance return PickedUpLayerInterfaceFactoryInterface_Access;
-   procedure getInstance;
    procedure process (This : in out HealPickedUpLayerInterfaceFactory; sourceLayerInterface : AllBinaryLayer_Access);
 
 end org.allbinary.game.ag.layer.pickup.health.HealPickedUpLayerInterfaceFactory_Package;

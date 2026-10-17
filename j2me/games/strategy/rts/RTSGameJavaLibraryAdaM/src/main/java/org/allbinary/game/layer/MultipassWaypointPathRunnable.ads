@@ -30,6 +30,7 @@ with org.allbinary.media.graphics.geography.pathfinding.PathFindingInfo_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListUtil_Package; use org.allbinary.util.BasicArrayListUtil_Package;
 with org.allbinary.game.layer.WaypointPathRunnableBase_Package; use org.allbinary.game.layer.WaypointPathRunnableBase_Package;
+with org.allbinary.game.layer.WaypointBehaviorBase_Package; use org.allbinary.game.layer.WaypointBehaviorBase_Package;
 
 package org.allbinary.game.layer.MultipassWaypointPathRunnable_Package is
 
@@ -69,7 +70,6 @@ package org.allbinary.game.layer.MultipassWaypointPathRunnable_Package is
    procedure reset2 (This : in out MultipassWaypointPathRunnable);
    procedure finish (This : in out MultipassWaypointPathRunnable);
    function isDone (This : in out MultipassWaypointPathRunnable) return Boolean;
-   procedure isDone (This : in out MultipassWaypointPathRunnable);
    procedure reset (This : in out MultipassWaypointPathRunnable);
    procedure processFirstRunnable (This : in out MultipassWaypointPathRunnable);
    procedure processSecondRunnable (This : in out MultipassWaypointPathRunnable);
@@ -95,6 +95,7 @@ with org.allbinary.media.graphics.geography.pathfinding.PathFindingInfo_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListUtil_Package; use org.allbinary.util.BasicArrayListUtil_Package;
 with org.allbinary.game.layer.WaypointPathRunnableBase_Package; use org.allbinary.game.layer.WaypointPathRunnableBase_Package;
+with org.allbinary.game.layer.WaypointBehaviorBase_Package; use org.allbinary.game.layer.WaypointBehaviorBase_Package;
 
 package org.allbinary.game.layer.FirstRunnable_Package is
 
@@ -141,6 +142,7 @@ with org.allbinary.media.graphics.geography.pathfinding.PathFindingInfo_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListUtil_Package; use org.allbinary.util.BasicArrayListUtil_Package;
 with org.allbinary.game.layer.WaypointPathRunnableBase_Package; use org.allbinary.game.layer.WaypointPathRunnableBase_Package;
+with org.allbinary.game.layer.WaypointBehaviorBase_Package; use org.allbinary.game.layer.WaypointBehaviorBase_Package;
 
 package org.allbinary.game.layer.SecondRunnable_Package is
 
@@ -187,6 +189,7 @@ with org.allbinary.media.graphics.geography.pathfinding.PathFindingInfo_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListUtil_Package; use org.allbinary.util.BasicArrayListUtil_Package;
 with org.allbinary.game.layer.WaypointPathRunnableBase_Package; use org.allbinary.game.layer.WaypointPathRunnableBase_Package;
+with org.allbinary.game.layer.WaypointBehaviorBase_Package; use org.allbinary.game.layer.WaypointBehaviorBase_Package;
 
 package org.allbinary.game.layer.EndRunnable_Package is
 

@@ -21,6 +21,7 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.layer.RTSInterface_Package; use org.allbinary.game.layer.RTSInterface_Package;
+with org.allbinary.game.rts.technology.UnitTechnologySingletonFactory_Package; use org.allbinary.game.rts.technology.UnitTechnologySingletonFactory_Package;
 
 package org.allbinary.game.rts.technology.ReloadTechnology_Package is
 
@@ -39,27 +40,17 @@ package org.allbinary.game.rts.technology.ReloadTechnology_Package is
    procedure Initialize (This : in out ReloadTechnology'Class; maxLevel : Integer);
    function Create (maxLevel : Integer) return ReloadTechnology_Access;
    function isCompleted (This : in out ReloadTechnology) return Boolean;
-   procedure isCompleted (This : in out ReloadTechnology);
    function getPercentComplete (This : in out ReloadTechnology) return Integer;
-   procedure getPercentComplete (This : in out ReloadTechnology);
    function getLevel (This : in out ReloadTechnology) return Integer;
-   procedure getLevel (This : in out ReloadTechnology);
    function getMaxLevel (This : in out ReloadTechnology) return Integer;
-   procedure getMaxLevel (This : in out ReloadTechnology);
    function getCost (This : in out ReloadTechnology) return Integer;
-   procedure getCost (This : in out ReloadTechnology);
    procedure downgrade (This : in out ReloadTechnology);
    function getDowngradeCost (This : in out ReloadTechnology) return Integer;
-   procedure getDowngradeCost (This : in out ReloadTechnology);
    function isDowngradeable (This : in out ReloadTechnology) return Boolean;
-   procedure isDowngradeable (This : in out ReloadTechnology);
    function getUpgradeCost (This : in out ReloadTechnology) return Integer;
-   procedure getUpgradeCost (This : in out ReloadTechnology);
    function isUpgradeable (This : in out ReloadTechnology) return Boolean;
-   procedure isUpgradeable (This : in out ReloadTechnology);
    procedure upgrade (This : in out ReloadTechnology);
    function isSelfUpgradeable (This : in out ReloadTechnology) return Boolean;
-   procedure isSelfUpgradeable (This : in out ReloadTechnology);
 
 end org.allbinary.game.rts.technology.ReloadTechnology_Package;
 

@@ -16,7 +16,7 @@ package body org.allbinary.logic.visual.media.MediaIOUtil_Package is
    function Create return MediaIOUtil_Access is
       This : constant MediaIOUtil_Access := new MediaIOUtil;
    begin
-      Initialize (This.all);
+      MediaIOUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -34,27 +34,6 @@ package body org.allbinary.logic.visual.media.MediaIOUtil_Package is
    function getWriterFormatNames (This : in out MediaIOUtil) return Unbounded_String_Array_Access is
    begin
         return ImageIO_Package.getWriterFormatNames;
-   end getWriterFormatNames;
-
-   procedure getInstance is
-      Java_Result : constant MediaIOUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure getReaderFormatNames (This : in out MediaIOUtil) is
-      Java_Result : constant Unbounded_String_Array_Access := MediaIOUtil'Class (This).getReaderFormatNames;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getReaderFormatNames;
-
-   procedure getWriterFormatNames (This : in out MediaIOUtil) is
-      Java_Result : constant Unbounded_String_Array_Access := MediaIOUtil'Class (This).getWriterFormatNames;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getWriterFormatNames;
 
 begin

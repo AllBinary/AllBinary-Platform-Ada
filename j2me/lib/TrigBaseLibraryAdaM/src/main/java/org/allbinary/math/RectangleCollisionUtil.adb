@@ -35,7 +35,7 @@ package body org.allbinary.math.RectangleCollisionUtil_Package is
    function Create return RectangleCollisionUtil_Access is
       This : constant RectangleCollisionUtil_Access := new RectangleCollisionUtil;
    begin
-      Initialize (This.all);
+      RectangleCollisionUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -56,13 +56,6 @@ package body org.allbinary.math.RectangleCollisionUtil_Package is
             return True;
         end if;
    end isInside;
-
-   procedure getInstance is
-      Java_Result : constant RectangleCollisionUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure isCollision (This : in out RectangleCollisionUtil; rectX1 : Integer; rectY1 : Integer; rectX2 : Integer; rectY2 : Integer; rect2X1 : Integer; rect2Y1 : Integer; rect2X2 : Integer; rect2Y2 : Integer) is
       Java_Result : constant Boolean := RectangleCollisionUtil'Class (This).isCollision (rectX1, rectY1, rectX2, rectY2, rect2X1, rect2Y1, rect2X2, rect2Y2);

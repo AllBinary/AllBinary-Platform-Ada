@@ -25,6 +25,8 @@ with org.allbinary.globals.FREEBLISKET_PATH_GLOBALS_Package; use org.allbinary.g
 with org.allbinary.globals.URLGLOBALS_Package; use org.allbinary.globals.URLGLOBALS_Package;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
+with org.allbinary.logic.control.search.SearchParams_Package; use org.allbinary.logic.control.search.SearchParams_Package;
+with org.allbinary.logic.control.search.SearchData_Package; use org.allbinary.logic.control.search.SearchData_Package;
 
 package org.allbinary.logic.control.search.TableSearchRequest_Package is
 
@@ -55,15 +57,10 @@ package org.allbinary.logic.control.search.TableSearchRequest_Package is
    procedure setFileBaseName (This : in out TableSearchRequest; value : Unbounded_String);
    procedure setContentType (This : in out TableSearchRequest; value : Unbounded_String);
    function getKeywords (This : in out TableSearchRequest) return Unbounded_String;
-   procedure getKeywords (This : in out TableSearchRequest);
    function getParams (This : in out TableSearchRequest) return SearchParams_Access;
-   procedure getParams (This : in out TableSearchRequest);
    function getXslFile (This : in out TableSearchRequest) return Unbounded_String;
-   procedure getXslFile (This : in out TableSearchRequest);
    function getFileBaseName (This : in out TableSearchRequest) return Unbounded_String;
-   procedure getFileBaseName (This : in out TableSearchRequest);
    function getContentType (This : in out TableSearchRequest) return Unbounded_String;
-   procedure getContentType (This : in out TableSearchRequest);
    function getFileBaseNameNode (This : in out TableSearchRequest; document : Document_Access) return Node_Access;
    procedure getFileBaseNameNode (This : in out TableSearchRequest; document : Document_Access);
 

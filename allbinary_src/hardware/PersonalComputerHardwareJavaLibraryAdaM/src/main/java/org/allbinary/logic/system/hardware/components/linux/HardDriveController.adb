@@ -31,7 +31,7 @@ package body org.allbinary.logic.system.hardware.components.linux.HardDriveContr
    function Create (data : Unbounded_String) return HardDriveController_Access is
       This : constant HardDriveController_Access := new HardDriveController;
    begin
-      Initialize (This.all, data);
+      HardDriveController_Package.Initialize (This.all, data);
       return This;
    end Create;
 
@@ -51,13 +51,6 @@ package body org.allbinary.logic.system.hardware.components.linux.HardDriveContr
    begin
       null;
    end compareTo;
-
-   procedure toString (This : in out HardDriveController) is
-      Java_Result : constant Unbounded_String := HardDriveController'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toString;
 
 end org.allbinary.logic.system.hardware.components.linux.HardDriveController_Package;
 

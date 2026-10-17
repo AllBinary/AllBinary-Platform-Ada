@@ -46,7 +46,7 @@ package body org.allbinary.game.ag.life.HealthIncludingLifeBar_Package is
    function Create (layerInterface : AllBinaryLayer_Access; life : Life_Access; healthInterface : Health_Access; animationInterface : HealthBarAnimation_Access; direction : Integer) return HealthIncludingLifeBar_Access is
       This : constant HealthIncludingLifeBar_Access := new HealthIncludingLifeBar;
    begin
-      Initialize (This.all, layerInterface, life, healthInterface, animationInterface, direction);
+      HealthIncludingLifeBar_Package.Initialize (This.all, layerInterface, life, healthInterface, animationInterface, direction);
       return This;
    end Create;
 

@@ -28,7 +28,7 @@ package body org.allbinary.game.ag.ai.LastKeyAIVisitorFactory_Package is
    function Create return LastKeyAIVisitorFactory_Access is
       This : constant LastKeyAIVisitorFactory_Access := new LastKeyAIVisitorFactory;
    begin
-      Initialize (This.all);
+      LastKeyAIVisitorFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -36,13 +36,6 @@ package body org.allbinary.game.ag.ai.LastKeyAIVisitorFactory_Package is
    function getInstance return LastKeyAIVisitor_Access is
    begin
         return LastKeyAIVisitorFactory_Package.instance;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant LastKeyAIVisitor_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

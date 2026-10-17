@@ -34,7 +34,7 @@ package body org.allbinary.media.image.comparison.motion.SaveMotionRectanglesRes
    function Create return SaveMotionRectanglesResultsWorker_Access is
       This : constant SaveMotionRectanglesResultsWorker_Access := new SaveMotionRectanglesResultsWorker;
    begin
-      Initialize (This.all);
+      SaveMotionRectanglesResultsWorker_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -89,20 +89,6 @@ package body org.allbinary.media.image.comparison.motion.SaveMotionRectanglesRes
                 end;
         end;
    end run;
-
-   procedure getMotionRectanglesVector (This : in out SaveMotionRectanglesResultsWorker) is
-      Java_Result : constant BasicArrayList_Access := SaveMotionRectanglesResultsWorker'Class (This).getMotionRectanglesVector;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getMotionRectanglesVector;
-
-   procedure isRunning (This : in out SaveMotionRectanglesResultsWorker) is
-      Java_Result : constant Boolean := SaveMotionRectanglesResultsWorker'Class (This).isRunning;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isRunning;
 
 end org.allbinary.media.image.comparison.motion.SaveMotionRectanglesResultsWorker_Package;
 

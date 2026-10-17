@@ -29,6 +29,9 @@ with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.Com
 with jsinterop.annotations.JsMethod_Package; use jsinterop.annotations.JsMethod_Package;
 with jsinterop.annotations.JsConstructor_Package; use jsinterop.annotations.JsConstructor_Package;
 with jsinterop.annotations.JsProperty_Package; use jsinterop.annotations.JsProperty_Package;
+with org.allbinary.math.AngleFactory_Package; use org.allbinary.math.AngleFactory_Package;
+with org.allbinary.math.PositionStrings_Package; use org.allbinary.math.PositionStrings_Package;
+with org.allbinary.math.Angle_Package; use org.allbinary.math.Angle_Package;
 
 package org.allbinary.math.NoDecimalTrigTable_Package is
 
@@ -59,7 +62,6 @@ package org.allbinary.math.NoDecimalTrigTable_Package is
    procedure Initialize (This : in out NoDecimalTrigTable'Class);
    function Create return NoDecimalTrigTable_Access;
    function getInstance return NoDecimalTrigTable_Access;
-   procedure getInstance;
    function sin (This : in out NoDecimalTrigTable; angle : Integer) return Long_Long_Integer;
    procedure sin (This : in out NoDecimalTrigTable; angle : Integer);
    function cos (This : in out NoDecimalTrigTable; angle : Integer) return Long_Long_Integer;

@@ -30,7 +30,7 @@ package body org.allbinary.data.tables.user.UserEntityFactory_Package is
    function Create return UserEntityFactory_Access is
       This : constant UserEntityFactory_Access := new UserEntityFactory;
    begin
-      Initialize (This.all);
+      UserEntityFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -53,13 +53,6 @@ package body org.allbinary.data.tables.user.UserEntityFactory_Package is
             return null;
                 end;
         end;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant UserEntity_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 end org.allbinary.data.tables.user.UserEntityFactory_Package;

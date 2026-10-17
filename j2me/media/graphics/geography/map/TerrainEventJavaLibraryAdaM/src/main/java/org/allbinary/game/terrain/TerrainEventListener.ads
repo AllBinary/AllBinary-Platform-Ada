@@ -14,6 +14,7 @@ with org.allbinary.logic.util.event.EventStrings_Package; use org.allbinary.logi
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.game.terrain.TerrainEventListenerInterface_Package; use org.allbinary.game.terrain.TerrainEventListenerInterface_Package;
+with org.allbinary.game.terrain.TerrainEvent_Package; use org.allbinary.game.terrain.TerrainEvent_Package;
 
 package org.allbinary.game.terrain.TerrainEventListener_Package is
 
@@ -37,7 +38,6 @@ package org.allbinary.game.terrain.TerrainEventListener_Package is
    procedure onEvent (This : in out TerrainEventListener; eventObject : AllBinaryEventObject_Access);
    procedure onTerrainEvent (This : in out TerrainEventListener; terrainEvent : TerrainEvent_Access);
    function getList (This : in out TerrainEventListener) return BasicArrayList_Access;
-   procedure getList (This : in out TerrainEventListener);
 
 end org.allbinary.game.terrain.TerrainEventListener_Package;
 

@@ -32,7 +32,7 @@ package body org.allbinary.input.automation.osgi.InputAutomationServiceFactory_P
    function Create return InputAutomationServiceFactory_Access is
       This : constant InputAutomationServiceFactory_Access := new InputAutomationServiceFactory;
    begin
-      Initialize (This.all);
+      InputAutomationServiceFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -51,13 +51,6 @@ package body org.allbinary.input.automation.osgi.InputAutomationServiceFactory_P
    begin
         null;
    end ungetService;
-
-   procedure getInstance is
-      Java_Result : constant InputAutomationServiceFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure getService (This : in out InputAutomationServiceFactory; bundle : Bundle_Access; registration : ServiceRegistration_Access) is
       Java_Result : constant Java_Object_Access := InputAutomationServiceFactory'Class (This).getService (bundle, registration);

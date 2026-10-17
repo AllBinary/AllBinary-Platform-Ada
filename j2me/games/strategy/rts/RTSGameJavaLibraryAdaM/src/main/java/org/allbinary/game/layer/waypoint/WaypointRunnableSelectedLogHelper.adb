@@ -31,7 +31,7 @@ package body org.allbinary.game.layer.waypoint.WaypointRunnableSelectedLogHelper
    function Create return WaypointRunnableSelectedLogHelper_Access is
       This : constant WaypointRunnableSelectedLogHelper_Access := new WaypointRunnableSelectedLogHelper;
    begin
-      Initialize (This.all);
+      WaypointRunnableSelectedLogHelper_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -50,13 +50,6 @@ package body org.allbinary.game.layer.waypoint.WaypointRunnableSelectedLogHelper
    begin
         This.logUtil.putF (StringMaker_Package.Create.append (pathFindingLayerInterface.getName).append (This.commonStrings.END_RUNNABLE).toString, This'Unchecked_Access, This.commonStrings.RUN);
    end end_Id;
-
-   procedure getInstance is
-      Java_Result : constant WaypointRunnableSelectedLogHelper_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

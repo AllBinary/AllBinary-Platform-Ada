@@ -13,7 +13,7 @@
 --  Generated Code Do Not Modify
 
 
-package body org.allbinary.logic.control.search_Case.SearchData_Package is
+package body org.allbinary.logic.control.search.SearchData_Package is
 
    procedure Initialize_Fields (This : in out SearchData'Class) is
    begin
@@ -30,7 +30,7 @@ package body org.allbinary.logic.control.search_Case.SearchData_Package is
    function Create return SearchData_Access is
       This : constant SearchData_Access := new SearchData;
    begin
-      Initialize (This.all);
+      SearchData_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -60,6 +60,6 @@ begin
    SEARCH := To_Unbounded_String ("search");
    MAKEPUBLIC := To_Unbounded_String ("Make Public");
 
-end org.allbinary.logic.control.search_Case.SearchData_Package;
+end org.allbinary.logic.control.search.SearchData_Package;
 
 

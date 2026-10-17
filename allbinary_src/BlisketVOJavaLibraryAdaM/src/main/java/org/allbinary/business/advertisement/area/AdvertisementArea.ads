@@ -26,6 +26,9 @@ with org.allbinary.business.context.modules.storefront.StoreFrontData_Package; u
 with org.allbinary.data.tree.dom.document.DomDocumentHelper_Package; use org.allbinary.data.tree.dom.document.DomDocumentHelper_Package;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.allbinary.business.advertisement.area.AdvertisementAreaInterface_Package; use org.allbinary.business.advertisement.area.AdvertisementAreaInterface_Package;
+with org.allbinary.business.advertisement.area.AdvertisementAreaConstraintsInterface_Package; use org.allbinary.business.advertisement.area.AdvertisementAreaConstraintsInterface_Package;
+with org.allbinary.business.advertisement.area.AdvertisementAreaData_Package; use org.allbinary.business.advertisement.area.AdvertisementAreaData_Package;
+with org.allbinary.business.advertisement.area.AdvertisementAreaConstraints_Package; use org.allbinary.business.advertisement.area.AdvertisementAreaConstraints_Package;
 
 package org.allbinary.business.advertisement.area.AdvertisementArea_Package is
 
@@ -50,15 +53,10 @@ package org.allbinary.business.advertisement.area.AdvertisementArea_Package is
    procedure Initialize (This : in out AdvertisementArea'Class; hashMap : HashMap_Access);
    function Create (hashMap : HashMap_Access) return AdvertisementArea_Access;
    function getName (This : in out AdvertisementArea) return Unbounded_String;
-   procedure getName (This : in out AdvertisementArea);
    function getStoreName (This : in out AdvertisementArea) return Unbounded_String;
-   procedure getStoreName (This : in out AdvertisementArea);
    function getDescription (This : in out AdvertisementArea) return Unbounded_String;
-   procedure getDescription (This : in out AdvertisementArea);
    function getConstraints (This : in out AdvertisementArea) return AdvertisementAreaConstraintsInterface_Access;
-   procedure getConstraints (This : in out AdvertisementArea);
    function getCampaign (This : in out AdvertisementArea) return Unbounded_String;
-   procedure getCampaign (This : in out AdvertisementArea);
    procedure setName (This : in out AdvertisementArea; name : Unbounded_String);
    procedure setStoreName (This : in out AdvertisementArea; storeName : Unbounded_String);
    procedure setDescription (This : in out AdvertisementArea; description : Unbounded_String);

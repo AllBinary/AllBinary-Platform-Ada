@@ -26,8 +26,9 @@ with org.allbinary.game.layer.RTSLayer_Package; use org.allbinary.game.layer.RTS
 with org.allbinary.game.layer.waypoint.WaypointInfoHudPaintable_Package; use org.allbinary.game.layer.waypoint.WaypointInfoHudPaintable_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.graphics.draw.KeyValueDrawCharArray_Package; use org.allbinary.graphics.draw.KeyValueDrawCharArray_Package;
+with org.allbinary.game.layer.geological.resources.GeologicalGeographicMapCellPosition_Package; use org.allbinary.game.layer.geological.resources.GeologicalGeographicMapCellPosition_Package;
 
-package org.allbinary.game.layer.geological.resources_Case.GeologicalResourceInfoHudPaintable_Package is
+package org.allbinary.game.layer.geological.resources.GeologicalResourceInfoHudPaintable_Package is
 
    package RTSLayer_Package renames Standard.org.allbinary.game.layer.RTSLayer_Package;
    package WaypointInfoHudPaintable_Package renames Standard.org.allbinary.game.layer.waypoint.WaypointInfoHudPaintable_Package;
@@ -51,6 +52,6 @@ package org.allbinary.game.layer.geological.resources_Case.GeologicalResourceInf
    procedure updateSelectionInfo (This : in out GeologicalResourceInfoHudPaintable);
    procedure paint (This : in out GeologicalResourceInfoHudPaintable; graphics : Graphics_Access);
 
-end org.allbinary.game.layer.geological.resources_Case.GeologicalResourceInfoHudPaintable_Package;
+end org.allbinary.game.layer.geological.resources.GeologicalResourceInfoHudPaintable_Package;
 
 

@@ -22,6 +22,7 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
 with org.allbinary.layer.AllBinaryLayerFactoryInterface_Package; use org.allbinary.layer.AllBinaryLayerFactoryInterface_Package;
+with org.allbinary.game.layer.pickup.RaceTrackPickupLayer_Package; use org.allbinary.game.layer.pickup.RaceTrackPickupLayer_Package;
 
 package org.allbinary.game.layer.pickup.RaceTrackPickupLayerFactory_Package is
 
@@ -38,7 +39,6 @@ package org.allbinary.game.layer.pickup.RaceTrackPickupLayerFactory_Package is
    procedure Initialize (This : in out RaceTrackPickupLayerFactory'Class);
    function Create return RaceTrackPickupLayerFactory_Access;
    function getInstance (This : in out RaceTrackPickupLayerFactory) return AllBinaryLayer_Access;
-   procedure getInstance (This : in out RaceTrackPickupLayerFactory);
 
 end org.allbinary.game.layer.pickup.RaceTrackPickupLayerFactory_Package;
 

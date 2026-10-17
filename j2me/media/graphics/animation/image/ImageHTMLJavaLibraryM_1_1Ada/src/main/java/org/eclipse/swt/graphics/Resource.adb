@@ -16,7 +16,7 @@ package body org.eclipse.swt.graphics.Resource_Package is
    function Create return Resource_Access is
       This : constant Resource_Access := new Resource;
    begin
-      Initialize (This.all);
+      Resource_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -29,13 +29,6 @@ package body org.eclipse.swt.graphics.Resource_Package is
    function isDisposed (This : in out Resource) return Boolean is
    begin
         return False;
-   end isDisposed;
-
-   procedure isDisposed (This : in out Resource) is
-      Java_Result : constant Boolean := Resource'Class (This).isDisposed;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end isDisposed;
 
 end org.eclipse.swt.graphics.Resource_Package;

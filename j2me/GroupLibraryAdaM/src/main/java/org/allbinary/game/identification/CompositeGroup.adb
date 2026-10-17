@@ -33,7 +33,7 @@ package body org.allbinary.game.identification.CompositeGroup_Package is
    function Create (groupInterface : Group_Access) return CompositeGroup_Access is
       This : constant CompositeGroup_Access := new CompositeGroup;
    begin
-      Initialize (This.all, groupInterface);
+      CompositeGroup_Package.Initialize (This.all, groupInterface);
       return This;
    end Create;
 
@@ -78,13 +78,6 @@ package body org.allbinary.game.identification.CompositeGroup_Package is
    begin
       null;
    end isInGroup;
-
-   procedure getGroup (This : in out CompositeGroup) is
-      Java_Result : constant Group_Access := CompositeGroup'Class (This).getGroup;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getGroup;
 
 end org.allbinary.game.identification.CompositeGroup_Package;
 

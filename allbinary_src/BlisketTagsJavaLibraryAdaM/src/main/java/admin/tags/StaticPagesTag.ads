@@ -55,11 +55,8 @@ package admin.tags.StaticPagesTag_Package is
    function Create return StaticPagesTag_Access;
    procedure setXsl (This : in out StaticPagesTag; value : Unbounded_String);
    function generateStaticPages (This : in out StaticPagesTag) return Unbounded_String;
-   procedure generateStaticPages (This : in out StaticPagesTag);
    function makePublic (This : in out StaticPagesTag) return Unbounded_String;
-   procedure makePublic (This : in out StaticPagesTag);
    function doStartTag (This : in out StaticPagesTag) return Integer;
-   procedure doStartTag (This : in out StaticPagesTag);
 
 end admin.tags.StaticPagesTag_Package;
 

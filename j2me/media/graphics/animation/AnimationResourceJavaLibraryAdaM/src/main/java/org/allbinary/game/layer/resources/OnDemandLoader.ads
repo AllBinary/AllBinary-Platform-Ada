@@ -30,6 +30,8 @@ with org.allbinary.image.ImageCache_Package; use org.allbinary.image.ImageCache_
 with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.game.layer.resources.OnDemandResourcesFactory_Package; use org.allbinary.game.layer.resources.OnDemandResourcesFactory_Package;
+with org.allbinary.game.layer.resources.OnDemandResources_Package; use org.allbinary.game.layer.resources.OnDemandResources_Package;
 
 package org.allbinary.game.layer.resources.OnDemandLoader_Package is
 

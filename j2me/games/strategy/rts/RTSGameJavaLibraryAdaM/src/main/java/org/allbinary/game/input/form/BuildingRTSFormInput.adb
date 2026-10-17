@@ -55,7 +55,7 @@ package body org.allbinary.game.input.form.BuildingRTSFormInput_Package is
    function Create (groupInterface : Group_Access_Array_Access; isUnitProducer : Boolean) return BuildingRTSFormInput_Access is
       This : constant BuildingRTSFormInput_Access := new BuildingRTSFormInput;
    begin
-      Initialize (This.all, groupInterface, isUnitProducer);
+      BuildingRTSFormInput_Package.Initialize (This.all, groupInterface, isUnitProducer);
       return This;
    end Create;
 
@@ -304,13 +304,6 @@ package body org.allbinary.game.input.form.BuildingRTSFormInput_Package is
             return False;
         end if;
    end isSurroundingCellsOffMap;
-
-   procedure isPositionBlocked (This : in out BuildingRTSFormInput) is
-      Java_Result : constant Boolean := BuildingRTSFormInput'Class (This).isPositionBlocked;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isPositionBlocked;
 
    procedure isDemoLocked (This : in out BuildingRTSFormInput; item : ABCustomItem_Access) is
       Java_Result : constant Boolean := BuildingRTSFormInput'Class (This).isDemoLocked (item);

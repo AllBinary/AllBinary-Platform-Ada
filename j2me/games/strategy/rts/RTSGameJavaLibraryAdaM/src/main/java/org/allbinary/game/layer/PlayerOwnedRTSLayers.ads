@@ -42,7 +42,6 @@ package org.allbinary.game.layer.PlayerOwnedRTSLayers_Package is
    procedure Initialize (This : in out PlayerOwnedRTSLayers'Class);
    function Create return PlayerOwnedRTSLayers_Access;
    function toString (This : in out PlayerOwnedRTSLayers) return Unbounded_String;
-   procedure toString (This : in out PlayerOwnedRTSLayers);
 
 end org.allbinary.game.layer.PlayerOwnedRTSLayers_Package;
 

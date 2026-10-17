@@ -28,7 +28,7 @@ package body org.allbinary.TsUtil_Package is
    function Create return TsUtil_Access is
       This : constant TsUtil_Access := new TsUtil;
    begin
-      Initialize (This.all);
+      TsUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -106,13 +106,6 @@ package body org.allbinary.TsUtil_Package is
    begin
         null;
    end gc;
-
-   procedure getInstance is
-      Java_Result : constant TsUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure hashCode (This : in out TsUtil; anyType : Java_Object_Access) is
       Java_Result : constant Integer := TsUtil'Class (This).hashCode (anyType);

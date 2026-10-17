@@ -41,7 +41,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoProperties_P
    function Create (name : Unbounded_String; label : Unbounded_String; description : Unbounded_String; objectFileName : Unbounded_String; objectConfigFileName : Unbounded_String; templateFileName : Unbounded_String) return TransformInfoProperties_Access is
       This : constant TransformInfoProperties_Access := new TransformInfoProperties;
    begin
-      Initialize (This.all, name, label, description, objectFileName, objectConfigFileName, templateFileName);
+      TransformInfoProperties_Package.Initialize (This.all, name, label, description, objectFileName, objectConfigFileName, templateFileName);
       return This;
    end Create;
 
@@ -98,48 +98,6 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoProperties_P
    function getObjectConfigFile (This : in out TransformInfoProperties) return Unbounded_String is
    begin
         return This.objectConfigFileName;
-   end getObjectConfigFile;
-
-   procedure getName (This : in out TransformInfoProperties) is
-      Java_Result : constant Unbounded_String := TransformInfoProperties'Class (This).getName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getName;
-
-   procedure getLabel (This : in out TransformInfoProperties) is
-      Java_Result : constant Unbounded_String := TransformInfoProperties'Class (This).getLabel;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getLabel;
-
-   procedure getDescription (This : in out TransformInfoProperties) is
-      Java_Result : constant Unbounded_String := TransformInfoProperties'Class (This).getDescription;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getDescription;
-
-   procedure getViewFile (This : in out TransformInfoProperties) is
-      Java_Result : constant Unbounded_String := TransformInfoProperties'Class (This).getViewFile;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getViewFile;
-
-   procedure getTemplateFile (This : in out TransformInfoProperties) is
-      Java_Result : constant Unbounded_String := TransformInfoProperties'Class (This).getTemplateFile;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTemplateFile;
-
-   procedure getObjectConfigFile (This : in out TransformInfoProperties) is
-      Java_Result : constant Unbounded_String := TransformInfoProperties'Class (This).getObjectConfigFile;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getObjectConfigFile;
 
 end org.allbinary.logic.visual.transform.info.TransformInfoProperties_Package;

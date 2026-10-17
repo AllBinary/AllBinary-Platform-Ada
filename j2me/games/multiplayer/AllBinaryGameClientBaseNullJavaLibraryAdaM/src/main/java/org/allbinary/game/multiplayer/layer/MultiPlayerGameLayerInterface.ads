@@ -20,6 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
+with org.allbinary.game.multiplayer.layer.MultiplayerBehavior_Package; use org.allbinary.game.multiplayer.layer.MultiplayerBehavior_Package;
 
 package org.allbinary.game.multiplayer.layer.MultiPlayerGameLayerInterface_Package is
 

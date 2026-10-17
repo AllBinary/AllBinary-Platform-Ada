@@ -39,7 +39,7 @@ package body org.allbinary.animation.image.ImageArrayRotationAnimationInfo_Packa
    function Create (imageArray : Image_Access_Array_Access; angleIncrement : Integer; totalAngle : Integer; dx : Integer; dy : Integer) return ImageArrayRotationAnimationInfo_Access is
       This : constant ImageArrayRotationAnimationInfo_Access := new ImageArrayRotationAnimationInfo;
    begin
-      Initialize (This.all, imageArray, angleIncrement, totalAngle, dx, dy);
+      ImageArrayRotationAnimationInfo_Package.Initialize (This.all, imageArray, angleIncrement, totalAngle, dx, dy);
       return This;
    end Create;
 
@@ -86,41 +86,6 @@ package body org.allbinary.animation.image.ImageArrayRotationAnimationInfo_Packa
    function getDy (This : in out ImageArrayRotationAnimationInfo) return Integer is
    begin
         return This.dy;
-   end getDy;
-
-   procedure getImageArray (This : in out ImageArrayRotationAnimationInfo) is
-      Java_Result : constant Image_Access_Array_Access := ImageArrayRotationAnimationInfo'Class (This).getImageArray;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getImageArray;
-
-   procedure getAngleInfoP (This : in out ImageArrayRotationAnimationInfo) is
-      Java_Result : constant AngleInfo_Access := ImageArrayRotationAnimationInfo'Class (This).getAngleInfoP;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getAngleInfoP;
-
-   procedure getTotalAngle (This : in out ImageArrayRotationAnimationInfo) is
-      Java_Result : constant Integer := ImageArrayRotationAnimationInfo'Class (This).getTotalAngle;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTotalAngle;
-
-   procedure getDx (This : in out ImageArrayRotationAnimationInfo) is
-      Java_Result : constant Integer := ImageArrayRotationAnimationInfo'Class (This).getDx;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getDx;
-
-   procedure getDy (This : in out ImageArrayRotationAnimationInfo) is
-      Java_Result : constant Integer := ImageArrayRotationAnimationInfo'Class (This).getDy;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getDy;
 
 end org.allbinary.animation.image.ImageArrayRotationAnimationInfo_Package;

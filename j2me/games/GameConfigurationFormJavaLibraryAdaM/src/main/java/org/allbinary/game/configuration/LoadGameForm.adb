@@ -35,7 +35,7 @@ package body org.allbinary.game.configuration.LoadGameForm_Package is
    function Create (commandListener : CommandListener_Access; title : Unbounded_String; backgrounBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access) return LoadGameForm_Access is
       This : constant LoadGameForm_Access := new LoadGameForm;
    begin
-      Initialize (This.all, commandListener, title, backgrounBasicColor, foregroundBasicColor);
+      LoadGameForm_Package.Initialize (This.all, commandListener, title, backgrounBasicColor, foregroundBasicColor);
       return This;
    end Create;
 
@@ -126,20 +126,6 @@ package body org.allbinary.game.configuration.LoadGameForm_Package is
    begin
       null;
    end getChoiceGroup;
-
-   procedure getSelectedId (This : in out LoadGameForm) is
-      Java_Result : constant Integer := LoadGameForm'Class (This).getSelectedId;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSelectedId;
-
-   procedure getSelectedText (This : in out LoadGameForm) is
-      Java_Result : constant Integer := LoadGameForm'Class (This).getSelectedText;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSelectedText;
 
 end org.allbinary.game.configuration.LoadGameForm_Package;
 

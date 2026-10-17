@@ -47,7 +47,6 @@ package org.allbinary.business.user.commerce.money.Money_Package is
    procedure Initialize (This : in out Money'Class; money : Money_Access);
    function Create (money : Money_Access) return Money_Access;
    function isValid (This : in out Money) return Boolean;
-   procedure isValid (This : in out Money);
    procedure add (This : in out Money; moreMoney : Money_Access);
    procedure add (This : in out Money; usDollarStr : Unbounded_String);
    procedure subtract (This : in out Money; usDollarStr : Unbounded_String);
@@ -58,11 +57,8 @@ package org.allbinary.business.user.commerce.money.Money_Package is
    function convertUsdToUnits (This : in out Money; usDollarStr : Unbounded_String) return Long_Long_Integer;
    procedure convertUsdToUnits (This : in out Money; usDollarStr : Unbounded_String);
    function getUnits (This : in out Money) return Long_Long_Integer;
-   procedure getUnits (This : in out Money);
    function getUnitsLong (This : in out Money) return Long_Long_Integer;
-   procedure getUnitsLong (This : in out Money);
    function toString (This : in out Money) return Unbounded_String;
-   procedure toString (This : in out Money);
 
 end org.allbinary.business.user.commerce.money.Money_Package;
 

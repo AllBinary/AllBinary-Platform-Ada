@@ -53,6 +53,7 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.allbinary.logic.visual.theme.ThemeInterface_Package; use org.allbinary.logic.visual.theme.ThemeInterface_Package;
+with org.allbinary.logic.visual.theme.ThemeData_Package; use org.allbinary.logic.visual.theme.ThemeData_Package;
 
 package org.allbinary.logic.visual.theme.ThemeValidation_Package is
 
@@ -110,31 +111,19 @@ package org.allbinary.logic.visual.theme.ThemeValidation_Package is
    procedure init (This : in out ThemeValidation);
    procedure init (This : in out ThemeValidation; storeThemeCategoryInterface : StoreThemeCategoryInterface_Access);
    function getTransformInfoInterface (This : in out ThemeValidation) return TransformInfoInterface_Access;
-   procedure getTransformInfoInterface (This : in out ThemeValidation);
    function getName (This : in out ThemeValidation) return Unbounded_String;
-   procedure getName (This : in out ThemeValidation);
    function getPreviewImageName (This : in out ThemeValidation) return Unbounded_String;
-   procedure getPreviewImageName (This : in out ThemeValidation);
    function getPreviewImagePath (This : in out ThemeValidation) return Unbounded_String;
-   procedure getPreviewImagePath (This : in out ThemeValidation);
    function getPath (This : in out ThemeValidation) return Unbounded_String;
-   procedure getPath (This : in out ThemeValidation);
    function getCssStyleValidation (This : in out ThemeValidation) return CssStyleValidation_Access;
-   procedure getCssStyleValidation (This : in out ThemeValidation);
    function isValid (This : in out ThemeValidation) return Boolean;
-   procedure isValid (This : in out ThemeValidation);
    function validationInfo (This : in out ThemeValidation) return Unbounded_String;
-   procedure validationInfo (This : in out ThemeValidation);
    function toValidationInfoDoc (This : in out ThemeValidation) return Document_Access;
-   procedure toValidationInfoDoc (This : in out ThemeValidation);
    function toValidationInfoNode (This : in out ThemeValidation; document : Document_Access) return Node_Access;
    procedure toValidationInfoNode (This : in out ThemeValidation; document : Document_Access);
    function getKey (This : in out ThemeValidation) return Java_Object_Access;
-   procedure getKey (This : in out ThemeValidation);
    function toVector (This : in out ThemeValidation) return BasicArrayList_Access;
-   procedure toVector (This : in out ThemeValidation);
    function toHashMap (This : in out ThemeValidation) return HashMap_Access;
-   procedure toHashMap (This : in out ThemeValidation);
    function toXmlNode (This : in out ThemeValidation; document : Document_Access) return Node_Access;
    procedure toXmlNode (This : in out ThemeValidation; document : Document_Access);
 

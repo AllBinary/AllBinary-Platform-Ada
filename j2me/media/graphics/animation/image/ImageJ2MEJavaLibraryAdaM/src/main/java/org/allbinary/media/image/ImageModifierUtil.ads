@@ -38,7 +38,6 @@ package org.allbinary.media.image.ImageModifierUtil_Package is
    procedure Initialize (This : in out ImageModifierUtil'Class);
    function Create return ImageModifierUtil_Access;
    function getInstanceOrCreate return ImageModifierUtil_Access;
-   procedure getInstanceOrCreate;
    procedure setColor (This : in out ImageModifierUtil; unusedOriginalImage : Image_Access; image : Image_Access; imageIndex : Integer; basicColor : BasicColor_Access);
    procedure changeColor (This : in out ImageModifierUtil; unusedOriginalImage : Image_Access; image : Image_Access; imageIndex : Integer; basicColor : BasicColor_Access);
    procedure setAlpha (This : in out ImageModifierUtil; originalImage : Image_Access; image : Image_Access; imageIndex : Integer; alphaInt : Integer);

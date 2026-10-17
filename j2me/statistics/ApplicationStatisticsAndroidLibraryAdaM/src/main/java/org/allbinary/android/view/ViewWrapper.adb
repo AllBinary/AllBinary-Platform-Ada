@@ -32,7 +32,7 @@ package body org.allbinary.android.view.ViewWrapper_Package is
    function Create (view : View_Access) return ViewWrapper_Access is
       This : constant ViewWrapper_Access := new ViewWrapper;
    begin
-      Initialize (This.all, view);
+      ViewWrapper_Package.Initialize (This.all, view);
       return This;
    end Create;
 

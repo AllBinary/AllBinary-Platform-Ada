@@ -25,6 +25,14 @@ with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArr
 with org.allbinary.util.BasicArrayListUtil_Package; use org.allbinary.util.BasicArrayListUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.input.motion.button.BaseTouchInput_Package; use org.allbinary.input.motion.button.BaseTouchInput_Package;
+with org.allbinary.input.motion.button.TouchButtonLocationHelper_Package; use org.allbinary.input.motion.button.TouchButtonLocationHelper_Package;
+with org.allbinary.input.motion.button.CommonButtons_Package; use org.allbinary.input.motion.button.CommonButtons_Package;
+with org.allbinary.input.motion.button.BasicTouchButtonCellPositionFactory_Package; use org.allbinary.input.motion.button.BasicTouchButtonCellPositionFactory_Package;
+with org.allbinary.input.motion.button.TouchButton_Package; use org.allbinary.input.motion.button.TouchButton_Package;
+with org.allbinary.input.motion.button.BasicTouchInputFactory_Package; use org.allbinary.input.motion.button.BasicTouchInputFactory_Package;
+with org.allbinary.input.motion.button.TouchButtonStrafeLeftResource_Package; use org.allbinary.input.motion.button.TouchButtonStrafeLeftResource_Package;
+with org.allbinary.input.motion.button.TouchButtonStrafeRightResource_Package; use org.allbinary.input.motion.button.TouchButtonStrafeRightResource_Package;
+with org.allbinary.input.motion.button.TouchButtonStartResource_Package; use org.allbinary.input.motion.button.TouchButtonStartResource_Package;
 
 package org.allbinary.input.motion.button.PreGameScrollSelectionTouchButtonsBuilder_Package is
 
@@ -45,7 +53,6 @@ package org.allbinary.input.motion.button.PreGameScrollSelectionTouchButtonsBuil
    procedure Initialize (This : in out PreGameScrollSelectionTouchButtonsBuilder'Class);
    function Create return PreGameScrollSelectionTouchButtonsBuilder_Access;
    function getList (This : in out PreGameScrollSelectionTouchButtonsBuilder) return BasicArrayList_Access;
-   procedure getList (This : in out PreGameScrollSelectionTouchButtonsBuilder);
 
 end org.allbinary.input.motion.button.PreGameScrollSelectionTouchButtonsBuilder_Package;
 

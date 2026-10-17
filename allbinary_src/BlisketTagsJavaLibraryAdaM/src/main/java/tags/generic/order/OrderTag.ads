@@ -39,7 +39,6 @@ package tags.generic_Id.order.OrderTag_Package is
    procedure Initialize (This : in out OrderTag'Class);
    function Create return OrderTag_Access;
    function doStartTag (This : in out OrderTag) return Integer;
-   procedure doStartTag (This : in out OrderTag);
 
 end tags.generic_Id.order.OrderTag_Package;
 

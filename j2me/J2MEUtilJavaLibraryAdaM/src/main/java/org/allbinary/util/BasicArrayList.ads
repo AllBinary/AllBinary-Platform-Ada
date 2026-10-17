@@ -15,6 +15,8 @@ with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.Com
 with jsinterop.annotations.JsMethod_Package; use jsinterop.annotations.JsMethod_Package;
 with jsinterop.annotations.JsConstructor_Package; use jsinterop.annotations.JsConstructor_Package;
 with jsinterop.annotations.JsProperty_Package; use jsinterop.annotations.JsProperty_Package;
+with org.allbinary.util.ArrayUtil_Package; use org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayListS_Package; use org.allbinary.util.BasicArrayListS_Package;
 
 package org.allbinary.util.BasicArrayList_Package is
 
@@ -67,19 +69,14 @@ package org.allbinary.util.BasicArrayList_Package is
    procedure set (This : in out BasicArrayList; index : Integer; element : Java_Object_Access);
    procedure clear (This : in out BasicArrayList);
    function size_Case (This : in out BasicArrayList) return Integer;
-   procedure size_Case (This : in out BasicArrayList);
    function isEmpty (This : in out BasicArrayList) return Boolean;
-   procedure isEmpty (This : in out BasicArrayList);
    function contains (This : in out BasicArrayList; anyType : Java_Object_Access) return Boolean;
    procedure contains (This : in out BasicArrayList; anyType : Java_Object_Access);
    function toArray (This : in out BasicArrayList) return Java_Object_Access_Array_Access;
-   procedure toArray (This : in out BasicArrayList);
    function toArrayType (This : in out BasicArrayList; objectArray : Java_Object_Access_Array_Access) return Java_Object_Access_Array_Access;
    procedure toArrayType (This : in out BasicArrayList; objectArray : Java_Object_Access_Array_Access);
    function clone (This : in out BasicArrayList) return Java_Object_Access;
-   procedure clone (This : in out BasicArrayList);
    function toString (This : in out BasicArrayList) return Unbounded_String;
-   procedure toString (This : in out BasicArrayList);
 
 end org.allbinary.util.BasicArrayList_Package;
 

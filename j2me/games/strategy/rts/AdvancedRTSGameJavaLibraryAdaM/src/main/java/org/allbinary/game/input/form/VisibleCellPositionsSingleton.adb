@@ -43,7 +43,7 @@ package body org.allbinary.game.input.form.VisibleCellPositionsSingleton_Package
    function Create return VisibleCellPositionsSingleton_Access is
       This : constant VisibleCellPositionsSingleton_Access := new VisibleCellPositionsSingleton;
    begin
-      Initialize (This.all);
+      VisibleCellPositionsSingleton_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -167,33 +167,12 @@ package body org.allbinary.game.input.form.VisibleCellPositionsSingleton_Package
         return This.simpleTiledLayer;
    end getSimpleTiledLayer;
 
-   procedure getInstance is
-      Java_Result : constant VisibleCellPositionsSingleton_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure shouldProcess (This : in out VisibleCellPositionsSingleton) is
-      Java_Result : constant Boolean := VisibleCellPositionsSingleton'Class (This).shouldProcess;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end shouldProcess;
-
    procedure isVisible (This : in out VisibleCellPositionsSingleton; cellPosition : CellPosition_Access) is
       Java_Result : constant Boolean := VisibleCellPositionsSingleton'Class (This).isVisible (cellPosition);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isVisible;
-
-   procedure getSimpleTiledLayer (This : in out VisibleCellPositionsSingleton) is
-      Java_Result : constant SimpleTiledLayer_Access := VisibleCellPositionsSingleton'Class (This).getSimpleTiledLayer;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSimpleTiledLayer;
 
 begin
    null;

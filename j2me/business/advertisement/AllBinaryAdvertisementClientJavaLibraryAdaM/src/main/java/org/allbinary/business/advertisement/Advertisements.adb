@@ -31,7 +31,7 @@ package body org.allbinary.business.advertisement.Advertisements_Package is
    function Create return Advertisements_Access is
       This : constant Advertisements_Access := new Advertisements;
    begin
-      Initialize (This.all);
+      Advertisements_Package.Initialize (This.all);
       return This;
    end Create;
 

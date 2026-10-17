@@ -28,7 +28,7 @@ package body org.allbinary.animation.image.AlphaBaseProcessor_Package is
    function Create return AlphaBaseProcessor_Access is
       This : constant AlphaBaseProcessor_Access := new AlphaBaseProcessor;
    begin
-      Initialize (This.all);
+      AlphaBaseProcessor_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -42,13 +42,6 @@ package body org.allbinary.animation.image.AlphaBaseProcessor_Package is
    begin
         null;
    end setAlpha;
-
-   procedure getInstance is
-      Java_Result : constant AlphaBaseProcessor_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

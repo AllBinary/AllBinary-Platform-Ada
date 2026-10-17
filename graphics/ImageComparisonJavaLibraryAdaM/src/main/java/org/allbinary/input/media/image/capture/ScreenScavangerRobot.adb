@@ -32,7 +32,7 @@ package body org.allbinary.input.media.image.capture.ScreenScavangerRobot_Packag
    function Create return ScreenScavangerRobot_Access is
       This : constant ScreenScavangerRobot_Access := new ScreenScavangerRobot;
    begin
-      Initialize (This.all);
+      ScreenScavangerRobot_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -55,13 +55,6 @@ package body org.allbinary.input.media.image.capture.ScreenScavangerRobot_Packag
         bufferedImageArray (index) := inputRobotInterface.createScreenCapture (rectScreenSize);
         This.logUtil.putF (To_Unbounded_String ("Finish"), This'Unchecked_Access, To_Unbounded_String ("getScreenAsBufferedImages"));
         return bufferedImageArray;
-   end getScreenAsBufferedImages;
-
-   procedure getScreenAsBufferedImages (This : in out ScreenScavangerRobot) is
-      Java_Result : constant BufferedImage_Access_Array_Access := ScreenScavangerRobot'Class (This).getScreenAsBufferedImages;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getScreenAsBufferedImages;
 
 end org.allbinary.input.media.image.capture.ScreenScavangerRobot_Package;

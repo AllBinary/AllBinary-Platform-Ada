@@ -28,7 +28,7 @@ package body admin.taghelpers.InventoryItemViewParentTagHelper_Package is
    function Create return InventoryItemViewParentTagHelper_Access is
       This : constant InventoryItemViewParentTagHelper_Access := new InventoryItemViewParentTagHelper;
    begin
-      Initialize (This.all);
+      InventoryItemViewParentTagHelper_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -120,13 +120,6 @@ package body admin.taghelpers.InventoryItemViewParentTagHelper_Package is
             Java_Throw (Java_New_Exception ("Exception", stringBuffer.toString));
         end if;
    end checkForValidationViewHelper;
-
-   procedure getInstance is
-      Java_Result : constant InventoryItemViewParentTagHelper_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure getInventoryItemView (This : in out InventoryItemViewParentTagHelper; inventoryTag : HelperTag_Access) is
       Java_Result : constant InventoryItemView_Access := InventoryItemViewParentTagHelper'Class (This).getInventoryItemView (inventoryTag);

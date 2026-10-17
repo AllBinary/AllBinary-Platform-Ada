@@ -47,7 +47,6 @@ package org.allbinary.logic.io.file.AbFileSystem_Package is
    procedure Initialize (This : in out AbFileSystem'Class);
    function Create return AbFileSystem_Access;
    function getInstance return AbFileSystem_Access;
-   procedure getInstance;
    function isDirectoryOrFile (This : in out AbFileSystem; path : Unbounded_String) return Boolean;
    procedure isDirectoryOrFile (This : in out AbFileSystem; path : Unbounded_String);
    function isDirectory (This : in out AbFileSystem; path : Unbounded_String) return Boolean;

@@ -24,6 +24,7 @@ with org.allbinary.input.automation.module.AbstractInputAutomationFactory_Packag
 with org.allbinary.input.automation.module.InputAutomationModuleData_Package; use org.allbinary.input.automation.module.InputAutomationModuleData_Package;
 with org.allbinary.input.automation.module.configuration.BlankModuleConfigurationJPanel_Package; use org.allbinary.input.automation.module.configuration.BlankModuleConfigurationJPanel_Package;
 with org.allbinary.thread.RunnableInterface_Package; use org.allbinary.thread.RunnableInterface_Package;
+with org.allbinary.input.automation.module.game.test.JPanel_Package; use org.allbinary.input.automation.module.game.test.JPanel_Package;
 
 package org.allbinary.input.automation.module.game.test.TestModuleFactory_Package is
 
@@ -45,11 +46,8 @@ package org.allbinary.input.automation.module.game.test.TestModuleFactory_Packag
    procedure Initialize (This : in out TestModuleFactory'Class);
    function Create return TestModuleFactory_Access;
    function getName (This : in out TestModuleFactory) return Unbounded_String;
-   procedure getName (This : in out TestModuleFactory);
    function getConfigurationJPanel (This : in out TestModuleFactory) return JPanel_Access;
-   procedure getConfigurationJPanel (This : in out TestModuleFactory);
    function getInstance (This : in out TestModuleFactory) return RunnableInterface_Access;
-   procedure getInstance (This : in out TestModuleFactory);
 
 end org.allbinary.input.automation.module.game.test.TestModuleFactory_Package;
 

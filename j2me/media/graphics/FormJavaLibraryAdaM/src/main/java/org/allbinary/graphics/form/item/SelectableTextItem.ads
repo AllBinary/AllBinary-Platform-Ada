@@ -23,6 +23,7 @@ with AllBinary_Java; use AllBinary_Java;
 --  with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
 with org.allbinary.graphics.form.item.ABTextItem_Package; use org.allbinary.graphics.form.item.ABTextItem_Package;
+with org.allbinary.graphics.form.item.ABStringComponent_Package; use org.allbinary.graphics.form.item.ABStringComponent_Package;
 
 package org.allbinary.graphics.form.item.SelectableTextItem_Package is
 
@@ -38,7 +39,6 @@ package org.allbinary.graphics.form.item.SelectableTextItem_Package is
    procedure Initialize (This : in out SelectableTextItem'Class; label : Unbounded_String; layout : Integer; altText : Unbounded_String; backgroundBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access);
    function Create (label : Unbounded_String; layout : Integer; altText : Unbounded_String; backgroundBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access) return SelectableTextItem_Access;
    function isFocusable (This : in out SelectableTextItem) return Boolean;
-   procedure isFocusable (This : in out SelectableTextItem);
    procedure paintXY (This : in out SelectableTextItem; graphics : Graphics_Access; x : Integer; y : Integer);
 
 end org.allbinary.graphics.form.item.SelectableTextItem_Package;

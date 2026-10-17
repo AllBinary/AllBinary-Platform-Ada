@@ -40,7 +40,7 @@ package body org.allbinary.logic.visual.dhtml.html.table.HtmlTableData_Package i
    function Create return HtmlTableData_Access is
       This : constant HtmlTableData_Access := new HtmlTableData;
    begin
-      Initialize (This.all);
+      HtmlTableData_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -48,13 +48,6 @@ package body org.allbinary.logic.visual.dhtml.html.table.HtmlTableData_Package i
    function getInstance return HtmlTableData_Access is
    begin
         return HtmlTableData_Package.instance;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant HtmlTableData_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

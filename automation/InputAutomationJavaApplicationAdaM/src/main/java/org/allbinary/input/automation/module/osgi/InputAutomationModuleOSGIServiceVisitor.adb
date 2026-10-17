@@ -32,7 +32,7 @@ package body org.allbinary.input.automation.module.osgi.InputAutomationModuleOSG
    function Create return InputAutomationModuleOSGIServiceVisitor_Access is
       This : constant InputAutomationModuleOSGIServiceVisitor_Access := new InputAutomationModuleOSGIServiceVisitor;
    begin
-      Initialize (This.all);
+      InputAutomationModuleOSGIServiceVisitor_Package.Initialize (This.all);
       return This;
    end Create;
 

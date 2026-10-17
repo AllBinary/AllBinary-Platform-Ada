@@ -30,7 +30,7 @@ package body org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes
    function Create return LogConfigTypes_Access is
       This : constant LogConfigTypes_Access := new LogConfigTypes;
    begin
-      Initialize (This.all);
+      LogConfigTypes_Package.Initialize (This.all);
       return This;
    end Create;
 

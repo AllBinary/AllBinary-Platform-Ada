@@ -29,7 +29,7 @@ package body org.allbinary.graphics.form.item.validation.PasswordValidator_Packa
    function Create (textFieldItem : ABTextFieldItem_Access; min : Integer; max : Integer; allowOnEmpty : Boolean) return PasswordValidator_Access is
       This : constant PasswordValidator_Access := new PasswordValidator;
    begin
-      Initialize (This.all, textFieldItem, min, max, allowOnEmpty);
+      PasswordValidator_Package.Initialize (This.all, textFieldItem, min, max, allowOnEmpty);
       return This;
    end Create;
 

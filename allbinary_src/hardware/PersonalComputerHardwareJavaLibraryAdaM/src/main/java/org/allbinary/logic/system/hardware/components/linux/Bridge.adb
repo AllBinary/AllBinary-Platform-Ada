@@ -31,7 +31,7 @@ package body org.allbinary.logic.system.hardware.components.linux.Bridge_Package
    function Create (data : Unbounded_String) return Bridge_Access is
       This : constant Bridge_Access := new Bridge;
    begin
-      Initialize (This.all, data);
+      Bridge_Package.Initialize (This.all, data);
       return This;
    end Create;
 
@@ -51,13 +51,6 @@ package body org.allbinary.logic.system.hardware.components.linux.Bridge_Package
    begin
       null;
    end compareTo;
-
-   procedure toString (This : in out Bridge) is
-      Java_Result : constant Unbounded_String := Bridge'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toString;
 
 end org.allbinary.logic.system.hardware.components.linux.Bridge_Package;
 

@@ -37,6 +37,7 @@ with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.Com
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.media.ScaleProperties_Package; use org.allbinary.media.ScaleProperties_Package;
 with org.allbinary.util.CircularIndexUtil_Package; use org.allbinary.util.CircularIndexUtil_Package;
+with org.allbinary.animation.image.BaseImageAnimationFactory_Package; use org.allbinary.animation.image.BaseImageAnimationFactory_Package;
 
 package org.allbinary.animation.image.LazyImageRotationAnimation_Package is
 
@@ -76,7 +77,6 @@ package org.allbinary.animation.image.LazyImageRotationAnimation_Package is
    procedure setRealAnimation (This : in out LazyImageRotationAnimation);
    procedure setScale (This : in out LazyImageRotationAnimation; scaleX : Float; scaleY : Float);
    function getAnimationBehavior (This : in out LazyImageRotationAnimation) return AnimationBehavior_Access;
-   procedure getAnimationBehavior (This : in out LazyImageRotationAnimation);
    procedure set (This : in out LazyImageRotationAnimation; gl : GL_Access);
    procedure setAlpha (This : in out LazyImageRotationAnimation; alpha : Integer);
    procedure setDx (This : in out LazyImageRotationAnimation; dx : Integer);
@@ -90,40 +90,26 @@ package org.allbinary.animation.image.LazyImageRotationAnimation_Package is
    procedure previousRotationZ (This : in out LazyImageRotationAnimation);
    procedure changeBasicColor (This : in out LazyImageRotationAnimation; basicColor : BasicColor_Access);
    function getBasicColorP (This : in out LazyImageRotationAnimation) return BasicColor_Access;
-   procedure getBasicColorP (This : in out LazyImageRotationAnimation);
    function getChangeBasicColor (This : in out LazyImageRotationAnimation) return BasicColor_Access;
-   procedure getChangeBasicColor (This : in out LazyImageRotationAnimation);
    function getChangeColor (This : in out LazyImageRotationAnimation) return Integer;
-   procedure getChangeColor (This : in out LazyImageRotationAnimation);
    function getColor (This : in out LazyImageRotationAnimation) return Integer;
-   procedure getColor (This : in out LazyImageRotationAnimation);
    function getDx (This : in out LazyImageRotationAnimation) return Integer;
-   procedure getDx (This : in out LazyImageRotationAnimation);
    function getDy (This : in out LazyImageRotationAnimation) return Integer;
-   procedure getDy (This : in out LazyImageRotationAnimation);
    function isThreed (This : in out LazyImageRotationAnimation) return Boolean;
-   procedure isThreed (This : in out LazyImageRotationAnimation);
    procedure nextFrame (This : in out LazyImageRotationAnimation);
    procedure reset (This : in out LazyImageRotationAnimation);
    procedure setFrame (This : in out LazyImageRotationAnimation; index : Integer);
    function getFrame (This : in out LazyImageRotationAnimation) return Integer;
-   procedure getFrame (This : in out LazyImageRotationAnimation);
    function getAnimationSize (This : in out LazyImageRotationAnimation) return Integer;
-   procedure getAnimationSize (This : in out LazyImageRotationAnimation);
    function getSize (This : in out LazyImageRotationAnimation) return Integer;
-   procedure getSize (This : in out LazyImageRotationAnimation);
    procedure previousFrame (This : in out LazyImageRotationAnimation);
    function isLastFrame (This : in out LazyImageRotationAnimation) return Boolean;
-   procedure isLastFrame (This : in out LazyImageRotationAnimation);
    procedure setSequence (This : in out LazyImageRotationAnimation; sequence : Integer_Array_Access);
    function getSequence (This : in out LazyImageRotationAnimation) return Integer_Array_Access;
-   procedure getSequence (This : in out LazyImageRotationAnimation);
    function getWidth (This : in out LazyImageRotationAnimation) return Integer;
-   procedure getWidth (This : in out LazyImageRotationAnimation);
    procedure paintXY (This : in out LazyImageRotationAnimation; graphics : Graphics_Access; x : Integer; y : Integer);
    procedure paintThreedXYZ (This : in out LazyImageRotationAnimation; graphics : Graphics_Access; x : Integer; y : Integer; z : Integer);
    function toString (This : in out LazyImageRotationAnimation) return Unbounded_String;
-   procedure toString (This : in out LazyImageRotationAnimation);
 
 end org.allbinary.animation.image.LazyImageRotationAnimation_Package;
 

@@ -30,7 +30,7 @@ package body org.allbinary.logic.communication.smtp.configuration.user.event.Use
    function Create return UserEmailEventListenerFactory_Access is
       This : constant UserEmailEventListenerFactory_Access := new UserEmailEventListenerFactory;
    begin
-      Initialize (This.all);
+      UserEmailEventListenerFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

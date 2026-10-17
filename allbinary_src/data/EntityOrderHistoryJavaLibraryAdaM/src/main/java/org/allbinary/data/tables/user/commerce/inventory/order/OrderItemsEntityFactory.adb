@@ -30,7 +30,7 @@ package body org.allbinary.data.tables.user.commerce.inventory.order.OrderItemsE
    function Create return OrderItemsEntityFactory_Access is
       This : constant OrderItemsEntityFactory_Access := new OrderItemsEntityFactory;
    begin
-      Initialize (This.all);
+      OrderItemsEntityFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -53,13 +53,6 @@ package body org.allbinary.data.tables.user.commerce.inventory.order.OrderItemsE
             return null;
                 end;
         end;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant OrderItemsEntity_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 end org.allbinary.data.tables.user.commerce.inventory.order.OrderItemsEntityFactory_Package;

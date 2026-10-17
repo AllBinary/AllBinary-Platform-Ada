@@ -36,7 +36,7 @@ package body org.allbinary.graphics.canvas.transition.progress.AndroidTitleProgr
    function Create (title : Unbounded_String; backgroundBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access) return AndroidTitleProgressBar_Access is
       This : constant AndroidTitleProgressBar_Access := new AndroidTitleProgressBar;
    begin
-      Initialize (This.all, title, backgroundBasicColor, foregroundBasicColor);
+      AndroidTitleProgressBar_Package.Initialize (This.all, title, backgroundBasicColor, foregroundBasicColor);
       return This;
    end Create;
 
@@ -143,13 +143,6 @@ package body org.allbinary.graphics.canvas.transition.progress.AndroidTitleProgr
         null;
    end paint;
 
-   procedure isInitialized (This : in out AndroidTitleProgressBar) is
-      Java_Result : constant Boolean := AndroidTitleProgressBar'Class (This).isInitialized;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isInitialized;
-
 end org.allbinary.graphics.canvas.transition.progress.AndroidTitleProgressBar_Package;
 
 
@@ -171,7 +164,7 @@ package body org.allbinary.graphics.canvas.transition.progress.TitleProgressBarS
    function Create (androidTitleProgressBar : AndroidTitleProgressBar_Access) return TitleProgressBarSetProgressRunnable_Access is
       This : constant TitleProgressBarSetProgressRunnable_Access := new TitleProgressBarSetProgressRunnable;
    begin
-      Initialize (This.all, androidTitleProgressBar);
+      TitleProgressBarSetProgressRunnable_Package.Initialize (This.all, androidTitleProgressBar);
       return This;
    end Create;
     
@@ -216,7 +209,7 @@ package body org.allbinary.graphics.canvas.transition.progress.TitleProgressBarP
    function Create (androidTitleProgressBar : AndroidTitleProgressBar_Access) return TitleProgressBarPortionSetProgressRunnable_Access is
       This : constant TitleProgressBarPortionSetProgressRunnable_Access := new TitleProgressBarPortionSetProgressRunnable;
    begin
-      Initialize (This.all, androidTitleProgressBar);
+      TitleProgressBarPortionSetProgressRunnable_Package.Initialize (This.all, androidTitleProgressBar);
       return This;
    end Create;
     
@@ -261,7 +254,7 @@ package body org.allbinary.graphics.canvas.transition.progress.ShowTitleProgress
    function Create (androidTitleProgressBar : AndroidTitleProgressBar_Access) return ShowTitleProgressBarRunnable_Access is
       This : constant ShowTitleProgressBarRunnable_Access := new ShowTitleProgressBarRunnable;
    begin
-      Initialize (This.all, androidTitleProgressBar);
+      ShowTitleProgressBarRunnable_Package.Initialize (This.all, androidTitleProgressBar);
       return This;
    end Create;
     
@@ -306,7 +299,7 @@ package body org.allbinary.graphics.canvas.transition.progress.DismissTitleProgr
    function Create (androidTitleProgressBar : AndroidTitleProgressBar_Access) return DismissTitleProgressBarRunnable_Access is
       This : constant DismissTitleProgressBarRunnable_Access := new DismissTitleProgressBarRunnable;
    begin
-      Initialize (This.all, androidTitleProgressBar);
+      DismissTitleProgressBarRunnable_Package.Initialize (This.all, androidTitleProgressBar);
       return This;
    end Create;
     

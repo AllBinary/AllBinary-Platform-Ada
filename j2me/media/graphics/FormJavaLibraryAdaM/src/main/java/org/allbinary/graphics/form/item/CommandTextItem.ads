@@ -40,9 +40,7 @@ package org.allbinary.graphics.form.item.CommandTextItem_Package is
    procedure Initialize (This : in out CommandTextItem'Class; command : Command_Access; layout : Integer; altText : Unbounded_String; backgroundBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access);
    function Create (command : Command_Access; layout : Integer; altText : Unbounded_String; backgroundBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access) return CommandTextItem_Access;
    function isFocusable (This : in out CommandTextItem) return Boolean;
-   procedure isFocusable (This : in out CommandTextItem);
    function getCommand (This : in out CommandTextItem) return Command_Access;
-   procedure getCommand (This : in out CommandTextItem);
 
 end org.allbinary.graphics.form.item.CommandTextItem_Package;
 

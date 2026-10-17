@@ -29,20 +29,13 @@ package body org.allbinary.ag.weapon.media.audio.ExplosionBasicSound_Package is
    function Create return ExplosionBasicSound_Access is
       This : constant ExplosionBasicSound_Access := new ExplosionBasicSound;
    begin
-      Initialize (This.all);
+      ExplosionBasicSound_Package.Initialize (This.all);
       return This;
    end Create;
 
    function getInstance return Sound_Access is
    begin
         return ExplosionBasicSound_Package.soundInterface;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant Sound_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

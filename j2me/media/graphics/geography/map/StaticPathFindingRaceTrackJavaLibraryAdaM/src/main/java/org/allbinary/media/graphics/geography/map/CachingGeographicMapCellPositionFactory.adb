@@ -29,7 +29,7 @@ package body org.allbinary.media.graphics.geography.map.CachingGeographicMapCell
    function Create (geographicMapInterface : BasicGeographicMap_Access) return CachingGeographicMapCellPositionFactory_Access is
       This : constant CachingGeographicMapCellPositionFactory_Access := new CachingGeographicMapCellPositionFactory;
    begin
-      Initialize (This.all, geographicMapInterface);
+      CachingGeographicMapCellPositionFactory_Package.Initialize (This.all, geographicMapInterface);
       return This;
    end Create;
 

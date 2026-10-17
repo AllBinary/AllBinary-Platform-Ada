@@ -46,17 +46,13 @@ package org.allbinary.media.image.comparison.color.ColorDelta_Package is
    procedure Initialize (This : in out ColorDelta'Class; rgb1 : Integer; rgb2 : Integer);
    function Create (rgb1 : Integer; rgb2 : Integer) return ColorDelta_Access;
    function getKey (This : in out ColorDelta) return Java_Object_Access;
-   procedure getKey (This : in out ColorDelta);
    function getKey (rgb1 : Integer; rgb2 : Integer) return Java_Object_Access;
    procedure getKey (rgb1 : Integer; rgb2 : Integer);
    function getRgb1 (This : in out ColorDelta) return Integer;
-   procedure getRgb1 (This : in out ColorDelta);
    procedure setRgb1 (This : in out ColorDelta; rgb1 : Integer);
    function getRgb2 (This : in out ColorDelta) return Integer;
-   procedure getRgb2 (This : in out ColorDelta);
    procedure setRgb2 (This : in out ColorDelta; rgb2 : Integer);
    function toString (This : in out ColorDelta) return Unbounded_String;
-   procedure toString (This : in out ColorDelta);
 
 end org.allbinary.media.image.comparison.color.ColorDelta_Package;
 

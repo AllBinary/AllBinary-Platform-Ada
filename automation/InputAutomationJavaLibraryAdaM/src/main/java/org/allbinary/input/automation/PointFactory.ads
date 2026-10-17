@@ -20,6 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
+with org.allbinary.input.automation.Point_Package; use org.allbinary.input.automation.Point_Package;
 
 package org.allbinary.input.automation.PointFactory_Package is
 

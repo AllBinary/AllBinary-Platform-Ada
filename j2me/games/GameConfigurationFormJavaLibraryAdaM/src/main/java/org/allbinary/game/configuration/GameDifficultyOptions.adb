@@ -39,7 +39,7 @@ package body org.allbinary.game.configuration.GameDifficultyOptions_Package is
    function Create (commandListener : CommandListener_Access; title : Unbounded_String; list : BasicArrayList_Access; backgrounBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access) return GameDifficultyOptions_Access is
       This : constant GameDifficultyOptions_Access := new GameDifficultyOptions;
    begin
-      Initialize (This.all, commandListener, title, list, backgrounBasicColor, foregroundBasicColor);
+      GameDifficultyOptions_Package.Initialize (This.all, commandListener, title, list, backgrounBasicColor, foregroundBasicColor);
       return This;
    end Create;
 
@@ -140,20 +140,6 @@ package body org.allbinary.game.configuration.GameDifficultyOptions_Package is
    begin
       null;
    end getChoiceGroup;
-
-   procedure getSelectedId (This : in out GameDifficultyOptions) is
-      Java_Result : constant Integer := GameDifficultyOptions'Class (This).getSelectedId;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSelectedId;
-
-   procedure getSelectedText (This : in out GameDifficultyOptions) is
-      Java_Result : constant Integer := GameDifficultyOptions'Class (This).getSelectedText;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSelectedText;
 
 end org.allbinary.game.configuration.GameDifficultyOptions_Package;
 

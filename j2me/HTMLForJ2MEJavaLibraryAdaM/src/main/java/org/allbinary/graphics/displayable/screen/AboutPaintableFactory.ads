@@ -45,7 +45,6 @@ package org.allbinary.graphics.displayable.screen.AboutPaintableFactory_Package 
    procedure Initialize (This : in out AboutPaintableFactory'Class);
    function Create return AboutPaintableFactory_Access;
    function getInstance return AboutPaintableFactory_Access;
-   procedure getInstance;
 
 end org.allbinary.graphics.displayable.screen.AboutPaintableFactory_Package;
 

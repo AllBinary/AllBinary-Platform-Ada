@@ -30,7 +30,7 @@ package body org.allbinary.data.tables.advertisement.sales.AffiliateSalesEntityF
    function Create return AffiliateSalesEntityFactory_Access is
       This : constant AffiliateSalesEntityFactory_Access := new AffiliateSalesEntityFactory;
    begin
-      Initialize (This.all);
+      AffiliateSalesEntityFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -53,13 +53,6 @@ package body org.allbinary.data.tables.advertisement.sales.AffiliateSalesEntityF
             return null;
                 end;
         end;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant AffiliateSalesEntityInterface_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

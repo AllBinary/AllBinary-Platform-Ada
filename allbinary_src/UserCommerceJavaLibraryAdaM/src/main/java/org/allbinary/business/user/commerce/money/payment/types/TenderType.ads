@@ -38,7 +38,6 @@ package org.allbinary.business.user.commerce.money.payment.types.TenderType_Pack
    function isEqual (This : in out TenderType; tenderType : TenderType_Access) return Boolean;
    procedure isEqual (This : in out TenderType; tenderType : TenderType_Access);
    function toString (This : in out TenderType) return Unbounded_String;
-   procedure toString (This : in out TenderType);
 
 end org.allbinary.business.user.commerce.money.payment.types.TenderType_Package;
 

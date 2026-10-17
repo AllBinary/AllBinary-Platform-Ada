@@ -28,7 +28,7 @@ package body org.allbinary.game.layer.waypoint.WaypointRunnableLogHelper_Package
    function Create return WaypointRunnableLogHelper_Access is
       This : constant WaypointRunnableLogHelper_Access := new WaypointRunnableLogHelper;
    begin
-      Initialize (This.all);
+      WaypointRunnableLogHelper_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -47,13 +47,6 @@ package body org.allbinary.game.layer.waypoint.WaypointRunnableLogHelper_Package
    begin
         null;
    end end_Id;
-
-   procedure getInstance is
-      Java_Result : constant WaypointRunnableLogHelper_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

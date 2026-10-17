@@ -46,7 +46,7 @@ package body org.allbinary.game.input.CompleteMotionGestureInputEvent_Package is
    function Create (name : Unbounded_String; motionGestureInput : MotionGestureInput_Access) return CompleteMotionGestureInputEvent_Access is
       This : constant CompleteMotionGestureInputEvent_Access := new CompleteMotionGestureInputEvent;
    begin
-      Initialize (This.all, name, motionGestureInput);
+      CompleteMotionGestureInputEvent_Package.Initialize (This.all, name, motionGestureInput);
       return This;
    end Create;
 
@@ -68,20 +68,6 @@ package body org.allbinary.game.input.CompleteMotionGestureInputEvent_Package is
    function getMotionGestureInput (This : in out CompleteMotionGestureInputEvent) return MotionGestureInput_Access is
    begin
         return This.motionGestureInput;
-   end getMotionGestureInput;
-
-   procedure getName (This : in out CompleteMotionGestureInputEvent) is
-      Java_Result : constant Unbounded_String := CompleteMotionGestureInputEvent'Class (This).getName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getName;
-
-   procedure getMotionGestureInput (This : in out CompleteMotionGestureInputEvent) is
-      Java_Result : constant MotionGestureInput_Access := CompleteMotionGestureInputEvent'Class (This).getMotionGestureInput;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getMotionGestureInput;
 
 end org.allbinary.game.input.CompleteMotionGestureInputEvent_Package;

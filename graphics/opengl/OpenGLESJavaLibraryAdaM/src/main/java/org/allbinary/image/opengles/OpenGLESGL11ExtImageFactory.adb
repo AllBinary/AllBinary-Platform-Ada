@@ -29,7 +29,7 @@ package body org.allbinary.image.opengles.OpenGLESGL11ExtImageFactory_Package is
    function Create return OpenGLESGL11ExtImageFactory_Access is
       This : constant OpenGLESGL11ExtImageFactory_Access := new OpenGLESGL11ExtImageFactory;
    begin
-      Initialize (This.all);
+      OpenGLESGL11ExtImageFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

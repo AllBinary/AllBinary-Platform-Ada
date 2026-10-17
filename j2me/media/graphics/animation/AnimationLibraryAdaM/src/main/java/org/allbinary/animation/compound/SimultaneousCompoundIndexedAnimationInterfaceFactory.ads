@@ -25,6 +25,7 @@ with org.allbinary.animation.AnimationBehaviorFactory_Package; use org.allbinary
 with org.allbinary.animation.AnimationInterfaceFactoryInterface_Package; use org.allbinary.animation.AnimationInterfaceFactoryInterface_Package;
 with org.allbinary.logic.communication.log.ForcedLogUtil_Package; use org.allbinary.logic.communication.log.ForcedLogUtil_Package;
 with org.allbinary.animation.compound.CompoundAnimationInterfaceFactory_Package; use org.allbinary.animation.compound.CompoundAnimationInterfaceFactory_Package;
+with org.allbinary.animation.compound.SimultaneousCompoundIndexedAnimation_Package; use org.allbinary.animation.compound.SimultaneousCompoundIndexedAnimation_Package;
 
 package org.allbinary.animation.compound.SimultaneousCompoundIndexedAnimationInterfaceFactory_Package is
 

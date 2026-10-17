@@ -41,7 +41,6 @@ package tags.generic_Id.shipping.ShippingMethodsTag_Package is
    procedure Initialize (This : in out ShippingMethodsTag'Class);
    function Create return ShippingMethodsTag_Access;
    function doStartTag (This : in out ShippingMethodsTag) return Integer;
-   procedure doStartTag (This : in out ShippingMethodsTag);
 
 end tags.generic_Id.shipping.ShippingMethodsTag_Package;
 

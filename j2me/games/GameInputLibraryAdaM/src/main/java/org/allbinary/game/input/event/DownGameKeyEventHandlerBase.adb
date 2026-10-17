@@ -32,7 +32,7 @@ package body org.allbinary.game.input.event.DownGameKeyEventHandlerBase_Package 
    function Create return DownGameKeyEventHandlerBase_Access is
       This : constant DownGameKeyEventHandlerBase_Access := new DownGameKeyEventHandlerBase;
    begin
-      Initialize (This.all);
+      DownGameKeyEventHandlerBase_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -120,13 +120,6 @@ package body org.allbinary.game.input.event.DownGameKeyEventHandlerBase_Package 
             index := index + 1;
         end loop;
         return stringBuffer.toString;
-   end toString;
-
-   procedure toString (This : in out DownGameKeyEventHandlerBase) is
-      Java_Result : constant Unbounded_String := DownGameKeyEventHandlerBase'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end toString;
 
 begin

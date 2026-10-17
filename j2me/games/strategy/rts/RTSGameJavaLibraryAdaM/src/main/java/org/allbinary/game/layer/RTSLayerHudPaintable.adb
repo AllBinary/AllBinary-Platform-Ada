@@ -41,7 +41,7 @@ package body org.allbinary.game.layer.RTSLayerHudPaintable_Package is
    function Create return RTSLayerHudPaintable_Access is
       This : constant RTSLayerHudPaintable_Access := new RTSLayerHudPaintable;
    begin
-      Initialize (This.all);
+      RTSLayerHudPaintable_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -87,20 +87,6 @@ package body org.allbinary.game.layer.RTSLayerHudPaintable_Package is
    function getRtsLayer (This : in out RTSLayerHudPaintable) return CollidableDestroyableDamageableLayer_Access is
    begin
         return This.rtsLayer;
-   end getRtsLayer;
-
-   procedure getInstance is
-      Java_Result : constant RTSLayerHudPaintable_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure getRtsLayer (This : in out RTSLayerHudPaintable) is
-      Java_Result : constant CollidableDestroyableDamageableLayer_Access := RTSLayerHudPaintable'Class (This).getRtsLayer;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getRtsLayer;
 
 begin

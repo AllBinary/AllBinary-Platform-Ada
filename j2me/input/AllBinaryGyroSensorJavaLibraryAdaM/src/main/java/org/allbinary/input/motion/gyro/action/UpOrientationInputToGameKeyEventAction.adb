@@ -37,16 +37,9 @@ package body org.allbinary.input.motion.gyro.action.UpOrientationInputToGameKeyE
    function Create return UpOrientationInputToGameKeyEventAction_Access is
       This : constant UpOrientationInputToGameKeyEventAction_Access := new UpOrientationInputToGameKeyEventAction;
    begin
-      Initialize (This.all);
+      UpOrientationInputToGameKeyEventAction_Package.Initialize (This.all);
       return This;
    end Create;
-
-   procedure getInstance is
-      Java_Result : constant GameKeyCompleteMotionGestureInputEvent_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

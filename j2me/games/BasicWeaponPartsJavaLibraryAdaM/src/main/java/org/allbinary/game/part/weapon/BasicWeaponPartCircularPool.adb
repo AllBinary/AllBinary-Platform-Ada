@@ -29,7 +29,7 @@ package body org.allbinary.game.part.weapon.BasicWeaponPartCircularPool_Package 
    function Create return BasicWeaponPartCircularPool_Access is
       This : constant BasicWeaponPartCircularPool_Access := new BasicWeaponPartCircularPool;
    begin
-      Initialize (This.all);
+      BasicWeaponPartCircularPool_Package.Initialize (This.all);
       return This;
    end Create;
 

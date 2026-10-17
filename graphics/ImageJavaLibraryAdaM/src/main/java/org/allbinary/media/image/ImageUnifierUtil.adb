@@ -37,7 +37,7 @@ package body org.allbinary.media.image.ImageUnifierUtil_Package is
    function Create return ImageUnifierUtil_Access is
       This : constant ImageUnifierUtil_Access := new ImageUnifierUtil;
    begin
-      Initialize (This.all);
+      ImageUnifierUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -81,20 +81,6 @@ package body org.allbinary.media.image.ImageUnifierUtil_Package is
         g.dispose;
         return newBufferedImage;
    end getImage;
-
-   procedure getInstance is
-      Java_Result : constant ImageUnifierUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure getDefaultConfiguration (This : in out ImageUnifierUtil) is
-      Java_Result : constant GraphicsConfiguration_Access := ImageUnifierUtil'Class (This).getDefaultConfiguration;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getDefaultConfiguration;
 
    procedure getImage (This : in out ImageUnifierUtil; bufferedImageArray : BufferedImage_Access_Array_Access; imageUnifierProperties : ImageUnifierProperties_Access) is
       Java_Result : constant BufferedImage_Access := ImageUnifierUtil'Class (This).getImage (bufferedImageArray, imageUnifierProperties);

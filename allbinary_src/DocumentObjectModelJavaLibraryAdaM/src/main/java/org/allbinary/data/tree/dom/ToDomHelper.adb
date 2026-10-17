@@ -30,11 +30,12 @@ package body org.allbinary.data.tree.dom.ToDomHelper_Package is
    function Create return ToDomHelper_Access is
       This : constant ToDomHelper_Access := new ToDomHelper;
    begin
-      Initialize (This.all);
+      ToDomHelper_Package.Initialize (This.all);
       return This;
    end Create;
 
-   function convertNull (value : Unbounded_String) return Unbounded_String is
+   function convertNull (value_Param : Unbounded_String) return Unbounded_String is
+      value : Unbounded_String := value_Param;
    begin
         if (value) = (Null_Unbounded_String) then
             value := StringUtil_Package.getInstance.NULL_STRING;
@@ -42,8 +43,8 @@ package body org.allbinary.data.tree.dom.ToDomHelper_Package is
         return value;
    end convertNull;
 
-   procedure convertNull (value : Unbounded_String) is
-      Java_Result : constant Unbounded_String := convertNull (value);
+   procedure convertNull (value_Param : Unbounded_String) is
+      Java_Result : constant Unbounded_String := convertNull (value_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

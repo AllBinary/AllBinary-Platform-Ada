@@ -32,7 +32,7 @@ package body views.generic_Id.inventory.InventorySearchUtil_Package is
    function Create return InventorySearchUtil_Access is
       This : constant InventorySearchUtil_Access := new InventorySearchUtil;
    begin
-      Initialize (This.all);
+      InventorySearchUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -241,13 +241,6 @@ package body views.generic_Id.inventory.InventorySearchUtil_Package is
                 end;
         end;
    end search;
-
-   procedure getInstance is
-      Java_Result : constant InventorySearchUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure getBasicItemIdColumn (This : in out InventorySearchUtil; searchRequest : SearchRequest_Access) is
       Java_Result : constant BasicArrayList_Access := InventorySearchUtil'Class (This).getBasicItemIdColumn (searchRequest);

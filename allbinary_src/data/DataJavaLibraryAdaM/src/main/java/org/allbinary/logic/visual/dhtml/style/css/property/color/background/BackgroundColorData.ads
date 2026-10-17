@@ -37,7 +37,6 @@ package org.allbinary.logic.visual.dhtml.style.css.property.color.background.Bac
    procedure Initialize (This : in out BackgroundColorData'Class);
    function Create return BackgroundColorData_Access;
    function getInstance return BackgroundColorData_Access;
-   procedure getInstance;
 
 end org.allbinary.logic.visual.dhtml.style.css.property.color.background.BackgroundColorData_Package;
 

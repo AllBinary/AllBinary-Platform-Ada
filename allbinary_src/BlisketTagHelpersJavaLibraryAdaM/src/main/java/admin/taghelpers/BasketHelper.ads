@@ -56,7 +56,6 @@ package admin.taghelpers.BasketHelper_Package is
    procedure Initialize (This : in out BasketHelper'Class; hashMap : HashMap_Access; pageContext : PageContext_Access);
    function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return BasketHelper_Access;
    function isBasketEmpty (This : in out BasketHelper) return Boolean;
-   procedure isBasketEmpty (This : in out BasketHelper);
 
 end admin.taghelpers.BasketHelper_Package;
 

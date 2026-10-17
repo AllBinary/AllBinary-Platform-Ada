@@ -32,7 +32,7 @@ package body org.allbinary.business.user.commerce.shipping.modules.NoShippingMod
    function Create return NoShippingModuleView_Access is
       This : constant NoShippingModuleView_Access := new NoShippingModuleView;
    begin
-      Initialize (This.all);
+      NoShippingModuleView_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -87,20 +87,6 @@ package body org.allbinary.business.user.commerce.shipping.modules.NoShippingMod
         return Null_Unbounded_String;
    end view;
 
-   procedure isValid (This : in out NoShippingModuleView) is
-      Java_Result : constant Boolean := NoShippingModuleView'Class (This).isValid;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isValid;
-
-   procedure toValidationInfoDoc (This : in out NoShippingModuleView) is
-      Java_Result : constant Document_Access := NoShippingModuleView'Class (This).toValidationInfoDoc;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toValidationInfoDoc;
-
    procedure toValidationInfoNode (This : in out NoShippingModuleView; document : Document_Access) is
       Java_Result : constant Node_Access := NoShippingModuleView'Class (This).toValidationInfoNode (document);
       pragma Unreferenced (Java_Result);
@@ -108,33 +94,12 @@ package body org.allbinary.business.user.commerce.shipping.modules.NoShippingMod
       null;
    end toValidationInfoNode;
 
-   procedure toXmlDoc (This : in out NoShippingModuleView) is
-      Java_Result : constant Document_Access := NoShippingModuleView'Class (This).toXmlDoc;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toXmlDoc;
-
    procedure toXmlNode (This : in out NoShippingModuleView; document : Document_Access) is
       Java_Result : constant Node_Access := NoShippingModuleView'Class (This).toXmlNode (document);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end toXmlNode;
-
-   procedure validationInfo (This : in out NoShippingModuleView) is
-      Java_Result : constant Unbounded_String := NoShippingModuleView'Class (This).validationInfo;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end validationInfo;
-
-   procedure view (This : in out NoShippingModuleView) is
-      Java_Result : constant Unbounded_String := NoShippingModuleView'Class (This).view;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end view;
 
 end org.allbinary.business.user.commerce.shipping.modules.NoShippingModuleView_Package;
 

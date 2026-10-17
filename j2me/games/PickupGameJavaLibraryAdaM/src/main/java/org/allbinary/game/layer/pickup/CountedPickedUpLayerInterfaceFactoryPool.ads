@@ -41,9 +41,7 @@ package org.allbinary.game.layer.pickup.CountedPickedUpLayerInterfaceFactoryPool
    procedure Initialize (This : in out CountedPickedUpLayerInterfaceFactoryPool'Class);
    function Create return CountedPickedUpLayerInterfaceFactoryPool_Access;
    function getList (This : in out CountedPickedUpLayerInterfaceFactoryPool) return BasicArrayList_Access;
-   procedure getList (This : in out CountedPickedUpLayerInterfaceFactoryPool);
    function getInstance return CountedPickedUpLayerInterfaceFactoryPool_Access;
-   procedure getInstance;
    procedure init;
 
 end org.allbinary.game.layer.pickup.CountedPickedUpLayerInterfaceFactoryPool_Package;

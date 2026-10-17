@@ -31,20 +31,13 @@ package body org.allbinary.graphics.paint.NullPaintable_Package is
    function Create return NullPaintable_Access is
       This : constant NullPaintable_Access := new NullPaintable;
    begin
-      Initialize (This.all);
+      NullPaintable_Package.Initialize (This.all);
       return This;
    end Create;
 
    function getInstance return Paintable_Access is
    begin
         return NullPaintable_Package.SINGLETON;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant Paintable_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

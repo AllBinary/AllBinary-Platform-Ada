@@ -26,6 +26,7 @@ with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.Com
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.game.score.HighScoresInterface_Package; use org.allbinary.game.score.HighScoresInterface_Package;
+with org.allbinary.game.score.HighScore_Package; use org.allbinary.game.score.HighScore_Package;
 
 package org.allbinary.game.score.HighScores_Package is
 
@@ -52,22 +53,15 @@ package org.allbinary.game.score.HighScores_Package is
    function Create (name : Unbounded_String; heading : Unbounded_String; columnTwoHeading : Unbounded_String) return HighScores_Access;
    procedure setList (This : in out HighScores; orderedHighScoresList : BasicArrayList_Access);
    function getList (This : in out HighScores) return BasicArrayList_Access;
-   procedure getList (This : in out HighScores);
    function getName (This : in out HighScores) return Unbounded_String;
-   procedure getName (This : in out HighScores);
    function getTotal (This : in out HighScores) return Integer;
-   procedure getTotal (This : in out HighScores);
    procedure addHighScore (This : in out HighScores; newHighScore : HighScore_Access);
    function getHeading (This : in out HighScores) return Unbounded_String;
-   procedure getHeading (This : in out HighScores);
    function getColumnOneHeading (This : in out HighScores) return Unbounded_String;
-   procedure getColumnOneHeading (This : in out HighScores);
    function getColumnTwoHeading (This : in out HighScores) return Unbounded_String;
-   procedure getColumnTwoHeading (This : in out HighScores);
    function isBestScore (This : in out HighScores; newHighScore : HighScore_Access) return Boolean;
    procedure isBestScore (This : in out HighScores; newHighScore : HighScore_Access);
    function toString (This : in out HighScores) return Unbounded_String;
-   procedure toString (This : in out HighScores);
 
 end org.allbinary.game.score.HighScores_Package;
 

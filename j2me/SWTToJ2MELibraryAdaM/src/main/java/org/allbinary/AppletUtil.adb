@@ -30,7 +30,7 @@ package body org.allbinary.AppletUtil_Package is
    function Create return AppletUtil_Access is
       This : constant AppletUtil_Access := new AppletUtil;
    begin
-      Initialize (This.all);
+      AppletUtil_Package.Initialize (This.all);
       return This;
    end Create;
 

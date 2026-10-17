@@ -29,7 +29,7 @@ package body org.allbinary.logic.system.security.licensing.LicenseStrings_Packag
    function Create return LicenseStrings_Access is
       This : constant LicenseStrings_Access := new LicenseStrings;
    begin
-      Initialize (This.all);
+      LicenseStrings_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -37,13 +37,6 @@ package body org.allbinary.logic.system.security.licensing.LicenseStrings_Packag
    function getInstance return LicenseStrings_Access is
    begin
         return LicenseStrings_Package.instance;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant LicenseStrings_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

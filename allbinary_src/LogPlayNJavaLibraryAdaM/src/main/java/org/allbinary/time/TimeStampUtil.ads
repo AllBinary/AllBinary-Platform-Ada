@@ -21,11 +21,12 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with com.google.gwt.i18n.client.DateTimeFormat_Package; use com.google.gwt.i18n.client.DateTimeFormat_Package;
---  with java.util.Date_Package; use java.util.Date_Package;
+with java.util.Date_Package; use java.util.Date_Package;
 
 package org.allbinary.time.TimeStampUtil_Package is
 
    package DateTimeFormat_Package renames Standard.com.google.gwt.i18n.client.DateTimeFormat_Package;
+   package Date_Package renames Standard.java.util.Date_Package;
 
    type TimeStampUtil is tagged;
    type TimeStampUtil_Access is access all TimeStampUtil'Class;
@@ -38,9 +39,7 @@ package org.allbinary.time.TimeStampUtil_Package is
    procedure Initialize (This : in out TimeStampUtil'Class);
    function Create return TimeStampUtil_Access;
    function getInstance return TimeStampUtil_Access;
-   procedure getInstance;
    function getAsString (This : in out TimeStampUtil) return Unbounded_String;
-   procedure getAsString (This : in out TimeStampUtil);
 
 end org.allbinary.time.TimeStampUtil_Package;
 

@@ -35,7 +35,7 @@ package body org.allbinary.media.image.ImageToRotationImageArrayUtil_Package is
    function Create return ImageToRotationImageArrayUtil_Access is
       This : constant ImageToRotationImageArrayUtil_Access := new ImageToRotationImageArrayUtil;
    begin
-      Initialize (This.all);
+      ImageToRotationImageArrayUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -55,13 +55,6 @@ package body org.allbinary.media.image.ImageToRotationImageArrayUtil_Package is
         end loop;
         return imageArray;
    end generate;
-
-   procedure getInstance is
-      Java_Result : constant ImageToRotationImageArrayUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure generate (This : in out ImageToRotationImageArrayUtil; image : Image_Access; angleIncrement : Integer; totalAngle : Integer) is
       Java_Result : constant Image_Access_Array_Access := ImageToRotationImageArrayUtil'Class (This).generate (image, angleIncrement, totalAngle);

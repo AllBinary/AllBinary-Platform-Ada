@@ -30,6 +30,8 @@ with AllBinary_Java; use AllBinary_Java;
 --  with javax.sound.sampled.Line.Info_Package; use javax.sound.sampled.Line.Info_Package;
 --  with javax.sound.sampled.LineListener_Package; use javax.sound.sampled.LineListener_Package;
 --  with javax.sound.sampled.LineUnavailableException_Package; use javax.sound.sampled.LineUnavailableException_Package;
+with org.allbinary.media.audio.NullJ2SEControl_Package; use org.allbinary.media.audio.NullJ2SEControl_Package;
+with org.allbinary.media.audio.NullAudioFormat_Package; use org.allbinary.media.audio.NullAudioFormat_Package;
 
 package org.allbinary.media.audio.NullClip_Package is
 
@@ -47,9 +49,7 @@ package org.allbinary.media.audio.NullClip_Package is
    procedure open (This : in out NullClip; format : AudioFormat_Access; data : Short_Short_Integer_Array_Access; offset : Integer; bufferSize : Integer);
    procedure open (This : in out NullClip; stream : AudioInputStream_Access);
    function getFrameLength (This : in out NullClip) return Integer;
-   procedure getFrameLength (This : in out NullClip);
    function getMicrosecondLength (This : in out NullClip) return Long_Long_Integer;
-   procedure getMicrosecondLength (This : in out NullClip);
    procedure setFramePosition (This : in out NullClip; frames : Integer);
    procedure setMicrosecondPosition (This : in out NullClip; microseconds : Long_Long_Integer);
    procedure setLoopPoints (This : in out NullClip; start : Integer; end_Id : Integer);
@@ -59,31 +59,19 @@ package org.allbinary.media.audio.NullClip_Package is
    procedure start (This : in out NullClip);
    procedure stop (This : in out NullClip);
    function isRunning (This : in out NullClip) return Boolean;
-   procedure isRunning (This : in out NullClip);
    function isActive (This : in out NullClip) return Boolean;
-   procedure isActive (This : in out NullClip);
    function getFormat (This : in out NullClip) return AudioFormat_Access;
-   procedure getFormat (This : in out NullClip);
    function getBufferSize (This : in out NullClip) return Integer;
-   procedure getBufferSize (This : in out NullClip);
    function available (This : in out NullClip) return Integer;
-   procedure available (This : in out NullClip);
    function getFramePosition (This : in out NullClip) return Integer;
-   procedure getFramePosition (This : in out NullClip);
    function getLongFramePosition (This : in out NullClip) return Long_Long_Integer;
-   procedure getLongFramePosition (This : in out NullClip);
    function getMicrosecondPosition (This : in out NullClip) return Long_Long_Integer;
-   procedure getMicrosecondPosition (This : in out NullClip);
    function getLevel (This : in out NullClip) return Float;
-   procedure getLevel (This : in out NullClip);
    function getLineInfo (This : in out NullClip) return Info_Access;
-   procedure getLineInfo (This : in out NullClip);
    procedure open (This : in out NullClip);
    procedure close (This : in out NullClip);
    function isOpen (This : in out NullClip) return Boolean;
-   procedure isOpen (This : in out NullClip);
    function getControls (This : in out NullClip) return Control_Access_Array_Access;
-   procedure getControls (This : in out NullClip);
    function isControlSupported (This : in out NullClip; control : Type_Access) return Boolean;
    procedure isControlSupported (This : in out NullClip; control : Type_Access);
    function getControl (This : in out NullClip; control : Type_Access) return Control_Access;

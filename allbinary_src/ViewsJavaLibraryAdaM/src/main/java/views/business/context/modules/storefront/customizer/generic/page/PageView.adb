@@ -34,7 +34,7 @@ package body views.business.context.modules.storefront.customizer.generic_Id.pag
    function Create (transformInfoInterface : TransformInfoInterface_Access) return PageView_Access is
       This : constant PageView_Access := new PageView;
    begin
-      Initialize (This.all, transformInfoInterface);
+      PageView_Package.Initialize (This.all, transformInfoInterface);
       return This;
    end Create;
 
@@ -54,13 +54,6 @@ package body views.business.context.modules.storefront.customizer.generic_Id.pag
             Java_Throw (e);
                 end;
         end;
-   end view;
-
-   procedure view (This : in out PageView) is
-      Java_Result : constant Unbounded_String := PageView'Class (This).view;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end view;
 
 end views.business.context.modules.storefront.customizer.generic_Id.page.PageView_Package;

@@ -61,7 +61,6 @@ package views.generic_Id.payment.PaymentView_Package is
    procedure toXmlNode (This : in out PaymentView; document : Document_Access);
    procedure addDomNodeInterfaces (This : in out PaymentView);
    function view (This : in out PaymentView) return Unbounded_String;
-   procedure view (This : in out PaymentView);
 
 end views.generic_Id.payment.PaymentView_Package;
 

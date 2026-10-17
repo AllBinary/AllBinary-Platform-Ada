@@ -43,6 +43,7 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.allbinary.logic.communication.smtp.EmailInterface_Package; use org.allbinary.logic.communication.smtp.EmailInterface_Package;
+with org.allbinary.logic.communication.smtp.EmailData_Package; use org.allbinary.logic.communication.smtp.EmailData_Package;
 
 package org.allbinary.logic.communication.smtp.Email_Package is
 
@@ -81,17 +82,12 @@ package org.allbinary.logic.communication.smtp.Email_Package is
    procedure init (This : in out Email; from : Unbounded_String; to : Unbounded_String; subject : Unbounded_String; server : Unbounded_String; textBody : Unbounded_String; htmlAttachment : Unbounded_String; contentBase : Unbounded_String);
    procedure init (This : in out Email; server : Unbounded_String; authenticator : Authenticator_Access; addresses_from : InternetAddress_Access_Array_Access; addresses_to : InternetAddress_Access_Array_Access; addresses_cc : InternetAddress_Access_Array_Access; addresses_bcc : InternetAddress_Access_Array_Access; subject : Unbounded_String; mimeBodyParts : MimeBodyPart_Access_Array_Access);
    function getMimeMessage (This : in out Email) return MimeMessage_Access;
-   procedure getMimeMessage (This : in out Email);
    function getDebugInfo (This : in out Email) return Unbounded_String;
-   procedure getDebugInfo (This : in out Email);
    function log (This : in out Email) return Unbounded_String;
-   procedure log (This : in out Email);
    function toHashMap (This : in out Email) return HashMap_Access;
-   procedure toHashMap (This : in out Email);
    function toXmlNode (This : in out Email; document : Document_Access) return Node_Access;
    procedure toXmlNode (This : in out Email; document : Document_Access);
    function toXmlDoc (This : in out Email) return Document_Access;
-   procedure toXmlDoc (This : in out Email);
 
 end org.allbinary.logic.communication.smtp.Email_Package;
 

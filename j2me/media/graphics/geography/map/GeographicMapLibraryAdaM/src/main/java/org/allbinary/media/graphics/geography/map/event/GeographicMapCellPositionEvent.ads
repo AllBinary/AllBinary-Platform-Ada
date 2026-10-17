@@ -50,9 +50,7 @@ package org.allbinary.media.graphics.geography.map.event.GeographicMapCellPositi
    procedure init (This : in out GeographicMapCellPositionEvent; anyType : Java_Object_Access);
    procedure setGeographicMapCellPosition (This : in out GeographicMapCellPositionEvent; geographicMapCellPosition : GeographicMapCellPosition_Access);
    function getGeographicMapCellPosition (This : in out GeographicMapCellPositionEvent) return GeographicMapCellPosition_Access;
-   procedure getGeographicMapCellPosition (This : in out GeographicMapCellPositionEvent);
    function toString (This : in out GeographicMapCellPositionEvent) return Unbounded_String;
-   procedure toString (This : in out GeographicMapCellPositionEvent);
 
 end org.allbinary.media.graphics.geography.map.event.GeographicMapCellPositionEvent_Package;
 

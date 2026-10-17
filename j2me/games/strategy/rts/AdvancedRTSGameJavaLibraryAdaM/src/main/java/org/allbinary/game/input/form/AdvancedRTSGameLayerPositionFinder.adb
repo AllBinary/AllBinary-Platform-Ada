@@ -35,7 +35,7 @@ package body org.allbinary.game.input.form.AdvancedRTSGameLayerPositionFinder_Pa
    function Create return AdvancedRTSGameLayerPositionFinder_Access is
       This : constant AdvancedRTSGameLayerPositionFinder_Access := new AdvancedRTSGameLayerPositionFinder;
    begin
-      Initialize (This.all);
+      AdvancedRTSGameLayerPositionFinder_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -48,13 +48,6 @@ package body org.allbinary.game.input.form.AdvancedRTSGameLayerPositionFinder_Pa
         end if;
         return layerInterface;
    end getLayerInterface;
-
-   procedure getInstance is
-      Java_Result : constant AdvancedRTSGameLayerPositionFinder_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure getLayerInterface (This : in out AdvancedRTSGameLayerPositionFinder; geographicMapCellPosition : GeographicMapCellPosition_Access) is
       Java_Result : constant AllBinaryLayer_Access := AdvancedRTSGameLayerPositionFinder'Class (This).getLayerInterface (geographicMapCellPosition);

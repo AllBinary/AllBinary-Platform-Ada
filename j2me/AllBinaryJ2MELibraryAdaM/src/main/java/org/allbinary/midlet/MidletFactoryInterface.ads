@@ -21,6 +21,7 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with javax.microedition.midlet.MIDlet_Package; use javax.microedition.midlet.MIDlet_Package;
+with org.allbinary.midlet.AllBinaryMidlet_Package; use org.allbinary.midlet.AllBinaryMidlet_Package;
 
 package org.allbinary.midlet.MidletFactoryInterface_Package is
 
@@ -35,7 +36,6 @@ package org.allbinary.midlet.MidletFactoryInterface_Package is
    procedure Initialize (This : in out MidletFactoryInterface'Class);
    function Create return MidletFactoryInterface_Access;
    function getInstance (This : in out MidletFactoryInterface) return MIDlet_Access;
-   procedure getInstance (This : in out MidletFactoryInterface);
 
 end org.allbinary.midlet.MidletFactoryInterface_Package;
 

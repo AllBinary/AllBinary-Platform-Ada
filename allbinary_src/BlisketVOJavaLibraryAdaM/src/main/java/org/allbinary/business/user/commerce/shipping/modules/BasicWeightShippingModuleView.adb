@@ -32,7 +32,7 @@ package body org.allbinary.business.user.commerce.shipping.modules.BasicWeightSh
    function Create return BasicWeightShippingModuleView_Access is
       This : constant BasicWeightShippingModuleView_Access := new BasicWeightShippingModuleView;
    begin
-      Initialize (This.all);
+      BasicWeightShippingModuleView_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -113,20 +113,6 @@ package body org.allbinary.business.user.commerce.shipping.modules.BasicWeightSh
         end;
    end view;
 
-   procedure isValid (This : in out BasicWeightShippingModuleView) is
-      Java_Result : constant Boolean := BasicWeightShippingModuleView'Class (This).isValid;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isValid;
-
-   procedure toValidationInfoDoc (This : in out BasicWeightShippingModuleView) is
-      Java_Result : constant Document_Access := BasicWeightShippingModuleView'Class (This).toValidationInfoDoc;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toValidationInfoDoc;
-
    procedure toValidationInfoNode (This : in out BasicWeightShippingModuleView; document : Document_Access) is
       Java_Result : constant Node_Access := BasicWeightShippingModuleView'Class (This).toValidationInfoNode (document);
       pragma Unreferenced (Java_Result);
@@ -134,33 +120,12 @@ package body org.allbinary.business.user.commerce.shipping.modules.BasicWeightSh
       null;
    end toValidationInfoNode;
 
-   procedure validationInfo (This : in out BasicWeightShippingModuleView) is
-      Java_Result : constant Unbounded_String := BasicWeightShippingModuleView'Class (This).validationInfo;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end validationInfo;
-
    procedure toXmlNode (This : in out BasicWeightShippingModuleView; document : Document_Access) is
       Java_Result : constant Node_Access := BasicWeightShippingModuleView'Class (This).toXmlNode (document);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end toXmlNode;
-
-   procedure toXmlDoc (This : in out BasicWeightShippingModuleView) is
-      Java_Result : constant Document_Access := BasicWeightShippingModuleView'Class (This).toXmlDoc;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toXmlDoc;
-
-   procedure view (This : in out BasicWeightShippingModuleView) is
-      Java_Result : constant Unbounded_String := BasicWeightShippingModuleView'Class (This).view;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end view;
 
 end org.allbinary.business.user.commerce.shipping.modules.BasicWeightShippingModuleView_Package;
 

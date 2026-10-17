@@ -28,7 +28,7 @@ package body org.allbinary.logic.PropertyInitUtil_Package is
    function Create return PropertyInitUtil_Access is
       This : constant PropertyInitUtil_Access := new PropertyInitUtil;
    begin
-      Initialize (This.all);
+      PropertyInitUtil_Package.Initialize (This.all);
       return This;
    end Create;
 

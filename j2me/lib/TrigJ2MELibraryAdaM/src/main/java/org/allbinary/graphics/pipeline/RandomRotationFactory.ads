@@ -23,6 +23,7 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.rand.MyRandomFactory_Package; use org.allbinary.game.rand.MyRandomFactory_Package;
 with org.allbinary.math.AngleFactory_Package; use org.allbinary.math.AngleFactory_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.graphics.pipeline.BasicGraphicsPipeline_Package; use org.allbinary.graphics.pipeline.BasicGraphicsPipeline_Package;
 
 package org.allbinary.graphics.pipeline.RandomRotationFactory_Package is
 
@@ -44,7 +45,6 @@ package org.allbinary.graphics.pipeline.RandomRotationFactory_Package is
    procedure Initialize (This : in out RandomRotationFactory'Class);
    function Create return RandomRotationFactory_Access;
    function getInstance return RandomRotationFactory_Access;
-   procedure getInstance;
    function getInstanceList (This : in out RandomRotationFactory; vector : BasicArrayList_Access; howMuch : Integer) return BasicArrayList_Access;
    procedure getInstanceList (This : in out RandomRotationFactory; vector : BasicArrayList_Access; howMuch : Integer);
    function getNextRandomAngle (This : in out RandomRotationFactory; howMuch : Integer) return Integer;

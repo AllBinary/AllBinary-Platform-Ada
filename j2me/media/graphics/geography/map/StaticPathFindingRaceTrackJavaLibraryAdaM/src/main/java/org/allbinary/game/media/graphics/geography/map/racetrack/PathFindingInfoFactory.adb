@@ -36,7 +36,7 @@ package body org.allbinary.game.media.graphics.geography.map.racetrack.PathFindi
    function Create return PathFindingInfoFactory_Access is
       This : constant PathFindingInfoFactory_Access := new PathFindingInfoFactory;
    begin
-      Initialize (This.all);
+      PathFindingInfoFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -52,13 +52,6 @@ package body org.allbinary.game.media.graphics.geography.map.racetrack.PathFindi
         This.init (geographicMapInterface, pathFindingInfo, graphArray);
         return pathFindingInfo;
    end getInstancePathFindingInfo;
-
-   procedure getInstance is
-      Java_Result : constant PathFindingInfoFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure getInstancePathFindingInfo (This : in out PathFindingInfoFactory; geographicMapInterface : BasicGeographicMap_Access; graphArray : Integer_Array_Access_Array_Access) is
       Java_Result : constant PathFindingInfo_Access := PathFindingInfoFactory'Class (This).getInstancePathFindingInfo (geographicMapInterface, graphArray);

@@ -40,7 +40,7 @@ package body org.allbinary.logic.java.help.JavaHelpUtil_Package is
    function Create return JavaHelpUtil_Access is
       This : constant JavaHelpUtil_Access := new JavaHelpUtil;
    begin
-      Initialize (This.all);
+      JavaHelpUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -112,13 +112,6 @@ package body org.allbinary.logic.java.help.JavaHelpUtil_Package is
                 end;
         end;
    end main;
-
-   procedure getInstance is
-      Java_Result : constant JavaHelpUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure getHelpSet (This : in out JavaHelpUtil; filePath : Unbounded_String) is
       Java_Result : constant HelpSet_Access := JavaHelpUtil'Class (This).getHelpSet (filePath);

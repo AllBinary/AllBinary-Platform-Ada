@@ -28,6 +28,7 @@ with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface
 with org.allbinary.logic.visual.transform.generator.TransformGeneratorUtil_Package; use org.allbinary.logic.visual.transform.generator.TransformGeneratorUtil_Package;
 with org.allbinary.logic.visual.transform.info.TransformInfo_Package; use org.allbinary.logic.visual.transform.info.TransformInfo_Package;
 with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
+with views.business.context.modules.storefront.customizer.CustomizerUtil_Package; use views.business.context.modules.storefront.customizer.CustomizerUtil_Package;
 
 package views.business.context.modules.storefront.customizer.StoreCustomizerComponentUtil_Package is
 
@@ -53,7 +54,6 @@ package views.business.context.modules.storefront.customizer.StoreCustomizerComp
    procedure Initialize (This : in out StoreCustomizerComponentUtil'Class);
    function Create return StoreCustomizerComponentUtil_Access;
    function getInstance return StoreCustomizerComponentUtil_Access;
-   procedure getInstance;
    function generate (This : in out StoreCustomizerComponentUtil; abeClientInformation : AbeClientInformationInterface_Access; transformInfoInterface : TransformInfoInterface_Access) return Unbounded_String;
    procedure generate (This : in out StoreCustomizerComponentUtil; abeClientInformation : AbeClientInformationInterface_Access; transformInfoInterface : TransformInfoInterface_Access);
    procedure generate (This : in out StoreCustomizerComponentUtil; abeClientInformation : AbeClientInformationInterface_Access; transformInfoInterface : TransformInfoInterface_Access; allViewsToBeModifiedVector : BasicArrayList_Access);

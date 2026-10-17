@@ -32,7 +32,7 @@ package body admin.tags.XmlOptionItemsTag_Package is
    function Create return XmlOptionItemsTag_Access is
       This : constant XmlOptionItemsTag_Access := new XmlOptionItemsTag;
    begin
-      Initialize (This.all);
+      XmlOptionItemsTag_Package.Initialize (This.all);
       return This;
    end Create;
 

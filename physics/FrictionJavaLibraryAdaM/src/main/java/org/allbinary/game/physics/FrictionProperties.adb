@@ -30,7 +30,7 @@ package body org.allbinary.game.physics.FrictionProperties_Package is
    function Create return FrictionProperties_Access is
       This : constant FrictionProperties_Access := new FrictionProperties;
    begin
-      Initialize (This.all);
+      FrictionProperties_Package.Initialize (This.all);
       return This;
    end Create;
 

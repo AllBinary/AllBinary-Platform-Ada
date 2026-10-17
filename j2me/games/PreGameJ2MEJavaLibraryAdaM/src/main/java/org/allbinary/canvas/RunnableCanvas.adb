@@ -58,7 +58,7 @@ package body org.allbinary.canvas.RunnableCanvas_Package is
    function Create (commandListener : CommandListener_Access; childNameList : BasicArrayList_Access; hasParam : Boolean) return RunnableCanvas_Access is
       This : constant RunnableCanvas_Access := new RunnableCanvas;
    begin
-      Initialize (This.all, commandListener, childNameList, hasParam);
+      RunnableCanvas_Package.Initialize (This.all, commandListener, childNameList, hasParam);
       return This;
    end Create;
 
@@ -245,55 +245,6 @@ package body org.allbinary.canvas.RunnableCanvas_Package is
    function getType (This : in out RunnableCanvas) return Integer is
    begin
         return -(1);
-   end getType;
-
-   procedure isMainCanvas (This : in out RunnableCanvas) is
-      Java_Result : constant Boolean := RunnableCanvas'Class (This).isMainCanvas;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isMainCanvas;
-
-   procedure isRunning (This : in out RunnableCanvas) is
-      Java_Result : constant Boolean := RunnableCanvas'Class (This).isRunning;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isRunning;
-
-   procedure getLoopTimeHelperP (This : in out RunnableCanvas) is
-      Java_Result : constant TimeDelayHelper_Access := RunnableCanvas'Class (This).getLoopTimeHelperP;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getLoopTimeHelperP;
-
-   procedure getWait (This : in out RunnableCanvas) is
-      Java_Result : constant Integer := RunnableCanvas'Class (This).getWait;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getWait;
-
-   procedure isPausable (This : in out RunnableCanvas) is
-      Java_Result : constant Boolean := RunnableCanvas'Class (This).isPausable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isPausable;
-
-   procedure isSingleThread (This : in out RunnableCanvas) is
-      Java_Result : constant Boolean := RunnableCanvas'Class (This).isSingleThread;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isSingleThread;
-
-   procedure getType (This : in out RunnableCanvas) is
-      Java_Result : constant Integer := RunnableCanvas'Class (This).getType;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getType;
 
 end org.allbinary.canvas.RunnableCanvas_Package;

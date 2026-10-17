@@ -42,27 +42,13 @@ package body org.allbinary.graphics.opengles.OpenGLFeatureUtil_Package is
    function Create return OpenGLFeatureUtil_Access is
       This : constant OpenGLFeatureUtil_Access := new OpenGLFeatureUtil;
    begin
-      Initialize (This.all);
+      OpenGLFeatureUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
    function isAnyThreed (This : in out OpenGLFeatureUtil) return Boolean is
    begin
         return This.anyThreed;
-   end isAnyThreed;
-
-   procedure getInstance is
-      Java_Result : constant OpenGLFeatureUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure isAnyThreed (This : in out OpenGLFeatureUtil) is
-      Java_Result : constant Boolean := OpenGLFeatureUtil'Class (This).isAnyThreed;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end isAnyThreed;
 
 begin

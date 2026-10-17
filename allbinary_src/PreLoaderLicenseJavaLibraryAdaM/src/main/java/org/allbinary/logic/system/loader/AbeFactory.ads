@@ -28,6 +28,9 @@ with org.allbinary.logic.system.security.AbKeys_Package; use org.allbinary.logic
 with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package; use org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
 with org.allbinary.logic.system.security.licensing.LicensingException_Package; use org.allbinary.logic.system.security.licensing.LicensingException_Package;
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.system.loader.WebappClassLoaderInfo_Package; use org.allbinary.logic.system.loader.WebappClassLoaderInfo_Package;
+with org.allbinary.logic.system.loader.ClassLoader_Package; use org.allbinary.logic.system.loader.ClassLoader_Package;
+with org.allbinary.logic.system.loader.AbeClassLoader_Package; use org.allbinary.logic.system.loader.AbeClassLoader_Package;
 
 package org.allbinary.logic.system.loader.AbeFactory_Package is
 
@@ -53,7 +56,6 @@ package org.allbinary.logic.system.loader.AbeFactory_Package is
    procedure Initialize (This : in out AbeFactory'Class);
    function Create return AbeFactory_Access;
    function getInstance return AbeFactory_Access;
-   procedure getInstance;
    function getInstance (This : in out AbeFactory; abeClientInformation : AbeClientInformationInterface_Access; className : Unbounded_String) return Java_Object_Access;
    procedure getInstance (This : in out AbeFactory; abeClientInformation : AbeClientInformationInterface_Access; className : Unbounded_String);
    function getInstance (This : in out AbeFactory; abeClientInformation : AbeClientInformationInterface_Access; className : Unbounded_String; classes : Ada_Tags_Tag_Array_Access; params : Java_Object_Access_Array_Access) return Java_Object_Access;

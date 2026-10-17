@@ -33,7 +33,7 @@ package body org.allbinary.bundle.logic.system.loader.CryptServiceFactory_Packag
    function Create return CryptServiceFactory_Access is
       This : constant CryptServiceFactory_Access := new CryptServiceFactory;
    begin
-      Initialize (This.all);
+      CryptServiceFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

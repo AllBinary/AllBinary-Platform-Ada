@@ -32,7 +32,7 @@ package body admin.taghelpers.BasicGroupItemsRequestHelperFactory_Package is
    function Create return BasicGroupItemsRequestHelperFactory_Access is
       This : constant BasicGroupItemsRequestHelperFactory_Access := new BasicGroupItemsRequestHelperFactory;
    begin
-      Initialize (This.all);
+      BasicGroupItemsRequestHelperFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

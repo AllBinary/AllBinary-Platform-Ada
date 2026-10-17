@@ -38,7 +38,6 @@ package org.allbinary.image.PreResourceImageUtil_Package is
    procedure Initialize (This : in out PreResourceImageUtil'Class);
    function Create return PreResourceImageUtil_Access;
    function getInstance return PreResourceImageUtil_Access;
-   procedure getInstance;
    function encapsulate (This : in out PreResourceImageUtil; image : Image_Access) return Image_Access;
    procedure encapsulate (This : in out PreResourceImageUtil; image : Image_Access);
    procedure updateGL (This : in out PreResourceImageUtil; gl : GL_Access; image : Image_Access);

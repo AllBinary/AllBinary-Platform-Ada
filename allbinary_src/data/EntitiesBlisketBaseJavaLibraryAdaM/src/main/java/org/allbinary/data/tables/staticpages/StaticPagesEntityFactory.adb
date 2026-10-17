@@ -36,7 +36,7 @@ package body org.allbinary.data.tables.staticpages.StaticPagesEntityFactory_Pack
    function Create return StaticPagesEntityFactory_Access is
       This : constant StaticPagesEntityFactory_Access := new StaticPagesEntityFactory;
    begin
-      Initialize (This.all);
+      StaticPagesEntityFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -57,20 +57,6 @@ package body org.allbinary.data.tables.staticpages.StaticPagesEntityFactory_Pack
             return null;
                 end;
         end;
-   end getStaticPagesEntityInstance;
-
-   procedure getInstance is
-      Java_Result : constant StaticPagesEntityFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure getStaticPagesEntityInstance (This : in out StaticPagesEntityFactory) is
-      Java_Result : constant StaticPagesEntity_Access := StaticPagesEntityFactory'Class (This).getStaticPagesEntityInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getStaticPagesEntityInstance;
 
 begin

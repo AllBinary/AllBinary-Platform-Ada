@@ -32,7 +32,7 @@ package body org.allbinary.business.user.commerce.shipping.modules.UspsShippingM
    function Create return UspsShippingModule_Access is
       This : constant UspsShippingModule_Access := new UspsShippingModule;
    begin
-      Initialize (This.all);
+      UspsShippingModule_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -57,20 +57,6 @@ package body org.allbinary.business.user.commerce.shipping.modules.UspsShippingM
    begin
       null;
    end getCost;
-
-   procedure getDescription (This : in out UspsShippingModule) is
-      Java_Result : constant Unbounded_String := UspsShippingModule'Class (This).getDescription;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getDescription;
-
-   procedure getName (This : in out UspsShippingModule) is
-      Java_Result : constant Unbounded_String := UspsShippingModule'Class (This).getName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getName;
 
 end org.allbinary.business.user.commerce.shipping.modules.UspsShippingModule_Package;
 

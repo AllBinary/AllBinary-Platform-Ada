@@ -42,7 +42,6 @@ package org.allbinary.logic.system.hardware.components.linux.Ethernet_Package is
    function compareTo (This : in out Ethernet; componentInterface : HardwareComponentInterface_Access) return Boolean;
    procedure compareTo (This : in out Ethernet; componentInterface : HardwareComponentInterface_Access);
    function toString (This : in out Ethernet) return Unbounded_String;
-   procedure toString (This : in out Ethernet);
 
 end org.allbinary.logic.system.hardware.components.linux.Ethernet_Package;
 

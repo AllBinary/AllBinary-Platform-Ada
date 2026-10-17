@@ -39,7 +39,6 @@ package bundle.input.automation.module.InputAutomationModuleService_Package is
    procedure Initialize (This : in out InputAutomationModuleService'Class; inputAutomationModuleInterfaceArray : InputAutomationModuleFactoryInterface_Access_Array_Access);
    function Create (inputAutomationModuleInterfaceArray : InputAutomationModuleFactoryInterface_Access_Array_Access) return InputAutomationModuleService_Access;
    function getInputAutomationModuleInterfaceArray (This : in out InputAutomationModuleService) return InputAutomationModuleFactoryInterface_Access_Array_Access;
-   procedure getInputAutomationModuleInterfaceArray (This : in out InputAutomationModuleService);
    procedure setInputAutomationModuleInterfaceArray (This : in out InputAutomationModuleService; inputAutomationModuleInterfaceArray : InputAutomationModuleFactoryInterface_Access_Array_Access);
 
 end bundle.input.automation.module.InputAutomationModuleService_Package;

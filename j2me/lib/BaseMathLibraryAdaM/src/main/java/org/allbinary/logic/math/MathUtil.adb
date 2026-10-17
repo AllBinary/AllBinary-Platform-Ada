@@ -17,7 +17,7 @@ package body org.allbinary.logic.math.MathUtil_Package is
    function Create return MathUtil_Access is
       This : constant MathUtil_Access := new MathUtil;
    begin
-      Initialize (This.all);
+      MathUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -27,7 +27,8 @@ package body org.allbinary.logic.math.MathUtil_Package is
         return MathUtil_Package.instance;
    end getInstance;
 
-   function getTotalDigits (This : in out MathUtil; digits_Id : Integer) return Integer is
+   function getTotalDigits (This : in out MathUtil; digits_Id_Param : Integer) return Integer is
+      digits_Id : Integer := digits_Id_Param;
       total : Integer;
    begin
         total := 0;
@@ -92,15 +93,8 @@ package body org.allbinary.logic.math.MathUtil_Package is
         return (if ((value) >= (value2)) then value else value2);
    end max;
 
-   procedure getInstance is
-      Java_Result : constant MathUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure getTotalDigits (This : in out MathUtil; digits_Id : Integer) is
-      Java_Result : constant Integer := MathUtil'Class (This).getTotalDigits (digits_Id);
+   procedure getTotalDigits (This : in out MathUtil; digits_Id_Param : Integer) is
+      Java_Result : constant Integer := MathUtil'Class (This).getTotalDigits (digits_Id_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

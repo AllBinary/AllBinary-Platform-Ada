@@ -34,7 +34,7 @@ package body org.allbinary.logic.math.vector.MathVector_Package is
    function Create (magnitudeBasicDecimal : BasicDecimal_Access; direction : Integer) return MathVector_Access is
       This : constant MathVector_Access := new MathVector;
    begin
-      Initialize (This.all, magnitudeBasicDecimal, direction);
+      MathVector_Package.Initialize (This.all, magnitudeBasicDecimal, direction);
       return This;
    end Create;
 
@@ -51,27 +51,6 @@ package body org.allbinary.logic.math.vector.MathVector_Package is
    function getResult (This : in out MathVector) return BasicDecimal_Access is
    begin
         return This.resultBasicDecimal;
-   end getResult;
-
-   procedure getMagnitude (This : in out MathVector) is
-      Java_Result : constant BasicDecimal_Access := MathVector'Class (This).getMagnitude;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getMagnitude;
-
-   procedure getDirection (This : in out MathVector) is
-      Java_Result : constant Integer := MathVector'Class (This).getDirection;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getDirection;
-
-   procedure getResult (This : in out MathVector) is
-      Java_Result : constant BasicDecimal_Access := MathVector'Class (This).getResult;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getResult;
 
 end org.allbinary.logic.math.vector.MathVector_Package;

@@ -21,6 +21,8 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.configuration.feature.Features_Package; use org.allbinary.game.configuration.feature.Features_Package;
+with org.allbinary.graphics.opengles.OpenGLConfiguration_Package; use org.allbinary.graphics.opengles.OpenGLConfiguration_Package;
+with org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package; use org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package;
 
 package org.allbinary.graphics.opengles.OpenGLFeatureUtil_Package is
 
@@ -39,9 +41,7 @@ package org.allbinary.graphics.opengles.OpenGLFeatureUtil_Package is
    procedure Initialize (This : in out OpenGLFeatureUtil'Class);
    function Create return OpenGLFeatureUtil_Access;
    function getInstance return OpenGLFeatureUtil_Access;
-   procedure getInstance;
    function isAnyThreed (This : in out OpenGLFeatureUtil) return Boolean;
-   procedure isAnyThreed (This : in out OpenGLFeatureUtil);
 
 end org.allbinary.graphics.opengles.OpenGLFeatureUtil_Package;
 

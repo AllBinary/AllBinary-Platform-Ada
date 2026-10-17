@@ -35,7 +35,7 @@ package body org.allbinary.logic.io.file.directory.Directory_Package is
    function Create return Directory_Access is
       This : constant Directory_Access := new Directory;
    begin
-      Initialize (This.all);
+      Directory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -229,13 +229,6 @@ package body org.allbinary.logic.io.file.directory.Directory_Package is
         end if;
         return fileList;
    end search;
-
-   procedure getInstance is
-      Java_Result : constant Directory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure create (This : in out Directory; directoryAbPath : AbPath_Access) is
       Java_Result : constant Boolean := Directory'Class (This).create (directoryAbPath);

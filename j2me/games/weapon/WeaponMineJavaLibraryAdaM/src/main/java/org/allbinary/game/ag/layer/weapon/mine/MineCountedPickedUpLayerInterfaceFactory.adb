@@ -39,7 +39,7 @@ package body org.allbinary.game.ag.layer.weapon.mine.MineCountedPickedUpLayerInt
    function Create return MineCountedPickedUpLayerInterfaceFactory_Access is
       This : constant MineCountedPickedUpLayerInterfaceFactory_Access := new MineCountedPickedUpLayerInterfaceFactory;
    begin
-      Initialize (This.all);
+      MineCountedPickedUpLayerInterfaceFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -64,20 +64,6 @@ package body org.allbinary.game.ag.layer.weapon.mine.MineCountedPickedUpLayerInt
         scoreableInterface := ScoreableInterface_Access (sourceLayerInterface);
         return This.weaponLayerCircularStaticPool.getInstanceWeaponLayer (sourceLayerInterface, x, y, z, Integer (angle.intValue), 0, This.weaponProperties, scoreableInterface);
    end getNextInstance;
-
-   procedure getInstance is
-      Java_Result : constant PickedUpLayerInterfaceFactoryInterface_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure getTotal (This : in out MineCountedPickedUpLayerInterfaceFactory) is
-      Java_Result : constant Integer := MineCountedPickedUpLayerInterfaceFactory'Class (This).getTotal;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTotal;
 
    procedure getNextInstance (This : in out MineCountedPickedUpLayerInterfaceFactory; hashtable : ABHashtable_Access; x : Integer; y : Integer; z : Integer) is
       Java_Result : constant AllBinaryLayer_Access := MineCountedPickedUpLayerInterfaceFactory'Class (This).getNextInstance (hashtable, x, y, z);

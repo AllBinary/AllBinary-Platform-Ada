@@ -22,6 +22,7 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with javax.swing.tree.MutableTreeNode_Package; use javax.swing.tree.MutableTreeNode_Package;
 with org.allbinary.graphics.j2me.workarea.canvas.event.EventObject_Package; use org.allbinary.graphics.j2me.workarea.canvas.event.EventObject_Package;
+with org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventSource_Package; use org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventSource_Package;
 
 package org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEvent_Package is
 
@@ -36,15 +37,10 @@ package org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEvent_Package 
    procedure Initialize (This : in out MyCanvasEvent'Class; source : Java_Object_Access);
    function Create (source : Java_Object_Access) return MyCanvasEvent_Access;
    function getSource (This : in out MyCanvasEvent) return Java_Object_Access;
-   procedure getSource (This : in out MyCanvasEvent);
    function toString (This : in out MyCanvasEvent) return Unbounded_String;
-   procedure toString (This : in out MyCanvasEvent);
    function getCommand (This : in out MyCanvasEvent) return Unbounded_String;
-   procedure getCommand (This : in out MyCanvasEvent);
    function getTreeNode (This : in out MyCanvasEvent) return MutableTreeNode_Access;
-   procedure getTreeNode (This : in out MyCanvasEvent);
    function getAngle (This : in out MyCanvasEvent) return Long_Float;
-   procedure getAngle (This : in out MyCanvasEvent);
 
 end org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEvent_Package;
 

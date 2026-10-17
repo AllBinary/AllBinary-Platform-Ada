@@ -30,7 +30,7 @@ package body org.allbinary.business.user.modules.admin.AdminUserFactory_Package 
    function Create return AdminUserFactory_Access is
       This : constant AdminUserFactory_Access := new AdminUserFactory;
    begin
-      Initialize (This.all);
+      AdminUserFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -44,13 +44,6 @@ package body org.allbinary.business.user.modules.admin.AdminUserFactory_Package 
    function getInstance (This : in out AdminUserFactory; hashMap : HashMap_Access) return UserInterface_Access is
    begin
         return AdminUser_Package.Create (hashMap);
-   end getInstance;
-
-   procedure getInstance (This : in out AdminUserFactory) is
-      Java_Result : constant UserInterface_Access := AdminUserFactory'Class (This).getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
    procedure getInstance (This : in out AdminUserFactory; hashMap : HashMap_Access) is

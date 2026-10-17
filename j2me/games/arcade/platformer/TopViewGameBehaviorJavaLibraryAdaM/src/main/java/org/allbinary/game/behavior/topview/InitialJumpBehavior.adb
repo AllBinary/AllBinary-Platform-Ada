@@ -28,7 +28,7 @@ package body org.allbinary.game.behavior.topview.InitialJumpBehavior_Package is
    function Create return InitialJumpBehavior_Access is
       This : constant InitialJumpBehavior_Access := new InitialJumpBehavior;
    begin
-      Initialize (This.all);
+      InitialJumpBehavior_Package.Initialize (This.all);
       return This;
    end Create;
 

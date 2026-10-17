@@ -31,7 +31,7 @@ package body org.allbinary.business.advertisement.campaign.AdvertisementCampaign
    function Create (vector : BasicArrayList_Access) return AdvertisementCampaigns_Access is
       This : constant AdvertisementCampaigns_Access := new AdvertisementCampaigns;
    begin
-      Initialize (This.all, vector);
+      AdvertisementCampaigns_Package.Initialize (This.all, vector);
       return This;
    end Create;
 
@@ -66,20 +66,6 @@ package body org.allbinary.business.advertisement.campaign.AdvertisementCampaign
    begin
       null;
    end get;
-
-   procedure size (This : in out AdvertisementCampaigns) is
-      Java_Result : constant Integer := AdvertisementCampaigns'Class (This).size;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end size;
-
-   procedure isEnabled (This : in out AdvertisementCampaigns) is
-      Java_Result : constant Boolean := AdvertisementCampaigns'Class (This).isEnabled;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isEnabled;
 
    procedure search (This : in out AdvertisementCampaigns; advertisementSearchInterface : AdvertisementSearchInterface_Access) is
       Java_Result : constant AdvertisementsInterface_Access := AdvertisementCampaigns'Class (This).search (advertisementSearchInterface);

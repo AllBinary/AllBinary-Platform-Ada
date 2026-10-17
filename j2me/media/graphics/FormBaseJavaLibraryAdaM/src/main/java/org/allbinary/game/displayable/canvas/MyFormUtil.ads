@@ -61,10 +61,8 @@ package org.allbinary.game.displayable.canvas.MyFormUtil_Package is
    procedure Initialize (This : in out MyFormUtil'Class);
    function Create return MyFormUtil_Access;
    function getInstance return MyFormUtil_Access;
-   procedure getInstance;
    procedure updateMeasurement (This : in out MyFormUtil; graphics : Graphics_Access);
    function getPopupMenuRectangle (This : in out MyFormUtil) return Rectangle_Access;
-   procedure getPopupMenuRectangle (This : in out MyFormUtil);
 
 end org.allbinary.game.displayable.canvas.MyFormUtil_Package;
 

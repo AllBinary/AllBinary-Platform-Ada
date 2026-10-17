@@ -43,10 +43,9 @@ package org.allbinary.image.ImageTypeUtil_Package is
 
    procedure Initialize (This : in out ImageTypeUtil'Class);
    function Create return ImageTypeUtil_Access;
-   function isSupported (This : in out ImageTypeUtil; mediaFileType : Unbounded_String) return Boolean;
-   procedure isSupported (This : in out ImageTypeUtil; mediaFileType : Unbounded_String);
+   function isSupported (This : in out ImageTypeUtil; mediaFileType_Param : Unbounded_String) return Boolean;
+   procedure isSupported (This : in out ImageTypeUtil; mediaFileType_Param : Unbounded_String);
    function getInstance return ImageTypeUtil_Access;
-   procedure getInstance;
 
 end org.allbinary.image.ImageTypeUtil_Package;
 

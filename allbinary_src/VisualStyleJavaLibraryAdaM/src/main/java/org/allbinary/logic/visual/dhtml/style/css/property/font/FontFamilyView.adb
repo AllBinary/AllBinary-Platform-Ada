@@ -29,7 +29,7 @@ package body org.allbinary.logic.visual.dhtml.style.css.property.font.FontFamily
    function Create return FontFamilyView_Access is
       This : constant FontFamilyView_Access := new FontFamilyView;
    begin
-      Initialize (This.all);
+      FontFamilyView_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -42,7 +42,7 @@ package body org.allbinary.logic.visual.dhtml.style.css.property.font.FontFamily
    function Create (node : Node_Access) return FontFamilyView_Access is
       This : constant FontFamilyView_Access := new FontFamilyView;
    begin
-      Initialize (This.all, node);
+      FontFamilyView_Package.Initialize (This.all, node);
       return This;
    end Create;
 

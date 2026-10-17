@@ -25,6 +25,8 @@ with org.allbinary.business.user.commerce.money.payment.types.PaymentType_Packag
 with org.allbinary.business.user.commerce.money.payment.types.PaymentTypeUtil_Package; use org.allbinary.business.user.commerce.money.payment.types.PaymentTypeUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionInterfaceFactoryInterface_Package; use org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionInterfaceFactoryInterface_Package;
+with org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionInterface_Package; use org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionInterface_Package;
 
 package org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionInterfaceFactory_Package is
 
@@ -47,7 +49,6 @@ package org.allbinary.business.user.commerce.money.payment.gateway.transaction.P
    procedure Initialize (This : in out PaymentTransactionInterfaceFactory'Class);
    function Create return PaymentTransactionInterfaceFactory_Access;
    function getInstance return PaymentTransactionInterfaceFactory_Access;
-   procedure getInstance;
    function getInstance (This : in out PaymentTransactionInterfaceFactory; orderReview : OrderHistory_Access) return PaymentTransactionInterface_Access;
    procedure getInstance (This : in out PaymentTransactionInterfaceFactory; orderReview : OrderHistory_Access);
 

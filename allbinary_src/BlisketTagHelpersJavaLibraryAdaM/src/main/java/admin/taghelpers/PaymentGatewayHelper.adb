@@ -49,7 +49,7 @@ package body admin.taghelpers.PaymentGatewayHelper_Package is
    function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return PaymentGatewayHelper_Access is
       This : constant PaymentGatewayHelper_Access := new PaymentGatewayHelper;
    begin
-      Initialize (This.all, hashMap, pageContext);
+      PaymentGatewayHelper_Package.Initialize (This.all, hashMap, pageContext);
       return This;
    end Create;
 
@@ -254,55 +254,6 @@ package body admin.taghelpers.PaymentGatewayHelper_Package is
             return error;
                 end;
         end;
-   end backup;
-
-   procedure insert (This : in out PaymentGatewayHelper) is
-      Java_Result : constant Unbounded_String := PaymentGatewayHelper'Class (This).insert;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end insert;
-
-   procedure update (This : in out PaymentGatewayHelper) is
-      Java_Result : constant Unbounded_String := PaymentGatewayHelper'Class (This).update;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end update;
-
-   procedure delete (This : in out PaymentGatewayHelper) is
-      Java_Result : constant Unbounded_String := PaymentGatewayHelper'Class (This).delete;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end delete;
-
-   procedure drop (This : in out PaymentGatewayHelper) is
-      Java_Result : constant Unbounded_String := PaymentGatewayHelper'Class (This).drop;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end drop;
-
-   procedure create (This : in out PaymentGatewayHelper) is
-      Java_Result : constant Unbounded_String := PaymentGatewayHelper'Class (This).create;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end create;
-
-   procedure restore (This : in out PaymentGatewayHelper) is
-      Java_Result : constant Unbounded_String := PaymentGatewayHelper'Class (This).restore;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end restore;
-
-   procedure backup (This : in out PaymentGatewayHelper) is
-      Java_Result : constant Unbounded_String := PaymentGatewayHelper'Class (This).backup;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end backup;
 
 end admin.taghelpers.PaymentGatewayHelper_Package;

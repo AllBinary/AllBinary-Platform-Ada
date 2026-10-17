@@ -30,7 +30,7 @@ package body org.allbinary.opengles.JOGL11_Package is
    function Create (gl : GL_Access) return JOGL11_Access is
       This : constant JOGL11_Access := new JOGL11;
    begin
-      Initialize (This.all, gl);
+      JOGL11_Package.Initialize (This.all, gl);
       return This;
    end Create;
 
@@ -45,7 +45,7 @@ package body org.allbinary.opengles.JOGL11_Package is
    function Create (gl : GL_Access; gl2 : GL2_Access) return JOGL11_Access is
       This : constant JOGL11_Access := new JOGL11;
    begin
-      Initialize (This.all, gl, gl2);
+      JOGL11_Package.Initialize (This.all, gl, gl2);
       return This;
    end Create;
 

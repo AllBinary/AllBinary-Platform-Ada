@@ -43,7 +43,6 @@ package org.allbinary.logic.math.PrimitiveLongSingleton_Package is
    procedure Initialize (This : in out PrimitiveLongSingleton'Class);
    function Create return PrimitiveLongSingleton_Access;
    function getInstance return PrimitiveLongSingleton_Access;
-   procedure getInstance;
    function getNumberFromChar (This : in out PrimitiveLongSingleton; numberAsChar : Character) return Short_Short_Integer;
    procedure getNumberFromChar (This : in out PrimitiveLongSingleton; numberAsChar : Character);
 

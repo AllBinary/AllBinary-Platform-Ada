@@ -47,7 +47,7 @@ package body org.allbinary.media.graphics.geography.map.racetrack.RaceTrackData_
    function Create (id : Integer; cellWidth : Integer; cellHeight : Integer; miniCellWidth : Integer; miniCellHeight : Integer; cellTypeIdToGeographicMapCellTypeArray : Integer_Array_Access; mapArray : Integer_Array_Access_Array_Access) return RaceTrackData_Access is
       This : constant RaceTrackData_Access := new RaceTrackData;
    begin
-      Initialize (This.all, id, cellWidth, cellHeight, miniCellWidth, miniCellHeight, cellTypeIdToGeographicMapCellTypeArray, mapArray);
+      RaceTrackData_Package.Initialize (This.all, id, cellWidth, cellHeight, miniCellWidth, miniCellHeight, cellTypeIdToGeographicMapCellTypeArray, mapArray);
       return This;
    end Create;
 
@@ -149,76 +149,6 @@ package body org.allbinary.media.graphics.geography.map.racetrack.RaceTrackData_
    function getId (This : in out RaceTrackData) return Integer is
    begin
         return This.id;
-   end getId;
-
-   procedure getMapArray (This : in out RaceTrackData) is
-      Java_Result : constant Integer_Array_Access_Array_Access := RaceTrackData'Class (This).getMapArray;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getMapArray;
-
-   procedure getCellTypeIdToGeographicMapCellTypeArray (This : in out RaceTrackData) is
-      Java_Result : constant Integer_Array_Access := RaceTrackData'Class (This).getCellTypeIdToGeographicMapCellTypeArray;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getCellTypeIdToGeographicMapCellTypeArray;
-
-   procedure getCellWidth (This : in out RaceTrackData) is
-      Java_Result : constant Integer := RaceTrackData'Class (This).getCellWidth;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getCellWidth;
-
-   procedure getCellHeight (This : in out RaceTrackData) is
-      Java_Result : constant Integer := RaceTrackData'Class (This).getCellHeight;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getCellHeight;
-
-   procedure getOverPassGeographicMapCellPositionArray (This : in out RaceTrackData) is
-      Java_Result : constant CellPosition_Access_Array_Access := RaceTrackData'Class (This).getOverPassGeographicMapCellPositionArray;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getOverPassGeographicMapCellPositionArray;
-
-   procedure getTileSetImage (This : in out RaceTrackData) is
-      Java_Result : constant Image_Access := RaceTrackData'Class (This).getTileSetImage;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTileSetImage;
-
-   procedure getMiniTileSetImage (This : in out RaceTrackData) is
-      Java_Result : constant Image_Access := RaceTrackData'Class (This).getMiniTileSetImage;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getMiniTileSetImage;
-
-   procedure getMiniCellWidth (This : in out RaceTrackData) is
-      Java_Result : constant Integer := RaceTrackData'Class (This).getMiniCellWidth;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getMiniCellWidth;
-
-   procedure getMiniCellHeight (This : in out RaceTrackData) is
-      Java_Result : constant Integer := RaceTrackData'Class (This).getMiniCellHeight;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getMiniCellHeight;
-
-   procedure getId (This : in out RaceTrackData) is
-      Java_Result : constant Integer := RaceTrackData'Class (This).getId;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getId;
 
 end org.allbinary.media.graphics.geography.map.racetrack.RaceTrackData_Package;

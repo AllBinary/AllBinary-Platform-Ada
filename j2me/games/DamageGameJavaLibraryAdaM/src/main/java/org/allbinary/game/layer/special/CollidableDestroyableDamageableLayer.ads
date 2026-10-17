@@ -98,7 +98,6 @@ package org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Pa
    procedure Initialize (This : in out CollidableDestroyableDamageableLayer'Class; groupInterface : Group_Access_Array_Access; name : Unbounded_String; layerInfo : Rectangle_Access; viewPosition : ViewPositionBase_Access);
    function Create (groupInterface : Group_Access_Array_Access; name : Unbounded_String; layerInfo : Rectangle_Access; viewPosition : ViewPositionBase_Access) return CollidableDestroyableDamageableLayer_Access;
    function getNullInstance return CollidableDestroyableDamageableLayer_Access;
-   procedure getNullInstance;
    procedure initPosition (This : in out CollidableDestroyableDamageableLayer);
    procedure initPositionXYZ (This : in out CollidableDestroyableDamageableLayer; x : Integer; y : Integer; z : Integer);
    procedure paint (This : in out CollidableDestroyableDamageableLayer; graphics : Graphics_Access);
@@ -106,22 +105,15 @@ package org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Pa
    function getDamage (This : in out CollidableDestroyableDamageableLayer; damageType : Integer) return Integer;
    procedure getDamage (This : in out CollidableDestroyableDamageableLayer; damageType : Integer);
    function isDestroyed (This : in out CollidableDestroyableDamageableLayer) return Boolean;
-   procedure isDestroyed (This : in out CollidableDestroyableDamageableLayer);
    function getGroupInterface (This : in out CollidableDestroyableDamageableLayer) return Group_Access_Array_Access;
-   procedure getGroupInterface (This : in out CollidableDestroyableDamageableLayer);
    procedure setGroupInterface (This : in out CollidableDestroyableDamageableLayer; teamInterface : Group_Access_Array_Access);
    procedure setAllBinaryGameLayerManager (This : in out CollidableDestroyableDamageableLayer; allBinaryGameLayerManager : AllBinaryGameLayerManager_Access);
    function isReadyForExplosion (This : in out CollidableDestroyableDamageableLayer) return Boolean;
-   procedure isReadyForExplosion (This : in out CollidableDestroyableDamageableLayer);
    procedure setReadyForExplosion (This : in out CollidableDestroyableDamageableLayer; isReadyForExplosion : Boolean);
    function getInitWidth (This : in out CollidableDestroyableDamageableLayer) return Integer;
-   procedure getInitWidth (This : in out CollidableDestroyableDamageableLayer);
    function getInitHeight (This : in out CollidableDestroyableDamageableLayer) return Integer;
-   procedure getInitHeight (This : in out CollidableDestroyableDamageableLayer);
    function getInitX (This : in out CollidableDestroyableDamageableLayer) return Integer;
-   procedure getInitX (This : in out CollidableDestroyableDamageableLayer);
    function getInitY (This : in out CollidableDestroyableDamageableLayer) return Integer;
-   procedure getInitY (This : in out CollidableDestroyableDamageableLayer);
    procedure up (This : in out CollidableDestroyableDamageableLayer);
    procedure down (This : in out CollidableDestroyableDamageableLayer);
    procedure right (This : in out CollidableDestroyableDamageableLayer);
@@ -142,15 +134,12 @@ package org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Pa
    procedure leftTrigger (This : in out CollidableDestroyableDamageableLayer; layerManager : AllBinaryLayerManager_Access; gameKeyEvent : GameKeyEvent_Access; xAnalogValue : Integer);
    procedure onDestroyed (This : in out CollidableDestroyableDamageableLayer; destroyedEvent : DestroyedEvent_Access);
    function getPickupBehavior (This : in out CollidableDestroyableDamageableLayer) return PickupBehavior_Access;
-   procedure getPickupBehavior (This : in out CollidableDestroyableDamageableLayer);
    procedure setPickupBehavior (This : in out CollidableDestroyableDamageableLayer; pickupBehavior : PickupBehavior_Access);
    procedure addPart (This : in out CollidableDestroyableDamageableLayer; pickedUpLayerInterfaceFactoryInterface : PickedUpLayerInterfaceFactoryInterface_Access);
    procedure setPartInterfaceArray (This : in out CollidableDestroyableDamageableLayer; partInterfaceArray : PartInterface_Access_Array_Access);
    function getPartInterfaceArray (This : in out CollidableDestroyableDamageableLayer) return PartInterface_Access_Array_Access;
-   procedure getPartInterfaceArray (This : in out CollidableDestroyableDamageableLayer);
    procedure toStringAppend (This : in out CollidableDestroyableDamageableLayer; stringBuffer : StringMaker_Access);
    function toString (This : in out CollidableDestroyableDamageableLayer) return Unbounded_String;
-   procedure toString (This : in out CollidableDestroyableDamageableLayer);
 
 end org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package;
 

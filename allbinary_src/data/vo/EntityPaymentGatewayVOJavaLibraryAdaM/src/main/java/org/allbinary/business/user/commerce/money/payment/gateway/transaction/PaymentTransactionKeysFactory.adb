@@ -13,7 +13,7 @@
 --  Generated Code Do Not Modify
 
 
-package body org.allbinary.business.user_Case.commerce.money.payment.gateway.transaction.PaymentTransactionKeysFactory_Package is
+package body org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionKeysFactory_Package is
 
    procedure Initialize_Fields (This : in out PaymentTransactionKeysFactory'Class) is
    begin
@@ -109,7 +109,7 @@ package body org.allbinary.business.user_Case.commerce.money.payment.gateway.tra
    function Create return PaymentTransactionKeysFactory_Access is
       This : constant PaymentTransactionKeysFactory_Access := new PaymentTransactionKeysFactory;
    begin
-      Initialize (This.all);
+      PaymentTransactionKeysFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -119,17 +119,10 @@ package body org.allbinary.business.user_Case.commerce.money.payment.gateway.tra
         return PaymentTransactionKeysFactory_Package.instance;
    end getInstance;
 
-   procedure getInstance is
-      Java_Result : constant PaymentTransactionKeysFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
 begin
    null;
    instance := PaymentTransactionKeysFactory_Package.Create;
 
-end org.allbinary.business.user_Case.commerce.money.payment.gateway.transaction.PaymentTransactionKeysFactory_Package;
+end org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionKeysFactory_Package;
 
 

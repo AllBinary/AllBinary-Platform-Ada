@@ -68,7 +68,7 @@ package body org.allbinary.input.automation.InputAutomationJFrame_Package is
    function Create return InputAutomationJFrame_Access is
       This : constant InputAutomationJFrame_Access := new InputAutomationJFrame;
    begin
-      Initialize (This.all);
+      InputAutomationJFrame_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -571,20 +571,6 @@ package body org.allbinary.input.automation.InputAutomationJFrame_Package is
                 end;
         end;
    end onRemove;
-
-   procedure getInstance is
-      Java_Result : constant InputAutomationJFrame_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure getAutomationModuleConfigurationJPanel (This : in out InputAutomationJFrame) is
-      Java_Result : constant JPanel_Access := InputAutomationJFrame'Class (This).getAutomationModuleConfigurationJPanel;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getAutomationModuleConfigurationJPanel;
 
 begin
    null;

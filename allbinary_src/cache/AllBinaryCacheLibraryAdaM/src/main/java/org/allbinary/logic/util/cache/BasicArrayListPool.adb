@@ -29,7 +29,7 @@ package body org.allbinary.logic.util.cache.BasicArrayListPool_Package is
    function Create (cacheableInterfaceFactoryInterface : CacheableInterfaceFactoryInterface_Access) return BasicArrayListPool_Access is
       This : constant BasicArrayListPool_Access := new BasicArrayListPool;
    begin
-      Initialize (This.all, cacheableInterfaceFactoryInterface);
+      BasicArrayListPool_Package.Initialize (This.all, cacheableInterfaceFactoryInterface);
       return This;
    end Create;
 

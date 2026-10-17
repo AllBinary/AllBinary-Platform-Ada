@@ -73,7 +73,6 @@ package org.allbinary.logic.communication.smtp.event.UserEmailEventNameData_Pack
    function getInstance (userEmailEventNameString : Unbounded_String) return UserEmailEventNameData_Access;
    procedure getInstance (userEmailEventNameString : Unbounded_String);
    function toString (This : in out UserEmailEventNameData) return Unbounded_String;
-   procedure toString (This : in out UserEmailEventNameData);
 
 end org.allbinary.logic.communication.smtp.event.UserEmailEventNameData_Package;
 

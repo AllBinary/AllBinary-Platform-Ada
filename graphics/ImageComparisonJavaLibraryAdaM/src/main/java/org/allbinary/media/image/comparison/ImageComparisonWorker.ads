@@ -32,6 +32,12 @@ with org.allbinary.logic.util.event.handler.BasicEventHandler_Package; use org.a
 with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.time.TimeDelayHelper_Package; use org.allbinary.time.TimeDelayHelper_Package;
+with org.allbinary.media.image.comparison.ImageComparatorConstraintsInterface_Package; use org.allbinary.media.image.comparison.ImageComparatorConstraintsInterface_Package;
+with org.allbinary.media.image.comparison.ImageComparator_Package; use org.allbinary.media.image.comparison.ImageComparator_Package;
+with org.allbinary.media.image.comparison.ImageComparisonResult_Package; use org.allbinary.media.image.comparison.ImageComparisonResult_Package;
+with org.allbinary.media.image.comparison.ImageComparisonResultFrameCacheable_Package; use org.allbinary.media.image.comparison.ImageComparisonResultFrameCacheable_Package;
+with org.allbinary.media.image.comparison.ImageComparisonResultCacheSingleton_Package; use org.allbinary.media.image.comparison.ImageComparisonResultCacheSingleton_Package;
+with org.allbinary.media.image.comparison.ImageComparisonResultsEvent_Package; use org.allbinary.media.image.comparison.ImageComparisonResultsEvent_Package;
 
 package org.allbinary.media.image.comparison.ImageComparisonWorker_Package is
 
@@ -66,7 +72,6 @@ package org.allbinary.media.image.comparison.ImageComparisonWorker_Package is
    procedure Initialize (This : in out ImageComparisonWorker'Class; imageComparatorConstraintsInterface : ImageComparatorConstraintsInterface_Access);
    function Create (imageComparatorConstraintsInterface : ImageComparatorConstraintsInterface_Access) return ImageComparisonWorker_Access;
    function isRunning (This : in out ImageComparisonWorker) return Boolean;
-   procedure isRunning (This : in out ImageComparisonWorker);
    procedure setRunning (This : in out ImageComparisonWorker; running : Boolean);
    procedure onCaptureEvent (This : in out ImageComparisonWorker; capturedImageWorkerResultsEvent : CapturedImageWorkerResultsEvent_Access);
    procedure onEvent (This : in out ImageComparisonWorker; allBinaryEventObject : AllBinaryEventObject_Access);

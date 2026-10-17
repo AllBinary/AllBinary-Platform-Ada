@@ -35,7 +35,7 @@ package body org.allbinary.animation.vector.RectangleFilledAdjustedAnimation_Pac
    function Create (width : Integer; height : Integer; offsetX : Integer; offsetY : Integer; basicColor : BasicColor_Access) return RectangleFilledAdjustedAnimation_Access is
       This : constant RectangleFilledAdjustedAnimation_Access := new RectangleFilledAdjustedAnimation;
    begin
-      Initialize (This.all, width, height, offsetX, offsetY, basicColor);
+      RectangleFilledAdjustedAnimation_Package.Initialize (This.all, width, height, offsetX, offsetY, basicColor);
       return This;
    end Create;
 

@@ -39,7 +39,7 @@ package body org.allbinary.layer.event.LayerManagerEventHandler_Package is
    function Create return LayerManagerEventHandler_Access is
       This : constant LayerManagerEventHandler_Access := new LayerManagerEventHandler;
    begin
-      Initialize (This.all);
+      LayerManagerEventHandler_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -134,13 +134,6 @@ package body org.allbinary.layer.event.LayerManagerEventHandler_Package is
         layerManagerEventListenerInterface := (LayerManagerEventListenerInterface_Access (eventListenerInterface));
         layerManagerEventListenerInterface.onCreateLayerManagerEvent (LayerManagerEvent_Access (eventObject));
    end process;
-
-   procedure getInstance is
-      Java_Result : constant LayerManagerEventHandler_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

@@ -24,6 +24,7 @@ with AllBinary_Java; use AllBinary_Java;
 --  with javax.help.HelpSet_Package; use javax.help.HelpSet_Package;
 with org.allbinary.logic.java.help.JavaHelpUtil_Package; use org.allbinary.logic.java.help.JavaHelpUtil_Package;
 with org.allbinary.input.automation.module.InputAutomationModuleFactoryInterface_Package; use org.allbinary.input.automation.module.InputAutomationModuleFactoryInterface_Package;
+with org.allbinary.input.automation.module.JPanel_Package; use org.allbinary.input.automation.module.JPanel_Package;
 
 package org.allbinary.input.automation.module.AbstractInputAutomationFactory_Package is
 
@@ -43,11 +44,8 @@ package org.allbinary.input.automation.module.AbstractInputAutomationFactory_Pac
    procedure Initialize (This : in out AbstractInputAutomationFactory'Class; name : Unbounded_String; jPanel : JPanel_Access; helpSet : HelpSet_Access);
    function Create (name : Unbounded_String; jPanel : JPanel_Access; helpSet : HelpSet_Access) return AbstractInputAutomationFactory_Access;
    function getName (This : in out AbstractInputAutomationFactory) return Unbounded_String;
-   procedure getName (This : in out AbstractInputAutomationFactory);
    function getConfigurationJPanel (This : in out AbstractInputAutomationFactory) return JPanel_Access;
-   procedure getConfigurationJPanel (This : in out AbstractInputAutomationFactory);
    function getHelpSet (This : in out AbstractInputAutomationFactory) return HelpSet_Access;
-   procedure getHelpSet (This : in out AbstractInputAutomationFactory);
 
 end org.allbinary.input.automation.module.AbstractInputAutomationFactory_Package;
 

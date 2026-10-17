@@ -58,6 +58,13 @@ with org.allbinary.graphics.j2me.workarea.canvas.JPanel_Package; use org.allbina
 with org.allbinary.graphics.j2me.workarea.canvas.MouseListener_Package; use org.allbinary.graphics.j2me.workarea.canvas.MouseListener_Package;
 with org.allbinary.graphics.j2me.workarea.canvas.MouseMotionListener_Package; use org.allbinary.graphics.j2me.workarea.canvas.MouseMotionListener_Package;
 with org.allbinary.graphics.j2me.workarea.canvas.KeyListener_Package; use org.allbinary.graphics.j2me.workarea.canvas.KeyListener_Package;
+with org.allbinary.graphics.j2me.workarea.canvas.IntegerDimension_Package; use org.allbinary.graphics.j2me.workarea.canvas.IntegerDimension_Package;
+with org.allbinary.graphics.j2me.workarea.canvas.CanvasTreeLabel_Package; use org.allbinary.graphics.j2me.workarea.canvas.CanvasTreeLabel_Package;
+with org.allbinary.graphics.j2me.workarea.canvas.Color_Package; use org.allbinary.graphics.j2me.workarea.canvas.Color_Package;
+with org.allbinary.graphics.j2me.workarea.canvas.Grid_Package; use org.allbinary.graphics.j2me.workarea.canvas.Grid_Package;
+with org.allbinary.graphics.j2me.workarea.canvas.Dimension_Package; use org.allbinary.graphics.j2me.workarea.canvas.Dimension_Package;
+with org.allbinary.graphics.j2me.workarea.canvas.CanvasDom_Package; use org.allbinary.graphics.j2me.workarea.canvas.CanvasDom_Package;
+with org.allbinary.graphics.j2me.workarea.canvas.Graphics_Package; use org.allbinary.graphics.j2me.workarea.canvas.Graphics_Package;
 
 package org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package is
 
@@ -119,14 +126,12 @@ package org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package is
    function Create (workAreaJTreeJPanel : WorkAreaJTreeJPanel_Access; dimension : Dimension_Access; x : Integer; y : Integer) return CanvasJPanel_Access;
    procedure initMyComponents (This : in out CanvasJPanel);
    function getTreeNode (This : in out CanvasJPanel) return MutableTreeNode_Access;
-   procedure getTreeNode (This : in out CanvasJPanel);
    procedure initComponents (This : in out CanvasJPanel);
    procedure setCanvasSize (This : in out CanvasJPanel; x : Integer; y : Integer);
    procedure setGrid (This : in out CanvasJPanel; point : GPoint_Access);
    procedure setGrid (This : in out CanvasJPanel; xSize : Integer; ySize : Integer);
    procedure setDefaultGrid (This : in out CanvasJPanel);
    function getAngle (This : in out CanvasJPanel) return Long_Float;
-   procedure getAngle (This : in out CanvasJPanel);
    procedure setAngle (This : in out CanvasJPanel; angle : Long_Float);
    procedure addAngle (This : in out CanvasJPanel; angle : Long_Float);
    procedure explodeAll (This : in out CanvasJPanel);
@@ -137,19 +142,14 @@ package org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package is
    procedure duplicateGraphicItem (This : in out CanvasJPanel; graphicItem : GraphicItemInterface_Access);
    procedure duplicateGraphicItemHashMap (This : in out CanvasJPanel; hashMap : HashMap_Access);
    function getGraphicItemHashMap (This : in out CanvasJPanel) return HashMap_Access;
-   procedure getGraphicItemHashMap (This : in out CanvasJPanel);
    function getXPixelsPerWorkAreaPixel (This : in out CanvasJPanel) return Integer;
-   procedure getXPixelsPerWorkAreaPixel (This : in out CanvasJPanel);
    function getYPixelsPerWorkAreaPixel (This : in out CanvasJPanel) return Integer;
-   procedure getYPixelsPerWorkAreaPixel (This : in out CanvasJPanel);
    function getSelectedTool (This : in out CanvasJPanel) return GraphicItemInterface_Access;
-   procedure getSelectedTool (This : in out CanvasJPanel);
    procedure drawItems (This : in out CanvasJPanel; graphics : Graphics_Access);
    procedure drawGrid (This : in out CanvasJPanel; graphics : Graphics_Access);
    procedure paint (This : in out CanvasJPanel; graphics : Graphics_Access);
    procedure repaint (This : in out CanvasJPanel);
    function toDom (This : in out CanvasJPanel) return Node_Access;
-   procedure toDom (This : in out CanvasJPanel);
    procedure changed (This : in out CanvasJPanel);
    procedure mouseClicked (This : in out CanvasJPanel; mouseEvent : MouseEvent_Access);
    procedure mouseEntered (This : in out CanvasJPanel; mouseEvent : MouseEvent_Access);
@@ -167,14 +167,11 @@ package org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package is
    procedure deselect (This : in out CanvasJPanel; evt : MyGraphicItemEvent_Access);
    procedure highlight (This : in out CanvasJPanel; evt : MyGraphicItemEvent_Access);
    function duplicate (This : in out CanvasJPanel) return CanvasJPanel_Access;
-   procedure duplicate (This : in out CanvasJPanel);
    procedure duplicate (This : in out CanvasJPanel; event : MyGraphicItemEvent_Access);
    procedure rotate (This : in out CanvasJPanel; event : MyGraphicItemEvent_Access);
    function getCanvasDimension (This : in out CanvasJPanel) return IntegerDimension_Access;
-   procedure getCanvasDimension (This : in out CanvasJPanel);
    procedure setCanvasDimension (This : in out CanvasJPanel; canvasDimension : IntegerDimension_Access);
    function getGrid (This : in out CanvasJPanel) return Grid_Access;
-   procedure getGrid (This : in out CanvasJPanel);
 
 end org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package;
 

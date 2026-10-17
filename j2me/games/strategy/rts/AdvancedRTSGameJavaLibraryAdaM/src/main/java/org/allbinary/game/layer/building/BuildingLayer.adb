@@ -64,7 +64,7 @@ package body org.allbinary.game.layer.building.BuildingLayer_Package is
    function Create (remoteInfo : RemoteInfo_Access; buildingPropertiesFactory : BuildingPropertiesFactory_Access; advancedRTSProperties : AdvancedRTSProperties_Access; groupInterface : Group_Access_Array_Access; rootName : Unbounded_String; name : Unbounded_String; healthInterface : Health_Access; rtsFormInput : RTSFormInput_Access; animationInterfaceFactoryInterface : AnimationInterfaceFactoryInterface_Access; emptyAnimationInterfaceFactoryInterface : AnimationInterfaceFactoryInterface_Access; baseAnimationInterfaceFactoryInterface : AnimationInterfaceFactoryInterface_Access; buildAnimationInterfaceFactoryInterface : AnimationInterfaceFactoryInterface_Access; verticleBuildAnimationInterfaceFactoryInterface : AnimationInterfaceFactoryInterface_Access; proceduralAnimationInterfaceFactoryInterface : ProceduralAnimationInterfaceFactoryInterface_Access; rectangle : Rectangle_Access; x : Integer; y : Integer) return BuildingLayer_Access is
       This : constant BuildingLayer_Access := new BuildingLayer;
    begin
-      Initialize (This.all, remoteInfo, buildingPropertiesFactory, advancedRTSProperties, groupInterface, rootName, name, healthInterface, rtsFormInput, animationInterfaceFactoryInterface, emptyAnimationInterfaceFactoryInterface, baseAnimationInterfaceFactoryInterface, buildAnimationInterfaceFactoryInterface, verticleBuildAnimationInterfaceFactoryInterface, proceduralAnimationInterfaceFactoryInterface, rectangle, x, y);
+      BuildingLayer_Package.Initialize (This.all, remoteInfo, buildingPropertiesFactory, advancedRTSProperties, groupInterface, rootName, name, healthInterface, rtsFormInput, animationInterfaceFactoryInterface, emptyAnimationInterfaceFactoryInterface, baseAnimationInterfaceFactoryInterface, buildAnimationInterfaceFactoryInterface, verticleBuildAnimationInterfaceFactoryInterface, proceduralAnimationInterfaceFactoryInterface, rectangle, x, y);
       return This;
    end Create;
 
@@ -368,62 +368,6 @@ package body org.allbinary.game.layer.building.BuildingLayer_Package is
         return 2;
    end getStaticType;
 
-   procedure createSimulated is
-      Java_Result : constant BuildingLayer_Access := createSimulated;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end createSimulated;
-
-   procedure calculateEfficiency (This : in out BuildingLayer) is
-      Java_Result : constant Integer := BuildingLayer'Class (This).calculateEfficiency;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end calculateEfficiency;
-
-   procedure getCost (This : in out BuildingLayer) is
-      Java_Result : constant Integer := BuildingLayer'Class (This).getCost;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getCost;
-
-   procedure getDowngradeCost (This : in out BuildingLayer) is
-      Java_Result : constant Integer := BuildingLayer'Class (This).getDowngradeCost;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getDowngradeCost;
-
-   procedure getUpgradeCost (This : in out BuildingLayer) is
-      Java_Result : constant Integer := BuildingLayer'Class (This).getUpgradeCost;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getUpgradeCost;
-
-   procedure getBuildingLevelCost (This : in out BuildingLayer) is
-      Java_Result : constant Integer := BuildingLayer'Class (This).getBuildingLevelCost;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getBuildingLevelCost;
-
-   procedure getProductivity (This : in out BuildingLayer) is
-      Java_Result : constant Integer := BuildingLayer'Class (This).getProductivity;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getProductivity;
-
-   procedure getEfficiency (This : in out BuildingLayer) is
-      Java_Result : constant Integer := BuildingLayer'Class (This).getEfficiency;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getEfficiency;
-
    procedure getMoveOutOfBuildAreaPath (This : in out BuildingLayer; geographicMapCellPosition : GeographicMapCellPosition_Access) is
       Java_Result : constant BasicArrayList_Access := BuildingLayer'Class (This).getMoveOutOfBuildAreaPath (geographicMapCellPosition);
       pragma Unreferenced (Java_Result);
@@ -431,54 +375,12 @@ package body org.allbinary.game.layer.building.BuildingLayer_Package is
       null;
    end getMoveOutOfBuildAreaPath;
 
-   procedure getEndGeographicMapCellPositionList (This : in out BuildingLayer) is
-      Java_Result : constant BasicArrayList_Access := BuildingLayer'Class (This).getEndGeographicMapCellPositionList;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getEndGeographicMapCellPositionList;
-
-   procedure shouldHandleStartSameAsEnd (This : in out BuildingLayer) is
-      Java_Result : constant Boolean := BuildingLayer'Class (This).shouldHandleStartSameAsEnd;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end shouldHandleStartSameAsEnd;
-
    procedure getDamage (This : in out BuildingLayer; damageType : Integer) is
       Java_Result : constant Integer := BuildingLayer'Class (This).getDamage (damageType);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getDamage;
-
-   procedure createHudPaintable (This : in out BuildingLayer) is
-      Java_Result : constant SelectionHudPaintable_Access := BuildingLayer'Class (This).createHudPaintable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end createHudPaintable;
-
-   procedure getHudPaintable (This : in out BuildingLayer) is
-      Java_Result : constant SelectionHudPaintable_Access := BuildingLayer'Class (This).getHudPaintable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getHudPaintable;
-
-   procedure getType (This : in out BuildingLayer) is
-      Java_Result : constant Integer := BuildingLayer'Class (This).getType;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getType;
-
-   procedure getStaticType is
-      Java_Result : constant Integer := getStaticType;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getStaticType;
 
 end org.allbinary.game.layer.building.BuildingLayer_Package;
 

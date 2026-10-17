@@ -35,7 +35,7 @@ package body org.allbinary.game.layer.Aggression_Package is
    function Create (ram : Integer; projectile : Integer; drops : Integer) return Aggression_Access is
       This : constant Aggression_Access := new Aggression;
    begin
-      Initialize (This.all, ram, projectile, drops);
+      Aggression_Package.Initialize (This.all, ram, projectile, drops);
       return This;
    end Create;
 
@@ -68,27 +68,6 @@ package body org.allbinary.game.layer.Aggression_Package is
    begin
         This.drops := drops;
    end setDrops;
-
-   procedure getRam (This : in out Aggression) is
-      Java_Result : constant Integer := Aggression'Class (This).getRam;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getRam;
-
-   procedure getProjectile (This : in out Aggression) is
-      Java_Result : constant Integer := Aggression'Class (This).getProjectile;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getProjectile;
-
-   procedure getDrops (This : in out Aggression) is
-      Java_Result : constant Integer := Aggression'Class (This).getDrops;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getDrops;
 
 end org.allbinary.game.layer.Aggression_Package;
 

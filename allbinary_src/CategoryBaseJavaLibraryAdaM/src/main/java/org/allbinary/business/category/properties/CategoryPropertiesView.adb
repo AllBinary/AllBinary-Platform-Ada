@@ -31,7 +31,7 @@ package body org.allbinary.business.category.properties.CategoryPropertiesView_P
    function Create (categoryPropertiesInterface : CategoryPropertiesInterface_Access) return CategoryPropertiesView_Access is
       This : constant CategoryPropertiesView_Access := new CategoryPropertiesView;
    begin
-      Initialize (This.all, categoryPropertiesInterface);
+      CategoryPropertiesView_Package.Initialize (This.all, categoryPropertiesInterface);
       return This;
    end Create;
 

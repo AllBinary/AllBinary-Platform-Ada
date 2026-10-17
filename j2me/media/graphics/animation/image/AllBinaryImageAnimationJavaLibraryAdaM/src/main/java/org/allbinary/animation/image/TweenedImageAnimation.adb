@@ -41,7 +41,7 @@ package body org.allbinary.animation.image.TweenedImageAnimation_Package is
    function Create (image : Image_Access; dx : Integer; dy : Integer; totalFrames : Integer; animationBehavior : AnimationBehavior_Access) return TweenedImageAnimation_Access is
       This : constant TweenedImageAnimation_Access := new TweenedImageAnimation;
    begin
-      Initialize (This.all, image, dx, dy, totalFrames, animationBehavior);
+      TweenedImageAnimation_Package.Initialize (This.all, image, dx, dy, totalFrames, animationBehavior);
       return This;
    end Create;
 
@@ -108,34 +108,6 @@ package body org.allbinary.animation.image.TweenedImageAnimation_Package is
    begin
         DisposalUtil_Package.getInstance.disposeImage (This.image);
    end finalize;
-
-   procedure getAnimationSize (This : in out TweenedImageAnimation) is
-      Java_Result : constant Integer := TweenedImageAnimation'Class (This).getAnimationSize;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getAnimationSize;
-
-   procedure getFrame (This : in out TweenedImageAnimation) is
-      Java_Result : constant Integer := TweenedImageAnimation'Class (This).getFrame;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getFrame;
-
-   procedure getSize (This : in out TweenedImageAnimation) is
-      Java_Result : constant Integer := TweenedImageAnimation'Class (This).getSize;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSize;
-
-   procedure getSequence (This : in out TweenedImageAnimation) is
-      Java_Result : constant Integer_Array_Access := TweenedImageAnimation'Class (This).getSequence;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSequence;
 
 end org.allbinary.animation.image.TweenedImageAnimation_Package;
 

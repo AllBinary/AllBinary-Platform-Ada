@@ -30,9 +30,7 @@ package org.allbinary.graphics.OpenGLBitmap_Package is
    procedure getPixels (This : in out OpenGLBitmap; pixels : Integer_Array_Access; offset : Integer; stride : Integer; x : Integer; y : Integer; width : Integer; height : Integer);
    procedure setPixels (This : in out OpenGLBitmap; pixels : Integer_Array_Access; offset : Integer; stride : Integer; x : Integer; y : Integer; width : Integer; height : Integer);
    function getWidth (This : in out OpenGLBitmap) return Integer;
-   procedure getWidth (This : in out OpenGLBitmap);
    function getHeight (This : in out OpenGLBitmap) return Integer;
-   procedure getHeight (This : in out OpenGLBitmap);
    procedure recycle (This : in out OpenGLBitmap);
 
 end org.allbinary.graphics.OpenGLBitmap_Package;

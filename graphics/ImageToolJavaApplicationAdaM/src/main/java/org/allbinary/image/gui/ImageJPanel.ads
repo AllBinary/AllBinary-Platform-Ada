@@ -25,6 +25,7 @@ with org.allbinary.graphics.displayable.CanvasStrings_Package; use org.allbinary
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.image.gui.JPanel_Package; use org.allbinary.image.gui.JPanel_Package;
+with org.allbinary.image.gui.Graphics_Package; use org.allbinary.image.gui.Graphics_Package;
 
 package org.allbinary.image.gui.ImageJPanel_Package is
 

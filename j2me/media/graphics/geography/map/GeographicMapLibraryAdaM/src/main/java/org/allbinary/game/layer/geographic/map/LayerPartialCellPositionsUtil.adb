@@ -28,7 +28,7 @@ package body org.allbinary.game.layer.geographic.map.LayerPartialCellPositionsUt
    function Create return LayerPartialCellPositionsUtil_Access is
       This : constant LayerPartialCellPositionsUtil_Access := new LayerPartialCellPositionsUtil;
    begin
-      Initialize (This.all);
+      LayerPartialCellPositionsUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -105,13 +105,6 @@ package body org.allbinary.game.layer.geographic.map.LayerPartialCellPositionsUt
    begin
       null;
    end getAllDXY;
-
-   procedure getInstance is
-      Java_Result : constant LayerPartialCellPositionsUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

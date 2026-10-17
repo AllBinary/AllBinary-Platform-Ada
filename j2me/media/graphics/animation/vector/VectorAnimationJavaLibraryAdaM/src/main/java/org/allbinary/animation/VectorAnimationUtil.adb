@@ -35,7 +35,7 @@ package body org.allbinary.animation.VectorAnimationUtil_Package is
    function Create return VectorAnimationUtil_Access is
       This : constant VectorAnimationUtil_Access := new VectorAnimationUtil;
    begin
-      Initialize (This.all);
+      VectorAnimationUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -101,13 +101,6 @@ package body org.allbinary.animation.VectorAnimationUtil_Package is
         end loop;
         return points;
    end toFrameArrayFromPointBasicArrayList;
-
-   procedure getInstance is
-      Java_Result : constant VectorAnimationUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure toAnimationArrayFromListOfPointListWithPointsPerFrame (This : in out VectorAnimationUtil; vector : BasicArrayList_Access; pointsPerFrame : Integer) is
       Java_Result : constant Integer_Array_Access_Array_Access_Array_Access := VectorAnimationUtil'Class (This).toAnimationArrayFromListOfPointListWithPointsPerFrame (vector, pointsPerFrame);

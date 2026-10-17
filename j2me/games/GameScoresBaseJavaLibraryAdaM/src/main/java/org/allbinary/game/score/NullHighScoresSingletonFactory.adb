@@ -28,7 +28,7 @@ package body org.allbinary.game.score.NullHighScoresSingletonFactory_Package is
    function Create return NullHighScoresSingletonFactory_Access is
       This : constant NullHighScoresSingletonFactory_Access := new NullHighScoresSingletonFactory;
    begin
-      Initialize (This.all);
+      NullHighScoresSingletonFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -36,13 +36,6 @@ package body org.allbinary.game.score.NullHighScoresSingletonFactory_Package is
    function getInstance return HighScores_Access is
    begin
         return NullHighScoresSingletonFactory_Package.SINGLETON;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant HighScores_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

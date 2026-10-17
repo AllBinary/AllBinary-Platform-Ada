@@ -31,7 +31,7 @@ package body org.allbinary.media.image.comparison.ImageComparator_Package is
    function Create (imageComparatorConstraintsInterface : ImageComparatorConstraintsInterface_Access) return ImageComparator_Access is
       This : constant ImageComparator_Access := new ImageComparator;
    begin
-      Initialize (This.all, imageComparatorConstraintsInterface);
+      ImageComparator_Package.Initialize (This.all, imageComparatorConstraintsInterface);
       return This;
    end Create;
 

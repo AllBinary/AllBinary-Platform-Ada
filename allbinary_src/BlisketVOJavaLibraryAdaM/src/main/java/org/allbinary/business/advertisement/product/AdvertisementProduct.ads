@@ -42,13 +42,9 @@ package org.allbinary.business.advertisement.product.AdvertisementProduct_Packag
    procedure Initialize (This : in out AdvertisementProduct'Class);
    function Create return AdvertisementProduct_Access;
    function getType (This : in out AdvertisementProduct) return Unbounded_String;
-   procedure getType (This : in out AdvertisementProduct);
    function getLink (This : in out AdvertisementProduct) return Unbounded_String;
-   procedure getLink (This : in out AdvertisementProduct);
    function getNumber (This : in out AdvertisementProduct) return Integer;
-   procedure getNumber (This : in out AdvertisementProduct);
    function getTwoDimensionalConstraint (This : in out AdvertisementProduct) return TwoDimensionalConstraintInterface_Access;
-   procedure getTwoDimensionalConstraint (This : in out AdvertisementProduct);
 
 end org.allbinary.business.advertisement.product.AdvertisementProduct_Package;
 

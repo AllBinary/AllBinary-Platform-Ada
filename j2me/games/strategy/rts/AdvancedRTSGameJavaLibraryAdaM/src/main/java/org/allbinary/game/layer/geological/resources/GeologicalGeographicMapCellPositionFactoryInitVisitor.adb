@@ -28,7 +28,7 @@ package body org.allbinary.game.layer.geological.resources.GeologicalGeographicM
    function Create return GeologicalGeographicMapCellPositionFactoryInitVisitor_Access is
       This : constant GeologicalGeographicMapCellPositionFactoryInitVisitor_Access := new GeologicalGeographicMapCellPositionFactoryInitVisitor;
    begin
-      Initialize (This.all);
+      GeologicalGeographicMapCellPositionFactoryInitVisitor_Package.Initialize (This.all);
       return This;
    end Create;
 

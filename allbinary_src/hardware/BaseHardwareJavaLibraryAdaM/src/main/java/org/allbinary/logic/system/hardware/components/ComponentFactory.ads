@@ -21,6 +21,7 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.logic.system.hardware.components.Component_Package; use org.allbinary.logic.system.hardware.components.Component_Package;
 
 package org.allbinary.logic.system.hardware.components.ComponentFactory_Package is
 
@@ -51,7 +52,6 @@ package org.allbinary.logic.system.hardware.components.ComponentFactory_Package 
    procedure Initialize (This : in out ComponentFactory'Class);
    function Create return ComponentFactory_Access;
    function getInstance return ComponentFactory_Access;
-   procedure getInstance;
 
 end org.allbinary.logic.system.hardware.components.ComponentFactory_Package;
 

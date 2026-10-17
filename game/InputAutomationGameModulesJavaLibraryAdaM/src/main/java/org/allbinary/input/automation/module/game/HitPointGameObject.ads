@@ -49,13 +49,10 @@ package org.allbinary.input.automation.module.game.HitPointGameObject_Package is
    function isMoreThan (This : in out HitPointGameObject; aFloat : Float) return Boolean;
    procedure isMoreThan (This : in out HitPointGameObject; aFloat : Float);
    function isCloseDeath (This : in out HitPointGameObject) return Boolean;
-   procedure isCloseDeath (This : in out HitPointGameObject);
    procedure setCloseDeath (This : in out HitPointGameObject; closeDeath : Boolean);
    function isDamaged (This : in out HitPointGameObject) return Boolean;
-   procedure isDamaged (This : in out HitPointGameObject);
    procedure setDamaged (This : in out HitPointGameObject; damaged : Boolean);
    function toString (This : in out HitPointGameObject) return Unbounded_String;
-   procedure toString (This : in out HitPointGameObject);
 
 end org.allbinary.input.automation.module.game.HitPointGameObject_Package;
 

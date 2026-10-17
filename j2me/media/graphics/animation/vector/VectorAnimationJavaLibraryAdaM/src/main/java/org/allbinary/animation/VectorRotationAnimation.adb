@@ -30,7 +30,7 @@ package body org.allbinary.animation.VectorRotationAnimation_Package is
    function Create (currentPoints : Integer_Array_Access_Array_Access_Array_Access; basicColor : BasicColor_Access; animationBehavior : AnimationBehavior_Access) return VectorRotationAnimation_Access is
       This : constant VectorRotationAnimation_Access := new VectorRotationAnimation;
    begin
-      Initialize (This.all, currentPoints, basicColor, animationBehavior);
+      VectorRotationAnimation_Package.Initialize (This.all, currentPoints, basicColor, animationBehavior);
       return This;
    end Create;
 

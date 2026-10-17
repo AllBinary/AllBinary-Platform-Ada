@@ -65,7 +65,6 @@ package org.allbinary.animation.resource.BaseResourceAnimationInterfaceFactoryIn
    procedure Initialize (This : in out BaseResourceAnimationInterfaceFactoryInterfaceFactory'Class; name : Unbounded_String; hashtable : ABHashtable_Access; rectangleHashtable : ABHashtable_Access; rectangleArrayHashtable : ABHashtable_Access);
    function Create (name : Unbounded_String; hashtable : ABHashtable_Access; rectangleHashtable : ABHashtable_Access; rectangleArrayHashtable : ABHashtable_Access) return BaseResourceAnimationInterfaceFactoryInterfaceFactory_Access;
    function getName (This : in out BaseResourceAnimationInterfaceFactoryInterfaceFactory) return Unbounded_String;
-   procedure getName (This : in out BaseResourceAnimationInterfaceFactoryInterfaceFactory);
    procedure init (This : in out BaseResourceAnimationInterfaceFactoryInterfaceFactory; level : Integer);
    procedure initImageCache (This : in out BaseResourceAnimationInterfaceFactoryInterfaceFactory; imageCache : ImageCache_Access; level : Integer);
    procedure add (This : in out BaseResourceAnimationInterfaceFactoryInterfaceFactory; resource : Unbounded_String; animationInterfaceFactoryInterface : BasicAnimationInterfaceFactoryInterface_Access);
@@ -78,20 +77,14 @@ package org.allbinary.animation.resource.BaseResourceAnimationInterfaceFactoryIn
    procedure getRectangleArrayOfArrays (This : in out BaseResourceAnimationInterfaceFactoryInterfaceFactory; resource : Unbounded_String);
    procedure addRectangleArrayOfArrays (This : in out BaseResourceAnimationInterfaceFactoryInterfaceFactory; resource : Unbounded_String; rectangleArrayOfArrays : Rectangle_Access_Array_Access_Array_Access);
    function isFeature (This : in out BaseResourceAnimationInterfaceFactoryInterfaceFactory) return Boolean;
-   procedure isFeature (This : in out BaseResourceAnimationInterfaceFactoryInterfaceFactory);
    function isLoadingLevel (This : in out BaseResourceAnimationInterfaceFactoryInterfaceFactory; level : Integer) return Boolean;
    procedure isLoadingLevel (This : in out BaseResourceAnimationInterfaceFactoryInterfaceFactory; level : Integer);
    function toString (This : in out BaseResourceAnimationInterfaceFactoryInterfaceFactory) return Unbounded_String;
-   procedure toString (This : in out BaseResourceAnimationInterfaceFactoryInterfaceFactory);
    function getHashtable (This : in out BaseResourceAnimationInterfaceFactoryInterfaceFactory) return ABHashtable_Access;
-   procedure getHashtable (This : in out BaseResourceAnimationInterfaceFactoryInterfaceFactory);
    function getRectangleHashtable (This : in out BaseResourceAnimationInterfaceFactoryInterfaceFactory) return ABHashtable_Access;
-   procedure getRectangleHashtable (This : in out BaseResourceAnimationInterfaceFactoryInterfaceFactory);
    function getRectangleArrayOfArraysHashtable (This : in out BaseResourceAnimationInterfaceFactoryInterfaceFactory) return ABHashtable_Access;
-   procedure getRectangleArrayOfArraysHashtable (This : in out BaseResourceAnimationInterfaceFactoryInterfaceFactory);
    procedure setInitialized (This : in out BaseResourceAnimationInterfaceFactoryInterfaceFactory; initialized : Boolean);
    function isInitialized (This : in out BaseResourceAnimationInterfaceFactoryInterfaceFactory) return Boolean;
-   procedure isInitialized (This : in out BaseResourceAnimationInterfaceFactoryInterfaceFactory);
 
 end org.allbinary.animation.resource.BaseResourceAnimationInterfaceFactoryInterfaceFactory_Package;
 

@@ -32,7 +32,7 @@ package body admin.taghelpers.AdminConfigurationHelperFactory_Package is
    function Create return AdminConfigurationHelperFactory_Access is
       This : constant AdminConfigurationHelperFactory_Access := new AdminConfigurationHelperFactory;
    begin
-      Initialize (This.all);
+      AdminConfigurationHelperFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

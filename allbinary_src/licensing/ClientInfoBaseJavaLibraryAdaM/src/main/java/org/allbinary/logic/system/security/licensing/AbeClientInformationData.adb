@@ -51,16 +51,9 @@ package body org.allbinary.logic.system.security.licensing.AbeClientInformationD
    function Create return AbeClientInformationData_Access is
       This : constant AbeClientInformationData_Access := new AbeClientInformationData;
    begin
-      Initialize (This.all);
+      AbeClientInformationData_Package.Initialize (This.all);
       return This;
    end Create;
-
-   procedure getInstance is
-      Java_Result : constant AbeClientInformationData_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

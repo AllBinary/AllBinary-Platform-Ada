@@ -33,7 +33,7 @@ package body org.allbinary.media.image.cache.BufferedImageCacheable_Package is
    function Create (key : BufferedImageInfo_Access) return BufferedImageCacheable_Access is
       This : constant BufferedImageCacheable_Access := new BufferedImageCacheable;
    begin
-      Initialize (This.all, key);
+      BufferedImageCacheable_Package.Initialize (This.all, key);
       return This;
    end Create;
 
@@ -60,27 +60,6 @@ package body org.allbinary.media.image.cache.BufferedImageCacheable_Package is
         stringBuffer.append (To_Unbounded_String (" "));
         stringBuffer.append (This.getKey.toString);
         return stringBuffer.toString;
-   end toString;
-
-   procedure getKey (This : in out BufferedImageCacheable) is
-      Java_Result : constant Java_Object_Access := BufferedImageCacheable'Class (This).getKey;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getKey;
-
-   procedure getBufferedImage (This : in out BufferedImageCacheable) is
-      Java_Result : constant BufferedImage_Access := BufferedImageCacheable'Class (This).getBufferedImage;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getBufferedImage;
-
-   procedure toString (This : in out BufferedImageCacheable) is
-      Java_Result : constant Unbounded_String := BufferedImageCacheable'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end toString;
 
 end org.allbinary.media.image.cache.BufferedImageCacheable_Package;

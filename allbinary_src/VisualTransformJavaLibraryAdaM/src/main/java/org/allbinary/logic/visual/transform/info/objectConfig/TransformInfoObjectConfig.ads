@@ -42,6 +42,7 @@ with org.w3c.dom.NamedNodeMap_Package; use org.w3c.dom.NamedNodeMap_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.w3c.dom.NodeList_Package; use org.w3c.dom.NodeList_Package;
 with org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfigInterface_Package; use org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfigInterface_Package;
+with org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfigData_Package; use org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfigData_Package;
 
 package org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfig_Package is
 
@@ -84,16 +85,12 @@ package org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObje
    function Create (transformInfoInterface : TransformInfoInterface_Access) return TransformInfoObjectConfig_Access;
    procedure createDocument (This : in out TransformInfoObjectConfig);
    function getTransformInfoInterface (This : in out TransformInfoObjectConfig) return TransformInfoInterface_Access;
-   procedure getTransformInfoInterface (This : in out TransformInfoObjectConfig);
    function toXmlDoc (This : in out TransformInfoObjectConfig) return Document_Access;
-   procedure toXmlDoc (This : in out TransformInfoObjectConfig);
    procedure setDocument (This : in out TransformInfoObjectConfig; document : Document_Access);
    function containsView (This : in out TransformInfoObjectConfig; transformInfoInterface : TransformInfoInterface_Access) return Boolean;
    procedure containsView (This : in out TransformInfoObjectConfig; transformInfoInterface : TransformInfoInterface_Access);
    function getTemplateAttributes (This : in out TransformInfoObjectConfig) return NamedNodeMap_Access;
-   procedure getTemplateAttributes (This : in out TransformInfoObjectConfig);
    function getName (This : in out TransformInfoObjectConfig) return Unbounded_String;
-   procedure getName (This : in out TransformInfoObjectConfig);
    procedure setName (This : in out TransformInfoObjectConfig; name : Unbounded_String);
    function getNodeVector (This : in out TransformInfoObjectConfig; nodeName : Unbounded_String) return BasicArrayList_Access;
    procedure getNodeVector (This : in out TransformInfoObjectConfig; nodeName : Unbounded_String);
@@ -104,26 +101,16 @@ package org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObje
    function getTransformsGroup (This : in out TransformInfoObjectConfig; group : Unbounded_String) return BasicArrayList_Access;
    procedure getTransformsGroup (This : in out TransformInfoObjectConfig; group : Unbounded_String);
    function getTransformDomNodes (This : in out TransformInfoObjectConfig) return BasicArrayList_Access;
-   procedure getTransformDomNodes (This : in out TransformInfoObjectConfig);
    function getTransforms (This : in out TransformInfoObjectConfig) return BasicArrayList_Access;
-   procedure getTransforms (This : in out TransformInfoObjectConfig);
    function getGroupTransforms (This : in out TransformInfoObjectConfig) return BasicArrayList_Access;
-   procedure getGroupTransforms (This : in out TransformInfoObjectConfig);
    function getParentTransforms (This : in out TransformInfoObjectConfig) return BasicArrayList_Access;
-   procedure getParentTransforms (This : in out TransformInfoObjectConfig);
    function getRootNode (This : in out TransformInfoObjectConfig) return Node_Access;
-   procedure getRootNode (This : in out TransformInfoObjectConfig);
    procedure setOutputTypeName (This : in out TransformInfoObjectConfig; outputTypeName : Unbounded_String);
    function getOutputTypeName (This : in out TransformInfoObjectConfig) return Unbounded_String;
-   procedure getOutputTypeName (This : in out TransformInfoObjectConfig);
    function getInputOutputTypeName (This : in out TransformInfoObjectConfig) return Unbounded_String;
-   procedure getInputOutputTypeName (This : in out TransformInfoObjectConfig);
    function getInputOutputTypeFile (This : in out TransformInfoObjectConfig) return Unbounded_String;
-   procedure getInputOutputTypeFile (This : in out TransformInfoObjectConfig);
    function getImportUriPath (This : in out TransformInfoObjectConfig) return Unbounded_String;
-   procedure getImportUriPath (This : in out TransformInfoObjectConfig);
    function toString (This : in out TransformInfoObjectConfig) return Unbounded_String;
-   procedure toString (This : in out TransformInfoObjectConfig);
 
 end org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfig_Package;
 

@@ -35,7 +35,6 @@ package org.allbinary.animation.text.TextChangeListener_Package is
    procedure Initialize (This : in out TextChangeListener'Class);
    function Create return TextChangeListener_Access;
    function getInstance return TextChangeListener_Access;
-   procedure getInstance;
    procedure onMeasure (This : in out TextChangeListener);
 
 end org.allbinary.animation.text.TextChangeListener_Package;

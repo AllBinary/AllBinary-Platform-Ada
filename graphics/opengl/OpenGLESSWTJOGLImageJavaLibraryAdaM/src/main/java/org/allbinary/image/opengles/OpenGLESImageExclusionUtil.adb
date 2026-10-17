@@ -37,7 +37,7 @@ package body org.allbinary.image.opengles.OpenGLESImageExclusionUtil_Package is
    function Create return OpenGLESImageExclusionUtil_Access is
       This : constant OpenGLESImageExclusionUtil_Access := new OpenGLESImageExclusionUtil;
    begin
-      Initialize (This.all);
+      OpenGLESImageExclusionUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -68,13 +68,6 @@ package body org.allbinary.image.opengles.OpenGLESImageExclusionUtil_Package is
             return True;
         end if;
    end isCustomScaling;
-
-   procedure getInstance is
-      Java_Result : constant OpenGLESImageExclusionUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure isCustomScaling (This : in out OpenGLESImageExclusionUtil; image : Image_Access) is
       Java_Result : constant Boolean := OpenGLESImageExclusionUtil'Class (This).isCustomScaling (image);

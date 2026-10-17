@@ -37,7 +37,6 @@ package org.allbinary.game.combat.damage.DamageFloaters_Package is
    procedure Initialize (This : in out DamageFloaters'Class);
    function Create return DamageFloaters_Access;
    function getInstance return DamageFloaters_Access;
-   procedure getInstance;
    procedure add (This : in out DamageFloaters; damage : Integer);
 
 end org.allbinary.game.combat.damage.DamageFloaters_Package;

@@ -27,6 +27,7 @@ with org.allbinary.init.Init_Package; use org.allbinary.init.Init_Package;
 with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.game.configuration.InGameOptionsForm_Package; use org.allbinary.game.configuration.InGameOptionsForm_Package;
 
 package org.allbinary.game.configuration.InGameOptionsFormFactory_Package is
 
@@ -51,10 +52,8 @@ package org.allbinary.game.configuration.InGameOptionsFormFactory_Package is
    procedure Initialize (This : in out InGameOptionsFormFactory'Class);
    function Create return InGameOptionsFormFactory_Access;
    function getInstance return InGameOptionsFormFactory_Access;
-   procedure getInstance;
    procedure init (This : in out InGameOptionsFormFactory; commandListener : CommandListener_Access; initInterface : Init_Access; title : Unbounded_String; backgrounBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access);
    function get (This : in out InGameOptionsFormFactory) return CommandForm_Access;
-   procedure get (This : in out InGameOptionsFormFactory);
 
 end org.allbinary.game.configuration.InGameOptionsFormFactory_Package;
 

@@ -58,16 +58,9 @@ package body org.allbinary.game.ag.ai.NumberInSameGroupSequence_Package is
    function Create return NumberInSameGroupSequence_Access is
       This : constant NumberInSameGroupSequence_Access := new NumberInSameGroupSequence;
    begin
-      Initialize (This.all);
+      NumberInSameGroupSequence_Package.Initialize (This.all);
       return This;
    end Create;
-
-   procedure getInstance is
-      Java_Result : constant NumberInSameGroupSequence_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 end org.allbinary.game.ag.ai.NumberInSameGroupSequence_Package;
 

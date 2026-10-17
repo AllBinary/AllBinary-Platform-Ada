@@ -44,11 +44,8 @@ package org.allbinary.media.DisplaysUtil_Package is
    procedure Initialize (This : in out DisplaysUtil'Class);
    function Create return DisplaysUtil_Access;
    function getInstance return DisplaysUtil_Access;
-   procedure getInstance;
    function getPrimaryScreenSize (This : in out DisplaysUtil) return Rectangle_Access;
-   procedure getPrimaryScreenSize (This : in out DisplaysUtil);
    function getScreenSizesAsRectangleArray (This : in out DisplaysUtil) return Rectangle_Access_Array_Access;
-   procedure getScreenSizesAsRectangleArray (This : in out DisplaysUtil);
 
 end org.allbinary.media.DisplaysUtil_Package;
 

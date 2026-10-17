@@ -40,13 +40,10 @@ package org.allbinary.game.layer.Aggression_Package is
    procedure Initialize (This : in out Aggression'Class; ram : Integer; projectile : Integer; drops : Integer);
    function Create (ram : Integer; projectile : Integer; drops : Integer) return Aggression_Access;
    function getRam (This : in out Aggression) return Integer;
-   procedure getRam (This : in out Aggression);
    procedure setRam (This : in out Aggression; ram : Integer);
    function getProjectile (This : in out Aggression) return Integer;
-   procedure getProjectile (This : in out Aggression);
    procedure setProjectile (This : in out Aggression; projectile : Integer);
    function getDrops (This : in out Aggression) return Integer;
-   procedure getDrops (This : in out Aggression);
    procedure setDrops (This : in out Aggression; drops : Integer);
 
 end org.allbinary.game.layer.Aggression_Package;

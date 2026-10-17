@@ -28,7 +28,7 @@ package body org.allbinary.game.layer.waypoint.Waypoint2LogHelper_Package is
    function Create return Waypoint2LogHelper_Access is
       This : constant Waypoint2LogHelper_Access := new Waypoint2LogHelper;
    begin
-      Initialize (This.all);
+      Waypoint2LogHelper_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -142,13 +142,6 @@ package body org.allbinary.game.layer.waypoint.Waypoint2LogHelper_Package is
    begin
         null;
    end targetMovedSoRetarget;
-
-   procedure getInstance is
-      Java_Result : constant Waypoint2LogHelper_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

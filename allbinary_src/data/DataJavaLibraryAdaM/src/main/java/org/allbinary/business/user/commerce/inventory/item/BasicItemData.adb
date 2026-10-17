@@ -13,7 +13,7 @@
 --  Generated Code Do Not Modify
 
 
-package body org.allbinary.business.user.commerce.inventory.item_Case.BasicItemData_Package is
+package body org.allbinary.business.user.commerce.inventory.item.BasicItemData_Package is
 
    procedure Initialize_Fields (This : in out BasicItemData'Class) is
    begin
@@ -57,7 +57,7 @@ package body org.allbinary.business.user.commerce.inventory.item_Case.BasicItemD
    function Create return BasicItemData_Access is
       This : constant BasicItemData_Access := new BasicItemData;
    begin
-      Initialize (This.all);
+      BasicItemData_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -67,17 +67,10 @@ package body org.allbinary.business.user.commerce.inventory.item_Case.BasicItemD
         return BasicItemData_Package.instance;
    end getInstance;
 
-   procedure getInstance is
-      Java_Result : constant BasicItemData_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
 begin
    null;
    instance := BasicItemData_Package.Create;
 
-end org.allbinary.business.user.commerce.inventory.item_Case.BasicItemData_Package;
+end org.allbinary.business.user.commerce.inventory.item.BasicItemData_Package;
 
 

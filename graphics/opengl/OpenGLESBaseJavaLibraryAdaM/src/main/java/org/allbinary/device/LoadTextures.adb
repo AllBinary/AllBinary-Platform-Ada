@@ -28,7 +28,7 @@ package body org.allbinary.device.LoadTextures_Package is
    function Create return LoadTextures_Access is
       This : constant LoadTextures_Access := new LoadTextures;
    begin
-      Initialize (This.all);
+      LoadTextures_Package.Initialize (This.all);
       return This;
    end Create;
 

@@ -31,7 +31,7 @@ package body org.allbinary.logic.util.cache.PoolType_Package is
    function Create (cacheType : CacheType_Access) return PoolType_Access is
       This : constant PoolType_Access := new PoolType;
    begin
-      Initialize (This.all, cacheType);
+      PoolType_Package.Initialize (This.all, cacheType);
       return This;
    end Create;
 
@@ -45,20 +45,6 @@ package body org.allbinary.logic.util.cache.PoolType_Package is
    begin
         POOL_TYPE := To_Unbounded_String ("PoolType: ");
         return POOL_TYPE & This.getCacheType.toString;
-   end toString;
-
-   procedure getCacheType (This : in out PoolType) is
-      Java_Result : constant CacheType_Access := PoolType'Class (This).getCacheType;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getCacheType;
-
-   procedure toString (This : in out PoolType) is
-      Java_Result : constant Unbounded_String := PoolType'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end toString;
 
 end org.allbinary.logic.util.cache.PoolType_Package;

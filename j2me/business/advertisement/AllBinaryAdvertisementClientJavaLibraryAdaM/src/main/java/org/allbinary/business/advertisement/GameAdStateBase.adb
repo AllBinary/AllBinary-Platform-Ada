@@ -33,7 +33,7 @@ package body org.allbinary.business.advertisement.GameAdStateBase_Package is
    function Create (adConfiguration : AdConfiguration_Access) return GameAdStateBase_Access is
       This : constant GameAdStateBase_Access := new GameAdStateBase;
    begin
-      Initialize (This.all, adConfiguration);
+      GameAdStateBase_Package.Initialize (This.all, adConfiguration);
       return This;
    end Create;
 
@@ -151,55 +151,6 @@ package body org.allbinary.business.advertisement.GameAdStateBase_Package is
    begin
       null;
    end isShowingAtLocation;
-
-   procedure isShowingAt (This : in out GameAdStateBase) is
-      Java_Result : constant Boolean := GameAdStateBase'Class (This).isShowingAt;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isShowingAt;
-
-   procedure isGameIsReady (This : in out GameAdStateBase) is
-      Java_Result : constant Boolean := GameAdStateBase'Class (This).isGameIsReady;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isGameIsReady;
-
-   procedure getAdvertisements (This : in out GameAdStateBase) is
-      Java_Result : constant Advertisements_Access := GameAdStateBase'Class (This).getAdvertisements;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getAdvertisements;
-
-   procedure getAdConfiguration (This : in out GameAdStateBase) is
-      Java_Result : constant AdConfiguration_Access := GameAdStateBase'Class (This).getAdConfiguration;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getAdConfiguration;
-
-   procedure isOkayToShowPageAd (This : in out GameAdStateBase) is
-      Java_Result : constant Boolean := GameAdStateBase'Class (This).isOkayToShowPageAd;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isOkayToShowPageAd;
-
-   procedure isOkayToShowAds (This : in out GameAdStateBase) is
-      Java_Result : constant Boolean := GameAdStateBase'Class (This).isOkayToShowAds;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isOkayToShowAds;
-
-   procedure isEnabled (This : in out GameAdStateBase) is
-      Java_Result : constant Boolean := GameAdStateBase'Class (This).isEnabled;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isEnabled;
 
 end org.allbinary.business.advertisement.GameAdStateBase_Package;
 

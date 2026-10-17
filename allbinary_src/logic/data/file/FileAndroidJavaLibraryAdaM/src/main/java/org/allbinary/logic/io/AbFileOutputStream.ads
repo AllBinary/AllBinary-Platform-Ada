@@ -54,7 +54,6 @@ package org.allbinary.logic.io.AbFileOutputStream_Package is
    procedure createFromFilePathAppend (name : Unbounded_String; append : Boolean);
    procedure close (This : in out AbFileOutputStream);
    function getChannel (This : in out AbFileOutputStream) return FileChannel_Access;
-   procedure getChannel (This : in out AbFileOutputStream);
    procedure write (This : in out AbFileOutputStream; buffer : Short_Short_Integer_Array_Access);
    procedure write (This : in out AbFileOutputStream; buffer : Short_Short_Integer_Array_Access; offset : Integer; count : Integer);
    procedure write (This : in out AbFileOutputStream; b : Integer);

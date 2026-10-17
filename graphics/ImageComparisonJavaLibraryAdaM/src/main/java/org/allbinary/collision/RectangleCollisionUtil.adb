@@ -30,7 +30,7 @@ package body org.allbinary.collision.RectangleCollisionUtil_Package is
    function Create return RectangleCollisionUtil_Access is
       This : constant RectangleCollisionUtil_Access := new RectangleCollisionUtil;
    begin
-      Initialize (This.all);
+      RectangleCollisionUtil_Package.Initialize (This.all);
       return This;
    end Create;
 

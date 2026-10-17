@@ -42,9 +42,7 @@ package org.allbinary.game.GameMode_Package is
    function Create (name : Unbounded_String) return GameMode_Access;
    procedure setName (This : in out GameMode; name : Unbounded_String);
    function getName (This : in out GameMode) return Unbounded_String;
-   procedure getName (This : in out GameMode);
    function toString (This : in out GameMode) return Unbounded_String;
-   procedure toString (This : in out GameMode);
 
 end org.allbinary.game.GameMode_Package;
 

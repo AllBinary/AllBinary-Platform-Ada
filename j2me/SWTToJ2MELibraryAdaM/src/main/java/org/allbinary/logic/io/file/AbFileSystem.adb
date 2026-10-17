@@ -30,7 +30,7 @@ package body org.allbinary.logic.io.file.AbFileSystem_Package is
    function Create return AbFileSystem_Access is
       This : constant AbFileSystem_Access := new AbFileSystem;
    begin
-      Initialize (This.all);
+      AbFileSystem_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -117,13 +117,6 @@ package body org.allbinary.logic.io.file.AbFileSystem_Package is
                 end;
         end;
    end close;
-
-   procedure getInstance is
-      Java_Result : constant AbFileSystem_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure isDirectoryOrFile (This : in out AbFileSystem; path : Unbounded_String) is
       Java_Result : constant Boolean := AbFileSystem'Class (This).isDirectoryOrFile (path);

@@ -23,6 +23,7 @@ with AllBinary_Java; use AllBinary_Java;
 --  with javax.microedition.lcdui.Font_Package; use javax.microedition.lcdui.Font_Package;
 --  with javax.microedition.midlet.MIDlet_Package; use javax.microedition.midlet.MIDlet_Package;
 with org.allbinary.graphics.threed.Runnable_Package; use org.allbinary.graphics.threed.Runnable_Package;
+with org.allbinary.graphics.threed.RatioProcessor_Package; use org.allbinary.graphics.threed.RatioProcessor_Package;
 
 package org.allbinary.graphics.threed.SWTJOGLProcessor_Package is
 
@@ -38,13 +39,10 @@ package org.allbinary.graphics.threed.SWTJOGLProcessor_Package is
    procedure Initialize (This : in out SWTJOGLProcessor'Class);
    function Create return SWTJOGLProcessor_Access;
    function getInstance return SWTJOGLProcessor_Access;
-   procedure getInstance;
    procedure init (This : in out SWTJOGLProcessor; display : Java_Object_Access; comp : Java_Object_Access);
    function isHolderCreated (This : in out SWTJOGLProcessor) return Boolean;
-   procedure isHolderCreated (This : in out SWTJOGLProcessor);
    procedure setRenderer (This : in out SWTJOGLProcessor; renderer : Java_Object_Access);
    function isJOGL (This : in out SWTJOGLProcessor) return Boolean;
-   procedure isJOGL (This : in out SWTJOGLProcessor);
    procedure createSurface (This : in out SWTJOGLProcessor);
    procedure onSurfaceCreated (This : in out SWTJOGLProcessor);
    procedure onSurfaceChangedForEvent (This : in out SWTJOGLProcessor; event : Java_Object_Access);
@@ -57,7 +55,6 @@ package org.allbinary.graphics.threed.SWTJOGLProcessor_Package is
    procedure setCustom (This : in out SWTJOGLProcessor; width : Integer; height : Integer; ratio : Float);
    procedure setRatioProcessor (This : in out SWTJOGLProcessor; ratioProcessor : RatioProcessor_Access);
    function isPortraitRatioProcessor (This : in out SWTJOGLProcessor) return Boolean;
-   procedure isPortraitRatioProcessor (This : in out SWTJOGLProcessor);
    function charWidth (This : in out SWTJOGLProcessor; font : Font_Access; ch : Character) return Integer;
    procedure charWidth (This : in out SWTJOGLProcessor; font : Font_Access; ch : Character);
    function charsWidth (This : in out SWTJOGLProcessor; font : Font_Access; ch : Character_Array_Access; offset : Integer; length : Integer) return Integer;

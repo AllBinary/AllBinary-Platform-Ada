@@ -36,7 +36,7 @@ package body org.allbinary.business.user.commerce.money.payment.types.PaymentTyp
    function Create (basicPaymentType : BasicPaymentType_Access) return PaymentType_Access is
       This : constant PaymentType_Access := new PaymentType;
    begin
-      Initialize (This.all, basicPaymentType);
+      PaymentType_Package.Initialize (This.all, basicPaymentType);
       return This;
    end Create;
 
@@ -53,7 +53,7 @@ package body org.allbinary.business.user.commerce.money.payment.types.PaymentTyp
    function Create (basicPaymentType : BasicPaymentType_Access; paymentTransactionInterfaceFactoryInterface : PaymentTransactionInterfaceFactoryInterface_Access; paymentProcessorInterfaceFactoryInterface : PaymentProcessorInterfaceFactoryInterface_Access) return PaymentType_Access is
       This : constant PaymentType_Access := new PaymentType;
    begin
-      Initialize (This.all, basicPaymentType, paymentTransactionInterfaceFactoryInterface, paymentProcessorInterfaceFactoryInterface);
+      PaymentType_Package.Initialize (This.all, basicPaymentType, paymentTransactionInterfaceFactoryInterface, paymentProcessorInterfaceFactoryInterface);
       return This;
    end Create;
 
@@ -106,41 +106,6 @@ package body org.allbinary.business.user.commerce.money.payment.types.PaymentTyp
    function getBasicPaymentType (This : in out PaymentType) return BasicPaymentType_Access is
    begin
         return This.basicPaymentType;
-   end getBasicPaymentType;
-
-   procedure getPaymentTransactionInterfaceFactoryInterface (This : in out PaymentType) is
-      Java_Result : constant PaymentTransactionInterfaceFactoryInterface_Access := PaymentType'Class (This).getPaymentTransactionInterfaceFactoryInterface;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getPaymentTransactionInterfaceFactoryInterface;
-
-   procedure getPaymentProcessorInterfaceFactoryInterface (This : in out PaymentType) is
-      Java_Result : constant PaymentProcessorInterfaceFactoryInterface_Access := PaymentType'Class (This).getPaymentProcessorInterfaceFactoryInterface;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getPaymentProcessorInterfaceFactoryInterface;
-
-   procedure toVector (This : in out PaymentType) is
-      Java_Result : constant BasicArrayList_Access := PaymentType'Class (This).toVector;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toVector;
-
-   procedure toHashMap (This : in out PaymentType) is
-      Java_Result : constant HashMap_Access := PaymentType'Class (This).toHashMap;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toHashMap;
-
-   procedure getBasicPaymentType (This : in out PaymentType) is
-      Java_Result : constant BasicPaymentType_Access := PaymentType'Class (This).getBasicPaymentType;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getBasicPaymentType;
 
 end org.allbinary.business.user.commerce.money.payment.types.PaymentType_Package;

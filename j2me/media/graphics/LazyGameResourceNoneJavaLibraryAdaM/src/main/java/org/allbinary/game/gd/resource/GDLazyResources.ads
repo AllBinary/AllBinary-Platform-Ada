@@ -39,7 +39,6 @@ package org.allbinary.game.gd.resource.GDLazyResources_Package is
    procedure Initialize (This : in out GDLazyResources'Class);
    function Create return GDLazyResources_Access;
    function getInstance return GDLazyResources_Access;
-   procedure getInstance;
 
 end org.allbinary.game.gd.resource.GDLazyResources_Package;
 

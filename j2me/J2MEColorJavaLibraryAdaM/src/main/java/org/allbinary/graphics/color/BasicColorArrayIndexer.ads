@@ -24,6 +24,7 @@ with jsinterop.annotations.JsType_Package; use jsinterop.annotations.JsType_Pack
 with org.allbinary.util.CircularIndexUtil_Package; use org.allbinary.util.CircularIndexUtil_Package;
 with jsinterop.annotations.JsMethod_Package; use jsinterop.annotations.JsMethod_Package;
 with jsinterop.annotations.JsConstructor_Package; use jsinterop.annotations.JsConstructor_Package;
+with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
 
 package org.allbinary.graphics.color.BasicColorArrayIndexer_Package is
 
@@ -46,9 +47,7 @@ package org.allbinary.graphics.color.BasicColorArrayIndexer_Package is
    function Create (basicColorArray : BasicColor_Access_Array_Access) return BasicColorArrayIndexer_Access;
    procedure next (This : in out BasicColorArrayIndexer);
    function get (This : in out BasicColorArrayIndexer) return BasicColor_Access;
-   procedure get (This : in out BasicColorArrayIndexer);
    function getBasicColorArray (This : in out BasicColorArrayIndexer) return BasicColor_Access_Array_Access;
-   procedure getBasicColorArray (This : in out BasicColorArrayIndexer);
 
 end org.allbinary.graphics.color.BasicColorArrayIndexer_Package;
 

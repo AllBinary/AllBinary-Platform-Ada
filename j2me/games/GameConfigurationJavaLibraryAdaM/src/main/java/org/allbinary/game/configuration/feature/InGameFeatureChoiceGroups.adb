@@ -31,7 +31,7 @@ package body org.allbinary.game.configuration.feature.InGameFeatureChoiceGroups_
    function Create return InGameFeatureChoiceGroups_Access is
       This : constant InGameFeatureChoiceGroups_Access := new InGameFeatureChoiceGroups;
    begin
-      Initialize (This.all);
+      InGameFeatureChoiceGroups_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -54,27 +54,6 @@ package body org.allbinary.game.configuration.feature.InGameFeatureChoiceGroups_
    begin
         This.hashtable.put (name, list);
    end add;
-
-   procedure getExclusiveInstance is
-      Java_Result : constant InGameFeatureChoiceGroups_Access := getExclusiveInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getExclusiveInstance;
-
-   procedure getMultipleInstance is
-      Java_Result : constant InGameFeatureChoiceGroups_Access := getMultipleInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getMultipleInstance;
-
-   procedure get (This : in out InGameFeatureChoiceGroups) is
-      Java_Result : constant ABHashtable_Access := InGameFeatureChoiceGroups'Class (This).get;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end get;
 
 begin
    null;

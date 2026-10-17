@@ -28,7 +28,7 @@ package body org.allbinary.graphics.color.ColorUtil_Package is
    function Create return ColorUtil_Access is
       This : constant ColorUtil_Access := new ColorUtil;
    begin
-      Initialize (This.all);
+      ColorUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -53,13 +53,6 @@ package body org.allbinary.graphics.color.ColorUtil_Package is
         end if;
         return False;
    end isDark;
-
-   procedure getInstance is
-      Java_Result : constant ColorUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure isGreyishOrWhiteLike (This : in out ColorUtil; color : Color_Access) is
       Java_Result : constant Boolean := ColorUtil'Class (This).isGreyishOrWhiteLike (color);

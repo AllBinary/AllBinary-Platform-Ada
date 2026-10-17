@@ -37,7 +37,6 @@ package org.allbinary.media.graphics.geography.map.PathData_Package is
    procedure Initialize (This : in out PathData'Class);
    function Create return PathData_Access;
    function getInstance return PathData_Access;
-   procedure getInstance;
 
 end org.allbinary.media.graphics.geography.map.PathData_Package;
 

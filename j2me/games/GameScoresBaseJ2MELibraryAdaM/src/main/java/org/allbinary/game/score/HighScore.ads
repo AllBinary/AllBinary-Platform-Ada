@@ -49,20 +49,13 @@ package org.allbinary.game.score.HighScore_Package is
    procedure Initialize (This : in out HighScore'Class; id : Integer; name : Unbounded_String; gameInfo : GameInfo_Access; score : Long_Long_Integer);
    function Create (id : Integer; name : Unbounded_String; gameInfo : GameInfo_Access; score : Long_Long_Integer) return HighScore_Access;
    function getId (This : in out HighScore) return Integer;
-   procedure getId (This : in out HighScore);
    function getName (This : in out HighScore) return Unbounded_String;
-   procedure getName (This : in out HighScore);
    function getScore (This : in out HighScore) return Long_Long_Integer;
-   procedure getScore (This : in out HighScore);
    function getAsBytes (This : in out HighScore) return Short_Short_Integer_Array_Access;
-   procedure getAsBytes (This : in out HighScore);
    function getGameInfo (This : in out HighScore) return GameInfo_Access;
-   procedure getGameInfo (This : in out HighScore);
    function getScoreString (This : in out HighScore) return Unbounded_String;
-   procedure getScoreString (This : in out HighScore);
    procedure setName (This : in out HighScore; name : Unbounded_String);
    function toString (This : in out HighScore) return Unbounded_String;
-   procedure toString (This : in out HighScore);
 
 end org.allbinary.game.score.HighScore_Package;
 

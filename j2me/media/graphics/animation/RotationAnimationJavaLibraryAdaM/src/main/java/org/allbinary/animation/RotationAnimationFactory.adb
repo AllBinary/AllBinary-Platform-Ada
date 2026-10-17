@@ -40,7 +40,7 @@ package body org.allbinary.animation.RotationAnimationFactory_Package is
    function Create (totalAngle : Short_Integer; angleIncrement : Short_Integer) return RotationAnimationFactory_Access is
       This : constant RotationAnimationFactory_Access := new RotationAnimationFactory;
    begin
-      Initialize (This.all, totalAngle, angleIncrement);
+      RotationAnimationFactory_Package.Initialize (This.all, totalAngle, angleIncrement);
       return This;
    end Create;
 
@@ -60,13 +60,6 @@ package body org.allbinary.animation.RotationAnimationFactory_Package is
    begin
         null;
    end setInitialScale;
-
-   procedure createFactory is
-      Java_Result : constant RotationAnimationFactory_Access := createFactory;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end createFactory;
 
    procedure getInstance (This : in out RotationAnimationFactory; instanceId : Integer) is
       Java_Result : constant Animation_Access := RotationAnimationFactory'Class (This).getInstance (instanceId);

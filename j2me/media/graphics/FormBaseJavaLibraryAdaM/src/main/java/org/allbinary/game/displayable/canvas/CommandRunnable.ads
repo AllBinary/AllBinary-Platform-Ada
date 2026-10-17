@@ -26,6 +26,7 @@ with org.allbinary.graphics.displayable.MyCanvas_Package; use org.allbinary.grap
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.game.displayable.canvas.Runnable_Package; use org.allbinary.game.displayable.canvas.Runnable_Package;
+with org.allbinary.game.displayable.canvas.CommandFormInputProcessor_Package; use org.allbinary.game.displayable.canvas.CommandFormInputProcessor_Package;
 
 package org.allbinary.game.displayable.canvas.CommandRunnable_Package is
 

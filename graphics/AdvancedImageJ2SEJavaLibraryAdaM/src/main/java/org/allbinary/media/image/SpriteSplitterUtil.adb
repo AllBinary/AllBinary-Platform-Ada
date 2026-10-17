@@ -37,7 +37,7 @@ package body org.allbinary.media.image.SpriteSplitterUtil_Package is
    function Create return SpriteSplitterUtil_Access is
       This : constant SpriteSplitterUtil_Access := new SpriteSplitterUtil;
    begin
-      Initialize (This.all);
+      SpriteSplitterUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -159,13 +159,6 @@ package body org.allbinary.media.image.SpriteSplitterUtil_Package is
             end if;
         end loop;
    end process;
-
-   procedure getInstance is
-      Java_Result : constant SpriteSplitterUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

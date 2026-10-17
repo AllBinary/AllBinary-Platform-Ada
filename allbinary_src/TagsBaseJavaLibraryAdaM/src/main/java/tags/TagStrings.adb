@@ -29,7 +29,7 @@ package body tags.TagStrings_Package is
    function Create return TagStrings_Access is
       This : constant TagStrings_Access := new TagStrings;
    begin
-      Initialize (This.all);
+      TagStrings_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -37,13 +37,6 @@ package body tags.TagStrings_Package is
    function getInstance return TagStrings_Access is
    begin
         return TagStrings_Package.instance;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant TagStrings_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

@@ -88,12 +88,9 @@ package org.allbinary.data.tables.transform.info.TransformInfoEntity_Package is
    function getNames (This : in out TransformInfoEntity; storeName : Unbounded_String) return BasicArrayList_Access;
    procedure getNames (This : in out TransformInfoEntity; storeName : Unbounded_String);
    function createTableStatement (This : in out TransformInfoEntity) return Unbounded_String;
-   procedure createTableStatement (This : in out TransformInfoEntity);
    function createTable (This : in out TransformInfoEntity) return Unbounded_String;
-   procedure createTable (This : in out TransformInfoEntity);
    procedure update (This : in out TransformInfoEntity; updatedValues : HashMap_Access);
    function dropTable (This : in out TransformInfoEntity) return Unbounded_String;
-   procedure dropTable (This : in out TransformInfoEntity);
 
 end org.allbinary.data.tables.transform.info.TransformInfoEntity_Package;
 

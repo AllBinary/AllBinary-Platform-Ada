@@ -64,35 +64,22 @@ package admin.tags.TableTag_Package is
    function Create return TableTag_Access;
    procedure setIsSelected (This : in out TableTag; enabled : Unbounded_String);
    function isEnabled (This : in out TableTag) return Boolean;
-   procedure isEnabled (This : in out TableTag);
    procedure setTagHelperFactory (This : in out TableTag; tagHelperFactoryInterface : TagHelperFactoryInterface_Access);
    function getTagHelperFactoryInterface (This : in out TableTag) return TagHelperFactoryInterface_Access;
-   procedure getTagHelperFactoryInterface (This : in out TableTag);
    procedure setTagRequestHelperFactory (This : in out TableTag; tagHelperFactoryInterface : TagHelperFactoryInterface_Access);
    function getTagRequestHelperFactoryInterface (This : in out TableTag) return TagHelperFactoryInterface_Access;
-   procedure getTagRequestHelperFactoryInterface (This : in out TableTag);
    procedure setCurrent (This : in out TableTag; current : Integer);
    function getCurrent (This : in out TableTag) return Integer;
-   procedure getCurrent (This : in out TableTag);
    procedure setTotal (This : in out TableTag; total : Integer);
    function getTotal (This : in out TableTag) return Integer;
-   procedure getTotal (This : in out TableTag);
    function drop (This : in out TableTag) return Unbounded_String;
-   procedure drop (This : in out TableTag);
    function create (This : in out TableTag) return Unbounded_String;
-   procedure create (This : in out TableTag);
    function restore (This : in out TableTag) return Unbounded_String;
-   procedure restore (This : in out TableTag);
    function backup (This : in out TableTag) return Unbounded_String;
-   procedure backup (This : in out TableTag);
    function insert (This : in out TableTag) return Unbounded_String;
-   procedure insert (This : in out TableTag);
    function delete (This : in out TableTag) return Unbounded_String;
-   procedure delete (This : in out TableTag);
    function update (This : in out TableTag) return Unbounded_String;
-   procedure update (This : in out TableTag);
    function doStartTag (This : in out TableTag) return Integer;
-   procedure doStartTag (This : in out TableTag);
 
 end admin.tags.TableTag_Package;
 

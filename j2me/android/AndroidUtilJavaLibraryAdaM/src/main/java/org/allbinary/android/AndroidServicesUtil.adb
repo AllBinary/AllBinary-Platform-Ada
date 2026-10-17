@@ -33,7 +33,7 @@ package body org.allbinary.android.AndroidServicesUtil_Package is
    function Create return AndroidServicesUtil_Access is
       This : constant AndroidServicesUtil_Access := new AndroidServicesUtil;
    begin
-      Initialize (This.all);
+      AndroidServicesUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -69,13 +69,6 @@ package body org.allbinary.android.AndroidServicesUtil_Package is
         This.logUtil.putF (This.SERVICE_NOT_FOUND_RUNNING & name, This'Unchecked_Access, This.IS_SERVICE_RUNNING);
         return False;
    end isServiceRunning;
-
-   procedure getInstance is
-      Java_Result : constant AndroidServicesUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure isServiceRunning (This : in out AndroidServicesUtil; name : Unbounded_String) is
       Java_Result : constant Boolean := AndroidServicesUtil'Class (This).isServiceRunning (name);

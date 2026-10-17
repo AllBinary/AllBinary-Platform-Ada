@@ -40,7 +40,6 @@ package org.allbinary.logic.system.hardware.components.linux.Unknown_Package is
    function compareTo (This : in out Unknown; componentInterface : HardwareComponentInterface_Access) return Boolean;
    procedure compareTo (This : in out Unknown; componentInterface : HardwareComponentInterface_Access);
    function toString (This : in out Unknown) return Unbounded_String;
-   procedure toString (This : in out Unknown);
 
 end org.allbinary.logic.system.hardware.components.linux.Unknown_Package;
 

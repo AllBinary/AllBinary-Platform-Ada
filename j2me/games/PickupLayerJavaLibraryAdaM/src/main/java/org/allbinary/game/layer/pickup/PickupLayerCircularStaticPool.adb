@@ -31,7 +31,7 @@ package body org.allbinary.game.layer.pickup.PickupLayerCircularStaticPool_Packa
    function Create return PickupLayerCircularStaticPool_Access is
       This : constant PickupLayerCircularStaticPool_Access := new PickupLayerCircularStaticPool;
    begin
-      Initialize (This.all);
+      PickupLayerCircularStaticPool_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -49,13 +49,6 @@ package body org.allbinary.game.layer.pickup.PickupLayerCircularStaticPool_Packa
         pickupLayer.init (pickedUpLayerInterfaceFactoryInterface, pickedUpLayerInterfaceFactoryInterface.getAnimationInterface);
         return pickupLayer;
    end getInstanceXYZ;
-
-   procedure getInstance is
-      Java_Result : constant PickupLayerCircularStaticPool_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure getInstanceXYZ (This : in out PickupLayerCircularStaticPool; pickedUpLayerInterfaceFactoryInterface : PickedUpLayerInterfaceFactoryInterface_Access; x : Integer; y : Integer; z : Integer) is
       Java_Result : constant PickedUpLayerInterface_Access := PickupLayerCircularStaticPool'Class (This).getInstanceXYZ (pickedUpLayerInterfaceFactoryInterface, x, y, z);

@@ -35,6 +35,7 @@ with org.allbinary.graphics.paint.InitUpdatePaintable_Package; use org.allbinary
 with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package; use org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package;
 
 package org.allbinary.game.displayable.canvas.StartIntermissionPaintable_Package is
 
@@ -84,7 +85,6 @@ package org.allbinary.game.displayable.canvas.StartIntermissionPaintable_Package
    procedure update (This : in out StartIntermissionPaintable);
    procedure setBasicColorP (This : in out StartIntermissionPaintable; basicColor : BasicColor_Access);
    function getBasicColorP (This : in out StartIntermissionPaintable) return BasicColor_Access;
-   procedure getBasicColorP (This : in out StartIntermissionPaintable);
 
 end org.allbinary.game.displayable.canvas.StartIntermissionPaintable_Package;
 

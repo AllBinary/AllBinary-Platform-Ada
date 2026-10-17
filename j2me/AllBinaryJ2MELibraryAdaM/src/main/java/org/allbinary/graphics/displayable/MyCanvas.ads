@@ -36,6 +36,8 @@ with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArra
 with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.util.ABStack_Package; use org.allbinary.util.ABStack_Package;
 with org.allbinary.graphics.displayable.DisplayableInterface_Package; use org.allbinary.graphics.displayable.DisplayableInterface_Package;
+with org.allbinary.graphics.displayable.CanvasStrings_Package; use org.allbinary.graphics.displayable.CanvasStrings_Package;
+with org.allbinary.graphics.displayable.DisplayInfoSingleton_Package; use org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
 
 package org.allbinary.graphics.displayable.MyCanvas_Package is
 
@@ -74,7 +76,6 @@ package org.allbinary.graphics.displayable.MyCanvas_Package is
    procedure setFullScreenMode (This : in out MyCanvas; mode : Boolean);
    procedure sizeChanged (This : in out MyCanvas; w : Integer; h : Integer);
    function getCommandStack (This : in out MyCanvas) return ABStack_Access;
-   procedure getCommandStack (This : in out MyCanvas);
    function isCommand (This : in out MyCanvas; command : Command_Access) return Boolean;
    procedure isCommand (This : in out MyCanvas; command : Command_Access);
    procedure addCommand (This : in out MyCanvas; command : Command_Access);
@@ -82,9 +83,7 @@ package org.allbinary.graphics.displayable.MyCanvas_Package is
    procedure removeAllCommands (This : in out MyCanvas);
    procedure setCommandListener (This : in out MyCanvas; l : CommandListener_Access);
    function getCustomCommandListener (This : in out MyCanvas) return CommandListener_Access;
-   procedure getCustomCommandListener (This : in out MyCanvas);
    function isPaused (This : in out MyCanvas) return Boolean;
-   procedure isPaused (This : in out MyCanvas);
    procedure removePauseCommand (This : in out MyCanvas);
    procedure pause (This : in out MyCanvas);
    procedure unPause (This : in out MyCanvas);

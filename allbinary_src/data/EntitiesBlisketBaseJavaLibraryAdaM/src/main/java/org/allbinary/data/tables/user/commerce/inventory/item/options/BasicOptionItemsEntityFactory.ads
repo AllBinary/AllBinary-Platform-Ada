@@ -22,6 +22,7 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.data.tables.user.commerce.inventory.item.options.BasicOptionItemsEntity_Package; use org.allbinary.data.tables.user.commerce.inventory.item.options.BasicOptionItemsEntity_Package;
 
 package org.allbinary.data.tables.user.commerce.inventory.item.options.BasicOptionItemsEntityFactory_Package is
 
@@ -41,9 +42,7 @@ package org.allbinary.data.tables.user.commerce.inventory.item.options.BasicOpti
    procedure Initialize (This : in out BasicOptionItemsEntityFactory'Class);
    function Create return BasicOptionItemsEntityFactory_Access;
    function getInstance return BasicOptionItemsEntityFactory_Access;
-   procedure getInstance;
    function getBasicOptionItemsEntityInstance (This : in out BasicOptionItemsEntityFactory) return BasicOptionItemsEntity_Access;
-   procedure getBasicOptionItemsEntityInstance (This : in out BasicOptionItemsEntityFactory);
 
 end org.allbinary.data.tables.user.commerce.inventory.item.options.BasicOptionItemsEntityFactory_Package;
 

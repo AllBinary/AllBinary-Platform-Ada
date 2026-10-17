@@ -28,7 +28,7 @@ package body org.allbinary.game.midlet.LicenseCheckRunnableFactory_Package is
    function Create return LicenseCheckRunnableFactory_Access is
       This : constant LicenseCheckRunnableFactory_Access := new LicenseCheckRunnableFactory;
    begin
-      Initialize (This.all);
+      LicenseCheckRunnableFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

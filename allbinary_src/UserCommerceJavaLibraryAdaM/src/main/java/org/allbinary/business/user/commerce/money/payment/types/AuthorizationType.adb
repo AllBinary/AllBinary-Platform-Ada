@@ -31,20 +31,13 @@ package body org.allbinary.business.user.commerce.money.payment.types.Authorizat
    function Create (name : Unbounded_String) return AuthorizationType_Access is
       This : constant AuthorizationType_Access := new AuthorizationType;
    begin
-      Initialize (This.all, name);
+      AuthorizationType_Package.Initialize (This.all, name);
       return This;
    end Create;
 
    function toString (This : in out AuthorizationType) return Unbounded_String is
    begin
         return This.name;
-   end toString;
-
-   procedure toString (This : in out AuthorizationType) is
-      Java_Result : constant Unbounded_String := AuthorizationType'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end toString;
 
 end org.allbinary.business.user.commerce.money.payment.types.AuthorizationType_Package;

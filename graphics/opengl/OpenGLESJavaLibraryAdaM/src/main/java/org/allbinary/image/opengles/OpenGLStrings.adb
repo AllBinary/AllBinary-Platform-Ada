@@ -18,7 +18,7 @@ package body org.allbinary.image.opengles.OpenGLStrings_Package is
    function Create return OpenGLStrings_Access is
       This : constant OpenGLStrings_Access := new OpenGLStrings;
    begin
-      Initialize (This.all);
+      OpenGLStrings_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -26,13 +26,6 @@ package body org.allbinary.image.opengles.OpenGLStrings_Package is
    function getInstance return OpenGLStrings_Access is
    begin
         return OpenGLStrings_Package.instance;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant OpenGLStrings_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

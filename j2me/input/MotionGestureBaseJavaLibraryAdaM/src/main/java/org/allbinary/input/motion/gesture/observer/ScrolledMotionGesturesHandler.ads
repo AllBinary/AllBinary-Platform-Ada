@@ -23,6 +23,8 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbinary.logic.util.event.AllBinaryEventObject_Package;
 with org.allbinary.logic.util.event.EventListenerInterface_Package; use org.allbinary.logic.util.event.EventListenerInterface_Package;
 with org.allbinary.logic.util.event.handler.BasicEventHandler_Package; use org.allbinary.logic.util.event.handler.BasicEventHandler_Package;
+with org.allbinary.input.motion.gesture.observer.BaseMotionGestureEventListener_Package; use org.allbinary.input.motion.gesture.observer.BaseMotionGestureEventListener_Package;
+with org.allbinary.input.motion.gesture.observer.MotionGestureEvent_Package; use org.allbinary.input.motion.gesture.observer.MotionGestureEvent_Package;
 
 package org.allbinary.input.motion.gesture.observer.ScrolledMotionGesturesHandler_Package is
 
@@ -41,7 +43,6 @@ package org.allbinary.input.motion.gesture.observer.ScrolledMotionGesturesHandle
    procedure Initialize (This : in out ScrolledMotionGesturesHandler'Class);
    function Create return ScrolledMotionGesturesHandler_Access;
    function getInstance return ScrolledMotionGesturesHandler_Access;
-   procedure getInstance;
    procedure process (This : in out ScrolledMotionGesturesHandler; eventObject : AllBinaryEventObject_Access; eventListenerInterface : EventListenerInterface_Access);
 
 end org.allbinary.input.motion.gesture.observer.ScrolledMotionGesturesHandler_Package;

@@ -39,19 +39,12 @@ package org.allbinary.view.ViewPosition_Package is
    procedure Initialize (This : in out ViewPosition'Class; x : Integer; y : Integer; z : Integer);
    function Create (x : Integer; y : Integer; z : Integer) return ViewPosition_Access;
    function getInstanceD return ViewPosition_Access;
-   procedure getInstanceD;
    function getX (This : in out ViewPosition) return Integer;
-   procedure getX (This : in out ViewPosition);
    function getY (This : in out ViewPosition) return Integer;
-   procedure getY (This : in out ViewPosition);
    function getZ (This : in out ViewPosition) return Integer;
-   procedure getZ (This : in out ViewPosition);
    function getX2 (This : in out ViewPosition) return Integer;
-   procedure getX2 (This : in out ViewPosition);
    function getY2 (This : in out ViewPosition) return Integer;
-   procedure getY2 (This : in out ViewPosition);
    function getZ2 (This : in out ViewPosition) return Integer;
-   procedure getZ2 (This : in out ViewPosition);
    procedure setAllbinaryLayer (This : in out ViewPosition; allbinaryLayer : Java_Object_Access);
 
 end org.allbinary.view.ViewPosition_Package;

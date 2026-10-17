@@ -29,7 +29,7 @@ package body org.allbinary.game.configuration.feature.TouchFeature_Package is
    function Create (name : Unbounded_String) return TouchFeature_Access is
       This : constant TouchFeature_Access := new TouchFeature;
    begin
-      Initialize (This.all, name);
+      TouchFeature_Package.Initialize (This.all, name);
       return This;
    end Create;
 

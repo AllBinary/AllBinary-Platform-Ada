@@ -63,21 +63,13 @@ package admin.taghelpers.PaymentHelper_Package is
    function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return PaymentHelper_Access;
    procedure getFormData (This : in out PaymentHelper);
    function insert (This : in out PaymentHelper) return Unbounded_String;
-   procedure insert (This : in out PaymentHelper);
    function select_Id (This : in out PaymentHelper) return Unbounded_String;
-   procedure select_Id (This : in out PaymentHelper);
    function delete (This : in out PaymentHelper) return Unbounded_String;
-   procedure delete (This : in out PaymentHelper);
    function drop (This : in out PaymentHelper) return Unbounded_String;
-   procedure drop (This : in out PaymentHelper);
    function create (This : in out PaymentHelper) return Unbounded_String;
-   procedure create (This : in out PaymentHelper);
    function restore (This : in out PaymentHelper) return Unbounded_String;
-   procedure restore (This : in out PaymentHelper);
    function backup (This : in out PaymentHelper) return Unbounded_String;
-   procedure backup (This : in out PaymentHelper);
    function update (This : in out PaymentHelper) return Unbounded_String;
-   procedure update (This : in out PaymentHelper);
 
 end admin.taghelpers.PaymentHelper_Package;
 

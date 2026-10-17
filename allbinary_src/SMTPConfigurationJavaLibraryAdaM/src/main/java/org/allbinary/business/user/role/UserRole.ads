@@ -22,6 +22,7 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.io.Serializable_Package; use java.io.Serializable_Package;
 with org.allbinary.business.user.UserFactoryInterface_Package; use org.allbinary.business.user.UserFactoryInterface_Package;
+with org.allbinary.business.user.role.BasicUserRole_Package; use org.allbinary.business.user.role.BasicUserRole_Package;
 
 package org.allbinary.business.user.role.UserRole_Package is
 
@@ -40,15 +41,10 @@ package org.allbinary.business.user.role.UserRole_Package is
    procedure Initialize (This : in out UserRole'Class; aBasicUserRole : BasicUserRole_Access; aUserFactoryInterface : UserFactoryInterface_Access);
    function Create (aBasicUserRole : BasicUserRole_Access; aUserFactoryInterface : UserFactoryInterface_Access) return UserRole_Access;
    function toString (This : in out UserRole) return Unbounded_String;
-   procedure toString (This : in out UserRole);
    function getBasicUserRole (This : in out UserRole) return BasicUserRole_Access;
-   procedure getBasicUserRole (This : in out UserRole);
    function getUserFactory (This : in out UserRole) return UserFactoryInterface_Access;
-   procedure getUserFactory (This : in out UserRole);
    function getSessionTimeout (This : in out UserRole) return Long_Long_Integer;
-   procedure getSessionTimeout (This : in out UserRole);
    function getSessionInactivityTimeout (This : in out UserRole) return Long_Long_Integer;
-   procedure getSessionInactivityTimeout (This : in out UserRole);
 
 end org.allbinary.business.user.role.UserRole_Package;
 

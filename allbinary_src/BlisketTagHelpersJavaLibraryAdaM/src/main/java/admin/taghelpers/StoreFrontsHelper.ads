@@ -65,15 +65,10 @@ package admin.taghelpers.StoreFrontsHelper_Package is
    procedure Initialize (This : in out StoreFrontsHelper'Class; hashMap : HashMap_Access; pageContext : PageContext_Access);
    function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return StoreFrontsHelper_Access;
    function drop (This : in out StoreFrontsHelper) return Unbounded_String;
-   procedure drop (This : in out StoreFrontsHelper);
    function create (This : in out StoreFrontsHelper) return Unbounded_String;
-   procedure create (This : in out StoreFrontsHelper);
    function restore (This : in out StoreFrontsHelper) return Unbounded_String;
-   procedure restore (This : in out StoreFrontsHelper);
    function backup (This : in out StoreFrontsHelper) return Unbounded_String;
-   procedure backup (This : in out StoreFrontsHelper);
    function generateSelect (This : in out StoreFrontsHelper) return Unbounded_String;
-   procedure generateSelect (This : in out StoreFrontsHelper);
 
 end admin.taghelpers.StoreFrontsHelper_Package;
 

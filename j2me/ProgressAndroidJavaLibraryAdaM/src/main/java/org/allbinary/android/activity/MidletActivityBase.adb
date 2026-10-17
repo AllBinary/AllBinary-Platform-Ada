@@ -29,7 +29,7 @@ package body org.allbinary.android.activity.MidletActivityBase_Package is
    function Create return MidletActivityBase_Access is
       This : constant MidletActivityBase_Access := new MidletActivityBase;
    begin
-      Initialize (This.all);
+      MidletActivityBase_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -86,20 +86,6 @@ package body org.allbinary.android.activity.MidletActivityBase_Package is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end onGenericMotionEvent;
-
-   procedure getRootView (This : in out MidletActivityBase) is
-      Java_Result : constant View_Access := MidletActivityBase'Class (This).getRootView;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getRootView;
-
-   procedure getView (This : in out MidletActivityBase) is
-      Java_Result : constant View_Access := MidletActivityBase'Class (This).getView;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getView;
 
    procedure onGenericMotionEvent (This : in out MidletActivityBase; event : MotionEvent_Access) is
       Java_Result : constant Boolean := MidletActivityBase'Class (This).onGenericMotionEvent (event);

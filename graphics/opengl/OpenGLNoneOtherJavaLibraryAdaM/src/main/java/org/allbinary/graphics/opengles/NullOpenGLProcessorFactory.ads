@@ -8,6 +8,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
+with org.allbinary.graphics.opengles.OpenGLProcessor_Package; use org.allbinary.graphics.opengles.OpenGLProcessor_Package;
 
 package org.allbinary.graphics.opengles.NullOpenGLProcessorFactory_Package is
 
@@ -23,7 +24,6 @@ package org.allbinary.graphics.opengles.NullOpenGLProcessorFactory_Package is
    procedure Initialize (This : in out NullOpenGLProcessorFactory'Class);
    function Create return NullOpenGLProcessorFactory_Access;
    function getInstance return OpenGLProcessor_Access;
-   procedure getInstance;
 
 end org.allbinary.graphics.opengles.NullOpenGLProcessorFactory_Package;
 

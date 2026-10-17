@@ -57,11 +57,8 @@ package admin.taghelpers.WorkFlowRequestHelper_Package is
    procedure Initialize (This : in out WorkFlowRequestHelper'Class; hashMap : HashMap_Access; pageContext : PageContext_Access);
    function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return WorkFlowRequestHelper_Access;
    function delete (This : in out WorkFlowRequestHelper) return Unbounded_String;
-   procedure delete (This : in out WorkFlowRequestHelper);
    function insert (This : in out WorkFlowRequestHelper) return Unbounded_String;
-   procedure insert (This : in out WorkFlowRequestHelper);
    function update (This : in out WorkFlowRequestHelper) return Unbounded_String;
-   procedure update (This : in out WorkFlowRequestHelper);
 
 end admin.taghelpers.WorkFlowRequestHelper_Package;
 

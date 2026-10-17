@@ -34,6 +34,9 @@ with org.allbinary.graphics.font.UpdateMyFontProcessor_Package; use org.allbinar
 with org.allbinary.graphics.paint.Paintable_Package; use org.allbinary.graphics.paint.Paintable_Package;
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbinary.logic.util.event.AllBinaryEventObject_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.game.score.NullHighScoresSingletonFactory_Package; use org.allbinary.game.score.NullHighScoresSingletonFactory_Package;
+with org.allbinary.game.score.HighScores_Package; use org.allbinary.game.score.HighScores_Package;
+with org.allbinary.game.score.HighScore_Package; use org.allbinary.game.score.HighScore_Package;
 
 package org.allbinary.game.score.HighScoresPaintable_Package is
 
@@ -71,7 +74,6 @@ package org.allbinary.game.score.HighScoresPaintable_Package is
    procedure paint (This : in out HighScoresPaintable; graphics : Graphics_Access);
    procedure setBasicColorP (This : in out HighScoresPaintable; basicColor : BasicColor_Access);
    function getBasicColorP (This : in out HighScoresPaintable) return BasicColor_Access;
-   procedure getBasicColorP (This : in out HighScoresPaintable);
    procedure setHighScores (This : in out HighScoresPaintable; highScores : HighScores_Access);
 
 end org.allbinary.game.score.HighScoresPaintable_Package;

@@ -46,7 +46,6 @@ package org.allbinary.logic.math.MathData_Package is
    procedure Initialize (This : in out MathData'Class);
    function Create return MathData_Access;
    function getInstance return MathData_Access;
-   procedure getInstance;
 
 end org.allbinary.logic.math.MathData_Package;
 

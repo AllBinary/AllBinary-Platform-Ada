@@ -34,7 +34,7 @@ package body views.business.context.modules.storefront.customizer.generic_Id.pag
    function Create (transformInfoInterface : TransformInfoInterface_Access) return PageValidationView_Access is
       This : constant PageValidationView_Access := new PageValidationView;
    begin
-      Initialize (This.all, transformInfoInterface);
+      PageValidationView_Package.Initialize (This.all, transformInfoInterface);
       return This;
    end Create;
 
@@ -191,27 +191,6 @@ package body views.business.context.modules.storefront.customizer.generic_Id.pag
    begin
         return null;
    end toValidationInfoNode;
-
-   procedure isValid (This : in out PageValidationView) is
-      Java_Result : constant Boolean := PageValidationView'Class (This).isValid;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isValid;
-
-   procedure validationInfo (This : in out PageValidationView) is
-      Java_Result : constant Unbounded_String := PageValidationView'Class (This).validationInfo;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end validationInfo;
-
-   procedure toValidationInfoDoc (This : in out PageValidationView) is
-      Java_Result : constant Document_Access := PageValidationView'Class (This).toValidationInfoDoc;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toValidationInfoDoc;
 
    procedure toValidationInfoNode (This : in out PageValidationView; document : Document_Access) is
       Java_Result : constant Node_Access := PageValidationView'Class (This).toValidationInfoNode (document);

@@ -37,7 +37,6 @@ package org.allbinary.animation.AnimationEventHandler_Package is
    procedure Initialize (This : in out AnimationEventHandler'Class);
    function Create return AnimationEventHandler_Access;
    function getInstance return AnimationEventHandler_Access;
-   procedure getInstance;
 
 end org.allbinary.animation.AnimationEventHandler_Package;
 

@@ -30,20 +30,13 @@ package body org.allbinary.input.motion.gesture.configuration.MotionGestureConfi
    function Create return MotionGestureConfigurationFactory_Access is
       This : constant MotionGestureConfigurationFactory_Access := new MotionGestureConfigurationFactory;
    begin
-      Initialize (This.all);
+      MotionGestureConfigurationFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
    function getInstance return MotionGestureConfiguration_Access is
    begin
         return MotionGestureConfigurationFactory_Package.config;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant MotionGestureConfiguration_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

@@ -36,16 +36,9 @@ package body org.allbinary.logic.visual.dhtml.style.css.property.color.backgroun
    function Create return BackgroundColorData_Access is
       This : constant BackgroundColorData_Access := new BackgroundColorData;
    begin
-      Initialize (This.all);
+      BackgroundColorData_Package.Initialize (This.all);
       return This;
    end Create;
-
-   procedure getInstance is
-      Java_Result : constant BackgroundColorData_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

@@ -28,7 +28,7 @@ package body org.allbinary.thread.BaseImageLoadingProcessor_Package is
    function Create return BaseImageLoadingProcessor_Access is
       This : constant BaseImageLoadingProcessor_Access := new BaseImageLoadingProcessor;
    begin
-      Initialize (This.all);
+      BaseImageLoadingProcessor_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -42,13 +42,6 @@ package body org.allbinary.thread.BaseImageLoadingProcessor_Package is
    begin
         null;
    end runTask;
-
-   procedure getInstance is
-      Java_Result : constant BaseImageLoadingProcessor_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

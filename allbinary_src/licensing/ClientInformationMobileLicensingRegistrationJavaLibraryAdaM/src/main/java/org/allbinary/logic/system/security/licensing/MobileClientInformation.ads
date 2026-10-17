@@ -26,6 +26,7 @@ with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.Com
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
 with org.allbinary.logic.system.security.licensing.AbeClientInformation_Package; use org.allbinary.logic.system.security.licensing.AbeClientInformation_Package;
+with org.allbinary.logic.system.security.licensing.PartnerIdentifierFileUtil_Package; use org.allbinary.logic.system.security.licensing.PartnerIdentifierFileUtil_Package;
 
 package org.allbinary.logic.system.security.licensing.MobileClientInformation_Package is
 
@@ -47,7 +48,6 @@ package org.allbinary.logic.system.security.licensing.MobileClientInformation_Pa
    procedure Initialize (This : in out MobileClientInformation'Class; name : Unbounded_String; version : Unbounded_String; specialName : Unbounded_String; shortName : Unbounded_String);
    function Create (name : Unbounded_String; version : Unbounded_String; specialName : Unbounded_String; shortName : Unbounded_String) return MobileClientInformation_Access;
    function toHashtable (This : in out MobileClientInformation) return ABHashtable_Access;
-   procedure toHashtable (This : in out MobileClientInformation);
 
 end org.allbinary.logic.system.security.licensing.MobileClientInformation_Package;
 

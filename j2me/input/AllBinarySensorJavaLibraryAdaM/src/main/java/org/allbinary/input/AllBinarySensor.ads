@@ -49,9 +49,7 @@ package org.allbinary.input.AllBinarySensor_Package is
    procedure update (This : in out AllBinarySensor);
    procedure setMax (max : Integer);
    function getMax return Integer;
-   procedure getMax;
    function getId (This : in out AllBinarySensor) return Integer;
-   procedure getId (This : in out AllBinarySensor);
    procedure shutdown (This : in out AllBinarySensor);
    procedure onSensorChange (This : in out AllBinarySensor);
 

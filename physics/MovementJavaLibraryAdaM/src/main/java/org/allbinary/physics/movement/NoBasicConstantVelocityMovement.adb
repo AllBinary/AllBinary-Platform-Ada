@@ -29,7 +29,7 @@ package body org.allbinary.physics.movement.NoBasicConstantVelocityMovement_Pack
    function Create return NoBasicConstantVelocityMovement_Access is
       This : constant NoBasicConstantVelocityMovement_Access := new NoBasicConstantVelocityMovement;
    begin
-      Initialize (This.all);
+      NoBasicConstantVelocityMovement_Package.Initialize (This.all);
       return This;
    end Create;
 

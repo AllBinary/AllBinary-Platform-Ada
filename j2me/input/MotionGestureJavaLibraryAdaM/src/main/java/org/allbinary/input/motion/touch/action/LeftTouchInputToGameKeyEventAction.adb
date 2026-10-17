@@ -37,16 +37,9 @@ package body org.allbinary.input.motion.touch.action.LeftTouchInputToGameKeyEven
    function Create return LeftTouchInputToGameKeyEventAction_Access is
       This : constant LeftTouchInputToGameKeyEventAction_Access := new LeftTouchInputToGameKeyEventAction;
    begin
-      Initialize (This.all);
+      LeftTouchInputToGameKeyEventAction_Package.Initialize (This.all);
       return This;
    end Create;
-
-   procedure getInstance is
-      Java_Result : constant GameKeyCompleteMotionGestureInputEvent_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

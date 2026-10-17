@@ -28,7 +28,7 @@ package body org.allbinary.game.score.HighScoresCanvasChangeLevelInputProcessorF
    function Create return HighScoresCanvasChangeLevelInputProcessorFactory_Access is
       This : constant HighScoresCanvasChangeLevelInputProcessorFactory_Access := new HighScoresCanvasChangeLevelInputProcessorFactory;
    begin
-      Initialize (This.all);
+      HighScoresCanvasChangeLevelInputProcessorFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

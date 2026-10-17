@@ -16,7 +16,7 @@ package body org.allbinary.graphics.form.item.ImageItem_Package is
    function Create return ImageItem_Access is
       This : constant ImageItem_Access := new ImageItem;
    begin
-      Initialize (This.all);
+      ImageItem_Package.Initialize (This.all);
       return This;
    end Create;
 

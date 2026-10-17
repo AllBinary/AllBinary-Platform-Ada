@@ -20,20 +20,22 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.game.configuration.event_Case.ChangedGameFeatureListener_Package; use org.allbinary.game.configuration.event_Case.ChangedGameFeatureListener_Package;
-with org.allbinary.game.configuration.event_Case.GameInitializedEvent_Package; use org.allbinary.game.configuration.event_Case.GameInitializedEvent_Package;
-with org.allbinary.game.configuration.event_Case.GameInitializedEventHandler_Package; use org.allbinary.game.configuration.event_Case.GameInitializedEventHandler_Package;
+with org.allbinary.game.configuration.event.ChangedGameFeatureListener_Package; use org.allbinary.game.configuration.event.ChangedGameFeatureListener_Package;
+with org.allbinary.game.configuration.event.GameInitializedEvent_Package; use org.allbinary.game.configuration.event.GameInitializedEvent_Package;
+with org.allbinary.game.configuration.event.GameInitializedEventHandler_Package; use org.allbinary.game.configuration.event.GameInitializedEventHandler_Package;
 with org.allbinary.game.configuration.feature.Features_Package; use org.allbinary.game.configuration.feature.Features_Package;
 with org.allbinary.game.configuration.feature.MainFeatureFactory_Package; use org.allbinary.game.configuration.feature.MainFeatureFactory_Package;
 with org.allbinary.game.resource.ResourceLoadingLevelFactory_Package; use org.allbinary.game.resource.ResourceLoadingLevelFactory_Package;
 with org.allbinary.graphics.displayable.MyCanvas_Package; use org.allbinary.graphics.displayable.MyCanvas_Package;
 with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package; use org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+with org.allbinary.game.init.GameInitializationInterface_Package; use org.allbinary.game.init.GameInitializationInterface_Package;
+with org.allbinary.game.init.BasicBuildGameInitializerFactory_Package; use org.allbinary.game.init.BasicBuildGameInitializerFactory_Package;
 
 package org.allbinary.game.init.GameInitializationUtil_Package is
 
-   package ChangedGameFeatureListener_Package renames Standard.org.allbinary.game.configuration.event_Case.ChangedGameFeatureListener_Package;
-   package GameInitializedEvent_Package renames Standard.org.allbinary.game.configuration.event_Case.GameInitializedEvent_Package;
-   package GameInitializedEventHandler_Package renames Standard.org.allbinary.game.configuration.event_Case.GameInitializedEventHandler_Package;
+   package ChangedGameFeatureListener_Package renames Standard.org.allbinary.game.configuration.event.ChangedGameFeatureListener_Package;
+   package GameInitializedEvent_Package renames Standard.org.allbinary.game.configuration.event.GameInitializedEvent_Package;
+   package GameInitializedEventHandler_Package renames Standard.org.allbinary.game.configuration.event.GameInitializedEventHandler_Package;
    package Features_Package renames Standard.org.allbinary.game.configuration.feature.Features_Package;
    package MainFeatureFactory_Package renames Standard.org.allbinary.game.configuration.feature.MainFeatureFactory_Package;
    package ResourceLoadingLevelFactory_Package renames Standard.org.allbinary.game.resource.ResourceLoadingLevelFactory_Package;
@@ -55,7 +57,6 @@ package org.allbinary.game.init.GameInitializationUtil_Package is
    procedure initDemo (This : in out GameInitializationUtil; abeClientInformation : AbeClientInformationInterface_Access; canvas : MyCanvas_Access; gameInitializationInterfaceFactoryInterface : BasicBuildGameInitializerFactory_Access);
    procedure initGame (This : in out GameInitializationUtil; abeClientInformation : AbeClientInformationInterface_Access; canvas : MyCanvas_Access; gameInitializationInterfaceFactoryInterface : BasicBuildGameInitializerFactory_Access);
    function getInstance return GameInitializationUtil_Access;
-   procedure getInstance;
 
 end org.allbinary.game.init.GameInitializationUtil_Package;
 

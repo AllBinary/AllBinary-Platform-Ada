@@ -23,6 +23,9 @@ with AllBinary_Java; use AllBinary_Java;
 --  with java.awt.image.BufferedImage_Package; use java.awt.image.BufferedImage_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.media.image.ImageUtil_Package; use org.allbinary.media.image.ImageUtil_Package;
+with org.allbinary.media.image.ImageProcessorInput_Package; use org.allbinary.media.image.ImageProcessorInput_Package;
+with org.allbinary.media.image.ImageProcessedVisitor_Package; use org.allbinary.media.image.ImageProcessedVisitor_Package;
 
 package org.allbinary.media.image.CanvasExpandUtil_Package is
 
@@ -43,7 +46,6 @@ package org.allbinary.media.image.CanvasExpandUtil_Package is
    procedure Initialize (This : in out CanvasExpandUtil'Class);
    function Create return CanvasExpandUtil_Access;
    function getInstance return CanvasExpandUtil_Access;
-   procedure getInstance;
    procedure process (This : in out CanvasExpandUtil; imageProcessorInput : ImageProcessorInput_Access; increaseX : Integer; increaseY : Integer; visitor : ImageProcessedVisitor_Access);
 
 end org.allbinary.media.image.CanvasExpandUtil_Package;

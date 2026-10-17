@@ -35,7 +35,7 @@ package body org.allbinary.time.TimeStampUtil_Package is
    function Create return TimeStampUtil_Access is
       This : constant TimeStampUtil_Access := new TimeStampUtil;
    begin
-      Initialize (This.all);
+      TimeStampUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -46,20 +46,6 @@ package body org.allbinary.time.TimeStampUtil_Package is
         simpleDataFormat := DateTimeFormat_Package.getFormat (To_Unbounded_String ("yyyy-MM-dd HH:mm:ss.SSS"));
         date := Date_Package.Create;
         return simpleDataFormat.format (date);
-   end getAsString;
-
-   procedure getInstance is
-      Java_Result : constant TimeStampUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure getAsString (This : in out TimeStampUtil) is
-      Java_Result : constant Unbounded_String := TimeStampUtil'Class (This).getAsString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getAsString;
 
 begin

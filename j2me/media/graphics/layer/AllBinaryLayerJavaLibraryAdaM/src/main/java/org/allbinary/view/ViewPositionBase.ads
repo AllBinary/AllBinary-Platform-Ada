@@ -37,11 +37,8 @@ package org.allbinary.view.ViewPositionBase_Package is
    procedure Initialize (This : in out ViewPositionBase'Class; x : Integer; y : Integer; z : Integer);
    function Create (x : Integer; y : Integer; z : Integer) return ViewPositionBase_Access;
    function getX2 (This : in out ViewPositionBase) return Integer;
-   procedure getX2 (This : in out ViewPositionBase);
    function getY2 (This : in out ViewPositionBase) return Integer;
-   procedure getY2 (This : in out ViewPositionBase);
    function getZ2 (This : in out ViewPositionBase) return Integer;
-   procedure getZ2 (This : in out ViewPositionBase);
    procedure setAllbinaryLayer (This : in out ViewPositionBase; allbinaryLayer : Java_Object_Access);
 
 end org.allbinary.view.ViewPositionBase_Package;

@@ -20,7 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.util.Calendar_Package; use java.util.Calendar_Package;
+with java.util.Calendar_Package; use java.util.Calendar_Package;
 --  with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
@@ -44,6 +44,7 @@ with admin.taghelpers.TagHelper_Package; use admin.taghelpers.TagHelper_Package;
 
 package admin.taghelpers.AuthenticationHelper_Package is
 
+   package Calendar_Package renames Standard.java.util.Calendar_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
    package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    package UserInterface_Package renames Standard.org.allbinary.business.user.UserInterface_Package;
@@ -79,28 +80,19 @@ package admin.taghelpers.AuthenticationHelper_Package is
    function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return AuthenticationHelper_Access;
    procedure getFormData (This : in out AuthenticationHelper);
    function invalidateSession (This : in out AuthenticationHelper) return Integer;
-   procedure invalidateSession (This : in out AuthenticationHelper);
    function isSessionOld (This : in out AuthenticationHelper) return Boolean;
-   procedure isSessionOld (This : in out AuthenticationHelper);
    function isRarelyUsedSession (This : in out AuthenticationHelper) return Boolean;
-   procedure isRarelyUsedSession (This : in out AuthenticationHelper);
    function validRole (This : in out AuthenticationHelper) return Unbounded_String;
-   procedure validRole (This : in out AuthenticationHelper);
    function invalidRole (This : in out AuthenticationHelper) return Unbounded_String;
-   procedure invalidRole (This : in out AuthenticationHelper);
    function isAuthenticated (This : in out AuthenticationHelper) return Boolean;
-   procedure isAuthenticated (This : in out AuthenticationHelper);
    function isAuthenticationSessionValid (This : in out AuthenticationHelper; roles : BasicArrayList_Access) return Boolean;
    procedure isAuthenticationSessionValid (This : in out AuthenticationHelper; roles : BasicArrayList_Access);
    procedure nextAttempt (This : in out AuthenticationHelper);
    function processIfNewLogin (This : in out AuthenticationHelper; userName : Unbounded_String; password : Unbounded_String) return Boolean;
    procedure processIfNewLogin (This : in out AuthenticationHelper; userName : Unbounded_String; password : Unbounded_String);
    function processInvalidation (This : in out AuthenticationHelper) return Boolean;
-   procedure processInvalidation (This : in out AuthenticationHelper);
    function outputSessionInfo (This : in out AuthenticationHelper) return Unbounded_String;
-   procedure outputSessionInfo (This : in out AuthenticationHelper);
    function getRole (This : in out AuthenticationHelper) return UserRole_Access;
-   procedure getRole (This : in out AuthenticationHelper);
 
 end admin.taghelpers.AuthenticationHelper_Package;
 

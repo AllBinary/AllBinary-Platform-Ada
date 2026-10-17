@@ -41,11 +41,8 @@ package org.allbinary.business.advertisement.image.AdvertisementImage_Package is
    procedure Initialize (This : in out AdvertisementImage'Class);
    function Create return AdvertisementImage_Access;
    function getFileName (This : in out AdvertisementImage) return Unbounded_String;
-   procedure getFileName (This : in out AdvertisementImage);
    function getUrl (This : in out AdvertisementImage) return Unbounded_String;
-   procedure getUrl (This : in out AdvertisementImage);
    function getTwoDimensionalConstraint (This : in out AdvertisementImage) return TwoDimensionalConstraintInterface_Access;
-   procedure getTwoDimensionalConstraint (This : in out AdvertisementImage);
 
 end org.allbinary.business.advertisement.image.AdvertisementImage_Package;
 

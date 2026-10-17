@@ -31,7 +31,7 @@ package body views.admin.payment.gateways.SelectExistingView_Package is
    function Create (transformInfoInterface : TransformInfoInterface_Access) return SelectExistingView_Access is
       This : constant SelectExistingView_Access := new SelectExistingView;
    begin
-      Initialize (This.all, transformInfoInterface);
+      SelectExistingView_Package.Initialize (This.all, transformInfoInterface);
       return This;
    end Create;
 
@@ -55,13 +55,6 @@ package body views.admin.payment.gateways.SelectExistingView_Package is
             Java_Throw (e);
                 end;
         end;
-   end view;
-
-   procedure view (This : in out SelectExistingView) is
-      Java_Result : constant Unbounded_String := SelectExistingView'Class (This).view;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end view;
 
 end views.admin.payment.gateways.SelectExistingView_Package;

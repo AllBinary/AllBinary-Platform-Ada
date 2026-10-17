@@ -28,6 +28,7 @@ with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.lo
 with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package; use org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
 with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
 with org.allbinary.logic.visual.transform.info.TransformInfoObjectFactory_Package; use org.allbinary.logic.visual.transform.info.TransformInfoObjectFactory_Package;
+with org.allbinary.logic.visual.transform.template.TransformTemplateInterface_Package; use org.allbinary.logic.visual.transform.template.TransformTemplateInterface_Package;
 
 package org.allbinary.logic.visual.transform.template.TransformTemplateFactory_Package is
 
@@ -51,7 +52,6 @@ package org.allbinary.logic.visual.transform.template.TransformTemplateFactory_P
    procedure Initialize (This : in out TransformTemplateFactory'Class);
    function Create return TransformTemplateFactory_Access;
    function getInstance return TransformTemplateFactory_Access;
-   procedure getInstance;
    function getInstance (This : in out TransformTemplateFactory; abeClientInformation : AbeClientInformationInterface_Access; templateName : Unbounded_String; propertiesHashMap : HashMap_Access; pageContext : PageContext_Access) return TransformTemplateInterface_Access;
    procedure getInstance (This : in out TransformTemplateFactory; abeClientInformation : AbeClientInformationInterface_Access; templateName : Unbounded_String; propertiesHashMap : HashMap_Access; pageContext : PageContext_Access);
 

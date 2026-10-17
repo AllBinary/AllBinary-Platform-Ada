@@ -37,16 +37,9 @@ package body org.allbinary.input.motion.gyro.action.LeftOrientationInputToGameKe
    function Create return LeftOrientationInputToGameKeyEventAction_Access is
       This : constant LeftOrientationInputToGameKeyEventAction_Access := new LeftOrientationInputToGameKeyEventAction;
    begin
-      Initialize (This.all);
+      LeftOrientationInputToGameKeyEventAction_Package.Initialize (This.all);
       return This;
    end Create;
-
-   procedure getInstance is
-      Java_Result : constant GameKeyCompleteMotionGestureInputEvent_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

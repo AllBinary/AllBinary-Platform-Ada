@@ -62,7 +62,7 @@ package body org.allbinary.business.installer.InitializerDatabase_Package is
    function Create (abeClientInformation : AbeClientInformationInterface_Access; map : Map_Access) return InitializerDatabase_Access is
       This : constant InitializerDatabase_Access := new InitializerDatabase;
    begin
-      Initialize (This.all, abeClientInformation, map);
+      InitializerDatabase_Package.Initialize (This.all, abeClientInformation, map);
       return This;
    end Create;
 
@@ -76,7 +76,7 @@ package body org.allbinary.business.installer.InitializerDatabase_Package is
    function Create (abeClientInformation : AbeClientInformationInterface_Access; initHashMap : HashMap_Access) return InitializerDatabase_Access is
       This : constant InitializerDatabase_Access := new InitializerDatabase;
    begin
-      Initialize (This.all, abeClientInformation, initHashMap);
+      InitializerDatabase_Package.Initialize (This.all, abeClientInformation, initHashMap);
       return This;
    end Create;
 
@@ -302,89 +302,12 @@ package body org.allbinary.business.installer.InitializerDatabase_Package is
       null;
    end isJdbcDriverValid;
 
-   procedure isValid (This : in out InitializerDatabase) is
-      Java_Result : constant Boolean := InitializerDatabase'Class (This).isValid;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isValid;
-
    procedure getJdbcDriverValidationInfo (This : in out InitializerDatabase; jdbcDriver : Unbounded_String) is
       Java_Result : constant Unbounded_String := InitializerDatabase'Class (This).getJdbcDriverValidationInfo (jdbcDriver);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getJdbcDriverValidationInfo;
-
-   procedure getInvalidInfo (This : in out InitializerDatabase) is
-      Java_Result : constant Unbounded_String := InitializerDatabase'Class (This).getInvalidInfo;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInvalidInfo;
-
-   procedure createUsers (This : in out InitializerDatabase) is
-      Java_Result : constant Boolean := InitializerDatabase'Class (This).createUsers;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end createUsers;
-
-   procedure createDatabases (This : in out InitializerDatabase) is
-      Java_Result : constant Boolean := InitializerDatabase'Class (This).createDatabases;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end createDatabases;
-
-   procedure createTables (This : in out InitializerDatabase) is
-      Java_Result : constant Boolean := InitializerDatabase'Class (This).createTables;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end createTables;
-
-   procedure getAdminDbUserName (This : in out InitializerDatabase) is
-      Java_Result : constant Unbounded_String := InitializerDatabase'Class (This).getAdminDbUserName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getAdminDbUserName;
-
-   procedure getAdminDbPassword (This : in out InitializerDatabase) is
-      Java_Result : constant Unbounded_String := InitializerDatabase'Class (This).getAdminDbPassword;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getAdminDbPassword;
-
-   procedure getAdminJdbcDriver (This : in out InitializerDatabase) is
-      Java_Result : constant Unbounded_String := InitializerDatabase'Class (This).getAdminJdbcDriver;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getAdminJdbcDriver;
-
-   procedure getAdminSchema (This : in out InitializerDatabase) is
-      Java_Result : constant Unbounded_String := InitializerDatabase'Class (This).getAdminSchema;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getAdminSchema;
-
-   procedure getAdminServer (This : in out InitializerDatabase) is
-      Java_Result : constant Unbounded_String := InitializerDatabase'Class (This).getAdminServer;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getAdminServer;
-
-   procedure getAdminPort (This : in out InitializerDatabase) is
-      Java_Result : constant Unbounded_String := InitializerDatabase'Class (This).getAdminPort;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getAdminPort;
 
 begin
    null;

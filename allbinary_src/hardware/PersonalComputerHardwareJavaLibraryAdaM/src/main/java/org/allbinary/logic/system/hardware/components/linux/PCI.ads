@@ -42,7 +42,6 @@ package org.allbinary.logic.system.hardware.components.linux.PCI_Package is
    function compareTo (This : in out PCI; componentInterface : HardwareComponentInterface_Access) return Boolean;
    procedure compareTo (This : in out PCI; componentInterface : HardwareComponentInterface_Access);
    function toString (This : in out PCI) return Unbounded_String;
-   procedure toString (This : in out PCI);
 
 end org.allbinary.logic.system.hardware.components.linux.PCI_Package;
 

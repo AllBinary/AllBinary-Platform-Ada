@@ -42,7 +42,7 @@ package body tags.transform.info.TransformInfoTag_Package is
    function Create return TransformInfoTag_Access is
       This : constant TransformInfoTag_Access := new TransformInfoTag;
    begin
-      Initialize (This.all);
+      TransformInfoTag_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -56,7 +56,7 @@ package body tags.transform.info.TransformInfoTag_Package is
    function Create (tagHelperFactoryInterface : TagHelperFactoryInterface_Access) return TransformInfoTag_Access is
       This : constant TransformInfoTag_Access := new TransformInfoTag;
    begin
-      Initialize (This.all, tagHelperFactoryInterface);
+      TransformInfoTag_Package.Initialize (This.all, tagHelperFactoryInterface);
       return This;
    end Create;
 
@@ -153,27 +153,6 @@ package body tags.transform.info.TransformInfoTag_Package is
             return SKIP_BODY;
                 end;
         end;
-   end doStartTag;
-
-   procedure getName (This : in out TransformInfoTag) is
-      Java_Result : constant Unbounded_String := TransformInfoTag'Class (This).getName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getName;
-
-   procedure getObjectFile (This : in out TransformInfoTag) is
-      Java_Result : constant Unbounded_String := TransformInfoTag'Class (This).getObjectFile;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getObjectFile;
-
-   procedure doStartTag (This : in out TransformInfoTag) is
-      Java_Result : constant Integer := TransformInfoTag'Class (This).doStartTag;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end doStartTag;
 
 end tags.transform.info.TransformInfoTag_Package;

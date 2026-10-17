@@ -59,7 +59,6 @@ package org.allbinary.game.media.graphics.geography.map.racetrack.PathFindingInf
    procedure Initialize (This : in out PathFindingInfoFactory'Class);
    function Create return PathFindingInfoFactory_Access;
    function getInstance return PathFindingInfoFactory_Access;
-   procedure getInstance;
    procedure initMax (max_Case : Integer);
    function getInstancePathFindingInfo (This : in out PathFindingInfoFactory; geographicMapInterface : BasicGeographicMap_Access; mapArray : Integer_Array_Access_Array_Access) return PathFindingInfo_Access;
    procedure getInstancePathFindingInfo (This : in out PathFindingInfoFactory; geographicMapInterface : BasicGeographicMap_Access; mapArray : Integer_Array_Access_Array_Access);

@@ -37,7 +37,6 @@ package org.allbinary.business.context.modules.storefront.statistics.advertiseme
    procedure Initialize (This : in out StoreFrontAdvertisementsStatisticsData'Class);
    function Create return StoreFrontAdvertisementsStatisticsData_Access;
    function getInstance return StoreFrontAdvertisementsStatisticsData_Access;
-   procedure getInstance;
 
 end org.allbinary.business.context.modules.storefront.statistics.advertisements.StoreFrontAdvertisementsStatisticsData_Package;
 

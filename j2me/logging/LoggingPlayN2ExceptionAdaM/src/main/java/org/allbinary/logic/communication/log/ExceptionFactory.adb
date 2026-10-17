@@ -28,7 +28,7 @@ package body org.allbinary.logic.communication.log.ExceptionFactory_Package is
    function Create return ExceptionFactory_Access is
       This : constant ExceptionFactory_Access := new ExceptionFactory;
    begin
-      Initialize (This.all);
+      ExceptionFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

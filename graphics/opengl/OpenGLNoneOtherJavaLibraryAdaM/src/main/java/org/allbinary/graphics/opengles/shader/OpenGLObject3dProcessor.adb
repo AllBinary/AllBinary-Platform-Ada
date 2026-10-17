@@ -17,7 +17,7 @@ package body org.allbinary.graphics.opengles.shader.OpenGLObject3dProcessor_Pack
    function Create return OpenGLObject3dProcessor_Access is
       This : constant OpenGLObject3dProcessor_Access := new OpenGLObject3dProcessor;
    begin
-      Initialize (This.all);
+      OpenGLObject3dProcessor_Package.Initialize (This.all);
       return This;
    end Create;
 

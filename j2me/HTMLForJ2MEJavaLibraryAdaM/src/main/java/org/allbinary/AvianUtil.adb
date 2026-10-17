@@ -28,7 +28,7 @@ package body org.allbinary.AvianUtil_Package is
    function Create return AvianUtil_Access is
       This : constant AvianUtil_Access := new AvianUtil;
    begin
-      Initialize (This.all);
+      AvianUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -36,13 +36,6 @@ package body org.allbinary.AvianUtil_Package is
    function isAvian return Boolean is
    begin
         return False;
-   end isAvian;
-
-   procedure isAvian is
-      Java_Result : constant Boolean := isAvian;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end isAvian;
 
 end org.allbinary.AvianUtil_Package;

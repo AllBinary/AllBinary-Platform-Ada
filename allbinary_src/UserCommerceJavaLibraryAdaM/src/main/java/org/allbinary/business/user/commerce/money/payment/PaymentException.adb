@@ -29,7 +29,7 @@ package body org.allbinary.business.user.commerce.money.payment.PaymentException
    function Create (error : Unbounded_String) return PaymentException_Access is
       This : constant PaymentException_Access := new PaymentException;
    begin
-      Initialize (This.all, error);
+      PaymentException_Package.Initialize (This.all, error);
       return This;
    end Create;
 

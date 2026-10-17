@@ -39,7 +39,7 @@ package body org.allbinary.media.image.comparison.ImageComparisonWorker_Package 
    function Create (imageComparatorConstraintsInterface : ImageComparatorConstraintsInterface_Access) return ImageComparisonWorker_Access is
       This : constant ImageComparisonWorker_Access := new ImageComparisonWorker;
    begin
-      Initialize (This.all, imageComparatorConstraintsInterface);
+      ImageComparisonWorker_Package.Initialize (This.all, imageComparatorConstraintsInterface);
       return This;
    end Create;
 
@@ -109,13 +109,6 @@ package body org.allbinary.media.image.comparison.ImageComparisonWorker_Package 
                 end;
         end;
    end run;
-
-   procedure isRunning (This : in out ImageComparisonWorker) is
-      Java_Result : constant Boolean := ImageComparisonWorker'Class (This).isRunning;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isRunning;
 
 end org.allbinary.media.image.comparison.ImageComparisonWorker_Package;
 

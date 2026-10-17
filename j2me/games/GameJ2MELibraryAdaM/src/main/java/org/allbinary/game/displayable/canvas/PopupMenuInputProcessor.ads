@@ -36,6 +36,7 @@ with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.Com
 with org.allbinary.time.TimeDelayHelper_Package; use org.allbinary.time.TimeDelayHelper_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.game.displayable.canvas.BasicMenuInputProcessor_Package; use org.allbinary.game.displayable.canvas.BasicMenuInputProcessor_Package;
+with org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package; use org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package;
 
 package org.allbinary.game.displayable.canvas.PopupMenuInputProcessor_Package is
 
@@ -72,9 +73,7 @@ package org.allbinary.game.displayable.canvas.PopupMenuInputProcessor_Package is
    function processInput (This : in out PopupMenuInputProcessor; key : Integer) return Integer;
    procedure processInput (This : in out PopupMenuInputProcessor; key : Integer);
    function processInputList (This : in out PopupMenuInputProcessor) return Integer;
-   procedure processInputList (This : in out PopupMenuInputProcessor);
    function processMotionInputs (This : in out PopupMenuInputProcessor) return Integer;
-   procedure processMotionInputs (This : in out PopupMenuInputProcessor);
    procedure processMotionInput (This : in out PopupMenuInputProcessor; motionGestureEvent : MotionGestureEvent_Access);
 
 end org.allbinary.game.displayable.canvas.PopupMenuInputProcessor_Package;

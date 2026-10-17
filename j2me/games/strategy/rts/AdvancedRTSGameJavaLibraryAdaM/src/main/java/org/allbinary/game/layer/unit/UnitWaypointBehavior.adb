@@ -55,7 +55,7 @@ package body org.allbinary.game.layer.unit.UnitWaypointBehavior_Package is
    function Create (associatedAdvancedRTSGameLayer : UnitLayer_Access; fakeWaypoint : CollidableDestroyableDamageableLayer_Access) return UnitWaypointBehavior_Access is
       This : constant UnitWaypointBehavior_Access := new UnitWaypointBehavior;
    begin
-      Initialize (This.all, associatedAdvancedRTSGameLayer, fakeWaypoint);
+      UnitWaypointBehavior_Package.Initialize (This.all, associatedAdvancedRTSGameLayer, fakeWaypoint);
       return This;
    end Create;
 
@@ -334,13 +334,6 @@ package body org.allbinary.game.layer.unit.UnitWaypointBehavior_Package is
         This.trackingWaypoint := trackingWaypoint;
    end setTrackingWaypoint;
 
-   procedure isWaypointListEmptyOrOnlyTargets (This : in out UnitWaypointBehavior) is
-      Java_Result : constant Boolean := UnitWaypointBehavior'Class (This).isWaypointListEmptyOrOnlyTargets;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isWaypointListEmptyOrOnlyTargets;
-
    procedure insertWaypoint (This : in out UnitWaypointBehavior; index : Integer; rtsLayer : CollidableDestroyableDamageableLayer_Access) is
       Java_Result : constant Boolean := UnitWaypointBehavior'Class (This).insertWaypoint (index, rtsLayer);
       pragma Unreferenced (Java_Result);
@@ -354,104 +347,6 @@ package body org.allbinary.game.layer.unit.UnitWaypointBehavior_Package is
    begin
       null;
    end canInsertWaypoint;
-
-   procedure needToMove (This : in out UnitWaypointBehavior) is
-      Java_Result : constant Boolean := UnitWaypointBehavior'Class (This).needToMove;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end needToMove;
-
-   procedure getMovementLogicAsString (This : in out UnitWaypointBehavior) is
-      Java_Result : constant Unbounded_String := UnitWaypointBehavior'Class (This).getMovementLogicAsString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getMovementLogicAsString;
-
-   procedure isMovingFromStopped (This : in out UnitWaypointBehavior) is
-      Java_Result : constant Boolean := UnitWaypointBehavior'Class (This).isMovingFromStopped;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isMovingFromStopped;
-
-   procedure getWaypointPathsList (This : in out UnitWaypointBehavior) is
-      Java_Result : constant BasicArrayList_Access := UnitWaypointBehavior'Class (This).getWaypointPathsList;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getWaypointPathsList;
-
-   procedure isMoving (This : in out UnitWaypointBehavior) is
-      Java_Result : constant Boolean := UnitWaypointBehavior'Class (This).isMoving;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isMoving;
-
-   procedure isTrackingWaypoint (This : in out UnitWaypointBehavior) is
-      Java_Result : constant Boolean := UnitWaypointBehavior'Class (This).isTrackingWaypoint;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isTrackingWaypoint;
-
-   procedure getPossibleTargetList (This : in out UnitWaypointBehavior) is
-      Java_Result : constant BasicArrayList_Access := UnitWaypointBehavior'Class (This).getPossibleTargetList;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getPossibleTargetList;
-
-   procedure getLastPathGeographicMapCellPosition (This : in out UnitWaypointBehavior) is
-      Java_Result : constant GeographicMapCellPosition_Access := UnitWaypointBehavior'Class (This).getLastPathGeographicMapCellPosition;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getLastPathGeographicMapCellPosition;
-
-   procedure getCurrentPathGeographicMapCellPosition (This : in out UnitWaypointBehavior) is
-      Java_Result : constant GeographicMapCellPosition_Access := UnitWaypointBehavior'Class (This).getCurrentPathGeographicMapCellPosition;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getCurrentPathGeographicMapCellPosition;
-
-   procedure getSensorAction (This : in out UnitWaypointBehavior) is
-      Java_Result : constant SensorAction_Access := UnitWaypointBehavior'Class (This).getSensorAction;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSensorAction;
-
-   procedure getCurrentTargetLayerInterface (This : in out UnitWaypointBehavior) is
-      Java_Result : constant CollidableDestroyableDamageableLayer_Access := UnitWaypointBehavior'Class (This).getCurrentTargetLayerInterface;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getCurrentTargetLayerInterface;
-
-   procedure getCurrentTargetDistance (This : in out UnitWaypointBehavior) is
-      Java_Result : constant Integer := UnitWaypointBehavior'Class (This).getCurrentTargetDistance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getCurrentTargetDistance;
-
-   procedure getCompleteTimeDelayHelper (This : in out UnitWaypointBehavior) is
-      Java_Result : constant TimeDelayHelper_Access := UnitWaypointBehavior'Class (This).getCompleteTimeDelayHelper;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getCompleteTimeDelayHelper;
-
-   procedure getCurrentGeographicMapCellHistory (This : in out UnitWaypointBehavior) is
-      Java_Result : constant GeographicMapCellHistory_Access := UnitWaypointBehavior'Class (This).getCurrentGeographicMapCellHistory;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getCurrentGeographicMapCellHistory;
 
 begin
    null;

@@ -26,6 +26,11 @@ with org.allbinary.graphics.color.ColorCacheable_Package; use org.allbinary.grap
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.media.image.analysis.ImageAnalysisResults_Package; use org.allbinary.media.image.analysis.ImageAnalysisResults_Package;
+with org.allbinary.media.image.analysis.ColorRangeInterface_Package; use org.allbinary.media.image.analysis.ColorRangeInterface_Package;
+with org.allbinary.media.image.analysis.Color_Package; use org.allbinary.media.image.analysis.Color_Package;
+with org.allbinary.media.image.analysis.ColorAverage_Package; use org.allbinary.media.image.analysis.ColorAverage_Package;
+with org.allbinary.media.image.analysis.ImageColorResults_Package; use org.allbinary.media.image.analysis.ImageColorResults_Package;
 
 package org.allbinary.media.image.analysis.ImageAnalysis_Package is
 
@@ -48,7 +53,6 @@ package org.allbinary.media.image.analysis.ImageAnalysis_Package is
    procedure Initialize (This : in out ImageAnalysis'Class);
    function Create return ImageAnalysis_Access;
    function getInstance return ImageAnalysis_Access;
-   procedure getInstance;
    function process (This : in out ImageAnalysis; bufferedImageArray : BufferedImage_Access_Array_Access; colorRangeInterface : ColorRangeInterface_Access) return ImageAnalysisResults_Access_Array_Access;
    procedure process (This : in out ImageAnalysis; bufferedImageArray : BufferedImage_Access_Array_Access; colorRangeInterface : ColorRangeInterface_Access);
    function process (bufferedImage : BufferedImage_Access; colorRangeInterface : ColorRangeInterface_Access) return ImageAnalysisResults_Access;

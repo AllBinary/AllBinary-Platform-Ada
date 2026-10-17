@@ -28,7 +28,7 @@ package body org.allbinary.game.ag.ai.DiveAndDirectionalTrackingAICompositeVisit
    function Create return DiveAndDirectionalTrackingAICompositeVisitorFactory_Access is
       This : constant DiveAndDirectionalTrackingAICompositeVisitorFactory_Access := new DiveAndDirectionalTrackingAICompositeVisitorFactory;
    begin
-      Initialize (This.all);
+      DiveAndDirectionalTrackingAICompositeVisitorFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

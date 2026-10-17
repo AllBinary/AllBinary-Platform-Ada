@@ -33,20 +33,13 @@ package body org.allbinary.business.forward.ForwardData_Package is
    function Create return ForwardData_Access is
       This : constant ForwardData_Access := new ForwardData;
    begin
-      Initialize (This.all);
+      ForwardData_Package.Initialize (This.all);
       return This;
    end Create;
 
    function getInstance return ForwardData_Access is
    begin
         return ForwardData_Package.instance;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant ForwardData_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

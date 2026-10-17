@@ -34,7 +34,7 @@ package body org.allbinary.time.GameTickTimeDelayHelper_Package is
    function Create (startTime : Long_Long_Integer) return GameTickTimeDelayHelper_Access is
       This : constant GameTickTimeDelayHelper_Access := new GameTickTimeDelayHelper;
    begin
-      Initialize (This.all, startTime);
+      GameTickTimeDelayHelper_Package.Initialize (This.all, startTime);
       return This;
    end Create;
 
@@ -56,20 +56,6 @@ package body org.allbinary.time.GameTickTimeDelayHelper_Package is
    function getTimeFromStart (This : in out GameTickTimeDelayHelper) return Long_Long_Integer is
    begin
         return (This.startTime) - (This.lastStartTime);
-   end getTimeFromStart;
-
-   procedure setStartTime (This : in out GameTickTimeDelayHelper) is
-      Java_Result : constant Long_Long_Integer := GameTickTimeDelayHelper'Class (This).setStartTime;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end setStartTime;
-
-   procedure getTimeFromStart (This : in out GameTickTimeDelayHelper) is
-      Java_Result : constant Long_Long_Integer := GameTickTimeDelayHelper'Class (This).getTimeFromStart;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getTimeFromStart;
 
 end org.allbinary.time.GameTickTimeDelayHelper_Package;

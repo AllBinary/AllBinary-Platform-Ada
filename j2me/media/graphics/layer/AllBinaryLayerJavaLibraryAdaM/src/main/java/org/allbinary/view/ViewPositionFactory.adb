@@ -28,7 +28,7 @@ package body org.allbinary.view.ViewPositionFactory_Package is
    function Create return ViewPositionFactory_Access is
       This : constant ViewPositionFactory_Access := new ViewPositionFactory;
    begin
-      Initialize (This.all);
+      ViewPositionFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -36,13 +36,6 @@ package body org.allbinary.view.ViewPositionFactory_Package is
    function getInstance (This : in out ViewPositionFactory) return ViewPositionBase_Access is
    begin
         return ViewPosition_Package.getInstanceD;
-   end getInstance;
-
-   procedure getInstance (This : in out ViewPositionFactory) is
-      Java_Result : constant ViewPositionBase_Access := ViewPositionFactory'Class (This).getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 end org.allbinary.view.ViewPositionFactory_Package;

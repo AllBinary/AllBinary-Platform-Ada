@@ -28,7 +28,7 @@ package body org.allbinary.logic.communication.log.LogFactory_Package is
    function Create return LogFactory_Access is
       This : constant LogFactory_Access := new LogFactory;
    begin
-      Initialize (This.all);
+      LogFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

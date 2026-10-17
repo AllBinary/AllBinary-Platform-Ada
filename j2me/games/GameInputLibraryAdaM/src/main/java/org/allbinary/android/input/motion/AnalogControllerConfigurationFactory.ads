@@ -46,9 +46,7 @@ package org.allbinary.android.input.motion.AnalogControllerConfigurationFactory_
    procedure Initialize (This : in out AnalogControllerConfigurationFactory'Class);
    function Create return AnalogControllerConfigurationFactory_Access;
    function getInstance return AnalogControllerConfigurationFactory_Access;
-   procedure getInstance;
    function isAvailable (This : in out AnalogControllerConfigurationFactory) return Boolean;
-   procedure isAvailable (This : in out AnalogControllerConfigurationFactory);
    procedure setAvailable (This : in out AnalogControllerConfigurationFactory; available : Boolean);
 
 end org.allbinary.android.input.motion.AnalogControllerConfigurationFactory_Package;

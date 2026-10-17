@@ -45,7 +45,6 @@ package org.allbinary.logic.io.path.AbPathData_Package is
    procedure Initialize (This : in out AbPathData'Class);
    function Create return AbPathData_Access;
    function getInstance return AbPathData_Access;
-   procedure getInstance;
    function getExtensionIndex (This : in out AbPathData; filePath : Unbounded_String) return Integer;
    procedure getExtensionIndex (This : in out AbPathData; filePath : Unbounded_String);
    function getExtensionWithDot (This : in out AbPathData; filePath : Unbounded_String) return Unbounded_String;

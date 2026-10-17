@@ -43,7 +43,7 @@ package body org.allbinary.game.layer.item.RTSLayerCostAnimation_Package is
    function Create (image : Image_Access; layerInterfaceFactoryInterface : CostLayerInterfaceFactoryInterface_Access) return RTSLayerCostAnimation_Access is
       This : constant RTSLayerCostAnimation_Access := new RTSLayerCostAnimation;
    begin
-      Initialize (This.all, image, layerInterfaceFactoryInterface);
+      RTSLayerCostAnimation_Package.Initialize (This.all, image, layerInterfaceFactoryInterface);
       return This;
    end Create;
 

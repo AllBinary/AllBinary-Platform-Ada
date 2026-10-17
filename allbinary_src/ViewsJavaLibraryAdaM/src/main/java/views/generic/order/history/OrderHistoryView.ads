@@ -74,7 +74,6 @@ package views.generic_Id.order.history.OrderHistoryView_Package is
    procedure toXmlNode (This : in out OrderHistoryView; document : Document_Access);
    procedure addDomNodeInterfaces (This : in out OrderHistoryView);
    function view (This : in out OrderHistoryView) return Unbounded_String;
-   procedure view (This : in out OrderHistoryView);
 
 end views.generic_Id.order.history.OrderHistoryView_Package;
 

@@ -30,7 +30,7 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
    function Create return KeyboardInputAutomationProcessor_Access is
       This : constant KeyboardInputAutomationProcessor_Access := new KeyboardInputAutomationProcessor;
    begin
-      Initialize (This.all);
+      KeyboardInputAutomationProcessor_Package.Initialize (This.all);
       return This;
    end Create;
 

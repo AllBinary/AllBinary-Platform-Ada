@@ -31,7 +31,7 @@ package body org.allbinary.graphics.opengles.shader.UniformCameraPositionOpenGLP
    function Create (shaderComposite : ShaderComposite_Access; handleIndex : Integer) return UniformCameraPositionOpenGLProcessor_Access is
       This : constant UniformCameraPositionOpenGLProcessor_Access := new UniformCameraPositionOpenGLProcessor;
    begin
-      Initialize (This.all, shaderComposite, handleIndex);
+      UniformCameraPositionOpenGLProcessor_Package.Initialize (This.all, shaderComposite, handleIndex);
       return This;
    end Create;
 

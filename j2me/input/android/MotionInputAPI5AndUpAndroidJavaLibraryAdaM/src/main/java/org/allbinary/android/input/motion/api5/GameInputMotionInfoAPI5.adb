@@ -34,16 +34,9 @@ package body org.allbinary.android.input.motion.api5.GameInputMotionInfoAPI5_Pac
    function Create return GameInputMotionInfoAPI5_Access is
       This : constant GameInputMotionInfoAPI5_Access := new GameInputMotionInfoAPI5;
    begin
-      Initialize (This.all);
+      GameInputMotionInfoAPI5_Package.Initialize (This.all);
       return This;
    end Create;
-
-   procedure getInstance is
-      Java_Result : constant GameInputMotionInfoAPI5_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

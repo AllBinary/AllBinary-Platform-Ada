@@ -28,7 +28,7 @@ package body org.allbinary.game.layer.GeographicMapCellPositionAreaBase_Package 
    function Create return GeographicMapCellPositionAreaBase_Access is
       This : constant GeographicMapCellPositionAreaBase_Access := new GeographicMapCellPositionAreaBase;
    begin
-      Initialize (This.all);
+      GeographicMapCellPositionAreaBase_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -53,27 +53,6 @@ package body org.allbinary.game.layer.GeographicMapCellPositionAreaBase_Package 
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end update;
-
-   procedure getNextSurroundingGeographicMapCellPosition (This : in out GeographicMapCellPositionAreaBase) is
-      Java_Result : constant GeographicMapCellPosition_Access := GeographicMapCellPositionAreaBase'Class (This).getNextSurroundingGeographicMapCellPosition;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getNextSurroundingGeographicMapCellPosition;
-
-   procedure getOccupyingGeographicMapCellPositionList (This : in out GeographicMapCellPositionAreaBase) is
-      Java_Result : constant BasicArrayList_Access := GeographicMapCellPositionAreaBase'Class (This).getOccupyingGeographicMapCellPositionList;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getOccupyingGeographicMapCellPositionList;
-
-   procedure getSurroundingGeographicMapCellPositionList (This : in out GeographicMapCellPositionAreaBase) is
-      Java_Result : constant BasicArrayList_Access := GeographicMapCellPositionAreaBase'Class (This).getSurroundingGeographicMapCellPositionList;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSurroundingGeographicMapCellPositionList;
 
 begin
    null;

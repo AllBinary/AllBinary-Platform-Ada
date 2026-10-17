@@ -41,7 +41,6 @@ package org.allbinary.game.layer.LinePathRelativeAnimation_Package is
    procedure Initialize (This : in out LinePathRelativeAnimation'Class);
    function Create return LinePathRelativeAnimation_Access;
    function getInstance return LinePathAnimation_Access;
-   procedure getInstance;
    procedure paint (This : in out LinePathRelativeAnimation; graphics : Graphics_Access; point : GPoint_Access; nextPoint : GPoint_Access; tiledLayer : Layer_Access);
 
 end org.allbinary.game.layer.LinePathRelativeAnimation_Package;

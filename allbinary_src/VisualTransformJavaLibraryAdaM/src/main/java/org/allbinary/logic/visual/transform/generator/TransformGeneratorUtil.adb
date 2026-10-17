@@ -36,7 +36,7 @@ package body org.allbinary.logic.visual.transform.generator.TransformGeneratorUt
    function Create return TransformGeneratorUtil_Access is
       This : constant TransformGeneratorUtil_Access := new TransformGeneratorUtil;
    begin
-      Initialize (This.all);
+      TransformGeneratorUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -79,13 +79,6 @@ package body org.allbinary.logic.visual.transform.generator.TransformGeneratorUt
    begin
         This.generate (abeClientInformation, transformInfoDomNode.getTransformInfoInterface, ownerTransformInfoInterface);
    end generate;
-
-   procedure getInstance is
-      Java_Result : constant TransformGeneratorUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

@@ -52,7 +52,6 @@ package org.allbinary.logic.io.file.FileData_Package is
    procedure Initialize (This : in out FileData'Class);
    function Create return FileData_Access;
    function getInstance return FileData_Access;
-   procedure getInstance;
 
 end org.allbinary.logic.io.file.FileData_Package;
 

@@ -36,7 +36,7 @@ package body org.allbinary.logic.system.os.linux.LinuxOperatingSystemFactory_Pac
    function Create return LinuxOperatingSystemFactory_Access is
       This : constant LinuxOperatingSystemFactory_Access := new LinuxOperatingSystemFactory;
    begin
-      Initialize (This.all);
+      LinuxOperatingSystemFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -72,20 +72,6 @@ package body org.allbinary.logic.system.os.linux.LinuxOperatingSystemFactory_Pac
             return NoOperatingSystem_Package.NO_OPERATING_SYSTEM;
                 end;
         end;
-   end getOperatingSystemInstance;
-
-   procedure getInstance is
-      Java_Result : constant LinuxOperatingSystemFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure getOperatingSystemInstance (This : in out LinuxOperatingSystemFactory) is
-      Java_Result : constant GenericOperatingSystem_Access := LinuxOperatingSystemFactory'Class (This).getOperatingSystemInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getOperatingSystemInstance;
 
 begin

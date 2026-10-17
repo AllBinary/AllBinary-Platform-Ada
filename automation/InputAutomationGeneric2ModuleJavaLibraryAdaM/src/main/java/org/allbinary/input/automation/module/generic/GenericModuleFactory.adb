@@ -29,7 +29,7 @@ package body org.allbinary.input.automation.module.generic_Id.GenericModuleFacto
    function Create return GenericModuleFactory_Access is
       This : constant GenericModuleFactory_Access := new GenericModuleFactory;
    begin
-      Initialize (This.all);
+      GenericModuleFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -41,13 +41,6 @@ package body org.allbinary.input.automation.module.generic_Id.GenericModuleFacto
         genericProfile := (GenericModuleConfigurationJPanel_Access (This.getConfigurationJPanel)).getSelectedGenericProfile;
         inputAutomationActionInterface := InputAutomationActionInterface_Access (GenericInputAutomationAction_Package.Create);
         return RunnableInterface_Access (GenericInputAutomationWorker_Package.Create (inputAutomationActionInterface, genericProfile, NoMotionRectangleConstraints_Package.Create, NoImageComparatorConstraints_Package.Create));
-   end getInstance;
-
-   procedure getInstance (This : in out GenericModuleFactory) is
-      Java_Result : constant RunnableInterface_Access := GenericModuleFactory'Class (This).getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

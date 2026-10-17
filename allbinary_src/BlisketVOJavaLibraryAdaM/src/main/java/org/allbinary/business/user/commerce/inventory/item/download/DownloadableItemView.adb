@@ -33,7 +33,7 @@ package body org.allbinary.business.user.commerce.inventory.item.download.Downlo
    function Create (downloadableItem : DownloadableItem_Access) return DownloadableItemView_Access is
       This : constant DownloadableItemView_Access := new DownloadableItemView;
    begin
-      Initialize (This.all, downloadableItem);
+      DownloadableItemView_Package.Initialize (This.all, downloadableItem);
       return This;
    end Create;
 
@@ -118,20 +118,6 @@ package body org.allbinary.business.user.commerce.inventory.item.download.Downlo
    begin
       null;
    end toXmlNode;
-
-   procedure toXmlDoc (This : in out DownloadableItemView) is
-      Java_Result : constant Document_Access := DownloadableItemView'Class (This).toXmlDoc;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toXmlDoc;
-
-   procedure view (This : in out DownloadableItemView) is
-      Java_Result : constant Unbounded_String := DownloadableItemView'Class (This).view;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end view;
 
 end org.allbinary.business.user.commerce.inventory.item.download.DownloadableItemView_Package;
 

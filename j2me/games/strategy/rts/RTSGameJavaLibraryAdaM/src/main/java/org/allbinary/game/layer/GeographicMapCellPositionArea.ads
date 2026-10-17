@@ -64,11 +64,8 @@ package org.allbinary.game.layer.GeographicMapCellPositionArea_Package is
    function Create (layerInterface : AllBinaryLayer_Access) return GeographicMapCellPositionArea_Access;
    procedure update (This : in out GeographicMapCellPositionArea; geographicMapInterface : BasicGeographicMap_Access);
    function getOccupyingGeographicMapCellPositionList (This : in out GeographicMapCellPositionArea) return BasicArrayList_Access;
-   procedure getOccupyingGeographicMapCellPositionList (This : in out GeographicMapCellPositionArea);
    function getSurroundingGeographicMapCellPositionList (This : in out GeographicMapCellPositionArea) return BasicArrayList_Access;
-   procedure getSurroundingGeographicMapCellPositionList (This : in out GeographicMapCellPositionArea);
    function getNextSurroundingGeographicMapCellPosition (This : in out GeographicMapCellPositionArea) return GeographicMapCellPosition_Access;
-   procedure getNextSurroundingGeographicMapCellPosition (This : in out GeographicMapCellPositionArea);
 
 end org.allbinary.game.layer.GeographicMapCellPositionArea_Package;
 

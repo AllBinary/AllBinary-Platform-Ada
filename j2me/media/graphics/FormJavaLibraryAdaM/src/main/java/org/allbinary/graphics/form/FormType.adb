@@ -31,20 +31,13 @@ package body org.allbinary.graphics.form.FormType_Package is
    function Create (name : Unbounded_String) return FormType_Access is
       This : constant FormType_Access := new FormType;
    begin
-      Initialize (This.all, name);
+      FormType_Package.Initialize (This.all, name);
       return This;
    end Create;
 
    function toString (This : in out FormType) return Unbounded_String is
    begin
         return This.name;
-   end toString;
-
-   procedure toString (This : in out FormType) is
-      Java_Result : constant Unbounded_String := FormType'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end toString;
 
 end org.allbinary.graphics.form.FormType_Package;

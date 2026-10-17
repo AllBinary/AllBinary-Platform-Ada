@@ -41,6 +41,7 @@ with org.allbinary.layer.AllBinaryLayerManager_Package; use org.allbinary.layer.
 with org.allbinary.physics.movement.Movement_Package; use org.allbinary.physics.movement.Movement_Package;
 with org.allbinary.view.ViewPosition_Package; use org.allbinary.view.ViewPosition_Package;
 with org.allbinary.view.ViewPositionBase_Package; use org.allbinary.view.ViewPositionBase_Package;
+with org.allbinary.game.layer.weapon.CollidableWeaponBehavior_Package; use org.allbinary.game.layer.weapon.CollidableWeaponBehavior_Package;
 
 package org.allbinary.game.layer.weapon.WeaponLayer_Package is
 
@@ -92,43 +93,30 @@ package org.allbinary.game.layer.weapon.WeaponLayer_Package is
    procedure setGroupInterfaces (This : in out WeaponLayer);
    procedure processTick (This : in out WeaponLayer; allBinaryLayerManager : AllBinaryLayerManager_Access);
    function isDestroyed (This : in out WeaponLayer) return Boolean;
-   procedure isDestroyed (This : in out WeaponLayer);
    procedure damage (This : in out WeaponLayer; damage : Integer; damageType : Integer);
    procedure givePoints (This : in out WeaponLayer; total : Integer);
    function isExhausted (This : in out WeaponLayer) return Boolean;
-   procedure isExhausted (This : in out WeaponLayer);
    function getDamage (This : in out WeaponLayer; damageType : Integer) return Integer;
    procedure getDamage (This : in out WeaponLayer; damageType : Integer);
    procedure setDestroyed (This : in out WeaponLayer; destroyed : Boolean);
    function getInitDamage (This : in out WeaponLayer) return Integer;
-   procedure getInitDamage (This : in out WeaponLayer);
    procedure setAnimationInterface (This : in out WeaponLayer; animationInterface : Animation_Access);
    function getAnimationInterface (This : in out WeaponLayer) return Animation_Access;
-   procedure getAnimationInterface (This : in out WeaponLayer);
    function getInitAnimationInterfaceP (This : in out WeaponLayer) return Animation_Access;
-   procedure getInitAnimationInterfaceP (This : in out WeaponLayer);
    procedure setInitAnimationInterfaceP (This : in out WeaponLayer; initAnimationInterface : Animation_Access);
    function getDestroyedAnimationInterface (This : in out WeaponLayer) return Animation_Access;
-   procedure getDestroyedAnimationInterface (This : in out WeaponLayer);
    function getOwnerLayerInterface (This : in out WeaponLayer) return AllBinaryLayer_Access;
-   procedure getOwnerLayerInterface (This : in out WeaponLayer);
    procedure setOwnerLayerInterface (This : in out WeaponLayer; sourceLayerInterface : AllBinaryLayer_Access);
    procedure paint (This : in out WeaponLayer; graphics : Graphics_Access);
    procedure paintThreed (This : in out WeaponLayer; graphics : Graphics_Access);
    function getMovement (This : in out WeaponLayer) return Movement_Access;
-   procedure getMovement (This : in out WeaponLayer);
    procedure setMovement (This : in out WeaponLayer; movement : Movement_Access);
    function getType (This : in out WeaponLayer) return Integer;
-   procedure getType (This : in out WeaponLayer);
    function getStaticType return Integer;
-   procedure getStaticType;
    function getMultiPlayerType (This : in out WeaponLayer) return Integer;
-   procedure getMultiPlayerType (This : in out WeaponLayer);
    procedure setWeaponPropertiesP (This : in out WeaponLayer; weaponProperties : WeaponProperties_Access);
    function getWeaponPropertiesP (This : in out WeaponLayer) return WeaponProperties_Access;
-   procedure getWeaponPropertiesP (This : in out WeaponLayer);
    function implmentsTickableInterface (This : in out WeaponLayer) return Boolean;
-   procedure implmentsTickableInterface (This : in out WeaponLayer);
    procedure set (This : in out WeaponLayer; gl : GL_Access);
 
 end org.allbinary.game.layer.weapon.WeaponLayer_Package;

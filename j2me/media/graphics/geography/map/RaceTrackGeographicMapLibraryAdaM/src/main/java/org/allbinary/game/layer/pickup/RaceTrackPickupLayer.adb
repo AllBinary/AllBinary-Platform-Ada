@@ -31,7 +31,7 @@ package body org.allbinary.game.layer.pickup.RaceTrackPickupLayer_Package is
    function Create return RaceTrackPickupLayer_Access is
       This : constant RaceTrackPickupLayer_Access := new RaceTrackPickupLayer;
    begin
-      Initialize (This.all);
+      RaceTrackPickupLayer_Package.Initialize (This.all);
       return This;
    end Create;
 

@@ -78,9 +78,7 @@ package taghelpers.InventoryHelper_Package is
    function Create (propertiesHashMap : HashMap_Access; pageContext : PageContext_Access) return InventoryHelper_Access;
    procedure getFormData (This : in out InventoryHelper);
    function viewSummary (This : in out InventoryHelper) return Unbounded_String;
-   procedure viewSummary (This : in out InventoryHelper);
    function search (This : in out InventoryHelper) return Unbounded_String;
-   procedure search (This : in out InventoryHelper);
 
 end taghelpers.InventoryHelper_Package;
 

@@ -39,6 +39,8 @@ with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.lo
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbinary.logic.util.event.AllBinaryEventObject_Package;
 with org.allbinary.logic.util.event.EventStrings_Package; use org.allbinary.logic.util.event.EventStrings_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.game.graphics.hud.HudGraphicsPosition_Package; use org.allbinary.game.graphics.hud.HudGraphicsPosition_Package;
+with org.allbinary.game.graphics.hud.BasicHudFactory_Package; use org.allbinary.game.graphics.hud.BasicHudFactory_Package;
 
 package org.allbinary.game.graphics.hud.BasicHud_Package is
 
@@ -92,9 +94,7 @@ package org.allbinary.game.graphics.hud.BasicHud_Package is
    function Create (location : Integer; direction : Integer; bufferZone : Integer; basicColor : BasicColor_Access) return BasicHud_Access;
    procedure updateMeasurement (This : in out BasicHud; graphics : Graphics_Access);
    function getLocation (This : in out BasicHud) return Integer;
-   procedure getLocation (This : in out BasicHud);
    function getDirection (This : in out BasicHud) return Integer;
-   procedure getDirection (This : in out BasicHud);
    function getHudGraphicsPositionWH (This : in out BasicHud; width : Integer; height : Integer; maxWidth : Integer; maxHeight : Integer) return HudGraphicsPosition_Access;
    procedure getHudGraphicsPositionWH (This : in out BasicHud; width : Integer; height : Integer; maxWidth : Integer; maxHeight : Integer);
    procedure onEvent (This : in out BasicHud; eventObject : AllBinaryEventObject_Access);
@@ -102,23 +102,17 @@ package org.allbinary.game.graphics.hud.BasicHud_Package is
    function getPoint (This : in out BasicHud; x : Integer; y : Integer) return GPoint_Access;
    procedure getPoint (This : in out BasicHud; x : Integer; y : Integer);
    function getBufferZone (This : in out BasicHud) return Integer;
-   procedure getBufferZone (This : in out BasicHud);
    procedure setBufferZone (This : in out BasicHud; bufferZone : Integer);
    procedure setLocation (This : in out BasicHud; location : Integer);
    procedure setDirection (This : in out BasicHud; direction : Integer);
    function getHudGraphicsPosition (This : in out BasicHud) return HudGraphicsPosition_Access;
-   procedure getHudGraphicsPosition (This : in out BasicHud);
    function getColor (This : in out BasicHud) return Integer;
-   procedure getColor (This : in out BasicHud);
    function getX (This : in out BasicHud) return Integer;
-   procedure getX (This : in out BasicHud);
    procedure setX (This : in out BasicHud; x : Integer);
    procedure setBasicColorP (This : in out BasicHud; basicColor : BasicColor_Access);
    function getBasicColorP (This : in out BasicHud) return BasicColor_Access;
-   procedure getBasicColorP (This : in out BasicHud);
    procedure setY (This : in out BasicHud; y : Integer);
    function getY (This : in out BasicHud) return Integer;
-   procedure getY (This : in out BasicHud);
    procedure paintSSO (This : in out BasicHud; graphics : Graphics_Access; string_Id : Unbounded_String; string2 : Unbounded_String; offset : Integer);
    procedure paintSSOO (This : in out BasicHud; graphics : Graphics_Access; string_Id : Unbounded_String; string2 : Unbounded_String; offset : Integer; offset2 : Integer);
    procedure paintDXY (This : in out BasicHud; graphics : Graphics_Access; charArray : Character_Array_Access; offset : Integer; len : Integer; charArray2 : Character_Array_Access; offset2 : Integer; len2 : Integer; xOffset : Integer; xOffset2 : Integer);

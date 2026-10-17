@@ -33,7 +33,7 @@ package body views.generic_Id.basket.BasketView_Package is
    function Create (transformInfoInterface : TransformInfoInterface_Access) return BasketView_Access is
       This : constant BasketView_Access := new BasketView;
    begin
-      Initialize (This.all, transformInfoInterface);
+      BasketView_Package.Initialize (This.all, transformInfoInterface);
       return This;
    end Create;
 
@@ -145,13 +145,6 @@ package body views.generic_Id.basket.BasketView_Package is
    begin
       null;
    end toXmlNode;
-
-   procedure view (This : in out BasketView) is
-      Java_Result : constant Unbounded_String := BasketView'Class (This).view;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end view;
 
 end views.generic_Id.basket.BasketView_Package;
 

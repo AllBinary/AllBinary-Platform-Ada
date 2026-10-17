@@ -32,7 +32,7 @@ package body org.allbinary.game.midlet.DemoGameMidletEvent_Package is
    function Create (anyType : Java_Object_Access; demoGameMidletState : DemoGameMidletState_Access) return DemoGameMidletEvent_Access is
       This : constant DemoGameMidletEvent_Access := new DemoGameMidletEvent;
    begin
-      Initialize (This.all, anyType, demoGameMidletState);
+      DemoGameMidletEvent_Package.Initialize (This.all, anyType, demoGameMidletState);
       return This;
    end Create;
 
@@ -49,13 +49,6 @@ package body org.allbinary.game.midlet.DemoGameMidletEvent_Package is
    function getDemoGameMidletState (This : in out DemoGameMidletEvent) return DemoGameMidletState_Access is
    begin
         return This.demoGameMidletState;
-   end getDemoGameMidletState;
-
-   procedure getDemoGameMidletState (This : in out DemoGameMidletEvent) is
-      Java_Result : constant DemoGameMidletState_Access := DemoGameMidletEvent'Class (This).getDemoGameMidletState;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getDemoGameMidletState;
 
 end org.allbinary.game.midlet.DemoGameMidletEvent_Package;

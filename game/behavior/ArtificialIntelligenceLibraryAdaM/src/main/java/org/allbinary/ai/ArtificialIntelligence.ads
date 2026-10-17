@@ -39,10 +39,8 @@ package org.allbinary.ai.ArtificialIntelligence_Package is
    procedure Initialize (This : in out ArtificialIntelligence'Class);
    function Create return ArtificialIntelligence_Access;
    function getInstance return ArtificialIntelligence_Access;
-   procedure getInstance;
    procedure processAI (This : in out ArtificialIntelligence; layerManager : AllBinaryLayerManager_Access);
    function getId (This : in out ArtificialIntelligence) return Integer;
-   procedure getId (This : in out ArtificialIntelligence);
 
 end org.allbinary.ai.ArtificialIntelligence_Package;
 

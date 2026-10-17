@@ -28,7 +28,7 @@ package body org.allbinary.game.view.TileLayerPositionIntoViewPositionUtil_Packa
    function Create return TileLayerPositionIntoViewPositionUtil_Access is
       This : constant TileLayerPositionIntoViewPositionUtil_Access := new TileLayerPositionIntoViewPositionUtil;
    begin
-      Initialize (This.all);
+      TileLayerPositionIntoViewPositionUtil_Package.Initialize (This.all);
       return This;
    end Create;
 

@@ -30,7 +30,7 @@ package body org.allbinary.game.input.event.GameKeyEventUtil_Package is
    function Create return GameKeyEventUtil_Access is
       This : constant GameKeyEventUtil_Access := new GameKeyEventUtil;
    begin
-      Initialize (This.all);
+      GameKeyEventUtil_Package.Initialize (This.all);
       return This;
    end Create;
 

@@ -50,7 +50,7 @@ package body org.allbinary.game.input.InputFactory_Package is
    function Create return InputFactory_Access is
       This : constant InputFactory_Access := new InputFactory;
    begin
-      Initialize (This.all);
+      InputFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -59,7 +59,8 @@ package body org.allbinary.game.input.InputFactory_Package is
         This.inputIntegerArray (id) := input;
    end add;
 
-   function getInstanceById (This : in out InputFactory; id : Integer) return Input_Access is
+   function getInstanceById (This : in out InputFactory; id_Param : Integer) return Input_Access is
+      id : Integer := id_Param;
    begin
         if (id) < (0) then
             id := -(id);
@@ -71,15 +72,8 @@ package body org.allbinary.game.input.InputFactory_Package is
         return This.inputIntegerArray (id);
    end getInstanceById;
 
-   procedure getInstance is
-      Java_Result : constant InputFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure getInstanceById (This : in out InputFactory; id : Integer) is
-      Java_Result : constant Input_Access := InputFactory'Class (This).getInstanceById (id);
+   procedure getInstanceById (This : in out InputFactory; id_Param : Integer) is
+      Java_Result : constant Input_Access := InputFactory'Class (This).getInstanceById (id_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

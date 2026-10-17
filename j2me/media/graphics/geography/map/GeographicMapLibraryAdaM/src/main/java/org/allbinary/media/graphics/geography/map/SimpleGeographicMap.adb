@@ -43,7 +43,7 @@ package body org.allbinary.media.graphics.geography.map.SimpleGeographicMap_Pack
    function Create (id : Integer; name : Unbounded_String; cellTypeIdToGeographicMapCellType : Integer_Array_Access; tiledLayer : AllBinaryTiledLayer_Access; foregroundBasicColor : BasicColor_Access; backgroundBasicColor : BasicColor_Access) return SimpleGeographicMap_Access is
       This : constant SimpleGeographicMap_Access := new SimpleGeographicMap;
    begin
-      Initialize (This.all, id, name, cellTypeIdToGeographicMapCellType, tiledLayer, foregroundBasicColor, backgroundBasicColor);
+      SimpleGeographicMap_Package.Initialize (This.all, id, name, cellTypeIdToGeographicMapCellType, tiledLayer, foregroundBasicColor, backgroundBasicColor);
       return This;
    end Create;
 
@@ -107,27 +107,6 @@ package body org.allbinary.media.graphics.geography.map.SimpleGeographicMap_Pack
         This.backgroundBasicColor := backgroundBasicColor;
    end setBackgroundBasicColor;
 
-   procedure getId (This : in out SimpleGeographicMap) is
-      Java_Result : constant Integer := SimpleGeographicMap'Class (This).getId;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getId;
-
-   procedure getName (This : in out SimpleGeographicMap) is
-      Java_Result : constant Unbounded_String := SimpleGeographicMap'Class (This).getName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getName;
-
-   procedure getAllBinaryTiledLayer (This : in out SimpleGeographicMap) is
-      Java_Result : constant AllBinaryTiledLayer_Access := SimpleGeographicMap'Class (This).getAllBinaryTiledLayer;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getAllBinaryTiledLayer;
-
    procedure getCellTypeAt (This : in out SimpleGeographicMap; cellPosition : GeographicMapCellPosition_Access) is
       Java_Result : constant GeographicMapCellType_Access := SimpleGeographicMap'Class (This).getCellTypeAt (cellPosition);
       pragma Unreferenced (Java_Result);
@@ -141,20 +120,6 @@ package body org.allbinary.media.graphics.geography.map.SimpleGeographicMap_Pack
    begin
       null;
    end getCellTypeFromMapCellTypeInt;
-
-   procedure getForegroundBasicColor (This : in out SimpleGeographicMap) is
-      Java_Result : constant BasicColor_Access := SimpleGeographicMap'Class (This).getForegroundBasicColor;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getForegroundBasicColor;
-
-   procedure getBackgroundBasicColor (This : in out SimpleGeographicMap) is
-      Java_Result : constant BasicColor_Access := SimpleGeographicMap'Class (This).getBackgroundBasicColor;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getBackgroundBasicColor;
 
 end org.allbinary.media.graphics.geography.map.SimpleGeographicMap_Package;
 

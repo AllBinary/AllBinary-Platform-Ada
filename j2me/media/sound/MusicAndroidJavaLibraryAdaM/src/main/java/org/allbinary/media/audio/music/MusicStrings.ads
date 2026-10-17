@@ -39,7 +39,6 @@ package org.allbinary.media.audio.music.MusicStrings_Package is
    procedure Initialize (This : in out MusicStrings'Class);
    function Create return MusicStrings_Access;
    function getInstance return MusicStrings_Access;
-   procedure getInstance;
 
 end org.allbinary.media.audio.music.MusicStrings_Package;
 

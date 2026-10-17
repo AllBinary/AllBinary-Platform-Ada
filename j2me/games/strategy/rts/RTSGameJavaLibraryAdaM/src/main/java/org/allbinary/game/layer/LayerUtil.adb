@@ -28,7 +28,7 @@ package body org.allbinary.game.layer.LayerUtil_Package is
    function Create return LayerUtil_Access is
       This : constant LayerUtil_Access := new LayerUtil;
    begin
-      Initialize (This.all);
+      LayerUtil_Package.Initialize (This.all);
       return This;
    end Create;
 

@@ -29,7 +29,7 @@ package body org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEvent_Pac
    function Create (source : Java_Object_Access) return MyCanvasEvent_Access is
       This : constant MyCanvasEvent_Access := new MyCanvasEvent;
    begin
-      Initialize (This.all, source);
+      MyCanvasEvent_Package.Initialize (This.all, source);
       return This;
    end Create;
 
@@ -62,41 +62,6 @@ package body org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEvent_Pac
    begin
         myEventSource := MyCanvasEventSource_Access (This.getSource);
         return myEventSource.getAngle;
-   end getAngle;
-
-   procedure getSource (This : in out MyCanvasEvent) is
-      Java_Result : constant Java_Object_Access := MyCanvasEvent'Class (This).getSource;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSource;
-
-   procedure toString (This : in out MyCanvasEvent) is
-      Java_Result : constant Unbounded_String := MyCanvasEvent'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toString;
-
-   procedure getCommand (This : in out MyCanvasEvent) is
-      Java_Result : constant Unbounded_String := MyCanvasEvent'Class (This).getCommand;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getCommand;
-
-   procedure getTreeNode (This : in out MyCanvasEvent) is
-      Java_Result : constant MutableTreeNode_Access := MyCanvasEvent'Class (This).getTreeNode;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTreeNode;
-
-   procedure getAngle (This : in out MyCanvasEvent) is
-      Java_Result : constant Long_Float := MyCanvasEvent'Class (This).getAngle;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getAngle;
 
 end org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEvent_Package;

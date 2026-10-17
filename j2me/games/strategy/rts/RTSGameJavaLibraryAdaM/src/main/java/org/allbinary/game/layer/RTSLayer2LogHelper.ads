@@ -20,6 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
+with org.allbinary.game.layer.PathFindingLayerInterface_Package; use org.allbinary.game.layer.PathFindingLayerInterface_Package;
 
 package org.allbinary.game.layer.RTSLayer2LogHelper_Package is
 
@@ -35,7 +36,6 @@ package org.allbinary.game.layer.RTSLayer2LogHelper_Package is
    procedure Initialize (This : in out RTSLayer2LogHelper'Class);
    function Create return RTSLayer2LogHelper_Access;
    function getInstance return RTSLayer2LogHelper_Access;
-   procedure getInstance;
    procedure steeringUp (This : in out RTSLayer2LogHelper; pathFindingLayerInterface : PathFindingLayerInterface_Access);
    procedure steeringFireOrStop (This : in out RTSLayer2LogHelper; pathFindingLayerInterface : PathFindingLayerInterface_Access);
    procedure buildingAbove (This : in out RTSLayer2LogHelper; pathFindingLayerInterface : PathFindingLayerInterface_Access);

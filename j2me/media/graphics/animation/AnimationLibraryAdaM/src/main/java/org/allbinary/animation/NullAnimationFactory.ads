@@ -24,6 +24,7 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.media.ScaleProperties_Package; use org.allbinary.media.ScaleProperties_Package;
 with org.allbinary.animation.AnimationInterfaceFactoryInterface_Package; use org.allbinary.animation.AnimationInterfaceFactoryInterface_Package;
 with org.allbinary.animation.ProceduralAnimationInterfaceFactoryInterface_Package; use org.allbinary.animation.ProceduralAnimationInterfaceFactoryInterface_Package;
+with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Animation_Package;
 
 package org.allbinary.animation.NullAnimationFactory_Package is
 
@@ -44,7 +45,6 @@ package org.allbinary.animation.NullAnimationFactory_Package is
    procedure Initialize (This : in out NullAnimationFactory'Class);
    function Create return NullAnimationFactory_Access;
    function getFactoryInstance return NullAnimationFactory_Access;
-   procedure getFactoryInstance;
    function getInstance (This : in out NullAnimationFactory; instanceId : Integer) return Animation_Access;
    procedure getInstance (This : in out NullAnimationFactory; instanceId : Integer);
    function getInstanceAnimation (This : in out NullAnimationFactory; animationInterface : Animation_Access) return Animation_Access;

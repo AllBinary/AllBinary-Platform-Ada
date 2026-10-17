@@ -54,7 +54,7 @@ package body org.allbinary.media.audio.PCClipWavPlayer_Package is
    function Create (inputStream : InputStream_Access) return PCClipWavPlayer_Access is
       This : constant PCClipWavPlayer_Access := new PCClipWavPlayer;
    begin
-      Initialize (This.all, inputStream);
+      PCClipWavPlayer_Package.Initialize (This.all, inputStream);
       return This;
    end Create;
 
@@ -210,13 +210,6 @@ package body org.allbinary.media.audio.PCClipWavPlayer_Package is
         end if;
    end update;
 
-   procedure getContentType (This : in out PCClipWavPlayer) is
-      Java_Result : constant Unbounded_String := PCClipWavPlayer'Class (This).getContentType;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getContentType;
-
    procedure create (This : in out PCClipWavPlayer; audioInputStream : AudioInputStream_Access) is
       Java_Result : constant Clip_Access := PCClipWavPlayer'Class (This).create (audioInputStream);
       pragma Unreferenced (Java_Result);
@@ -230,27 +223,6 @@ package body org.allbinary.media.audio.PCClipWavPlayer_Package is
    begin
       null;
    end getControl;
-
-   procedure getControls (This : in out PCClipWavPlayer) is
-      Java_Result : constant Control_Access_Array_Access := PCClipWavPlayer'Class (This).getControls;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getControls;
-
-   procedure getVolume (This : in out PCClipWavPlayer) is
-      Java_Result : constant Float := PCClipWavPlayer'Class (This).getVolume;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getVolume;
-
-   procedure getDuration (This : in out PCClipWavPlayer) is
-      Java_Result : constant Long_Long_Integer := PCClipWavPlayer'Class (This).getDuration;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getDuration;
 
 end org.allbinary.media.audio.PCClipWavPlayer_Package;
 

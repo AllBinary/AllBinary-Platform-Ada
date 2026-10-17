@@ -30,7 +30,7 @@ package body org.allbinary.graphics.opengles.OrthogonalLightingOpenGLProcessorFa
    function Create return OrthogonalLightingOpenGLProcessorFactory_Access is
       This : constant OrthogonalLightingOpenGLProcessorFactory_Access := new OrthogonalLightingOpenGLProcessorFactory;
    begin
-      Initialize (This.all);
+      OrthogonalLightingOpenGLProcessorFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -38,13 +38,6 @@ package body org.allbinary.graphics.opengles.OrthogonalLightingOpenGLProcessorFa
    function getInstance return OrthogonalLightingOpenGLProcessorFactory_Access is
    begin
         return OrthogonalLightingOpenGLProcessorFactory_Package.instance;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant OrthogonalLightingOpenGLProcessorFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

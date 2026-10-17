@@ -38,7 +38,7 @@ package body org.allbinary.data.generator.PaymentGatewayIdGenerator_Package is
    function Create return PaymentGatewayIdGenerator_Access is
       This : constant PaymentGatewayIdGenerator_Access := new PaymentGatewayIdGenerator;
    begin
-      Initialize (This.all);
+      PaymentGatewayIdGenerator_Package.Initialize (This.all);
       return This;
    end Create;
 

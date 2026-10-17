@@ -39,11 +39,8 @@ package org.allbinary.logic.util.cache.CacheType_Package is
    procedure Initialize (This : in out CacheType'Class; vendor : Unbounded_String; type_Id : Unbounded_String);
    function Create (vendor : Unbounded_String; type_Id : Unbounded_String) return CacheType_Access;
    function getVendor (This : in out CacheType) return Unbounded_String;
-   procedure getVendor (This : in out CacheType);
    function getType (This : in out CacheType) return Unbounded_String;
-   procedure getType (This : in out CacheType);
    function toString (This : in out CacheType) return Unbounded_String;
-   procedure toString (This : in out CacheType);
 
 end org.allbinary.logic.util.cache.CacheType_Package;
 

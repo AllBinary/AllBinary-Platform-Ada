@@ -30,7 +30,7 @@ package body org.allbinary.data.tree.dom.BasicErrorNodeUtil_Package is
    function Create return BasicErrorNodeUtil_Access is
       This : constant BasicErrorNodeUtil_Access := new BasicErrorNodeUtil;
    begin
-      Initialize (This.all);
+      BasicErrorNodeUtil_Package.Initialize (This.all);
       return This;
    end Create;
 

@@ -36,6 +36,8 @@ with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Packag
 with org.allbinary.media.graphics.geography.map.PathData_Package; use org.allbinary.media.graphics.geography.map.PathData_Package;
 with org.allbinary.util.BasicArrayListUtil_Package; use org.allbinary.util.BasicArrayListUtil_Package;
 with org.allbinary.media.graphics.geography.pathfinding.PathGeneratorInterface_Package; use org.allbinary.media.graphics.geography.pathfinding.PathGeneratorInterface_Package;
+with org.allbinary.media.graphics.geography.pathfinding.PathCacheFactory_Package; use org.allbinary.media.graphics.geography.pathfinding.PathCacheFactory_Package;
+with org.allbinary.media.graphics.geography.pathfinding.PathFindingInfo_Package; use org.allbinary.media.graphics.geography.pathfinding.PathFindingInfo_Package;
 
 package org.allbinary.media.graphics.geography.pathfinding.StaticPathGenerator_Package is
 

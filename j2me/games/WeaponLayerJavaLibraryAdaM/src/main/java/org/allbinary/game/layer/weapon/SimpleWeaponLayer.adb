@@ -36,16 +36,9 @@ package body org.allbinary.game.layer.weapon.SimpleWeaponLayer_Package is
    function Create (name : Unbounded_String; remoteInfo : RemoteInfo_Access; multiPlayerType : Integer; movement : Movement_Access; animationInterface : Animation_Access; destroyedAnimationInterface : Animation_Access; rectangle : Rectangle_Access; viewPosition : ViewPositionBase_Access) return SimpleWeaponLayer_Access is
       This : constant SimpleWeaponLayer_Access := new SimpleWeaponLayer;
    begin
-      Initialize (This.all, name, remoteInfo, multiPlayerType, movement, animationInterface, destroyedAnimationInterface, rectangle, viewPosition);
+      SimpleWeaponLayer_Package.Initialize (This.all, name, remoteInfo, multiPlayerType, movement, animationInterface, destroyedAnimationInterface, rectangle, viewPosition);
       return This;
    end Create;
-
-   procedure createDestroyed is
-      Java_Result : constant Animation_Access := createDestroyed;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end createDestroyed;
 
 end org.allbinary.game.layer.weapon.SimpleWeaponLayer_Package;
 

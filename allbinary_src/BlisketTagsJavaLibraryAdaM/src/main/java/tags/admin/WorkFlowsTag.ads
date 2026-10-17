@@ -39,7 +39,6 @@ package tags.admin.WorkFlowsTag_Package is
    procedure Initialize (This : in out WorkFlowsTag'Class);
    function Create return WorkFlowsTag_Access;
    function doStartTag (This : in out WorkFlowsTag) return Integer;
-   procedure doStartTag (This : in out WorkFlowsTag);
 
 end tags.admin.WorkFlowsTag_Package;
 

@@ -34,7 +34,7 @@ package body org.allbinary.game.paint.MainGameDemoStatePaintable_Package is
    function Create (ownershipPaintableInterface : Paintable_Access; menuPaintableInterface : Paintable_Access) return MainGameDemoStatePaintable_Access is
       This : constant MainGameDemoStatePaintable_Access := new MainGameDemoStatePaintable;
    begin
-      Initialize (This.all, ownershipPaintableInterface, menuPaintableInterface);
+      MainGameDemoStatePaintable_Package.Initialize (This.all, ownershipPaintableInterface, menuPaintableInterface);
       return This;
    end Create;
 
@@ -52,20 +52,6 @@ package body org.allbinary.game.paint.MainGameDemoStatePaintable_Package is
    function getMenuPaintableInterface (This : in out MainGameDemoStatePaintable) return Paintable_Access is
    begin
         return This.menuPaintableInterface;
-   end getMenuPaintableInterface;
-
-   procedure getOwnershipPaintableInterface (This : in out MainGameDemoStatePaintable) is
-      Java_Result : constant Paintable_Access := MainGameDemoStatePaintable'Class (This).getOwnershipPaintableInterface;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getOwnershipPaintableInterface;
-
-   procedure getMenuPaintableInterface (This : in out MainGameDemoStatePaintable) is
-      Java_Result : constant Paintable_Access := MainGameDemoStatePaintable'Class (This).getMenuPaintableInterface;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getMenuPaintableInterface;
 
 end org.allbinary.game.paint.MainGameDemoStatePaintable_Package;

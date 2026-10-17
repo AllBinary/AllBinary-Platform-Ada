@@ -32,7 +32,7 @@ package body org.allbinary.input.motion.gesture.MotionGestureInput_Package is
    function Create (id : Integer; name : Unbounded_String) return MotionGestureInput_Access is
       This : constant MotionGestureInput_Access := new MotionGestureInput;
    begin
-      Initialize (This.all, id, name);
+      MotionGestureInput_Package.Initialize (This.all, id, name);
       return This;
    end Create;
 

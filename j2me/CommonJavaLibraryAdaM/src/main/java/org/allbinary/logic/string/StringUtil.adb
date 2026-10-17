@@ -40,7 +40,7 @@ package body org.allbinary.logic.string_Id.StringUtil_Package is
    function Create return StringUtil_Access is
       This : constant StringUtil_Access := new StringUtil;
    begin
-      Initialize (This.all);
+      StringUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -82,26 +82,12 @@ package body org.allbinary.logic.string_Id.StringUtil_Package is
         end if;
    end toString;
 
-   procedure getInstance is
-      Java_Result : constant StringUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
    procedure getNonNull (This : in out StringUtil; string_Id : Unbounded_String) is
       Java_Result : constant Unbounded_String := StringUtil'Class (This).getNonNull (string_Id);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getNonNull;
-
-   procedure getArrayInstance (This : in out StringUtil) is
-      Java_Result : constant Unbounded_String_Array_Access := StringUtil'Class (This).getArrayInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getArrayInstance;
 
    procedure count (This : in out StringUtil; string_Id : Unbounded_String; aChar : Character) is
       Java_Result : constant Integer := StringUtil'Class (This).count (string_Id, aChar);

@@ -32,7 +32,7 @@ package body org.allbinary.logic.util.event.EventStrings_Package is
    function Create return EventStrings_Access is
       This : constant EventStrings_Access := new EventStrings;
    begin
-      Initialize (This.all);
+      EventStrings_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -40,13 +40,6 @@ package body org.allbinary.logic.util.event.EventStrings_Package is
    function getInstance return EventStrings_Access is
    begin
         return EventStrings_Package.instance;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant EventStrings_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

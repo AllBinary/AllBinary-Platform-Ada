@@ -31,7 +31,7 @@ package body tags.generic_Id.basket.BasketTag_Package is
    function Create return BasketTag_Access is
       This : constant BasketTag_Access := new BasketTag;
    begin
-      Initialize (This.all);
+      BasketTag_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -59,13 +59,6 @@ package body tags.generic_Id.basket.BasketTag_Package is
             return SKIP_BODY;
                 end;
         end;
-   end doStartTag;
-
-   procedure doStartTag (This : in out BasketTag) is
-      Java_Result : constant Integer := BasketTag'Class (This).doStartTag;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end doStartTag;
 
 end tags.generic_Id.basket.BasketTag_Package;

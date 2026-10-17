@@ -63,7 +63,6 @@ package views.business.context.modules.storefront.customizer.CustomizerUtil_Pack
    procedure Initialize (This : in out CustomizerUtil'Class);
    function Create return CustomizerUtil_Access;
    function getInstance return CustomizerUtil_Access;
-   procedure getInstance;
    function getTransformInfoInterfaceToCustomize (This : in out CustomizerUtil; customizerTransformInfoInterface : TransformInfoInterface_Access; transformInfoInterface : TransformInfoInterface_Access) return TransformInfoInterface_Access;
    procedure getTransformInfoInterfaceToCustomize (This : in out CustomizerUtil; customizerTransformInfoInterface : TransformInfoInterface_Access; transformInfoInterface : TransformInfoInterface_Access);
    function getTransformInfoObjectConfigComponentNodesToCustomize (This : in out CustomizerUtil; customizerTransformInfoInterface : TransformInfoInterface_Access; transformInfoInterface : TransformInfoInterface_Access) return BasicArrayList_Access;

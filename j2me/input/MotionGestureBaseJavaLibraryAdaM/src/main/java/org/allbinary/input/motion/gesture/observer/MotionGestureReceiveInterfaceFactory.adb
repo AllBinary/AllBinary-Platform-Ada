@@ -28,7 +28,7 @@ package body org.allbinary.input.motion.gesture.observer.MotionGestureReceiveInt
    function Create return MotionGestureReceiveInterfaceFactory_Access is
       This : constant MotionGestureReceiveInterfaceFactory_Access := new MotionGestureReceiveInterfaceFactory;
    begin
-      Initialize (This.all);
+      MotionGestureReceiveInterfaceFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -42,13 +42,6 @@ package body org.allbinary.input.motion.gesture.observer.MotionGestureReceiveInt
         else
             return ResolveCompleteMotionGestureListener_Package.Create;
         end if;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant CompleteMotionGestureListenerInterface_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 end org.allbinary.input.motion.gesture.observer.MotionGestureReceiveInterfaceFactory_Package;

@@ -52,7 +52,7 @@ package body org.allbinary.graphics.j2me.workarea.tools.LinesGraphicItem_Package
    function Create return LinesGraphicItem_Access is
       This : constant LinesGraphicItem_Access := new LinesGraphicItem;
    begin
-      Initialize (This.all);
+      LinesGraphicItem_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -90,7 +90,7 @@ package body org.allbinary.graphics.j2me.workarea.tools.LinesGraphicItem_Package
    function Create (linesNode : Node_Access) return LinesGraphicItem_Access is
       This : constant LinesGraphicItem_Access := new LinesGraphicItem;
    begin
-      Initialize (This.all, linesNode);
+      LinesGraphicItem_Package.Initialize (This.all, linesNode);
       return This;
    end Create;
 
@@ -115,7 +115,8 @@ package body org.allbinary.graphics.j2me.workarea.tools.LinesGraphicItem_Package
         This.points.addPoints (basicGraphicsPipeline.getMatrix);
    end translate;
 
-   procedure setRotate (This : in out LinesGraphicItem; theta : Long_Float) is
+   procedure setRotate (This : in out LinesGraphicItem; theta_Param : Long_Float) is
+      theta : Long_Float := theta_Param;
    begin
         while (theta) > ((2) * (Math_Package.PI)) loop
             theta := (theta) - ((2) * (Math_Package.PI));
@@ -431,82 +432,12 @@ package body org.allbinary.graphics.j2me.workarea.tools.LinesGraphicItem_Package
         null;
    end keyTyped;
 
-   procedure getTreeNode (This : in out LinesGraphicItem) is
-      Java_Result : constant MutableTreeNode_Access := LinesGraphicItem'Class (This).getTreeNode;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTreeNode;
-
-   procedure getName (This : in out LinesGraphicItem) is
-      Java_Result : constant Unbounded_String := LinesGraphicItem'Class (This).getName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getName;
-
-   procedure getStaticName is
-      Java_Result : constant Unbounded_String := getStaticName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getStaticName;
-
-   procedure removePoint (This : in out LinesGraphicItem) is
-      Java_Result : constant GPoint_Access := LinesGraphicItem'Class (This).removePoint;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end removePoint;
-
-   procedure isActive (This : in out LinesGraphicItem) is
-      Java_Result : constant Boolean := LinesGraphicItem'Class (This).isActive;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isActive;
-
-   procedure duplicate (This : in out LinesGraphicItem) is
-      Java_Result : constant GraphicItemInterface_Access := LinesGraphicItem'Class (This).duplicate;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end duplicate;
-
-   procedure getAngle (This : in out LinesGraphicItem) is
-      Java_Result : constant Long_Float := LinesGraphicItem'Class (This).getAngle;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getAngle;
-
    procedure toDom (This : in out LinesGraphicItem; canvasDom : CanvasDom_Access) is
       Java_Result : constant Node_Access := LinesGraphicItem'Class (This).toDom (canvasDom);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end toDom;
-
-   procedure isValid (This : in out LinesGraphicItem) is
-      Java_Result : constant Boolean := LinesGraphicItem'Class (This).isValid;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isValid;
-
-   procedure getPointsInterface (This : in out LinesGraphicItem) is
-      Java_Result : constant Points_Access := LinesGraphicItem'Class (This).getPointsInterface;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getPointsInterface;
-
-   procedure getColor (This : in out LinesGraphicItem) is
-      Java_Result : constant Color_Access := LinesGraphicItem'Class (This).getColor;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getColor;
 
 begin
    null;

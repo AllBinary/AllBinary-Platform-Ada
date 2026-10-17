@@ -20,6 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
+with org.allbinary.animation.ShapeType_Package; use org.allbinary.animation.ShapeType_Package;
 
 package org.allbinary.animation.ShapeTypeFactory_Package is
 
@@ -43,7 +44,6 @@ package org.allbinary.animation.ShapeTypeFactory_Package is
    procedure Initialize (This : in out ShapeTypeFactory'Class);
    function Create return ShapeTypeFactory_Access;
    function getInstance return ShapeTypeFactory_Access;
-   procedure getInstance;
 
 end org.allbinary.animation.ShapeTypeFactory_Package;
 

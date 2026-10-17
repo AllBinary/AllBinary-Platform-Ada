@@ -21,6 +21,7 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.game.configuration.feature.GraphicsFeature_Package; use org.allbinary.game.configuration.feature.GraphicsFeature_Package;
 
 package org.allbinary.game.configuration.feature.GraphicsFeatureFactory_Package is
 
@@ -47,7 +48,6 @@ package org.allbinary.game.configuration.feature.GraphicsFeatureFactory_Package 
    procedure Initialize (This : in out GraphicsFeatureFactory'Class);
    function Create return GraphicsFeatureFactory_Access;
    function getInstance return GraphicsFeatureFactory_Access;
-   procedure getInstance;
 
 end org.allbinary.game.configuration.feature.GraphicsFeatureFactory_Package;
 

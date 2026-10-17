@@ -28,7 +28,7 @@ package body org.allbinary.game.score.HighScoresCanvasNoInputProcessorFactory_Pa
    function Create return HighScoresCanvasNoInputProcessorFactory_Access is
       This : constant HighScoresCanvasNoInputProcessorFactory_Access := new HighScoresCanvasNoInputProcessorFactory;
    begin
-      Initialize (This.all);
+      HighScoresCanvasNoInputProcessorFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

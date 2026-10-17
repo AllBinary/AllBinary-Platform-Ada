@@ -31,7 +31,7 @@ package body org.allbinary.business.installer.DeleteCloud_Package is
    function Create return DeleteCloud_Access is
       This : constant DeleteCloud_Access := new DeleteCloud;
    begin
-      Initialize (This.all);
+      DeleteCloud_Package.Initialize (This.all);
       return This;
    end Create;
 

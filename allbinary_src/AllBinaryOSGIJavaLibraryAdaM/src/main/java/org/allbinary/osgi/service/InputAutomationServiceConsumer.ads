@@ -28,6 +28,7 @@ with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.lo
 with org.allbinary.osgi.OSGIServiceInterface_Package; use org.allbinary.osgi.OSGIServiceInterface_Package;
 with org.allbinary.osgi.OSGIServiceVisitorInterface_Package; use org.allbinary.osgi.OSGIServiceVisitorInterface_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.osgi.service.OSGIServiceUtil_Package; use org.allbinary.osgi.service.OSGIServiceUtil_Package;
 
 package org.allbinary.osgi.service.InputAutomationServiceConsumer_Package is
 
@@ -58,15 +59,11 @@ package org.allbinary.osgi.service.InputAutomationServiceConsumer_Package is
    function Create (registryName : Unbounded_String; bundleContext : BundleContext_Access; osgiServiceVisitorInterface : OSGIServiceVisitorInterface_Access) return InputAutomationServiceConsumer_Access;
    procedure process (This : in out InputAutomationServiceConsumer);
    function getServiceReferences (This : in out InputAutomationServiceConsumer) return ServiceReference_Access_Array_Access;
-   procedure getServiceReferences (This : in out InputAutomationServiceConsumer);
    function getBundleContext (This : in out InputAutomationServiceConsumer) return BundleContext_Access;
-   procedure getBundleContext (This : in out InputAutomationServiceConsumer);
    procedure setBundleContext (This : in out InputAutomationServiceConsumer; aBundleContext : BundleContext_Access);
    function getRegistryName (This : in out InputAutomationServiceConsumer) return Unbounded_String;
-   procedure getRegistryName (This : in out InputAutomationServiceConsumer);
    procedure setRegistryName (This : in out InputAutomationServiceConsumer; registryName : Unbounded_String);
    function getOsgiServiceVisitorInterface (This : in out InputAutomationServiceConsumer) return OSGIServiceVisitorInterface_Access;
-   procedure getOsgiServiceVisitorInterface (This : in out InputAutomationServiceConsumer);
    procedure setOsgiServiceVisitorInterface (This : in out InputAutomationServiceConsumer; osgiServiceVisitorInterface : OSGIServiceVisitorInterface_Access);
 
 end org.allbinary.osgi.service.InputAutomationServiceConsumer_Package;

@@ -35,7 +35,7 @@ package body org.allbinary.logic.util.cache.CachePolicy_Package is
    function Create (name : Unbounded_String; maxTime : Long_Long_Integer; maxSize : Long_Long_Integer) return CachePolicy_Access is
       This : constant CachePolicy_Access := new CachePolicy;
    begin
-      Initialize (This.all, name, maxTime, maxSize);
+      CachePolicy_Package.Initialize (This.all, name, maxTime, maxSize);
       return This;
    end Create;
 
@@ -62,27 +62,6 @@ package body org.allbinary.logic.util.cache.CachePolicy_Package is
    function getName (This : in out CachePolicy) return Unbounded_String is
    begin
         return This.name;
-   end getName;
-
-   procedure getMaxTime (This : in out CachePolicy) is
-      Java_Result : constant Long_Long_Integer := CachePolicy'Class (This).getMaxTime;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getMaxTime;
-
-   procedure getMaxSize (This : in out CachePolicy) is
-      Java_Result : constant Long_Long_Integer := CachePolicy'Class (This).getMaxSize;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getMaxSize;
-
-   procedure getName (This : in out CachePolicy) is
-      Java_Result : constant Unbounded_String := CachePolicy'Class (This).getName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getName;
 
 end org.allbinary.logic.util.cache.CachePolicy_Package;

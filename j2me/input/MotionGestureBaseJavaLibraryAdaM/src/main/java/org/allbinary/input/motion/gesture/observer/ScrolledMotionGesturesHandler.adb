@@ -36,7 +36,7 @@ package body org.allbinary.input.motion.gesture.observer.ScrolledMotionGesturesH
    function Create return ScrolledMotionGesturesHandler_Access is
       This : constant ScrolledMotionGesturesHandler_Access := new ScrolledMotionGesturesHandler;
    begin
-      Initialize (This.all);
+      ScrolledMotionGesturesHandler_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -47,13 +47,6 @@ package body org.allbinary.input.motion.gesture.observer.ScrolledMotionGesturesH
         baseMotionGestureEventListener := BaseMotionGestureEventListener_Access (eventListenerInterface);
         baseMotionGestureEventListener.onScrolledMotionGestureEvent (MotionGestureEvent_Access (eventObject));
    end process;
-
-   procedure getInstance is
-      Java_Result : constant ScrolledMotionGesturesHandler_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

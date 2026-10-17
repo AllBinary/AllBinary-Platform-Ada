@@ -31,20 +31,13 @@ package body org.allbinary.game.collision.CollisionType_Package is
    function Create (name : Unbounded_String) return CollisionType_Access is
       This : constant CollisionType_Access := new CollisionType;
    begin
-      Initialize (This.all, name);
+      CollisionType_Package.Initialize (This.all, name);
       return This;
    end Create;
 
    function toString (This : in out CollisionType) return Unbounded_String is
    begin
         return This.name;
-   end toString;
-
-   procedure toString (This : in out CollisionType) is
-      Java_Result : constant Unbounded_String := CollisionType'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end toString;
 
 end org.allbinary.game.collision.CollisionType_Package;

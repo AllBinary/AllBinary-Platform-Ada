@@ -35,7 +35,7 @@ package body org.allbinary.game.layer.Driver_Package is
    function Create (turnSpeed : Integer; trackPathSelectionSkill : Integer; aggression : Aggression_Access) return Driver_Access is
       This : constant Driver_Access := new Driver;
    begin
-      Initialize (This.all, turnSpeed, trackPathSelectionSkill, aggression);
+      Driver_Package.Initialize (This.all, turnSpeed, trackPathSelectionSkill, aggression);
       return This;
    end Create;
 
@@ -68,27 +68,6 @@ package body org.allbinary.game.layer.Driver_Package is
    begin
         This.aggression := aggression;
    end setAggression;
-
-   procedure getTurnSpeed (This : in out Driver) is
-      Java_Result : constant Integer := Driver'Class (This).getTurnSpeed;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTurnSpeed;
-
-   procedure getTrackPathSelectionSkill (This : in out Driver) is
-      Java_Result : constant Integer := Driver'Class (This).getTrackPathSelectionSkill;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTrackPathSelectionSkill;
-
-   procedure getAggression (This : in out Driver) is
-      Java_Result : constant Aggression_Access := Driver'Class (This).getAggression;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getAggression;
 
 begin
    null;

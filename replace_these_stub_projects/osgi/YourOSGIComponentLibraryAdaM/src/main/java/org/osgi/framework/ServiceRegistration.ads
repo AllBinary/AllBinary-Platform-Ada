@@ -8,6 +8,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
+with org.osgi.framework.ServiceReference_Package; use org.osgi.framework.ServiceReference_Package;
 
 package org.osgi.framework.ServiceRegistration_Package is
 

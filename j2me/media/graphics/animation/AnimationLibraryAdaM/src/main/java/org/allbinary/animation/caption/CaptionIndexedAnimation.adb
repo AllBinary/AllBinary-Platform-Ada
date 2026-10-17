@@ -53,7 +53,7 @@ package body org.allbinary.animation.caption.CaptionIndexedAnimation_Package is
    function Create (animationInterface : Animation_Access; movieIndexedAnimationInterface : IndexedAnimation_Access; player : Player_Access; captionDx : Integer; captionDy : Integer; dx : Integer; dy : Integer; time : Integer; animationBehavior : AnimationBehavior_Access) return CaptionIndexedAnimation_Access is
       This : constant CaptionIndexedAnimation_Access := new CaptionIndexedAnimation;
    begin
-      Initialize (This.all, animationInterface, movieIndexedAnimationInterface, player, captionDx, captionDy, dx, dy, time, animationBehavior);
+      CaptionIndexedAnimation_Package.Initialize (This.all, animationInterface, movieIndexedAnimationInterface, player, captionDx, captionDy, dx, dy, time, animationBehavior);
       return This;
    end Create;
 
@@ -118,34 +118,6 @@ package body org.allbinary.animation.caption.CaptionIndexedAnimation_Package is
         This.animationInterface.paintThreedXYZ (graphics, (x) + (This.captionDx), (y) + (This.captionDy), z);
         This.movieIndexedAnimationInterface.paintThreedXYZ (graphics, ((x) + (This.captionDx)) + (This.dx), ((y) + (This.captionDy)) + (This.dy), z);
    end paintThreedXYZ;
-
-   procedure isLastFrame (This : in out CaptionIndexedAnimation) is
-      Java_Result : constant Boolean := CaptionIndexedAnimation'Class (This).isLastFrame;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isLastFrame;
-
-   procedure getFrame (This : in out CaptionIndexedAnimation) is
-      Java_Result : constant Integer := CaptionIndexedAnimation'Class (This).getFrame;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getFrame;
-
-   procedure getSize (This : in out CaptionIndexedAnimation) is
-      Java_Result : constant Integer := CaptionIndexedAnimation'Class (This).getSize;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSize;
-
-   procedure getSequence (This : in out CaptionIndexedAnimation) is
-      Java_Result : constant Integer_Array_Access := CaptionIndexedAnimation'Class (This).getSequence;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSequence;
 
 end org.allbinary.animation.caption.CaptionIndexedAnimation_Package;
 

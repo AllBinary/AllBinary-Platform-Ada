@@ -38,7 +38,7 @@ package body org.allbinary.input.automation.module.generic_Id.SavedCaptureImages
    function Create (savedCaptureGenericProfileDataWorkerType : SavedCaptureGenericProfileDataWorkerType_Access) return SavedCaptureImagesWorker_Access is
       This : constant SavedCaptureImagesWorker_Access := new SavedCaptureImagesWorker;
    begin
-      Initialize (This.all, savedCaptureGenericProfileDataWorkerType);
+      SavedCaptureImagesWorker_Package.Initialize (This.all, savedCaptureGenericProfileDataWorkerType);
       return This;
    end Create;
 
@@ -103,13 +103,6 @@ package body org.allbinary.input.automation.module.generic_Id.SavedCaptureImages
                 end;
         end;
    end run;
-
-   procedure isRunning (This : in out SavedCaptureImagesWorker) is
-      Java_Result : constant Boolean := SavedCaptureImagesWorker'Class (This).isRunning;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isRunning;
 
 begin
    null;

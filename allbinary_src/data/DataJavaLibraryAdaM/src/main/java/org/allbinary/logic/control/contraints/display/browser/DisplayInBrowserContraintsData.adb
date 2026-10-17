@@ -30,7 +30,7 @@ package body org.allbinary.logic.control.contraints.display.browser.DisplayInBro
    function Create return DisplayInBrowserContraintsData_Access is
       This : constant DisplayInBrowserContraintsData_Access := new DisplayInBrowserContraintsData;
    begin
-      Initialize (This.all);
+      DisplayInBrowserContraintsData_Package.Initialize (This.all);
       return This;
    end Create;
 

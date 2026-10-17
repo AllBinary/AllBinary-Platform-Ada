@@ -61,7 +61,7 @@ package body org.allbinary.animation.image.sprite.OneRowSpriteIndexedAnimationFa
    function Create (image : Image_Access; sequenceArray : Integer_Array_Access; width : Integer; height : Integer; dx : Integer; dy : Integer; animationBehaviorFactory : AnimationBehaviorFactory_Access) return OneRowSpriteIndexedAnimationFactory_Access is
       This : constant OneRowSpriteIndexedAnimationFactory_Access := new OneRowSpriteIndexedAnimationFactory;
    begin
-      Initialize (This.all, image, sequenceArray, width, height, dx, dy, animationBehaviorFactory);
+      OneRowSpriteIndexedAnimationFactory_Package.Initialize (This.all, image, sequenceArray, width, height, dx, dy, animationBehaviorFactory);
       return This;
    end Create;
 

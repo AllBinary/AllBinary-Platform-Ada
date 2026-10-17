@@ -35,7 +35,7 @@ package body org.allbinary.data.tree.dom.StoreUriResolver_Package is
    function Create (parentTransformInfoInterface : TransformInfoInterface_Access; basicURIResolver : BasicUriResolver_Access) return StoreUriResolver_Access is
       This : constant StoreUriResolver_Access := new StoreUriResolver;
    begin
-      Initialize (This.all, parentTransformInfoInterface, basicURIResolver);
+      StoreUriResolver_Package.Initialize (This.all, parentTransformInfoInterface, basicURIResolver);
       return This;
    end Create;
 
@@ -96,13 +96,6 @@ package body org.allbinary.data.tree.dom.StoreUriResolver_Package is
    begin
       null;
    end resolve;
-
-   procedure toString (This : in out StoreUriResolver) is
-      Java_Result : constant Unbounded_String := StoreUriResolver'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toString;
 
 end org.allbinary.data.tree.dom.StoreUriResolver_Package;
 

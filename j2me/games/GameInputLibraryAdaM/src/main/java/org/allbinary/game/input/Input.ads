@@ -41,13 +41,10 @@ package org.allbinary.game.input.Input_Package is
    procedure Initialize (This : in out Input'Class; id : Integer; name : Unbounded_String);
    function Create (id : Integer; name : Unbounded_String) return Input_Access;
    function getId (This : in out Input) return Integer;
-   procedure getId (This : in out Input);
    procedure setId (This : in out Input; key : Integer);
    function getName (This : in out Input) return Unbounded_String;
-   procedure getName (This : in out Input);
    procedure setName (This : in out Input; keyName : Unbounded_String);
    function toString (This : in out Input) return Unbounded_String;
-   procedure toString (This : in out Input);
 
 end org.allbinary.game.input.Input_Package;
 

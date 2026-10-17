@@ -33,7 +33,7 @@ package body org.allbinary.game.configuration.feature.Feature_Package is
    function Create (name : Unbounded_String) return Feature_Access is
       This : constant Feature_Access := new Feature;
    begin
-      Initialize (This.all, name);
+      Feature_Package.Initialize (This.all, name);
       return This;
    end Create;
 
@@ -63,20 +63,6 @@ package body org.allbinary.game.configuration.feature.Feature_Package is
    begin
       null;
    end getInstance;
-
-   procedure toString (This : in out Feature) is
-      Java_Result : constant Unbounded_String := Feature'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toString;
-
-   procedure getName (This : in out Feature) is
-      Java_Result : constant Unbounded_String := Feature'Class (This).getName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getName;
 
 begin
    null;

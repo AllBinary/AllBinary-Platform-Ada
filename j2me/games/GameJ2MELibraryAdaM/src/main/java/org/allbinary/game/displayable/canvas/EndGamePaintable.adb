@@ -32,7 +32,7 @@ package body org.allbinary.game.displayable.canvas.EndGamePaintable_Package is
    function Create (gameCanvas : AllBinaryGameCanvas_Access) return EndGamePaintable_Access is
       This : constant EndGamePaintable_Access := new EndGamePaintable;
    begin
-      Initialize (This.all, gameCanvas);
+      EndGamePaintable_Package.Initialize (This.all, gameCanvas);
       return This;
    end Create;
 

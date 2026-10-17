@@ -35,7 +35,7 @@ package body org.allbinary.game.input.GameInputProcessorComposite_Package is
    function Create (name : Unbounded_String; gameInputProcessorInterface : GameInputProcessorInterface_Access) return GameInputProcessorComposite_Access is
       This : constant GameInputProcessorComposite_Access := new GameInputProcessorComposite;
    begin
-      Initialize (This.all, name, gameInputProcessorInterface);
+      GameInputProcessorComposite_Package.Initialize (This.all, name, gameInputProcessorInterface);
       return This;
    end Create;
 
@@ -58,13 +58,6 @@ package body org.allbinary.game.input.GameInputProcessorComposite_Package is
    function toString (This : in out GameInputProcessorComposite) return Unbounded_String is
    begin
         return StringMaker_Package.Create.append (PlayerGameInput (This).toString).append (This.NAME_LABEL).append (This.name).toString;
-   end toString;
-
-   procedure toString (This : in out GameInputProcessorComposite) is
-      Java_Result : constant Unbounded_String := GameInputProcessorComposite'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end toString;
 
 end org.allbinary.game.input.GameInputProcessorComposite_Package;

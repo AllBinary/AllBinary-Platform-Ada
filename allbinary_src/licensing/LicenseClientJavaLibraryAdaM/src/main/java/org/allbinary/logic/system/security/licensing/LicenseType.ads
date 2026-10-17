@@ -37,7 +37,6 @@ package org.allbinary.logic.system.security.licensing.LicenseType_Package is
    function Create (name : Unbounded_String) return LicenseType_Access;
    procedure setName (This : in out LicenseType; name : Unbounded_String);
    function getName (This : in out LicenseType) return Unbounded_String;
-   procedure getName (This : in out LicenseType);
 
 end org.allbinary.logic.system.security.licensing.LicenseType_Package;
 

@@ -29,7 +29,7 @@ package body org.allbinary.graphics.color.ColorTemperatureUtil_Package is
    function Create return ColorTemperatureUtil_Access is
       This : constant ColorTemperatureUtil_Access := new ColorTemperatureUtil;
    begin
-      Initialize (This.all);
+      ColorTemperatureUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -60,13 +60,6 @@ package body org.allbinary.graphics.color.ColorTemperatureUtil_Package is
         end if;
         return basicColor;
    end getBasicColor;
-
-   procedure getInstance is
-      Java_Result : constant ColorTemperatureUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure getBasicColor (This : in out ColorTemperatureUtil; thirdTemp : Integer) is
       Java_Result : constant BasicColor_Access := ColorTemperatureUtil'Class (This).getBasicColor (thirdTemp);

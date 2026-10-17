@@ -31,7 +31,7 @@ package body org.allbinary.business.installer.InitializeCloud_Package is
    function Create return InitializeCloud_Access is
       This : constant InitializeCloud_Access := new InitializeCloud;
    begin
-      Initialize (This.all);
+      InitializeCloud_Package.Initialize (This.all);
       return This;
    end Create;
 

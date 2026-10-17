@@ -20,6 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
+with org.allbinary.animation.AnimationBehavior_Package; use org.allbinary.animation.AnimationBehavior_Package;
 
 package org.allbinary.animation.AnimationBehaviorFactory_Package is
 
@@ -35,9 +36,7 @@ package org.allbinary.animation.AnimationBehaviorFactory_Package is
    procedure Initialize (This : in out AnimationBehaviorFactory'Class);
    function Create return AnimationBehaviorFactory_Access;
    function getInstance return AnimationBehaviorFactory_Access;
-   procedure getInstance;
    function getOrCreateInstance (This : in out AnimationBehaviorFactory) return AnimationBehavior_Access;
-   procedure getOrCreateInstance (This : in out AnimationBehaviorFactory);
 
 end org.allbinary.animation.AnimationBehaviorFactory_Package;
 

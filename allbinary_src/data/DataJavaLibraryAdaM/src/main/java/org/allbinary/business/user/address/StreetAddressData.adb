@@ -13,7 +13,7 @@
 --  Generated Code Do Not Modify
 
 
-package body org.allbinary.business.user.address_Case.StreetAddressData_Package is
+package body org.allbinary.business.user.address.StreetAddressData_Package is
 
    procedure Initialize_Fields (This : in out StreetAddressData'Class) is
    begin
@@ -30,7 +30,7 @@ package body org.allbinary.business.user.address_Case.StreetAddressData_Package 
    function Create return StreetAddressData_Access is
       This : constant StreetAddressData_Access := new StreetAddressData;
    begin
-      Initialize (This.all);
+      StreetAddressData_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -51,6 +51,6 @@ begin
    CODE := To_Unbounded_String ("STREETADDRESS_CODE");
    COUNTRY := To_Unbounded_String ("STREETADDRESS_COUNTRY");
 
-end org.allbinary.business.user.address_Case.StreetAddressData_Package;
+end org.allbinary.business.user.address.StreetAddressData_Package;
 
 

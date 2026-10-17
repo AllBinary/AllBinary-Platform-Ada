@@ -24,6 +24,8 @@ with org.allbinary.game.input.InputFactory_Package; use org.allbinary.game.input
 with org.allbinary.input.motion.gesture.MotionGestureInput_Package; use org.allbinary.input.motion.gesture.MotionGestureInput_Package;
 with org.allbinary.input.motion.gesture.TouchMotionGestureFactory_Package; use org.allbinary.input.motion.gesture.TouchMotionGestureFactory_Package;
 with org.allbinary.logic.util.event.AllBinaryEventCircularPool_Package; use org.allbinary.logic.util.event.AllBinaryEventCircularPool_Package;
+with org.allbinary.input.motion.gesture.observer.MotionEventFactory_Package; use org.allbinary.input.motion.gesture.observer.MotionEventFactory_Package;
+with org.allbinary.input.motion.gesture.observer.MotionGestureEvent_Package; use org.allbinary.input.motion.gesture.observer.MotionGestureEvent_Package;
 
 package org.allbinary.input.motion.gesture.observer.MotionEventCircularPool_Package is
 

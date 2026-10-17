@@ -65,12 +65,10 @@ package views.generic_Id.address.shipping.ShippingAddressesView_Package is
    procedure Initialize (This : in out ShippingAddressesView'Class; transformInfoInterface : TransformInfoInterface_Access);
    function Create (transformInfoInterface : TransformInfoInterface_Access) return ShippingAddressesView_Access;
    function getRequest (This : in out ShippingAddressesView) return HttpServletRequest_Access;
-   procedure getRequest (This : in out ShippingAddressesView);
    function toXmlNode (This : in out ShippingAddressesView; document : Document_Access) return Node_Access;
    procedure toXmlNode (This : in out ShippingAddressesView; document : Document_Access);
    procedure addDomNodeInterfaces (This : in out ShippingAddressesView);
    function view (This : in out ShippingAddressesView) return Unbounded_String;
-   procedure view (This : in out ShippingAddressesView);
 
 end views.generic_Id.address.shipping.ShippingAddressesView_Package;
 

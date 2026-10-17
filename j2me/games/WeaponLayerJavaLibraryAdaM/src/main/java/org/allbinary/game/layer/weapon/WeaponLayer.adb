@@ -47,7 +47,7 @@ package body org.allbinary.game.layer.weapon.WeaponLayer_Package is
    function Create (name : Unbounded_String; remoteInfo : RemoteInfo_Access; multiPlayerType : Integer; movement : Movement_Access; animationInterface : Animation_Access; destroyedAnimationInterface : Animation_Access; rectangle : Rectangle_Access; viewPosition : ViewPositionBase_Access) return WeaponLayer_Access is
       This : constant WeaponLayer_Access := new WeaponLayer;
    begin
-      Initialize (This.all, name, remoteInfo, multiPlayerType, movement, animationInterface, destroyedAnimationInterface, rectangle, viewPosition);
+      WeaponLayer_Package.Initialize (This.all, name, remoteInfo, multiPlayerType, movement, animationInterface, destroyedAnimationInterface, rectangle, viewPosition);
       return This;
    end Create;
 
@@ -268,103 +268,12 @@ package body org.allbinary.game.layer.weapon.WeaponLayer_Package is
         This.initAnimationInterface.set (gl);
    end set;
 
-   procedure isDestroyed (This : in out WeaponLayer) is
-      Java_Result : constant Boolean := WeaponLayer'Class (This).isDestroyed;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isDestroyed;
-
-   procedure isExhausted (This : in out WeaponLayer) is
-      Java_Result : constant Boolean := WeaponLayer'Class (This).isExhausted;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isExhausted;
-
    procedure getDamage (This : in out WeaponLayer; damageType : Integer) is
       Java_Result : constant Integer := WeaponLayer'Class (This).getDamage (damageType);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getDamage;
-
-   procedure getInitDamage (This : in out WeaponLayer) is
-      Java_Result : constant Integer := WeaponLayer'Class (This).getInitDamage;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInitDamage;
-
-   procedure getAnimationInterface (This : in out WeaponLayer) is
-      Java_Result : constant Animation_Access := WeaponLayer'Class (This).getAnimationInterface;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getAnimationInterface;
-
-   procedure getInitAnimationInterfaceP (This : in out WeaponLayer) is
-      Java_Result : constant Animation_Access := WeaponLayer'Class (This).getInitAnimationInterfaceP;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInitAnimationInterfaceP;
-
-   procedure getDestroyedAnimationInterface (This : in out WeaponLayer) is
-      Java_Result : constant Animation_Access := WeaponLayer'Class (This).getDestroyedAnimationInterface;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getDestroyedAnimationInterface;
-
-   procedure getOwnerLayerInterface (This : in out WeaponLayer) is
-      Java_Result : constant AllBinaryLayer_Access := WeaponLayer'Class (This).getOwnerLayerInterface;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getOwnerLayerInterface;
-
-   procedure getMovement (This : in out WeaponLayer) is
-      Java_Result : constant Movement_Access := WeaponLayer'Class (This).getMovement;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getMovement;
-
-   procedure getType (This : in out WeaponLayer) is
-      Java_Result : constant Integer := WeaponLayer'Class (This).getType;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getType;
-
-   procedure getStaticType is
-      Java_Result : constant Integer := getStaticType;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getStaticType;
-
-   procedure getMultiPlayerType (This : in out WeaponLayer) is
-      Java_Result : constant Integer := WeaponLayer'Class (This).getMultiPlayerType;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getMultiPlayerType;
-
-   procedure getWeaponPropertiesP (This : in out WeaponLayer) is
-      Java_Result : constant WeaponProperties_Access := WeaponLayer'Class (This).getWeaponPropertiesP;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getWeaponPropertiesP;
-
-   procedure implmentsTickableInterface (This : in out WeaponLayer) is
-      Java_Result : constant Boolean := WeaponLayer'Class (This).implmentsTickableInterface;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end implmentsTickableInterface;
 
 end org.allbinary.game.layer.weapon.WeaponLayer_Package;
 

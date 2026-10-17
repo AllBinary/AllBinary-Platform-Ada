@@ -29,7 +29,7 @@ package body org.allbinary.graphics.displayable.event.DisplayChangeEvent_Package
    function Create (anyType : Java_Object_Access) return DisplayChangeEvent_Access is
       This : constant DisplayChangeEvent_Access := new DisplayChangeEvent;
    begin
-      Initialize (This.all, anyType);
+      DisplayChangeEvent_Package.Initialize (This.all, anyType);
       return This;
    end Create;
 

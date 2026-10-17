@@ -69,11 +69,8 @@ package org.allbinary.data.tables.user.commerce.inventory.item.downloads.Downloa
    function getForItem (This : in out DownloadItemsEntity; id : Unbounded_String; downloadItemId : Unbounded_String) return BasicArrayList_Access;
    procedure getForItem (This : in out DownloadItemsEntity; id : Unbounded_String; downloadItemId : Unbounded_String);
    function createTableStatement (This : in out DownloadItemsEntity) return Unbounded_String;
-   procedure createTableStatement (This : in out DownloadItemsEntity);
    function createTable (This : in out DownloadItemsEntity) return Unbounded_String;
-   procedure createTable (This : in out DownloadItemsEntity);
    function dropTable (This : in out DownloadItemsEntity) return Unbounded_String;
-   procedure dropTable (This : in out DownloadItemsEntity);
 
 end org.allbinary.data.tables.user.commerce.inventory.item.downloads.DownloadItemsEntity_Package;
 

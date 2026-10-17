@@ -23,6 +23,7 @@ with AllBinary_Java; use AllBinary_Java;
 --  with java.awt.image.BufferedImage_Package; use java.awt.image.BufferedImage_Package;
 with org.allbinary.graphics.GPoint_Package; use org.allbinary.graphics.GPoint_Package;
 with org.allbinary.input.automation.module.ImageComparatorConstraints_Package; use org.allbinary.input.automation.module.ImageComparatorConstraints_Package;
+with org.allbinary.input.automation.module.generic_Id.constraints.Color_Package; use org.allbinary.input.automation.module.generic_Id.constraints.Color_Package;
 
 package org.allbinary.input.automation.module.generic_Id.constraints.NoImageComparatorConstraints_Package is
 

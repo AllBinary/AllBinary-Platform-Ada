@@ -32,7 +32,7 @@ package body org.allbinary.business.user.commerce.money.Money_Package is
    function Create (money : Money_Access) return Money_Access is
       This : constant Money_Access := new Money;
    begin
-      Initialize (This.all, money);
+      Money_Package.Initialize (This.all, money);
       return This;
    end Create;
 
@@ -46,7 +46,7 @@ package body org.allbinary.business.user.commerce.money.Money_Package is
    function Create return Money_Access is
       This : constant Money_Access := new Money;
    begin
-      Initialize (This.all);
+      Money_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -62,7 +62,7 @@ package body org.allbinary.business.user.commerce.money.Money_Package is
    function Create (usDollarStr : Unbounded_String) return Money_Access is
       This : constant Money_Access := new Money;
    begin
-      Initialize (This.all, usDollarStr);
+      Money_Package.Initialize (This.all, usDollarStr);
       return This;
    end Create;
 
@@ -76,7 +76,7 @@ package body org.allbinary.business.user.commerce.money.Money_Package is
    function Create (units : Long_Long_Integer) return Money_Access is
       This : constant Money_Access := new Money;
    begin
-      Initialize (This.all, units);
+      Money_Package.Initialize (This.all, units);
       return This;
    end Create;
 
@@ -172,13 +172,6 @@ package body org.allbinary.business.user.commerce.money.Money_Package is
         return Java_New_String (This.convertUnitsTo (This.DEFAULT_CURRENCY));
    end toString;
 
-   procedure isValid (This : in out Money) is
-      Java_Result : constant Boolean := Money'Class (This).isValid;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isValid;
-
    procedure convertUnitsTo (This : in out Money; currency : Unbounded_String) is
       Java_Result : constant Unbounded_String := Money'Class (This).convertUnitsTo (currency);
       pragma Unreferenced (Java_Result);
@@ -192,27 +185,6 @@ package body org.allbinary.business.user.commerce.money.Money_Package is
    begin
       null;
    end convertUsdToUnits;
-
-   procedure getUnits (This : in out Money) is
-      Java_Result : constant Long_Long_Integer := Money'Class (This).getUnits;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getUnits;
-
-   procedure getUnitsLong (This : in out Money) is
-      Java_Result : constant Long_Long_Integer := Money'Class (This).getUnitsLong;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getUnitsLong;
-
-   procedure toString (This : in out Money) is
-      Java_Result : constant Unbounded_String := Money'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toString;
 
 end org.allbinary.business.user.commerce.money.Money_Package;
 

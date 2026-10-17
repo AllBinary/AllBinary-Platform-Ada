@@ -41,7 +41,6 @@ package org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographic
    procedure Initialize (This : in out RaceTrackGeographicMapCellType'Class; name : Unbounded_String; type_Id : Integer; travelCost : Integer; reset : Integer);
    function Create (name : Unbounded_String; type_Id : Integer; travelCost : Integer; reset : Integer) return RaceTrackGeographicMapCellType_Access;
    function getTravelCost (This : in out RaceTrackGeographicMapCellType) return Integer;
-   procedure getTravelCost (This : in out RaceTrackGeographicMapCellType);
 
 end org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellType_Package;
 

@@ -75,24 +75,18 @@ package org.allbinary.midlet.AllBinaryMidlet_Package is
    procedure Initialize (This : in out AllBinaryMidlet'Class);
    function Create return AllBinaryMidlet_Access;
    function getNullInstance return AllBinaryMidlet_Access;
-   procedure getNullInstance;
    procedure setDisplay (This : in out AllBinaryMidlet; newDisplay : Displayable_Access);
    function getDisplay (This : in out AllBinaryMidlet) return Display_Access;
-   procedure getDisplay (This : in out AllBinaryMidlet);
    function getCurrentDisplayable (This : in out AllBinaryMidlet) return Displayable_Access;
-   procedure getCurrentDisplayable (This : in out AllBinaryMidlet);
    procedure setDestroyed (This : in out AllBinaryMidlet; destroyed : Boolean);
    function isDestroyed (This : in out AllBinaryMidlet) return Boolean;
-   procedure isDestroyed (This : in out AllBinaryMidlet);
    procedure startApp (This : in out AllBinaryMidlet);
    procedure pauseApp (This : in out AllBinaryMidlet);
    procedure destroyAppInRunnable (This : in out AllBinaryMidlet; unconditional : Boolean; isProgress : Boolean);
    procedure destroyApp (This : in out AllBinaryMidlet; unconditional : Boolean);
    procedure setStartStateHashtable (This : in out AllBinaryMidlet; hashtable : ABHashtable_Access);
    function getStartStateHashtable (This : in out AllBinaryMidlet) return ABHashtable_Access;
-   procedure getStartStateHashtable (This : in out AllBinaryMidlet);
    function getCurrentStateHashtable (This : in out AllBinaryMidlet) return ABHashtable_Access;
-   procedure getCurrentStateHashtable (This : in out AllBinaryMidlet);
    procedure commandAction (This : in out AllBinaryMidlet; command : Command_Access; displayable : Displayable_Access);
 
 end org.allbinary.midlet.AllBinaryMidlet_Package;

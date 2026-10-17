@@ -48,7 +48,7 @@ package body org.allbinary.input.automation.module.InputAutomationModuleFactoryF
    function Create (inputAutomationModuleConfigurations : InputAutomationModuleConfigurations_Access; helpSetListenerInterface : HelpSetListener_Access) return InputAutomationModuleFactoryFactory_Access is
       This : constant InputAutomationModuleFactoryFactory_Access := new InputAutomationModuleFactoryFactory;
    begin
-      Initialize (This.all, inputAutomationModuleConfigurations, helpSetListenerInterface);
+      InputAutomationModuleFactoryFactory_Package.Initialize (This.all, inputAutomationModuleConfigurations, helpSetListenerInterface);
       return This;
    end Create;
 
@@ -84,13 +84,6 @@ package body org.allbinary.input.automation.module.InputAutomationModuleFactoryF
         end if;
         return inputAutomationModuleFactoryInterface;
    end getInstance;
-
-   procedure getListModel (This : in out InputAutomationModuleFactoryFactory) is
-      Java_Result : constant ListModel_Access := InputAutomationModuleFactoryFactory'Class (This).getListModel;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getListModel;
 
    procedure getInstance (This : in out InputAutomationModuleFactoryFactory; moduleName : Unbounded_String) is
       Java_Result : constant InputAutomationModuleFactoryInterface_Access := InputAutomationModuleFactoryFactory'Class (This).getInstance (moduleName);

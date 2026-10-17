@@ -43,7 +43,6 @@ package tags.generic_Id.payment.PaymentTag_Package is
    procedure Initialize (This : in out PaymentTag'Class);
    function Create return PaymentTag_Access;
    function doStartTag (This : in out PaymentTag) return Integer;
-   procedure doStartTag (This : in out PaymentTag);
 
 end tags.generic_Id.payment.PaymentTag_Package;
 

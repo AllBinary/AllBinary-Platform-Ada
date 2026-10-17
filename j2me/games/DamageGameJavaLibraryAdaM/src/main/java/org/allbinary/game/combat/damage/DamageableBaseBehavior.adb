@@ -28,7 +28,7 @@ package body org.allbinary.game.combat.damage.DamageableBaseBehavior_Package is
    function Create return DamageableBaseBehavior_Access is
       This : constant DamageableBaseBehavior_Access := new DamageableBaseBehavior;
    begin
-      Initialize (This.all);
+      DamageableBaseBehavior_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -54,20 +54,6 @@ package body org.allbinary.game.combat.damage.DamageableBaseBehavior_Package is
    begin
         return 6000;
    end getDamage;
-
-   procedure getInstance is
-      Java_Result : constant DamageableBaseBehavior_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure getName (This : in out DamageableBaseBehavior) is
-      Java_Result : constant Unbounded_String := DamageableBaseBehavior'Class (This).getName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getName;
 
    procedure getDamage (This : in out DamageableBaseBehavior; damageType : Integer) is
       Java_Result : constant Integer := DamageableBaseBehavior'Class (This).getDamage (damageType);

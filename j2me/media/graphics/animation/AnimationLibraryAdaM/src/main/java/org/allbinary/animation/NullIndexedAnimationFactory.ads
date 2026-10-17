@@ -24,6 +24,10 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.media.ScaleProperties_Package; use org.allbinary.media.ScaleProperties_Package;
 with org.allbinary.animation.AnimationInterfaceFactoryInterface_Package; use org.allbinary.animation.AnimationInterfaceFactoryInterface_Package;
 with org.allbinary.animation.ProceduralAnimationInterfaceFactoryInterface_Package; use org.allbinary.animation.ProceduralAnimationInterfaceFactoryInterface_Package;
+with org.allbinary.animation.IndexedAnimation_Package; use org.allbinary.animation.IndexedAnimation_Package;
+with org.allbinary.animation.NullIndexedAnimation_Package; use org.allbinary.animation.NullIndexedAnimation_Package;
+with org.allbinary.animation.IndexedAnimationBehavior_Package; use org.allbinary.animation.IndexedAnimationBehavior_Package;
+with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Animation_Package;
 
 package org.allbinary.animation.NullIndexedAnimationFactory_Package is
 
@@ -43,7 +47,6 @@ package org.allbinary.animation.NullIndexedAnimationFactory_Package is
    procedure Initialize (This : in out NullIndexedAnimationFactory'Class);
    function Create return NullIndexedAnimationFactory_Access;
    function getFactoryInstance return NullIndexedAnimationFactory_Access;
-   procedure getFactoryInstance;
    function getInstance (This : in out NullIndexedAnimationFactory; instanceId : Integer) return Animation_Access;
    procedure getInstance (This : in out NullIndexedAnimationFactory; instanceId : Integer);
    function getInstanceAnimation (This : in out NullIndexedAnimationFactory; animationInterface : Animation_Access) return Animation_Access;
@@ -64,6 +67,10 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.media.ScaleProperties_Package; use org.allbinary.media.ScaleProperties_Package;
 with org.allbinary.animation.AnimationInterfaceFactoryInterface_Package; use org.allbinary.animation.AnimationInterfaceFactoryInterface_Package;
 with org.allbinary.animation.ProceduralAnimationInterfaceFactoryInterface_Package; use org.allbinary.animation.ProceduralAnimationInterfaceFactoryInterface_Package;
+with org.allbinary.animation.IndexedAnimation_Package; use org.allbinary.animation.IndexedAnimation_Package;
+with org.allbinary.animation.NullIndexedAnimation_Package; use org.allbinary.animation.NullIndexedAnimation_Package;
+with org.allbinary.animation.IndexedAnimationBehavior_Package; use org.allbinary.animation.IndexedAnimationBehavior_Package;
+with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Animation_Package;
 
 package org.allbinary.animation.NullIndexedAnimationInner_Package is
 

@@ -37,16 +37,9 @@ package body org.allbinary.game.layer.SensorActionFactory_Package is
    function Create return SensorActionFactory_Access is
       This : constant SensorActionFactory_Access := new SensorActionFactory;
    begin
-      Initialize (This.all);
+      SensorActionFactory_Package.Initialize (This.all);
       return This;
    end Create;
-
-   procedure getInstance is
-      Java_Result : constant SensorActionFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

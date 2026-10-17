@@ -79,9 +79,7 @@ package admin.taghelpers.OrderHelper_Package is
    procedure Initialize (This : in out OrderHelper'Class; propertiesHashMap : HashMap_Access; pageContext : PageContext_Access);
    function Create (propertiesHashMap : HashMap_Access; pageContext : PageContext_Access) return OrderHelper_Access;
    function setPaymentGateway (This : in out OrderHelper) return Boolean;
-   procedure setPaymentGateway (This : in out OrderHelper);
    function process (This : in out OrderHelper) return Unbounded_String;
-   procedure process (This : in out OrderHelper);
 
 end admin.taghelpers.OrderHelper_Package;
 

@@ -38,7 +38,7 @@ package body org.allbinary.animation.text.TextAnimation_Package is
    function Create (text : Unbounded_String; animationBehavior : AnimationBehavior_Access) return TextAnimation_Access is
       This : constant TextAnimation_Access := new TextAnimation;
    begin
-      Initialize (This.all, text, animationBehavior);
+      TextAnimation_Package.Initialize (This.all, text, animationBehavior);
       return This;
    end Create;
 
@@ -132,20 +132,6 @@ package body org.allbinary.animation.text.TextAnimation_Package is
    function getFontHeight (This : in out TextAnimation) return Integer is
    begin
         return This.fontHeight;
-   end getFontHeight;
-
-   procedure getTextArray (This : in out TextAnimation) is
-      Java_Result : constant Unbounded_String_Array_Access := TextAnimation'Class (This).getTextArray;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTextArray;
-
-   procedure getFontHeight (This : in out TextAnimation) is
-      Java_Result : constant Integer := TextAnimation'Class (This).getFontHeight;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getFontHeight;
 
 end org.allbinary.animation.text.TextAnimation_Package;

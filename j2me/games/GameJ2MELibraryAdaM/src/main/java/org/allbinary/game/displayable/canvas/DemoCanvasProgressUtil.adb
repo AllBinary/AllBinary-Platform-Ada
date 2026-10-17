@@ -28,7 +28,7 @@ package body org.allbinary.game.displayable.canvas.DemoCanvasProgressUtil_Packag
    function Create return DemoCanvasProgressUtil_Access is
       This : constant DemoCanvasProgressUtil_Access := new DemoCanvasProgressUtil;
    begin
-      Initialize (This.all);
+      DemoCanvasProgressUtil_Package.Initialize (This.all);
       return This;
    end Create;
 

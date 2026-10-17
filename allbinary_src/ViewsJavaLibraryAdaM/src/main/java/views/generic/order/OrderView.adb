@@ -37,7 +37,7 @@ package body views.generic_Id.order.OrderView_Package is
    function Create (transformInfoInterface : TransformInfoInterface_Access) return OrderView_Access is
       This : constant OrderView_Access := new OrderView;
    begin
-      Initialize (This.all, transformInfoInterface);
+      OrderView_Package.Initialize (This.all, transformInfoInterface);
       return This;
    end Create;
 
@@ -106,13 +106,6 @@ package body views.generic_Id.order.OrderView_Package is
    begin
       null;
    end toXmlNode;
-
-   procedure view (This : in out OrderView) is
-      Java_Result : constant Unbounded_String := OrderView'Class (This).view;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end view;
 
 end views.generic_Id.order.OrderView_Package;
 

@@ -31,20 +31,13 @@ package body org.allbinary.game.layer.pickup.PickedUpLayerType_Package is
    function Create (name : Unbounded_String) return PickedUpLayerType_Access is
       This : constant PickedUpLayerType_Access := new PickedUpLayerType;
    begin
-      Initialize (This.all, name);
+      PickedUpLayerType_Package.Initialize (This.all, name);
       return This;
    end Create;
 
    function toString (This : in out PickedUpLayerType) return Unbounded_String is
    begin
         return This.name;
-   end toString;
-
-   procedure toString (This : in out PickedUpLayerType) is
-      Java_Result : constant Unbounded_String := PickedUpLayerType'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end toString;
 
 end org.allbinary.game.layer.pickup.PickedUpLayerType_Package;

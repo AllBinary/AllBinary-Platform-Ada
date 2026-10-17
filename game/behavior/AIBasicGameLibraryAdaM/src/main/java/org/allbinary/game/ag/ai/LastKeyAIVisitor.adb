@@ -33,7 +33,7 @@ package body org.allbinary.game.ag.ai.LastKeyAIVisitor_Package is
    function Create return LastKeyAIVisitor_Access is
       This : constant LastKeyAIVisitor_Access := new LastKeyAIVisitor;
    begin
-      Initialize (This.all);
+      LastKeyAIVisitor_Package.Initialize (This.all);
       return This;
    end Create;
 

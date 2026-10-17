@@ -62,7 +62,6 @@ package views.admin.user.UsersView_Package is
    procedure toXmlNode (This : in out UsersView; document : Document_Access);
    procedure addDomNodeInterfaces (This : in out UsersView);
    function view (This : in out UsersView) return Unbounded_String;
-   procedure view (This : in out UsersView);
 
 end views.admin.user.UsersView_Package;
 

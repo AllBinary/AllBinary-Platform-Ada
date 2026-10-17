@@ -33,7 +33,7 @@ package body org.allbinary.data.tables.user.commerce.inventory.order.OrderHistor
    function Create return OrderHistoryEntity_Access is
       This : constant OrderHistoryEntity_Access := new OrderHistoryEntity;
    begin
-      Initialize (This.all);
+      OrderHistoryEntity_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -485,27 +485,6 @@ package body org.allbinary.data.tables.user.commerce.inventory.order.OrderHistor
    begin
       null;
    end getOrder;
-
-   procedure createTableStatement (This : in out OrderHistoryEntity) is
-      Java_Result : constant Unbounded_String := OrderHistoryEntity'Class (This).createTableStatement;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end createTableStatement;
-
-   procedure createTable (This : in out OrderHistoryEntity) is
-      Java_Result : constant Unbounded_String := OrderHistoryEntity'Class (This).createTable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end createTable;
-
-   procedure dropTable (This : in out OrderHistoryEntity) is
-      Java_Result : constant Unbounded_String := OrderHistoryEntity'Class (This).dropTable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end dropTable;
 
 end org.allbinary.data.tables.user.commerce.inventory.order.OrderHistoryEntity_Package;
 

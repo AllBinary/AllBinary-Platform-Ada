@@ -60,11 +60,8 @@ package views.admin.workflow.NewView_Package is
    procedure Initialize (This : in out NewView'Class; transformInfoInterface : TransformInfoInterface_Access);
    function Create (transformInfoInterface : TransformInfoInterface_Access) return NewView_Access;
    function isValid (This : in out NewView) return Boolean;
-   procedure isValid (This : in out NewView);
    function validationInfo (This : in out NewView) return Unbounded_String;
-   procedure validationInfo (This : in out NewView);
    function toValidationInfoDoc (This : in out NewView) return Document_Access;
-   procedure toValidationInfoDoc (This : in out NewView);
    function toValidationInfoNode (This : in out NewView; document : Document_Access) return Node_Access;
    procedure toValidationInfoNode (This : in out NewView; document : Document_Access);
 

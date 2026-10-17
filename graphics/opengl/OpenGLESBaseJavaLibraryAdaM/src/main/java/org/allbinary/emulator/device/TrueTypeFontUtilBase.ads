@@ -55,12 +55,11 @@ package org.allbinary.emulator.device.TrueTypeFontUtilBase_Package is
 
    procedure Initialize (This : in out TrueTypeFontUtilBase'Class; scale : Integer);
    function Create (scale : Integer) return TrueTypeFontUtilBase_Access;
-   function getAsTextureSize (This : in out TrueTypeFontUtilBase; textureSize : Integer) return Integer;
-   procedure getAsTextureSize (This : in out TrueTypeFontUtilBase; textureSize : Integer);
-   function getCellSize (This : in out TrueTypeFontUtilBase; cellSize : Integer) return Integer;
-   procedure getCellSize (This : in out TrueTypeFontUtilBase; cellSize : Integer);
+   function getAsTextureSize (This : in out TrueTypeFontUtilBase; textureSize_Param : Integer) return Integer;
+   procedure getAsTextureSize (This : in out TrueTypeFontUtilBase; textureSize_Param : Integer);
+   function getCellSize (This : in out TrueTypeFontUtilBase; cellSize_Param : Integer) return Integer;
+   procedure getCellSize (This : in out TrueTypeFontUtilBase; cellSize_Param : Integer);
    function getYOffset (This : in out TrueTypeFontUtilBase) return Integer;
-   procedure getYOffset (This : in out TrueTypeFontUtilBase);
 
 end org.allbinary.emulator.device.TrueTypeFontUtilBase_Package;
 

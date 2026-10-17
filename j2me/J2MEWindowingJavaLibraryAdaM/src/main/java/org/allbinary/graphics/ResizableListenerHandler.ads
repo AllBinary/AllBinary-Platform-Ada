@@ -20,6 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
+with org.allbinary.graphics.ResizableListenerInterface_Package; use org.allbinary.graphics.ResizableListenerInterface_Package;
 
 package org.allbinary.graphics.ResizableListenerHandler_Package is
 
@@ -35,7 +36,6 @@ package org.allbinary.graphics.ResizableListenerHandler_Package is
    procedure Initialize (This : in out ResizableListenerHandler'Class);
    function Create return ResizableListenerHandler_Access;
    function getInstance return ResizableListenerHandler_Access;
-   procedure getInstance;
    procedure setListener (This : in out ResizableListenerHandler; resizableListenerInterface : ResizableListenerInterface_Access);
    procedure fire (This : in out ResizableListenerHandler; isFullScreen : Boolean);
    procedure fireEvent (This : in out ResizableListenerHandler; value : Boolean);

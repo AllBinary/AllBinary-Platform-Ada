@@ -29,7 +29,7 @@ package body org.allbinary.game.configuration.feature.InputFeature_Package is
    function Create (name : Unbounded_String) return InputFeature_Access is
       This : constant InputFeature_Access := new InputFeature;
    begin
-      Initialize (This.all, name);
+      InputFeature_Package.Initialize (This.all, name);
       return This;
    end Create;
 

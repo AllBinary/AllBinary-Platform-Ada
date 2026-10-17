@@ -29,7 +29,7 @@ package body org.allbinary.game.paint.OverScanColorFillPaintable_Package is
    function Create (basicColor : BasicColor_Access) return OverScanColorFillPaintable_Access is
       This : constant OverScanColorFillPaintable_Access := new OverScanColorFillPaintable;
    begin
-      Initialize (This.all, basicColor);
+      OverScanColorFillPaintable_Package.Initialize (This.all, basicColor);
       return This;
    end Create;
 

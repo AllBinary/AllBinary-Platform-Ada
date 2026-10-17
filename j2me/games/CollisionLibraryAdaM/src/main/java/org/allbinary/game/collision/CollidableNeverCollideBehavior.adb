@@ -29,7 +29,7 @@ package body org.allbinary.game.collision.CollidableNeverCollideBehavior_Package
    function Create (isCollidable : Boolean) return CollidableNeverCollideBehavior_Access is
       This : constant CollidableNeverCollideBehavior_Access := new CollidableNeverCollideBehavior;
    begin
-      Initialize (This.all, isCollidable);
+      CollidableNeverCollideBehavior_Package.Initialize (This.all, isCollidable);
       return This;
    end Create;
 

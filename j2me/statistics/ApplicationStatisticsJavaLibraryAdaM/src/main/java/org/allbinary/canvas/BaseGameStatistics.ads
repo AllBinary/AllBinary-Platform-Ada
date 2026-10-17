@@ -70,17 +70,12 @@ package org.allbinary.canvas.BaseGameStatistics_Package is
    procedure nextFrame (This : in out BaseGameStatistics);
    procedure nextRefresh (This : in out BaseGameStatistics);
    function getRefreshRate (This : in out BaseGameStatistics) return Short_Integer;
-   procedure getRefreshRate (This : in out BaseGameStatistics);
    function getTimeDelayHelper (This : in out BaseGameStatistics) return TimeDelayHelper_Access;
-   procedure getTimeDelayHelper (This : in out BaseGameStatistics);
    function to2DCharArray (This : in out BaseGameStatistics) return Character_Array_Access_Array_Access;
-   procedure to2DCharArray (This : in out BaseGameStatistics);
    function toStringArray (This : in out BaseGameStatistics) return Unbounded_String_Array_Access;
-   procedure toStringArray (This : in out BaseGameStatistics);
    function toStringAt (This : in out BaseGameStatistics; totalTime : Long_Long_Integer) return Unbounded_String;
    procedure toStringAt (This : in out BaseGameStatistics; totalTime : Long_Long_Integer);
    function toString (This : in out BaseGameStatistics) return Unbounded_String;
-   procedure toString (This : in out BaseGameStatistics);
 
 end org.allbinary.canvas.BaseGameStatistics_Package;
 

@@ -31,6 +31,7 @@ with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package
 with org.allbinary.logic.io.path.AbPathData_Package; use org.allbinary.logic.io.path.AbPathData_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.business.init.InitSql_Package; use org.allbinary.business.init.InitSql_Package;
+with org.allbinary.business.init.InitInfo_Package; use org.allbinary.business.init.InitInfo_Package;
 
 package org.allbinary.business.init.InitInfoEntity_Package is
 
@@ -65,13 +66,10 @@ package org.allbinary.business.init.InitInfoEntity_Package is
    procedure Initialize (This : in out InitInfoEntity'Class);
    function Create return InitInfoEntity_Access;
    function get (This : in out InitInfoEntity) return Boolean;
-   procedure get (This : in out InitInfoEntity);
    function is_Id (This : in out InitInfoEntity) return Boolean;
-   procedure is_Id (This : in out InitInfoEntity);
    procedure update (This : in out InitInfoEntity);
    procedure add (This : in out InitInfoEntity);
    function createTable (This : in out InitInfoEntity) return Unbounded_String;
-   procedure createTable (This : in out InitInfoEntity);
 
 end org.allbinary.business.init.InitInfoEntity_Package;
 

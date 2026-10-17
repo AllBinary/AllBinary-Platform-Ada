@@ -31,7 +31,7 @@ package body org.allbinary.logic.system.loader.NativeLibraryClassLoader_Package 
    function Create (parent : ClassLoader_Access) return NativeLibraryClassLoader_Access is
       This : constant NativeLibraryClassLoader_Access := new NativeLibraryClassLoader;
    begin
-      Initialize (This.all, parent);
+      NativeLibraryClassLoader_Package.Initialize (This.all, parent);
       return This;
    end Create;
 

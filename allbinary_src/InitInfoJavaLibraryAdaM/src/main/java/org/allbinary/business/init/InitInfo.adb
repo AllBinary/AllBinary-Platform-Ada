@@ -42,7 +42,7 @@ package body org.allbinary.business.init.InitInfo_Package is
    function Create return InitInfo_Access is
       This : constant InitInfo_Access := new InitInfo;
    begin
-      Initialize (This.all);
+      InitInfo_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -229,41 +229,6 @@ package body org.allbinary.business.init.InitInfo_Package is
         return hashMap;
    end toHashMap;
 
-   procedure getInstance is
-      Java_Result : constant InitInfo_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure isTesting (This : in out InitInfo) is
-      Java_Result : constant Boolean := InitInfo'Class (This).isTesting;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isTesting;
-
-   procedure getTesting (This : in out InitInfo) is
-      Java_Result : constant Unbounded_String := InitInfo'Class (This).getTesting;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTesting;
-
-   procedure getTestHtmlPath (This : in out InitInfo) is
-      Java_Result : constant Unbounded_String := InitInfo'Class (This).getTestHtmlPath;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTestHtmlPath;
-
-   procedure getMainPath (This : in out InitInfo) is
-      Java_Result : constant Unbounded_String := InitInfo'Class (This).getMainPath;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getMainPath;
-
    procedure isMainPathValid (This : in out InitInfo; abPath : AbPath_Access) is
       Java_Result : constant Boolean := InitInfo'Class (This).isMainPathValid (abPath);
       pragma Unreferenced (Java_Result);
@@ -284,13 +249,6 @@ package body org.allbinary.business.init.InitInfo_Package is
    begin
       null;
    end isTestingValid;
-
-   procedure toHashMap (This : in out InitInfo) is
-      Java_Result : constant HashMap_Access := InitInfo'Class (This).toHashMap;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toHashMap;
 
 begin
    null;

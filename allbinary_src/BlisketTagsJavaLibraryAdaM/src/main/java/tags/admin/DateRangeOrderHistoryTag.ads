@@ -45,7 +45,6 @@ package tags.admin.DateRangeOrderHistoryTag_Package is
    function Create return DateRangeOrderHistoryTag_Access;
    procedure setStatus (This : in out DateRangeOrderHistoryTag; value : Unbounded_String);
    function doStartTag (This : in out DateRangeOrderHistoryTag) return Integer;
-   procedure doStartTag (This : in out DateRangeOrderHistoryTag);
 
 end tags.admin.DateRangeOrderHistoryTag_Package;
 

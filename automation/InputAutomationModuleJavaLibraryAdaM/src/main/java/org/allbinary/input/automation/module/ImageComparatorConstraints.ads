@@ -54,7 +54,6 @@ package org.allbinary.input.automation.module.ImageComparatorConstraints_Package
    procedure Initialize (This : in out ImageComparatorConstraints'Class; doImageComparisonEveryNthFrame : Integer);
    function Create (doImageComparisonEveryNthFrame : Integer) return ImageComparatorConstraints_Access;
    function getAvoidVector (This : in out ImageComparatorConstraints) return BasicArrayList_Access;
-   procedure getAvoidVector (This : in out ImageComparatorConstraints);
    function isColorAllowed (This : in out ImageComparatorConstraints; frame : Integer; point : GPoint_Access; color : Color_Access) return Boolean;
    procedure isColorAllowed (This : in out ImageComparatorConstraints; frame : Integer; point : GPoint_Access; color : Color_Access);
    function isCollisionWithAvoidRectangles (This : in out ImageComparatorConstraints; rectangle : Rectangle_Access) return Boolean;
@@ -63,7 +62,6 @@ package org.allbinary.input.automation.module.ImageComparatorConstraints_Package
    procedure isCollisionWithAvoidRectangles (This : in out ImageComparatorConstraints; point : GPoint_Access);
    procedure setAvoidVector (This : in out ImageComparatorConstraints; avoidVector : BasicArrayList_Access);
    function getMaxNonMatchingPixelDeltas (This : in out ImageComparatorConstraints) return Integer;
-   procedure getMaxNonMatchingPixelDeltas (This : in out ImageComparatorConstraints);
    procedure setMaxNonMatchingPixelDeltas (This : in out ImageComparatorConstraints; maxNonMatchingPixelDeltas : Integer);
    function isFrameAllowed (This : in out ImageComparatorConstraints; frame : Integer) return Boolean;
    procedure isFrameAllowed (This : in out ImageComparatorConstraints; frame : Integer);

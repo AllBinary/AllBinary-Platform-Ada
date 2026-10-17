@@ -33,7 +33,7 @@ package body org.allbinary.data.tree.dom.SimpleTransform_Package is
    function Create (xsltFilePath : AbPath_Access; dataFilePath : AbPath_Access) return SimpleTransform_Access is
       This : constant SimpleTransform_Access := new SimpleTransform;
    begin
-      Initialize (This.all, xsltFilePath, dataFilePath);
+      SimpleTransform_Package.Initialize (This.all, xsltFilePath, dataFilePath);
       return This;
    end Create;
 
@@ -47,13 +47,6 @@ package body org.allbinary.data.tree.dom.SimpleTransform_Package is
         document := DomDocumentHelper_Package.create (AbFileLocalInputStream_Package.Create (AbFile_Package.createAbFileFromAbPath (This.dataFilePath)));
         result := XslHelper_Package.getInstance.translate (StreamSource_Package.Create (inputStream), StreamSource_Package.Create (StringBufferInputStream_Package.Create (XmlDocumentHelper_Package.toString (document))));
         return result;
-   end transform;
-
-   procedure transform (This : in out SimpleTransform) is
-      Java_Result : constant Unbounded_String := SimpleTransform'Class (This).transform;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end transform;
 
 end org.allbinary.data.tree.dom.SimpleTransform_Package;

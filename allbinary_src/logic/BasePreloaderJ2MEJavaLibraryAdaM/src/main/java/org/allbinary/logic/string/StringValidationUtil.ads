@@ -21,6 +21,7 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.TsUtil_Package; use org.allbinary.TsUtil_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 
 package org.allbinary.logic.string_Id.StringValidationUtil_Package is
 
@@ -40,7 +41,6 @@ package org.allbinary.logic.string_Id.StringValidationUtil_Package is
    procedure Initialize (This : in out StringValidationUtil'Class);
    function Create return StringValidationUtil_Access;
    function getInstance return StringValidationUtil_Access;
-   procedure getInstance;
    function containsSpaces (This : in out StringValidationUtil; value : Unbounded_String) return Boolean;
    procedure containsSpaces (This : in out StringValidationUtil; value : Unbounded_String);
    function isNumber (This : in out StringValidationUtil; value : Unbounded_String) return Boolean;

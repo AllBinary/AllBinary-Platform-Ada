@@ -50,7 +50,7 @@ package body org.allbinary.logic.visual.transform.data.TransformStoreDocument_Pa
    function Create (pageContext : PageContext_Access; weblisketSession : WeblisketSession_Access) return TransformStoreDocument_Access is
       This : constant TransformStoreDocument_Access := new TransformStoreDocument;
    begin
-      Initialize (This.all, pageContext, weblisketSession);
+      TransformStoreDocument_Package.Initialize (This.all, pageContext, weblisketSession);
       return This;
    end Create;
 
@@ -78,7 +78,7 @@ package body org.allbinary.logic.visual.transform.data.TransformStoreDocument_Pa
    function Create (searchRequest : SearchRequest_Access) return TransformStoreDocument_Access is
       This : constant TransformStoreDocument_Access := new TransformStoreDocument;
    begin
-      Initialize (This.all, searchRequest);
+      TransformStoreDocument_Package.Initialize (This.all, searchRequest);
       return This;
    end Create;
 

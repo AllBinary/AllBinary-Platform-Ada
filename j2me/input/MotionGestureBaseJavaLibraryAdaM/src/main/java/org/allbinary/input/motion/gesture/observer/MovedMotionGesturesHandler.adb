@@ -36,7 +36,7 @@ package body org.allbinary.input.motion.gesture.observer.MovedMotionGesturesHand
    function Create return MovedMotionGesturesHandler_Access is
       This : constant MovedMotionGesturesHandler_Access := new MovedMotionGesturesHandler;
    begin
-      Initialize (This.all);
+      MovedMotionGesturesHandler_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -47,13 +47,6 @@ package body org.allbinary.input.motion.gesture.observer.MovedMotionGesturesHand
         baseMotionGestureEventListener := BaseMotionGestureEventListener_Access (eventListenerInterface);
         baseMotionGestureEventListener.onMotionGestureEvent (MotionGestureEvent_Access (eventObject));
    end process;
-
-   procedure getInstance is
-      Java_Result : constant MovedMotionGesturesHandler_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

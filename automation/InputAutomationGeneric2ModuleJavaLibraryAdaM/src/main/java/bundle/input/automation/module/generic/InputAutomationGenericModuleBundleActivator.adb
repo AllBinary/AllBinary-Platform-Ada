@@ -31,7 +31,7 @@ package body bundle.input.automation.module.generic_Id.InputAutomationGenericMod
    function Create return InputAutomationGenericModuleBundleActivator_Access is
       This : constant InputAutomationGenericModuleBundleActivator_Access := new InputAutomationGenericModuleBundleActivator;
    begin
-      Initialize (This.all);
+      InputAutomationGenericModuleBundleActivator_Package.Initialize (This.all);
       return This;
    end Create;
 

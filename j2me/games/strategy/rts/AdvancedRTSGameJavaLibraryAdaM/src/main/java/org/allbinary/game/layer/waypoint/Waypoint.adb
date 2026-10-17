@@ -36,7 +36,7 @@ package body org.allbinary.game.layer.waypoint.Waypoint_Package is
    function Create (ownerLayer : PathFindingLayerInterface_Access; sound : Sound_Access) return Waypoint_Access is
       This : constant Waypoint_Access := new Waypoint;
    begin
-      Initialize (This.all, ownerLayer, sound);
+      Waypoint_Package.Initialize (This.all, ownerLayer, sound);
       return This;
    end Create;
 

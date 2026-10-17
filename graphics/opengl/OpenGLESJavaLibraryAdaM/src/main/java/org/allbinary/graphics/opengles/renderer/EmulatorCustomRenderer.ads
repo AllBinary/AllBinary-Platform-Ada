@@ -26,6 +26,7 @@ with org.allbinary.emulator.InitEmulatorFactory_Package; use org.allbinary.emula
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
+with org.allbinary.graphics.opengles.renderer.RendererStrings_Package; use org.allbinary.graphics.opengles.renderer.RendererStrings_Package;
 
 package org.allbinary.graphics.opengles.renderer.EmulatorCustomRenderer_Package is
 

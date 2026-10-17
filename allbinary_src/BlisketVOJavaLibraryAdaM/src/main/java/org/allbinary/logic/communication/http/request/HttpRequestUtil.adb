@@ -35,7 +35,7 @@ package body org.allbinary.logic.communication.http.request.HttpRequestUtil_Pack
    function Create return HttpRequestUtil_Access is
       This : constant HttpRequestUtil_Access := new HttpRequestUtil;
    begin
-      Initialize (This.all);
+      HttpRequestUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -60,13 +60,6 @@ package body org.allbinary.logic.communication.http.request.HttpRequestUtil_Pack
             return Unbounded_Slice (requestPath, ((beginIndex) + (1)) + 1, Length (requestPath));
         end if;
    end generateFileName;
-
-   procedure getInstance is
-      Java_Result : constant HttpRequestUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure getLastSeparatorIndex (This : in out HttpRequestUtil; requestPath : Unbounded_String) is
       Java_Result : constant Integer := HttpRequestUtil'Class (This).getLastSeparatorIndex (requestPath);

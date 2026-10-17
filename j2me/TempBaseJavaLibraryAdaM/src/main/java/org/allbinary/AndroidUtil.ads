@@ -34,9 +34,7 @@ package org.allbinary.AndroidUtil_Package is
    procedure Initialize (This : in out AndroidUtil'Class);
    function Create return AndroidUtil_Access;
    function isMemoryRestrictive return Boolean;
-   procedure isMemoryRestrictive;
    function isAndroid return Boolean;
-   procedure isAndroid;
 
 end org.allbinary.AndroidUtil_Package;
 

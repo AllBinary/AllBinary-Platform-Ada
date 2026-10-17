@@ -28,7 +28,7 @@ package body org.allbinary.game.collision.CollidableBaseBehaviorFactory_Package 
    function Create return CollidableBaseBehaviorFactory_Access is
       This : constant CollidableBaseBehaviorFactory_Access := new CollidableBaseBehaviorFactory;
    begin
-      Initialize (This.all);
+      CollidableBaseBehaviorFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -36,13 +36,6 @@ package body org.allbinary.game.collision.CollidableBaseBehaviorFactory_Package 
    function createBehavior (This : in out CollidableBaseBehaviorFactory) return CollidableBaseBehavior_Access is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
-   end createBehavior;
-
-   procedure createBehavior (This : in out CollidableBaseBehaviorFactory) is
-      Java_Result : constant CollidableBaseBehavior_Access := CollidableBaseBehaviorFactory'Class (This).createBehavior;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end createBehavior;
 
 end org.allbinary.game.collision.CollidableBaseBehaviorFactory_Package;

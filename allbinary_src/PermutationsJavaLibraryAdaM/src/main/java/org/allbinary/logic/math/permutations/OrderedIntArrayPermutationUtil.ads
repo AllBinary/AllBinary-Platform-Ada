@@ -21,6 +21,7 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.util.visitor.Visitor_Package; use org.allbinary.logic.util.visitor.Visitor_Package;
+with org.allbinary.logic.math.permutations.IntPermutationVisitor_Package; use org.allbinary.logic.math.permutations.IntPermutationVisitor_Package;
 
 package org.allbinary.logic.math.permutations.OrderedIntArrayPermutationUtil_Package is
 
@@ -40,7 +41,6 @@ package org.allbinary.logic.math.permutations.OrderedIntArrayPermutationUtil_Pac
    procedure Initialize (This : in out OrderedIntArrayPermutationUtil'Class);
    function Create return OrderedIntArrayPermutationUtil_Access;
    function getInstance return OrderedIntArrayPermutationUtil_Access;
-   procedure getInstance;
    procedure getNext (This : in out OrderedIntArrayPermutationUtil; data : Integer_Array_Access);
    procedure swap (This : in out OrderedIntArrayPermutationUtil; data : Integer_Array_Access; a : Integer; b : Integer);
    function factorial (This : in out OrderedIntArrayPermutationUtil; dataLength : Integer) return Long_Long_Integer;

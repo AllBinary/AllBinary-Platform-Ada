@@ -56,7 +56,7 @@ package body org.allbinary.input.automation.module.generic_Id.GenericInputAutoma
    function Create (inputAutomationActionInterface : InputAutomationActionInterface_Access; genericProfile : GenericProfile_Access; motionRectangleConstraintsInterface : MotionRectangleConstraintsInterface_Access; imageComparatorConstraintsInterface : ImageComparatorConstraintsInterface_Access) return GenericInputAutomationWorker_Access is
       This : constant GenericInputAutomationWorker_Access := new GenericInputAutomationWorker;
    begin
-      Initialize (This.all, inputAutomationActionInterface, genericProfile, motionRectangleConstraintsInterface, imageComparatorConstraintsInterface);
+      GenericInputAutomationWorker_Package.Initialize (This.all, inputAutomationActionInterface, genericProfile, motionRectangleConstraintsInterface, imageComparatorConstraintsInterface);
       return This;
    end Create;
 
@@ -130,20 +130,6 @@ package body org.allbinary.input.automation.module.generic_Id.GenericInputAutoma
    begin
         This.frame := frame;
    end setFrame;
-
-   procedure getGenericProfile (This : in out GenericInputAutomationWorker) is
-      Java_Result : constant GenericProfile_Access := GenericInputAutomationWorker'Class (This).getGenericProfile;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getGenericProfile;
-
-   procedure getFrame (This : in out GenericInputAutomationWorker) is
-      Java_Result : constant Long_Long_Integer := GenericInputAutomationWorker'Class (This).getFrame;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getFrame;
 
 end org.allbinary.input.automation.module.generic_Id.GenericInputAutomationWorker_Package;
 

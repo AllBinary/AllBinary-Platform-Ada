@@ -43,9 +43,7 @@ package bundle.input.automation.ServiceReferenceMap_Package is
    procedure Initialize (This : in out ServiceReferenceMap'Class; serviceReference : ServiceReference_Access);
    function Create (serviceReference : ServiceReference_Access) return ServiceReferenceMap_Access;
    function size (This : in out ServiceReferenceMap) return Integer;
-   procedure size (This : in out ServiceReferenceMap);
    function isEmpty (This : in out ServiceReferenceMap) return Boolean;
-   procedure isEmpty (This : in out ServiceReferenceMap);
    function containsKey (This : in out ServiceReferenceMap; key : Java_Object_Access) return Boolean;
    procedure containsKey (This : in out ServiceReferenceMap; key : Java_Object_Access);
    function containsValue (This : in out ServiceReferenceMap; value : Java_Object_Access) return Boolean;
@@ -59,11 +57,8 @@ package bundle.input.automation.ServiceReferenceMap_Package is
    procedure putAll (This : in out ServiceReferenceMap; m : Map_Access);
    procedure clear (This : in out ServiceReferenceMap);
    function keySet (This : in out ServiceReferenceMap) return Set_Access;
-   procedure keySet (This : in out ServiceReferenceMap);
    function values (This : in out ServiceReferenceMap) return Collection_Access;
-   procedure values (This : in out ServiceReferenceMap);
    function entrySet (This : in out ServiceReferenceMap) return Set_Access;
-   procedure entrySet (This : in out ServiceReferenceMap);
    function toString (map : Map_Access) return Unbounded_String;
    procedure toString (map : Map_Access);
 

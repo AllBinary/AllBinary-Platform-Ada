@@ -30,7 +30,7 @@ package body org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventServ
    function Create return MyCanvasEventService_Access is
       This : constant MyCanvasEventService_Access := new MyCanvasEventService;
    begin
-      Initialize (This.all);
+      MyCanvasEventService_Package.Initialize (This.all);
       return This;
    end Create;
 

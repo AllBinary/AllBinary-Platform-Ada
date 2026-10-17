@@ -28,7 +28,7 @@ package body org.allbinary.game.collision.CollidableHelperFactory_Package is
    function Create return CollidableHelperFactory_Access is
       This : constant CollidableHelperFactory_Access := new CollidableHelperFactory;
    begin
-      Initialize (This.all);
+      CollidableHelperFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -40,13 +40,6 @@ package body org.allbinary.game.collision.CollidableHelperFactory_Package is
         else
             return SourceCollisionHelper_Package.Create (AllBinaryLayer_Package.NULL_ALLBINARY_LAYER);
         end if;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant CollisionHelper_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 end org.allbinary.game.collision.CollidableHelperFactory_Package;

@@ -33,7 +33,7 @@ package body admin.taghelpers.StaticPagesHelper_Package is
    function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return StaticPagesHelper_Access is
       This : constant StaticPagesHelper_Access := new StaticPagesHelper;
    begin
-      Initialize (This.all, hashMap, pageContext);
+      StaticPagesHelper_Package.Initialize (This.all, hashMap, pageContext);
       return This;
    end Create;
 
@@ -135,34 +135,6 @@ package body admin.taghelpers.StaticPagesHelper_Package is
             return error;
                 end;
         end;
-   end backup;
-
-   procedure drop (This : in out StaticPagesHelper) is
-      Java_Result : constant Unbounded_String := StaticPagesHelper'Class (This).drop;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end drop;
-
-   procedure create (This : in out StaticPagesHelper) is
-      Java_Result : constant Unbounded_String := StaticPagesHelper'Class (This).create;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end create;
-
-   procedure restore (This : in out StaticPagesHelper) is
-      Java_Result : constant Unbounded_String := StaticPagesHelper'Class (This).restore;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end restore;
-
-   procedure backup (This : in out StaticPagesHelper) is
-      Java_Result : constant Unbounded_String := StaticPagesHelper'Class (This).backup;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end backup;
 
 end admin.taghelpers.StaticPagesHelper_Package;

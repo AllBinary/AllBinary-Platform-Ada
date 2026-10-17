@@ -20,6 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
+with org.allbinary.logic.visual.media.MediaData_Package; use org.allbinary.logic.visual.media.MediaData_Package;
 
 package org.allbinary.logic.visual.media.MediaDataFactory_Package is
 
@@ -56,7 +57,6 @@ package org.allbinary.logic.visual.media.MediaDataFactory_Package is
    procedure Initialize (This : in out MediaDataFactory'Class);
    function Create return MediaDataFactory_Access;
    function getInstance return MediaDataFactory_Access;
-   procedure getInstance;
 
 end org.allbinary.logic.visual.media.MediaDataFactory_Package;
 

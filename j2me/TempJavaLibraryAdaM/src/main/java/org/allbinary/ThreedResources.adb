@@ -28,7 +28,7 @@ package body org.allbinary.ThreedResources_Package is
    function Create return ThreedResources_Access is
       This : constant ThreedResources_Access := new ThreedResources;
    begin
-      Initialize (This.all);
+      ThreedResources_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -42,13 +42,6 @@ package body org.allbinary.ThreedResources_Package is
    begin
         null;
    end add;
-
-   procedure getThreedResources is
-      Java_Result : constant ThreedResources_Access := getThreedResources;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getThreedResources;
 
 begin
    null;

@@ -32,7 +32,7 @@ package body admin.taghelpers.QuoteRequestHelperFactory_Package is
    function Create return QuoteRequestHelperFactory_Access is
       This : constant QuoteRequestHelperFactory_Access := new QuoteRequestHelperFactory;
    begin
-      Initialize (This.all);
+      QuoteRequestHelperFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

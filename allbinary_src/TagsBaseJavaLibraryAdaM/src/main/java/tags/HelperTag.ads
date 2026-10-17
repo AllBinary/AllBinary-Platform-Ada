@@ -44,9 +44,7 @@ package tags.HelperTag_Package is
    function Create (tagHelperFactoryInterface : TagHelperFactoryInterface_Access) return HelperTag_Access;
    procedure setHelper (This : in out HelperTag);
    function getHelper (This : in out HelperTag) return Java_Object_Access;
-   procedure getHelper (This : in out HelperTag);
    function doEndTag (This : in out HelperTag) return Integer;
-   procedure doEndTag (This : in out HelperTag);
 
 end tags.HelperTag_Package;
 

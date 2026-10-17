@@ -51,7 +51,7 @@ package body org.allbinary.game.layer.AdvancedRTSGameLayer_Package is
    function Create (remoteInfo : RemoteInfo_Access; parentLayer : PathFindingLayerInterface_Access; advancedRTSProperties : AdvancedRTSProperties_Access; groupInterface : Group_Access_Array_Access; rootName : Unbounded_String; name : Unbounded_String; healthInterface : Health_Access; rtsFormInput : RTSFormInput_Access; animationInterfaceFactoryInterface : AnimationInterfaceFactoryInterface_Access; emptyAnimationInterfaceFactoryInterface : AnimationInterfaceFactoryInterface_Access; baseAnimationInterfaceFactoryInterface : AnimationInterfaceFactoryInterface_Access; buildAnimationInterfaceFactoryInterface : AnimationInterfaceFactoryInterface_Access; verticleBuildAnimationInterfaceFactoryInterface : AnimationInterfaceFactoryInterface_Access; proceduralAnimationInterfaceFactoryInterface : ProceduralAnimationInterfaceFactoryInterface_Access; rectangle : Rectangle_Access; x : Integer; y : Integer; viewPosition : ViewPositionBase_Access) return AdvancedRTSGameLayer_Access is
       This : constant AdvancedRTSGameLayer_Access := new AdvancedRTSGameLayer;
    begin
-      Initialize (This.all, remoteInfo, parentLayer, advancedRTSProperties, groupInterface, rootName, name, healthInterface, rtsFormInput, animationInterfaceFactoryInterface, emptyAnimationInterfaceFactoryInterface, baseAnimationInterfaceFactoryInterface, buildAnimationInterfaceFactoryInterface, verticleBuildAnimationInterfaceFactoryInterface, proceduralAnimationInterfaceFactoryInterface, rectangle, x, y, viewPosition);
+      AdvancedRTSGameLayer_Package.Initialize (This.all, remoteInfo, parentLayer, advancedRTSProperties, groupInterface, rootName, name, healthInterface, rtsFormInput, animationInterfaceFactoryInterface, emptyAnimationInterfaceFactoryInterface, baseAnimationInterfaceFactoryInterface, buildAnimationInterfaceFactoryInterface, verticleBuildAnimationInterfaceFactoryInterface, proceduralAnimationInterfaceFactoryInterface, rectangle, x, y, viewPosition);
       return This;
    end Create;
 
@@ -275,75 +275,12 @@ package body org.allbinary.game.layer.AdvancedRTSGameLayer_Package is
         end;
    end onDestroyed;
 
-   procedure createSimulated is
-      Java_Result : constant AdvancedRTSGameLayer_Access := createSimulated;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end createSimulated;
-
-   procedure getParentLayer (This : in out AdvancedRTSGameLayer) is
-      Java_Result : constant PathFindingLayerInterface_Access := AdvancedRTSGameLayer'Class (This).getParentLayer;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getParentLayer;
-
-   procedure getWaypointBehavior (This : in out AdvancedRTSGameLayer) is
-      Java_Result : constant WaypointBehaviorBase_Access := AdvancedRTSGameLayer'Class (This).getWaypointBehavior;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getWaypointBehavior;
-
-   procedure getWaypointLogHelper (This : in out AdvancedRTSGameLayer) is
-      Java_Result : constant WaypointLogHelper_Access := AdvancedRTSGameLayer'Class (This).getWaypointLogHelper;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getWaypointLogHelper;
-
-   procedure getWaypoint2LogHelper (This : in out AdvancedRTSGameLayer) is
-      Java_Result : constant Waypoint2LogHelper_Access := AdvancedRTSGameLayer'Class (This).getWaypoint2LogHelper;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getWaypoint2LogHelper;
-
-   procedure getWaypointRunnableLogHelper (This : in out AdvancedRTSGameLayer) is
-      Java_Result : constant WaypointRunnableLogHelper_Access := AdvancedRTSGameLayer'Class (This).getWaypointRunnableLogHelper;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getWaypointRunnableLogHelper;
-
-   procedure shouldAddWaypointFromBuilding (This : in out AdvancedRTSGameLayer) is
-      Java_Result : constant Boolean := AdvancedRTSGameLayer'Class (This).shouldAddWaypointFromBuilding;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end shouldAddWaypointFromBuilding;
-
-   procedure isWaypointListEmptyOrOnlyTargets (This : in out AdvancedRTSGameLayer) is
-      Java_Result : constant Boolean := AdvancedRTSGameLayer'Class (This).isWaypointListEmptyOrOnlyTargets;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isWaypointListEmptyOrOnlyTargets;
-
    procedure buildingChase (This : in out AdvancedRTSGameLayer; allbinaryLayer : AllBinaryLayer_Access; cellPosition : GeographicMapCellPosition_Access) is
       Java_Result : constant Boolean := AdvancedRTSGameLayer'Class (This).buildingChase (allbinaryLayer, cellPosition);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end buildingChase;
-
-   procedure getSurroundingGeographicMapCellPositionList (This : in out AdvancedRTSGameLayer) is
-      Java_Result : constant BasicArrayList_Access := AdvancedRTSGameLayer'Class (This).getSurroundingGeographicMapCellPositionList;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSurroundingGeographicMapCellPositionList;
 
 end org.allbinary.game.layer.AdvancedRTSGameLayer_Package;
 

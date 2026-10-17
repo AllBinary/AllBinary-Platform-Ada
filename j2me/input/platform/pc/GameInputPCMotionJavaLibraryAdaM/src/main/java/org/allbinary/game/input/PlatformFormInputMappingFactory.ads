@@ -25,6 +25,8 @@ with org.allbinary.input.motion.button.BasicTouchInputFactory_Package; use org.a
 with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.game.input.PCKeyFactory_Package; use org.allbinary.game.input.PCKeyFactory_Package;
+with org.allbinary.game.input.GameKeyFactory_Package; use org.allbinary.game.input.GameKeyFactory_Package;
 
 package org.allbinary.game.input.PlatformFormInputMappingFactory_Package is
 
@@ -48,9 +50,7 @@ package org.allbinary.game.input.PlatformFormInputMappingFactory_Package is
    procedure Initialize (This : in out PlatformFormInputMappingFactory'Class);
    function Create return PlatformFormInputMappingFactory_Access;
    function getInstance return PlatformFormInputMappingFactory_Access;
-   procedure getInstance;
    function getOrCreate (This : in out PlatformFormInputMappingFactory) return InputToGameKeyMapping_Access;
-   procedure getOrCreate (This : in out PlatformFormInputMappingFactory);
 
 end org.allbinary.game.input.PlatformFormInputMappingFactory_Package;
 

@@ -51,7 +51,6 @@ package org.allbinary.game.layer.unit.UnitWaypointStrings_Package is
    procedure Initialize (This : in out UnitWaypointStrings'Class);
    function Create return UnitWaypointStrings_Access;
    function getInstance return UnitWaypointStrings_Access;
-   procedure getInstance;
 
 end org.allbinary.game.layer.unit.UnitWaypointStrings_Package;
 

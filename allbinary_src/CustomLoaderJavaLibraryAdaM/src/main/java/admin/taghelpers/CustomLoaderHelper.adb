@@ -32,7 +32,7 @@ package body admin.taghelpers.CustomLoaderHelper_Package is
    function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return CustomLoaderHelper_Access is
       This : constant CustomLoaderHelper_Access := new CustomLoaderHelper;
    begin
-      Initialize (This.all, hashMap, pageContext);
+      CustomLoaderHelper_Package.Initialize (This.all, hashMap, pageContext);
       return This;
    end Create;
 
@@ -46,7 +46,7 @@ package body admin.taghelpers.CustomLoaderHelper_Package is
    function Create return CustomLoaderHelper_Access is
       This : constant CustomLoaderHelper_Access := new CustomLoaderHelper;
    begin
-      Initialize (This.all);
+      CustomLoaderHelper_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -84,13 +84,6 @@ package body admin.taghelpers.CustomLoaderHelper_Package is
                 end;
         end;
    end setWebappPath;
-
-   procedure getWebappPath (This : in out CustomLoaderHelper) is
-      Java_Result : constant Unbounded_String := CustomLoaderHelper'Class (This).getWebappPath;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getWebappPath;
 
 end admin.taghelpers.CustomLoaderHelper_Package;
 

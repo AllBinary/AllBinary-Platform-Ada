@@ -26,7 +26,7 @@ with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
-with org.allbinary.time_Case.TimeStampUtil_Package; use org.allbinary.time_Case.TimeStampUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package; use org.allbinary.time.TimeStampUtil_Package;
 
 package org.allbinary.logic.communication.log.LogFormatUtil_Package is
 
@@ -36,7 +36,7 @@ package org.allbinary.logic.communication.log.LogFormatUtil_Package is
    package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
    package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
-   package TimeStampUtil_Package renames Standard.org.allbinary.time_Case.TimeStampUtil_Package;
+   package TimeStampUtil_Package renames Standard.org.allbinary.time.TimeStampUtil_Package;
 
    type LogFormatUtil is tagged;
    type LogFormatUtil_Access is access all LogFormatUtil'Class;
@@ -63,13 +63,12 @@ package org.allbinary.logic.communication.log.LogFormatUtil_Package is
    procedure Initialize (This : in out LogFormatUtil'Class);
    function Create return LogFormatUtil_Access;
    function getInstance return LogFormatUtil_Access;
-   procedure getInstance;
    function get (This : in out LogFormatUtil; className : Unbounded_String; functionName : Unbounded_String; specialMessage : Unbounded_String; exception_Id : Java_Object_Access) return Unbounded_String;
    procedure get (This : in out LogFormatUtil; className : Unbounded_String; functionName : Unbounded_String; specialMessage : Unbounded_String; exception_Id : Java_Object_Access);
    function getS (This : in out LogFormatUtil; className : Unbounded_String; functionName : Unbounded_String; specialMessage : Unbounded_String) return Unbounded_String;
    procedure getS (This : in out LogFormatUtil; className : Unbounded_String; functionName : Unbounded_String; specialMessage : Unbounded_String);
-   function getF (This : in out LogFormatUtil; className : Unbounded_String; functionName : Unbounded_String) return StringMaker_Access;
-   procedure getF (This : in out LogFormatUtil; className : Unbounded_String; functionName : Unbounded_String);
+   function getF (This : in out LogFormatUtil; className : Unbounded_String; functionName_Param : Unbounded_String) return StringMaker_Access;
+   procedure getF (This : in out LogFormatUtil; className : Unbounded_String; functionName_Param : Unbounded_String);
    function getO (This : in out LogFormatUtil; exception_Id : Java_Object_Access) return Unbounded_String;
    procedure getO (This : in out LogFormatUtil; exception_Id : Java_Object_Access);
 

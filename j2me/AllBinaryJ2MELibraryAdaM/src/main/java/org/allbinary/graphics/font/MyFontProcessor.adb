@@ -28,7 +28,7 @@ package body org.allbinary.graphics.font.MyFontProcessor_Package is
    function Create return MyFontProcessor_Access is
       This : constant MyFontProcessor_Access := new MyFontProcessor;
    begin
-      Initialize (This.all);
+      MyFontProcessor_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -66,13 +66,6 @@ package body org.allbinary.graphics.font.MyFontProcessor_Package is
    begin
       null;
    end defaultStringWidth;
-
-   procedure getInstance is
-      Java_Result : constant MyFontProcessor_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

@@ -37,7 +37,7 @@ package body org.allbinary.vector.VectorInfo_Package is
    function Create (width : Integer; height : Integer; points : Integer_Array_Access_Array_Access; totalFrames : Integer) return VectorInfo_Access is
       This : constant VectorInfo_Access := new VectorInfo;
    begin
-      Initialize (This.all, width, height, points, totalFrames);
+      VectorInfo_Package.Initialize (This.all, width, height, points, totalFrames);
       return This;
    end Create;
 
@@ -80,34 +80,6 @@ package body org.allbinary.vector.VectorInfo_Package is
    begin
         This.totalFrames := totalFrames;
    end setTotalFrames;
-
-   procedure getWidth (This : in out VectorInfo) is
-      Java_Result : constant Integer := VectorInfo'Class (This).getWidth;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getWidth;
-
-   procedure getHeight (This : in out VectorInfo) is
-      Java_Result : constant Integer := VectorInfo'Class (This).getHeight;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getHeight;
-
-   procedure getPoints (This : in out VectorInfo) is
-      Java_Result : constant Integer_Array_Access_Array_Access := VectorInfo'Class (This).getPoints;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getPoints;
-
-   procedure getTotalFrames (This : in out VectorInfo) is
-      Java_Result : constant Integer := VectorInfo'Class (This).getTotalFrames;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTotalFrames;
 
 end org.allbinary.vector.VectorInfo_Package;
 

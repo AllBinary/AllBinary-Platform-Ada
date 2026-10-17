@@ -36,13 +36,9 @@ package org.allbinary.globals.UrlGlobalsInterface_Package is
    procedure Initialize (This : in out UrlGlobalsInterface'Class);
    function Create return UrlGlobalsInterface_Access;
    function getMainPath (This : in out UrlGlobalsInterface) return Unbounded_String;
-   procedure getMainPath (This : in out UrlGlobalsInterface);
    function getTestHtmlPath (This : in out UrlGlobalsInterface) return Unbounded_String;
-   procedure getTestHtmlPath (This : in out UrlGlobalsInterface);
    function getWebappPath (This : in out UrlGlobalsInterface) return Unbounded_String;
-   procedure getWebappPath (This : in out UrlGlobalsInterface);
    function isTestingMode (This : in out UrlGlobalsInterface) return Boolean;
-   procedure isTestingMode (This : in out UrlGlobalsInterface);
 
 end org.allbinary.globals.UrlGlobalsInterface_Package;
 

@@ -29,7 +29,7 @@ package body views.generic_Id.inventory.AutoSearchValidationInventoryView_Packag
    function Create (searchRequest : SearchRequest_Access) return AutoSearchValidationInventoryView_Access is
       This : constant AutoSearchValidationInventoryView_Access := new AutoSearchValidationInventoryView;
    begin
-      Initialize (This.all, searchRequest);
+      AutoSearchValidationInventoryView_Package.Initialize (This.all, searchRequest);
       return This;
    end Create;
 
@@ -53,33 +53,12 @@ package body views.generic_Id.inventory.AutoSearchValidationInventoryView_Packag
         return Null_Unbounded_String;
    end validationInfo;
 
-   procedure isValid (This : in out AutoSearchValidationInventoryView) is
-      Java_Result : constant Boolean := AutoSearchValidationInventoryView'Class (This).isValid;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isValid;
-
-   procedure toValidationInfoDoc (This : in out AutoSearchValidationInventoryView) is
-      Java_Result : constant Document_Access := AutoSearchValidationInventoryView'Class (This).toValidationInfoDoc;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toValidationInfoDoc;
-
    procedure toValidationInfoNode (This : in out AutoSearchValidationInventoryView; document : Document_Access) is
       Java_Result : constant Node_Access := AutoSearchValidationInventoryView'Class (This).toValidationInfoNode (document);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end toValidationInfoNode;
-
-   procedure validationInfo (This : in out AutoSearchValidationInventoryView) is
-      Java_Result : constant Unbounded_String := AutoSearchValidationInventoryView'Class (This).validationInfo;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end validationInfo;
 
 end views.generic_Id.inventory.AutoSearchValidationInventoryView_Package;
 

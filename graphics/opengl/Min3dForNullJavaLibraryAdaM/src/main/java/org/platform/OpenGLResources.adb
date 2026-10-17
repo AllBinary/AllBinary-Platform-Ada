@@ -16,7 +16,7 @@ package body org.platform.OpenGLResources_Package is
    function Create return OpenGLResources_Access is
       This : constant OpenGLResources_Access := new OpenGLResources;
    begin
-      Initialize (This.all);
+      OpenGLResources_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -64,13 +64,6 @@ package body org.platform.OpenGLResources_Package is
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end getPackageName;
 
-   procedure getInstance is
-      Java_Result : constant OpenGLResources_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
    procedure isExcluded (This : in out OpenGLResources; name : Unbounded_String) is
       Java_Result : constant Boolean := OpenGLResources'Class (This).isExcluded (name);
       pragma Unreferenced (Java_Result);
@@ -105,13 +98,6 @@ package body org.platform.OpenGLResources_Package is
    begin
       null;
    end getResourceAsStream;
-
-   procedure getPackageName (This : in out OpenGLResources) is
-      Java_Result : constant Unbounded_String := OpenGLResources'Class (This).getPackageName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getPackageName;
 
 begin
    null;

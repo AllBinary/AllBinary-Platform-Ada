@@ -28,7 +28,7 @@ package body org.allbinary.business.user.commerce.inventory.item.download.Downlo
    function Create return DownloadItemData_Access is
       This : constant DownloadItemData_Access := new DownloadItemData;
    begin
-      Initialize (This.all);
+      DownloadItemData_Package.Initialize (This.all);
       return This;
    end Create;
 

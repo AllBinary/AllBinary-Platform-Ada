@@ -45,7 +45,7 @@ package body org.allbinary.string_Id.CommonPhoneStrings_Package is
    function Create return CommonPhoneStrings_Access is
       This : constant CommonPhoneStrings_Access := new CommonPhoneStrings;
    begin
-      Initialize (This.all);
+      CommonPhoneStrings_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -53,13 +53,6 @@ package body org.allbinary.string_Id.CommonPhoneStrings_Package is
    function getInstance return CommonPhoneStrings_Access is
    begin
         return CommonPhoneStrings_Package.instance;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant CommonPhoneStrings_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

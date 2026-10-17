@@ -41,16 +41,9 @@ package body org.allbinary.business.quoterequest.QuoteRequestData_Package is
    function Create return QuoteRequestData_Access is
       This : constant QuoteRequestData_Access := new QuoteRequestData;
    begin
-      Initialize (This.all);
+      QuoteRequestData_Package.Initialize (This.all);
       return This;
    end Create;
-
-   procedure getInstance is
-      Java_Result : constant QuoteRequestData_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

@@ -61,7 +61,6 @@ package org.allbinary.business.category.store.StoreCategoryFactory_Package is
    procedure Initialize (This : in out StoreCategoryFactory'Class; transformInfoInterface : TransformInfoInterface_Access);
    function Create (transformInfoInterface : TransformInfoInterface_Access) return StoreCategoryFactory_Access;
    function getRootInstance (This : in out StoreCategoryFactory) return CategoryInterface_Access;
-   procedure getRootInstance (This : in out StoreCategoryFactory);
    function getRootInstance (This : in out StoreCategoryFactory; categoryPath : AbPath_Access) return CategoryInterface_Access;
    procedure getRootInstance (This : in out StoreCategoryFactory; categoryPath : AbPath_Access);
    function getRootInstanceFromNode (This : in out StoreCategoryFactory; node : Node_Access) return CategoryInterface_Access;

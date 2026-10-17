@@ -28,7 +28,7 @@ package body org.allbinary.logic.system.security.crypt.jcehelper.BaseSecretCompo
    function Create return BaseSecretComposite_Access is
       This : constant BaseSecretComposite_Access := new BaseSecretComposite;
    begin
-      Initialize (This.all);
+      BaseSecretComposite_Package.Initialize (This.all);
       return This;
    end Create;
 

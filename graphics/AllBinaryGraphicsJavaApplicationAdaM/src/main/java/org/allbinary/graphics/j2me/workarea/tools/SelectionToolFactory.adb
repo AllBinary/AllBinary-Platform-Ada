@@ -28,7 +28,7 @@ package body org.allbinary.graphics.j2me.workarea.tools.SelectionToolFactory_Pac
    function Create return SelectionToolFactory_Access is
       This : constant SelectionToolFactory_Access := new SelectionToolFactory;
    begin
-      Initialize (This.all);
+      SelectionToolFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

@@ -31,7 +31,7 @@ package body views.admin.payment.PaymentProcessorComponent_Package is
    function Create (transformInfoInterface : TransformInfoInterface_Access) return PaymentProcessorComponent_Access is
       This : constant PaymentProcessorComponent_Access := new PaymentProcessorComponent;
    begin
-      Initialize (This.all, transformInfoInterface);
+      PaymentProcessorComponent_Package.Initialize (This.all, transformInfoInterface);
       return This;
    end Create;
 
@@ -64,13 +64,6 @@ package body views.admin.payment.PaymentProcessorComponent_Package is
             Java_Throw (e);
                 end;
         end;
-   end view;
-
-   procedure view (This : in out PaymentProcessorComponent) is
-      Java_Result : constant Unbounded_String := PaymentProcessorComponent'Class (This).view;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end view;
 
 end views.admin.payment.PaymentProcessorComponent_Package;

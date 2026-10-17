@@ -30,7 +30,7 @@ package body org.allbinary.data.tables.TableDataFactory_Package is
    function Create return TableDataFactory_Access is
       This : constant TableDataFactory_Access := new TableDataFactory;
    begin
-      Initialize (This.all);
+      TableDataFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -38,13 +38,6 @@ package body org.allbinary.data.tables.TableDataFactory_Package is
    function getInstance return TableDataFactory_Access is
    begin
         return TableDataFactory_Package.instance;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant TableDataFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

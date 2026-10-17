@@ -51,7 +51,6 @@ package views.business.context.modules.storefront.HttpStoreComponentView_Package
    procedure Initialize (This : in out HttpStoreComponentView'Class; transformInfoInterface : TransformInfoInterface_Access);
    function Create (transformInfoInterface : TransformInfoInterface_Access) return HttpStoreComponentView_Access;
    function view (This : in out HttpStoreComponentView) return Unbounded_String;
-   procedure view (This : in out HttpStoreComponentView);
 
 end views.business.context.modules.storefront.HttpStoreComponentView_Package;
 

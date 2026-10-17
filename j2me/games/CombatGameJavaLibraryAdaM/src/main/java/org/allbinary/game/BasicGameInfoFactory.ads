@@ -27,12 +27,9 @@ package org.allbinary.game.BasicGameInfoFactory_Package is
    procedure Initialize (This : in out BasicGameInfoFactory'Class);
    function Create return BasicGameInfoFactory_Access;
    function getInstance return BasicGameInfoFactory_Access;
-   procedure getInstance;
    procedure init (This : in out BasicGameInfoFactory; total : Integer);
    function isPeaked (This : in out BasicGameInfoFactory) return Boolean;
-   procedure isPeaked (This : in out BasicGameInfoFactory);
    function howManyLeft (This : in out BasicGameInfoFactory) return Integer;
-   procedure howManyLeft (This : in out BasicGameInfoFactory);
 
 end org.allbinary.game.BasicGameInfoFactory_Package;
 

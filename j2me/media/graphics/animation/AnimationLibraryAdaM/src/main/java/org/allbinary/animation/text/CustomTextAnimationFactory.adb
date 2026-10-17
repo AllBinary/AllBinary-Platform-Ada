@@ -53,7 +53,7 @@ package body org.allbinary.animation.text.CustomTextAnimationFactory_Package is
    function Create (text : Unbounded_String; fontSize : Integer; animationBehaviorFactory : AnimationBehaviorFactory_Access) return CustomTextAnimationFactory_Access is
       This : constant CustomTextAnimationFactory_Access := new CustomTextAnimationFactory;
    begin
-      Initialize (This.all, text, fontSize, animationBehaviorFactory);
+      CustomTextAnimationFactory_Package.Initialize (This.all, text, fontSize, animationBehaviorFactory);
       return This;
    end Create;
 
@@ -99,20 +99,6 @@ package body org.allbinary.animation.text.CustomTextAnimationFactory_Package is
    begin
       null;
    end getInstance;
-
-   procedure getWidth (This : in out CustomTextAnimationFactory) is
-      Java_Result : constant Integer := CustomTextAnimationFactory'Class (This).getWidth;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getWidth;
-
-   procedure getHeight (This : in out CustomTextAnimationFactory) is
-      Java_Result : constant Integer := CustomTextAnimationFactory'Class (This).getHeight;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getHeight;
 
 end org.allbinary.animation.text.CustomTextAnimationFactory_Package;
 

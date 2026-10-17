@@ -36,7 +36,7 @@ package body org.allbinary.data.tables.user.commerce.money.payment.PaymentEntity
    function Create return PaymentEntityFactory_Access is
       This : constant PaymentEntityFactory_Access := new PaymentEntityFactory;
    begin
-      Initialize (This.all);
+      PaymentEntityFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -57,20 +57,6 @@ package body org.allbinary.data.tables.user.commerce.money.payment.PaymentEntity
             return null;
                 end;
         end;
-   end getPaymentEntityInstance;
-
-   procedure getInstance is
-      Java_Result : constant PaymentEntityFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure getPaymentEntityInstance (This : in out PaymentEntityFactory) is
-      Java_Result : constant PaymentEntity_Access := PaymentEntityFactory'Class (This).getPaymentEntityInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getPaymentEntityInstance;
 
 begin

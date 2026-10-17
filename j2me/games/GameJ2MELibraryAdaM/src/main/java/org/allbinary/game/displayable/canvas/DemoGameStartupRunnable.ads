@@ -23,6 +23,7 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.thread.ABRunnable_Package; use org.allbinary.thread.ABRunnable_Package;
+with org.allbinary.game.displayable.canvas.DemoCanvas_Package; use org.allbinary.game.displayable.canvas.DemoCanvas_Package;
 
 package org.allbinary.game.displayable.canvas.DemoGameStartupRunnable_Package is
 
@@ -45,7 +46,6 @@ package org.allbinary.game.displayable.canvas.DemoGameStartupRunnable_Package is
    function Create (demoCanvas : DemoCanvas_Access) return DemoGameStartupRunnable_Access;
    procedure run (This : in out DemoGameStartupRunnable);
    function getType (This : in out DemoGameStartupRunnable) return Integer;
-   procedure getType (This : in out DemoGameStartupRunnable);
 
 end org.allbinary.game.displayable.canvas.DemoGameStartupRunnable_Package;
 

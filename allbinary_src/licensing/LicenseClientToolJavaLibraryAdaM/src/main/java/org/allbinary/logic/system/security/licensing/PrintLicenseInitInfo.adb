@@ -30,7 +30,7 @@ package body org.allbinary.logic.system.security.licensing.PrintLicenseInitInfo_
    function Create (options : Unbounded_String_Array_Access) return PrintLicenseInitInfo_Access is
       This : constant PrintLicenseInitInfo_Access := new PrintLicenseInitInfo;
    begin
-      Initialize (This.all, options);
+      PrintLicenseInitInfo_Package.Initialize (This.all, options);
       return This;
    end Create;
 
@@ -79,13 +79,6 @@ package body org.allbinary.logic.system.security.licensing.PrintLicenseInitInfo_
         initInfo := PrintLicenseInitInfo_Package.Create (args);
         initInfo.printInitInfo;
    end main;
-
-   procedure getLicenseInitInfo (This : in out PrintLicenseInitInfo) is
-      Java_Result : constant LicenseInitInfo_Access := PrintLicenseInitInfo'Class (This).getLicenseInitInfo;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getLicenseInitInfo;
 
 begin
    null;

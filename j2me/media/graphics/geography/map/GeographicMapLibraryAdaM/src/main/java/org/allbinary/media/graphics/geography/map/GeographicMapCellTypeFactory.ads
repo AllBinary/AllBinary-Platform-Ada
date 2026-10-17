@@ -21,6 +21,7 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package;
 
 package org.allbinary.media.graphics.geography.map.GeographicMapCellTypeFactory_Package is
 
@@ -40,17 +41,12 @@ package org.allbinary.media.graphics.geography.map.GeographicMapCellTypeFactory_
    procedure Initialize (This : in out GeographicMapCellTypeFactory'Class);
    function Create return GeographicMapCellTypeFactory_Access;
    function getInstance return GeographicMapCellTypeFactory_Access;
-   procedure getInstance;
    function get (This : in out GeographicMapCellTypeFactory; type_Id : Integer) return GeographicMapCellType_Access;
    procedure get (This : in out GeographicMapCellTypeFactory; type_Id : Integer);
    function getGeographicMapCellTypeArray (This : in out GeographicMapCellTypeFactory) return GeographicMapCellType_Access_Array_Access;
-   procedure getGeographicMapCellTypeArray (This : in out GeographicMapCellTypeFactory);
    function getStartType (This : in out GeographicMapCellTypeFactory) return Integer;
-   procedure getStartType (This : in out GeographicMapCellTypeFactory);
    function getEndType (This : in out GeographicMapCellTypeFactory) return Integer;
-   procedure getEndType (This : in out GeographicMapCellTypeFactory);
    function getEmptyType (This : in out GeographicMapCellTypeFactory) return Integer;
-   procedure getEmptyType (This : in out GeographicMapCellTypeFactory);
    function isPath (This : in out GeographicMapCellTypeFactory; cellType : GeographicMapCellType_Access) return Boolean;
    procedure isPath (This : in out GeographicMapCellTypeFactory; cellType : GeographicMapCellType_Access);
 

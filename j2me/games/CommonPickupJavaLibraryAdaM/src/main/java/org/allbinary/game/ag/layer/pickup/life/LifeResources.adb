@@ -31,20 +31,13 @@ package body org.allbinary.game.ag.layer.pickup.life.LifeResources_Package is
    function Create return LifeResources_Access is
       This : constant LifeResources_Access := new LifeResources;
    begin
-      Initialize (This.all);
+      LifeResources_Package.Initialize (This.all);
       return This;
    end Create;
 
    function getInstance return LifeResources_Access is
    begin
         return LifeResources_Package.SINGLETON;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant LifeResources_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

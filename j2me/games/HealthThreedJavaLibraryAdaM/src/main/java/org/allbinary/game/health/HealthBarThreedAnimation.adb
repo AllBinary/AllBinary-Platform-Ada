@@ -39,7 +39,7 @@ package body org.allbinary.game.health.HealthBarThreedAnimation_Package is
    function Create (layerInterface : AllBinaryLayer_Access; location : Integer) return HealthBarThreedAnimation_Access is
       This : constant HealthBarThreedAnimation_Access := new HealthBarThreedAnimation;
    begin
-      Initialize (This.all, layerInterface, location);
+      HealthBarThreedAnimation_Package.Initialize (This.all, layerInterface, location);
       return This;
    end Create;
 

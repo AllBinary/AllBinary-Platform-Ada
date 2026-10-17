@@ -34,7 +34,7 @@ package body org.allbinary.logic.io.file.SimpleFileUtil_Package is
    function Create return SimpleFileUtil_Access is
       This : constant SimpleFileUtil_Access := new SimpleFileUtil;
    begin
-      Initialize (This.all);
+      SimpleFileUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -240,34 +240,6 @@ package body org.allbinary.logic.io.file.SimpleFileUtil_Package is
         end loop;
         return stringMaker.toString;
    end createStringFromArrayOfStrings;
-
-   procedure getInstance is
-      Java_Result : constant SimpleFileUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure nullOutputStream is
-      Java_Result : constant OutputStream_Access := nullOutputStream;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end nullOutputStream;
-
-   procedure nullWriter is
-      Java_Result : constant Writer_Access := nullWriter;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end nullWriter;
-
-   procedure nullReader is
-      Java_Result : constant Reader_Access := nullReader;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end nullReader;
 
    procedure loadFileAsList (This : in out SimpleFileUtil; inputStream : InputStream_Access; max : Integer; byteArray1 : Short_Short_Integer_Array_Access) is
       Java_Result : constant BasicArrayList_Access := SimpleFileUtil'Class (This).loadFileAsList (inputStream, max, byteArray1);

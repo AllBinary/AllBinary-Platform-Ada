@@ -32,7 +32,7 @@ package body org.allbinary.game.midlet.LicenseLoadingTypeFactory_Package is
    function Create return LicenseLoadingTypeFactory_Access is
       This : constant LicenseLoadingTypeFactory_Access := new LicenseLoadingTypeFactory;
    begin
-      Initialize (This.all);
+      LicenseLoadingTypeFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -40,13 +40,6 @@ package body org.allbinary.game.midlet.LicenseLoadingTypeFactory_Package is
    function getIntance return LicenseLoadingTypeFactory_Access is
    begin
         return LicenseLoadingTypeFactory_Package.instance;
-   end getIntance;
-
-   procedure getIntance is
-      Java_Result : constant LicenseLoadingTypeFactory_Access := getIntance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getIntance;
 
 begin

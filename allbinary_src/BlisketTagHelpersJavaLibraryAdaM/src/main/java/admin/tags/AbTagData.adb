@@ -30,7 +30,7 @@ package body admin.tags.AbTagData_Package is
    function Create return AbTagData_Access is
       This : constant AbTagData_Access := new AbTagData;
    begin
-      Initialize (This.all);
+      AbTagData_Package.Initialize (This.all);
       return This;
    end Create;
 

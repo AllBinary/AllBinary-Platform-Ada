@@ -34,7 +34,7 @@ package body org.allbinary.data.tables.staticpages.StaticPagesEntity_Package is
    function Create return StaticPagesEntity_Access is
       This : constant StaticPagesEntity_Access := new StaticPagesEntity;
    begin
-      Initialize (This.all);
+      StaticPagesEntity_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -104,27 +104,6 @@ package body org.allbinary.data.tables.staticpages.StaticPagesEntity_Package is
    begin
       null;
    end getFile;
-
-   procedure dropTable (This : in out StaticPagesEntity) is
-      Java_Result : constant Unbounded_String := StaticPagesEntity'Class (This).dropTable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end dropTable;
-
-   procedure createTableStatement (This : in out StaticPagesEntity) is
-      Java_Result : constant Unbounded_String := StaticPagesEntity'Class (This).createTableStatement;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end createTableStatement;
-
-   procedure createTable (This : in out StaticPagesEntity) is
-      Java_Result : constant Unbounded_String := StaticPagesEntity'Class (This).createTable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end createTable;
 
 end org.allbinary.data.tables.staticpages.StaticPagesEntity_Package;
 

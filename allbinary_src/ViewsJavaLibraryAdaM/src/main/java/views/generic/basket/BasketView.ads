@@ -77,7 +77,6 @@ package views.generic_Id.basket.BasketView_Package is
    procedure toXmlNode (This : in out BasketView; document : Document_Access);
    procedure addDomNodeInterfaces (This : in out BasketView);
    function view (This : in out BasketView) return Unbounded_String;
-   procedure view (This : in out BasketView);
 
 end views.generic_Id.basket.BasketView_Package;
 

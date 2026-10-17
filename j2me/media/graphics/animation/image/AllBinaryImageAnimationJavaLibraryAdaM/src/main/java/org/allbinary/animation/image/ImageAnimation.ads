@@ -49,20 +49,15 @@ package org.allbinary.animation.image.ImageAnimation_Package is
    procedure Initialize (This : in out ImageAnimation'Class; image : Image_Access; animationBehavior : AnimationBehavior_Access);
    function Create (image : Image_Access; animationBehavior : AnimationBehavior_Access) return ImageAnimation_Access;
    function getAnimationSize (This : in out ImageAnimation) return Integer;
-   procedure getAnimationSize (This : in out ImageAnimation);
    procedure nextFrame (This : in out ImageAnimation);
    procedure previousFrame (This : in out ImageAnimation);
    procedure setFrame (This : in out ImageAnimation; index : Integer);
    function getFrame (This : in out ImageAnimation) return Integer;
-   procedure getFrame (This : in out ImageAnimation);
    function getSize (This : in out ImageAnimation) return Integer;
-   procedure getSize (This : in out ImageAnimation);
    procedure setSequence (This : in out ImageAnimation; sequence : Integer_Array_Access);
    function getSequence (This : in out ImageAnimation) return Integer_Array_Access;
-   procedure getSequence (This : in out ImageAnimation);
    procedure paintXY (This : in out ImageAnimation; graphics : Graphics_Access; x : Integer; y : Integer);
    function getImage (This : in out ImageAnimation) return Image_Access;
-   procedure getImage (This : in out ImageAnimation);
    procedure close (This : in out ImageAnimation);
    procedure finalize (This : in out ImageAnimation);
 

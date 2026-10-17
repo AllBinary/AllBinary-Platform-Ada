@@ -20,6 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
+with org.allbinary.business.init.LicenseInitInfo_Package; use org.allbinary.business.init.LicenseInitInfo_Package;
 
 package org.allbinary.business.init.LicenseInitInfoUtil_Package is
 
@@ -40,11 +41,9 @@ package org.allbinary.business.init.LicenseInitInfoUtil_Package is
    procedure Initialize (This : in out LicenseInitInfoUtil'Class);
    function Create return LicenseInitInfoUtil_Access;
    function getInstance return LicenseInitInfoUtil_Access;
-   procedure getInstance;
    procedure setFilePath (This : in out LicenseInitInfoUtil; filePath : Unbounded_String);
    procedure write (This : in out LicenseInitInfoUtil; initData : LicenseInitInfo_Access);
    function read (This : in out LicenseInitInfoUtil) return LicenseInitInfo_Access;
-   procedure read (This : in out LicenseInitInfoUtil);
    function readAgain (This : in out LicenseInitInfoUtil; initializeCounter : Integer) return LicenseInitInfo_Access;
    procedure readAgain (This : in out LicenseInitInfoUtil; initializeCounter : Integer);
 

@@ -27,6 +27,8 @@ with org.allbinary.logic.util.event.EventStrings_Package; use org.allbinary.logi
 with org.allbinary.logic.util.event.handler.BasicEventHandler_Package; use org.allbinary.logic.util.event.handler.BasicEventHandler_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.game.input.event.GameKeyEvent_Package; use org.allbinary.game.input.event.GameKeyEvent_Package;
+with org.allbinary.game.input.event.DownKeyEventListenerInterface_Package; use org.allbinary.game.input.event.DownKeyEventListenerInterface_Package;
 
 package org.allbinary.game.input.event.DownKeyEventHandlerBase_Package is
 
@@ -60,7 +62,6 @@ package org.allbinary.game.input.event.DownKeyEventHandlerBase_Package is
    procedure processI (This : in out DownKeyEventHandlerBase; eventObject : Integer; eventListenerInterface : EventListenerInterface_Access);
    procedure processEvent (This : in out DownKeyEventHandlerBase; eventObject : GameKeyEvent_Access; eventListenerInterface : EventListenerInterface_Access);
    function toString (This : in out DownKeyEventHandlerBase) return Unbounded_String;
-   procedure toString (This : in out DownKeyEventHandlerBase);
 
 end org.allbinary.game.input.event.DownKeyEventHandlerBase_Package;
 

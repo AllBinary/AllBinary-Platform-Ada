@@ -42,7 +42,6 @@ package org.allbinary.logic.control.workflow.StoreWorkFlowWrapper_Package is
    procedure Initialize (This : in out StoreWorkFlowWrapper'Class; anyType : Java_Object_Access);
    function Create (anyType : Java_Object_Access) return StoreWorkFlowWrapper_Access;
    function getStoreName (This : in out StoreWorkFlowWrapper) return Unbounded_String;
-   procedure getStoreName (This : in out StoreWorkFlowWrapper);
 
 end org.allbinary.logic.control.workflow.StoreWorkFlowWrapper_Package;
 

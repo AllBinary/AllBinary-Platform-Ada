@@ -28,7 +28,7 @@ package body admin.tags.ParentInventoryTagHelper_Package is
    function Create return ParentInventoryTagHelper_Access is
       This : constant ParentInventoryTagHelper_Access := new ParentInventoryTagHelper;
    begin
-      Initialize (This.all);
+      ParentInventoryTagHelper_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -54,13 +54,6 @@ package body admin.tags.ParentInventoryTagHelper_Package is
             Java_Throw (Java_New_Exception ("Exception", stringBuffer.toString));
         end if;
    end isValid;
-
-   procedure getInstance is
-      Java_Result : constant ParentInventoryTagHelper_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

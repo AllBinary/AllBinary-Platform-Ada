@@ -56,14 +56,11 @@ package org.allbinary.physics.movement.BasicConstantVelocityMovement_Package is
    procedure moveOutsideRadius (This : in out BasicConstantVelocityMovement; layer : AllBinaryLayer_Access; radius : Long_Long_Integer; angle : Integer; otherAngle : Integer);
    procedure process (This : in out BasicConstantVelocityMovement; layer : AllBinaryGameLayer_Access);
    function toString (This : in out BasicConstantVelocityMovement) return Unbounded_String;
-   procedure toString (This : in out BasicConstantVelocityMovement);
    procedure stop (This : in out BasicConstantVelocityMovement);
    function getVelocityProperties (This : in out BasicConstantVelocityMovement) return BasicVelocityProperties_Access;
-   procedure getVelocityProperties (This : in out BasicConstantVelocityMovement);
    procedure setVelocityProperties (This : in out BasicConstantVelocityMovement; velocityProperties : BasicVelocityProperties_Access);
    procedure setSpeedBasicDecimal (This : in out BasicConstantVelocityMovement; speedBasicDecimal : BasicDecimal_Access);
    function getSpeedBasicDecimal (This : in out BasicConstantVelocityMovement) return BasicDecimal_Access;
-   procedure getSpeedBasicDecimal (This : in out BasicConstantVelocityMovement);
 
 end org.allbinary.physics.movement.BasicConstantVelocityMovement_Package;
 

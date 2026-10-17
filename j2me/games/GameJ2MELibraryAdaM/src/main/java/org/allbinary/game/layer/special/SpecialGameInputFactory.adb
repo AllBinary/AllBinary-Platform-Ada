@@ -28,7 +28,7 @@ package body org.allbinary.game.layer.special.SpecialGameInputFactory_Package is
    function Create return SpecialGameInputFactory_Access is
       This : constant SpecialGameInputFactory_Access := new SpecialGameInputFactory;
    begin
-      Initialize (This.all);
+      SpecialGameInputFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

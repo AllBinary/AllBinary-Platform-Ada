@@ -69,7 +69,6 @@ package views.business.context.modules.storefront.customizer.bodies.generic_Id.t
    function toXmlNode (This : in out TitleBodyCustomizerView; document : Document_Access) return Node_Access;
    procedure toXmlNode (This : in out TitleBodyCustomizerView; document : Document_Access);
    function view (This : in out TitleBodyCustomizerView) return Unbounded_String;
-   procedure view (This : in out TitleBodyCustomizerView);
 
 end views.business.context.modules.storefront.customizer.bodies.generic_Id.title.TitleBodyCustomizerView_Package;
 

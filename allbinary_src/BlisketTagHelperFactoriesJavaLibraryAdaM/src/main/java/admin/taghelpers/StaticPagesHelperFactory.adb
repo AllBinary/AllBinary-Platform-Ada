@@ -32,7 +32,7 @@ package body admin.taghelpers.StaticPagesHelperFactory_Package is
    function Create return StaticPagesHelperFactory_Access is
       This : constant StaticPagesHelperFactory_Access := new StaticPagesHelperFactory;
    begin
-      Initialize (This.all);
+      StaticPagesHelperFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

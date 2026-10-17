@@ -39,7 +39,7 @@ package body org.allbinary.android.input.motion.TrackballGameInputMotionEventPro
    function Create return TrackballGameInputMotionEventProcessor_Access is
       This : constant TrackballGameInputMotionEventProcessor_Access := new TrackballGameInputMotionEventProcessor;
    begin
-      Initialize (This.all);
+      TrackballGameInputMotionEventProcessor_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -69,13 +69,6 @@ package body org.allbinary.android.input.motion.TrackballGameInputMotionEventPro
                 end;
         end;
    end process;
-
-   procedure getInstance is
-      Java_Result : constant TrackballGameInputMotionEventProcessor_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

@@ -30,7 +30,7 @@ package body admin.taghelpers.OrderHistoryHelperFactory_Package is
    function Create return OrderHistoryHelperFactory_Access is
       This : constant OrderHistoryHelperFactory_Access := new OrderHistoryHelperFactory;
    begin
-      Initialize (This.all);
+      OrderHistoryHelperFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

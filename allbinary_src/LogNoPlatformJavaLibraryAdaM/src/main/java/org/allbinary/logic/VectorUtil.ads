@@ -20,10 +20,11 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.util.Vector_Package; use java.util.Vector_Package;
+with java.util.Vector_Package; use java.util.Vector_Package;
 
 package org.allbinary.logic.VectorUtil_Package is
 
+   package Vector_Package renames Standard.java.util.Vector_Package;
 
    type VectorUtil is tagged;
    type VectorUtil_Access is access all VectorUtil'Class;
@@ -36,7 +37,6 @@ package org.allbinary.logic.VectorUtil_Package is
    procedure Initialize (This : in out VectorUtil'Class);
    function Create return VectorUtil_Access;
    function getInstance return VectorUtil_Access;
-   procedure getInstance;
    function getSize (This : in out VectorUtil; anyType : Java_Object_Access) return Integer;
    procedure getSize (This : in out VectorUtil; anyType : Java_Object_Access);
    function elementAt (This : in out VectorUtil; anyType : Java_Object_Access; index : Integer) return Java_Object_Access;

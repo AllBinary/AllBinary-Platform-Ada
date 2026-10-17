@@ -41,7 +41,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoHttpContext_
    function Create (databaseHashMap : HashMap_Access; propertiesHashMap : HashMap_Access; pageContext : PageContext_Access) return TransformInfoHttpContext_Access is
       This : constant TransformInfoHttpContext_Access := new TransformInfoHttpContext;
    begin
-      Initialize (This.all, databaseHashMap, propertiesHashMap, pageContext);
+      TransformInfoHttpContext_Package.Initialize (This.all, databaseHashMap, propertiesHashMap, pageContext);
       return This;
    end Create;
 
@@ -59,7 +59,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoHttpContext_
    function Create (propertiesHashMap : HashMap_Access; pageContext : PageContext_Access) return TransformInfoHttpContext_Access is
       This : constant TransformInfoHttpContext_Access := new TransformInfoHttpContext;
    begin
-      Initialize (This.all, propertiesHashMap, pageContext);
+      TransformInfoHttpContext_Package.Initialize (This.all, propertiesHashMap, pageContext);
       return This;
    end Create;
 
@@ -92,34 +92,6 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoHttpContext_
    function getDataFilePath (This : in out TransformInfoHttpContext) return AbPath_Access is
    begin
         return AbPath_Package.Create (This.getPath, This.getDataFile);
-   end getDataFilePath;
-
-   procedure getPath (This : in out TransformInfoHttpContext) is
-      Java_Result : constant Unbounded_String := TransformInfoHttpContext'Class (This).getPath;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getPath;
-
-   procedure getTemplateFilePath (This : in out TransformInfoHttpContext) is
-      Java_Result : constant AbPath_Access := TransformInfoHttpContext'Class (This).getTemplateFilePath;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTemplateFilePath;
-
-   procedure getObjectConfigFilePath (This : in out TransformInfoHttpContext) is
-      Java_Result : constant AbPath_Access := TransformInfoHttpContext'Class (This).getObjectConfigFilePath;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getObjectConfigFilePath;
-
-   procedure getDataFilePath (This : in out TransformInfoHttpContext) is
-      Java_Result : constant AbPath_Access := TransformInfoHttpContext'Class (This).getDataFilePath;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getDataFilePath;
 
 end org.allbinary.logic.visual.transform.info.TransformInfoHttpContext_Package;

@@ -48,7 +48,7 @@ package body org.allbinary.logic.communication.sql.connection.pool.SqlConnection
    function Create return SqlConnectionPool_Access is
       This : constant SqlConnectionPool_Access := new SqlConnectionPool;
    begin
-      Initialize (This.all);
+      SqlConnectionPool_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -149,13 +149,6 @@ package body org.allbinary.logic.communication.sql.connection.pool.SqlConnection
             This.logUtil.putF (This.CONNECTION_ALLREADY_CLOSED, This'Unchecked_Access, This.METHOD_ADD);
         end if;
    end add;
-
-   procedure getInstance is
-      Java_Result : constant SqlConnectionPool_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure get (This : in out SqlConnectionPool; url : Unbounded_String) is
       Java_Result : constant Connection_Access := SqlConnectionPool'Class (This).get (url);

@@ -31,7 +31,7 @@ package body org.allbinary.layer.event.ScrollMapEventHandler_Package is
    function Create return ScrollMapEventHandler_Access is
       This : constant ScrollMapEventHandler_Access := new ScrollMapEventHandler;
    begin
-      Initialize (This.all);
+      ScrollMapEventHandler_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -47,13 +47,6 @@ package body org.allbinary.layer.event.ScrollMapEventHandler_Package is
         scrollMapEventListenerInterface := (ScrollMapEventListenerInterface_Access (eventListenerInterface));
         scrollMapEventListenerInterface.onMoveEvent (ScrollMapEvent_Access (eventObject));
    end process;
-
-   procedure getInstance is
-      Java_Result : constant ScrollMapEventHandler_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

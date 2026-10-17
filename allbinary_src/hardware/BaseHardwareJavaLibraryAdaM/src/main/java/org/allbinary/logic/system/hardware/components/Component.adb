@@ -31,20 +31,13 @@ package body org.allbinary.logic.system.hardware.components.Component_Package is
    function Create (componentName : Unbounded_String) return Component_Access is
       This : constant Component_Access := new Component;
    begin
-      Initialize (This.all, componentName);
+      Component_Package.Initialize (This.all, componentName);
       return This;
    end Create;
 
    function toString (This : in out Component) return Unbounded_String is
    begin
         return This.name;
-   end toString;
-
-   procedure toString (This : in out Component) is
-      Java_Result : constant Unbounded_String := Component'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end toString;
 
 end org.allbinary.logic.system.hardware.components.Component_Package;

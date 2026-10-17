@@ -60,7 +60,6 @@ package org.allbinary.game.ag.layer.hud.basic.NumberStringHud_Package is
    function Create (prependString : Unbounded_String; max : Integer; location : Integer; direction : Integer; bufferZone : Integer; basicColor : BasicColor_Access) return NumberStringHud_Access;
    procedure updateMeasurement (This : in out NumberStringHud; graphics : Graphics_Access);
    function get (This : in out NumberStringHud) return Integer;
-   procedure get (This : in out NumberStringHud);
    procedure add (This : in out NumberStringHud; value : Integer);
    procedure set (This : in out NumberStringHud; value : Integer);
    procedure reduce (This : in out NumberStringHud; value : Integer);

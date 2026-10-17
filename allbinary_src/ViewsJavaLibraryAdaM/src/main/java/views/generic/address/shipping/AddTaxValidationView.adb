@@ -31,7 +31,7 @@ package body views.generic_Id.address.shipping.AddTaxValidationView_Package is
    function Create (transformInfoInterface : TransformInfoInterface_Access) return AddTaxValidationView_Access is
       This : constant AddTaxValidationView_Access := new AddTaxValidationView;
    begin
-      Initialize (This.all, transformInfoInterface);
+      AddTaxValidationView_Package.Initialize (This.all, transformInfoInterface);
       return This;
    end Create;
 
@@ -135,27 +135,6 @@ package body views.generic_Id.address.shipping.AddTaxValidationView_Package is
    begin
         return null;
    end toValidationInfoNode;
-
-   procedure isValid (This : in out AddTaxValidationView) is
-      Java_Result : constant Boolean := AddTaxValidationView'Class (This).isValid;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isValid;
-
-   procedure validationInfo (This : in out AddTaxValidationView) is
-      Java_Result : constant Unbounded_String := AddTaxValidationView'Class (This).validationInfo;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end validationInfo;
-
-   procedure toValidationInfoDoc (This : in out AddTaxValidationView) is
-      Java_Result : constant Document_Access := AddTaxValidationView'Class (This).toValidationInfoDoc;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toValidationInfoDoc;
 
    procedure toValidationInfoNode (This : in out AddTaxValidationView; document : Document_Access) is
       Java_Result : constant Node_Access := AddTaxValidationView'Class (This).toValidationInfoNode (document);

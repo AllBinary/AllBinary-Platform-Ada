@@ -22,6 +22,7 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.input.mapping.InputToGameKeyMapping_Package; use org.allbinary.game.input.mapping.InputToGameKeyMapping_Package;
 with org.allbinary.game.input.J2MEGameInputMapping_Package; use org.allbinary.game.input.J2MEGameInputMapping_Package;
+with org.allbinary.game.input.NormalJ2MEDefaultGameInputMapping_Package; use org.allbinary.game.input.NormalJ2MEDefaultGameInputMapping_Package;
 
 package org.allbinary.game.input.NormalJ2MEGameInputMapping_Package is
 
@@ -37,7 +38,6 @@ package org.allbinary.game.input.NormalJ2MEGameInputMapping_Package is
    procedure Initialize (This : in out NormalJ2MEGameInputMapping'Class);
    function Create return NormalJ2MEGameInputMapping_Access;
    function getDefault (This : in out NormalJ2MEGameInputMapping) return InputToGameKeyMapping_Access;
-   procedure getDefault (This : in out NormalJ2MEGameInputMapping);
 
 end org.allbinary.game.input.NormalJ2MEGameInputMapping_Package;
 

@@ -29,7 +29,7 @@ package body org.allbinary.util.ABVector_Package is
    function Create return ABVector_Access is
       This : constant ABVector_Access := new ABVector;
    begin
-      Initialize (This.all);
+      ABVector_Package.Initialize (This.all);
       return This;
    end Create;
 

@@ -34,6 +34,7 @@ with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.
 with tags.HelperTag_Package; use tags.HelperTag_Package;
 with views.admin.inventory.InventoryItemView_Package; use views.admin.inventory.InventoryItemView_Package;
 with admin.taghelpers.ModifyTable_Package; use admin.taghelpers.ModifyTable_Package;
+with admin.taghelpers.InventoryItemViewParentTagHelper_Package; use admin.taghelpers.InventoryItemViewParentTagHelper_Package;
 
 package admin.taghelpers.InventoryRequestHelper_Package is
 
@@ -63,13 +64,9 @@ package admin.taghelpers.InventoryRequestHelper_Package is
    procedure Initialize (This : in out InventoryRequestHelper'Class; propertiesHashMap : HashMap_Access; pageContext : PageContext_Access);
    function Create (propertiesHashMap : HashMap_Access; pageContext : PageContext_Access) return InventoryRequestHelper_Access;
    function insert (This : in out InventoryRequestHelper) return Unbounded_String;
-   procedure insert (This : in out InventoryRequestHelper);
    function delete (This : in out InventoryRequestHelper) return Unbounded_String;
-   procedure delete (This : in out InventoryRequestHelper);
    function update (This : in out InventoryRequestHelper) return Unbounded_String;
-   procedure update (This : in out InventoryRequestHelper);
    function getItemInterface (This : in out InventoryRequestHelper) return ItemInterface_Access;
-   procedure getItemInterface (This : in out InventoryRequestHelper);
 
 end admin.taghelpers.InventoryRequestHelper_Package;
 

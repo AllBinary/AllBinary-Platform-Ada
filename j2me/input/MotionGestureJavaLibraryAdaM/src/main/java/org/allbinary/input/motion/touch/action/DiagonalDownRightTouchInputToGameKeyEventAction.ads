@@ -43,7 +43,6 @@ package org.allbinary.input.motion.touch.action.DiagonalDownRightTouchInputToGam
    procedure Initialize (This : in out DiagonalDownRightTouchInputToGameKeyEventAction'Class);
    function Create return DiagonalDownRightTouchInputToGameKeyEventAction_Access;
    function getInstance return GameKeyCompleteMotionGestureInputEvent_Access;
-   procedure getInstance;
 
 end org.allbinary.input.motion.touch.action.DiagonalDownRightTouchInputToGameKeyEventAction_Package;
 

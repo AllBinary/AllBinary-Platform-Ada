@@ -33,7 +33,7 @@ package body org.allbinary.game.ag.ai.tactical.HorizontalManeuverAI_Package is
    function Create (ownerLayerInterface : AllBinaryLayer_Access; gameInput : GameInput_Access) return HorizontalManeuverAI_Access is
       This : constant HorizontalManeuverAI_Access := new HorizontalManeuverAI;
    begin
-      Initialize (This.all, ownerLayerInterface, gameInput);
+      HorizontalManeuverAI_Package.Initialize (This.all, ownerLayerInterface, gameInput);
       return This;
    end Create;
 

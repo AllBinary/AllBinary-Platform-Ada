@@ -32,7 +32,7 @@ package body org.allbinary.business.category.CategoryView_Package is
    function Create (categoryInterface : CategoryInterface_Access) return CategoryView_Access is
       This : constant CategoryView_Access := new CategoryView;
    begin
-      Initialize (This.all, categoryInterface);
+      CategoryView_Package.Initialize (This.all, categoryInterface);
       return This;
    end Create;
 
@@ -76,13 +76,6 @@ package body org.allbinary.business.category.CategoryView_Package is
         end loop;
         return node;
    end toXmlNode;
-
-   procedure getCategoryInterface (This : in out CategoryView) is
-      Java_Result : constant CategoryInterface_Access := CategoryView'Class (This).getCategoryInterface;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getCategoryInterface;
 
    procedure toXmlNode (This : in out CategoryView; document : Document_Access) is
       Java_Result : constant Node_Access := CategoryView'Class (This).toXmlNode (document);

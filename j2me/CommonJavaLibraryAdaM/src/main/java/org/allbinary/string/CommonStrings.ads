@@ -94,7 +94,6 @@ package org.allbinary.string_Id.CommonStrings_Package is
    procedure Initialize (This : in out CommonStrings'Class);
    function Create return CommonStrings_Access;
    function getInstance return CommonStrings_Access;
-   procedure getInstance;
 
 end org.allbinary.string_Id.CommonStrings_Package;
 

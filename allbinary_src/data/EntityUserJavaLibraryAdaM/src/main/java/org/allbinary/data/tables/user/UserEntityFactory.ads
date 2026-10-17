@@ -22,6 +22,7 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.data.tables.user.UserEntity_Package; use org.allbinary.data.tables.user.UserEntity_Package;
 
 package org.allbinary.data.tables.user.UserEntityFactory_Package is
 
@@ -38,7 +39,6 @@ package org.allbinary.data.tables.user.UserEntityFactory_Package is
    procedure Initialize (This : in out UserEntityFactory'Class);
    function Create return UserEntityFactory_Access;
    function getInstance return UserEntity_Access;
-   procedure getInstance;
 
 end org.allbinary.data.tables.user.UserEntityFactory_Package;
 

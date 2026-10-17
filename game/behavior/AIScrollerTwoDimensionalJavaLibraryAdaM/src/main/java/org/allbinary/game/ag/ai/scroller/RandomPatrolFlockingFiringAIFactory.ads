@@ -26,6 +26,8 @@ with org.allbinary.game.ai.ArtificialIntelligenceInterfaceFactoryInterface_Packa
 with org.allbinary.game.input.GameInput_Package; use org.allbinary.game.input.GameInput_Package;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
 with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
+with org.allbinary.game.ag.ai.scroller.RandomPatrolAI_Package; use org.allbinary.game.ag.ai.scroller.RandomPatrolAI_Package;
+with org.allbinary.game.ag.ai.scroller.TimedFireAI_Package; use org.allbinary.game.ag.ai.scroller.TimedFireAI_Package;
 
 package org.allbinary.game.ag.ai.scroller.RandomPatrolFlockingFiringAIFactory_Package is
 

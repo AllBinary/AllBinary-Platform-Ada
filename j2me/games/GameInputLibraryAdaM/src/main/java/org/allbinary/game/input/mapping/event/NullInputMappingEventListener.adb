@@ -28,7 +28,7 @@ package body org.allbinary.game.input.mapping.event.NullInputMappingEventListene
    function Create return NullInputMappingEventListener_Access is
       This : constant NullInputMappingEventListener_Access := new NullInputMappingEventListener;
    begin
-      Initialize (This.all);
+      NullInputMappingEventListener_Package.Initialize (This.all);
       return This;
    end Create;
 

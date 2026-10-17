@@ -28,7 +28,7 @@ package body org.allbinary.image.AnimationFrameToImageUtil_Package is
    function Create return AnimationFrameToImageUtil_Access is
       This : constant AnimationFrameToImageUtil_Access := new AnimationFrameToImageUtil;
    begin
-      Initialize (This.all);
+      AnimationFrameToImageUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -65,13 +65,6 @@ package body org.allbinary.image.AnimationFrameToImageUtil_Package is
         animationInterface.paintXY (graphics, 0, 0);
         return image;
    end getInstanceWH;
-
-   procedure getInstance is
-      Java_Result : constant AnimationFrameToImageUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure getInstanceTranslate (This : in out AnimationFrameToImageUtil; width : Integer; height : Integer; animationInterface : Animation_Access) is
       Java_Result : constant Image_Access := AnimationFrameToImageUtil'Class (This).getInstanceTranslate (width, height, animationInterface);

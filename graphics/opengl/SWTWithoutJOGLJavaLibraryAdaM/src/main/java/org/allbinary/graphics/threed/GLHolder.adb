@@ -31,7 +31,7 @@ package body org.allbinary.graphics.threed.GLHolder_Package is
    function Create return GLHolder_Access is
       This : constant GLHolder_Access := new GLHolder;
    begin
-      Initialize (This.all);
+      GLHolder_Package.Initialize (This.all);
       return This;
    end Create;
 

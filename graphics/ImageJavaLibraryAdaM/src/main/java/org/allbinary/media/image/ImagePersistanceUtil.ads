@@ -51,7 +51,6 @@ package org.allbinary.media.image.ImagePersistanceUtil_Package is
    procedure Initialize (This : in out ImagePersistanceUtil'Class);
    function Create return ImagePersistanceUtil_Access;
    function getInstance return ImagePersistanceUtil_Access;
-   procedure getInstance;
    procedure saveWithBatik (This : in out ImagePersistanceUtil; file : AbFile_Access; bufferedImage : BufferedImage_Access);
    procedure saveWithImageIO (This : in out ImagePersistanceUtil; filePath : Unbounded_String; bufferedImage : BufferedImage_Access);
    procedure saveWithImageIO (This : in out ImagePersistanceUtil; file : File_Access; bufferedImage : BufferedImage_Access);

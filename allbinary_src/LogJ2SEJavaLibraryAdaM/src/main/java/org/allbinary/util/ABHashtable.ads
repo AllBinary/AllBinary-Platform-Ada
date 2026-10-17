@@ -20,10 +20,11 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.util.Hashtable_Package; use java.util.Hashtable_Package;
+with java.util.Hashtable_Package; use java.util.Hashtable_Package;
 
 package org.allbinary.util.ABHashtable_Package is
 
+   package Hashtable_Package renames Standard.java.util.Hashtable_Package;
 
    type ABHashtable is tagged;
    type ABHashtable_Access is access all ABHashtable'Class;

@@ -42,7 +42,6 @@ package org.allbinary.game.collision.CollisionHelper_Package is
    function isCollidable (This : in out CollisionHelper; layerInterface : CollidableCompositeLayer_Access) return Boolean;
    procedure isCollidable (This : in out CollisionHelper; layerInterface : CollidableCompositeLayer_Access);
    function getOwnerLayerInterface (This : in out CollisionHelper) return AllBinaryLayer_Access;
-   procedure getOwnerLayerInterface (This : in out CollisionHelper);
    procedure setOwnerLayerInterface (This : in out CollisionHelper; sourceLayerInterface : AllBinaryLayer_Access);
 
 end org.allbinary.game.collision.CollisionHelper_Package;

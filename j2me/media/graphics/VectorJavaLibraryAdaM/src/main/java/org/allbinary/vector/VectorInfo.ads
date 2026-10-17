@@ -39,16 +39,12 @@ package org.allbinary.vector.VectorInfo_Package is
    procedure Initialize (This : in out VectorInfo'Class; width : Integer; height : Integer; points : Integer_Array_Access_Array_Access; totalFrames : Integer);
    function Create (width : Integer; height : Integer; points : Integer_Array_Access_Array_Access; totalFrames : Integer) return VectorInfo_Access;
    function getWidth (This : in out VectorInfo) return Integer;
-   procedure getWidth (This : in out VectorInfo);
    procedure setWidth (This : in out VectorInfo; width : Integer);
    function getHeight (This : in out VectorInfo) return Integer;
-   procedure getHeight (This : in out VectorInfo);
    procedure setHeight (This : in out VectorInfo; height : Integer);
    function getPoints (This : in out VectorInfo) return Integer_Array_Access_Array_Access;
-   procedure getPoints (This : in out VectorInfo);
    procedure setPoints (This : in out VectorInfo; points : Integer_Array_Access_Array_Access);
    function getTotalFrames (This : in out VectorInfo) return Integer;
-   procedure getTotalFrames (This : in out VectorInfo);
    procedure setTotalFrames (This : in out VectorInfo; totalFrames : Integer);
 
 end org.allbinary.vector.VectorInfo_Package;

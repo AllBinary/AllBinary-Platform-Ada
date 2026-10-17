@@ -39,7 +39,7 @@ package body org.allbinary.graphics.form.item.CustomTextBox_Package is
    function Create (cmdListener : CommandListener_Access; label : Unbounded_String; text : Unbounded_String; maxSize : Integer; constraints : Integer; font : Font_Access; backgroundBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access) return CustomTextBox_Access is
       This : constant CustomTextBox_Access := new CustomTextBox;
    begin
-      Initialize (This.all, cmdListener, label, text, maxSize, constraints, font, backgroundBasicColor, foregroundBasicColor);
+      CustomTextBox_Package.Initialize (This.all, cmdListener, label, text, maxSize, constraints, font, backgroundBasicColor, foregroundBasicColor);
       return This;
    end Create;
 
@@ -117,13 +117,6 @@ package body org.allbinary.graphics.form.item.CustomTextBox_Package is
    function getTextFieldItem (This : in out CustomTextBox) return ABTextFieldItem_Access is
    begin
         return This.textFieldItem;
-   end getTextFieldItem;
-
-   procedure getTextFieldItem (This : in out CustomTextBox) is
-      Java_Result : constant ABTextFieldItem_Access := CustomTextBox'Class (This).getTextFieldItem;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getTextFieldItem;
 
 end org.allbinary.graphics.form.item.CustomTextBox_Package;

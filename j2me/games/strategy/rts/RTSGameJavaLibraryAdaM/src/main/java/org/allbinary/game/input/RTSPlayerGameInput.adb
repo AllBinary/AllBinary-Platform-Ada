@@ -57,7 +57,7 @@ package body org.allbinary.game.input.RTSPlayerGameInput_Package is
    function Create (gameCanvas : AllBinaryGameCanvas_Access; inputList : BasicArrayList_Access; playerInputId : Integer; towerInfoPaintable : RTSLayerInfoPaintable_Access; rtsPlayerLayerInterface : RTSPlayerLayerInterface_Access; layerPositionFinderInterface : LayerPositionFinderInterface_Access; selectRTSLayerVisitorFactoryInterface : SelectRTSLayerVisitorFactoryInterface_Access) return RTSPlayerGameInput_Access is
       This : constant RTSPlayerGameInput_Access := new RTSPlayerGameInput;
    begin
-      Initialize (This.all, gameCanvas, inputList, playerInputId, towerInfoPaintable, rtsPlayerLayerInterface, layerPositionFinderInterface, selectRTSLayerVisitorFactoryInterface);
+      RTSPlayerGameInput_Package.Initialize (This.all, gameCanvas, inputList, playerInputId, towerInfoPaintable, rtsPlayerLayerInterface, layerPositionFinderInterface, selectRTSLayerVisitorFactoryInterface);
       return This;
    end Create;
 
@@ -280,62 +280,6 @@ package body org.allbinary.game.input.RTSPlayerGameInput_Package is
    function getScrollPlayerGameInput (This : in out RTSPlayerGameInput) return ScrollMapPlayerGameInput_Access is
    begin
         return This.scrollPlayerGameInput;
-   end getScrollPlayerGameInput;
-
-   procedure getSelectedBuildingPlayerGameInput (This : in out RTSPlayerGameInput) is
-      Java_Result : constant SelectedRTSLayersPlayerGameInput_Access := RTSPlayerGameInput'Class (This).getSelectedBuildingPlayerGameInput;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSelectedBuildingPlayerGameInput;
-
-   procedure getSelectedRtsFormInput (This : in out RTSPlayerGameInput) is
-      Java_Result : constant RTSFormInput_Access := RTSPlayerGameInput'Class (This).getSelectedRtsFormInput;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSelectedRtsFormInput;
-
-   procedure getRtsPlayerLayerInterface (This : in out RTSPlayerGameInput) is
-      Java_Result : constant RTSPlayerLayerInterface_Access := RTSPlayerGameInput'Class (This).getRtsPlayerLayerInterface;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getRtsPlayerLayerInterface;
-
-   procedure getRTSLayerInfoPaintable (This : in out RTSPlayerGameInput) is
-      Java_Result : constant RTSLayerInfoPaintable_Access := RTSPlayerGameInput'Class (This).getRTSLayerInfoPaintable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getRTSLayerInfoPaintable;
-
-   procedure getMotionGestureInputList (This : in out RTSPlayerGameInput) is
-      Java_Result : constant BasicArrayList_Access := RTSPlayerGameInput'Class (This).getMotionGestureInputList;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getMotionGestureInputList;
-
-   procedure getGameCanvas (This : in out RTSPlayerGameInput) is
-      Java_Result : constant AllBinaryGameCanvas_Access := RTSPlayerGameInput'Class (This).getGameCanvas;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getGameCanvas;
-
-   procedure isIsSingleKeyProcessing (This : in out RTSPlayerGameInput) is
-      Java_Result : constant Boolean := RTSPlayerGameInput'Class (This).isIsSingleKeyProcessing;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isIsSingleKeyProcessing;
-
-   procedure getScrollPlayerGameInput (This : in out RTSPlayerGameInput) is
-      Java_Result : constant ScrollMapPlayerGameInput_Access := RTSPlayerGameInput'Class (This).getScrollPlayerGameInput;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getScrollPlayerGameInput;
 
 end org.allbinary.game.input.RTSPlayerGameInput_Package;

@@ -29,7 +29,7 @@ package body org.allbinary.business.user.commerce.inventory.order.OrderProcessor
    function Create return OrderProcessorUtil_Access is
       This : constant OrderProcessorUtil_Access := new OrderProcessorUtil;
    begin
-      Initialize (This.all);
+      OrderProcessorUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -51,13 +51,6 @@ package body org.allbinary.business.user.commerce.inventory.order.OrderProcessor
         orderHistory.insert (userName, order);
         return This.ORDER_PROCESSED;
    end process;
-
-   procedure getInstance is
-      Java_Result : constant OrderProcessorUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure process (This : in out OrderProcessorUtil; userName : Unbounded_String; order : Order_Access) is
       Java_Result : constant Unbounded_String := OrderProcessorUtil'Class (This).process (userName, order);

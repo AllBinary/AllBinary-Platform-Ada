@@ -32,20 +32,13 @@ package body org.allbinary.input.gyro.OrientationData_Package is
    function Create return OrientationData_Access is
       This : constant OrientationData_Access := new OrientationData;
    begin
-      Initialize (This.all);
+      OrientationData_Package.Initialize (This.all);
       return This;
    end Create;
 
    function getInstance return OrientationData_Access is
    begin
         return OrientationData_Package.SINGLETON;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant OrientationData_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

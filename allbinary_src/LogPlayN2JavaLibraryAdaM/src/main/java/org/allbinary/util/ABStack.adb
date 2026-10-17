@@ -29,7 +29,7 @@ package body org.allbinary.util.ABStack_Package is
    function Create return ABStack_Access is
       This : constant ABStack_Access := new ABStack;
    begin
-      Initialize (This.all);
+      ABStack_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -70,27 +70,6 @@ package body org.allbinary.util.ABStack_Package is
    begin
       null;
    end push;
-
-   procedure pop (This : in out ABStack) is
-      Java_Result : constant Java_Object_Access := ABStack'Class (This).pop;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end pop;
-
-   procedure peek (This : in out ABStack) is
-      Java_Result : constant Java_Object_Access := ABStack'Class (This).peek;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end peek;
-
-   procedure empty (This : in out ABStack) is
-      Java_Result : constant Boolean := ABStack'Class (This).empty;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end empty;
 
    procedure search (This : in out ABStack; obj : Java_Object_Access) is
       Java_Result : constant Integer := ABStack'Class (This).search (obj);

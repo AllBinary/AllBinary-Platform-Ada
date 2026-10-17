@@ -38,7 +38,7 @@ package body org.allbinary.logic.NullUtil_Package is
    function Create return NullUtil_Access is
       This : constant NullUtil_Access := new NullUtil;
    begin
-      Initialize (This.all);
+      NullUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -46,13 +46,6 @@ package body org.allbinary.logic.NullUtil_Package is
    function getInstance return NullUtil_Access is
    begin
         return NullUtil_Package.instance;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant NullUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

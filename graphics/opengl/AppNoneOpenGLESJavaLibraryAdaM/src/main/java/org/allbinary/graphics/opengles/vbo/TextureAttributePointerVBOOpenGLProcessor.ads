@@ -38,7 +38,6 @@ package org.allbinary.graphics.opengles.vbo.TextureAttributePointerVBOOpenGLProc
    procedure Initialize (This : in out TextureAttributePointerVBOOpenGLProcessor'Class);
    function Create return TextureAttributePointerVBOOpenGLProcessor_Access;
    function getInstance return TextureAttributePointerVBOOpenGLProcessor_Access;
-   procedure getInstance;
    procedure process (This : in out TextureAttributePointerVBOOpenGLProcessor; gl : GL10_Access; anyType : Java_Object_Access);
 
 end org.allbinary.graphics.opengles.vbo.TextureAttributePointerVBOOpenGLProcessor_Package;

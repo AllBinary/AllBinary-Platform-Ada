@@ -28,7 +28,7 @@ package body org.allbinary.content.NotificationBuilder_Package is
    function Create return NotificationBuilder_Access is
       This : constant NotificationBuilder_Access := new NotificationBuilder;
    begin
-      Initialize (This.all);
+      NotificationBuilder_Package.Initialize (This.all);
       return This;
    end Create;
 

@@ -42,7 +42,6 @@ package org.allbinary.game.score.HighScoreCommands_Package is
    procedure Initialize (This : in out HighScoreCommands'Class);
    function Create return HighScoreCommands_Access;
    function getInstance return HighScoreCommands_Access;
-   procedure getInstance;
 
 end org.allbinary.game.score.HighScoreCommands_Package;
 

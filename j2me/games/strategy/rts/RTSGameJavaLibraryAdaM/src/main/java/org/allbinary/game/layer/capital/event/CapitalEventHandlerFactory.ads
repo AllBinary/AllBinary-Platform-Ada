@@ -21,6 +21,7 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.identification.Group_Package; use org.allbinary.game.identification.Group_Package;
+with org.allbinary.game.layer.capital.event.CapitalEventHandler_Package; use org.allbinary.game.layer.capital.event.CapitalEventHandler_Package;
 
 package org.allbinary.game.layer.capital.event.CapitalEventHandlerFactory_Package is
 

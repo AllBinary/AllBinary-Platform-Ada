@@ -38,7 +38,7 @@ package body org.allbinary.input.automation.module.game.test.TestInputAutomation
    function Create (inputAutomationActionInterface : InputAutomationActionInterface_Access; genericProfileActions : GenericProfileActions_Access; imageComparatorConstraintsInterface : ImageComparatorConstraintsInterface_Access; motionRectangleConstraintsInterface : MotionRectangleConstraintsInterface_Access) return TestInputAutomationCaptureWorker_Access is
       This : constant TestInputAutomationCaptureWorker_Access := new TestInputAutomationCaptureWorker;
    begin
-      Initialize (This.all, inputAutomationActionInterface, genericProfileActions, imageComparatorConstraintsInterface, motionRectangleConstraintsInterface);
+      TestInputAutomationCaptureWorker_Package.Initialize (This.all, inputAutomationActionInterface, genericProfileActions, imageComparatorConstraintsInterface, motionRectangleConstraintsInterface);
       return This;
    end Create;
 
@@ -93,13 +93,6 @@ package body org.allbinary.input.automation.module.game.test.TestInputAutomation
    begin
         This.genericProfileActions := genericProfileActions;
    end setGenericProfileActions;
-
-   procedure getGenericProfileActions (This : in out TestInputAutomationCaptureWorker) is
-      Java_Result : constant GenericProfileActions_Access := TestInputAutomationCaptureWorker'Class (This).getGenericProfileActions;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getGenericProfileActions;
 
 end org.allbinary.input.automation.module.game.test.TestInputAutomationCaptureWorker_Package;
 

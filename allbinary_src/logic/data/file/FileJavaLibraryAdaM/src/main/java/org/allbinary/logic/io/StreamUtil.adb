@@ -36,7 +36,7 @@ package body org.allbinary.logic.io.StreamUtil_Package is
    function Create return StreamUtil_Access is
       This : constant StreamUtil_Access := new StreamUtil;
    begin
-      Initialize (This.all);
+      StreamUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -98,13 +98,6 @@ package body org.allbinary.logic.io.StreamUtil_Package is
                 end;
         end;
    end close;
-
-   procedure getInstance is
-      Java_Result : constant StreamUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure get (This : in out StreamUtil; inputStream : InputStream_Access; outputStream : OutputStream_Access; buffer : Short_Short_Integer_Array_Access) is
       Java_Result : constant OutputStream_Access := StreamUtil'Class (This).get (inputStream, outputStream, buffer);

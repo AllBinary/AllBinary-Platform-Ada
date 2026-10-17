@@ -20,6 +20,8 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
+with org.allbinary.graphics.ScreenCaptureNoneFactory_Package; use org.allbinary.graphics.ScreenCaptureNoneFactory_Package;
+with org.allbinary.graphics.ScreenCapture_Package; use org.allbinary.graphics.ScreenCapture_Package;
 
 package org.allbinary.graphics.ScreenCaptureFactory_Package is
 
@@ -35,7 +37,6 @@ package org.allbinary.graphics.ScreenCaptureFactory_Package is
    procedure Initialize (This : in out ScreenCaptureFactory'Class);
    function Create return ScreenCaptureFactory_Access;
    function getInstance return ScreenCapture_Access;
-   procedure getInstance;
 
 end org.allbinary.graphics.ScreenCaptureFactory_Package;
 

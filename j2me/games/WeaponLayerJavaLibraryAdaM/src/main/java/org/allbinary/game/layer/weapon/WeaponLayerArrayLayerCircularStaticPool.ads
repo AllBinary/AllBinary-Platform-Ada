@@ -21,6 +21,7 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.util.CircularIndexUtil_Package; use org.allbinary.util.CircularIndexUtil_Package;
+with org.allbinary.game.layer.weapon.WeaponLayer_Package; use org.allbinary.game.layer.weapon.WeaponLayer_Package;
 
 package org.allbinary.game.layer.weapon.WeaponLayerArrayLayerCircularStaticPool_Package is
 
@@ -41,7 +42,6 @@ package org.allbinary.game.layer.weapon.WeaponLayerArrayLayerCircularStaticPool_
    procedure Initialize (This : in out WeaponLayerArrayLayerCircularStaticPool'Class);
    function Create return WeaponLayerArrayLayerCircularStaticPool_Access;
    function getInstance return WeaponLayerArrayLayerCircularStaticPool_Access;
-   procedure getInstance;
    procedure init (This : in out WeaponLayerArrayLayerCircularStaticPool);
    function getInstanceArray (This : in out WeaponLayerArrayLayerCircularStaticPool; size : Integer) return WeaponLayer_Access_Array_Access;
    procedure getInstanceArray (This : in out WeaponLayerArrayLayerCircularStaticPool; size : Integer);

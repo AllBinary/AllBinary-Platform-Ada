@@ -26,6 +26,7 @@ with org.allbinary.input.motion.gesture.observer.MotionGestureEvent_Package; use
 with org.allbinary.time.TimeDelayHelper_Package; use org.allbinary.time.TimeDelayHelper_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.game.displayable.canvas.CommandFormInputProcessor_Package; use org.allbinary.game.displayable.canvas.CommandFormInputProcessor_Package;
+with org.allbinary.game.displayable.canvas.GameCommandCanvas_Package; use org.allbinary.game.displayable.canvas.GameCommandCanvas_Package;
 
 package org.allbinary.game.displayable.canvas.ImmediateCommandFormInputProcessor_Package is
 

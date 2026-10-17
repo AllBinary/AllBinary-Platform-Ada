@@ -26,6 +26,7 @@ with org.allbinary.logic.util.event.EventStrings_Package; use org.allbinary.logi
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.game.input.event.RawKeyEventListener_Package; use org.allbinary.game.input.event.RawKeyEventListener_Package;
 
 package org.allbinary.game.input.event.RawKeyEventHandler_Package is
 
@@ -52,7 +53,6 @@ package org.allbinary.game.input.event.RawKeyEventHandler_Package is
    procedure Initialize (This : in out RawKeyEventHandler'Class);
    function Create return RawKeyEventHandler_Access;
    function getInstance return RawKeyEventHandler_Access;
-   procedure getInstance;
    procedure removeAllListeners (This : in out RawKeyEventHandler);
    procedure addListeners (This : in out RawKeyEventHandler; vector : BasicArrayList_Access);
    procedure addListenerSingleThreaded (This : in out RawKeyEventHandler; eventListenerInterface : RawKeyEventListener_Access);
@@ -62,9 +62,7 @@ package org.allbinary.game.input.event.RawKeyEventHandler_Package is
    procedure fireEvent (This : in out RawKeyEventHandler; keyCode : Integer; deviceId : Integer; repeated : Boolean);
    procedure process (This : in out RawKeyEventHandler; keyCode : Integer; deviceId : Integer; repeated : Boolean; eventListenerInterface : RawKeyEventListener_Access);
    function getEventListenerInterfaceListP (This : in out RawKeyEventHandler) return BasicArrayList_Access;
-   procedure getEventListenerInterfaceListP (This : in out RawKeyEventHandler);
    function toString (This : in out RawKeyEventHandler) return Unbounded_String;
-   procedure toString (This : in out RawKeyEventHandler);
 
 end org.allbinary.game.input.event.RawKeyEventHandler_Package;
 

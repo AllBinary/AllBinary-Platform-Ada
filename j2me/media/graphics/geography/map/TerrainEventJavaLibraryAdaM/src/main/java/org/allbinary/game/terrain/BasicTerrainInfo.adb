@@ -31,7 +31,7 @@ package body org.allbinary.game.terrain.BasicTerrainInfo_Package is
    function Create (angle : Angle_Access) return BasicTerrainInfo_Access is
       This : constant BasicTerrainInfo_Access := new BasicTerrainInfo;
    begin
-      Initialize (This.all, angle);
+      BasicTerrainInfo_Package.Initialize (This.all, angle);
       return This;
    end Create;
 
@@ -44,13 +44,6 @@ package body org.allbinary.game.terrain.BasicTerrainInfo_Package is
    begin
         This.angle := angle;
    end setAngle;
-
-   procedure getAngle (This : in out BasicTerrainInfo) is
-      Java_Result : constant Angle_Access := BasicTerrainInfo'Class (This).getAngle;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getAngle;
 
 begin
    null;

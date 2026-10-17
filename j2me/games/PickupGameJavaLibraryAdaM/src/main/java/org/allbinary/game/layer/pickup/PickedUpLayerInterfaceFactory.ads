@@ -23,6 +23,8 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Animation_Package;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
 with org.allbinary.game.layer.pickup.PickedUpLayerInterfaceFactoryBase_Package; use org.allbinary.game.layer.pickup.PickedUpLayerInterfaceFactoryBase_Package;
+with org.allbinary.game.layer.pickup.PickedUpLayerType_Package; use org.allbinary.game.layer.pickup.PickedUpLayerType_Package;
+with org.allbinary.game.layer.pickup.IconLayer_Package; use org.allbinary.game.layer.pickup.IconLayer_Package;
 
 package org.allbinary.game.layer.pickup.PickedUpLayerInterfaceFactory_Package is
 
@@ -43,11 +45,8 @@ package org.allbinary.game.layer.pickup.PickedUpLayerInterfaceFactory_Package is
    procedure Initialize (This : in out PickedUpLayerInterfaceFactory'Class; pickeUpLayerType : PickedUpLayerType_Access; iconLayer : IconLayer_Access; animationInterface : Animation_Access);
    function Create (pickeUpLayerType : PickedUpLayerType_Access; iconLayer : IconLayer_Access; animationInterface : Animation_Access) return PickedUpLayerInterfaceFactory_Access;
    function getIconLayer (This : in out PickedUpLayerInterfaceFactory) return AllBinaryLayer_Access;
-   procedure getIconLayer (This : in out PickedUpLayerInterfaceFactory);
    function getAnimationInterface (This : in out PickedUpLayerInterfaceFactory) return Animation_Access;
-   procedure getAnimationInterface (This : in out PickedUpLayerInterfaceFactory);
    function getPickedUpLayerType (This : in out PickedUpLayerInterfaceFactory) return PickedUpLayerType_Access;
-   procedure getPickedUpLayerType (This : in out PickedUpLayerInterfaceFactory);
 
 end org.allbinary.game.layer.pickup.PickedUpLayerInterfaceFactory_Package;
 

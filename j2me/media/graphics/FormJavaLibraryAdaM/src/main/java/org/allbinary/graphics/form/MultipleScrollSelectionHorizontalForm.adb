@@ -39,7 +39,7 @@ package body org.allbinary.graphics.form.MultipleScrollSelectionHorizontalForm_P
    function Create (title : Unbounded_String; items : ABCustomItem_Access_Array_Access; formPaintableFactory : ItemPaintableFactory_Access; border : Integer; backgroundBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access) return MultipleScrollSelectionHorizontalForm_Access is
       This : constant MultipleScrollSelectionHorizontalForm_Access := new MultipleScrollSelectionHorizontalForm;
    begin
-      Initialize (This.all, title, items, formPaintableFactory, border, backgroundBasicColor, foregroundBasicColor);
+      MultipleScrollSelectionHorizontalForm_Package.Initialize (This.all, title, items, formPaintableFactory, border, backgroundBasicColor, foregroundBasicColor);
       return This;
    end Create;
 
@@ -75,7 +75,8 @@ package body org.allbinary.graphics.form.MultipleScrollSelectionHorizontalForm_P
    end updateMeasurement;
 
    --  throws Exception
-   function paintHorizontal (This : in out MultipleScrollSelectionHorizontalForm; graphics : Graphics_Access; index : Integer; item : ABCustomItem_Access; dx : Integer; dy : Integer) return Integer is
+   function paintHorizontal (This : in out MultipleScrollSelectionHorizontalForm; graphics : Graphics_Access; index : Integer; item : ABCustomItem_Access; dx_Param : Integer; dy : Integer) return Integer is
+      dx : Integer := dx_Param;
       dx2 : Integer;
    begin
         dx2 := (This.paintItem (graphics, index, item, dx, dy)) + (This.border);
@@ -143,8 +144,8 @@ package body org.allbinary.graphics.form.MultipleScrollSelectionHorizontalForm_P
       null;
    end createForm;
 
-   procedure paintHorizontal (This : in out MultipleScrollSelectionHorizontalForm; graphics : Graphics_Access; index : Integer; item : ABCustomItem_Access; dx : Integer; dy : Integer) is
-      Java_Result : constant Integer := MultipleScrollSelectionHorizontalForm'Class (This).paintHorizontal (graphics, index, item, dx, dy);
+   procedure paintHorizontal (This : in out MultipleScrollSelectionHorizontalForm; graphics : Graphics_Access; index : Integer; item : ABCustomItem_Access; dx_Param : Integer; dy : Integer) is
+      Java_Result : constant Integer := MultipleScrollSelectionHorizontalForm'Class (This).paintHorizontal (graphics, index, item, dx_Param, dy);
       pragma Unreferenced (Java_Result);
    begin
       null;
@@ -156,13 +157,6 @@ package body org.allbinary.graphics.form.MultipleScrollSelectionHorizontalForm_P
    begin
       null;
    end paintVertical;
-
-   procedure getStartIndex (This : in out MultipleScrollSelectionHorizontalForm) is
-      Java_Result : constant Integer := MultipleScrollSelectionHorizontalForm'Class (This).getStartIndex;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getStartIndex;
 
 end org.allbinary.graphics.form.MultipleScrollSelectionHorizontalForm_Package;
 
@@ -186,7 +180,7 @@ package body org.allbinary.graphics.form.MultipleScrollSelectionFormHorizontalPa
    function Create (multipleScrollSelectionForm : MultipleScrollSelectionHorizontalForm_Access) return MultipleScrollSelectionFormHorizontalPaintable_Access is
       This : constant MultipleScrollSelectionFormHorizontalPaintable_Access := new MultipleScrollSelectionFormHorizontalPaintable;
    begin
-      Initialize (This.all, multipleScrollSelectionForm);
+      MultipleScrollSelectionFormHorizontalPaintable_Package.Initialize (This.all, multipleScrollSelectionForm);
       return This;
    end Create;
     
@@ -225,7 +219,7 @@ package body org.allbinary.graphics.form.MultipleScrollSelectionFormVerticalPain
    function Create (multipleScrollSelectionForm : MultipleScrollSelectionHorizontalForm_Access) return MultipleScrollSelectionFormVerticalPaintable_Access is
       This : constant MultipleScrollSelectionFormVerticalPaintable_Access := new MultipleScrollSelectionFormVerticalPaintable;
    begin
-      Initialize (This.all, multipleScrollSelectionForm);
+      MultipleScrollSelectionFormVerticalPaintable_Package.Initialize (This.all, multipleScrollSelectionForm);
       return This;
    end Create;
     

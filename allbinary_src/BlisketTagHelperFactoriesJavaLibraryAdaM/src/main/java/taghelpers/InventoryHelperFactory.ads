@@ -25,6 +25,7 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.system.security.licensing.LicensingException_Package; use org.allbinary.logic.system.security.licensing.LicensingException_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with taghelpers.InventoryHelper_Package; use taghelpers.InventoryHelper_Package;
 
 package taghelpers.InventoryHelperFactory_Package is
 

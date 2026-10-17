@@ -30,7 +30,7 @@ package body org.allbinary.game.configuration.InGameOptionsFormFactory_Package i
    function Create return InGameOptionsFormFactory_Access is
       This : constant InGameOptionsFormFactory_Access := new InGameOptionsFormFactory;
    begin
-      Initialize (This.all);
+      InGameOptionsFormFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -65,20 +65,6 @@ package body org.allbinary.game.configuration.InGameOptionsFormFactory_Package i
    function get (This : in out InGameOptionsFormFactory) return CommandForm_Access is
    begin
         return This.SINGLETON;
-   end get;
-
-   procedure getInstance is
-      Java_Result : constant InGameOptionsFormFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure get (This : in out InGameOptionsFormFactory) is
-      Java_Result : constant CommandForm_Access := InGameOptionsFormFactory'Class (This).get;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end get;
 
 begin

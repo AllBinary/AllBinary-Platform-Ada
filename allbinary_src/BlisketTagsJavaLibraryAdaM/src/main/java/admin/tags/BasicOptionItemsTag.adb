@@ -33,7 +33,7 @@ package body admin.tags.BasicOptionItemsTag_Package is
    function Create return BasicOptionItemsTag_Access is
       This : constant BasicOptionItemsTag_Access := new BasicOptionItemsTag;
    begin
-      Initialize (This.all);
+      BasicOptionItemsTag_Package.Initialize (This.all);
       return This;
    end Create;
 

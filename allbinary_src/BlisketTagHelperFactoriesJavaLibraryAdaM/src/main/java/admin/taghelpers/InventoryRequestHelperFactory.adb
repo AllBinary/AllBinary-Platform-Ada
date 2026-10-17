@@ -32,7 +32,7 @@ package body admin.taghelpers.InventoryRequestHelperFactory_Package is
    function Create return InventoryRequestHelperFactory_Access is
       This : constant InventoryRequestHelperFactory_Access := new InventoryRequestHelperFactory;
    begin
-      Initialize (This.all);
+      InventoryRequestHelperFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

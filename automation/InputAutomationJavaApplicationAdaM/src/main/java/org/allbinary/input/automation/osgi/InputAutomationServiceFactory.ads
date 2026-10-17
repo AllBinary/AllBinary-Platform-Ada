@@ -50,7 +50,6 @@ package org.allbinary.input.automation.osgi.InputAutomationServiceFactory_Packag
    procedure Initialize (This : in out InputAutomationServiceFactory'Class);
    function Create return InputAutomationServiceFactory_Access;
    function getInstance return InputAutomationServiceFactory_Access;
-   procedure getInstance;
    function getService (This : in out InputAutomationServiceFactory; bundle : Bundle_Access; registration : ServiceRegistration_Access) return Java_Object_Access;
    procedure getService (This : in out InputAutomationServiceFactory; bundle : Bundle_Access; registration : ServiceRegistration_Access);
    procedure ungetService (This : in out InputAutomationServiceFactory; bundle : Bundle_Access; registration : ServiceRegistration_Access; service : Java_Object_Access);

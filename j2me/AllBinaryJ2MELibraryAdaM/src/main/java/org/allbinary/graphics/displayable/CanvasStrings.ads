@@ -58,7 +58,6 @@ package org.allbinary.graphics.displayable.CanvasStrings_Package is
    procedure Initialize (This : in out CanvasStrings'Class);
    function Create return CanvasStrings_Access;
    function getInstance return CanvasStrings_Access;
-   procedure getInstance;
 
 end org.allbinary.graphics.displayable.CanvasStrings_Package;
 

@@ -52,7 +52,7 @@ package body org.allbinary.animation.image.AllBinaryJ2SEImageRotationAnimation_P
    function Create (originalImage : Image_Access; image : Image_Access; angleInfo : AngleInfo_Access; totalAngle : Short_Integer; animationBehavior : AnimationBehavior_Access) return AllBinaryJ2SEImageRotationAnimation_Access is
       This : constant AllBinaryJ2SEImageRotationAnimation_Access := new AllBinaryJ2SEImageRotationAnimation;
    begin
-      Initialize (This.all, originalImage, image, angleInfo, totalAngle, animationBehavior);
+      AllBinaryJ2SEImageRotationAnimation_Package.Initialize (This.all, originalImage, image, angleInfo, totalAngle, animationBehavior);
       return This;
    end Create;
 

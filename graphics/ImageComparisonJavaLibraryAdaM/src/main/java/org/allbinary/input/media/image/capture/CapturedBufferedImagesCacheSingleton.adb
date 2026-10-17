@@ -31,7 +31,7 @@ package body org.allbinary.input.media.image.capture.CapturedBufferedImagesCache
    function Create return CapturedBufferedImagesCacheSingleton_Access is
       This : constant CapturedBufferedImagesCacheSingleton_Access := new CapturedBufferedImagesCacheSingleton;
    begin
-      Initialize (This.all);
+      CapturedBufferedImagesCacheSingleton_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -64,13 +64,6 @@ package body org.allbinary.input.media.image.capture.CapturedBufferedImagesCache
                 end;
         end;
    end Initializer;
-
-   procedure getInstance is
-      Java_Result : constant CacheInterface_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

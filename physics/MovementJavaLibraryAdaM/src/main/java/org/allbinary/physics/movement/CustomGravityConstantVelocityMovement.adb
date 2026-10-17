@@ -33,7 +33,7 @@ package body org.allbinary.physics.movement.CustomGravityConstantVelocityMovemen
    function Create (speedBasicDecimal : BasicDecimal_Access; customGravity : Integer) return CustomGravityConstantVelocityMovement_Access is
       This : constant CustomGravityConstantVelocityMovement_Access := new CustomGravityConstantVelocityMovement;
    begin
-      Initialize (This.all, speedBasicDecimal, customGravity);
+      CustomGravityConstantVelocityMovement_Package.Initialize (This.all, speedBasicDecimal, customGravity);
       return This;
    end Create;
 

@@ -30,6 +30,9 @@ with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.EnumerationUtil_Package; use org.allbinary.util.EnumerationUtil_Package;
 with org.allbinary.util.HashtableUtil_Package; use org.allbinary.util.HashtableUtil_Package;
+with org.allbinary.game.configuration.feature.Features_Package; use org.allbinary.game.configuration.feature.Features_Package;
+with org.allbinary.game.configuration.feature.Feature_Package; use org.allbinary.game.configuration.feature.Feature_Package;
+with org.allbinary.game.configuration.feature.GameFeatureChoiceGroups_Package; use org.allbinary.game.configuration.feature.GameFeatureChoiceGroups_Package;
 
 package org.allbinary.game.configuration.feature.GameFeatureUtil_Package is
 
@@ -59,7 +62,6 @@ package org.allbinary.game.configuration.feature.GameFeatureUtil_Package is
    procedure Initialize (This : in out GameFeatureUtil'Class);
    function Create return GameFeatureUtil_Access;
    function getInstance return GameFeatureUtil_Access;
-   procedure getInstance;
    procedure setDefault (This : in out GameFeatureUtil; choiceGroup : ChoiceGroup_Access);
    procedure updateMultiple (This : in out GameFeatureUtil; choiceGroup : ChoiceGroup_Access);
    procedure updateExclusiveForChoiceGroup (This : in out GameFeatureUtil; choiceGroup : ChoiceGroup_Access);

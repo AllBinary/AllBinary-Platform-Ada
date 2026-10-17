@@ -23,6 +23,7 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.logic.system.security.licensing.ClientInformation_Package; use org.allbinary.logic.system.security.licensing.ClientInformation_Package;
 
 package org.allbinary.logic.system.security.licensing.ClientInformationFactory_Package is
 
@@ -40,7 +41,6 @@ package org.allbinary.logic.system.security.licensing.ClientInformationFactory_P
    procedure Initialize (This : in out ClientInformationFactory'Class);
    function Create return ClientInformationFactory_Access;
    function getInstance (This : in out ClientInformationFactory) return ClientInformation_Access;
-   procedure getInstance (This : in out ClientInformationFactory);
 
 end org.allbinary.logic.system.security.licensing.ClientInformationFactory_Package;
 

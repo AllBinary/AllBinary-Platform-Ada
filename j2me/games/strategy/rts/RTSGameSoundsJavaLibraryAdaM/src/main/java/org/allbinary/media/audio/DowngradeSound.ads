@@ -38,7 +38,6 @@ package org.allbinary.media.audio.DowngradeSound_Package is
    procedure Initialize (This : in out DowngradeSound'Class);
    function Create return DowngradeSound_Access;
    function getInstance return Sound_Access;
-   procedure getInstance;
 
 end org.allbinary.media.audio.DowngradeSound_Package;
 

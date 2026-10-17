@@ -20,6 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
+with org.allbinary.logic.visual.dhtml.html.head.meta.HtmlMetaAttributeData_Package; use org.allbinary.logic.visual.dhtml.html.head.meta.HtmlMetaAttributeData_Package;
 
 package org.allbinary.logic.visual.dhtml.html.head.meta.HtmlMetaAttributeDataFactory_Package is
 
@@ -39,7 +40,6 @@ package org.allbinary.logic.visual.dhtml.html.head.meta.HtmlMetaAttributeDataFac
    procedure Initialize (This : in out HtmlMetaAttributeDataFactory'Class);
    function Create return HtmlMetaAttributeDataFactory_Access;
    function getInstance return HtmlMetaAttributeDataFactory_Access;
-   procedure getInstance;
 
 end org.allbinary.logic.visual.dhtml.html.head.meta.HtmlMetaAttributeDataFactory_Package;
 

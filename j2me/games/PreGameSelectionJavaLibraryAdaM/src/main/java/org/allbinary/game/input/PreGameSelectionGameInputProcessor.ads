@@ -40,6 +40,8 @@ with org.allbinary.thread.ThreadObjectUtil_Package; use org.allbinary.thread.Thr
 with org.allbinary.time.TimeDelayHelper_Package; use org.allbinary.time.TimeDelayHelper_Package;
 with org.allbinary.game.input.GameInputProcessorInterface_Package; use org.allbinary.game.input.GameInputProcessorInterface_Package;
 with org.allbinary.game.input.PlayerGameInputCompositeInterface_Package; use org.allbinary.game.input.PlayerGameInputCompositeInterface_Package;
+with org.allbinary.game.input.PlayerGameInput_Package; use org.allbinary.game.input.PlayerGameInput_Package;
+with org.allbinary.game.input.GameInputProcessorComposite_Package; use org.allbinary.game.input.GameInputProcessorComposite_Package;
 
 package org.allbinary.game.input.PreGameSelectionGameInputProcessor_Package is
 
@@ -82,13 +84,10 @@ package org.allbinary.game.input.PreGameSelectionGameInputProcessor_Package is
    procedure process (This : in out PreGameSelectionGameInputProcessor);
    procedure onInput (This : in out PreGameSelectionGameInputProcessor; list : BasicArrayList_Access);
    function getPreGameSelectorPaintable (This : in out PreGameSelectionGameInputProcessor) return PreGameSelectorPaintable_Access;
-   procedure getPreGameSelectorPaintable (This : in out PreGameSelectionGameInputProcessor);
    procedure processInput (This : in out PreGameSelectionGameInputProcessor; layerManager : AllBinaryLayerManager_Access);
    procedure initInputProcessors (This : in out PreGameSelectionGameInputProcessor);
    function getName (This : in out PreGameSelectionGameInputProcessor) return Unbounded_String;
-   procedure getName (This : in out PreGameSelectionGameInputProcessor);
    function getPlayerGameInput (This : in out PreGameSelectionGameInputProcessor) return PlayerGameInput_Access;
-   procedure getPlayerGameInput (This : in out PreGameSelectionGameInputProcessor);
 
 end org.allbinary.game.input.PreGameSelectionGameInputProcessor_Package;
 

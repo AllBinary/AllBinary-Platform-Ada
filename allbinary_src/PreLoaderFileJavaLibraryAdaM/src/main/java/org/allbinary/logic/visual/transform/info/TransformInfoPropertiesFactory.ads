@@ -28,6 +28,8 @@ with org.w3c.dom.Attr_Package; use org.w3c.dom.Attr_Package;
 with org.w3c.dom.NamedNodeMap_Package; use org.w3c.dom.NamedNodeMap_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.w3c.dom.NodeList_Package; use org.w3c.dom.NodeList_Package;
+with org.allbinary.logic.visual.transform.info.TransformInfoData_Package; use org.allbinary.logic.visual.transform.info.TransformInfoData_Package;
+with org.allbinary.logic.visual.transform.info.TransformInfoProperties_Package; use org.allbinary.logic.visual.transform.info.TransformInfoProperties_Package;
 
 package org.allbinary.logic.visual.transform.info.TransformInfoPropertiesFactory_Package is
 
@@ -53,7 +55,6 @@ package org.allbinary.logic.visual.transform.info.TransformInfoPropertiesFactory
    procedure Initialize (This : in out TransformInfoPropertiesFactory'Class);
    function Create return TransformInfoPropertiesFactory_Access;
    function getInstance return TransformInfoPropertiesFactory_Access;
-   procedure getInstance;
    function getInstance (This : in out TransformInfoPropertiesFactory; node : Node_Access) return TransformInfoProperties_Access;
    procedure getInstance (This : in out TransformInfoPropertiesFactory; node : Node_Access);
 

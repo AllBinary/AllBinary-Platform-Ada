@@ -23,6 +23,8 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package; use org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
 with org.allbinary.logic.util.event.AllBinaryEventCircularPool_Package; use org.allbinary.logic.util.event.AllBinaryEventCircularPool_Package;
+with org.allbinary.game.combat.destroy.event.DestroyEventFactory_Package; use org.allbinary.game.combat.destroy.event.DestroyEventFactory_Package;
+with org.allbinary.game.combat.destroy.event.DestroyedEvent_Package; use org.allbinary.game.combat.destroy.event.DestroyedEvent_Package;
 
 package org.allbinary.game.combat.destroy.event.DestroyEventCircularStaticPool_Package is
 
@@ -43,7 +45,6 @@ package org.allbinary.game.combat.destroy.event.DestroyEventCircularStaticPool_P
    procedure Initialize (This : in out DestroyEventCircularStaticPool'Class);
    function Create return DestroyEventCircularStaticPool_Access;
    function getInstance return DestroyEventCircularStaticPool_Access;
-   procedure getInstance;
    procedure init (This : in out DestroyEventCircularStaticPool; combatGameCanvas : AllBinaryGameCanvas_Access);
    function getInstanceForLayer (This : in out DestroyEventCircularStaticPool; layerInterface : AllBinaryLayer_Access) return DestroyedEvent_Access;
    procedure getInstanceForLayer (This : in out DestroyEventCircularStaticPool; layerInterface : AllBinaryLayer_Access);

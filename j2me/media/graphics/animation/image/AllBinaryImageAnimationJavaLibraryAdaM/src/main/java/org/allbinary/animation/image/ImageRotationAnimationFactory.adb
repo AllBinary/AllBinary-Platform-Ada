@@ -34,7 +34,7 @@ package body org.allbinary.animation.image.ImageRotationAnimationFactory_Package
    function Create (image : Image_Access; width : Integer; height : Integer; dx : Integer; dy : Integer; angleIncrement : Short_Integer; animationBehaviorFactory : AnimationBehaviorFactory_Access) return ImageRotationAnimationFactory_Access is
       This : constant ImageRotationAnimationFactory_Access := new ImageRotationAnimationFactory;
    begin
-      Initialize (This.all, image, width, height, dx, dy, angleIncrement, animationBehaviorFactory);
+      ImageRotationAnimationFactory_Package.Initialize (This.all, image, width, height, dx, dy, angleIncrement, animationBehaviorFactory);
       return This;
    end Create;
 
@@ -60,13 +60,6 @@ package body org.allbinary.animation.image.ImageRotationAnimationFactory_Package
    begin
       null;
    end getInstance;
-
-   procedure getAngleIncrementP (This : in out ImageRotationAnimationFactory) is
-      Java_Result : constant Short_Integer := ImageRotationAnimationFactory'Class (This).getAngleIncrementP;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getAngleIncrementP;
 
 end org.allbinary.animation.image.ImageRotationAnimationFactory_Package;
 

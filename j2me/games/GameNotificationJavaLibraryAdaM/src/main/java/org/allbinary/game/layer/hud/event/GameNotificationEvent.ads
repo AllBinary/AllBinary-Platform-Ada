@@ -47,13 +47,9 @@ package org.allbinary.game.layer.hud.event.GameNotificationEvent_Package is
    procedure Initialize (This : in out GameNotificationEvent'Class; anyType : Java_Object_Access; string_Id : Unbounded_String; seconds : Integer; basicColor : BasicColor_Access; permanent : Boolean);
    function Create (anyType : Java_Object_Access; string_Id : Unbounded_String; seconds : Integer; basicColor : BasicColor_Access; permanent : Boolean) return GameNotificationEvent_Access;
    function getString (This : in out GameNotificationEvent) return Unbounded_String;
-   procedure getString (This : in out GameNotificationEvent);
    function getSeconds (This : in out GameNotificationEvent) return Integer;
-   procedure getSeconds (This : in out GameNotificationEvent);
    function getBasicColorP (This : in out GameNotificationEvent) return BasicColor_Access;
-   procedure getBasicColorP (This : in out GameNotificationEvent);
    function getPermanent (This : in out GameNotificationEvent) return Boolean;
-   procedure getPermanent (This : in out GameNotificationEvent);
    procedure setString (This : in out GameNotificationEvent; string_Id : Unbounded_String);
    procedure setBasicColorP (This : in out GameNotificationEvent; basicColor : BasicColor_Access);
 

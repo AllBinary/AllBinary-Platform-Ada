@@ -30,7 +30,7 @@ package body org.allbinary.data.tables.transform.info.TransformInfoEntityFactory
    function Create return TransformInfoEntityFactory_Access is
       This : constant TransformInfoEntityFactory_Access := new TransformInfoEntityFactory;
    begin
-      Initialize (This.all);
+      TransformInfoEntityFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

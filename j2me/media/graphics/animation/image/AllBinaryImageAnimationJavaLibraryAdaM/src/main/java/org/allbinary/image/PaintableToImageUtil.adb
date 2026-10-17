@@ -28,7 +28,7 @@ package body org.allbinary.image.PaintableToImageUtil_Package is
    function Create return PaintableToImageUtil_Access is
       This : constant PaintableToImageUtil_Access := new PaintableToImageUtil;
    begin
-      Initialize (This.all);
+      PaintableToImageUtil_Package.Initialize (This.all);
       return This;
    end Create;
 

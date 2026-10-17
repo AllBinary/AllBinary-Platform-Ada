@@ -43,7 +43,7 @@ package body org.allbinary.logic.system.security.crypt.WeakCrypt_Package is
    function Create (key : Integer) return WeakCrypt_Access is
       This : constant WeakCrypt_Access := new WeakCrypt;
    begin
-      Initialize (This.all, key);
+      WeakCrypt_Package.Initialize (This.all, key);
       return This;
    end Create;
 

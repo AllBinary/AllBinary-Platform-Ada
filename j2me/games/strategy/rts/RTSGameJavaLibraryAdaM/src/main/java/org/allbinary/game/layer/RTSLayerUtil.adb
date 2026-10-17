@@ -31,7 +31,7 @@ package body org.allbinary.game.layer.RTSLayerUtil_Package is
    function Create return RTSLayerUtil_Access is
       This : constant RTSLayerUtil_Access := new RTSLayerUtil;
    begin
-      Initialize (This.all);
+      RTSLayerUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -207,13 +207,6 @@ package body org.allbinary.game.layer.RTSLayerUtil_Package is
         hashtable.put (This.groupCommonFactory.ID, BasicGroupFactory_Package.getInstance.NONE_ARRAY);
         return hashtable;
    end createFakeRTSLayerHashtable;
-
-   procedure getInstance is
-      Java_Result : constant RTSLayerUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure createWeaponProperties (This : in out RTSLayerUtil; weaponProperties : WeaponProperties_Access; currentLevel : Integer; lastLevel : Integer) is
       Java_Result : constant WeaponProperties_Access := RTSLayerUtil'Class (This).createWeaponProperties (weaponProperties, currentLevel, lastLevel);

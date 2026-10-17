@@ -28,7 +28,7 @@ package body org.allbinary.util.EnumerationUtil_Package is
    function Create return EnumerationUtil_Access is
       This : constant EnumerationUtil_Access := new EnumerationUtil;
    begin
-      Initialize (This.all);
+      EnumerationUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -57,13 +57,6 @@ package body org.allbinary.util.EnumerationUtil_Package is
         end loop;
         return basicArrayList.toArray;
    end getAsArray;
-
-   procedure getInstance is
-      Java_Result : constant EnumerationUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure hasMoreElements (This : in out EnumerationUtil; enumeration : Enumeration_Access) is
       Java_Result : constant Boolean := EnumerationUtil'Class (This).hasMoreElements (enumeration);

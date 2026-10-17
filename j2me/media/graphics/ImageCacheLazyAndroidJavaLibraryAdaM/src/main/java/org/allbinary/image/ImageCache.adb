@@ -35,7 +35,7 @@ package body org.allbinary.image.ImageCache_Package is
    function Create return ImageCache_Access is
       This : constant ImageCache_Access := new ImageCache;
    begin
-      Initialize (This.all);
+      ImageCache_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -154,13 +154,6 @@ package body org.allbinary.image.ImageCache_Package is
    begin
       null;
    end createImage;
-
-   procedure isLazy (This : in out ImageCache) is
-      Java_Result : constant Boolean := ImageCache'Class (This).isLazy;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isLazy;
 
 begin
    null;

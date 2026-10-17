@@ -34,7 +34,7 @@ package body org.allbinary.input.automation.robot.osgi.InputAutomationRobotBundl
    function Create return InputAutomationRobotBundleActivator_Access is
       This : constant InputAutomationRobotBundleActivator_Access := new InputAutomationRobotBundleActivator;
    begin
-      Initialize (This.all);
+      InputAutomationRobotBundleActivator_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -157,20 +157,6 @@ package body org.allbinary.input.automation.robot.osgi.InputAutomationRobotBundl
    begin
       null;
    end getInputAutomationRobotChangeListener;
-
-   procedure getServiceFactory (This : in out InputAutomationRobotBundleActivator) is
-      Java_Result : constant Java_Object_Access := InputAutomationRobotBundleActivator'Class (This).getServiceFactory;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getServiceFactory;
-
-   procedure getInputRobotInterface (This : in out InputAutomationRobotBundleActivator) is
-      Java_Result : constant InputRobotInterface_Access_Array_Access := InputAutomationRobotBundleActivator'Class (This).getInputRobotInterface;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInputRobotInterface;
 
 end org.allbinary.input.automation.robot.osgi.InputAutomationRobotBundleActivator_Package;
 

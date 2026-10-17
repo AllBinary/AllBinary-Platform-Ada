@@ -47,7 +47,6 @@ package org.allbinary.game.displayable.GameLevelDisplayChangeEventListenersFacto
    procedure Initialize (This : in out GameLevelDisplayChangeEventListenersFactory'Class);
    function Create return GameLevelDisplayChangeEventListenersFactory_Access;
    function getInstance return GameLevelDisplayChangeEventListenersFactory_Access;
-   procedure getInstance;
    procedure add (This : in out GameLevelDisplayChangeEventListenersFactory; displayChangeEventListener : DisplayChangeEventListener_Access);
    procedure clear (This : in out GameLevelDisplayChangeEventListenersFactory);
 

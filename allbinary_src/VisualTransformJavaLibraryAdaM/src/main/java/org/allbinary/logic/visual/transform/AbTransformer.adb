@@ -35,7 +35,7 @@ package body org.allbinary.logic.visual.transform.AbTransformer_Package is
    function Create (transformInfoInterface : TransformInfoInterface_Access) return AbTransformer_Access is
       This : constant AbTransformer_Access := new AbTransformer;
    begin
-      Initialize (This.all, transformInfoInterface);
+      AbTransformer_Package.Initialize (This.all, transformInfoInterface);
       return This;
    end Create;
 
@@ -99,34 +99,6 @@ package body org.allbinary.logic.visual.transform.AbTransformer_Package is
                 end;
         end;
    end translate;
-
-   procedure getTransformInfoInterface (This : in out AbTransformer) is
-      Java_Result : constant TransformInfoInterface_Access := AbTransformer'Class (This).getTransformInfoInterface;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTransformInfoInterface;
-
-   procedure getInputStream (This : in out AbTransformer) is
-      Java_Result : constant InputStream_Access := AbTransformer'Class (This).getInputStream;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInputStream;
-
-   procedure getURIResolver (This : in out AbTransformer) is
-      Java_Result : constant URIResolver_Access := AbTransformer'Class (This).getURIResolver;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getURIResolver;
-
-   procedure getStreamSource (This : in out AbTransformer) is
-      Java_Result : constant StreamSource_Access := AbTransformer'Class (This).getStreamSource;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getStreamSource;
 
    procedure translate (This : in out AbTransformer; xmlDocumentStr : Unbounded_String) is
       Java_Result : constant Unbounded_String := AbTransformer'Class (This).translate (xmlDocumentStr);

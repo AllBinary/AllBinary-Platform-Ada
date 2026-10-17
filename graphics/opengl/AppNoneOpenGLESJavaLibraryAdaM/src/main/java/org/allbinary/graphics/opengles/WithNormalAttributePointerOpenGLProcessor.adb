@@ -36,7 +36,7 @@ package body org.allbinary.graphics.opengles.WithNormalAttributePointerOpenGLPro
    function Create return WithNormalAttributePointerOpenGLProcessor_Access is
       This : constant WithNormalAttributePointerOpenGLProcessor_Access := new WithNormalAttributePointerOpenGLProcessor;
    begin
-      Initialize (This.all);
+      WithNormalAttributePointerOpenGLProcessor_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -44,13 +44,6 @@ package body org.allbinary.graphics.opengles.WithNormalAttributePointerOpenGLPro
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end process;
-
-   procedure getInstance is
-      Java_Result : constant WithNormalAttributePointerOpenGLProcessor_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

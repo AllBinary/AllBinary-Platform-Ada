@@ -38,7 +38,7 @@ package body org.allbinary.math.AngleInfo_Package is
    function Create (angleIncrementInfo : AngleIncrementInfo_Access) return AngleInfo_Access is
       This : constant AngleInfo_Access := new AngleInfo;
    begin
-      Initialize (This.all, angleIncrementInfo);
+      AngleInfo_Package.Initialize (This.all, angleIncrementInfo);
       return This;
    end Create;
 
@@ -81,27 +81,6 @@ package body org.allbinary.math.AngleInfo_Package is
    begin
       null;
    end getInstance;
-
-   procedure getAngle (This : in out AngleInfo) is
-      Java_Result : constant Short_Integer := AngleInfo'Class (This).getAngle;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getAngle;
-
-   procedure getAngleIncrementInfo (This : in out AngleInfo) is
-      Java_Result : constant AngleIncrementInfo_Access := AngleInfo'Class (This).getAngleIncrementInfo;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getAngleIncrementInfo;
-
-   procedure toString (This : in out AngleInfo) is
-      Java_Result : constant Unbounded_String := AngleInfo'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toString;
 
 begin
    null;

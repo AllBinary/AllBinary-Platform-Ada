@@ -51,7 +51,6 @@ package views.business.context.HttpContextView_Package is
    procedure Initialize (This : in out HttpContextView'Class; transformInfoInterface : TransformInfoInterface_Access);
    function Create (transformInfoInterface : TransformInfoInterface_Access) return HttpContextView_Access;
    function view (This : in out HttpContextView) return Unbounded_String;
-   procedure view (This : in out HttpContextView);
 
 end views.business.context.HttpContextView_Package;
 

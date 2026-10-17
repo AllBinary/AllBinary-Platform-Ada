@@ -29,7 +29,7 @@ package body org.allbinary.business.init.InitInfo2_Package is
    function Create return InitInfo2_Access is
       This : constant InitInfo2_Access := new InitInfo2;
    begin
-      Initialize (This.all);
+      InitInfo2_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -48,13 +48,6 @@ package body org.allbinary.business.init.InitInfo2_Package is
    begin
         return This.directory.create (value);
    end isMainPathValid;
-
-   procedure getInstance is
-      Java_Result : constant InitInfo2_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure isTestHtmlPathValid (This : in out InitInfo2; value : AbPath_Access) is
       Java_Result : constant Boolean := InitInfo2'Class (This).isTestHtmlPathValid (value);

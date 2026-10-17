@@ -30,7 +30,7 @@ package body org.allbinary.game.layer.building.event.LocalPlayerBuildingEventHan
    function Create return LocalPlayerBuildingEventHandler_Access is
       This : constant LocalPlayerBuildingEventHandler_Access := new LocalPlayerBuildingEventHandler;
    begin
-      Initialize (This.all);
+      LocalPlayerBuildingEventHandler_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -46,13 +46,6 @@ package body org.allbinary.game.layer.building.event.LocalPlayerBuildingEventHan
         buildingEventListenerInterface := (BuildingEventListenerInterface_Access (eventListenerInterface));
         buildingEventListenerInterface.onBuildingEvent (RTSLayerEvent_Access (eventObject));
    end process;
-
-   procedure getInstance is
-      Java_Result : constant LocalPlayerBuildingEventHandler_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

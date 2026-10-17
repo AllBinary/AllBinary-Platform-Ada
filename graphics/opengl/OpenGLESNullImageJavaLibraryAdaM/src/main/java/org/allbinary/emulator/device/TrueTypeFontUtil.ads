@@ -44,7 +44,6 @@ package org.allbinary.emulator.device.TrueTypeFontUtil_Package is
    procedure Initialize (This : in out TrueTypeFontUtil'Class);
    function Create return TrueTypeFontUtil_Access;
    function getInstance return TrueTypeFontUtil_Access;
-   procedure getInstance;
    function getAsTextureSize (This : in out TrueTypeFontUtil; textureSize : Integer) return Integer;
    procedure getAsTextureSize (This : in out TrueTypeFontUtil; textureSize : Integer);
    function getCellSize (This : in out TrueTypeFontUtil; cellSize : Integer) return Integer;

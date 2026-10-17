@@ -32,7 +32,7 @@ package body views.admin.storefront.statistics.ValidationStoreFrontStatisticsVie
    function Create (transformInfoInterface : TransformInfoInterface_Access) return ValidationStoreFrontStatisticsView_Access is
       This : constant ValidationStoreFrontStatisticsView_Access := new ValidationStoreFrontStatisticsView;
    begin
-      Initialize (This.all, transformInfoInterface);
+      ValidationStoreFrontStatisticsView_Package.Initialize (This.all, transformInfoInterface);
       return This;
    end Create;
 
@@ -84,27 +84,6 @@ package body views.admin.storefront.statistics.ValidationStoreFrontStatisticsVie
    begin
         return null;
    end toValidationInfoNode;
-
-   procedure isValid (This : in out ValidationStoreFrontStatisticsView) is
-      Java_Result : constant Boolean := ValidationStoreFrontStatisticsView'Class (This).isValid;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isValid;
-
-   procedure validationInfo (This : in out ValidationStoreFrontStatisticsView) is
-      Java_Result : constant Unbounded_String := ValidationStoreFrontStatisticsView'Class (This).validationInfo;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end validationInfo;
-
-   procedure toValidationInfoDoc (This : in out ValidationStoreFrontStatisticsView) is
-      Java_Result : constant Document_Access := ValidationStoreFrontStatisticsView'Class (This).toValidationInfoDoc;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toValidationInfoDoc;
 
    procedure toValidationInfoNode (This : in out ValidationStoreFrontStatisticsView; document : Document_Access) is
       Java_Result : constant Node_Access := ValidationStoreFrontStatisticsView'Class (This).toValidationInfoNode (document);

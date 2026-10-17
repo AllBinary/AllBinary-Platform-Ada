@@ -28,7 +28,7 @@ package body org.allbinary.animation.image.ModifierBaseProcessor_Package is
    function Create return ModifierBaseProcessor_Access is
       This : constant ModifierBaseProcessor_Access := new ModifierBaseProcessor;
    begin
-      Initialize (This.all);
+      ModifierBaseProcessor_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -47,13 +47,6 @@ package body org.allbinary.animation.image.ModifierBaseProcessor_Package is
    begin
         null;
    end updateAlpha;
-
-   procedure getInstance is
-      Java_Result : constant ModifierBaseProcessor_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

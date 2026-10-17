@@ -37,16 +37,9 @@ package body org.allbinary.logic.visual.transform.info.template.TransformInfoTem
    function Create return TransformInfoTemplateData_Access is
       This : constant TransformInfoTemplateData_Access := new TransformInfoTemplateData;
    begin
-      Initialize (This.all);
+      TransformInfoTemplateData_Package.Initialize (This.all);
       return This;
    end Create;
-
-   procedure getInstance is
-      Java_Result : constant TransformInfoTemplateData_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

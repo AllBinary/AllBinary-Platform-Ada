@@ -31,7 +31,7 @@ package body org.allbinary.logic.visual.theme.ThemePropertiesView_Package is
    function Create (themeInterface : ThemeInterface_Access) return ThemePropertiesView_Access is
       This : constant ThemePropertiesView_Access := new ThemePropertiesView;
    begin
-      Initialize (This.all, themeInterface);
+      ThemePropertiesView_Package.Initialize (This.all, themeInterface);
       return This;
    end Create;
 

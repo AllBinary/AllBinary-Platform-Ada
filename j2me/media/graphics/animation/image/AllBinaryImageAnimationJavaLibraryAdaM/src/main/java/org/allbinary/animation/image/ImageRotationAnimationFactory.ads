@@ -28,6 +28,8 @@ with org.allbinary.logic.math.PrimitiveIntUtil_Package; use org.allbinary.logic.
 with org.allbinary.math.AngleFactory_Package; use org.allbinary.math.AngleFactory_Package;
 with org.allbinary.math.AngleInfo_Package; use org.allbinary.math.AngleInfo_Package;
 with org.allbinary.animation.image.BaseImageAnimationFactory_Package; use org.allbinary.animation.image.BaseImageAnimationFactory_Package;
+with org.allbinary.animation.image.ImageBaseRotationAnimation_Package; use org.allbinary.animation.image.ImageBaseRotationAnimation_Package;
+with org.allbinary.animation.image.AdjustedImageBaseRotationAnimation_Package; use org.allbinary.animation.image.AdjustedImageBaseRotationAnimation_Package;
 
 package org.allbinary.animation.image.ImageRotationAnimationFactory_Package is
 
@@ -52,7 +54,6 @@ package org.allbinary.animation.image.ImageRotationAnimationFactory_Package is
    function getInstance (This : in out ImageRotationAnimationFactory; instanceId : Integer) return Animation_Access;
    procedure getInstance (This : in out ImageRotationAnimationFactory; instanceId : Integer);
    function getAngleIncrementP (This : in out ImageRotationAnimationFactory) return Short_Integer;
-   procedure getAngleIncrementP (This : in out ImageRotationAnimationFactory);
 
 end org.allbinary.animation.image.ImageRotationAnimationFactory_Package;
 

@@ -55,7 +55,7 @@ package body org.allbinary.logic.control.search.SearchParams_Package is
    function Create (request : HttpServletRequest_Access) return SearchParams_Access is
       This : constant SearchParams_Access := new SearchParams;
    begin
-      Initialize (This.all, request);
+      SearchParams_Package.Initialize (This.all, request);
       return This;
    end Create;
 
@@ -197,69 +197,6 @@ package body org.allbinary.logic.control.search.SearchParams_Package is
    begin
         return ModDomHelper_Package.createNameValueNodes (document, SearchData_Package.LENGTH, ToDomHelper_Package.convertNull (This.getLength));
    end getLengthNode;
-
-   procedure get (This : in out SearchParams) is
-      Java_Result : constant HashMap_Access := SearchParams'Class (This).get;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end get;
-
-   procedure getOrder (This : in out SearchParams) is
-      Java_Result : constant Unbounded_String := SearchParams'Class (This).getOrder;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getOrder;
-
-   procedure getSortBy (This : in out SearchParams) is
-      Java_Result : constant Unbounded_String := SearchParams'Class (This).getSortBy;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSortBy;
-
-   procedure getLength (This : in out SearchParams) is
-      Java_Result : constant Unbounded_String := SearchParams'Class (This).getLength;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getLength;
-
-   procedure getLengthInt (This : in out SearchParams) is
-      Java_Result : constant Integer := SearchParams'Class (This).getLengthInt;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getLengthInt;
-
-   procedure getStartPage (This : in out SearchParams) is
-      Java_Result : constant Unbounded_String := SearchParams'Class (This).getStartPage;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getStartPage;
-
-   procedure getEndPage (This : in out SearchParams) is
-      Java_Result : constant Unbounded_String := SearchParams'Class (This).getEndPage;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getEndPage;
-
-   procedure getStartPageInt (This : in out SearchParams) is
-      Java_Result : constant Integer := SearchParams'Class (This).getStartPageInt;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getStartPageInt;
-
-   procedure getEndPageInt (This : in out SearchParams) is
-      Java_Result : constant Integer := SearchParams'Class (This).getEndPageInt;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getEndPageInt;
 
    procedure getParamsNode (This : in out SearchParams; document : Document_Access) is
       Java_Result : constant Node_Access := SearchParams'Class (This).getParamsNode (document);

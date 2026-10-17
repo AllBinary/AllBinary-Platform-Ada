@@ -33,7 +33,7 @@ package body org.allbinary.input.event.VirtualKeyboardEventHandler_Package is
    function Create return VirtualKeyboardEventHandler_Access is
       This : constant VirtualKeyboardEventHandler_Access := new VirtualKeyboardEventHandler;
    begin
-      Initialize (This.all);
+      VirtualKeyboardEventHandler_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -80,13 +80,6 @@ package body org.allbinary.input.event.VirtualKeyboardEventHandler_Package is
                 end;
         end;
    end close;
-
-   procedure getInstance is
-      Java_Result : constant VirtualKeyboardEventHandler_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

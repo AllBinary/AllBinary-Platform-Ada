@@ -21,6 +21,7 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.identification.Group_Package; use org.allbinary.game.identification.Group_Package;
+with org.allbinary.game.layer.waypoint.event.WaypointEventHandler_Package; use org.allbinary.game.layer.waypoint.event.WaypointEventHandler_Package;
 
 package org.allbinary.game.layer.waypoint.event.WaypointEventHandlerFactory_Package is
 

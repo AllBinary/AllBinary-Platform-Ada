@@ -39,7 +39,7 @@ package body org.allbinary.animation.image.sprite.SpriteIndexedAnimation_Package
    function Create (sprite : Sprite_Access; image : Image_Access; basicColorArray : BasicColor_Access_Array_Access; animationBehavior : AnimationBehavior_Access) return SpriteIndexedAnimation_Access is
       This : constant SpriteIndexedAnimation_Access := new SpriteIndexedAnimation;
    begin
-      Initialize (This.all, sprite, image, basicColorArray, animationBehavior);
+      SpriteIndexedAnimation_Package.Initialize (This.all, sprite, image, basicColorArray, animationBehavior);
       return This;
    end Create;
 
@@ -147,55 +147,6 @@ package body org.allbinary.animation.image.sprite.SpriteIndexedAnimation_Package
    begin
         null;
    end finalize;
-
-   procedure getAnimationSize (This : in out SpriteIndexedAnimation) is
-      Java_Result : constant Integer := SpriteIndexedAnimation'Class (This).getAnimationSize;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getAnimationSize;
-
-   procedure getBasicColorP (This : in out SpriteIndexedAnimation) is
-      Java_Result : constant BasicColor_Access := SpriteIndexedAnimation'Class (This).getBasicColorP;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getBasicColorP;
-
-   procedure getSize (This : in out SpriteIndexedAnimation) is
-      Java_Result : constant Integer := SpriteIndexedAnimation'Class (This).getSize;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSize;
-
-   procedure getFrame (This : in out SpriteIndexedAnimation) is
-      Java_Result : constant Integer := SpriteIndexedAnimation'Class (This).getFrame;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getFrame;
-
-   procedure isLastFrame (This : in out SpriteIndexedAnimation) is
-      Java_Result : constant Boolean := SpriteIndexedAnimation'Class (This).isLastFrame;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isLastFrame;
-
-   procedure getLastFrame (This : in out SpriteIndexedAnimation) is
-      Java_Result : constant Integer := SpriteIndexedAnimation'Class (This).getLastFrame;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getLastFrame;
-
-   procedure getSequence (This : in out SpriteIndexedAnimation) is
-      Java_Result : constant Integer_Array_Access := SpriteIndexedAnimation'Class (This).getSequence;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSequence;
 
 end org.allbinary.animation.image.sprite.SpriteIndexedAnimation_Package;
 

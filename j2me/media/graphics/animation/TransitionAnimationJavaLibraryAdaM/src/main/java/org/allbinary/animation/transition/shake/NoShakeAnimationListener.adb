@@ -29,7 +29,7 @@ package body org.allbinary.animation.transition.shake.NoShakeAnimationListener_P
    function Create return NoShakeAnimationListener_Access is
       This : constant NoShakeAnimationListener_Access := new NoShakeAnimationListener;
    begin
-      Initialize (This.all);
+      NoShakeAnimationListener_Package.Initialize (This.all);
       return This;
    end Create;
 

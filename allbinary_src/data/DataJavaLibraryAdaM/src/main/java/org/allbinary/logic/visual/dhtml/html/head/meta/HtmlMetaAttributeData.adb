@@ -33,7 +33,7 @@ package body org.allbinary.logic.visual.dhtml.html.head.meta.HtmlMetaAttributeDa
    function Create (id : Integer; value : Unbounded_String) return HtmlMetaAttributeData_Access is
       This : constant HtmlMetaAttributeData_Access := new HtmlMetaAttributeData;
    begin
-      Initialize (This.all, id, value);
+      HtmlMetaAttributeData_Package.Initialize (This.all, id, value);
       return This;
    end Create;
 
@@ -57,13 +57,6 @@ package body org.allbinary.logic.visual.dhtml.html.head.meta.HtmlMetaAttributeDa
    begin
       null;
    end equals;
-
-   procedure toString (This : in out HtmlMetaAttributeData) is
-      Java_Result : constant Unbounded_String := HtmlMetaAttributeData'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toString;
 
 end org.allbinary.logic.visual.dhtml.html.head.meta.HtmlMetaAttributeData_Package;
 

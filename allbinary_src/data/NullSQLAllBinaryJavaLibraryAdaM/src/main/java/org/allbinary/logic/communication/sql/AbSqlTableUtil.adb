@@ -33,7 +33,7 @@ package body org.allbinary.logic.communication.sql.AbSqlTableUtil_Package is
    function Create return AbSqlTableUtil_Access is
       This : constant AbSqlTableUtil_Access := new AbSqlTableUtil;
    begin
-      Initialize (This.all);
+      AbSqlTableUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -61,13 +61,6 @@ package body org.allbinary.logic.communication.sql.AbSqlTableUtil_Package is
         stringBuffer.append (To_Unbounded_String (" Restoration Failed"));
         return stringBuffer.toString;
    end restoreTable;
-
-   procedure getInstance is
-      Java_Result : constant AbSqlTableUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure backupTable (This : in out AbSqlTableUtil; abSqlTable : AbSqlTable_Access) is
       Java_Result : constant Unbounded_String := AbSqlTableUtil'Class (This).backupTable (abSqlTable);

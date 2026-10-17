@@ -22,6 +22,8 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.awt.image.BufferedImage_Package; use java.awt.image.BufferedImage_Package;
 with org.allbinary.media.image.comparison.motion.MotionRectangleConstraintsInterface_Package; use org.allbinary.media.image.comparison.motion.MotionRectangleConstraintsInterface_Package;
+with org.allbinary.input.automation.module.Dimension_Package; use org.allbinary.input.automation.module.Dimension_Package;
+with org.allbinary.input.automation.module.Rectangle_Package; use org.allbinary.input.automation.module.Rectangle_Package;
 
 package org.allbinary.input.automation.module.MotionRectangleConstraints_Package is
 
@@ -42,9 +44,7 @@ package org.allbinary.input.automation.module.MotionRectangleConstraints_Package
    procedure Initialize (This : in out MotionRectangleConstraints'Class);
    function Create return MotionRectangleConstraints_Access;
    function getMinDimension (This : in out MotionRectangleConstraints) return Dimension_Access;
-   procedure getMinDimension (This : in out MotionRectangleConstraints);
    function getMaxDimension (This : in out MotionRectangleConstraints) return Dimension_Access;
-   procedure getMaxDimension (This : in out MotionRectangleConstraints);
    function isTooSmall (This : in out MotionRectangleConstraints; rectangle : Rectangle_Access) return Boolean;
    procedure isTooSmall (This : in out MotionRectangleConstraints; rectangle : Rectangle_Access);
    function isAreaTooSmall (This : in out MotionRectangleConstraints; rectangle : Rectangle_Access) return Boolean;
@@ -56,10 +56,8 @@ package org.allbinary.input.automation.module.MotionRectangleConstraints_Package
    procedure setMinDimension (This : in out MotionRectangleConstraints; minDimension : Dimension_Access);
    procedure setMaxDimension (This : in out MotionRectangleConstraints; maxDimension : Dimension_Access);
    function getMaxMotionRectangles (This : in out MotionRectangleConstraints) return Integer;
-   procedure getMaxMotionRectangles (This : in out MotionRectangleConstraints);
    procedure setMaxMotionRectangles (This : in out MotionRectangleConstraints; maxMotionRectangles : Integer);
    function getMinArea (This : in out MotionRectangleConstraints) return Integer;
-   procedure getMinArea (This : in out MotionRectangleConstraints);
    procedure setMinArea (This : in out MotionRectangleConstraints; minArea : Integer);
 
 end org.allbinary.input.automation.module.MotionRectangleConstraints_Package;

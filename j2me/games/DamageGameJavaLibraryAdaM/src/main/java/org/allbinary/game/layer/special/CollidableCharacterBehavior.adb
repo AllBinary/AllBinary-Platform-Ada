@@ -29,7 +29,7 @@ package body org.allbinary.game.layer.special.CollidableCharacterBehavior_Packag
    function Create (collidable : Boolean) return CollidableCharacterBehavior_Access is
       This : constant CollidableCharacterBehavior_Access := new CollidableCharacterBehavior;
    begin
-      Initialize (This.all, collidable);
+      CollidableCharacterBehavior_Package.Initialize (This.all, collidable);
       return This;
    end Create;
 

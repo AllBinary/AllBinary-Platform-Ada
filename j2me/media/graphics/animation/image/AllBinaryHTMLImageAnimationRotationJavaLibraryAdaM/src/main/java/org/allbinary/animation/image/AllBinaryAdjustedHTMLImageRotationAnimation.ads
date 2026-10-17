@@ -46,10 +46,8 @@ package org.allbinary.animation.image.AllBinaryAdjustedHTMLImageRotationAnimatio
    procedure init (This : in out AllBinaryAdjustedHTMLImageRotationAnimation; dx : Integer; dy : Integer);
    procedure setDx (This : in out AllBinaryAdjustedHTMLImageRotationAnimation; dx : Integer);
    function getDx (This : in out AllBinaryAdjustedHTMLImageRotationAnimation) return Integer;
-   procedure getDx (This : in out AllBinaryAdjustedHTMLImageRotationAnimation);
    procedure setDy (This : in out AllBinaryAdjustedHTMLImageRotationAnimation; dy : Integer);
    function getDy (This : in out AllBinaryAdjustedHTMLImageRotationAnimation) return Integer;
-   procedure getDy (This : in out AllBinaryAdjustedHTMLImageRotationAnimation);
    procedure paintXY (This : in out AllBinaryAdjustedHTMLImageRotationAnimation; graphics : Graphics_Access; x : Integer; y : Integer);
 
 end org.allbinary.animation.image.AllBinaryAdjustedHTMLImageRotationAnimation_Package;

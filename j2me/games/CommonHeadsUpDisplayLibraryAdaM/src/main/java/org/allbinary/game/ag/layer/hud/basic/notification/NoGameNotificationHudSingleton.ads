@@ -24,6 +24,7 @@ with org.allbinary.game.graphics.hud.BasicHudFactory_Package; use org.allbinary.
 with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.game.ag.layer.hud.basic.notification.GameNotificationHud_Package; use org.allbinary.game.ag.layer.hud.basic.notification.GameNotificationHud_Package;
 
 package org.allbinary.game.ag.layer.hud.basic.notification.NoGameNotificationHudSingleton_Package is
 
@@ -46,9 +47,7 @@ package org.allbinary.game.ag.layer.hud.basic.notification.NoGameNotificationHud
    procedure Initialize (This : in out NoGameNotificationHudSingleton'Class);
    function Create return NoGameNotificationHudSingleton_Access;
    function getInstance return NoGameNotificationHudSingleton_Access;
-   procedure getInstance;
    function getGameNotificationHud (This : in out NoGameNotificationHudSingleton) return GameNotificationHud_Access;
-   procedure getGameNotificationHud (This : in out NoGameNotificationHudSingleton);
 
 end org.allbinary.game.ag.layer.hud.basic.notification.NoGameNotificationHudSingleton_Package;
 

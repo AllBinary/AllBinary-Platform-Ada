@@ -21,6 +21,7 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.layer.RTSInterface_Package; use org.allbinary.game.layer.RTSInterface_Package;
+with org.allbinary.game.rts.technology.UnitTechnologySingletonFactory_Package; use org.allbinary.game.rts.technology.UnitTechnologySingletonFactory_Package;
 
 package org.allbinary.game.rts.technology.RepairTechnology_Package is
 
@@ -39,27 +40,17 @@ package org.allbinary.game.rts.technology.RepairTechnology_Package is
    procedure Initialize (This : in out RepairTechnology'Class; maxLevel : Integer);
    function Create (maxLevel : Integer) return RepairTechnology_Access;
    function isCompleted (This : in out RepairTechnology) return Boolean;
-   procedure isCompleted (This : in out RepairTechnology);
    function getPercentComplete (This : in out RepairTechnology) return Integer;
-   procedure getPercentComplete (This : in out RepairTechnology);
    function getLevel (This : in out RepairTechnology) return Integer;
-   procedure getLevel (This : in out RepairTechnology);
    function getMaxLevel (This : in out RepairTechnology) return Integer;
-   procedure getMaxLevel (This : in out RepairTechnology);
    function getCost (This : in out RepairTechnology) return Integer;
-   procedure getCost (This : in out RepairTechnology);
    procedure downgrade (This : in out RepairTechnology);
    function getDowngradeCost (This : in out RepairTechnology) return Integer;
-   procedure getDowngradeCost (This : in out RepairTechnology);
    function isDowngradeable (This : in out RepairTechnology) return Boolean;
-   procedure isDowngradeable (This : in out RepairTechnology);
    function getUpgradeCost (This : in out RepairTechnology) return Integer;
-   procedure getUpgradeCost (This : in out RepairTechnology);
    function isUpgradeable (This : in out RepairTechnology) return Boolean;
-   procedure isUpgradeable (This : in out RepairTechnology);
    procedure upgrade (This : in out RepairTechnology);
    function isSelfUpgradeable (This : in out RepairTechnology) return Boolean;
-   procedure isSelfUpgradeable (This : in out RepairTechnology);
 
 end org.allbinary.game.rts.technology.RepairTechnology_Package;
 

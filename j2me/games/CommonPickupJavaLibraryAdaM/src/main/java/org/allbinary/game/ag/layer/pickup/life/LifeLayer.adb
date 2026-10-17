@@ -29,7 +29,7 @@ package body org.allbinary.game.ag.layer.pickup.life.LifeLayer_Package is
    function Create return LifeLayer_Access is
       This : constant LifeLayer_Access := new LifeLayer;
    begin
-      Initialize (This.all);
+      LifeLayer_Package.Initialize (This.all);
       return This;
    end Create;
 

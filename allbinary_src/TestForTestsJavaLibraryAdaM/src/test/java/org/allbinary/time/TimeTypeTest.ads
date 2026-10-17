@@ -8,13 +8,15 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.util.Calendar_Package; use java.util.Calendar_Package;
+with java.util.Calendar_Package; use java.util.Calendar_Package;
 with org.junit.jupiter.api.Assertions_Package; use org.junit.jupiter.api.Assertions_Package;
 with org.junit.jupiter.api.DisplayName_Package; use org.junit.jupiter.api.DisplayName_Package;
 with org.junit.jupiter.api.Test_Package; use org.junit.jupiter.api.Test_Package;
+with org.allbinary.time.TimeTypeUtil_Package; use org.allbinary.time.TimeTypeUtil_Package;
 
 package org.allbinary.time.TimeTypeTest_Package is
 
+   package Calendar_Package renames Standard.java.util.Calendar_Package;
    package Assertions_Package renames Standard.org.junit.jupiter.api.Assertions_Package;
    package DisplayName_Package renames Standard.org.junit.jupiter.api.DisplayName_Package;
    package Test_Package renames Standard.org.junit.jupiter.api.Test_Package;
@@ -51,13 +53,15 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.util.Calendar_Package; use java.util.Calendar_Package;
+with java.util.Calendar_Package; use java.util.Calendar_Package;
 with org.junit.jupiter.api.Assertions_Package; use org.junit.jupiter.api.Assertions_Package;
 with org.junit.jupiter.api.DisplayName_Package; use org.junit.jupiter.api.DisplayName_Package;
 with org.junit.jupiter.api.Test_Package; use org.junit.jupiter.api.Test_Package;
+with org.allbinary.time.TimeTypeUtil_Package; use org.allbinary.time.TimeTypeUtil_Package;
 
 package org.allbinary.time.TestableTimeTypeUtil_Package is
 
+   package Calendar_Package renames Standard.java.util.Calendar_Package;
    package Assertions_Package renames Standard.org.junit.jupiter.api.Assertions_Package;
    package DisplayName_Package renames Standard.org.junit.jupiter.api.DisplayName_Package;
    package Test_Package renames Standard.org.junit.jupiter.api.Test_Package;
@@ -74,7 +78,6 @@ package org.allbinary.time.TestableTimeTypeUtil_Package is
    procedure Initialize (This : in out TestableTimeTypeUtil'Class; hour : Integer);
    function Create (hour : Integer) return TestableTimeTypeUtil_Access;
    function getHourOfDay (This : in out TestableTimeTypeUtil) return Integer;
-   procedure getHourOfDay (This : in out TestableTimeTypeUtil);
 
 end org.allbinary.time.TestableTimeTypeUtil_Package;
 

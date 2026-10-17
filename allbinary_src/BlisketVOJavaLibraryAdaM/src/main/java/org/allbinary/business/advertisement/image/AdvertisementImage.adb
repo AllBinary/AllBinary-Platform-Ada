@@ -33,7 +33,7 @@ package body org.allbinary.business.advertisement.image.AdvertisementImage_Packa
    function Create return AdvertisementImage_Access is
       This : constant AdvertisementImage_Access := new AdvertisementImage;
    begin
-      Initialize (This.all);
+      AdvertisementImage_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -50,27 +50,6 @@ package body org.allbinary.business.advertisement.image.AdvertisementImage_Packa
    function getTwoDimensionalConstraint (This : in out AdvertisementImage) return TwoDimensionalConstraintInterface_Access is
    begin
         return This.constraint;
-   end getTwoDimensionalConstraint;
-
-   procedure getFileName (This : in out AdvertisementImage) is
-      Java_Result : constant Unbounded_String := AdvertisementImage'Class (This).getFileName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getFileName;
-
-   procedure getUrl (This : in out AdvertisementImage) is
-      Java_Result : constant Unbounded_String := AdvertisementImage'Class (This).getUrl;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getUrl;
-
-   procedure getTwoDimensionalConstraint (This : in out AdvertisementImage) is
-      Java_Result : constant TwoDimensionalConstraintInterface_Access := AdvertisementImage'Class (This).getTwoDimensionalConstraint;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getTwoDimensionalConstraint;
 
 end org.allbinary.business.advertisement.image.AdvertisementImage_Package;

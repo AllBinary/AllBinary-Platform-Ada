@@ -28,7 +28,7 @@ package body org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package i
    function Create return PlatformBitmapBaseFactory_Access is
       This : constant PlatformBitmapBaseFactory_Access := new PlatformBitmapBaseFactory;
    begin
-      Initialize (This.all);
+      PlatformBitmapBaseFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

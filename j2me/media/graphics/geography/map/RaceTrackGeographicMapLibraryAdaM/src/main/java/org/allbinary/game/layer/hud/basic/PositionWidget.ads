@@ -46,7 +46,6 @@ package org.allbinary.game.layer.hud.basic.PositionWidget_Package is
    procedure Initialize (This : in out PositionWidget'Class; position : Integer; location : Integer; direction : Integer; basicColor : BasicColor_Access);
    function Create (position : Integer; location : Integer; direction : Integer; basicColor : BasicColor_Access) return PositionWidget_Access;
    function get (This : in out PositionWidget) return Integer;
-   procedure get (This : in out PositionWidget);
    procedure set (This : in out PositionWidget; position : Integer);
    procedure paint (This : in out PositionWidget; graphics : Graphics_Access);
    function toString (position : Integer) return Unbounded_String;

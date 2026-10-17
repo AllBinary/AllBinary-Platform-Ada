@@ -22,6 +22,7 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with javax.swing.tree.MutableTreeNode_Package; use javax.swing.tree.MutableTreeNode_Package;
 with org.allbinary.graphics.j2me.workarea.tools.event.EventObject_Package; use org.allbinary.graphics.j2me.workarea.tools.event.EventObject_Package;
+with org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEventSource_Package; use org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEventSource_Package;
 
 package org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEvent_Package is
 
@@ -36,15 +37,10 @@ package org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEvent_Pack
    procedure Initialize (This : in out MyGraphicItemEvent'Class; source : Java_Object_Access);
    function Create (source : Java_Object_Access) return MyGraphicItemEvent_Access;
    function getSource (This : in out MyGraphicItemEvent) return Java_Object_Access;
-   procedure getSource (This : in out MyGraphicItemEvent);
    function toString (This : in out MyGraphicItemEvent) return Unbounded_String;
-   procedure toString (This : in out MyGraphicItemEvent);
    function getCommand (This : in out MyGraphicItemEvent) return Unbounded_String;
-   procedure getCommand (This : in out MyGraphicItemEvent);
    function getTreeNode (This : in out MyGraphicItemEvent) return MutableTreeNode_Access;
-   procedure getTreeNode (This : in out MyGraphicItemEvent);
    function getAngle (This : in out MyGraphicItemEvent) return Long_Float;
-   procedure getAngle (This : in out MyGraphicItemEvent);
 
 end org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEvent_Package;
 

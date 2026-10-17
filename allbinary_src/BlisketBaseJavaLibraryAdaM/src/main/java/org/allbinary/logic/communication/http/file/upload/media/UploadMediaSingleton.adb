@@ -74,7 +74,7 @@ package body org.allbinary.logic.communication.http.file.upload.media.UploadMedi
    function Create return UploadMediaSingleton_Access is
       This : constant UploadMediaSingleton_Access := new UploadMediaSingleton;
    begin
-      Initialize (This.all);
+      UploadMediaSingleton_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -130,13 +130,6 @@ package body org.allbinary.logic.communication.http.file.upload.media.UploadMedi
             return False;
         end if;
    end isMedia;
-
-   procedure getInstance is
-      Java_Result : constant UploadMediaSingleton_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure isReaderSupported (This : in out UploadMediaSingleton; mediaFileType : Unbounded_String) is
       Java_Result : constant Boolean := UploadMediaSingleton'Class (This).isReaderSupported (mediaFileType);

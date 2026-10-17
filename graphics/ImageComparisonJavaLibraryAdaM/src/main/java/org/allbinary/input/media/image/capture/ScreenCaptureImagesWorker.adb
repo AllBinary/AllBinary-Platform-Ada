@@ -36,7 +36,7 @@ package body org.allbinary.input.media.image.capture.ScreenCaptureImagesWorker_P
    function Create return ScreenCaptureImagesWorker_Access is
       This : constant ScreenCaptureImagesWorker_Access := new ScreenCaptureImagesWorker;
    begin
-      Initialize (This.all);
+      ScreenCaptureImagesWorker_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -87,13 +87,6 @@ package body org.allbinary.input.media.image.capture.ScreenCaptureImagesWorker_P
                 end;
         end;
    end run;
-
-   procedure isRunning (This : in out ScreenCaptureImagesWorker) is
-      Java_Result : constant Boolean := ScreenCaptureImagesWorker'Class (This).isRunning;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isRunning;
 
 begin
    null;

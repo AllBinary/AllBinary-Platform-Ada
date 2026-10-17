@@ -28,7 +28,7 @@ package body org.allbinary.media.graphics.geography.map.NoGeographicMapCellPosit
    function Create return NoGeographicMapCellPositionFactoryInitVisitor_Access is
       This : constant NoGeographicMapCellPositionFactoryInitVisitor_Access := new NoGeographicMapCellPositionFactoryInitVisitor;
    begin
-      Initialize (This.all);
+      NoGeographicMapCellPositionFactoryInitVisitor_Package.Initialize (This.all);
       return This;
    end Create;
 

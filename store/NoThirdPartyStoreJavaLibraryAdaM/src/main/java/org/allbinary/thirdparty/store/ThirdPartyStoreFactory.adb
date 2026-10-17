@@ -35,16 +35,9 @@ package body org.allbinary.thirdparty.store.ThirdPartyStoreFactory_Package is
    function Create return ThirdPartyStoreFactory_Access is
       This : constant ThirdPartyStoreFactory_Access := new ThirdPartyStoreFactory;
    begin
-      Initialize (This.all);
+      ThirdPartyStoreFactory_Package.Initialize (This.all);
       return This;
    end Create;
-
-   procedure getInstance is
-      Java_Result : constant ThirdPartyStore_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

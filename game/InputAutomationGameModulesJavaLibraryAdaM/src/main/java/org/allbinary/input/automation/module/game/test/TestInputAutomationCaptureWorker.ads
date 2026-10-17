@@ -69,7 +69,6 @@ package org.allbinary.input.automation.module.game.test.TestInputAutomationCaptu
    procedure processDataWorkerResults (This : in out TestInputAutomationCaptureWorker);
    procedure process (This : in out TestInputAutomationCaptureWorker);
    function getGenericProfileActions (This : in out TestInputAutomationCaptureWorker) return GenericProfileActions_Access;
-   procedure getGenericProfileActions (This : in out TestInputAutomationCaptureWorker);
    procedure setGenericProfileActions (This : in out TestInputAutomationCaptureWorker; genericProfileActions : GenericProfileActions_Access);
 
 end org.allbinary.input.automation.module.game.test.TestInputAutomationCaptureWorker_Package;

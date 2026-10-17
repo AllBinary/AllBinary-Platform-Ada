@@ -51,11 +51,8 @@ package views.generic_Id.address.billing.DeleteValidationView_Package is
    procedure Initialize (This : in out DeleteValidationView'Class; transformInfoInterface : TransformInfoInterface_Access);
    function Create (transformInfoInterface : TransformInfoInterface_Access) return DeleteValidationView_Access;
    function isValid (This : in out DeleteValidationView) return Boolean;
-   procedure isValid (This : in out DeleteValidationView);
    function validationInfo (This : in out DeleteValidationView) return Unbounded_String;
-   procedure validationInfo (This : in out DeleteValidationView);
    function toValidationInfoDoc (This : in out DeleteValidationView) return Document_Access;
-   procedure toValidationInfoDoc (This : in out DeleteValidationView);
    function toValidationInfoNode (This : in out DeleteValidationView; document : Document_Access) return Node_Access;
    procedure toValidationInfoNode (This : in out DeleteValidationView; document : Document_Access);
 

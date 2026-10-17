@@ -25,6 +25,7 @@ with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.game.identification.Group_Package; use org.allbinary.game.identification.Group_Package;
 
 package org.allbinary.game.identification.GroupFactory_Package is
 
@@ -50,9 +51,7 @@ package org.allbinary.game.identification.GroupFactory_Package is
    procedure Initialize (This : in out GroupFactory'Class);
    function Create return GroupFactory_Access;
    function getInstance return GroupFactory_Access;
-   procedure getInstance;
    function getNextGroup (This : in out GroupFactory) return Group_Access;
-   procedure getNextGroup (This : in out GroupFactory);
    function getNextGroupByName (This : in out GroupFactory; name : Unbounded_String) return Group_Access;
    procedure getNextGroupByName (This : in out GroupFactory; name : Unbounded_String);
    procedure init (This : in out GroupFactory; groups : Short_Integer; nameArray : Unbounded_String_Array_Access);

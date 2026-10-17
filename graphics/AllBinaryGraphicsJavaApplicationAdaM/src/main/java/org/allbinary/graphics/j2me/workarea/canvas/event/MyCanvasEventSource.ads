@@ -39,11 +39,8 @@ package org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventSource_Pa
    procedure Initialize (This : in out MyCanvasEventSource'Class; command : Unbounded_String; treeNode : MutableTreeNode_Access);
    function Create (command : Unbounded_String; treeNode : MutableTreeNode_Access) return MyCanvasEventSource_Access;
    function getCommand (This : in out MyCanvasEventSource) return Unbounded_String;
-   procedure getCommand (This : in out MyCanvasEventSource);
    function getTreeNode (This : in out MyCanvasEventSource) return MutableTreeNode_Access;
-   procedure getTreeNode (This : in out MyCanvasEventSource);
    function getAngle (This : in out MyCanvasEventSource) return Long_Float;
-   procedure getAngle (This : in out MyCanvasEventSource);
    procedure setAngle (This : in out MyCanvasEventSource; angle : Long_Float);
 
 end org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventSource_Package;

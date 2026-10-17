@@ -28,7 +28,7 @@ package body org.allbinary.media.graphics.geography.map.racetrack.NullRaceTrackG
    function Create return NullRaceTrackGeographicMap_Access is
       This : constant NullRaceTrackGeographicMap_Access := new NullRaceTrackGeographicMap;
    begin
-      Initialize (This.all);
+      NullRaceTrackGeographicMap_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -128,27 +128,6 @@ package body org.allbinary.media.graphics.geography.map.racetrack.NullRaceTrackG
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end setRaceTrackData;
 
-   procedure getId (This : in out NullRaceTrackGeographicMap) is
-      Java_Result : constant Integer := NullRaceTrackGeographicMap'Class (This).getId;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getId;
-
-   procedure getName (This : in out NullRaceTrackGeographicMap) is
-      Java_Result : constant Unbounded_String := NullRaceTrackGeographicMap'Class (This).getName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getName;
-
-   procedure getAllBinaryTiledLayer (This : in out NullRaceTrackGeographicMap) is
-      Java_Result : constant AllBinaryTiledLayer_Access := NullRaceTrackGeographicMap'Class (This).getAllBinaryTiledLayer;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getAllBinaryTiledLayer;
-
    procedure getCellPositionsAt (This : in out NullRaceTrackGeographicMap; layer : Layer_Access; currentCellPositionArray : GeographicMapCellPosition_Access_Array_Access_Array_Access; cellPositionArray : GeographicMapCellPosition_Access_Array_Access_Array_Access) is
       Java_Result : constant Boolean := NullRaceTrackGeographicMap'Class (This).getCellPositionsAt (layer, currentCellPositionArray, cellPositionArray);
       pragma Unreferenced (Java_Result);
@@ -190,48 +169,6 @@ package body org.allbinary.media.graphics.geography.map.racetrack.NullRaceTrackG
    begin
       null;
    end getCellTypeAt;
-
-   procedure getGeographicMapCellPositionFactory (This : in out NullRaceTrackGeographicMap) is
-      Java_Result : constant BasicGeographicMapCellPositionFactory_Access := NullRaceTrackGeographicMap'Class (This).getGeographicMapCellPositionFactory;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getGeographicMapCellPositionFactory;
-
-   procedure getGeographicMapCellPositionFactoryInterface (This : in out NullRaceTrackGeographicMap) is
-      Java_Result : constant GeographicMapCellPositionFactoryInterface_Access := NullRaceTrackGeographicMap'Class (This).getGeographicMapCellPositionFactoryInterface;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getGeographicMapCellPositionFactoryInterface;
-
-   procedure getForegroundBasicColor (This : in out NullRaceTrackGeographicMap) is
-      Java_Result : constant BasicColor_Access := NullRaceTrackGeographicMap'Class (This).getForegroundBasicColor;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getForegroundBasicColor;
-
-   procedure getBackgroundBasicColor (This : in out NullRaceTrackGeographicMap) is
-      Java_Result : constant BasicColor_Access := NullRaceTrackGeographicMap'Class (This).getBackgroundBasicColor;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getBackgroundBasicColor;
-
-   procedure getRaceTrackInfo (This : in out NullRaceTrackGeographicMap) is
-      Java_Result : constant RaceTrackInfo_Access := NullRaceTrackGeographicMap'Class (This).getRaceTrackInfo;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getRaceTrackInfo;
-
-   procedure getRaceTrackData (This : in out NullRaceTrackGeographicMap) is
-      Java_Result : constant RaceTrackData_Access := NullRaceTrackGeographicMap'Class (This).getRaceTrackData;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getRaceTrackData;
 
 begin
    null;

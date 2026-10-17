@@ -30,7 +30,7 @@ package body org.allbinary.graphics.color.ColorLevel_Package is
    function Create return ColorLevel_Access is
       This : constant ColorLevel_Access := new ColorLevel;
    begin
-      Initialize (This.all);
+      ColorLevel_Package.Initialize (This.all);
       return This;
    end Create;
 

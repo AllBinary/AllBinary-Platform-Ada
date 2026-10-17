@@ -36,6 +36,7 @@ with org.allbinary.logic.string_Id.StringValidationUtil_Package; use org.allbina
 with org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfig_Package; use org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfig_Package;
 with org.allbinary.logic.visual.transform.info.TransformInfo_Package; use org.allbinary.logic.visual.transform.info.TransformInfo_Package;
 with org.allbinary.logic.visual.transform.info.TransformInfoHttpInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoHttpInterface_Package;
+with org.allbinary.logic.visual.transform.info.TransformInfoData_Package; use org.allbinary.logic.visual.transform.info.TransformInfoData_Package;
 
 package org.allbinary.logic.visual.transform.info.TransformInfoHttp_Package is
 
@@ -65,17 +66,11 @@ package org.allbinary.logic.visual.transform.info.TransformInfoHttp_Package is
    function Create (propertiesHashMap : HashMap_Access; pageContext : PageContext_Access; crud : Boolean) return TransformInfoHttp_Access;
    procedure set (This : in out TransformInfoHttp; hashMap : HashMap_Access);
    function getWeblisketSession (This : in out TransformInfoHttp) return WeblisketSessionInterface_Access;
-   procedure getWeblisketSession (This : in out TransformInfoHttp);
    function getPageContext (This : in out TransformInfoHttp) return PageContext_Access;
-   procedure getPageContext (This : in out TransformInfoHttp);
    function getPropertiesHashMap (This : in out TransformInfoHttp) return HashMap_Access;
-   procedure getPropertiesHashMap (This : in out TransformInfoHttp);
    function getTemplateFilePath (This : in out TransformInfoHttp) return AbPath_Access;
-   procedure getTemplateFilePath (This : in out TransformInfoHttp);
    function getObjectConfigFilePath (This : in out TransformInfoHttp) return AbPath_Access;
-   procedure getObjectConfigFilePath (This : in out TransformInfoHttp);
    function getDataFilePath (This : in out TransformInfoHttp) return AbPath_Access;
-   procedure getDataFilePath (This : in out TransformInfoHttp);
 
 end org.allbinary.logic.visual.transform.info.TransformInfoHttp_Package;
 

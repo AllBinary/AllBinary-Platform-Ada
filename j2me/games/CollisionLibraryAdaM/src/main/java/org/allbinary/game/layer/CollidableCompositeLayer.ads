@@ -66,17 +66,12 @@ package org.allbinary.game.layer.CollidableCompositeLayer_Package is
    procedure Initialize (This : in out CollidableCompositeLayer'Class; name : Unbounded_String; layerInfo : Rectangle_Access; viewPosition : ViewPositionBase_Access; collidableBaseBehaviorFactory : CollidableBaseBehaviorFactory_Access);
    function Create (name : Unbounded_String; layerInfo : Rectangle_Access; viewPosition : ViewPositionBase_Access; collidableBaseBehaviorFactory : CollidableBaseBehaviorFactory_Access) return CollidableCompositeLayer_Access;
    function getNullInstance return CollidableCompositeLayer_Access;
-   procedure getNullInstance;
    function getArtificialIntelligenceInterface (This : in out CollidableCompositeLayer) return ArtificialIntelligenceInterface_Access;
-   procedure getArtificialIntelligenceInterface (This : in out CollidableCompositeLayer);
    function getCollidableInferface (This : in out CollidableCompositeLayer) return CollidableBaseBehavior_Access;
-   procedure getCollidableInferface (This : in out CollidableCompositeLayer);
    procedure setCollidableInferface (This : in out CollidableCompositeLayer; collidableInferface : CollidableBaseBehavior_Access);
    function implmentsCollidableInterface (This : in out CollidableCompositeLayer) return Boolean;
-   procedure implmentsCollidableInterface (This : in out CollidableCompositeLayer);
    procedure toStringAppend (This : in out CollidableCompositeLayer; stringBuffer : StringMaker_Access);
    function toString (This : in out CollidableCompositeLayer) return Unbounded_String;
-   procedure toString (This : in out CollidableCompositeLayer);
 
 end org.allbinary.game.layer.CollidableCompositeLayer_Package;
 

@@ -34,16 +34,9 @@ package body org.allbinary.input.motion.button.TouchButtonFireResource_Package i
    function Create return TouchButtonFireResource_Access is
       This : constant TouchButtonFireResource_Access := new TouchButtonFireResource;
    begin
-      Initialize (This.all);
+      TouchButtonFireResource_Package.Initialize (This.all);
       return This;
    end Create;
-
-   procedure getInstance is
-      Java_Result : constant TouchButtonResource_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

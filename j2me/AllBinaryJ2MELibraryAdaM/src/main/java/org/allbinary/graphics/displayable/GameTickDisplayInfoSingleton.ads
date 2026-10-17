@@ -20,6 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
+with org.allbinary.graphics.displayable.DisplayInfoSingleton_Package; use org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
 
 package org.allbinary.graphics.displayable.GameTickDisplayInfoSingleton_Package is
 
@@ -41,16 +42,11 @@ package org.allbinary.graphics.displayable.GameTickDisplayInfoSingleton_Package 
    procedure Initialize (This : in out GameTickDisplayInfoSingleton'Class);
    function Create return GameTickDisplayInfoSingleton_Access;
    function getInstance return GameTickDisplayInfoSingleton_Access;
-   procedure getInstance;
    procedure update (This : in out GameTickDisplayInfoSingleton);
    function getLastWidth (This : in out GameTickDisplayInfoSingleton) return Integer;
-   procedure getLastWidth (This : in out GameTickDisplayInfoSingleton);
    function getLastHeight (This : in out GameTickDisplayInfoSingleton) return Integer;
-   procedure getLastHeight (This : in out GameTickDisplayInfoSingleton);
    function getLastHalfWidth (This : in out GameTickDisplayInfoSingleton) return Integer;
-   procedure getLastHalfWidth (This : in out GameTickDisplayInfoSingleton);
    function getLastHalfHeight (This : in out GameTickDisplayInfoSingleton) return Integer;
-   procedure getLastHalfHeight (This : in out GameTickDisplayInfoSingleton);
 
 end org.allbinary.graphics.displayable.GameTickDisplayInfoSingleton_Package;
 

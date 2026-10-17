@@ -29,7 +29,7 @@ package body org.allbinary.media.graphics.geography.map.racetrack.BasePathFindin
    function Create return BasePathFindingInfoFactory_Access is
       This : constant BasePathFindingInfoFactory_Access := new BasePathFindingInfoFactory;
    begin
-      Initialize (This.all);
+      BasePathFindingInfoFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

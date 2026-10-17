@@ -37,7 +37,6 @@ package org.allbinary.logic.communication.log.config.LogConfigsData_Package is
    procedure Initialize (This : in out LogConfigsData'Class);
    function Create return LogConfigsData_Access;
    function getInstance return LogConfigsData_Access;
-   procedure getInstance;
 
 end org.allbinary.logic.communication.log.config.LogConfigsData_Package;
 

@@ -30,7 +30,7 @@ package body org.allbinary.game.layer.SteeringVisitor_Package is
    function Create return SteeringVisitor_Access is
       This : constant SteeringVisitor_Access := new SteeringVisitor;
    begin
-      Initialize (This.all);
+      SteeringVisitor_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -38,13 +38,6 @@ package body org.allbinary.game.layer.SteeringVisitor_Package is
    function getList (This : in out SteeringVisitor) return BasicArrayList_Access is
    begin
         return This.list;
-   end getList;
-
-   procedure getList (This : in out SteeringVisitor) is
-      Java_Result : constant BasicArrayList_Access := SteeringVisitor'Class (This).getList;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getList;
 
 end org.allbinary.game.layer.SteeringVisitor_Package;

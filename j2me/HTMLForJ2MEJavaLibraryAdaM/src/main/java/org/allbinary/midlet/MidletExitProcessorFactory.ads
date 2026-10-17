@@ -24,6 +24,7 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.AppletUtil_Package; use org.allbinary.AppletUtil_Package;
 with org.allbinary.J2MEUtil_Package; use org.allbinary.J2MEUtil_Package;
 with org.allbinary.canvas.Processor_Package; use org.allbinary.canvas.Processor_Package;
+with org.allbinary.midlet.MidletExitProcessor_Package; use org.allbinary.midlet.MidletExitProcessor_Package;
 
 package org.allbinary.midlet.MidletExitProcessorFactory_Package is
 
@@ -42,7 +43,6 @@ package org.allbinary.midlet.MidletExitProcessorFactory_Package is
    procedure Initialize (This : in out MidletExitProcessorFactory'Class);
    function Create return MidletExitProcessorFactory_Access;
    function getInstance return MidletExitProcessorFactory_Access;
-   procedure getInstance;
    function getExitInstance (This : in out MidletExitProcessorFactory; midlet : MIDlet_Access) return Processor_Access;
    procedure getExitInstance (This : in out MidletExitProcessorFactory; midlet : MIDlet_Access);
 

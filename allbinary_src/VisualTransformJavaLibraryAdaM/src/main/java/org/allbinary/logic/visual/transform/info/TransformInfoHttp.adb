@@ -37,7 +37,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoHttp_Package
    function Create (propertiesHashMap : HashMap_Access; pageContext : PageContext_Access; crud : Boolean) return TransformInfoHttp_Access is
       This : constant TransformInfoHttp_Access := new TransformInfoHttp;
    begin
-      Initialize (This.all, propertiesHashMap, pageContext, crud);
+      TransformInfoHttp_Package.Initialize (This.all, propertiesHashMap, pageContext, crud);
       return This;
    end Create;
 
@@ -57,7 +57,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoHttp_Package
    function Create (request : HttpServletRequest_Access; propertiesHashMap : HashMap_Access; pageContext : PageContext_Access) return TransformInfoHttp_Access is
       This : constant TransformInfoHttp_Access := new TransformInfoHttp;
    begin
-      Initialize (This.all, request, propertiesHashMap, pageContext);
+      TransformInfoHttp_Package.Initialize (This.all, request, propertiesHashMap, pageContext);
       return This;
    end Create;
 
@@ -76,7 +76,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoHttp_Package
    function Create (databaseHashMap : HashMap_Access; propertiesHashMap : HashMap_Access; pageContext : PageContext_Access) return TransformInfoHttp_Access is
       This : constant TransformInfoHttp_Access := new TransformInfoHttp;
    begin
-      Initialize (This.all, databaseHashMap, propertiesHashMap, pageContext);
+      TransformInfoHttp_Package.Initialize (This.all, databaseHashMap, propertiesHashMap, pageContext);
       return This;
    end Create;
 
@@ -95,7 +95,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoHttp_Package
    function Create (propertiesHashMap : HashMap_Access; pageContext : PageContext_Access) return TransformInfoHttp_Access is
       This : constant TransformInfoHttp_Access := new TransformInfoHttp;
    begin
-      Initialize (This.all, propertiesHashMap, pageContext);
+      TransformInfoHttp_Package.Initialize (This.all, propertiesHashMap, pageContext);
       return This;
    end Create;
 
@@ -110,7 +110,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoHttp_Package
    function Create (parentViewOfThisTransformInfoInterface : TransformInfoHttp_Access) return TransformInfoHttp_Access is
       This : constant TransformInfoHttp_Access := new TransformInfoHttp;
    begin
-      Initialize (This.all, parentViewOfThisTransformInfoInterface);
+      TransformInfoHttp_Package.Initialize (This.all, parentViewOfThisTransformInfoInterface);
       return This;
    end Create;
 
@@ -178,48 +178,6 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoHttp_Package
    function getDataFilePath (This : in out TransformInfoHttp) return AbPath_Access is
    begin
         return AbPath_Package.Create ((URLGLOBALS.getMainPath) + (FREEBLISKET_PATH_GLOBALS.getInstance.XSLPATH), This.getDataFile);
-   end getDataFilePath;
-
-   procedure getWeblisketSession (This : in out TransformInfoHttp) is
-      Java_Result : constant WeblisketSessionInterface_Access := TransformInfoHttp'Class (This).getWeblisketSession;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getWeblisketSession;
-
-   procedure getPageContext (This : in out TransformInfoHttp) is
-      Java_Result : constant PageContext_Access := TransformInfoHttp'Class (This).getPageContext;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getPageContext;
-
-   procedure getPropertiesHashMap (This : in out TransformInfoHttp) is
-      Java_Result : constant HashMap_Access := TransformInfoHttp'Class (This).getPropertiesHashMap;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getPropertiesHashMap;
-
-   procedure getTemplateFilePath (This : in out TransformInfoHttp) is
-      Java_Result : constant AbPath_Access := TransformInfoHttp'Class (This).getTemplateFilePath;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTemplateFilePath;
-
-   procedure getObjectConfigFilePath (This : in out TransformInfoHttp) is
-      Java_Result : constant AbPath_Access := TransformInfoHttp'Class (This).getObjectConfigFilePath;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getObjectConfigFilePath;
-
-   procedure getDataFilePath (This : in out TransformInfoHttp) is
-      Java_Result : constant AbPath_Access := TransformInfoHttp'Class (This).getDataFilePath;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getDataFilePath;
 
 end org.allbinary.logic.visual.transform.info.TransformInfoHttp_Package;

@@ -31,20 +31,13 @@ package body org.allbinary.business.advertisement.search.website.BasicAdvertisem
    function Create (websiteId : Unbounded_String) return BasicAdvertisementWebsite_Access is
       This : constant BasicAdvertisementWebsite_Access := new BasicAdvertisementWebsite;
    begin
-      Initialize (This.all, websiteId);
+      BasicAdvertisementWebsite_Package.Initialize (This.all, websiteId);
       return This;
    end Create;
 
    function toString (This : in out BasicAdvertisementWebsite) return Unbounded_String is
    begin
         return This.websiteId;
-   end toString;
-
-   procedure toString (This : in out BasicAdvertisementWebsite) is
-      Java_Result : constant Unbounded_String := BasicAdvertisementWebsite'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end toString;
 
 end org.allbinary.business.advertisement.search.website.BasicAdvertisementWebsite_Package;

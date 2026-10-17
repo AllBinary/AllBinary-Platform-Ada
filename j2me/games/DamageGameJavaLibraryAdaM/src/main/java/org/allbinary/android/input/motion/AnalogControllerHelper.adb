@@ -36,7 +36,7 @@ package body org.allbinary.android.input.motion.AnalogControllerHelper_Package i
    function Create (reduceTimeFactor : Integer) return AnalogControllerHelper_Access is
       This : constant AnalogControllerHelper_Access := new AnalogControllerHelper;
    begin
-      Initialize (This.all, reduceTimeFactor);
+      AnalogControllerHelper_Package.Initialize (This.all, reduceTimeFactor);
       return This;
    end Create;
 

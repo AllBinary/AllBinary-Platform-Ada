@@ -57,7 +57,7 @@ package body org.allbinary.business.user.commerce.inventory.item.download.Downlo
    function Create (id : Unbounded_String) return DownloadableItem_Access is
       This : constant DownloadableItem_Access := new DownloadableItem;
    begin
-      Initialize (This.all, id);
+      DownloadableItem_Package.Initialize (This.all, id);
       return This;
    end Create;
 
@@ -109,7 +109,7 @@ package body org.allbinary.business.user.commerce.inventory.item.download.Downlo
    function Create (hashMap : HashMap_Access) return DownloadableItem_Access is
       This : constant DownloadableItem_Access := new DownloadableItem;
    begin
-      Initialize (This.all, hashMap);
+      DownloadableItem_Package.Initialize (This.all, hashMap);
       return This;
    end Create;
 
@@ -217,97 +217,6 @@ package body org.allbinary.business.user.commerce.inventory.item.download.Downlo
    function getRetries (This : in out DownloadableItem) return Unbounded_String is
    begin
         return This.retries;
-   end getRetries;
-
-   procedure toVector (This : in out DownloadableItem) is
-      Java_Result : constant BasicArrayList_Access := DownloadableItem'Class (This).toVector;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toVector;
-
-   procedure toHashMap (This : in out DownloadableItem) is
-      Java_Result : constant HashMap_Access := DownloadableItem'Class (This).toHashMap;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toHashMap;
-
-   procedure getId (This : in out DownloadableItem) is
-      Java_Result : constant Unbounded_String := DownloadableItem'Class (This).getId;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getId;
-
-   procedure getSystem (This : in out DownloadableItem) is
-      Java_Result : constant Unbounded_String := DownloadableItem'Class (This).getSystem;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSystem;
-
-   procedure getPlatform (This : in out DownloadableItem) is
-      Java_Result : constant Unbounded_String := DownloadableItem'Class (This).getPlatform;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getPlatform;
-
-   procedure getSpecialName (This : in out DownloadableItem) is
-      Java_Result : constant Unbounded_String := DownloadableItem'Class (This).getSpecialName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSpecialName;
-
-   procedure getVersion (This : in out DownloadableItem) is
-      Java_Result : constant Unbounded_String := DownloadableItem'Class (This).getVersion;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getVersion;
-
-   procedure getChanges (This : in out DownloadableItem) is
-      Java_Result : constant Unbounded_String := DownloadableItem'Class (This).getChanges;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getChanges;
-
-   procedure getLicenseFile (This : in out DownloadableItem) is
-      Java_Result : constant Unbounded_String := DownloadableItem'Class (This).getLicenseFile;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getLicenseFile;
-
-   procedure getFile (This : in out DownloadableItem) is
-      Java_Result : constant Unbounded_String := DownloadableItem'Class (This).getFile;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getFile;
-
-   procedure getSize (This : in out DownloadableItem) is
-      Java_Result : constant Long_Long_Integer := DownloadableItem'Class (This).getSize;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSize;
-
-   procedure getValidTime (This : in out DownloadableItem) is
-      Java_Result : constant Long_Long_Integer := DownloadableItem'Class (This).getValidTime;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getValidTime;
-
-   procedure getRetries (This : in out DownloadableItem) is
-      Java_Result : constant Unbounded_String := DownloadableItem'Class (This).getRetries;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getRetries;
 
 end org.allbinary.business.user.commerce.inventory.item.download.DownloadableItem_Package;

@@ -34,7 +34,7 @@ package body org.allbinary.input.automation.module.generic_Id.constraints.NoMoti
    function Create return NoMotionRectangleConstraints_Access is
       This : constant NoMotionRectangleConstraints_Access := new NoMotionRectangleConstraints;
    begin
-      Initialize (This.all);
+      NoMotionRectangleConstraints_Package.Initialize (This.all);
       return This;
    end Create;
 

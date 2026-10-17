@@ -47,7 +47,7 @@ package body org.allbinary.logic.communication.log.LogFormatUtil_Package is
    function Create return LogFormatUtil_Access is
       This : constant LogFormatUtil_Access := new LogFormatUtil;
    begin
-      Initialize (This.all);
+      LogFormatUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -109,13 +109,6 @@ package body org.allbinary.logic.communication.log.LogFormatUtil_Package is
             return StringUtil_Package.getInstance.EMPTY_STRING;
         end if;
    end getO;
-
-   procedure getInstance is
-      Java_Result : constant LogFormatUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure get (This : in out LogFormatUtil; className : Unbounded_String; functionName : Unbounded_String; specialMessage : Unbounded_String; exception_Id : Java_Object_Access) is
       Java_Result : constant Unbounded_String := LogFormatUtil'Class (This).get (className, functionName, specialMessage, exception_Id);

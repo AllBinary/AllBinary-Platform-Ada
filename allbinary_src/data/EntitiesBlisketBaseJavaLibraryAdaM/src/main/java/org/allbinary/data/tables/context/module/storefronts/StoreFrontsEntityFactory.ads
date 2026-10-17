@@ -22,6 +22,7 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.data.tables.context.module.storefronts.StoreFrontsEntity_Package; use org.allbinary.data.tables.context.module.storefronts.StoreFrontsEntity_Package;
 
 package org.allbinary.data.tables.context.module.storefronts.StoreFrontsEntityFactory_Package is
 
@@ -41,9 +42,7 @@ package org.allbinary.data.tables.context.module.storefronts.StoreFrontsEntityFa
    procedure Initialize (This : in out StoreFrontsEntityFactory'Class);
    function Create return StoreFrontsEntityFactory_Access;
    function getInstance return StoreFrontsEntityFactory_Access;
-   procedure getInstance;
    function getStoreFrontsEntityInstance (This : in out StoreFrontsEntityFactory) return StoreFrontsEntity_Access;
-   procedure getStoreFrontsEntityInstance (This : in out StoreFrontsEntityFactory);
 
 end org.allbinary.data.tables.context.module.storefronts.StoreFrontsEntityFactory_Package;
 

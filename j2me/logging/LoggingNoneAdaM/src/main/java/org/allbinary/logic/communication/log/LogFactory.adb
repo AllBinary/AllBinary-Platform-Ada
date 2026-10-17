@@ -13,7 +13,7 @@
 --  Generated Code Do Not Modify
 
 
-package body org.allbinary.logic.communication.log_Case.LogFactory_Package is
+package body org.allbinary.logic.communication.log.LogFactory_Package is
 
    procedure Initialize_Fields (This : in out LogFactory'Class) is
    begin
@@ -28,7 +28,7 @@ package body org.allbinary.logic.communication.log_Case.LogFactory_Package is
    function Create return LogFactory_Access is
       This : constant LogFactory_Access := new LogFactory;
    begin
-      Initialize (This.all);
+      LogFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -52,13 +52,6 @@ package body org.allbinary.logic.communication.log_Case.LogFactory_Package is
         return LogFactory_Package.LOG;
    end getInstanceF;
 
-   procedure getInstanceD is
-      Java_Result : constant Log_Access := getInstanceD;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstanceD;
-
    procedure getInstance (specialMessage : Unbounded_String; anyType : Java_Object_Access; functionName : Unbounded_String; exception_Id : Java_Object_Access) is
       Java_Result : constant Log_Access := getInstance (specialMessage, anyType, functionName, exception_Id);
       pragma Unreferenced (Java_Result);
@@ -77,6 +70,6 @@ begin
    null;
    LOG := Log_Package.Create (StringUtil_Package.getInstance.EMPTY_STRING, NullUtil_Package.getInstance.NULL_OBJECT, StringUtil_Package.getInstance.EMPTY_STRING, NullUtil_Package.getInstance.NULL_OBJECT);
 
-end org.allbinary.logic.communication.log_Case.LogFactory_Package;
+end org.allbinary.logic.communication.log.LogFactory_Package;
 
 

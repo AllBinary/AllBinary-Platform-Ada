@@ -30,7 +30,7 @@ package body org.allbinary.logic.communication.http.request.session.WeblisketSes
    function Create return WeblisketSessionData_Access is
       This : constant WeblisketSessionData_Access := new WeblisketSessionData;
    begin
-      Initialize (This.all);
+      WeblisketSessionData_Package.Initialize (This.all);
       return This;
    end Create;
 

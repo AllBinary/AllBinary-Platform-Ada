@@ -23,6 +23,7 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbinary.logic.util.event.AllBinaryEventObject_Package;
 with org.allbinary.logic.util.event.AllBinaryEventObjectFactoryInterface_Package; use org.allbinary.logic.util.event.AllBinaryEventObjectFactoryInterface_Package;
+with org.allbinary.game.terrain.TerrainEvent_Package; use org.allbinary.game.terrain.TerrainEvent_Package;
 
 package org.allbinary.game.terrain.TerrainEventFactory_Package is
 
@@ -40,7 +41,6 @@ package org.allbinary.game.terrain.TerrainEventFactory_Package is
    procedure Initialize (This : in out TerrainEventFactory'Class);
    function Create return TerrainEventFactory_Access;
    function getInstance (This : in out TerrainEventFactory) return AllBinaryEventObject_Access;
-   procedure getInstance (This : in out TerrainEventFactory);
 
 end org.allbinary.game.terrain.TerrainEventFactory_Package;
 

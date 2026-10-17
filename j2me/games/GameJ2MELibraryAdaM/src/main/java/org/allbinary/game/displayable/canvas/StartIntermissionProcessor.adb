@@ -35,7 +35,7 @@ package body org.allbinary.game.displayable.canvas.StartIntermissionProcessor_Pa
    function Create (gameCanvas : AllBinaryGameCanvas_Access) return StartIntermissionProcessor_Access is
       This : constant StartIntermissionProcessor_Access := new StartIntermissionProcessor;
    begin
-      Initialize (This.all, gameCanvas);
+      StartIntermissionProcessor_Package.Initialize (This.all, gameCanvas);
       return This;
    end Create;
 

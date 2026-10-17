@@ -54,7 +54,7 @@ package body org.allbinary.input.automation.actions.script.condition.AlwaysActio
    function Create (node : Node_Access) return AlwaysActionScriptCondition_Access is
       This : constant AlwaysActionScriptCondition_Access := new AlwaysActionScriptCondition;
    begin
-      Initialize (This.all, node);
+      AlwaysActionScriptCondition_Package.Initialize (This.all, node);
       return This;
    end Create;
 
@@ -69,7 +69,7 @@ package body org.allbinary.input.automation.actions.script.condition.AlwaysActio
    function Create return AlwaysActionScriptCondition_Access is
       This : constant AlwaysActionScriptCondition_Access := new AlwaysActionScriptCondition;
    begin
-      Initialize (This.all);
+      AlwaysActionScriptCondition_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -124,20 +124,6 @@ package body org.allbinary.input.automation.actions.script.condition.AlwaysActio
    begin
         This.logUtil.putF (To_Unbounded_String ("Is On: ") & Java_Image (This.isIsOn), This'Unchecked_Access, To_Unbounded_String ("log"));
    end log;
-
-   procedure isIsOn (This : in out AlwaysActionScriptCondition) is
-      Java_Result : constant Boolean := AlwaysActionScriptCondition'Class (This).isIsOn;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isIsOn;
-
-   procedure toHashMap (This : in out AlwaysActionScriptCondition) is
-      Java_Result : constant HashMap_Access := AlwaysActionScriptCondition'Class (This).toHashMap;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toHashMap;
 
    procedure toXmlNode (This : in out AlwaysActionScriptCondition; document : Document_Access) is
       Java_Result : constant Node_Access := AlwaysActionScriptCondition'Class (This).toXmlNode (document);

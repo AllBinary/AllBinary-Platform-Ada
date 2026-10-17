@@ -30,7 +30,7 @@ package body org.allbinary.business.user.commerce.money.payment.gateway.modules.
    function Create return AuthorizeNetAimData_Access is
       This : constant AuthorizeNetAimData_Access := new AuthorizeNetAimData;
    begin
-      Initialize (This.all);
+      AuthorizeNetAimData_Package.Initialize (This.all);
       return This;
    end Create;
 

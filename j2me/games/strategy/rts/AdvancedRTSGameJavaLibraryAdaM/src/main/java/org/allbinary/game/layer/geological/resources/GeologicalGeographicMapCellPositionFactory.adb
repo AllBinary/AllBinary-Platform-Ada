@@ -31,7 +31,7 @@ package body org.allbinary.game.layer.geological.resources.GeologicalGeographicM
    function Create (resourcePerMapCellType : Integer_Array_Access) return GeologicalGeographicMapCellPositionFactory_Access is
       This : constant GeologicalGeographicMapCellPositionFactory_Access := new GeologicalGeographicMapCellPositionFactory;
    begin
-      Initialize (This.all, resourcePerMapCellType);
+      GeologicalGeographicMapCellPositionFactory_Package.Initialize (This.all, resourcePerMapCellType);
       return This;
    end Create;
 

@@ -29,7 +29,7 @@ package body org.allbinary.game.displayable.GameLevelDisplayChangeEventListeners
    function Create return GameLevelDisplayChangeEventListenersFactory_Access is
       This : constant GameLevelDisplayChangeEventListenersFactory_Access := new GameLevelDisplayChangeEventListenersFactory;
    begin
-      Initialize (This.all);
+      GameLevelDisplayChangeEventListenersFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -59,13 +59,6 @@ package body org.allbinary.game.displayable.GameLevelDisplayChangeEventListeners
         end loop;
         This.list.clear;
    end clear;
-
-   procedure getInstance is
-      Java_Result : constant GameLevelDisplayChangeEventListenersFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

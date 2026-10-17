@@ -28,7 +28,7 @@ package body org.allbinary.game.ag.ai.scroller.RandomPatrolFlockingFiringAIFacto
    function Create return RandomPatrolFlockingFiringAIFactory_Access is
       This : constant RandomPatrolFlockingFiringAIFactory_Access := new RandomPatrolFlockingFiringAIFactory;
    begin
-      Initialize (This.all);
+      RandomPatrolFlockingFiringAIFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

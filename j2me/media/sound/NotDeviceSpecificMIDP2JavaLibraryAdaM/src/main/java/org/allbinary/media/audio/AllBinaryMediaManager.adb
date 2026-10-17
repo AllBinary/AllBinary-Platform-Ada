@@ -30,7 +30,7 @@ package body org.allbinary.media.audio.AllBinaryMediaManager_Package is
    function Create return AllBinaryMediaManager_Access is
       This : constant AllBinaryMediaManager_Access := new AllBinaryMediaManager;
    begin
-      Initialize (This.all);
+      AllBinaryMediaManager_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -92,20 +92,6 @@ package body org.allbinary.media.audio.AllBinaryMediaManager_Package is
             Manager_Package.playTone (frequency, time, volume);
         end if;
    end playTone;
-
-   procedure isMuted is
-      Java_Result : constant Boolean := isMuted;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isMuted;
-
-   procedure update is
-      Java_Result : constant Boolean := update;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end update;
 
    procedure createPlayer (resource : Unbounded_String) is
       Java_Result : constant Player_Access := createPlayer (resource);

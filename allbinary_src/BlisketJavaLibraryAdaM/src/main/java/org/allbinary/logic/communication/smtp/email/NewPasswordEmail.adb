@@ -37,7 +37,7 @@ package body org.allbinary.logic.communication.smtp.email.NewPasswordEmail_Packa
    function Create (abeClientInformation : AbeClientInformationInterface_Access; userInterface : UserInterface_Access; newPassword : Unbounded_String) return NewPasswordEmail_Access is
       This : constant NewPasswordEmail_Access := new NewPasswordEmail;
    begin
-      Initialize (This.all, abeClientInformation, userInterface, newPassword);
+      NewPasswordEmail_Package.Initialize (This.all, abeClientInformation, userInterface, newPassword);
       return This;
    end Create;
 

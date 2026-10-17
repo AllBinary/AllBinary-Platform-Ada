@@ -29,7 +29,7 @@ package body org.platform.ThreedObjResources_Package is
    function Create return ThreedObjResources_Access is
       This : constant ThreedObjResources_Access := new ThreedObjResources;
    begin
-      Initialize (This.all);
+      ThreedObjResources_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -48,13 +48,6 @@ package body org.platform.ThreedObjResources_Package is
         end if;
         return resourceName;
    end get;
-
-   procedure getInstance is
-      Java_Result : constant ThreedObjResources_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure get (This : in out ThreedObjResources; resourceName : Unbounded_String) is
       Java_Result : constant Unbounded_String := ThreedObjResources'Class (This).get (resourceName);

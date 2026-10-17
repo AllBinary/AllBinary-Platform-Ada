@@ -41,16 +41,9 @@ package body org.allbinary.business.context.modules.storefront.statistics.orders
    function Create return StoreFrontOrdersHistoryStatisticsData_Access is
       This : constant StoreFrontOrdersHistoryStatisticsData_Access := new StoreFrontOrdersHistoryStatisticsData;
    begin
-      Initialize (This.all);
+      StoreFrontOrdersHistoryStatisticsData_Package.Initialize (This.all);
       return This;
    end Create;
-
-   procedure getInstance is
-      Java_Result : constant StoreFrontOrdersHistoryStatisticsData_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

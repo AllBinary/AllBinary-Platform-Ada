@@ -39,7 +39,6 @@ package org.allbinary.game.multiplayer.layer.MultiplayerBehavior_Package is
    procedure startTick (This : in out MultiplayerBehavior);
    procedure endTick (This : in out MultiplayerBehavior);
    function getApproximateElapsed (This : in out MultiplayerBehavior) return Long_Long_Integer;
-   procedure getApproximateElapsed (This : in out MultiplayerBehavior);
 
 end org.allbinary.game.multiplayer.layer.MultiplayerBehavior_Package;
 

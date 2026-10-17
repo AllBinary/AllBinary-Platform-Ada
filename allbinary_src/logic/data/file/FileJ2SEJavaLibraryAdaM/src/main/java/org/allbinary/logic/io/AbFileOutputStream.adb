@@ -53,7 +53,7 @@ package body org.allbinary.logic.io.AbFileOutputStream_Package is
    function Create (name : Unbounded_String; append : Boolean) return AbFileOutputStream_Access is
       This : constant AbFileOutputStream_Access := new AbFileOutputStream;
    begin
-      Initialize (This.all, name, append);
+      AbFileOutputStream_Package.Initialize (This.all, name, append);
       return This;
    end Create;
 

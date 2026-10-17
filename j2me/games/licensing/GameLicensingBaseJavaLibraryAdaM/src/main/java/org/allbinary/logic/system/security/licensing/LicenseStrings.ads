@@ -37,7 +37,6 @@ package org.allbinary.logic.system.security.licensing.LicenseStrings_Package is
    procedure Initialize (This : in out LicenseStrings'Class);
    function Create return LicenseStrings_Access;
    function getInstance return LicenseStrings_Access;
-   procedure getInstance;
 
 end org.allbinary.logic.system.security.licensing.LicenseStrings_Package;
 

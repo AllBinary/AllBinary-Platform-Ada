@@ -30,7 +30,7 @@ package body org.allbinary.content.CommandUriAction_Package is
    function Create return CommandUriAction_Access is
       This : constant CommandUriAction_Access := new CommandUriAction;
    begin
-      Initialize (This.all);
+      CommandUriAction_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -73,13 +73,6 @@ package body org.allbinary.content.CommandUriAction_Package is
         intent := Intent_Package.Create (Intent_Package.ACTION_VIEW, uri);
         return intent;
    end getIntent;
-
-   procedure getInstance is
-      Java_Result : constant CommandUriAction_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure getIntent (This : in out CommandUriAction; command : Command_Access) is
       Java_Result : constant Intent_Access := CommandUriAction'Class (This).getIntent (command);

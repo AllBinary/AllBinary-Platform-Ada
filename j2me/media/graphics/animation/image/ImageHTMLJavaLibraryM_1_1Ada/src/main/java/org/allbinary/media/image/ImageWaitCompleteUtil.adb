@@ -34,7 +34,7 @@ package body org.allbinary.media.image.ImageWaitCompleteUtil_Package is
    function Create return ImageWaitCompleteUtil_Access is
       This : constant ImageWaitCompleteUtil_Access := new ImageWaitCompleteUtil;
    begin
-      Initialize (This.all);
+      ImageWaitCompleteUtil_Package.Initialize (This.all);
       return This;
    end Create;
 

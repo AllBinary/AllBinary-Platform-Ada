@@ -25,6 +25,8 @@ with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArra
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.data.tables.TableMappingInterface_Package; use org.allbinary.data.tables.TableMappingInterface_Package;
 with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventsConfigurationInterface_Package; use org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventsConfigurationInterface_Package;
+with org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventsConfigurationData_Package; use org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventsConfigurationData_Package;
 
 package org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventsConfigurationMapping_Package is
 
@@ -45,11 +47,8 @@ package org.allbinary.logic.communication.smtp.configuration.user.event.UserEmai
    procedure Initialize (This : in out UserEmailEventsConfigurationMapping'Class; userEmailEventsConfigurationInterface : UserEmailEventsConfigurationInterface_Access);
    function Create (userEmailEventsConfigurationInterface : UserEmailEventsConfigurationInterface_Access) return UserEmailEventsConfigurationMapping_Access;
    function toHashMap (This : in out UserEmailEventsConfigurationMapping) return HashMap_Access;
-   procedure toHashMap (This : in out UserEmailEventsConfigurationMapping);
    function getKey (This : in out UserEmailEventsConfigurationMapping) return Java_Object_Access;
-   procedure getKey (This : in out UserEmailEventsConfigurationMapping);
    function toVector (This : in out UserEmailEventsConfigurationMapping) return BasicArrayList_Access;
-   procedure toVector (This : in out UserEmailEventsConfigurationMapping);
 
 end org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventsConfigurationMapping_Package;
 

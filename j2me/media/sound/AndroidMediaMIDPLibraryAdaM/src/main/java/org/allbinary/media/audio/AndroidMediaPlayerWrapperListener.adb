@@ -41,7 +41,7 @@ package body org.allbinary.media.audio.AndroidMediaPlayerWrapperListener_Package
    function Create (androidMediaPlayerWrapper : AndroidMediaPlayerWrapper_Access) return AndroidMediaPlayerWrapperListener_Access is
       This : constant AndroidMediaPlayerWrapperListener_Access := new AndroidMediaPlayerWrapperListener;
    begin
-      Initialize (This.all, androidMediaPlayerWrapper);
+      AndroidMediaPlayerWrapperListener_Package.Initialize (This.all, androidMediaPlayerWrapper);
       return This;
    end Create;
 
@@ -63,7 +63,7 @@ package body org.allbinary.media.audio.MediaPlayerOnBufferingUpdateListener_Pack
    function Create return MediaPlayerOnBufferingUpdateListener_Access is
       This : constant MediaPlayerOnBufferingUpdateListener_Access := new MediaPlayerOnBufferingUpdateListener;
    begin
-      Initialize (This.all);
+      MediaPlayerOnBufferingUpdateListener_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -91,7 +91,7 @@ package body org.allbinary.media.audio.MediaPlayerOnPreparedListener_Package is
    function Create return MediaPlayerOnPreparedListener_Access is
       This : constant MediaPlayerOnPreparedListener_Access := new MediaPlayerOnPreparedListener;
    begin
-      Initialize (This.all);
+      MediaPlayerOnPreparedListener_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -119,7 +119,7 @@ package body org.allbinary.media.audio.MediaPlayerOnErrorListener_Package is
    function Create return MediaPlayerOnErrorListener_Access is
       This : constant MediaPlayerOnErrorListener_Access := new MediaPlayerOnErrorListener;
    begin
-      Initialize (This.all);
+      MediaPlayerOnErrorListener_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -154,7 +154,7 @@ package body org.allbinary.media.audio.MediaPlayerOnCompletionListener_Package i
    function Create return MediaPlayerOnCompletionListener_Access is
       This : constant MediaPlayerOnCompletionListener_Access := new MediaPlayerOnCompletionListener;
    begin
-      Initialize (This.all);
+      MediaPlayerOnCompletionListener_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -187,7 +187,7 @@ package body org.allbinary.media.audio.AndroidMediaPlayerOnBufferingUpdateListen
    function Create (androidMediaPlayerWrapperListener : AndroidMediaPlayerWrapperListener_Access) return AndroidMediaPlayerOnBufferingUpdateListener_Access is
       This : constant AndroidMediaPlayerOnBufferingUpdateListener_Access := new AndroidMediaPlayerOnBufferingUpdateListener;
    begin
-      Initialize (This.all, androidMediaPlayerWrapperListener);
+      AndroidMediaPlayerOnBufferingUpdateListener_Package.Initialize (This.all, androidMediaPlayerWrapperListener);
       return This;
    end Create;
     
@@ -222,7 +222,7 @@ package body org.allbinary.media.audio.AndroidMediaPlayerOnPreparedListener_Pack
    function Create (androidMediaPlayerWrapperListener : AndroidMediaPlayerWrapperListener_Access) return AndroidMediaPlayerOnPreparedListener_Access is
       This : constant AndroidMediaPlayerOnPreparedListener_Access := new AndroidMediaPlayerOnPreparedListener;
    begin
-      Initialize (This.all, androidMediaPlayerWrapperListener);
+      AndroidMediaPlayerOnPreparedListener_Package.Initialize (This.all, androidMediaPlayerWrapperListener);
       return This;
    end Create;
     
@@ -259,7 +259,7 @@ package body org.allbinary.media.audio.AndroidMediaPlayerOnErrorListener_Package
    function Create (androidMediaPlayerWrapperListener : AndroidMediaPlayerWrapperListener_Access) return AndroidMediaPlayerOnErrorListener_Access is
       This : constant AndroidMediaPlayerOnErrorListener_Access := new AndroidMediaPlayerOnErrorListener;
    begin
-      Initialize (This.all, androidMediaPlayerWrapperListener);
+      AndroidMediaPlayerOnErrorListener_Package.Initialize (This.all, androidMediaPlayerWrapperListener);
       return This;
    end Create;
     
@@ -302,7 +302,7 @@ package body org.allbinary.media.audio.AndroidMediaPlayerOnCompletionListener_Pa
    function Create (androidMediaPlayerWrapperListener : AndroidMediaPlayerWrapperListener_Access) return AndroidMediaPlayerOnCompletionListener_Access is
       This : constant AndroidMediaPlayerOnCompletionListener_Access := new AndroidMediaPlayerOnCompletionListener;
    begin
-      Initialize (This.all, androidMediaPlayerWrapperListener);
+      AndroidMediaPlayerOnCompletionListener_Package.Initialize (This.all, androidMediaPlayerWrapperListener);
       return This;
    end Create;
     

@@ -71,10 +71,8 @@ package org.allbinary.animation.vector.VectorCenterGenerator_Package is
    function translate (list : BasicArrayList_Access; x : Integer; y : Integer) return BasicArrayList_Access;
    procedure translate (list : BasicArrayList_Access; x : Integer; y : Integer);
    function getWidth (This : in out VectorCenterGenerator) return Integer;
-   procedure getWidth (This : in out VectorCenterGenerator);
    procedure setWidth (This : in out VectorCenterGenerator; width : Integer);
    function getHeight (This : in out VectorCenterGenerator) return Integer;
-   procedure getHeight (This : in out VectorCenterGenerator);
    procedure setHeight (This : in out VectorCenterGenerator; height : Integer);
 
 end org.allbinary.animation.vector.VectorCenterGenerator_Package;

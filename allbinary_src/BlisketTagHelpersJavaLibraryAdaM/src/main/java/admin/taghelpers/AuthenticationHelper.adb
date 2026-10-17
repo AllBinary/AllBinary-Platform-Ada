@@ -36,7 +36,7 @@ package body admin.taghelpers.AuthenticationHelper_Package is
    function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return AuthenticationHelper_Access is
       This : constant AuthenticationHelper_Access := new AuthenticationHelper;
    begin
-      Initialize (This.all, hashMap, pageContext);
+      AuthenticationHelper_Package.Initialize (This.all, hashMap, pageContext);
       return This;
    end Create;
 
@@ -55,7 +55,7 @@ package body admin.taghelpers.AuthenticationHelper_Package is
    function Create (hashMap : HashMap_Access; httpServletRequest : HttpServletRequest_Access) return AuthenticationHelper_Access is
       This : constant AuthenticationHelper_Access := new AuthenticationHelper;
    begin
-      Initialize (This.all, hashMap, httpServletRequest);
+      AuthenticationHelper_Package.Initialize (This.all, hashMap, httpServletRequest);
       return This;
    end Create;
 
@@ -379,48 +379,6 @@ package body admin.taghelpers.AuthenticationHelper_Package is
         return This.role;
    end getRole;
 
-   procedure invalidateSession (This : in out AuthenticationHelper) is
-      Java_Result : constant Integer := AuthenticationHelper'Class (This).invalidateSession;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end invalidateSession;
-
-   procedure isSessionOld (This : in out AuthenticationHelper) is
-      Java_Result : constant Boolean := AuthenticationHelper'Class (This).isSessionOld;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isSessionOld;
-
-   procedure isRarelyUsedSession (This : in out AuthenticationHelper) is
-      Java_Result : constant Boolean := AuthenticationHelper'Class (This).isRarelyUsedSession;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isRarelyUsedSession;
-
-   procedure validRole (This : in out AuthenticationHelper) is
-      Java_Result : constant Unbounded_String := AuthenticationHelper'Class (This).validRole;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end validRole;
-
-   procedure invalidRole (This : in out AuthenticationHelper) is
-      Java_Result : constant Unbounded_String := AuthenticationHelper'Class (This).invalidRole;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end invalidRole;
-
-   procedure isAuthenticated (This : in out AuthenticationHelper) is
-      Java_Result : constant Boolean := AuthenticationHelper'Class (This).isAuthenticated;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isAuthenticated;
-
    procedure isAuthenticationSessionValid (This : in out AuthenticationHelper; roles : BasicArrayList_Access) is
       Java_Result : constant Boolean := AuthenticationHelper'Class (This).isAuthenticationSessionValid (roles);
       pragma Unreferenced (Java_Result);
@@ -434,27 +392,6 @@ package body admin.taghelpers.AuthenticationHelper_Package is
    begin
       null;
    end processIfNewLogin;
-
-   procedure processInvalidation (This : in out AuthenticationHelper) is
-      Java_Result : constant Boolean := AuthenticationHelper'Class (This).processInvalidation;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end processInvalidation;
-
-   procedure outputSessionInfo (This : in out AuthenticationHelper) is
-      Java_Result : constant Unbounded_String := AuthenticationHelper'Class (This).outputSessionInfo;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end outputSessionInfo;
-
-   procedure getRole (This : in out AuthenticationHelper) is
-      Java_Result : constant UserRole_Access := AuthenticationHelper'Class (This).getRole;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getRole;
 
 end admin.taghelpers.AuthenticationHelper_Package;
 

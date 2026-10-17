@@ -53,7 +53,7 @@ package body org.allbinary.media.graphics.geography.map.racetrack.BaseRaceTrackG
    function Create (raceTrackInfo : RaceTrackInfo_Access; raceTrackData : RaceTrackData_Access; tiledLayer : AllBinaryTiledLayer_Access; miniGeographicMap : BasicGeographicMap_Access; geographicMapCellPositionFactoryInterface : GeographicMapCellPositionFactoryInterface_Access; geographicMapCellPositionBaseFactory : GeographicMapCellPositionBaseFactory_Access; geographicMapCellTypeFactory : GeographicMapCellTypeFactory_Access) return BaseRaceTrackGeographicMap_Access is
       This : constant BaseRaceTrackGeographicMap_Access := new BaseRaceTrackGeographicMap;
    begin
-      Initialize (This.all, raceTrackInfo, raceTrackData, tiledLayer, miniGeographicMap, geographicMapCellPositionFactoryInterface, geographicMapCellPositionBaseFactory, geographicMapCellTypeFactory);
+      BaseRaceTrackGeographicMap_Package.Initialize (This.all, raceTrackInfo, raceTrackData, tiledLayer, miniGeographicMap, geographicMapCellPositionFactoryInterface, geographicMapCellPositionBaseFactory, geographicMapCellTypeFactory);
       return This;
    end Create;
 
@@ -86,27 +86,6 @@ package body org.allbinary.media.graphics.geography.map.racetrack.BaseRaceTrackG
    begin
         This.raceTrackData := raceTrackData;
    end setRaceTrackData;
-
-   procedure getRaceTrackInfo (This : in out BaseRaceTrackGeographicMap) is
-      Java_Result : constant RaceTrackInfo_Access := BaseRaceTrackGeographicMap'Class (This).getRaceTrackInfo;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getRaceTrackInfo;
-
-   procedure getMiniBasicGeographicMap (This : in out BaseRaceTrackGeographicMap) is
-      Java_Result : constant BasicGeographicMap_Access := BaseRaceTrackGeographicMap'Class (This).getMiniBasicGeographicMap;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getMiniBasicGeographicMap;
-
-   procedure getRaceTrackData (This : in out BaseRaceTrackGeographicMap) is
-      Java_Result : constant RaceTrackData_Access := BaseRaceTrackGeographicMap'Class (This).getRaceTrackData;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getRaceTrackData;
 
 end org.allbinary.media.graphics.geography.map.racetrack.BaseRaceTrackGeographicMap_Package;
 

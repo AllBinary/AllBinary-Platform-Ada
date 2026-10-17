@@ -64,9 +64,7 @@ package org.allbinary.game.configuration.LoadGameForm_Package is
    function getChoiceGroup (This : in out LoadGameForm; list : BasicArrayList_Access; name : Unbounded_String; option : Integer) return ChoiceGroup_Access;
    procedure getChoiceGroup (This : in out LoadGameForm; list : BasicArrayList_Access; name : Unbounded_String; option : Integer);
    function getSelectedId (This : in out LoadGameForm) return Integer;
-   procedure getSelectedId (This : in out LoadGameForm);
    function getSelectedText (This : in out LoadGameForm) return Integer;
-   procedure getSelectedText (This : in out LoadGameForm);
 
 end org.allbinary.game.configuration.LoadGameForm_Package;
 

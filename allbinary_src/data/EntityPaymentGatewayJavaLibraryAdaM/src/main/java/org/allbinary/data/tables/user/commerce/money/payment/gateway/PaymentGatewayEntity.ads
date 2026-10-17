@@ -20,7 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.util.Calendar_Package; use java.util.Calendar_Package;
+with java.util.Calendar_Package; use java.util.Calendar_Package;
 --  with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
@@ -45,6 +45,7 @@ with org.allbinary.data.tables.user.commerce.money.payment.gateway.PaymentGatewa
 
 package org.allbinary.data.tables.user.commerce.money.payment.gateway.PaymentGatewayEntity_Package is
 
+   package Calendar_Package renames Standard.java.util.Calendar_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
    package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    package StoreFrontData_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
@@ -85,11 +86,8 @@ package org.allbinary.data.tables.user.commerce.money.payment.gateway.PaymentGat
    procedure findPaymentTypeVectorByStore (This : in out PaymentGatewayEntity; storeName : Unbounded_String);
    procedure remove (This : in out PaymentGatewayEntity; storeName : Unbounded_String; paymentType : BasicPaymentType_Access);
    function createTableStatement (This : in out PaymentGatewayEntity) return Unbounded_String;
-   procedure createTableStatement (This : in out PaymentGatewayEntity);
    function createTable (This : in out PaymentGatewayEntity) return Unbounded_String;
-   procedure createTable (This : in out PaymentGatewayEntity);
    function dropTable (This : in out PaymentGatewayEntity) return Unbounded_String;
-   procedure dropTable (This : in out PaymentGatewayEntity);
 
 end org.allbinary.data.tables.user.commerce.money.payment.gateway.PaymentGatewayEntity_Package;
 

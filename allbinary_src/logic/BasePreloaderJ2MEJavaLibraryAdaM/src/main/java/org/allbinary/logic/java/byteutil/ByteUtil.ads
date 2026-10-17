@@ -35,7 +35,6 @@ package org.allbinary.logic.java.byteutil.ByteUtil_Package is
    procedure Initialize (This : in out ByteUtil'Class);
    function Create return ByteUtil_Access;
    function getInstance return ByteUtil_Access;
-   procedure getInstance;
    function xor_Id (This : in out ByteUtil; array_Id : Short_Short_Integer_Array_Access; mask : Short_Short_Integer) return Short_Short_Integer_Array_Access;
    procedure xor_Id (This : in out ByteUtil; array_Id : Short_Short_Integer_Array_Access; mask : Short_Short_Integer);
    function not_Id (This : in out ByteUtil; array_Id : Short_Short_Integer_Array_Access) return Short_Short_Integer_Array_Access;

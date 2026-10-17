@@ -48,13 +48,9 @@ package admin.taghelpers.SpecialItemsHelper_Package is
    procedure Initialize (This : in out SpecialItemsHelper'Class; hashMap : HashMap_Access; pageContext : PageContext_Access);
    function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return SpecialItemsHelper_Access;
    function create (This : in out SpecialItemsHelper) return Unbounded_String;
-   procedure create (This : in out SpecialItemsHelper);
    function drop (This : in out SpecialItemsHelper) return Unbounded_String;
-   procedure drop (This : in out SpecialItemsHelper);
    function restore (This : in out SpecialItemsHelper) return Unbounded_String;
-   procedure restore (This : in out SpecialItemsHelper);
    function backup (This : in out SpecialItemsHelper) return Unbounded_String;
-   procedure backup (This : in out SpecialItemsHelper);
 
 end admin.taghelpers.SpecialItemsHelper_Package;
 

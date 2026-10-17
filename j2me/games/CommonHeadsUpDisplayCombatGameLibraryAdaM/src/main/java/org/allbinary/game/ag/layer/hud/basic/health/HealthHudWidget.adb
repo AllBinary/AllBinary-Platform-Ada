@@ -49,7 +49,7 @@ package body org.allbinary.game.ag.layer.hud.basic.health.HealthHudWidget_Packag
    function Create (animationInterface : Animation_Access; healthInterface : Health_Access; location : Integer; direction : Integer) return HealthHudWidget_Access is
       This : constant HealthHudWidget_Access := new HealthHudWidget;
    begin
-      Initialize (This.all, animationInterface, healthInterface, location, direction);
+      HealthHudWidget_Package.Initialize (This.all, animationInterface, healthInterface, location, direction);
       return This;
    end Create;
 

@@ -32,7 +32,7 @@ package body org.allbinary.game.layer.RTSLayer2SelectedLogHelper_Package is
    function Create return RTSLayer2SelectedLogHelper_Access is
       This : constant RTSLayer2SelectedLogHelper_Access := new RTSLayer2SelectedLogHelper;
    begin
-      Initialize (This.all);
+      RTSLayer2SelectedLogHelper_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -91,13 +91,6 @@ package body org.allbinary.game.layer.RTSLayer2SelectedLogHelper_Package is
    begin
         This.logUtil.putF (StringMaker_Package.Create.append (pathFindingLayerInterface.getName).append (To_Unbounded_String (" Building Right")).toString, This'Unchecked_Access, This.BUILDING_CHASE);
    end buildingRight;
-
-   procedure getInstance is
-      Java_Result : constant RTSLayer2SelectedLogHelper_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

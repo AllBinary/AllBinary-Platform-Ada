@@ -28,7 +28,7 @@ package body org.allbinary.media.audio.SecondaryPlayerQueueFactory_Package is
    function Create return SecondaryPlayerQueueFactory_Access is
       This : constant SecondaryPlayerQueueFactory_Access := new SecondaryPlayerQueueFactory;
    begin
-      Initialize (This.all);
+      SecondaryPlayerQueueFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -36,13 +36,6 @@ package body org.allbinary.media.audio.SecondaryPlayerQueueFactory_Package is
    function getInstance return PlayerQueue_Access is
    begin
         return SecondaryPlayerQueueFactory_Package.SINGLETON;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant PlayerQueue_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

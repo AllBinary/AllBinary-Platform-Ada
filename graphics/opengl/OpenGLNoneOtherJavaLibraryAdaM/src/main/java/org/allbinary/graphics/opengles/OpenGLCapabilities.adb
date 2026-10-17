@@ -46,7 +46,7 @@ package body org.allbinary.graphics.opengles.OpenGLCapabilities_Package is
    function Create return OpenGLCapabilities_Access is
       This : constant OpenGLCapabilities_Access := new OpenGLCapabilities;
    begin
-      Initialize (This.all);
+      OpenGLCapabilities_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -74,34 +74,6 @@ package body org.allbinary.graphics.opengles.OpenGLCapabilities_Package is
    begin
         return True;
    end isTextureSizeValid;
-
-   procedure getInstance is
-      Java_Result : constant OpenGLCapabilities_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure isGlExtensionDrawTexture (This : in out OpenGLCapabilities) is
-      Java_Result : constant Boolean := OpenGLCapabilities'Class (This).isGlExtensionDrawTexture;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isGlExtensionDrawTexture;
-
-   procedure getGlVersion (This : in out OpenGLCapabilities) is
-      Java_Result : constant Unbounded_String := OpenGLCapabilities'Class (This).getGlVersion;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getGlVersion;
-
-   procedure isVertexBufferObjectSupport (This : in out OpenGLCapabilities) is
-      Java_Result : constant Boolean := OpenGLCapabilities'Class (This).isVertexBufferObjectSupport;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isVertexBufferObjectSupport;
 
    procedure isTextureSizeValid (This : in out OpenGLCapabilities; widthAndHeight : Integer) is
       Java_Result : constant Boolean := OpenGLCapabilities'Class (This).isTextureSizeValid (widthAndHeight);

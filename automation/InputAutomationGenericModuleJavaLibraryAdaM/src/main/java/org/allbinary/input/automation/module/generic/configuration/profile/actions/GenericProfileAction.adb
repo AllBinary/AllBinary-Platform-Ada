@@ -41,7 +41,7 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
    function Create (genericProfileActionJPanel : GenericProfileActionJPanel_Access; node : Node_Access) return GenericProfileAction_Access is
       This : constant GenericProfileAction_Access := new GenericProfileAction;
    begin
-      Initialize (This.all, genericProfileActionJPanel, node);
+      GenericProfileAction_Package.Initialize (This.all, genericProfileActionJPanel, node);
       return This;
    end Create;
 
@@ -56,7 +56,7 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
    function Create (name : Unbounded_String) return GenericProfileAction_Access is
       This : constant GenericProfileAction_Access := new GenericProfileAction;
    begin
-      Initialize (This.all, name);
+      GenericProfileAction_Package.Initialize (This.all, name);
       return This;
    end Create;
 
@@ -98,33 +98,12 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
         This.genericProfileActionScript := genericProfileActionScript;
    end setGenericProfileActionScript;
 
-   procedure getName (This : in out GenericProfileAction) is
-      Java_Result : constant Unbounded_String := GenericProfileAction'Class (This).getName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getName;
-
-   procedure toHashMap (This : in out GenericProfileAction) is
-      Java_Result : constant HashMap_Access := GenericProfileAction'Class (This).toHashMap;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toHashMap;
-
    procedure toXmlNode (This : in out GenericProfileAction; document : Document_Access) is
       Java_Result : constant Node_Access := GenericProfileAction'Class (This).toXmlNode (document);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end toXmlNode;
-
-   procedure getGenericProfileActionScript (This : in out GenericProfileAction) is
-      Java_Result : constant GenericProfileActionScript_Access := GenericProfileAction'Class (This).getGenericProfileActionScript;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getGenericProfileActionScript;
 
 end org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileAction_Package;
 

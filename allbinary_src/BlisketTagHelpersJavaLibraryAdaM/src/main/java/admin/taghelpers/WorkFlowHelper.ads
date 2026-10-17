@@ -50,13 +50,9 @@ package admin.taghelpers.WorkFlowHelper_Package is
    procedure Initialize (This : in out WorkFlowHelper'Class; hashMap : HashMap_Access; pageContext : PageContext_Access);
    function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return WorkFlowHelper_Access;
    function drop (This : in out WorkFlowHelper) return Unbounded_String;
-   procedure drop (This : in out WorkFlowHelper);
    function create (This : in out WorkFlowHelper) return Unbounded_String;
-   procedure create (This : in out WorkFlowHelper);
    function restore (This : in out WorkFlowHelper) return Unbounded_String;
-   procedure restore (This : in out WorkFlowHelper);
    function backup (This : in out WorkFlowHelper) return Unbounded_String;
-   procedure backup (This : in out WorkFlowHelper);
 
 end admin.taghelpers.WorkFlowHelper_Package;
 

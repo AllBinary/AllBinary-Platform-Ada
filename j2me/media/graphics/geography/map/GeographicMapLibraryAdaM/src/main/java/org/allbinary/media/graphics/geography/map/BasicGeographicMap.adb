@@ -37,7 +37,7 @@ package body org.allbinary.media.graphics.geography.map.BasicGeographicMap_Packa
    function Create (id : Integer; name : Unbounded_String; cellTypeIdToGeographicMapCellType : Integer_Array_Access; tiledLayer : AllBinaryTiledLayer_Access; foregroundBasicColor : BasicColor_Access; backgroundBasicColor : BasicColor_Access; geographicMapCellPositionFactoryInterface : GeographicMapCellPositionFactoryInterface_Access; geographicMapCellPositionBaseFactory : GeographicMapCellPositionBaseFactory_Access; geographicMapCellTypeFactory : GeographicMapCellTypeFactory_Access) return BasicGeographicMap_Access is
       This : constant BasicGeographicMap_Access := new BasicGeographicMap;
    begin
-      Initialize (This.all, id, name, cellTypeIdToGeographicMapCellType, tiledLayer, foregroundBasicColor, backgroundBasicColor, geographicMapCellPositionFactoryInterface, geographicMapCellPositionBaseFactory, geographicMapCellTypeFactory);
+      BasicGeographicMap_Package.Initialize (This.all, id, name, cellTypeIdToGeographicMapCellType, tiledLayer, foregroundBasicColor, backgroundBasicColor, geographicMapCellPositionFactoryInterface, geographicMapCellPositionBaseFactory, geographicMapCellTypeFactory);
       return This;
    end Create;
 
@@ -296,27 +296,6 @@ package body org.allbinary.media.graphics.geography.map.BasicGeographicMap_Packa
    begin
       null;
    end getCellTypeAtXY;
-
-   procedure getGeographicMapCellPositionFactory (This : in out BasicGeographicMap) is
-      Java_Result : constant BasicGeographicMapCellPositionFactory_Access := BasicGeographicMap'Class (This).getGeographicMapCellPositionFactory;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getGeographicMapCellPositionFactory;
-
-   procedure getGeographicMapCellPositionFactoryInterface (This : in out BasicGeographicMap) is
-      Java_Result : constant GeographicMapCellPositionFactoryInterface_Access := BasicGeographicMap'Class (This).getGeographicMapCellPositionFactoryInterface;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getGeographicMapCellPositionFactoryInterface;
-
-   procedure getGeographicMapCellTypeFactory (This : in out BasicGeographicMap) is
-      Java_Result : constant GeographicMapCellTypeFactory_Access := BasicGeographicMap'Class (This).getGeographicMapCellTypeFactory;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getGeographicMapCellTypeFactory;
 
 begin
    null;

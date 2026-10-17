@@ -54,7 +54,6 @@ package org.allbinary.game.ag.ai.KeyPressesAI_Package is
    procedure enable (This : in out KeyPressesAI);
    procedure setOn (This : in out KeyPressesAI; on : Boolean);
    function isOn (This : in out KeyPressesAI) return Boolean;
-   procedure isOn (This : in out KeyPressesAI);
 
 end org.allbinary.game.ag.ai.KeyPressesAI_Package;
 

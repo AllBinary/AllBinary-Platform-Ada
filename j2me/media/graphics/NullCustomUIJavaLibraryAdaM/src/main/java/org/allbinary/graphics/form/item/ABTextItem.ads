@@ -12,6 +12,7 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
 with org.allbinary.graphics.form.item.CustomCustomItem_Package; use org.allbinary.graphics.form.item.CustomCustomItem_Package;
 with org.allbinary.graphics.form.item.ABCustomItemInterface_Package; use org.allbinary.graphics.form.item.ABCustomItemInterface_Package;
+with org.allbinary.graphics.form.item.ABStringComponent_Package; use org.allbinary.graphics.form.item.ABStringComponent_Package;
 
 package org.allbinary.graphics.form.item.ABTextItem_Package is
 
@@ -29,7 +30,6 @@ package org.allbinary.graphics.form.item.ABTextItem_Package is
    procedure keyPressed (This : in out ABTextItem; keyCode : Integer);
    procedure paintUnselected (This : in out ABTextItem; graphics : Graphics_Access; x : Integer; y : Integer);
    function getLabelStringComponent (This : in out ABTextItem) return ABStringComponent_Access;
-   procedure getLabelStringComponent (This : in out ABTextItem);
 
 end org.allbinary.graphics.form.item.ABTextItem_Package;
 

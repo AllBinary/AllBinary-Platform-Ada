@@ -25,6 +25,7 @@ with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.game.input.PlayerGameInput_Package; use org.allbinary.game.input.PlayerGameInput_Package;
+with org.allbinary.game.input.GameInputProcessorInterface_Package; use org.allbinary.game.input.GameInputProcessorInterface_Package;
 
 package org.allbinary.game.input.GameInputProcessorComposite_Package is
 
@@ -48,7 +49,6 @@ package org.allbinary.game.input.GameInputProcessorComposite_Package is
    function Create (name : Unbounded_String; gameInputProcessorInterface : GameInputProcessorInterface_Access) return GameInputProcessorComposite_Access;
    procedure update (This : in out GameInputProcessorComposite);
    function toString (This : in out GameInputProcessorComposite) return Unbounded_String;
-   procedure toString (This : in out GameInputProcessorComposite);
 
 end org.allbinary.game.input.GameInputProcessorComposite_Package;
 

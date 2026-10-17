@@ -42,7 +42,7 @@ package body org.allbinary.logic.communication.sql.AbDatabaseManagement_Package 
    function Create (databaseConnectionInfoInterface : DatabaseConnectionInfoInterface_Access) return AbDatabaseManagement_Access is
       This : constant AbDatabaseManagement_Access := new AbDatabaseManagement;
    begin
-      Initialize (This.all, databaseConnectionInfoInterface);
+      AbDatabaseManagement_Package.Initialize (This.all, databaseConnectionInfoInterface);
       return This;
    end Create;
 
@@ -56,7 +56,7 @@ package body org.allbinary.logic.communication.sql.AbDatabaseManagement_Package 
    function Create (connectionInfo : DbConnectionInfo_Access) return AbDatabaseManagement_Access is
       This : constant AbDatabaseManagement_Access := new AbDatabaseManagement;
    begin
-      Initialize (This.all, connectionInfo);
+      AbDatabaseManagement_Package.Initialize (This.all, connectionInfo);
       return This;
    end Create;
 
@@ -139,13 +139,6 @@ package body org.allbinary.logic.communication.sql.AbDatabaseManagement_Package 
                 end;
         end;
    end addDb;
-
-   procedure getHostName (This : in out AbDatabaseManagement) is
-      Java_Result : constant Unbounded_String := AbDatabaseManagement'Class (This).getHostName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getHostName;
 
    procedure addDbUser (This : in out AbDatabaseManagement; hostName : Unbounded_String; db : Unbounded_String; userName : Unbounded_String; password : Unbounded_String) is
       Java_Result : constant Boolean := AbDatabaseManagement'Class (This).addDbUser (hostName, db, userName, password);

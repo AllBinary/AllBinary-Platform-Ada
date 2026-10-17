@@ -36,6 +36,12 @@ with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.C
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.graphics.form.PaintableForm_Package; use org.allbinary.graphics.form.PaintableForm_Package;
+with org.allbinary.graphics.form.ItemPaintableFactory_Package; use org.allbinary.graphics.form.ItemPaintableFactory_Package;
+with org.allbinary.graphics.form.ItemIndexPaintable_Package; use org.allbinary.graphics.form.ItemIndexPaintable_Package;
+with org.allbinary.graphics.form.ItemIndexDx_Package; use org.allbinary.graphics.form.ItemIndexDx_Package;
+with org.allbinary.graphics.form.ItemPaintable_Package; use org.allbinary.graphics.form.ItemPaintable_Package;
+with org.allbinary.graphics.form.FormTypeFactory_Package; use org.allbinary.graphics.form.FormTypeFactory_Package;
+with org.allbinary.graphics.form.FormType_Package; use org.allbinary.graphics.form.FormType_Package;
 
 package org.allbinary.graphics.form.ScrollSelectionForm_Package is
 
@@ -79,9 +85,7 @@ package org.allbinary.graphics.form.ScrollSelectionForm_Package is
    function createForm (title : Unbounded_String; items : ABCustomItem_Access_Array_Access; formPaintableFactory : ItemPaintableFactory_Access; border : Integer; backgroundBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access) return PaintableForm_Access;
    procedure createForm (title : Unbounded_String; items : ABCustomItem_Access_Array_Access; formPaintableFactory : ItemPaintableFactory_Access; border : Integer; backgroundBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access);
    function getNullScrollSelectionForm return ScrollSelectionForm_Access;
-   procedure getNullScrollSelectionForm;
    function getNullScrollSelectionFormHorizontal return ScrollSelectionForm_Access;
-   procedure getNullScrollSelectionFormHorizontal;
    procedure init (This : in out ScrollSelectionForm; rectangle : Rectangle_Access; formType : FormType_Access);
    function paintItemHorizontal (This : in out ScrollSelectionForm; graphics : Graphics_Access; index : Integer; item : ABCustomItem_Access; x : Integer; y : Integer) return Integer;
    procedure paintItemHorizontal (This : in out ScrollSelectionForm; graphics : Graphics_Access; index : Integer; item : ABCustomItem_Access; x : Integer; y : Integer);
@@ -102,7 +106,6 @@ package org.allbinary.graphics.form.ScrollSelectionForm_Package is
    function getItemIndex (This : in out ScrollSelectionForm; item : ABCustomItem_Access) return Integer;
    procedure getItemIndex (This : in out ScrollSelectionForm; item : ABCustomItem_Access);
    function getStartIndex (This : in out ScrollSelectionForm) return Integer;
-   procedure getStartIndex (This : in out ScrollSelectionForm);
    function getSelectedIndexForPoint (This : in out ScrollSelectionForm; point : GPoint_Access) return Integer;
    procedure getSelectedIndexForPoint (This : in out ScrollSelectionForm; point : GPoint_Access);
    function processInputKey (This : in out ScrollSelectionForm; gameKeyCode : Integer) return Integer;
@@ -116,12 +119,9 @@ package org.allbinary.graphics.form.ScrollSelectionForm_Package is
    function getDiffX (This : in out ScrollSelectionForm; item : ABCustomItem_Access) return Integer;
    procedure getDiffX (This : in out ScrollSelectionForm; item : ABCustomItem_Access);
    function getDx (This : in out ScrollSelectionForm) return Integer;
-   procedure getDx (This : in out ScrollSelectionForm);
    function getDy (This : in out ScrollSelectionForm) return Integer;
-   procedure getDy (This : in out ScrollSelectionForm);
    procedure setButtonBasicColor (This : in out ScrollSelectionForm; buttonBasicColor : BasicColor_Access);
    function getButtonBasicColor (This : in out ScrollSelectionForm) return BasicColor_Access;
-   procedure getButtonBasicColor (This : in out ScrollSelectionForm);
 
 end org.allbinary.graphics.form.ScrollSelectionForm_Package;
 
@@ -149,6 +149,12 @@ with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.C
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.graphics.form.PaintableForm_Package; use org.allbinary.graphics.form.PaintableForm_Package;
+with org.allbinary.graphics.form.ItemPaintableFactory_Package; use org.allbinary.graphics.form.ItemPaintableFactory_Package;
+with org.allbinary.graphics.form.ItemIndexPaintable_Package; use org.allbinary.graphics.form.ItemIndexPaintable_Package;
+with org.allbinary.graphics.form.ItemIndexDx_Package; use org.allbinary.graphics.form.ItemIndexDx_Package;
+with org.allbinary.graphics.form.ItemPaintable_Package; use org.allbinary.graphics.form.ItemPaintable_Package;
+with org.allbinary.graphics.form.FormTypeFactory_Package; use org.allbinary.graphics.form.FormTypeFactory_Package;
+with org.allbinary.graphics.form.FormType_Package; use org.allbinary.graphics.form.FormType_Package;
 
 package org.allbinary.graphics.form.ScrollSelectionFormHorizontalPaintable_Package is
 
@@ -206,6 +212,12 @@ with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.C
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.graphics.form.PaintableForm_Package; use org.allbinary.graphics.form.PaintableForm_Package;
+with org.allbinary.graphics.form.ItemPaintableFactory_Package; use org.allbinary.graphics.form.ItemPaintableFactory_Package;
+with org.allbinary.graphics.form.ItemIndexPaintable_Package; use org.allbinary.graphics.form.ItemIndexPaintable_Package;
+with org.allbinary.graphics.form.ItemIndexDx_Package; use org.allbinary.graphics.form.ItemIndexDx_Package;
+with org.allbinary.graphics.form.ItemPaintable_Package; use org.allbinary.graphics.form.ItemPaintable_Package;
+with org.allbinary.graphics.form.FormTypeFactory_Package; use org.allbinary.graphics.form.FormTypeFactory_Package;
+with org.allbinary.graphics.form.FormType_Package; use org.allbinary.graphics.form.FormType_Package;
 
 package org.allbinary.graphics.form.ScrollSelectionFormVerticalPaintable_Package is
 
@@ -263,6 +275,12 @@ with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.C
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.graphics.form.PaintableForm_Package; use org.allbinary.graphics.form.PaintableForm_Package;
+with org.allbinary.graphics.form.ItemPaintableFactory_Package; use org.allbinary.graphics.form.ItemPaintableFactory_Package;
+with org.allbinary.graphics.form.ItemIndexPaintable_Package; use org.allbinary.graphics.form.ItemIndexPaintable_Package;
+with org.allbinary.graphics.form.ItemIndexDx_Package; use org.allbinary.graphics.form.ItemIndexDx_Package;
+with org.allbinary.graphics.form.ItemPaintable_Package; use org.allbinary.graphics.form.ItemPaintable_Package;
+with org.allbinary.graphics.form.FormTypeFactory_Package; use org.allbinary.graphics.form.FormTypeFactory_Package;
+with org.allbinary.graphics.form.FormType_Package; use org.allbinary.graphics.form.FormType_Package;
 
 package org.allbinary.graphics.form.ScrollSelectionFormTempHorizontalPaintable_Package is
 
@@ -320,6 +338,12 @@ with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.C
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.graphics.form.PaintableForm_Package; use org.allbinary.graphics.form.PaintableForm_Package;
+with org.allbinary.graphics.form.ItemPaintableFactory_Package; use org.allbinary.graphics.form.ItemPaintableFactory_Package;
+with org.allbinary.graphics.form.ItemIndexPaintable_Package; use org.allbinary.graphics.form.ItemIndexPaintable_Package;
+with org.allbinary.graphics.form.ItemIndexDx_Package; use org.allbinary.graphics.form.ItemIndexDx_Package;
+with org.allbinary.graphics.form.ItemPaintable_Package; use org.allbinary.graphics.form.ItemPaintable_Package;
+with org.allbinary.graphics.form.FormTypeFactory_Package; use org.allbinary.graphics.form.FormTypeFactory_Package;
+with org.allbinary.graphics.form.FormType_Package; use org.allbinary.graphics.form.FormType_Package;
 
 package org.allbinary.graphics.form.ScrollSelectionFormHorizontalDx_Package is
 
@@ -377,6 +401,12 @@ with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.C
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.graphics.form.PaintableForm_Package; use org.allbinary.graphics.form.PaintableForm_Package;
+with org.allbinary.graphics.form.ItemPaintableFactory_Package; use org.allbinary.graphics.form.ItemPaintableFactory_Package;
+with org.allbinary.graphics.form.ItemIndexPaintable_Package; use org.allbinary.graphics.form.ItemIndexPaintable_Package;
+with org.allbinary.graphics.form.ItemIndexDx_Package; use org.allbinary.graphics.form.ItemIndexDx_Package;
+with org.allbinary.graphics.form.ItemPaintable_Package; use org.allbinary.graphics.form.ItemPaintable_Package;
+with org.allbinary.graphics.form.FormTypeFactory_Package; use org.allbinary.graphics.form.FormTypeFactory_Package;
+with org.allbinary.graphics.form.FormType_Package; use org.allbinary.graphics.form.FormType_Package;
 
 package org.allbinary.graphics.form.ScrollSelectionFormVericalDx_Package is
 
@@ -434,6 +464,12 @@ with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.C
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.graphics.form.PaintableForm_Package; use org.allbinary.graphics.form.PaintableForm_Package;
+with org.allbinary.graphics.form.ItemPaintableFactory_Package; use org.allbinary.graphics.form.ItemPaintableFactory_Package;
+with org.allbinary.graphics.form.ItemIndexPaintable_Package; use org.allbinary.graphics.form.ItemIndexPaintable_Package;
+with org.allbinary.graphics.form.ItemIndexDx_Package; use org.allbinary.graphics.form.ItemIndexDx_Package;
+with org.allbinary.graphics.form.ItemPaintable_Package; use org.allbinary.graphics.form.ItemPaintable_Package;
+with org.allbinary.graphics.form.FormTypeFactory_Package; use org.allbinary.graphics.form.FormTypeFactory_Package;
+with org.allbinary.graphics.form.FormType_Package; use org.allbinary.graphics.form.FormType_Package;
 
 package org.allbinary.graphics.form.ScrollSelectionFormTempHorizontalDx_Package is
 

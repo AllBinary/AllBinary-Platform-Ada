@@ -32,7 +32,7 @@ package body org.allbinary.game.layer.unit.UnitGameInputProcessor_Package is
    function Create (unitLayer : UnitLayer_Access) return UnitGameInputProcessor_Access is
       This : constant UnitGameInputProcessor_Access := new UnitGameInputProcessor;
    begin
-      Initialize (This.all, unitLayer);
+      UnitGameInputProcessor_Package.Initialize (This.all, unitLayer);
       return This;
    end Create;
 

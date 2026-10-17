@@ -70,12 +70,9 @@ package org.allbinary.data.tables.advertisement.areas.AdvertisementAreasEntity_P
    function get (This : in out AdvertisementAreasEntity; storeName : Unbounded_String; advertisementAreaName : Unbounded_String) return AdvertisementAreaInterface_Access;
    procedure get (This : in out AdvertisementAreasEntity; storeName : Unbounded_String; advertisementAreaName : Unbounded_String);
    function createTableStatement (This : in out AdvertisementAreasEntity) return Unbounded_String;
-   procedure createTableStatement (This : in out AdvertisementAreasEntity);
    function createTable (This : in out AdvertisementAreasEntity) return Unbounded_String;
-   procedure createTable (This : in out AdvertisementAreasEntity);
    procedure update (This : in out AdvertisementAreasEntity; updatedValues : HashMap_Access);
    function dropTable (This : in out AdvertisementAreasEntity) return Unbounded_String;
-   procedure dropTable (This : in out AdvertisementAreasEntity);
 
 end org.allbinary.data.tables.advertisement.areas.AdvertisementAreasEntity_Package;
 

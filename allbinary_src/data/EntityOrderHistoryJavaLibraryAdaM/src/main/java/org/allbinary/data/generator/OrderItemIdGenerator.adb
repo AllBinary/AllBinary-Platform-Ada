@@ -38,7 +38,7 @@ package body org.allbinary.data.generator.OrderItemIdGenerator_Package is
    function Create return OrderItemIdGenerator_Access is
       This : constant OrderItemIdGenerator_Access := new OrderItemIdGenerator;
    begin
-      Initialize (This.all);
+      OrderItemIdGenerator_Package.Initialize (This.all);
       return This;
    end Create;
 

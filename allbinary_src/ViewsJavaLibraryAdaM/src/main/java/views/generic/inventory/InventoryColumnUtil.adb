@@ -30,7 +30,7 @@ package body views.generic_Id.inventory.InventoryColumnUtil_Package is
    function Create return InventoryColumnUtil_Access is
       This : constant InventoryColumnUtil_Access := new InventoryColumnUtil;
    begin
-      Initialize (This.all);
+      InventoryColumnUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -61,13 +61,6 @@ package body views.generic_Id.inventory.InventoryColumnUtil_Package is
         end loop;
         return keywords;
    end getColumnWhereLike;
-
-   procedure getInstance is
-      Java_Result : constant InventoryColumnUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure getColumnWhereLike (This : in out InventoryColumnUtil; inventoryEntity : InventoryEntity_Access; category : Unbounded_String; column : Unbounded_String) is
       Java_Result : constant BasicArrayList_Access := InventoryColumnUtil'Class (This).getColumnWhereLike (inventoryEntity, category, column);

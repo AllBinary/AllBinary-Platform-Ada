@@ -25,6 +25,7 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.animation.AnimationBehavior_Package; use org.allbinary.animation.AnimationBehavior_Package;
 with org.allbinary.math.AngleInfo_Package; use org.allbinary.math.AngleInfo_Package;
 with org.allbinary.animation.image.ImageArrayRotationAnimation_Package; use org.allbinary.animation.image.ImageArrayRotationAnimation_Package;
+with org.allbinary.animation.image.ImageArrayRotationAnimationInfo_Package; use org.allbinary.animation.image.ImageArrayRotationAnimationInfo_Package;
 
 package org.allbinary.animation.image.AdjustedImageArrayRotationAnimation_Package is
 
@@ -51,10 +52,8 @@ package org.allbinary.animation.image.AdjustedImageArrayRotationAnimation_Packag
    procedure paintXY (This : in out AdjustedImageArrayRotationAnimation; graphics : Graphics_Access; x : Integer; y : Integer);
    procedure setDx (This : in out AdjustedImageArrayRotationAnimation; dx : Integer);
    function getDx (This : in out AdjustedImageArrayRotationAnimation) return Integer;
-   procedure getDx (This : in out AdjustedImageArrayRotationAnimation);
    procedure setDy (This : in out AdjustedImageArrayRotationAnimation; dy : Integer);
    function getDy (This : in out AdjustedImageArrayRotationAnimation) return Integer;
-   procedure getDy (This : in out AdjustedImageArrayRotationAnimation);
 
 end org.allbinary.animation.image.AdjustedImageArrayRotationAnimation_Package;
 

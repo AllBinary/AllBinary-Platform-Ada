@@ -26,7 +26,7 @@ package body org.allbinary.game.BasicGameInfoFactory_Package is
    function Create return BasicGameInfoFactory_Access is
       This : constant BasicGameInfoFactory_Access := new BasicGameInfoFactory;
    begin
-      Initialize (This.all);
+      BasicGameInfoFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -49,27 +49,6 @@ package body org.allbinary.game.BasicGameInfoFactory_Package is
    function howManyLeft (This : in out BasicGameInfoFactory) return Integer is
    begin
         return (This.total) - (This.currentDestroyIndex);
-   end howManyLeft;
-
-   procedure getInstance is
-      Java_Result : constant BasicGameInfoFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure isPeaked (This : in out BasicGameInfoFactory) is
-      Java_Result : constant Boolean := BasicGameInfoFactory'Class (This).isPeaked;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isPeaked;
-
-   procedure howManyLeft (This : in out BasicGameInfoFactory) is
-      Java_Result : constant Integer := BasicGameInfoFactory'Class (This).howManyLeft;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end howManyLeft;
 
 begin

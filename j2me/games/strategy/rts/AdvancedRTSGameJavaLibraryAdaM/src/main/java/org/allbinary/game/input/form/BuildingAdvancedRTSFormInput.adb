@@ -34,7 +34,7 @@ package body org.allbinary.game.input.form.BuildingAdvancedRTSFormInput_Package 
    function Create (groupInterface : Group_Access_Array_Access; isUnitProducer : Boolean) return BuildingAdvancedRTSFormInput_Access is
       This : constant BuildingAdvancedRTSFormInput_Access := new BuildingAdvancedRTSFormInput;
    begin
-      Initialize (This.all, groupInterface, isUnitProducer);
+      BuildingAdvancedRTSFormInput_Package.Initialize (This.all, groupInterface, isUnitProducer);
       return This;
    end Create;
 
@@ -87,13 +87,6 @@ package body org.allbinary.game.input.form.BuildingAdvancedRTSFormInput_Package 
         end if;
         BuildingRTSFormInput (This).add (rtsPlayerLayerInterface, layerManager, layerInterface);
    end add;
-
-   procedure isPositionBlocked (This : in out BuildingAdvancedRTSFormInput) is
-      Java_Result : constant Boolean := BuildingAdvancedRTSFormInput'Class (This).isPositionBlocked;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isPositionBlocked;
 
    procedure isBuildAttemptValid (This : in out BuildingAdvancedRTSFormInput; rtsPlayerLayerInterface : RTSPlayerLayerInterface_Access; layerInterface : RTSLayer_Access) is
       Java_Result : constant Boolean := BuildingAdvancedRTSFormInput'Class (This).isBuildAttemptValid (rtsPlayerLayerInterface, layerInterface);

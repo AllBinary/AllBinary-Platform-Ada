@@ -21,6 +21,7 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.util.cache.CacheableInterface_Package; use org.allbinary.logic.util.cache.CacheableInterface_Package;
+with org.allbinary.graphics.color.Color_Package; use org.allbinary.graphics.color.Color_Package;
 
 package org.allbinary.graphics.color.ColorCacheable_Package is
 
@@ -39,9 +40,7 @@ package org.allbinary.graphics.color.ColorCacheable_Package is
    procedure Initialize (This : in out ColorCacheable'Class; key : Java_Object_Access);
    function Create (key : Java_Object_Access) return ColorCacheable_Access;
    function getKey (This : in out ColorCacheable) return Java_Object_Access;
-   procedure getKey (This : in out ColorCacheable);
    function getColor (This : in out ColorCacheable) return Color_Access;
-   procedure getColor (This : in out ColorCacheable);
    procedure setColor (This : in out ColorCacheable; color : Color_Access);
 
 end org.allbinary.graphics.color.ColorCacheable_Package;

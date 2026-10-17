@@ -36,7 +36,6 @@ package org.allbinary.logic.system.os.solaris.SolarisOS_Package is
    procedure Initialize (This : in out SolarisOS'Class);
    function Create return SolarisOS_Access;
    function isAutoHide (This : in out SolarisOS) return Boolean;
-   procedure isAutoHide (This : in out SolarisOS);
 
 end org.allbinary.logic.system.os.solaris.SolarisOS_Package;
 

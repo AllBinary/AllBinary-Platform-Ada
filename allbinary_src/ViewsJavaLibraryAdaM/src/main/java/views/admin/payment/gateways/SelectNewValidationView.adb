@@ -29,7 +29,7 @@ package body views.admin.payment.gateways.SelectNewValidationView_Package is
    function Create (transformInfoInterface : TransformInfoInterface_Access) return SelectNewValidationView_Access is
       This : constant SelectNewValidationView_Access := new SelectNewValidationView;
    begin
-      Initialize (This.all, transformInfoInterface);
+      SelectNewValidationView_Package.Initialize (This.all, transformInfoInterface);
       return This;
    end Create;
 
@@ -70,20 +70,6 @@ package body views.admin.payment.gateways.SelectNewValidationView_Package is
         return SelectNewView_Package.Create (This.getTransformInfoInterface).view;
    end view;
 
-   procedure isValid (This : in out SelectNewValidationView) is
-      Java_Result : constant Boolean := SelectNewValidationView'Class (This).isValid;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isValid;
-
-   procedure toValidationInfoDoc (This : in out SelectNewValidationView) is
-      Java_Result : constant Document_Access := SelectNewValidationView'Class (This).toValidationInfoDoc;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toValidationInfoDoc;
-
    procedure toValidationInfoNode (This : in out SelectNewValidationView; document : Document_Access) is
       Java_Result : constant Node_Access := SelectNewValidationView'Class (This).toValidationInfoNode (document);
       pragma Unreferenced (Java_Result);
@@ -91,33 +77,12 @@ package body views.admin.payment.gateways.SelectNewValidationView_Package is
       null;
    end toValidationInfoNode;
 
-   procedure validationInfo (This : in out SelectNewValidationView) is
-      Java_Result : constant Unbounded_String := SelectNewValidationView'Class (This).validationInfo;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end validationInfo;
-
-   procedure toXmlDoc (This : in out SelectNewValidationView) is
-      Java_Result : constant Document_Access := SelectNewValidationView'Class (This).toXmlDoc;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toXmlDoc;
-
    procedure toXmlNode (This : in out SelectNewValidationView; document : Document_Access) is
       Java_Result : constant Node_Access := SelectNewValidationView'Class (This).toXmlNode (document);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end toXmlNode;
-
-   procedure view (This : in out SelectNewValidationView) is
-      Java_Result : constant Unbounded_String := SelectNewValidationView'Class (This).view;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end view;
 
 end views.admin.payment.gateways.SelectNewValidationView_Package;
 

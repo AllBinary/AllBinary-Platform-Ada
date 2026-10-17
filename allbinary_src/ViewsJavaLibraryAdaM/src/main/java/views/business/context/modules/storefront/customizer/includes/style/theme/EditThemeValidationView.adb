@@ -31,7 +31,7 @@ package body views.business.context.modules.storefront.customizer.includes.style
    function Create (transformInfoInterface : TransformInfoInterface_Access) return EditThemeValidationView_Access is
       This : constant EditThemeValidationView_Access := new EditThemeValidationView;
    begin
-      Initialize (This.all, transformInfoInterface);
+      EditThemeValidationView_Package.Initialize (This.all, transformInfoInterface);
       return This;
    end Create;
 
@@ -104,27 +104,6 @@ package body views.business.context.modules.storefront.customizer.includes.style
    begin
         return null;
    end toValidationInfoNode;
-
-   procedure isValid (This : in out EditThemeValidationView) is
-      Java_Result : constant Boolean := EditThemeValidationView'Class (This).isValid;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isValid;
-
-   procedure validationInfo (This : in out EditThemeValidationView) is
-      Java_Result : constant Unbounded_String := EditThemeValidationView'Class (This).validationInfo;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end validationInfo;
-
-   procedure toValidationInfoDoc (This : in out EditThemeValidationView) is
-      Java_Result : constant Document_Access := EditThemeValidationView'Class (This).toValidationInfoDoc;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toValidationInfoDoc;
 
    procedure toValidationInfoNode (This : in out EditThemeValidationView; document : Document_Access) is
       Java_Result : constant Node_Access := EditThemeValidationView'Class (This).toValidationInfoNode (document);

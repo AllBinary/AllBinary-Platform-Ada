@@ -40,7 +40,6 @@ package org.allbinary.thread.ThreadUtil_Package is
    procedure Initialize (This : in out ThreadUtil'Class);
    function Create return ThreadUtil_Access;
    function getInstance return ThreadUtil_Access;
-   procedure getInstance;
    function isRunning (This : in out ThreadUtil; thread : Thread_Access) return Boolean;
    procedure isRunning (This : in out ThreadUtil; thread : Thread_Access);
    procedure join_Case (This : in out ThreadUtil; thread : Thread_Access);

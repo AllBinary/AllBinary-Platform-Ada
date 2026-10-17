@@ -35,7 +35,7 @@ package body org.allbinary.logic.communication.log.config.type_Id.LogConfigType_
    function Create (name : Unbounded_String; description : Unbounded_String) return LogConfigType_Access is
       This : constant LogConfigType_Access := new LogConfigType;
    begin
-      Initialize (This.all, name, description);
+      LogConfigType_Package.Initialize (This.all, name, description);
       return This;
    end Create;
 
@@ -58,20 +58,6 @@ package body org.allbinary.logic.communication.log.config.type_Id.LogConfigType_
    begin
         This.description := value;
    end setDescription;
-
-   procedure getName (This : in out LogConfigType) is
-      Java_Result : constant Unbounded_String := LogConfigType'Class (This).getName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getName;
-
-   procedure getDescription (This : in out LogConfigType) is
-      Java_Result : constant Unbounded_String := LogConfigType'Class (This).getDescription;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getDescription;
 
 begin
    null;

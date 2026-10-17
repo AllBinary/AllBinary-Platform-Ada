@@ -32,7 +32,7 @@ package body org.allbinary.logic.io.AbFileInputStream_Package is
    function Create (fileInputStream : FileInputStream_Access) return AbFileInputStream_Access is
       This : constant AbFileInputStream_Access := new AbFileInputStream;
    begin
-      Initialize (This.all, fileInputStream);
+      AbFileInputStream_Package.Initialize (This.all, fileInputStream);
       return This;
    end Create;
 
@@ -92,34 +92,6 @@ package body org.allbinary.logic.io.AbFileInputStream_Package is
    begin
         return This.fileInputStream.skip (n);
    end skip;
-
-   procedure markSupported (This : in out AbFileInputStream) is
-      Java_Result : constant Boolean := AbFileInputStream'Class (This).markSupported;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end markSupported;
-
-   procedure available (This : in out AbFileInputStream) is
-      Java_Result : constant Integer := AbFileInputStream'Class (This).available;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end available;
-
-   procedure getChannel (This : in out AbFileInputStream) is
-      Java_Result : constant FileChannel_Access := AbFileInputStream'Class (This).getChannel;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getChannel;
-
-   procedure read (This : in out AbFileInputStream) is
-      Java_Result : constant Integer := AbFileInputStream'Class (This).read;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end read;
 
    procedure read (This : in out AbFileInputStream; b : Short_Short_Integer_Array_Access) is
       Java_Result : constant Integer := AbFileInputStream'Class (This).read (b);

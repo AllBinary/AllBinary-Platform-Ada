@@ -28,6 +28,7 @@ with org.allbinary.data.tree.dom.ModDomHelper_Package; use org.allbinary.data.tr
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
+with org.allbinary.business.user.UserData_Package; use org.allbinary.business.user.UserData_Package;
 
 package org.allbinary.business.user.UserDomNode_Package is
 
@@ -53,9 +54,7 @@ package org.allbinary.business.user.UserDomNode_Package is
    function toXmlNode (This : in out UserDomNode; document : Document_Access) return Node_Access;
    procedure toXmlNode (This : in out UserDomNode; document : Document_Access);
    function toXmlDoc (This : in out UserDomNode) return Document_Access;
-   procedure toXmlDoc (This : in out UserDomNode);
    function view (This : in out UserDomNode) return Unbounded_String;
-   procedure view (This : in out UserDomNode);
 
 end org.allbinary.business.user.UserDomNode_Package;
 

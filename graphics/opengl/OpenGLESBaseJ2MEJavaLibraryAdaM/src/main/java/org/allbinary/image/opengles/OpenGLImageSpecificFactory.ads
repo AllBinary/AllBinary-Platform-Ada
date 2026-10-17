@@ -23,6 +23,7 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.image.opengles.OpenGLImageFactory_Package; use org.allbinary.image.opengles.OpenGLImageFactory_Package;
 
 package org.allbinary.image.opengles.OpenGLImageSpecificFactory_Package is
 
@@ -44,10 +45,8 @@ package org.allbinary.image.opengles.OpenGLImageSpecificFactory_Package is
    procedure Initialize (This : in out OpenGLImageSpecificFactory'Class);
    function Create return OpenGLImageSpecificFactory_Access;
    function getInstance return OpenGLImageSpecificFactory_Access;
-   procedure getInstance;
    procedure setImageFactory (This : in out OpenGLImageSpecificFactory; imageFactory : OpenGLImageFactory_Access);
    function getImageFactory (This : in out OpenGLImageSpecificFactory) return OpenGLImageFactory_Access;
-   procedure getImageFactory (This : in out OpenGLImageSpecificFactory);
 
 end org.allbinary.image.opengles.OpenGLImageSpecificFactory_Package;
 

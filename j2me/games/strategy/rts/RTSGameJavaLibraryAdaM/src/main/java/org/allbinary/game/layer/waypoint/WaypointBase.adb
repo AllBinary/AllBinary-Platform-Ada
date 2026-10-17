@@ -33,7 +33,7 @@ package body org.allbinary.game.layer.waypoint.WaypointBase_Package is
    function Create (sound : Sound_Access) return WaypointBase_Access is
       This : constant WaypointBase_Access := new WaypointBase;
    begin
-      Initialize (This.all, sound);
+      WaypointBase_Package.Initialize (This.all, sound);
       return This;
    end Create;
 
@@ -98,20 +98,6 @@ package body org.allbinary.game.layer.waypoint.WaypointBase_Package is
         return 0;
    end getType;
 
-   procedure getSound (This : in out WaypointBase) is
-      Java_Result : constant Sound_Access := WaypointBase'Class (This).getSound;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSound;
-
-   procedure getConnectedWaypointList (This : in out WaypointBase) is
-      Java_Result : constant BasicArrayList_Access := WaypointBase'Class (This).getConnectedWaypointList;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getConnectedWaypointList;
-
    procedure getPathFindingInfo (This : in out WaypointBase; geographicMapCellPosition : GeographicMapCellPosition_Access) is
       Java_Result : constant PathFindingInfo_Access := WaypointBase'Class (This).getPathFindingInfo (geographicMapCellPosition);
       pragma Unreferenced (Java_Result);
@@ -139,13 +125,6 @@ package body org.allbinary.game.layer.waypoint.WaypointBase_Package is
    begin
       null;
    end getPathsListFromCacheOnly;
-
-   procedure getType (This : in out WaypointBase) is
-      Java_Result : constant Integer := WaypointBase'Class (This).getType;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getType;
 
 begin
    null;

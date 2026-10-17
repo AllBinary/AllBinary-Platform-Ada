@@ -31,7 +31,7 @@ package body org.allbinary.logic.communication.log.XmlRpcRemoteLogClient_Package
    function Create (clientInfo : AbeClientInformationInterface_Access) return XmlRpcRemoteLogClient_Access is
       This : constant XmlRpcRemoteLogClient_Access := new XmlRpcRemoteLogClient;
    begin
-      Initialize (This.all, clientInfo);
+      XmlRpcRemoteLogClient_Package.Initialize (This.all, clientInfo);
       return This;
    end Create;
 

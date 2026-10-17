@@ -32,7 +32,7 @@ package body org.allbinary.business.user.commerce.money.payment.types.CreditCard
    function Create return CreditCardTypeFactory_Access is
       This : constant CreditCardTypeFactory_Access := new CreditCardTypeFactory;
    begin
-      Initialize (This.all);
+      CreditCardTypeFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -40,13 +40,6 @@ package body org.allbinary.business.user.commerce.money.payment.types.CreditCard
    function getInstance return CreditCardTypeFactory_Access is
    begin
         return CreditCardTypeFactory_Package.instance;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant CreditCardTypeFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

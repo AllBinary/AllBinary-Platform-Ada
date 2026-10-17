@@ -23,6 +23,7 @@ with AllBinary_Java; use AllBinary_Java;
 --  with javax.microedition.media.Control_Package; use javax.microedition.media.Control_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.media.audio.BasicPlayer_Package; use org.allbinary.media.audio.BasicPlayer_Package;
+with org.allbinary.media.audio.NullControl_Package; use org.allbinary.media.audio.NullControl_Package;
 
 package org.allbinary.media.audio.NoPlayer_Package is
 
@@ -40,11 +41,9 @@ package org.allbinary.media.audio.NoPlayer_Package is
    function Create return NoPlayer_Access;
    procedure close (This : in out NoPlayer);
    function getContentType (This : in out NoPlayer) return Unbounded_String;
-   procedure getContentType (This : in out NoPlayer);
    function getControl (This : in out NoPlayer; controlType : Unbounded_String) return Control_Access;
    procedure getControl (This : in out NoPlayer; controlType : Unbounded_String);
    function getControls (This : in out NoPlayer) return Control_Access_Array_Access;
-   procedure getControls (This : in out NoPlayer);
 
 end org.allbinary.media.audio.NoPlayer_Package;
 

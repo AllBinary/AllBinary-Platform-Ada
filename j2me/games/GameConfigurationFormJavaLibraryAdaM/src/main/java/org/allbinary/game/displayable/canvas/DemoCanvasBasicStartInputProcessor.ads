@@ -50,7 +50,6 @@ package org.allbinary.game.displayable.canvas.DemoCanvasBasicStartInputProcessor
    procedure Initialize (This : in out DemoCanvasBasicStartInputProcessor'Class; gameKeyEventList : BasicArrayList_Access; gameCanvas : RunnableCanvas_Access);
    function Create (gameKeyEventList : BasicArrayList_Access; gameCanvas : RunnableCanvas_Access) return DemoCanvasBasicStartInputProcessor_Access;
    function processInputList (This : in out DemoCanvasBasicStartInputProcessor) return Integer;
-   procedure processInputList (This : in out DemoCanvasBasicStartInputProcessor);
 
 end org.allbinary.game.displayable.canvas.DemoCanvasBasicStartInputProcessor_Package;
 

@@ -22,6 +22,7 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.data.tables.category.CategoryEntity_Package; use org.allbinary.data.tables.category.CategoryEntity_Package;
 
 package org.allbinary.data.tables.category.CategoryEntityFactory_Package is
 
@@ -41,9 +42,7 @@ package org.allbinary.data.tables.category.CategoryEntityFactory_Package is
    procedure Initialize (This : in out CategoryEntityFactory'Class);
    function Create return CategoryEntityFactory_Access;
    function getInstance return CategoryEntityFactory_Access;
-   procedure getInstance;
    function getCategoryEntityInstance (This : in out CategoryEntityFactory) return CategoryEntity_Access;
-   procedure getCategoryEntityInstance (This : in out CategoryEntityFactory);
 
 end org.allbinary.data.tables.category.CategoryEntityFactory_Package;
 

@@ -30,7 +30,7 @@ package body org.allbinary.game.multiplayer.layer.MultiplayerBehavior_Package is
    function Create (username : Unbounded_String) return MultiplayerBehavior_Access is
       This : constant MultiplayerBehavior_Access := new MultiplayerBehavior;
    begin
-      Initialize (This.all, username);
+      MultiplayerBehavior_Package.Initialize (This.all, username);
       return This;
    end Create;
 
@@ -47,13 +47,6 @@ package body org.allbinary.game.multiplayer.layer.MultiplayerBehavior_Package is
    function getApproximateElapsed (This : in out MultiplayerBehavior) return Long_Long_Integer is
    begin
         return 0;
-   end getApproximateElapsed;
-
-   procedure getApproximateElapsed (This : in out MultiplayerBehavior) is
-      Java_Result : constant Long_Long_Integer := MultiplayerBehavior'Class (This).getApproximateElapsed;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getApproximateElapsed;
 
 begin

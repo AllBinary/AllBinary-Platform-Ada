@@ -32,7 +32,7 @@ package body org.allbinary.business.backup.BlisketBackupFactory_Package is
    function Create return BlisketBackupFactory_Access is
       This : constant BlisketBackupFactory_Access := new BlisketBackupFactory;
    begin
-      Initialize (This.all);
+      BlisketBackupFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -246,13 +246,6 @@ package body org.allbinary.business.backup.BlisketBackupFactory_Package is
                 end;
         end;
    end backup;
-
-   procedure getInstance is
-      Java_Result : constant BlisketBackupFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure getFileBasicArrayList (This : in out BlisketBackupFactory; pathString : Unbounded_String) is
       Java_Result : constant BasicArrayList_Access := BlisketBackupFactory'Class (This).getFileBasicArrayList (pathString);

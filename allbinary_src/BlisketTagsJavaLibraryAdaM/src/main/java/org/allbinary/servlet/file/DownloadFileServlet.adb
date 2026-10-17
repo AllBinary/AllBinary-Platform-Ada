@@ -33,7 +33,7 @@ package body org.allbinary.servlet.file.DownloadFileServlet_Package is
    function Create return DownloadFileServlet_Access is
       This : constant DownloadFileServlet_Access := new DownloadFileServlet;
    begin
-      Initialize (This.all);
+      DownloadFileServlet_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -130,13 +130,6 @@ package body org.allbinary.servlet.file.DownloadFileServlet_Package is
    function getServletInfo (This : in out DownloadFileServlet) return Unbounded_String is
    begin
         return To_Unbounded_String ("Serves Up Cloud Files");
-   end getServletInfo;
-
-   procedure getServletInfo (This : in out DownloadFileServlet) is
-      Java_Result : constant Unbounded_String := DownloadFileServlet'Class (This).getServletInfo;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getServletInfo;
 
 end org.allbinary.servlet.file.DownloadFileServlet_Package;

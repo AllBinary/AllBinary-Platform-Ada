@@ -31,7 +31,7 @@ package body org.allbinary.business.context.modules.storefront.statistics.advert
    function Create (storeFrontAdvertisementsStatisticsInterface : StoreFrontAdvertisementsStatisticsInterface_Access) return StoreFrontAdvertisementsStatisticsView_Access is
       This : constant StoreFrontAdvertisementsStatisticsView_Access := new StoreFrontAdvertisementsStatisticsView;
    begin
-      Initialize (This.all, storeFrontAdvertisementsStatisticsInterface);
+      StoreFrontAdvertisementsStatisticsView_Package.Initialize (This.all, storeFrontAdvertisementsStatisticsInterface);
       return This;
    end Create;
 

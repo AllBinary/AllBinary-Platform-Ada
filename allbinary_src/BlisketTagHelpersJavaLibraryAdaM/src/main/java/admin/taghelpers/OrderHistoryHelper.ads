@@ -48,13 +48,9 @@ package admin.taghelpers.OrderHistoryHelper_Package is
    procedure Initialize (This : in out OrderHistoryHelper'Class; hashMap : HashMap_Access; pageContext : PageContext_Access);
    function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return OrderHistoryHelper_Access;
    function drop (This : in out OrderHistoryHelper) return Unbounded_String;
-   procedure drop (This : in out OrderHistoryHelper);
    function create (This : in out OrderHistoryHelper) return Unbounded_String;
-   procedure create (This : in out OrderHistoryHelper);
    function restore (This : in out OrderHistoryHelper) return Unbounded_String;
-   procedure restore (This : in out OrderHistoryHelper);
    function backup (This : in out OrderHistoryHelper) return Unbounded_String;
-   procedure backup (This : in out OrderHistoryHelper);
 
 end admin.taghelpers.OrderHistoryHelper_Package;
 

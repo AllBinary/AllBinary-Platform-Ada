@@ -36,7 +36,6 @@ package org.allbinary.image.opengles.ModifierOpenGLESImageProcessor_Package is
    procedure Initialize (This : in out ModifierOpenGLESImageProcessor'Class);
    function Create return ModifierOpenGLESImageProcessor_Access;
    function getInstance return ModifierOpenGLESImageProcessor_Access;
-   procedure getInstance;
 
 end org.allbinary.image.opengles.ModifierOpenGLESImageProcessor_Package;
 

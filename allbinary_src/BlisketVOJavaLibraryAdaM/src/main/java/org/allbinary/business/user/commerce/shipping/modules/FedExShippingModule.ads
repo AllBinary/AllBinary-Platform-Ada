@@ -44,9 +44,7 @@ package org.allbinary.business.user.commerce.shipping.modules.FedExShippingModul
    function getCost (This : in out FedExShippingModule; order : OrderInterface_Access) return Money_Access;
    procedure getCost (This : in out FedExShippingModule; order : OrderInterface_Access);
    function getDescription (This : in out FedExShippingModule) return Unbounded_String;
-   procedure getDescription (This : in out FedExShippingModule);
    function getName (This : in out FedExShippingModule) return Unbounded_String;
-   procedure getName (This : in out FedExShippingModule);
 
 end org.allbinary.business.user.commerce.shipping.modules.FedExShippingModule_Package;
 

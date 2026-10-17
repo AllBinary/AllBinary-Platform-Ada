@@ -44,7 +44,7 @@ package body org.allbinary.thread.ThreadPool_Package is
    function Create (poolName : Unbounded_String; numThreads : Integer; priority : Integer) return ThreadPool_Access is
       This : constant ThreadPool_Access := new ThreadPool;
    begin
-      Initialize (This.all, poolName, numThreads, priority);
+      ThreadPool_Package.Initialize (This.all, poolName, numThreads, priority);
       return This;
    end Create;
 
@@ -199,27 +199,6 @@ package body org.allbinary.thread.ThreadPool_Package is
    function createName (This : in out ThreadPool) return Unbounded_String is
    begin
         return StringMaker_Package.Create.append (This.poolName).append (ThreadPool_Package.ROOT_NAME).appendint (Java_Post_Increment (This.threadID)).toString;
-   end createName;
-
-   procedure getTask (This : in out ThreadPool) is
-      Java_Result : constant Runnable_Access := ThreadPool'Class (This).getTask;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTask;
-
-   procedure isBusy (This : in out ThreadPool) is
-      Java_Result : constant Boolean := ThreadPool'Class (This).isBusy;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isBusy;
-
-   procedure createName (This : in out ThreadPool) is
-      Java_Result : constant Unbounded_String := ThreadPool'Class (This).createName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end createName;
 
 begin

@@ -32,6 +32,7 @@ with org.allbinary.logic.io.path.AbFilePath_Package; use org.allbinary.logic.io.
 with org.allbinary.logic.io.path.AbPath_Package; use org.allbinary.logic.io.path.AbPath_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.visual.transform.info.template.TransformInfoTemplateData_Package; use org.allbinary.logic.visual.transform.info.template.TransformInfoTemplateData_Package;
+with org.allbinary.data.tree.dom.URIResolverStrings_Package; use org.allbinary.data.tree.dom.URIResolverStrings_Package;
 
 package org.allbinary.data.tree.dom.BasicUriResolver_Package is
 
@@ -58,11 +59,9 @@ package org.allbinary.data.tree.dom.BasicUriResolver_Package is
    procedure Initialize (This : in out BasicUriResolver'Class; extension : Unbounded_String);
    function Create (extension : Unbounded_String) return BasicUriResolver_Access;
    function getExtension (This : in out BasicUriResolver) return Unbounded_String;
-   procedure getExtension (This : in out BasicUriResolver);
    function resolve (This : in out BasicUriResolver; href : Unbounded_String; base : Unbounded_String) return Source_Access;
    procedure resolve (This : in out BasicUriResolver; href : Unbounded_String; base : Unbounded_String);
    function toString (This : in out BasicUriResolver) return Unbounded_String;
-   procedure toString (This : in out BasicUriResolver);
 
 end org.allbinary.data.tree.dom.BasicUriResolver_Package;
 

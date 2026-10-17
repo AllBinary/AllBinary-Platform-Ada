@@ -40,14 +40,11 @@ package org.allbinary.logic.system.security.licensing.registration.RegistrationC
    procedure Initialize (This : in out RegistrationConfiguration'Class);
    function Create return RegistrationConfiguration_Access;
    function getInstance return RegistrationConfiguration_Access;
-   procedure getInstance;
    procedure read (This : in out RegistrationConfiguration);
    procedure write (This : in out RegistrationConfiguration);
    function toString (This : in out RegistrationConfiguration) return Unbounded_String;
-   procedure toString (This : in out RegistrationConfiguration);
    procedure setRegistrationCode (This : in out RegistrationConfiguration; registrationCode : Unbounded_String);
    function getRegistrationCode (This : in out RegistrationConfiguration) return Unbounded_String;
-   procedure getRegistrationCode (This : in out RegistrationConfiguration);
 
 end org.allbinary.logic.system.security.licensing.registration.RegistrationConfiguration_Package;
 

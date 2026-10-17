@@ -29,7 +29,7 @@ package body workflows.template.data.BasicStoreWorkFlow_Package is
    function Create (propertiesHashMap : HashMap_Access; pageContext : PageContext_Access) return BasicStoreWorkFlow_Access is
       This : constant BasicStoreWorkFlow_Access := new BasicStoreWorkFlow;
    begin
-      Initialize (This.all, propertiesHashMap, pageContext);
+      BasicStoreWorkFlow_Package.Initialize (This.all, propertiesHashMap, pageContext);
       return This;
    end Create;
 
@@ -37,13 +37,6 @@ package body workflows.template.data.BasicStoreWorkFlow_Package is
    function getStoreName (This : in out BasicStoreWorkFlow) return Unbounded_String is
    begin
         return Unbounded_String (This.getPropertiesHashMap.get (StoreFrontData_Package.getInstance.NAME));
-   end getStoreName;
-
-   procedure getStoreName (This : in out BasicStoreWorkFlow) is
-      Java_Result : constant Unbounded_String := BasicStoreWorkFlow'Class (This).getStoreName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getStoreName;
 
 end workflows.template.data.BasicStoreWorkFlow_Package;

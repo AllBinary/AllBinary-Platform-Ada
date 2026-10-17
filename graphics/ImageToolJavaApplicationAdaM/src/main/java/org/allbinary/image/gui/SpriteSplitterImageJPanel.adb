@@ -57,7 +57,7 @@ package body org.allbinary.image.gui.SpriteSplitterImageJPanel_Package is
    function Create (imageProcessorInput : ImageProcessorInput_Access) return SpriteSplitterImageJPanel_Access is
       This : constant SpriteSplitterImageJPanel_Access := new SpriteSplitterImageJPanel;
    begin
-      Initialize (This.all, imageProcessorInput);
+      SpriteSplitterImageJPanel_Package.Initialize (This.all, imageProcessorInput);
       return This;
    end Create;
 
@@ -294,13 +294,6 @@ package body org.allbinary.image.gui.SpriteSplitterImageJPanel_Package is
         isWritten := ImageIO_Package.write (RenderedImage_Access (This.result), This.imageStrings.PNG, file);
         This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("File: ")).append (StringUtil_Package.getInstance.toString (file)).append (To_Unbounded_String (" Wrote: ")).appendboolean (isWritten).toString, This'Unchecked_Access, This.commonStrings.RUN);
    end visit;
-
-   procedure getImageProcessorInput (This : in out SpriteSplitterImageJPanel) is
-      Java_Result : constant ImageProcessorInput_Access := SpriteSplitterImageJPanel'Class (This).getImageProcessorInput;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getImageProcessorInput;
 
 end org.allbinary.image.gui.SpriteSplitterImageJPanel_Package;
 

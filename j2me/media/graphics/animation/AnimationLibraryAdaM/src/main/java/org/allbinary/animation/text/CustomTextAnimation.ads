@@ -54,11 +54,8 @@ package org.allbinary.animation.text.CustomTextAnimation_Package is
    procedure setScale (This : in out CustomTextAnimation; scaleX : Float; scaleY : Float);
    procedure setText (This : in out CustomTextAnimation; text : Unbounded_String);
    function getText (This : in out CustomTextAnimation) return Unbounded_String;
-   procedure getText (This : in out CustomTextAnimation);
    function getWidth (This : in out CustomTextAnimation) return Integer;
-   procedure getWidth (This : in out CustomTextAnimation);
    function getFontHeight (This : in out CustomTextAnimation) return Integer;
-   procedure getFontHeight (This : in out CustomTextAnimation);
 
 end org.allbinary.animation.text.CustomTextAnimation_Package;
 

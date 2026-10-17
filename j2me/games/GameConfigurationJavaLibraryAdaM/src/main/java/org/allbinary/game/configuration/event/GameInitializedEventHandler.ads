@@ -23,6 +23,8 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbinary.logic.util.event.AllBinaryEventObject_Package;
 with org.allbinary.logic.util.event.EventListenerInterface_Package; use org.allbinary.logic.util.event.EventListenerInterface_Package;
 with org.allbinary.logic.util.event.handler.BasicEventHandler_Package; use org.allbinary.logic.util.event.handler.BasicEventHandler_Package;
+with org.allbinary.game.configuration.event.GameInitializedListenerInterface_Package; use org.allbinary.game.configuration.event.GameInitializedListenerInterface_Package;
+with org.allbinary.game.configuration.event.GameInitializedEvent_Package; use org.allbinary.game.configuration.event.GameInitializedEvent_Package;
 
 package org.allbinary.game.configuration.event.GameInitializedEventHandler_Package is
 
@@ -41,7 +43,6 @@ package org.allbinary.game.configuration.event.GameInitializedEventHandler_Packa
    procedure Initialize (This : in out GameInitializedEventHandler'Class);
    function Create return GameInitializedEventHandler_Access;
    function getInstance return GameInitializedEventHandler_Access;
-   procedure getInstance;
    procedure process (This : in out GameInitializedEventHandler; eventObject : AllBinaryEventObject_Access; eventListenerInterface : EventListenerInterface_Access);
 
 end org.allbinary.game.configuration.event.GameInitializedEventHandler_Package;

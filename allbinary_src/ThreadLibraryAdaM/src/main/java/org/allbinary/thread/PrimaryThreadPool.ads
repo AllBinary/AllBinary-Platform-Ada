@@ -40,7 +40,6 @@ package org.allbinary.thread.PrimaryThreadPool_Package is
    procedure Initialize (This : in out PrimaryThreadPool'Class; poolName : Unbounded_String; numThreads : Integer; priority : Integer);
    function Create (poolName : Unbounded_String; numThreads : Integer; priority : Integer) return PrimaryThreadPool_Access;
    function getInstance return ThreadPool_Access;
-   procedure getInstance;
    procedure runTask (This : in out PrimaryThreadPool; task_Id : Runnable_Access);
    procedure startTask (This : in out PrimaryThreadPool; task_Id : Runnable_Access);
    procedure completedTask (This : in out PrimaryThreadPool; task_Id : Runnable_Access);

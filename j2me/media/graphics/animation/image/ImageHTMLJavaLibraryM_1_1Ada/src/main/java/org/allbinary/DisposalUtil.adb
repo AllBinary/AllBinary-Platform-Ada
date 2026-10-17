@@ -28,7 +28,7 @@ package body org.allbinary.DisposalUtil_Package is
    function Create return DisposalUtil_Access is
       This : constant DisposalUtil_Access := new DisposalUtil;
    begin
-      Initialize (This.all);
+      DisposalUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -49,13 +49,6 @@ package body org.allbinary.DisposalUtil_Package is
             resource.dispose;
         end if;
    end disposeResource;
-
-   procedure getInstance is
-      Java_Result : constant DisposalUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

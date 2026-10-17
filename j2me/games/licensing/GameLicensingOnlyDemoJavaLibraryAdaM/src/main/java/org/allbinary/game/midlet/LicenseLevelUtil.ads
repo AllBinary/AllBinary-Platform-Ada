@@ -35,7 +35,6 @@ package org.allbinary.game.midlet.LicenseLevelUtil_Package is
    procedure Initialize (This : in out LicenseLevelUtil'Class);
    function Create return LicenseLevelUtil_Access;
    function getInstance return LicenseLevelUtil_Access;
-   procedure getInstance;
    function getMaxLevel (This : in out LicenseLevelUtil; maxLevel : Integer; demoLevel : Integer) return Integer;
    procedure getMaxLevel (This : in out LicenseLevelUtil; maxLevel : Integer; demoLevel : Integer);
 

@@ -31,7 +31,7 @@ package body org.allbinary.logic.communication.smtp.event.modules.log.LogUserEma
    function Create return LogUserEmailEventListenerModule_Access is
       This : constant LogUserEmailEventListenerModule_Access := new LogUserEmailEventListenerModule;
    begin
-      Initialize (This.all);
+      LogUserEmailEventListenerModule_Package.Initialize (This.all);
       return This;
    end Create;
 

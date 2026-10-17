@@ -31,7 +31,7 @@ package body org.allbinary.logic.system.hardware.components.linux.Video_Package 
    function Create (data : Unbounded_String) return Video_Access is
       This : constant Video_Access := new Video;
    begin
-      Initialize (This.all, data);
+      Video_Package.Initialize (This.all, data);
       return This;
    end Create;
 
@@ -51,13 +51,6 @@ package body org.allbinary.logic.system.hardware.components.linux.Video_Package 
    begin
       null;
    end compareTo;
-
-   procedure toString (This : in out Video) is
-      Java_Result : constant Unbounded_String := Video'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toString;
 
 end org.allbinary.logic.system.hardware.components.linux.Video_Package;
 

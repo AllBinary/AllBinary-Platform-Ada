@@ -25,6 +25,8 @@ with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.Com
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.game.layer.RTSLayerCompositePaintable_Package; use org.allbinary.game.layer.RTSLayerCompositePaintable_Package;
+with org.allbinary.game.layer.UpgradableRTSLayerHudPaintable_Package; use org.allbinary.game.layer.UpgradableRTSLayerHudPaintable_Package;
+with org.allbinary.game.layer.RTSLayer_Package; use org.allbinary.game.layer.RTSLayer_Package;
 
 package org.allbinary.game.layer.UpgradableWideRTSLayerPaintable_Package is
 
@@ -47,7 +49,6 @@ package org.allbinary.game.layer.UpgradableWideRTSLayerPaintable_Package is
    procedure paint (This : in out UpgradableWideRTSLayerPaintable; graphics : Graphics_Access);
    procedure setCost (This : in out UpgradableWideRTSLayerPaintable; cost : Unbounded_String);
    function getCost (This : in out UpgradableWideRTSLayerPaintable) return Unbounded_String;
-   procedure getCost (This : in out UpgradableWideRTSLayerPaintable);
 
 end org.allbinary.game.layer.UpgradableWideRTSLayerPaintable_Package;
 

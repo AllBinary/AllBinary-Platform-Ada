@@ -26,6 +26,9 @@ with org.allbinary.math.AngleInfo_Package; use org.allbinary.math.AngleInfo_Pack
 with org.allbinary.media.ScaleProperties_Package; use org.allbinary.media.ScaleProperties_Package;
 with org.allbinary.animation.AnimationInterfaceFactoryInterface_Package; use org.allbinary.animation.AnimationInterfaceFactoryInterface_Package;
 with org.allbinary.animation.ProceduralAnimationInterfaceFactoryInterface_Package; use org.allbinary.animation.ProceduralAnimationInterfaceFactoryInterface_Package;
+with org.allbinary.animation.NullRotationAnimation_Package; use org.allbinary.animation.NullRotationAnimation_Package;
+with org.allbinary.animation.AnimationBehavior_Package; use org.allbinary.animation.AnimationBehavior_Package;
+with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Animation_Package;
 
 package org.allbinary.animation.RotationAnimationFactory_Package is
 
@@ -47,7 +50,6 @@ package org.allbinary.animation.RotationAnimationFactory_Package is
    procedure Initialize (This : in out RotationAnimationFactory'Class; totalAngle : Short_Integer; angleIncrement : Short_Integer);
    function Create (totalAngle : Short_Integer; angleIncrement : Short_Integer) return RotationAnimationFactory_Access;
    function createFactory return RotationAnimationFactory_Access;
-   procedure createFactory;
    function getInstance (This : in out RotationAnimationFactory; instanceId : Integer) return Animation_Access;
    procedure getInstance (This : in out RotationAnimationFactory; instanceId : Integer);
    function getInstanceAnimation (This : in out RotationAnimationFactory; animationInterface : Animation_Access) return Animation_Access;

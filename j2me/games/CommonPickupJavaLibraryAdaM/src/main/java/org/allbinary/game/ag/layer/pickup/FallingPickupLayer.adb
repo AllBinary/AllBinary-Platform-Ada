@@ -29,7 +29,7 @@ package body org.allbinary.game.ag.layer.pickup.FallingPickupLayer_Package is
    function Create (remoteInfo : RemoteInfo_Access) return FallingPickupLayer_Access is
       This : constant FallingPickupLayer_Access := new FallingPickupLayer;
    begin
-      Initialize (This.all, remoteInfo);
+      FallingPickupLayer_Package.Initialize (This.all, remoteInfo);
       return This;
    end Create;
 
@@ -41,13 +41,6 @@ package body org.allbinary.game.ag.layer.pickup.FallingPickupLayer_Package is
    function implmentsTickableInterface (This : in out FallingPickupLayer) return Boolean is
    begin
         return True;
-   end implmentsTickableInterface;
-
-   procedure implmentsTickableInterface (This : in out FallingPickupLayer) is
-      Java_Result : constant Boolean := FallingPickupLayer'Class (This).implmentsTickableInterface;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end implmentsTickableInterface;
 
 begin

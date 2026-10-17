@@ -22,6 +22,8 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.time.TimeDelayHelper_Package; use org.allbinary.time.TimeDelayHelper_Package;
 with org.allbinary.game.IntermissionInterface_Package; use org.allbinary.game.IntermissionInterface_Package;
+with org.allbinary.game.NullIntermissionEnableListener_Package; use org.allbinary.game.NullIntermissionEnableListener_Package;
+with org.allbinary.game.IntermissionEnableListenerInterface_Package; use org.allbinary.game.IntermissionEnableListenerInterface_Package;
 
 package org.allbinary.game.Intermission_Package is
 
@@ -42,10 +44,8 @@ package org.allbinary.game.Intermission_Package is
    function Create return Intermission_Access;
    procedure setListener (This : in out Intermission; enableListener : IntermissionEnableListenerInterface_Access);
    function getTimeDelayHelper (This : in out Intermission) return TimeDelayHelper_Access;
-   procedure getTimeDelayHelper (This : in out Intermission);
    procedure setEnabled (This : in out Intermission; enabled : Boolean);
    function isEnabled (This : in out Intermission) return Boolean;
-   procedure isEnabled (This : in out Intermission);
 
 end org.allbinary.game.Intermission_Package;
 

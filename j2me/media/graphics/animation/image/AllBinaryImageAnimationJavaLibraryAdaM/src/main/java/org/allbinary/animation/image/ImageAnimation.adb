@@ -33,7 +33,7 @@ package body org.allbinary.animation.image.ImageAnimation_Package is
    function Create (image : Image_Access; animationBehavior : AnimationBehavior_Access) return ImageAnimation_Access is
       This : constant ImageAnimation_Access := new ImageAnimation;
    begin
-      Initialize (This.all, image, animationBehavior);
+      ImageAnimation_Package.Initialize (This.all, image, animationBehavior);
       return This;
    end Create;
 
@@ -99,41 +99,6 @@ package body org.allbinary.animation.image.ImageAnimation_Package is
    begin
         DisposalUtil_Package.getInstance.disposeImage (This.image);
    end finalize;
-
-   procedure getAnimationSize (This : in out ImageAnimation) is
-      Java_Result : constant Integer := ImageAnimation'Class (This).getAnimationSize;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getAnimationSize;
-
-   procedure getFrame (This : in out ImageAnimation) is
-      Java_Result : constant Integer := ImageAnimation'Class (This).getFrame;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getFrame;
-
-   procedure getSize (This : in out ImageAnimation) is
-      Java_Result : constant Integer := ImageAnimation'Class (This).getSize;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSize;
-
-   procedure getSequence (This : in out ImageAnimation) is
-      Java_Result : constant Integer_Array_Access := ImageAnimation'Class (This).getSequence;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSequence;
-
-   procedure getImage (This : in out ImageAnimation) is
-      Java_Result : constant Image_Access := ImageAnimation'Class (This).getImage;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getImage;
 
 end org.allbinary.animation.image.ImageAnimation_Package;
 

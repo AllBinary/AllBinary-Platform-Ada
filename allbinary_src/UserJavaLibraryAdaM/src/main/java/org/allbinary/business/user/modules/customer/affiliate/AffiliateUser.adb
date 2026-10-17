@@ -32,7 +32,7 @@ package body org.allbinary.business.user.modules.customer.affiliate.AffiliateUse
    function Create return AffiliateUser_Access is
       This : constant AffiliateUser_Access := new AffiliateUser;
    begin
-      Initialize (This.all);
+      AffiliateUser_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -47,7 +47,7 @@ package body org.allbinary.business.user.modules.customer.affiliate.AffiliateUse
    function Create (userHashMap : HashMap_Access) return AffiliateUser_Access is
       This : constant AffiliateUser_Access := new AffiliateUser;
    begin
-      Initialize (This.all, userHashMap);
+      AffiliateUser_Package.Initialize (This.all, userHashMap);
       return This;
    end Create;
 
@@ -65,13 +65,6 @@ package body org.allbinary.business.user.modules.customer.affiliate.AffiliateUse
    function isSessionValid (This : in out AffiliateUser) return Boolean is
    begin
         return This.affiliateSales.isValid;
-   end isSessionValid;
-
-   procedure isSessionValid (This : in out AffiliateUser) is
-      Java_Result : constant Boolean := AffiliateUser'Class (This).isSessionValid;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end isSessionValid;
 
 end org.allbinary.business.user.modules.customer.affiliate.AffiliateUser_Package;

@@ -31,20 +31,13 @@ package body org.allbinary.graphics.color.ColorChangeEventHandler_Package is
    function Create return ColorChangeEventHandler_Access is
       This : constant ColorChangeEventHandler_Access := new ColorChangeEventHandler;
    begin
-      Initialize (This.all);
+      ColorChangeEventHandler_Package.Initialize (This.all);
       return This;
    end Create;
 
    function getInstance return ColorChangeEventHandler_Access is
    begin
         return ColorChangeEventHandler_Package.eventHandler;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant ColorChangeEventHandler_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

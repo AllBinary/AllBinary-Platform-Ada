@@ -29,7 +29,7 @@ package body org.allbinary.view.ViewPositionBase_Package is
    function Create (x : Integer; y : Integer; z : Integer) return ViewPositionBase_Access is
       This : constant ViewPositionBase_Access := new ViewPositionBase;
    begin
-      Initialize (This.all, x, y, z);
+      ViewPositionBase_Package.Initialize (This.all, x, y, z);
       return This;
    end Create;
 
@@ -52,27 +52,6 @@ package body org.allbinary.view.ViewPositionBase_Package is
    begin
         null;
    end setAllbinaryLayer;
-
-   procedure getX2 (This : in out ViewPositionBase) is
-      Java_Result : constant Integer := ViewPositionBase'Class (This).getX2;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getX2;
-
-   procedure getY2 (This : in out ViewPositionBase) is
-      Java_Result : constant Integer := ViewPositionBase'Class (This).getY2;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getY2;
-
-   procedure getZ2 (This : in out ViewPositionBase) is
-      Java_Result : constant Integer := ViewPositionBase'Class (This).getZ2;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getZ2;
 
 begin
    null;

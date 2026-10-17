@@ -36,7 +36,7 @@ package body org.allbinary.business.context.modules.storefronts.BasicStoreFrontF
    function Create return BasicStoreFrontFactory_Access is
       This : constant BasicStoreFrontFactory_Access := new BasicStoreFrontFactory;
    begin
-      Initialize (This.all);
+      BasicStoreFrontFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -60,13 +60,6 @@ package body org.allbinary.business.context.modules.storefronts.BasicStoreFrontF
             return null;
                 end;
         end;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant BasicStoreFrontFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
    procedure getInstance (This : in out BasicStoreFrontFactory; storeName : Unbounded_String) is

@@ -21,6 +21,7 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+with org.allbinary.media.image.comparison.ImageComparisonResult_Package; use org.allbinary.media.image.comparison.ImageComparisonResult_Package;
 
 package org.allbinary.media.image.comparison.ImageComparisonResultsEvent_Package is
 
@@ -38,7 +39,6 @@ package org.allbinary.media.image.comparison.ImageComparisonResultsEvent_Package
    procedure Initialize (This : in out ImageComparisonResultsEvent'Class; anyType : Java_Object_Access; imageComparisonInfo : ImageComparisonResult_Access);
    function Create (anyType : Java_Object_Access; imageComparisonInfo : ImageComparisonResult_Access) return ImageComparisonResultsEvent_Access;
    function getImageComparisonResult (This : in out ImageComparisonResultsEvent) return ImageComparisonResult_Access;
-   procedure getImageComparisonResult (This : in out ImageComparisonResultsEvent);
    procedure setImageComparisonResult (This : in out ImageComparisonResultsEvent; imageComparisonResult : ImageComparisonResult_Access);
 
 end org.allbinary.media.image.comparison.ImageComparisonResultsEvent_Package;

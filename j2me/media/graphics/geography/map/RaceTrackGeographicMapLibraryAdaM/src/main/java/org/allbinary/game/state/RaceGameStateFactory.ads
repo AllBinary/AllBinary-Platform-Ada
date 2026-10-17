@@ -21,6 +21,8 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
+with org.allbinary.game.state.GameStateFactory_Package; use org.allbinary.game.state.GameStateFactory_Package;
+with org.allbinary.game.state.GameState_Package; use org.allbinary.game.state.GameState_Package;
 
 package org.allbinary.game.state.RaceGameStateFactory_Package is
 
@@ -41,7 +43,6 @@ package org.allbinary.game.state.RaceGameStateFactory_Package is
    procedure Initialize (This : in out RaceGameStateFactory'Class);
    function Create return RaceGameStateFactory_Access;
    function getInstance return RaceGameStateFactory_Access;
-   procedure getInstance;
 
 end org.allbinary.game.state.RaceGameStateFactory_Package;
 

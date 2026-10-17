@@ -26,6 +26,7 @@ with org.allbinary.logic.util.cache.PoolInterface_Package; use org.allbinary.log
 with org.allbinary.logic.util.cache.PoolInterfaceFactory_Package; use org.allbinary.logic.util.cache.PoolInterfaceFactory_Package;
 with org.allbinary.logic.util.cache.PoolTypeFactory_Package; use org.allbinary.logic.util.cache.PoolTypeFactory_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.media.image.cache.BufferedImageCacheableFactory_Package; use org.allbinary.media.image.cache.BufferedImageCacheableFactory_Package;
 
 package org.allbinary.media.image.cache.BufferedImagePoolSingleton_Package is
 
@@ -47,7 +48,6 @@ package org.allbinary.media.image.cache.BufferedImagePoolSingleton_Package is
    procedure Initialize (This : in out BufferedImagePoolSingleton'Class);
    function Create return BufferedImagePoolSingleton_Access;
    function getInstance return PoolInterface_Access;
-   procedure getInstance;
 
 end org.allbinary.media.image.cache.BufferedImagePoolSingleton_Package;
 

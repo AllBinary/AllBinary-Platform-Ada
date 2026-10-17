@@ -52,7 +52,6 @@ package org.allbinary.game.input.GameInputStrings_Package is
    procedure Initialize (This : in out GameInputStrings'Class);
    function Create return GameInputStrings_Access;
    function getInstance return GameInputStrings_Access;
-   procedure getInstance;
 
 end org.allbinary.game.input.GameInputStrings_Package;
 

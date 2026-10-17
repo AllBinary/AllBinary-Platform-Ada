@@ -32,7 +32,7 @@ package body admin.taghelpers.BasketRequestHelperFactory_Package is
    function Create return BasketRequestHelperFactory_Access is
       This : constant BasketRequestHelperFactory_Access := new BasketRequestHelperFactory;
    begin
-      Initialize (This.all);
+      BasketRequestHelperFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

@@ -44,7 +44,7 @@ package body org.allbinary.input.automation.actions.script.condition.AlwaysActio
    function Create (alwaysActionScriptConditionInterface : AlwaysActionScriptConditionInterface_Access) return AlwaysActionScriptConditionJPanel_Access is
       This : constant AlwaysActionScriptConditionJPanel_Access := new AlwaysActionScriptConditionJPanel;
    begin
-      Initialize (This.all, alwaysActionScriptConditionInterface);
+      AlwaysActionScriptConditionJPanel_Package.Initialize (This.all, alwaysActionScriptConditionInterface);
       return This;
    end Create;
 
@@ -131,13 +131,6 @@ package body org.allbinary.input.automation.actions.script.condition.AlwaysActio
    begin
         This.getAlwaysActionJDialog.setVisible (True);
    end alwaysActionJButtonActionPerformed;
-
-   procedure getAlwaysActionJDialog (This : in out AlwaysActionScriptConditionJPanel) is
-      Java_Result : constant JDialog_Access := AlwaysActionScriptConditionJPanel'Class (This).getAlwaysActionJDialog;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getAlwaysActionJDialog;
 
 end org.allbinary.input.automation.actions.script.condition.AlwaysActionScriptConditionJPanel_Package;
 

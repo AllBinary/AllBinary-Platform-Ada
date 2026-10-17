@@ -29,7 +29,7 @@ package body org.allbinary.game.configuration.persistance.GameDifficultyFactory_
    function Create return GameDifficultyFactory_Access is
       This : constant GameDifficultyFactory_Access := new GameDifficultyFactory;
    begin
-      Initialize (This.all);
+      GameDifficultyFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -47,20 +47,6 @@ package body org.allbinary.game.configuration.persistance.GameDifficultyFactory_
    function getLevel (This : in out GameDifficultyFactory) return Integer is
    begin
         return This.level;
-   end getLevel;
-
-   procedure getInstance is
-      Java_Result : constant GameDifficultyFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure getLevel (This : in out GameDifficultyFactory) is
-      Java_Result : constant Integer := GameDifficultyFactory'Class (This).getLevel;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getLevel;
 
 begin

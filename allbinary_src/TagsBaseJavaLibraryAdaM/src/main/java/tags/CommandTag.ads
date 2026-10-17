@@ -21,6 +21,7 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with tags.CustomTagSupport_Package; use tags.CustomTagSupport_Package;
+with tags.TagStrings_Package; use tags.TagStrings_Package;
 
 package tags.CommandTag_Package is
 
@@ -39,7 +40,6 @@ package tags.CommandTag_Package is
    function Create return CommandTag_Access;
    procedure setCommand (This : in out CommandTag; command : Unbounded_String);
    function getCommand (This : in out CommandTag) return Unbounded_String;
-   procedure getCommand (This : in out CommandTag);
 
 end tags.CommandTag_Package;
 

@@ -28,7 +28,7 @@ package body org.allbinary.game.ag.ai.tactical.HorizontalManeuverAIFactory_Packa
    function Create return HorizontalManeuverAIFactory_Access is
       This : constant HorizontalManeuverAIFactory_Access := new HorizontalManeuverAIFactory;
    begin
-      Initialize (This.all);
+      HorizontalManeuverAIFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

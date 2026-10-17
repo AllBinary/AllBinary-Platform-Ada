@@ -36,7 +36,7 @@ package body org.allbinary.logic.control.workflow.NewWorkFlowFactory_Package is
    function Create return NewWorkFlowFactory_Access is
       This : constant NewWorkFlowFactory_Access := new NewWorkFlowFactory;
    begin
-      Initialize (This.all);
+      NewWorkFlowFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -98,13 +98,6 @@ package body org.allbinary.logic.control.workflow.NewWorkFlowFactory_Package is
             Java_Throw (e);
                 end;
         end;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant NewWorkFlowFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
    procedure getInstance (This : in out NewWorkFlowFactory; abeClientInformation : AbeClientInformationInterface_Access; hashMap : HashMap_Access; pageContext : PageContext_Access) is

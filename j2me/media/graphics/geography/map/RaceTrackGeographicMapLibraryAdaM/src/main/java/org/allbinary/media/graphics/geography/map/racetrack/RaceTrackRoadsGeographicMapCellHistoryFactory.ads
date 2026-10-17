@@ -37,7 +37,6 @@ package org.allbinary.media.graphics.geography.map.racetrack.RaceTrackRoadsGeogr
    procedure Initialize (This : in out RaceTrackRoadsGeographicMapCellHistoryFactory'Class);
    function Create return RaceTrackRoadsGeographicMapCellHistoryFactory_Access;
    function getInstance return GeographicMapCellHistory_Access;
-   procedure getInstance;
 
 end org.allbinary.media.graphics.geography.map.racetrack.RaceTrackRoadsGeographicMapCellHistoryFactory_Package;
 

@@ -23,6 +23,8 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.layer.AllBinaryLayerManager_Package; use org.allbinary.layer.AllBinaryLayerManager_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.game.input.PlayerGameInputCompositeInterface_Package; use org.allbinary.game.input.PlayerGameInputCompositeInterface_Package;
+with org.allbinary.game.input.NoPlayerGameInput_Package; use org.allbinary.game.input.NoPlayerGameInput_Package;
+with org.allbinary.game.input.PlayerGameInput_Package; use org.allbinary.game.input.PlayerGameInput_Package;
 
 package org.allbinary.game.input.NullPlayerGameInputComposite_Package is
 
@@ -40,11 +42,9 @@ package org.allbinary.game.input.NullPlayerGameInputComposite_Package is
    procedure Initialize (This : in out NullPlayerGameInputComposite'Class);
    function Create return NullPlayerGameInputComposite_Access;
    function getName (This : in out NullPlayerGameInputComposite) return Unbounded_String;
-   procedure getName (This : in out NullPlayerGameInputComposite);
    procedure processInput (This : in out NullPlayerGameInputComposite; layerManager : AllBinaryLayerManager_Access);
    procedure initInputProcessors (This : in out NullPlayerGameInputComposite);
    function getPlayerGameInput (This : in out NullPlayerGameInputComposite) return PlayerGameInput_Access;
-   procedure getPlayerGameInput (This : in out NullPlayerGameInputComposite);
 
 end org.allbinary.game.input.NullPlayerGameInputComposite_Package;
 

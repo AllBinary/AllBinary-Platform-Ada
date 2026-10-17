@@ -28,7 +28,7 @@ package body org.allbinary.J2SEUtil_Package is
    function Create return J2SEUtil_Access is
       This : constant J2SEUtil_Access := new J2SEUtil;
    begin
-      Initialize (This.all);
+      J2SEUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -58,13 +58,6 @@ package body org.allbinary.J2SEUtil_Package is
         objectArray := set.toArray;
         return objectArray;
    end getSetAsArray;
-
-   procedure getInstance is
-      Java_Result : constant J2SEUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure getHashMapAsArray (This : in out J2SEUtil; hashMap : HashMap_Access) is
       Java_Result : constant Java_Object_Access_Array_Access := J2SEUtil'Class (This).getHashMapAsArray (hashMap);

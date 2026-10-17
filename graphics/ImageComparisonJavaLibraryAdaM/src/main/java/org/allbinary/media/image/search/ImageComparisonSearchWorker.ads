@@ -33,6 +33,7 @@ with org.allbinary.media.image.comparison.ImageComparisonResultsListener_Package
 with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.time.TimeDelayHelper_Package; use org.allbinary.time.TimeDelayHelper_Package;
+with org.allbinary.media.image.search.ImageComparisonSearchConstraintsInterface_Package; use org.allbinary.media.image.search.ImageComparisonSearchConstraintsInterface_Package;
 
 package org.allbinary.media.image.search.ImageComparisonSearchWorker_Package is
 
@@ -68,7 +69,6 @@ package org.allbinary.media.image.search.ImageComparisonSearchWorker_Package is
    procedure onImageComparisonResultsEvent (This : in out ImageComparisonSearchWorker; imageComparisonResultsEvent : ImageComparisonResultsEvent_Access);
    procedure onEvent (This : in out ImageComparisonSearchWorker; allBinaryEventObject : AllBinaryEventObject_Access);
    function isRunning (This : in out ImageComparisonSearchWorker) return Boolean;
-   procedure isRunning (This : in out ImageComparisonSearchWorker);
    procedure setRunning (This : in out ImageComparisonSearchWorker; running : Boolean);
    procedure run (This : in out ImageComparisonSearchWorker);
 

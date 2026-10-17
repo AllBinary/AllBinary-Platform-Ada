@@ -28,6 +28,7 @@ with org.allbinary.logic.string_Id.StringValidationUtil_Package; use org.allbina
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.allbinary.logic.visual.transform.template.customizer.widgets.title.TitleView_Package; use org.allbinary.logic.visual.transform.template.customizer.widgets.title.TitleView_Package;
+with org.allbinary.logic.visual.transform.template.customizer.widgets.title.TitleData_Package; use org.allbinary.logic.visual.transform.template.customizer.widgets.title.TitleData_Package;
 
 package org.allbinary.logic.visual.transform.template.customizer.widgets.title.TitleNotRequiredValidation_Package is
 
@@ -50,11 +51,8 @@ package org.allbinary.logic.visual.transform.template.customizer.widgets.title.T
    procedure Initialize (This : in out TitleNotRequiredValidation'Class);
    function Create return TitleNotRequiredValidation_Access;
    function isValid (This : in out TitleNotRequiredValidation) return Boolean;
-   procedure isValid (This : in out TitleNotRequiredValidation);
    function validationInfo (This : in out TitleNotRequiredValidation) return Unbounded_String;
-   procedure validationInfo (This : in out TitleNotRequiredValidation);
    function toValidationInfoDoc (This : in out TitleNotRequiredValidation) return Document_Access;
-   procedure toValidationInfoDoc (This : in out TitleNotRequiredValidation);
    function toValidationInfoNode (This : in out TitleNotRequiredValidation; document : Document_Access) return Node_Access;
    procedure toValidationInfoNode (This : in out TitleNotRequiredValidation; document : Document_Access);
 

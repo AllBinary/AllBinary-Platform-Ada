@@ -32,7 +32,7 @@ package body views.admin.payment.gateway.PaymentGatewayViewAbstract_Package is
    function Create (transformInfoInterface : TransformInfoInterface_Access) return PaymentGatewayViewAbstract_Access is
       This : constant PaymentGatewayViewAbstract_Access := new PaymentGatewayViewAbstract;
    begin
-      Initialize (This.all, transformInfoInterface);
+      PaymentGatewayViewAbstract_Package.Initialize (This.all, transformInfoInterface);
       return This;
    end Create;
 
@@ -54,13 +54,6 @@ package body views.admin.payment.gateway.PaymentGatewayViewAbstract_Package is
    begin
         This.paymentGatewayPrimaryKey := paymentGatewayPrimaryKey;
    end setPaymentGatewayPrimaryKey;
-
-   procedure getPaymentGatewayPrimaryKey (This : in out PaymentGatewayViewAbstract) is
-      Java_Result : constant PaymentGatewayPrimaryKey_Access := PaymentGatewayViewAbstract'Class (This).getPaymentGatewayPrimaryKey;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getPaymentGatewayPrimaryKey;
 
 end views.admin.payment.gateway.PaymentGatewayViewAbstract_Package;
 

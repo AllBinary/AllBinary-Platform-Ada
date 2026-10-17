@@ -30,6 +30,7 @@ with org.allbinary.graphics.font.UpdateMyFontInterface_Package; use org.allbinar
 with org.allbinary.graphics.form.item.CustomTextBox_Package; use org.allbinary.graphics.form.item.CustomTextBox_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.animation.text.TextInterface_Package; use org.allbinary.animation.text.TextInterface_Package;
+with org.allbinary.animation.text.TextChangeListener_Package; use org.allbinary.animation.text.TextChangeListener_Package;
 
 package org.allbinary.animation.text.CustomTextBoxIndexedAnimation_Package is
 
@@ -61,10 +62,8 @@ package org.allbinary.animation.text.CustomTextBoxIndexedAnimation_Package is
    procedure updateMeasurement (This : in out CustomTextBoxIndexedAnimation; graphics : Graphics_Access);
    procedure setText (This : in out CustomTextBoxIndexedAnimation; text : Unbounded_String);
    function getText (This : in out CustomTextBoxIndexedAnimation) return Unbounded_String;
-   procedure getText (This : in out CustomTextBoxIndexedAnimation);
    procedure onEventRaw (This : in out CustomTextBoxIndexedAnimation; keyCode : Integer; deviceId : Integer; repeated : Boolean);
    function getFontHeight (This : in out CustomTextBoxIndexedAnimation) return Integer;
-   procedure getFontHeight (This : in out CustomTextBoxIndexedAnimation);
    procedure paintXY (This : in out CustomTextBoxIndexedAnimation; graphics : Graphics_Access; x : Integer; y : Integer);
    procedure paintThreedXYZ (This : in out CustomTextBoxIndexedAnimation; graphics : Graphics_Access; x : Integer; y : Integer; z : Integer);
 

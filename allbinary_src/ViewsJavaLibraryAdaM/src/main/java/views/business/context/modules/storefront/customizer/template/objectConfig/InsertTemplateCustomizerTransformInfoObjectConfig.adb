@@ -31,7 +31,7 @@ package body views.business.context.modules.storefront.customizer.template.objec
    function Create (transformInfoInterface : TransformInfoInterface_Access) return InsertTemplateCustomizerTransformInfoObjectConfig_Access is
       This : constant InsertTemplateCustomizerTransformInfoObjectConfig_Access := new InsertTemplateCustomizerTransformInfoObjectConfig;
    begin
-      Initialize (This.all, transformInfoInterface);
+      InsertTemplateCustomizerTransformInfoObjectConfig_Package.Initialize (This.all, transformInfoInterface);
       return This;
    end Create;
 
@@ -46,7 +46,7 @@ package body views.business.context.modules.storefront.customizer.template.objec
    function Create (transformInfoInterface : TransformInfoInterface_Access; document : Document_Access) return InsertTemplateCustomizerTransformInfoObjectConfig_Access is
       This : constant InsertTemplateCustomizerTransformInfoObjectConfig_Access := new InsertTemplateCustomizerTransformInfoObjectConfig;
    begin
-      Initialize (This.all, transformInfoInterface, document);
+      InsertTemplateCustomizerTransformInfoObjectConfig_Package.Initialize (This.all, transformInfoInterface, document);
       return This;
    end Create;
 
@@ -61,7 +61,7 @@ package body views.business.context.modules.storefront.customizer.template.objec
    function Create (transformInfoInterface : TransformInfoInterface_Access; name : Unbounded_String; type_Id : Unbounded_String) return InsertTemplateCustomizerTransformInfoObjectConfig_Access is
       This : constant InsertTemplateCustomizerTransformInfoObjectConfig_Access := new InsertTemplateCustomizerTransformInfoObjectConfig;
    begin
-      Initialize (This.all, transformInfoInterface, name, type_Id);
+      InsertTemplateCustomizerTransformInfoObjectConfig_Package.Initialize (This.all, transformInfoInterface, name, type_Id);
       return This;
    end Create;
 

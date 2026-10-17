@@ -37,7 +37,7 @@ package body org.allbinary.logic.communication.http.file.upload.AbFileItem_Packa
    function Create (name : Unbounded_String; fieldName : Unbounded_String; byteArray : Short_Short_Integer_Array_Access) return AbFileItem_Access is
       This : constant AbFileItem_Access := new AbFileItem;
    begin
-      Initialize (This.all, name, fieldName, byteArray);
+      AbFileItem_Package.Initialize (This.all, name, fieldName, byteArray);
       return This;
    end Create;
 
@@ -152,89 +152,12 @@ package body org.allbinary.logic.communication.http.file.upload.AbFileItem_Packa
         Java_Throw (Java_New_Exception ("RuntimeException", This.commonStrings.NOT_IMPLEMENTED));
    end setHeaders;
 
-   procedure getInputStream (This : in out AbFileItem) is
-      Java_Result : constant InputStream_Access := AbFileItem'Class (This).getInputStream;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInputStream;
-
-   procedure getContentType (This : in out AbFileItem) is
-      Java_Result : constant Unbounded_String := AbFileItem'Class (This).getContentType;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getContentType;
-
-   procedure getName (This : in out AbFileItem) is
-      Java_Result : constant Unbounded_String := AbFileItem'Class (This).getName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getName;
-
-   procedure isInMemory (This : in out AbFileItem) is
-      Java_Result : constant Boolean := AbFileItem'Class (This).isInMemory;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isInMemory;
-
-   procedure getSize (This : in out AbFileItem) is
-      Java_Result : constant Long_Long_Integer := AbFileItem'Class (This).getSize;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSize;
-
-   procedure get (This : in out AbFileItem) is
-      Java_Result : constant Short_Short_Integer_Array_Access := AbFileItem'Class (This).get;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end get;
-
    procedure getString (This : in out AbFileItem; encoding : Unbounded_String) is
       Java_Result : constant Unbounded_String := AbFileItem'Class (This).getString (encoding);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getString;
-
-   procedure getString (This : in out AbFileItem) is
-      Java_Result : constant Unbounded_String := AbFileItem'Class (This).getString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getString;
-
-   procedure getFieldName (This : in out AbFileItem) is
-      Java_Result : constant Unbounded_String := AbFileItem'Class (This).getFieldName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getFieldName;
-
-   procedure isFormField (This : in out AbFileItem) is
-      Java_Result : constant Boolean := AbFileItem'Class (This).isFormField;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isFormField;
-
-   procedure getOutputStream (This : in out AbFileItem) is
-      Java_Result : constant OutputStream_Access := AbFileItem'Class (This).getOutputStream;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getOutputStream;
-
-   procedure getHeaders (This : in out AbFileItem) is
-      Java_Result : constant FileItemHeaders_Access := AbFileItem'Class (This).getHeaders;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getHeaders;
 
 end org.allbinary.logic.communication.http.file.upload.AbFileItem_Package;
 

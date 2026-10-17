@@ -39,7 +39,7 @@ package body org.allbinary.logic.communication.log.config.LogConfig_Package is
    function Create (aName : Unbounded_String; aDescription : Unbounded_String; aPath : Unbounded_String; aFileName : Unbounded_String) return LogConfig_Access is
       This : constant LogConfig_Access := new LogConfig;
    begin
-      Initialize (This.all, aName, aDescription, aPath, aFileName);
+      LogConfig_Package.Initialize (This.all, aName, aDescription, aPath, aFileName);
       return This;
    end Create;
 
@@ -68,7 +68,7 @@ package body org.allbinary.logic.communication.log.config.LogConfig_Package is
    function Create (node : Node_Access) return LogConfig_Access is
       This : constant LogConfig_Access := new LogConfig;
    begin
-      Initialize (This.all, node);
+      LogConfig_Package.Initialize (This.all, node);
       return This;
    end Create;
 
@@ -128,41 +128,6 @@ package body org.allbinary.logic.communication.log.config.LogConfig_Package is
    begin
         logKeyVector := BasicArrayListD_Package.Create;
         return logKeyVector;
-   end getTypeVector;
-
-   procedure getName (This : in out LogConfig) is
-      Java_Result : constant Unbounded_String := LogConfig'Class (This).getName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getName;
-
-   procedure isEnabled (This : in out LogConfig) is
-      Java_Result : constant Boolean := LogConfig'Class (This).isEnabled;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isEnabled;
-
-   procedure getDescription (This : in out LogConfig) is
-      Java_Result : constant Unbounded_String := LogConfig'Class (This).getDescription;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getDescription;
-
-   procedure getFileName (This : in out LogConfig) is
-      Java_Result : constant Unbounded_String := LogConfig'Class (This).getFileName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getFileName;
-
-   procedure getTypeVector (This : in out LogConfig) is
-      Java_Result : constant BasicArrayList_Access := LogConfig'Class (This).getTypeVector;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getTypeVector;
 
 end org.allbinary.logic.communication.log.config.LogConfig_Package;

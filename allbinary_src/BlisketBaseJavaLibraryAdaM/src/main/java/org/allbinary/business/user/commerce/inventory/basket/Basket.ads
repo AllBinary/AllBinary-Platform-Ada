@@ -55,17 +55,12 @@ package org.allbinary.business.user.commerce.inventory.basket.Basket_Package is
    procedure removeItem (This : in out Basket; id : Unbounded_String);
    procedure adjustItem (This : in out Basket; id : Unbounded_String; num : Unbounded_String);
    function getTotalWeight (This : in out Basket) return Unbounded_String;
-   procedure getTotalWeight (This : in out Basket);
    function getNumberOfItems (This : in out Basket) return Integer;
-   procedure getNumberOfItems (This : in out Basket);
    function getIds (This : in out Basket) return Set_Access;
-   procedure getIds (This : in out Basket);
    function getItems (This : in out Basket) return HashMap_Access;
-   procedure getItems (This : in out Basket);
    function getNumberOf (This : in out Basket; product : Unbounded_String) return Integer;
    procedure getNumberOf (This : in out Basket; product : Unbounded_String);
    function getSubTotal (This : in out Basket) return Money_Access;
-   procedure getSubTotal (This : in out Basket);
 
 end org.allbinary.business.user.commerce.inventory.basket.Basket_Package;
 

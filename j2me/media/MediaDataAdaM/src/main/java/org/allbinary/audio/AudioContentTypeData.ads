@@ -36,7 +36,6 @@ package org.allbinary.audio.AudioContentTypeData_Package is
    procedure Initialize (This : in out AudioContentTypeData'Class; name : Unbounded_String);
    function Create (name : Unbounded_String) return AudioContentTypeData_Access;
    function getName (This : in out AudioContentTypeData) return Unbounded_String;
-   procedure getName (This : in out AudioContentTypeData);
 
 end org.allbinary.audio.AudioContentTypeData_Package;
 

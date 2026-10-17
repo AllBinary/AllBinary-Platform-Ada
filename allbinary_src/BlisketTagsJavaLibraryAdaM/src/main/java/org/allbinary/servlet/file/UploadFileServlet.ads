@@ -80,11 +80,10 @@ package org.allbinary.servlet.file.UploadFileServlet_Package is
    procedure Initialize (This : in out UploadFileServlet'Class);
    function Create return UploadFileServlet_Access;
    procedure processRequest (This : in out UploadFileServlet; request : HttpServletRequest_Access; response : HttpServletResponse_Access);
-   procedure saveFile (This : in out UploadFileServlet; filePath : Unbounded_String);
+   procedure saveFile (This : in out UploadFileServlet; filePath_Param : Unbounded_String);
    procedure doGet (This : in out UploadFileServlet; request : HttpServletRequest_Access; response : HttpServletResponse_Access);
    procedure doPost (This : in out UploadFileServlet; request : HttpServletRequest_Access; response : HttpServletResponse_Access);
    function getServletInfo (This : in out UploadFileServlet) return Unbounded_String;
-   procedure getServletInfo (This : in out UploadFileServlet);
 
 end org.allbinary.servlet.file.UploadFileServlet_Package;
 

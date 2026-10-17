@@ -28,7 +28,7 @@ package body org.allbinary.image.ChoiceGroupImageUtil_Package is
    function Create return ChoiceGroupImageUtil_Access is
       This : constant ChoiceGroupImageUtil_Access := new ChoiceGroupImageUtil;
    begin
-      Initialize (This.all);
+      ChoiceGroupImageUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -100,13 +100,6 @@ package body org.allbinary.image.ChoiceGroupImageUtil_Package is
         end if;
         choiceGroupFactory.init (imageArray);
    end update;
-
-   procedure getInstance is
-      Java_Result : constant ChoiceGroupImageUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

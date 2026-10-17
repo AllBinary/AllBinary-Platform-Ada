@@ -34,16 +34,9 @@ package body org.allbinary.input.motion.button.TouchButtonStrafeLeftResource_Pac
    function Create return TouchButtonStrafeLeftResource_Access is
       This : constant TouchButtonStrafeLeftResource_Access := new TouchButtonStrafeLeftResource;
    begin
-      Initialize (This.all);
+      TouchButtonStrafeLeftResource_Package.Initialize (This.all);
       return This;
    end Create;
-
-   procedure getInstance is
-      Java_Result : constant TouchButtonResource_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

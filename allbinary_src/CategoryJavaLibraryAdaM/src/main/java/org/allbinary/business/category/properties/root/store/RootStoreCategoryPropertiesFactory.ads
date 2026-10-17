@@ -28,6 +28,7 @@ with org.allbinary.logic.io.path.AbPath_Package; use org.allbinary.logic.io.path
 with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
+with org.allbinary.business.category.properties.root.store.RootStoreCategoryProperties_Package; use org.allbinary.business.category.properties.root.store.RootStoreCategoryProperties_Package;
 
 package org.allbinary.business.category.properties.root.store.RootStoreCategoryPropertiesFactory_Package is
 
@@ -52,7 +53,6 @@ package org.allbinary.business.category.properties.root.store.RootStoreCategoryP
    procedure Initialize (This : in out RootStoreCategoryPropertiesFactory'Class; transformInfoInterface : TransformInfoInterface_Access);
    function Create (transformInfoInterface : TransformInfoInterface_Access) return RootStoreCategoryPropertiesFactory_Access;
    function getInstance (This : in out RootStoreCategoryPropertiesFactory) return CategoryPropertiesInterface_Access;
-   procedure getInstance (This : in out RootStoreCategoryPropertiesFactory);
 
 end org.allbinary.business.category.properties.root.store.RootStoreCategoryPropertiesFactory_Package;
 

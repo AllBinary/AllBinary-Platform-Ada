@@ -27,6 +27,7 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 with org.eclipse.swt.SWT_Package; use org.eclipse.swt.SWT_Package;
 with org.eclipse.swt.graphics.GC_Package; use org.eclipse.swt.graphics.GC_Package;
 with org.eclipse.swt.graphics.ImageData_Package; use org.eclipse.swt.graphics.ImageData_Package;
+with org.allbinary.media.image.ImageUtil_Package; use org.allbinary.media.image.ImageUtil_Package;
 
 package org.allbinary.media.image.ImageSwtRotationUtil_Package is
 
@@ -56,7 +57,6 @@ package org.allbinary.media.image.ImageSwtRotationUtil_Package is
    procedure Initialize (This : in out ImageSwtRotationUtil'Class);
    function Create return ImageSwtRotationUtil_Access;
    function getInstance return ImageSwtRotationUtil_Access;
-   procedure getInstance;
    function getRotatedImage (This : in out ImageSwtRotationUtil; bufferedImage : Image_Access; totalAngle : Integer) return Image_Access;
    procedure getRotatedImage (This : in out ImageSwtRotationUtil; bufferedImage : Image_Access; totalAngle : Integer);
    function getRotatedImage2 (This : in out ImageSwtRotationUtil; bufferedImage : Image_Access; newBufferedImage : Image_Access; gc : GC_Access; angle : Float) return Image_Access;

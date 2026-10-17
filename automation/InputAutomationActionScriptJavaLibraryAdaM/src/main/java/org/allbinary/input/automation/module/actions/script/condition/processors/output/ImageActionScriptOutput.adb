@@ -63,7 +63,7 @@ package body org.allbinary.input.automation.module.actions.script.condition.proc
    function Create (node : Node_Access) return ImageActionScriptOutput_Access is
       This : constant ImageActionScriptOutput_Access := new ImageActionScriptOutput;
    begin
-      Initialize (This.all, node);
+      ImageActionScriptOutput_Package.Initialize (This.all, node);
       return This;
    end Create;
 
@@ -80,7 +80,7 @@ package body org.allbinary.input.automation.module.actions.script.condition.proc
    function Create return ImageActionScriptOutput_Access is
       This : constant ImageActionScriptOutput_Access := new ImageActionScriptOutput;
    begin
-      Initialize (This.all);
+      ImageActionScriptOutput_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -170,54 +170,12 @@ package body org.allbinary.input.automation.module.actions.script.condition.proc
         This.imageTypes := imageTypes;
    end setImageTypes;
 
-   procedure getActionScriptOutputJPanel (This : in out ImageActionScriptOutput) is
-      Java_Result : constant ImageActionScriptOutputJPanel_Access := ImageActionScriptOutput'Class (This).getActionScriptOutputJPanel;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getActionScriptOutputJPanel;
-
-   procedure toHashMap (This : in out ImageActionScriptOutput) is
-      Java_Result : constant HashMap_Access := ImageActionScriptOutput'Class (This).toHashMap;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toHashMap;
-
    procedure toXmlNode (This : in out ImageActionScriptOutput; document : Document_Access) is
       Java_Result : constant Node_Access := ImageActionScriptOutput'Class (This).toXmlNode (document);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end toXmlNode;
-
-   procedure isSaved (This : in out ImageActionScriptOutput) is
-      Java_Result : constant Boolean := ImageActionScriptOutput'Class (This).isSaved;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isSaved;
-
-   procedure isDisplay (This : in out ImageActionScriptOutput) is
-      Java_Result : constant Boolean := ImageActionScriptOutput'Class (This).isDisplay;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isDisplay;
-
-   procedure future_toString (This : in out ImageActionScriptOutput) is
-      Java_Result : constant Unbounded_String := ImageActionScriptOutput'Class (This).future_toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end future_toString;
-
-   procedure getImageTypes (This : in out ImageActionScriptOutput) is
-      Java_Result : constant ImageTypes_Access := ImageActionScriptOutput'Class (This).getImageTypes;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getImageTypes;
 
 begin
    null;

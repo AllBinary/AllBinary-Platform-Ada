@@ -31,7 +31,7 @@ package body org.allbinary.game.ag.layer.hud.basic.notification.GameNotification
    function Create return GameNotification_Access is
       This : constant GameNotification_Access := new GameNotification;
    begin
-      Initialize (This.all);
+      GameNotification_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -55,13 +55,6 @@ package body org.allbinary.game.ag.layer.hud.basic.notification.GameNotification
    function getSize (This : in out GameNotification) return Integer is
    begin
         return This.stringList.size;
-   end getSize;
-
-   procedure getSize (This : in out GameNotification) is
-      Java_Result : constant Integer := GameNotification'Class (This).getSize;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getSize;
 
 begin

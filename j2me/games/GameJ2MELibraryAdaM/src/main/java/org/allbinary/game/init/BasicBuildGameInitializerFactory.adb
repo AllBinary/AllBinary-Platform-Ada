@@ -28,7 +28,7 @@ package body org.allbinary.game.init.BasicBuildGameInitializerFactory_Package is
    function Create return BasicBuildGameInitializerFactory_Access is
       This : constant BasicBuildGameInitializerFactory_Access := new BasicBuildGameInitializerFactory;
    begin
-      Initialize (This.all);
+      BasicBuildGameInitializerFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -36,13 +36,6 @@ package body org.allbinary.game.init.BasicBuildGameInitializerFactory_Package is
    function getInstance (This : in out BasicBuildGameInitializerFactory) return GameInitializationInterface_Access is
    begin
         return BaseGameInitialization_Package.NULL_BASE_GAME_INITIALIZATION;
-   end getInstance;
-
-   procedure getInstance (This : in out BasicBuildGameInitializerFactory) is
-      Java_Result : constant GameInitializationInterface_Access := BasicBuildGameInitializerFactory'Class (This).getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

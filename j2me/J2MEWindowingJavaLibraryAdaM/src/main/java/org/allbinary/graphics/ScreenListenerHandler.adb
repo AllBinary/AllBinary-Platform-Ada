@@ -29,7 +29,7 @@ package body org.allbinary.graphics.ScreenListenerHandler_Package is
    function Create return ScreenListenerHandler_Access is
       This : constant ScreenListenerHandler_Access := new ScreenListenerHandler;
    begin
-      Initialize (This.all);
+      ScreenListenerHandler_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -53,13 +53,6 @@ package body org.allbinary.graphics.ScreenListenerHandler_Package is
    begin
         This.screenListenerInterface.onFullScreenDisplay;
    end fire;
-
-   procedure getInstance is
-      Java_Result : constant ScreenListenerHandler_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

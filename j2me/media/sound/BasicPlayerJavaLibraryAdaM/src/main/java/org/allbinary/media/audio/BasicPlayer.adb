@@ -35,7 +35,7 @@ package body org.allbinary.media.audio.BasicPlayer_Package is
    function Create return BasicPlayer_Access is
       This : constant BasicPlayer_Access := new BasicPlayer;
    begin
-      Initialize (This.all);
+      BasicPlayer_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -141,54 +141,12 @@ package body org.allbinary.media.audio.BasicPlayer_Package is
         null;
    end setVolume;
 
-   procedure getContentType (This : in out BasicPlayer) is
-      Java_Result : constant Unbounded_String := BasicPlayer'Class (This).getContentType;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getContentType;
-
    procedure getControl (This : in out BasicPlayer; controlType : Unbounded_String) is
       Java_Result : constant Control_Access := BasicPlayer'Class (This).getControl (controlType);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getControl;
-
-   procedure getControls (This : in out BasicPlayer) is
-      Java_Result : constant Control_Access_Array_Access := BasicPlayer'Class (This).getControls;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getControls;
-
-   procedure getState (This : in out BasicPlayer) is
-      Java_Result : constant Integer := BasicPlayer'Class (This).getState;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getState;
-
-   procedure getDuration (This : in out BasicPlayer) is
-      Java_Result : constant Long_Long_Integer := BasicPlayer'Class (This).getDuration;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getDuration;
-
-   procedure getMediaTime (This : in out BasicPlayer) is
-      Java_Result : constant Long_Long_Integer := BasicPlayer'Class (This).getMediaTime;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getMediaTime;
-
-   procedure getLoopCount (This : in out BasicPlayer) is
-      Java_Result : constant Integer := BasicPlayer'Class (This).getLoopCount;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getLoopCount;
 
    procedure setMediaTime (This : in out BasicPlayer; now : Long_Long_Integer) is
       Java_Result : constant Long_Long_Integer := BasicPlayer'Class (This).setMediaTime (now);

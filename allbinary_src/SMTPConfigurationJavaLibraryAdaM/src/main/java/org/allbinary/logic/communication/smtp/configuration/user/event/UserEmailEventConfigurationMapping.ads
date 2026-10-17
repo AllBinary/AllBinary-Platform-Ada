@@ -25,6 +25,8 @@ with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArra
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.data.tables.TableMappingInterface_Package; use org.allbinary.data.tables.TableMappingInterface_Package;
 with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventConfigurationInterface_Package; use org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventConfigurationInterface_Package;
+with org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventConfigurationData_Package; use org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventConfigurationData_Package;
 
 package org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventConfigurationMapping_Package is
 
@@ -45,11 +47,8 @@ package org.allbinary.logic.communication.smtp.configuration.user.event.UserEmai
    procedure Initialize (This : in out UserEmailEventConfigurationMapping'Class; userEmailEventConfigurationInterface : UserEmailEventConfigurationInterface_Access);
    function Create (userEmailEventConfigurationInterface : UserEmailEventConfigurationInterface_Access) return UserEmailEventConfigurationMapping_Access;
    function toHashMap (This : in out UserEmailEventConfigurationMapping) return HashMap_Access;
-   procedure toHashMap (This : in out UserEmailEventConfigurationMapping);
    function getKey (This : in out UserEmailEventConfigurationMapping) return Java_Object_Access;
-   procedure getKey (This : in out UserEmailEventConfigurationMapping);
    function toVector (This : in out UserEmailEventConfigurationMapping) return BasicArrayList_Access;
-   procedure toVector (This : in out UserEmailEventConfigurationMapping);
 
 end org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventConfigurationMapping_Package;
 

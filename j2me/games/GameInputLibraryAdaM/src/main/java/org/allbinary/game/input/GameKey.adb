@@ -29,20 +29,13 @@ package body org.allbinary.game.input.GameKey_Package is
    function Create (key : Integer; name : Unbounded_String) return GameKey_Access is
       This : constant GameKey_Access := new GameKey;
    begin
-      Initialize (This.all, key, name);
+      GameKey_Package.Initialize (This.all, key, name);
       return This;
    end Create;
 
    function toString (This : in out GameKey) return Unbounded_String is
    begin
         return StringMaker_Package.Create.append (To_Unbounded_String ("GameKey ")).append (Input (This).toString).toString;
-   end toString;
-
-   procedure toString (This : in out GameKey) is
-      Java_Result : constant Unbounded_String := GameKey'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end toString;
 
 begin

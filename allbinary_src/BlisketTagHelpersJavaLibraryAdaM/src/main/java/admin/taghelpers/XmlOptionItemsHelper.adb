@@ -33,7 +33,7 @@ package body admin.taghelpers.XmlOptionItemsHelper_Package is
    function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return XmlOptionItemsHelper_Access is
       This : constant XmlOptionItemsHelper_Access := new XmlOptionItemsHelper;
    begin
-      Initialize (This.all, hashMap, pageContext);
+      XmlOptionItemsHelper_Package.Initialize (This.all, hashMap, pageContext);
       return This;
    end Create;
 
@@ -135,34 +135,6 @@ package body admin.taghelpers.XmlOptionItemsHelper_Package is
             return error;
                 end;
         end;
-   end backup;
-
-   procedure create (This : in out XmlOptionItemsHelper) is
-      Java_Result : constant Unbounded_String := XmlOptionItemsHelper'Class (This).create;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end create;
-
-   procedure drop (This : in out XmlOptionItemsHelper) is
-      Java_Result : constant Unbounded_String := XmlOptionItemsHelper'Class (This).drop;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end drop;
-
-   procedure restore (This : in out XmlOptionItemsHelper) is
-      Java_Result : constant Unbounded_String := XmlOptionItemsHelper'Class (This).restore;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end restore;
-
-   procedure backup (This : in out XmlOptionItemsHelper) is
-      Java_Result : constant Unbounded_String := XmlOptionItemsHelper'Class (This).backup;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end backup;
 
 end admin.taghelpers.XmlOptionItemsHelper_Package;

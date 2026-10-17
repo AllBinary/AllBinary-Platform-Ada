@@ -28,7 +28,7 @@ package body org.allbinary.logic.ABSystemWrapper_Package is
    function Create return ABSystemWrapper_Access is
       This : constant ABSystemWrapper_Access := new ABSystemWrapper;
    begin
-      Initialize (This.all);
+      ABSystemWrapper_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -46,20 +46,6 @@ package body org.allbinary.logic.ABSystemWrapper_Package is
    function currentTimeMillis (This : in out ABSystemWrapper) return Long_Long_Integer is
    begin
         return Java_Current_Time_Millis;
-   end currentTimeMillis;
-
-   procedure getInstance is
-      Java_Result : constant ABSystemWrapper_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure currentTimeMillis (This : in out ABSystemWrapper) is
-      Java_Result : constant Long_Long_Integer := ABSystemWrapper'Class (This).currentTimeMillis;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end currentTimeMillis;
 
 begin

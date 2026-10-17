@@ -38,7 +38,7 @@ package body org.allbinary.media.image.search.ImageComparisonSearchWorker_Packag
    function Create (imageSearchConstraintsInterface : ImageComparisonSearchConstraintsInterface_Access) return ImageComparisonSearchWorker_Access is
       This : constant ImageComparisonSearchWorker_Access := new ImageComparisonSearchWorker;
    begin
-      Initialize (This.all, imageSearchConstraintsInterface);
+      ImageComparisonSearchWorker_Package.Initialize (This.all, imageSearchConstraintsInterface);
       return This;
    end Create;
 
@@ -90,13 +90,6 @@ package body org.allbinary.media.image.search.ImageComparisonSearchWorker_Packag
                 end;
         end;
    end run;
-
-   procedure isRunning (This : in out ImageComparisonSearchWorker) is
-      Java_Result : constant Boolean := ImageComparisonSearchWorker'Class (This).isRunning;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isRunning;
 
 end org.allbinary.media.image.search.ImageComparisonSearchWorker_Package;
 

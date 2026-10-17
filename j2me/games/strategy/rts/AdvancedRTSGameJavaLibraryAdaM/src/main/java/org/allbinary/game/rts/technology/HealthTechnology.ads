@@ -21,6 +21,7 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.layer.RTSInterface_Package; use org.allbinary.game.layer.RTSInterface_Package;
+with org.allbinary.game.rts.technology.UnitTechnologySingletonFactory_Package; use org.allbinary.game.rts.technology.UnitTechnologySingletonFactory_Package;
 
 package org.allbinary.game.rts.technology.HealthTechnology_Package is
 
@@ -39,27 +40,17 @@ package org.allbinary.game.rts.technology.HealthTechnology_Package is
    procedure Initialize (This : in out HealthTechnology'Class; maxLevel : Integer);
    function Create (maxLevel : Integer) return HealthTechnology_Access;
    function isCompleted (This : in out HealthTechnology) return Boolean;
-   procedure isCompleted (This : in out HealthTechnology);
    function getPercentComplete (This : in out HealthTechnology) return Integer;
-   procedure getPercentComplete (This : in out HealthTechnology);
    function getLevel (This : in out HealthTechnology) return Integer;
-   procedure getLevel (This : in out HealthTechnology);
    function getMaxLevel (This : in out HealthTechnology) return Integer;
-   procedure getMaxLevel (This : in out HealthTechnology);
    function getCost (This : in out HealthTechnology) return Integer;
-   procedure getCost (This : in out HealthTechnology);
    procedure downgrade (This : in out HealthTechnology);
    function getDowngradeCost (This : in out HealthTechnology) return Integer;
-   procedure getDowngradeCost (This : in out HealthTechnology);
    function isDowngradeable (This : in out HealthTechnology) return Boolean;
-   procedure isDowngradeable (This : in out HealthTechnology);
    function getUpgradeCost (This : in out HealthTechnology) return Integer;
-   procedure getUpgradeCost (This : in out HealthTechnology);
    function isUpgradeable (This : in out HealthTechnology) return Boolean;
-   procedure isUpgradeable (This : in out HealthTechnology);
    procedure upgrade (This : in out HealthTechnology);
    function isSelfUpgradeable (This : in out HealthTechnology) return Boolean;
-   procedure isSelfUpgradeable (This : in out HealthTechnology);
 
 end org.allbinary.game.rts.technology.HealthTechnology_Package;
 

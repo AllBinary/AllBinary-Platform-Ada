@@ -30,7 +30,7 @@ package body org.allbinary.game.GameAdState_Package is
    function Create (adConfiguration : AdConfiguration_Access) return GameAdState_Access is
       This : constant GameAdState_Access := new GameAdState;
    begin
-      Initialize (This.all, adConfiguration);
+      GameAdState_Package.Initialize (This.all, adConfiguration);
       return This;
    end Create;
 

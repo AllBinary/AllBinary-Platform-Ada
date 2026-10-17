@@ -28,7 +28,7 @@ package body org.allbinary.game.ag.ai.BasicProbabilityAIDataFactory_Package is
    function Create return BasicProbabilityAIDataFactory_Access is
       This : constant BasicProbabilityAIDataFactory_Access := new BasicProbabilityAIDataFactory;
    begin
-      Initialize (This.all);
+      BasicProbabilityAIDataFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -65,13 +65,6 @@ package body org.allbinary.game.ag.ai.BasicProbabilityAIDataFactory_Package is
         repeatLikelyhoodIntegerArray (Canvas_Package.KEY_NUM1) := smallIntegerSingletonFactory.getAt (10);
         inputProbability := InputProbability_Package.Create (likelyhoodIntegerArray, repeatLikelyhoodIntegerArray, 42, NoTimeDelayHelper_Package.SINGLETON);
         return inputProbability.toHashtable;
-   end getInstance;
-
-   procedure getInstance (This : in out BasicProbabilityAIDataFactory) is
-      Java_Result : constant ABHashtable_Access := BasicProbabilityAIDataFactory'Class (This).getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 end org.allbinary.game.ag.ai.BasicProbabilityAIDataFactory_Package;

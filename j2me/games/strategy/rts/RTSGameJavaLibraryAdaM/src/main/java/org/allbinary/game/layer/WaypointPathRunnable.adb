@@ -32,7 +32,7 @@ package body org.allbinary.game.layer.WaypointPathRunnable_Package is
    function Create return WaypointPathRunnable_Access is
       This : constant WaypointPathRunnable_Access := new WaypointPathRunnable;
    begin
-      Initialize (This.all);
+      WaypointPathRunnable_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -66,13 +66,6 @@ package body org.allbinary.game.layer.WaypointPathRunnable_Package is
    function isDone (This : in out WaypointPathRunnable) return Boolean is
    begin
         return True;
-   end isDone;
-
-   procedure isDone (This : in out WaypointPathRunnable) is
-      Java_Result : constant Boolean := WaypointPathRunnable'Class (This).isDone;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end isDone;
 
 end org.allbinary.game.layer.WaypointPathRunnable_Package;

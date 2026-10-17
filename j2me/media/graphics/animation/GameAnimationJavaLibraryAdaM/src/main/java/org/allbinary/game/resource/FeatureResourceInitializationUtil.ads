@@ -23,6 +23,8 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.animation.FeaturedAnimationInterfaceFactoryInterfaceFactory_Package; use org.allbinary.animation.FeaturedAnimationInterfaceFactoryInterfaceFactory_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.game.resource.FeaturedResourceFactory_Package; use org.allbinary.game.resource.FeaturedResourceFactory_Package;
+with org.allbinary.game.resource.FeaturedResourceRelativeRelationshipFactory_Package; use org.allbinary.game.resource.FeaturedResourceRelativeRelationshipFactory_Package;
 
 package org.allbinary.game.resource.FeatureResourceInitializationUtil_Package is
 
@@ -43,7 +45,6 @@ package org.allbinary.game.resource.FeatureResourceInitializationUtil_Package is
    procedure Initialize (This : in out FeatureResourceInitializationUtil'Class);
    function Create return FeatureResourceInitializationUtil_Access;
    function getInstance return FeatureResourceInitializationUtil_Access;
-   procedure getInstance;
    procedure init (This : in out FeatureResourceInitializationUtil; level : Integer);
 
 end org.allbinary.game.resource.FeatureResourceInitializationUtil_Package;

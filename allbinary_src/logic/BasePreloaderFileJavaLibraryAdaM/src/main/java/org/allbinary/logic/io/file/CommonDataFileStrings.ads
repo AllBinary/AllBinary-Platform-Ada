@@ -88,7 +88,6 @@ package org.allbinary.logic.io.file.CommonDataFileStrings_Package is
    procedure Initialize (This : in out CommonDataFileStrings'Class);
    function Create return CommonDataFileStrings_Access;
    function getInstance return CommonDataFileStrings_Access;
-   procedure getInstance;
 
 end org.allbinary.logic.io.file.CommonDataFileStrings_Package;
 

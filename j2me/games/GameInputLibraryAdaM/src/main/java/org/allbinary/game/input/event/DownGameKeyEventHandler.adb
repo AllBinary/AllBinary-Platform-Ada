@@ -49,7 +49,7 @@ package body org.allbinary.game.input.event.DownGameKeyEventHandler_Package is
    function Create return DownGameKeyEventHandler_Access is
       This : constant DownGameKeyEventHandler_Access := new DownGameKeyEventHandler;
    begin
-      Initialize (This.all);
+      DownGameKeyEventHandler_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -79,13 +79,6 @@ package body org.allbinary.game.input.event.DownGameKeyEventHandler_Package is
             DownGameKeyEventHandler_Package.instanceArray (index).removeListener (eventListenerInterface);
         end loop;
    end removeListener;
-
-   procedure getInstance is
-      Java_Result : constant DownGameKeyEventHandler_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure getInstanceForDevice (This : in out DownGameKeyEventHandler; deviceId : Integer) is
       Java_Result : constant DownGameKeyEventHandlerBase_Access := DownGameKeyEventHandler'Class (This).getInstanceForDevice (deviceId);

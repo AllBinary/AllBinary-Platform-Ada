@@ -31,7 +31,7 @@ package body org.allbinary.business.user.commerce.money.payment.types.TenderType
    function Create (name : Unbounded_String) return TenderType_Access is
       This : constant TenderType_Access := new TenderType;
    begin
-      Initialize (This.all, name);
+      TenderType_Package.Initialize (This.all, name);
       return This;
    end Create;
 
@@ -55,13 +55,6 @@ package body org.allbinary.business.user.commerce.money.payment.types.TenderType
    begin
       null;
    end isEqual;
-
-   procedure toString (This : in out TenderType) is
-      Java_Result : constant Unbounded_String := TenderType'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toString;
 
 end org.allbinary.business.user.commerce.money.payment.types.TenderType_Package;
 

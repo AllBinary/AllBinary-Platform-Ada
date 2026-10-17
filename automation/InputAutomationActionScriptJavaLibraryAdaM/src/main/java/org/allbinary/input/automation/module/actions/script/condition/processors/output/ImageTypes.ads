@@ -30,6 +30,7 @@ with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.w3c.dom.NodeList_Package; use org.w3c.dom.NodeList_Package;
+with org.allbinary.input.automation.module.actions.script.condition.processors.output.ImageActionScriptOutputData_Package; use org.allbinary.input.automation.module.actions.script.condition.processors.output.ImageActionScriptOutputData_Package;
 
 package org.allbinary.input.automation.module.actions.script.condition.processors.output.ImageTypes_Package is
 
@@ -58,11 +59,9 @@ package org.allbinary.input.automation.module.actions.script.condition.processor
    function valueOf (anyType : Java_Object_Access_Array_Access) return ImageTypes_Access;
    procedure valueOf (anyType : Java_Object_Access_Array_Access);
    function getVector (This : in out ImageTypes) return BasicArrayList_Access;
-   procedure getVector (This : in out ImageTypes);
    function toXmlNode (This : in out ImageTypes; document : Document_Access) return Node_Access;
    procedure toXmlNode (This : in out ImageTypes; document : Document_Access);
    function toString (This : in out ImageTypes) return Unbounded_String;
-   procedure toString (This : in out ImageTypes);
 
 end org.allbinary.input.automation.module.actions.script.condition.processors.output.ImageTypes_Package;
 

@@ -36,7 +36,7 @@ package body org.allbinary.logic.control.workflow.TagWorkFlowFactory_Package is
    function Create return TagWorkFlowFactory_Access is
       This : constant TagWorkFlowFactory_Access := new TagWorkFlowFactory;
    begin
-      Initialize (This.all);
+      TagWorkFlowFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -75,13 +75,6 @@ package body org.allbinary.logic.control.workflow.TagWorkFlowFactory_Package is
             Java_Throw (e);
                 end;
         end;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant TagWorkFlowFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
    procedure getInstance (This : in out TagWorkFlowFactory; abeClientInformation : AbeClientInformationInterface_Access; propertiesHashMap : HashMap_Access; pageContext : PageContext_Access) is

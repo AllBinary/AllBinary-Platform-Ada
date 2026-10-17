@@ -34,7 +34,7 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
    function Create (name : Unbounded_String; path : Unbounded_String; lastFrame : Integer) return SavedCaptureGenericProfileDataWorkerType_Access is
       This : constant SavedCaptureGenericProfileDataWorkerType_Access := new SavedCaptureGenericProfileDataWorkerType;
    begin
-      Initialize (This.all, name, path, lastFrame);
+      SavedCaptureGenericProfileDataWorkerType_Package.Initialize (This.all, name, path, lastFrame);
       return This;
    end Create;
 
@@ -57,20 +57,6 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
    begin
         This.lastFrame := lastFrame;
    end setLastFrame;
-
-   procedure getPath (This : in out SavedCaptureGenericProfileDataWorkerType) is
-      Java_Result : constant Unbounded_String := SavedCaptureGenericProfileDataWorkerType'Class (This).getPath;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getPath;
-
-   procedure getLastFrame (This : in out SavedCaptureGenericProfileDataWorkerType) is
-      Java_Result : constant Integer := SavedCaptureGenericProfileDataWorkerType'Class (This).getLastFrame;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getLastFrame;
 
 begin
    null;

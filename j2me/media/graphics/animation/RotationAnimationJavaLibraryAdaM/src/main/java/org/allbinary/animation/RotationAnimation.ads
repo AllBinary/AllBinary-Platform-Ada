@@ -29,6 +29,7 @@ with org.allbinary.math.FrameUtil_Package; use org.allbinary.math.FrameUtil_Pack
 with org.allbinary.util.CircularIndexUtil_Package; use org.allbinary.util.CircularIndexUtil_Package;
 with org.allbinary.animation.IndexedAnimation_Package; use org.allbinary.animation.IndexedAnimation_Package;
 with org.allbinary.animation.RotationAnimationInterface_Package; use org.allbinary.animation.RotationAnimationInterface_Package;
+with org.allbinary.animation.AnimationBehavior_Package; use org.allbinary.animation.AnimationBehavior_Package;
 
 package org.allbinary.animation.RotationAnimation_Package is
 
@@ -66,13 +67,9 @@ package org.allbinary.animation.RotationAnimation_Package is
    procedure adjustFrameToAngle (This : in out RotationAnimation; angle : Angle_Access);
    procedure adjustFrame (This : in out RotationAnimation; angle : Short_Integer);
    function getFrame (This : in out RotationAnimation) return Integer;
-   procedure getFrame (This : in out RotationAnimation);
    function getSize (This : in out RotationAnimation) return Integer;
-   procedure getSize (This : in out RotationAnimation);
    function getAngleInfoP (This : in out RotationAnimation) return AngleInfo_Access;
-   procedure getAngleInfoP (This : in out RotationAnimation);
    function toString (This : in out RotationAnimation) return Unbounded_String;
-   procedure toString (This : in out RotationAnimation);
 
 end org.allbinary.animation.RotationAnimation_Package;
 

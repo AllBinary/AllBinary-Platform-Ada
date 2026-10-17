@@ -34,7 +34,7 @@ package body org.allbinary.animation.IndexedAnimation_Package is
    function Create (animationBehavior : AnimationBehavior_Access) return IndexedAnimation_Access is
       This : constant IndexedAnimation_Access := new IndexedAnimation;
    begin
-      Initialize (This.all, animationBehavior);
+      IndexedAnimation_Package.Initialize (This.all, animationBehavior);
       return This;
    end Create;
 
@@ -109,62 +109,6 @@ package body org.allbinary.animation.IndexedAnimation_Package is
    function getHeight (This : in out IndexedAnimation) return Integer is
    begin
         return 0;
-   end getHeight;
-
-   procedure getAnimationBehavior (This : in out IndexedAnimation) is
-      Java_Result : constant AnimationBehavior_Access := IndexedAnimation'Class (This).getAnimationBehavior;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getAnimationBehavior;
-
-   procedure getFrame (This : in out IndexedAnimation) is
-      Java_Result : constant Integer := IndexedAnimation'Class (This).getFrame;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getFrame;
-
-   procedure getAnimationSize (This : in out IndexedAnimation) is
-      Java_Result : constant Integer := IndexedAnimation'Class (This).getAnimationSize;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getAnimationSize;
-
-   procedure getSize (This : in out IndexedAnimation) is
-      Java_Result : constant Integer := IndexedAnimation'Class (This).getSize;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSize;
-
-   procedure isLastFrame (This : in out IndexedAnimation) is
-      Java_Result : constant Boolean := IndexedAnimation'Class (This).isLastFrame;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isLastFrame;
-
-   procedure getSequence (This : in out IndexedAnimation) is
-      Java_Result : constant Integer_Array_Access := IndexedAnimation'Class (This).getSequence;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSequence;
-
-   procedure getWidth (This : in out IndexedAnimation) is
-      Java_Result : constant Integer := IndexedAnimation'Class (This).getWidth;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getWidth;
-
-   procedure getHeight (This : in out IndexedAnimation) is
-      Java_Result : constant Integer := IndexedAnimation'Class (This).getHeight;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getHeight;
 
 end org.allbinary.animation.IndexedAnimation_Package;

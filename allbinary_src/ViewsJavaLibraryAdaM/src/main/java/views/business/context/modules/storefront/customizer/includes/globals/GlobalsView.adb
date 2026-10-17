@@ -33,7 +33,7 @@ package body views.business.context.modules.storefront.customizer.includes.globa
    function Create (transformInfoInterface : TransformInfoInterface_Access) return GlobalsView_Access is
       This : constant GlobalsView_Access := new GlobalsView;
    begin
-      Initialize (This.all, transformInfoInterface);
+      GlobalsView_Package.Initialize (This.all, transformInfoInterface);
       return This;
    end Create;
 
@@ -85,13 +85,6 @@ package body views.business.context.modules.storefront.customizer.includes.globa
    begin
       null;
    end toXmlNode;
-
-   procedure view (This : in out GlobalsView) is
-      Java_Result : constant Unbounded_String := GlobalsView'Class (This).view;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end view;
 
 end views.business.context.modules.storefront.customizer.includes.globals.GlobalsView_Package;
 

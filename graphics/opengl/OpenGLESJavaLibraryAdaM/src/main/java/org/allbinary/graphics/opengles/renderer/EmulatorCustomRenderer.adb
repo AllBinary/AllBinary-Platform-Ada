@@ -31,7 +31,7 @@ package body org.allbinary.graphics.opengles.renderer.EmulatorCustomRenderer_Pac
    function Create return EmulatorCustomRenderer_Access is
       This : constant EmulatorCustomRenderer_Access := new EmulatorCustomRenderer;
    begin
-      Initialize (This.all);
+      EmulatorCustomRenderer_Package.Initialize (This.all);
       return This;
    end Create;
 

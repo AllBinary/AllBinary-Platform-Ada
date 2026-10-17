@@ -32,7 +32,7 @@ package body org.allbinary.game.input.InputPersistance_Package is
    function Create (name : Unbounded_String) return InputPersistance_Access is
       This : constant InputPersistance_Access := new InputPersistance;
    begin
-      Initialize (This.all, name);
+      InputPersistance_Package.Initialize (This.all, name);
       return This;
    end Create;
 

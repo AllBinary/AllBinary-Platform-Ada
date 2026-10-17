@@ -44,7 +44,7 @@ package body org.allbinary.canvas.BaseGameStatistics_Package is
    function Create return BaseGameStatistics_Access is
       This : constant BaseGameStatistics_Access := new BaseGameStatistics;
    begin
-      Initialize (This.all);
+      BaseGameStatistics_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -188,47 +188,12 @@ package body org.allbinary.canvas.BaseGameStatistics_Package is
         end if;
    end toString;
 
-   procedure getRefreshRate (This : in out BaseGameStatistics) is
-      Java_Result : constant Short_Integer := BaseGameStatistics'Class (This).getRefreshRate;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getRefreshRate;
-
-   procedure getTimeDelayHelper (This : in out BaseGameStatistics) is
-      Java_Result : constant TimeDelayHelper_Access := BaseGameStatistics'Class (This).getTimeDelayHelper;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTimeDelayHelper;
-
-   procedure to2DCharArray (This : in out BaseGameStatistics) is
-      Java_Result : constant Character_Array_Access_Array_Access := BaseGameStatistics'Class (This).to2DCharArray;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end to2DCharArray;
-
-   procedure toStringArray (This : in out BaseGameStatistics) is
-      Java_Result : constant Unbounded_String_Array_Access := BaseGameStatistics'Class (This).toStringArray;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toStringArray;
-
    procedure toStringAt (This : in out BaseGameStatistics; totalTime : Long_Long_Integer) is
       Java_Result : constant Unbounded_String := BaseGameStatistics'Class (This).toStringAt (totalTime);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end toStringAt;
-
-   procedure toString (This : in out BaseGameStatistics) is
-      Java_Result : constant Unbounded_String := BaseGameStatistics'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toString;
 
 end org.allbinary.canvas.BaseGameStatistics_Package;
 

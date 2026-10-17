@@ -37,7 +37,6 @@ package org.allbinary.graphics.paint.LocationPaintable_Package is
    procedure Initialize (This : in out LocationPaintable'Class);
    function Create return LocationPaintable_Access;
    function getInstance return LocationPaintable_Access;
-   procedure getInstance;
    procedure paintXY (This : in out LocationPaintable; graphics : Graphics_Access; x : Integer; y : Integer);
 
 end org.allbinary.graphics.paint.LocationPaintable_Package;

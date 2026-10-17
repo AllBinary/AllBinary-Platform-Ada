@@ -29,7 +29,7 @@ package body org.allbinary.animation.image.TopToBottomImageAnimationFactory_Pack
    function Create (image : Image_Access; sequenceArray : Integer_Array_Access; animationBehaviorFactory : AnimationBehaviorFactory_Access) return TopToBottomImageAnimationFactory_Access is
       This : constant TopToBottomImageAnimationFactory_Access := new TopToBottomImageAnimationFactory;
    begin
-      Initialize (This.all, image, sequenceArray, animationBehaviorFactory);
+      TopToBottomImageAnimationFactory_Package.Initialize (This.all, image, sequenceArray, animationBehaviorFactory);
       return This;
    end Create;
 

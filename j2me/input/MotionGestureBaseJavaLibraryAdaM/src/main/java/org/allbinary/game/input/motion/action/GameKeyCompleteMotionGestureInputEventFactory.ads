@@ -25,6 +25,7 @@ with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.
 with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.game.input.motion.action.GameKeyCompleteMotionGestureInputEvent_Package; use org.allbinary.game.input.motion.action.GameKeyCompleteMotionGestureInputEvent_Package;
 
 package org.allbinary.game.input.motion.action.GameKeyCompleteMotionGestureInputEventFactory_Package is
 
@@ -48,7 +49,6 @@ package org.allbinary.game.input.motion.action.GameKeyCompleteMotionGestureInput
    procedure Initialize (This : in out GameKeyCompleteMotionGestureInputEventFactory'Class);
    function Create return GameKeyCompleteMotionGestureInputEventFactory_Access;
    function getInstance return GameKeyCompleteMotionGestureInputEventFactory_Access;
-   procedure getInstance;
    procedure add (This : in out GameKeyCompleteMotionGestureInputEventFactory; gameKeyCompleteMotionGestureInputEvent : GameKeyCompleteMotionGestureInputEvent_Access);
    procedure updateAll (This : in out GameKeyCompleteMotionGestureInputEventFactory);
 

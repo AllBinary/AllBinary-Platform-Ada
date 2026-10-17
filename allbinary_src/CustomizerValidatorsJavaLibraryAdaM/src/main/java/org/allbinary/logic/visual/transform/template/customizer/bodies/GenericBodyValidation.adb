@@ -33,7 +33,7 @@ package body org.allbinary.logic.visual.transform.template.customizer.bodies.Gen
    function Create return GenericBodyValidation_Access is
       This : constant GenericBodyValidation_Access := new GenericBodyValidation;
    begin
-      Initialize (This.all);
+      GenericBodyValidation_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -57,7 +57,7 @@ package body org.allbinary.logic.visual.transform.template.customizer.bodies.Gen
    function Create (document : Document_Access) return GenericBodyValidation_Access is
       This : constant GenericBodyValidation_Access := new GenericBodyValidation;
    begin
-      Initialize (This.all, document);
+      GenericBodyValidation_Package.Initialize (This.all, document);
       return This;
    end Create;
 
@@ -72,7 +72,7 @@ package body org.allbinary.logic.visual.transform.template.customizer.bodies.Gen
    function Create (hashMap : HashMap_Access) return GenericBodyValidation_Access is
       This : constant GenericBodyValidation_Access := new GenericBodyValidation;
    begin
-      Initialize (This.all, hashMap);
+      GenericBodyValidation_Package.Initialize (This.all, hashMap);
       return This;
    end Create;
 
@@ -152,27 +152,6 @@ package body org.allbinary.logic.visual.transform.template.customizer.bodies.Gen
         node := ModDomHelper_Package.createNameValueNodes (document, BodyData_Package.getInstance.NAME, This.body_Id);
         return node;
    end toXmlNode;
-
-   procedure isValid (This : in out GenericBodyValidation) is
-      Java_Result : constant Boolean := GenericBodyValidation'Class (This).isValid;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isValid;
-
-   procedure validationInfo (This : in out GenericBodyValidation) is
-      Java_Result : constant Unbounded_String := GenericBodyValidation'Class (This).validationInfo;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end validationInfo;
-
-   procedure toValidationInfoDoc (This : in out GenericBodyValidation) is
-      Java_Result : constant Document_Access := GenericBodyValidation'Class (This).toValidationInfoDoc;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toValidationInfoDoc;
 
    procedure toValidationInfoNode (This : in out GenericBodyValidation; document : Document_Access) is
       Java_Result : constant Node_Access := GenericBodyValidation'Class (This).toValidationInfoNode (document);

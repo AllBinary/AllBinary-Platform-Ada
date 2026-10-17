@@ -43,7 +43,7 @@ package body org.allbinary.media.graphics.geography.map.racetrack.drop.RaceTrack
    function Create return RaceTrackRandomDropCellPositionGenerator_Access is
       This : constant RaceTrackRandomDropCellPositionGenerator_Access := new RaceTrackRandomDropCellPositionGenerator;
    begin
-      Initialize (This.all);
+      RaceTrackRandomDropCellPositionGenerator_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -83,13 +83,6 @@ package body org.allbinary.media.graphics.geography.map.racetrack.drop.RaceTrack
         pickupLayer.setTiledLayer (tiledLayer);
         allBinaryLayerManager.append (pickupLayer);
    end drop;
-
-   procedure getInstance is
-      Java_Result : constant RaceTrackRandomDropCellPositionGenerator_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

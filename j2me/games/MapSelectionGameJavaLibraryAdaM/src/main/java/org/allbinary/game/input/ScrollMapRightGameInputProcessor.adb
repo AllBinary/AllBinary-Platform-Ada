@@ -29,7 +29,7 @@ package body org.allbinary.game.input.ScrollMapRightGameInputProcessor_Package i
    function Create (scrollMapPlayerGameInput : ScrollMapPlayerGameInput_Access) return ScrollMapRightGameInputProcessor_Access is
       This : constant ScrollMapRightGameInputProcessor_Access := new ScrollMapRightGameInputProcessor;
    begin
-      Initialize (This.all, scrollMapPlayerGameInput);
+      ScrollMapRightGameInputProcessor_Package.Initialize (This.all, scrollMapPlayerGameInput);
       return This;
    end Create;
 

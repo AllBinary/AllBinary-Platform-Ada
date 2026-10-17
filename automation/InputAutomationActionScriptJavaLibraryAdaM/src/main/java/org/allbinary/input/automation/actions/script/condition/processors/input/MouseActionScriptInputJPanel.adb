@@ -60,7 +60,7 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
    function Create (mouseActionScriptInputInterface : MouseActionScriptInputInterface_Access) return MouseActionScriptInputJPanel_Access is
       This : constant MouseActionScriptInputJPanel_Access := new MouseActionScriptInputJPanel;
    begin
-      Initialize (This.all, mouseActionScriptInputInterface);
+      MouseActionScriptInputJPanel_Package.Initialize (This.all, mouseActionScriptInputInterface);
       return This;
    end Create;
 
@@ -245,13 +245,6 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
    begin
         This.getMouseActionJDialog.setVisible (True);
    end mouseActionJButtonActionPerformed;
-
-   procedure getMouseActionJDialog (This : in out MouseActionScriptInputJPanel) is
-      Java_Result : constant JDialog_Access := MouseActionScriptInputJPanel'Class (This).getMouseActionJDialog;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getMouseActionJDialog;
 
 end org.allbinary.input.automation.actions.script.condition.processors.input.MouseActionScriptInputJPanel_Package;
 

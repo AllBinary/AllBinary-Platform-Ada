@@ -20,7 +20,7 @@ package body org.allbinary.device.OpenGLESGraphics_Package is
    function Create return OpenGLESGraphics_Access is
       This : constant OpenGLESGraphics_Access := new OpenGLESGraphics;
    begin
-      Initialize (This.all);
+      OpenGLESGraphics_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -65,13 +65,6 @@ package body org.allbinary.device.OpenGLESGraphics_Package is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end setFontDebug;
-
-   procedure getGlP (This : in out OpenGLESGraphics) is
-      Java_Result : constant GL10_Access := OpenGLESGraphics'Class (This).getGlP;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getGlP;
 
 end org.allbinary.device.OpenGLESGraphics_Package;
 

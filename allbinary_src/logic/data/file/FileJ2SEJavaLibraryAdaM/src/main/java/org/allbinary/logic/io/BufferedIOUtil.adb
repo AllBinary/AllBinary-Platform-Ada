@@ -28,7 +28,7 @@ package body org.allbinary.logic.io.BufferedIOUtil_Package is
    function Create return BufferedIOUtil_Access is
       This : constant BufferedIOUtil_Access := new BufferedIOUtil;
    begin
-      Initialize (This.all);
+      BufferedIOUtil_Package.Initialize (This.all);
       return This;
    end Create;
 

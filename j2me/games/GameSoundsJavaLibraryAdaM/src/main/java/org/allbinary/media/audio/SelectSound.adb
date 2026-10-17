@@ -29,20 +29,13 @@ package body org.allbinary.media.audio.SelectSound_Package is
    function Create return SelectSound_Access is
       This : constant SelectSound_Access := new SelectSound;
    begin
-      Initialize (This.all);
+      SelectSound_Package.Initialize (This.all);
       return This;
    end Create;
 
    function getInstance return Sound_Access is
    begin
         return SelectSound_Package.soundInterface;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant Sound_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

@@ -29,7 +29,7 @@ package body org.allbinary.game.midlet.DemoGameMidlet_Package is
    function Create (clientInformationFactory : ClientInformationFactory_Access) return DemoGameMidlet_Access is
       This : constant DemoGameMidlet_Access := new DemoGameMidlet;
    begin
-      Initialize (This.all, clientInformationFactory);
+      DemoGameMidlet_Package.Initialize (This.all, clientInformationFactory);
       return This;
    end Create;
 
@@ -110,47 +110,12 @@ package body org.allbinary.game.midlet.DemoGameMidlet_Package is
         return True;
    end isReady;
 
-   procedure isContinue (This : in out DemoGameMidlet) is
-      Java_Result : constant Boolean := DemoGameMidlet'Class (This).isContinue;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isContinue;
-
-   procedure getHighestLevel (This : in out DemoGameMidlet) is
-      Java_Result : constant Integer := DemoGameMidlet'Class (This).getHighestLevel;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getHighestLevel;
-
-   procedure createDemoGameCanvasRunnableInterface (This : in out DemoGameMidlet) is
-      Java_Result : constant GameCanvasRunnableInterface_Access := DemoGameMidlet'Class (This).createDemoGameCanvasRunnableInterface;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end createDemoGameCanvasRunnableInterface;
-
    procedure createGameCanvasRunnable (This : in out DemoGameMidlet; allBinaryGameLayerManager : AllBinaryGameLayerManager_Access) is
       Java_Result : constant GameCanvasRunnableInterface_Access := DemoGameMidlet'Class (This).createGameCanvasRunnable (allBinaryGameLayerManager);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createGameCanvasRunnable;
-
-   procedure createGameCanvasRunnableInterface (This : in out DemoGameMidlet) is
-      Java_Result : constant GameCanvasRunnableInterface_Access := DemoGameMidlet'Class (This).createGameCanvasRunnableInterface;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end createGameCanvasRunnableInterface;
-
-   procedure isReady (This : in out DemoGameMidlet) is
-      Java_Result : constant Boolean := DemoGameMidlet'Class (This).isReady;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isReady;
 
 end org.allbinary.game.midlet.DemoGameMidlet_Package;
 

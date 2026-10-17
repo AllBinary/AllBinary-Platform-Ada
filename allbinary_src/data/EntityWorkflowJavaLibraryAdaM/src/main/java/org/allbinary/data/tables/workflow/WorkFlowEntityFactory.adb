@@ -36,7 +36,7 @@ package body org.allbinary.data.tables.workflow.WorkFlowEntityFactory_Package is
    function Create return WorkFlowEntityFactory_Access is
       This : constant WorkFlowEntityFactory_Access := new WorkFlowEntityFactory;
    begin
-      Initialize (This.all);
+      WorkFlowEntityFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -57,20 +57,6 @@ package body org.allbinary.data.tables.workflow.WorkFlowEntityFactory_Package is
             return null;
                 end;
         end;
-   end create2;
-
-   procedure getInstance is
-      Java_Result : constant WorkFlowEntityFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure create2 (This : in out WorkFlowEntityFactory) is
-      Java_Result : constant WorkFlowEntity_Access := WorkFlowEntityFactory'Class (This).create2;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end create2;
 
 begin

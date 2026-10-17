@@ -33,7 +33,7 @@ package body org.allbinary.data.tables.user.commerce.money.payment.transaction.T
    function Create return TransactionEntity_Access is
       This : constant TransactionEntity_Access := new TransactionEntity;
    begin
-      Initialize (This.all);
+      TransactionEntity_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -111,27 +111,6 @@ package body org.allbinary.data.tables.user.commerce.money.payment.transaction.T
    function dropTable (This : in out TransactionEntity) return Unbounded_String is
    begin
         return AbSqlBean (This).dropTable;
-   end dropTable;
-
-   procedure createTableStatement (This : in out TransactionEntity) is
-      Java_Result : constant Unbounded_String := TransactionEntity'Class (This).createTableStatement;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end createTableStatement;
-
-   procedure createTable (This : in out TransactionEntity) is
-      Java_Result : constant Unbounded_String := TransactionEntity'Class (This).createTable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end createTable;
-
-   procedure dropTable (This : in out TransactionEntity) is
-      Java_Result : constant Unbounded_String := TransactionEntity'Class (This).dropTable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end dropTable;
 
 end org.allbinary.data.tables.user.commerce.money.payment.transaction.TransactionEntity_Package;

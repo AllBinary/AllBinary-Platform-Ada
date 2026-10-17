@@ -36,7 +36,7 @@ package body org.allbinary.graphics.opengles.vbo.TextureAttributePointerVBOOpenG
    function Create return TextureAttributePointerVBOOpenGLProcessor_Access is
       This : constant TextureAttributePointerVBOOpenGLProcessor_Access := new TextureAttributePointerVBOOpenGLProcessor;
    begin
-      Initialize (This.all);
+      TextureAttributePointerVBOOpenGLProcessor_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -44,13 +44,6 @@ package body org.allbinary.graphics.opengles.vbo.TextureAttributePointerVBOOpenG
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end process;
-
-   procedure getInstance is
-      Java_Result : constant TextureAttributePointerVBOOpenGLProcessor_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

@@ -43,7 +43,7 @@ package body org.allbinary.game.score.RecordStoreHighScores_Package is
    function Create (abeClientInformation : AbeClientInformationInterface_Access; gameInfo : GameInfo_Access; name : Unbounded_String; heading : Unbounded_String; columnTwoHeading : Unbounded_String; recordComparatorInterface : RecordComparator_Access) return RecordStoreHighScores_Access is
       This : constant RecordStoreHighScores_Access := new RecordStoreHighScores;
    begin
-      Initialize (This.all, abeClientInformation, gameInfo, name, heading, columnTwoHeading, recordComparatorInterface);
+      RecordStoreHighScores_Package.Initialize (This.all, abeClientInformation, gameInfo, name, heading, columnTwoHeading, recordComparatorInterface);
       return This;
    end Create;
 
@@ -333,26 +333,12 @@ package body org.allbinary.game.score.RecordStoreHighScores_Package is
       null;
    end getRecordId;
 
-   procedure isTooManyHighScores (This : in out RecordStoreHighScores) is
-      Java_Result : constant Boolean := RecordStoreHighScores'Class (This).isTooManyHighScores;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isTooManyHighScores;
-
    procedure isBestScore (This : in out RecordStoreHighScores; newHighScore : HighScore_Access) is
       Java_Result : constant Boolean := RecordStoreHighScores'Class (This).isBestScore (newHighScore);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isBestScore;
-
-   procedure toString (This : in out RecordStoreHighScores) is
-      Java_Result : constant Unbounded_String := RecordStoreHighScores'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toString;
 
 begin
    null;

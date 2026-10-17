@@ -41,11 +41,8 @@ package org.allbinary.logic.math.vector.MathVector_Package is
    procedure Initialize (This : in out MathVector'Class; magnitudeBasicDecimal : BasicDecimal_Access; direction : Integer);
    function Create (magnitudeBasicDecimal : BasicDecimal_Access; direction : Integer) return MathVector_Access;
    function getMagnitude (This : in out MathVector) return BasicDecimal_Access;
-   procedure getMagnitude (This : in out MathVector);
    function getDirection (This : in out MathVector) return Integer;
-   procedure getDirection (This : in out MathVector);
    function getResult (This : in out MathVector) return BasicDecimal_Access;
-   procedure getResult (This : in out MathVector);
 
 end org.allbinary.logic.math.vector.MathVector_Package;
 

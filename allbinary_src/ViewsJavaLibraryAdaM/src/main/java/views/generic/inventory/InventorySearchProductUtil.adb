@@ -31,7 +31,7 @@ package body views.generic_Id.inventory.InventorySearchProductUtil_Package is
    function Create return InventorySearchProductUtil_Access is
       This : constant InventorySearchProductUtil_Access := new InventorySearchProductUtil;
    begin
-      Initialize (This.all);
+      InventorySearchProductUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -73,13 +73,6 @@ package body views.generic_Id.inventory.InventorySearchProductUtil_Package is
                 end;
         end;
    end getProduct;
-
-   procedure getInstance is
-      Java_Result : constant InventorySearchProductUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure getProduct (This : in out InventorySearchProductUtil; abeClientInformation : AbeClientInformationInterface_Access; searchRequest : SearchRequest_Access; product : Unbounded_String) is
       Java_Result : constant Unbounded_String := InventorySearchProductUtil'Class (This).getProduct (abeClientInformation, searchRequest, product);

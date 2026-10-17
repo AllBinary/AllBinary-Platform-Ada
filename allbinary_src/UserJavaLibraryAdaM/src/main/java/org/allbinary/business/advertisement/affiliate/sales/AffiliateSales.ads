@@ -34,7 +34,6 @@ package org.allbinary.business.advertisement.affiliate.sales.AffiliateSales_Pack
    procedure Initialize (This : in out AffiliateSales'Class);
    function Create return AffiliateSales_Access;
    function isValid (This : in out AffiliateSales) return Boolean;
-   procedure isValid (This : in out AffiliateSales);
 
 end org.allbinary.business.advertisement.affiliate.sales.AffiliateSales_Package;
 

@@ -62,15 +62,10 @@ package admin.tags.BasketTag_Package is
    procedure setCommand (This : in out BasketTag; command : Unbounded_String);
    procedure setStoreName (This : in out BasketTag; value : Unbounded_String);
    function isBasketEmpty (This : in out BasketTag) return Boolean;
-   procedure isBasketEmpty (This : in out BasketTag);
    function addItemToBasket (This : in out BasketTag) return Boolean;
-   procedure addItemToBasket (This : in out BasketTag);
    function removeItemFromBasket (This : in out BasketTag) return Boolean;
-   procedure removeItemFromBasket (This : in out BasketTag);
    function adjustBasket (This : in out BasketTag) return Boolean;
-   procedure adjustBasket (This : in out BasketTag);
    function doStartTag (This : in out BasketTag) return Integer;
-   procedure doStartTag (This : in out BasketTag);
 
 end admin.tags.BasketTag_Package;
 

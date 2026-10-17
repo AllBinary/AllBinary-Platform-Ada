@@ -29,7 +29,7 @@ package body org.allbinary.game.tracking.TrackingEventCircularStaticPool_Package
    function Create return TrackingEventCircularStaticPool_Access is
       This : constant TrackingEventCircularStaticPool_Access := new TrackingEventCircularStaticPool;
    begin
-      Initialize (This.all);
+      TrackingEventCircularStaticPool_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -52,13 +52,6 @@ package body org.allbinary.game.tracking.TrackingEventCircularStaticPool_Package
         trackingEvent.setLayerInterfaceForCircularStaticPool (layerInterface);
         return trackingEvent;
    end getNextInstance;
-
-   procedure getInstance is
-      Java_Result : constant TrackingEventCircularStaticPool_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure getNextInstance (This : in out TrackingEventCircularStaticPool; layerInterface : AllBinaryLayer_Access) is
       Java_Result : constant TrackingEvent_Access := TrackingEventCircularStaticPool'Class (This).getNextInstance (layerInterface);

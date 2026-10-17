@@ -67,11 +67,8 @@ package org.allbinary.data.tables.user.quoterequest.QuoteRequestEntity_Package i
    procedure getIds (This : in out QuoteRequestEntity; userName : Unbounded_String);
    procedure deleteWhere (This : in out QuoteRequestEntity; key : Unbounded_String; value : Unbounded_String);
    function createTableStatement (This : in out QuoteRequestEntity) return Unbounded_String;
-   procedure createTableStatement (This : in out QuoteRequestEntity);
    function createTable (This : in out QuoteRequestEntity) return Unbounded_String;
-   procedure createTable (This : in out QuoteRequestEntity);
    function dropTable (This : in out QuoteRequestEntity) return Unbounded_String;
-   procedure dropTable (This : in out QuoteRequestEntity);
    procedure update (This : in out QuoteRequestEntity; userName : Unbounded_String; updatedValues : HashMap_Access);
 
 end org.allbinary.data.tables.user.quoterequest.QuoteRequestEntity_Package;

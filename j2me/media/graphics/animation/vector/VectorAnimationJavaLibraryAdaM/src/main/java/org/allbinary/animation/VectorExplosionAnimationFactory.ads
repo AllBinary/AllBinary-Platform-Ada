@@ -23,6 +23,11 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
 with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
 with org.allbinary.animation.ProceduralAnimationInterfaceFactoryInterface_Package; use org.allbinary.animation.ProceduralAnimationInterfaceFactoryInterface_Package;
+with org.allbinary.animation.VectorExplosionGenerator_Package; use org.allbinary.animation.VectorExplosionGenerator_Package;
+with org.allbinary.animation.AnimationBehaviorFactory_Package; use org.allbinary.animation.AnimationBehaviorFactory_Package;
+with org.allbinary.animation.VectorAnimationInterface_Package; use org.allbinary.animation.VectorAnimationInterface_Package;
+with org.allbinary.animation.VectorRotationAnimation_Package; use org.allbinary.animation.VectorRotationAnimation_Package;
+with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Animation_Package;
 
 package org.allbinary.animation.VectorExplosionAnimationFactory_Package is
 
@@ -46,7 +51,6 @@ package org.allbinary.animation.VectorExplosionAnimationFactory_Package is
    procedure getInstanceAnimation (This : in out VectorExplosionAnimationFactory; animationInterface : Animation_Access);
    procedure setBasicColorP (This : in out VectorExplosionAnimationFactory; basicColor : BasicColor_Access);
    function getBasicColorP (This : in out VectorExplosionAnimationFactory) return BasicColor_Access;
-   procedure getBasicColorP (This : in out VectorExplosionAnimationFactory);
 
 end org.allbinary.animation.VectorExplosionAnimationFactory_Package;
 

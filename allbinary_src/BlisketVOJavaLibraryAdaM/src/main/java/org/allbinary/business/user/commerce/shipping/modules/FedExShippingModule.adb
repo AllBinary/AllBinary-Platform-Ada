@@ -32,7 +32,7 @@ package body org.allbinary.business.user.commerce.shipping.modules.FedExShipping
    function Create return FedExShippingModule_Access is
       This : constant FedExShippingModule_Access := new FedExShippingModule;
    begin
-      Initialize (This.all);
+      FedExShippingModule_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -57,20 +57,6 @@ package body org.allbinary.business.user.commerce.shipping.modules.FedExShipping
    begin
       null;
    end getCost;
-
-   procedure getDescription (This : in out FedExShippingModule) is
-      Java_Result : constant Unbounded_String := FedExShippingModule'Class (This).getDescription;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getDescription;
-
-   procedure getName (This : in out FedExShippingModule) is
-      Java_Result : constant Unbounded_String := FedExShippingModule'Class (This).getName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getName;
 
 end org.allbinary.business.user.commerce.shipping.modules.FedExShippingModule_Package;
 

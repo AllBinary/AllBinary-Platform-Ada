@@ -33,7 +33,7 @@ package body org.allbinary.game.displayable.canvas.GameRunnable_Package is
    function Create return GameRunnable_Access is
       This : constant GameRunnable_Access := new GameRunnable;
    begin
-      Initialize (This.all);
+      GameRunnable_Package.Initialize (This.all);
       return This;
    end Create;
 

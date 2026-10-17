@@ -22,6 +22,7 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.input.InputFactory_Package; use org.allbinary.game.input.InputFactory_Package;
 with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
+with org.allbinary.input.motion.gesture.MotionGestureInput_Package; use org.allbinary.input.motion.gesture.MotionGestureInput_Package;
 
 package org.allbinary.input.motion.gesture.TouchMotionGestureFactory_Package is
 
@@ -54,7 +55,6 @@ package org.allbinary.input.motion.gesture.TouchMotionGestureFactory_Package is
    procedure Initialize (This : in out TouchMotionGestureFactory'Class);
    function Create return TouchMotionGestureFactory_Access;
    function getInstance return TouchMotionGestureFactory_Access;
-   procedure getInstance;
 
 end org.allbinary.input.motion.gesture.TouchMotionGestureFactory_Package;
 

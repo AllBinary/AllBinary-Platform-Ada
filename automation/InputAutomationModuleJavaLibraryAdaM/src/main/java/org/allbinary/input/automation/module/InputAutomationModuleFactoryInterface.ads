@@ -22,6 +22,7 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with javax.help.HelpSet_Package; use javax.help.HelpSet_Package;
 with org.allbinary.thread.RunnableInterface_Package; use org.allbinary.thread.RunnableInterface_Package;
+with org.allbinary.input.automation.module.JPanel_Package; use org.allbinary.input.automation.module.JPanel_Package;
 
 package org.allbinary.input.automation.module.InputAutomationModuleFactoryInterface_Package is
 
@@ -37,13 +38,9 @@ package org.allbinary.input.automation.module.InputAutomationModuleFactoryInterf
    procedure Initialize (This : in out InputAutomationModuleFactoryInterface'Class);
    function Create return InputAutomationModuleFactoryInterface_Access;
    function getName (This : in out InputAutomationModuleFactoryInterface) return Unbounded_String;
-   procedure getName (This : in out InputAutomationModuleFactoryInterface);
    function getConfigurationJPanel (This : in out InputAutomationModuleFactoryInterface) return JPanel_Access;
-   procedure getConfigurationJPanel (This : in out InputAutomationModuleFactoryInterface);
    function getHelpSet (This : in out InputAutomationModuleFactoryInterface) return HelpSet_Access;
-   procedure getHelpSet (This : in out InputAutomationModuleFactoryInterface);
    function getInstance (This : in out InputAutomationModuleFactoryInterface) return RunnableInterface_Access;
-   procedure getInstance (This : in out InputAutomationModuleFactoryInterface);
 
 end org.allbinary.input.automation.module.InputAutomationModuleFactoryInterface_Package;
 

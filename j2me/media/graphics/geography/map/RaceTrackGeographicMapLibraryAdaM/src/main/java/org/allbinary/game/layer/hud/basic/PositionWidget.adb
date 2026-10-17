@@ -34,7 +34,7 @@ package body org.allbinary.game.layer.hud.basic.PositionWidget_Package is
    function Create (position : Integer; location : Integer; direction : Integer; basicColor : BasicColor_Access) return PositionWidget_Access is
       This : constant PositionWidget_Access := new PositionWidget;
    begin
-      Initialize (This.all, position, location, direction, basicColor);
+      PositionWidget_Package.Initialize (This.all, position, location, direction, basicColor);
       return This;
    end Create;
 
@@ -70,13 +70,6 @@ package body org.allbinary.game.layer.hud.basic.PositionWidget_Package is
         end if;
         return stringBuffer.toString;
    end toString;
-
-   procedure get (This : in out PositionWidget) is
-      Java_Result : constant Integer := PositionWidget'Class (This).get;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end get;
 
    procedure toString (position : Integer) is
       Java_Result : constant Unbounded_String := toString (position);

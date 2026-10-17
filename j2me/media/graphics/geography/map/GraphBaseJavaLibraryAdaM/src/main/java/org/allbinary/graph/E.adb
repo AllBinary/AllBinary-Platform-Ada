@@ -16,7 +16,7 @@ package body org.allbinary.graph.E_Package is
    function Create return E_Access is
       This : constant E_Access := new E;
    begin
-      Initialize (This.all);
+      E_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -24,13 +24,6 @@ package body org.allbinary.graph.E_Package is
    function newInstance (This : in out E) return E_Access is
    begin
         return E_Package.e;
-   end newInstance;
-
-   procedure newInstance (This : in out E) is
-      Java_Result : constant E_Access := E'Class (This).newInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end newInstance;
 
 begin

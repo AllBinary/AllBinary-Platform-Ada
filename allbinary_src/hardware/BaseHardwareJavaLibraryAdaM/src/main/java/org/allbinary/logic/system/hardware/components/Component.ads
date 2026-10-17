@@ -36,7 +36,6 @@ package org.allbinary.logic.system.hardware.components.Component_Package is
    procedure Initialize (This : in out Component'Class; componentName : Unbounded_String);
    function Create (componentName : Unbounded_String) return Component_Access;
    function toString (This : in out Component) return Unbounded_String;
-   procedure toString (This : in out Component);
 
 end org.allbinary.logic.system.hardware.components.Component_Package;
 

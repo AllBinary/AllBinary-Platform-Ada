@@ -29,7 +29,7 @@ package body org.allbinary.animation.image.AllBinaryPlatformImageRotationAnimati
    function Create (image : Image_Access; width : Integer; height : Integer; angleIncrement : Short_Integer; animationBehaviorFactory : AnimationBehaviorFactory_Access; resizeCanvasForRotation : Boolean) return AllBinaryPlatformImageRotationAnimationFactory_Access is
       This : constant AllBinaryPlatformImageRotationAnimationFactory_Access := new AllBinaryPlatformImageRotationAnimationFactory;
    begin
-      Initialize (This.all, image, width, height, angleIncrement, animationBehaviorFactory, resizeCanvasForRotation);
+      AllBinaryPlatformImageRotationAnimationFactory_Package.Initialize (This.all, image, width, height, angleIncrement, animationBehaviorFactory, resizeCanvasForRotation);
       return This;
    end Create;
 

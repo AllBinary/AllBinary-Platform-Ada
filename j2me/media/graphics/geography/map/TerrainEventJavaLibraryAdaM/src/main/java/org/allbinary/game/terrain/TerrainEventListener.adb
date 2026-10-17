@@ -17,7 +17,7 @@ package body org.allbinary.game.terrain.TerrainEventListener_Package is
    function Create return TerrainEventListener_Access is
       This : constant TerrainEventListener_Access := new TerrainEventListener;
    begin
-      Initialize (This.all);
+      TerrainEventListener_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -36,13 +36,6 @@ package body org.allbinary.game.terrain.TerrainEventListener_Package is
    function getList (This : in out TerrainEventListener) return BasicArrayList_Access is
    begin
         return This.list;
-   end getList;
-
-   procedure getList (This : in out TerrainEventListener) is
-      Java_Result : constant BasicArrayList_Access := TerrainEventListener'Class (This).getList;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getList;
 
 end org.allbinary.game.terrain.TerrainEventListener_Package;

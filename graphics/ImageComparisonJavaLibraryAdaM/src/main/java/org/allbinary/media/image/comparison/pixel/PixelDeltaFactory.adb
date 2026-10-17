@@ -56,7 +56,7 @@ package body org.allbinary.media.image.comparison.pixel.PixelDeltaFactory_Packag
    function Create return PixelDeltaFactory_Access is
       This : constant PixelDeltaFactory_Access := new PixelDeltaFactory;
    begin
-      Initialize (This.all);
+      PixelDeltaFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

@@ -37,7 +37,7 @@ package body org.allbinary.media.image.ImageRotationUtil_Package is
    function Create return ImageRotationUtil_Access is
       This : constant ImageRotationUtil_Access := new ImageRotationUtil;
    begin
-      Initialize (This.all);
+      ImageRotationUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -63,13 +63,6 @@ package body org.allbinary.media.image.ImageRotationUtil_Package is
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Not Mutable")));
         end if;
    end createRotatedImage;
-
-   procedure getInstance is
-      Java_Result : constant ImageRotationUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure createRotatedImage (This : in out ImageRotationUtil; originalImage : Image_Access; rotationInDegrees : Integer) is
       Java_Result : constant Image_Access := ImageRotationUtil'Class (This).createRotatedImage (originalImage, rotationInDegrees);

@@ -28,7 +28,7 @@ package body org.allbinary.media.audio.NullAudioFormat_Package is
    function Create return NullAudioFormat_Access is
       This : constant NullAudioFormat_Access := new NullAudioFormat;
    begin
-      Initialize (This.all);
+      NullAudioFormat_Package.Initialize (This.all);
       return This;
    end Create;
 

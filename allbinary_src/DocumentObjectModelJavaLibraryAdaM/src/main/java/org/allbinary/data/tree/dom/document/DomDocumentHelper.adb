@@ -30,7 +30,7 @@ package body org.allbinary.data.tree.dom.document.DomDocumentHelper_Package is
    function Create return DomDocumentHelper_Access is
       This : constant DomDocumentHelper_Access := new DomDocumentHelper;
    begin
-      Initialize (This.all);
+      DomDocumentHelper_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -105,13 +105,6 @@ package body org.allbinary.data.tree.dom.document.DomDocumentHelper_Package is
             Java_Throw (e);
                 end;
         end;
-   end create;
-
-   procedure create is
-      Java_Result : constant Document_Access := create;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end create;
 
    procedure create (inputStream : InputStream_Access) is

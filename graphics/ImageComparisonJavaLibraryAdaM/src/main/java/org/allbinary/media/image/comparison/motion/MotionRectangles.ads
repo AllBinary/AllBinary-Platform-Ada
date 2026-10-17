@@ -45,12 +45,9 @@ package org.allbinary.media.image.comparison.motion.MotionRectangles_Package is
    procedure Initialize (This : in out MotionRectangles'Class; name : Unbounded_String; imageComparisonResult : ImageComparisonResult_Access);
    function Create (name : Unbounded_String; imageComparisonResult : ImageComparisonResult_Access) return MotionRectangles_Access;
    function getVector (This : in out MotionRectangles) return BasicArrayList_Access;
-   procedure getVector (This : in out MotionRectangles);
    procedure setVector (This : in out MotionRectangles; rectangleVector : BasicArrayList_Access);
    function getName (This : in out MotionRectangles) return Unbounded_String;
-   procedure getName (This : in out MotionRectangles);
    function getImageComparisonResult (This : in out MotionRectangles) return ImageComparisonResult_Access;
-   procedure getImageComparisonResult (This : in out MotionRectangles);
    procedure setImageComparisonResult (This : in out MotionRectangles; imageComparisonResult : ImageComparisonResult_Access);
 
 end org.allbinary.media.image.comparison.motion.MotionRectangles_Package;

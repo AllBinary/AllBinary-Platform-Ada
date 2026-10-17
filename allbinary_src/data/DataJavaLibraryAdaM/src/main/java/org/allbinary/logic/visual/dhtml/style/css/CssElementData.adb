@@ -36,16 +36,9 @@ package body org.allbinary.logic.visual.dhtml.style.css.CssElementData_Package i
    function Create return CssElementData_Access is
       This : constant CssElementData_Access := new CssElementData;
    begin
-      Initialize (This.all);
+      CssElementData_Package.Initialize (This.all);
       return This;
    end Create;
-
-   procedure getInstance is
-      Java_Result : constant CssElementData_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

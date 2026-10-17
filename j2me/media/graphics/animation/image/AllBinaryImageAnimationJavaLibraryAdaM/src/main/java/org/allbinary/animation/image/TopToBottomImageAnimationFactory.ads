@@ -24,6 +24,7 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Animation_Package;
 with org.allbinary.animation.AnimationBehaviorFactory_Package; use org.allbinary.animation.AnimationBehaviorFactory_Package;
 with org.allbinary.animation.image.BaseImageAnimationFactory_Package; use org.allbinary.animation.image.BaseImageAnimationFactory_Package;
+with org.allbinary.animation.image.TopToBottomImageAnimation_Package; use org.allbinary.animation.image.TopToBottomImageAnimation_Package;
 
 package org.allbinary.animation.image.TopToBottomImageAnimationFactory_Package is
 

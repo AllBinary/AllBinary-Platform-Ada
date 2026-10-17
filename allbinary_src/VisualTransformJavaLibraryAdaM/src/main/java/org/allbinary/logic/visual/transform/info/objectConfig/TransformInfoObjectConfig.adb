@@ -49,7 +49,7 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.TransformInf
    function Create (transformInfoInterface : TransformInfoInterface_Access) return TransformInfoObjectConfig_Access is
       This : constant TransformInfoObjectConfig_Access := new TransformInfoObjectConfig;
    begin
-      Initialize (This.all, transformInfoInterface);
+      TransformInfoObjectConfig_Package.Initialize (This.all, transformInfoInterface);
       return This;
    end Create;
 
@@ -82,7 +82,7 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.TransformInf
    function Create (transformInfoInterface : TransformInfoInterface_Access; document : Document_Access) return TransformInfoObjectConfig_Access is
       This : constant TransformInfoObjectConfig_Access := new TransformInfoObjectConfig;
    begin
-      Initialize (This.all, transformInfoInterface, document);
+      TransformInfoObjectConfig_Package.Initialize (This.all, transformInfoInterface, document);
       return This;
    end Create;
 
@@ -116,7 +116,7 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.TransformInf
    function Create (transformInfoInterface : TransformInfoInterface_Access; name : Unbounded_String; type_Id : Unbounded_String) return TransformInfoObjectConfig_Access is
       This : constant TransformInfoObjectConfig_Access := new TransformInfoObjectConfig;
    begin
-      Initialize (This.all, transformInfoInterface, name, type_Id);
+      TransformInfoObjectConfig_Package.Initialize (This.all, transformInfoInterface, name, type_Id);
       return This;
    end Create;
 
@@ -394,40 +394,12 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.TransformInf
         end;
    end toString;
 
-   procedure getTransformInfoInterface (This : in out TransformInfoObjectConfig) is
-      Java_Result : constant TransformInfoInterface_Access := TransformInfoObjectConfig'Class (This).getTransformInfoInterface;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTransformInfoInterface;
-
-   procedure toXmlDoc (This : in out TransformInfoObjectConfig) is
-      Java_Result : constant Document_Access := TransformInfoObjectConfig'Class (This).toXmlDoc;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toXmlDoc;
-
    procedure containsView (This : in out TransformInfoObjectConfig; transformInfoInterface : TransformInfoInterface_Access) is
       Java_Result : constant Boolean := TransformInfoObjectConfig'Class (This).containsView (transformInfoInterface);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end containsView;
-
-   procedure getTemplateAttributes (This : in out TransformInfoObjectConfig) is
-      Java_Result : constant NamedNodeMap_Access := TransformInfoObjectConfig'Class (This).getTemplateAttributes;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTemplateAttributes;
-
-   procedure getName (This : in out TransformInfoObjectConfig) is
-      Java_Result : constant Unbounded_String := TransformInfoObjectConfig'Class (This).getName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getName;
 
    procedure getNodeVector (This : in out TransformInfoObjectConfig; nodeName : Unbounded_String) is
       Java_Result : constant BasicArrayList_Access := TransformInfoObjectConfig'Class (This).getNodeVector (nodeName);
@@ -456,76 +428,6 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.TransformInf
    begin
       null;
    end getTransformsGroup;
-
-   procedure getTransformDomNodes (This : in out TransformInfoObjectConfig) is
-      Java_Result : constant BasicArrayList_Access := TransformInfoObjectConfig'Class (This).getTransformDomNodes;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTransformDomNodes;
-
-   procedure getTransforms (This : in out TransformInfoObjectConfig) is
-      Java_Result : constant BasicArrayList_Access := TransformInfoObjectConfig'Class (This).getTransforms;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTransforms;
-
-   procedure getGroupTransforms (This : in out TransformInfoObjectConfig) is
-      Java_Result : constant BasicArrayList_Access := TransformInfoObjectConfig'Class (This).getGroupTransforms;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getGroupTransforms;
-
-   procedure getParentTransforms (This : in out TransformInfoObjectConfig) is
-      Java_Result : constant BasicArrayList_Access := TransformInfoObjectConfig'Class (This).getParentTransforms;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getParentTransforms;
-
-   procedure getRootNode (This : in out TransformInfoObjectConfig) is
-      Java_Result : constant Node_Access := TransformInfoObjectConfig'Class (This).getRootNode;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getRootNode;
-
-   procedure getOutputTypeName (This : in out TransformInfoObjectConfig) is
-      Java_Result : constant Unbounded_String := TransformInfoObjectConfig'Class (This).getOutputTypeName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getOutputTypeName;
-
-   procedure getInputOutputTypeName (This : in out TransformInfoObjectConfig) is
-      Java_Result : constant Unbounded_String := TransformInfoObjectConfig'Class (This).getInputOutputTypeName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInputOutputTypeName;
-
-   procedure getInputOutputTypeFile (This : in out TransformInfoObjectConfig) is
-      Java_Result : constant Unbounded_String := TransformInfoObjectConfig'Class (This).getInputOutputTypeFile;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInputOutputTypeFile;
-
-   procedure getImportUriPath (This : in out TransformInfoObjectConfig) is
-      Java_Result : constant Unbounded_String := TransformInfoObjectConfig'Class (This).getImportUriPath;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getImportUriPath;
-
-   procedure toString (This : in out TransformInfoObjectConfig) is
-      Java_Result : constant Unbounded_String := TransformInfoObjectConfig'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toString;
 
 end org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfig_Package;
 

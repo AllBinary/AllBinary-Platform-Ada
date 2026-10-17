@@ -30,7 +30,7 @@ package body org.allbinary.business.DynamicObjectData_Package is
    function Create return DynamicObjectData_Access is
       This : constant DynamicObjectData_Access := new DynamicObjectData;
    begin
-      Initialize (This.all);
+      DynamicObjectData_Package.Initialize (This.all);
       return This;
    end Create;
 

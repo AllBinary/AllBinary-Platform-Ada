@@ -40,16 +40,9 @@ package body org.allbinary.graphics.displayable.screen.AboutPaintableFactory_Pac
    function Create return AboutPaintableFactory_Access is
       This : constant AboutPaintableFactory_Access := new AboutPaintableFactory;
    begin
-      Initialize (This.all);
+      AboutPaintableFactory_Package.Initialize (This.all);
       return This;
    end Create;
-
-   procedure getInstance is
-      Java_Result : constant AboutPaintableFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

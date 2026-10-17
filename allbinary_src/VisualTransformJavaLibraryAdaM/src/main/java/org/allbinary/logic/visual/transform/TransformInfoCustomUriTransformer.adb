@@ -32,7 +32,7 @@ package body org.allbinary.logic.visual.transform.TransformInfoCustomUriTransfor
    function Create (abeClientInformation : AbeClientInformationInterface_Access; transformInfoInterface : TransformInfoInterface_Access) return TransformInfoCustomUriTransformer_Access is
       This : constant TransformInfoCustomUriTransformer_Access := new TransformInfoCustomUriTransformer;
    begin
-      Initialize (This.all, abeClientInformation, transformInfoInterface);
+      TransformInfoCustomUriTransformer_Package.Initialize (This.all, abeClientInformation, transformInfoInterface);
       return This;
    end Create;
 

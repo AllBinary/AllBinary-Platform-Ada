@@ -12,6 +12,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
+with org.allbinary.input.automation.actions.script.JTreeInterface_Package; use org.allbinary.input.automation.actions.script.JTreeInterface_Package;
 
 package org.allbinary.input.automation.actions.script.JTreeInterfaceFactory_Package is
 
@@ -29,10 +30,8 @@ package org.allbinary.input.automation.actions.script.JTreeInterfaceFactory_Pack
    procedure Initialize (This : in out JTreeInterfaceFactory'Class);
    function Create return JTreeInterfaceFactory_Access;
    function getInstance return JTreeInterfaceFactory_Access;
-   procedure getInstance;
    procedure set (This : in out JTreeInterfaceFactory; jTreeInterface : JTreeInterface_Access);
    function getJTreeInterface (This : in out JTreeInterfaceFactory) return JTreeInterface_Access;
-   procedure getJTreeInterface (This : in out JTreeInterfaceFactory);
 
 end org.allbinary.input.automation.actions.script.JTreeInterfaceFactory_Package;
 

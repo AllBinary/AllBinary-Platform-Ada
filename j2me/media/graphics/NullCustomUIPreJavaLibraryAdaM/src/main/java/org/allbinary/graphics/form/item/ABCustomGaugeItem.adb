@@ -17,7 +17,7 @@ package body org.allbinary.graphics.form.item.ABCustomGaugeItem_Package is
    function Create (label : Unbounded_String; maxValue : Integer; initialValue : Integer; backgroundBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access) return ABCustomGaugeItem_Access is
       This : constant ABCustomGaugeItem_Access := new ABCustomGaugeItem;
    begin
-      Initialize (This.all, label, maxValue, initialValue, backgroundBasicColor, foregroundBasicColor);
+      ABCustomGaugeItem_Package.Initialize (This.all, label, maxValue, initialValue, backgroundBasicColor, foregroundBasicColor);
       return This;
    end Create;
 

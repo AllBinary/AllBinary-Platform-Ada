@@ -52,7 +52,7 @@ package body org.allbinary.game.input.SelectedRTSLayersPlayerGameInput_Package i
    function Create (towerInfoPaintable : RTSLayerInfoPaintable_Access; rtsPlayerLayerInterface : RTSPlayerLayerInterface_Access; list : BasicArrayList_Access; playerInputId : Integer; selectRTSLayerVisitorFactoryInterface : SelectRTSLayerVisitorFactoryInterface_Access) return SelectedRTSLayersPlayerGameInput_Access is
       This : constant SelectedRTSLayersPlayerGameInput_Access := new SelectedRTSLayersPlayerGameInput;
    begin
-      Initialize (This.all, towerInfoPaintable, rtsPlayerLayerInterface, list, playerInputId, selectRTSLayerVisitorFactoryInterface);
+      SelectedRTSLayersPlayerGameInput_Package.Initialize (This.all, towerInfoPaintable, rtsPlayerLayerInterface, list, playerInputId, selectRTSLayerVisitorFactoryInterface);
       return This;
    end Create;
 
@@ -309,41 +309,6 @@ package body org.allbinary.game.input.SelectedRTSLayersPlayerGameInput_Package i
    begin
       null;
    end isSelected;
-
-   procedure getSelectedBasicArrayList (This : in out SelectedRTSLayersPlayerGameInput) is
-      Java_Result : constant BasicArrayList_Access := SelectedRTSLayersPlayerGameInput'Class (This).getSelectedBasicArrayList;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSelectedBasicArrayList;
-
-   procedure getLastSelectedRtsLayer (This : in out SelectedRTSLayersPlayerGameInput) is
-      Java_Result : constant CollidableDestroyableDamageableLayer_Access := SelectedRTSLayersPlayerGameInput'Class (This).getLastSelectedRtsLayer;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getLastSelectedRtsLayer;
-
-   procedure isAnyRTSLayerSelected (This : in out SelectedRTSLayersPlayerGameInput) is
-      Java_Result : constant Boolean := SelectedRTSLayersPlayerGameInput'Class (This).isAnyRTSLayerSelected;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isAnyRTSLayerSelected;
-
-   procedure getPaintSelectedRTSLayersList (This : in out SelectedRTSLayersPlayerGameInput) is
-      Java_Result : constant BasicArrayList_Access := SelectedRTSLayersPlayerGameInput'Class (This).getPaintSelectedRTSLayersList;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getPaintSelectedRTSLayersList;
-
-   procedure getPreSelectedRTSLayersList (This : in out SelectedRTSLayersPlayerGameInput) is
-      Java_Result : constant BasicArrayList_Access := SelectedRTSLayersPlayerGameInput'Class (This).getPreSelectedRTSLayersList;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getPreSelectedRTSLayersList;
 
 end org.allbinary.game.input.SelectedRTSLayersPlayerGameInput_Package;
 

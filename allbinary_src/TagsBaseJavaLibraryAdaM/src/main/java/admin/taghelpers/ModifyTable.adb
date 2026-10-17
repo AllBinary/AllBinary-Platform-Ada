@@ -30,7 +30,7 @@ package body admin.taghelpers.ModifyTable_Package is
    function Create return ModifyTable_Access is
       This : constant ModifyTable_Access := new ModifyTable;
    begin
-      Initialize (This.all);
+      ModifyTable_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -51,27 +51,6 @@ package body admin.taghelpers.ModifyTable_Package is
    function update (This : in out ModifyTable) return Unbounded_String is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
-   end update;
-
-   procedure insert (This : in out ModifyTable) is
-      Java_Result : constant Unbounded_String := ModifyTable'Class (This).insert;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end insert;
-
-   procedure delete (This : in out ModifyTable) is
-      Java_Result : constant Unbounded_String := ModifyTable'Class (This).delete;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end delete;
-
-   procedure update (This : in out ModifyTable) is
-      Java_Result : constant Unbounded_String := ModifyTable'Class (This).update;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end update;
 
 end admin.taghelpers.ModifyTable_Package;

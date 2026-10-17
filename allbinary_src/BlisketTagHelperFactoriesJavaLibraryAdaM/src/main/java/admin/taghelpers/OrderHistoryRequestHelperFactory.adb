@@ -32,7 +32,7 @@ package body admin.taghelpers.OrderHistoryRequestHelperFactory_Package is
    function Create return OrderHistoryRequestHelperFactory_Access is
       This : constant OrderHistoryRequestHelperFactory_Access := new OrderHistoryRequestHelperFactory;
    begin
-      Initialize (This.all);
+      OrderHistoryRequestHelperFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

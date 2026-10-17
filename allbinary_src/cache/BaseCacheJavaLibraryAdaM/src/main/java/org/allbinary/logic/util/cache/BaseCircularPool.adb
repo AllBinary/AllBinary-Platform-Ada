@@ -30,7 +30,7 @@ package body org.allbinary.logic.util.cache.BaseCircularPool_Package is
    function Create return BaseCircularPool_Access is
       This : constant BaseCircularPool_Access := new BaseCircularPool;
    begin
-      Initialize (This.all);
+      BaseCircularPool_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -60,13 +60,6 @@ package body org.allbinary.logic.util.cache.BaseCircularPool_Package is
    begin
         return This.OBJECT_ARRAY (index);
    end getInstance;
-
-   procedure getNextInstance (This : in out BaseCircularPool) is
-      Java_Result : constant Java_Object_Access := BaseCircularPool'Class (This).getNextInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getNextInstance;
 
    procedure getInstance (This : in out BaseCircularPool; index : Integer) is
       Java_Result : constant Java_Object_Access := BaseCircularPool'Class (This).getInstance (index);

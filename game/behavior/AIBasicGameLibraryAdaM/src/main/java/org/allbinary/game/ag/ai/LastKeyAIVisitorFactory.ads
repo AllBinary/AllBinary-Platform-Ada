@@ -20,6 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
+with org.allbinary.game.ag.ai.LastKeyAIVisitor_Package; use org.allbinary.game.ag.ai.LastKeyAIVisitor_Package;
 
 package org.allbinary.game.ag.ai.LastKeyAIVisitorFactory_Package is
 
@@ -35,7 +36,6 @@ package org.allbinary.game.ag.ai.LastKeyAIVisitorFactory_Package is
    procedure Initialize (This : in out LastKeyAIVisitorFactory'Class);
    function Create return LastKeyAIVisitorFactory_Access;
    function getInstance return LastKeyAIVisitor_Access;
-   procedure getInstance;
 
 end org.allbinary.game.ag.ai.LastKeyAIVisitorFactory_Package;
 

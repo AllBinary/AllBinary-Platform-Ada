@@ -23,6 +23,7 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.configuration.feature.Features_Package; use org.allbinary.game.configuration.feature.Features_Package;
 with org.allbinary.game.configuration.feature.SensorFeatureFactory_Package; use org.allbinary.game.configuration.feature.SensorFeatureFactory_Package;
 with org.allbinary.input.gyro.AllBinaryOrientationSensor_Package; use org.allbinary.input.gyro.AllBinaryOrientationSensor_Package;
+with org.allbinary.input.accelerometer.NoAccelerometerSensor_Package; use org.allbinary.input.accelerometer.NoAccelerometerSensor_Package;
 
 package org.allbinary.input.accelerometer.AccelerometerSensorFactory_Package is
 
@@ -42,7 +43,6 @@ package org.allbinary.input.accelerometer.AccelerometerSensorFactory_Package is
    function Create return AccelerometerSensorFactory_Access;
    procedure init;
    function getInstance return AllBinaryOrientationSensor_Access;
-   procedure getInstance;
 
 end org.allbinary.input.accelerometer.AccelerometerSensorFactory_Package;
 

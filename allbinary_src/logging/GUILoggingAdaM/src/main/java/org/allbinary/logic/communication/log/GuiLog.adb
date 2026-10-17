@@ -37,7 +37,7 @@ package body org.allbinary.logic.communication.log.GuiLog_Package is
    function Create return GuiLog_Access is
       This : constant GuiLog_Access := new GuiLog;
    begin
-      Initialize (This.all);
+      GuiLog_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -113,13 +113,6 @@ package body org.allbinary.logic.communication.log.GuiLog_Package is
                 end;
         end;
    end put;
-
-   procedure getInstance is
-      Java_Result : constant GuiLog_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure put (This : in out GuiLog; specialMessage : Unbounded_String; anyType : Java_Object_Access; functionName : Unbounded_String) is
       Java_Result : constant Unbounded_String := GuiLog'Class (This).put (specialMessage, anyType, functionName);

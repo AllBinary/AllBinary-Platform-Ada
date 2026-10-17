@@ -37,7 +37,7 @@ package body org.allbinary.game.layer.pickup.PickupLayer_Package is
    function Create (name : Unbounded_String; remoteInfo : RemoteInfo_Access; total : Integer; pickedUpLayerInterfaceFactoryInterface : PickedUpLayerInterfaceFactoryInterface_Access; animationInterface : Animation_Access; rectangle : Rectangle_Access; viewPosition : ViewPositionBase_Access) return PickupLayer_Access is
       This : constant PickupLayer_Access := new PickupLayer;
    begin
-      Initialize (This.all, name, remoteInfo, total, pickedUpLayerInterfaceFactoryInterface, animationInterface, rectangle, viewPosition);
+      PickupLayer_Package.Initialize (This.all, name, remoteInfo, total, pickedUpLayerInterfaceFactoryInterface, animationInterface, rectangle, viewPosition);
       return This;
    end Create;
 
@@ -115,20 +115,6 @@ package body org.allbinary.game.layer.pickup.PickupLayer_Package is
         openGLSurfaceChangedInterface := OpenGLSurfaceChangedInterface_Access (This.animationInterface);
         openGLSurfaceChangedInterface.set (gl);
    end set;
-
-   procedure getPickedUpLayerInterfaceFactoryInterface (This : in out PickupLayer) is
-      Java_Result : constant PickedUpLayerInterfaceFactoryInterface_Access := PickupLayer'Class (This).getPickedUpLayerInterfaceFactoryInterface;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getPickedUpLayerInterfaceFactoryInterface;
-
-   procedure isDestroyed (This : in out PickupLayer) is
-      Java_Result : constant Boolean := PickupLayer'Class (This).isDestroyed;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isDestroyed;
 
    procedure getDamage (This : in out PickupLayer; damageType : Integer) is
       Java_Result : constant Integer := PickupLayer'Class (This).getDamage (damageType);

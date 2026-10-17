@@ -52,7 +52,7 @@ package body org.allbinary.game.input.GameKeyFactory_Package is
    function Create return GameKeyFactory_Access is
       This : constant GameKeyFactory_Access := new GameKeyFactory;
    begin
-      Initialize (This.all);
+      GameKeyFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -63,13 +63,6 @@ package body org.allbinary.game.input.GameKeyFactory_Package is
             GameKeyFactory_Package.instance := GameKeyFactory_Package.Create;
         end if;
         return GameKeyFactory_Access (GameKeyFactory_Package.instance);
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant GameKeyFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

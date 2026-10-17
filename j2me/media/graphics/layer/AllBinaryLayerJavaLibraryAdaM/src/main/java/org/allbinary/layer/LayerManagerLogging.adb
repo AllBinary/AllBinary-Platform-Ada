@@ -39,7 +39,7 @@ package body org.allbinary.layer.LayerManagerLogging_Package is
    function Create return LayerManagerLogging_Access is
       This : constant LayerManagerLogging_Access := new LayerManagerLogging;
    begin
-      Initialize (This.all);
+      LayerManagerLogging_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -114,13 +114,6 @@ package body org.allbinary.layer.LayerManagerLogging_Package is
         This.stringBuilder.delete (0, This.stringBuilder.length);
         This.logUtil.putF (This.stringBuilder.appendint (Integer (TsUtil_Package.getInstance.hashCode (This'Unchecked_Access))).append_Case (This.CLEAR).toString, This'Unchecked_Access, This.CLEAR);
    end clear_Case;
-
-   procedure getInstance is
-      Java_Result : constant LayerManagerLogging_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

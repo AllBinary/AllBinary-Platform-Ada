@@ -51,11 +51,8 @@ package admin.tags.BillingAddressTag_Package is
    function Create return BillingAddressTag_Access;
    procedure setValue (This : in out BillingAddressTag; value : Unbounded_String);
    function set (This : in out BillingAddressTag) return Unbounded_String;
-   procedure set (This : in out BillingAddressTag);
    function setToShippingAddress (This : in out BillingAddressTag) return Unbounded_String;
-   procedure setToShippingAddress (This : in out BillingAddressTag);
    function doStartTag (This : in out BillingAddressTag) return Integer;
-   procedure doStartTag (This : in out BillingAddressTag);
 
 end admin.tags.BillingAddressTag_Package;
 

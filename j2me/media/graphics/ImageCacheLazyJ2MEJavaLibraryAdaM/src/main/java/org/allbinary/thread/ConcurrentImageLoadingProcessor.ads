@@ -26,6 +26,8 @@ with org.allbinary.image.ImageCache_Package; use org.allbinary.image.ImageCache_
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.thread.BaseImageLoadingProcessor_Package; use org.allbinary.thread.BaseImageLoadingProcessor_Package;
+with org.allbinary.thread.ABRunnable_Package; use org.allbinary.thread.ABRunnable_Package;
+with org.allbinary.thread.ImageThreadPool_Package; use org.allbinary.thread.ImageThreadPool_Package;
 
 package org.allbinary.thread.ConcurrentImageLoadingProcessor_Package is
 
@@ -65,6 +67,8 @@ with org.allbinary.image.ImageCache_Package; use org.allbinary.image.ImageCache_
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.thread.BaseImageLoadingProcessor_Package; use org.allbinary.thread.BaseImageLoadingProcessor_Package;
+with org.allbinary.thread.ABRunnable_Package; use org.allbinary.thread.ABRunnable_Package;
+with org.allbinary.thread.ImageThreadPool_Package; use org.allbinary.thread.ImageThreadPool_Package;
 
 package org.allbinary.thread.ImageCacheRunnable_Package is
 

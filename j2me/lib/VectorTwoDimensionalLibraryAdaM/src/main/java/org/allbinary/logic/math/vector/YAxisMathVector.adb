@@ -30,7 +30,7 @@ package body org.allbinary.logic.math.vector.YAxisMathVector_Package is
    function Create (magnitudeBasicDecimal : BasicDecimal_Access; direction : Integer) return YAxisMathVector_Access is
       This : constant YAxisMathVector_Access := new YAxisMathVector;
    begin
-      Initialize (This.all, magnitudeBasicDecimal, direction);
+      YAxisMathVector_Package.Initialize (This.all, magnitudeBasicDecimal, direction);
       return This;
    end Create;
 
@@ -45,13 +45,6 @@ package body org.allbinary.logic.math.vector.YAxisMathVector_Package is
         result := YAxisMathVectorUtil_Package.calculate (This.getMagnitude.getUnscaled, This.getDirection);
         This.resultBasicDecimal := BasicDecimal_Package.Create (result);
    end calculate;
-
-   procedure getResult (This : in out YAxisMathVector) is
-      Java_Result : constant BasicDecimal_Access := YAxisMathVector'Class (This).getResult;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getResult;
 
 end org.allbinary.logic.math.vector.YAxisMathVector_Package;
 

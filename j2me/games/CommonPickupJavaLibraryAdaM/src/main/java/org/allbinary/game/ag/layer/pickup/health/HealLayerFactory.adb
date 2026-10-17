@@ -28,7 +28,7 @@ package body org.allbinary.game.ag.layer.pickup.health.HealLayerFactory_Package 
    function Create return HealLayerFactory_Access is
       This : constant HealLayerFactory_Access := new HealLayerFactory;
    begin
-      Initialize (This.all);
+      HealLayerFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -37,13 +37,6 @@ package body org.allbinary.game.ag.layer.pickup.health.HealLayerFactory_Package 
    function getInstance (This : in out HealLayerFactory) return AllBinaryLayer_Access is
    begin
         return HealLayer_Package.Create;
-   end getInstance;
-
-   procedure getInstance (This : in out HealLayerFactory) is
-      Java_Result : constant AllBinaryLayer_Access := HealLayerFactory'Class (This).getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 end org.allbinary.game.ag.layer.pickup.health.HealLayerFactory_Package;

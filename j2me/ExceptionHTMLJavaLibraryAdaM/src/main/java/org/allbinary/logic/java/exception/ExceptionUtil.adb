@@ -36,7 +36,7 @@ package body org.allbinary.logic.java.exception_Id.ExceptionUtil_Package is
    function Create return ExceptionUtil_Access is
       This : constant ExceptionUtil_Access := new ExceptionUtil;
    begin
-      Initialize (This.all);
+      ExceptionUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -45,13 +45,6 @@ package body org.allbinary.logic.java.exception_Id.ExceptionUtil_Package is
         Java_Print_Stack_Trace (e);
         return This.NONE;
    end getStackTrace;
-
-   procedure getInstance is
-      Java_Result : constant ExceptionUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure getStackTrace (This : in out ExceptionUtil; e : Java_Throwable) is
       Java_Result : constant Unbounded_String := ExceptionUtil'Class (This).getStackTrace (e);

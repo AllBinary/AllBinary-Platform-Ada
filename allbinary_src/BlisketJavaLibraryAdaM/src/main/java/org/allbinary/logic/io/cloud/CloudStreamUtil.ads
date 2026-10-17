@@ -23,6 +23,8 @@ with AllBinary_Java; use AllBinary_Java;
 --  with java.io.InputStream_Package; use java.io.InputStream_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.io.file.AbFile_Package; use org.allbinary.logic.io.file.AbFile_Package;
+with org.allbinary.logic.io.AbFileInputStream_Package; use org.allbinary.logic.io.AbFileInputStream_Package;
+with org.allbinary.logic.io.AbFileLocalInputStream_Package; use org.allbinary.logic.io.AbFileLocalInputStream_Package;
 
 package org.allbinary.logic.io.CloudStreamUtil_Package is
 
@@ -42,7 +44,6 @@ package org.allbinary.logic.io.CloudStreamUtil_Package is
    procedure Initialize (This : in out CloudStreamUtil'Class);
    function Create return CloudStreamUtil_Access;
    function getInstance return CloudStreamUtil_Access;
-   procedure getInstance;
    function getFile (This : in out CloudStreamUtil; file : AbFile_Access) return InputStream_Access;
    procedure getFile (This : in out CloudStreamUtil; file : AbFile_Access);
    function getFileAnyWhere (This : in out CloudStreamUtil; file : AbFile_Access) return InputStream_Access;

@@ -83,14 +83,12 @@ package org.allbinary.game.score.HighScoreNamePersistanceSingleton_Package is
    procedure Initialize (This : in out HighScoreNamePersistanceSingleton'Class);
    function Create return HighScoreNamePersistanceSingleton_Access;
    function getInstance return HighScoreNamePersistanceSingleton_Access;
-   procedure getInstance;
    procedure clear (This : in out HighScoreNamePersistanceSingleton);
    procedure deleteAll (This : in out HighScoreNamePersistanceSingleton; abeClientInformation : AbeClientInformationInterface_Access; gameInfo : GameInfo_Access);
    function getRecordId (This : in out HighScoreNamePersistanceSingleton; abeClientInformation : AbeClientInformationInterface_Access) return Unbounded_String;
    procedure getRecordId (This : in out HighScoreNamePersistanceSingleton; abeClientInformation : AbeClientInformationInterface_Access);
    procedure delete (This : in out HighScoreNamePersistanceSingleton; abeClientInformation : AbeClientInformationInterface_Access; gameInfo : GameInfo_Access; deleteId : Integer);
    function getIds (This : in out HighScoreNamePersistanceSingleton) return BasicArrayList_Access;
-   procedure getIds (This : in out HighScoreNamePersistanceSingleton);
    function load (This : in out HighScoreNamePersistanceSingleton; abeClientInformation : AbeClientInformationInterface_Access; gameInfo : GameInfo_Access) return Unbounded_String;
    procedure load (This : in out HighScoreNamePersistanceSingleton; abeClientInformation : AbeClientInformationInterface_Access; gameInfo : GameInfo_Access);
    procedure save (This : in out HighScoreNamePersistanceSingleton; abeClientInformation : AbeClientInformationInterface_Access; gameInfo : GameInfo_Access; name : Unbounded_String);

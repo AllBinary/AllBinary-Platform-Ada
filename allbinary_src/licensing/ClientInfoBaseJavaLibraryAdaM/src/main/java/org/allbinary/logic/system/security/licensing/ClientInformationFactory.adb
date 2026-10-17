@@ -28,7 +28,7 @@ package body org.allbinary.logic.system.security.licensing.ClientInformationFact
    function Create return ClientInformationFactory_Access is
       This : constant ClientInformationFactory_Access := new ClientInformationFactory;
    begin
-      Initialize (This.all);
+      ClientInformationFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -43,13 +43,6 @@ package body org.allbinary.logic.system.security.licensing.ClientInformationFact
         logUtil.putF (commonStrings.NOT_IMPLEMENTED, This'Unchecked_Access, commonStrings.GET_INSTANCE);
         stringUtil := StringUtil_Package.getInstance;
         return ClientInformation_Package.Create (stringUtil.NULL_STRING, stringUtil.NULL_STRING, stringUtil.NULL_STRING, stringUtil.NULL_STRING);
-   end getInstance;
-
-   procedure getInstance (This : in out ClientInformationFactory) is
-      Java_Result : constant ClientInformation_Access := ClientInformationFactory'Class (This).getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 end org.allbinary.logic.system.security.licensing.ClientInformationFactory_Package;

@@ -42,7 +42,6 @@ package org.allbinary.thread.NullRunnable_Package is
    procedure Initialize (This : in out NullRunnable'Class);
    function Create return NullRunnable_Access;
    function getInstance return NullRunnable_Access;
-   procedure getInstance;
 
 end org.allbinary.thread.NullRunnable_Package;
 

@@ -38,7 +38,6 @@ package org.allbinary.media.image.filter.ImageFileFilter_Package is
    function accept_Id (This : in out ImageFileFilter; f : File_Access) return Boolean;
    procedure accept_Id (This : in out ImageFileFilter; f : File_Access);
    function getDescription (This : in out ImageFileFilter) return Unbounded_String;
-   procedure getDescription (This : in out ImageFileFilter);
 
 end org.allbinary.media.image.filter.ImageFileFilter_Package;
 

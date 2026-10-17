@@ -35,7 +35,7 @@ package body org.allbinary.business.user.modules.configuration.UserConfiguration
    function Create return UserConfiguration_Access is
       This : constant UserConfiguration_Access := new UserConfiguration;
    begin
-      Initialize (This.all);
+      UserConfiguration_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -51,7 +51,7 @@ package body org.allbinary.business.user.modules.configuration.UserConfiguration
    function Create (hashMap : HashMap_Access) return UserConfiguration_Access is
       This : constant UserConfiguration_Access := new UserConfiguration;
    begin
-      Initialize (This.all, hashMap);
+      UserConfiguration_Package.Initialize (This.all, hashMap);
       return This;
    end Create;
 
@@ -84,27 +84,6 @@ package body org.allbinary.business.user.modules.configuration.UserConfiguration
    begin
         This.timeLastModified := timeLastModified;
    end setTimeLastModified;
-
-   procedure getUserEmailConfigurationInterface (This : in out UserConfiguration) is
-      Java_Result : constant UserEmailConfigurationInterface_Access := UserConfiguration'Class (This).getUserEmailConfigurationInterface;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getUserEmailConfigurationInterface;
-
-   procedure getTimeCreated (This : in out UserConfiguration) is
-      Java_Result : constant TimeCreated_Access := UserConfiguration'Class (This).getTimeCreated;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTimeCreated;
-
-   procedure getTimeLastModified (This : in out UserConfiguration) is
-      Java_Result : constant TimeLastModified_Access := UserConfiguration'Class (This).getTimeLastModified;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTimeLastModified;
 
 end org.allbinary.business.user.modules.configuration.UserConfiguration_Package;
 

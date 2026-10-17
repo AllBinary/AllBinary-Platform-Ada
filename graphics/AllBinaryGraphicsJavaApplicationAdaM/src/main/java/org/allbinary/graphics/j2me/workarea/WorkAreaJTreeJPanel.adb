@@ -46,7 +46,7 @@ package body org.allbinary.graphics.j2me.workarea.WorkAreaJTreeJPanel_Package is
    function Create (workAreaName : Unbounded_String) return WorkAreaJTreeJPanel_Access is
       This : constant WorkAreaJTreeJPanel_Access := new WorkAreaJTreeJPanel;
    begin
-      Initialize (This.all, workAreaName);
+      WorkAreaJTreeJPanel_Package.Initialize (This.all, workAreaName);
       return This;
    end Create;
 
@@ -394,13 +394,6 @@ package body org.allbinary.graphics.j2me.workarea.WorkAreaJTreeJPanel_Package is
    begin
       null;
    end getNode;
-
-   procedure getRootTreeNode (This : in out WorkAreaJTreeJPanel) is
-      Java_Result : constant MutableTreeNode_Access := WorkAreaJTreeJPanel'Class (This).getRootTreeNode;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getRootTreeNode;
 
 end org.allbinary.graphics.j2me.workarea.WorkAreaJTreeJPanel_Package;
 

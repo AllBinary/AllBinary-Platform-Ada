@@ -31,7 +31,7 @@ package body org.allbinary.logic.visual.transform.info.CustomTransformInfo_Packa
    function Create (outputTypeName : Unbounded_String; inputOutputTypeName : Unbounded_String; inputOutputTypeFile : Unbounded_String; name : Unbounded_String; objectFileName : Unbounded_String; objectConfigFileName : Unbounded_String; templateFileName : Unbounded_String; dataFileName : Unbounded_String) return CustomTransformInfo_Access is
       This : constant CustomTransformInfo_Access := new CustomTransformInfo;
    begin
-      Initialize (This.all, outputTypeName, inputOutputTypeName, inputOutputTypeFile, name, objectFileName, objectConfigFileName, templateFileName, dataFileName);
+      CustomTransformInfo_Package.Initialize (This.all, outputTypeName, inputOutputTypeName, inputOutputTypeFile, name, objectFileName, objectConfigFileName, templateFileName, dataFileName);
       return This;
    end Create;
 

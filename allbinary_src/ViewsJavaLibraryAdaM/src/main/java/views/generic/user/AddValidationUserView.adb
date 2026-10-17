@@ -33,7 +33,7 @@ package body views.generic_Id.user.AddValidationUserView_Package is
    function Create (transformInfoInterface : TransformInfoInterface_Access) return AddValidationUserView_Access is
       This : constant AddValidationUserView_Access := new AddValidationUserView;
    begin
-      Initialize (This.all, transformInfoInterface);
+      AddValidationUserView_Package.Initialize (This.all, transformInfoInterface);
       return This;
    end Create;
 
@@ -107,40 +107,12 @@ package body views.generic_Id.user.AddValidationUserView_Package is
         return This.views.ValidationOnlyTempUtil.getInstance.view (This'Unchecked_Access);
    end view;
 
-   procedure isValid (This : in out AddValidationUserView) is
-      Java_Result : constant Boolean := AddValidationUserView'Class (This).isValid;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isValid;
-
-   procedure validationInfo (This : in out AddValidationUserView) is
-      Java_Result : constant Unbounded_String := AddValidationUserView'Class (This).validationInfo;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end validationInfo;
-
-   procedure toValidationInfoDoc (This : in out AddValidationUserView) is
-      Java_Result : constant Document_Access := AddValidationUserView'Class (This).toValidationInfoDoc;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toValidationInfoDoc;
-
    procedure toValidationInfoNode (This : in out AddValidationUserView; document : Document_Access) is
       Java_Result : constant Node_Access := AddValidationUserView'Class (This).toValidationInfoNode (document);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end toValidationInfoNode;
-
-   procedure view (This : in out AddValidationUserView) is
-      Java_Result : constant Unbounded_String := AddValidationUserView'Class (This).view;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end view;
 
 end views.generic_Id.user.AddValidationUserView_Package;
 

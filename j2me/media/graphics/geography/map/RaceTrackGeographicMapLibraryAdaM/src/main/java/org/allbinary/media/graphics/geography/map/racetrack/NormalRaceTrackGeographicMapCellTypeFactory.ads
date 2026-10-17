@@ -21,6 +21,7 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellTypeFactory_Package; use org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellTypeFactory_Package;
+with org.allbinary.media.graphics.geography.map.racetrack.EmptyRaceRaceTrackGeographicMapCellTypeFactory_Package; use org.allbinary.media.graphics.geography.map.racetrack.EmptyRaceRaceTrackGeographicMapCellTypeFactory_Package;
 
 package org.allbinary.media.graphics.geography.map.racetrack.NormalRaceTrackGeographicMapCellTypeFactory_Package is
 
@@ -36,7 +37,6 @@ package org.allbinary.media.graphics.geography.map.racetrack.NormalRaceTrackGeog
    procedure Initialize (This : in out NormalRaceTrackGeographicMapCellTypeFactory'Class);
    function Create return NormalRaceTrackGeographicMapCellTypeFactory_Access;
    function getInstance return NormalRaceTrackGeographicMapCellTypeFactory_Access;
-   procedure getInstance;
 
 end org.allbinary.media.graphics.geography.map.racetrack.NormalRaceTrackGeographicMapCellTypeFactory_Package;
 

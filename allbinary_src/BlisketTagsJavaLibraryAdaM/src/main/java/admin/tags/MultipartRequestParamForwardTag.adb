@@ -32,7 +32,7 @@ package body admin.tags.MultipartRequestParamForwardTag_Package is
    function Create return MultipartRequestParamForwardTag_Access is
       This : constant MultipartRequestParamForwardTag_Access := new MultipartRequestParamForwardTag;
    begin
-      Initialize (This.all);
+      MultipartRequestParamForwardTag_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -75,13 +75,6 @@ package body admin.tags.MultipartRequestParamForwardTag_Package is
             return Tag_Package.SKIP_BODY;
                 end;
         end;
-   end doStartTag;
-
-   procedure doStartTag (This : in out MultipartRequestParamForwardTag) is
-      Java_Result : constant Integer := MultipartRequestParamForwardTag'Class (This).doStartTag;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end doStartTag;
 
 end admin.tags.MultipartRequestParamForwardTag_Package;

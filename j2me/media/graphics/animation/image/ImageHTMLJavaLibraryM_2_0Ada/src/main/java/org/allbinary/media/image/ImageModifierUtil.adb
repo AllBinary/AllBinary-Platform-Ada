@@ -33,7 +33,7 @@ package body org.allbinary.media.image.ImageModifierUtil_Package is
    function Create return ImageModifierUtil_Access is
       This : constant ImageModifierUtil_Access := new ImageModifierUtil;
    begin
-      Initialize (This.all);
+      ImageModifierUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -176,13 +176,6 @@ package body org.allbinary.media.image.ImageModifierUtil_Package is
             This.alphaArray (index) := True;
         end loop;
    end reset;
-
-   procedure getInstanceOrCreate is
-      Java_Result : constant ImageModifierUtil_Access := getInstanceOrCreate;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstanceOrCreate;
 
    procedure getImageArray (This : in out ImageModifierUtil; originalImageArray : Image_Access_Array_Access) is
       Java_Result : constant Image_Access_Array_Access := ImageModifierUtil'Class (This).getImageArray (originalImageArray);

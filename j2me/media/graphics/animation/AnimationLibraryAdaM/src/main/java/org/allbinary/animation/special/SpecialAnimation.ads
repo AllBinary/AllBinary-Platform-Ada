@@ -42,11 +42,9 @@ package org.allbinary.animation.special.SpecialAnimation_Package is
    procedure Initialize (This : in out SpecialAnimation'Class; animationBehavior : AnimationBehavior_Access);
    function Create (animationBehavior : AnimationBehavior_Access) return SpecialAnimation_Access;
    function getInstance return SpecialAnimation_Access;
-   procedure getInstance;
    procedure nextFrame (This : in out SpecialAnimation);
    procedure setLastFrame (This : in out SpecialAnimation);
    function isComplete (This : in out SpecialAnimation) return Boolean;
-   procedure isComplete (This : in out SpecialAnimation);
    procedure open (This : in out SpecialAnimation);
    procedure close (This : in out SpecialAnimation);
    procedure process (This : in out SpecialAnimation);

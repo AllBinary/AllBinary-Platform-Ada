@@ -51,7 +51,7 @@ package body org.allbinary.logic.visual.dhtml.html.select_Id.HtmlSelect_Package 
    function Create (before : Unbounded_String; size_Case : Unbounded_String; name_Case : Unbounded_String; after : Unbounded_String) return HtmlSelect_Access is
       This : constant HtmlSelect_Access := new HtmlSelect;
    begin
-      Initialize (This.all, before, size_Case, name_Case, after);
+      HtmlSelect_Package.Initialize (This.all, before, size_Case, name_Case, after);
       return This;
    end Create;
 
@@ -158,27 +158,6 @@ package body org.allbinary.logic.visual.dhtml.html.select_Id.HtmlSelect_Package 
         result := result & This.ENDSELECT;
         result := result & This.after;
         return result;
-   end toString;
-
-   procedure isMultiple (This : in out HtmlSelect) is
-      Java_Result : constant Boolean := HtmlSelect'Class (This).isMultiple;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isMultiple;
-
-   procedure getOptions (This : in out HtmlSelect) is
-      Java_Result : constant Unbounded_String := HtmlSelect'Class (This).getOptions;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getOptions;
-
-   procedure toString (This : in out HtmlSelect) is
-      Java_Result : constant Unbounded_String := HtmlSelect'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end toString;
 
 end org.allbinary.logic.visual.dhtml.html.select_Id.HtmlSelect_Package;

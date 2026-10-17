@@ -21,6 +21,7 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.input.automation.module.InputAutomationActionInterface_Package; use org.allbinary.input.automation.module.InputAutomationActionInterface_Package;
+with org.allbinary.input.automation.module.game.Rectangle_Package; use org.allbinary.input.automation.module.game.Rectangle_Package;
 
 package org.allbinary.input.automation.module.game.BasicGameInputAutomationActionInterface_Package is
 

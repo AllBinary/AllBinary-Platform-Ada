@@ -38,7 +38,6 @@ package org.allbinary.logic.system.PlatformAssetManager_Package is
    procedure Initialize (This : in out PlatformAssetManager'Class);
    function Create return PlatformAssetManager_Access;
    function getInstance return PlatformAssetManager_Access;
-   procedure getInstance;
    function getResourceAsStream (This : in out PlatformAssetManager; resource : Unbounded_String) return InputStream_Access;
    procedure getResourceAsStream (This : in out PlatformAssetManager; resource : Unbounded_String);
 

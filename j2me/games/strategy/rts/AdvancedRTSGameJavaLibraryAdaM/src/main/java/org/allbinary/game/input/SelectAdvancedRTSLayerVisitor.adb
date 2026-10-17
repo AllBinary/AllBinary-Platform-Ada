@@ -32,7 +32,7 @@ package body org.allbinary.game.input.SelectAdvancedRTSLayerVisitor_Package is
    function Create (selectedRTSLayersPlayerGameInput : SelectedRTSLayersPlayerGameInput_Access) return SelectAdvancedRTSLayerVisitor_Access is
       This : constant SelectAdvancedRTSLayerVisitor_Access := new SelectAdvancedRTSLayerVisitor;
    begin
-      Initialize (This.all, selectedRTSLayersPlayerGameInput);
+      SelectAdvancedRTSLayerVisitor_Package.Initialize (This.all, selectedRTSLayersPlayerGameInput);
       return This;
    end Create;
 

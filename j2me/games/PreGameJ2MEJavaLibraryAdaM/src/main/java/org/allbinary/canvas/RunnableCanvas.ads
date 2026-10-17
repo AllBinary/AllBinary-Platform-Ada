@@ -31,11 +31,13 @@ with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
-with org.allbinary.thread_Case.NullThread_Package; use org.allbinary.thread_Case.NullThread_Package;
-with org.allbinary.thread_Case.RunnableInterface_Package; use org.allbinary.thread_Case.RunnableInterface_Package;
-with org.allbinary.thread_Case.ThreadObjectUtil_Package; use org.allbinary.thread_Case.ThreadObjectUtil_Package;
+with org.allbinary.thread.NullThread_Package; use org.allbinary.thread.NullThread_Package;
+with org.allbinary.thread.RunnableInterface_Package; use org.allbinary.thread.RunnableInterface_Package;
+with org.allbinary.thread.ThreadObjectUtil_Package; use org.allbinary.thread.ThreadObjectUtil_Package;
 with org.allbinary.time.TimeDelayHelper_Package; use org.allbinary.time.TimeDelayHelper_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.canvas.Processor_Package; use org.allbinary.canvas.Processor_Package;
+with org.allbinary.canvas.RunnableCanvasRefreshHelper_Package; use org.allbinary.canvas.RunnableCanvasRefreshHelper_Package;
 
 package org.allbinary.canvas.RunnableCanvas_Package is
 
@@ -49,9 +51,9 @@ package org.allbinary.canvas.RunnableCanvas_Package is
    package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
-   package NullThread_Package renames Standard.org.allbinary.thread_Case.NullThread_Package;
-   package RunnableInterface_Package renames Standard.org.allbinary.thread_Case.RunnableInterface_Package;
-   package ThreadObjectUtil_Package renames Standard.org.allbinary.thread_Case.ThreadObjectUtil_Package;
+   package NullThread_Package renames Standard.org.allbinary.thread.NullThread_Package;
+   package RunnableInterface_Package renames Standard.org.allbinary.thread.RunnableInterface_Package;
+   package ThreadObjectUtil_Package renames Standard.org.allbinary.thread.ThreadObjectUtil_Package;
    package TimeDelayHelper_Package renames Standard.org.allbinary.time.TimeDelayHelper_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
 
@@ -88,16 +90,12 @@ package org.allbinary.canvas.RunnableCanvas_Package is
    function Create (commandListener : CommandListener_Access; childNameList : BasicArrayList_Access; hasParam : Boolean) return RunnableCanvas_Access;
    procedure initCommands (This : in out RunnableCanvas; cmdListener : CommandListener_Access);
    function isMainCanvas (This : in out RunnableCanvas) return Boolean;
-   procedure isMainCanvas (This : in out RunnableCanvas);
    procedure setThread (This : in out RunnableCanvas; thread_Case : Thread_Access);
    procedure setRunning (This : in out RunnableCanvas; running : Boolean);
    function isRunning (This : in out RunnableCanvas) return Boolean;
-   procedure isRunning (This : in out RunnableCanvas);
    function getLoopTimeHelperP (This : in out RunnableCanvas) return TimeDelayHelper_Access;
-   procedure getLoopTimeHelperP (This : in out RunnableCanvas);
    procedure setWait (This : in out RunnableCanvas; wait : Integer);
    function getWait (This : in out RunnableCanvas) return Integer;
-   procedure getWait (This : in out RunnableCanvas);
    procedure setCurrentThread (This : in out RunnableCanvas);
    procedure setCurrentThreadFake (This : in out RunnableCanvas);
    procedure showNotify (This : in out RunnableCanvas);
@@ -105,15 +103,12 @@ package org.allbinary.canvas.RunnableCanvas_Package is
    procedure waitOnNotify (This : in out RunnableCanvas; wait : Long_Long_Integer);
    procedure processSleep (This : in out RunnableCanvas);
    function isPausable (This : in out RunnableCanvas) return Boolean;
-   procedure isPausable (This : in out RunnableCanvas);
    procedure processGameSleep (This : in out RunnableCanvas; sleep : Long_Long_Integer);
    procedure processLoopSleep (This : in out RunnableCanvas);
    function isSingleThread (This : in out RunnableCanvas) return Boolean;
-   procedure isSingleThread (This : in out RunnableCanvas);
    procedure run (This : in out RunnableCanvas);
    procedure end2 (This : in out RunnableCanvas);
    function getType (This : in out RunnableCanvas) return Integer;
-   procedure getType (This : in out RunnableCanvas);
 
 end org.allbinary.canvas.RunnableCanvas_Package;
 

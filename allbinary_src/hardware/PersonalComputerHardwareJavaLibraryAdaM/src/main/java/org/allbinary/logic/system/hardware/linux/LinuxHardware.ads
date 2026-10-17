@@ -49,6 +49,7 @@ with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.Com
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.logic.system.hardware.linux.PCComponentFactory_Package; use org.allbinary.logic.system.hardware.linux.PCComponentFactory_Package;
 
 package org.allbinary.logic.system.hardware.linux.LinuxHardware_Package is
 
@@ -108,7 +109,7 @@ package org.allbinary.logic.system.hardware.linux.LinuxHardware_Package is
    procedure Initialize (This : in out LinuxHardware'Class; path : Unbounded_String);
    function Create (path : Unbounded_String) return LinuxHardware_Access;
    procedure init (This : in out LinuxHardware; filePath : Unbounded_String);
-   procedure init (This : in out LinuxHardware; lineNumberReader : LineNumberReader_Access; filePath : Unbounded_String);
+   procedure init (This : in out LinuxHardware; lineNumberReader_Param : LineNumberReader_Access; filePath : Unbounded_String);
    function getMultimedia (This : in out LinuxHardware; index : Integer) return MediaInterface_Access;
    procedure getMultimedia (This : in out LinuxHardware; index : Integer);
    function getBridge (This : in out LinuxHardware; index : Integer) return BridgeInterface_Access;
@@ -134,7 +135,6 @@ package org.allbinary.logic.system.hardware.linux.LinuxHardware_Package is
    function getComponent (This : in out LinuxHardware; index : Integer) return HardwareComponentInterface_Access;
    procedure getComponent (This : in out LinuxHardware; index : Integer);
    function toString (This : in out LinuxHardware) return Unbounded_String;
-   procedure toString (This : in out LinuxHardware);
    function compareTo (This : in out LinuxHardware; hardwareInterface : HardwareInterface_Access) return Boolean;
    procedure compareTo (This : in out LinuxHardware; hardwareInterface : HardwareInterface_Access);
    function difference (This : in out LinuxHardware; hardwareInterface : HardwareInterface_Access) return ABHashtable_Access;

@@ -23,6 +23,7 @@ with AllBinary_Java; use AllBinary_Java;
 --  with javax.servlet.ServletRequest_Package; use javax.servlet.ServletRequest_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.business.user.commerce.money.payment.PaymentInterface_Package; use org.allbinary.business.user.commerce.money.payment.PaymentInterface_Package;
 
 package org.allbinary.business.user.commerce.money.payment.PaymentFactory_Package is
 

@@ -24,6 +24,7 @@ with org.allbinary.thread.ARunnable_Package; use org.allbinary.thread.ARunnable_
 --  with java.io.File_Package; use java.io.File_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.gui.dialog.JDialog_Package; use org.allbinary.gui.dialog.JDialog_Package;
+with org.allbinary.gui.dialog.FileJDialogListenerInterface_Package; use org.allbinary.gui.dialog.FileJDialogListenerInterface_Package;
 
 package org.allbinary.gui.dialog.FileJDialog_Package is
 
@@ -48,7 +49,6 @@ package org.allbinary.gui.dialog.FileJDialog_Package is
    procedure jFileChooser1ActionPerformed (This : in out FileJDialog; evt : ActionEvent_Access);
    procedure main (args : Unbounded_String_Array_Access);
    function getJFileChooser1 (This : in out FileJDialog) return JFileChooser_Access;
-   procedure getJFileChooser1 (This : in out FileJDialog);
    procedure setJFileChooser1 (This : in out FileJDialog; jFileChooser1 : JFileChooser_Access);
 
 end org.allbinary.gui.dialog.FileJDialog_Package;

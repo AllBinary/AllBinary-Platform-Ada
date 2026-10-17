@@ -30,7 +30,7 @@ package body org.allbinary.game.rts.technology.event.TechEventHandler_Package is
    function Create return TechEventHandler_Access is
       This : constant TechEventHandler_Access := new TechEventHandler;
    begin
-      Initialize (This.all);
+      TechEventHandler_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -46,13 +46,6 @@ package body org.allbinary.game.rts.technology.event.TechEventHandler_Package is
         techEventListenerInterface := (TechEventListenerInterface_Access (eventListenerInterface));
         techEventListenerInterface.onTechEvent (eventObject);
    end process;
-
-   procedure getInstance is
-      Java_Result : constant TechEventHandler_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

@@ -43,7 +43,7 @@ package body org.allbinary.logic.visual.dhtml.html.input.HtmlInput_Package is
    function Create (before : Unbounded_String; type_Case_Id : Unbounded_String; name_Case : Unbounded_String; after : Unbounded_String) return HtmlInput_Access is
       This : constant HtmlInput_Access := new HtmlInput;
    begin
-      Initialize (This.all, before, type_Case_Id, name_Case, after);
+      HtmlInput_Package.Initialize (This.all, before, type_Case_Id, name_Case, after);
       return This;
    end Create;
 
@@ -82,13 +82,6 @@ package body org.allbinary.logic.visual.dhtml.html.input.HtmlInput_Package is
         result := result & This.ENDINPUT;
         result := result & This.after;
         return result;
-   end toString;
-
-   procedure toString (This : in out HtmlInput) is
-      Java_Result : constant Unbounded_String := HtmlInput'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end toString;
 
 end org.allbinary.logic.visual.dhtml.html.input.HtmlInput_Package;

@@ -34,7 +34,7 @@ package body org.allbinary.layer.NullLayer_Package is
    function Create return NullLayer_Access is
       This : constant NullLayer_Access := new NullLayer;
    begin
-      Initialize (This.all);
+      NullLayer_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -42,13 +42,6 @@ package body org.allbinary.layer.NullLayer_Package is
    begin
         null;
    end paint;
-
-   procedure getInstance is
-      Java_Result : constant NullLayer_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

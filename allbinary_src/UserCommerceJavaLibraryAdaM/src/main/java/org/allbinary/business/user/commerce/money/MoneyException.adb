@@ -31,7 +31,7 @@ package body org.allbinary.business.user.commerce.money.MoneyException_Package i
    function Create return MoneyException_Access is
       This : constant MoneyException_Access := new MoneyException;
    begin
-      Initialize (This.all);
+      MoneyException_Package.Initialize (This.all);
       return This;
    end Create;
 

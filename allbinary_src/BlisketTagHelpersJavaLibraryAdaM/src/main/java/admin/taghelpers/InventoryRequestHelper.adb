@@ -38,7 +38,7 @@ package body admin.taghelpers.InventoryRequestHelper_Package is
    function Create (propertiesHashMap : HashMap_Access; pageContext : PageContext_Access) return InventoryRequestHelper_Access is
       This : constant InventoryRequestHelper_Access := new InventoryRequestHelper;
    begin
-      Initialize (This.all, propertiesHashMap, pageContext);
+      InventoryRequestHelper_Package.Initialize (This.all, propertiesHashMap, pageContext);
       return This;
    end Create;
 
@@ -137,34 +137,6 @@ package body admin.taghelpers.InventoryRequestHelper_Package is
    function getItemInterface (This : in out InventoryRequestHelper) return ItemInterface_Access is
    begin
         return This.itemInterface;
-   end getItemInterface;
-
-   procedure insert (This : in out InventoryRequestHelper) is
-      Java_Result : constant Unbounded_String := InventoryRequestHelper'Class (This).insert;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end insert;
-
-   procedure delete (This : in out InventoryRequestHelper) is
-      Java_Result : constant Unbounded_String := InventoryRequestHelper'Class (This).delete;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end delete;
-
-   procedure update (This : in out InventoryRequestHelper) is
-      Java_Result : constant Unbounded_String := InventoryRequestHelper'Class (This).update;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end update;
-
-   procedure getItemInterface (This : in out InventoryRequestHelper) is
-      Java_Result : constant ItemInterface_Access := InventoryRequestHelper'Class (This).getItemInterface;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getItemInterface;
 
 end admin.taghelpers.InventoryRequestHelper_Package;

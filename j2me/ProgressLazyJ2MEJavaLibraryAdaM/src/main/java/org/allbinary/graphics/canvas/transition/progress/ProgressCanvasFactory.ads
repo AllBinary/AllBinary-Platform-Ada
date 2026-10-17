@@ -24,6 +24,8 @@ with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.s
 with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
 with org.allbinary.graphics.paint.PaintableInterface_Package; use org.allbinary.graphics.paint.PaintableInterface_Package;
 with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
+with org.allbinary.graphics.canvas.transition.progress.LazyProgressCanvas_Package; use org.allbinary.graphics.canvas.transition.progress.LazyProgressCanvas_Package;
+with org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package; use org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package;
 
 package org.allbinary.graphics.canvas.transition.progress.ProgressCanvasFactory_Package is
 
@@ -43,9 +45,7 @@ package org.allbinary.graphics.canvas.transition.progress.ProgressCanvasFactory_
    procedure Initialize (This : in out ProgressCanvasFactory'Class);
    function Create return ProgressCanvasFactory_Access;
    function getInstance return ProgressCanvas_Access;
-   procedure getInstance;
    function getLazyInstance return PaintableInterface_Access;
-   procedure getLazyInstance;
 
 end org.allbinary.graphics.canvas.transition.progress.ProgressCanvasFactory_Package;
 

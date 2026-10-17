@@ -25,6 +25,7 @@ with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.lo
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.logic.communication.smtp.configuration.server.EmailServerConfigurationInterface_Package; use org.allbinary.logic.communication.smtp.configuration.server.EmailServerConfigurationInterface_Package;
+with org.allbinary.logic.communication.smtp.configuration.server.EmailServerConfigurationData_Package; use org.allbinary.logic.communication.smtp.configuration.server.EmailServerConfigurationData_Package;
 
 package org.allbinary.logic.communication.smtp.configuration.server.EmailServerConfiguration_Package is
 
@@ -48,16 +49,12 @@ package org.allbinary.logic.communication.smtp.configuration.server.EmailServerC
    function Create return EmailServerConfiguration_Access;
    procedure setSmtpServer (This : in out EmailServerConfiguration; value : Unbounded_String);
    function getSmtpServer (This : in out EmailServerConfiguration) return Unbounded_String;
-   procedure getSmtpServer (This : in out EmailServerConfiguration);
    function getAccountName (This : in out EmailServerConfiguration) return Unbounded_String;
-   procedure getAccountName (This : in out EmailServerConfiguration);
    procedure setAccountName (This : in out EmailServerConfiguration; accountName : Unbounded_String);
    function getPassword (This : in out EmailServerConfiguration) return Unbounded_String;
-   procedure getPassword (This : in out EmailServerConfiguration);
    procedure setPassword (This : in out EmailServerConfiguration; password : Unbounded_String);
    procedure log (This : in out EmailServerConfiguration);
    function toString (This : in out EmailServerConfiguration) return Unbounded_String;
-   procedure toString (This : in out EmailServerConfiguration);
 
 end org.allbinary.logic.communication.smtp.configuration.server.EmailServerConfiguration_Package;
 

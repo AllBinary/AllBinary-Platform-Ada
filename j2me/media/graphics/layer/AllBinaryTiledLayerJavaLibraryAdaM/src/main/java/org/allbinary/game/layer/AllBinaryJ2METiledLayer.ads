@@ -50,17 +50,12 @@ package org.allbinary.game.layer.AllBinaryJ2METiledLayer_Package is
    procedure moveDXY (This : in out AllBinaryJ2METiledLayer; dx : Integer; dy : Integer);
    procedure setPosition (This : in out AllBinaryJ2METiledLayer; x : Integer; y : Integer; z : Integer);
    function getTiledLayer (This : in out AllBinaryJ2METiledLayer) return TiledLayer_Access;
-   procedure getTiledLayer (This : in out AllBinaryJ2METiledLayer);
    function getCellWidth (This : in out AllBinaryJ2METiledLayer) return Integer;
-   procedure getCellWidth (This : in out AllBinaryJ2METiledLayer);
    function getCellHeight (This : in out AllBinaryJ2METiledLayer) return Integer;
-   procedure getCellHeight (This : in out AllBinaryJ2METiledLayer);
    function getCell (This : in out AllBinaryJ2METiledLayer; col : Integer; row : Integer) return Integer;
    procedure getCell (This : in out AllBinaryJ2METiledLayer; col : Integer; row : Integer);
    function getColumns (This : in out AllBinaryJ2METiledLayer) return Integer;
-   procedure getColumns (This : in out AllBinaryJ2METiledLayer);
    function getRows (This : in out AllBinaryJ2METiledLayer) return Integer;
-   procedure getRows (This : in out AllBinaryJ2METiledLayer);
    procedure setCell (This : in out AllBinaryJ2METiledLayer; col : Integer; row : Integer; index : Integer);
    function getAnimatedTile (This : in out AllBinaryJ2METiledLayer; animationTileIndex : Integer) return Integer;
    procedure getAnimatedTile (This : in out AllBinaryJ2METiledLayer; animationTileIndex : Integer);

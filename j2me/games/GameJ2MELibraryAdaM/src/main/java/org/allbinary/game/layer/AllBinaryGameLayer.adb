@@ -43,7 +43,7 @@ package body org.allbinary.game.layer.AllBinaryGameLayer_Package is
    function Create (name : Unbounded_String; layerInfo : Rectangle_Access; viewPosition : ViewPositionBase_Access) return AllBinaryGameLayer_Access is
       This : constant AllBinaryGameLayer_Access := new AllBinaryGameLayer;
    begin
-      Initialize (This.all, name, layerInfo, viewPosition);
+      AllBinaryGameLayer_Package.Initialize (This.all, name, layerInfo, viewPosition);
       return This;
    end Create;
 
@@ -124,13 +124,6 @@ package body org.allbinary.game.layer.AllBinaryGameLayer_Package is
         AllBinaryLayer (This).setLayerHeight (height);
         This.setHalfHeight (Java_Shift_Right_Arithmetic (height, 1));
    end setHeight;
-
-   procedure getGameKeyEventList (This : in out AllBinaryGameLayer) is
-      Java_Result : constant BasicArrayList_Access := AllBinaryGameLayer'Class (This).getGameKeyEventList;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getGameKeyEventList;
 
 end org.allbinary.game.layer.AllBinaryGameLayer_Package;
 

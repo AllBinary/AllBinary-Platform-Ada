@@ -32,7 +32,7 @@ package body org.allbinary.input.motion.button.TouchScreenTypesFactory_Package i
    function Create return TouchScreenTypesFactory_Access is
       This : constant TouchScreenTypesFactory_Access := new TouchScreenTypesFactory;
    begin
-      Initialize (This.all);
+      TouchScreenTypesFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -40,13 +40,6 @@ package body org.allbinary.input.motion.button.TouchScreenTypesFactory_Package i
    function getInstance return TouchScreenTypesFactory_Access is
    begin
         return TouchScreenTypesFactory_Package.instance;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant TouchScreenTypesFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

@@ -22,6 +22,7 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.GameAdState_Package; use org.allbinary.game.GameAdState_Package;
 with org.allbinary.graphics.displayable.DisplayInfoSingleton_Package; use org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
+with org.allbinary.business.advertisement.GameAdStateFactory_Package; use org.allbinary.business.advertisement.GameAdStateFactory_Package;
 
 package org.allbinary.business.advertisement.BottomLimiter_Package is
 
@@ -44,13 +45,10 @@ package org.allbinary.business.advertisement.BottomLimiter_Package is
    procedure Initialize (This : in out BottomLimiter'Class);
    function Create return BottomLimiter_Access;
    function getInstance return BottomLimiter_Access;
-   procedure getInstance;
    procedure init (This : in out BottomLimiter; lower : Integer; higher : Integer);
    procedure update (This : in out BottomLimiter);
    function getDeltaY (This : in out BottomLimiter) return Integer;
-   procedure getDeltaY (This : in out BottomLimiter);
    function getBottom (This : in out BottomLimiter) return Integer;
-   procedure getBottom (This : in out BottomLimiter);
 
 end org.allbinary.business.advertisement.BottomLimiter_Package;
 

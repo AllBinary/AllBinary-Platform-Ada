@@ -23,6 +23,7 @@ with AllBinary_Java; use AllBinary_Java;
 --  with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.business.user.UserFactoryInterface_Package; use org.allbinary.business.user.UserFactoryInterface_Package;
 with org.allbinary.business.user.UserInterface_Package; use org.allbinary.business.user.UserInterface_Package;
+with org.allbinary.business.user.modules.admin.store.payment.PaymentStoreAdminUser_Package; use org.allbinary.business.user.modules.admin.store.payment.PaymentStoreAdminUser_Package;
 
 package org.allbinary.business.user.modules.admin.store.payment.PaymentStoreAdminUserFactory_Package is
 
@@ -39,7 +40,6 @@ package org.allbinary.business.user.modules.admin.store.payment.PaymentStoreAdmi
    procedure Initialize (This : in out PaymentStoreAdminUserFactory'Class);
    function Create return PaymentStoreAdminUserFactory_Access;
    function getInstance (This : in out PaymentStoreAdminUserFactory) return UserInterface_Access;
-   procedure getInstance (This : in out PaymentStoreAdminUserFactory);
    function getInstance (This : in out PaymentStoreAdminUserFactory; hashMap : HashMap_Access) return UserInterface_Access;
    procedure getInstance (This : in out PaymentStoreAdminUserFactory; hashMap : HashMap_Access);
 

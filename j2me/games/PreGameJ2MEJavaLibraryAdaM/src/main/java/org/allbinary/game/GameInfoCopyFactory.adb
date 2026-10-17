@@ -28,7 +28,7 @@ package body org.allbinary.game.GameInfoCopyFactory_Package is
    function Create return GameInfoCopyFactory_Access is
       This : constant GameInfoCopyFactory_Access := new GameInfoCopyFactory;
    begin
-      Initialize (This.all);
+      GameInfoCopyFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

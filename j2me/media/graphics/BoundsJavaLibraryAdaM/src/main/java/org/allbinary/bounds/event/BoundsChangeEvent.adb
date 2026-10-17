@@ -29,20 +29,13 @@ package body org.allbinary.bounds.event.BoundsChangeEvent_Package is
    function Create (rectangle : Rectangle_Access) return BoundsChangeEvent_Access is
       This : constant BoundsChangeEvent_Access := new BoundsChangeEvent;
    begin
-      Initialize (This.all, rectangle);
+      BoundsChangeEvent_Package.Initialize (This.all, rectangle);
       return This;
    end Create;
 
    function getRectangle (This : in out BoundsChangeEvent) return Rectangle_Access is
    begin
         return Rectangle_Access (This.getSource);
-   end getRectangle;
-
-   procedure getRectangle (This : in out BoundsChangeEvent) is
-      Java_Result : constant Rectangle_Access := BoundsChangeEvent'Class (This).getRectangle;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getRectangle;
 
 end org.allbinary.bounds.event.BoundsChangeEvent_Package;

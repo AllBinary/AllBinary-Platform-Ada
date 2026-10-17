@@ -21,7 +21,7 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 
-package org.allbinary.business.user.address_Case.StreetAddressData_Package is
+package org.allbinary.business.user.address.StreetAddressData_Package is
 
 
    type StreetAddressData is tagged;
@@ -48,6 +48,6 @@ package org.allbinary.business.user.address_Case.StreetAddressData_Package is
    procedure Initialize (This : in out StreetAddressData'Class);
    function Create return StreetAddressData_Access;
 
-end org.allbinary.business.user.address_Case.StreetAddressData_Package;
+end org.allbinary.business.user.address.StreetAddressData_Package;
 
 

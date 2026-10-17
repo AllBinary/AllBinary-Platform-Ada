@@ -20,6 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
+with org.allbinary.game.midlet.LicenseLoadingType_Package; use org.allbinary.game.midlet.LicenseLoadingType_Package;
 
 package org.allbinary.game.midlet.LicenseLoadingTypeFactory_Package is
 
@@ -40,7 +41,6 @@ package org.allbinary.game.midlet.LicenseLoadingTypeFactory_Package is
    procedure Initialize (This : in out LicenseLoadingTypeFactory'Class);
    function Create return LicenseLoadingTypeFactory_Access;
    function getIntance return LicenseLoadingTypeFactory_Access;
-   procedure getIntance;
 
 end org.allbinary.game.midlet.LicenseLoadingTypeFactory_Package;
 

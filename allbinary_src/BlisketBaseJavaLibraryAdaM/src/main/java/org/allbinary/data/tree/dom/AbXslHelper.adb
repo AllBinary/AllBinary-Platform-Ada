@@ -28,7 +28,7 @@ package body org.allbinary.data.tree.dom.AbXslHelper_Package is
    function Create return AbXslHelper_Access is
       This : constant AbXslHelper_Access := new AbXslHelper;
    begin
-      Initialize (This.all);
+      AbXslHelper_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -66,13 +66,6 @@ package body org.allbinary.data.tree.dom.AbXslHelper_Package is
                 end;
         end;
    end translate;
-
-   procedure getInstance is
-      Java_Result : constant AbXslHelper_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure translate (This : in out AbXslHelper; xslFile : AbFile_Access; xmlFile : AbFile_Access) is
       Java_Result : constant Unbounded_String := AbXslHelper'Class (This).translate (xslFile, xmlFile);

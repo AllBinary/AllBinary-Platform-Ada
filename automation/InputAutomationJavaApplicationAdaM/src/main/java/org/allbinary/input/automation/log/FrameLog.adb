@@ -33,7 +33,7 @@ package body org.allbinary.input.automation.log.FrameLog_Package is
    function Create (frame : Long_Long_Integer) return FrameLog_Access is
       This : constant FrameLog_Access := new FrameLog;
    begin
-      Initialize (This.all, frame);
+      FrameLog_Package.Initialize (This.all, frame);
       return This;
    end Create;
 
@@ -84,13 +84,6 @@ package body org.allbinary.input.automation.log.FrameLog_Package is
    function getFrame (This : in out FrameLog) return Long_Long_Integer is
    begin
         return This.frame;
-   end getFrame;
-
-   procedure getFrame (This : in out FrameLog) is
-      Java_Result : constant Long_Long_Integer := FrameLog'Class (This).getFrame;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getFrame;
 
 begin

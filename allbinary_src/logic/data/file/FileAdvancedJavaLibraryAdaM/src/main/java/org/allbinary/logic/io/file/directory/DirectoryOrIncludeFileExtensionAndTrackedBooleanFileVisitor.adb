@@ -34,7 +34,7 @@ package body org.allbinary.logic.io.file.directory.DirectoryOrIncludeFileExtensi
    function Create (filterStringBasicArrayList : BasicArrayList_Access) return DirectoryOrIncludeFileExtensionAndTrackedBooleanFileVisitor_Access is
       This : constant DirectoryOrIncludeFileExtensionAndTrackedBooleanFileVisitor_Access := new DirectoryOrIncludeFileExtensionAndTrackedBooleanFileVisitor;
    begin
-      Initialize (This.all, filterStringBasicArrayList);
+      DirectoryOrIncludeFileExtensionAndTrackedBooleanFileVisitor_Package.Initialize (This.all, filterStringBasicArrayList);
       return This;
    end Create;
 
@@ -49,7 +49,7 @@ package body org.allbinary.logic.io.file.directory.DirectoryOrIncludeFileExtensi
    function Create (filterStringBasicArrayList : BasicArrayList_Access; includesString : Unbounded_String) return DirectoryOrIncludeFileExtensionAndTrackedBooleanFileVisitor_Access is
       This : constant DirectoryOrIncludeFileExtensionAndTrackedBooleanFileVisitor_Access := new DirectoryOrIncludeFileExtensionAndTrackedBooleanFileVisitor;
    begin
-      Initialize (This.all, filterStringBasicArrayList, includesString);
+      DirectoryOrIncludeFileExtensionAndTrackedBooleanFileVisitor_Package.Initialize (This.all, filterStringBasicArrayList, includesString);
       return This;
    end Create;
 

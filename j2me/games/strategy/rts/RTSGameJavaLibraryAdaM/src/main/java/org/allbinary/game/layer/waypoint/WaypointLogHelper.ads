@@ -45,7 +45,6 @@ package org.allbinary.game.layer.waypoint.WaypointLogHelper_Package is
    procedure Initialize (This : in out WaypointLogHelper'Class);
    function Create return WaypointLogHelper_Access;
    function getInstance return WaypointLogHelper_Access;
-   procedure getInstance;
    procedure onWaypointEvent (This : in out WaypointLogHelper; associatedAdvancedRTSGameLayer : PathFindingLayerInterface_Access; advancedRTSGameLayer : PathFindingLayerInterface_Access);
    procedure addWaypointFromBuilding (This : in out WaypointLogHelper; associatedAdvancedRTSGameLayer : PathFindingLayerInterface_Access; advancedRTSGameLayer : PathFindingLayerInterface_Access);
    procedure addWaypointFromBuildingList (This : in out WaypointLogHelper; associatedAdvancedRTSGameLayer : PathFindingLayerInterface_Access; advancedRTSGameLayer : PathFindingLayerInterface_Access; list : BasicArrayList_Access);

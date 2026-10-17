@@ -31,7 +31,7 @@ package body org.allbinary.logic.visual.dhtml.html.input.HtmlPasswordInput_Packa
    function Create (before : Unbounded_String; name : Unbounded_String; value : Unbounded_String; after : Unbounded_String) return HtmlPasswordInput_Access is
       This : constant HtmlPasswordInput_Access := new HtmlPasswordInput;
    begin
-      Initialize (This.all, before, name, value, after);
+      HtmlPasswordInput_Package.Initialize (This.all, before, name, value, after);
       return This;
    end Create;
 

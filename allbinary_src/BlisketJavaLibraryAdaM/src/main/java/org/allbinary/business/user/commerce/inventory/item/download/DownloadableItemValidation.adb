@@ -33,7 +33,7 @@ package body org.allbinary.business.user.commerce.inventory.item.download.Downlo
    function Create (downloadableItem : DownloadableItem_Access) return DownloadableItemValidation_Access is
       This : constant DownloadableItemValidation_Access := new DownloadableItemValidation;
    begin
-      Initialize (This.all, downloadableItem);
+      DownloadableItemValidation_Package.Initialize (This.all, downloadableItem);
       return This;
    end Create;
 
@@ -192,27 +192,6 @@ package body org.allbinary.business.user.commerce.inventory.item.download.Downlo
    begin
         return null;
    end toValidationInfoNode;
-
-   procedure isValid (This : in out DownloadableItemValidation) is
-      Java_Result : constant Boolean := DownloadableItemValidation'Class (This).isValid;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isValid;
-
-   procedure validationInfo (This : in out DownloadableItemValidation) is
-      Java_Result : constant Unbounded_String := DownloadableItemValidation'Class (This).validationInfo;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end validationInfo;
-
-   procedure toValidationInfoDoc (This : in out DownloadableItemValidation) is
-      Java_Result : constant Document_Access := DownloadableItemValidation'Class (This).toValidationInfoDoc;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toValidationInfoDoc;
 
    procedure toValidationInfoNode (This : in out DownloadableItemValidation; document : Document_Access) is
       Java_Result : constant Node_Access := DownloadableItemValidation'Class (This).toValidationInfoNode (document);

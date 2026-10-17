@@ -29,7 +29,7 @@ package body org.allbinary.image.opengles.OpenGLESGL11VBOImageFactory_Package is
    function Create return OpenGLESGL11VBOImageFactory_Access is
       This : constant OpenGLESGL11VBOImageFactory_Access := new OpenGLESGL11VBOImageFactory;
    begin
-      Initialize (This.all);
+      OpenGLESGL11VBOImageFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

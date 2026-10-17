@@ -35,7 +35,7 @@ package body org.allbinary.gui.dialog.FileJDialog_Package is
    function Create return FileJDialog_Access is
       This : constant FileJDialog_Access := new FileJDialog;
    begin
-      Initialize (This.all);
+      FileJDialog_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -51,7 +51,7 @@ package body org.allbinary.gui.dialog.FileJDialog_Package is
    function Create (parent : Frame_Access; modal : Boolean) return FileJDialog_Access is
       This : constant FileJDialog_Access := new FileJDialog;
    begin
-      Initialize (This.all, parent, modal);
+      FileJDialog_Package.Initialize (This.all, parent, modal);
       return This;
    end Create;
 
@@ -114,13 +114,6 @@ package body org.allbinary.gui.dialog.FileJDialog_Package is
    begin
         This.jFileChooser1 := jFileChooser1;
    end setJFileChooser1;
-
-   procedure getJFileChooser1 (This : in out FileJDialog) is
-      Java_Result : constant JFileChooser_Access := FileJDialog'Class (This).getJFileChooser1;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getJFileChooser1;
 
 end org.allbinary.gui.dialog.FileJDialog_Package;
 

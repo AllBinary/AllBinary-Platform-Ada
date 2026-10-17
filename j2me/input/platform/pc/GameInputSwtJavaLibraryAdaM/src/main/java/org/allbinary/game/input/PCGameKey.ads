@@ -22,6 +22,7 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.game.input.Input_Package; use org.allbinary.game.input.Input_Package;
+with org.allbinary.game.input.InputFactory_Package; use org.allbinary.game.input.InputFactory_Package;
 
 package org.allbinary.game.input.PCGameKey_Package is
 
@@ -37,7 +38,6 @@ package org.allbinary.game.input.PCGameKey_Package is
    procedure Initialize (This : in out PCGameKey'Class; keyCode : Integer; name : Unbounded_String);
    function Create (keyCode : Integer; name : Unbounded_String) return PCGameKey_Access;
    function toString (This : in out PCGameKey) return Unbounded_String;
-   procedure toString (This : in out PCGameKey);
    function getString (keyCode : Integer) return Unbounded_String;
    procedure getString (keyCode : Integer);
 

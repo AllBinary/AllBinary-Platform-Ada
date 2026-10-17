@@ -30,7 +30,7 @@ package body taghelpers.transform.info.TransformInfoRequestHelperFactory_Package
    function Create return TransformInfoRequestHelperFactory_Access is
       This : constant TransformInfoRequestHelperFactory_Access := new TransformInfoRequestHelperFactory;
    begin
-      Initialize (This.all);
+      TransformInfoRequestHelperFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

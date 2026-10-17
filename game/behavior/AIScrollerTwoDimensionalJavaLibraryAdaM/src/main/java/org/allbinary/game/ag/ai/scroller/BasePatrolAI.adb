@@ -37,7 +37,7 @@ package body org.allbinary.game.ag.ai.scroller.BasePatrolAI_Package is
    function Create (hashtable : ABHashtable_Access; ownerLayerInterface : AllBinaryLayer_Access; gameInput : GameInput_Access) return BasePatrolAI_Access is
       This : constant BasePatrolAI_Access := new BasePatrolAI;
    begin
-      Initialize (This.all, hashtable, ownerLayerInterface, gameInput);
+      BasePatrolAI_Package.Initialize (This.all, hashtable, ownerLayerInterface, gameInput);
       return This;
    end Create;
 

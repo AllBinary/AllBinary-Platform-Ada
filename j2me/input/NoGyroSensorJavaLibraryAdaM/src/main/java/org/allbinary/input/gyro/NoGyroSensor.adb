@@ -31,7 +31,7 @@ package body org.allbinary.input.gyro.NoGyroSensor_Package is
    function Create return NoGyroSensor_Access is
       This : constant NoGyroSensor_Access := new NoGyroSensor;
    begin
-      Initialize (This.all);
+      NoGyroSensor_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -45,13 +45,6 @@ package body org.allbinary.input.gyro.NoGyroSensor_Package is
    begin
         null;
    end onSensorChange;
-
-   procedure getOrientation (This : in out NoGyroSensor) is
-      Java_Result : constant Orientation_Access := NoGyroSensor'Class (This).getOrientation;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getOrientation;
 
 end org.allbinary.input.gyro.NoGyroSensor_Package;
 

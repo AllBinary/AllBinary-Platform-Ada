@@ -67,13 +67,9 @@ package views.business.context.modules.storefront.customizer.hedges.header.Inser
    procedure Initialize (This : in out InsertHeaderValidationView'Class; transformInfoInterface : TransformInfoInterface_Access);
    function Create (transformInfoInterface : TransformInfoInterface_Access) return InsertHeaderValidationView_Access;
    function toXmlDoc (This : in out InsertHeaderValidationView) return Document_Access;
-   procedure toXmlDoc (This : in out InsertHeaderValidationView);
    function isValid (This : in out InsertHeaderValidationView) return Boolean;
-   procedure isValid (This : in out InsertHeaderValidationView);
    function validationInfo (This : in out InsertHeaderValidationView) return Unbounded_String;
-   procedure validationInfo (This : in out InsertHeaderValidationView);
    function toValidationInfoDoc (This : in out InsertHeaderValidationView) return Document_Access;
-   procedure toValidationInfoDoc (This : in out InsertHeaderValidationView);
    function toValidationInfoNode (This : in out InsertHeaderValidationView; document : Document_Access) return Node_Access;
    procedure toValidationInfoNode (This : in out InsertHeaderValidationView; document : Document_Access);
 

@@ -24,6 +24,7 @@ with org.osgi.framework.Bundle_Package; use org.osgi.framework.Bundle_Package;
 with org.osgi.framework.BundleContext_Package; use org.osgi.framework.BundleContext_Package;
 with bundle.input.automation.InputAutomationBundleActivator_Package; use bundle.input.automation.InputAutomationBundleActivator_Package;
 with org.allbinary.gui.dialog.BasicTextJDialog_Package; use org.allbinary.gui.dialog.BasicTextJDialog_Package;
+with org.allbinary.input.automation.osgi.JDialog_Package; use org.allbinary.input.automation.osgi.JDialog_Package;
 
 package org.allbinary.input.automation.osgi.DesktopBundle_Package is
 

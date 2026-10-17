@@ -49,14 +49,10 @@ package org.allbinary.logic.communication.smtp.info.BasicEmailInfo_Package is
    procedure Initialize (This : in out BasicEmailInfo'Class; subject : Unbounded_String; textBody : Unbounded_String);
    function Create (subject : Unbounded_String; textBody : Unbounded_String) return BasicEmailInfo_Access;
    function getSubject (This : in out BasicEmailInfo) return Unbounded_String;
-   procedure getSubject (This : in out BasicEmailInfo);
    function getTextBody (This : in out BasicEmailInfo) return Unbounded_String;
-   procedure getTextBody (This : in out BasicEmailInfo);
    function getEmailServerConfigurationInterface (This : in out BasicEmailInfo) return EmailServerConfigurationInterface_Access;
-   procedure getEmailServerConfigurationInterface (This : in out BasicEmailInfo);
    procedure setEmailServerConfigurationInterface (This : in out BasicEmailInfo; emailServerConfigurationInterface : EmailServerConfigurationInterface_Access);
    function toString (This : in out BasicEmailInfo) return Unbounded_String;
-   procedure toString (This : in out BasicEmailInfo);
    procedure init (This : in out BasicEmailInfo);
 
 end org.allbinary.logic.communication.smtp.info.BasicEmailInfo_Package;

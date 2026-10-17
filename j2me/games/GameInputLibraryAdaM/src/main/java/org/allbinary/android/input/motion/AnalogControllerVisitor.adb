@@ -28,7 +28,7 @@ package body org.allbinary.android.input.motion.AnalogControllerVisitor_Package 
    function Create return AnalogControllerVisitor_Access is
       This : constant AnalogControllerVisitor_Access := new AnalogControllerVisitor;
    begin
-      Initialize (This.all);
+      AnalogControllerVisitor_Package.Initialize (This.all);
       return This;
    end Create;
 

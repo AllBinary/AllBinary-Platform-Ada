@@ -29,7 +29,7 @@ package body org.allbinary.graphics.displayable.screen.FullScreenPaintableFactor
    function Create return FullScreenPaintableFactory_Access is
       This : constant FullScreenPaintableFactory_Access := new FullScreenPaintableFactory;
    begin
-      Initialize (This.all);
+      FullScreenPaintableFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -37,13 +37,6 @@ package body org.allbinary.graphics.displayable.screen.FullScreenPaintableFactor
    function getInstance return FullScreenPaintableFactory_Access is
    begin
         return FullScreenPaintableFactory_Package.instance;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant FullScreenPaintableFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

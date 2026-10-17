@@ -22,7 +22,6 @@ package org.allbinary.graph.V_Package is
    procedure Initialize (This : in out V'Class);
    function Create return V_Access;
    function getId (This : in out V) return Integer;
-   procedure getId (This : in out V);
 
 end org.allbinary.graph.V_Package;
 

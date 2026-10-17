@@ -44,7 +44,7 @@ package body org.allbinary.business.init.LicenseInitInfoUtil_Package is
    function Create return LicenseInitInfoUtil_Access is
       This : constant LicenseInitInfoUtil_Access := new LicenseInitInfoUtil;
    begin
-      Initialize (This.all);
+      LicenseInitInfoUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -69,20 +69,6 @@ package body org.allbinary.business.init.LicenseInitInfoUtil_Package is
         licenseInitInfo.addServer (This.OFFICIAL_ALLBINARY_SERVICES_SERVER);
         return licenseInitInfo;
    end readAgain;
-
-   procedure getInstance is
-      Java_Result : constant LicenseInitInfoUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure read (This : in out LicenseInitInfoUtil) is
-      Java_Result : constant LicenseInitInfo_Access := LicenseInitInfoUtil'Class (This).read;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end read;
 
    procedure readAgain (This : in out LicenseInitInfoUtil; initializeCounter : Integer) is
       Java_Result : constant LicenseInitInfo_Access := LicenseInitInfoUtil'Class (This).readAgain (initializeCounter);

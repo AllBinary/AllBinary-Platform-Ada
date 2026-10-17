@@ -37,7 +37,7 @@ package body org.allbinary.game.part.weapon.BasicProjectileWeaponPart_Package is
    function Create (animationInterface : Animation_Access; sourceLayerInterface : AllBinaryLayer_Access; weaponLayerCircularStaticPool : WeaponLayerCircularPool_Access; weaponProperties : WeaponProperties_Access; scoreableInterface : ScoreableInterface_Access; relativeRelationship : RelativeRelationship_Access) return BasicProjectileWeaponPart_Access is
       This : constant BasicProjectileWeaponPart_Access := new BasicProjectileWeaponPart;
    begin
-      Initialize (This.all, animationInterface, sourceLayerInterface, weaponLayerCircularStaticPool, weaponProperties, scoreableInterface, relativeRelationship);
+      BasicProjectileWeaponPart_Package.Initialize (This.all, animationInterface, sourceLayerInterface, weaponLayerCircularStaticPool, weaponProperties, scoreableInterface, relativeRelationship);
       return This;
    end Create;
 

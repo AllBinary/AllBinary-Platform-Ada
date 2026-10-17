@@ -41,7 +41,6 @@ package tags.generic_Id.address.shipping.TaxAddressTag_Package is
    procedure Initialize (This : in out TaxAddressTag'Class);
    function Create return TaxAddressTag_Access;
    function doStartTag (This : in out TaxAddressTag) return Integer;
-   procedure doStartTag (This : in out TaxAddressTag);
 
 end tags.generic_Id.address.shipping.TaxAddressTag_Package;
 

@@ -48,7 +48,6 @@ package org.allbinary.string_Id.CommonStateStrings_Package is
    procedure Initialize (This : in out CommonStateStrings'Class);
    function Create return CommonStateStrings_Access;
    function getInstance return CommonStateStrings_Access;
-   procedure getInstance;
 
 end org.allbinary.string_Id.CommonStateStrings_Package;
 

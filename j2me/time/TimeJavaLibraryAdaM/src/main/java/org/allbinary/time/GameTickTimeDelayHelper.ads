@@ -38,10 +38,8 @@ package org.allbinary.time.GameTickTimeDelayHelper_Package is
    procedure Initialize (This : in out GameTickTimeDelayHelper'Class; startTime : Long_Long_Integer);
    function Create (startTime : Long_Long_Integer) return GameTickTimeDelayHelper_Access;
    function setStartTime (This : in out GameTickTimeDelayHelper) return Long_Long_Integer;
-   procedure setStartTime (This : in out GameTickTimeDelayHelper);
    procedure loop_Id (This : in out GameTickTimeDelayHelper);
    function getTimeFromStart (This : in out GameTickTimeDelayHelper) return Long_Long_Integer;
-   procedure getTimeFromStart (This : in out GameTickTimeDelayHelper);
 
 end org.allbinary.time.GameTickTimeDelayHelper_Package;
 

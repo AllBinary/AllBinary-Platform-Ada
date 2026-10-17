@@ -29,7 +29,7 @@ package body org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGameF
    function Create (name : Unbounded_String) return RaceTrackGameFeature_Access is
       This : constant RaceTrackGameFeature_Access := new RaceTrackGameFeature;
    begin
-      Initialize (This.all, name);
+      RaceTrackGameFeature_Package.Initialize (This.all, name);
       return This;
    end Create;
 

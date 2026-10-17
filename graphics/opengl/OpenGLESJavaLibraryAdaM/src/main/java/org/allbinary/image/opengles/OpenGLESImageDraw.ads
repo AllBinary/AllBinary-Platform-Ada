@@ -36,7 +36,6 @@ package org.allbinary.image.opengles.OpenGLESImageDraw_Package is
    procedure Initialize (This : in out OpenGLESImageDraw'Class);
    function Create return OpenGLESImageDraw_Access;
    function getInstance return OpenGLESImageDraw_Access;
-   procedure getInstance;
    procedure drawRegion (This : in out OpenGLESImageDraw; gl : GL10_Access; viewHeight : Integer; x_src : Float; y_src : Float; width : Float; height : Float; x : Integer; y : Integer; z : Integer);
    procedure draw (This : in out OpenGLESImageDraw; gl : GL10_Access; x : Integer; y : Integer; z : Integer);
 

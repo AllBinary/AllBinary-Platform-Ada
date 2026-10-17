@@ -52,7 +52,6 @@ package org.allbinary.logic.system.security.licensing.AbeClientInformationData_P
    procedure Initialize (This : in out AbeClientInformationData'Class);
    function Create return AbeClientInformationData_Access;
    function getInstance return AbeClientInformationData_Access;
-   procedure getInstance;
 
 end org.allbinary.logic.system.security.licensing.AbeClientInformationData_Package;
 

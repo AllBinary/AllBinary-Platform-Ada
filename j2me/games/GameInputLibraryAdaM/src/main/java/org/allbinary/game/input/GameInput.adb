@@ -37,7 +37,7 @@ package body org.allbinary.game.input.GameInput_Package is
    function Create (gameKeyEventList : BasicArrayList_Access; removalGameKeyEventList : BasicArrayList_Access) return GameInput_Access is
       This : constant GameInput_Access := new GameInput;
    begin
-      Initialize (This.all, gameKeyEventList, removalGameKeyEventList);
+      GameInput_Package.Initialize (This.all, gameKeyEventList, removalGameKeyEventList);
       return This;
    end Create;
 
@@ -123,20 +123,6 @@ package body org.allbinary.game.input.GameInput_Package is
    begin
       null;
    end isForRemoval;
-
-   procedure getRemovalGameKeyEventList (This : in out GameInput) is
-      Java_Result : constant BasicArrayList_Access := GameInput'Class (This).getRemovalGameKeyEventList;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getRemovalGameKeyEventList;
-
-   procedure getGameKeyEventList (This : in out GameInput) is
-      Java_Result : constant BasicArrayList_Access := GameInput'Class (This).getGameKeyEventList;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getGameKeyEventList;
 
 end org.allbinary.game.input.GameInput_Package;
 

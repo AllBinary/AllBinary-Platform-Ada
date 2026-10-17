@@ -28,7 +28,7 @@ package body org.allbinary.image.opengles.OpenGLImageCacheFactory_Package is
    function Create return OpenGLImageCacheFactory_Access is
       This : constant OpenGLImageCacheFactory_Access := new OpenGLImageCacheFactory;
    begin
-      Initialize (This.all);
+      OpenGLImageCacheFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -44,13 +44,6 @@ package body org.allbinary.image.opengles.OpenGLImageCacheFactory_Package is
             null;
         end if;
    end init;
-
-   procedure getInstance is
-      Java_Result : constant ImageCache_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

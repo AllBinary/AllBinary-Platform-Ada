@@ -31,7 +31,7 @@ package body org.allbinary.game.midlet.GameMidletEventHandler_Package is
    function Create return GameMidletEventHandler_Access is
       This : constant GameMidletEventHandler_Access := new GameMidletEventHandler;
    begin
-      Initialize (This.all);
+      GameMidletEventHandler_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -47,13 +47,6 @@ package body org.allbinary.game.midlet.GameMidletEventHandler_Package is
         gameMidletEventListener := GameMidletEventListener_Access (eventListenerInterface);
         gameMidletEventListener.onGameEnd (eventObject);
    end process;
-
-   procedure getInstance is
-      Java_Result : constant GameMidletEventHandler_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

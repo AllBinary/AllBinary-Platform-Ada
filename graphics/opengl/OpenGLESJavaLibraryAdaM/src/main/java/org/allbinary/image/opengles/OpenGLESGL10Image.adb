@@ -138,7 +138,7 @@ package body org.allbinary.image.opengles.OpenGLESGL10Image_Package is
    function Create (image : Image_Access; bitmapFactory : PlatformBitmapBaseFactory_Access; textureFactory : PlatformTextureBaseFactory_Access) return OpenGLESGL10Image_Access is
       This : constant OpenGLESGL10Image_Access := new OpenGLESGL10Image;
    begin
-      Initialize (This.all, image, bitmapFactory, textureFactory);
+      OpenGLESGL10Image_Package.Initialize (This.all, image, bitmapFactory, textureFactory);
       return This;
    end Create;
 

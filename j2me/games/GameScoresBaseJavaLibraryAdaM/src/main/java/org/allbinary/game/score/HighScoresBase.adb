@@ -31,7 +31,7 @@ package body org.allbinary.game.score.HighScoresBase_Package is
    function Create return HighScoresBase_Access is
       This : constant HighScoresBase_Access := new HighScoresBase;
    begin
-      Initialize (This.all);
+      HighScoresBase_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -48,13 +48,6 @@ package body org.allbinary.game.score.HighScoresBase_Package is
    function createHighScoresHelper (This : in out HighScoresBase) return HighScoresHelperBaseInterface_Access is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
-   end createHighScoresHelper;
-
-   procedure createHighScoresHelper (This : in out HighScoresBase) is
-      Java_Result : constant HighScoresHelperBaseInterface_Access := HighScoresBase'Class (This).createHighScoresHelper;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end createHighScoresHelper;
 
 end org.allbinary.game.score.HighScoresBase_Package;

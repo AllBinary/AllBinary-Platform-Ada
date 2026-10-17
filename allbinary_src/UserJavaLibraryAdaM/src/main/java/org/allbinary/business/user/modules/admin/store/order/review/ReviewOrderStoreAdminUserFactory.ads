@@ -23,6 +23,7 @@ with AllBinary_Java; use AllBinary_Java;
 --  with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.business.user.UserFactoryInterface_Package; use org.allbinary.business.user.UserFactoryInterface_Package;
 with org.allbinary.business.user.UserInterface_Package; use org.allbinary.business.user.UserInterface_Package;
+with org.allbinary.business.user.modules.admin.store.order.review.ReviewOrderStoreAdminUser_Package; use org.allbinary.business.user.modules.admin.store.order.review.ReviewOrderStoreAdminUser_Package;
 
 package org.allbinary.business.user.modules.admin.store.order.review.ReviewOrderStoreAdminUserFactory_Package is
 
@@ -39,7 +40,6 @@ package org.allbinary.business.user.modules.admin.store.order.review.ReviewOrder
    procedure Initialize (This : in out ReviewOrderStoreAdminUserFactory'Class);
    function Create return ReviewOrderStoreAdminUserFactory_Access;
    function getInstance (This : in out ReviewOrderStoreAdminUserFactory) return UserInterface_Access;
-   procedure getInstance (This : in out ReviewOrderStoreAdminUserFactory);
    function getInstance (This : in out ReviewOrderStoreAdminUserFactory; hashMap : HashMap_Access) return UserInterface_Access;
    procedure getInstance (This : in out ReviewOrderStoreAdminUserFactory; hashMap : HashMap_Access);
 

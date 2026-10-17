@@ -24,6 +24,7 @@ with org.allbinary.graphics.Rectangle_Package; use org.allbinary.graphics.Rectan
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.view.ViewPosition_Package; use org.allbinary.view.ViewPosition_Package;
 with org.allbinary.layer.AllBinaryLayerFactoryInterface_Package; use org.allbinary.layer.AllBinaryLayerFactoryInterface_Package;
+with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
 
 package org.allbinary.layer.AllBinaryLayerFactory_Package is
 
@@ -43,7 +44,6 @@ package org.allbinary.layer.AllBinaryLayerFactory_Package is
    procedure Initialize (This : in out AllBinaryLayerFactory'Class; rectangle : Rectangle_Access);
    function Create (rectangle : Rectangle_Access) return AllBinaryLayerFactory_Access;
    function getInstance (This : in out AllBinaryLayerFactory) return AllBinaryLayer_Access;
-   procedure getInstance (This : in out AllBinaryLayerFactory);
 
 end org.allbinary.layer.AllBinaryLayerFactory_Package;
 

@@ -32,7 +32,7 @@ package body org.allbinary.input.automation.robot.InputRobot_Package is
    function Create (graphicsDevice : GraphicsDevice_Access) return InputRobot_Access is
       This : constant InputRobot_Access := new InputRobot;
    begin
-      Initialize (This.all, graphicsDevice);
+      InputRobot_Package.Initialize (This.all, graphicsDevice);
       return This;
    end Create;
 
@@ -168,27 +168,6 @@ package body org.allbinary.input.automation.robot.InputRobot_Package is
         null;
    end off;
 
-   procedure getName (This : in out InputRobot) is
-      Java_Result : constant Unbounded_String := InputRobot'Class (This).getName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getName;
-
-   procedure getHelpSet (This : in out InputRobot) is
-      Java_Result : constant HelpSet_Access := InputRobot'Class (This).getHelpSet;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getHelpSet;
-
-   procedure getMousePoint (This : in out InputRobot) is
-      Java_Result : constant Point_Access := InputRobot'Class (This).getMousePoint;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getMousePoint;
-
    procedure createScreenCapture (This : in out InputRobot; screenRect : Rectangle_Access) is
       Java_Result : constant BufferedImage_Access := InputRobot'Class (This).createScreenCapture (screenRect);
       pragma Unreferenced (Java_Result);
@@ -196,33 +175,12 @@ package body org.allbinary.input.automation.robot.InputRobot_Package is
       null;
    end createScreenCapture;
 
-   procedure getAutoDelay (This : in out InputRobot) is
-      Java_Result : constant Integer := InputRobot'Class (This).getAutoDelay;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getAutoDelay;
-
    procedure getPixelColor (This : in out InputRobot; x : Integer; y : Integer) is
       Java_Result : constant Color_Access := InputRobot'Class (This).getPixelColor (x, y);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getPixelColor;
-
-   procedure isAutoWaitForIdle (This : in out InputRobot) is
-      Java_Result : constant Boolean := InputRobot'Class (This).isAutoWaitForIdle;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isAutoWaitForIdle;
-
-   procedure toString (This : in out InputRobot) is
-      Java_Result : constant Unbounded_String := InputRobot'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toString;
 
 begin
    null;

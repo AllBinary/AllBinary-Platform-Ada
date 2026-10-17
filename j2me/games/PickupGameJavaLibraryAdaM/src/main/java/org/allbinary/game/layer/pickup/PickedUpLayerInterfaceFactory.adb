@@ -36,7 +36,7 @@ package body org.allbinary.game.layer.pickup.PickedUpLayerInterfaceFactory_Packa
    function Create (pickeUpLayerType : PickedUpLayerType_Access; iconLayer : IconLayer_Access; animationInterface : Animation_Access) return PickedUpLayerInterfaceFactory_Access is
       This : constant PickedUpLayerInterfaceFactory_Access := new PickedUpLayerInterfaceFactory;
    begin
-      Initialize (This.all, pickeUpLayerType, iconLayer, animationInterface);
+      PickedUpLayerInterfaceFactory_Package.Initialize (This.all, pickeUpLayerType, iconLayer, animationInterface);
       return This;
    end Create;
 
@@ -53,27 +53,6 @@ package body org.allbinary.game.layer.pickup.PickedUpLayerInterfaceFactory_Packa
    function getPickedUpLayerType (This : in out PickedUpLayerInterfaceFactory) return PickedUpLayerType_Access is
    begin
         return This.pickedUpLayerType;
-   end getPickedUpLayerType;
-
-   procedure getIconLayer (This : in out PickedUpLayerInterfaceFactory) is
-      Java_Result : constant AllBinaryLayer_Access := PickedUpLayerInterfaceFactory'Class (This).getIconLayer;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getIconLayer;
-
-   procedure getAnimationInterface (This : in out PickedUpLayerInterfaceFactory) is
-      Java_Result : constant Animation_Access := PickedUpLayerInterfaceFactory'Class (This).getAnimationInterface;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getAnimationInterface;
-
-   procedure getPickedUpLayerType (This : in out PickedUpLayerInterfaceFactory) is
-      Java_Result : constant PickedUpLayerType_Access := PickedUpLayerInterfaceFactory'Class (This).getPickedUpLayerType;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getPickedUpLayerType;
 
 end org.allbinary.game.layer.pickup.PickedUpLayerInterfaceFactory_Package;

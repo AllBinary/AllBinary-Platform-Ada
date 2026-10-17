@@ -57,7 +57,6 @@ package org.allbinary.string_Id.CommonLabels_Package is
    procedure Initialize (This : in out CommonLabels'Class);
    function Create return CommonLabels_Access;
    function getInstance return CommonLabels_Access;
-   procedure getInstance;
 
 end org.allbinary.string_Id.CommonLabels_Package;
 

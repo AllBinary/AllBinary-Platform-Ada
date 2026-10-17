@@ -37,7 +37,7 @@ package body org.allbinary.logic.visual.transform.TransformFactory_Package is
    function Create return TransformFactory_Access is
       This : constant TransformFactory_Access := new TransformFactory;
    begin
-      Initialize (This.all);
+      TransformFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -143,13 +143,6 @@ package body org.allbinary.logic.visual.transform.TransformFactory_Package is
             Java_Throw (e);
                 end;
         end;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant TransformFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
    procedure getInstance (This : in out TransformFactory; abeClientInformation : AbeClientInformationInterface_Access; viewName : Unbounded_String; ownerTransformInfoInterface : TransformInfoInterface_Access) is

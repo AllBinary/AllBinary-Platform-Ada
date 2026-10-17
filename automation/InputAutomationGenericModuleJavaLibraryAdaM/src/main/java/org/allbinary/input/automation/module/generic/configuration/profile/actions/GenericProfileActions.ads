@@ -39,6 +39,10 @@ with org.allbinary.logic.io.path.AbPath_Package; use org.allbinary.logic.io.path
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.w3c.dom.NodeList_Package; use org.w3c.dom.NodeList_Package;
+with org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileActionsJPanel_Package; use org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileActionsJPanel_Package;
+with org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileActionsData_Package; use org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileActionsData_Package;
+with org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileActionData_Package; use org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileActionData_Package;
+with org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileAction_Package; use org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileAction_Package;
 
 package org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileActions_Package is
 
@@ -81,25 +85,19 @@ package org.allbinary.input.automation.module.generic_Id.configuration.profile.a
    procedure fileInit (This : in out GenericProfileActions; fileInputStream : FileInputStream_Access);
    procedure initActions (This : in out GenericProfileActions; nodeList : NodeList_Access);
    function getDefaultListModelHelper (This : in out GenericProfileActions) return DefaultListModelHelper_Access;
-   procedure getDefaultListModelHelper (This : in out GenericProfileActions);
    function getAction (This : in out GenericProfileActions; string_Id : Unbounded_String) return GenericProfileAction_Access;
    procedure getAction (This : in out GenericProfileActions; string_Id : Unbounded_String);
    procedure add (This : in out GenericProfileActions; name : Unbounded_String);
    procedure remove (This : in out GenericProfileActions; name : Unbounded_String);
    function toHashMap (This : in out GenericProfileActions) return HashMap_Access;
-   procedure toHashMap (This : in out GenericProfileActions);
    function toXmlNode (This : in out GenericProfileActions; document : Document_Access) return Node_Access;
    procedure toXmlNode (This : in out GenericProfileActions; document : Document_Access);
    function toXmlDoc (This : in out GenericProfileActions) return Document_Access;
-   procedure toXmlDoc (This : in out GenericProfileActions);
    function getGenericProfileActionsJPanel (This : in out GenericProfileActions) return GenericProfileActionsJPanel_Access;
-   procedure getGenericProfileActionsJPanel (This : in out GenericProfileActions);
    procedure setGenericProfileActionsJPanel (This : in out GenericProfileActions; genericProfileActionsJPanel : GenericProfileActionsJPanel_Access);
    function getHashMap (This : in out GenericProfileActions) return HashMap_Access;
-   procedure getHashMap (This : in out GenericProfileActions);
    procedure setHashMap (This : in out GenericProfileActions; hashMap : HashMap_Access);
    function getName (This : in out GenericProfileActions) return Unbounded_String;
-   procedure getName (This : in out GenericProfileActions);
    procedure setName (This : in out GenericProfileActions; name : Unbounded_String);
 
 end org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileActions_Package;

@@ -41,7 +41,7 @@ package body org.allbinary.input.motion.button.TouchButtonRecognizer_Package is
    function Create return TouchButtonRecognizer_Access is
       This : constant TouchButtonRecognizer_Access := new TouchButtonRecognizer;
    begin
-      Initialize (This.all);
+      TouchButtonRecognizer_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -160,7 +160,7 @@ package body org.allbinary.input.motion.button.ReleaseHelper_Package is
    function Create (touchButtonRecognizer : TouchButtonRecognizer_Access) return ReleaseHelper_Access is
       This : constant ReleaseHelper_Access := new ReleaseHelper;
    begin
-      Initialize (This.all, touchButtonRecognizer);
+      ReleaseHelper_Package.Initialize (This.all, touchButtonRecognizer);
       return This;
    end Create;
     
@@ -200,7 +200,7 @@ package body org.allbinary.input.motion.button.MultitouchReleaseHelper_Package i
    function Create (touchButtonRecognizer : TouchButtonRecognizer_Access) return MultitouchReleaseHelper_Access is
       This : constant MultitouchReleaseHelper_Access := new MultitouchReleaseHelper;
    begin
-      Initialize (This.all, touchButtonRecognizer);
+      MultitouchReleaseHelper_Package.Initialize (This.all, touchButtonRecognizer);
       return This;
    end Create;
     

@@ -66,7 +66,6 @@ package org.allbinary.media.graphics.geography.map.racetrack.drop.RaceTrackRando
    procedure Initialize (This : in out RaceTrackRandomDropCellPositionGenerator'Class);
    function Create return RaceTrackRandomDropCellPositionGenerator_Access;
    function getInstance return RaceTrackRandomDropCellPositionGenerator_Access;
-   procedure getInstance;
    procedure update (This : in out RaceTrackRandomDropCellPositionGenerator; allBinaryGameLayerManager : AllBinaryGameLayerManager_Access; geographicMapInterface : BasicGeographicMap_Access);
    procedure drop (This : in out RaceTrackRandomDropCellPositionGenerator; allBinaryLayerManager : AllBinaryLayerManager_Access; index : Integer);
 

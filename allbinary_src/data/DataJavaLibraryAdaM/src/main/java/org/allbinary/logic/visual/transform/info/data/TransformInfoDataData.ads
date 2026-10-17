@@ -40,7 +40,6 @@ package org.allbinary.logic.visual.transform.info.data.TransformInfoDataData_Pac
    procedure Initialize (This : in out TransformInfoDataData'Class);
    function Create return TransformInfoDataData_Access;
    function getInstance return TransformInfoDataData_Access;
-   procedure getInstance;
 
 end org.allbinary.logic.visual.transform.info.data.TransformInfoDataData_Package;
 

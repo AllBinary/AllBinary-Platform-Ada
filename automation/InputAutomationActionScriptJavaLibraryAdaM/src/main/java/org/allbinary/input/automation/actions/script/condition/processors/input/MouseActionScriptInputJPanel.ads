@@ -30,6 +30,9 @@ with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.C
 with org.allbinary.string_Id.CommonPhoneStrings_Package; use org.allbinary.string_Id.CommonPhoneStrings_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.input.automation.actions.script.condition.processors.input.JPanel_Package; use org.allbinary.input.automation.actions.script.condition.processors.input.JPanel_Package;
+with org.allbinary.input.automation.actions.script.condition.processors.input.MouseActionScriptInputInterface_Package; use org.allbinary.input.automation.actions.script.condition.processors.input.MouseActionScriptInputInterface_Package;
+with org.allbinary.input.automation.actions.script.condition.processors.input.DefaultComboBoxModel_Package; use org.allbinary.input.automation.actions.script.condition.processors.input.DefaultComboBoxModel_Package;
+with org.allbinary.input.automation.actions.script.condition.processors.input.ComboBoxModel_Package; use org.allbinary.input.automation.actions.script.condition.processors.input.ComboBoxModel_Package;
 
 package org.allbinary.input.automation.actions.script.condition.processors.input.MouseActionScriptInputJPanel_Package is
 
@@ -76,7 +79,6 @@ package org.allbinary.input.automation.actions.script.condition.processors.input
    procedure updateInputType (This : in out MouseActionScriptInputJPanel);
    procedure update (This : in out MouseActionScriptInputJPanel);
    function getMouseActionJDialog (This : in out MouseActionScriptInputJPanel) return JDialog_Access;
-   procedure getMouseActionJDialog (This : in out MouseActionScriptInputJPanel);
    procedure setMouseActionJDialog (This : in out MouseActionScriptInputJPanel; mouseActionJDialog : JDialog_Access);
    procedure initComponents (This : in out MouseActionScriptInputJPanel);
    procedure button2JCheckBoxActionPerformed (This : in out MouseActionScriptInputJPanel; evt : ActionEvent_Access);

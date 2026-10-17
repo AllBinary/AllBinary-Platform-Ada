@@ -39,7 +39,6 @@ package org.allbinary.logic.io.file.FileUnamedUtil_Package is
    procedure Initialize (This : in out FileUnamedUtil'Class);
    function Create return FileUnamedUtil_Access;
    function getInstance return FileUnamedUtil_Access;
-   procedure getInstance;
    function process (This : in out FileUnamedUtil; string_Id : Unbounded_String) return Unbounded_String;
    procedure process (This : in out FileUnamedUtil; string_Id : Unbounded_String);
 

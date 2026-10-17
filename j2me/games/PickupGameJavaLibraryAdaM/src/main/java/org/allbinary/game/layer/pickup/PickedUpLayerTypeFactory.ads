@@ -21,6 +21,7 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.game.layer.pickup.PickedUpLayerType_Package; use org.allbinary.game.layer.pickup.PickedUpLayerType_Package;
 
 package org.allbinary.game.layer.pickup.PickedUpLayerTypeFactory_Package is
 
@@ -48,7 +49,6 @@ package org.allbinary.game.layer.pickup.PickedUpLayerTypeFactory_Package is
    procedure Initialize (This : in out PickedUpLayerTypeFactory'Class);
    function Create return PickedUpLayerTypeFactory_Access;
    function getInstance return PickedUpLayerTypeFactory_Access;
-   procedure getInstance;
 
 end org.allbinary.game.layer.pickup.PickedUpLayerTypeFactory_Package;
 

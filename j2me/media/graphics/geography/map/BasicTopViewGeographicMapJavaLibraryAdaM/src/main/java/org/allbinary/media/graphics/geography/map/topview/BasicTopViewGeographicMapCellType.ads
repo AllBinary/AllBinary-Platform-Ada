@@ -61,9 +61,7 @@ package org.allbinary.media.graphics.geography.map.topview.BasicTopViewGeographi
    function hasType (This : in out BasicTopViewGeographicMapCellType; type_Id : Integer) return Boolean;
    procedure hasType (This : in out BasicTopViewGeographicMapCellType; type_Id : Integer);
    function getTypes (This : in out BasicTopViewGeographicMapCellType) return Integer_Array_Access;
-   procedure getTypes (This : in out BasicTopViewGeographicMapCellType);
    function toString (This : in out BasicTopViewGeographicMapCellType) return Unbounded_String;
-   procedure toString (This : in out BasicTopViewGeographicMapCellType);
 
 end org.allbinary.media.graphics.geography.map.topview.BasicTopViewGeographicMapCellType_Package;
 

@@ -39,9 +39,7 @@ package org.allbinary.android.activity.NullKeyInputViewComposite_Package is
    function Create return NullKeyInputViewComposite_Access;
    procedure setKeyInputView (This : in out NullKeyInputViewComposite; keyInputView : View_Access);
    function getRootView (This : in out NullKeyInputViewComposite) return View_Access;
-   procedure getRootView (This : in out NullKeyInputViewComposite);
    function getView (This : in out NullKeyInputViewComposite) return View_Access;
-   procedure getView (This : in out NullKeyInputViewComposite);
    procedure runOnUiThread (This : in out NullKeyInputViewComposite; action : Runnable_Access);
 
 end org.allbinary.android.activity.NullKeyInputViewComposite_Package;

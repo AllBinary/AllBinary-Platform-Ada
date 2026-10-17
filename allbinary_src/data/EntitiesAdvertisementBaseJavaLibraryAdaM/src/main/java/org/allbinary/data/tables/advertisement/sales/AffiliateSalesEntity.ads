@@ -56,12 +56,9 @@ package org.allbinary.data.tables.advertisement.sales.AffiliateSalesEntity_Packa
    function Create return AffiliateSalesEntity_Access;
    procedure delete (This : in out AffiliateSalesEntity; value : Unbounded_String);
    function createTableStatement (This : in out AffiliateSalesEntity) return Unbounded_String;
-   procedure createTableStatement (This : in out AffiliateSalesEntity);
    function createTable (This : in out AffiliateSalesEntity) return Unbounded_String;
-   procedure createTable (This : in out AffiliateSalesEntity);
    procedure update (This : in out AffiliateSalesEntity; updatedValues : HashMap_Access);
    function dropTable (This : in out AffiliateSalesEntity) return Unbounded_String;
-   procedure dropTable (This : in out AffiliateSalesEntity);
 
 end org.allbinary.data.tables.advertisement.sales.AffiliateSalesEntity_Package;
 

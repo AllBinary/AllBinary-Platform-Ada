@@ -37,7 +37,7 @@ package body org.allbinary.input.motion.button.TouchButtonInput_Package is
    function Create (id : Integer; name : Unbounded_String) return TouchButtonInput_Access is
       This : constant TouchButtonInput_Access := new TouchButtonInput;
    begin
-      Initialize (This.all, id, name);
+      TouchButtonInput_Package.Initialize (This.all, id, name);
       return This;
    end Create;
 
@@ -67,20 +67,6 @@ package body org.allbinary.input.motion.button.TouchButtonInput_Package is
    function getGameKeyEvent (This : in out TouchButtonInput) return GameKeyEvent_Access is
    begin
         return This.gameKeyEvent;
-   end getGameKeyEvent;
-
-   procedure getSourceId (This : in out TouchButtonInput) is
-      Java_Result : constant Integer := TouchButtonInput'Class (This).getSourceId;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSourceId;
-
-   procedure getGameKeyEvent (This : in out TouchButtonInput) is
-      Java_Result : constant GameKeyEvent_Access := TouchButtonInput'Class (This).getGameKeyEvent;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getGameKeyEvent;
 
 end org.allbinary.input.motion.button.TouchButtonInput_Package;

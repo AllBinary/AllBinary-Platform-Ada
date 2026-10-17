@@ -36,7 +36,7 @@ package body org.allbinary.game.ag.ai.ReverseVelocityBoundsVisitor_Package is
    function Create (layerInterface : LayerInterface_Access) return ReverseVelocityBoundsVisitor_Access is
       This : constant ReverseVelocityBoundsVisitor_Access := new ReverseVelocityBoundsVisitor;
    begin
-      Initialize (This.all, layerInterface);
+      ReverseVelocityBoundsVisitor_Package.Initialize (This.all, layerInterface);
       return This;
    end Create;
 
@@ -77,20 +77,6 @@ package body org.allbinary.game.ag.ai.ReverseVelocityBoundsVisitor_Package is
             This.velocityInterface.getVelocityYBasicDecimalP.multiplyint (-(1));
         end if;
    end maxY;
-
-   procedure getX (This : in out ReverseVelocityBoundsVisitor) is
-      Java_Result : constant Integer := ReverseVelocityBoundsVisitor'Class (This).getX;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getX;
-
-   procedure getY (This : in out ReverseVelocityBoundsVisitor) is
-      Java_Result : constant Integer := ReverseVelocityBoundsVisitor'Class (This).getY;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getY;
 
 end org.allbinary.game.ag.ai.ReverseVelocityBoundsVisitor_Package;
 

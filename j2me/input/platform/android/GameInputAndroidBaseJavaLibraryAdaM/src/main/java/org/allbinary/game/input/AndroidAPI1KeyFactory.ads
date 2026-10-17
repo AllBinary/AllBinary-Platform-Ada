@@ -26,7 +26,6 @@ package org.allbinary.game.input.AndroidAPI1KeyFactory_Package is
    procedure Initialize (This : in out AndroidAPI1KeyFactory'Class);
    function Create return AndroidAPI1KeyFactory_Access;
    function getInstance return AndroidAPI1KeyFactory_Access;
-   procedure getInstance;
 
 end org.allbinary.game.input.AndroidAPI1KeyFactory_Package;
 

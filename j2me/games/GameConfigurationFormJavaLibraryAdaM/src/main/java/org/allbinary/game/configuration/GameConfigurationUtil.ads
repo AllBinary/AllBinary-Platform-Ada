@@ -25,6 +25,11 @@ with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.lo
 with org.allbinary.logic.math.SmallIntegerSingletonFactory_Package; use org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.game.configuration.GameConfigurationSingleton_Package; use org.allbinary.game.configuration.GameConfigurationSingleton_Package;
+with org.allbinary.game.configuration.GameConfiguration_Package; use org.allbinary.game.configuration.GameConfiguration_Package;
+with org.allbinary.game.configuration.GameOptionsForm_Package; use org.allbinary.game.configuration.GameOptionsForm_Package;
+with org.allbinary.game.configuration.GameConfigurationGauge_Package; use org.allbinary.game.configuration.GameConfigurationGauge_Package;
+with org.allbinary.game.configuration.GameConfigurationCentral_Package; use org.allbinary.game.configuration.GameConfigurationCentral_Package;
 
 package org.allbinary.game.configuration.GameConfigurationUtil_Package is
 
@@ -51,14 +56,12 @@ package org.allbinary.game.configuration.GameConfigurationUtil_Package is
    procedure Initialize (This : in out GameConfigurationUtil'Class);
    function Create return GameConfigurationUtil_Access;
    function getInstance return GameConfigurationUtil_Access;
-   procedure getInstance;
    procedure change (This : in out GameConfigurationUtil; gameOptionsForm : GameOptionsForm_Access; gauge : GameConfigurationGauge_Access);
    procedure update (This : in out GameConfigurationUtil; gauge : GameConfigurationGauge_Access);
    procedure setDefault (This : in out GameConfigurationUtil; gauge : GameConfigurationGauge_Access);
    procedure updateChallange (This : in out GameConfigurationUtil; gameOptionsForm : GameOptionsForm_Access; gameConfiguration : GameConfiguration_Access);
    procedure updateCompetitionValue (This : in out GameConfigurationUtil);
    function getCompetitionValue (This : in out GameConfigurationUtil) return Integer;
-   procedure getCompetitionValue (This : in out GameConfigurationUtil);
 
 end org.allbinary.game.configuration.GameConfigurationUtil_Package;
 

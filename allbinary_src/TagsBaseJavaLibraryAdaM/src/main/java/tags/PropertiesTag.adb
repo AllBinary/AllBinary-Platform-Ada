@@ -36,7 +36,7 @@ package body tags.PropertiesTag_Package is
    function Create return PropertiesTag_Access is
       This : constant PropertiesTag_Access := new PropertiesTag;
    begin
-      Initialize (This.all);
+      PropertiesTag_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -52,20 +52,6 @@ package body tags.PropertiesTag_Package is
         end if;
         This.propertiesHashMap := StdUtil_Package.getInstance.createHashMap;
         return EVAL_PAGE;
-   end doEndTag;
-
-   procedure getPropertiesHashMap (This : in out PropertiesTag) is
-      Java_Result : constant HashMap_Access := PropertiesTag'Class (This).getPropertiesHashMap;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getPropertiesHashMap;
-
-   procedure doEndTag (This : in out PropertiesTag) is
-      Java_Result : constant Integer := PropertiesTag'Class (This).doEndTag;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end doEndTag;
 
 end tags.PropertiesTag_Package;

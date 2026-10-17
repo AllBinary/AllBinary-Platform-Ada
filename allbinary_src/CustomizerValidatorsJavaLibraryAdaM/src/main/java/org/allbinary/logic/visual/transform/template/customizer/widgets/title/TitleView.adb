@@ -33,7 +33,7 @@ package body org.allbinary.logic.visual.transform.template.customizer.widgets.ti
    function Create return TitleView_Access is
       This : constant TitleView_Access := new TitleView;
    begin
-      Initialize (This.all);
+      TitleView_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -57,7 +57,7 @@ package body org.allbinary.logic.visual.transform.template.customizer.widgets.ti
    function Create (node : Node_Access) return TitleView_Access is
       This : constant TitleView_Access := new TitleView;
    begin
-      Initialize (This.all, node);
+      TitleView_Package.Initialize (This.all, node);
       return This;
    end Create;
 
@@ -74,7 +74,7 @@ package body org.allbinary.logic.visual.transform.template.customizer.widgets.ti
    function Create (hashMap : HashMap_Access) return TitleView_Access is
       This : constant TitleView_Access := new TitleView;
    begin
-      Initialize (This.all, hashMap);
+      TitleView_Package.Initialize (This.all, hashMap);
       return This;
    end Create;
 
@@ -109,20 +109,6 @@ package body org.allbinary.logic.visual.transform.template.customizer.widgets.ti
         end if;
         return ModDomHelper_Package.createNameValueNodes (document, TitleData_Package.getInstance.NAME, hashMap);
    end toXmlNode;
-
-   procedure getTitle (This : in out TitleView) is
-      Java_Result : constant Unbounded_String := TitleView'Class (This).getTitle;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTitle;
-
-   procedure toHashMap (This : in out TitleView) is
-      Java_Result : constant HashMap_Access := TitleView'Class (This).toHashMap;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toHashMap;
 
    procedure toXmlNode (This : in out TitleView; document : Document_Access) is
       Java_Result : constant Node_Access := TitleView'Class (This).toXmlNode (document);

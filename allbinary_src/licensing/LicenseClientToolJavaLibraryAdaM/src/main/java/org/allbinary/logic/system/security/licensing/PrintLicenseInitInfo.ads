@@ -45,7 +45,6 @@ package org.allbinary.logic.system.security.licensing.PrintLicenseInitInfo_Packa
    procedure Initialize (This : in out PrintLicenseInitInfo'Class; options : Unbounded_String_Array_Access);
    function Create (options : Unbounded_String_Array_Access) return PrintLicenseInitInfo_Access;
    function getLicenseInitInfo (This : in out PrintLicenseInitInfo) return LicenseInitInfo_Access;
-   procedure getLicenseInitInfo (This : in out PrintLicenseInitInfo);
    procedure printInitInfo (This : in out PrintLicenseInitInfo);
    procedure main (args : Unbounded_String_Array_Access);
 

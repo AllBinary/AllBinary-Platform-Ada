@@ -46,21 +46,15 @@ package org.allbinary.business.user.role.BasicUserRole_Package is
    procedure Initialize (This : in out BasicUserRole'Class; aRole : Unbounded_String; a_int_RoleId : Integer; aSessionTimeout : Long_Long_Integer; aSessionInactivityTimeout : Long_Long_Integer);
    function Create (aRole : Unbounded_String; a_int_RoleId : Integer; aSessionTimeout : Long_Long_Integer; aSessionInactivityTimeout : Long_Long_Integer) return BasicUserRole_Access;
    function getRoleId (This : in out BasicUserRole) return Integer;
-   procedure getRoleId (This : in out BasicUserRole);
    function getRole (This : in out BasicUserRole) return Unbounded_String;
-   procedure getRole (This : in out BasicUserRole);
    function getSessionTimeout (This : in out BasicUserRole) return Long_Long_Integer;
-   procedure getSessionTimeout (This : in out BasicUserRole);
    function getSessionInactivityTimeout (This : in out BasicUserRole) return Long_Long_Integer;
-   procedure getSessionInactivityTimeout (This : in out BasicUserRole);
    function equals (This : in out BasicUserRole; basicUserRole : BasicUserRole_Access) return Boolean;
    procedure equals (This : in out BasicUserRole; basicUserRole : BasicUserRole_Access);
    function toString (This : in out BasicUserRole) return Unbounded_String;
-   procedure toString (This : in out BasicUserRole);
    function getRole (role : Unbounded_String) return BasicUserRole_Access;
    procedure getRole (role : Unbounded_String);
    function getAll return BasicArrayList_Access;
-   procedure getAll;
 
 end org.allbinary.business.user.role.BasicUserRole_Package;
 

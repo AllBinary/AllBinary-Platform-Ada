@@ -34,7 +34,6 @@ package org.allbinary.AvianUtil_Package is
    procedure Initialize (This : in out AvianUtil'Class);
    function Create return AvianUtil_Access;
    function isAvian return Boolean;
-   procedure isAvian;
 
 end org.allbinary.AvianUtil_Package;
 

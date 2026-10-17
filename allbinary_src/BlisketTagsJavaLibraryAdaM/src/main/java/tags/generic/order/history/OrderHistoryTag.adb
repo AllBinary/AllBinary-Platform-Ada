@@ -33,7 +33,7 @@ package body tags.generic_Id.order.history.OrderHistoryTag_Package is
    function Create return OrderHistoryTag_Access is
       This : constant OrderHistoryTag_Access := new OrderHistoryTag;
    begin
-      Initialize (This.all);
+      OrderHistoryTag_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -93,20 +93,6 @@ package body tags.generic_Id.order.history.OrderHistoryTag_Package is
             return SKIP_BODY;
                 end;
         end;
-   end doStartTag;
-
-   procedure setOrderStatus (This : in out OrderHistoryTag) is
-      Java_Result : constant Unbounded_String := OrderHistoryTag'Class (This).setOrderStatus;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end setOrderStatus;
-
-   procedure doStartTag (This : in out OrderHistoryTag) is
-      Java_Result : constant Integer := OrderHistoryTag'Class (This).doStartTag;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end doStartTag;
 
 end tags.generic_Id.order.history.OrderHistoryTag_Package;

@@ -40,16 +40,9 @@ package body org.allbinary.graphics.displayable.command.MyCommandsFactory_Packag
    function Create return MyCommandsFactory_Access is
       This : constant MyCommandsFactory_Access := new MyCommandsFactory;
    begin
-      Initialize (This.all);
+      MyCommandsFactory_Package.Initialize (This.all);
       return This;
    end Create;
-
-   procedure getInstance is
-      Java_Result : constant MyCommandsFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

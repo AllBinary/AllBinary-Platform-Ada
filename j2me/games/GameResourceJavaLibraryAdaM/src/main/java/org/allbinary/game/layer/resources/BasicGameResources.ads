@@ -25,6 +25,7 @@ with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.lo
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.game.layer.resources.GameGraphicsResourceUtil_Package; use org.allbinary.game.layer.resources.GameGraphicsResourceUtil_Package;
 
 package org.allbinary.game.layer.resources.BasicGameResources_Package is
 
@@ -51,7 +52,6 @@ package org.allbinary.game.layer.resources.BasicGameResources_Package is
    procedure init (This : in out BasicGameResources; ROOT : Unbounded_String; SIZE : Unbounded_String_Array_Access);
    procedure append (This : in out BasicGameResources; ROOT : Unbounded_String; sizeString : Unbounded_String);
    function getString (This : in out BasicGameResources) return Unbounded_String;
-   procedure getString (This : in out BasicGameResources);
 
 end org.allbinary.game.layer.resources.BasicGameResources_Package;
 

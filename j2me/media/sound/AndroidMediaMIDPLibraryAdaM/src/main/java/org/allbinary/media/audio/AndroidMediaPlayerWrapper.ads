@@ -56,22 +56,18 @@ package org.allbinary.media.audio.AndroidMediaPlayerWrapper_Package is
    procedure Initialize (This : in out AndroidMediaPlayerWrapper'Class; resource : Unbounded_String);
    function Create (resource : Unbounded_String) return AndroidMediaPlayerWrapper_Access;
    function createPlayerWrapper return AndroidMediaPlayerWrapper_Access;
-   procedure createPlayerWrapper;
    procedure setLoopCount (This : in out AndroidMediaPlayerWrapper; count : Integer);
    procedure addPlayerListener (This : in out AndroidMediaPlayerWrapper; playerListener : PlayerListener_Access);
    procedure removePlayerListener (This : in out AndroidMediaPlayerWrapper; playerListener : PlayerListener_Access);
    function getState (This : in out AndroidMediaPlayerWrapper) return Integer;
-   procedure getState (This : in out AndroidMediaPlayerWrapper);
    procedure close (This : in out AndroidMediaPlayerWrapper);
    procedure start (This : in out AndroidMediaPlayerWrapper);
    procedure stop (This : in out AndroidMediaPlayerWrapper);
    procedure update (This : in out AndroidMediaPlayerWrapper; event : Unbounded_String);
    procedure setVolume (This : in out AndroidMediaPlayerWrapper; leftVolume : Integer; rightVolume : Integer);
    function getDuration (This : in out AndroidMediaPlayerWrapper) return Long_Long_Integer;
-   procedure getDuration (This : in out AndroidMediaPlayerWrapper);
    procedure setMediaPlayer (This : in out AndroidMediaPlayerWrapper; mediaPlayer : MediaPlayer_Access);
    function getMediaPlayer (This : in out AndroidMediaPlayerWrapper) return MediaPlayer_Access;
-   procedure getMediaPlayer (This : in out AndroidMediaPlayerWrapper);
 
 end org.allbinary.media.audio.AndroidMediaPlayerWrapper_Package;
 

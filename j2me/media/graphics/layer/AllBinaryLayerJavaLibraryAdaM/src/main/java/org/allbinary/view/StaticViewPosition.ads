@@ -35,11 +35,8 @@ package org.allbinary.view.StaticViewPosition_Package is
    procedure Initialize (This : in out StaticViewPosition'Class; x : Integer; y : Integer; z : Integer);
    function Create (x : Integer; y : Integer; z : Integer) return StaticViewPosition_Access;
    function getX (This : in out StaticViewPosition) return Integer;
-   procedure getX (This : in out StaticViewPosition);
    function getY (This : in out StaticViewPosition) return Integer;
-   procedure getY (This : in out StaticViewPosition);
    function getZ (This : in out StaticViewPosition) return Integer;
-   procedure getZ (This : in out StaticViewPosition);
 
 end org.allbinary.view.StaticViewPosition_Package;
 

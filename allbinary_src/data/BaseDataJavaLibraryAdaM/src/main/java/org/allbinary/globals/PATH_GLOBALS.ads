@@ -47,7 +47,6 @@ package org.allbinary.globals.PATH_GLOBALS_Package is
    procedure Initialize (This : in out PATH_GLOBALS'Class);
    function Create return PATH_GLOBALS_Access;
    function getInstance return PATH_GLOBALS_Access;
-   procedure getInstance;
 
 end org.allbinary.globals.PATH_GLOBALS_Package;
 

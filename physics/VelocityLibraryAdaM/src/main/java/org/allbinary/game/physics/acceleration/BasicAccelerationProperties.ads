@@ -38,10 +38,8 @@ package org.allbinary.game.physics.acceleration.BasicAccelerationProperties_Pack
    function Create (forward : Integer; reverse_Id : Integer) return BasicAccelerationProperties_Access;
    procedure setReverse (This : in out BasicAccelerationProperties; reverse_Id : Integer);
    function getReverse (This : in out BasicAccelerationProperties) return Integer;
-   procedure getReverse (This : in out BasicAccelerationProperties);
    procedure setForward (This : in out BasicAccelerationProperties; forward : Integer);
    function getForward (This : in out BasicAccelerationProperties) return Integer;
-   procedure getForward (This : in out BasicAccelerationProperties);
 
 end org.allbinary.game.physics.acceleration.BasicAccelerationProperties_Package;
 

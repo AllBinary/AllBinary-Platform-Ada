@@ -39,7 +39,7 @@ package body org.allbinary.logic.communication.smtp.info.StoreEmailInfo_Package 
    function Create (storeFrontInterface : StoreFrontInterface_Access; subject : Unbounded_String; textBody : Unbounded_String) return StoreEmailInfo_Access is
       This : constant StoreEmailInfo_Access := new StoreEmailInfo;
    begin
-      Initialize (This.all, storeFrontInterface, subject, textBody);
+      StoreEmailInfo_Package.Initialize (This.all, storeFrontInterface, subject, textBody);
       return This;
    end Create;
 

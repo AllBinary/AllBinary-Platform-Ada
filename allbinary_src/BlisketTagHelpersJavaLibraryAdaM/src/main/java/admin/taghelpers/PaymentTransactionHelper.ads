@@ -48,13 +48,9 @@ package admin.taghelpers.PaymentTransactionHelper_Package is
    procedure Initialize (This : in out PaymentTransactionHelper'Class; hashMap : HashMap_Access; pageContext : PageContext_Access);
    function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return PaymentTransactionHelper_Access;
    function drop (This : in out PaymentTransactionHelper) return Unbounded_String;
-   procedure drop (This : in out PaymentTransactionHelper);
    function create (This : in out PaymentTransactionHelper) return Unbounded_String;
-   procedure create (This : in out PaymentTransactionHelper);
    function restore (This : in out PaymentTransactionHelper) return Unbounded_String;
-   procedure restore (This : in out PaymentTransactionHelper);
    function backup (This : in out PaymentTransactionHelper) return Unbounded_String;
-   procedure backup (This : in out PaymentTransactionHelper);
 
 end admin.taghelpers.PaymentTransactionHelper_Package;
 

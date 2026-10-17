@@ -33,7 +33,7 @@ package body org.allbinary.data.tables.user.commerce.money.payment.PaymentEntity
    function Create return PaymentEntity_Access is
       This : constant PaymentEntity_Access := new PaymentEntity;
    begin
-      Initialize (This.all);
+      PaymentEntity_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -243,27 +243,6 @@ package body org.allbinary.data.tables.user.commerce.money.payment.PaymentEntity
    begin
       null;
    end getDefault;
-
-   procedure createTableStatement (This : in out PaymentEntity) is
-      Java_Result : constant Unbounded_String := PaymentEntity'Class (This).createTableStatement;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end createTableStatement;
-
-   procedure createTable (This : in out PaymentEntity) is
-      Java_Result : constant Unbounded_String := PaymentEntity'Class (This).createTable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end createTable;
-
-   procedure drop (This : in out PaymentEntity) is
-      Java_Result : constant Unbounded_String := PaymentEntity'Class (This).drop;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end drop;
 
 end org.allbinary.data.tables.user.commerce.money.payment.PaymentEntity_Package;
 

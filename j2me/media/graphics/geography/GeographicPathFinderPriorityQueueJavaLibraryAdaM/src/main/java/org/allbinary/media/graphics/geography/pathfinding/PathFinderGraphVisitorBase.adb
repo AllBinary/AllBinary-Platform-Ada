@@ -28,7 +28,7 @@ package body org.allbinary.media.graphics.geography.pathfinding.PathFinderGraphV
    function Create return PathFinderGraphVisitorBase_Access is
       This : constant PathFinderGraphVisitorBase_Access := new PathFinderGraphVisitorBase;
    begin
-      Initialize (This.all);
+      PathFinderGraphVisitorBase_Package.Initialize (This.all);
       return This;
    end Create;
 

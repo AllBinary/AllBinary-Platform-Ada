@@ -31,7 +31,7 @@ package body org.allbinary.servlet.MagicalImageServlet_Package is
    function Create return MagicalImageServlet_Access is
       This : constant MagicalImageServlet_Access := new MagicalImageServlet;
    begin
-      Initialize (This.all);
+      MagicalImageServlet_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -88,13 +88,6 @@ package body org.allbinary.servlet.MagicalImageServlet_Package is
    function getServletInfo (This : in out MagicalImageServlet) return Unbounded_String is
    begin
         return To_Unbounded_String ("Serves Up Image From Local or Cloud");
-   end getServletInfo;
-
-   procedure getServletInfo (This : in out MagicalImageServlet) is
-      Java_Result : constant Unbounded_String := MagicalImageServlet'Class (This).getServletInfo;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getServletInfo;
 
 end org.allbinary.servlet.MagicalImageServlet_Package;

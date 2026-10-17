@@ -28,7 +28,7 @@ package body org.allbinary.media.graphics.geography.map.racetrack.BasicGeographi
    function Create return BasicGeographicMapFactory_Access is
       This : constant BasicGeographicMapFactory_Access := new BasicGeographicMapFactory;
    begin
-      Initialize (This.all);
+      BasicGeographicMapFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

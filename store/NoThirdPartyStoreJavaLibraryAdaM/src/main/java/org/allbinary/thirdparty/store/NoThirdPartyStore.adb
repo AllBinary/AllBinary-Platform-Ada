@@ -29,7 +29,7 @@ package body org.allbinary.thirdparty.store.NoThirdPartyStore_Package is
    function Create return NoThirdPartyStore_Access is
       This : constant NoThirdPartyStore_Access := new NoThirdPartyStore;
    begin
-      Initialize (This.all);
+      NoThirdPartyStore_Package.Initialize (This.all);
       return This;
    end Create;
 

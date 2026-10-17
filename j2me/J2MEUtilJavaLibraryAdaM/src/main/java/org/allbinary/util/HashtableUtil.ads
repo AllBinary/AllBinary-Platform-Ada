@@ -22,6 +22,10 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.util.Enumeration_Package; use java.util.Enumeration_Package;
 with jsinterop.annotations.JsType_Package; use jsinterop.annotations.JsType_Package;
+with org.allbinary.util.EnumerationUtil_Package; use org.allbinary.util.EnumerationUtil_Package;
+with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
+with org.allbinary.util.BasicArrayListS_Package; use org.allbinary.util.BasicArrayListS_Package;
+with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 
 package org.allbinary.util.HashtableUtil_Package is
 
@@ -40,7 +44,6 @@ package org.allbinary.util.HashtableUtil_Package is
    procedure Initialize (This : in out HashtableUtil'Class);
    function Create return HashtableUtil_Access;
    function getInstance return HashtableUtil_Access;
-   procedure getInstance;
    procedure putAll (This : in out HashtableUtil; fromHashtable : ABHashtable_Access; hashtable : ABHashtable_Access);
    function getKeysAsArray (This : in out HashtableUtil; hashtable : ABHashtable_Access) return Java_Object_Access_Array_Access;
    procedure getKeysAsArray (This : in out HashtableUtil; hashtable : ABHashtable_Access);

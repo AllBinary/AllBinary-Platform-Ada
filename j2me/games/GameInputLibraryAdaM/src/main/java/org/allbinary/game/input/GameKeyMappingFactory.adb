@@ -64,7 +64,7 @@ package body org.allbinary.game.input.GameKeyMappingFactory_Package is
    function Create return GameKeyMappingFactory_Access is
       This : constant GameKeyMappingFactory_Access := new GameKeyMappingFactory;
    begin
-      Initialize (This.all);
+      GameKeyMappingFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -77,13 +77,6 @@ package body org.allbinary.game.input.GameKeyMappingFactory_Package is
    begin
         This.intKeyToGameKey (gameKey.getId) := gameKey;
    end setGameKey;
-
-   procedure getInstance is
-      Java_Result : constant GameKeyMappingFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure getGameKey (This : in out GameKeyMappingFactory; key : Integer) is
       Java_Result : constant GameKey_Access := GameKeyMappingFactory'Class (This).getGameKey (key);

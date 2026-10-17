@@ -46,7 +46,6 @@ package org.allbinary.logic.math.vector.Vertex_Package is
    procedure Initialize (This : in out Vertex'Class);
    function Create return Vertex_Access;
    function toString (This : in out Vertex) return Unbounded_String;
-   procedure toString (This : in out Vertex);
 
 end org.allbinary.logic.math.vector.Vertex_Package;
 

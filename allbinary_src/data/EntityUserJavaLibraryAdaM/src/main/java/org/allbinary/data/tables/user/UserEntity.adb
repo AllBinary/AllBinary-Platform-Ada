@@ -40,7 +40,7 @@ package body org.allbinary.data.tables.user.UserEntity_Package is
    function Create return UserEntity_Access is
       This : constant UserEntity_Access := new UserEntity;
    begin
-      Initialize (This.all);
+      UserEntity_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -261,26 +261,12 @@ package body org.allbinary.data.tables.user.UserEntity_Package is
         return AbSqlBean (This).createTable (This.createTableStatement);
    end createTable;
 
-   procedure getAdministrators (This : in out UserEntity) is
-      Java_Result : constant BasicArrayList_Access := UserEntity'Class (This).getAdministrators;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getAdministrators;
-
    procedure getStoreManagers (This : in out UserEntity; storeFrontInterface : StoreFrontInterface_Access) is
       Java_Result : constant BasicArrayList_Access := UserEntity'Class (This).getStoreManagers (storeFrontInterface);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getStoreManagers;
-
-   procedure getCustomers (This : in out UserEntity) is
-      Java_Result : constant BasicArrayList_Access := UserEntity'Class (This).getCustomers;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getCustomers;
 
    procedure getUsersWithRole (This : in out UserEntity; userRole : UserRole_Access) is
       Java_Result : constant BasicArrayList_Access := UserEntity'Class (This).getUsersWithRole (userRole);
@@ -309,27 +295,6 @@ package body org.allbinary.data.tables.user.UserEntity_Package is
    begin
       null;
    end login;
-
-   procedure dropTables (This : in out UserEntity) is
-      Java_Result : constant Unbounded_String := UserEntity'Class (This).dropTables;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end dropTables;
-
-   procedure createTableStatement (This : in out UserEntity) is
-      Java_Result : constant Unbounded_String := UserEntity'Class (This).createTableStatement;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end createTableStatement;
-
-   procedure createTable (This : in out UserEntity) is
-      Java_Result : constant Unbounded_String := UserEntity'Class (This).createTable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end createTable;
 
 end org.allbinary.data.tables.user.UserEntity_Package;
 

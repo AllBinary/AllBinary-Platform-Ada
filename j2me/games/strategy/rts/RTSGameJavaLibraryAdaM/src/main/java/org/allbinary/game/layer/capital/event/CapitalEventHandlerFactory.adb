@@ -28,7 +28,7 @@ package body org.allbinary.game.layer.capital.event.CapitalEventHandlerFactory_P
    function Create return CapitalEventHandlerFactory_Access is
       This : constant CapitalEventHandlerFactory_Access := new CapitalEventHandlerFactory;
    begin
-      Initialize (This.all);
+      CapitalEventHandlerFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

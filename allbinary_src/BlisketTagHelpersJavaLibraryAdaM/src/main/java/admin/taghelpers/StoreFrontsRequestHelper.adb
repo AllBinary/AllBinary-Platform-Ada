@@ -43,7 +43,7 @@ package body admin.taghelpers.StoreFrontsRequestHelper_Package is
    function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return StoreFrontsRequestHelper_Access is
       This : constant StoreFrontsRequestHelper_Access := new StoreFrontsRequestHelper;
    begin
-      Initialize (This.all, hashMap, pageContext);
+      StoreFrontsRequestHelper_Package.Initialize (This.all, hashMap, pageContext);
       return This;
    end Create;
 
@@ -202,34 +202,6 @@ package body admin.taghelpers.StoreFrontsRequestHelper_Package is
             return error;
                 end;
         end;
-   end delete;
-
-   procedure update (This : in out StoreFrontsRequestHelper) is
-      Java_Result : constant Unbounded_String := StoreFrontsRequestHelper'Class (This).update;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end update;
-
-   procedure install (This : in out StoreFrontsRequestHelper) is
-      Java_Result : constant Unbounded_String := StoreFrontsRequestHelper'Class (This).install;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end install;
-
-   procedure insert (This : in out StoreFrontsRequestHelper) is
-      Java_Result : constant Unbounded_String := StoreFrontsRequestHelper'Class (This).insert;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end insert;
-
-   procedure delete (This : in out StoreFrontsRequestHelper) is
-      Java_Result : constant Unbounded_String := StoreFrontsRequestHelper'Class (This).delete;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end delete;
 
 end admin.taghelpers.StoreFrontsRequestHelper_Package;

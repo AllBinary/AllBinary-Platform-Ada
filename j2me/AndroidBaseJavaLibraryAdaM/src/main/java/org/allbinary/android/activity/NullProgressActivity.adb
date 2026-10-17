@@ -28,7 +28,7 @@ package body org.allbinary.android.activity.NullProgressActivity_Package is
    function Create return NullProgressActivity_Access is
       This : constant NullProgressActivity_Access := new NullProgressActivity;
    begin
-      Initialize (This.all);
+      NullProgressActivity_Package.Initialize (This.all);
       return This;
    end Create;
 

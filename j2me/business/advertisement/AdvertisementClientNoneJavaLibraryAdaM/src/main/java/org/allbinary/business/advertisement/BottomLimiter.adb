@@ -39,7 +39,7 @@ package body org.allbinary.business.advertisement.BottomLimiter_Package is
    function Create return BottomLimiter_Access is
       This : constant BottomLimiter_Access := new BottomLimiter;
    begin
-      Initialize (This.all);
+      BottomLimiter_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -71,27 +71,6 @@ package body org.allbinary.business.advertisement.BottomLimiter_Package is
    function getBottom (This : in out BottomLimiter) return Integer is
    begin
         return This.bottom;
-   end getBottom;
-
-   procedure getInstance is
-      Java_Result : constant BottomLimiter_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure getDeltaY (This : in out BottomLimiter) is
-      Java_Result : constant Integer := BottomLimiter'Class (This).getDeltaY;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getDeltaY;
-
-   procedure getBottom (This : in out BottomLimiter) is
-      Java_Result : constant Integer := BottomLimiter'Class (This).getBottom;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getBottom;
 
 begin

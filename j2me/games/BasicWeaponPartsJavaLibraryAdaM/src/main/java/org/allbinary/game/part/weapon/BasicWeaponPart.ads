@@ -70,15 +70,12 @@ package org.allbinary.game.part.weapon.BasicWeaponPart_Package is
    procedure process (This : in out BasicWeaponPart; allbinaryLayerManager : AllBinaryLayerManager_Access; angle : Short_Integer; otherAngle : Short_Integer);
    procedure processScore (This : in out BasicWeaponPart; allbinaryLayerManager : AllBinaryLayerManager_Access; angle : Short_Integer; otherAngle : Short_Integer; weaponProperties : WeaponProperties_Access; scoreableInterface : ScoreableInterface_Access);
    function getOwnerLayerInterface (This : in out BasicWeaponPart) return AllBinaryLayer_Access;
-   procedure getOwnerLayerInterface (This : in out BasicWeaponPart);
    procedure setOwnerLayerInterface (This : in out BasicWeaponPart; ownerLayerInterface : AllBinaryLayer_Access);
    function getAnimationInterface (This : in out BasicWeaponPart) return Animation_Access;
-   procedure getAnimationInterface (This : in out BasicWeaponPart);
    procedure setAnimationInterface (This : in out BasicWeaponPart; animationInterface : Animation_Access);
    procedure paint (This : in out BasicWeaponPart; graphics : Graphics_Access);
    procedure paintThreed (This : in out BasicWeaponPart; graphics : Graphics_Access);
    function getWeaponProperties (This : in out BasicWeaponPart) return WeaponProperties_Access;
-   procedure getWeaponProperties (This : in out BasicWeaponPart);
    procedure setWeaponProperties (This : in out BasicWeaponPart; weaponProperties : WeaponProperties_Access);
 
 end org.allbinary.game.part.weapon.BasicWeaponPart_Package;

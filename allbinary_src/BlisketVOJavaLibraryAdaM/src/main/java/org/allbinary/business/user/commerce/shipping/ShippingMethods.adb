@@ -35,7 +35,7 @@ package body org.allbinary.business.user.commerce.shipping.ShippingMethods_Packa
    function Create (abeClientInformation : AbeClientInformationInterface_Access; storeFrontInterface : StoreFrontInterface_Access) return ShippingMethods_Access is
       This : constant ShippingMethods_Access := new ShippingMethods;
    begin
-      Initialize (This.all, abeClientInformation, storeFrontInterface);
+      ShippingMethods_Package.Initialize (This.all, abeClientInformation, storeFrontInterface);
       return This;
    end Create;
 
@@ -72,26 +72,12 @@ package body org.allbinary.business.user.commerce.shipping.ShippingMethods_Packa
         return This.defaultShippingMethodInterface;
    end getDefault;
 
-   procedure get (This : in out ShippingMethods) is
-      Java_Result : constant BasicArrayList_Access := ShippingMethods'Class (This).get;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end get;
-
    procedure getShippingInterface (This : in out ShippingMethods; name : Unbounded_String) is
       Java_Result : constant ShippingInterface_Access := ShippingMethods'Class (This).getShippingInterface (name);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getShippingInterface;
-
-   procedure getDefault (This : in out ShippingMethods) is
-      Java_Result : constant ShippingInterface_Access := ShippingMethods'Class (This).getDefault;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getDefault;
 
 end org.allbinary.business.user.commerce.shipping.ShippingMethods_Package;
 

@@ -17,7 +17,7 @@ package body org.allbinary.android.ToastUtil_Package is
    function Create return ToastUtil_Access is
       This : constant ToastUtil_Access := new ToastUtil;
    begin
-      Initialize (This.all);
+      ToastUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -32,13 +32,6 @@ package body org.allbinary.android.ToastUtil_Package is
         --  Java nested class MakeToast: move it to its own package
         view.post (MakeToast_Package.Create (message));
    end makeToast;
-
-   procedure getInstance is
-      Java_Result : constant ToastUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

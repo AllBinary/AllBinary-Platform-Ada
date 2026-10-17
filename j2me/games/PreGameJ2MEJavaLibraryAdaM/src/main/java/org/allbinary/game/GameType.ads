@@ -36,7 +36,6 @@ package org.allbinary.game.GameType_Package is
    procedure Initialize (This : in out GameType'Class; name : Unbounded_String);
    function Create (name : Unbounded_String) return GameType_Access;
    function toString (This : in out GameType) return Unbounded_String;
-   procedure toString (This : in out GameType);
 
 end org.allbinary.game.GameType_Package;
 

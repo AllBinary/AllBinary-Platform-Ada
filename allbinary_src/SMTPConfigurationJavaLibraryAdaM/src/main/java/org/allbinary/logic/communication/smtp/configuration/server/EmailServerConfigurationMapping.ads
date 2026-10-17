@@ -25,6 +25,8 @@ with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArra
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.data.tables.TableMappingInterface_Package; use org.allbinary.data.tables.TableMappingInterface_Package;
 with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.logic.communication.smtp.configuration.server.EmailServerConfigurationInterface_Package; use org.allbinary.logic.communication.smtp.configuration.server.EmailServerConfigurationInterface_Package;
+with org.allbinary.logic.communication.smtp.configuration.server.EmailServerConfigurationData_Package; use org.allbinary.logic.communication.smtp.configuration.server.EmailServerConfigurationData_Package;
 
 package org.allbinary.logic.communication.smtp.configuration.server.EmailServerConfigurationMapping_Package is
 
@@ -45,11 +47,8 @@ package org.allbinary.logic.communication.smtp.configuration.server.EmailServerC
    procedure Initialize (This : in out EmailServerConfigurationMapping'Class; emailServerConfigurationInterface : EmailServerConfigurationInterface_Access);
    function Create (emailServerConfigurationInterface : EmailServerConfigurationInterface_Access) return EmailServerConfigurationMapping_Access;
    function toHashMap (This : in out EmailServerConfigurationMapping) return HashMap_Access;
-   procedure toHashMap (This : in out EmailServerConfigurationMapping);
    function getKey (This : in out EmailServerConfigurationMapping) return Java_Object_Access;
-   procedure getKey (This : in out EmailServerConfigurationMapping);
    function toVector (This : in out EmailServerConfigurationMapping) return BasicArrayList_Access;
-   procedure toVector (This : in out EmailServerConfigurationMapping);
 
 end org.allbinary.logic.communication.smtp.configuration.server.EmailServerConfigurationMapping_Package;
 

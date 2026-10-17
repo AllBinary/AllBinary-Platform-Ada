@@ -42,7 +42,6 @@ package org.allbinary.business.quoterequest.QuoteRequestData_Package is
    procedure Initialize (This : in out QuoteRequestData'Class);
    function Create return QuoteRequestData_Access;
    function getInstance return QuoteRequestData_Access;
-   procedure getInstance;
 
 end org.allbinary.business.quoterequest.QuoteRequestData_Package;
 

@@ -32,7 +32,7 @@ package body admin.taghelpers.InitHelperFactory_Package is
    function Create return InitHelperFactory_Access is
       This : constant InitHelperFactory_Access := new InitHelperFactory;
    begin
-      Initialize (This.all);
+      InitHelperFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

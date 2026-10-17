@@ -33,7 +33,7 @@ package body org.allbinary.game.combat.destroy.DestroyableSimpleBehavior_Package
    function Create (ownerLayer : CollidableCompositeLayer_Access) return DestroyableSimpleBehavior_Access is
       This : constant DestroyableSimpleBehavior_Access := new DestroyableSimpleBehavior;
    begin
-      Initialize (This.all, ownerLayer);
+      DestroyableSimpleBehavior_Package.Initialize (This.all, ownerLayer);
       return This;
    end Create;
 
@@ -49,13 +49,6 @@ package body org.allbinary.game.combat.destroy.DestroyableSimpleBehavior_Package
             DestroyedLayerProcessor_Package.getInstance.add (This.ownerLayer);
         end if;
    end setDestroyed;
-
-   procedure isDestroyed (This : in out DestroyableSimpleBehavior) is
-      Java_Result : constant Boolean := DestroyableSimpleBehavior'Class (This).isDestroyed;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isDestroyed;
 
 end org.allbinary.game.combat.destroy.DestroyableSimpleBehavior_Package;
 

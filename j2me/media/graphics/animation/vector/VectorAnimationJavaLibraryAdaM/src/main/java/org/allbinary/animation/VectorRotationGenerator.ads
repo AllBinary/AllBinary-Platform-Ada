@@ -30,6 +30,7 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListS_Package; use org.allbinary.util.BasicArrayListS_Package;
 with org.allbinary.vector.VectorInfo_Package; use org.allbinary.vector.VectorInfo_Package;
+with org.allbinary.animation.VectorAnimationUtil_Package; use org.allbinary.animation.VectorAnimationUtil_Package;
 
 package org.allbinary.animation.VectorRotationGenerator_Package is
 
@@ -59,7 +60,6 @@ package org.allbinary.animation.VectorRotationGenerator_Package is
    procedure Initialize (This : in out VectorRotationGenerator'Class);
    function Create return VectorRotationGenerator_Access;
    function getInstance return VectorRotationGenerator_Access;
-   procedure getInstance;
    function getInstance (This : in out VectorRotationGenerator; vectorRotationInfo : VectorInfo_Access) return Integer_Array_Access_Array_Access_Array_Access;
    procedure getInstance (This : in out VectorRotationGenerator; vectorRotationInfo : VectorInfo_Access);
    function getInstanceFrames (This : in out VectorRotationGenerator; width : Integer; height : Integer; points : Integer_Array_Access_Array_Access; frames : Integer) return Integer_Array_Access_Array_Access_Array_Access;

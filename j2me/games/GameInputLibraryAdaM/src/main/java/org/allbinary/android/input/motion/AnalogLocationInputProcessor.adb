@@ -28,7 +28,7 @@ package body org.allbinary.android.input.motion.AnalogLocationInputProcessor_Pac
    function Create return AnalogLocationInputProcessor_Access is
       This : constant AnalogLocationInputProcessor_Access := new AnalogLocationInputProcessor;
    begin
-      Initialize (This.all);
+      AnalogLocationInputProcessor_Package.Initialize (This.all);
       return This;
    end Create;
 

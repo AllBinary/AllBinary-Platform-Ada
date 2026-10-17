@@ -19,20 +19,13 @@ package body org.allbinary.graphics.form.item.ABCustomImageItem_Package is
    function Create (label : Unbounded_String; image : Image_Access; layout : Integer; altText : Unbounded_String; basicColor : BasicColor_Access; yOffset : Integer) return ABCustomImageItem_Access is
       This : constant ABCustomImageItem_Access := new ABCustomImageItem;
    begin
-      Initialize (This.all, label, image, layout, altText, basicColor, yOffset);
+      ABCustomImageItem_Package.Initialize (This.all, label, image, layout, altText, basicColor, yOffset);
       return This;
    end Create;
 
    function getImage (This : in out ABCustomImageItem) return Image_Access is
    begin
         return NullImage_Package.NULL_IMAGE;
-   end getImage;
-
-   procedure getImage (This : in out ABCustomImageItem) is
-      Java_Result : constant Image_Access := ABCustomImageItem'Class (This).getImage;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getImage;
 
 end org.allbinary.graphics.form.item.ABCustomImageItem_Package;

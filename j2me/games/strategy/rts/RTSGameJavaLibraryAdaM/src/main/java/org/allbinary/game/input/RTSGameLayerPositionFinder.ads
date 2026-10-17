@@ -42,7 +42,6 @@ package org.allbinary.game.input.RTSGameLayerPositionFinder_Package is
    procedure Initialize (This : in out RTSGameLayerPositionFinder'Class);
    function Create return RTSGameLayerPositionFinder_Access;
    function getInstance return RTSGameLayerPositionFinder_Access;
-   procedure getInstance;
    function getLayerInterface (This : in out RTSGameLayerPositionFinder; geographicMapCellPosition : GeographicMapCellPosition_Access) return AllBinaryLayer_Access;
    procedure getLayerInterface (This : in out RTSGameLayerPositionFinder; geographicMapCellPosition : GeographicMapCellPosition_Access);
 

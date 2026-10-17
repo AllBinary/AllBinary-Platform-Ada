@@ -30,7 +30,7 @@ package body org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes
    function Create return LogConfigTypesData_Access is
       This : constant LogConfigTypesData_Access := new LogConfigTypesData;
    begin
-      Initialize (This.all);
+      LogConfigTypesData_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -38,13 +38,6 @@ package body org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes
    function getInstance return LogConfigTypesData_Access is
    begin
         return LogConfigTypesData_Package.instance;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant LogConfigTypesData_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

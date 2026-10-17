@@ -28,6 +28,9 @@ with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.logic.system.security.licensing.AbeLicenseInterface_Package; use org.allbinary.logic.system.security.licensing.AbeLicenseInterface_Package;
+with org.allbinary.logic.system.security.licensing.LicenseType_Package; use org.allbinary.logic.system.security.licensing.LicenseType_Package;
+with org.allbinary.logic.system.security.licensing.AbeClientInformationData_Package; use org.allbinary.logic.system.security.licensing.AbeClientInformationData_Package;
+with org.allbinary.logic.system.security.licensing.LicenseTypeFactory_Package; use org.allbinary.logic.system.security.licensing.LicenseTypeFactory_Package;
 
 package org.allbinary.logic.system.security.licensing.AbeClientLicense_Package is
 
@@ -57,22 +60,15 @@ package org.allbinary.logic.system.security.licensing.AbeClientLicense_Package i
    function hasRequiredKeys (resultHashtable : ABHashtable_Access) return Boolean;
    procedure hasRequiredKeys (resultHashtable : ABHashtable_Access);
    function hasKey (This : in out AbeClientLicense) return Boolean;
-   procedure hasKey (This : in out AbeClientLicense);
    function getKey (This : in out AbeClientLicense; keyName : Unbounded_String) return Unbounded_String;
    procedure getKey (This : in out AbeClientLicense; keyName : Unbounded_String);
    function getLicenseId (This : in out AbeClientLicense) return Unbounded_String;
-   procedure getLicenseId (This : in out AbeClientLicense);
    function getServers (This : in out AbeClientLicense) return BasicArrayList_Access;
-   procedure getServers (This : in out AbeClientLicense);
    function isValid (This : in out AbeClientLicense) return Boolean;
-   procedure isValid (This : in out AbeClientLicense);
    function toString (This : in out AbeClientLicense) return Unbounded_String;
-   procedure toString (This : in out AbeClientLicense);
    procedure setSpecial (This : in out AbeClientLicense; special : Unbounded_String);
    function getSpecial (This : in out AbeClientLicense) return Unbounded_String;
-   procedure getSpecial (This : in out AbeClientLicense);
    function getLicenseType (This : in out AbeClientLicense) return LicenseType_Access;
-   procedure getLicenseType (This : in out AbeClientLicense);
 
 end org.allbinary.logic.system.security.licensing.AbeClientLicense_Package;
 

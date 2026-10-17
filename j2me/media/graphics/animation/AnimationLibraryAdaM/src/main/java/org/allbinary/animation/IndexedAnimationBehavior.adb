@@ -36,7 +36,7 @@ package body org.allbinary.animation.IndexedAnimationBehavior_Package is
    function Create (loopTotal : Integer; frameDelayTime : Long_Long_Integer) return IndexedAnimationBehavior_Access is
       This : constant IndexedAnimationBehavior_Access := new IndexedAnimationBehavior;
    begin
-      Initialize (This.all, loopTotal, frameDelayTime);
+      IndexedAnimationBehavior_Package.Initialize (This.all, loopTotal, frameDelayTime);
       return This;
    end Create;
 

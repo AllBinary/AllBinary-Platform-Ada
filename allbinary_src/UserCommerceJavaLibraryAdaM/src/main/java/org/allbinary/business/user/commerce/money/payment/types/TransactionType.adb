@@ -31,7 +31,7 @@ package body org.allbinary.business.user.commerce.money.payment.types.Transactio
    function Create (name : Unbounded_String) return TransactionType_Access is
       This : constant TransactionType_Access := new TransactionType;
    begin
-      Initialize (This.all, name);
+      TransactionType_Package.Initialize (This.all, name);
       return This;
    end Create;
 
@@ -55,13 +55,6 @@ package body org.allbinary.business.user.commerce.money.payment.types.Transactio
    begin
       null;
    end isEqual;
-
-   procedure toString (This : in out TransactionType) is
-      Java_Result : constant Unbounded_String := TransactionType'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toString;
 
 end org.allbinary.business.user.commerce.money.payment.types.TransactionType_Package;
 

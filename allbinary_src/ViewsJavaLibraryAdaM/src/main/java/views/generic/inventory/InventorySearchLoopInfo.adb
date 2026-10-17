@@ -35,7 +35,7 @@ package body views.generic_Id.inventory.InventorySearchLoopInfo_Package is
    function Create return InventorySearchLoopInfo_Access is
       This : constant InventorySearchLoopInfo_Access := new InventorySearchLoopInfo;
    begin
-      Initialize (This.all);
+      InventorySearchLoopInfo_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -51,13 +51,6 @@ package body views.generic_Id.inventory.InventorySearchLoopInfo_Package is
         stringBuffer.append (This.LAST);
         stringBuffer.appendint (This.lastPage);
         return stringBuffer.toString;
-   end toString;
-
-   procedure toString (This : in out InventorySearchLoopInfo) is
-      Java_Result : constant Unbounded_String := InventorySearchLoopInfo'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end toString;
 
 end views.generic_Id.inventory.InventorySearchLoopInfo_Package;

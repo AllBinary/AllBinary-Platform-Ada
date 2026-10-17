@@ -30,20 +30,13 @@ package body org.allbinary.business.user.subscription.Subscription_Package is
    function Create return Subscription_Access is
       This : constant Subscription_Access := new Subscription;
    begin
-      Initialize (This.all);
+      Subscription_Package.Initialize (This.all);
       return This;
    end Create;
 
    function isSubscribed (This : in out Subscription) return Boolean is
    begin
         return True;
-   end isSubscribed;
-
-   procedure isSubscribed (This : in out Subscription) is
-      Java_Result : constant Boolean := Subscription'Class (This).isSubscribed;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end isSubscribed;
 
 end org.allbinary.business.user.subscription.Subscription_Package;

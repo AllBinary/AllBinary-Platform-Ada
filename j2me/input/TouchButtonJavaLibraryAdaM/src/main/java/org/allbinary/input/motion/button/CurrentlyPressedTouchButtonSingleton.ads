@@ -22,6 +22,7 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.input.motion.button.TouchButtonInput_Package; use org.allbinary.input.motion.button.TouchButtonInput_Package;
 
 package org.allbinary.input.motion.button.CurrentlyPressedTouchButtonSingleton_Package is
 
@@ -41,9 +42,7 @@ package org.allbinary.input.motion.button.CurrentlyPressedTouchButtonSingleton_P
    procedure Initialize (This : in out CurrentlyPressedTouchButtonSingleton'Class);
    function Create return CurrentlyPressedTouchButtonSingleton_Access;
    function getInstance return CurrentlyPressedTouchButtonSingleton_Access;
-   procedure getInstance;
    function size (This : in out CurrentlyPressedTouchButtonSingleton) return Integer;
-   procedure size (This : in out CurrentlyPressedTouchButtonSingleton);
    function removeAt (This : in out CurrentlyPressedTouchButtonSingleton; index : Integer) return TouchButtonInput_Access;
    procedure removeAt (This : in out CurrentlyPressedTouchButtonSingleton; index : Integer);
    function remove (This : in out CurrentlyPressedTouchButtonSingleton; touchButtonInput : TouchButtonInput_Access) return Boolean;

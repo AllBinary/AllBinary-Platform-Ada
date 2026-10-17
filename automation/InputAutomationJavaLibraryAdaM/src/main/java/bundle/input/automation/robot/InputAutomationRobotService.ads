@@ -39,7 +39,6 @@ package bundle.input.automation.robot.InputAutomationRobotService_Package is
    procedure Initialize (This : in out InputAutomationRobotService'Class; inputRobotInterfaceArray : InputRobotInterface_Access_Array_Access);
    function Create (inputRobotInterfaceArray : InputRobotInterface_Access_Array_Access) return InputAutomationRobotService_Access;
    function getInputRobotInterfaceArray (This : in out InputAutomationRobotService) return InputRobotInterface_Access_Array_Access;
-   procedure getInputRobotInterfaceArray (This : in out InputAutomationRobotService);
    procedure setInputRobotInterfaceArray (This : in out InputAutomationRobotService; inputRobotInterfaceArray : InputRobotInterface_Access_Array_Access);
 
 end bundle.input.automation.robot.InputAutomationRobotService_Package;

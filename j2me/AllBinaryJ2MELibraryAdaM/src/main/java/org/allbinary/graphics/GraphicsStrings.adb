@@ -36,7 +36,7 @@ package body org.allbinary.graphics.GraphicsStrings_Package is
    function Create return GraphicsStrings_Access is
       This : constant GraphicsStrings_Access := new GraphicsStrings;
    begin
-      Initialize (This.all);
+      GraphicsStrings_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -44,13 +44,6 @@ package body org.allbinary.graphics.GraphicsStrings_Package is
    function getInstance return GraphicsStrings_Access is
    begin
         return GraphicsStrings_Package.instance;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant GraphicsStrings_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

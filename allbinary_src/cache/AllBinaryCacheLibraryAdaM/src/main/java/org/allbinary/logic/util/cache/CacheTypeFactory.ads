@@ -9,8 +9,9 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.logic.util.cache.CacheType_Package; use org.allbinary.logic.util.cache.CacheType_Package;
 
-package org.allbinary.logic.util.cache_Case.CacheTypeFactory_Package is
+package org.allbinary.logic.util.cache.CacheTypeFactory_Package is
 
    package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
 
@@ -30,8 +31,7 @@ package org.allbinary.logic.util.cache_Case.CacheTypeFactory_Package is
    procedure Initialize (This : in out CacheTypeFactory'Class);
    function Create return CacheTypeFactory_Access;
    function getInstance return CacheTypeFactory_Access;
-   procedure getInstance;
 
-end org.allbinary.logic.util.cache_Case.CacheTypeFactory_Package;
+end org.allbinary.logic.util.cache.CacheTypeFactory_Package;
 
 

@@ -23,6 +23,7 @@ with AllBinary_Java; use AllBinary_Java;
 --  with java.util.EventObject_Package; use java.util.EventObject_Package;
 with org.allbinary.logic.communication.smtp.info.EmailInfo_Package; use org.allbinary.logic.communication.smtp.info.EmailInfo_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.communication.smtp.event.UserEmailEventNameData_Package; use org.allbinary.logic.communication.smtp.event.UserEmailEventNameData_Package;
 
 package org.allbinary.logic.communication.smtp.event.EmailEvent_Package is
 
@@ -43,12 +44,9 @@ package org.allbinary.logic.communication.smtp.event.EmailEvent_Package is
    procedure Initialize (This : in out EmailEvent'Class; emailEventHandler : Java_Object_Access; userEmailEventNameData : UserEmailEventNameData_Access; emailInfo : EmailInfo_Access; attempts : Integer);
    function Create (emailEventHandler : Java_Object_Access; userEmailEventNameData : UserEmailEventNameData_Access; emailInfo : EmailInfo_Access; attempts : Integer) return EmailEvent_Access;
    function getEmailInfo (This : in out EmailEvent) return EmailInfo_Access;
-   procedure getEmailInfo (This : in out EmailEvent);
    function getAttempts (This : in out EmailEvent) return Integer;
-   procedure getAttempts (This : in out EmailEvent);
    procedure setAttempts (This : in out EmailEvent; attempts : Integer);
    function toString (This : in out EmailEvent) return Unbounded_String;
-   procedure toString (This : in out EmailEvent);
 
 end org.allbinary.logic.communication.smtp.event.EmailEvent_Package;
 

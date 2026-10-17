@@ -46,7 +46,7 @@ package body org.allbinary.game.combat.damage.PtsDamageFloaters_Package is
    function Create (layerInterface : AllBinaryLayer_Access) return PtsDamageFloaters_Access is
       This : constant PtsDamageFloaters_Access := new PtsDamageFloaters;
    begin
-      Initialize (This.all, layerInterface);
+      PtsDamageFloaters_Package.Initialize (This.all, layerInterface);
       return This;
    end Create;
 

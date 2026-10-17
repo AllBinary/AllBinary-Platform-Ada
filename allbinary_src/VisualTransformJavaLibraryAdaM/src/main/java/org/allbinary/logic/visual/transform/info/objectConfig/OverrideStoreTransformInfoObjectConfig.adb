@@ -29,7 +29,7 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.OverrideStor
    function Create (abeClientInformation : AbeClientInformationInterface_Access; transformInfoInterface : TransformInfoInterface_Access) return OverrideStoreTransformInfoObjectConfig_Access is
       This : constant OverrideStoreTransformInfoObjectConfig_Access := new OverrideStoreTransformInfoObjectConfig;
    begin
-      Initialize (This.all, abeClientInformation, transformInfoInterface);
+      OverrideStoreTransformInfoObjectConfig_Package.Initialize (This.all, abeClientInformation, transformInfoInterface);
       return This;
    end Create;
 
@@ -43,7 +43,7 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.OverrideStor
    function Create (abeClientInformation : AbeClientInformationInterface_Access; transformInfoInterface : TransformInfoInterface_Access; document : Document_Access) return OverrideStoreTransformInfoObjectConfig_Access is
       This : constant OverrideStoreTransformInfoObjectConfig_Access := new OverrideStoreTransformInfoObjectConfig;
    begin
-      Initialize (This.all, abeClientInformation, transformInfoInterface, document);
+      OverrideStoreTransformInfoObjectConfig_Package.Initialize (This.all, abeClientInformation, transformInfoInterface, document);
       return This;
    end Create;
 
@@ -57,7 +57,7 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.OverrideStor
    function Create (abeClientInformation : AbeClientInformationInterface_Access; transformInfoInterface : TransformInfoInterface_Access; name : Unbounded_String; type_Id : Unbounded_String) return OverrideStoreTransformInfoObjectConfig_Access is
       This : constant OverrideStoreTransformInfoObjectConfig_Access := new OverrideStoreTransformInfoObjectConfig;
    begin
-      Initialize (This.all, abeClientInformation, transformInfoInterface, name, type_Id);
+      OverrideStoreTransformInfoObjectConfig_Package.Initialize (This.all, abeClientInformation, transformInfoInterface, name, type_Id);
       return This;
    end Create;
 

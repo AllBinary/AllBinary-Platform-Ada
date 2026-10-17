@@ -36,7 +36,7 @@ package body org.allbinary.graphics.draw.KeyValueDrawString_Package is
    function Create (label_Case : Unbounded_String; x : Integer) return KeyValueDrawString_Access is
       This : constant KeyValueDrawString_Access := new KeyValueDrawString;
    begin
-      Initialize (This.all, label_Case, x);
+      KeyValueDrawString_Package.Initialize (This.all, label_Case, x);
       return This;
    end Create;
 

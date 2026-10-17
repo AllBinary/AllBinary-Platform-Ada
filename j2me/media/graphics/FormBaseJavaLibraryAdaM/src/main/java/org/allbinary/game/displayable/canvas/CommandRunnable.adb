@@ -35,7 +35,7 @@ package body org.allbinary.game.displayable.canvas.CommandRunnable_Package is
    function Create (commandFormInputProcessor : CommandFormInputProcessor_Access; command : Command_Access) return CommandRunnable_Access is
       This : constant CommandRunnable_Access := new CommandRunnable;
    begin
-      Initialize (This.all, commandFormInputProcessor, command);
+      CommandRunnable_Package.Initialize (This.all, commandFormInputProcessor, command);
       return This;
    end Create;
 

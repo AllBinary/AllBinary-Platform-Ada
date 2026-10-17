@@ -37,7 +37,6 @@ package org.allbinary.business.advertisement.search.website.BasicAdvertisementWe
    procedure Initialize (This : in out BasicAdvertisementWebsite'Class; websiteId : Unbounded_String);
    function Create (websiteId : Unbounded_String) return BasicAdvertisementWebsite_Access;
    function toString (This : in out BasicAdvertisementWebsite) return Unbounded_String;
-   procedure toString (This : in out BasicAdvertisementWebsite);
 
 end org.allbinary.business.advertisement.search.website.BasicAdvertisementWebsite_Package;
 

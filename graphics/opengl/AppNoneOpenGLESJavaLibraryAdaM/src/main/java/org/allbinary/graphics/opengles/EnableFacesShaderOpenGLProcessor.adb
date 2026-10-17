@@ -24,7 +24,7 @@ package body org.allbinary.graphics.opengles.EnableFacesShaderOpenGLProcessor_Pa
    function Create return EnableFacesShaderOpenGLProcessor_Access is
       This : constant EnableFacesShaderOpenGLProcessor_Access := new EnableFacesShaderOpenGLProcessor;
    begin
-      Initialize (This.all);
+      EnableFacesShaderOpenGLProcessor_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -32,13 +32,6 @@ package body org.allbinary.graphics.opengles.EnableFacesShaderOpenGLProcessor_Pa
    begin
         null;
    end process;
-
-   procedure getInstance is
-      Java_Result : constant EnableFacesShaderOpenGLProcessor_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

@@ -28,7 +28,7 @@ package body org.allbinary.business.user.commerce.inventory.order.OrderHistoryDa
    function Create return OrderHistoryData_Access is
       This : constant OrderHistoryData_Access := new OrderHistoryData;
    begin
-      Initialize (This.all);
+      OrderHistoryData_Package.Initialize (This.all);
       return This;
    end Create;
 

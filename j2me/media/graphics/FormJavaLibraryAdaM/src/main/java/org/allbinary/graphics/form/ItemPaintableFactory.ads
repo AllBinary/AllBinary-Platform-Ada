@@ -21,6 +21,7 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.graphics.form.ItemPaintable_Package; use org.allbinary.graphics.form.ItemPaintable_Package;
+with org.allbinary.graphics.form.PaintableForm_Package; use org.allbinary.graphics.form.PaintableForm_Package;
 
 package org.allbinary.graphics.form.ItemPaintableFactory_Package is
 
@@ -36,7 +37,6 @@ package org.allbinary.graphics.form.ItemPaintableFactory_Package is
    procedure Initialize (This : in out ItemPaintableFactory'Class);
    function Create return ItemPaintableFactory_Access;
    function getInstance return ItemPaintableFactory_Access;
-   procedure getInstance;
    function getInstanceItemPaintable (This : in out ItemPaintableFactory; paintableForm : PaintableForm_Access) return ItemPaintable_Access;
    procedure getInstanceItemPaintable (This : in out ItemPaintableFactory; paintableForm : PaintableForm_Access);
 

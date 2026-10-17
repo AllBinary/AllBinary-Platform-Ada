@@ -45,7 +45,7 @@ package body org.allbinary.logic.communication.ftp.configuration.FtpConfiguratio
    function Create (node : Node_Access) return FtpConfigurationView_Access is
       This : constant FtpConfigurationView_Access := new FtpConfigurationView;
    begin
-      Initialize (This.all, node);
+      FtpConfigurationView_Package.Initialize (This.all, node);
       return This;
    end Create;
 
@@ -59,7 +59,7 @@ package body org.allbinary.logic.communication.ftp.configuration.FtpConfiguratio
    function Create (ftpConfigurationInterface : FtpConfigurationInterface_Access) return FtpConfigurationView_Access is
       This : constant FtpConfigurationView_Access := new FtpConfigurationView;
    begin
-      Initialize (This.all, ftpConfigurationInterface);
+      FtpConfigurationView_Package.Initialize (This.all, ftpConfigurationInterface);
       return This;
    end Create;
 
@@ -91,13 +91,6 @@ package body org.allbinary.logic.communication.ftp.configuration.FtpConfiguratio
    begin
       null;
    end toXmlNode;
-
-   procedure getFtpConfigurationInterface (This : in out FtpConfigurationView) is
-      Java_Result : constant FtpConfigurationInterface_Access := FtpConfigurationView'Class (This).getFtpConfigurationInterface;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getFtpConfigurationInterface;
 
 end org.allbinary.logic.communication.ftp.configuration.FtpConfigurationView_Package;
 

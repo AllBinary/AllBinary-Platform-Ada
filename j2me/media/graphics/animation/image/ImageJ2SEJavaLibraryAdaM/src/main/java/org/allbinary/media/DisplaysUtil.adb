@@ -28,7 +28,7 @@ package body org.allbinary.media.DisplaysUtil_Package is
    function Create return DisplaysUtil_Access is
       This : constant DisplaysUtil_Access := new DisplaysUtil;
    begin
-      Initialize (This.all);
+      DisplaysUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -69,27 +69,6 @@ package body org.allbinary.media.DisplaysUtil_Package is
             rectangleArray (index) := rectangle;
         end loop;
         return rectangleArray;
-   end getScreenSizesAsRectangleArray;
-
-   procedure getInstance is
-      Java_Result : constant DisplaysUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure getPrimaryScreenSize (This : in out DisplaysUtil) is
-      Java_Result : constant Rectangle_Access := DisplaysUtil'Class (This).getPrimaryScreenSize;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getPrimaryScreenSize;
-
-   procedure getScreenSizesAsRectangleArray (This : in out DisplaysUtil) is
-      Java_Result : constant Rectangle_Access_Array_Access := DisplaysUtil'Class (This).getScreenSizesAsRectangleArray;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getScreenSizesAsRectangleArray;
 
 begin

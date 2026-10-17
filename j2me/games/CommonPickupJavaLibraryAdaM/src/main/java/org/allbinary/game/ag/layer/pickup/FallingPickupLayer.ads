@@ -54,7 +54,6 @@ package org.allbinary.game.ag.layer.pickup.FallingPickupLayer_Package is
    function Create (remoteInfo : RemoteInfo_Access) return FallingPickupLayer_Access;
    procedure processTick (This : in out FallingPickupLayer; allBinaryLayerManager : AllBinaryLayerManager_Access);
    function implmentsTickableInterface (This : in out FallingPickupLayer) return Boolean;
-   procedure implmentsTickableInterface (This : in out FallingPickupLayer);
 
 end org.allbinary.game.ag.layer.pickup.FallingPickupLayer_Package;
 

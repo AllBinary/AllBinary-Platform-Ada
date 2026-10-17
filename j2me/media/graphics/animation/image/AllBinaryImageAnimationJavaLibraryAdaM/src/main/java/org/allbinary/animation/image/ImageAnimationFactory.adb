@@ -35,7 +35,7 @@ package body org.allbinary.animation.image.ImageAnimationFactory_Package is
    function Create (image : Image_Access; width : Integer; height : Integer; dx : Integer; dy : Integer; animationBehaviorFactory : AnimationBehaviorFactory_Access) return ImageAnimationFactory_Access is
       This : constant ImageAnimationFactory_Access := new ImageAnimationFactory;
    begin
-      Initialize (This.all, image, width, height, dx, dy, animationBehaviorFactory);
+      ImageAnimationFactory_Package.Initialize (This.all, image, width, height, dx, dy, animationBehaviorFactory);
       return This;
    end Create;
 

@@ -31,7 +31,7 @@ package body org.allbinary.game.midlet.DemoGameMidletEventHandler_Package is
    function Create return DemoGameMidletEventHandler_Access is
       This : constant DemoGameMidletEventHandler_Access := new DemoGameMidletEventHandler;
    begin
-      Initialize (This.all);
+      DemoGameMidletEventHandler_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -47,13 +47,6 @@ package body org.allbinary.game.midlet.DemoGameMidletEventHandler_Package is
         demoGameMidletEventListener := DemoGameMidletEventListener_Access (eventListenerInterface);
         demoGameMidletEventListener.onDemoGameMidletEvent (DemoGameMidletEvent_Access (eventObject));
    end process;
-
-   procedure getInstance is
-      Java_Result : constant DemoGameMidletEventHandler_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

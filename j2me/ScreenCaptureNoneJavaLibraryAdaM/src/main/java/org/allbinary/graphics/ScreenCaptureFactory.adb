@@ -28,7 +28,7 @@ package body org.allbinary.graphics.ScreenCaptureFactory_Package is
    function Create return ScreenCaptureFactory_Access is
       This : constant ScreenCaptureFactory_Access := new ScreenCaptureFactory;
    begin
-      Initialize (This.all);
+      ScreenCaptureFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -36,13 +36,6 @@ package body org.allbinary.graphics.ScreenCaptureFactory_Package is
    function getInstance return ScreenCapture_Access is
    begin
         return ScreenCaptureFactory_Package.instance;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant ScreenCapture_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

@@ -55,11 +55,8 @@ package admin.tags.CategoryTag_Package is
    function Create return CategoryTag_Access;
    procedure setXsl (This : in out CategoryTag; value : Unbounded_String);
    function viewCategory (This : in out CategoryTag) return Unbounded_String;
-   procedure viewCategory (This : in out CategoryTag);
    function viewCategories (This : in out CategoryTag) return Unbounded_String;
-   procedure viewCategories (This : in out CategoryTag);
    function doStartTag (This : in out CategoryTag) return Integer;
-   procedure doStartTag (This : in out CategoryTag);
 
 end admin.tags.CategoryTag_Package;
 

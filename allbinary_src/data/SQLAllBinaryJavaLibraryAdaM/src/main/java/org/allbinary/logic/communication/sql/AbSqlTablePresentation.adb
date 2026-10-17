@@ -29,7 +29,7 @@ package body org.allbinary.logic.communication.sql.AbSqlTablePresentation_Packag
    function Create (databaseConnectionInfoInterface : DbConnectionInfo_Access) return AbSqlTablePresentation_Access is
       This : constant AbSqlTablePresentation_Access := new AbSqlTablePresentation;
    begin
-      Initialize (This.all, databaseConnectionInfoInterface);
+      AbSqlTablePresentation_Package.Initialize (This.all, databaseConnectionInfoInterface);
       return This;
    end Create;
 

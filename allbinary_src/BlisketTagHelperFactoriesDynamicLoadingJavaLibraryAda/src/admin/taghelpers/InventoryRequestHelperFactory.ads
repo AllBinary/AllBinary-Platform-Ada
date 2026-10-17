@@ -24,6 +24,7 @@ with AllBinary_Java; use AllBinary_Java;
 --  with javax.servlet.jsp.PageContext_Package; use javax.servlet.jsp.PageContext_Package;
 with org.allbinary.logic.system.security.licensing.LicensingException_Package; use org.allbinary.logic.system.security.licensing.LicensingException_Package;
 with admin.taghelpers.TagHelperFactoryInterface_Package; use admin.taghelpers.TagHelperFactoryInterface_Package;
+with admin.taghelpers.HelperFactory_Package; use admin.taghelpers.HelperFactory_Package;
 
 package admin.taghelpers.InventoryRequestHelperFactory_Package is
 

@@ -37,6 +37,8 @@ with org.allbinary.graphics.font.MyFontProcessor_Package; use org.allbinary.grap
 with org.allbinary.graphics.font.UpdateMyFontInterface_Package; use org.allbinary.graphics.font.UpdateMyFontInterface_Package;
 with org.allbinary.graphics.font.UpdateMyFontProcessor_Package; use org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
 with org.allbinary.logic.math.BasicDecimal_Package; use org.allbinary.logic.math.BasicDecimal_Package;
+with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
+with org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package; use org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
 
 package org.allbinary.media.graphics.geography.map.GeographicMapCellHistory_Package is
 
@@ -80,23 +82,16 @@ package org.allbinary.media.graphics.geography.map.GeographicMapCellHistory_Pack
    function Create return GeographicMapCellHistory_Access;
    procedure updateMeasurement (This : in out GeographicMapCellHistory; graphics : Graphics_Access);
    function getTotalVisited (This : in out GeographicMapCellHistory) return Integer;
-   procedure getTotalVisited (This : in out GeographicMapCellHistory);
    function getTotalNotVisited (This : in out GeographicMapCellHistory) return Integer;
-   procedure getTotalNotVisited (This : in out GeographicMapCellHistory);
    function getSize (This : in out GeographicMapCellHistory) return Integer;
-   procedure getSize (This : in out GeographicMapCellHistory);
    procedure trackAll (This : in out GeographicMapCellHistory; list : BasicArrayList_Access);
    procedure track (This : in out GeographicMapCellHistory; geographicMapCellPosition : GeographicMapCellPosition_Access);
    function getTracked (This : in out GeographicMapCellHistory) return BasicArrayList_Access;
-   procedure getTracked (This : in out GeographicMapCellHistory);
    function getVisited (This : in out GeographicMapCellHistory) return BasicArrayList_Access;
-   procedure getVisited (This : in out GeographicMapCellHistory);
    function getAfterIfNotLast (This : in out GeographicMapCellHistory; geographicMapCellPosition : GeographicMapCellPosition_Access) return GeographicMapCellPosition_Access;
    procedure getAfterIfNotLast (This : in out GeographicMapCellHistory; geographicMapCellPosition : GeographicMapCellPosition_Access);
    function getFirstUnvisited (This : in out GeographicMapCellHistory) return GeographicMapCellPosition_Access;
-   procedure getFirstUnvisited (This : in out GeographicMapCellHistory);
    function getFirstUnvisitedIndex (This : in out GeographicMapCellHistory) return Integer;
-   procedure getFirstUnvisitedIndex (This : in out GeographicMapCellHistory);
    function getInPathButNotTracked (This : in out GeographicMapCellHistory; pathList : BasicArrayList_Access) return BasicArrayList_Access;
    procedure getInPathButNotTracked (This : in out GeographicMapCellHistory; pathList : BasicArrayList_Access);
    function isVisited (This : in out GeographicMapCellHistory; geographicMapCellPosition : GeographicMapCellPosition_Access) return Boolean;
@@ -104,9 +99,7 @@ package org.allbinary.media.graphics.geography.map.GeographicMapCellHistory_Pack
    function visit (This : in out GeographicMapCellHistory; geographicMapCellPosition : GeographicMapCellPosition_Access) return Boolean;
    procedure visit (This : in out GeographicMapCellHistory; geographicMapCellPosition : GeographicMapCellPosition_Access);
    function isAllVisited (This : in out GeographicMapCellHistory) return Boolean;
-   procedure isAllVisited (This : in out GeographicMapCellHistory);
    function isAllVisited2 (This : in out GeographicMapCellHistory) return Boolean;
-   procedure isAllVisited2 (This : in out GeographicMapCellHistory);
    function isPortionVisited (This : in out GeographicMapCellHistory; basicDecimal : BasicDecimal_Access) return Boolean;
    procedure isPortionVisited (This : in out GeographicMapCellHistory; basicDecimal : BasicDecimal_Access);
    procedure reset (This : in out GeographicMapCellHistory);

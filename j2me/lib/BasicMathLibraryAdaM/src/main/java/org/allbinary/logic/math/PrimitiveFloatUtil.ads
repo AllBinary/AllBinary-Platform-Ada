@@ -34,7 +34,6 @@ package org.allbinary.logic.math.PrimitiveFloatUtil_Package is
    procedure Initialize (This : in out PrimitiveFloatUtil'Class);
    function Create return PrimitiveFloatUtil_Access;
    function getArrayInstance return Float_Array_Access;
-   procedure getArrayInstance;
 
 end org.allbinary.logic.math.PrimitiveFloatUtil_Package;
 

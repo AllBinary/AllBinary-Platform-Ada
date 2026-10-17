@@ -28,7 +28,7 @@ package body org.allbinary.graphics.opengles.shader.NullOpenGLTextureProcessor_P
    function Create return NullOpenGLTextureProcessor_Access is
       This : constant NullOpenGLTextureProcessor_Access := new NullOpenGLTextureProcessor;
    begin
-      Initialize (This.all);
+      NullOpenGLTextureProcessor_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -36,13 +36,6 @@ package body org.allbinary.graphics.opengles.shader.NullOpenGLTextureProcessor_P
    function getInstance return OpenGLObject3dProcessor_Access is
    begin
         return NullOpenGLTextureProcessor_Package.instance;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant OpenGLObject3dProcessor_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

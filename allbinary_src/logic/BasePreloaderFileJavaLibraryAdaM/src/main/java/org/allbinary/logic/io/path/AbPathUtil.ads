@@ -20,6 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
+with org.allbinary.logic.io.path.AbPath_Package; use org.allbinary.logic.io.path.AbPath_Package;
 
 package org.allbinary.logic.io.path.AbPathUtil_Package is
 
@@ -37,7 +38,6 @@ package org.allbinary.logic.io.path.AbPathUtil_Package is
    procedure Initialize (This : in out AbPathUtil'Class);
    function Create return AbPathUtil_Access;
    function getInstance return AbPathUtil_Access;
-   procedure getInstance;
 
 end org.allbinary.logic.io.path.AbPathUtil_Package;
 

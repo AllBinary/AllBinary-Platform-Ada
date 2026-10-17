@@ -36,7 +36,6 @@ package org.allbinary.input.motion.button.TouchButtonReverseResource_Package is
    procedure Initialize (This : in out TouchButtonReverseResource'Class);
    function Create return TouchButtonReverseResource_Access;
    function getInstance return TouchButtonResource_Access;
-   procedure getInstance;
 
 end org.allbinary.input.motion.button.TouchButtonReverseResource_Package;
 

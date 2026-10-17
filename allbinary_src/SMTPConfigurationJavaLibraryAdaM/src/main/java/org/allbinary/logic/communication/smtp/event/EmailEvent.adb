@@ -35,7 +35,7 @@ package body org.allbinary.logic.communication.smtp.event.EmailEvent_Package is
    function Create (emailEventHandler : Java_Object_Access; userEmailEventNameData : UserEmailEventNameData_Access; emailInfo : EmailInfo_Access; attempts : Integer) return EmailEvent_Access is
       This : constant EmailEvent_Access := new EmailEvent;
    begin
-      Initialize (This.all, emailEventHandler, userEmailEventNameData, emailInfo, attempts);
+      EmailEvent_Package.Initialize (This.all, emailEventHandler, userEmailEventNameData, emailInfo, attempts);
       return This;
    end Create;
 
@@ -65,27 +65,6 @@ package body org.allbinary.logic.communication.smtp.event.EmailEvent_Package is
         stringBuffer.append (To_Unbounded_String ("" & ASCII.LF & "Number of Attempts: "));
         stringBuffer.appendint (This.getAttempts);
         return stringBuffer.toString;
-   end toString;
-
-   procedure getEmailInfo (This : in out EmailEvent) is
-      Java_Result : constant EmailInfo_Access := EmailEvent'Class (This).getEmailInfo;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getEmailInfo;
-
-   procedure getAttempts (This : in out EmailEvent) is
-      Java_Result : constant Integer := EmailEvent'Class (This).getAttempts;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getAttempts;
-
-   procedure toString (This : in out EmailEvent) is
-      Java_Result : constant Unbounded_String := EmailEvent'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end toString;
 
 end org.allbinary.logic.communication.smtp.event.EmailEvent_Package;

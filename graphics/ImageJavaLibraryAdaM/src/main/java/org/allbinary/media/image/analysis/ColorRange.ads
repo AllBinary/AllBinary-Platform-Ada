@@ -23,6 +23,7 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.media.image.analysis.ColorRangeInterface_Package; use org.allbinary.media.image.analysis.ColorRangeInterface_Package;
+with org.allbinary.media.image.analysis.Color_Package; use org.allbinary.media.image.analysis.Color_Package;
 
 package org.allbinary.media.image.analysis.ColorRange_Package is
 
@@ -46,27 +47,20 @@ package org.allbinary.media.image.analysis.ColorRange_Package is
    procedure Initialize (This : in out ColorRange'Class);
    function Create return ColorRange_Access;
    function getMinRed (This : in out ColorRange) return Integer;
-   procedure getMinRed (This : in out ColorRange);
    procedure setMinRed (This : in out ColorRange; minRed : Integer);
    function getMaxRed (This : in out ColorRange) return Integer;
-   procedure getMaxRed (This : in out ColorRange);
    procedure setMaxRed (This : in out ColorRange; maxRed : Integer);
    function getMinGreen (This : in out ColorRange) return Integer;
-   procedure getMinGreen (This : in out ColorRange);
    procedure setMinGreen (This : in out ColorRange; minGreen : Integer);
    function getMaxGreen (This : in out ColorRange) return Integer;
-   procedure getMaxGreen (This : in out ColorRange);
    procedure setMaxGreen (This : in out ColorRange; maxGreen : Integer);
    function getMinBlue (This : in out ColorRange) return Integer;
-   procedure getMinBlue (This : in out ColorRange);
    procedure setMinBlue (This : in out ColorRange; minBlue : Integer);
    function getMaxBlue (This : in out ColorRange) return Integer;
-   procedure getMaxBlue (This : in out ColorRange);
    procedure setMaxBlue (This : in out ColorRange; maxBlue : Integer);
    function isInRange (This : in out ColorRange; color : Color_Access) return Boolean;
    procedure isInRange (This : in out ColorRange; color : Color_Access);
    function toString (This : in out ColorRange) return Unbounded_String;
-   procedure toString (This : in out ColorRange);
 
 end org.allbinary.media.image.analysis.ColorRange_Package;
 

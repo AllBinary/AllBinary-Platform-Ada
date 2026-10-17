@@ -29,7 +29,7 @@ package body org.allbinary.game.multiplayer.layer.MultiPlayerGameLayer_Package i
    function Create (remoteInfo : RemoteInfo_Access; groupInterface : Group_Access_Array_Access; name : Unbounded_String; layerInfo : Rectangle_Access; viewPosition : ViewPositionBase_Access) return MultiPlayerGameLayer_Access is
       This : constant MultiPlayerGameLayer_Access := new MultiPlayerGameLayer;
    begin
-      Initialize (This.all, remoteInfo, groupInterface, name, layerInfo, viewPosition);
+      MultiPlayerGameLayer_Package.Initialize (This.all, remoteInfo, groupInterface, name, layerInfo, viewPosition);
       return This;
    end Create;
 
@@ -51,20 +51,6 @@ package body org.allbinary.game.multiplayer.layer.MultiPlayerGameLayer_Package i
    function getFiring (This : in out MultiPlayerGameLayer) return Short_Integer is
    begin
         return 0;
-   end getFiring;
-
-   procedure getMultiplayerBehavior (This : in out MultiPlayerGameLayer) is
-      Java_Result : constant MultiplayerBehavior_Access := MultiPlayerGameLayer'Class (This).getMultiplayerBehavior;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getMultiplayerBehavior;
-
-   procedure getFiring (This : in out MultiPlayerGameLayer) is
-      Java_Result : constant Short_Integer := MultiPlayerGameLayer'Class (This).getFiring;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getFiring;
 
 end org.allbinary.game.multiplayer.layer.MultiPlayerGameLayer_Package;

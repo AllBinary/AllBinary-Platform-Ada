@@ -66,7 +66,6 @@ package org.allbinary.logic.system.hardware.linux.PCComponentFactory_Package is
    procedure Initialize (This : in out PCComponentFactory'Class);
    function Create return PCComponentFactory_Access;
    function getInstance return PCComponentFactory_Access;
-   procedure getInstance;
    function getInstance (This : in out PCComponentFactory; component : Unbounded_String; componentData : Unbounded_String) return HardwareComponentInterface_Access;
    procedure getInstance (This : in out PCComponentFactory; component : Unbounded_String; componentData : Unbounded_String);
    function getComponentType (This : in out PCComponentFactory; component : Unbounded_String) return Unbounded_String;

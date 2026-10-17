@@ -29,7 +29,7 @@ package body org.allbinary.graphics.opengles.OpenGLVUtil_Package is
    function Create return OpenGLVUtil_Access is
       This : constant OpenGLVUtil_Access := new OpenGLVUtil;
    begin
-      Initialize (This.all);
+      OpenGLVUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -37,13 +37,6 @@ package body org.allbinary.graphics.opengles.OpenGLVUtil_Package is
    function getInstance return OpenGLVUtil_Access is
    begin
         return OpenGLVUtil_Package.instance;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant OpenGLVUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

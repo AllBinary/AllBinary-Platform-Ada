@@ -30,7 +30,7 @@ package body org.allbinary.logic.visual.transform.ContextTransformer_Package is
    function Create (abeClientInformation : AbeClientInformationInterface_Access; transformInfoInterface : TransformInfoInterface_Access) return ContextTransformer_Access is
       This : constant ContextTransformer_Access := new ContextTransformer;
    begin
-      Initialize (This.all, abeClientInformation, transformInfoInterface);
+      ContextTransformer_Package.Initialize (This.all, abeClientInformation, transformInfoInterface);
       return This;
    end Create;
 

@@ -32,7 +32,7 @@ package body org.allbinary.game.displayable.canvas.InitGameProcessor_Package is
    function Create (gameCanvas : AllBinaryGameCanvas_Access) return InitGameProcessor_Access is
       This : constant InitGameProcessor_Access := new InitGameProcessor;
    begin
-      Initialize (This.all, gameCanvas);
+      InitGameProcessor_Package.Initialize (This.all, gameCanvas);
       return This;
    end Create;
 

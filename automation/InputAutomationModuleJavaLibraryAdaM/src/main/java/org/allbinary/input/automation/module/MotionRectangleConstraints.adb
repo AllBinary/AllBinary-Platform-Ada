@@ -34,7 +34,7 @@ package body org.allbinary.input.automation.module.MotionRectangleConstraints_Pa
    function Create return MotionRectangleConstraints_Access is
       This : constant MotionRectangleConstraints_Access := new MotionRectangleConstraints;
    begin
-      Initialize (This.all);
+      MotionRectangleConstraints_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -111,20 +111,6 @@ package body org.allbinary.input.automation.module.MotionRectangleConstraints_Pa
         This.minArea := minArea;
    end setMinArea;
 
-   procedure getMinDimension (This : in out MotionRectangleConstraints) is
-      Java_Result : constant Dimension_Access := MotionRectangleConstraints'Class (This).getMinDimension;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getMinDimension;
-
-   procedure getMaxDimension (This : in out MotionRectangleConstraints) is
-      Java_Result : constant Dimension_Access := MotionRectangleConstraints'Class (This).getMaxDimension;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getMaxDimension;
-
    procedure isTooSmall (This : in out MotionRectangleConstraints; rectangle : Rectangle_Access) is
       Java_Result : constant Boolean := MotionRectangleConstraints'Class (This).isTooSmall (rectangle);
       pragma Unreferenced (Java_Result);
@@ -152,20 +138,6 @@ package body org.allbinary.input.automation.module.MotionRectangleConstraints_Pa
    begin
       null;
    end isValid;
-
-   procedure getMaxMotionRectangles (This : in out MotionRectangleConstraints) is
-      Java_Result : constant Integer := MotionRectangleConstraints'Class (This).getMaxMotionRectangles;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getMaxMotionRectangles;
-
-   procedure getMinArea (This : in out MotionRectangleConstraints) is
-      Java_Result : constant Integer := MotionRectangleConstraints'Class (This).getMinArea;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getMinArea;
 
 end org.allbinary.input.automation.module.MotionRectangleConstraints_Package;
 

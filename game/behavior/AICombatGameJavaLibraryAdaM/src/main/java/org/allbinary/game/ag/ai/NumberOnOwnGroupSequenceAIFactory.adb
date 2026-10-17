@@ -29,7 +29,7 @@ package body org.allbinary.game.ag.ai.NumberOnOwnGroupSequenceAIFactory_Package 
    function Create return NumberOnOwnGroupSequenceAIFactory_Access is
       This : constant NumberOnOwnGroupSequenceAIFactory_Access := new NumberOnOwnGroupSequenceAIFactory;
    begin
-      Initialize (This.all);
+      NumberOnOwnGroupSequenceAIFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

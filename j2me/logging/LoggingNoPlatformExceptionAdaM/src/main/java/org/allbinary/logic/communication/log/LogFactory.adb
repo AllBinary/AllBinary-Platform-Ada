@@ -13,7 +13,7 @@
 --  Generated Code Do Not Modify
 
 
-package body org.allbinary.logic.communication.log_Case.LogFactory_Package is
+package body org.allbinary.logic.communication.log.LogFactory_Package is
 
    procedure Initialize_Fields (This : in out LogFactory'Class) is
    begin
@@ -28,7 +28,7 @@ package body org.allbinary.logic.communication.log_Case.LogFactory_Package is
    function Create return LogFactory_Access is
       This : constant LogFactory_Access := new LogFactory;
    begin
-      Initialize (This.all);
+      LogFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -61,6 +61,6 @@ begin
    null;
    LOG := Log_Package.Create (StringUtil_Package.getInstance.EMPTY_STRING, NullUtil_Package.getInstance.NULL_OBJECT, StringUtil_Package.getInstance.EMPTY_STRING, NullUtil_Package.getInstance.NULL_OBJECT);
 
-end org.allbinary.logic.communication.log_Case.LogFactory_Package;
+end org.allbinary.logic.communication.log.LogFactory_Package;
 
 

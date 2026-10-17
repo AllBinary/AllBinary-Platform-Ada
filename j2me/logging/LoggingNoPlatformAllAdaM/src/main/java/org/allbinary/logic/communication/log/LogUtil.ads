@@ -20,6 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
+with org.allbinary.logic.communication.log.Log_Package; use org.allbinary.logic.communication.log.Log_Package;
 
 package org.allbinary.logic.communication.log.LogUtil_Package is
 
@@ -35,7 +36,6 @@ package org.allbinary.logic.communication.log.LogUtil_Package is
    procedure Initialize (This : in out LogUtil'Class);
    function Create return LogUtil_Access;
    function getInstance return LogUtil_Access;
-   procedure getInstance;
    procedure putL (This : in out LogUtil; log : Log_Access);
    procedure putF (This : in out LogUtil; specialMessage : Unbounded_String; anyType : Java_Object_Access; functionName : Unbounded_String);
    procedure putF (This : in out LogUtil; specialMessage : Unbounded_String; className : Unbounded_String; functionName : Unbounded_String);

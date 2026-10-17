@@ -31,7 +31,7 @@ package body org.allbinary.game.ag.layer.weapon.mine.MineLayer_Package is
    function Create (viewPosition : ViewPositionBase_Access) return MineLayer_Access is
       This : constant MineLayer_Access := new MineLayer;
    begin
-      Initialize (This.all, viewPosition);
+      MineLayer_Package.Initialize (This.all, viewPosition);
       return This;
    end Create;
 

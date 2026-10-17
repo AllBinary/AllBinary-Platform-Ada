@@ -33,6 +33,7 @@ with org.allbinary.logic.io.CloudStreamUtil_Package; use org.allbinary.logic.io.
 with org.allbinary.logic.io.StreamUtil_Package; use org.allbinary.logic.io.StreamUtil_Package;
 with org.allbinary.logic.io.file.AbFile_Package; use org.allbinary.logic.io.file.AbFile_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.servlet.BlisketServletUtil_Package; use org.allbinary.servlet.BlisketServletUtil_Package;
 
 package org.allbinary.servlet.MagicalImageServlet_Package is
 
@@ -60,7 +61,6 @@ package org.allbinary.servlet.MagicalImageServlet_Package is
    procedure doGet (This : in out MagicalImageServlet; request : HttpServletRequest_Access; response : HttpServletResponse_Access);
    procedure doPost (This : in out MagicalImageServlet; request : HttpServletRequest_Access; response : HttpServletResponse_Access);
    function getServletInfo (This : in out MagicalImageServlet) return Unbounded_String;
-   procedure getServletInfo (This : in out MagicalImageServlet);
 
 end org.allbinary.servlet.MagicalImageServlet_Package;
 

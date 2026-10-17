@@ -28,20 +28,13 @@ package body org.allbinary.media.audio.DowngradeSound_Package is
    function Create return DowngradeSound_Access is
       This : constant DowngradeSound_Access := new DowngradeSound;
    begin
-      Initialize (This.all);
+      DowngradeSound_Package.Initialize (This.all);
       return This;
    end Create;
 
    function getInstance return Sound_Access is
    begin
         return DowngradeSound_Package.soundInterface;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant Sound_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

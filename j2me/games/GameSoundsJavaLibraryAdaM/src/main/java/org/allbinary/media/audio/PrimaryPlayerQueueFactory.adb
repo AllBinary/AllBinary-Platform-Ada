@@ -28,7 +28,7 @@ package body org.allbinary.media.audio.PrimaryPlayerQueueFactory_Package is
    function Create return PrimaryPlayerQueueFactory_Access is
       This : constant PrimaryPlayerQueueFactory_Access := new PrimaryPlayerQueueFactory;
    begin
-      Initialize (This.all);
+      PrimaryPlayerQueueFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -36,13 +36,6 @@ package body org.allbinary.media.audio.PrimaryPlayerQueueFactory_Package is
    function getInstance return PlayerQueue_Access is
    begin
         return PrimaryPlayerQueueFactory_Package.SINGLETON;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant PlayerQueue_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

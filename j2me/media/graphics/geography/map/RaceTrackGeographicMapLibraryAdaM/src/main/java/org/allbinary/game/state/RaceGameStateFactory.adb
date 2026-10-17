@@ -31,7 +31,7 @@ package body org.allbinary.game.state.RaceGameStateFactory_Package is
    function Create return RaceGameStateFactory_Access is
       This : constant RaceGameStateFactory_Access := new RaceGameStateFactory;
    begin
-      Initialize (This.all);
+      RaceGameStateFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -42,13 +42,6 @@ package body org.allbinary.game.state.RaceGameStateFactory_Package is
             RaceGameStateFactory_Package.instance := RaceGameStateFactory_Package.Create;
         end if;
         return RaceGameStateFactory_Access (RaceGameStateFactory_Package.instance);
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant RaceGameStateFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

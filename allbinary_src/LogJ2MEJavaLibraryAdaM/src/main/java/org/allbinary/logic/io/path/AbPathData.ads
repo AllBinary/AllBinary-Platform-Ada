@@ -45,7 +45,6 @@ package org.allbinary.logic.io.path.AbPathData_Package is
    procedure Initialize (This : in out AbPathData'Class);
    function Create return AbPathData_Access;
    function getInstance return AbPathData_Access;
-   procedure getInstance;
 
 end org.allbinary.logic.io.path.AbPathData_Package;
 

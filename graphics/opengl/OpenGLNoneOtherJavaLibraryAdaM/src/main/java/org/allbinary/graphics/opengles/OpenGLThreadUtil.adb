@@ -16,7 +16,7 @@ package body org.allbinary.graphics.opengles.OpenGLThreadUtil_Package is
    function Create return OpenGLThreadUtil_Access is
       This : constant OpenGLThreadUtil_Access := new OpenGLThreadUtil;
    begin
-      Initialize (This.all);
+      OpenGLThreadUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -40,13 +40,6 @@ package body org.allbinary.graphics.opengles.OpenGLThreadUtil_Package is
    begin
         null;
    end onResume;
-
-   procedure getInstance is
-      Java_Result : constant OpenGLThreadUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

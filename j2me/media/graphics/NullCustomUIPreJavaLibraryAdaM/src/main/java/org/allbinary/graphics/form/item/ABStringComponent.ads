@@ -27,9 +27,7 @@ package org.allbinary.graphics.form.item.ABStringComponent_Package is
    procedure Initialize (This : in out ABStringComponent'Class; backgroundBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access);
    function Create (backgroundBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access) return ABStringComponent_Access;
    function getBackgroundBasicColor (This : in out ABStringComponent) return BasicColor_Access;
-   procedure getBackgroundBasicColor (This : in out ABStringComponent);
    function getForegroundBasicColor (This : in out ABStringComponent) return BasicColor_Access;
-   procedure getForegroundBasicColor (This : in out ABStringComponent);
    procedure setForegroundBasicColor (This : in out ABStringComponent; foregroundBasicColor : BasicColor_Access);
 
 end org.allbinary.graphics.form.item.ABStringComponent_Package;

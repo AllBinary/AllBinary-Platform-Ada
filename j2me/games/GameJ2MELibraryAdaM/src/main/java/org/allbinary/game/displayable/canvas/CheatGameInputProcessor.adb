@@ -34,7 +34,7 @@ package body org.allbinary.game.displayable.canvas.CheatGameInputProcessor_Packa
    function Create (gameCanvas : AllBinaryGameCanvas_Access) return CheatGameInputProcessor_Access is
       This : constant CheatGameInputProcessor_Access := new CheatGameInputProcessor;
    begin
-      Initialize (This.all, gameCanvas);
+      CheatGameInputProcessor_Package.Initialize (This.all, gameCanvas);
       return This;
    end Create;
 

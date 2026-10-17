@@ -30,7 +30,7 @@ package body org.allbinary.business.user.modules.customer.subscriber.SubscriberU
    function Create return SubscriberUserFactory_Access is
       This : constant SubscriberUserFactory_Access := new SubscriberUserFactory;
    begin
-      Initialize (This.all);
+      SubscriberUserFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -44,13 +44,6 @@ package body org.allbinary.business.user.modules.customer.subscriber.SubscriberU
    function getInstance (This : in out SubscriberUserFactory; hashMap : HashMap_Access) return UserInterface_Access is
    begin
         return SubscriberUser_Package.Create (hashMap);
-   end getInstance;
-
-   procedure getInstance (This : in out SubscriberUserFactory) is
-      Java_Result : constant UserInterface_Access := SubscriberUserFactory'Class (This).getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
    procedure getInstance (This : in out SubscriberUserFactory; hashMap : HashMap_Access) is

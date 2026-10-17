@@ -43,7 +43,6 @@ package org.allbinary.game.layer.waypoint.Waypoint2LogHelper_Package is
    procedure Initialize (This : in out Waypoint2LogHelper'Class);
    function Create return Waypoint2LogHelper_Access;
    function getInstance return Waypoint2LogHelper_Access;
-   procedure getInstance;
    procedure initRange (This : in out Waypoint2LogHelper; associatedAdvancedRTSGameLayer : PathFindingLayerInterface_Access; closeRange : Integer; sensorRange : Integer);
    procedure processPossibleTarget (This : in out Waypoint2LogHelper; associatedAdvancedRTSGameLayer : PathFindingLayerInterface_Access; unitWaypointBehavior2 : WaypointBehaviorBase_Access; layerInterface : PathFindingLayerInterface_Access; anotherTargetDistance : Integer; isShorterThanCurrentTargetDistance : Boolean; isCurrentTargetDestroyed : Boolean);
    procedure processSetTarget (This : in out Waypoint2LogHelper; associatedAdvancedRTSGameLayer : PathFindingLayerInterface_Access; unitWaypointBehavior2 : WaypointBehaviorBase_Access; layerInterface : PathFindingLayerInterface_Access; anotherTargetDistance : Integer);

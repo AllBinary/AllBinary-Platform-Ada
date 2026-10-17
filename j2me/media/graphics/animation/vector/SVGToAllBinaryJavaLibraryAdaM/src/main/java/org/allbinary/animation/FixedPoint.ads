@@ -25,7 +25,6 @@ package org.allbinary.animation.FixedPoint_Package is
    procedure Initialize (This : in out FixedPoint'Class);
    function Create return FixedPoint_Access;
    function getInstance return FixedPoint_Access;
-   procedure getInstance;
    function toFixed (This : in out FixedPoint; val : Long_Float) return Integer;
    procedure toFixed (This : in out FixedPoint; val : Long_Float);
    function toFixed (This : in out FixedPoint; val : Float) return Integer;

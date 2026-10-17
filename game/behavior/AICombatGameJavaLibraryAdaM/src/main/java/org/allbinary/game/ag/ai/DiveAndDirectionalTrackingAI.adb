@@ -56,7 +56,7 @@ package body org.allbinary.game.ag.ai.DiveAndDirectionalTrackingAI_Package is
    function Create (ownerLayerInterface : AllBinaryLayer_Access; artificialIntelligenceInterface : ArtificialIntelligenceInterface_Access; gameInput : GameInput_Access; visitor : Visitor_Access) return DiveAndDirectionalTrackingAI_Access is
       This : constant DiveAndDirectionalTrackingAI_Access := new DiveAndDirectionalTrackingAI;
    begin
-      Initialize (This.all, ownerLayerInterface, artificialIntelligenceInterface, gameInput, visitor);
+      DiveAndDirectionalTrackingAI_Package.Initialize (This.all, ownerLayerInterface, artificialIntelligenceInterface, gameInput, visitor);
       return This;
    end Create;
 
@@ -315,27 +315,6 @@ package body org.allbinary.game.ag.ai.DiveAndDirectionalTrackingAI_Package is
         stringBuffer.append (To_Unbounded_String (" LastDirection: "));
         stringBuffer.append (StringUtil_Package.getInstance.toString (This.getLastDirection));
         return stringBuffer.toString;
-   end toString;
-
-   procedure isBeyondTarget (This : in out DiveAndDirectionalTrackingAI) is
-      Java_Result : constant Boolean := DiveAndDirectionalTrackingAI'Class (This).isBeyondTarget;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isBeyondTarget;
-
-   procedure getLastDirection (This : in out DiveAndDirectionalTrackingAI) is
-      Java_Result : constant Direction_Access := DiveAndDirectionalTrackingAI'Class (This).getLastDirection;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getLastDirection;
-
-   procedure toString (This : in out DiveAndDirectionalTrackingAI) is
-      Java_Result : constant Unbounded_String := DiveAndDirectionalTrackingAI'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end toString;
 
 end org.allbinary.game.ag.ai.DiveAndDirectionalTrackingAI_Package;

@@ -35,7 +35,7 @@ package body org.allbinary.logic.communication.http.request.RequestParams_Packag
    function Create return RequestParams_Access is
       This : constant RequestParams_Access := new RequestParams;
    begin
-      Initialize (This.all);
+      RequestParams_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -50,7 +50,7 @@ package body org.allbinary.logic.communication.http.request.RequestParams_Packag
    function Create (request : HttpServletRequest_Access) return RequestParams_Access is
       This : constant RequestParams_Access := new RequestParams;
    begin
-      Initialize (This.all, request);
+      RequestParams_Package.Initialize (This.all, request);
       return This;
    end Create;
 
@@ -65,7 +65,7 @@ package body org.allbinary.logic.communication.http.request.RequestParams_Packag
    function Create (pageContext : PageContext_Access) return RequestParams_Access is
       This : constant RequestParams_Access := new RequestParams;
    begin
-      Initialize (This.all, pageContext);
+      RequestParams_Package.Initialize (This.all, pageContext);
       return This;
    end Create;
 
@@ -148,26 +148,12 @@ package body org.allbinary.logic.communication.http.request.RequestParams_Packag
         return hashMap;
    end toHashMap;
 
-   procedure getMap (This : in out RequestParams) is
-      Java_Result : constant Map_Access := RequestParams'Class (This).getMap;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getMap;
-
    procedure toXmlNode (This : in out RequestParams; document : Document_Access) is
       Java_Result : constant Node_Access := RequestParams'Class (This).toXmlNode (document);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end toXmlNode;
-
-   procedure toHashMap (This : in out RequestParams) is
-      Java_Result : constant HashMap_Access := RequestParams'Class (This).toHashMap;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toHashMap;
 
 end org.allbinary.logic.communication.http.request.RequestParams_Package;
 

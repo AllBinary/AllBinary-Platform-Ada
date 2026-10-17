@@ -30,20 +30,13 @@ package body org.allbinary.input.media.image.capture.ProcessingFrameIndexFactory
    function Create return ProcessingFrameIndexFactory_Access is
       This : constant ProcessingFrameIndexFactory_Access := new ProcessingFrameIndexFactory;
    begin
-      Initialize (This.all);
+      ProcessingFrameIndexFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
    function next return Long_Long_Integer is
    begin
         return Java_Post_Increment (ProcessingFrameIndexFactory_Package.currentFrame);
-   end next;
-
-   procedure next is
-      Java_Result : constant Long_Long_Integer := next;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end next;
 
 begin

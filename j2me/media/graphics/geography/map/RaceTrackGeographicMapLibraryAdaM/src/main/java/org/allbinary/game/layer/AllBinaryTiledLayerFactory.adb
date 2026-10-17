@@ -28,7 +28,7 @@ package body org.allbinary.game.layer.AllBinaryTiledLayerFactory_Package is
    function Create return AllBinaryTiledLayerFactory_Access is
       This : constant AllBinaryTiledLayerFactory_Access := new AllBinaryTiledLayerFactory;
    begin
-      Initialize (This.all);
+      AllBinaryTiledLayerFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

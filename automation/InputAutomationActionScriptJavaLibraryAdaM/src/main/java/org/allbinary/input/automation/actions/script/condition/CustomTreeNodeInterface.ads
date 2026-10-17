@@ -21,6 +21,7 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with javax.swing.tree.MutableTreeNode_Package; use javax.swing.tree.MutableTreeNode_Package;
+with org.allbinary.input.automation.actions.script.condition.JPopupMenu_Package; use org.allbinary.input.automation.actions.script.condition.JPopupMenu_Package;
 
 package org.allbinary.input.automation.actions.script.condition.CustomTreeNodeInterface_Package is
 

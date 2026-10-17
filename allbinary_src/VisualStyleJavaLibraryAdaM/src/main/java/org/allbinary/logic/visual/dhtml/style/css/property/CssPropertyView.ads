@@ -24,6 +24,7 @@ with org.allbinary.data.tree.dom.DomNodeInterface_Package; use org.allbinary.dat
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
+with org.allbinary.logic.visual.dhtml.style.css.property.CssProperty_Package; use org.allbinary.logic.visual.dhtml.style.css.property.CssProperty_Package;
 
 package org.allbinary.logic.visual.dhtml.style.css.property.CssPropertyView_Package is
 
@@ -45,7 +46,6 @@ package org.allbinary.logic.visual.dhtml.style.css.property.CssPropertyView_Pack
    procedure Initialize (This : in out CssPropertyView'Class; name : Unbounded_String);
    function Create (name : Unbounded_String) return CssPropertyView_Access;
    function getProperty (This : in out CssPropertyView) return CssProperty_Access;
-   procedure getProperty (This : in out CssPropertyView);
    function toXmlNode (This : in out CssPropertyView; document : Document_Access) return Node_Access;
    procedure toXmlNode (This : in out CssPropertyView; document : Document_Access);
 

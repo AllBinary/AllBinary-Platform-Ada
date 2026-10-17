@@ -31,7 +31,7 @@ package body org.allbinary.game.ag.layer.pickup.points.PointsLayerFactory_Packag
    function Create (points : Integer) return PointsLayerFactory_Access is
       This : constant PointsLayerFactory_Access := new PointsLayerFactory;
    begin
-      Initialize (This.all, points);
+      PointsLayerFactory_Package.Initialize (This.all, points);
       return This;
    end Create;
 
@@ -39,13 +39,6 @@ package body org.allbinary.game.ag.layer.pickup.points.PointsLayerFactory_Packag
    function getInstance (This : in out PointsLayerFactory) return AllBinaryLayer_Access is
    begin
         return PointsLayer_Package.Create (This.points);
-   end getInstance;
-
-   procedure getInstance (This : in out PointsLayerFactory) is
-      Java_Result : constant AllBinaryLayer_Access := PointsLayerFactory'Class (This).getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 end org.allbinary.game.ag.layer.pickup.points.PointsLayerFactory_Package;

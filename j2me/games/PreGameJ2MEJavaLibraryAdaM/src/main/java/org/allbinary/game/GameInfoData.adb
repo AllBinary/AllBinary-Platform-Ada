@@ -41,16 +41,9 @@ package body org.allbinary.game.GameInfoData_Package is
    function Create return GameInfoData_Access is
       This : constant GameInfoData_Access := new GameInfoData;
    begin
-      Initialize (This.all);
+      GameInfoData_Package.Initialize (This.all);
       return This;
    end Create;
-
-   procedure getInstance is
-      Java_Result : constant GameInfoData_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

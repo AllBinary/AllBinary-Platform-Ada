@@ -35,7 +35,6 @@ package org.allbinary.canvas.Processor_Package is
    procedure Initialize (This : in out Processor'Class);
    function Create return Processor_Access;
    function getInstance return Processor_Access;
-   procedure getInstance;
    procedure process (This : in out Processor);
    procedure processt (This : in out Processor; timeDelta : Long_Long_Integer);
 

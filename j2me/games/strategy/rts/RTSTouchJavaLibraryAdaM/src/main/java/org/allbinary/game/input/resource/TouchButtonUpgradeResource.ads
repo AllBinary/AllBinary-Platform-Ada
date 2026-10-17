@@ -37,7 +37,6 @@ package org.allbinary.game.input.resource.TouchButtonUpgradeResource_Package is
    procedure Initialize (This : in out TouchButtonUpgradeResource'Class);
    function Create return TouchButtonUpgradeResource_Access;
    function getInstance return TouchButtonResource_Access;
-   procedure getInstance;
 
 end org.allbinary.game.input.resource.TouchButtonUpgradeResource_Package;
 

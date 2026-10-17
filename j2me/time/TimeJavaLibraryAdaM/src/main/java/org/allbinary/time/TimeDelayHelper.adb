@@ -34,7 +34,7 @@ package body org.allbinary.time.TimeDelayHelper_Package is
    function Create (delay_Id : Integer) return TimeDelayHelper_Access is
       This : constant TimeDelayHelper_Access := new TimeDelayHelper;
    begin
-      Initialize (This.all, delay_Id);
+      TimeDelayHelper_Package.Initialize (This.all, delay_Id);
       return This;
    end Create;
 
@@ -178,13 +178,6 @@ package body org.allbinary.time.TimeDelayHelper_Package is
         end if;
    end toString;
 
-   procedure isTimeTNT (This : in out TimeDelayHelper) is
-      Java_Result : constant Boolean := TimeDelayHelper'Class (This).isTimeTNT;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isTimeTNT;
-
    procedure isTimeSinceTNT (This : in out TimeDelayHelper; delay_Id : Integer) is
       Java_Result : constant Boolean := TimeDelayHelper'Class (This).isTimeSinceTNT (delay_Id);
       pragma Unreferenced (Java_Result);
@@ -213,13 +206,6 @@ package body org.allbinary.time.TimeDelayHelper_Package is
       null;
    end isTimeSince;
 
-   procedure getElapsedTNT (This : in out TimeDelayHelper) is
-      Java_Result : constant Long_Long_Integer := TimeDelayHelper'Class (This).getElapsedTNT;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getElapsedTNT;
-
    procedure getElapsed (This : in out TimeDelayHelper; currentTime : Long_Long_Integer) is
       Java_Result : constant Long_Long_Integer := TimeDelayHelper'Class (This).getElapsed (currentTime);
       pragma Unreferenced (Java_Result);
@@ -241,33 +227,12 @@ package body org.allbinary.time.TimeDelayHelper_Package is
       null;
    end isElapsedTNT;
 
-   procedure getStartTime (This : in out TimeDelayHelper) is
-      Java_Result : constant Long_Long_Integer := TimeDelayHelper'Class (This).getStartTime;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getStartTime;
-
-   procedure resume (This : in out TimeDelayHelper) is
-      Java_Result : constant Boolean := TimeDelayHelper'Class (This).resume;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end resume;
-
    procedure toStringAt (This : in out TimeDelayHelper; currentTime : Long_Long_Integer) is
       Java_Result : constant Unbounded_String := TimeDelayHelper'Class (This).toStringAt (currentTime);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end toStringAt;
-
-   procedure toString (This : in out TimeDelayHelper) is
-      Java_Result : constant Unbounded_String := TimeDelayHelper'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toString;
 
 end org.allbinary.time.TimeDelayHelper_Package;
 

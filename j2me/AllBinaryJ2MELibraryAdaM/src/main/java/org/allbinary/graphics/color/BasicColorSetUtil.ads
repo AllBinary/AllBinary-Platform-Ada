@@ -21,6 +21,7 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
 
 package org.allbinary.graphics.color.BasicColorSetUtil_Package is
 
@@ -36,7 +37,6 @@ package org.allbinary.graphics.color.BasicColorSetUtil_Package is
    procedure Initialize (This : in out BasicColorSetUtil'Class);
    function Create return BasicColorSetUtil_Access;
    function getInstance return BasicColorSetUtil_Access;
-   procedure getInstance;
    procedure setBasicColorP (This : in out BasicColorSetUtil; graphics : Graphics_Access; basicColor : BasicColor_Access);
    procedure setBasicColorP3 (This : in out BasicColorSetUtil; graphics : Graphics_Access; basicColor : BasicColor_Access; value : Integer);
 

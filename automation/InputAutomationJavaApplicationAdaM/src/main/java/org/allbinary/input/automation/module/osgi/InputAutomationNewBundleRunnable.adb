@@ -36,7 +36,7 @@ package body org.allbinary.input.automation.module.osgi.InputAutomationNewBundle
    function Create (inputAutomationBundleActivator : InputAutomationBundleActivator_Access) return InputAutomationNewBundleRunnable_Access is
       This : constant InputAutomationNewBundleRunnable_Access := new InputAutomationNewBundleRunnable;
    begin
-      Initialize (This.all, inputAutomationBundleActivator);
+      InputAutomationNewBundleRunnable_Package.Initialize (This.all, inputAutomationBundleActivator);
       return This;
    end Create;
 
@@ -119,7 +119,7 @@ package body org.allbinary.input.automation.module.osgi.InputAutomationNewBundle
       file_Case : File_Access;
    begin
         This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, To_Unbounded_String ("getJarModuleFileBasicArrayList"));
-        baseJarPath := System_Package.getProperty (JAR_DIR_PROP);
+        baseJarPath := Java_Get_Property (JAR_DIR_PROP);
         if baseJarPath.startsWith (InputAutomationNewBundleRunnable_Package.FILE) then
             baseJarPath := Unbounded_Slice (baseJarPath, (InputAutomationNewBundleRunnable_Package.FILE.length) + 1, Length (baseJarPath));
         end if;
@@ -232,47 +232,12 @@ package body org.allbinary.input.automation.module.osgi.InputAutomationNewBundle
         end;
    end run;
 
-   procedure isRunning (This : in out InputAutomationNewBundleRunnable) is
-      Java_Result : constant Boolean := InputAutomationNewBundleRunnable'Class (This).isRunning;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isRunning;
-
-   procedure getAllJarSymbolicNameHashMap (This : in out InputAutomationNewBundleRunnable) is
-      Java_Result : constant HashMap_Access := InputAutomationNewBundleRunnable'Class (This).getAllJarSymbolicNameHashMap;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getAllJarSymbolicNameHashMap;
-
-   procedure getJarModuleFileBasicArrayList (This : in out InputAutomationNewBundleRunnable) is
-      Java_Result : constant BasicArrayList_Access := InputAutomationNewBundleRunnable'Class (This).getJarModuleFileBasicArrayList;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getJarModuleFileBasicArrayList;
-
-   procedure getInstalledJarSymbolicNameBasicArrayList (This : in out InputAutomationNewBundleRunnable) is
-      Java_Result : constant BasicArrayList_Access := InputAutomationNewBundleRunnable'Class (This).getInstalledJarSymbolicNameBasicArrayList;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstalledJarSymbolicNameBasicArrayList;
-
    procedure isInstalled (This : in out InputAutomationNewBundleRunnable; symbolicName : Unbounded_String) is
       Java_Result : constant Boolean := InputAutomationNewBundleRunnable'Class (This).isInstalled (symbolicName);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isInstalled;
-
-   procedure findNewModules (This : in out InputAutomationNewBundleRunnable) is
-      Java_Result : constant BasicArrayList_Access := InputAutomationNewBundleRunnable'Class (This).findNewModules;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end findNewModules;
 
    procedure install (This : in out InputAutomationNewBundleRunnable; url : URL_Access) is
       Java_Result : constant Bundle_Access := InputAutomationNewBundleRunnable'Class (This).install (url);

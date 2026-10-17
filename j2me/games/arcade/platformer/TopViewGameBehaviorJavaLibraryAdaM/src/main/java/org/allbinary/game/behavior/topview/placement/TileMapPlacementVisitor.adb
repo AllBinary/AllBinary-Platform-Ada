@@ -28,7 +28,7 @@ package body org.allbinary.game.behavior.topview.placement.TileMapPlacementVisit
    function Create return TileMapPlacementVisitor_Access is
       This : constant TileMapPlacementVisitor_Access := new TileMapPlacementVisitor;
    begin
-      Initialize (This.all);
+      TileMapPlacementVisitor_Package.Initialize (This.all);
       return This;
    end Create;
 

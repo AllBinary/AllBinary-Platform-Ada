@@ -29,7 +29,7 @@ package body org.allbinary.util.HashtableUtil_Package is
    function Create return HashtableUtil_Access is
       This : constant HashtableUtil_Access := new HashtableUtil;
    begin
-      Initialize (This.all);
+      HashtableUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -83,13 +83,6 @@ package body org.allbinary.util.HashtableUtil_Package is
         end loop;
         return list;
    end getKeysAsList;
-
-   procedure getInstance is
-      Java_Result : constant HashtableUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure getKeysAsArray (This : in out HashtableUtil; hashtable : ABHashtable_Access) is
       Java_Result : constant Java_Object_Access_Array_Access := HashtableUtil'Class (This).getKeysAsArray (hashtable);

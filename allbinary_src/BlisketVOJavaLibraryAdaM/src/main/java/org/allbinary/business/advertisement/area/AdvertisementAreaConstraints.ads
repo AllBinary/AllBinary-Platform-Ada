@@ -28,6 +28,7 @@ with org.allbinary.logic.control.contraints.size.TwoDimensionalConstraintInterfa
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.allbinary.business.advertisement.area.AdvertisementAreaConstraintsInterface_Package; use org.allbinary.business.advertisement.area.AdvertisementAreaConstraintsInterface_Package;
+with org.allbinary.business.advertisement.area.AdvertisementAreaData_Package; use org.allbinary.business.advertisement.area.AdvertisementAreaData_Package;
 
 package org.allbinary.business.advertisement.area.AdvertisementAreaConstraints_Package is
 
@@ -54,9 +55,7 @@ package org.allbinary.business.advertisement.area.AdvertisementAreaConstraints_P
    procedure setDisplayInBrowserContraints (This : in out AdvertisementAreaConstraints; displayInBrowserContraintsInterface : DisplayInBrowserContraintsInterface_Access);
    procedure getTwoDimensionContraints (This : in out AdvertisementAreaConstraints; twoDimensionConstraintsInterface : TwoDimensionalConstraintInterface_Access);
    function getDisplayInBrowserContraints (This : in out AdvertisementAreaConstraints) return DisplayInBrowserContraintsInterface_Access;
-   procedure getDisplayInBrowserContraints (This : in out AdvertisementAreaConstraints);
    function getTwoDimensionContraints (This : in out AdvertisementAreaConstraints) return TwoDimensionalConstraintInterface_Access;
-   procedure getTwoDimensionContraints (This : in out AdvertisementAreaConstraints);
 
 end org.allbinary.business.advertisement.area.AdvertisementAreaConstraints_Package;
 

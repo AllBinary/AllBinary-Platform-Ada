@@ -21,6 +21,8 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.collision.CollidableBaseBehaviorFactory_Package; use org.allbinary.game.collision.CollidableBaseBehaviorFactory_Package;
+with org.allbinary.game.collision.CollidableNeverCollideBehavior_Package; use org.allbinary.game.collision.CollidableNeverCollideBehavior_Package;
+with org.allbinary.game.collision.CollidableBaseBehavior_Package; use org.allbinary.game.collision.CollidableBaseBehavior_Package;
 
 package org.allbinary.game.collision.CollidableNeverCollideBehaviorFactory_Package is
 
@@ -38,9 +40,7 @@ package org.allbinary.game.collision.CollidableNeverCollideBehaviorFactory_Packa
    procedure Initialize (This : in out CollidableNeverCollideBehaviorFactory'Class);
    function Create return CollidableNeverCollideBehaviorFactory_Access;
    function getInstance return CollidableNeverCollideBehaviorFactory_Access;
-   procedure getInstance;
    function createBehavior (This : in out CollidableNeverCollideBehaviorFactory) return CollidableBaseBehavior_Access;
-   procedure createBehavior (This : in out CollidableNeverCollideBehaviorFactory);
 
 end org.allbinary.game.collision.CollidableNeverCollideBehaviorFactory_Package;
 

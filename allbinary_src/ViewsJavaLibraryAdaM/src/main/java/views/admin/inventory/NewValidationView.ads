@@ -49,13 +49,10 @@ package views.admin.inventory.NewValidationView_Package is
    procedure Initialize (This : in out NewValidationView'Class; transformInfoInterface : TransformInfoInterface_Access);
    function Create (transformInfoInterface : TransformInfoInterface_Access) return NewValidationView_Access;
    function isValid (This : in out NewValidationView) return Boolean;
-   procedure isValid (This : in out NewValidationView);
    function toValidationInfoDoc (This : in out NewValidationView) return Document_Access;
-   procedure toValidationInfoDoc (This : in out NewValidationView);
    function toValidationInfoNode (This : in out NewValidationView; document : Document_Access) return Node_Access;
    procedure toValidationInfoNode (This : in out NewValidationView; document : Document_Access);
    function validationInfo (This : in out NewValidationView) return Unbounded_String;
-   procedure validationInfo (This : in out NewValidationView);
 
 end views.admin.inventory.NewValidationView_Package;
 

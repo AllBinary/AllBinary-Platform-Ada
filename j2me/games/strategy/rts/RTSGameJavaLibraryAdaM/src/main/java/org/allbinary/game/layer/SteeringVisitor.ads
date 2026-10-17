@@ -42,7 +42,6 @@ package org.allbinary.game.layer.SteeringVisitor_Package is
    procedure Initialize (This : in out SteeringVisitor'Class);
    function Create return SteeringVisitor_Access;
    function getList (This : in out SteeringVisitor) return BasicArrayList_Access;
-   procedure getList (This : in out SteeringVisitor);
 
 end org.allbinary.game.layer.SteeringVisitor_Package;
 

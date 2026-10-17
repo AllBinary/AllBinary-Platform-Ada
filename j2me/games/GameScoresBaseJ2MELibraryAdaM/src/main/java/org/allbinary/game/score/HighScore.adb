@@ -39,7 +39,7 @@ package body org.allbinary.game.score.HighScore_Package is
    function Create (id : Integer; name : Unbounded_String; gameInfo : GameInfo_Access; score : Long_Long_Integer) return HighScore_Access is
       This : constant HighScore_Access := new HighScore;
    begin
-      Initialize (This.all, id, name, gameInfo, score);
+      HighScore_Package.Initialize (This.all, id, name, gameInfo, score);
       return This;
    end Create;
 
@@ -90,55 +90,6 @@ package body org.allbinary.game.score.HighScore_Package is
    begin
         commonSeps := CommonSeps_Package.getInstance;
         return StringMaker_Package.Create.append (This.name).append (commonSeps.COLON).appendlong (This.score).append (commonSeps.FORWARD_SLASH).append (This.scoreString).toString;
-   end toString;
-
-   procedure getId (This : in out HighScore) is
-      Java_Result : constant Integer := HighScore'Class (This).getId;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getId;
-
-   procedure getName (This : in out HighScore) is
-      Java_Result : constant Unbounded_String := HighScore'Class (This).getName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getName;
-
-   procedure getScore (This : in out HighScore) is
-      Java_Result : constant Long_Long_Integer := HighScore'Class (This).getScore;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getScore;
-
-   procedure getAsBytes (This : in out HighScore) is
-      Java_Result : constant Short_Short_Integer_Array_Access := HighScore'Class (This).getAsBytes;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getAsBytes;
-
-   procedure getGameInfo (This : in out HighScore) is
-      Java_Result : constant GameInfo_Access := HighScore'Class (This).getGameInfo;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getGameInfo;
-
-   procedure getScoreString (This : in out HighScore) is
-      Java_Result : constant Unbounded_String := HighScore'Class (This).getScoreString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getScoreString;
-
-   procedure toString (This : in out HighScore) is
-      Java_Result : constant Unbounded_String := HighScore'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end toString;
 
 end org.allbinary.game.score.HighScore_Package;

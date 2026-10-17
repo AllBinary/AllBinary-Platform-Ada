@@ -42,7 +42,6 @@ package org.allbinary.math.Angle_Package is
    procedure Initialize (This : in out Angle'Class; angle : Short_Integer);
    function Create (angle : Short_Integer) return Angle_Access;
    function getValue (This : in out Angle) return Short_Integer;
-   procedure getValue (This : in out Angle);
 
 end org.allbinary.math.Angle_Package;
 

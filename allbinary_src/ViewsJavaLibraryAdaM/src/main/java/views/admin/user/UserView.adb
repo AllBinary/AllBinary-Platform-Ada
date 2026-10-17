@@ -32,7 +32,7 @@ package body views.admin.user.UserView_Package is
    function Create (transformInfoInterface : TransformInfoInterface_Access) return UserView_Access is
       This : constant UserView_Access := new UserView;
    begin
-      Initialize (This.all, transformInfoInterface);
+      UserView_Package.Initialize (This.all, transformInfoInterface);
       return This;
    end Create;
 
@@ -58,13 +58,6 @@ package body views.admin.user.UserView_Package is
             Java_Throw (e);
                 end;
         end;
-   end view;
-
-   procedure view (This : in out UserView) is
-      Java_Result : constant Unbounded_String := UserView'Class (This).view;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end view;
 
 end views.admin.user.UserView_Package;

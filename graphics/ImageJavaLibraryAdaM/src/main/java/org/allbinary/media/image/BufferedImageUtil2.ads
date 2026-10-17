@@ -9,6 +9,8 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.awt.image.BufferedImage_Package; use java.awt.image.BufferedImage_Package;
+with org.allbinary.media.image.ImageUtil_Package; use org.allbinary.media.image.ImageUtil_Package;
+with org.allbinary.media.image.Graphics2D_Package; use org.allbinary.media.image.Graphics2D_Package;
 
 package org.allbinary.media.image.BufferedImageUtil2_Package is
 
@@ -26,7 +28,6 @@ package org.allbinary.media.image.BufferedImageUtil2_Package is
    procedure Initialize (This : in out BufferedImageUtil2'Class);
    function Create return BufferedImageUtil2_Access;
    function getInstance return BufferedImageUtil2_Access;
-   procedure getInstance;
    function createSpriteImage (This : in out BufferedImageUtil2; bufferedImageArray : BufferedImage_Access_Array_Access) return BufferedImage_Access;
    procedure createSpriteImage (This : in out BufferedImageUtil2; bufferedImageArray : BufferedImage_Access_Array_Access);
 

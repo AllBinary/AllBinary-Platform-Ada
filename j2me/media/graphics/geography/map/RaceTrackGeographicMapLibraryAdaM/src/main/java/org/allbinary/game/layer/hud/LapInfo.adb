@@ -33,7 +33,7 @@ package body org.allbinary.game.layer.hud.LapInfo_Package is
    function Create (totalLaps : Integer) return LapInfo_Access is
       This : constant LapInfo_Access := new LapInfo;
    begin
-      Initialize (This.all, totalLaps);
+      LapInfo_Package.Initialize (This.all, totalLaps);
       return This;
    end Create;
 
@@ -71,34 +71,6 @@ package body org.allbinary.game.layer.hud.LapInfo_Package is
         stringBuffer.append (To_Unbounded_String (" Total Laps: "));
         stringBuffer.appendint (This.getTotalLaps);
         return stringBuffer.toString;
-   end toString;
-
-   procedure getCurrentLap (This : in out LapInfo) is
-      Java_Result : constant Integer := LapInfo'Class (This).getCurrentLap;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getCurrentLap;
-
-   procedure getTotalLaps (This : in out LapInfo) is
-      Java_Result : constant Integer := LapInfo'Class (This).getTotalLaps;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTotalLaps;
-
-   procedure isDone (This : in out LapInfo) is
-      Java_Result : constant Boolean := LapInfo'Class (This).isDone;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isDone;
-
-   procedure toString (This : in out LapInfo) is
-      Java_Result : constant Unbounded_String := LapInfo'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end toString;
 
 begin

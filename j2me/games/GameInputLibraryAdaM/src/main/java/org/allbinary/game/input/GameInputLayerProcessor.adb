@@ -29,7 +29,7 @@ package body org.allbinary.game.input.GameInputLayerProcessor_Package is
    function Create return GameInputLayerProcessor_Access is
       This : constant GameInputLayerProcessor_Access := new GameInputLayerProcessor;
    begin
-      Initialize (This.all);
+      GameInputLayerProcessor_Package.Initialize (This.all);
       return This;
    end Create;
 

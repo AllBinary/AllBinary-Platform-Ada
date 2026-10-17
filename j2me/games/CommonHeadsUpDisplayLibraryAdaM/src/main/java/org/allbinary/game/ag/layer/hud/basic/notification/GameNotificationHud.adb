@@ -32,7 +32,7 @@ package body org.allbinary.game.ag.layer.hud.basic.notification.GameNotification
    function Create (location : Integer; direction : Integer; bufferZone : Integer; basicColor : BasicColor_Access) return GameNotificationHud_Access is
       This : constant GameNotificationHud_Access := new GameNotificationHud;
    begin
-      Initialize (This.all, location, direction, bufferZone, basicColor);
+      GameNotificationHud_Package.Initialize (This.all, location, direction, bufferZone, basicColor);
       return This;
    end Create;
 

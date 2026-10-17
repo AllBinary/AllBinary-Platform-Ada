@@ -37,7 +37,7 @@ package body org.allbinary.business.user.commerce.money.payment.gateway.transact
    function Create return PaymentTransactionInterfaceRequestFactory_Access is
       This : constant PaymentTransactionInterfaceRequestFactory_Access := new PaymentTransactionInterfaceRequestFactory;
    begin
-      Initialize (This.all);
+      PaymentTransactionInterfaceRequestFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -198,13 +198,6 @@ package body org.allbinary.business.user.commerce.money.payment.gateway.transact
                 end;
         end;
    end generateFromTestData;
-
-   procedure getInstance is
-      Java_Result : constant PaymentTransactionInterfaceRequestFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure getInstance (This : in out PaymentTransactionInterfaceRequestFactory; transformInfoInterface : TransformInfoInterface_Access) is
       Java_Result : constant PaymentTransactionInterface_Access := PaymentTransactionInterfaceRequestFactory'Class (This).getInstance (transformInfoInterface);

@@ -45,7 +45,6 @@ package org.allbinary.business.user.modules.customer.subscriber.SubscriberUser_P
    procedure validateSession (This : in out SubscriberUser; weblisketSession : WeblisketSessionInterface_Access);
    procedure updateSession (This : in out SubscriberUser; weblisketSession : WeblisketSessionInterface_Access);
    function isSessionValid (This : in out SubscriberUser) return Boolean;
-   procedure isSessionValid (This : in out SubscriberUser);
 
 end org.allbinary.business.user.modules.customer.subscriber.SubscriberUser_Package;
 

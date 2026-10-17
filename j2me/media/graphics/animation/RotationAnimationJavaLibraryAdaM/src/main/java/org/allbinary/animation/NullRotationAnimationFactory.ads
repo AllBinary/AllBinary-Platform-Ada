@@ -27,6 +27,10 @@ with org.allbinary.media.ScaleProperties_Package; use org.allbinary.media.ScaleP
 with org.allbinary.util.CircularIndexUtil_Package; use org.allbinary.util.CircularIndexUtil_Package;
 with org.allbinary.animation.AnimationInterfaceFactoryInterface_Package; use org.allbinary.animation.AnimationInterfaceFactoryInterface_Package;
 with org.allbinary.animation.ProceduralAnimationInterfaceFactoryInterface_Package; use org.allbinary.animation.ProceduralAnimationInterfaceFactoryInterface_Package;
+with org.allbinary.animation.RotationAnimation_Package; use org.allbinary.animation.RotationAnimation_Package;
+with org.allbinary.animation.NullRotationAnimation_Package; use org.allbinary.animation.NullRotationAnimation_Package;
+with org.allbinary.animation.IndexedAnimationBehavior_Package; use org.allbinary.animation.IndexedAnimationBehavior_Package;
+with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Animation_Package;
 
 package org.allbinary.animation.NullRotationAnimationFactory_Package is
 
@@ -49,7 +53,6 @@ package org.allbinary.animation.NullRotationAnimationFactory_Package is
    procedure Initialize (This : in out NullRotationAnimationFactory'Class);
    function Create return NullRotationAnimationFactory_Access;
    function getFactoryInstance return NullRotationAnimationFactory_Access;
-   procedure getFactoryInstance;
    function getInstance (This : in out NullRotationAnimationFactory; instanceId : Integer) return Animation_Access;
    procedure getInstance (This : in out NullRotationAnimationFactory; instanceId : Integer);
    function getInstanceAnimation (This : in out NullRotationAnimationFactory; animationInterface : Animation_Access) return Animation_Access;
@@ -73,6 +76,10 @@ with org.allbinary.media.ScaleProperties_Package; use org.allbinary.media.ScaleP
 with org.allbinary.util.CircularIndexUtil_Package; use org.allbinary.util.CircularIndexUtil_Package;
 with org.allbinary.animation.AnimationInterfaceFactoryInterface_Package; use org.allbinary.animation.AnimationInterfaceFactoryInterface_Package;
 with org.allbinary.animation.ProceduralAnimationInterfaceFactoryInterface_Package; use org.allbinary.animation.ProceduralAnimationInterfaceFactoryInterface_Package;
+with org.allbinary.animation.RotationAnimation_Package; use org.allbinary.animation.RotationAnimation_Package;
+with org.allbinary.animation.NullRotationAnimation_Package; use org.allbinary.animation.NullRotationAnimation_Package;
+with org.allbinary.animation.IndexedAnimationBehavior_Package; use org.allbinary.animation.IndexedAnimationBehavior_Package;
+with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Animation_Package;
 
 package org.allbinary.animation.NullRotationAnimation2_Package is
 

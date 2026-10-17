@@ -38,7 +38,7 @@ package body org.allbinary.graphics.j2me.workarea.tools.SelectionTool_Package is
    function Create (canvasJPanel : CanvasJPanel_Access) return SelectionTool_Access is
       This : constant SelectionTool_Access := new SelectionTool;
    begin
-      Initialize (This.all, canvasJPanel);
+      SelectionTool_Package.Initialize (This.all, canvasJPanel);
       return This;
    end Create;
 
@@ -279,89 +279,12 @@ package body org.allbinary.graphics.j2me.workarea.tools.SelectionTool_Package is
         return null;
    end duplicate;
 
-   procedure getTreeNode (This : in out SelectionTool) is
-      Java_Result : constant MutableTreeNode_Access := SelectionTool'Class (This).getTreeNode;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTreeNode;
-
-   procedure getPointsInterface (This : in out SelectionTool) is
-      Java_Result : constant Points_Access := SelectionTool'Class (This).getPointsInterface;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getPointsInterface;
-
-   procedure isValid (This : in out SelectionTool) is
-      Java_Result : constant Boolean := SelectionTool'Class (This).isValid;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isValid;
-
-   procedure isActive (This : in out SelectionTool) is
-      Java_Result : constant Boolean := SelectionTool'Class (This).isActive;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isActive;
-
-   procedure getAngle (This : in out SelectionTool) is
-      Java_Result : constant Long_Float := SelectionTool'Class (This).getAngle;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getAngle;
-
-   procedure getXRect (This : in out SelectionTool) is
-      Java_Result : constant Integer := SelectionTool'Class (This).getXRect;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getXRect;
-
-   procedure getYRect (This : in out SelectionTool) is
-      Java_Result : constant Integer := SelectionTool'Class (This).getYRect;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getYRect;
-
    procedure toDom (This : in out SelectionTool; canvasDom : CanvasDom_Access) is
       Java_Result : constant Node_Access := SelectionTool'Class (This).toDom (canvasDom);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end toDom;
-
-   procedure removePoint (This : in out SelectionTool) is
-      Java_Result : constant GPoint_Access := SelectionTool'Class (This).removePoint;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end removePoint;
-
-   procedure getName (This : in out SelectionTool) is
-      Java_Result : constant Unbounded_String := SelectionTool'Class (This).getName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getName;
-
-   procedure getStaticName is
-      Java_Result : constant Unbounded_String := getStaticName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getStaticName;
-
-   procedure duplicate (This : in out SelectionTool) is
-      Java_Result : constant GraphicItemInterface_Access := SelectionTool'Class (This).duplicate;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end duplicate;
 
 begin
    null;

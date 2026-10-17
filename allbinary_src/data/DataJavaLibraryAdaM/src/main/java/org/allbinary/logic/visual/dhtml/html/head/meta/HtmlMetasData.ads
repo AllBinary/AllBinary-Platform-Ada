@@ -37,7 +37,6 @@ package org.allbinary.logic.visual.dhtml.html.head.meta.HtmlMetasData_Package is
    procedure Initialize (This : in out HtmlMetasData'Class);
    function Create return HtmlMetasData_Access;
    function getInstance return HtmlMetasData_Access;
-   procedure getInstance;
 
 end org.allbinary.logic.visual.dhtml.html.head.meta.HtmlMetasData_Package;
 

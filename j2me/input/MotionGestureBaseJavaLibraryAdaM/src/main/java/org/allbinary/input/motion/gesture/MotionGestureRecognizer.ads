@@ -34,6 +34,8 @@ with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.lo
 with org.allbinary.logic.math.J2SEMath_Package; use org.allbinary.logic.math.J2SEMath_Package;
 with org.allbinary.logic.util.event.handler.BasicEventHandler_Package; use org.allbinary.logic.util.event.handler.BasicEventHandler_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.input.motion.gesture.TouchMotionGestureFactory_Package; use org.allbinary.input.motion.gesture.TouchMotionGestureFactory_Package;
+with org.allbinary.input.motion.gesture.MotionGestureInput_Package; use org.allbinary.input.motion.gesture.MotionGestureInput_Package;
 
 package org.allbinary.input.motion.gesture.MotionGestureRecognizer_Package is
 
@@ -82,7 +84,6 @@ package org.allbinary.input.motion.gesture.MotionGestureRecognizer_Package is
    function processScrolledMotionEvent (This : in out MotionGestureRecognizer; current : GPoint_Access; deviceId : Integer; button : Integer) return Boolean;
    procedure processScrolledMotionEvent (This : in out MotionGestureRecognizer; current : GPoint_Access; deviceId : Integer; button : Integer);
    function getMotionGesturesHandler (This : in out MotionGestureRecognizer) return BasicMotionGesturesHandler_Access;
-   procedure getMotionGesturesHandler (This : in out MotionGestureRecognizer);
 
 end org.allbinary.input.motion.gesture.MotionGestureRecognizer_Package;
 

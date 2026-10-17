@@ -34,7 +34,7 @@ package body org.allbinary.data.tables.user.commerce.inventory.item.options.Basi
    function Create return BasicOptionItemsEntity_Access is
       This : constant BasicOptionItemsEntity_Access := new BasicOptionItemsEntity;
    begin
-      Initialize (This.all);
+      BasicOptionItemsEntity_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -99,27 +99,6 @@ package body org.allbinary.data.tables.user.commerce.inventory.item.options.Basi
    function dropTable (This : in out BasicOptionItemsEntity) return Unbounded_String is
    begin
         return AbSqlBean (This).dropTable;
-   end dropTable;
-
-   procedure createTableStatement (This : in out BasicOptionItemsEntity) is
-      Java_Result : constant Unbounded_String := BasicOptionItemsEntity'Class (This).createTableStatement;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end createTableStatement;
-
-   procedure createTable (This : in out BasicOptionItemsEntity) is
-      Java_Result : constant Unbounded_String := BasicOptionItemsEntity'Class (This).createTable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end createTable;
-
-   procedure dropTable (This : in out BasicOptionItemsEntity) is
-      Java_Result : constant Unbounded_String := BasicOptionItemsEntity'Class (This).dropTable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end dropTable;
 
 end org.allbinary.data.tables.user.commerce.inventory.item.options.BasicOptionItemsEntity_Package;

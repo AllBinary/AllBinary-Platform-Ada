@@ -31,7 +31,7 @@ package body views.admin.storefront.DeleteValidationStoreFrontView_Package is
    function Create (transformInfoInterface : TransformInfoInterface_Access) return DeleteValidationStoreFrontView_Access is
       This : constant DeleteValidationStoreFrontView_Access := new DeleteValidationStoreFrontView;
    begin
-      Initialize (This.all, transformInfoInterface);
+      DeleteValidationStoreFrontView_Package.Initialize (This.all, transformInfoInterface);
       return This;
    end Create;
 
@@ -95,27 +95,6 @@ package body views.admin.storefront.DeleteValidationStoreFrontView_Package is
    begin
         return null;
    end toValidationInfoNode;
-
-   procedure isValid (This : in out DeleteValidationStoreFrontView) is
-      Java_Result : constant Boolean := DeleteValidationStoreFrontView'Class (This).isValid;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isValid;
-
-   procedure validationInfo (This : in out DeleteValidationStoreFrontView) is
-      Java_Result : constant Unbounded_String := DeleteValidationStoreFrontView'Class (This).validationInfo;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end validationInfo;
-
-   procedure toValidationInfoDoc (This : in out DeleteValidationStoreFrontView) is
-      Java_Result : constant Document_Access := DeleteValidationStoreFrontView'Class (This).toValidationInfoDoc;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toValidationInfoDoc;
 
    procedure toValidationInfoNode (This : in out DeleteValidationStoreFrontView; document : Document_Access) is
       Java_Result : constant Node_Access := DeleteValidationStoreFrontView'Class (This).toValidationInfoNode (document);

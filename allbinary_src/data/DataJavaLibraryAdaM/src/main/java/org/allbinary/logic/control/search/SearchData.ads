@@ -21,7 +21,7 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 
-package org.allbinary.logic.control.search_Case.SearchData_Package is
+package org.allbinary.logic.control.search.SearchData_Package is
 
 
    type SearchData is tagged;
@@ -57,6 +57,6 @@ package org.allbinary.logic.control.search_Case.SearchData_Package is
    procedure Initialize (This : in out SearchData'Class);
    function Create return SearchData_Access;
 
-end org.allbinary.logic.control.search_Case.SearchData_Package;
+end org.allbinary.logic.control.search.SearchData_Package;
 
 

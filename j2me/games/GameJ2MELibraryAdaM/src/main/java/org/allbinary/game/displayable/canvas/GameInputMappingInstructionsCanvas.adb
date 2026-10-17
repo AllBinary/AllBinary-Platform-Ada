@@ -37,7 +37,7 @@ package body org.allbinary.game.displayable.canvas.GameInputMappingInstructionsC
    function Create (commandListener : CommandListener_Access; allBinaryGameLayerManager : AllBinaryGameLayerManager_Access) return GameInputMappingInstructionsCanvas_Access is
       This : constant GameInputMappingInstructionsCanvas_Access := new GameInputMappingInstructionsCanvas;
    begin
-      Initialize (This.all, commandListener, allBinaryGameLayerManager);
+      GameInputMappingInstructionsCanvas_Package.Initialize (This.all, commandListener, allBinaryGameLayerManager);
       return This;
    end Create;
 

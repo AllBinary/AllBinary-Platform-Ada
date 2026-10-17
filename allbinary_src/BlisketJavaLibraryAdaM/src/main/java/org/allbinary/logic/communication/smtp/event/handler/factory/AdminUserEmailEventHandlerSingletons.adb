@@ -40,7 +40,7 @@ package body org.allbinary.logic.communication.smtp.event.handler.factory.AdminU
    function Create return AdminUserEmailEventHandlerSingletons_Access is
       This : constant AdminUserEmailEventHandlerSingletons_Access := new AdminUserEmailEventHandlerSingletons;
    begin
-      Initialize (This.all);
+      AdminUserEmailEventHandlerSingletons_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -68,13 +68,6 @@ package body org.allbinary.logic.communication.smtp.event.handler.factory.AdminU
             end if;
             return userEmailEventHandler;
         end if;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant AdminUserEmailEventHandlerSingletons_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
    procedure getInstance (This : in out AdminUserEmailEventHandlerSingletons; abeClientInformation : AbeClientInformationInterface_Access; userEmailEventNameData : UserEmailEventNameData_Access) is

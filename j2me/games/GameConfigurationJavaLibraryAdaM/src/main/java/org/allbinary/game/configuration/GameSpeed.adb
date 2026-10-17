@@ -28,7 +28,7 @@ package body org.allbinary.game.configuration.GameSpeed_Package is
    function Create return GameSpeed_Access is
       This : constant GameSpeed_Access := new GameSpeed;
    begin
-      Initialize (This.all);
+      GameSpeed_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -50,27 +50,6 @@ package body org.allbinary.game.configuration.GameSpeed_Package is
    function getInstance return GameSpeed_Access is
    begin
         return GameSpeed_Package.instance;
-   end getInstance;
-
-   procedure getSpeed (This : in out GameSpeed) is
-      Java_Result : constant Integer := GameSpeed'Class (This).getSpeed;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSpeed;
-
-   procedure getDelay (This : in out GameSpeed) is
-      Java_Result : constant Integer := GameSpeed'Class (This).getDelay;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getDelay;
-
-   procedure getInstance is
-      Java_Result : constant GameSpeed_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

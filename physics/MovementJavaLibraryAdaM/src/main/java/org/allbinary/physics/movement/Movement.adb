@@ -30,7 +30,7 @@ package body org.allbinary.physics.movement.Movement_Package is
    function Create return Movement_Access is
       This : constant Movement_Access := new Movement;
    begin
-      Initialize (This.all);
+      Movement_Package.Initialize (This.all);
       return This;
    end Create;
 

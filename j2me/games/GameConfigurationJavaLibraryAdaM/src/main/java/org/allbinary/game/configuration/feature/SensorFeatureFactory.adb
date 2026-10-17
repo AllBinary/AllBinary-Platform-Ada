@@ -43,16 +43,9 @@ package body org.allbinary.game.configuration.feature.SensorFeatureFactory_Packa
    function Create return SensorFeatureFactory_Access is
       This : constant SensorFeatureFactory_Access := new SensorFeatureFactory;
    begin
-      Initialize (This.all);
+      SensorFeatureFactory_Package.Initialize (This.all);
       return This;
    end Create;
-
-   procedure getInstance is
-      Java_Result : constant SensorFeatureFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

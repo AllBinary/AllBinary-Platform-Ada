@@ -29,7 +29,7 @@ package body org.allbinary.view.StaticViewPosition_Package is
    function Create (x : Integer; y : Integer; z : Integer) return StaticViewPosition_Access is
       This : constant StaticViewPosition_Access := new StaticViewPosition;
    begin
-      Initialize (This.all, x, y, z);
+      StaticViewPosition_Package.Initialize (This.all, x, y, z);
       return This;
    end Create;
 
@@ -46,27 +46,6 @@ package body org.allbinary.view.StaticViewPosition_Package is
    function getZ (This : in out StaticViewPosition) return Integer is
    begin
         return This.getRawZ;
-   end getZ;
-
-   procedure getX (This : in out StaticViewPosition) is
-      Java_Result : constant Integer := StaticViewPosition'Class (This).getX;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getX;
-
-   procedure getY (This : in out StaticViewPosition) is
-      Java_Result : constant Integer := StaticViewPosition'Class (This).getY;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getY;
-
-   procedure getZ (This : in out StaticViewPosition) is
-      Java_Result : constant Integer := StaticViewPosition'Class (This).getZ;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getZ;
 
 end org.allbinary.view.StaticViewPosition_Package;

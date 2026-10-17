@@ -20,6 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
+with org.allbinary.input.automation.robot.osgi.InputAutomationRobotInterfaceWrapper_Package; use org.allbinary.input.automation.robot.osgi.InputAutomationRobotInterfaceWrapper_Package;
 
 package org.allbinary.input.automation.robot.osgi.InputAutomationRobotChangeEvent_Package is
 
@@ -36,7 +37,6 @@ package org.allbinary.input.automation.robot.osgi.InputAutomationRobotChangeEven
    procedure Initialize (This : in out InputAutomationRobotChangeEvent'Class; inputAutomationRobotInterfaceWrapper : InputAutomationRobotInterfaceWrapper_Access);
    function Create (inputAutomationRobotInterfaceWrapper : InputAutomationRobotInterfaceWrapper_Access) return InputAutomationRobotChangeEvent_Access;
    function getInputAutomationRobotInterfaceWrapper (This : in out InputAutomationRobotChangeEvent) return InputAutomationRobotInterfaceWrapper_Access;
-   procedure getInputAutomationRobotInterfaceWrapper (This : in out InputAutomationRobotChangeEvent);
    procedure setInputAutomationRobotInterfaceWrapper (This : in out InputAutomationRobotChangeEvent; inputAutomationRobotInterfaceWrapper : InputAutomationRobotInterfaceWrapper_Access);
 
 end org.allbinary.input.automation.robot.osgi.InputAutomationRobotChangeEvent_Package;

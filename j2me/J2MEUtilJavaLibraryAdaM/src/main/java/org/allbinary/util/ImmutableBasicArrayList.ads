@@ -42,7 +42,6 @@ package org.allbinary.util.ImmutableBasicArrayList_Package is
    procedure add (This : in out ImmutableBasicArrayList; e : Java_Object_Access);
    procedure addAt (This : in out ImmutableBasicArrayList; index : Integer; element : Java_Object_Access);
    function toString (This : in out ImmutableBasicArrayList) return Unbounded_String;
-   procedure toString (This : in out ImmutableBasicArrayList);
 
 end org.allbinary.util.ImmutableBasicArrayList_Package;
 

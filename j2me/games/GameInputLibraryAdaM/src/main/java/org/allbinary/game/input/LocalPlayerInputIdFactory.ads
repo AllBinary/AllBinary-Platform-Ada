@@ -49,19 +49,16 @@ package org.allbinary.game.input.LocalPlayerInputIdFactory_Package is
    procedure Initialize (This : in out LocalPlayerInputIdFactory'Class);
    function Create return LocalPlayerInputIdFactory_Access;
    function getInstance return LocalPlayerInputIdFactory_Access;
-   procedure getInstance;
    function getDeviceId (This : in out LocalPlayerInputIdFactory; playerInputId : Integer) return Integer;
    procedure getDeviceId (This : in out LocalPlayerInputIdFactory; playerInputId : Integer);
    function getPlayerForDevice (This : in out LocalPlayerInputIdFactory; deviceId : Integer) return Integer;
    procedure getPlayerForDevice (This : in out LocalPlayerInputIdFactory; deviceId : Integer);
    function getTotalDevicesInPlay (This : in out LocalPlayerInputIdFactory) return Integer;
-   procedure getTotalDevicesInPlay (This : in out LocalPlayerInputIdFactory);
    function isPlayerInPlay (This : in out LocalPlayerInputIdFactory; playerInputId : Integer) return Boolean;
    procedure isPlayerInPlay (This : in out LocalPlayerInputIdFactory; playerInputId : Integer);
    procedure setPlayerInPlay (This : in out LocalPlayerInputIdFactory; playerInputId : Integer);
    procedure setPlayerOutOfPlay (This : in out LocalPlayerInputIdFactory; playerInputId : Integer);
    function getPlayersInPlay (This : in out LocalPlayerInputIdFactory) return Boolean_Array_Access;
-   procedure getPlayersInPlay (This : in out LocalPlayerInputIdFactory);
 
 end org.allbinary.game.input.LocalPlayerInputIdFactory_Package;
 

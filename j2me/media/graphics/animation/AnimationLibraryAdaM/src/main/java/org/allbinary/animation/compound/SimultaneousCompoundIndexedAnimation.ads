@@ -46,18 +46,14 @@ package org.allbinary.animation.compound.SimultaneousCompoundIndexedAnimation_Pa
    function Create (animationInterfaceArray : Animation_Access_Array_Access; animationBehavior : AnimationBehavior_Access) return SimultaneousCompoundIndexedAnimation_Access;
    procedure setFrame (This : in out SimultaneousCompoundIndexedAnimation; frameIndex : Integer);
    function getFrame (This : in out SimultaneousCompoundIndexedAnimation) return Integer;
-   procedure getFrame (This : in out SimultaneousCompoundIndexedAnimation);
    function getSize (This : in out SimultaneousCompoundIndexedAnimation) return Integer;
-   procedure getSize (This : in out SimultaneousCompoundIndexedAnimation);
    procedure previousFrame (This : in out SimultaneousCompoundIndexedAnimation);
    procedure setSequence (This : in out SimultaneousCompoundIndexedAnimation; sequence : Integer_Array_Access);
    function getSequence (This : in out SimultaneousCompoundIndexedAnimation) return Integer_Array_Access;
-   procedure getSequence (This : in out SimultaneousCompoundIndexedAnimation);
    procedure nextFrame (This : in out SimultaneousCompoundIndexedAnimation);
    procedure paintXY (This : in out SimultaneousCompoundIndexedAnimation; graphics : Graphics_Access; x : Integer; y : Integer);
    procedure paintThreedXYZ (This : in out SimultaneousCompoundIndexedAnimation; graphics : Graphics_Access; x : Integer; y : Integer; z : Integer);
    function getAnimationInterfaceArray (This : in out SimultaneousCompoundIndexedAnimation) return Animation_Access_Array_Access;
-   procedure getAnimationInterfaceArray (This : in out SimultaneousCompoundIndexedAnimation);
    procedure setAnimationInterfaceArray (This : in out SimultaneousCompoundIndexedAnimation; animationInterfaceArray : Animation_Access_Array_Access);
 
 end org.allbinary.animation.compound.SimultaneousCompoundIndexedAnimation_Package;

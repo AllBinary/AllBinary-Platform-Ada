@@ -25,6 +25,7 @@ with org.allbinary.business.DynamicObjectData_Package; use org.allbinary.busines
 with org.allbinary.business.advertisement.AdvertisementsInterface_Package; use org.allbinary.business.advertisement.AdvertisementsInterface_Package;
 with org.allbinary.business.advertisement.search.AdvertisementSearchInterface_Package; use org.allbinary.business.advertisement.search.AdvertisementSearchInterface_Package;
 with org.allbinary.business.advertisement.campaign.AdvertisementCampaignInterface_Package; use org.allbinary.business.advertisement.campaign.AdvertisementCampaignInterface_Package;
+with org.allbinary.business.advertisement.campaign.AdvertisementCampaignData_Package; use org.allbinary.business.advertisement.campaign.AdvertisementCampaignData_Package;
 
 package org.allbinary.business.advertisement.campaign.AdvertisementCampaign_Package is
 
@@ -44,9 +45,7 @@ package org.allbinary.business.advertisement.campaign.AdvertisementCampaign_Pack
    procedure Initialize (This : in out AdvertisementCampaign'Class; hashMap : HashMap_Access);
    function Create (hashMap : HashMap_Access) return AdvertisementCampaign_Access;
    function getComponent (This : in out AdvertisementCampaign) return Java_Object_Access;
-   procedure getComponent (This : in out AdvertisementCampaign);
    function getName (This : in out AdvertisementCampaign) return Unbounded_String;
-   procedure getName (This : in out AdvertisementCampaign);
    procedure setComponentName (This : in out AdvertisementCampaign; name : Unbounded_String);
    procedure setName (This : in out AdvertisementCampaign; name : Unbounded_String);
    function search (This : in out AdvertisementCampaign; advertisementSearchInterface : AdvertisementSearchInterface_Access) return AdvertisementsInterface_Access;

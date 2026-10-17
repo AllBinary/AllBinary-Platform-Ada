@@ -32,7 +32,7 @@ package body taghelpers.ViewHelperFactory_Package is
    function Create return ViewHelperFactory_Access is
       This : constant ViewHelperFactory_Access := new ViewHelperFactory;
    begin
-      Initialize (This.all);
+      ViewHelperFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

@@ -32,7 +32,7 @@ package body org.allbinary.media.graphics.geography.map.event.GeographicMapCellP
    function Create (anyType : Java_Object_Access; geographicMapCellPosition : CellPosition_Access) return GeographicMapCellPositionEvent_Access is
       This : constant GeographicMapCellPositionEvent_Access := new GeographicMapCellPositionEvent;
    begin
-      Initialize (This.all, anyType, geographicMapCellPosition);
+      GeographicMapCellPositionEvent_Package.Initialize (This.all, anyType, geographicMapCellPosition);
       return This;
    end Create;
 
@@ -59,20 +59,6 @@ package body org.allbinary.media.graphics.geography.map.event.GeographicMapCellP
         stringBuffer.append (To_Unbounded_String ("" & ASCII.LF & "GeographicMapCellPosition: "));
         stringBuffer.append (StringUtil_Package.getInstance.toString (This.getGeographicMapCellPosition));
         return stringBuffer.toString;
-   end toString;
-
-   procedure getGeographicMapCellPosition (This : in out GeographicMapCellPositionEvent) is
-      Java_Result : constant GeographicMapCellPosition_Access := GeographicMapCellPositionEvent'Class (This).getGeographicMapCellPosition;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getGeographicMapCellPosition;
-
-   procedure toString (This : in out GeographicMapCellPositionEvent) is
-      Java_Result : constant Unbounded_String := GeographicMapCellPositionEvent'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end toString;
 
 end org.allbinary.media.graphics.geography.map.event.GeographicMapCellPositionEvent_Package;

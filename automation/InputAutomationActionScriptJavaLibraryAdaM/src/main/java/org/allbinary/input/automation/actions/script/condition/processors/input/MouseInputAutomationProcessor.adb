@@ -30,7 +30,7 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
    function Create return MouseInputAutomationProcessor_Access is
       This : constant MouseInputAutomationProcessor_Access := new MouseInputAutomationProcessor;
    begin
-      Initialize (This.all);
+      MouseInputAutomationProcessor_Package.Initialize (This.all);
       return This;
    end Create;
 

@@ -32,7 +32,7 @@ package body views.business.context.modules.storefront.customizer.hedges.header.
    function Create (transformInfoInterface : TransformInfoInterface_Access) return TopBarView_Access is
       This : constant TopBarView_Access := new TopBarView;
    begin
-      Initialize (This.all, transformInfoInterface);
+      TopBarView_Package.Initialize (This.all, transformInfoInterface);
       return This;
    end Create;
 
@@ -84,13 +84,6 @@ package body views.business.context.modules.storefront.customizer.hedges.header.
    begin
       null;
    end toXmlNode;
-
-   procedure view (This : in out TopBarView) is
-      Java_Result : constant Unbounded_String := TopBarView'Class (This).view;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end view;
 
 end views.business.context.modules.storefront.customizer.hedges.header.TopBarView_Package;
 

@@ -29,7 +29,7 @@ package body org.allbinary.game.tick.TickableLayerProcessor_Package is
    function Create return TickableLayerProcessor_Access is
       This : constant TickableLayerProcessor_Access := new TickableLayerProcessor;
    begin
-      Initialize (This.all);
+      TickableLayerProcessor_Package.Initialize (This.all);
       return This;
    end Create;
 

@@ -76,27 +76,16 @@ package admin.tags.AuthenticationTag_Package is
    procedure setNewPassword (This : in out AuthenticationTag; value : Unbounded_String);
    procedure setRoles (This : in out AuthenticationTag; values : BasicArrayList_Access);
    function changePassword (This : in out AuthenticationTag) return Boolean;
-   procedure changePassword (This : in out AuthenticationTag);
    function newPassword (This : in out AuthenticationTag) return Boolean;
-   procedure newPassword (This : in out AuthenticationTag);
    function invalidateSession (This : in out AuthenticationTag) return Integer;
-   procedure invalidateSession (This : in out AuthenticationTag);
    function isSessionOld (This : in out AuthenticationTag) return Boolean;
-   procedure isSessionOld (This : in out AuthenticationTag);
    function isRoleValid (This : in out AuthenticationTag) return Boolean;
-   procedure isRoleValid (This : in out AuthenticationTag);
    function validRole (This : in out AuthenticationTag) return Unbounded_String;
-   procedure validRole (This : in out AuthenticationTag);
    function invalidRole (This : in out AuthenticationTag) return Unbounded_String;
-   procedure invalidRole (This : in out AuthenticationTag);
    function isAuthenticationSessionValid (This : in out AuthenticationTag) return Boolean;
-   procedure isAuthenticationSessionValid (This : in out AuthenticationTag);
    function processIfNewLogin (This : in out AuthenticationTag) return Boolean;
-   procedure processIfNewLogin (This : in out AuthenticationTag);
    function processInvalidation (This : in out AuthenticationTag) return Boolean;
-   procedure processInvalidation (This : in out AuthenticationTag);
    function doStartTag (This : in out AuthenticationTag) return Integer;
-   procedure doStartTag (This : in out AuthenticationTag);
 
 end admin.tags.AuthenticationTag_Package;
 

@@ -29,7 +29,7 @@ package body org.allbinary.game.configuration.feature.SensorFeature_Package is
    function Create (name : Unbounded_String) return SensorFeature_Access is
       This : constant SensorFeature_Access := new SensorFeature;
    begin
-      Initialize (This.all, name);
+      SensorFeature_Package.Initialize (This.all, name);
       return This;
    end Create;
 

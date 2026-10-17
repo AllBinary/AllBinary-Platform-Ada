@@ -34,7 +34,7 @@ package body org.allbinary.animation.special.SpecialAnimation_Package is
    function Create (animationBehavior : AnimationBehavior_Access) return SpecialAnimation_Access is
       This : constant SpecialAnimation_Access := new SpecialAnimation;
    begin
-      Initialize (This.all, animationBehavior);
+      SpecialAnimation_Package.Initialize (This.all, animationBehavior);
       return This;
    end Create;
 
@@ -69,20 +69,6 @@ package body org.allbinary.animation.special.SpecialAnimation_Package is
    begin
         null;
    end process;
-
-   procedure getInstance is
-      Java_Result : constant SpecialAnimation_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure isComplete (This : in out SpecialAnimation) is
-      Java_Result : constant Boolean := SpecialAnimation'Class (This).isComplete;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isComplete;
 
 begin
    null;

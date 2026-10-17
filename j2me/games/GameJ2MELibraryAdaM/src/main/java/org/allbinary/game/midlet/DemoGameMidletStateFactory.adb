@@ -34,20 +34,13 @@ package body org.allbinary.game.midlet.DemoGameMidletStateFactory_Package is
    function Create return DemoGameMidletStateFactory_Access is
       This : constant DemoGameMidletStateFactory_Access := new DemoGameMidletStateFactory;
    begin
-      Initialize (This.all);
+      DemoGameMidletStateFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
    function getInstance return DemoGameMidletStateFactory_Access is
    begin
         return DemoGameMidletStateFactory_Package.STATE;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant DemoGameMidletStateFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

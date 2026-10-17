@@ -23,6 +23,8 @@ with AllBinary_Java; use AllBinary_Java;
 --  with java.util.Arrays_Package; use java.util.Arrays_Package;
 with org.allbinary.TsUtil_Package; use org.allbinary.TsUtil_Package;
 with org.allbinary.logic.util.visitor.Visitor_Package; use org.allbinary.logic.util.visitor.Visitor_Package;
+with org.allbinary.logic.math.permutations.ComparableObject_Package; use org.allbinary.logic.math.permutations.ComparableObject_Package;
+with org.allbinary.logic.math.permutations.ObjectPermutationVisitor_Package; use org.allbinary.logic.math.permutations.ObjectPermutationVisitor_Package;
 
 package org.allbinary.logic.math.permutations.OrderedObjectArrayPermutationUtil_Package is
 
@@ -43,7 +45,6 @@ package org.allbinary.logic.math.permutations.OrderedObjectArrayPermutationUtil_
    procedure Initialize (This : in out OrderedObjectArrayPermutationUtil'Class);
    function Create return OrderedObjectArrayPermutationUtil_Access;
    function getInstance return OrderedObjectArrayPermutationUtil_Access;
-   procedure getInstance;
    procedure getNext (This : in out OrderedObjectArrayPermutationUtil; data : Java_Object_Access_Array_Access);
    procedure swap (This : in out OrderedObjectArrayPermutationUtil; data : Java_Object_Access_Array_Access; a : Integer; b : Integer);
    function factorial (This : in out OrderedObjectArrayPermutationUtil; dataLength : Integer) return Long_Long_Integer;

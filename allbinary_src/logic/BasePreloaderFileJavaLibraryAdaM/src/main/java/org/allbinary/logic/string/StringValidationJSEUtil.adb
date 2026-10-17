@@ -30,7 +30,7 @@ package body org.allbinary.logic.string_Id.StringValidationJSEUtil_Package is
    function Create return StringValidationJSEUtil_Access is
       This : constant StringValidationJSEUtil_Access := new StringValidationJSEUtil;
    begin
-      Initialize (This.all);
+      StringValidationJSEUtil_Package.Initialize (This.all);
       return This;
    end Create;
 

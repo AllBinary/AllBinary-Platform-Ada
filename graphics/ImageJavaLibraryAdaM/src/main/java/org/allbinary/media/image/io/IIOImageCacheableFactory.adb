@@ -30,7 +30,7 @@ package body org.allbinary.media.image.io.IIOImageCacheableFactory_Package is
    function Create return IIOImageCacheableFactory_Access is
       This : constant IIOImageCacheableFactory_Access := new IIOImageCacheableFactory;
    begin
-      Initialize (This.all);
+      IIOImageCacheableFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

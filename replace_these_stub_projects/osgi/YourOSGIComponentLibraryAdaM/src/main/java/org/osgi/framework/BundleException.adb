@@ -17,7 +17,7 @@ package body org.osgi.framework.BundleException_Package is
    function Create return BundleException_Access is
       This : constant BundleException_Access := new BundleException;
    begin
-      Initialize (This.all);
+      BundleException_Package.Initialize (This.all);
       return This;
    end Create;
 

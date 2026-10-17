@@ -35,7 +35,7 @@ package body org.allbinary.logic.visual.transform.BasicTransformer_Package is
    function Create (abeClientInformation : AbeClientInformationInterface_Access; transformInfoInterface : TransformInfoInterface_Access) return BasicTransformer_Access is
       This : constant BasicTransformer_Access := new BasicTransformer;
    begin
-      Initialize (This.all, abeClientInformation, transformInfoInterface);
+      BasicTransformer_Package.Initialize (This.all, abeClientInformation, transformInfoInterface);
       return This;
    end Create;
 

@@ -32,6 +32,7 @@ with org.allbinary.logic.string_Id.StringValidationUtil_Package; use org.allbina
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
+with org.allbinary.logic.visual.transform.template.customizer.widgets.title.TitleData_Package; use org.allbinary.logic.visual.transform.template.customizer.widgets.title.TitleData_Package;
 
 package org.allbinary.logic.visual.transform.template.customizer.widgets.title.TitleView_Package is
 
@@ -62,10 +63,8 @@ package org.allbinary.logic.visual.transform.template.customizer.widgets.title.T
    procedure Initialize (This : in out TitleView'Class);
    function Create return TitleView_Access;
    function getTitle (This : in out TitleView) return Unbounded_String;
-   procedure getTitle (This : in out TitleView);
    procedure getFormData (This : in out TitleView; hashMap : HashMap_Access);
    function toHashMap (This : in out TitleView) return HashMap_Access;
-   procedure toHashMap (This : in out TitleView);
    function toXmlNode (This : in out TitleView; document : Document_Access) return Node_Access;
    procedure toXmlNode (This : in out TitleView; document : Document_Access);
 

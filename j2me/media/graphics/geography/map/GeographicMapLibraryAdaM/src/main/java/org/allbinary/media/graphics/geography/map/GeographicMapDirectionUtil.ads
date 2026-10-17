@@ -24,6 +24,7 @@ with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.
 with org.allbinary.direction.Direction_Package; use org.allbinary.direction.Direction_Package;
 with org.allbinary.direction.DirectionFactory_Package; use org.allbinary.direction.DirectionFactory_Package;
 with org.allbinary.graphics.CellPosition_Package; use org.allbinary.graphics.CellPosition_Package;
+with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
 
 package org.allbinary.media.graphics.geography.map.GeographicMapDirectionUtil_Package is
 
@@ -47,7 +48,6 @@ package org.allbinary.media.graphics.geography.map.GeographicMapDirectionUtil_Pa
    procedure Initialize (This : in out GeographicMapDirectionUtil'Class);
    function Create return GeographicMapDirectionUtil_Access;
    function getInstance return GeographicMapDirectionUtil_Access;
-   procedure getInstance;
    function getDirectionFromCellPositionToAdjacentCellPosition (This : in out GeographicMapDirectionUtil; fromGeographicMapCellPosition : GeographicMapCellPosition_Access; toGeographicMapCellPosition : GeographicMapCellPosition_Access) return Direction_Access;
    procedure getDirectionFromCellPositionToAdjacentCellPosition (This : in out GeographicMapDirectionUtil; fromGeographicMapCellPosition : GeographicMapCellPosition_Access; toGeographicMapCellPosition : GeographicMapCellPosition_Access);
    function getEightDirectionFromCellPositionToAdjacentCellPosition (This : in out GeographicMapDirectionUtil; fromGeographicMapCellPosition : GeographicMapCellPosition_Access; toGeographicMapCellPosition : GeographicMapCellPosition_Access) return Direction_Access;

@@ -36,7 +36,7 @@ package body org.allbinary.logic.visual.transform.template.TransformTemplateFact
    function Create return TransformTemplateFactory_Access is
       This : constant TransformTemplateFactory_Access := new TransformTemplateFactory;
    begin
-      Initialize (This.all);
+      TransformTemplateFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -62,13 +62,6 @@ package body org.allbinary.logic.visual.transform.template.TransformTemplateFact
             Java_Throw (e);
                 end;
         end;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant TransformTemplateFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
    procedure getInstance (This : in out TransformTemplateFactory; abeClientInformation : AbeClientInformationInterface_Access; templateName : Unbounded_String; propertiesHashMap : HashMap_Access; pageContext : PageContext_Access) is

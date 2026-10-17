@@ -41,7 +41,6 @@ package org.allbinary.logic.visual.dhtml.html.name.HtmlNameMathData_Package is
    procedure Initialize (This : in out HtmlNameMathData'Class);
    function Create return HtmlNameMathData_Access;
    function getInstance return HtmlNameMathData_Access;
-   procedure getInstance;
 
 end org.allbinary.logic.visual.dhtml.html.name.HtmlNameMathData_Package;
 

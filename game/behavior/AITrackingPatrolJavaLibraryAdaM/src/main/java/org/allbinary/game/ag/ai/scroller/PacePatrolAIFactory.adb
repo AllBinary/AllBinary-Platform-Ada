@@ -28,7 +28,7 @@ package body org.allbinary.game.ag.ai.scroller.PacePatrolAIFactory_Package is
    function Create return PacePatrolAIFactory_Access is
       This : constant PacePatrolAIFactory_Access := new PacePatrolAIFactory;
    begin
-      Initialize (This.all);
+      PacePatrolAIFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

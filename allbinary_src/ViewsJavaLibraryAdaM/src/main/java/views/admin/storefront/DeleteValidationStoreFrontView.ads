@@ -51,11 +51,8 @@ package views.admin.storefront.DeleteValidationStoreFrontView_Package is
    procedure Initialize (This : in out DeleteValidationStoreFrontView'Class; transformInfoInterface : TransformInfoInterface_Access);
    function Create (transformInfoInterface : TransformInfoInterface_Access) return DeleteValidationStoreFrontView_Access;
    function isValid (This : in out DeleteValidationStoreFrontView) return Boolean;
-   procedure isValid (This : in out DeleteValidationStoreFrontView);
    function validationInfo (This : in out DeleteValidationStoreFrontView) return Unbounded_String;
-   procedure validationInfo (This : in out DeleteValidationStoreFrontView);
    function toValidationInfoDoc (This : in out DeleteValidationStoreFrontView) return Document_Access;
-   procedure toValidationInfoDoc (This : in out DeleteValidationStoreFrontView);
    function toValidationInfoNode (This : in out DeleteValidationStoreFrontView; document : Document_Access) return Node_Access;
    procedure toValidationInfoNode (This : in out DeleteValidationStoreFrontView; document : Document_Access);
 

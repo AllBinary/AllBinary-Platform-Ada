@@ -32,6 +32,7 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.game.configuration.event.GameFeatureListenerInterface_Package; use org.allbinary.game.configuration.event.GameFeatureListenerInterface_Package;
+with org.allbinary.game.configuration.event.GameFeatureEvent_Package; use org.allbinary.game.configuration.event.GameFeatureEvent_Package;
 
 package org.allbinary.game.configuration.event.BaseChangedGameFeatureListener_Package is
 
@@ -69,7 +70,6 @@ package org.allbinary.game.configuration.event.BaseChangedGameFeatureListener_Pa
    function isChangedFeature (This : in out BaseChangedGameFeatureListener; gameFeature : Feature_Access) return Boolean;
    procedure isChangedFeature (This : in out BaseChangedGameFeatureListener; gameFeature : Feature_Access);
    function isChanged (This : in out BaseChangedGameFeatureListener) return Boolean;
-   procedure isChanged (This : in out BaseChangedGameFeatureListener);
 
 end org.allbinary.game.configuration.event.BaseChangedGameFeatureListener_Package;
 

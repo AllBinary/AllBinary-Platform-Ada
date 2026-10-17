@@ -25,6 +25,7 @@ with org.allbinary.game.input.Input_Package; use org.allbinary.game.input.Input_
 with org.allbinary.game.input.InputFactory_Package; use org.allbinary.game.input.InputFactory_Package;
 with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.game.input.event.GameKeyEvent_Package; use org.allbinary.game.input.event.GameKeyEvent_Package;
 
 package org.allbinary.game.input.event.GameKeyEventFactory_Package is
 
@@ -51,7 +52,6 @@ package org.allbinary.game.input.event.GameKeyEventFactory_Package is
    procedure Initialize (This : in out GameKeyEventFactory'Class);
    function Create return GameKeyEventFactory_Access;
    function getInstance return GameKeyEventFactory_Access;
-   procedure getInstance;
    procedure init (This : in out GameKeyEventFactory);
    function getInstanceForKey (This : in out GameKeyEventFactory; anyType : GameKeyEventSourceInterface_Access; key : Integer) return GameKeyEvent_Access;
    procedure getInstanceForKey (This : in out GameKeyEventFactory; anyType : GameKeyEventSourceInterface_Access; key : Integer);

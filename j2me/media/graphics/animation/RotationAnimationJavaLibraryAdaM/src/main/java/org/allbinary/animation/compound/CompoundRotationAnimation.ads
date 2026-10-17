@@ -58,22 +58,17 @@ package org.allbinary.animation.compound.CompoundRotationAnimation_Package is
    function Create (animationInterfaceArray : RotationAnimation_Access_Array_Access; animationBehavior : AnimationBehavior_Access) return CompoundRotationAnimation_Access;
    procedure setFrame (This : in out CompoundRotationAnimation; index : Integer);
    function getFrame (This : in out CompoundRotationAnimation) return Integer;
-   procedure getFrame (This : in out CompoundRotationAnimation);
    function getAnimationSize (This : in out CompoundRotationAnimation) return Integer;
-   procedure getAnimationSize (This : in out CompoundRotationAnimation);
    function getSize (This : in out CompoundRotationAnimation) return Integer;
-   procedure getSize (This : in out CompoundRotationAnimation);
    procedure previousFrame (This : in out CompoundRotationAnimation);
    procedure nextFrame (This : in out CompoundRotationAnimation);
    procedure previousRotation (This : in out CompoundRotationAnimation);
    procedure nextRotation (This : in out CompoundRotationAnimation);
    procedure setSequence (This : in out CompoundRotationAnimation; sequence : Integer_Array_Access);
    function getSequence (This : in out CompoundRotationAnimation) return Integer_Array_Access;
-   procedure getSequence (This : in out CompoundRotationAnimation);
    procedure paintXY (This : in out CompoundRotationAnimation; graphics : Graphics_Access; x : Integer; y : Integer);
    procedure paintThreedXYZ (This : in out CompoundRotationAnimation; graphics : Graphics_Access; x : Integer; y : Integer; z : Integer);
    function getCurrentAnimation (This : in out CompoundRotationAnimation) return IndexedAnimation_Access;
-   procedure getCurrentAnimation (This : in out CompoundRotationAnimation);
    procedure nextAnimation (This : in out CompoundRotationAnimation);
    procedure previousAnimation (This : in out CompoundRotationAnimation);
    procedure setAnimation (This : in out CompoundRotationAnimation; index : Integer);
@@ -82,9 +77,7 @@ package org.allbinary.animation.compound.CompoundRotationAnimation_Package is
    procedure adjustFrameToAngle (This : in out CompoundRotationAnimation; newAngle : Angle_Access);
    procedure adjustFrame (This : in out CompoundRotationAnimation; angle : Short_Integer);
    function getAngleInfoP (This : in out CompoundRotationAnimation) return AngleInfo_Access;
-   procedure getAngleInfoP (This : in out CompoundRotationAnimation);
    function getAnimationInterfaceArray (This : in out CompoundRotationAnimation) return RotationAnimation_Access_Array_Access;
-   procedure getAnimationInterfaceArray (This : in out CompoundRotationAnimation);
    procedure setAnimationInterfaceArray (This : in out CompoundRotationAnimation; animationInterfaceArray : RotationAnimation_Access_Array_Access);
    procedure set (This : in out CompoundRotationAnimation; gl : GL_Access);
 

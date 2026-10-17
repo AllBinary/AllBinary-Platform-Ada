@@ -25,6 +25,7 @@ with AllBinary_Java; use AllBinary_Java;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.allbinary.logic.communication.smtp.EmailInterface_Package; use org.allbinary.logic.communication.smtp.EmailInterface_Package;
+with org.allbinary.logic.communication.smtp.Email_Package; use org.allbinary.logic.communication.smtp.Email_Package;
 
 package org.allbinary.logic.communication.smtp.AbEmail_Package is
 
@@ -43,19 +44,13 @@ package org.allbinary.logic.communication.smtp.AbEmail_Package is
    procedure Initialize (This : in out AbEmail'Class; server : Unbounded_String; from : Unbounded_String; to : Unbounded_String; subject : Unbounded_String; textBody : Unbounded_String; htmlAttachment : Unbounded_String; contentBase : Unbounded_String);
    function Create (server : Unbounded_String; from : Unbounded_String; to : Unbounded_String; subject : Unbounded_String; textBody : Unbounded_String; htmlAttachment : Unbounded_String; contentBase : Unbounded_String) return AbEmail_Access;
    function getMimeMessage (This : in out AbEmail) return MimeMessage_Access;
-   procedure getMimeMessage (This : in out AbEmail);
    function getDebugInfo (This : in out AbEmail) return Unbounded_String;
-   procedure getDebugInfo (This : in out AbEmail);
    function log (This : in out AbEmail) return Unbounded_String;
-   procedure log (This : in out AbEmail);
    function toHashMap (This : in out AbEmail) return HashMap_Access;
-   procedure toHashMap (This : in out AbEmail);
    function toXmlNode (This : in out AbEmail; document : Document_Access) return Node_Access;
    procedure toXmlNode (This : in out AbEmail; document : Document_Access);
    function getEmail (This : in out AbEmail) return Email_Access;
-   procedure getEmail (This : in out AbEmail);
    function toXmlDoc (This : in out AbEmail) return Document_Access;
-   procedure toXmlDoc (This : in out AbEmail);
 
 end org.allbinary.logic.communication.smtp.AbEmail_Package;
 

@@ -49,7 +49,7 @@ package body org.allbinary.graphics.j2me.workarea.tools.ToolJPanel_Package is
    function Create return ToolJPanel_Access is
       This : constant ToolJPanel_Access := new ToolJPanel;
    begin
-      Initialize (This.all);
+      ToolJPanel_Package.Initialize (This.all);
       return This;
    end Create;
 

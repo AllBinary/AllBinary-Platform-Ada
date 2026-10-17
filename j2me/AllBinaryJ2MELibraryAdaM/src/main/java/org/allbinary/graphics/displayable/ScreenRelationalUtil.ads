@@ -9,6 +9,7 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
+with org.allbinary.graphics.displayable.DisplayInfoSingleton_Package; use org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
 
 package org.allbinary.graphics.displayable.ScreenRelationalUtil_Package is
 
@@ -24,7 +25,6 @@ package org.allbinary.graphics.displayable.ScreenRelationalUtil_Package is
    procedure Initialize (This : in out ScreenRelationalUtil'Class);
    function Create return ScreenRelationalUtil_Access;
    function getInstance return ScreenRelationalUtil_Access;
-   procedure getInstance;
    function getScaleImage (This : in out ScreenRelationalUtil; image : Image_Access) return Float;
    procedure getScaleImage (This : in out ScreenRelationalUtil; image : Image_Access);
    function getScaleWH (This : in out ScreenRelationalUtil; aWidth : Integer; aHeight : Integer) return Float;

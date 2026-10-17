@@ -45,7 +45,6 @@ package views.ValidationOnlyTempUtil_Package is
    procedure Initialize (This : in out ValidationOnlyTempUtil'Class);
    function Create return ValidationOnlyTempUtil_Access;
    function getInstance return ValidationOnlyTempUtil_Access;
-   procedure getInstance;
    function view (This : in out ValidationOnlyTempUtil; validationComponentInterface : ValidationComponentInterface_Access) return Unbounded_String;
    procedure view (This : in out ValidationOnlyTempUtil; validationComponentInterface : ValidationComponentInterface_Access);
 

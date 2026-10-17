@@ -21,6 +21,7 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.game.score.HighScores_Package; use org.allbinary.game.score.HighScores_Package;
 
 package org.allbinary.game.score.NullHighScoresSingletonFactory_Package is
 
@@ -37,7 +38,6 @@ package org.allbinary.game.score.NullHighScoresSingletonFactory_Package is
    procedure Initialize (This : in out NullHighScoresSingletonFactory'Class);
    function Create return NullHighScoresSingletonFactory_Access;
    function getInstance return HighScores_Access;
-   procedure getInstance;
 
 end org.allbinary.game.score.NullHighScoresSingletonFactory_Package;
 

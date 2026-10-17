@@ -39,7 +39,7 @@ package body org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeC
    function Create (parent : Java_Object_Access; geographicMapCellPosition : GeographicMapCellPosition_Access; pathFindingNodeCostInfo : PathFindingNodeCostInfo_Access) return PathFindingNodeCost_Access is
       This : constant PathFindingNodeCost_Access := new PathFindingNodeCost;
    begin
-      Initialize (This.all, parent, geographicMapCellPosition, pathFindingNodeCostInfo);
+      PathFindingNodeCost_Package.Initialize (This.all, parent, geographicMapCellPosition, pathFindingNodeCostInfo);
       return This;
    end Create;
 
@@ -77,26 +77,12 @@ package body org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeC
         return stringBuffer.toString;
    end toString;
 
-   procedure getPathFindingNodeCostInfo (This : in out PathFindingNodeCost) is
-      Java_Result : constant PathFindingNodeCostInfo_Access := PathFindingNodeCost'Class (This).getPathFindingNodeCostInfo;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getPathFindingNodeCostInfo;
-
    procedure compareTo (This : in out PathFindingNodeCost; pathFindingNodeCost : PathFindingNodeCost_Access) is
       Java_Result : constant Integer := PathFindingNodeCost'Class (This).compareTo (pathFindingNodeCost);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end compareTo;
-
-   procedure toString (This : in out PathFindingNodeCost) is
-      Java_Result : constant Unbounded_String := PathFindingNodeCost'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toString;
 
 begin
    null;

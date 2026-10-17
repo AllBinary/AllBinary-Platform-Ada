@@ -72,9 +72,7 @@ package org.allbinary.business.init.InstallerInfo_Package is
    procedure setPassword (This : in out InstallerInfo; password : Unbounded_String);
    procedure updateIfNeeded (This : in out InstallerInfo);
    function getUserName (This : in out InstallerInfo) return Unbounded_String;
-   procedure getUserName (This : in out InstallerInfo);
    function getPassword (This : in out InstallerInfo) return Unbounded_String;
-   procedure getPassword (This : in out InstallerInfo);
    function isValid (This : in out InstallerInfo; userName : Unbounded_String; password : Unbounded_String) return Boolean;
    procedure isValid (This : in out InstallerInfo; userName : Unbounded_String; password : Unbounded_String);
 

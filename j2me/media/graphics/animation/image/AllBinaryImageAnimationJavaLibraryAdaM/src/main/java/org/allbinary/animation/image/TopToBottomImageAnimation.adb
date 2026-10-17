@@ -36,7 +36,7 @@ package body org.allbinary.animation.image.TopToBottomImageAnimation_Package is
    function Create (image : Image_Access; sequenceArray : Integer_Array_Access; animationBehavior : AnimationBehavior_Access) return TopToBottomImageAnimation_Access is
       This : constant TopToBottomImageAnimation_Access := new TopToBottomImageAnimation;
    begin
-      Initialize (This.all, image, sequenceArray, animationBehavior);
+      TopToBottomImageAnimation_Package.Initialize (This.all, image, sequenceArray, animationBehavior);
       return This;
    end Create;
 

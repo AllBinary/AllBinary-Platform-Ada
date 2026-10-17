@@ -30,7 +30,7 @@ package body org.allbinary.logic.communication.smtp.EmailData_Package is
    function Create return EmailData_Access is
       This : constant EmailData_Access := new EmailData;
    begin
-      Initialize (This.all);
+      EmailData_Package.Initialize (This.all);
       return This;
    end Create;
 

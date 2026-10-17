@@ -52,9 +52,7 @@ package tags.StoreWorkFlowTag_Package is
    function Create return StoreWorkFlowTag_Access;
    procedure setName (This : in out StoreWorkFlowTag; value : Unbounded_String);
    function process (This : in out StoreWorkFlowTag) return Integer;
-   procedure process (This : in out StoreWorkFlowTag);
    function doStartTag (This : in out StoreWorkFlowTag) return Integer;
-   procedure doStartTag (This : in out StoreWorkFlowTag);
 
 end tags.StoreWorkFlowTag_Package;
 

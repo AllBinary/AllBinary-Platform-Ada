@@ -33,7 +33,7 @@ package body org.allbinary.logic.communication.smtp.event.handler.UserEmailEvent
    function Create return UserEmailEventHandler_Access is
       This : constant UserEmailEventHandler_Access := new UserEmailEventHandler;
    begin
-      Initialize (This.all);
+      UserEmailEventHandler_Package.Initialize (This.all);
       return This;
    end Create;
 

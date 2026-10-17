@@ -41,7 +41,7 @@ package body org.allbinary.game.layer.waypoint.Waypoint2SelectedLogHelper_Packag
    function Create return Waypoint2SelectedLogHelper_Access is
       This : constant Waypoint2SelectedLogHelper_Access := new Waypoint2SelectedLogHelper;
    begin
-      Initialize (This.all);
+      Waypoint2SelectedLogHelper_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -281,13 +281,6 @@ package body org.allbinary.game.layer.waypoint.Waypoint2SelectedLogHelper_Packag
    begin
         This.logUtil.putF (StringMaker_Package.Create.append (associatedAdvancedRTSGameLayer.getName).append (To_Unbounded_String (" - target moved so retargeting")).toString, This'Unchecked_Access, To_Unbounded_String ("turnTo"));
    end targetMovedSoRetarget;
-
-   procedure getInstance is
-      Java_Result : constant Waypoint2LogHelper_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

@@ -26,6 +26,11 @@ with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics
 with org.allbinary.graphics.paint.Paintable_Package; use org.allbinary.graphics.paint.Paintable_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.input.motion.button.TouchButtonLocationHelper_Package; use org.allbinary.input.motion.button.TouchButtonLocationHelper_Package;
+with org.allbinary.input.motion.button.CommonButtons_Package; use org.allbinary.input.motion.button.CommonButtons_Package;
+with org.allbinary.input.motion.button.TouchButton_Package; use org.allbinary.input.motion.button.TouchButton_Package;
+with org.allbinary.input.motion.button.BasicTouchInputFactory_Package; use org.allbinary.input.motion.button.BasicTouchInputFactory_Package;
+with org.allbinary.input.motion.button.TouchButtonBlankResource_Package; use org.allbinary.input.motion.button.TouchButtonBlankResource_Package;
 
 package org.allbinary.input.motion.button.TouchButtonsMappingPaintable_Package is
 
@@ -51,7 +56,6 @@ package org.allbinary.input.motion.button.TouchButtonsMappingPaintable_Package i
    function Create (basicColor : BasicColor_Access) return TouchButtonsMappingPaintable_Access;
    procedure init (This : in out TouchButtonsMappingPaintable);
    function createPaintableTable (This : in out TouchButtonsMappingPaintable) return Paintable_Access_Array_Access_Array_Access;
-   procedure createPaintableTable (This : in out TouchButtonsMappingPaintable);
    procedure paint (This : in out TouchButtonsMappingPaintable; graphics : Graphics_Access);
 
 end org.allbinary.input.motion.button.TouchButtonsMappingPaintable_Package;

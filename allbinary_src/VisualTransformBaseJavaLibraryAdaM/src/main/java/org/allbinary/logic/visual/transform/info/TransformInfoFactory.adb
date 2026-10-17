@@ -30,20 +30,13 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoFactory_Pack
    function Create return TransformInfoFactory_Access is
       This : constant TransformInfoFactory_Access := new TransformInfoFactory;
    begin
-      Initialize (This.all);
+      TransformInfoFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
    function getInstance (This : in out TransformInfoFactory) return TransformInfoInterface_Access is
    begin
         return null;
-   end getInstance;
-
-   procedure getInstance (This : in out TransformInfoFactory) is
-      Java_Result : constant TransformInfoInterface_Access := TransformInfoFactory'Class (This).getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 end org.allbinary.logic.visual.transform.info.TransformInfoFactory_Package;

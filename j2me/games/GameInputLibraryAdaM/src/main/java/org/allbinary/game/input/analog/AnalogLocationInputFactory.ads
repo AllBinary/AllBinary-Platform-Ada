@@ -10,6 +10,7 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.game.input.analog.AnalogLocationInput_Package; use org.allbinary.game.input.analog.AnalogLocationInput_Package;
 
 package org.allbinary.game.input.analog.AnalogLocationInputFactory_Package is
 
@@ -29,12 +30,10 @@ package org.allbinary.game.input.analog.AnalogLocationInputFactory_Package is
    procedure Initialize (This : in out AnalogLocationInputFactory'Class);
    function Create return AnalogLocationInputFactory_Access;
    function getInstance return AnalogLocationInputFactory_Access;
-   procedure getInstance;
    procedure addPlayer (This : in out AnalogLocationInputFactory; playerInputId : Integer);
    function getInstanceForPlayer (This : in out AnalogLocationInputFactory; playerInputId : Integer) return AnalogLocationInput_Access;
    procedure getInstanceForPlayer (This : in out AnalogLocationInputFactory; playerInputId : Integer);
    function getList (This : in out AnalogLocationInputFactory) return BasicArrayList_Access;
-   procedure getList (This : in out AnalogLocationInputFactory);
 
 end org.allbinary.game.input.analog.AnalogLocationInputFactory_Package;
 

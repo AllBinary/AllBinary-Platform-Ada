@@ -37,7 +37,6 @@ package org.allbinary.game.tracking.GenericTrackingLayerCircularStaticPool_Packa
    procedure Initialize (This : in out GenericTrackingLayerCircularStaticPool'Class);
    function Create return GenericTrackingLayerCircularStaticPool_Access;
    function getInstance return GenericTrackingLayerCircularStaticPool_Access;
-   procedure getInstance;
 
 end org.allbinary.game.tracking.GenericTrackingLayerCircularStaticPool_Package;
 

@@ -36,7 +36,6 @@ package org.allbinary.android.input.motion.NoMotionEventProcessor_Package is
    procedure Initialize (This : in out NoMotionEventProcessor'Class);
    function Create return NoMotionEventProcessor_Access;
    function getInstance return MotionEventProcessor_Access;
-   procedure getInstance;
 
 end org.allbinary.android.input.motion.NoMotionEventProcessor_Package;
 

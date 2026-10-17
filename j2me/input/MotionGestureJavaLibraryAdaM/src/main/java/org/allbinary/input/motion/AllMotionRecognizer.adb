@@ -40,7 +40,7 @@ package body org.allbinary.input.motion.AllMotionRecognizer_Package is
    function Create return AllMotionRecognizer_Access is
       This : constant AllMotionRecognizer_Access := new AllMotionRecognizer;
    begin
-      Initialize (This.all);
+      AllMotionRecognizer_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -119,13 +119,6 @@ package body org.allbinary.input.motion.AllMotionRecognizer_Package is
    function getMotionGestureRecognizer (This : in out AllMotionRecognizer) return MotionGestureRecognizer_Access is
    begin
         return This.motionGestureRecognizer;
-   end getMotionGestureRecognizer;
-
-   procedure getMotionGestureRecognizer (This : in out AllMotionRecognizer) is
-      Java_Result : constant MotionGestureRecognizer_Access := AllMotionRecognizer'Class (This).getMotionGestureRecognizer;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getMotionGestureRecognizer;
 
 begin

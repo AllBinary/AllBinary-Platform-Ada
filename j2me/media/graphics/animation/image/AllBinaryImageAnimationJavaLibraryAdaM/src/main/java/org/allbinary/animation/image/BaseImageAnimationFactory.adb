@@ -49,7 +49,7 @@ package body org.allbinary.animation.image.BaseImageAnimationFactory_Package is
    function Create (image : Image_Access; sequenceArray : Integer_Array_Access; width : Integer; height : Integer; dx : Integer; dy : Integer; animationBehaviorFactory : AnimationBehaviorFactory_Access) return BaseImageAnimationFactory_Access is
       This : constant BaseImageAnimationFactory_Access := new BaseImageAnimationFactory;
    begin
-      Initialize (This.all, image, sequenceArray, width, height, dx, dy, animationBehaviorFactory);
+      BaseImageAnimationFactory_Package.Initialize (This.all, image, sequenceArray, width, height, dx, dy, animationBehaviorFactory);
       return This;
    end Create;
 
@@ -119,41 +119,6 @@ package body org.allbinary.animation.image.BaseImageAnimationFactory_Package is
    begin
       null;
    end getInstance;
-
-   procedure getImage (This : in out BaseImageAnimationFactory) is
-      Java_Result : constant Image_Access := BaseImageAnimationFactory'Class (This).getImage;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getImage;
-
-   procedure getSequenceArray (This : in out BaseImageAnimationFactory) is
-      Java_Result : constant Integer_Array_Access := BaseImageAnimationFactory'Class (This).getSequenceArray;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSequenceArray;
-
-   procedure getAnimationFactoryInitializationVisitorP (This : in out BaseImageAnimationFactory) is
-      Java_Result : constant AnimationFactoryInitializationVisitor_Access := BaseImageAnimationFactory'Class (This).getAnimationFactoryInitializationVisitorP;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getAnimationFactoryInitializationVisitorP;
-
-   procedure getScalePropertiesP (This : in out BaseImageAnimationFactory) is
-      Java_Result : constant ScaleProperties_Access := BaseImageAnimationFactory'Class (This).getScalePropertiesP;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getScalePropertiesP;
-
-   procedure toString (This : in out BaseImageAnimationFactory) is
-      Java_Result : constant Unbounded_String := BaseImageAnimationFactory'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toString;
 
 end org.allbinary.animation.image.BaseImageAnimationFactory_Package;
 

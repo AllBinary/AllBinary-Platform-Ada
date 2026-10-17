@@ -30,7 +30,7 @@ package body org.allbinary.globals.MESSAGES_Package is
    function Create return MESSAGES_Access is
       This : constant MESSAGES_Access := new MESSAGES;
    begin
-      Initialize (This.all);
+      MESSAGES_Package.Initialize (This.all);
       return This;
    end Create;
 

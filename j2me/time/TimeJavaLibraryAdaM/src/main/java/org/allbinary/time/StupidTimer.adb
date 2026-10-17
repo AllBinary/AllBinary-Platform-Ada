@@ -20,7 +20,7 @@ package body org.allbinary.time.StupidTimer_Package is
    function Create return StupidTimer_Access is
       This : constant StupidTimer_Access := new StupidTimer;
    begin
-      Initialize (This.all);
+      StupidTimer_Package.Initialize (This.all);
       return This;
    end Create;
 

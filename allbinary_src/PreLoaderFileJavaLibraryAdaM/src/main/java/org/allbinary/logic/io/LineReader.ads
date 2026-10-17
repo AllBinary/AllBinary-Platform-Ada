@@ -24,6 +24,7 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.logic.io.AbFileInputStream_Package; use org.allbinary.logic.io.AbFileInputStream_Package;
 
 package org.allbinary.logic.io.LineReader_Package is
 
@@ -49,9 +50,7 @@ package org.allbinary.logic.io.LineReader_Package is
    procedure Initialize (This : in out LineReader'Class; fileName : Unbounded_String);
    function Create (fileName : Unbounded_String) return LineReader_Access;
    function hasNext (This : in out LineReader) return Boolean;
-   procedure hasNext (This : in out LineReader);
    function next (This : in out LineReader) return Unbounded_String;
-   procedure next (This : in out LineReader);
 
 end org.allbinary.logic.io.LineReader_Package;
 

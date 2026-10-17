@@ -29,7 +29,7 @@ package body org.allbinary.android.input.motion.event.AnalogControllerConfigurat
    function Create (anyType : Java_Object_Access) return AnalogControllerConfigurationEvent_Access is
       This : constant AnalogControllerConfigurationEvent_Access := new AnalogControllerConfigurationEvent;
    begin
-      Initialize (This.all, anyType);
+      AnalogControllerConfigurationEvent_Package.Initialize (This.all, anyType);
       return This;
    end Create;
 

@@ -58,7 +58,6 @@ package org.allbinary.business.init.WeblisketFinder_Package is
    procedure Initialize (This : in out WeblisketFinder'Class);
    function Create return WeblisketFinder_Access;
    function getInstance return WeblisketFinder_Access;
-   procedure getInstance;
    function findAll (This : in out WeblisketFinder; path : Unbounded_String) return BasicArrayList_Access;
    procedure findAll (This : in out WeblisketFinder; path : Unbounded_String);
    function getInstallationPath (This : in out WeblisketFinder; file : AbFile_Access) return Unbounded_String;

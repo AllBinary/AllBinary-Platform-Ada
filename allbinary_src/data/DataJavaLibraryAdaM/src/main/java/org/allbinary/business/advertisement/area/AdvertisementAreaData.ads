@@ -39,7 +39,6 @@ package org.allbinary.business.advertisement.area.AdvertisementAreaData_Package 
    procedure Initialize (This : in out AdvertisementAreaData'Class);
    function Create return AdvertisementAreaData_Access;
    function getInstance return AdvertisementAreaData_Access;
-   procedure getInstance;
 
 end org.allbinary.business.advertisement.area.AdvertisementAreaData_Package;
 

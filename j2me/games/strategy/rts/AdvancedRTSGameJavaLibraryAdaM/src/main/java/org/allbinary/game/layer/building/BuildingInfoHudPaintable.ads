@@ -33,6 +33,7 @@ with org.allbinary.game.layer.PathFindingLayerInterface_Package; use org.allbina
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
 with org.allbinary.graphics.font.MyFontProcessor_Package; use org.allbinary.graphics.font.MyFontProcessor_Package;
 with org.allbinary.logic.math.MathUtil_Package; use org.allbinary.logic.math.MathUtil_Package;
+with org.allbinary.game.layer.building.BuildingLayer_Package; use org.allbinary.game.layer.building.BuildingLayer_Package;
 
 package org.allbinary.game.layer.building.BuildingInfoHudPaintable_Package is
 
@@ -68,7 +69,6 @@ package org.allbinary.game.layer.building.BuildingInfoHudPaintable_Package is
    procedure Initialize (This : in out BuildingInfoHudPaintable'Class);
    function Create return BuildingInfoHudPaintable_Access;
    function getInstance return BuildingInfoHudPaintable_Access;
-   procedure getInstance;
    procedure updateMeasurement (This : in out BuildingInfoHudPaintable; graphics : Graphics_Access);
    procedure setBasicColorP (This : in out BuildingInfoHudPaintable; basicColor : BasicColor_Access);
    procedure paint (This : in out BuildingInfoHudPaintable; graphics : Graphics_Access);

@@ -47,7 +47,7 @@ package body org.allbinary.animation.SVGAsJSONSimpleLoader_Package is
    function Create return SVGAsJSONSimpleLoader_Access is
       This : constant SVGAsJSONSimpleLoader_Access := new SVGAsJSONSimpleLoader;
    begin
-      Initialize (This.all);
+      SVGAsJSONSimpleLoader_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -276,13 +276,6 @@ package body org.allbinary.animation.SVGAsJSONSimpleLoader_Package is
         end loop;
         Ada.Text_IO.Put_Line (Java_Image (stringBuilder.toString));
    end main;
-
-   procedure getInstance is
-      Java_Result : constant SVGAsJSONSimpleLoader_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure load (This : in out SVGAsJSONSimpleLoader; svgAsJson : Unbounded_String) is
       Java_Result : constant Integer_Array_Access_Array_Access := SVGAsJSONSimpleLoader'Class (This).load (svgAsJson);

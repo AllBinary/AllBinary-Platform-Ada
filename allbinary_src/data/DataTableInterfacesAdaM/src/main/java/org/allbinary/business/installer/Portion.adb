@@ -33,7 +33,7 @@ package body org.allbinary.business.installer.Portion_Package is
    function Create (hashMap : HashMap_Access) return Portion_Access is
       This : constant Portion_Access := new Portion;
    begin
-      Initialize (This.all, hashMap);
+      Portion_Package.Initialize (This.all, hashMap);
       return This;
    end Create;
 
@@ -45,20 +45,6 @@ package body org.allbinary.business.installer.Portion_Package is
    function getTotal (This : in out Portion) return Integer is
    begin
         return This.total;
-   end getTotal;
-
-   procedure getCurrent (This : in out Portion) is
-      Java_Result : constant Integer := Portion'Class (This).getCurrent;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getCurrent;
-
-   procedure getTotal (This : in out Portion) is
-      Java_Result : constant Integer := Portion'Class (This).getTotal;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getTotal;
 
 end org.allbinary.business.installer.Portion_Package;

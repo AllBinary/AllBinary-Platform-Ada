@@ -67,7 +67,7 @@ package body org.allbinary.game.midlet.GameMidlet_Package is
    function Create (clientInformationFactory : ClientInformationFactory_Access) return GameMidlet_Access is
       This : constant GameMidlet_Access := new GameMidlet;
    begin
-      Initialize (This.all, clientInformationFactory);
+      GameMidlet_Package.Initialize (This.all, clientInformationFactory);
       return This;
    end Create;
 
@@ -656,90 +656,6 @@ package body org.allbinary.game.midlet.GameMidlet_Package is
             end if;
         end if;
         return False;
-   end isDemoLoading;
-
-   procedure getInputMappingInstructionsCanvas (This : in out GameMidlet) is
-      Java_Result : constant MyCanvas_Access := GameMidlet'Class (This).getInputMappingInstructionsCanvas;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInputMappingInstructionsCanvas;
-
-   procedure getInputMappingCanvas (This : in out GameMidlet) is
-      Java_Result : constant MyCanvas_Access := GameMidlet'Class (This).getInputMappingCanvas;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInputMappingCanvas;
-
-   procedure getAboutCanvas (This : in out GameMidlet) is
-      Java_Result : constant MyCanvas_Access := GameMidlet'Class (This).getAboutCanvas;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getAboutCanvas;
-
-   procedure getHelpPaintable (This : in out GameMidlet) is
-      Java_Result : constant HelpPaintable_Access := GameMidlet'Class (This).getHelpPaintable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getHelpPaintable;
-
-   procedure createHighScoresCanvas (This : in out GameMidlet) is
-      Java_Result : constant HighScoresCanvas_Access := GameMidlet'Class (This).createHighScoresCanvas;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end createHighScoresCanvas;
-
-   procedure getGameCanvasRunnableInterface (This : in out GameMidlet) is
-      Java_Result : constant GameCanvasRunnableInterface_Access := GameMidlet'Class (This).getGameCanvasRunnableInterface;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getGameCanvasRunnableInterface;
-
-   procedure createGameLayerManager (This : in out GameMidlet) is
-      Java_Result : constant AllBinaryGameLayerManager_Access := GameMidlet'Class (This).createGameLayerManager;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end createGameLayerManager;
-
-   procedure getGameOptionsForm (This : in out GameMidlet) is
-      Java_Result : constant CommandForm_Access := GameMidlet'Class (This).getGameOptionsForm;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getGameOptionsForm;
-
-   procedure getCurrentStateHashtable (This : in out GameMidlet) is
-      Java_Result : constant ABHashtable_Access := GameMidlet'Class (This).getCurrentStateHashtable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getCurrentStateHashtable;
-
-   procedure getLoadGameForm (This : in out GameMidlet) is
-      Java_Result : constant CommandForm_Access := GameMidlet'Class (This).getLoadGameForm;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getLoadGameForm;
-
-   procedure isResized (This : in out GameMidlet) is
-      Java_Result : constant Boolean := GameMidlet'Class (This).isResized;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isResized;
-
-   procedure isDemoLoading (This : in out GameMidlet) is
-      Java_Result : constant Boolean := GameMidlet'Class (This).isDemoLoading;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end isDemoLoading;
 
 end org.allbinary.game.midlet.GameMidlet_Package;

@@ -36,7 +36,7 @@ package body org.allbinary.logic.system.security.AbCryptUtil_Package is
    function Create return AbCryptUtil_Access is
       This : constant AbCryptUtil_Access := new AbCryptUtil;
    begin
-      Initialize (This.all);
+      AbCryptUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -58,13 +58,6 @@ package body org.allbinary.logic.system.security.AbCryptUtil_Package is
             This.streamUtil.close (inputStream);
         end;
    end decrypt;
-
-   procedure getInstance is
-      Java_Result : constant AbCryptUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure decrypt (This : in out AbCryptUtil; inputStream : InputStream_Access; key : Unbounded_String) is
       Java_Result : constant Short_Short_Integer_Array_Access := AbCryptUtil'Class (This).decrypt (inputStream, key);

@@ -34,7 +34,7 @@ package body org.allbinary.media.audio.PlayerStateUtil_Package is
    function Create return PlayerStateUtil_Access is
       This : constant PlayerStateUtil_Access := new PlayerStateUtil;
    begin
-      Initialize (This.all);
+      PlayerStateUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -59,13 +59,6 @@ package body org.allbinary.media.audio.PlayerStateUtil_Package is
         end if;
         return This.commonStrings.UNKNOWN;
    end convert;
-
-   procedure getInstance is
-      Java_Result : constant PlayerStateUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure convert (This : in out PlayerStateUtil; state : Integer) is
       Java_Result : constant Unbounded_String := PlayerStateUtil'Class (This).convert (state);

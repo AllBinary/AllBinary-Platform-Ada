@@ -29,7 +29,7 @@ package body org.allbinary.media.audio.NullJ2SEControl_Package is
    function Create (type_Id : Type_Access) return NullJ2SEControl_Access is
       This : constant NullJ2SEControl_Access := new NullJ2SEControl;
    begin
-      Initialize (This.all, type_Id);
+      NullJ2SEControl_Package.Initialize (This.all, type_Id);
       return This;
    end Create;
 

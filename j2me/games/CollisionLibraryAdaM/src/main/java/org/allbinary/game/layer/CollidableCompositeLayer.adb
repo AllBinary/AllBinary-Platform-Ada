@@ -42,7 +42,7 @@ package body org.allbinary.game.layer.CollidableCompositeLayer_Package is
    function Create (name : Unbounded_String; layerInfo : Rectangle_Access; viewPosition : ViewPositionBase_Access; collidableBaseBehaviorFactory : CollidableBaseBehaviorFactory_Access) return CollidableCompositeLayer_Access is
       This : constant CollidableCompositeLayer_Access := new CollidableCompositeLayer;
    begin
-      Initialize (This.all, name, layerInfo, viewPosition, collidableBaseBehaviorFactory);
+      CollidableCompositeLayer_Package.Initialize (This.all, name, layerInfo, viewPosition, collidableBaseBehaviorFactory);
       return This;
    end Create;
 
@@ -82,41 +82,6 @@ package body org.allbinary.game.layer.CollidableCompositeLayer_Package is
         stringBuffer := StringMaker_Package.Create;
         This.toStringAppend (stringBuffer);
         return stringBuffer.toString;
-   end toString;
-
-   procedure getNullInstance is
-      Java_Result : constant CollidableCompositeLayer_Access := getNullInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getNullInstance;
-
-   procedure getArtificialIntelligenceInterface (This : in out CollidableCompositeLayer) is
-      Java_Result : constant ArtificialIntelligenceInterface_Access := CollidableCompositeLayer'Class (This).getArtificialIntelligenceInterface;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getArtificialIntelligenceInterface;
-
-   procedure getCollidableInferface (This : in out CollidableCompositeLayer) is
-      Java_Result : constant CollidableBaseBehavior_Access := CollidableCompositeLayer'Class (This).getCollidableInferface;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getCollidableInferface;
-
-   procedure implmentsCollidableInterface (This : in out CollidableCompositeLayer) is
-      Java_Result : constant Boolean := CollidableCompositeLayer'Class (This).implmentsCollidableInterface;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end implmentsCollidableInterface;
-
-   procedure toString (This : in out CollidableCompositeLayer) is
-      Java_Result : constant Unbounded_String := CollidableCompositeLayer'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end toString;
 
 begin

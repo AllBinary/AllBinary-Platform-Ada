@@ -41,7 +41,7 @@ package body org.allbinary.logic.system.hardware.android.AndroidHardware_Package
    function Create return AndroidHardware_Access is
       This : constant AndroidHardware_Access := new AndroidHardware;
    begin
-      Initialize (This.all);
+      AndroidHardware_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -131,13 +131,6 @@ package body org.allbinary.logic.system.hardware.android.AndroidHardware_Package
    begin
       null;
    end getComponent;
-
-   procedure toString (This : in out AndroidHardware) is
-      Java_Result : constant Unbounded_String := AndroidHardware'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toString;
 
    procedure compareTo (This : in out AndroidHardware; hardwareInterface : HardwareInterface_Access) is
       Java_Result : constant Boolean := AndroidHardware'Class (This).compareTo (hardwareInterface);

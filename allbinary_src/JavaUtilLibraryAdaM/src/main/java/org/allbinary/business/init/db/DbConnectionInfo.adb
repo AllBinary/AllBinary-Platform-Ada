@@ -42,7 +42,7 @@ package body org.allbinary.business.init.db.DbConnectionInfo_Package is
    function Create return DbConnectionInfo_Access is
       This : constant DbConnectionInfo_Access := new DbConnectionInfo;
    begin
-      Initialize (This.all);
+      DbConnectionInfo_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -169,83 +169,6 @@ package body org.allbinary.business.init.db.DbConnectionInfo_Package is
    function getPasswordKey (This : in out DbConnectionInfo) return Unbounded_String is
    begin
         return This.PASSWORD_KEY;
-   end getPasswordKey;
-
-   procedure getUrl (This : in out DbConnectionInfo) is
-      Java_Result : constant Unbounded_String := DbConnectionInfo'Class (This).getUrl;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getUrl;
-
-   procedure getJdbcDriver (This : in out DbConnectionInfo) is
-      Java_Result : constant Unbounded_String := DbConnectionInfo'Class (This).getJdbcDriver;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getJdbcDriver;
-
-   procedure getName (This : in out DbConnectionInfo) is
-      Java_Result : constant Unbounded_String := DbConnectionInfo'Class (This).getName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getName;
-
-   procedure getUserName (This : in out DbConnectionInfo) is
-      Java_Result : constant Unbounded_String := DbConnectionInfo'Class (This).getUserName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getUserName;
-
-   procedure getPassword (This : in out DbConnectionInfo) is
-      Java_Result : constant Unbounded_String := DbConnectionInfo'Class (This).getPassword;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getPassword;
-
-   procedure getHost (This : in out DbConnectionInfo) is
-      Java_Result : constant Unbounded_String := DbConnectionInfo'Class (This).getHost;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getHost;
-
-   procedure getSchema (This : in out DbConnectionInfo) is
-      Java_Result : constant Unbounded_String := DbConnectionInfo'Class (This).getSchema;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSchema;
-
-   procedure getServer (This : in out DbConnectionInfo) is
-      Java_Result : constant Unbounded_String := DbConnectionInfo'Class (This).getServer;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getServer;
-
-   procedure getPort (This : in out DbConnectionInfo) is
-      Java_Result : constant Unbounded_String := DbConnectionInfo'Class (This).getPort;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getPort;
-
-   procedure getUserNameKey (This : in out DbConnectionInfo) is
-      Java_Result : constant Unbounded_String := DbConnectionInfo'Class (This).getUserNameKey;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getUserNameKey;
-
-   procedure getPasswordKey (This : in out DbConnectionInfo) is
-      Java_Result : constant Unbounded_String := DbConnectionInfo'Class (This).getPasswordKey;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getPasswordKey;
 
 end org.allbinary.business.init.db.DbConnectionInfo_Package;

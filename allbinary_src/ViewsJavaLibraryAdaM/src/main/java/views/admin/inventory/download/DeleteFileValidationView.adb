@@ -32,7 +32,7 @@ package body views.admin.inventory.download.DeleteFileValidationView_Package is
    function Create (transformInfoInterface : TransformInfoInterface_Access) return DeleteFileValidationView_Access is
       This : constant DeleteFileValidationView_Access := new DeleteFileValidationView;
    begin
-      Initialize (This.all, transformInfoInterface);
+      DeleteFileValidationView_Package.Initialize (This.all, transformInfoInterface);
       return This;
    end Create;
 
@@ -120,33 +120,12 @@ package body views.admin.inventory.download.DeleteFileValidationView_Package is
         end;
    end validationInfo;
 
-   procedure isValid (This : in out DeleteFileValidationView) is
-      Java_Result : constant Boolean := DeleteFileValidationView'Class (This).isValid;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isValid;
-
-   procedure toValidationInfoDoc (This : in out DeleteFileValidationView) is
-      Java_Result : constant Document_Access := DeleteFileValidationView'Class (This).toValidationInfoDoc;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toValidationInfoDoc;
-
    procedure toValidationInfoNode (This : in out DeleteFileValidationView; document : Document_Access) is
       Java_Result : constant Node_Access := DeleteFileValidationView'Class (This).toValidationInfoNode (document);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end toValidationInfoNode;
-
-   procedure validationInfo (This : in out DeleteFileValidationView) is
-      Java_Result : constant Unbounded_String := DeleteFileValidationView'Class (This).validationInfo;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end validationInfo;
 
 end views.admin.inventory.download.DeleteFileValidationView_Package;
 

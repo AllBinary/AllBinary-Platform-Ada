@@ -56,7 +56,6 @@ package org.allbinary.logic.communication.http.request.MultipartRequestParams_Pa
    procedure setSpecial (This : in out MultipartRequestParams);
    procedure processMultipartRequest (This : in out MultipartRequestParams; request : HttpServletRequest_Access);
    function toHashMap (This : in out MultipartRequestParams) return HashMap_Access;
-   procedure toHashMap (This : in out MultipartRequestParams);
 
 end org.allbinary.logic.communication.http.request.MultipartRequestParams_Package;
 

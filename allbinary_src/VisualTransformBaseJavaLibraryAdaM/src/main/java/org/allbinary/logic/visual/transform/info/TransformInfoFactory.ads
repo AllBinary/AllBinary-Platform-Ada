@@ -20,6 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
+with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
 
 package org.allbinary.logic.visual.transform.info.TransformInfoFactory_Package is
 
@@ -34,7 +35,6 @@ package org.allbinary.logic.visual.transform.info.TransformInfoFactory_Package i
    procedure Initialize (This : in out TransformInfoFactory'Class);
    function Create return TransformInfoFactory_Access;
    function getInstance (This : in out TransformInfoFactory) return TransformInfoInterface_Access;
-   procedure getInstance (This : in out TransformInfoFactory);
 
 end org.allbinary.logic.visual.transform.info.TransformInfoFactory_Package;
 

@@ -40,7 +40,7 @@ package body org.allbinary.graphics.CellPositionFactory_Package is
    function Create return CellPositionFactory_Access is
       This : constant CellPositionFactory_Access := new CellPositionFactory;
    begin
-      Initialize (This.all);
+      CellPositionFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -105,13 +105,6 @@ package body org.allbinary.graphics.CellPositionFactory_Package is
         return This.rows;
    end getRows;
 
-   procedure getInstance is
-      Java_Result : constant CellPositionFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
    procedure getInstanceColRow (This : in out CellPositionFactory; i_column : Integer; i_row : Integer) is
       Java_Result : constant CellPosition_Access := CellPositionFactory'Class (This).getInstanceColRow (i_column, i_row);
       pragma Unreferenced (Java_Result);
@@ -125,20 +118,6 @@ package body org.allbinary.graphics.CellPositionFactory_Package is
    begin
       null;
    end createInstance;
-
-   procedure getColumns (This : in out CellPositionFactory) is
-      Java_Result : constant Integer := CellPositionFactory'Class (This).getColumns;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getColumns;
-
-   procedure getRows (This : in out CellPositionFactory) is
-      Java_Result : constant Integer := CellPositionFactory'Class (This).getRows;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getRows;
 
 begin
    null;

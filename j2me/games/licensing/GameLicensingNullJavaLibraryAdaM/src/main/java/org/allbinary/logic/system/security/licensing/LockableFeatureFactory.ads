@@ -41,9 +41,7 @@ package org.allbinary.logic.system.security.licensing.LockableFeatureFactory_Pac
    procedure Initialize (This : in out LockableFeatureFactory'Class);
    function Create return LockableFeatureFactory_Access;
    function getInstance return LockableFeatureFactory_Access;
-   procedure getInstance;
    function getList (This : in out LockableFeatureFactory) return BasicArrayList_Access;
-   procedure getList (This : in out LockableFeatureFactory);
 
 end org.allbinary.logic.system.security.licensing.LockableFeatureFactory_Package;
 

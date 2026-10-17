@@ -37,7 +37,7 @@ package body org.allbinary.game.combat.damage.DamageUtil_Package is
    function Create return DamageUtil_Access is
       This : constant DamageUtil_Access := new DamageUtil;
    begin
-      Initialize (This.all);
+      DamageUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -66,13 +66,6 @@ package body org.allbinary.game.combat.damage.DamageUtil_Package is
             This.logUtil.putF (stringBuffer.toString, collidableInterfaceCompositeInterface1, This.COLLIDE);
         end if;
    end debugDamage;
-
-   procedure getInstance is
-      Java_Result : constant DamageUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

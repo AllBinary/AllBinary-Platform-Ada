@@ -38,7 +38,7 @@ package body org.allbinary.game.GameStrings_Package is
    function Create return GameStrings_Access is
       This : constant GameStrings_Access := new GameStrings;
    begin
-      Initialize (This.all);
+      GameStrings_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -46,13 +46,6 @@ package body org.allbinary.game.GameStrings_Package is
    function getInstance return GameStrings_Access is
    begin
         return GameStrings_Package.instance;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant GameStrings_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

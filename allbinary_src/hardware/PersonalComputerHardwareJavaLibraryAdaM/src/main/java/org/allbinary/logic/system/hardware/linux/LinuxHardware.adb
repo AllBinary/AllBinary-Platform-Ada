@@ -46,7 +46,7 @@ package body org.allbinary.logic.system.hardware.linux.LinuxHardware_Package is
    function Create (path : Unbounded_String) return LinuxHardware_Access is
       This : constant LinuxHardware_Access := new LinuxHardware;
    begin
-      Initialize (This.all, path);
+      LinuxHardware_Package.Initialize (This.all, path);
       return This;
    end Create;
 
@@ -72,7 +72,7 @@ package body org.allbinary.logic.system.hardware.linux.LinuxHardware_Package is
    function Create return LinuxHardware_Access is
       This : constant LinuxHardware_Access := new LinuxHardware;
    begin
-      Initialize (This.all);
+      LinuxHardware_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -97,7 +97,8 @@ package body org.allbinary.logic.system.hardware.linux.LinuxHardware_Package is
    end init;
 
    --  throws Exception
-   procedure init (This : in out LinuxHardware; lineNumberReader : LineNumberReader_Access; filePath : Unbounded_String) is
+   procedure init (This : in out LinuxHardware; lineNumberReader_Param : LineNumberReader_Access; filePath : Unbounded_String) is
+      lineNumberReader : LineNumberReader_Access := lineNumberReader_Param;
       pciFile_Case : FileReader_Access;
       fileVector : BasicArrayList_Access;
       file : AbFile_Access;
@@ -363,13 +364,6 @@ package body org.allbinary.logic.system.hardware.linux.LinuxHardware_Package is
    begin
       null;
    end getComponent;
-
-   procedure toString (This : in out LinuxHardware) is
-      Java_Result : constant Unbounded_String := LinuxHardware'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toString;
 
    procedure compareTo (This : in out LinuxHardware; hardwareInterface : HardwareInterface_Access) is
       Java_Result : constant Boolean := LinuxHardware'Class (This).compareTo (hardwareInterface);

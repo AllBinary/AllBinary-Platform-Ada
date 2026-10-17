@@ -30,7 +30,7 @@ package body admin.taghelpers.BasicOptionItemsHelperFactory_Package is
    function Create return BasicOptionItemsHelperFactory_Access is
       This : constant BasicOptionItemsHelperFactory_Access := new BasicOptionItemsHelperFactory;
    begin
-      Initialize (This.all);
+      BasicOptionItemsHelperFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

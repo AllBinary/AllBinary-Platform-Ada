@@ -27,6 +27,8 @@ with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.lo
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.allbinary.input.automation.actions.script.ProfileActionScriptItemInterface_Package; use org.allbinary.input.automation.actions.script.ProfileActionScriptItemInterface_Package;
+with org.allbinary.input.automation.actions.script.JPopupMenu_Package; use org.allbinary.input.automation.actions.script.JPopupMenu_Package;
+with org.allbinary.input.automation.actions.script.JMenuItem_Package; use org.allbinary.input.automation.actions.script.JMenuItem_Package;
 
 package org.allbinary.input.automation.actions.script.ProfileActionScriptItem_Package is
 
@@ -62,7 +64,6 @@ package org.allbinary.input.automation.actions.script.ProfileActionScriptItem_Pa
    procedure init (This : in out ProfileActionScriptItem);
    procedure process (This : in out ProfileActionScriptItem; frame : Long_Long_Integer);
    function getJPopupMenu (This : in out ProfileActionScriptItem) return JPopupMenu_Access;
-   procedure getJPopupMenu (This : in out ProfileActionScriptItem);
    procedure showDialog (This : in out ProfileActionScriptItem);
    procedure actionPerformed (This : in out ProfileActionScriptItem; actionEvent : ActionEvent_Access);
    procedure setJPopupMenu (This : in out ProfileActionScriptItem; jPopupMenu : JPopupMenu_Access);

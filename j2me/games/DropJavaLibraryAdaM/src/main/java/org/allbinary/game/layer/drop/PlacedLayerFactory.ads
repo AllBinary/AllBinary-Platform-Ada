@@ -35,11 +35,8 @@ package org.allbinary.game.layer.drop.PlacedLayerFactory_Package is
    function Create return PlacedLayerFactory_Access;
    procedure clear (This : in out PlacedLayerFactory);
    function getInstance return PlacedLayerFactory_Access;
-   procedure getInstance;
    function getSize (This : in out PlacedLayerFactory) return Integer;
-   procedure getSize (This : in out PlacedLayerFactory);
    function getRandomInstance (This : in out PlacedLayerFactory) return AllBinaryLayerFactoryInterface_Access;
-   procedure getRandomInstance (This : in out PlacedLayerFactory);
    procedure add (This : in out PlacedLayerFactory; layerInterfaceFactoryInterface : AllBinaryLayerFactoryInterface_Access);
 
 end org.allbinary.game.layer.drop.PlacedLayerFactory_Package;

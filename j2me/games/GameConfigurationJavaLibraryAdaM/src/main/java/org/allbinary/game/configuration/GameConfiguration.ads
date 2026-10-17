@@ -26,6 +26,7 @@ with org.allbinary.logic.java.bool.BooleanFactory_Package; use org.allbinary.log
 with org.allbinary.logic.math.SmallIntegerSingletonFactory_Package; use org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.game.configuration.GameConfigurationSingleton_Package; use org.allbinary.game.configuration.GameConfigurationSingleton_Package;
 
 package org.allbinary.game.configuration.GameConfiguration_Package is
 
@@ -55,25 +56,18 @@ package org.allbinary.game.configuration.GameConfiguration_Package is
    function Create (name : Unbounded_String; defaultValue : Integer; minValue : Integer; maxValue : Integer) return GameConfiguration_Access;
    procedure setValue (This : in out GameConfiguration; value : Integer);
    function getValue (This : in out GameConfiguration) return Integer;
-   procedure getValue (This : in out GameConfiguration);
    procedure setMaxValue (This : in out GameConfiguration; maxValue : Integer);
    function getMaxValue (This : in out GameConfiguration) return Integer;
-   procedure getMaxValue (This : in out GameConfiguration);
    procedure setMinValue (This : in out GameConfiguration; minValue : Integer);
    function getMinValue (This : in out GameConfiguration) return Integer;
-   procedure getMinValue (This : in out GameConfiguration);
    procedure setName (This : in out GameConfiguration; name : Unbounded_String);
    function getName (This : in out GameConfiguration) return Unbounded_String;
-   procedure getName (This : in out GameConfiguration);
    procedure setDefaultValue (This : in out GameConfiguration; defaultValue : Integer);
    function getDefaultValue (This : in out GameConfiguration) return Integer;
-   procedure getDefaultValue (This : in out GameConfiguration);
    procedure setDefault (This : in out GameConfiguration);
    function toString (This : in out GameConfiguration) return Unbounded_String;
-   procedure toString (This : in out GameConfiguration);
    procedure setModifiable (This : in out GameConfiguration; modifiable : Boolean);
    function isModifiable (This : in out GameConfiguration) return Boolean;
-   procedure isModifiable (This : in out GameConfiguration);
 
 end org.allbinary.game.configuration.GameConfiguration_Package;
 

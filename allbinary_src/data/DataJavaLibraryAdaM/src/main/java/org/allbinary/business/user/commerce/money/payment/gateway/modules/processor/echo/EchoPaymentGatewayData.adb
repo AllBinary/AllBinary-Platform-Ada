@@ -30,7 +30,7 @@ package body org.allbinary.business.user.commerce.money.payment.gateway.modules.
    function Create return EchoPaymentGatewayData_Access is
       This : constant EchoPaymentGatewayData_Access := new EchoPaymentGatewayData;
    begin
-      Initialize (This.all);
+      EchoPaymentGatewayData_Package.Initialize (This.all);
       return This;
    end Create;
 

@@ -33,6 +33,9 @@ with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.s
 with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.HashtableUtil_Package; use org.allbinary.util.HashtableUtil_Package;
+with org.allbinary.game.configuration.feature.Features_Package; use org.allbinary.game.configuration.feature.Features_Package;
+with org.allbinary.game.configuration.feature.Feature_Package; use org.allbinary.game.configuration.feature.Feature_Package;
+with org.allbinary.game.configuration.feature.GameFeatureUtil_Package; use org.allbinary.game.configuration.feature.GameFeatureUtil_Package;
 
 package org.allbinary.game.configuration.feature.GameFeatureFormUtil_Package is
 
@@ -61,7 +64,6 @@ package org.allbinary.game.configuration.feature.GameFeatureFormUtil_Package is
    procedure Initialize (This : in out GameFeatureFormUtil'Class);
    function Create return GameFeatureFormUtil_Access;
    function getInstance return GameFeatureFormUtil_Access;
-   procedure getInstance;
    function getChoiceGroup (This : in out GameFeatureFormUtil; hashtable : ABHashtable_Access; name : Unbounded_String; option : Integer) return ChoiceGroup_Access;
    procedure getChoiceGroup (This : in out GameFeatureFormUtil; hashtable : ABHashtable_Access; name : Unbounded_String; option : Integer);
    procedure addChoiceGroup (This : in out GameFeatureFormUtil; form : CommandForm_Access; hashtable : ABHashtable_Access; option : Integer);

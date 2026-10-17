@@ -29,7 +29,7 @@ package body org.allbinary.util.BasicArrayListD_Package is
    function Create return BasicArrayListD_Access is
       This : constant BasicArrayListD_Access := new BasicArrayListD;
    begin
-      Initialize (This.all);
+      BasicArrayListD_Package.Initialize (This.all);
       return This;
    end Create;
 

@@ -29,7 +29,7 @@ package body org.allbinary.logic.io.file.FileUnamedUtil_Package is
    function Create return FileUnamedUtil_Access is
       This : constant FileUnamedUtil_Access := new FileUnamedUtil;
    begin
-      Initialize (This.all);
+      FileUnamedUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -47,13 +47,6 @@ package body org.allbinary.logic.io.file.FileUnamedUtil_Package is
         simplifiedString := simplifiedString.replace (This.commonSeps.DASH, This.commonSeps.UNDERSCORE);
         return simplifiedString;
    end process;
-
-   procedure getInstance is
-      Java_Result : constant FileUnamedUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure process (This : in out FileUnamedUtil; string_Id : Unbounded_String) is
       Java_Result : constant Unbounded_String := FileUnamedUtil'Class (This).process (string_Id);

@@ -23,7 +23,7 @@ package body org.allbinary.game.configuration.feature.MultiPlayerGameFeatureFact
    function Create return MultiPlayerGameFeatureFactory_Access is
       This : constant MultiPlayerGameFeatureFactory_Access := new MultiPlayerGameFeatureFactory;
    begin
-      Initialize (This.all);
+      MultiPlayerGameFeatureFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -35,13 +35,6 @@ package body org.allbinary.game.configuration.feature.MultiPlayerGameFeatureFact
         canvas := Canvas_Access (anyType);
         canvas.addCommand (gameCommandsFactory.QUIT_COMMAND);
    end addCommands;
-
-   procedure getInstance is
-      Java_Result : constant MultiPlayerGameFeatureFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

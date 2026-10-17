@@ -34,7 +34,7 @@ package body org.allbinary.data.tree.dom.DirectoryDataModel_Package is
    function Create (file : AbFile_Access) return DirectoryDataModel_Access is
       This : constant DirectoryDataModel_Access := new DirectoryDataModel;
    begin
-      Initialize (This.all, file);
+      DirectoryDataModel_Package.Initialize (This.all, file);
       return This;
    end Create;
 
@@ -94,47 +94,12 @@ package body org.allbinary.data.tree.dom.DirectoryDataModel_Package is
         return XmlDocumentHelper_Package.toString (This.getTransformDocumentInterface.getDoc);
    end view;
 
-   procedure getTypeId (This : in out DirectoryDataModel) is
-      Java_Result : constant Integer := DirectoryDataModel'Class (This).getTypeId;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTypeId;
-
-   procedure getTransformInfoInterface (This : in out DirectoryDataModel) is
-      Java_Result : constant TransformInfoInterface_Access := DirectoryDataModel'Class (This).getTransformInfoInterface;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTransformInfoInterface;
-
-   procedure getTransformDocumentInterface (This : in out DirectoryDataModel) is
-      Java_Result : constant TransformDocumentInterface_Access := DirectoryDataModel'Class (This).getTransformDocumentInterface;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTransformDocumentInterface;
-
    procedure toXmlNode (This : in out DirectoryDataModel; document : Document_Access) is
       Java_Result : constant Node_Access := DirectoryDataModel'Class (This).toXmlNode (document);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end toXmlNode;
-
-   procedure toXmlDoc (This : in out DirectoryDataModel) is
-      Java_Result : constant Document_Access := DirectoryDataModel'Class (This).toXmlDoc;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toXmlDoc;
-
-   procedure view (This : in out DirectoryDataModel) is
-      Java_Result : constant Unbounded_String := DirectoryDataModel'Class (This).view;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end view;
 
 end org.allbinary.data.tree.dom.DirectoryDataModel_Package;
 

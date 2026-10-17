@@ -31,6 +31,12 @@ with org.allbinary.media.image.ImageCopyUtil_Package; use org.allbinary.media.im
 with org.allbinary.media.image.ImageModifierUtil_Package; use org.allbinary.media.image.ImageModifierUtil_Package;
 with org.allbinary.media.image.ImageRotationUtil_Package; use org.allbinary.media.image.ImageRotationUtil_Package;
 with org.allbinary.animation.image.ImageBaseRotationAnimation_Package; use org.allbinary.animation.image.ImageBaseRotationAnimation_Package;
+with org.allbinary.animation.image.ModifierBaseProcessor_Package; use org.allbinary.animation.image.ModifierBaseProcessor_Package;
+with org.allbinary.animation.image.ScaleProcessor_Package; use org.allbinary.animation.image.ScaleProcessor_Package;
+with org.allbinary.animation.image.ScaleBaseProcessor_Package; use org.allbinary.animation.image.ScaleBaseProcessor_Package;
+with org.allbinary.animation.image.SetColorProcessor_Package; use org.allbinary.animation.image.SetColorProcessor_Package;
+with org.allbinary.animation.image.ChangeColorProcessor_Package; use org.allbinary.animation.image.ChangeColorProcessor_Package;
+with org.allbinary.animation.image.AlphaProcessor_Package; use org.allbinary.animation.image.AlphaProcessor_Package;
 
 package org.allbinary.animation.image.AllBinaryJ2SEImageRotationAnimation_Package is
 

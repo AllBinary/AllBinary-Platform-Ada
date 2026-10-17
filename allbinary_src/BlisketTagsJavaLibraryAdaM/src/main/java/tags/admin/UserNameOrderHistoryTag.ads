@@ -42,7 +42,6 @@ package tags.admin.UserNameOrderHistoryTag_Package is
    function Create return UserNameOrderHistoryTag_Access;
    procedure setStatus (This : in out UserNameOrderHistoryTag; value : Unbounded_String);
    function doStartTag (This : in out UserNameOrderHistoryTag) return Integer;
-   procedure doStartTag (This : in out UserNameOrderHistoryTag);
 
 end tags.admin.UserNameOrderHistoryTag_Package;
 

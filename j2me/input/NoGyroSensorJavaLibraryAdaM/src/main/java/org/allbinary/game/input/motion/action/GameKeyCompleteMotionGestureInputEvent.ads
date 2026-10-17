@@ -49,14 +49,11 @@ package org.allbinary.game.input.motion.action.GameKeyCompleteMotionGestureInput
    procedure Initialize (This : in out GameKeyCompleteMotionGestureInputEvent'Class; name : Unbounded_String; motionGestureInput : MotionGestureInput_Access; inputToGameKeyMapping : InputToGameKeyMapping_Access);
    function Create (name : Unbounded_String; motionGestureInput : MotionGestureInput_Access; inputToGameKeyMapping : InputToGameKeyMapping_Access) return GameKeyCompleteMotionGestureInputEvent_Access;
    function getSourceId (This : in out GameKeyCompleteMotionGestureInputEvent) return Integer;
-   procedure getSourceId (This : in out GameKeyCompleteMotionGestureInputEvent);
    procedure update (This : in out GameKeyCompleteMotionGestureInputEvent);
    procedure setGameKeyEvent (This : in out GameKeyCompleteMotionGestureInputEvent; gameKeyEvent : GameKeyEvent_Access);
    function getGameKeyEvent (This : in out GameKeyCompleteMotionGestureInputEvent) return GameKeyEvent_Access;
-   procedure getGameKeyEvent (This : in out GameKeyCompleteMotionGestureInputEvent);
    procedure setGameKey (This : in out GameKeyCompleteMotionGestureInputEvent; gameKey : GameKey_Access);
    function getGameKey (This : in out GameKeyCompleteMotionGestureInputEvent) return GameKey_Access;
-   procedure getGameKey (This : in out GameKeyCompleteMotionGestureInputEvent);
 
 end org.allbinary.game.input.motion.action.GameKeyCompleteMotionGestureInputEvent_Package;
 

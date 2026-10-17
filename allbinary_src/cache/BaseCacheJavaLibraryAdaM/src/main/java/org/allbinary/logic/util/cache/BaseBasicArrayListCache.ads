@@ -48,7 +48,6 @@ package org.allbinary.logic.util.cache.BaseBasicArrayListCache_Package is
    procedure Initialize (This : in out BaseBasicArrayListCache'Class);
    function Create return BaseBasicArrayListCache_Access;
    function log (This : in out BaseBasicArrayListCache) return Unbounded_String;
-   procedure log (This : in out BaseBasicArrayListCache);
 
 end org.allbinary.logic.util.cache.BaseBasicArrayListCache_Package;
 

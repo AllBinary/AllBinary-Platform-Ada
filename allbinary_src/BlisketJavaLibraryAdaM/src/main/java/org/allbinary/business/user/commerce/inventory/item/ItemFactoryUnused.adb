@@ -30,7 +30,7 @@ package body org.allbinary.business.user.commerce.inventory.item.ItemFactoryUnus
    function Create return ItemFactoryUnused_Access is
       This : constant ItemFactoryUnused_Access := new ItemFactoryUnused;
    begin
-      Initialize (This.all);
+      ItemFactoryUnused_Package.Initialize (This.all);
       return This;
    end Create;
 

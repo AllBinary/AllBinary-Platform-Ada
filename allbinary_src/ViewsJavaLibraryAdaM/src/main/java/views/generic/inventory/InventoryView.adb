@@ -31,7 +31,7 @@ package body views.generic_Id.inventory.InventoryView_Package is
    function Create (transformInfoInterface : TransformInfoInterface_Access) return InventoryView_Access is
       This : constant InventoryView_Access := new InventoryView;
    begin
-      Initialize (This.all, transformInfoInterface);
+      InventoryView_Package.Initialize (This.all, transformInfoInterface);
       return This;
    end Create;
 
@@ -108,13 +108,6 @@ package body views.generic_Id.inventory.InventoryView_Package is
    begin
       null;
    end toXmlNode;
-
-   procedure view (This : in out InventoryView) is
-      Java_Result : constant Unbounded_String := InventoryView'Class (This).view;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end view;
 
 end views.generic_Id.inventory.InventoryView_Package;
 

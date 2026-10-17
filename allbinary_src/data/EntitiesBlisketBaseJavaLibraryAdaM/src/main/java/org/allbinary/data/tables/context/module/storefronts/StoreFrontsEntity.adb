@@ -33,7 +33,7 @@ package body org.allbinary.data.tables.context.module.storefronts.StoreFrontsEnt
    function Create return StoreFrontsEntity_Access is
       This : constant StoreFrontsEntity_Access := new StoreFrontsEntity;
    begin
-      Initialize (This.all);
+      StoreFrontsEntity_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -187,34 +187,6 @@ package body org.allbinary.data.tables.context.module.storefronts.StoreFrontsEnt
    begin
       null;
    end getStoreFrontInterface;
-
-   procedure getStoreFrontNames (This : in out StoreFrontsEntity) is
-      Java_Result : constant BasicArrayList_Access := StoreFrontsEntity'Class (This).getStoreFrontNames;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getStoreFrontNames;
-
-   procedure createTableStatement (This : in out StoreFrontsEntity) is
-      Java_Result : constant Unbounded_String := StoreFrontsEntity'Class (This).createTableStatement;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end createTableStatement;
-
-   procedure createTable (This : in out StoreFrontsEntity) is
-      Java_Result : constant Unbounded_String := StoreFrontsEntity'Class (This).createTable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end createTable;
-
-   procedure dropTable (This : in out StoreFrontsEntity) is
-      Java_Result : constant Unbounded_String := StoreFrontsEntity'Class (This).dropTable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end dropTable;
 
 end org.allbinary.data.tables.context.module.storefronts.StoreFrontsEntity_Package;
 

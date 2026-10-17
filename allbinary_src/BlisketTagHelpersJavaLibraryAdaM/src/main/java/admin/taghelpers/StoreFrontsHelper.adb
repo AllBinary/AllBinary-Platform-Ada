@@ -34,7 +34,7 @@ package body admin.taghelpers.StoreFrontsHelper_Package is
    function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return StoreFrontsHelper_Access is
       This : constant StoreFrontsHelper_Access := new StoreFrontsHelper;
    begin
-      Initialize (This.all, hashMap, pageContext);
+      StoreFrontsHelper_Package.Initialize (This.all, hashMap, pageContext);
       return This;
    end Create;
 
@@ -174,41 +174,6 @@ package body admin.taghelpers.StoreFrontsHelper_Package is
             return error;
                 end;
         end;
-   end generateSelect;
-
-   procedure drop (This : in out StoreFrontsHelper) is
-      Java_Result : constant Unbounded_String := StoreFrontsHelper'Class (This).drop;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end drop;
-
-   procedure create (This : in out StoreFrontsHelper) is
-      Java_Result : constant Unbounded_String := StoreFrontsHelper'Class (This).create;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end create;
-
-   procedure restore (This : in out StoreFrontsHelper) is
-      Java_Result : constant Unbounded_String := StoreFrontsHelper'Class (This).restore;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end restore;
-
-   procedure backup (This : in out StoreFrontsHelper) is
-      Java_Result : constant Unbounded_String := StoreFrontsHelper'Class (This).backup;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end backup;
-
-   procedure generateSelect (This : in out StoreFrontsHelper) is
-      Java_Result : constant Unbounded_String := StoreFrontsHelper'Class (This).generateSelect;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end generateSelect;
 
 begin

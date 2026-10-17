@@ -29,7 +29,7 @@ package body org.allbinary.midlet.MidletStrings_Package is
    function Create return MidletStrings_Access is
       This : constant MidletStrings_Access := new MidletStrings;
    begin
-      Initialize (This.all);
+      MidletStrings_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -37,13 +37,6 @@ package body org.allbinary.midlet.MidletStrings_Package is
    function getInstance return MidletStrings_Access is
    begin
         return MidletStrings_Package.instance;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant MidletStrings_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

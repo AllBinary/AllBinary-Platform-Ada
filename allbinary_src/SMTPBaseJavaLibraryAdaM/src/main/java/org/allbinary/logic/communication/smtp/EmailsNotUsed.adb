@@ -33,7 +33,7 @@ package body org.allbinary.logic.communication.smtp.EmailsNotUsed_Package is
    function Create return EmailsNotUsed_Access is
       This : constant EmailsNotUsed_Access := new EmailsNotUsed;
    begin
-      Initialize (This.all);
+      EmailsNotUsed_Package.Initialize (This.all);
       return This;
    end Create;
 

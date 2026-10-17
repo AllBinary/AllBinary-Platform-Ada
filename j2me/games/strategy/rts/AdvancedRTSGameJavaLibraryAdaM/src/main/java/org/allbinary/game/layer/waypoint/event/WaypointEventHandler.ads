@@ -23,6 +23,7 @@ with org.allbinary.game.layer.RTSLayerEvent_Package; use org.allbinary.game.laye
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbinary.logic.util.event.AllBinaryEventObject_Package;
 with org.allbinary.logic.util.event.EventListenerInterface_Package; use org.allbinary.logic.util.event.EventListenerInterface_Package;
 with org.allbinary.logic.util.event.handler.BasicEventHandler_Package; use org.allbinary.logic.util.event.handler.BasicEventHandler_Package;
+with org.allbinary.game.layer.waypoint.event.WaypointEventListenerInterface_Package; use org.allbinary.game.layer.waypoint.event.WaypointEventListenerInterface_Package;
 
 package org.allbinary.game.layer.waypoint.event.WaypointEventHandler_Package is
 

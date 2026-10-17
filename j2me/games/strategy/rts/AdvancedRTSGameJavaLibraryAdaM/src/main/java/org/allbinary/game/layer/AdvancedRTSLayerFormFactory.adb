@@ -49,7 +49,7 @@ package body org.allbinary.game.layer.AdvancedRTSLayerFormFactory_Package is
    function Create (label : Unbounded_String; itemArrayFactoryInterface : ItemArraySingletonFactoryInterface_Access) return AdvancedRTSLayerFormFactory_Access is
       This : constant AdvancedRTSLayerFormFactory_Access := new AdvancedRTSLayerFormFactory;
    begin
-      Initialize (This.all, label, itemArrayFactoryInterface);
+      AdvancedRTSLayerFormFactory_Package.Initialize (This.all, label, itemArrayFactoryInterface);
       return This;
    end Create;
 

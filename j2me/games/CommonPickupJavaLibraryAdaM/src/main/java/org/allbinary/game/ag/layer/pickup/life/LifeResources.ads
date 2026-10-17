@@ -37,7 +37,6 @@ package org.allbinary.game.ag.layer.pickup.life.LifeResources_Package is
    procedure Initialize (This : in out LifeResources'Class);
    function Create return LifeResources_Access;
    function getInstance return LifeResources_Access;
-   procedure getInstance;
 
 end org.allbinary.game.ag.layer.pickup.life.LifeResources_Package;
 

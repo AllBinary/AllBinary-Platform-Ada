@@ -31,7 +31,7 @@ package body org.allbinary.animation.TimedVectorAnimation_Package is
    function Create (currentPoints : Integer_Array_Access_Array_Access_Array_Access; basicColor : BasicColor_Access; animationBehavior : AnimationBehavior_Access) return TimedVectorAnimation_Access is
       This : constant TimedVectorAnimation_Access := new TimedVectorAnimation;
    begin
-      Initialize (This.all, currentPoints, basicColor, animationBehavior);
+      TimedVectorAnimation_Package.Initialize (This.all, currentPoints, basicColor, animationBehavior);
       return This;
    end Create;
 

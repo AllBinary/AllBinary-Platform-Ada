@@ -58,7 +58,7 @@ package body org.allbinary.animation.special.TitleAnimation_Package is
    function Create (animationInterfaceArray : IndexedAnimation_Access_Array_Access; basicColorArray : BasicColor_Access_Array_Access; dxArray : Integer_Array_Access; dyArray : Integer_Array_Access; y : Integer; width : Integer; animationBehavior : AnimationBehavior_Access) return TitleAnimation_Access is
       This : constant TitleAnimation_Access := new TitleAnimation;
    begin
-      Initialize (This.all, animationInterfaceArray, basicColorArray, dxArray, dyArray, y, width, animationBehavior);
+      TitleAnimation_Package.Initialize (This.all, animationInterfaceArray, basicColorArray, dxArray, dyArray, y, width, animationBehavior);
       return This;
    end Create;
 
@@ -173,34 +173,6 @@ package body org.allbinary.animation.special.TitleAnimation_Package is
    begin
       null;
    end createAnimation;
-
-   procedure isComplete (This : in out TitleAnimation) is
-      Java_Result : constant Boolean := TitleAnimation'Class (This).isComplete;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isComplete;
-
-   procedure getSequence (This : in out TitleAnimation) is
-      Java_Result : constant Integer_Array_Access := TitleAnimation'Class (This).getSequence;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSequence;
-
-   procedure getSize (This : in out TitleAnimation) is
-      Java_Result : constant Integer := TitleAnimation'Class (This).getSize;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSize;
-
-   procedure getFrame (This : in out TitleAnimation) is
-      Java_Result : constant Integer := TitleAnimation'Class (This).getFrame;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getFrame;
 
 end org.allbinary.animation.special.TitleAnimation_Package;
 

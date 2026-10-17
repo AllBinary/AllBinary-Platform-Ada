@@ -42,10 +42,8 @@ package org.allbinary.game.graphics.hud.HudGraphicsPosition_Package is
    procedure Initialize (This : in out HudGraphicsPosition'Class; point : GPoint_Access; anchor : Integer);
    function Create (point : GPoint_Access; anchor : Integer) return HudGraphicsPosition_Access;
    function getAnchor (This : in out HudGraphicsPosition) return Integer;
-   procedure getAnchor (This : in out HudGraphicsPosition);
    procedure setAnchor (This : in out HudGraphicsPosition; anchor : Integer);
    function getPoint (This : in out HudGraphicsPosition) return GPoint_Access;
-   procedure getPoint (This : in out HudGraphicsPosition);
    procedure setPoint (This : in out HudGraphicsPosition; point : GPoint_Access);
 
 end org.allbinary.game.graphics.hud.HudGraphicsPosition_Package;

@@ -32,7 +32,7 @@ package body org.allbinary.game.score.ScoreComparator_Package is
    function Create (isHighestBest : Boolean) return ScoreComparator_Access is
       This : constant ScoreComparator_Access := new ScoreComparator;
    begin
-      Initialize (This.all, isHighestBest);
+      ScoreComparator_Package.Initialize (This.all, isHighestBest);
       return This;
    end Create;
 
@@ -98,13 +98,6 @@ package body org.allbinary.game.score.ScoreComparator_Package is
             return RecordComparator_Package.EQUIVALENT;
         end if;
    end getLowTooHigh;
-
-   procedure getBestScore (This : in out ScoreComparator) is
-      Java_Result : constant Long_Long_Integer := ScoreComparator'Class (This).getBestScore;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getBestScore;
 
    procedure compare (This : in out ScoreComparator; recordOne : Short_Short_Integer_Array_Access; recordTwo : Short_Short_Integer_Array_Access) is
       Java_Result : constant Integer := ScoreComparator'Class (This).compare (recordOne, recordTwo);

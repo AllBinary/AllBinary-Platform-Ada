@@ -32,7 +32,7 @@ package body org.allbinary.graphics.font.UpdateMyFontProcessor_Package is
    function Create (keyValueDrawCharArray : UpdateMyFontInterface_Access) return UpdateMyFontProcessor_Access is
       This : constant UpdateMyFontProcessor_Access := new UpdateMyFontProcessor;
    begin
-      Initialize (This.all, keyValueDrawCharArray);
+      UpdateMyFontProcessor_Package.Initialize (This.all, keyValueDrawCharArray);
       return This;
    end Create;
 

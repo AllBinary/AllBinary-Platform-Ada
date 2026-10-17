@@ -29,7 +29,7 @@ package body org.allbinary.bounds.RectangleLayerBounds_Package is
    function Create (rectangle : Rectangle_Access) return RectangleLayerBounds_Access is
       This : constant RectangleLayerBounds_Access := new RectangleLayerBounds;
    begin
-      Initialize (This.all, rectangle);
+      RectangleLayerBounds_Package.Initialize (This.all, rectangle);
       return This;
    end Create;
 

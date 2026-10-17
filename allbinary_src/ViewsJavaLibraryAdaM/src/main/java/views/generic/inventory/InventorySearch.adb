@@ -35,7 +35,7 @@ package body views.generic_Id.inventory.InventorySearch_Package is
    function Create (searchRequest : SearchRequest_Access) return InventorySearch_Access is
       This : constant InventorySearch_Access := new InventorySearch;
    begin
-      Initialize (This.all, searchRequest);
+      InventorySearch_Package.Initialize (This.all, searchRequest);
       return This;
    end Create;
 
@@ -119,27 +119,6 @@ package body views.generic_Id.inventory.InventorySearch_Package is
         abeClientInformation := ServiceClientInformationInterfaceFactory_Package.getInstance;
         return InventorySearchProductUtil_Package.getInstance.getProduct (abeClientInformation, This.searchRequest, product);
    end getProduct;
-
-   procedure searchSingleStaticPage (This : in out InventorySearch) is
-      Java_Result : constant Unbounded_String := InventorySearch'Class (This).searchSingleStaticPage;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end searchSingleStaticPage;
-
-   procedure searchSingleDynamicPage (This : in out InventorySearch) is
-      Java_Result : constant Unbounded_String := InventorySearch'Class (This).searchSingleDynamicPage;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end searchSingleDynamicPage;
-
-   procedure search (This : in out InventorySearch) is
-      Java_Result : constant Unbounded_String_Array_Access := InventorySearch'Class (This).search;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end search;
 
    procedure getProduct (This : in out InventorySearch; product : Unbounded_String) is
       Java_Result : constant Unbounded_String := InventorySearch'Class (This).getProduct (product);

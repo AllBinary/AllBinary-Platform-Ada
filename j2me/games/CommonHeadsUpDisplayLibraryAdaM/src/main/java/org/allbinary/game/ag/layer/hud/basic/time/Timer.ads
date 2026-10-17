@@ -53,14 +53,11 @@ package org.allbinary.game.ag.layer.hud.basic.time.Timer_Package is
    function Create (maxTime : Integer) return Timer_Access;
    procedure start (This : in out Timer);
    function get (This : in out Timer) return Long_Long_Integer;
-   procedure get (This : in out Timer);
    procedure update (This : in out Timer);
    procedure reduce (This : in out Timer; value : Integer);
    procedure add (This : in out Timer; value : Integer);
    function getTimeChars (This : in out Timer) return Character_Array_Access;
-   procedure getTimeChars (This : in out Timer);
    function getCurrentTotalDigits (This : in out Timer) return Integer;
-   procedure getCurrentTotalDigits (This : in out Timer);
 
 end org.allbinary.game.ag.layer.hud.basic.time.Timer_Package;
 

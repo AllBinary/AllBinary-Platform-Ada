@@ -36,7 +36,7 @@ package body org.allbinary.logic.visual.media.MediaData_Package is
    function Create (a_Name : Unbounded_String) return MediaData_Access is
       This : constant MediaData_Access := new MediaData;
    begin
-      Initialize (This.all, a_Name);
+      MediaData_Package.Initialize (This.all, a_Name);
       return This;
    end Create;
 
@@ -90,27 +90,6 @@ package body org.allbinary.logic.visual.media.MediaData_Package is
         return MediaData_Package.hashMap;
    end toHashMap;
 
-   procedure getName (This : in out MediaData) is
-      Java_Result : constant Unbounded_String := MediaData'Class (This).getName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getName;
-
-   procedure getType (This : in out MediaData) is
-      Java_Result : constant Unbounded_String := MediaData'Class (This).getType;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getType;
-
-   procedure getExtension (This : in out MediaData) is
-      Java_Result : constant Unbounded_String := MediaData'Class (This).getExtension;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getExtension;
-
    procedure isConvertableTo (This : in out MediaData; mediaData : MediaData_Access) is
       Java_Result : constant Boolean := MediaData'Class (This).isConvertableTo (mediaData);
       pragma Unreferenced (Java_Result);
@@ -118,33 +97,12 @@ package body org.allbinary.logic.visual.media.MediaData_Package is
       null;
    end isConvertableTo;
 
-   procedure toString (This : in out MediaData) is
-      Java_Result : constant Unbounded_String := MediaData'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toString;
-
    procedure get (a_Name : Unbounded_String) is
       Java_Result : constant MediaData_Access := get (a_Name);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end get;
-
-   procedure getDefault is
-      Java_Result : constant MediaData_Access := getDefault;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getDefault;
-
-   procedure toHashMap is
-      Java_Result : constant HashMap_Access := toHashMap;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toHashMap;
 
 begin
    null;

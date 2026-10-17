@@ -37,7 +37,7 @@ package body org.allbinary.input.automation.configuration.InputAutomationConfigu
    function Create return InputAutomationConfigurationFactory_Access is
       This : constant InputAutomationConfigurationFactory_Access := new InputAutomationConfigurationFactory;
    begin
-      Initialize (This.all);
+      InputAutomationConfigurationFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -81,13 +81,6 @@ package body org.allbinary.input.automation.configuration.InputAutomationConfigu
             This.inputAutomationConfiguration := InputAutomationConfiguration_Package.Create;
         end if;
    end init;
-
-   procedure getInstance is
-      Java_Result : constant InputAutomationConfigurationFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

@@ -23,7 +23,7 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 
-package org.allbinary.business.user.commerce.money.payment_Case.gateway.PaymentGatewayPageData_Package is
+package org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayPageData_Package is
 
    package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
@@ -53,6 +53,6 @@ package org.allbinary.business.user.commerce.money.payment_Case.gateway.PaymentG
    procedure Initialize (This : in out PaymentGatewayPageData'Class; location : Unbounded_String; paymentMethod : Unbounded_String);
    function Create (location : Unbounded_String; paymentMethod : Unbounded_String) return PaymentGatewayPageData_Access;
 
-end org.allbinary.business.user.commerce.money.payment_Case.gateway.PaymentGatewayPageData_Package;
+end org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayPageData_Package;
 
 

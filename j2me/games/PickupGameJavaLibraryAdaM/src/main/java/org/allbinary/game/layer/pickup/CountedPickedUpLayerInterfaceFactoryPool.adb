@@ -31,7 +31,7 @@ package body org.allbinary.game.layer.pickup.CountedPickedUpLayerInterfaceFactor
    function Create return CountedPickedUpLayerInterfaceFactoryPool_Access is
       This : constant CountedPickedUpLayerInterfaceFactoryPool_Access := new CountedPickedUpLayerInterfaceFactoryPool;
    begin
-      Initialize (This.all);
+      CountedPickedUpLayerInterfaceFactoryPool_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -49,20 +49,6 @@ package body org.allbinary.game.layer.pickup.CountedPickedUpLayerInterfaceFactor
    begin
         CountedPickedUpLayerInterfaceFactoryPool_Package.SINGLETON := CountedPickedUpLayerInterfaceFactoryPool_Package.Create;
    end init;
-
-   procedure getList (This : in out CountedPickedUpLayerInterfaceFactoryPool) is
-      Java_Result : constant BasicArrayList_Access := CountedPickedUpLayerInterfaceFactoryPool'Class (This).getList;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getList;
-
-   procedure getInstance is
-      Java_Result : constant CountedPickedUpLayerInterfaceFactoryPool_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

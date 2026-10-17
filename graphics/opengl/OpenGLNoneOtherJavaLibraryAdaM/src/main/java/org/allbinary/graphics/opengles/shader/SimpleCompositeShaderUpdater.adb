@@ -29,7 +29,7 @@ package body org.allbinary.graphics.opengles.shader.SimpleCompositeShaderUpdater
    function Create (uniformBlockArray : Unbounded_String_Array_Access; uniformArray : Unbounded_String_Array_Access; attributeArray : Unbounded_String_Array_Access; attributeHandleArray : Integer_Array_Access) return SimpleCompositeShaderUpdater_Access is
       This : constant SimpleCompositeShaderUpdater_Access := new SimpleCompositeShaderUpdater;
    begin
-      Initialize (This.all, uniformBlockArray, uniformArray, attributeArray, attributeHandleArray);
+      SimpleCompositeShaderUpdater_Package.Initialize (This.all, uniformBlockArray, uniformArray, attributeArray, attributeHandleArray);
       return This;
    end Create;
 

@@ -48,13 +48,9 @@ package admin.taghelpers.CustomItemsHelper_Package is
    procedure Initialize (This : in out CustomItemsHelper'Class; hashMap : HashMap_Access; pageContext : PageContext_Access);
    function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return CustomItemsHelper_Access;
    function create (This : in out CustomItemsHelper) return Unbounded_String;
-   procedure create (This : in out CustomItemsHelper);
    function drop (This : in out CustomItemsHelper) return Unbounded_String;
-   procedure drop (This : in out CustomItemsHelper);
    function restore (This : in out CustomItemsHelper) return Unbounded_String;
-   procedure restore (This : in out CustomItemsHelper);
    function backup (This : in out CustomItemsHelper) return Unbounded_String;
-   procedure backup (This : in out CustomItemsHelper);
 
 end admin.taghelpers.CustomItemsHelper_Package;
 

@@ -29,7 +29,7 @@ package body org.allbinary.image.opengles.ModifierOpenGLESImageProcessor_Package
    function Create return ModifierOpenGLESImageProcessor_Access is
       This : constant ModifierOpenGLESImageProcessor_Access := new ModifierOpenGLESImageProcessor;
    begin
-      Initialize (This.all);
+      ModifierOpenGLESImageProcessor_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -37,13 +37,6 @@ package body org.allbinary.image.opengles.ModifierOpenGLESImageProcessor_Package
    function getInstance return ModifierOpenGLESImageProcessor_Access is
    begin
         return ModifierOpenGLESImageProcessor_Package.instanceC;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant ModifierOpenGLESImageProcessor_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

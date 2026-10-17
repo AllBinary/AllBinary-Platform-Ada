@@ -54,7 +54,6 @@ package org.allbinary.logic.io.file.path.AbPathUtilOld_Package is
    procedure Initialize (This : in out AbPathUtilOld'Class);
    function Create return AbPathUtilOld_Access;
    function getInstance return AbPathUtilOld_Access;
-   procedure getInstance;
    function getExtension (This : in out AbPathUtilOld; abFilePath : AbFilePath_Access) return Unbounded_String;
    procedure getExtension (This : in out AbPathUtilOld; abFilePath : AbFilePath_Access);
    function getExtension (This : in out AbPathUtilOld; abPath : AbPath_Access) return Unbounded_String;
@@ -73,12 +72,12 @@ package org.allbinary.logic.io.file.path.AbPathUtilOld_Package is
    procedure isValidStart (This : in out AbPathUtilOld; path : Unbounded_String);
    function isValidEnd (This : in out AbPathUtilOld; path : Unbounded_String) return Boolean;
    procedure isValidEnd (This : in out AbPathUtilOld; path : Unbounded_String);
-   function adjustStart (This : in out AbPathUtilOld; path : Unbounded_String) return Unbounded_String;
-   procedure adjustStart (This : in out AbPathUtilOld; path : Unbounded_String);
-   function adjustEnd (This : in out AbPathUtilOld; path : Unbounded_String) return Unbounded_String;
-   procedure adjustEnd (This : in out AbPathUtilOld; path : Unbounded_String);
-   function adjust (This : in out AbPathUtilOld; path : Unbounded_String) return Unbounded_String;
-   procedure adjust (This : in out AbPathUtilOld; path : Unbounded_String);
+   function adjustStart (This : in out AbPathUtilOld; path_Param : Unbounded_String) return Unbounded_String;
+   procedure adjustStart (This : in out AbPathUtilOld; path_Param : Unbounded_String);
+   function adjustEnd (This : in out AbPathUtilOld; path_Param : Unbounded_String) return Unbounded_String;
+   procedure adjustEnd (This : in out AbPathUtilOld; path_Param : Unbounded_String);
+   function adjust (This : in out AbPathUtilOld; path_Param : Unbounded_String) return Unbounded_String;
+   procedure adjust (This : in out AbPathUtilOld; path_Param : Unbounded_String);
    function getNameFromPath (This : in out AbPathUtilOld; categoryPath : Unbounded_String) return Unbounded_String;
    procedure getNameFromPath (This : in out AbPathUtilOld; categoryPath : Unbounded_String);
    function removeNameFromPath (This : in out AbPathUtilOld; categoryPath : Unbounded_String) return AbPath_Access;

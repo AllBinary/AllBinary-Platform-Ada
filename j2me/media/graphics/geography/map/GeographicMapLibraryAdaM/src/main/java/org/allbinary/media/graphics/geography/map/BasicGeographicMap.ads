@@ -27,6 +27,13 @@ with org.allbinary.logic.math.MathUtil_Package; use org.allbinary.logic.math.Mat
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.media.graphics.geography.map.SimpleGeographicMap_Package; use org.allbinary.media.graphics.geography.map.SimpleGeographicMap_Package;
 with org.allbinary.media.graphics.geography.map.GeographicMapInterface_Package; use org.allbinary.media.graphics.geography.map.GeographicMapInterface_Package;
+with org.allbinary.media.graphics.geography.map.BasicGeographicMapCellPositionFactory_Package; use org.allbinary.media.graphics.geography.map.BasicGeographicMapCellPositionFactory_Package;
+with org.allbinary.media.graphics.geography.map.GeographicMapCellPositionFactoryInterface_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellPositionFactoryInterface_Package;
+with org.allbinary.media.graphics.geography.map.GeographicMapCellTypeFactory_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellTypeFactory_Package;
+with org.allbinary.media.graphics.geography.map.GeographicMapCellPositionBaseFactory_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellPositionBaseFactory_Package;
+with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
+with org.allbinary.media.graphics.geography.map.SimpleGeographicMapCellPositionFactory_Package; use org.allbinary.media.graphics.geography.map.SimpleGeographicMapCellPositionFactory_Package;
+with org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package;
 
 package org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package is
 
@@ -70,11 +77,8 @@ package org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package is
    function getCellTypeAtXY (This : in out BasicGeographicMap; x : Integer; y : Integer) return GeographicMapCellType_Access;
    procedure getCellTypeAtXY (This : in out BasicGeographicMap; x : Integer; y : Integer);
    function getGeographicMapCellPositionFactory (This : in out BasicGeographicMap) return BasicGeographicMapCellPositionFactory_Access;
-   procedure getGeographicMapCellPositionFactory (This : in out BasicGeographicMap);
    function getGeographicMapCellPositionFactoryInterface (This : in out BasicGeographicMap) return GeographicMapCellPositionFactoryInterface_Access;
-   procedure getGeographicMapCellPositionFactoryInterface (This : in out BasicGeographicMap);
    function getGeographicMapCellTypeFactory (This : in out BasicGeographicMap) return GeographicMapCellTypeFactory_Access;
-   procedure getGeographicMapCellTypeFactory (This : in out BasicGeographicMap);
 
 end org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
 

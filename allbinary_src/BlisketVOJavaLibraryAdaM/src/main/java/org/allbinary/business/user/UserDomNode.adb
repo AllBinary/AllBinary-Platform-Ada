@@ -31,7 +31,7 @@ package body org.allbinary.business.user.UserDomNode_Package is
    function Create (dataMappingInterface : TableMappingInterface_Access) return UserDomNode_Access is
       This : constant UserDomNode_Access := new UserDomNode;
    begin
-      Initialize (This.all, dataMappingInterface);
+      UserDomNode_Package.Initialize (This.all, dataMappingInterface);
       return This;
    end Create;
 
@@ -66,20 +66,6 @@ package body org.allbinary.business.user.UserDomNode_Package is
    begin
       null;
    end toXmlNode;
-
-   procedure toXmlDoc (This : in out UserDomNode) is
-      Java_Result : constant Document_Access := UserDomNode'Class (This).toXmlDoc;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toXmlDoc;
-
-   procedure view (This : in out UserDomNode) is
-      Java_Result : constant Unbounded_String := UserDomNode'Class (This).view;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end view;
 
 end org.allbinary.business.user.UserDomNode_Package;
 

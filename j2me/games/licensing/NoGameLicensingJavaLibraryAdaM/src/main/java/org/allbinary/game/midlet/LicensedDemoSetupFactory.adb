@@ -28,7 +28,7 @@ package body org.allbinary.game.midlet.LicensedDemoSetupFactory_Package is
    function Create return LicensedDemoSetupFactory_Access is
       This : constant LicensedDemoSetupFactory_Access := new LicensedDemoSetupFactory;
    begin
-      Initialize (This.all);
+      LicensedDemoSetupFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -36,13 +36,6 @@ package body org.allbinary.game.midlet.LicensedDemoSetupFactory_Package is
    function getInstance (This : in out LicensedDemoSetupFactory) return DemoSetup_Access is
    begin
         return DemoSetup_Package.Create;
-   end getInstance;
-
-   procedure getInstance (This : in out LicensedDemoSetupFactory) is
-      Java_Result : constant DemoSetup_Access := LicensedDemoSetupFactory'Class (This).getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 end org.allbinary.game.midlet.LicensedDemoSetupFactory_Package;

@@ -36,7 +36,7 @@ package body taghelpers.ValidationViewHelper_Package is
    function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return ValidationViewHelper_Access is
       This : constant ValidationViewHelper_Access := new ValidationViewHelper;
    begin
-      Initialize (This.all, hashMap, pageContext);
+      ValidationViewHelper_Package.Initialize (This.all, hashMap, pageContext);
       return This;
    end Create;
 
@@ -110,27 +110,6 @@ package body taghelpers.ValidationViewHelper_Package is
                 end;
         end;
    end toValidationInfoNode;
-
-   procedure isValid (This : in out ValidationViewHelper) is
-      Java_Result : constant Boolean := ValidationViewHelper'Class (This).isValid;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isValid;
-
-   procedure validationInfo (This : in out ValidationViewHelper) is
-      Java_Result : constant Unbounded_String := ValidationViewHelper'Class (This).validationInfo;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end validationInfo;
-
-   procedure toValidationInfoDoc (This : in out ValidationViewHelper) is
-      Java_Result : constant Document_Access := ValidationViewHelper'Class (This).toValidationInfoDoc;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toValidationInfoDoc;
 
    procedure toValidationInfoNode (This : in out ValidationViewHelper; document : Document_Access) is
       Java_Result : constant Node_Access := ValidationViewHelper'Class (This).toValidationInfoNode (document);

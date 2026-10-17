@@ -36,7 +36,7 @@ package body org.allbinary.logic.communication.http.file.upload.AbFileUploadFact
    function Create return AbFileUploadFactory_Access is
       This : constant AbFileUploadFactory_Access := new AbFileUploadFactory;
    begin
-      Initialize (This.all);
+      AbFileUploadFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -95,13 +95,6 @@ package body org.allbinary.logic.communication.http.file.upload.AbFileUploadFact
                 end;
         end;
    end getFileItemList;
-
-   procedure getInstance is
-      Java_Result : constant AbFileUploadFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure getFileItemStreamList (This : in out AbFileUploadFactory; httpServletRequest : HttpServletRequest_Access) is
       Java_Result : constant List_Access := AbFileUploadFactory'Class (This).getFileItemStreamList (httpServletRequest);

@@ -20,7 +20,7 @@ package body org.allbinary.animation.vector.ARectangleFilledAnimation_Package is
    function Create return ARectangleFilledAnimation_Access is
       This : constant ARectangleFilledAnimation_Access := new ARectangleFilledAnimation;
    begin
-      Initialize (This.all);
+      ARectangleFilledAnimation_Package.Initialize (This.all);
       return This;
    end Create;
 

@@ -32,7 +32,7 @@ package body org.allbinary.game.ag.ai.sequence.NumberLayersSequenceAI_Package is
    function Create (numberOfEnemiesLeft : Integer; artificialIntelligenceInterface : ArtificialIntelligenceInterface_Access_Array_Access; ownerLayerInterface : AllBinaryLayer_Access; gameInput : GameInput_Access) return NumberLayersSequenceAI_Access is
       This : constant NumberLayersSequenceAI_Access := new NumberLayersSequenceAI;
    begin
-      Initialize (This.all, numberOfEnemiesLeft, artificialIntelligenceInterface, ownerLayerInterface, gameInput);
+      NumberLayersSequenceAI_Package.Initialize (This.all, numberOfEnemiesLeft, artificialIntelligenceInterface, ownerLayerInterface, gameInput);
       return This;
    end Create;
 

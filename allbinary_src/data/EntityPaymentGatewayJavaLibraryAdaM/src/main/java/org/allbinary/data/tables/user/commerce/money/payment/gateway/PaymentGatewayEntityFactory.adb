@@ -30,7 +30,7 @@ package body org.allbinary.data.tables.user.commerce.money.payment.gateway.Payme
    function Create return PaymentGatewayEntityFactory_Access is
       This : constant PaymentGatewayEntityFactory_Access := new PaymentGatewayEntityFactory;
    begin
-      Initialize (This.all);
+      PaymentGatewayEntityFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -54,13 +54,6 @@ package body org.allbinary.data.tables.user.commerce.money.payment.gateway.Payme
             Java_Throw (e);
                 end;
         end;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant PaymentGatewayEntity_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 end org.allbinary.data.tables.user.commerce.money.payment.gateway.PaymentGatewayEntityFactory_Package;

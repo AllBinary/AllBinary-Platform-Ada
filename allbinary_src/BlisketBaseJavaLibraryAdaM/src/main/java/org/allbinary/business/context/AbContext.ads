@@ -49,11 +49,8 @@ package org.allbinary.business.context.AbContext_Package is
    procedure Initialize (This : in out AbContext'Class; propertiesHashMap : HashMap_Access; pageContext : PageContext_Access);
    function Create (propertiesHashMap : HashMap_Access; pageContext : PageContext_Access) return AbContext_Access;
    function getWeblisketSession (This : in out AbContext) return WeblisketSessionInterface_Access;
-   procedure getWeblisketSession (This : in out AbContext);
    function getPageContext (This : in out AbContext) return PageContext_Access;
-   procedure getPageContext (This : in out AbContext);
    function getPropertiesHashMap (This : in out AbContext) return HashMap_Access;
-   procedure getPropertiesHashMap (This : in out AbContext);
 
 end org.allbinary.business.context.AbContext_Package;
 

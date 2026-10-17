@@ -68,7 +68,6 @@ package org.allbinary.logic.visual.transform.info.dom.TransformInfoPropertiesDoc
    procedure Initialize (This : in out TransformInfoPropertiesDocument'Class; filePath : Unbounded_String);
    function Create (filePath : Unbounded_String) return TransformInfoPropertiesDocument_Access;
    function toTransformInfoPropertiesHashMap (This : in out TransformInfoPropertiesDocument) return HashMap_Access;
-   procedure toTransformInfoPropertiesHashMap (This : in out TransformInfoPropertiesDocument);
 
 end org.allbinary.logic.visual.transform.info.dom.TransformInfoPropertiesDocument_Package;
 

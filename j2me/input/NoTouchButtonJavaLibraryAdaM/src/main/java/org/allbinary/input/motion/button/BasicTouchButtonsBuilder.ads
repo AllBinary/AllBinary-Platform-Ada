@@ -48,9 +48,7 @@ package org.allbinary.input.motion.button.BasicTouchButtonsBuilder_Package is
    procedure Initialize (This : in out BasicTouchButtonsBuilder'Class);
    function Create return BasicTouchButtonsBuilder_Access;
    function getInstance return BaseTouchInput_Access;
-   procedure getInstance;
    function getList (This : in out BasicTouchButtonsBuilder) return BasicArrayList_Access;
-   procedure getList (This : in out BasicTouchButtonsBuilder);
 
 end org.allbinary.input.motion.button.BasicTouchButtonsBuilder_Package;
 

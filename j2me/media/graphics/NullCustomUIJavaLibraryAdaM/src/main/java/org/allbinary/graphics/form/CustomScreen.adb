@@ -17,7 +17,7 @@ package body org.allbinary.graphics.form.CustomScreen_Package is
    function Create return CustomScreen_Access is
       This : constant CustomScreen_Access := new CustomScreen;
    begin
-      Initialize (This.all);
+      CustomScreen_Package.Initialize (This.all);
       return This;
    end Create;
 

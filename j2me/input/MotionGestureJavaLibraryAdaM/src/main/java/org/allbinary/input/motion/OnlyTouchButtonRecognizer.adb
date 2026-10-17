@@ -33,7 +33,7 @@ package body org.allbinary.input.motion.OnlyTouchButtonRecognizer_Package is
    function Create return OnlyTouchButtonRecognizer_Access is
       This : constant OnlyTouchButtonRecognizer_Access := new OnlyTouchButtonRecognizer;
    begin
-      Initialize (This.all);
+      OnlyTouchButtonRecognizer_Package.Initialize (This.all);
       return This;
    end Create;
 

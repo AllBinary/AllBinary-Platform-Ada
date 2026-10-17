@@ -41,6 +41,13 @@ with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.w3c.dom.NodeList_Package; use org.w3c.dom.NodeList_Package;
 with org.allbinary.input.automation.actions.script.condition.ProfileActionScriptConditionInterface_Package; use org.allbinary.input.automation.actions.script.condition.ProfileActionScriptConditionInterface_Package;
+with org.allbinary.input.automation.actions.script.condition.GenericProfileActionScriptConditionData_Package; use org.allbinary.input.automation.actions.script.condition.GenericProfileActionScriptConditionData_Package;
+with org.allbinary.input.automation.actions.script.condition.ProfileActionScriptConditionFactory_Package; use org.allbinary.input.automation.actions.script.condition.ProfileActionScriptConditionFactory_Package;
+with org.allbinary.input.automation.actions.script.condition.JMenu_Package; use org.allbinary.input.automation.actions.script.condition.JMenu_Package;
+with org.allbinary.input.automation.actions.script.condition.JMenuItem_Package; use org.allbinary.input.automation.actions.script.condition.JMenuItem_Package;
+with org.allbinary.input.automation.actions.script.condition.TimeIntervalActionScriptCondition_Package; use org.allbinary.input.automation.actions.script.condition.TimeIntervalActionScriptCondition_Package;
+with org.allbinary.input.automation.actions.script.condition.AlwaysActionScriptCondition_Package; use org.allbinary.input.automation.actions.script.condition.AlwaysActionScriptCondition_Package;
+with org.allbinary.input.automation.actions.script.condition.ColorAtActionScriptCondition_Package; use org.allbinary.input.automation.actions.script.condition.ColorAtActionScriptCondition_Package;
 
 package org.allbinary.input.automation.actions.script.condition.BasicProfileActionScriptCondition_Package is
 
@@ -79,11 +86,8 @@ package org.allbinary.input.automation.actions.script.condition.BasicProfileActi
    procedure addProcessorNodes (This : in out BasicProfileActionScriptCondition; node : Node_Access);
    procedure init (This : in out BasicProfileActionScriptCondition);
    function getConditionJPopupMenu (This : in out BasicProfileActionScriptCondition) return JMenu_Access;
-   procedure getConditionJPopupMenu (This : in out BasicProfileActionScriptCondition);
    function getInputJPopupMenu (This : in out BasicProfileActionScriptCondition) return JMenu_Access;
-   procedure getInputJPopupMenu (This : in out BasicProfileActionScriptCondition);
    function getOutputJPopupMenu (This : in out BasicProfileActionScriptCondition) return JMenu_Access;
-   procedure getOutputJPopupMenu (This : in out BasicProfileActionScriptCondition);
    procedure addProcessor (This : in out BasicProfileActionScriptCondition; profileActionProcessorInterface : ProfileActionScriptProcessorInterface_Access);
    procedure removeProcessor (This : in out BasicProfileActionScriptCondition; profileActionProcessorInterface : ProfileActionScriptProcessorInterface_Access);
    procedure removeCondition (This : in out BasicProfileActionScriptCondition; profileActionScriptNodeInterface : ProfileActionScriptNodeInterface_Access);
@@ -91,11 +95,9 @@ package org.allbinary.input.automation.actions.script.condition.BasicProfileActi
    function toXmlNode (This : in out BasicProfileActionScriptCondition; document : Document_Access) return Node_Access;
    procedure toXmlNode (This : in out BasicProfileActionScriptCondition; document : Document_Access);
    function getProfileActionConditionInterfaceVector (This : in out BasicProfileActionScriptCondition) return BasicArrayList_Access;
-   procedure getProfileActionConditionInterfaceVector (This : in out BasicProfileActionScriptCondition);
    procedure setProfileActionConditionInterfaceVector (This : in out BasicProfileActionScriptCondition; profileActionConditionInterfaceVector : BasicArrayList_Access);
    procedure actionPerformed (This : in out BasicProfileActionScriptCondition; actionEvent : ActionEvent_Access);
    function getProfileActionProcessorInterfaceVector (This : in out BasicProfileActionScriptCondition) return BasicArrayList_Access;
-   procedure getProfileActionProcessorInterfaceVector (This : in out BasicProfileActionScriptCondition);
    procedure setProfileActionProcessorInterfaceVector (This : in out BasicProfileActionScriptCondition; profileActionProcessorInterfaceVector : BasicArrayList_Access);
    procedure updateTree (This : in out BasicProfileActionScriptCondition);
    function shouldProcess (This : in out BasicProfileActionScriptCondition; frame : Long_Long_Integer) return Boolean;

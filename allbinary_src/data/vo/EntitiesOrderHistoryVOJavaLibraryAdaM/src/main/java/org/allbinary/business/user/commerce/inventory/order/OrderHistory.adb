@@ -43,7 +43,7 @@ package body org.allbinary.business.user.commerce.inventory.order.OrderHistory_P
    function Create (basketInterface : BasketInterface_Access) return OrderHistory_Access is
       This : constant OrderHistory_Access := new OrderHistory;
    begin
-      Initialize (This.all, basketInterface);
+      OrderHistory_Package.Initialize (This.all, basketInterface);
       return This;
    end Create;
 
@@ -74,7 +74,7 @@ package body org.allbinary.business.user.commerce.inventory.order.OrderHistory_P
    function Create (basketInterface : BasketInterface_Access; orderHistory : OrderHistory_Access) return OrderHistory_Access is
       This : constant OrderHistory_Access := new OrderHistory;
    begin
-      Initialize (This.all, basketInterface, orderHistory);
+      OrderHistory_Package.Initialize (This.all, basketInterface, orderHistory);
       return This;
    end Create;
 
@@ -105,7 +105,7 @@ package body org.allbinary.business.user.commerce.inventory.order.OrderHistory_P
    function Create (basketInterface : BasketInterface_Access; orderHistoryHashMap : HashMap_Access) return OrderHistory_Access is
       This : constant OrderHistory_Access := new OrderHistory;
    begin
-      Initialize (This.all, basketInterface, orderHistoryHashMap);
+      OrderHistory_Package.Initialize (This.all, basketInterface, orderHistoryHashMap);
       return This;
    end Create;
 
@@ -294,104 +294,6 @@ package body org.allbinary.business.user.commerce.inventory.order.OrderHistory_P
         end loop;
         return node;
    end toXmlNode;
-
-   procedure getUserName (This : in out OrderHistory) is
-      Java_Result : constant Unbounded_String := OrderHistory'Class (This).getUserName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getUserName;
-
-   procedure getShippingAddress (This : in out OrderHistory) is
-      Java_Result : constant StreetAddress_Access := OrderHistory'Class (This).getShippingAddress;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getShippingAddress;
-
-   procedure getBillingAddress (This : in out OrderHistory) is
-      Java_Result : constant StreetAddress_Access := OrderHistory'Class (This).getBillingAddress;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getBillingAddress;
-
-   procedure getPaymentInfo (This : in out OrderHistory) is
-      Java_Result : constant Payment_Access := OrderHistory'Class (This).getPaymentInfo;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getPaymentInfo;
-
-   procedure getShipDate (This : in out OrderHistory) is
-      Java_Result : constant Unbounded_String := OrderHistory'Class (This).getShipDate;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getShipDate;
-
-   procedure getOrderDate (This : in out OrderHistory) is
-      Java_Result : constant Unbounded_String := OrderHistory'Class (This).getOrderDate;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getOrderDate;
-
-   procedure getTransDate (This : in out OrderHistory) is
-      Java_Result : constant Unbounded_String := OrderHistory'Class (This).getTransDate;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTransDate;
-
-   procedure getCancelDate (This : in out OrderHistory) is
-      Java_Result : constant Unbounded_String := OrderHistory'Class (This).getCancelDate;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getCancelDate;
-
-   procedure getStatus (This : in out OrderHistory) is
-      Java_Result : constant Unbounded_String := OrderHistory'Class (This).getStatus;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getStatus;
-
-   procedure getSubTotal (This : in out OrderHistory) is
-      Java_Result : constant Money_Access := OrderHistory'Class (This).getSubTotal;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSubTotal;
-
-   procedure getShippingCost (This : in out OrderHistory) is
-      Java_Result : constant Money_Access := OrderHistory'Class (This).getShippingCost;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getShippingCost;
-
-   procedure getTaxes (This : in out OrderHistory) is
-      Java_Result : constant Money_Access := OrderHistory'Class (This).getTaxes;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTaxes;
-
-   procedure getTotal (This : in out OrderHistory) is
-      Java_Result : constant Money_Access := OrderHistory'Class (This).getTotal;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTotal;
-
-   procedure toHashMap (This : in out OrderHistory) is
-      Java_Result : constant HashMap_Access := OrderHistory'Class (This).toHashMap;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toHashMap;
 
    procedure toXmlNode (This : in out OrderHistory; document : Document_Access) is
       Java_Result : constant Node_Access := OrderHistory'Class (This).toXmlNode (document);

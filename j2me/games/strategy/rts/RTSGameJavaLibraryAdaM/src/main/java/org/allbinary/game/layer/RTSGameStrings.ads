@@ -52,7 +52,6 @@ package org.allbinary.game.layer.RTSGameStrings_Package is
    procedure Initialize (This : in out RTSGameStrings'Class);
    function Create return RTSGameStrings_Access;
    function getInstance return RTSGameStrings_Access;
-   procedure getInstance;
 
 end org.allbinary.game.layer.RTSGameStrings_Package;
 

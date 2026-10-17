@@ -51,7 +51,7 @@ package body org.allbinary.logic.communication.sql.SqlStrings_Package is
    function Create return SqlStrings_Access is
       This : constant SqlStrings_Access := new SqlStrings;
    begin
-      Initialize (This.all);
+      SqlStrings_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -59,13 +59,6 @@ package body org.allbinary.logic.communication.sql.SqlStrings_Package is
    function getInstance return SqlStrings_Access is
    begin
         return SqlStrings_Package.instance;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant SqlStrings_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

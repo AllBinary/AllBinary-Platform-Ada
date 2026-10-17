@@ -25,6 +25,8 @@ with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.lo
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.allbinary.business.category.properties.CategoryPropertiesFactoryInterface_Package; use org.allbinary.business.category.properties.CategoryPropertiesFactoryInterface_Package;
+with org.allbinary.business.category.properties.CategoryPropertiesInterface_Package; use org.allbinary.business.category.properties.CategoryPropertiesInterface_Package;
+with org.allbinary.business.category.properties.CategoryProperties_Package; use org.allbinary.business.category.properties.CategoryProperties_Package;
 
 package org.allbinary.business.category.properties.CategoryPropertiesFactory_Package is
 
@@ -45,7 +47,6 @@ package org.allbinary.business.category.properties.CategoryPropertiesFactory_Pac
    procedure Initialize (This : in out CategoryPropertiesFactory'Class; name : Unbounded_String);
    function Create (name : Unbounded_String) return CategoryPropertiesFactory_Access;
    function getInstance (This : in out CategoryPropertiesFactory) return CategoryPropertiesInterface_Access;
-   procedure getInstance (This : in out CategoryPropertiesFactory);
 
 end org.allbinary.business.category.properties.CategoryPropertiesFactory_Package;
 

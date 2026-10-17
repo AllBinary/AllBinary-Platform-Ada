@@ -20,7 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.util.Calendar_Package; use java.util.Calendar_Package;
+with java.util.Calendar_Package; use java.util.Calendar_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 --  with javax.servlet.http.HttpServletRequest_Package; use javax.servlet.http.HttpServletRequest_Package;
@@ -44,6 +44,7 @@ with views.business.context.modules.storefront.HttpStoreComponentView_Package; u
 
 package views.admin.orderhistory.DateRangeOrderHistoryView_Package is
 
+   package Calendar_Package renames Standard.java.util.Calendar_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
    package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    package OrderData_Package renames Standard.org.allbinary.business.user.commerce.inventory.order.OrderData_Package;
@@ -103,17 +104,13 @@ package views.admin.orderhistory.DateRangeOrderHistoryView_Package is
    procedure getFormData (This : in out DateRangeOrderHistoryView);
    procedure addDomNodeInterfaces (This : in out DateRangeOrderHistoryView);
    function view (This : in out DateRangeOrderHistoryView) return Unbounded_String;
-   procedure view (This : in out DateRangeOrderHistoryView);
    function toXmlNode (This : in out DateRangeOrderHistoryView; document : Document_Access) return Node_Access;
    procedure toXmlNode (This : in out DateRangeOrderHistoryView; document : Document_Access);
    function isValid (This : in out DateRangeOrderHistoryView) return Boolean;
-   procedure isValid (This : in out DateRangeOrderHistoryView);
    function toValidationInfoDoc (This : in out DateRangeOrderHistoryView) return Document_Access;
-   procedure toValidationInfoDoc (This : in out DateRangeOrderHistoryView);
    function toValidationInfoNode (This : in out DateRangeOrderHistoryView; document : Document_Access) return Node_Access;
    procedure toValidationInfoNode (This : in out DateRangeOrderHistoryView; document : Document_Access);
    function validationInfo (This : in out DateRangeOrderHistoryView) return Unbounded_String;
-   procedure validationInfo (This : in out DateRangeOrderHistoryView);
 
 end views.admin.orderhistory.DateRangeOrderHistoryView_Package;
 

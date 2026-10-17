@@ -33,7 +33,7 @@ package body org.allbinary.servlet.file.UploadFileServlet_Package is
    function Create return UploadFileServlet_Access is
       This : constant UploadFileServlet_Access := new UploadFileServlet;
    begin
-      Initialize (This.all);
+      UploadFileServlet_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -96,7 +96,8 @@ package body org.allbinary.servlet.file.UploadFileServlet_Package is
    end processRequest;
 
    --  throws Exception
-   procedure saveFile (This : in out UploadFileServlet; filePath : Unbounded_String) is
+   procedure saveFile (This : in out UploadFileServlet; filePath_Param : Unbounded_String) is
+      filePath : Unbounded_String := filePath_Param;
       fileOutputStream : AbFileOutputStream_Access;
       fileItem : FileItem_Access;
       file : AbFile_Access;
@@ -153,13 +154,6 @@ package body org.allbinary.servlet.file.UploadFileServlet_Package is
    function getServletInfo (This : in out UploadFileServlet) return Unbounded_String is
    begin
         return To_Unbounded_String ("Upload Cloud Files");
-   end getServletInfo;
-
-   procedure getServletInfo (This : in out UploadFileServlet) is
-      Java_Result : constant Unbounded_String := UploadFileServlet'Class (This).getServletInfo;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getServletInfo;
 
 end org.allbinary.servlet.file.UploadFileServlet_Package;

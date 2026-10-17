@@ -27,6 +27,8 @@ with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.lo
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellPositionBaseFactory_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellPositionBaseFactory_Package;
+with org.allbinary.media.graphics.geography.map.BasicGeographicMapCellPositionFactory_Package; use org.allbinary.media.graphics.geography.map.BasicGeographicMapCellPositionFactory_Package;
+with org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package; use org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
 
 package org.allbinary.media.graphics.geography.map.GeographicMapCellPositionFactory_Package is
 
@@ -52,7 +54,6 @@ package org.allbinary.media.graphics.geography.map.GeographicMapCellPositionFact
    function getInstance (This : in out GeographicMapCellPositionFactory; geographicMapInterface : BasicGeographicMap_Access) return BasicGeographicMapCellPositionFactory_Access;
    procedure getInstance (This : in out GeographicMapCellPositionFactory; geographicMapInterface : BasicGeographicMap_Access);
    function getHashtable return ABHashtable_Access;
-   procedure getHashtable;
 
 end org.allbinary.media.graphics.geography.map.GeographicMapCellPositionFactory_Package;
 

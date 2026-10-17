@@ -32,6 +32,8 @@ with org.allbinary.graphics.Rectangle_Package; use org.allbinary.graphics.Rectan
 with org.allbinary.graphics.displayable.DisplayInfoSingleton_Package; use org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
 with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
+with org.allbinary.game.ag.ai.BoundBounceAI_Package; use org.allbinary.game.ag.ai.BoundBounceAI_Package;
+with org.allbinary.game.ag.ai.ReverseVelocityBoundsVisitor_Package; use org.allbinary.game.ag.ai.ReverseVelocityBoundsVisitor_Package;
 
 package org.allbinary.game.ag.ai.TopUBoundBounceAIFactory_Package is
 

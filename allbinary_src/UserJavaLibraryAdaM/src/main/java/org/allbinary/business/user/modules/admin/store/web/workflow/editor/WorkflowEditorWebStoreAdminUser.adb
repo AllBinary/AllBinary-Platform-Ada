@@ -29,7 +29,7 @@ package body org.allbinary.business.user.modules.admin.store.web.workflow.editor
    function Create return WorkflowEditorWebStoreAdminUser_Access is
       This : constant WorkflowEditorWebStoreAdminUser_Access := new WorkflowEditorWebStoreAdminUser;
    begin
-      Initialize (This.all);
+      WorkflowEditorWebStoreAdminUser_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -42,7 +42,7 @@ package body org.allbinary.business.user.modules.admin.store.web.workflow.editor
    function Create (userHashMap : HashMap_Access) return WorkflowEditorWebStoreAdminUser_Access is
       This : constant WorkflowEditorWebStoreAdminUser_Access := new WorkflowEditorWebStoreAdminUser;
    begin
-      Initialize (This.all, userHashMap);
+      WorkflowEditorWebStoreAdminUser_Package.Initialize (This.all, userHashMap);
       return This;
    end Create;
 

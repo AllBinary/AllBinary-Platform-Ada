@@ -46,7 +46,7 @@ package body org.allbinary.input.automation.module.actions.script.condition.proc
    function Create (capturedImageActionScriptOutputInterface : ImageActionScriptOutputInterface_Access) return ImageActionScriptOutputJPanel_Access is
       This : constant ImageActionScriptOutputJPanel_Access := new ImageActionScriptOutputJPanel;
    begin
-      Initialize (This.all, capturedImageActionScriptOutputInterface);
+      ImageActionScriptOutputJPanel_Package.Initialize (This.all, capturedImageActionScriptOutputInterface);
       return This;
    end Create;
 
@@ -209,13 +209,6 @@ package body org.allbinary.input.automation.module.actions.script.condition.proc
    begin
         This.getCapturedImageActionJDialog.setVisible (True);
    end capturedImageActionJButtonActionPerformed;
-
-   procedure getCapturedImageActionJDialog (This : in out ImageActionScriptOutputJPanel) is
-      Java_Result : constant JDialog_Access := ImageActionScriptOutputJPanel'Class (This).getCapturedImageActionJDialog;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getCapturedImageActionJDialog;
 
 end org.allbinary.input.automation.module.actions.script.condition.processors.output.ImageActionScriptOutputJPanel_Package;
 

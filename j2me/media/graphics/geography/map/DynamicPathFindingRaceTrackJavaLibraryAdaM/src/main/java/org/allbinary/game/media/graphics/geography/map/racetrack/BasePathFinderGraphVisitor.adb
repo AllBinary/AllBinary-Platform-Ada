@@ -38,7 +38,7 @@ package body org.allbinary.game.media.graphics.geography.map.racetrack.BasePathF
    function Create (geographicMapInterface : BasicGeographicMap_Access; edgeMinimum : Integer; minPathWeight : Integer; maxPathWeight : Integer) return BasePathFinderGraphVisitor_Access is
       This : constant BasePathFinderGraphVisitor_Access := new BasePathFinderGraphVisitor;
    begin
-      Initialize (This.all, geographicMapInterface, edgeMinimum, minPathWeight, maxPathWeight);
+      BasePathFinderGraphVisitor_Package.Initialize (This.all, geographicMapInterface, edgeMinimum, minPathWeight, maxPathWeight);
       return This;
    end Create;
 

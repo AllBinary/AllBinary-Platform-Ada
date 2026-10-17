@@ -85,7 +85,7 @@ package body org.allbinary.graphics.displayable.DisplayInfoSingleton_Package is
    function Create return DisplayInfoSingleton_Access is
       This : constant DisplayInfoSingleton_Access := new DisplayInfoSingleton;
    begin
-      Initialize (This.all);
+      DisplayInfoSingleton_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -121,7 +121,9 @@ package body org.allbinary.graphics.displayable.DisplayInfoSingleton_Package is
         end if;
    end setLastSize;
 
-   procedure setLastSizeForce (This : in out DisplayInfoSingleton; aLastWidth : Integer; aLastHeight : Integer; reason_Case : Unbounded_String) is
+   procedure setLastSizeForce (This : in out DisplayInfoSingleton; aLastWidth_Param : Integer; aLastHeight_Param : Integer; reason_Case : Unbounded_String) is
+      aLastWidth : Integer := aLastWidth_Param;
+      aLastHeight : Integer := aLastHeight_Param;
       stringMaker : StringMaker_Access;
       aFullWidth : Integer;
       aFullHeight : Integer;
@@ -448,41 +450,6 @@ package body org.allbinary.graphics.displayable.DisplayInfoSingleton_Package is
         return This.yOffset;
    end getyOffset;
 
-   procedure getInstance is
-      Java_Result : constant DisplayInfoSingleton_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure getLastHalf (This : in out DisplayInfoSingleton) is
-      Java_Result : constant Integer_Array_Access := DisplayInfoSingleton'Class (This).getLastHalf;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getLastHalf;
-
-   procedure getLast (This : in out DisplayInfoSingleton) is
-      Java_Result : constant Integer_Array_Access := DisplayInfoSingleton'Class (This).getLast;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getLast;
-
-   procedure getFull (This : in out DisplayInfoSingleton) is
-      Java_Result : constant Integer_Array_Access := DisplayInfoSingleton'Class (This).getFull;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getFull;
-
-   procedure getScaleLargestTo (This : in out DisplayInfoSingleton) is
-      Java_Result : constant Float := DisplayInfoSingleton'Class (This).getScaleLargestTo;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getScaleLargestTo;
-
    procedure isPortraitWH (This : in out DisplayInfoSingleton; lastWidth : Integer; lastHeight : Integer) is
       Java_Result : constant Boolean := DisplayInfoSingleton'Class (This).isPortraitWH (lastWidth, lastHeight);
       pragma Unreferenced (Java_Result);
@@ -490,131 +457,12 @@ package body org.allbinary.graphics.displayable.DisplayInfoSingleton_Package is
       null;
    end isPortraitWH;
 
-   procedure isPortrait (This : in out DisplayInfoSingleton) is
-      Java_Result : constant Boolean := DisplayInfoSingleton'Class (This).isPortrait;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isPortrait;
-
-   procedure toString (This : in out DisplayInfoSingleton) is
-      Java_Result : constant Unbounded_String := DisplayInfoSingleton'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toString;
-
    procedure toStringAppend (This : in out DisplayInfoSingleton; stringBuffer : StringMaker_Access) is
       Java_Result : constant Unbounded_String := DisplayInfoSingleton'Class (This).toStringAppend (stringBuffer);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end toStringAppend;
-
-   procedure getTop (This : in out DisplayInfoSingleton) is
-      Java_Result : constant Integer := DisplayInfoSingleton'Class (This).getTop;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTop;
-
-   procedure getLeft (This : in out DisplayInfoSingleton) is
-      Java_Result : constant Integer := DisplayInfoSingleton'Class (This).getLeft;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getLeft;
-
-   procedure getLastWidth (This : in out DisplayInfoSingleton) is
-      Java_Result : constant Integer := DisplayInfoSingleton'Class (This).getLastWidth;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getLastWidth;
-
-   procedure getLastHeight (This : in out DisplayInfoSingleton) is
-      Java_Result : constant Integer := DisplayInfoSingleton'Class (This).getLastHeight;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getLastHeight;
-
-   procedure getLastHalfWidth (This : in out DisplayInfoSingleton) is
-      Java_Result : constant Integer := DisplayInfoSingleton'Class (This).getLastHalfWidth;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getLastHalfWidth;
-
-   procedure getLastHalfHeight (This : in out DisplayInfoSingleton) is
-      Java_Result : constant Integer := DisplayInfoSingleton'Class (This).getLastHalfHeight;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getLastHalfHeight;
-
-   procedure getCustomLastWidth (This : in out DisplayInfoSingleton) is
-      Java_Result : constant Integer := DisplayInfoSingleton'Class (This).getCustomLastWidth;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getCustomLastWidth;
-
-   procedure getCustomLastHeight (This : in out DisplayInfoSingleton) is
-      Java_Result : constant Integer := DisplayInfoSingleton'Class (This).getCustomLastHeight;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getCustomLastHeight;
-
-   procedure getRawLastWidth (This : in out DisplayInfoSingleton) is
-      Java_Result : constant Integer := DisplayInfoSingleton'Class (This).getRawLastWidth;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getRawLastWidth;
-
-   procedure getRawLastHeight (This : in out DisplayInfoSingleton) is
-      Java_Result : constant Integer := DisplayInfoSingleton'Class (This).getRawLastHeight;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getRawLastHeight;
-
-   procedure getScalableListener (This : in out DisplayInfoSingleton) is
-      Java_Result : constant ScalableListener_Access := DisplayInfoSingleton'Class (This).getScalableListener;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getScalableListener;
-
-   procedure getRatio (This : in out DisplayInfoSingleton) is
-      Java_Result : constant Float := DisplayInfoSingleton'Class (This).getRatio;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getRatio;
-
-   procedure getDisplayRatio (This : in out DisplayInfoSingleton) is
-      Java_Result : constant Float := DisplayInfoSingleton'Class (This).getDisplayRatio;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getDisplayRatio;
-
-   procedure getxOffset (This : in out DisplayInfoSingleton) is
-      Java_Result : constant Integer := DisplayInfoSingleton'Class (This).getxOffset;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getxOffset;
-
-   procedure getyOffset (This : in out DisplayInfoSingleton) is
-      Java_Result : constant Integer := DisplayInfoSingleton'Class (This).getyOffset;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getyOffset;
 
 begin
    null;

@@ -32,6 +32,10 @@ with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.s
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.view.ViewPosition_Package; use org.allbinary.view.ViewPosition_Package;
 with org.allbinary.game.input.GameInputInterface_Package; use org.allbinary.game.input.GameInputInterface_Package;
+with org.allbinary.game.input.GameInputProcessor_Package; use org.allbinary.game.input.GameInputProcessor_Package;
+with org.allbinary.game.input.InputFactory_Package; use org.allbinary.game.input.InputFactory_Package;
+with org.allbinary.game.input.GameInputProcessorUtil_Package; use org.allbinary.game.input.GameInputProcessorUtil_Package;
+with org.allbinary.game.input.TestInputInterface_Package; use org.allbinary.game.input.TestInputInterface_Package;
 
 package org.allbinary.game.input.TestingInputSingleton_Package is
 
@@ -59,14 +63,12 @@ package org.allbinary.game.input.TestingInputSingleton_Package is
    procedure Initialize (This : in out TestingInputSingleton'Class);
    function Create return TestingInputSingleton_Access;
    function getInstance return TestingInputSingleton_Access;
-   procedure getInstance;
    procedure initInputProcessors (This : in out TestingInputSingleton);
    procedure initInputProcessorsForTestInput (This : in out TestingInputSingleton; aTestInputInterface : TestInputInterface_Access);
    procedure processInputList (This : in out TestingInputSingleton; allbinaryLayerManager : AllBinaryLayerManager_Access; list : BasicArrayList_Access);
    procedure processInput (This : in out TestingInputSingleton; allbinaryLayerManager : AllBinaryLayerManager_Access);
    procedure paint (This : in out TestingInputSingleton; graphics : Graphics_Access);
    function implmentsGameInputInterface (This : in out TestingInputSingleton) return Boolean;
-   procedure implmentsGameInputInterface (This : in out TestingInputSingleton);
 
 end org.allbinary.game.input.TestingInputSingleton_Package;
 

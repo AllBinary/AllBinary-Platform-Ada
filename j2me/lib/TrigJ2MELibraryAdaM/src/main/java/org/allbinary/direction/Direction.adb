@@ -38,7 +38,7 @@ package body org.allbinary.direction.Direction_Package is
    function Create (name : Unbounded_String; otherName : Unbounded_String; value : Integer; frameFactor : Integer) return Direction_Access is
       This : constant Direction_Access := new Direction;
    begin
-      Initialize (This.all, name, otherName, value, frameFactor);
+      Direction_Package.Initialize (This.all, name, otherName, value, frameFactor);
       return This;
    end Create;
 
@@ -86,41 +86,6 @@ package body org.allbinary.direction.Direction_Package is
    begin
       null;
    end getInstance;
-
-   procedure getValue (This : in out Direction) is
-      Java_Result : constant Integer := Direction'Class (This).getValue;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getValue;
-
-   procedure getFrameFactor (This : in out Direction) is
-      Java_Result : constant Integer := Direction'Class (This).getFrameFactor;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getFrameFactor;
-
-   procedure getOtherName (This : in out Direction) is
-      Java_Result : constant Unbounded_String := Direction'Class (This).getOtherName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getOtherName;
-
-   procedure getName (This : in out Direction) is
-      Java_Result : constant Unbounded_String := Direction'Class (This).getName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getName;
-
-   procedure toString (This : in out Direction) is
-      Java_Result : constant Unbounded_String := Direction'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toString;
 
 begin
    null;

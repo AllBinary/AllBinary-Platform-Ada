@@ -38,7 +38,6 @@ package org.allbinary.media.image.ImageCreationUtil_Package is
    procedure Initialize (This : in out ImageCreationUtil'Class);
    function Create return ImageCreationUtil_Access;
    function getInstance return ImageCreationUtil_Access;
-   procedure getInstance;
    function createImageWH (This : in out ImageCreationUtil; width : Integer; height : Integer) return Image_Access;
    procedure createImageWH (This : in out ImageCreationUtil; width : Integer; height : Integer);
    function createImage (This : in out ImageCreationUtil; width : Integer; height : Integer; maxScaleX : Float; maxScaleY : Float) return Image_Access;

@@ -27,6 +27,9 @@ with org.allbinary.graphics.canvas.transition.progress.ProgressCanvasFactory_Pac
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.media.audio.Sounds_Package; use org.allbinary.media.audio.Sounds_Package;
+with org.allbinary.media.audio.SoundsFactoryInterface_Package; use org.allbinary.media.audio.SoundsFactoryInterface_Package;
+with org.allbinary.media.audio.NoPlayer_Package; use org.allbinary.media.audio.NoPlayer_Package;
 
 package org.allbinary.media.audio.AllBinaryMediaManager_Package is
 
@@ -47,10 +50,8 @@ package org.allbinary.media.audio.AllBinaryMediaManager_Package is
    procedure Initialize (This : in out AllBinaryMediaManager'Class);
    function Create return AllBinaryMediaManager_Access;
    function isMuted return Boolean;
-   procedure isMuted;
    procedure setMuted (aMuted : Boolean);
    function update return Boolean;
-   procedure update;
    procedure init (soundsFactoryInterface : SoundsFactoryInterface_Access);
    procedure shutdown (soundsFactoryInterface : SoundsFactoryInterface_Access);
    function createPlayerFromInputStream (stream : InputStream_Access; type_Id : Unbounded_String) return Player_Access;

@@ -34,7 +34,7 @@ package body org.allbinary.data.tables.user.commerce.inventory.item.groups.Basic
    function Create return BasicGroupItemsEntity_Access is
       This : constant BasicGroupItemsEntity_Access := new BasicGroupItemsEntity;
    begin
-      Initialize (This.all);
+      BasicGroupItemsEntity_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -97,27 +97,6 @@ package body org.allbinary.data.tables.user.commerce.inventory.item.groups.Basic
    function dropTable (This : in out BasicGroupItemsEntity) return Unbounded_String is
    begin
         return AbSqlBean (This).dropTable;
-   end dropTable;
-
-   procedure createTableStatement (This : in out BasicGroupItemsEntity) is
-      Java_Result : constant Unbounded_String := BasicGroupItemsEntity'Class (This).createTableStatement;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end createTableStatement;
-
-   procedure createTable (This : in out BasicGroupItemsEntity) is
-      Java_Result : constant Unbounded_String := BasicGroupItemsEntity'Class (This).createTable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end createTable;
-
-   procedure dropTable (This : in out BasicGroupItemsEntity) is
-      Java_Result : constant Unbounded_String := BasicGroupItemsEntity'Class (This).dropTable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end dropTable;
 
 end org.allbinary.data.tables.user.commerce.inventory.item.groups.BasicGroupItemsEntity_Package;

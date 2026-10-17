@@ -29,7 +29,7 @@ package body org.allbinary.logic.io.CloudStreamUtil_Package is
    function Create return CloudStreamUtil_Access is
       This : constant CloudStreamUtil_Access := new CloudStreamUtil;
    begin
-      Initialize (This.all);
+      CloudStreamUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -91,13 +91,6 @@ package body org.allbinary.logic.io.CloudStreamUtil_Package is
         end if;
         return inputStream;
    end getFileLocal;
-
-   procedure getInstance is
-      Java_Result : constant CloudStreamUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure getFile (This : in out CloudStreamUtil; file : AbFile_Access) is
       Java_Result : constant InputStream_Access := CloudStreamUtil'Class (This).getFile (file);

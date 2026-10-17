@@ -25,6 +25,7 @@ with java.io.ByteArrayOutputStream_Package; use java.io.ByteArrayOutputStream_Pa
 --  with javax.xml.transform.stream.StreamSource_Package; use javax.xml.transform.stream.StreamSource_Package;
 with org.allbinary.logic.io.file.AbFile_Package; use org.allbinary.logic.io.file.AbFile_Package;
 with org.allbinary.logic.io.path.AbPath_Package; use org.allbinary.logic.io.path.AbPath_Package;
+with org.allbinary.data.tree.dom.XslHelper_Package; use org.allbinary.data.tree.dom.XslHelper_Package;
 
 package org.allbinary.data.tree.dom.AbXslHelper_Package is
 
@@ -43,7 +44,6 @@ package org.allbinary.data.tree.dom.AbXslHelper_Package is
    procedure Initialize (This : in out AbXslHelper'Class);
    function Create return AbXslHelper_Access;
    function getInstance return AbXslHelper_Access;
-   procedure getInstance;
    function translate (This : in out AbXslHelper; xslFile : AbFile_Access; xmlFile : AbFile_Access) return Unbounded_String;
    procedure translate (This : in out AbXslHelper; xslFile : AbFile_Access; xmlFile : AbFile_Access);
    function translate (This : in out AbXslHelper; xslPath : AbPath_Access; xmlPath : AbPath_Access) return Unbounded_String;

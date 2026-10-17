@@ -34,7 +34,7 @@ package body org.allbinary.game.displayable.canvas.BasicPaintablesCanvas_Package
    function Create (cmdListener : CommandListener_Access; name : Unbounded_String; allBinaryGameLayerManager : AllBinaryGameLayerManager_Access; paintableArray : Paintable_Access_Array_Access) return BasicPaintablesCanvas_Access is
       This : constant BasicPaintablesCanvas_Access := new BasicPaintablesCanvas;
    begin
-      Initialize (This.all, cmdListener, name, allBinaryGameLayerManager, paintableArray);
+      BasicPaintablesCanvas_Package.Initialize (This.all, cmdListener, name, allBinaryGameLayerManager, paintableArray);
       return This;
    end Create;
 

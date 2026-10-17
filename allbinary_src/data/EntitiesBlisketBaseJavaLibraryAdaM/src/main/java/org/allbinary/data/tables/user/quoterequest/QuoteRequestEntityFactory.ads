@@ -22,6 +22,7 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.data.tables.user.quoterequest.QuoteRequestEntity_Package; use org.allbinary.data.tables.user.quoterequest.QuoteRequestEntity_Package;
 
 package org.allbinary.data.tables.user.quoterequest.QuoteRequestEntityFactory_Package is
 
@@ -41,9 +42,7 @@ package org.allbinary.data.tables.user.quoterequest.QuoteRequestEntityFactory_Pa
    procedure Initialize (This : in out QuoteRequestEntityFactory'Class);
    function Create return QuoteRequestEntityFactory_Access;
    function getInstance return QuoteRequestEntityFactory_Access;
-   procedure getInstance;
    function getQuoteRequestEntityInstance (This : in out QuoteRequestEntityFactory) return QuoteRequestEntity_Access;
-   procedure getQuoteRequestEntityInstance (This : in out QuoteRequestEntityFactory);
 
 end org.allbinary.data.tables.user.quoterequest.QuoteRequestEntityFactory_Package;
 

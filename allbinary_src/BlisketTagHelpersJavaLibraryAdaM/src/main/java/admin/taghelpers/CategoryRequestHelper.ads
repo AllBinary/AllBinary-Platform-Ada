@@ -92,15 +92,10 @@ package admin.taghelpers.CategoryRequestHelper_Package is
    procedure getXmlData (This : in out CategoryRequestHelper);
    procedure setCategoryLoader (This : in out CategoryRequestHelper; requestNode : Node_Access);
    function insert (This : in out CategoryRequestHelper) return Unbounded_String;
-   procedure insert (This : in out CategoryRequestHelper);
    function delete (This : in out CategoryRequestHelper) return Unbounded_String;
-   procedure delete (This : in out CategoryRequestHelper);
    function viewCategory (This : in out CategoryRequestHelper) return Unbounded_String;
-   procedure viewCategory (This : in out CategoryRequestHelper);
    function viewCategories (This : in out CategoryRequestHelper) return Unbounded_String;
-   procedure viewCategories (This : in out CategoryRequestHelper);
    function update (This : in out CategoryRequestHelper) return Unbounded_String;
-   procedure update (This : in out CategoryRequestHelper);
 
 end admin.taghelpers.CategoryRequestHelper_Package;
 

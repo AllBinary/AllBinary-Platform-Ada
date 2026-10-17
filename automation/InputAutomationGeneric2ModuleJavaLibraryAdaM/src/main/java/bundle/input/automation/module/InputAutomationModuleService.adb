@@ -31,7 +31,7 @@ package body bundle.input.automation.module.InputAutomationModuleService_Package
    function Create (inputAutomationModuleInterfaceArray : InputAutomationModuleFactoryInterface_Access_Array_Access) return InputAutomationModuleService_Access is
       This : constant InputAutomationModuleService_Access := new InputAutomationModuleService;
    begin
-      Initialize (This.all, inputAutomationModuleInterfaceArray);
+      InputAutomationModuleService_Package.Initialize (This.all, inputAutomationModuleInterfaceArray);
       return This;
    end Create;
 
@@ -44,13 +44,6 @@ package body bundle.input.automation.module.InputAutomationModuleService_Package
    begin
         This.inputAutomationModuleInterfaceArray := inputAutomationModuleInterfaceArray;
    end setInputAutomationModuleInterfaceArray;
-
-   procedure getInputAutomationModuleInterfaceArray (This : in out InputAutomationModuleService) is
-      Java_Result : constant InputAutomationModuleFactoryInterface_Access_Array_Access := InputAutomationModuleService'Class (This).getInputAutomationModuleInterfaceArray;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInputAutomationModuleInterfaceArray;
 
 end bundle.input.automation.module.InputAutomationModuleService_Package;
 

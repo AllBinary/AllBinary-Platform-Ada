@@ -28,7 +28,7 @@ package body org.allbinary.time.TimeUtil_Package is
    function Create return TimeUtil_Access is
       This : constant TimeUtil_Access := new TimeUtil;
    begin
-      Initialize (This.all);
+      TimeUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -94,13 +94,6 @@ package body org.allbinary.time.TimeUtil_Package is
         timeDelta := TimeUtil_Package.calendar.getTimeInMillis;
         return (timeDelta) - (time);
    end getTotalTime;
-
-   procedure getInstance is
-      Java_Result : constant TimeUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure getTotalTime (This : in out TimeUtil; yearString : Unbounded_String; monthString : Unbounded_String; dayString : Unbounded_String; hourString : Unbounded_String; minuteString : Unbounded_String; secondString : Unbounded_String) is
       Java_Result : constant Long_Long_Integer := TimeUtil'Class (This).getTotalTime (yearString, monthString, dayString, hourString, minuteString, secondString);

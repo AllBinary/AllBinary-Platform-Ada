@@ -25,6 +25,7 @@ with org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package; use org.allbi
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.system.Memory_Package; use org.allbinary.system.Memory_Package;
+with org.allbinary.canvas.GameStatisticsFactory_Package; use org.allbinary.canvas.GameStatisticsFactory_Package;
 
 package org.allbinary.canvas.SpecialMessageUtil_Package is
 
@@ -45,9 +46,7 @@ package org.allbinary.canvas.SpecialMessageUtil_Package is
    procedure Initialize (This : in out SpecialMessageUtil'Class);
    function Create return SpecialMessageUtil_Access;
    function getInstance return SpecialMessageUtil_Access;
-   procedure getInstance;
    function get (This : in out SpecialMessageUtil) return Unbounded_String;
-   procedure get (This : in out SpecialMessageUtil);
 
 end org.allbinary.canvas.SpecialMessageUtil_Package;
 

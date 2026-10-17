@@ -25,6 +25,7 @@ with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics
 with org.allbinary.graphics.displayable.screen.CommandForm_Package; use org.allbinary.graphics.displayable.screen.CommandForm_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.game.configuration.GameOptionsForm_Package; use org.allbinary.game.configuration.GameOptionsForm_Package;
 
 package org.allbinary.game.configuration.GameOptionsFormFactory_Package is
 
@@ -46,7 +47,6 @@ package org.allbinary.game.configuration.GameOptionsFormFactory_Package is
    procedure Initialize (This : in out GameOptionsFormFactory'Class);
    function Create return GameOptionsFormFactory_Access;
    function getInstance return GameOptionsFormFactory_Access;
-   procedure getInstance;
    function init (This : in out GameOptionsFormFactory; commandListener : CommandListener_Access; title : Unbounded_String; backgrounBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access) return CommandForm_Access;
    procedure init (This : in out GameOptionsFormFactory; commandListener : CommandListener_Access; title : Unbounded_String; backgrounBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access);
 

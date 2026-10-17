@@ -50,7 +50,7 @@ package body org.allbinary.android.input.motion.api5.GameInputMotionEventProcess
    function Create return GameInputMotionEventProcessorAPI5_Access is
       This : constant GameInputMotionEventProcessorAPI5_Access := new GameInputMotionEventProcessorAPI5;
    begin
-      Initialize (This.all);
+      GameInputMotionEventProcessorAPI5_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -127,13 +127,6 @@ package body org.allbinary.android.input.motion.api5.GameInputMotionEventProcess
                 end;
         end;
    end process;
-
-   procedure getInstance is
-      Java_Result : constant GameInputMotionEventProcessorAPI5_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure isValid (This : in out GameInputMotionEventProcessorAPI5; pointerId : Integer) is
       Java_Result : constant Boolean := GameInputMotionEventProcessorAPI5'Class (This).isValid (pointerId);

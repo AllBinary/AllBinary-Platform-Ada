@@ -20,6 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
+with org.allbinary.media.audio.PlayerQueue_Package; use org.allbinary.media.audio.PlayerQueue_Package;
 
 package org.allbinary.media.audio.SecondaryPlayerQueueFactory_Package is
 
@@ -35,7 +36,6 @@ package org.allbinary.media.audio.SecondaryPlayerQueueFactory_Package is
    procedure Initialize (This : in out SecondaryPlayerQueueFactory'Class);
    function Create return SecondaryPlayerQueueFactory_Access;
    function getInstance return PlayerQueue_Access;
-   procedure getInstance;
 
 end org.allbinary.media.audio.SecondaryPlayerQueueFactory_Package;
 

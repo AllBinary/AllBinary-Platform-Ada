@@ -32,7 +32,7 @@ package body org.allbinary.game.displayable.canvas.OverlayPaintable_Package is
    function Create return OverlayPaintable_Access is
       This : constant OverlayPaintable_Access := new OverlayPaintable;
    begin
-      Initialize (This.all);
+      OverlayPaintable_Package.Initialize (This.all);
       return This;
    end Create;
 

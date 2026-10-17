@@ -28,7 +28,7 @@ package body org.allbinary.game.ag.layer.weapon.mine.MineLayerCircularStaticPool
    function Create return MineLayerCircularStaticPool_Access is
       This : constant MineLayerCircularStaticPool_Access := new MineLayerCircularStaticPool;
    begin
-      Initialize (This.all);
+      MineLayerCircularStaticPool_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -43,13 +43,6 @@ package body org.allbinary.game.ag.layer.weapon.mine.MineLayerCircularStaticPool
    function getInstance return WeaponLayerCircularPool_Access is
    begin
         return MineLayerCircularStaticPool_Package.WEAPON_LAYER_CIRCULAR_STATIC_POOL;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant WeaponLayerCircularPool_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

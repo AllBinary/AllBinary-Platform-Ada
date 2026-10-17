@@ -22,6 +22,7 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.layer.CollidableCompositeLayer_Package; use org.allbinary.game.layer.CollidableCompositeLayer_Package;
 with org.allbinary.game.combat.destroy.DestroyableBaseBehavior_Package; use org.allbinary.game.combat.destroy.DestroyableBaseBehavior_Package;
+with org.allbinary.game.combat.destroy.DestroyedLayerProcessor_Package; use org.allbinary.game.combat.destroy.DestroyedLayerProcessor_Package;
 
 package org.allbinary.game.combat.destroy.DestroyableSimpleBehavior_Package is
 
@@ -40,7 +41,6 @@ package org.allbinary.game.combat.destroy.DestroyableSimpleBehavior_Package is
    procedure Initialize (This : in out DestroyableSimpleBehavior'Class; ownerLayer : CollidableCompositeLayer_Access);
    function Create (ownerLayer : CollidableCompositeLayer_Access) return DestroyableSimpleBehavior_Access;
    function isDestroyed (This : in out DestroyableSimpleBehavior) return Boolean;
-   procedure isDestroyed (This : in out DestroyableSimpleBehavior);
    procedure setDestroyed (This : in out DestroyableSimpleBehavior; destroyed : Boolean);
 
 end org.allbinary.game.combat.destroy.DestroyableSimpleBehavior_Package;

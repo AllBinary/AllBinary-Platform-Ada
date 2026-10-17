@@ -35,7 +35,7 @@ package body org.allbinary.media.image.comparison.motion.TestInputForMotionRecta
    function Create return TestInputForMotionRectanglesResultsWorker_Access is
       This : constant TestInputForMotionRectanglesResultsWorker_Access := new TestInputForMotionRectanglesResultsWorker;
    begin
-      Initialize (This.all);
+      TestInputForMotionRectanglesResultsWorker_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -134,20 +134,6 @@ package body org.allbinary.media.image.comparison.motion.TestInputForMotionRecta
                 end;
         end;
    end run;
-
-   procedure getMotionRectanglesVector (This : in out TestInputForMotionRectanglesResultsWorker) is
-      Java_Result : constant BasicArrayList_Access := TestInputForMotionRectanglesResultsWorker'Class (This).getMotionRectanglesVector;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getMotionRectanglesVector;
-
-   procedure isRunning (This : in out TestInputForMotionRectanglesResultsWorker) is
-      Java_Result : constant Boolean := TestInputForMotionRectanglesResultsWorker'Class (This).isRunning;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isRunning;
 
 end org.allbinary.media.image.comparison.motion.TestInputForMotionRectanglesResultsWorker_Package;
 

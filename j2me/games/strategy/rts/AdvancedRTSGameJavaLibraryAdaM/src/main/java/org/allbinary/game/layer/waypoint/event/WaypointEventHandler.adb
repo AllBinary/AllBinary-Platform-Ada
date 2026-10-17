@@ -30,7 +30,7 @@ package body org.allbinary.game.layer.waypoint.event.WaypointEventHandler_Packag
    function Create return WaypointEventHandler_Access is
       This : constant WaypointEventHandler_Access := new WaypointEventHandler;
    begin
-      Initialize (This.all);
+      WaypointEventHandler_Package.Initialize (This.all);
       return This;
    end Create;
 

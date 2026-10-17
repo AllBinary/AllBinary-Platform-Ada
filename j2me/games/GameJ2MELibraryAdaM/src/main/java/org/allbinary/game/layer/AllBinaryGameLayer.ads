@@ -40,6 +40,8 @@ with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArr
 with org.allbinary.view.ViewPositionBase_Package; use org.allbinary.view.ViewPositionBase_Package;
 with org.allbinary.view.event.ViewPositionEvent_Package; use org.allbinary.view.event.ViewPositionEvent_Package;
 with org.allbinary.view.event.ViewPositionEventListenerInterface_Package; use org.allbinary.view.event.ViewPositionEventListenerInterface_Package;
+with org.allbinary.game.layer.SWTUtil_Package; use org.allbinary.game.layer.SWTUtil_Package;
+with org.allbinary.game.layer.GameLayerUtil_Package; use org.allbinary.game.layer.GameLayerUtil_Package;
 
 package org.allbinary.game.layer.AllBinaryGameLayer_Package is
 
@@ -80,7 +82,6 @@ package org.allbinary.game.layer.AllBinaryGameLayer_Package is
    procedure set (This : in out AllBinaryGameLayer; gl : GL_Access);
    procedure move (This : in out AllBinaryGameLayer);
    function getGameKeyEventList (This : in out AllBinaryGameLayer) return BasicArrayList_Access;
-   procedure getGameKeyEventList (This : in out AllBinaryGameLayer);
    procedure processInput (This : in out AllBinaryGameLayer; allBinaryLayerManager : AllBinaryLayerManager_Access);
    procedure processTick (This : in out AllBinaryGameLayer; allBinaryLayerManager : AllBinaryLayerManager_Access);
    procedure onEvent (This : in out AllBinaryGameLayer; eventObject : AllBinaryEventObject_Access);

@@ -42,7 +42,6 @@ package org.allbinary.logic.util.visitor.Visitor_Package is
    function visit (This : in out Visitor; anyType : Java_Object_Access) return Java_Object_Access;
    procedure visit (This : in out Visitor; anyType : Java_Object_Access);
    function getInstance return Visitor_Access;
-   procedure getInstance;
 
 end org.allbinary.logic.util.visitor.Visitor_Package;
 

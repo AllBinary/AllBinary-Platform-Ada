@@ -40,7 +40,6 @@ package org.allbinary.logic.visual.transform.template.customizer.widgets.title.T
    procedure Initialize (This : in out TitleData'Class);
    function Create return TitleData_Access;
    function getInstance return TitleData_Access;
-   procedure getInstance;
 
 end org.allbinary.logic.visual.transform.template.customizer.widgets.title.TitleData_Package;
 

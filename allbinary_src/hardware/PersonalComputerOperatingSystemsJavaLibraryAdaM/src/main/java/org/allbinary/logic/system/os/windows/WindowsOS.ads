@@ -36,7 +36,6 @@ package org.allbinary.logic.system.os.windows.WindowsOS_Package is
    procedure Initialize (This : in out WindowsOS'Class);
    function Create return WindowsOS_Access;
    function isAutoHide (This : in out WindowsOS) return Boolean;
-   procedure isAutoHide (This : in out WindowsOS);
 
 end org.allbinary.logic.system.os.windows.WindowsOS_Package;
 

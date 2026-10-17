@@ -65,7 +65,7 @@ package body org.allbinary.logic.visual.dhtml.html.table.HtmlTable_Package is
    function Create (before : Unbounded_String; cellpadding_Case : Unbounded_String; cellspacing_Case : Unbounded_String; after : Unbounded_String) return HtmlTable_Access is
       This : constant HtmlTable_Access := new HtmlTable;
    begin
-      Initialize (This.all, before, cellpadding_Case, cellspacing_Case, after);
+      HtmlTable_Package.Initialize (This.all, before, cellpadding_Case, cellspacing_Case, after);
       return This;
    end Create;
 
@@ -111,13 +111,6 @@ package body org.allbinary.logic.visual.dhtml.html.table.HtmlTable_Package is
         result := result & This.ENDTAG;
         result := result & This.after;
         return result;
-   end toString;
-
-   procedure toString (This : in out HtmlTable) is
-      Java_Result : constant Unbounded_String := HtmlTable'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end toString;
 
 end org.allbinary.logic.visual.dhtml.html.table.HtmlTable_Package;

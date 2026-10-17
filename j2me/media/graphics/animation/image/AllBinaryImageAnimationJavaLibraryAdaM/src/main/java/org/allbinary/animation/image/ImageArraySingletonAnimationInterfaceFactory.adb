@@ -29,7 +29,7 @@ package body org.allbinary.animation.image.ImageArraySingletonAnimationInterface
    function Create (imageArray : Image_Access_Array_Access) return ImageArraySingletonAnimationInterfaceFactory_Access is
       This : constant ImageArraySingletonAnimationInterfaceFactory_Access := new ImageArraySingletonAnimationInterfaceFactory;
    begin
-      Initialize (This.all, imageArray);
+      ImageArraySingletonAnimationInterfaceFactory_Package.Initialize (This.all, imageArray);
       return This;
    end Create;
 

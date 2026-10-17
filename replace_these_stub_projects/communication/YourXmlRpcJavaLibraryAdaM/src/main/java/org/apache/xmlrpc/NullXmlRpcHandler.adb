@@ -28,7 +28,7 @@ package body org.apache.xmlrpc.NullXmlRpcHandler_Package is
    function Create return NullXmlRpcHandler_Access is
       This : constant NullXmlRpcHandler_Access := new NullXmlRpcHandler;
    begin
-      Initialize (This.all);
+      NullXmlRpcHandler_Package.Initialize (This.all);
       return This;
    end Create;
 

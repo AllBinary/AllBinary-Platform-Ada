@@ -42,11 +42,8 @@ package admin.taghelpers.ModifyTable_Package is
    procedure Initialize (This : in out ModifyTable'Class);
    function Create return ModifyTable_Access;
    function insert (This : in out ModifyTable) return Unbounded_String;
-   procedure insert (This : in out ModifyTable);
    function delete (This : in out ModifyTable) return Unbounded_String;
-   procedure delete (This : in out ModifyTable);
    function update (This : in out ModifyTable) return Unbounded_String;
-   procedure update (This : in out ModifyTable);
 
 end admin.taghelpers.ModifyTable_Package;
 

@@ -33,7 +33,7 @@ package body org.allbinary.game.ag.layer.hud.basic.score.ScoreableAddOnlyForHud_
    function Create (scoreVectorGraphic : ScoreHudWidget_Access) return ScoreableAddOnlyForHud_Access is
       This : constant ScoreableAddOnlyForHud_Access := new ScoreableAddOnlyForHud;
    begin
-      Initialize (This.all, scoreVectorGraphic);
+      ScoreableAddOnlyForHud_Package.Initialize (This.all, scoreVectorGraphic);
       return This;
    end Create;
 
@@ -51,13 +51,6 @@ package body org.allbinary.game.ag.layer.hud.basic.score.ScoreableAddOnlyForHud_
    function getScoreHudWidget (This : in out ScoreableAddOnlyForHud) return ScoreHudWidget_Access is
    begin
         return This.scoreHudWidget;
-   end getScoreHudWidget;
-
-   procedure getScoreHudWidget (This : in out ScoreableAddOnlyForHud) is
-      Java_Result : constant ScoreHudWidget_Access := ScoreableAddOnlyForHud'Class (This).getScoreHudWidget;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getScoreHudWidget;
 
 end org.allbinary.game.ag.layer.hud.basic.score.ScoreableAddOnlyForHud_Package;

@@ -39,7 +39,6 @@ package org.allbinary.logic.string_Id.ServletStrings_Package is
    procedure Initialize (This : in out ServletStrings'Class);
    function Create return ServletStrings_Access;
    function getInstance return ServletStrings_Access;
-   procedure getInstance;
 
 end org.allbinary.logic.string_Id.ServletStrings_Package;
 

@@ -26,6 +26,7 @@ with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArr
 with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.logic.control.validate.ValidationInterface_Package; use org.allbinary.logic.control.validate.ValidationInterface_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
+with org.allbinary.logic.visual.dhtml.style.css.CssElementValidationFactory_Package; use org.allbinary.logic.visual.dhtml.style.css.CssElementValidationFactory_Package;
 
 package org.allbinary.logic.visual.dhtml.style.css.CssElementsValidationFactory_Package is
 

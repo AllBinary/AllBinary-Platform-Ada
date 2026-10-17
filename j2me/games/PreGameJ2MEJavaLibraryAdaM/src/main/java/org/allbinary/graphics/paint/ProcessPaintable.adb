@@ -29,7 +29,7 @@ package body org.allbinary.graphics.paint.ProcessPaintable_Package is
    function Create return ProcessPaintable_Access is
       This : constant ProcessPaintable_Access := new ProcessPaintable;
    begin
-      Initialize (This.all);
+      ProcessPaintable_Package.Initialize (This.all);
       return This;
    end Create;
 

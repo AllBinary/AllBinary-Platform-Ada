@@ -28,7 +28,7 @@ package body org.allbinary.thread.ARunnable_Package is
    function Create return ARunnable_Access is
       This : constant ARunnable_Access := new ARunnable;
    begin
-      Initialize (This.all);
+      ARunnable_Package.Initialize (This.all);
       return This;
    end Create;
 

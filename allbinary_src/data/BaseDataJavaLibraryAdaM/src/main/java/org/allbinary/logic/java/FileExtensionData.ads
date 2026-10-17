@@ -38,7 +38,6 @@ package org.allbinary.logic.java.FileExtensionData_Package is
    procedure Initialize (This : in out FileExtensionData'Class);
    function Create return FileExtensionData_Access;
    function getInstance return FileExtensionData_Access;
-   procedure getInstance;
 
 end org.allbinary.logic.java.FileExtensionData_Package;
 

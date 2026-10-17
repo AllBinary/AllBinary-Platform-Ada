@@ -31,7 +31,7 @@ package body bundle.input.automation.robot.InputAutomationRobotService_Package i
    function Create (inputRobotInterfaceArray : InputRobotInterface_Access_Array_Access) return InputAutomationRobotService_Access is
       This : constant InputAutomationRobotService_Access := new InputAutomationRobotService;
    begin
-      Initialize (This.all, inputRobotInterfaceArray);
+      InputAutomationRobotService_Package.Initialize (This.all, inputRobotInterfaceArray);
       return This;
    end Create;
 
@@ -44,13 +44,6 @@ package body bundle.input.automation.robot.InputAutomationRobotService_Package i
    begin
         This.inputRobotInterfaceArray := inputRobotInterfaceArray;
    end setInputRobotInterfaceArray;
-
-   procedure getInputRobotInterfaceArray (This : in out InputAutomationRobotService) is
-      Java_Result : constant InputRobotInterface_Access_Array_Access := InputAutomationRobotService'Class (This).getInputRobotInterfaceArray;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInputRobotInterfaceArray;
 
 end bundle.input.automation.robot.InputAutomationRobotService_Package;
 

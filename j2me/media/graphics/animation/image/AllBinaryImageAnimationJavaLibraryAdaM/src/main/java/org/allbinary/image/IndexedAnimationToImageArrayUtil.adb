@@ -28,7 +28,7 @@ package body org.allbinary.image.IndexedAnimationToImageArrayUtil_Package is
    function Create return IndexedAnimationToImageArrayUtil_Access is
       This : constant IndexedAnimationToImageArrayUtil_Access := new IndexedAnimationToImageArrayUtil;
    begin
-      Initialize (This.all);
+      IndexedAnimationToImageArrayUtil_Package.Initialize (This.all);
       return This;
    end Create;
 

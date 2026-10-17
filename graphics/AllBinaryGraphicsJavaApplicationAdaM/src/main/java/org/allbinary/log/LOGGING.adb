@@ -32,7 +32,7 @@ package body org.allbinary.log.LOGGING_Package is
    function Create (value : Unbounded_String) return LOGGING_Access is
       This : constant LOGGING_Access := new LOGGING;
    begin
-      Initialize (This.all, value);
+      LOGGING_Package.Initialize (This.all, value);
       return This;
    end Create;
 
@@ -52,13 +52,6 @@ package body org.allbinary.log.LOGGING_Package is
    begin
       null;
    end contains;
-
-   procedure toString (This : in out LOGGING) is
-      Java_Result : constant Unbounded_String := LOGGING'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toString;
 
 begin
    null;

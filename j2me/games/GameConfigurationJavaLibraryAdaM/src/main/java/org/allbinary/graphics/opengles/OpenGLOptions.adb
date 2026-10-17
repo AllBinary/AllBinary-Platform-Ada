@@ -28,7 +28,7 @@ package body org.allbinary.graphics.opengles.OpenGLOptions_Package is
    function Create return OpenGLOptions_Access is
       This : constant OpenGLOptions_Access := new OpenGLOptions;
    begin
-      Initialize (This.all);
+      OpenGLOptions_Package.Initialize (This.all);
       return This;
    end Create;
 

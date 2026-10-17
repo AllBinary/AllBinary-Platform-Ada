@@ -29,7 +29,7 @@ package body org.allbinary.media.audio.BaseSoundsFactory_Package is
    function Create return BaseSoundsFactory_Access is
       This : constant BaseSoundsFactory_Access := new BaseSoundsFactory;
    begin
-      Initialize (This.all);
+      BaseSoundsFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -53,20 +53,6 @@ package body org.allbinary.media.audio.BaseSoundsFactory_Package is
    function isInitialized (This : in out BaseSoundsFactory) return Boolean is
    begin
         return This.initialized;
-   end isInitialized;
-
-   procedure getSoundInterfaceArray (This : in out BaseSoundsFactory) is
-      Java_Result : constant Sound_Access_Array_Access := BaseSoundsFactory'Class (This).getSoundInterfaceArray;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSoundInterfaceArray;
-
-   procedure isInitialized (This : in out BaseSoundsFactory) is
-      Java_Result : constant Boolean := BaseSoundsFactory'Class (This).isInitialized;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end isInitialized;
 
 end org.allbinary.media.audio.BaseSoundsFactory_Package;

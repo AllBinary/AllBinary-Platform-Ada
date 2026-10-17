@@ -52,9 +52,7 @@ package org.allbinary.game.ai.path.BasicDirectionAIHelper_Package is
    function getAIKeyPressedFromDirection (This : in out BasicDirectionAIHelper; geographicMapDirectionData : Direction_Access) return Integer;
    procedure getAIKeyPressedFromDirection (This : in out BasicDirectionAIHelper; geographicMapDirectionData : Direction_Access);
    function getAngleInfoP (This : in out BasicDirectionAIHelper) return AngleInfo_Access;
-   procedure getAngleInfoP (This : in out BasicDirectionAIHelper);
    function getName (This : in out BasicDirectionAIHelper) return Unbounded_String;
-   procedure getName (This : in out BasicDirectionAIHelper);
 
 end org.allbinary.game.ai.path.BasicDirectionAIHelper_Package;
 

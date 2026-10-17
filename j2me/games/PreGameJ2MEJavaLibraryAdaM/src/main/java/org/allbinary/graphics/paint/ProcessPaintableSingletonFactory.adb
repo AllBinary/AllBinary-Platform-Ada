@@ -30,20 +30,13 @@ package body org.allbinary.graphics.paint.ProcessPaintableSingletonFactory_Packa
    function Create return ProcessPaintableSingletonFactory_Access is
       This : constant ProcessPaintableSingletonFactory_Access := new ProcessPaintableSingletonFactory;
    begin
-      Initialize (This.all);
+      ProcessPaintableSingletonFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
    function getInstance return ProcessPaintable_Access is
    begin
         return ProcessPaintableSingletonFactory_Package.SINGLETON;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant ProcessPaintable_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

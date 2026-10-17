@@ -45,10 +45,8 @@ package org.allbinary.animation.image.AdjustedImageAnimation_Package is
    procedure paintXY (This : in out AdjustedImageAnimation; graphics : Graphics_Access; x : Integer; y : Integer);
    procedure setDx (This : in out AdjustedImageAnimation; dx : Integer);
    function getDx (This : in out AdjustedImageAnimation) return Integer;
-   procedure getDx (This : in out AdjustedImageAnimation);
    procedure setDy (This : in out AdjustedImageAnimation; dy : Integer);
    function getDy (This : in out AdjustedImageAnimation) return Integer;
-   procedure getDy (This : in out AdjustedImageAnimation);
 
 end org.allbinary.animation.image.AdjustedImageAnimation_Package;
 

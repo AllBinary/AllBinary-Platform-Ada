@@ -28,6 +28,11 @@ with org.allbinary.util.BasicArrayListUtil_Package; use org.allbinary.util.Basic
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.graphics.CellPositionFactory_Package; use org.allbinary.graphics.CellPositionFactory_Package;
 with org.allbinary.input.motion.button.BaseTouchInput_Package; use org.allbinary.input.motion.button.BaseTouchInput_Package;
+with org.allbinary.input.motion.button.TouchButtonLocationHelper_Package; use org.allbinary.input.motion.button.TouchButtonLocationHelper_Package;
+with org.allbinary.input.motion.button.BasicTouchButtonCellPositionFactory_Package; use org.allbinary.input.motion.button.BasicTouchButtonCellPositionFactory_Package;
+with org.allbinary.input.motion.button.CommonButtons_Package; use org.allbinary.input.motion.button.CommonButtons_Package;
+with org.allbinary.input.motion.button.TouchButton_Package; use org.allbinary.input.motion.button.TouchButton_Package;
+with org.allbinary.input.motion.button.BasicTouchInputFactory_Package; use org.allbinary.input.motion.button.BasicTouchInputFactory_Package;
 
 package org.allbinary.input.motion.button.UpgradeDowngradeTouchButtonsBuilder_Package is
 
@@ -51,7 +56,6 @@ package org.allbinary.input.motion.button.UpgradeDowngradeTouchButtonsBuilder_Pa
    procedure Initialize (This : in out UpgradeDowngradeTouchButtonsBuilder'Class);
    function Create return UpgradeDowngradeTouchButtonsBuilder_Access;
    function getList (This : in out UpgradeDowngradeTouchButtonsBuilder) return BasicArrayList_Access;
-   procedure getList (This : in out UpgradeDowngradeTouchButtonsBuilder);
 
 end org.allbinary.input.motion.button.UpgradeDowngradeTouchButtonsBuilder_Package;
 

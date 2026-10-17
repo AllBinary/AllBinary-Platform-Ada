@@ -41,7 +41,6 @@ package tags.generic_Id.basket.MiniBasketTag_Package is
    procedure Initialize (This : in out MiniBasketTag'Class);
    function Create return MiniBasketTag_Access;
    function doStartTag (This : in out MiniBasketTag) return Integer;
-   procedure doStartTag (This : in out MiniBasketTag);
 
 end tags.generic_Id.basket.MiniBasketTag_Package;
 

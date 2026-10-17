@@ -30,7 +30,7 @@ package body org.allbinary.business.user.commerce.money.payment.gateway.modules.
    function Create return EchoResponseTypeTwoData_Access is
       This : constant EchoResponseTypeTwoData_Access := new EchoResponseTypeTwoData;
    begin
-      Initialize (This.all);
+      EchoResponseTypeTwoData_Package.Initialize (This.all);
       return This;
    end Create;
 

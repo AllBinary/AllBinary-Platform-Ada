@@ -39,6 +39,8 @@ with org.allbinary.logic.system.security.licensing.ServiceClientInformationInter
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with views.admin.inventory.listings.InventoryViewSearchInterface_Package; use views.admin.inventory.listings.InventoryViewSearchInterface_Package;
+with views.generic_Id.inventory.InventorySearchUtil_Package; use views.generic_Id.inventory.InventorySearchUtil_Package;
+with views.generic_Id.inventory.InventorySearchProductUtil_Package; use views.generic_Id.inventory.InventorySearchProductUtil_Package;
 
 package views.generic_Id.inventory.InventorySearch_Package is
 
@@ -76,11 +78,8 @@ package views.generic_Id.inventory.InventorySearch_Package is
    procedure Initialize (This : in out InventorySearch'Class; searchRequest : SearchRequest_Access);
    function Create (searchRequest : SearchRequest_Access) return InventorySearch_Access;
    function searchSingleStaticPage (This : in out InventorySearch) return Unbounded_String;
-   procedure searchSingleStaticPage (This : in out InventorySearch);
    function searchSingleDynamicPage (This : in out InventorySearch) return Unbounded_String;
-   procedure searchSingleDynamicPage (This : in out InventorySearch);
    function search (This : in out InventorySearch) return Unbounded_String_Array_Access;
-   procedure search (This : in out InventorySearch);
    function getProduct (This : in out InventorySearch; product : Unbounded_String) return Unbounded_String;
    procedure getProduct (This : in out InventorySearch; product : Unbounded_String);
 

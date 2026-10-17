@@ -29,7 +29,7 @@ package body org.allbinary.game.displayable.canvas.NullGameCanvasRunnable_Packag
    function Create return NullGameCanvasRunnable_Access is
       This : constant NullGameCanvasRunnable_Access := new NullGameCanvasRunnable;
    begin
-      Initialize (This.all);
+      NullGameCanvasRunnable_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -155,76 +155,6 @@ package body org.allbinary.game.displayable.canvas.NullGameCanvasRunnable_Packag
    begin
         null;
    end run;
-
-   procedure getTitle (This : in out NullGameCanvasRunnable) is
-      Java_Result : constant Unbounded_String := NullGameCanvasRunnable'Class (This).getTitle;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTitle;
-
-   procedure isInitialized (This : in out NullGameCanvasRunnable) is
-      Java_Result : constant Boolean := NullGameCanvasRunnable'Class (This).isInitialized;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isInitialized;
-
-   procedure isPaused (This : in out NullGameCanvasRunnable) is
-      Java_Result : constant Boolean := NullGameCanvasRunnable'Class (This).isPaused;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isPaused;
-
-   procedure isHighScoreSubmitted (This : in out NullGameCanvasRunnable) is
-      Java_Result : constant Boolean := NullGameCanvasRunnable'Class (This).isHighScoreSubmitted;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isHighScoreSubmitted;
-
-   procedure isGameOver (This : in out NullGameCanvasRunnable) is
-      Java_Result : constant Boolean := NullGameCanvasRunnable'Class (This).isGameOver;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isGameOver;
-
-   procedure getCurrentStateHashtable (This : in out NullGameCanvasRunnable) is
-      Java_Result : constant ABHashtable_Access := NullGameCanvasRunnable'Class (This).getCurrentStateHashtable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getCurrentStateHashtable;
-
-   procedure getLoadStateHashtable (This : in out NullGameCanvasRunnable) is
-      Java_Result : constant ABHashtable_Access := NullGameCanvasRunnable'Class (This).getLoadStateHashtable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getLoadStateHashtable;
-
-   procedure getType (This : in out NullGameCanvasRunnable) is
-      Java_Result : constant Integer := NullGameCanvasRunnable'Class (This).getType;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getType;
-
-   procedure getGameState (This : in out NullGameCanvasRunnable) is
-      Java_Result : constant GameState_Access := NullGameCanvasRunnable'Class (This).getGameState;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getGameState;
-
-   procedure isRunning (This : in out NullGameCanvasRunnable) is
-      Java_Result : constant Boolean := NullGameCanvasRunnable'Class (This).isRunning;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isRunning;
 
 begin
    null;

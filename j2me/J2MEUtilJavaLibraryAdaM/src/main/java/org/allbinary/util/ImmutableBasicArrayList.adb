@@ -32,7 +32,7 @@ package body org.allbinary.util.ImmutableBasicArrayList_Package is
    function Create (name : Unbounded_String; size : Integer) return ImmutableBasicArrayList_Access is
       This : constant ImmutableBasicArrayList_Access := new ImmutableBasicArrayList;
    begin
-      Initialize (This.all, name, size);
+      ImmutableBasicArrayList_Package.Initialize (This.all, name, size);
       return This;
    end Create;
 
@@ -58,13 +58,6 @@ package body org.allbinary.util.ImmutableBasicArrayList_Package is
    begin
       null;
    end add;
-
-   procedure toString (This : in out ImmutableBasicArrayList) is
-      Java_Result : constant Unbounded_String := ImmutableBasicArrayList'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toString;
 
 end org.allbinary.util.ImmutableBasicArrayList_Package;
 

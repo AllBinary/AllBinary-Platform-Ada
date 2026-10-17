@@ -33,7 +33,7 @@ package body org.allbinary.input.automation.module.osgi.InputAutomationModuleSer
    function Create return InputAutomationModuleServiceFactory_Access is
       This : constant InputAutomationModuleServiceFactory_Access := new InputAutomationModuleServiceFactory;
    begin
-      Initialize (This.all);
+      InputAutomationModuleServiceFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -64,13 +64,6 @@ package body org.allbinary.input.automation.module.osgi.InputAutomationModuleSer
    begin
       null;
    end getService;
-
-   procedure getInputAutomationModuleInterfaceArray (This : in out InputAutomationModuleServiceFactory) is
-      Java_Result : constant InputAutomationModuleFactoryInterface_Access_Array_Access := InputAutomationModuleServiceFactory'Class (This).getInputAutomationModuleInterfaceArray;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInputAutomationModuleInterfaceArray;
 
 end org.allbinary.input.automation.module.osgi.InputAutomationModuleServiceFactory_Package;
 

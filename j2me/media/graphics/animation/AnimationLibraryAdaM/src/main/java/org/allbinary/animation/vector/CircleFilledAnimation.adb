@@ -35,7 +35,7 @@ package body org.allbinary.animation.vector.CircleFilledAnimation_Package is
    function Create (width : Integer; height : Integer; basicColor : BasicColor_Access) return CircleFilledAnimation_Access is
       This : constant CircleFilledAnimation_Access := new CircleFilledAnimation;
    begin
-      Initialize (This.all, width, height, basicColor);
+      CircleFilledAnimation_Package.Initialize (This.all, width, height, basicColor);
       return This;
    end Create;
 

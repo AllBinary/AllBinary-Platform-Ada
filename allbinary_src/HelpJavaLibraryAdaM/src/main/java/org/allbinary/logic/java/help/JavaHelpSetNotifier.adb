@@ -30,7 +30,7 @@ package body org.allbinary.logic.java.help.JavaHelpSetNotifier_Package is
    function Create return JavaHelpSetNotifier_Access is
       This : constant JavaHelpSetNotifier_Access := new JavaHelpSetNotifier;
    begin
-      Initialize (This.all);
+      JavaHelpSetNotifier_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -60,13 +60,6 @@ package body org.allbinary.logic.java.help.JavaHelpSetNotifier_Package is
         JavaHelpSetNotifier_Package.vector.add (url);
         return isNotified;
    end isNotified;
-
-   procedure get is
-      Java_Result : constant BasicArrayList_Access := get;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end get;
 
    procedure isNotified (helpSet : HelpSet_Access) is
       Java_Result : constant Boolean := isNotified (helpSet);

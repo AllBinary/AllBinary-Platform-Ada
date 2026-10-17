@@ -39,6 +39,7 @@ with org.allbinary.media.graphics.geography.pathfinding.PathFinderGraphVisitorFa
 with org.allbinary.media.graphics.geography.pathfinding.PathFindingInfo_Package; use org.allbinary.media.graphics.geography.pathfinding.PathFindingInfo_Package;
 with org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfoFactory_Package; use org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfoFactory_Package;
 with org.allbinary.util.BasicArrayListS_Package; use org.allbinary.util.BasicArrayListS_Package;
+with org.allbinary.game.media.graphics.geography.map.racetrack.SimplePathFinderGraphVisitorFactory_Package; use org.allbinary.game.media.graphics.geography.map.racetrack.SimplePathFinderGraphVisitorFactory_Package;
 
 package org.allbinary.game.media.graphics.geography.map.racetrack.PathFindingInfoFactory_Package is
 
@@ -79,7 +80,6 @@ package org.allbinary.game.media.graphics.geography.map.racetrack.PathFindingInf
    procedure Initialize (This : in out PathFindingInfoFactory'Class; pathFinderGraphVisitorFactoryInterface : PathFinderGraphVisitorFactoryBase_Access; max : Integer);
    function Create (pathFinderGraphVisitorFactoryInterface : PathFinderGraphVisitorFactoryBase_Access; max : Integer) return PathFindingInfoFactory_Access;
    function getInstance return PathFindingInfoFactory_Access;
-   procedure getInstance;
    procedure initMax (max : Integer);
    function getInstancePathFindingInfo (This : in out PathFindingInfoFactory; geographicMapInterface : BasicGeographicMap_Access; mapArray : Integer_Array_Access_Array_Access) return PathFindingInfo_Access;
    procedure getInstancePathFindingInfo (This : in out PathFindingInfoFactory; geographicMapInterface : BasicGeographicMap_Access; mapArray : Integer_Array_Access_Array_Access);

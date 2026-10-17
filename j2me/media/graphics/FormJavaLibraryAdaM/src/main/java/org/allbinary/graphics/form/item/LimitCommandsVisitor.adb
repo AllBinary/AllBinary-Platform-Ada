@@ -34,7 +34,7 @@ package body org.allbinary.graphics.form.item.LimitCommandsVisitor_Package is
    function Create return LimitCommandsVisitor_Access is
       This : constant LimitCommandsVisitor_Access := new LimitCommandsVisitor;
    begin
-      Initialize (This.all);
+      LimitCommandsVisitor_Package.Initialize (This.all);
       return This;
    end Create;
 

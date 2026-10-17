@@ -29,7 +29,7 @@ package body org.osgi.framework.NullServiceReferenceFactory_Package is
    function Create return NullServiceReferenceFactory_Access is
       This : constant NullServiceReferenceFactory_Access := new NullServiceReferenceFactory;
    begin
-      Initialize (This.all);
+      NullServiceReferenceFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -37,13 +37,6 @@ package body org.osgi.framework.NullServiceReferenceFactory_Package is
    function getInstance return NullServiceReferenceFactory_Access is
    begin
         return NullServiceReferenceFactory_Package.instance;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant NullServiceReferenceFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

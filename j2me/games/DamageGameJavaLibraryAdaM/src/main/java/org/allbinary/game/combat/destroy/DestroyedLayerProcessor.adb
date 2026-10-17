@@ -31,7 +31,7 @@ package body org.allbinary.game.combat.destroy.DestroyedLayerProcessor_Package i
    function Create return DestroyedLayerProcessor_Access is
       This : constant DestroyedLayerProcessor_Access := new DestroyedLayerProcessor;
    begin
-      Initialize (This.all);
+      DestroyedLayerProcessor_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -76,13 +76,6 @@ package body org.allbinary.game.combat.destroy.DestroyedLayerProcessor_Package i
         end loop;
         list.clear;
    end process;
-
-   procedure getInstance is
-      Java_Result : constant BasicLayerProcessor_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

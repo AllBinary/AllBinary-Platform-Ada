@@ -29,7 +29,7 @@ package body org.allbinary.input.motion.CompleteMotionGestureInputToGameMotionGe
    function Create return CompleteMotionGestureInputToGameMotionGestureInput_Access is
       This : constant CompleteMotionGestureInputToGameMotionGestureInput_Access := new CompleteMotionGestureInputToGameMotionGestureInput;
    begin
-      Initialize (This.all);
+      CompleteMotionGestureInputToGameMotionGestureInput_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -43,13 +43,6 @@ package body org.allbinary.input.motion.CompleteMotionGestureInputToGameMotionGe
    begin
         PreLogUtil_Package.put (To_Unbounded_String ("No Touch Button = No Compound Motion Gestures"), This'Unchecked_Access, This.commonStrings.INIT);
    end init;
-
-   procedure getInstance is
-      Java_Result : constant CompleteMotionGestureInputToGameMotionGestureInput_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

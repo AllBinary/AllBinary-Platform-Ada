@@ -49,7 +49,6 @@ package org.allbinary.logic.communication.http.file.upload.HttpFileUploadUtil_Pa
    procedure Initialize (This : in out HttpFileUploadUtil'Class);
    function Create return HttpFileUploadUtil_Access;
    function getInstance return HttpFileUploadUtil_Access;
-   procedure getInstance;
    function isValid (This : in out HttpFileUploadUtil; anyType : Java_Object_Access) return Boolean;
    procedure isValid (This : in out HttpFileUploadUtil; anyType : Java_Object_Access);
    procedure log (fileItem : FileItemStream_Access);

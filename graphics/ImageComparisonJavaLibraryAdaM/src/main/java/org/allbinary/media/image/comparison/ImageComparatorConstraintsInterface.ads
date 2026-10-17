@@ -22,6 +22,8 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.awt.image.BufferedImage_Package; use java.awt.image.BufferedImage_Package;
 with org.allbinary.graphics.GPoint_Package; use org.allbinary.graphics.GPoint_Package;
+with org.allbinary.media.image.comparison.Rectangle_Package; use org.allbinary.media.image.comparison.Rectangle_Package;
+with org.allbinary.media.image.comparison.Color_Package; use org.allbinary.media.image.comparison.Color_Package;
 
 package org.allbinary.media.image.comparison.ImageComparatorConstraintsInterface_Package is
 

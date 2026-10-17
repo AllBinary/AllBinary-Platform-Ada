@@ -37,7 +37,7 @@ package body org.allbinary.game.score.HighScores_Package is
    function Create (name : Unbounded_String; heading : Unbounded_String; columnTwoHeading : Unbounded_String) return HighScores_Access is
       This : constant HighScores_Access := new HighScores;
    begin
-      Initialize (This.all, name, heading, columnTwoHeading);
+      HighScores_Package.Initialize (This.all, name, heading, columnTwoHeading);
       return This;
    end Create;
 
@@ -99,61 +99,12 @@ package body org.allbinary.game.score.HighScores_Package is
         return stringBuffer.toString;
    end toString;
 
-   procedure getList (This : in out HighScores) is
-      Java_Result : constant BasicArrayList_Access := HighScores'Class (This).getList;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getList;
-
-   procedure getName (This : in out HighScores) is
-      Java_Result : constant Unbounded_String := HighScores'Class (This).getName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getName;
-
-   procedure getTotal (This : in out HighScores) is
-      Java_Result : constant Integer := HighScores'Class (This).getTotal;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTotal;
-
-   procedure getHeading (This : in out HighScores) is
-      Java_Result : constant Unbounded_String := HighScores'Class (This).getHeading;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getHeading;
-
-   procedure getColumnOneHeading (This : in out HighScores) is
-      Java_Result : constant Unbounded_String := HighScores'Class (This).getColumnOneHeading;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getColumnOneHeading;
-
-   procedure getColumnTwoHeading (This : in out HighScores) is
-      Java_Result : constant Unbounded_String := HighScores'Class (This).getColumnTwoHeading;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getColumnTwoHeading;
-
    procedure isBestScore (This : in out HighScores; newHighScore : HighScore_Access) is
       Java_Result : constant Boolean := HighScores'Class (This).isBestScore (newHighScore);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isBestScore;
-
-   procedure toString (This : in out HighScores) is
-      Java_Result : constant Unbounded_String := HighScores'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toString;
 
 end org.allbinary.game.score.HighScores_Package;
 

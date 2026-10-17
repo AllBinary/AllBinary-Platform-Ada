@@ -40,7 +40,7 @@ package body views.BasicComponentView_Package is
    function Create (transformInfoInterface : TransformInfoInterface_Access) return BasicComponentView_Access is
       This : constant BasicComponentView_Access := new BasicComponentView;
    begin
-      Initialize (This.all, transformInfoInterface);
+      BasicComponentView_Package.Initialize (This.all, transformInfoInterface);
       return This;
    end Create;
 
@@ -107,48 +107,6 @@ package body views.BasicComponentView_Package is
             Java_Throw (e);
                 end;
         end;
-   end view;
-
-   procedure getTypeId (This : in out BasicComponentView) is
-      Java_Result : constant Integer := BasicComponentView'Class (This).getTypeId;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTypeId;
-
-   procedure getTransformDocumentInterface (This : in out BasicComponentView) is
-      Java_Result : constant TransformDocumentInterface_Access := BasicComponentView'Class (This).getTransformDocumentInterface;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTransformDocumentInterface;
-
-   procedure getTransformInfoInterface (This : in out BasicComponentView) is
-      Java_Result : constant TransformInfoInterface_Access := BasicComponentView'Class (This).getTransformInfoInterface;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTransformInfoInterface;
-
-   procedure toXmlDoc (This : in out BasicComponentView) is
-      Java_Result : constant Document_Access := BasicComponentView'Class (This).toXmlDoc;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toXmlDoc;
-
-   procedure getDoc (This : in out BasicComponentView) is
-      Java_Result : constant Document_Access := BasicComponentView'Class (This).getDoc;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getDoc;
-
-   procedure view (This : in out BasicComponentView) is
-      Java_Result : constant Unbounded_String := BasicComponentView'Class (This).view;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end view;
 
 end views.BasicComponentView_Package;

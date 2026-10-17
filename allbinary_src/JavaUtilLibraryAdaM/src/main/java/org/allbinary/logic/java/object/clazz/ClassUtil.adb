@@ -30,7 +30,7 @@ package body org.allbinary.logic.java.anyType.clazz.ClassUtil_Package is
    function Create return ClassUtil_Access is
       This : constant ClassUtil_Access := new ClassUtil;
    begin
-      Initialize (This.all);
+      ClassUtil_Package.Initialize (This.all);
       return This;
    end Create;
 

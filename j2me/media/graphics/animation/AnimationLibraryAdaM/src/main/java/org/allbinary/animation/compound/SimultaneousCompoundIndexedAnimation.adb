@@ -32,7 +32,7 @@ package body org.allbinary.animation.compound.SimultaneousCompoundIndexedAnimati
    function Create (animationInterfaceArray : Animation_Access_Array_Access; animationBehavior : AnimationBehavior_Access) return SimultaneousCompoundIndexedAnimation_Access is
       This : constant SimultaneousCompoundIndexedAnimation_Access := new SimultaneousCompoundIndexedAnimation;
    begin
-      Initialize (This.all, animationInterfaceArray, animationBehavior);
+      SimultaneousCompoundIndexedAnimation_Package.Initialize (This.all, animationInterfaceArray, animationBehavior);
       return This;
    end Create;
 
@@ -123,34 +123,6 @@ package body org.allbinary.animation.compound.SimultaneousCompoundIndexedAnimati
    begin
         This.animationInterfaceArray := animationInterfaceArray;
    end setAnimationInterfaceArray;
-
-   procedure getFrame (This : in out SimultaneousCompoundIndexedAnimation) is
-      Java_Result : constant Integer := SimultaneousCompoundIndexedAnimation'Class (This).getFrame;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getFrame;
-
-   procedure getSize (This : in out SimultaneousCompoundIndexedAnimation) is
-      Java_Result : constant Integer := SimultaneousCompoundIndexedAnimation'Class (This).getSize;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSize;
-
-   procedure getSequence (This : in out SimultaneousCompoundIndexedAnimation) is
-      Java_Result : constant Integer_Array_Access := SimultaneousCompoundIndexedAnimation'Class (This).getSequence;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSequence;
-
-   procedure getAnimationInterfaceArray (This : in out SimultaneousCompoundIndexedAnimation) is
-      Java_Result : constant Animation_Access_Array_Access := SimultaneousCompoundIndexedAnimation'Class (This).getAnimationInterfaceArray;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getAnimationInterfaceArray;
 
 end org.allbinary.animation.compound.SimultaneousCompoundIndexedAnimation_Package;
 

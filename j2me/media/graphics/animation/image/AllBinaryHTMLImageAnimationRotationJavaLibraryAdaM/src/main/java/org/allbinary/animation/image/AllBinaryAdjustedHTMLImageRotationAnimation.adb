@@ -33,7 +33,7 @@ package body org.allbinary.animation.image.AllBinaryAdjustedHTMLImageRotationAni
    function Create (originalImage : Image_Access; image : Image_Access; angleInfo : AngleInfo_Access; totalAngle : Short_Integer; dx : Integer; dy : Integer; animationBehavior : AnimationBehavior_Access) return AllBinaryAdjustedHTMLImageRotationAnimation_Access is
       This : constant AllBinaryAdjustedHTMLImageRotationAnimation_Access := new AllBinaryAdjustedHTMLImageRotationAnimation;
    begin
-      Initialize (This.all, originalImage, image, angleInfo, totalAngle, dx, dy, animationBehavior);
+      AllBinaryAdjustedHTMLImageRotationAnimation_Package.Initialize (This.all, originalImage, image, angleInfo, totalAngle, dx, dy, animationBehavior);
       return This;
    end Create;
 
@@ -68,20 +68,6 @@ package body org.allbinary.animation.image.AllBinaryAdjustedHTMLImageRotationAni
    begin
         AllBinaryHTMLImageRotationAnimation (This).paintXY (graphics, (x) + (This.dx), (y) + (This.dy));
    end paintXY;
-
-   procedure getDx (This : in out AllBinaryAdjustedHTMLImageRotationAnimation) is
-      Java_Result : constant Integer := AllBinaryAdjustedHTMLImageRotationAnimation'Class (This).getDx;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getDx;
-
-   procedure getDy (This : in out AllBinaryAdjustedHTMLImageRotationAnimation) is
-      Java_Result : constant Integer := AllBinaryAdjustedHTMLImageRotationAnimation'Class (This).getDy;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getDy;
 
 end org.allbinary.animation.image.AllBinaryAdjustedHTMLImageRotationAnimation_Package;
 

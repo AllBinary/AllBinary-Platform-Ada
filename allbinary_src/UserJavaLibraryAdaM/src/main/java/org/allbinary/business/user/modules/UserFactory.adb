@@ -30,7 +30,7 @@ package body org.allbinary.business.user.modules.UserFactory_Package is
    function Create return UserFactory_Access is
       This : constant UserFactory_Access := new UserFactory;
    begin
-      Initialize (This.all);
+      UserFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

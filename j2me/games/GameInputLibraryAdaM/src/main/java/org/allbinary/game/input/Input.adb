@@ -33,7 +33,7 @@ package body org.allbinary.game.input.Input_Package is
    function Create (id : Integer; name : Unbounded_String) return Input_Access is
       This : constant Input_Access := new Input;
    begin
-      Initialize (This.all, id, name);
+      Input_Package.Initialize (This.all, id, name);
       return This;
    end Create;
 
@@ -66,27 +66,6 @@ package body org.allbinary.game.input.Input_Package is
         stringBuffer.append (To_Unbounded_String (" Id: "));
         stringBuffer.appendint (This.getId);
         return stringBuffer.toString;
-   end toString;
-
-   procedure getId (This : in out Input) is
-      Java_Result : constant Integer := Input'Class (This).getId;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getId;
-
-   procedure getName (This : in out Input) is
-      Java_Result : constant Unbounded_String := Input'Class (This).getName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getName;
-
-   procedure toString (This : in out Input) is
-      Java_Result : constant Unbounded_String := Input'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end toString;
 
 end org.allbinary.game.input.Input_Package;

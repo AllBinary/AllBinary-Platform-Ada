@@ -51,9 +51,7 @@ package org.allbinary.graphics.form.item.validation.TextFieldItemValidator_Packa
    procedure Initialize (This : in out TextFieldItemValidator'Class; textFieldItem : ABTextFieldItem_Access; min : Integer; max : Integer; allowOnEmpty : Boolean);
    function Create (textFieldItem : ABTextFieldItem_Access; min : Integer; max : Integer; allowOnEmpty : Boolean) return TextFieldItemValidator_Access;
    function isValid (This : in out TextFieldItemValidator) return Boolean;
-   procedure isValid (This : in out TextFieldItemValidator);
    function toList (This : in out TextFieldItemValidator) return BasicArrayList_Access;
-   procedure toList (This : in out TextFieldItemValidator);
 
 end org.allbinary.graphics.form.item.validation.TextFieldItemValidator_Package;
 

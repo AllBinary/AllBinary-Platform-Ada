@@ -28,7 +28,7 @@ package body org.allbinary.game.ag.ai.tactical.BasicRandomAIFactory_Package is
    function Create return BasicRandomAIFactory_Access is
       This : constant BasicRandomAIFactory_Access := new BasicRandomAIFactory;
    begin
-      Initialize (This.all);
+      BasicRandomAIFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

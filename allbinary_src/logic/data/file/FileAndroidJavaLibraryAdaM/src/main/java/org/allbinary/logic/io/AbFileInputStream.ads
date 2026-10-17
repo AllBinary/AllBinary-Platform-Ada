@@ -42,15 +42,11 @@ package org.allbinary.logic.io.AbFileInputStream_Package is
    function Create (fileInputStream : FileInputStream_Access) return AbFileInputStream_Access;
    procedure mark (This : in out AbFileInputStream; readlimit : Integer);
    function markSupported (This : in out AbFileInputStream) return Boolean;
-   procedure markSupported (This : in out AbFileInputStream);
    procedure reset (This : in out AbFileInputStream);
    function available (This : in out AbFileInputStream) return Integer;
-   procedure available (This : in out AbFileInputStream);
    procedure close (This : in out AbFileInputStream);
    function getChannel (This : in out AbFileInputStream) return FileChannel_Access;
-   procedure getChannel (This : in out AbFileInputStream);
    function read (This : in out AbFileInputStream) return Integer;
-   procedure read (This : in out AbFileInputStream);
    function read (This : in out AbFileInputStream; b : Short_Short_Integer_Array_Access) return Integer;
    procedure read (This : in out AbFileInputStream; b : Short_Short_Integer_Array_Access);
    function read (This : in out AbFileInputStream; buffer : Short_Short_Integer_Array_Access; offset : Integer; count : Integer) return Integer;

@@ -32,7 +32,7 @@ package body admin.taghelpers.AdminConfigurationHelper_Package is
    function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return AdminConfigurationHelper_Access is
       This : constant AdminConfigurationHelper_Access := new AdminConfigurationHelper;
    begin
-      Initialize (This.all, hashMap, pageContext);
+      AdminConfigurationHelper_Package.Initialize (This.all, hashMap, pageContext);
       return This;
    end Create;
 
@@ -127,34 +127,6 @@ package body admin.taghelpers.AdminConfigurationHelper_Package is
             return error;
                 end;
         end;
-   end backup;
-
-   procedure create (This : in out AdminConfigurationHelper) is
-      Java_Result : constant Unbounded_String := AdminConfigurationHelper'Class (This).create;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end create;
-
-   procedure drop (This : in out AdminConfigurationHelper) is
-      Java_Result : constant Unbounded_String := AdminConfigurationHelper'Class (This).drop;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end drop;
-
-   procedure restore (This : in out AdminConfigurationHelper) is
-      Java_Result : constant Unbounded_String := AdminConfigurationHelper'Class (This).restore;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end restore;
-
-   procedure backup (This : in out AdminConfigurationHelper) is
-      Java_Result : constant Unbounded_String := AdminConfigurationHelper'Class (This).backup;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end backup;
 
 end admin.taghelpers.AdminConfigurationHelper_Package;

@@ -37,16 +37,9 @@ package body org.allbinary.logic.java.FileExtensionData_Package is
    function Create return FileExtensionData_Access is
       This : constant FileExtensionData_Access := new FileExtensionData;
    begin
-      Initialize (This.all);
+      FileExtensionData_Package.Initialize (This.all);
       return This;
    end Create;
-
-   procedure getInstance is
-      Java_Result : constant FileExtensionData_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

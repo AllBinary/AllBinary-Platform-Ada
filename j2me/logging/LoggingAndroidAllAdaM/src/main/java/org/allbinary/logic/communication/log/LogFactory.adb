@@ -28,7 +28,7 @@ package body org.allbinary.logic.communication.log.LogFactory_Package is
    function Create return LogFactory_Access is
       This : constant LogFactory_Access := new LogFactory;
    begin
-      Initialize (This.all);
+      LogFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -56,13 +56,6 @@ package body org.allbinary.logic.communication.log.LogFactory_Package is
    begin
         return Log_Package.Create (specialMessage, anyType, functionName, NullUtil_Package.getInstance.NULL_OBJECT);
    end getInstanceF;
-
-   procedure getInstanceD is
-      Java_Result : constant Log_Access := getInstanceD;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstanceD;
 
    procedure getInstanceNoF (specialMessage : Unbounded_String; anyType : Java_Object_Access; exception_Id : Java_Object_Access) is
       Java_Result : constant Log_Access := getInstanceNoF (specialMessage, anyType, exception_Id);

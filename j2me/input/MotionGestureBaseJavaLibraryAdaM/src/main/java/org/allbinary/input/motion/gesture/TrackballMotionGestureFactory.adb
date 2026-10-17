@@ -47,16 +47,9 @@ package body org.allbinary.input.motion.gesture.TrackballMotionGestureFactory_Pa
    function Create return TrackballMotionGestureFactory_Access is
       This : constant TrackballMotionGestureFactory_Access := new TrackballMotionGestureFactory;
    begin
-      Initialize (This.all);
+      TrackballMotionGestureFactory_Package.Initialize (This.all);
       return This;
    end Create;
-
-   procedure getInstance is
-      Java_Result : constant TrackballMotionGestureFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

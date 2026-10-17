@@ -40,7 +40,6 @@ package org.allbinary.game.combat.damage.ExplosionResources_Package is
    procedure Initialize (This : in out ExplosionResources'Class);
    function Create return ExplosionResources_Access;
    function getInstance return ExplosionResources_Access;
-   procedure getInstance;
 
 end org.allbinary.game.combat.damage.ExplosionResources_Package;
 

@@ -29,7 +29,7 @@ package body org.allbinary.platform.opengles.PlatformTextureBaseFactory_Package 
    function Create return PlatformTextureBaseFactory_Access is
       This : constant PlatformTextureBaseFactory_Access := new PlatformTextureBaseFactory;
    begin
-      Initialize (This.all);
+      PlatformTextureBaseFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

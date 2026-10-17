@@ -37,12 +37,9 @@ package org.allbinary.graphics.form.ABCustomForm_Package is
    procedure Initialize (This : in out ABCustomForm'Class; title : Unbounded_String; items : ABCustomItem_Access_Array_Access; backgroundBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access);
    function Create (title : Unbounded_String; items : ABCustomItem_Access_Array_Access; backgroundBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access) return ABCustomForm_Access;
    function getAllitems (This : in out ABCustomForm) return ABCustomItem_Access_Array_Access;
-   procedure getAllitems (This : in out ABCustomForm);
    function size (This : in out ABCustomForm) return Integer;
-   procedure size (This : in out ABCustomForm);
    procedure setSelectedIndex (This : in out ABCustomForm; index : Integer);
    function getSelectedIndex (This : in out ABCustomForm) return Integer;
-   procedure getSelectedIndex (This : in out ABCustomForm);
    procedure deleteAll (This : in out ABCustomForm);
    procedure delete (This : in out ABCustomForm; itemNum : Integer);
    function append (This : in out ABCustomForm; item : ABCustomItem_Access) return Integer;
@@ -52,10 +49,8 @@ package org.allbinary.graphics.form.ABCustomForm_Package is
    function get (This : in out ABCustomForm; itemNum : Integer) return ABCustomItem_Access;
    procedure get (This : in out ABCustomForm; itemNum : Integer);
    function getWidth (This : in out ABCustomForm) return Integer;
-   procedure getWidth (This : in out ABCustomForm);
    procedure paint (This : in out ABCustomForm; graphics : Graphics_Access);
    function getTitle (This : in out ABCustomForm) return Unbounded_String;
-   procedure getTitle (This : in out ABCustomForm);
 
 end org.allbinary.graphics.form.ABCustomForm_Package;
 

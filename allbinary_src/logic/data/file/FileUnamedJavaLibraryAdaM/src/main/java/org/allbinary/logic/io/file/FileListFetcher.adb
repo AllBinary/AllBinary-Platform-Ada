@@ -29,7 +29,7 @@ package body org.allbinary.logic.io.file.FileListFetcher_Package is
    function Create return FileListFetcher_Access is
       This : constant FileListFetcher_Access := new FileListFetcher;
    begin
-      Initialize (This.all);
+      FileListFetcher_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -201,13 +201,6 @@ package body org.allbinary.logic.io.file.FileListFetcher_Package is
         end;
         return null;
    end getDirectories;
-
-   procedure getInstance is
-      Java_Result : constant FileListFetcher_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure getFiles (This : in out FileListFetcher; path : Unbounded_String) is
       Java_Result : constant BasicArrayList_Access := FileListFetcher'Class (This).getFiles (path);

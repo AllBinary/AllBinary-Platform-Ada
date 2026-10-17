@@ -20,6 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
+with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellType_Package; use org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellType_Package;
 
 package org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellTypes_Package is
 
@@ -44,7 +45,6 @@ package org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographic
    procedure Initialize (This : in out RaceTrackGeographicMapCellTypes'Class);
    function Create return RaceTrackGeographicMapCellTypes_Access;
    function getInstance return RaceTrackGeographicMapCellTypes_Access;
-   procedure getInstance;
 
 end org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellTypes_Package;
 

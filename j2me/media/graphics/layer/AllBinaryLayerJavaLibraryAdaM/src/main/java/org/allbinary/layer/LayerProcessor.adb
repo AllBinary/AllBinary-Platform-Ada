@@ -32,7 +32,7 @@ package body org.allbinary.layer.LayerProcessor_Package is
    function Create (layerManager : LayerManager_Access) return LayerProcessor_Access is
       This : constant LayerProcessor_Access := new LayerProcessor;
    begin
-      Initialize (This.all, layerManager);
+      LayerProcessor_Package.Initialize (This.all, layerManager);
       return This;
    end Create;
 
@@ -72,13 +72,6 @@ package body org.allbinary.layer.LayerProcessor_Package is
    begin
       null;
    end isProcessorLayer;
-
-   procedure getLayerManager (This : in out LayerProcessor) is
-      Java_Result : constant LayerManager_Access := LayerProcessor'Class (This).getLayerManager;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getLayerManager;
 
 end org.allbinary.layer.LayerProcessor_Package;
 

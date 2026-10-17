@@ -37,7 +37,6 @@ package tags.TagStrings_Package is
    procedure Initialize (This : in out TagStrings'Class);
    function Create return TagStrings_Access;
    function getInstance return TagStrings_Access;
-   procedure getInstance;
 
 end tags.TagStrings_Package;
 

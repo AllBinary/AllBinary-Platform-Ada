@@ -38,7 +38,7 @@ package body org.allbinary.game.layer.hud.event.GameNotificationEvent_Package is
    function Create (anyType : Java_Object_Access; string_Id : Unbounded_String; seconds : Integer; basicColor : BasicColor_Access; permanent : Boolean) return GameNotificationEvent_Access is
       This : constant GameNotificationEvent_Access := new GameNotificationEvent;
    begin
-      Initialize (This.all, anyType, string_Id, seconds, basicColor, permanent);
+      GameNotificationEvent_Package.Initialize (This.all, anyType, string_Id, seconds, basicColor, permanent);
       return This;
    end Create;
 
@@ -71,34 +71,6 @@ package body org.allbinary.game.layer.hud.event.GameNotificationEvent_Package is
    begin
         This.basicColor := basicColor;
    end setBasicColorP;
-
-   procedure getString (This : in out GameNotificationEvent) is
-      Java_Result : constant Unbounded_String := GameNotificationEvent'Class (This).getString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getString;
-
-   procedure getSeconds (This : in out GameNotificationEvent) is
-      Java_Result : constant Integer := GameNotificationEvent'Class (This).getSeconds;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSeconds;
-
-   procedure getBasicColorP (This : in out GameNotificationEvent) is
-      Java_Result : constant BasicColor_Access := GameNotificationEvent'Class (This).getBasicColorP;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getBasicColorP;
-
-   procedure getPermanent (This : in out GameNotificationEvent) is
-      Java_Result : constant Boolean := GameNotificationEvent'Class (This).getPermanent;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getPermanent;
 
 end org.allbinary.game.layer.hud.event.GameNotificationEvent_Package;
 

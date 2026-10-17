@@ -50,7 +50,6 @@ package tags.generic_Id.inventory.InventoryTag_Package is
    procedure search (This : in out InventoryTag);
    procedure viewSummary (This : in out InventoryTag);
    function doStartTag (This : in out InventoryTag) return Integer;
-   procedure doStartTag (This : in out InventoryTag);
 
 end tags.generic_Id.inventory.InventoryTag_Package;
 

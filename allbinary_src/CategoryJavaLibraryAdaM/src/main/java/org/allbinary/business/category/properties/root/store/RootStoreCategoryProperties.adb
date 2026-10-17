@@ -43,7 +43,7 @@ package body org.allbinary.business.category.properties.root.store.RootStoreCate
    function Create (transformInfoInterface : TransformInfoInterface_Access) return RootStoreCategoryProperties_Access is
       This : constant RootStoreCategoryProperties_Access := new RootStoreCategoryProperties;
    begin
-      Initialize (This.all, transformInfoInterface);
+      RootStoreCategoryProperties_Package.Initialize (This.all, transformInfoInterface);
       return This;
    end Create;
 
@@ -65,7 +65,7 @@ package body org.allbinary.business.category.properties.root.store.RootStoreCate
    function Create (transformInfoInterface : TransformInfoInterface_Access; categoryAbPath : AbPath_Access) return RootStoreCategoryProperties_Access is
       This : constant RootStoreCategoryProperties_Access := new RootStoreCategoryProperties;
    begin
-      Initialize (This.all, transformInfoInterface, categoryAbPath);
+      RootStoreCategoryProperties_Package.Initialize (This.all, transformInfoInterface, categoryAbPath);
       return This;
    end Create;
 
@@ -89,7 +89,7 @@ package body org.allbinary.business.category.properties.root.store.RootStoreCate
    function Create (transformInfoInterface : TransformInfoInterface_Access; node : Node_Access) return RootStoreCategoryProperties_Access is
       This : constant RootStoreCategoryProperties_Access := new RootStoreCategoryProperties;
    begin
-      Initialize (This.all, transformInfoInterface, node);
+      RootStoreCategoryProperties_Package.Initialize (This.all, transformInfoInterface, node);
       return This;
    end Create;
 
@@ -113,7 +113,7 @@ package body org.allbinary.business.category.properties.root.store.RootStoreCate
    function Create (transformInfoInterface : TransformInfoInterface_Access; categoryPropertiesHashMap : HashMap_Access) return RootStoreCategoryProperties_Access is
       This : constant RootStoreCategoryProperties_Access := new RootStoreCategoryProperties;
    begin
-      Initialize (This.all, transformInfoInterface, categoryPropertiesHashMap);
+      RootStoreCategoryProperties_Package.Initialize (This.all, transformInfoInterface, categoryPropertiesHashMap);
       return This;
    end Create;
 
@@ -234,48 +234,6 @@ package body org.allbinary.business.category.properties.root.store.RootStoreCate
         end if;
    end log;
 
-   procedure isRealRoot (This : in out RootStoreCategoryProperties) is
-      Java_Result : constant Boolean := RootStoreCategoryProperties'Class (This).isRealRoot;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isRealRoot;
-
-   procedure isRoot (This : in out RootStoreCategoryProperties) is
-      Java_Result : constant Boolean := RootStoreCategoryProperties'Class (This).isRoot;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isRoot;
-
-   procedure getKey (This : in out RootStoreCategoryProperties) is
-      Java_Result : constant Java_Object_Access := RootStoreCategoryProperties'Class (This).getKey;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getKey;
-
-   procedure getRootFilePath (This : in out RootStoreCategoryProperties) is
-      Java_Result : constant AbPath_Access := RootStoreCategoryProperties'Class (This).getRootFilePath;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getRootFilePath;
-
-   procedure getValue (This : in out RootStoreCategoryProperties) is
-      Java_Result : constant Unbounded_String := RootStoreCategoryProperties'Class (This).getValue;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getValue;
-
-   procedure getWebAppPath (This : in out RootStoreCategoryProperties) is
-      Java_Result : constant AbPath_Access := RootStoreCategoryProperties'Class (This).getWebAppPath;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getWebAppPath;
-
    procedure getPath (This : in out RootStoreCategoryProperties; categoryHierarchyInterface : CategoryHierarchyInterface_Access) is
       Java_Result : constant AbPath_Access := RootStoreCategoryProperties'Class (This).getPath (categoryHierarchyInterface);
       pragma Unreferenced (Java_Result);
@@ -283,54 +241,12 @@ package body org.allbinary.business.category.properties.root.store.RootStoreCate
       null;
    end getPath;
 
-   procedure getFileName (This : in out RootStoreCategoryProperties) is
-      Java_Result : constant Unbounded_String := RootStoreCategoryProperties'Class (This).getFileName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getFileName;
-
-   procedure isValid (This : in out RootStoreCategoryProperties) is
-      Java_Result : constant Boolean := RootStoreCategoryProperties'Class (This).isValid;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isValid;
-
-   procedure toHashMap (This : in out RootStoreCategoryProperties) is
-      Java_Result : constant HashMap_Access := RootStoreCategoryProperties'Class (This).toHashMap;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toHashMap;
-
-   procedure toVector (This : in out RootStoreCategoryProperties) is
-      Java_Result : constant BasicArrayList_Access := RootStoreCategoryProperties'Class (This).toVector;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toVector;
-
-   procedure toValidationInfoDoc (This : in out RootStoreCategoryProperties) is
-      Java_Result : constant Document_Access := RootStoreCategoryProperties'Class (This).toValidationInfoDoc;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toValidationInfoDoc;
-
    procedure toValidationInfoNode (This : in out RootStoreCategoryProperties; document : Document_Access) is
       Java_Result : constant Node_Access := RootStoreCategoryProperties'Class (This).toValidationInfoNode (document);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end toValidationInfoNode;
-
-   procedure validationInfo (This : in out RootStoreCategoryProperties) is
-      Java_Result : constant Unbounded_String := RootStoreCategoryProperties'Class (This).validationInfo;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end validationInfo;
 
 end org.allbinary.business.category.properties.root.store.RootStoreCategoryProperties_Package;
 

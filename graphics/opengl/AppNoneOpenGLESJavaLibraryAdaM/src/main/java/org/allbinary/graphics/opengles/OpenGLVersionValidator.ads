@@ -39,9 +39,7 @@ package org.allbinary.graphics.opengles.OpenGLVersionValidator_Package is
    procedure Initialize (This : in out OpenGLVersionValidator'Class);
    function Create return OpenGLVersionValidator_Access;
    function getInstance return OpenGLVersionValidator_Access;
-   procedure getInstance;
    function isGL31OrHigher (This : in out OpenGLVersionValidator) return Boolean;
-   procedure isGL31OrHigher (This : in out OpenGLVersionValidator);
    function isAvailable (This : in out OpenGLVersionValidator; glVersionRequired : Unbounded_String) return Boolean;
    procedure isAvailable (This : in out OpenGLVersionValidator; glVersionRequired : Unbounded_String);
    procedure setShaderComposite (This : in out OpenGLVersionValidator; shaderComposite : ShaderComposite_Access; anyType : Java_Object_Access);

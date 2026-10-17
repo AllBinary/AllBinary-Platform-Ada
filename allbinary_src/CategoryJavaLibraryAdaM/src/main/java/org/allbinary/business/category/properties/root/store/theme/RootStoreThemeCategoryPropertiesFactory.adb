@@ -32,7 +32,7 @@ package body org.allbinary.business.category.properties.root.store.theme.RootSto
    function Create (transformInfoInterface : TransformInfoInterface_Access) return RootStoreThemeCategoryPropertiesFactory_Access is
       This : constant RootStoreThemeCategoryPropertiesFactory_Access := new RootStoreThemeCategoryPropertiesFactory;
    begin
-      Initialize (This.all, transformInfoInterface);
+      RootStoreThemeCategoryPropertiesFactory_Package.Initialize (This.all, transformInfoInterface);
       return This;
    end Create;
 
@@ -46,7 +46,7 @@ package body org.allbinary.business.category.properties.root.store.theme.RootSto
    function Create (transformInfoInterface : TransformInfoInterface_Access; abPath : AbPath_Access) return RootStoreThemeCategoryPropertiesFactory_Access is
       This : constant RootStoreThemeCategoryPropertiesFactory_Access := new RootStoreThemeCategoryPropertiesFactory;
    begin
-      Initialize (This.all, transformInfoInterface, abPath);
+      RootStoreThemeCategoryPropertiesFactory_Package.Initialize (This.all, transformInfoInterface, abPath);
       return This;
    end Create;
 
@@ -60,7 +60,7 @@ package body org.allbinary.business.category.properties.root.store.theme.RootSto
    function Create (transformInfoInterface : TransformInfoInterface_Access; node : Node_Access) return RootStoreThemeCategoryPropertiesFactory_Access is
       This : constant RootStoreThemeCategoryPropertiesFactory_Access := new RootStoreThemeCategoryPropertiesFactory;
    begin
-      Initialize (This.all, transformInfoInterface, node);
+      RootStoreThemeCategoryPropertiesFactory_Package.Initialize (This.all, transformInfoInterface, node);
       return This;
    end Create;
 
@@ -74,7 +74,7 @@ package body org.allbinary.business.category.properties.root.store.theme.RootSto
    function Create (transformInfoInterface : TransformInfoInterface_Access; categoryPropertiesHashMap : HashMap_Access) return RootStoreThemeCategoryPropertiesFactory_Access is
       This : constant RootStoreThemeCategoryPropertiesFactory_Access := new RootStoreThemeCategoryPropertiesFactory;
    begin
-      Initialize (This.all, transformInfoInterface, categoryPropertiesHashMap);
+      RootStoreThemeCategoryPropertiesFactory_Package.Initialize (This.all, transformInfoInterface, categoryPropertiesHashMap);
       return This;
    end Create;
 
@@ -95,13 +95,6 @@ package body org.allbinary.business.category.properties.root.store.theme.RootSto
             return null;
                 end;
         end;
-   end getInstance;
-
-   procedure getInstance (This : in out RootStoreThemeCategoryPropertiesFactory) is
-      Java_Result : constant CategoryPropertiesInterface_Access := RootStoreThemeCategoryPropertiesFactory'Class (This).getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 end org.allbinary.business.category.properties.root.store.theme.RootStoreThemeCategoryPropertiesFactory_Package;

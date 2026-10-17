@@ -32,7 +32,7 @@ package body admin.taghelpers.ShippingAddressHelperFactory_Package is
    function Create return ShippingAddressHelperFactory_Access is
       This : constant ShippingAddressHelperFactory_Access := new ShippingAddressHelperFactory;
    begin
-      Initialize (This.all);
+      ShippingAddressHelperFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

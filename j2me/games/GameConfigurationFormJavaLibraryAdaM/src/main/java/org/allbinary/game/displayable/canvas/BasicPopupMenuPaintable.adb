@@ -49,7 +49,7 @@ package body org.allbinary.game.displayable.canvas.BasicPopupMenuPaintable_Packa
    function Create (rectangle : Rectangle_Access; backgroundBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access) return BasicPopupMenuPaintable_Access is
       This : constant BasicPopupMenuPaintable_Access := new BasicPopupMenuPaintable;
    begin
-      Initialize (This.all, rectangle, backgroundBasicColor, foregroundBasicColor);
+      BasicPopupMenuPaintable_Package.Initialize (This.all, rectangle, backgroundBasicColor, foregroundBasicColor);
       return This;
    end Create;
 

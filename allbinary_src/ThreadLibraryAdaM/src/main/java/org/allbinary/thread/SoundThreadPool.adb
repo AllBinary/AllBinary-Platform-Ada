@@ -28,7 +28,7 @@ package body org.allbinary.thread.SoundThreadPool_Package is
    function Create return SoundThreadPool_Access is
       This : constant SoundThreadPool_Access := new SoundThreadPool;
    begin
-      Initialize (This.all);
+      SoundThreadPool_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -36,13 +36,6 @@ package body org.allbinary.thread.SoundThreadPool_Package is
    function getInstance return ThreadPool_Access is
    begin
         return SoundThreadPool_Package.instance;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant ThreadPool_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

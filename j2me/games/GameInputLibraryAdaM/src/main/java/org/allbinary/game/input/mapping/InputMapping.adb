@@ -34,7 +34,7 @@ package body org.allbinary.game.input.mapping.InputMapping_Package is
    function Create return InputMapping_Access is
       This : constant InputMapping_Access := new InputMapping;
    begin
-      Initialize (This.all);
+      InputMapping_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -130,27 +130,6 @@ package body org.allbinary.game.input.mapping.InputMapping_Package is
         return This.hashtable;
    end getHashtable;
 
-   procedure getTotalMapped (This : in out InputMapping) is
-      Java_Result : constant Integer := InputMapping'Class (This).getTotalMapped;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTotalMapped;
-
-   procedure isDefaultNew (This : in out InputMapping) is
-      Java_Result : constant Boolean := InputMapping'Class (This).isDefaultNew;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isDefaultNew;
-
-   procedure getDefault (This : in out InputMapping) is
-      Java_Result : constant InputToGameKeyMapping_Access := InputMapping'Class (This).getDefault;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getDefault;
-
    procedure isMapped (This : in out InputMapping; input : Input_Access) is
       Java_Result : constant Boolean := InputMapping'Class (This).isMapped (input);
       pragma Unreferenced (Java_Result);
@@ -164,13 +143,6 @@ package body org.allbinary.game.input.mapping.InputMapping_Package is
    begin
       null;
    end getMappedInput;
-
-   procedure getHashtable (This : in out InputMapping) is
-      Java_Result : constant ABHashtable_Access := InputMapping'Class (This).getHashtable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getHashtable;
 
 end org.allbinary.game.input.mapping.InputMapping_Package;
 

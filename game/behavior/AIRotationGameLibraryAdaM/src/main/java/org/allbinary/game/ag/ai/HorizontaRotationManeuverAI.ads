@@ -76,7 +76,6 @@ package org.allbinary.game.ag.ai.HorizontaRotationManeuverAI_Package is
    procedure accelerate (This : in out HorizontaRotationManeuverAI);
    procedure drop (This : in out HorizontaRotationManeuverAI);
    function getId (This : in out HorizontaRotationManeuverAI) return Integer;
-   procedure getId (This : in out HorizontaRotationManeuverAI);
 
 end org.allbinary.game.ag.ai.HorizontaRotationManeuverAI_Package;
 

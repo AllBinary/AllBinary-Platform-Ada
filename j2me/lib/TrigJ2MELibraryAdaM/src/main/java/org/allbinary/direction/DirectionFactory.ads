@@ -23,6 +23,7 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.string_Id.CommonPhoneStrings_Package; use org.allbinary.string_Id.CommonPhoneStrings_Package;
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.direction.Direction_Package; use org.allbinary.direction.Direction_Package;
 
 package org.allbinary.direction.DirectionFactory_Package is
 
@@ -56,7 +57,6 @@ package org.allbinary.direction.DirectionFactory_Package is
    procedure Initialize (This : in out DirectionFactory'Class);
    function Create return DirectionFactory_Access;
    function getInstance return DirectionFactory_Access;
-   procedure getInstance;
 
 end org.allbinary.direction.DirectionFactory_Package;
 

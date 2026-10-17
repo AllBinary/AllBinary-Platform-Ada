@@ -32,6 +32,7 @@ with org.allbinary.media.graphics.geography.map.GeographicMapCellHistory_Package
 with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.game.layer.RTSLayerLogHelper_Package; use org.allbinary.game.layer.RTSLayerLogHelper_Package;
+with org.allbinary.game.layer.PathFindingLayerInterface_Package; use org.allbinary.game.layer.PathFindingLayerInterface_Package;
 
 package org.allbinary.game.layer.RTSLayerSelectedLogHelper_Package is
 
@@ -63,7 +64,6 @@ package org.allbinary.game.layer.RTSLayerSelectedLogHelper_Package is
    procedure Initialize (This : in out RTSLayerSelectedLogHelper'Class);
    function Create return RTSLayerSelectedLogHelper_Access;
    function getInstance return RTSLayerSelectedLogHelper_Access;
-   procedure getInstance;
    procedure setClosestGeographicMapCellHistory (This : in out RTSLayerSelectedLogHelper; associatedAdvancedRTSGameLayer : PathFindingLayerInterface_Access; pathsList : BasicArrayList_Access);
    procedure trackTo (This : in out RTSLayerSelectedLogHelper; associatedAdvancedRTSGameLayer : PathFindingLayerInterface_Access; nextUnvisitedPathGeographicMapCellPosition : GeographicMapCellPosition_Access; dx : Integer; dy : Integer; reason : Unbounded_String);
    procedure turnTo (This : in out RTSLayerSelectedLogHelper; associatedAdvancedRTSGameLayer : PathFindingLayerInterface_Access; dx : Integer; dy : Integer; angleInfo : AngleInfo_Access; angle : Integer; movementAngle : NamedAngle_Access; evading : Boolean; targetAngle : Integer);

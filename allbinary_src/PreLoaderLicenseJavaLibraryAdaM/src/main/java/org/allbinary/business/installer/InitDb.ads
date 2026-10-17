@@ -48,19 +48,12 @@ package org.allbinary.business.installer.InitDb_Package is
    function Create return InitDb_Access;
    procedure setHelper (This : in out InitDb; anyType : Java_Object_Access);
    function getHelper (This : in out InitDb) return Java_Object_Access;
-   procedure getHelper (This : in out InitDb);
    function getHostName (This : in out InitDb) return Unbounded_String;
-   procedure getHostName (This : in out InitDb);
    function addUsers (This : in out InitDb) return Boolean;
-   procedure addUsers (This : in out InitDb);
    function addDatabases (This : in out InitDb) return Boolean;
-   procedure addDatabases (This : in out InitDb);
    function addTables (This : in out InitDb) return Boolean;
-   procedure addTables (This : in out InitDb);
    function useTemporaryMainPath (This : in out InitDb) return Boolean;
-   procedure useTemporaryMainPath (This : in out InitDb);
    function useNormalMainPath (This : in out InitDb) return Boolean;
-   procedure useNormalMainPath (This : in out InitDb);
 
 end org.allbinary.business.installer.InitDb_Package;
 

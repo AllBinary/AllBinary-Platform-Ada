@@ -30,7 +30,7 @@ package body org.allbinary.logic.visual.dhtml.html.input.HtmlImageInput_Package 
    function Create return HtmlImageInput_Access is
       This : constant HtmlImageInput_Access := new HtmlImageInput;
    begin
-      Initialize (This.all);
+      HtmlImageInput_Package.Initialize (This.all);
       return This;
    end Create;
 

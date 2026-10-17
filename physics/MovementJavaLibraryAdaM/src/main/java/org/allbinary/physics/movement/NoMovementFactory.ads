@@ -20,6 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
+with org.allbinary.physics.movement.Movement_Package; use org.allbinary.physics.movement.Movement_Package;
 
 package org.allbinary.physics.movement.NoMovementFactory_Package is
 
@@ -37,9 +38,7 @@ package org.allbinary.physics.movement.NoMovementFactory_Package is
    procedure Initialize (This : in out NoMovementFactory'Class);
    function Create return NoMovementFactory_Access;
    function getInstance return NoMovementFactory_Access;
-   procedure getInstance;
    function getMovmentInstance (This : in out NoMovementFactory) return Movement_Access;
-   procedure getMovmentInstance (This : in out NoMovementFactory);
 
 end org.allbinary.physics.movement.NoMovementFactory_Package;
 

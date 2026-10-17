@@ -58,13 +58,9 @@ package org.allbinary.business.context.modules.storefront.statistics.RealTimeSto
    procedure Initialize (This : in out RealTimeStoreFrontStatistics'Class; storeFrontInterface : StoreFrontInterface_Access);
    function Create (storeFrontInterface : StoreFrontInterface_Access) return RealTimeStoreFrontStatistics_Access;
    function getAdvertisements (This : in out RealTimeStoreFrontStatistics) return StoreFrontAdvertisementsStatisticsInterface_Access;
-   procedure getAdvertisements (This : in out RealTimeStoreFrontStatistics);
    function getUsers (This : in out RealTimeStoreFrontStatistics) return StoreFrontUsersStatisticsInterface_Access;
-   procedure getUsers (This : in out RealTimeStoreFrontStatistics);
    function getInventory (This : in out RealTimeStoreFrontStatistics) return StoreFrontInventoryStatisticsInterface_Access;
-   procedure getInventory (This : in out RealTimeStoreFrontStatistics);
    function getOrders (This : in out RealTimeStoreFrontStatistics) return StoreFrontOrdersHistoryStatisticsInterface_Access;
-   procedure getOrders (This : in out RealTimeStoreFrontStatistics);
 
 end org.allbinary.business.context.modules.storefront.statistics.RealTimeStoreFrontStatistics_Package;
 

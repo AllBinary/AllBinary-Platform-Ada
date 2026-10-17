@@ -30,6 +30,7 @@ with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.business.user.commerce.money.payment.gateway.transaction.TransactionResultInterface_Package; use org.allbinary.business.user.commerce.money.payment.gateway.transaction.TransactionResultInterface_Package;
+with org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionKeysFactory_Package; use org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionKeysFactory_Package;
 
 package org.allbinary.business.user.commerce.money.payment.gateway.transaction.TransactionResult_Package is
 
@@ -57,55 +58,30 @@ package org.allbinary.business.user.commerce.money.payment.gateway.transaction.T
    procedure Initialize (This : in out TransactionResult'Class; result : Unbounded_String);
    function Create (result : Unbounded_String) return TransactionResult_Access;
    function toString (This : in out TransactionResult) return Unbounded_String;
-   procedure toString (This : in out TransactionResult);
    function toHashMap (This : in out TransactionResult) return HashMap_Access;
-   procedure toHashMap (This : in out TransactionResult);
    function getAllPossibleKeys (This : in out TransactionResult) return BasicArrayList_Access;
-   procedure getAllPossibleKeys (This : in out TransactionResult);
    function getValues (This : in out TransactionResult) return BasicArrayList_Access;
-   procedure getValues (This : in out TransactionResult);
    function getPnRef (This : in out TransactionResult) return Unbounded_String;
-   procedure getPnRef (This : in out TransactionResult);
    function getRespMsg (This : in out TransactionResult) return Unbounded_String;
-   procedure getRespMsg (This : in out TransactionResult);
    function getResult (This : in out TransactionResult) return Unbounded_String;
-   procedure getResult (This : in out TransactionResult);
    function getScore (This : in out TransactionResult) return Unbounded_String;
-   procedure getScore (This : in out TransactionResult);
    function getStatus (This : in out TransactionResult) return Unbounded_String;
-   procedure getStatus (This : in out TransactionResult);
    function getFraudCode (This : in out TransactionResult) return Unbounded_String;
-   procedure getFraudCode (This : in out TransactionResult);
    function getFraudMsg (This : in out TransactionResult) return Unbounded_String;
-   procedure getFraudMsg (This : in out TransactionResult);
    function getOrigResult (This : in out TransactionResult) return Unbounded_String;
-   procedure getOrigResult (This : in out TransactionResult);
    function getAvsAddr (This : in out TransactionResult) return Unbounded_String;
-   procedure getAvsAddr (This : in out TransactionResult);
    function getAvsZip (This : in out TransactionResult) return Unbounded_String;
-   procedure getAvsZip (This : in out TransactionResult);
    function getErrCode (This : in out TransactionResult) return Unbounded_String;
-   procedure getErrCode (This : in out TransactionResult);
    function getException1 (This : in out TransactionResult) return Unbounded_String;
-   procedure getException1 (This : in out TransactionResult);
    function getException2 (This : in out TransactionResult) return Unbounded_String;
-   procedure getException2 (This : in out TransactionResult);
    function getException3 (This : in out TransactionResult) return Unbounded_String;
-   procedure getException3 (This : in out TransactionResult);
    function getException4 (This : in out TransactionResult) return Unbounded_String;
-   procedure getException4 (This : in out TransactionResult);
    function getException5 (This : in out TransactionResult) return Unbounded_String;
-   procedure getException5 (This : in out TransactionResult);
    function getException6 (This : in out TransactionResult) return Unbounded_String;
-   procedure getException6 (This : in out TransactionResult);
    function getException7 (This : in out TransactionResult) return Unbounded_String;
-   procedure getException7 (This : in out TransactionResult);
    function getReason1 (This : in out TransactionResult) return Unbounded_String;
-   procedure getReason1 (This : in out TransactionResult);
    function getReason2 (This : in out TransactionResult) return Unbounded_String;
-   procedure getReason2 (This : in out TransactionResult);
    function getReason3 (This : in out TransactionResult) return Unbounded_String;
-   procedure getReason3 (This : in out TransactionResult);
 
 end org.allbinary.business.user.commerce.money.payment.gateway.transaction.TransactionResult_Package;
 

@@ -46,7 +46,6 @@ package org.allbinary.thread.ImageThreadPool_Package is
    procedure Initialize (This : in out ImageThreadPool'Class; poolName : Unbounded_String; numThreads : Integer; priority : Integer);
    function Create (poolName : Unbounded_String; numThreads : Integer; priority : Integer) return ImageThreadPool_Access;
    function getInstance return ThreadPool_Access;
-   procedure getInstance;
    procedure runTask (This : in out ImageThreadPool; task_Id : Runnable_Access);
    procedure startTask (This : in out ImageThreadPool; task_Id : Runnable_Access);
    procedure completedTask (This : in out ImageThreadPool; task_Id : Runnable_Access);

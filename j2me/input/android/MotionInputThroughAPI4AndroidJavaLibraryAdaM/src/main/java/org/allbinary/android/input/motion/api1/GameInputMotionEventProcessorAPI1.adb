@@ -41,7 +41,7 @@ package body org.allbinary.android.input.motion.api1.GameInputMotionEventProcess
    function Create return GameInputMotionEventProcessorAPI1_Access is
       This : constant GameInputMotionEventProcessorAPI1_Access := new GameInputMotionEventProcessorAPI1;
    begin
-      Initialize (This.all);
+      GameInputMotionEventProcessorAPI1_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -70,13 +70,6 @@ package body org.allbinary.android.input.motion.api1.GameInputMotionEventProcess
                 end;
         end;
    end process;
-
-   procedure getInstance is
-      Java_Result : constant GameInputMotionEventProcessorAPI1_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

@@ -31,7 +31,7 @@ package body views.compound.CompoundComponentView_Package is
    function Create (transformInfoInterface : TransformInfoInterface_Access) return CompoundComponentView_Access is
       This : constant CompoundComponentView_Access := new CompoundComponentView;
    begin
-      Initialize (This.all, transformInfoInterface);
+      CompoundComponentView_Package.Initialize (This.all, transformInfoInterface);
       return This;
    end Create;
 
@@ -55,13 +55,6 @@ package body views.compound.CompoundComponentView_Package is
             Java_Throw (e);
                 end;
         end;
-   end view;
-
-   procedure view (This : in out CompoundComponentView) is
-      Java_Result : constant Unbounded_String := CompoundComponentView'Class (This).view;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end view;
 
 end views.compound.CompoundComponentView_Package;

@@ -38,7 +38,7 @@ package body org.allbinary.media.graphics.geography.map.GeographicMapDirectionUt
    function Create return GeographicMapDirectionUtil_Access is
       This : constant GeographicMapDirectionUtil_Access := new GeographicMapDirectionUtil;
    begin
-      Initialize (This.all);
+      GeographicMapDirectionUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -192,13 +192,6 @@ package body org.allbinary.media.graphics.geography.map.GeographicMapDirectionUt
         stringBuffer.append (CellPosition_Package.toStringCellPosition (toGeographicMapCellPosition));
         Java_Throw (Java_New_Exception ("Exception", stringBuffer.toString));
    end getEightDirectionFromCellPositionToCellPosition;
-
-   procedure getInstance is
-      Java_Result : constant GeographicMapDirectionUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure getDirectionFromCellPositionToAdjacentCellPosition (This : in out GeographicMapDirectionUtil; fromGeographicMapCellPosition : GeographicMapCellPosition_Access; toGeographicMapCellPosition : GeographicMapCellPosition_Access) is
       Java_Result : constant Direction_Access := GeographicMapDirectionUtil'Class (This).getDirectionFromCellPositionToAdjacentCellPosition (fromGeographicMapCellPosition, toGeographicMapCellPosition);

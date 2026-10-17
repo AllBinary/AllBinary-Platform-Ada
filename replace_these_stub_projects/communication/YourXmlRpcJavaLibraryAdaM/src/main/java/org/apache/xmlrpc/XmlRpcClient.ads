@@ -36,7 +36,6 @@ package org.apache.xmlrpc.XmlRpcClient_Package is
    procedure Initialize (This : in out XmlRpcClient'Class; url : Unbounded_String);
    function Create (url : Unbounded_String) return XmlRpcClient_Access;
    function getURL (This : in out XmlRpcClient) return URL_Access;
-   procedure getURL (This : in out XmlRpcClient);
    procedure setBasicAuthentication (This : in out XmlRpcClient; user : Unbounded_String; password : Unbounded_String);
    function execute (This : in out XmlRpcClient; method : Unbounded_String; params : BasicArrayList_Access) return Java_Object_Access;
    procedure execute (This : in out XmlRpcClient; method : Unbounded_String; params : BasicArrayList_Access);

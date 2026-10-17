@@ -35,7 +35,7 @@ package body views.generic_Id.shipping.ShippingMethodsView_Package is
    function Create (transformInfoInterface : TransformInfoInterface_Access) return ShippingMethodsView_Access is
       This : constant ShippingMethodsView_Access := new ShippingMethodsView;
    begin
-      Initialize (This.all, transformInfoInterface);
+      ShippingMethodsView_Package.Initialize (This.all, transformInfoInterface);
       return This;
    end Create;
 
@@ -134,13 +134,6 @@ package body views.generic_Id.shipping.ShippingMethodsView_Package is
    begin
       null;
    end toXmlNode;
-
-   procedure view (This : in out ShippingMethodsView) is
-      Java_Result : constant Unbounded_String := ShippingMethodsView'Class (This).view;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end view;
 
 end views.generic_Id.shipping.ShippingMethodsView_Package;
 

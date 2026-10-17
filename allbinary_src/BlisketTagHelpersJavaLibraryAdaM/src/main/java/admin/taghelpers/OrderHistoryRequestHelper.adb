@@ -38,7 +38,7 @@ package body admin.taghelpers.OrderHistoryRequestHelper_Package is
    function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return OrderHistoryRequestHelper_Access is
       This : constant OrderHistoryRequestHelper_Access := new OrderHistoryRequestHelper;
    begin
-      Initialize (This.all, hashMap, pageContext);
+      OrderHistoryRequestHelper_Package.Initialize (This.all, hashMap, pageContext);
       return This;
    end Create;
 
@@ -81,7 +81,8 @@ package body admin.taghelpers.OrderHistoryRequestHelper_Package is
         end;
    end setOrderStatus;
 
-   function setOrderStatus (This : in out OrderHistoryRequestHelper; newStatus : Unbounded_String) return Unbounded_String is
+   function setOrderStatus (This : in out OrderHistoryRequestHelper; newStatus_Param : Unbounded_String) return Unbounded_String is
+      newStatus : Unbounded_String := newStatus_Param;
       success : Unbounded_String;
       orderHistory : OrderHistory_Access;
       error : Unbounded_String;
@@ -112,15 +113,8 @@ package body admin.taghelpers.OrderHistoryRequestHelper_Package is
         end;
    end setOrderStatus;
 
-   procedure setOrderStatus (This : in out OrderHistoryRequestHelper) is
-      Java_Result : constant Unbounded_String := OrderHistoryRequestHelper'Class (This).setOrderStatus;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end setOrderStatus;
-
-   procedure setOrderStatus (This : in out OrderHistoryRequestHelper; newStatus : Unbounded_String) is
-      Java_Result : constant Unbounded_String := OrderHistoryRequestHelper'Class (This).setOrderStatus (newStatus);
+   procedure setOrderStatus (This : in out OrderHistoryRequestHelper; newStatus_Param : Unbounded_String) is
+      Java_Result : constant Unbounded_String := OrderHistoryRequestHelper'Class (This).setOrderStatus (newStatus_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

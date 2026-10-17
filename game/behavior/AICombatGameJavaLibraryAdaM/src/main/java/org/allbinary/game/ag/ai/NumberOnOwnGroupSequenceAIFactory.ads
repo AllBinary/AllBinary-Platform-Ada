@@ -29,6 +29,8 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.game.ag.ai.NumberInSameGroupSequence_Package; use org.allbinary.game.ag.ai.NumberInSameGroupSequence_Package;
+with org.allbinary.game.ag.ai.NumberOnOwnGroupSequenceAI_Package; use org.allbinary.game.ag.ai.NumberOnOwnGroupSequenceAI_Package;
 
 package org.allbinary.game.ag.ai.NumberOnOwnGroupSequenceAIFactory_Package is
 

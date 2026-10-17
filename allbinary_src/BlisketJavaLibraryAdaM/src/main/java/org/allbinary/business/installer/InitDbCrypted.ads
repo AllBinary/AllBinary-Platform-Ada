@@ -102,11 +102,8 @@ package org.allbinary.business.installer.InitDbCrypted_Package is
    procedure Initialize (This : in out InitDbCrypted'Class; databaseConnectionInfoInterface : DatabaseConnectionInfoInterface_Access);
    function Create (databaseConnectionInfoInterface : DatabaseConnectionInfoInterface_Access) return InitDbCrypted_Access;
    function addUsers (This : in out InitDbCrypted) return Boolean;
-   procedure addUsers (This : in out InitDbCrypted);
    function addDatabases (This : in out InitDbCrypted) return Boolean;
-   procedure addDatabases (This : in out InitDbCrypted);
    function addTables (This : in out InitDbCrypted) return Boolean;
-   procedure addTables (This : in out InitDbCrypted);
 
 end org.allbinary.business.installer.InitDbCrypted_Package;
 

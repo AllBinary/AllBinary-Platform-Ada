@@ -41,7 +41,7 @@ package body org.allbinary.media.graphics.geography.map.racetrack.drop.RaceTrack
    function Create return RaceTrackAdjacentDropCellPositionGenerator_Access is
       This : constant RaceTrackAdjacentDropCellPositionGenerator_Access := new RaceTrackAdjacentDropCellPositionGenerator;
    begin
-      Initialize (This.all);
+      RaceTrackAdjacentDropCellPositionGenerator_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -138,13 +138,6 @@ package body org.allbinary.media.graphics.geography.map.racetrack.drop.RaceTrack
             allBinaryLayerManager.append (layerInterface);
         end if;
    end drop;
-
-   procedure getInstance is
-      Java_Result : constant DropCellPositionGeneratorInterface_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure getFirstNonRoadAdjacentCellPosition (This : in out RaceTrackAdjacentDropCellPositionGenerator; column : Integer; row : Integer) is
       Java_Result : constant GeographicMapCellPosition_Access := RaceTrackAdjacentDropCellPositionGenerator'Class (This).getFirstNonRoadAdjacentCellPosition (column, row);

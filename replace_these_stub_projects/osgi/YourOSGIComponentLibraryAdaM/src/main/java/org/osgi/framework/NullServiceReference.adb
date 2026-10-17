@@ -28,7 +28,7 @@ package body org.osgi.framework.NullServiceReference_Package is
    function Create return NullServiceReference_Access is
       This : constant NullServiceReference_Access := new NullServiceReference;
    begin
-      Initialize (This.all);
+      NullServiceReference_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -54,13 +54,6 @@ package body org.osgi.framework.NullServiceReference_Package is
    begin
       null;
    end getProperty;
-
-   procedure getPropertyKeys (This : in out NullServiceReference) is
-      Java_Result : constant Unbounded_String_Array_Access := NullServiceReference'Class (This).getPropertyKeys;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getPropertyKeys;
 
    procedure compareTo (This : in out NullServiceReference; o : Java_Object_Access) is
       Java_Result : constant Integer := NullServiceReference'Class (This).compareTo (o);

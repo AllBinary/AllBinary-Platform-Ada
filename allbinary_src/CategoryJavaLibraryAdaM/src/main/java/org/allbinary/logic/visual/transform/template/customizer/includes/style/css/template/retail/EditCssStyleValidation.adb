@@ -31,7 +31,7 @@ package body org.allbinary.logic.visual.transform.template.customizer.includes.s
    function Create return EditCssStyleValidation_Access is
       This : constant EditCssStyleValidation_Access := new EditCssStyleValidation;
    begin
-      Initialize (This.all);
+      EditCssStyleValidation_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -44,7 +44,7 @@ package body org.allbinary.logic.visual.transform.template.customizer.includes.s
    function Create (document : Document_Access) return EditCssStyleValidation_Access is
       This : constant EditCssStyleValidation_Access := new EditCssStyleValidation;
    begin
-      Initialize (This.all, document);
+      EditCssStyleValidation_Package.Initialize (This.all, document);
       return This;
    end Create;
 
@@ -57,7 +57,7 @@ package body org.allbinary.logic.visual.transform.template.customizer.includes.s
    function Create (hashMap : HashMap_Access) return EditCssStyleValidation_Access is
       This : constant EditCssStyleValidation_Access := new EditCssStyleValidation;
    begin
-      Initialize (This.all, hashMap);
+      EditCssStyleValidation_Package.Initialize (This.all, hashMap);
       return This;
    end Create;
 
@@ -100,27 +100,6 @@ package body org.allbinary.logic.visual.transform.template.customizer.includes.s
         end loop;
         return node;
    end toXmlNode;
-
-   procedure isValid (This : in out EditCssStyleValidation) is
-      Java_Result : constant Boolean := EditCssStyleValidation'Class (This).isValid;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isValid;
-
-   procedure validationInfo (This : in out EditCssStyleValidation) is
-      Java_Result : constant Unbounded_String := EditCssStyleValidation'Class (This).validationInfo;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end validationInfo;
-
-   procedure toValidationInfoDoc (This : in out EditCssStyleValidation) is
-      Java_Result : constant Document_Access := EditCssStyleValidation'Class (This).toValidationInfoDoc;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toValidationInfoDoc;
 
    procedure toValidationInfoNode (This : in out EditCssStyleValidation; document : Document_Access) is
       Java_Result : constant Node_Access := EditCssStyleValidation'Class (This).toValidationInfoNode (document);

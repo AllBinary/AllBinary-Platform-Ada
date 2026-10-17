@@ -31,7 +31,7 @@ package body tags.admin.payment.gateways.ViewUnusedTag_Package is
    function Create return ViewUnusedTag_Access is
       This : constant ViewUnusedTag_Access := new ViewUnusedTag;
    begin
-      Initialize (This.all);
+      ViewUnusedTag_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -58,13 +58,6 @@ package body tags.admin.payment.gateways.ViewUnusedTag_Package is
             return SKIP_BODY;
                 end;
         end;
-   end doStartTag;
-
-   procedure doStartTag (This : in out ViewUnusedTag) is
-      Java_Result : constant Integer := ViewUnusedTag'Class (This).doStartTag;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end doStartTag;
 
 end tags.admin.payment.gateways.ViewUnusedTag_Package;

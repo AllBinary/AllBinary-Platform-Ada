@@ -28,7 +28,7 @@ package body javax.microedition.lcdui.NullImage_Package is
    function Create return NullImage_Access is
       This : constant NullImage_Access := new NullImage;
    begin
-      Initialize (This.all);
+      NullImage_Package.Initialize (This.all);
       return This;
    end Create;
 

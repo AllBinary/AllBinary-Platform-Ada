@@ -36,7 +36,6 @@ package org.allbinary.graphics.opengles.OpenGLVUtil_Package is
    procedure Initialize (This : in out OpenGLVUtil'Class);
    function Create return OpenGLVUtil_Access;
    function getInstance return OpenGLVUtil_Access;
-   procedure getInstance;
 
 end org.allbinary.graphics.opengles.OpenGLVUtil_Package;
 

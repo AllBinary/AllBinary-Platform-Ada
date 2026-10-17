@@ -28,6 +28,7 @@ with org.allbinary.logic.system.os.NoOperatingSystem_Package; use org.allbinary.
 with org.allbinary.logic.system.os.OperatingSystems_Package; use org.allbinary.logic.system.os.OperatingSystems_Package;
 with org.allbinary.logic.system.os.SystemProperties_Package; use org.allbinary.logic.system.os.SystemProperties_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.logic.system.os.solaris.SolarisOS_Package; use org.allbinary.logic.system.os.solaris.SolarisOS_Package;
 
 package org.allbinary.logic.system.os.solaris.SolarisOperatingSystemFactory_Package is
 
@@ -53,9 +54,7 @@ package org.allbinary.logic.system.os.solaris.SolarisOperatingSystemFactory_Pack
    procedure Initialize (This : in out SolarisOperatingSystemFactory'Class);
    function Create return SolarisOperatingSystemFactory_Access;
    function getInstance return SolarisOperatingSystemFactory_Access;
-   procedure getInstance;
    function getOperatingSystemInstance (This : in out SolarisOperatingSystemFactory) return GenericOperatingSystem_Access;
-   procedure getOperatingSystemInstance (This : in out SolarisOperatingSystemFactory);
 
 end org.allbinary.logic.system.os.solaris.SolarisOperatingSystemFactory_Package;
 

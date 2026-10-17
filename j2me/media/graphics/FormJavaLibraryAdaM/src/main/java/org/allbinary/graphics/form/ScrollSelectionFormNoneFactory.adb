@@ -28,7 +28,7 @@ package body org.allbinary.graphics.form.ScrollSelectionFormNoneFactory_Package 
    function Create return ScrollSelectionFormNoneFactory_Access is
       This : constant ScrollSelectionFormNoneFactory_Access := new ScrollSelectionFormNoneFactory;
    begin
-      Initialize (This.all);
+      ScrollSelectionFormNoneFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -36,13 +36,6 @@ package body org.allbinary.graphics.form.ScrollSelectionFormNoneFactory_Package 
    function getInstance return ScrollSelectionForm_Access is
    begin
         return ScrollSelectionForm_Package.getNullScrollSelectionFormHorizontal;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant ScrollSelectionForm_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 end org.allbinary.graphics.form.ScrollSelectionFormNoneFactory_Package;

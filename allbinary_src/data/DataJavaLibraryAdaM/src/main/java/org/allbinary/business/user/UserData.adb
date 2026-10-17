@@ -30,7 +30,7 @@ package body org.allbinary.business.user.UserData_Package is
    function Create return UserData_Access is
       This : constant UserData_Access := new UserData;
    begin
-      Initialize (This.all);
+      UserData_Package.Initialize (This.all);
       return This;
    end Create;
 

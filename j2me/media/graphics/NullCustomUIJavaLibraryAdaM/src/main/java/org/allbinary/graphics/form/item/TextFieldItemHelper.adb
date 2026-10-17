@@ -16,7 +16,7 @@ package body org.allbinary.graphics.form.item.TextFieldItemHelper_Package is
    function Create return TextFieldItemHelper_Access is
       This : constant TextFieldItemHelper_Access := new TextFieldItemHelper;
    begin
-      Initialize (This.all);
+      TextFieldItemHelper_Package.Initialize (This.all);
       return This;
    end Create;
 

@@ -28,6 +28,7 @@ with org.allbinary.data.tree.dom.ToDomHelper_Package; use org.allbinary.data.tre
 with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
+with org.allbinary.logic.control.search.SearchData_Package; use org.allbinary.logic.control.search.SearchData_Package;
 
 package org.allbinary.logic.control.search.SearchParams_Package is
 
@@ -60,23 +61,14 @@ package org.allbinary.logic.control.search.SearchParams_Package is
    procedure setStartPage (This : in out SearchParams; value : Unbounded_String);
    procedure setEndPage (This : in out SearchParams; value : Unbounded_String);
    function get (This : in out SearchParams) return HashMap_Access;
-   procedure get (This : in out SearchParams);
    function getOrder (This : in out SearchParams) return Unbounded_String;
-   procedure getOrder (This : in out SearchParams);
    function getSortBy (This : in out SearchParams) return Unbounded_String;
-   procedure getSortBy (This : in out SearchParams);
    function getLength (This : in out SearchParams) return Unbounded_String;
-   procedure getLength (This : in out SearchParams);
    function getLengthInt (This : in out SearchParams) return Integer;
-   procedure getLengthInt (This : in out SearchParams);
    function getStartPage (This : in out SearchParams) return Unbounded_String;
-   procedure getStartPage (This : in out SearchParams);
    function getEndPage (This : in out SearchParams) return Unbounded_String;
-   procedure getEndPage (This : in out SearchParams);
    function getStartPageInt (This : in out SearchParams) return Integer;
-   procedure getStartPageInt (This : in out SearchParams);
    function getEndPageInt (This : in out SearchParams) return Integer;
-   procedure getEndPageInt (This : in out SearchParams);
    function getParamsNode (This : in out SearchParams; document : Document_Access) return Node_Access;
    procedure getParamsNode (This : in out SearchParams; document : Document_Access);
    function getFieldsNode (This : in out SearchParams; document : Document_Access) return Node_Access;

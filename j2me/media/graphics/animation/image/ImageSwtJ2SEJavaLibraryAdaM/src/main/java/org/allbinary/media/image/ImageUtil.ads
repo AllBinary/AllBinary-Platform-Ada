@@ -71,7 +71,6 @@ package org.allbinary.media.image.ImageUtil_Package is
    procedure Initialize (This : in out ImageUtil'Class);
    function Create return ImageUtil_Access;
    function getInstance return ImageUtil_Access;
-   procedure getInstance;
    function create (This : in out ImageUtil; width : Integer; height : Integer) return Image_Access;
    procedure create (This : in out ImageUtil; width : Integer; height : Integer);
    function createBufferedImage (This : in out ImageUtil; bufferedImageArray : Image_Access_Array_Access; percent : Integer; scale : Boolean) return Image_Access_Array_Access;

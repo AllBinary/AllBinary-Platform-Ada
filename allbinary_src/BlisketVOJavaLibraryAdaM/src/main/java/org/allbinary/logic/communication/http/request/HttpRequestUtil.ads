@@ -37,7 +37,6 @@ package org.allbinary.logic.communication.http.request.HttpRequestUtil_Package i
    procedure Initialize (This : in out HttpRequestUtil'Class);
    function Create return HttpRequestUtil_Access;
    function getInstance return HttpRequestUtil_Access;
-   procedure getInstance;
    function getLastSeparatorIndex (This : in out HttpRequestUtil; requestPath : Unbounded_String) return Integer;
    procedure getLastSeparatorIndex (This : in out HttpRequestUtil; requestPath : Unbounded_String);
    function generateFileName (This : in out HttpRequestUtil; requestPath : Unbounded_String) return Unbounded_String;

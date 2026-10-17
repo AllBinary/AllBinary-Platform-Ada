@@ -38,7 +38,7 @@ package body org.allbinary.business.user.commerce.money.tax.modules.SimpleStateT
    function Create return SimpleStateTaxModule_Access is
       This : constant SimpleStateTaxModule_Access := new SimpleStateTaxModule;
    begin
-      Initialize (This.all);
+      SimpleStateTaxModule_Package.Initialize (This.all);
       return This;
    end Create;
 

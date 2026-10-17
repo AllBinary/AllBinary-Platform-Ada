@@ -36,7 +36,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoPropertiesFa
    function Create return TransformInfoPropertiesFactory_Access is
       This : constant TransformInfoPropertiesFactory_Access := new TransformInfoPropertiesFactory;
    begin
-      Initialize (This.all);
+      TransformInfoPropertiesFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -82,13 +82,6 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoPropertiesFa
         templateFileName := DomNodeHelper_Package.getTextNodeValue (templateFileNode);
         transformInfoProperties := TransformInfoProperties_Package.Create (name, label, description, objectFileName, objectConfigFileName, templateFileName);
         return transformInfoProperties;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant TransformInfoPropertiesFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
    procedure getInstance (This : in out TransformInfoPropertiesFactory; node : Node_Access) is

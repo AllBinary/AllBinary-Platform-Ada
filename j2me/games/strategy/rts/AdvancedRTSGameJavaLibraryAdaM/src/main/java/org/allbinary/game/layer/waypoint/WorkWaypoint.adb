@@ -29,7 +29,7 @@ package body org.allbinary.game.layer.waypoint.WorkWaypoint_Package is
    function Create (ownerLayer : PathFindingLayerInterface_Access) return WorkWaypoint_Access is
       This : constant WorkWaypoint_Access := new WorkWaypoint;
    begin
-      Initialize (This.all, ownerLayer);
+      WorkWaypoint_Package.Initialize (This.all, ownerLayer);
       return This;
    end Create;
 
@@ -89,13 +89,6 @@ package body org.allbinary.game.layer.waypoint.WorkWaypoint_Package is
    function getType (This : in out WorkWaypoint) return Integer is
    begin
         return 2;
-   end getType;
-
-   procedure getType (This : in out WorkWaypoint) is
-      Java_Result : constant Integer := WorkWaypoint'Class (This).getType;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getType;
 
 begin

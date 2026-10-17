@@ -39,7 +39,7 @@ package body org.allbinary.logic.communication.smtp.info.EmailInfo_Package is
    function Create (basicEmailInfo : BasicEmailInfo_Access) return EmailInfo_Access is
       This : constant EmailInfo_Access := new EmailInfo;
    begin
-      Initialize (This.all, basicEmailInfo);
+      EmailInfo_Package.Initialize (This.all, basicEmailInfo);
       return This;
    end Create;
 
@@ -58,7 +58,7 @@ package body org.allbinary.logic.communication.smtp.info.EmailInfo_Package is
    function Create (basicEmailInfo : BasicEmailInfo_Access; htmlAttachment : Unbounded_String; contentBase : Unbounded_String) return EmailInfo_Access is
       This : constant EmailInfo_Access := new EmailInfo;
    begin
-      Initialize (This.all, basicEmailInfo, htmlAttachment, contentBase);
+      EmailInfo_Package.Initialize (This.all, basicEmailInfo, htmlAttachment, contentBase);
       return This;
    end Create;
 
@@ -87,34 +87,6 @@ package body org.allbinary.logic.communication.smtp.info.EmailInfo_Package is
    function toString (This : in out EmailInfo) return Unbounded_String is
    begin
         return To_Unbounded_String ("Email Info: " & ASCII.LF & " ") & This.getBasicEmailInfo.toString;
-   end toString;
-
-   procedure getBasicEmailInfo (This : in out EmailInfo) is
-      Java_Result : constant BasicEmailInfo_Access := EmailInfo'Class (This).getBasicEmailInfo;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getBasicEmailInfo;
-
-   procedure getHtmlAttachment (This : in out EmailInfo) is
-      Java_Result : constant Unbounded_String := EmailInfo'Class (This).getHtmlAttachment;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getHtmlAttachment;
-
-   procedure getContentBase (This : in out EmailInfo) is
-      Java_Result : constant Unbounded_String := EmailInfo'Class (This).getContentBase;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getContentBase;
-
-   procedure toString (This : in out EmailInfo) is
-      Java_Result : constant Unbounded_String := EmailInfo'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end toString;
 
 end org.allbinary.logic.communication.smtp.info.EmailInfo_Package;

@@ -37,7 +37,6 @@ package org.allbinary.game.layer.waypoint.WaypointRunnableLogHelper_Package is
    procedure Initialize (This : in out WaypointRunnableLogHelper'Class);
    function Create return WaypointRunnableLogHelper_Access;
    function getInstance return WaypointRunnableLogHelper_Access;
-   procedure getInstance;
    procedure start (This : in out WaypointRunnableLogHelper; pathFindingLayerInterface : PathFindingLayerInterface_Access);
    procedure end_Id (This : in out WaypointRunnableLogHelper; pathFindingLayerInterface : PathFindingLayerInterface_Access);
 

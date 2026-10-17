@@ -53,7 +53,6 @@ package org.allbinary.game.displayable.RepaintBehavior_Package is
    procedure Initialize (This : in out RepaintBehavior'Class);
    function Create return RepaintBehavior_Access;
    function getInstance return RepaintBehavior_Access;
-   procedure getInstance;
    procedure repaint (This : in out RepaintBehavior; canvas : Canvas_Access);
    procedure onChangeRepaint (This : in out RepaintBehavior; canvas : Canvas_Access);
 

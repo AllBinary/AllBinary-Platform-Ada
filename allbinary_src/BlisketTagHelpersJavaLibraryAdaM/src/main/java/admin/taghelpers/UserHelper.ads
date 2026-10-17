@@ -77,19 +77,12 @@ package admin.taghelpers.UserHelper_Package is
    procedure Initialize (This : in out UserHelper'Class; hashMap : HashMap_Access; pageContext : PageContext_Access);
    function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return UserHelper_Access;
    function delete (This : in out UserHelper) return Unbounded_String;
-   procedure delete (This : in out UserHelper);
    function insert (This : in out UserHelper) return Unbounded_String;
-   procedure insert (This : in out UserHelper);
    function update (This : in out UserHelper) return Unbounded_String;
-   procedure update (This : in out UserHelper);
    function drop (This : in out UserHelper) return Unbounded_String;
-   procedure drop (This : in out UserHelper);
    function create (This : in out UserHelper) return Unbounded_String;
-   procedure create (This : in out UserHelper);
    function restore (This : in out UserHelper) return Unbounded_String;
-   procedure restore (This : in out UserHelper);
    function backup (This : in out UserHelper) return Unbounded_String;
-   procedure backup (This : in out UserHelper);
 
 end admin.taghelpers.UserHelper_Package;
 

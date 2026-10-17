@@ -23,6 +23,7 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.data.generator.OrderIdGenerator_Package; use org.allbinary.data.generator.OrderIdGenerator_Package;
 with org.allbinary.data.tables.user.commerce.inventory.order.OrderHistoryEntity_Package; use org.allbinary.data.tables.user.commerce.inventory.order.OrderHistoryEntity_Package;
 with org.allbinary.data.tables.user.commerce.inventory.order.OrderItemsEntity_Package; use org.allbinary.data.tables.user.commerce.inventory.order.OrderItemsEntity_Package;
+with org.allbinary.business.user.commerce.inventory.order.Order_Package; use org.allbinary.business.user.commerce.inventory.order.Order_Package;
 
 package org.allbinary.business.user.commerce.inventory.order.OrderProcessorUtil_Package is
 
@@ -43,7 +44,6 @@ package org.allbinary.business.user.commerce.inventory.order.OrderProcessorUtil_
    procedure Initialize (This : in out OrderProcessorUtil'Class);
    function Create return OrderProcessorUtil_Access;
    function getInstance return OrderProcessorUtil_Access;
-   procedure getInstance;
    function process (This : in out OrderProcessorUtil; userName : Unbounded_String; order : Order_Access) return Unbounded_String;
    procedure process (This : in out OrderProcessorUtil; userName : Unbounded_String; order : Order_Access);
 

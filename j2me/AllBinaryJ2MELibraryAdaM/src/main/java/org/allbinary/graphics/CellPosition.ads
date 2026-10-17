@@ -44,17 +44,13 @@ package org.allbinary.graphics.CellPosition_Package is
    procedure Initialize (This : in out CellPosition'Class; column : Integer; row : Integer; columns : Integer; rows : Integer);
    function Create (column : Integer; row : Integer; columns : Integer; rows : Integer) return CellPosition_Access;
    function getColumn (This : in out CellPosition) return Integer;
-   procedure getColumn (This : in out CellPosition);
    function getRow (This : in out CellPosition) return Integer;
-   procedure getRow (This : in out CellPosition);
    function toString (This : in out CellPosition) return Unbounded_String;
-   procedure toString (This : in out CellPosition);
    function toStringCellPosition (basicGeographicMapCellPosition : CellPosition_Access) return Unbounded_String;
    procedure toStringCellPosition (basicGeographicMapCellPosition : CellPosition_Access);
    function toStringColRow (i_column : Integer; i_row : Integer) return Unbounded_String;
    procedure toStringColRow (i_column : Integer; i_row : Integer);
    function getId (This : in out CellPosition) return Integer;
-   procedure getId (This : in out CellPosition);
 
 end org.allbinary.graphics.CellPosition_Package;
 

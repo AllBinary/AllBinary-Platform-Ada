@@ -21,6 +21,7 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.globals.Globals_Package; use org.allbinary.globals.Globals_Package;
+with org.allbinary.init.ClassLoader_Package; use org.allbinary.init.ClassLoader_Package;
 
 package org.allbinary.init.NoLicense_Package is
 

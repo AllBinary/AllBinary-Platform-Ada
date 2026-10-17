@@ -41,7 +41,6 @@ package org.allbinary.logic.java.help.JavaHelpSetNotifier_Package is
    procedure Initialize (This : in out JavaHelpSetNotifier'Class);
    function Create return JavaHelpSetNotifier_Access;
    function get return BasicArrayList_Access;
-   procedure get;
    function isNotified (helpSet : HelpSet_Access) return Boolean;
    procedure isNotified (helpSet : HelpSet_Access);
 

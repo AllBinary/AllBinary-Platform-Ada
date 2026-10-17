@@ -131,6 +131,9 @@ with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArra
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.util.BasicArrayListS_Package; use org.allbinary.util.BasicArrayListS_Package;
 with org.allbinary.view.ViewPositionBase_Package; use org.allbinary.view.ViewPositionBase_Package;
+with org.allbinary.game.layer.unit.CollidableUnitBehavior_Package; use org.allbinary.game.layer.unit.CollidableUnitBehavior_Package;
+with org.allbinary.game.layer.unit.UnitWaypointBehavior2_Package; use org.allbinary.game.layer.unit.UnitWaypointBehavior2_Package;
+with org.allbinary.game.layer.unit.UnitWaypointBehavior_Package; use org.allbinary.game.layer.unit.UnitWaypointBehavior_Package;
 
 package org.allbinary.game.layer.unit.UnitLayer_Package is
 
@@ -292,7 +295,6 @@ package org.allbinary.game.layer.unit.UnitLayer_Package is
    procedure construct (This : in out UnitLayer; rtsPlayerLayerInterface : RTSPlayerLayerInterface_Access);
    procedure updateSensorGeographicMapCellPositionList (This : in out UnitLayer);
    function getSensorGeographicMapCellPositionList (This : in out UnitLayer) return BasicArrayList_Access;
-   procedure getSensorGeographicMapCellPositionList (This : in out UnitLayer);
    procedure select_Id (This : in out UnitLayer);
    procedure deselect (This : in out UnitLayer);
    procedure setSelected (This : in out UnitLayer; selected : Boolean);
@@ -304,7 +306,6 @@ package org.allbinary.game.layer.unit.UnitLayer_Package is
    procedure processBuiltTick (This : in out UnitLayer; allBinaryLayerManager : AllBinaryLayerManager_Access);
    procedure teleportTo (This : in out UnitLayer; geographicMapCellPosition : GeographicMapCellPosition_Access);
    function getCurrentGeographicMapCellPosition (This : in out UnitLayer) return GeographicMapCellPosition_Access;
-   procedure getCurrentGeographicMapCellPosition (This : in out UnitLayer);
    procedure fire (This : in out UnitLayer; layerManager : AllBinaryLayerManager_Access; gameKeyEvent : GameKeyEvent_Access);
    procedure left (This : in out UnitLayer);
    procedure right (This : in out UnitLayer);
@@ -319,8 +320,8 @@ package org.allbinary.game.layer.unit.UnitLayer_Package is
    procedure groundFriction (This : in out UnitLayer);
    procedure trackTo (This : in out UnitLayer; reason : Unbounded_String);
    procedure trackToDXY (This : in out UnitLayer; dx : Integer; dy : Integer);
-   function turnTo (This : in out UnitLayer; dx : Integer; dy : Integer; targetAngle : Integer) return Boolean;
-   procedure turnTo (This : in out UnitLayer; dx : Integer; dy : Integer; targetAngle : Integer);
+   function turnTo (This : in out UnitLayer; dx : Integer; dy : Integer; targetAngle_Param : Integer) return Boolean;
+   procedure turnTo (This : in out UnitLayer; dx : Integer; dy : Integer; targetAngle_Param : Integer);
    procedure handleDeltalX (This : in out UnitLayer; dx : Integer; dy : Integer);
    procedure handleDeltalY (This : in out UnitLayer; dx : Integer; dy : Integer);
    procedure trackToDXYTargetAngle (This : in out UnitLayer; dx : Integer; dy : Integer; targetAngle : Integer);
@@ -330,37 +331,25 @@ package org.allbinary.game.layer.unit.UnitLayer_Package is
    procedure paint (This : in out UnitLayer; graphics : Graphics_Access);
    procedure onBuildingEvent (This : in out UnitLayer; event : RTSLayerEvent_Access);
    function getVehicleProperties (This : in out UnitLayer) return VehicleProperties_Access;
-   procedure getVehicleProperties (This : in out UnitLayer);
    procedure damage (This : in out UnitLayer; damage : Integer; damageType : Integer);
    function getDamage (This : in out UnitLayer; damageType : Integer) return Integer;
    procedure getDamage (This : in out UnitLayer; damageType : Integer);
    procedure setDestroyed (This : in out UnitLayer; destroyed : Boolean);
    function getLoad (This : in out UnitLayer) return Integer;
-   procedure getLoad (This : in out UnitLayer);
    procedure clearResourceAnimation (This : in out UnitLayer);
    procedure setLoad (This : in out UnitLayer; resource : Integer);
    procedure addLoad (This : in out UnitLayer; resource : Integer);
    procedure handleCost (This : in out UnitLayer; ownerLayer : PathFindingLayerInterface_Access);
    function createHudPaintable (This : in out UnitLayer) return SelectionHudPaintable_Access;
-   procedure createHudPaintable (This : in out UnitLayer);
    function getHudPaintable (This : in out UnitLayer) return SelectionHudPaintable_Access;
-   procedure getHudPaintable (This : in out UnitLayer);
    function getType (This : in out UnitLayer) return Integer;
-   procedure getType (This : in out UnitLayer);
    function getStaticType return Integer;
-   procedure getStaticType;
    function getUnitWaypointBehavior (This : in out UnitLayer) return UnitWaypointBehavior_Access;
-   procedure getUnitWaypointBehavior (This : in out UnitLayer);
    function getTrackingEvent (This : in out UnitLayer) return TrackingEvent_Access;
-   procedure getTrackingEvent (This : in out UnitLayer);
    function getCaptionAnimationHelper (This : in out UnitLayer) return CaptionAnimationHelperBase_Access;
-   procedure getCaptionAnimationHelper (This : in out UnitLayer);
    function isSelfUpgradeable (This : in out UnitLayer) return Boolean;
-   procedure isSelfUpgradeable (This : in out UnitLayer);
    function getMaxResourceLoad (This : in out UnitLayer) return Short_Integer;
-   procedure getMaxResourceLoad (This : in out UnitLayer);
    function getPartialpositionlist return BasicArrayList_Access;
-   procedure getPartialpositionlist;
 
 end org.allbinary.game.layer.unit.UnitLayer_Package;
 

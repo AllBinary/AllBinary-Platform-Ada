@@ -24,6 +24,8 @@ with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.game.layer.PlayerOwnedRTSLayers_Package; use org.allbinary.game.layer.PlayerOwnedRTSLayers_Package;
+with org.allbinary.game.layer.RTSLayer_Package; use org.allbinary.game.layer.RTSLayer_Package;
+with org.allbinary.game.layer.AllBinaryGameLayer_Package; use org.allbinary.game.layer.AllBinaryGameLayer_Package;
 
 package org.allbinary.game.layer.AdvancedPlayerOwnedRTSLayers_Package is
 
@@ -59,26 +61,16 @@ package org.allbinary.game.layer.AdvancedPlayerOwnedRTSLayers_Package is
    procedure removeUnit (This : in out AdvancedPlayerOwnedRTSLayers; gameLayer : AllBinaryGameLayer_Access);
    procedure removeWaypoint (This : in out AdvancedPlayerOwnedRTSLayers; gameLayer : AllBinaryGameLayer_Access);
    function getUnitsList (This : in out AdvancedPlayerOwnedRTSLayers) return BasicArrayList_Access;
-   procedure getUnitsList (This : in out AdvancedPlayerOwnedRTSLayers);
    function getWaypointsList (This : in out AdvancedPlayerOwnedRTSLayers) return BasicArrayList_Access;
-   procedure getWaypointsList (This : in out AdvancedPlayerOwnedRTSLayers);
    function getBaseList (This : in out AdvancedPlayerOwnedRTSLayers) return BasicArrayList_Access;
-   procedure getBaseList (This : in out AdvancedPlayerOwnedRTSLayers);
    function getGarrisonList (This : in out AdvancedPlayerOwnedRTSLayers) return BasicArrayList_Access;
-   procedure getGarrisonList (This : in out AdvancedPlayerOwnedRTSLayers);
    function getHouseList (This : in out AdvancedPlayerOwnedRTSLayers) return BasicArrayList_Access;
-   procedure getHouseList (This : in out AdvancedPlayerOwnedRTSLayers);
    function getLabList (This : in out AdvancedPlayerOwnedRTSLayers) return BasicArrayList_Access;
-   procedure getLabList (This : in out AdvancedPlayerOwnedRTSLayers);
    function getFactoryList (This : in out AdvancedPlayerOwnedRTSLayers) return BasicArrayList_Access;
-   procedure getFactoryList (This : in out AdvancedPlayerOwnedRTSLayers);
    function getTotalBuildings (This : in out AdvancedPlayerOwnedRTSLayers) return Integer;
-   procedure getTotalBuildings (This : in out AdvancedPlayerOwnedRTSLayers);
    procedure removeBuilding (This : in out AdvancedPlayerOwnedRTSLayers; layerInterface : AllBinaryGameLayer_Access);
    function toString (This : in out AdvancedPlayerOwnedRTSLayers) return Unbounded_String;
-   procedure toString (This : in out AdvancedPlayerOwnedRTSLayers);
    function getBuildingList (This : in out AdvancedPlayerOwnedRTSLayers) return BasicArrayList_Access;
-   procedure getBuildingList (This : in out AdvancedPlayerOwnedRTSLayers);
 
 end org.allbinary.game.layer.AdvancedPlayerOwnedRTSLayers_Package;
 

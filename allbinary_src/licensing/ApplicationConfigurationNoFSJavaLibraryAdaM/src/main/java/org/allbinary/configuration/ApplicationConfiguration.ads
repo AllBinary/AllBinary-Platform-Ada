@@ -42,21 +42,16 @@ package org.allbinary.configuration.ApplicationConfiguration_Package is
    procedure Initialize (This : in out ApplicationConfiguration'Class);
    function Create return ApplicationConfiguration_Access;
    function getInstance return ApplicationConfiguration_Access;
-   procedure getInstance;
    procedure read (This : in out ApplicationConfiguration);
    procedure write (This : in out ApplicationConfiguration);
    procedure update (This : in out ApplicationConfiguration; gameFeature : Feature_Access);
    procedure setFullscreen (This : in out ApplicationConfiguration; fullscreen : Boolean);
    function isFullscreen (This : in out ApplicationConfiguration) return Boolean;
-   procedure isFullscreen (This : in out ApplicationConfiguration);
    procedure setShowTitleBar (This : in out ApplicationConfiguration; showTitleBar : Boolean);
    function isShowTitleBar (This : in out ApplicationConfiguration) return Boolean;
-   procedure isShowTitleBar (This : in out ApplicationConfiguration);
    procedure setProgressBarView (This : in out ApplicationConfiguration; progressBarView : Boolean);
    function isProgressBarView (This : in out ApplicationConfiguration) return Boolean;
-   procedure isProgressBarView (This : in out ApplicationConfiguration);
    function toString (This : in out ApplicationConfiguration) return Unbounded_String;
-   procedure toString (This : in out ApplicationConfiguration);
 
 end org.allbinary.configuration.ApplicationConfiguration_Package;
 

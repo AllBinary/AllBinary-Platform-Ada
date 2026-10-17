@@ -33,7 +33,7 @@ package body org.allbinary.business.user.commerce.shipping.modules.NoShippingMod
    function Create return NoShippingModule_Access is
       This : constant NoShippingModule_Access := new NoShippingModule;
    begin
-      Initialize (This.all);
+      NoShippingModule_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -58,20 +58,6 @@ package body org.allbinary.business.user.commerce.shipping.modules.NoShippingMod
    begin
       null;
    end getCost;
-
-   procedure getDescription (This : in out NoShippingModule) is
-      Java_Result : constant Unbounded_String := NoShippingModule'Class (This).getDescription;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getDescription;
-
-   procedure getName (This : in out NoShippingModule) is
-      Java_Result : constant Unbounded_String := NoShippingModule'Class (This).getName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getName;
 
 end org.allbinary.business.user.commerce.shipping.modules.NoShippingModule_Package;
 

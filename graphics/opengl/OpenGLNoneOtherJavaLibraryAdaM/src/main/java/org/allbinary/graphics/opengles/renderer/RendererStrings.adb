@@ -33,7 +33,7 @@ package body org.allbinary.graphics.opengles.renderer.RendererStrings_Package is
    function Create return RendererStrings_Access is
       This : constant RendererStrings_Access := new RendererStrings;
    begin
-      Initialize (This.all);
+      RendererStrings_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -41,13 +41,6 @@ package body org.allbinary.graphics.opengles.renderer.RendererStrings_Package is
    function getInstance return RendererStrings_Access is
    begin
         return RendererStrings_Package.instance;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant RendererStrings_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

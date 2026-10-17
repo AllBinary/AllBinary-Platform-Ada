@@ -36,7 +36,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoHttpComposit
    function Create (transformInfoInterface : TransformInfoInterface_Access) return TransformInfoHttpComposite_Access is
       This : constant TransformInfoHttpComposite_Access := new TransformInfoHttpComposite;
    begin
-      Initialize (This.all, transformInfoInterface);
+      TransformInfoHttpComposite_Package.Initialize (This.all, transformInfoInterface);
       return This;
    end Create;
 
@@ -59,34 +59,6 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoHttpComposit
    function getPropertiesHashMap (This : in out TransformInfoHttpComposite) return HashMap_Access is
    begin
         return This.transformInfoInterface.getPropertiesHashMap;
-   end getPropertiesHashMap;
-
-   procedure getTransformInfoInterface (This : in out TransformInfoHttpComposite) is
-      Java_Result : constant TransformInfoInterface_Access := TransformInfoHttpComposite'Class (This).getTransformInfoInterface;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTransformInfoInterface;
-
-   procedure getWeblisketSession (This : in out TransformInfoHttpComposite) is
-      Java_Result : constant WeblisketSession_Access := TransformInfoHttpComposite'Class (This).getWeblisketSession;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getWeblisketSession;
-
-   procedure getPageContext (This : in out TransformInfoHttpComposite) is
-      Java_Result : constant PageContext_Access := TransformInfoHttpComposite'Class (This).getPageContext;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getPageContext;
-
-   procedure getPropertiesHashMap (This : in out TransformInfoHttpComposite) is
-      Java_Result : constant HashMap_Access := TransformInfoHttpComposite'Class (This).getPropertiesHashMap;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getPropertiesHashMap;
 
 end org.allbinary.logic.visual.transform.info.TransformInfoHttpComposite_Package;

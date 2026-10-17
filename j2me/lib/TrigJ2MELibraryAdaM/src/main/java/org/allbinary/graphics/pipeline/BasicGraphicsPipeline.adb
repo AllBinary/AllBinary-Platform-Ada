@@ -32,7 +32,7 @@ package body org.allbinary.graphics.pipeline.BasicGraphicsPipeline_Package is
    function Create (points : BasicArrayList_Access) return BasicGraphicsPipeline_Access is
       This : constant BasicGraphicsPipeline_Access := new BasicGraphicsPipeline;
    begin
-      Initialize (This.all, points);
+      BasicGraphicsPipeline_Package.Initialize (This.all, points);
       return This;
    end Create;
 
@@ -155,13 +155,6 @@ package body org.allbinary.graphics.pipeline.BasicGraphicsPipeline_Package is
    function getMatrix (This : in out BasicGraphicsPipeline) return BasicArrayList_Access is
    begin
         return This.pointBasicArrayList;
-   end getMatrix;
-
-   procedure getMatrix (This : in out BasicGraphicsPipeline) is
-      Java_Result : constant BasicArrayList_Access := BasicGraphicsPipeline'Class (This).getMatrix;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getMatrix;
 
 end org.allbinary.graphics.pipeline.BasicGraphicsPipeline_Package;

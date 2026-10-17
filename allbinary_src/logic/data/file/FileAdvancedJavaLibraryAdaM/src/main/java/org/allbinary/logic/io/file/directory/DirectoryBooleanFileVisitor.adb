@@ -30,7 +30,7 @@ package body org.allbinary.logic.io.file.directory.DirectoryBooleanFileVisitor_P
    function Create return DirectoryBooleanFileVisitor_Access is
       This : constant DirectoryBooleanFileVisitor_Access := new DirectoryBooleanFileVisitor;
    begin
-      Initialize (This.all);
+      DirectoryBooleanFileVisitor_Package.Initialize (This.all);
       return This;
    end Create;
 

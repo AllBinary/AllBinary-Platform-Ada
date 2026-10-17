@@ -30,7 +30,7 @@ package body admin.taghelpers.PaymentTransactionHelperFactory_Package is
    function Create return PaymentTransactionHelperFactory_Access is
       This : constant PaymentTransactionHelperFactory_Access := new PaymentTransactionHelperFactory;
    begin
-      Initialize (This.all);
+      PaymentTransactionHelperFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

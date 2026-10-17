@@ -71,7 +71,7 @@ package body org.allbinary.game.configuration.GameConfigurationCentral_Package i
    function Create return GameConfigurationCentral_Access is
       This : constant GameConfigurationCentral_Access := new GameConfigurationCentral;
    begin
-      Initialize (This.all);
+      GameConfigurationCentral_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -178,27 +178,6 @@ package body org.allbinary.game.configuration.GameConfigurationCentral_Package i
         stringBuffer.append (commonStrings.EQUALS);
         stringBuffer.appendint (Integer (This.MAX_LAYERS.getValue.intValue));
         return stringBuffer.toString;
-   end toString;
-
-   procedure getInstance is
-      Java_Result : constant GameConfigurationCentral_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure getGameControlFidelity (This : in out GameConfigurationCentral) is
-      Java_Result : constant Integer := GameConfigurationCentral'Class (This).getGameControlFidelity;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getGameControlFidelity;
-
-   procedure toString (This : in out GameConfigurationCentral) is
-      Java_Result : constant Unbounded_String := GameConfigurationCentral'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end toString;
 
 begin

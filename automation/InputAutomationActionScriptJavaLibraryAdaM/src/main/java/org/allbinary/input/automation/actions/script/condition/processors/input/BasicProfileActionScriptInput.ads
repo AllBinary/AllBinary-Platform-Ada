@@ -37,6 +37,7 @@ with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.allbinary.input.automation.actions.script.condition.processors.input.ProfileActionScriptInputInterface_Package; use org.allbinary.input.automation.actions.script.condition.processors.input.ProfileActionScriptInputInterface_Package;
+with org.allbinary.input.automation.actions.script.condition.processors.input.GenericProfileActionScriptInputData_Package; use org.allbinary.input.automation.actions.script.condition.processors.input.GenericProfileActionScriptInputData_Package;
 
 package org.allbinary.input.automation.actions.script.condition.processors.input.BasicProfileActionScriptInput_Package is
 
@@ -68,17 +69,13 @@ package org.allbinary.input.automation.actions.script.condition.processors.input
    procedure Initialize (This : in out BasicProfileActionScriptInput'Class; label : Unbounded_String; node : Node_Access);
    function Create (label : Unbounded_String; node : Node_Access) return BasicProfileActionScriptInput_Access;
    function getTime (This : in out BasicProfileActionScriptInput) return Integer;
-   procedure getTime (This : in out BasicProfileActionScriptInput);
    procedure setTime (This : in out BasicProfileActionScriptInput; time : Integer);
    function BasicProfileActionScriptInput_toHashMap (This : in out BasicProfileActionScriptInput) return HashMap_Access;
-   procedure BasicProfileActionScriptInput_toHashMap (This : in out BasicProfileActionScriptInput);
    function toXmlNode (This : in out BasicProfileActionScriptInput; document : Document_Access) return Node_Access;
    procedure toXmlNode (This : in out BasicProfileActionScriptInput; document : Document_Access);
    procedure setInputRobotInterface (This : in out BasicProfileActionScriptInput; inputRobotInterface : InputRobotInterface_Access);
    function getInputRobotInterface (This : in out BasicProfileActionScriptInput) return InputRobotInterface_Access;
-   procedure getInputRobotInterface (This : in out BasicProfileActionScriptInput);
    function toString (This : in out BasicProfileActionScriptInput) return Unbounded_String;
-   procedure toString (This : in out BasicProfileActionScriptInput);
 
 end org.allbinary.input.automation.actions.script.condition.processors.input.BasicProfileActionScriptInput_Package;
 

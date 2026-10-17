@@ -30,6 +30,13 @@ with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.lo
 with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.game.layer.pickup.PickupBehaviorInterface_Package; use org.allbinary.game.layer.pickup.PickupBehaviorInterface_Package;
+with org.allbinary.game.layer.pickup.PickupProcessorInterface_Package; use org.allbinary.game.layer.pickup.PickupProcessorInterface_Package;
+with org.allbinary.game.layer.pickup.PickedUpLayerInterfaceFactoryInterface_Package; use org.allbinary.game.layer.pickup.PickedUpLayerInterfaceFactoryInterface_Package;
+with org.allbinary.game.layer.pickup.PickedUpLayerType_Package; use org.allbinary.game.layer.pickup.PickedUpLayerType_Package;
+with org.allbinary.game.layer.pickup.PickedUpLayerTypeFactory_Package; use org.allbinary.game.layer.pickup.PickedUpLayerTypeFactory_Package;
+with org.allbinary.game.layer.pickup.CountedPickedUpLayerInterfaceFactoryInterface_Package; use org.allbinary.game.layer.pickup.CountedPickedUpLayerInterfaceFactoryInterface_Package;
+with org.allbinary.game.layer.pickup.PickedUpLayerInterface_Package; use org.allbinary.game.layer.pickup.PickedUpLayerInterface_Package;
+with org.allbinary.game.layer.pickup.CountedPickedUpLayerInterfaceFactory_Package; use org.allbinary.game.layer.pickup.CountedPickedUpLayerInterfaceFactory_Package;
 
 package org.allbinary.game.layer.pickup.PickupBehavior_Package is
 
@@ -58,7 +65,6 @@ package org.allbinary.game.layer.pickup.PickupBehavior_Package is
    procedure Initialize (This : in out PickupBehavior'Class; ownerLayerInterface : CollidableCompositeLayer_Access; countedIndex : Integer);
    function Create (ownerLayerInterface : CollidableCompositeLayer_Access; countedIndex : Integer) return PickupBehavior_Access;
    function getNullInstance return PickupBehavior_Access;
-   procedure getNullInstance;
    procedure doPickup (This : in out PickupBehavior; pickupProcessorInterface : PickupProcessorInterface_Access);
    procedure doPickupLayer (This : in out PickupBehavior; pickupLayerInterface : PickedUpLayerInterface_Access);
    procedure add (This : in out PickupBehavior; countedPickedUpLayerInterfaceFactoryInterface : CountedPickedUpLayerInterfaceFactoryInterface_Access);
@@ -68,7 +74,6 @@ package org.allbinary.game.layer.pickup.PickupBehavior_Package is
    function getCountedLayerInterfaceFactoryForSlot (This : in out PickupBehavior; slotIndex : Integer) return CountedLayerInterfaceFactoryPart_Access;
    procedure getCountedLayerInterfaceFactoryForSlot (This : in out PickupBehavior; slotIndex : Integer);
    function getCountedIndex (This : in out PickupBehavior) return Integer;
-   procedure getCountedIndex (This : in out PickupBehavior);
 
 end org.allbinary.game.layer.pickup.PickupBehavior_Package;
 

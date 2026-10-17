@@ -32,6 +32,16 @@ with org.allbinary.media.image.comparison.ImageComparisonResultsListener_Package
 with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.time.TimeDelayHelper_Package; use org.allbinary.time.TimeDelayHelper_Package;
+with org.allbinary.media.image.comparison.motion.MotionRectangleConstraintsInterface_Package; use org.allbinary.media.image.comparison.motion.MotionRectangleConstraintsInterface_Package;
+with org.allbinary.media.image.comparison.motion.AllMotionRectangles_Package; use org.allbinary.media.image.comparison.motion.AllMotionRectangles_Package;
+with org.allbinary.media.image.comparison.motion.AllMotionRectanglesResultsCacheSingleton_Package; use org.allbinary.media.image.comparison.motion.AllMotionRectanglesResultsCacheSingleton_Package;
+with org.allbinary.media.image.comparison.motion.MotionRectanglesResultsFrameCacheable_Package; use org.allbinary.media.image.comparison.motion.MotionRectanglesResultsFrameCacheable_Package;
+with org.allbinary.media.image.comparison.motion.ConsolidateMotionRectangles_Package; use org.allbinary.media.image.comparison.motion.ConsolidateMotionRectangles_Package;
+with org.allbinary.media.image.comparison.motion.ConsolidatedMotionRectanglesResultsCacheSingleton_Package; use org.allbinary.media.image.comparison.motion.ConsolidatedMotionRectanglesResultsCacheSingleton_Package;
+with org.allbinary.media.image.comparison.motion.ConstrainedMotionRectangles_Package; use org.allbinary.media.image.comparison.motion.ConstrainedMotionRectangles_Package;
+with org.allbinary.media.image.comparison.motion.ConstrainedMotionRectanglesResultsCacheSingleton_Package; use org.allbinary.media.image.comparison.motion.ConstrainedMotionRectanglesResultsCacheSingleton_Package;
+with org.allbinary.media.image.comparison.motion.MotionRectanglesResultsEvent_Package; use org.allbinary.media.image.comparison.motion.MotionRectanglesResultsEvent_Package;
+with org.allbinary.media.image.comparison.motion.MotionRectangles_Package; use org.allbinary.media.image.comparison.motion.MotionRectangles_Package;
 
 package org.allbinary.media.image.comparison.motion.MotionRectanglesWorker_Package is
 
@@ -67,7 +77,6 @@ package org.allbinary.media.image.comparison.motion.MotionRectanglesWorker_Packa
    procedure onImageComparisonResultsEvent (This : in out MotionRectanglesWorker; imageComparisonResultsEvent : ImageComparisonResultsEvent_Access);
    procedure onEvent (This : in out MotionRectanglesWorker; allBinaryEventObject : AllBinaryEventObject_Access);
    function isRunning (This : in out MotionRectanglesWorker) return Boolean;
-   procedure isRunning (This : in out MotionRectanglesWorker);
    procedure setRunning (This : in out MotionRectanglesWorker; running : Boolean);
    procedure run (This : in out MotionRectanglesWorker);
 

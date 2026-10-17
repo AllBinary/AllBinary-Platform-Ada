@@ -31,7 +31,7 @@ package body org.allbinary.business.context.modules.storefront.statistics.users.
    function Create (storeFrontUsersStatisticsInterface : StoreFrontUsersStatisticsInterface_Access) return StoreFrontUsersStatisticsView_Access is
       This : constant StoreFrontUsersStatisticsView_Access := new StoreFrontUsersStatisticsView;
    begin
-      Initialize (This.all, storeFrontUsersStatisticsInterface);
+      StoreFrontUsersStatisticsView_Package.Initialize (This.all, storeFrontUsersStatisticsInterface);
       return This;
    end Create;
 

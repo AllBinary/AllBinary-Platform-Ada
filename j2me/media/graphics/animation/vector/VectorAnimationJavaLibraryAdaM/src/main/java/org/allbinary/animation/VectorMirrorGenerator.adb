@@ -37,7 +37,7 @@ package body org.allbinary.animation.VectorMirrorGenerator_Package is
    function Create return VectorMirrorGenerator_Access is
       This : constant VectorMirrorGenerator_Access := new VectorMirrorGenerator;
    begin
-      Initialize (This.all);
+      VectorMirrorGenerator_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -94,13 +94,6 @@ package body org.allbinary.animation.VectorMirrorGenerator_Package is
         graphicsPipe.createMatrix;
         graphicsPipe.mirror (width);
         return graphicsPipe.getMatrix;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant VectorMirrorGenerator_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
    procedure getInstance (This : in out VectorMirrorGenerator; points : Integer_Array_Access_Array_Access_Array_Access; width : Integer) is

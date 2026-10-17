@@ -34,6 +34,8 @@ with org.allbinary.image.opengles.OpenGLSurfaceChangedInterface_Package; use org
 with org.allbinary.view.ViewPositionBase_Package; use org.allbinary.view.ViewPositionBase_Package;
 with org.allbinary.game.layer.pickup.PickedUpLayerInterface_Package; use org.allbinary.game.layer.pickup.PickedUpLayerInterface_Package;
 with org.allbinary.game.layer.pickup.PickupableInterface_Package; use org.allbinary.game.layer.pickup.PickupableInterface_Package;
+with org.allbinary.game.layer.pickup.CountedPickedUpLayerInterfaceFactory_Package; use org.allbinary.game.layer.pickup.CountedPickedUpLayerInterfaceFactory_Package;
+with org.allbinary.game.layer.pickup.PickedUpLayerInterfaceFactoryInterface_Package; use org.allbinary.game.layer.pickup.PickedUpLayerInterfaceFactoryInterface_Package;
 
 package org.allbinary.game.layer.pickup.PickupLayer_Package is
 
@@ -66,10 +68,8 @@ package org.allbinary.game.layer.pickup.PickupLayer_Package is
    procedure paint (This : in out PickupLayer; graphics : Graphics_Access);
    procedure paintThreed (This : in out PickupLayer; graphics : Graphics_Access);
    function getPickedUpLayerInterfaceFactoryInterface (This : in out PickupLayer) return PickedUpLayerInterfaceFactoryInterface_Access;
-   procedure getPickedUpLayerInterfaceFactoryInterface (This : in out PickupLayer);
    procedure setPickedUp (This : in out PickupLayer);
    function isDestroyed (This : in out PickupLayer) return Boolean;
-   procedure isDestroyed (This : in out PickupLayer);
    procedure setDestroyed (This : in out PickupLayer; destroyed : Boolean);
    procedure damage (This : in out PickupLayer; damage : Integer; damageType : Integer);
    function getDamage (This : in out PickupLayer; damageType : Integer) return Integer;

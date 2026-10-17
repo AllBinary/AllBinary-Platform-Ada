@@ -55,7 +55,6 @@ package org.allbinary.animation.compound.CompoundAnimationInterfaceFactory_Packa
    function createAnimation (This : in out CompoundAnimationInterfaceFactory; animationInterfaceArray : Animation_Access_Array_Access) return Animation_Access;
    procedure createAnimation (This : in out CompoundAnimationInterfaceFactory; animationInterfaceArray : Animation_Access_Array_Access);
    function getBasicAnimationInterfaceFactoryInterfaceArray (This : in out CompoundAnimationInterfaceFactory) return AnimationInterfaceFactoryInterface_Access_Array_Access;
-   procedure getBasicAnimationInterfaceFactoryInterfaceArray (This : in out CompoundAnimationInterfaceFactory);
    procedure setInitialScale (This : in out CompoundAnimationInterfaceFactory; scaleProperties : ScaleProperties_Access);
 
 end org.allbinary.animation.compound.CompoundAnimationInterfaceFactory_Package;

@@ -34,7 +34,7 @@ package body org.allbinary.game.layer.waypoint.WaypointInfoHudPaintable_Package 
    function Create return WaypointInfoHudPaintable_Access is
       This : constant WaypointInfoHudPaintable_Access := new WaypointInfoHudPaintable;
    begin
-      Initialize (This.all);
+      WaypointInfoHudPaintable_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -71,13 +71,6 @@ package body org.allbinary.game.layer.waypoint.WaypointInfoHudPaintable_Package 
         This.keyvalueDrawString.paint (graphics, This.textLine2Y);
         This.getAnimationInterface.paintXY (graphics, This.imageX, This.y);
    end paint;
-
-   procedure getRtsLayer (This : in out WaypointInfoHudPaintable) is
-      Java_Result : constant PathFindingLayerInterface_Access := WaypointInfoHudPaintable'Class (This).getRtsLayer;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getRtsLayer;
 
 end org.allbinary.game.layer.waypoint.WaypointInfoHudPaintable_Package;
 

@@ -29,7 +29,7 @@ package body org.allbinary.logic.communication.java.vm.stats.JvmStatisticsMappin
    function Create return JvmStatisticsMapping_Access is
       This : constant JvmStatisticsMapping_Access := new JvmStatisticsMapping;
    begin
-      Initialize (This.all);
+      JvmStatisticsMapping_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -72,27 +72,6 @@ package body org.allbinary.logic.communication.java.vm.stats.JvmStatisticsMappin
         vector.add (This.getTotalMemoryKilobytesString);
         vector.add (This.getTotalMemoryMegabytesString);
         return vector;
-   end toVector;
-
-   procedure toHashMap (This : in out JvmStatisticsMapping) is
-      Java_Result : constant HashMap_Access := JvmStatisticsMapping'Class (This).toHashMap;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toHashMap;
-
-   procedure getKey (This : in out JvmStatisticsMapping) is
-      Java_Result : constant Java_Object_Access := JvmStatisticsMapping'Class (This).getKey;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getKey;
-
-   procedure toVector (This : in out JvmStatisticsMapping) is
-      Java_Result : constant BasicArrayList_Access := JvmStatisticsMapping'Class (This).toVector;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end toVector;
 
 end org.allbinary.logic.communication.java.vm.stats.JvmStatisticsMapping_Package;

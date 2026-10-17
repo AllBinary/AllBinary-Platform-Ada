@@ -38,7 +38,6 @@ package org.allbinary.logic.visual.media.MediaTypeData_Package is
    procedure Initialize (This : in out MediaTypeData'Class);
    function Create return MediaTypeData_Access;
    function getInstance return MediaTypeData_Access;
-   procedure getInstance;
 
 end org.allbinary.logic.visual.media.MediaTypeData_Package;
 

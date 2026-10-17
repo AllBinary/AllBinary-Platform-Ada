@@ -32,7 +32,7 @@ package body org.allbinary.media.graphics.geography.pathfinding.StaticPathGenera
    function Create return StaticPathGenerator_Access is
       This : constant StaticPathGenerator_Access := new StaticPathGenerator;
    begin
-      Initialize (This.all);
+      StaticPathGenerator_Package.Initialize (This.all);
       return This;
    end Create;
 

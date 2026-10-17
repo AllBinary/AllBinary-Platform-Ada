@@ -36,16 +36,9 @@ package body org.allbinary.input.NoAllBinarySensor_Package is
    function Create return NoAllBinarySensor_Access is
       This : constant NoAllBinarySensor_Access := new NoAllBinarySensor;
    begin
-      Initialize (This.all);
+      NoAllBinarySensor_Package.Initialize (This.all);
       return This;
    end Create;
-
-   procedure getInstance is
-      Java_Result : constant NoAllBinarySensor_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

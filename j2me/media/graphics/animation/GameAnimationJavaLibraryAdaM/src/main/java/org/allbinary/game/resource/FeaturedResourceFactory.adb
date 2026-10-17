@@ -42,7 +42,7 @@ package body org.allbinary.game.resource.FeaturedResourceFactory_Package is
    function Create return FeaturedResourceFactory_Access is
       This : constant FeaturedResourceFactory_Access := new FeaturedResourceFactory;
    begin
-      Initialize (This.all);
+      FeaturedResourceFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -103,13 +103,6 @@ package body org.allbinary.game.resource.FeaturedResourceFactory_Package is
    function getList (This : in out FeaturedResourceFactory) return BasicArrayList_Access is
    begin
         return This.list;
-   end getList;
-
-   procedure getList (This : in out FeaturedResourceFactory) is
-      Java_Result : constant BasicArrayList_Access := FeaturedResourceFactory'Class (This).getList;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getList;
 
 end org.allbinary.game.resource.FeaturedResourceFactory_Package;

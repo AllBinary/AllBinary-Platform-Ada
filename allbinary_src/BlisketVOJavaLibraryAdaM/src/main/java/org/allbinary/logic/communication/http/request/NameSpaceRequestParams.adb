@@ -34,7 +34,7 @@ package body org.allbinary.logic.communication.http.request.NameSpaceRequestPara
    function Create return NameSpaceRequestParams_Access is
       This : constant NameSpaceRequestParams_Access := new NameSpaceRequestParams;
    begin
-      Initialize (This.all);
+      NameSpaceRequestParams_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -51,7 +51,7 @@ package body org.allbinary.logic.communication.http.request.NameSpaceRequestPara
    function Create (httpServletRequest : HttpServletRequest_Access) return NameSpaceRequestParams_Access is
       This : constant NameSpaceRequestParams_Access := new NameSpaceRequestParams;
    begin
-      Initialize (This.all, httpServletRequest);
+      NameSpaceRequestParams_Package.Initialize (This.all, httpServletRequest);
       return This;
    end Create;
 
@@ -68,7 +68,7 @@ package body org.allbinary.logic.communication.http.request.NameSpaceRequestPara
    function Create (pageContext : PageContext_Access) return NameSpaceRequestParams_Access is
       This : constant NameSpaceRequestParams_Access := new NameSpaceRequestParams;
    begin
-      Initialize (This.all, pageContext);
+      NameSpaceRequestParams_Package.Initialize (This.all, pageContext);
       return This;
    end Create;
 
@@ -434,13 +434,6 @@ package body org.allbinary.logic.communication.http.request.NameSpaceRequestPara
    begin
       null;
    end addNameSpace;
-
-   procedure toHashMap (This : in out NameSpaceRequestParams) is
-      Java_Result : constant HashMap_Access := NameSpaceRequestParams'Class (This).toHashMap;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toHashMap;
 
 end org.allbinary.logic.communication.http.request.NameSpaceRequestParams_Package;
 

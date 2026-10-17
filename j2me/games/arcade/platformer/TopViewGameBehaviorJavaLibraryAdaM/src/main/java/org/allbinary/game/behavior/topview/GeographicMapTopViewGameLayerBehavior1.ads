@@ -31,6 +31,7 @@ with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Packag
 with org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package;
 with org.allbinary.media.graphics.geography.map.SimpleGeographicMapCellPositionFactory_Package; use org.allbinary.media.graphics.geography.map.SimpleGeographicMapCellPositionFactory_Package;
 with org.allbinary.game.behavior.topview.GeographicMapTopViewLayerBehavior_Package; use org.allbinary.game.behavior.topview.GeographicMapTopViewLayerBehavior_Package;
+with org.allbinary.game.behavior.topview.TopViewCharacterInterface_Package; use org.allbinary.game.behavior.topview.TopViewCharacterInterface_Package;
 
 package org.allbinary.game.behavior.topview.GeographicMapTopViewGameLayerBehavior1_Package is
 

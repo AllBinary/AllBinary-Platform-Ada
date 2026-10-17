@@ -36,7 +36,7 @@ package body org.allbinary.logic.communication.http.AcceptableResponse_Package i
    function Create (candidate : Unbounded_String; tagName : Unbounded_String; index : Integer) return AcceptableResponse_Access is
       This : constant AcceptableResponse_Access := new AcceptableResponse;
    begin
-      Initialize (This.all, candidate, tagName, index);
+      AcceptableResponse_Package.Initialize (This.all, candidate, tagName, index);
       return This;
    end Create;
 

@@ -52,11 +52,8 @@ package views.admin.storefront.statistics.ValidationStoreFrontStatisticsView_Pac
    procedure Initialize (This : in out ValidationStoreFrontStatisticsView'Class; transformInfoInterface : TransformInfoInterface_Access);
    function Create (transformInfoInterface : TransformInfoInterface_Access) return ValidationStoreFrontStatisticsView_Access;
    function isValid (This : in out ValidationStoreFrontStatisticsView) return Boolean;
-   procedure isValid (This : in out ValidationStoreFrontStatisticsView);
    function validationInfo (This : in out ValidationStoreFrontStatisticsView) return Unbounded_String;
-   procedure validationInfo (This : in out ValidationStoreFrontStatisticsView);
    function toValidationInfoDoc (This : in out ValidationStoreFrontStatisticsView) return Document_Access;
-   procedure toValidationInfoDoc (This : in out ValidationStoreFrontStatisticsView);
    function toValidationInfoNode (This : in out ValidationStoreFrontStatisticsView; document : Document_Access) return Node_Access;
    procedure toValidationInfoNode (This : in out ValidationStoreFrontStatisticsView; document : Document_Access);
 

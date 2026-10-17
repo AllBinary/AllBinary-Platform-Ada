@@ -41,7 +41,7 @@ package body org.allbinary.logic.system.hardware.components.ComponentFactory_Pac
    function Create return ComponentFactory_Access is
       This : constant ComponentFactory_Access := new ComponentFactory;
    begin
-      Initialize (This.all);
+      ComponentFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -49,13 +49,6 @@ package body org.allbinary.logic.system.hardware.components.ComponentFactory_Pac
    function getInstance return ComponentFactory_Access is
    begin
         return ComponentFactory_Package.instance;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant ComponentFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

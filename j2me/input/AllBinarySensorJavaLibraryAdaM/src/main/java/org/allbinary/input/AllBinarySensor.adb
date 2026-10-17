@@ -32,7 +32,7 @@ package body org.allbinary.input.AllBinarySensor_Package is
    function Create return AllBinarySensor_Access is
       This : constant AllBinarySensor_Access := new AllBinarySensor;
    begin
-      Initialize (This.all);
+      AllBinarySensor_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -71,20 +71,6 @@ package body org.allbinary.input.AllBinarySensor_Package is
    begin
         ForcedLogUtil_Package.log (This.commonStrings.NOT_IMPLEMENTED, This'Unchecked_Access);
    end onSensorChange;
-
-   procedure getMax is
-      Java_Result : constant Integer := getMax;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getMax;
-
-   procedure getId (This : in out AllBinarySensor) is
-      Java_Result : constant Integer := AllBinarySensor'Class (This).getId;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getId;
 
 begin
    null;

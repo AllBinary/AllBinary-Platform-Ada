@@ -28,7 +28,7 @@ package body org.allbinary.image.opengles.OpenGLESImageDraw_Package is
    function Create return OpenGLESImageDraw_Access is
       This : constant OpenGLESImageDraw_Access := new OpenGLESImageDraw;
    begin
-      Initialize (This.all);
+      OpenGLESImageDraw_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -47,13 +47,6 @@ package body org.allbinary.image.opengles.OpenGLESImageDraw_Package is
    begin
         null;
    end draw;
-
-   procedure getInstance is
-      Java_Result : constant OpenGLESImageDraw_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

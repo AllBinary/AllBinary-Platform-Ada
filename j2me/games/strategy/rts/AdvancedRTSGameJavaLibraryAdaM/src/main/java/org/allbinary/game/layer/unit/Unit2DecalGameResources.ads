@@ -44,9 +44,7 @@ package org.allbinary.game.layer.unit.Unit2DecalGameResources_Package is
    function Create return Unit2DecalGameResources_Access;
    procedure append (This : in out Unit2DecalGameResources; ROOT : Unbounded_String; sizeString : Unbounded_String);
    function getString (This : in out Unit2DecalGameResources) return Unbounded_String;
-   procedure getString (This : in out Unit2DecalGameResources);
    function getInstance return BasicGameResources_Access;
-   procedure getInstance;
 
 end org.allbinary.game.layer.unit.Unit2DecalGameResources_Package;
 

@@ -43,7 +43,7 @@ package body org.allbinary.logic.communication.smtp.configuration.user.UserEmail
    function Create (node : Node_Access) return UserEmailConfigurationView_Access is
       This : constant UserEmailConfigurationView_Access := new UserEmailConfigurationView;
    begin
-      Initialize (This.all, node);
+      UserEmailConfigurationView_Package.Initialize (This.all, node);
       return This;
    end Create;
 
@@ -57,7 +57,7 @@ package body org.allbinary.logic.communication.smtp.configuration.user.UserEmail
    function Create (userEmailConfigurationInterface : UserEmailConfigurationInterface_Access) return UserEmailConfigurationView_Access is
       This : constant UserEmailConfigurationView_Access := new UserEmailConfigurationView;
    begin
-      Initialize (This.all, userEmailConfigurationInterface);
+      UserEmailConfigurationView_Package.Initialize (This.all, userEmailConfigurationInterface);
       return This;
    end Create;
 
@@ -84,13 +84,6 @@ package body org.allbinary.logic.communication.smtp.configuration.user.UserEmail
         node.appendChild (userEmailEventsConfigurationView.toXmlNode (document));
         return node;
    end toXmlNode;
-
-   procedure getEmailConfigurationInterface (This : in out UserEmailConfigurationView) is
-      Java_Result : constant UserEmailConfigurationInterface_Access := UserEmailConfigurationView'Class (This).getEmailConfigurationInterface;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getEmailConfigurationInterface;
 
    procedure toXmlNode (This : in out UserEmailConfigurationView; document : Document_Access) is
       Java_Result : constant Node_Access := UserEmailConfigurationView'Class (This).toXmlNode (document);

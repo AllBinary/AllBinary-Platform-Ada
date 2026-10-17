@@ -34,11 +34,8 @@ package org.allbinary.J2MEUtil_Package is
    procedure Initialize (This : in out J2MEUtil'Class);
    function Create return J2MEUtil_Access;
    function isJ2ME return Boolean;
-   procedure isJ2ME;
    function isJ2SE return Boolean;
-   procedure isJ2SE;
    function isHTML return Boolean;
-   procedure isHTML;
 
 end org.allbinary.J2MEUtil_Package;
 

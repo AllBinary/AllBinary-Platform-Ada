@@ -63,7 +63,7 @@ package body org.allbinary.media.graphics.geography.map.topview.BasicTopViewGeog
    function Create (name : Unbounded_String; types : BasicArrayList_Access; cost : Integer) return BasicTopViewGeographicMapCellType_Access is
       This : constant BasicTopViewGeographicMapCellType_Access := new BasicTopViewGeographicMapCellType;
    begin
-      Initialize (This.all, name, types, cost);
+      BasicTopViewGeographicMapCellType_Package.Initialize (This.all, name, types, cost);
       return This;
    end Create;
 
@@ -123,20 +123,6 @@ package body org.allbinary.media.graphics.geography.map.topview.BasicTopViewGeog
    begin
       null;
    end hasType;
-
-   procedure getTypes (This : in out BasicTopViewGeographicMapCellType) is
-      Java_Result : constant Integer_Array_Access := BasicTopViewGeographicMapCellType'Class (This).getTypes;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTypes;
-
-   procedure toString (This : in out BasicTopViewGeographicMapCellType) is
-      Java_Result : constant Unbounded_String := BasicTopViewGeographicMapCellType'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toString;
 
 end org.allbinary.media.graphics.geography.map.topview.BasicTopViewGeographicMapCellType_Package;
 

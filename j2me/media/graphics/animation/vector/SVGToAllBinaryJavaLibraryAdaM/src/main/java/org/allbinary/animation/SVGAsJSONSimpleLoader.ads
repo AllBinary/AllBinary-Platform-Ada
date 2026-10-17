@@ -31,6 +31,8 @@ with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArr
 with org.json.me.JSONArray_Package; use org.json.me.JSONArray_Package;
 with org.json.me.JSONException_Package; use org.json.me.JSONException_Package;
 with org.json.me.JSONObject_Package; use org.json.me.JSONObject_Package;
+with org.allbinary.animation.ShapeTypeFactory_Package; use org.allbinary.animation.ShapeTypeFactory_Package;
+with org.allbinary.animation.ShapeType_Package; use org.allbinary.animation.ShapeType_Package;
 
 package org.allbinary.animation.SVGAsJSONSimpleLoader_Package is
 
@@ -76,7 +78,6 @@ package org.allbinary.animation.SVGAsJSONSimpleLoader_Package is
    procedure Initialize (This : in out SVGAsJSONSimpleLoader'Class);
    function Create return SVGAsJSONSimpleLoader_Access;
    function getInstance return SVGAsJSONSimpleLoader_Access;
-   procedure getInstance;
    function load (This : in out SVGAsJSONSimpleLoader; svgAsJson : Unbounded_String) return Integer_Array_Access_Array_Access;
    procedure load (This : in out SVGAsJSONSimpleLoader; svgAsJson : Unbounded_String);
    procedure addShapes (This : in out SVGAsJSONSimpleLoader; pointVector : BasicArrayList_Access; value : Java_Object_Access; shapeType : ShapeType_Access);

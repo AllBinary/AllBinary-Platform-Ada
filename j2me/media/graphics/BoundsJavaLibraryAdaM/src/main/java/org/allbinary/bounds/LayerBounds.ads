@@ -27,6 +27,7 @@ with org.allbinary.logic.communication.log.ForcedLogUtil_Package; use org.allbin
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbinary.logic.util.event.AllBinaryEventObject_Package;
 with org.allbinary.logic.util.event.EventStrings_Package; use org.allbinary.logic.util.event.EventStrings_Package;
+with org.allbinary.bounds.BoundsVisitorInterface_Package; use org.allbinary.bounds.BoundsVisitorInterface_Package;
 
 package org.allbinary.bounds.LayerBounds_Package is
 
@@ -51,7 +52,6 @@ package org.allbinary.bounds.LayerBounds_Package is
    procedure Initialize (This : in out LayerBounds'Class; rectangle : Rectangle_Access);
    function Create (rectangle : Rectangle_Access) return LayerBounds_Access;
    function getRectangleP (This : in out LayerBounds) return Rectangle_Access;
-   procedure getRectangleP (This : in out LayerBounds);
    procedure visit (This : in out LayerBounds; boundsVisitorInterface : BoundsVisitorInterface_Access);
    procedure onEvent (This : in out LayerBounds; eventObject : AllBinaryEventObject_Access);
    procedure onBoundsChangeEvent (This : in out LayerBounds; boundsChangeEvent : BoundsChangeEvent_Access);

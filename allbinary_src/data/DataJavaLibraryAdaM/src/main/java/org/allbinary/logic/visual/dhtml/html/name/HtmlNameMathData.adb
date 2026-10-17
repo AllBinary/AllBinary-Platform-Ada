@@ -40,16 +40,9 @@ package body org.allbinary.logic.visual.dhtml.html.name.HtmlNameMathData_Package
    function Create return HtmlNameMathData_Access is
       This : constant HtmlNameMathData_Access := new HtmlNameMathData;
    begin
-      Initialize (This.all);
+      HtmlNameMathData_Package.Initialize (This.all);
       return This;
    end Create;
-
-   procedure getInstance is
-      Java_Result : constant HtmlNameMathData_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

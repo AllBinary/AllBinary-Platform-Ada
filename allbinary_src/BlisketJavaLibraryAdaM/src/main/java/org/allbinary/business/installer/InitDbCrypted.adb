@@ -37,7 +37,7 @@ package body org.allbinary.business.installer.InitDbCrypted_Package is
    function Create (databaseConnectionInfoInterface : DatabaseConnectionInfoInterface_Access) return InitDbCrypted_Access is
       This : constant InitDbCrypted_Access := new InitDbCrypted;
    begin
-      Initialize (This.all, databaseConnectionInfoInterface);
+      InitDbCrypted_Package.Initialize (This.all, databaseConnectionInfoInterface);
       return This;
    end Create;
 
@@ -203,27 +203,6 @@ package body org.allbinary.business.installer.InitDbCrypted_Package is
             return False;
                 end;
         end;
-   end addTables;
-
-   procedure addUsers (This : in out InitDbCrypted) is
-      Java_Result : constant Boolean := InitDbCrypted'Class (This).addUsers;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end addUsers;
-
-   procedure addDatabases (This : in out InitDbCrypted) is
-      Java_Result : constant Boolean := InitDbCrypted'Class (This).addDatabases;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end addDatabases;
-
-   procedure addTables (This : in out InitDbCrypted) is
-      Java_Result : constant Boolean := InitDbCrypted'Class (This).addTables;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end addTables;
 
 end org.allbinary.business.installer.InitDbCrypted_Package;

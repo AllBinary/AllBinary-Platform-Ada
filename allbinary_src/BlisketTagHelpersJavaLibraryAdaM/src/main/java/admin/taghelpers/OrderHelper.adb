@@ -45,7 +45,7 @@ package body admin.taghelpers.OrderHelper_Package is
    function Create (propertiesHashMap : HashMap_Access; pageContext : PageContext_Access) return OrderHelper_Access is
       This : constant OrderHelper_Access := new OrderHelper;
    begin
-      Initialize (This.all, propertiesHashMap, pageContext);
+      OrderHelper_Package.Initialize (This.all, propertiesHashMap, pageContext);
       return This;
    end Create;
 
@@ -156,20 +156,6 @@ package body admin.taghelpers.OrderHelper_Package is
             return error;
                 end;
         end;
-   end process;
-
-   procedure setPaymentGateway (This : in out OrderHelper) is
-      Java_Result : constant Boolean := OrderHelper'Class (This).setPaymentGateway;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end setPaymentGateway;
-
-   procedure process (This : in out OrderHelper) is
-      Java_Result : constant Unbounded_String := OrderHelper'Class (This).process;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end process;
 
 end admin.taghelpers.OrderHelper_Package;

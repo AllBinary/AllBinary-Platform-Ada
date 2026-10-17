@@ -34,7 +34,7 @@ package body org.allbinary.logic.control.contraints.display.browser.DisplayInBro
    function Create (node : Node_Access) return DisplayInBrowserContraints_Access is
       This : constant DisplayInBrowserContraints_Access := new DisplayInBrowserContraints;
    begin
-      Initialize (This.all, node);
+      DisplayInBrowserContraints_Package.Initialize (This.all, node);
       return This;
    end Create;
 
@@ -77,34 +77,6 @@ package body org.allbinary.logic.control.contraints.display.browser.DisplayInBro
    begin
         This.mountedLink := mountedLink;
    end setMountedLink;
-
-   procedure isMountable (This : in out DisplayInBrowserContraints) is
-      Java_Result : constant Boolean := DisplayInBrowserContraints'Class (This).isMountable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isMountable;
-
-   procedure isFrameable (This : in out DisplayInBrowserContraints) is
-      Java_Result : constant Boolean := DisplayInBrowserContraints'Class (This).isFrameable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isFrameable;
-
-   procedure isQuickFrameable (This : in out DisplayInBrowserContraints) is
-      Java_Result : constant Boolean := DisplayInBrowserContraints'Class (This).isQuickFrameable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isQuickFrameable;
-
-   procedure getMountedLink (This : in out DisplayInBrowserContraints) is
-      Java_Result : constant Unbounded_String := DisplayInBrowserContraints'Class (This).getMountedLink;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getMountedLink;
 
 end org.allbinary.logic.control.contraints.display.browser.DisplayInBrowserContraints_Package;
 

@@ -31,7 +31,7 @@ package body tags.CustomTagSupport_Package is
    function Create return CustomTagSupport_Access is
       This : constant CustomTagSupport_Access := new CustomTagSupport;
    begin
-      Initialize (This.all);
+      CustomTagSupport_Package.Initialize (This.all);
       return This;
    end Create;
 

@@ -31,20 +31,13 @@ package body org.allbinary.game.ag.layer.pickup.health.HealthResources_Package i
    function Create return HealthResources_Access is
       This : constant HealthResources_Access := new HealthResources;
    begin
-      Initialize (This.all);
+      HealthResources_Package.Initialize (This.all);
       return This;
    end Create;
 
    function getInstance return HealthResources_Access is
    begin
         return HealthResources_Package.SINGLETON;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant HealthResources_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

@@ -35,7 +35,7 @@ package body org.allbinary.animation.ShapeTypeFactory_Package is
    function Create return ShapeTypeFactory_Access is
       This : constant ShapeTypeFactory_Access := new ShapeTypeFactory;
    begin
-      Initialize (This.all);
+      ShapeTypeFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -43,13 +43,6 @@ package body org.allbinary.animation.ShapeTypeFactory_Package is
    function getInstance return ShapeTypeFactory_Access is
    begin
         return ShapeTypeFactory_Package.instance;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant ShapeTypeFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

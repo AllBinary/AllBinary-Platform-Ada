@@ -34,7 +34,7 @@ package body org.allbinary.business.user.role.BasicUserRole_Package is
    function Create (aRole : Unbounded_String; a_int_RoleId : Integer; aSessionTimeout : Long_Long_Integer; aSessionInactivityTimeout : Long_Long_Integer) return BasicUserRole_Access is
       This : constant BasicUserRole_Access := new BasicUserRole;
    begin
-      Initialize (This.all, aRole, a_int_RoleId, aSessionTimeout, aSessionInactivityTimeout);
+      BasicUserRole_Package.Initialize (This.all, aRole, a_int_RoleId, aSessionTimeout, aSessionInactivityTimeout);
       return This;
    end Create;
 
@@ -53,7 +53,7 @@ package body org.allbinary.business.user.role.BasicUserRole_Package is
    function Create (aRole : Unbounded_String; aDisplayValue : Unbounded_String; a_int_RoleId : Integer; aSessionTimeout : Long_Long_Integer; aSessionInactivityTimeout : Long_Long_Integer) return BasicUserRole_Access is
       This : constant BasicUserRole_Access := new BasicUserRole;
    begin
-      Initialize (This.all, aRole, aDisplayValue, a_int_RoleId, aSessionTimeout, aSessionInactivityTimeout);
+      BasicUserRole_Package.Initialize (This.all, aRole, aDisplayValue, a_int_RoleId, aSessionTimeout, aSessionInactivityTimeout);
       return This;
    end Create;
 
@@ -113,34 +113,6 @@ package body org.allbinary.business.user.role.BasicUserRole_Package is
         return BasicUserRole_Package.roleVector;
    end getAll;
 
-   procedure getRoleId (This : in out BasicUserRole) is
-      Java_Result : constant Integer := BasicUserRole'Class (This).getRoleId;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getRoleId;
-
-   procedure getRole (This : in out BasicUserRole) is
-      Java_Result : constant Unbounded_String := BasicUserRole'Class (This).getRole;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getRole;
-
-   procedure getSessionTimeout (This : in out BasicUserRole) is
-      Java_Result : constant Long_Long_Integer := BasicUserRole'Class (This).getSessionTimeout;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSessionTimeout;
-
-   procedure getSessionInactivityTimeout (This : in out BasicUserRole) is
-      Java_Result : constant Long_Long_Integer := BasicUserRole'Class (This).getSessionInactivityTimeout;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSessionInactivityTimeout;
-
    procedure equals (This : in out BasicUserRole; basicUserRole : BasicUserRole_Access) is
       Java_Result : constant Boolean := BasicUserRole'Class (This).equals (basicUserRole);
       pragma Unreferenced (Java_Result);
@@ -148,26 +120,12 @@ package body org.allbinary.business.user.role.BasicUserRole_Package is
       null;
    end equals;
 
-   procedure toString (This : in out BasicUserRole) is
-      Java_Result : constant Unbounded_String := BasicUserRole'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toString;
-
    procedure getRole (role : Unbounded_String) is
       Java_Result : constant BasicUserRole_Access := getRole (role);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getRole;
-
-   procedure getAll is
-      Java_Result : constant BasicArrayList_Access := getAll;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getAll;
 
 begin
    null;

@@ -31,7 +31,7 @@ package body views.business.context.modules.storefront.customizer.includes.globa
    function Create (transformInfoInterface : TransformInfoInterface_Access) return EditGlobalsValidationView_Access is
       This : constant EditGlobalsValidationView_Access := new EditGlobalsValidationView;
    begin
-      Initialize (This.all, transformInfoInterface);
+      EditGlobalsValidationView_Package.Initialize (This.all, transformInfoInterface);
       return This;
    end Create;
 
@@ -82,27 +82,6 @@ package body views.business.context.modules.storefront.customizer.includes.globa
    begin
         return null;
    end toValidationInfoNode;
-
-   procedure isValid (This : in out EditGlobalsValidationView) is
-      Java_Result : constant Boolean := EditGlobalsValidationView'Class (This).isValid;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isValid;
-
-   procedure validationInfo (This : in out EditGlobalsValidationView) is
-      Java_Result : constant Unbounded_String := EditGlobalsValidationView'Class (This).validationInfo;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end validationInfo;
-
-   procedure toValidationInfoDoc (This : in out EditGlobalsValidationView) is
-      Java_Result : constant Document_Access := EditGlobalsValidationView'Class (This).toValidationInfoDoc;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toValidationInfoDoc;
 
    procedure toValidationInfoNode (This : in out EditGlobalsValidationView; document : Document_Access) is
       Java_Result : constant Node_Access := EditGlobalsValidationView'Class (This).toValidationInfoNode (document);

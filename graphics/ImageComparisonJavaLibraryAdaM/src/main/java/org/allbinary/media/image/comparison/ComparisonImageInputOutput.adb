@@ -31,7 +31,7 @@ package body org.allbinary.media.image.comparison.ComparisonImageInputOutput_Pac
    function Create return ComparisonImageInputOutput_Access is
       This : constant ComparisonImageInputOutput_Access := new ComparisonImageInputOutput;
    begin
-      Initialize (This.all);
+      ComparisonImageInputOutput_Package.Initialize (This.all);
       return This;
    end Create;
 

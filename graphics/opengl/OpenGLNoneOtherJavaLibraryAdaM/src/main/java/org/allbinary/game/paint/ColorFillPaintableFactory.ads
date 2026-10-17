@@ -23,6 +23,9 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
 with org.allbinary.logic.system.os.GenericOperatingSystem_Package; use org.allbinary.logic.system.os.GenericOperatingSystem_Package;
 with org.allbinary.logic.system.os.OperatingSystemFactory_Package; use org.allbinary.logic.system.os.OperatingSystemFactory_Package;
+with org.allbinary.game.paint.ColorFillPaintable_Package; use org.allbinary.game.paint.ColorFillPaintable_Package;
+with org.allbinary.game.paint.OverScanColorFillPaintable_Package; use org.allbinary.game.paint.OverScanColorFillPaintable_Package;
+with org.allbinary.game.paint.ColorFillBasePaintable_Package; use org.allbinary.game.paint.ColorFillBasePaintable_Package;
 
 package org.allbinary.game.paint.ColorFillPaintableFactory_Package is
 
@@ -41,7 +44,6 @@ package org.allbinary.game.paint.ColorFillPaintableFactory_Package is
    procedure Initialize (This : in out ColorFillPaintableFactory'Class);
    function Create return ColorFillPaintableFactory_Access;
    function getInstance return ColorFillPaintableFactory_Access;
-   procedure getInstance;
    function getInstance (This : in out ColorFillPaintableFactory; basicColor : BasicColor_Access; forThreedCanvas : Boolean) return ColorFillBasePaintable_Access;
    procedure getInstance (This : in out ColorFillPaintableFactory; basicColor : BasicColor_Access; forThreedCanvas : Boolean);
 

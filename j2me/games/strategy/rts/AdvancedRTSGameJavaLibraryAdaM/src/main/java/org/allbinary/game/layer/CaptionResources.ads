@@ -37,7 +37,6 @@ package org.allbinary.game.layer.CaptionResources_Package is
    procedure Initialize (This : in out CaptionResources'Class);
    function Create return CaptionResources_Access;
    function getInstance return CaptionResources_Access;
-   procedure getInstance;
 
 end org.allbinary.game.layer.CaptionResources_Package;
 

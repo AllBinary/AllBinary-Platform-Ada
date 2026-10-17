@@ -52,13 +52,9 @@ package admin.tags.StoreFrontsTag_Package is
    procedure Initialize (This : in out StoreFrontsTag'Class);
    function Create return StoreFrontsTag_Access;
    function generateSelect (This : in out StoreFrontsTag) return Unbounded_String;
-   procedure generateSelect (This : in out StoreFrontsTag);
    function install (This : in out StoreFrontsTag) return Unbounded_String;
-   procedure install (This : in out StoreFrontsTag);
    function sendStoreCreatedEmails (This : in out StoreFrontsTag) return Unbounded_String;
-   procedure sendStoreCreatedEmails (This : in out StoreFrontsTag);
    function doStartTag (This : in out StoreFrontsTag) return Integer;
-   procedure doStartTag (This : in out StoreFrontsTag);
 
 end admin.tags.StoreFrontsTag_Package;
 

@@ -34,7 +34,7 @@ package body org.allbinary.animation.text.AdjustCustomTextAnimation_Package is
    function Create (text : Unbounded_String; fontSize : Integer; dx : Integer; dy : Integer; animationBehavior : AnimationBehavior_Access) return AdjustCustomTextAnimation_Access is
       This : constant AdjustCustomTextAnimation_Access := new AdjustCustomTextAnimation;
    begin
-      Initialize (This.all, text, fontSize, dx, dy, animationBehavior);
+      AdjustCustomTextAnimation_Package.Initialize (This.all, text, fontSize, dx, dy, animationBehavior);
       return This;
    end Create;
 
@@ -62,20 +62,6 @@ package body org.allbinary.animation.text.AdjustCustomTextAnimation_Package is
    begin
         CustomTextAnimation (This).paintXY (graphics, (x) + (This.dx), (y) + (This.dy));
    end paintXY;
-
-   procedure getDx (This : in out AdjustCustomTextAnimation) is
-      Java_Result : constant Integer := AdjustCustomTextAnimation'Class (This).getDx;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getDx;
-
-   procedure getDy (This : in out AdjustCustomTextAnimation) is
-      Java_Result : constant Integer := AdjustCustomTextAnimation'Class (This).getDy;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getDy;
 
 end org.allbinary.animation.text.AdjustCustomTextAnimation_Package;
 

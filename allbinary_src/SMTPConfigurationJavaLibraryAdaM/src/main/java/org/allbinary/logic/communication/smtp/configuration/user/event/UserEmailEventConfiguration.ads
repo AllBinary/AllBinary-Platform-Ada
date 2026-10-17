@@ -24,6 +24,7 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventConfigurationInterface_Package; use org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventConfigurationInterface_Package;
+with org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventConfigurationData_Package; use org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventConfigurationData_Package;
 
 package org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventConfiguration_Package is
 
@@ -44,13 +45,10 @@ package org.allbinary.logic.communication.smtp.configuration.user.event.UserEmai
    procedure Initialize (This : in out UserEmailEventConfiguration'Class);
    function Create return UserEmailEventConfiguration_Access;
    function getName (This : in out UserEmailEventConfiguration) return Unbounded_String;
-   procedure getName (This : in out UserEmailEventConfiguration);
    procedure setName (This : in out UserEmailEventConfiguration; name : Unbounded_String);
    function getEventListenerClassPath (This : in out UserEmailEventConfiguration) return Unbounded_String;
-   procedure getEventListenerClassPath (This : in out UserEmailEventConfiguration);
    procedure setEventListenerClassPath (This : in out UserEmailEventConfiguration; eventListenerClassPath : Unbounded_String);
    function log (This : in out UserEmailEventConfiguration) return Unbounded_String;
-   procedure log (This : in out UserEmailEventConfiguration);
 
 end org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventConfiguration_Package;
 

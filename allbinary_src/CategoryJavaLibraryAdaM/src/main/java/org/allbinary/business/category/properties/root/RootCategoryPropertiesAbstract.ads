@@ -57,36 +57,25 @@ package org.allbinary.business.category.properties.root.RootCategoryPropertiesAb
    procedure Initialize (This : in out RootCategoryPropertiesAbstract'Class);
    function Create return RootCategoryPropertiesAbstract_Access;
    function getKey (This : in out RootCategoryPropertiesAbstract) return Java_Object_Access;
-   procedure getKey (This : in out RootCategoryPropertiesAbstract);
    function getValue (This : in out RootCategoryPropertiesAbstract) return Unbounded_String;
-   procedure getValue (This : in out RootCategoryPropertiesAbstract);
    procedure setValue (This : in out RootCategoryPropertiesAbstract; value : Unbounded_String);
    procedure setRootFilePath (This : in out RootCategoryPropertiesAbstract; value : AbPath_Access);
    procedure setRootFilePath (This : in out RootCategoryPropertiesAbstract; value : Unbounded_String);
    function getRootFilePath (This : in out RootCategoryPropertiesAbstract) return AbPath_Access;
-   procedure getRootFilePath (This : in out RootCategoryPropertiesAbstract);
    function isRealRoot (This : in out RootCategoryPropertiesAbstract) return Boolean;
-   procedure isRealRoot (This : in out RootCategoryPropertiesAbstract);
    function isRoot (This : in out RootCategoryPropertiesAbstract) return Boolean;
-   procedure isRoot (This : in out RootCategoryPropertiesAbstract);
    function getWebAppPath (This : in out RootCategoryPropertiesAbstract; categoryHierarchyInterface : CategoryHierarchyInterface_Access) return Unbounded_String;
    procedure getWebAppPath (This : in out RootCategoryPropertiesAbstract; categoryHierarchyInterface : CategoryHierarchyInterface_Access);
    function getPath (This : in out RootCategoryPropertiesAbstract; categoryHierarchyInterface : CategoryHierarchyInterface_Access) return AbPath_Access;
    procedure getPath (This : in out RootCategoryPropertiesAbstract; categoryHierarchyInterface : CategoryHierarchyInterface_Access);
    function getFileName (This : in out RootCategoryPropertiesAbstract) return Unbounded_String;
-   procedure getFileName (This : in out RootCategoryPropertiesAbstract);
    function isValid (This : in out RootCategoryPropertiesAbstract) return Boolean;
-   procedure isValid (This : in out RootCategoryPropertiesAbstract);
    function toHashMap (This : in out RootCategoryPropertiesAbstract) return HashMap_Access;
-   procedure toHashMap (This : in out RootCategoryPropertiesAbstract);
    function toVector (This : in out RootCategoryPropertiesAbstract) return BasicArrayList_Access;
-   procedure toVector (This : in out RootCategoryPropertiesAbstract);
    function toValidationInfoDoc (This : in out RootCategoryPropertiesAbstract) return Document_Access;
-   procedure toValidationInfoDoc (This : in out RootCategoryPropertiesAbstract);
    function toValidationInfoNode (This : in out RootCategoryPropertiesAbstract; document : Document_Access) return Node_Access;
    procedure toValidationInfoNode (This : in out RootCategoryPropertiesAbstract; document : Document_Access);
    function validationInfo (This : in out RootCategoryPropertiesAbstract) return Unbounded_String;
-   procedure validationInfo (This : in out RootCategoryPropertiesAbstract);
 
 end org.allbinary.business.category.properties.root.RootCategoryPropertiesAbstract_Package;
 

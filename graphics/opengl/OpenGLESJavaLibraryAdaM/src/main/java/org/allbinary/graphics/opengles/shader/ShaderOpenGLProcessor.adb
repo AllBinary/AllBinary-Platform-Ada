@@ -19,7 +19,7 @@ package body org.allbinary.graphics.opengles.shader.ShaderOpenGLProcessor_Packag
    function Create return ShaderOpenGLProcessor_Access is
       This : constant ShaderOpenGLProcessor_Access := new ShaderOpenGLProcessor;
    begin
-      Initialize (This.all);
+      ShaderOpenGLProcessor_Package.Initialize (This.all);
       return This;
    end Create;
 

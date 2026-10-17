@@ -27,6 +27,8 @@ with org.allbinary.graphics.pipeline.RandomTranslation_Package; use org.allbinar
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.util.BasicArrayListS_Package; use org.allbinary.util.BasicArrayListS_Package;
+with org.allbinary.animation.VectorExplosionType_Package; use org.allbinary.animation.VectorExplosionType_Package;
+with org.allbinary.animation.VectorAnimationUtil_Package; use org.allbinary.animation.VectorAnimationUtil_Package;
 
 package org.allbinary.animation.VectorExplosionGenerator_Package is
 
@@ -54,7 +56,6 @@ package org.allbinary.animation.VectorExplosionGenerator_Package is
    procedure Initialize (This : in out VectorExplosionGenerator'Class);
    function Create return VectorExplosionGenerator_Access;
    function getInstance return VectorExplosionGenerator_Access;
-   procedure getInstance;
    function createList (This : in out VectorExplosionGenerator; list : BasicArrayList_Access; howMuch : Integer; type_Id : VectorExplosionType_Access) return BasicArrayList_Access;
    procedure createList (This : in out VectorExplosionGenerator; list : BasicArrayList_Access; howMuch : Integer; type_Id : VectorExplosionType_Access);
    function getInstance (This : in out VectorExplosionGenerator; points : Integer_Array_Access_Array_Access; howMuch : Integer; type_Id : VectorExplosionType_Access) return Integer_Array_Access_Array_Access_Array_Access;

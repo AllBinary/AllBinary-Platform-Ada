@@ -38,7 +38,6 @@ package org.allbinary.logic.visual.dhtml.style.css.property.font.FontFamilyData_
    procedure Initialize (This : in out FontFamilyData'Class);
    function Create return FontFamilyData_Access;
    function getInstance return FontFamilyData_Access;
-   procedure getInstance;
 
 end org.allbinary.logic.visual.dhtml.style.css.property.font.FontFamilyData_Package;
 

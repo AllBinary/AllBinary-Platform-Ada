@@ -32,7 +32,7 @@ package body tags.generic_Id.address.shipping.ShippingAddressTag_Package is
    function Create return ShippingAddressTag_Access is
       This : constant ShippingAddressTag_Access := new ShippingAddressTag;
    begin
-      Initialize (This.all);
+      ShippingAddressTag_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -77,13 +77,6 @@ package body tags.generic_Id.address.shipping.ShippingAddressTag_Package is
             return SKIP_BODY;
                 end;
         end;
-   end doStartTag;
-
-   procedure doStartTag (This : in out ShippingAddressTag) is
-      Java_Result : constant Integer := ShippingAddressTag'Class (This).doStartTag;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end doStartTag;
 
 end tags.generic_Id.address.shipping.ShippingAddressTag_Package;

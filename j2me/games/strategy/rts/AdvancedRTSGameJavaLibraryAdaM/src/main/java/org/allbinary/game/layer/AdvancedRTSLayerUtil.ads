@@ -23,6 +23,7 @@ with org.allbinary.game.layer.waypoint.WorkWaypoint_Package; use org.allbinary.g
 with org.allbinary.logic.math.SmallIntegerSingletonFactory_Package; use org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
 with org.allbinary.media.graphics.geography.map.racetrack.BaseRaceTrackGeographicMap_Package; use org.allbinary.media.graphics.geography.map.racetrack.BaseRaceTrackGeographicMap_Package;
 with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
+with org.allbinary.game.layer.RTSLayerUtil_Package; use org.allbinary.game.layer.RTSLayerUtil_Package;
 
 package org.allbinary.game.layer.AdvancedRTSLayerUtil_Package is
 
@@ -42,7 +43,6 @@ package org.allbinary.game.layer.AdvancedRTSLayerUtil_Package is
    procedure Initialize (This : in out AdvancedRTSLayerUtil'Class);
    function Create return AdvancedRTSLayerUtil_Access;
    function getInstance return AdvancedRTSLayerUtil_Access;
-   procedure getInstance;
    function createFakeRTSLayerHashtable (This : in out AdvancedRTSLayerUtil; baseRaceTrackGeographicMap : BaseRaceTrackGeographicMap_Access) return ABHashtable_Access;
    procedure createFakeRTSLayerHashtable (This : in out AdvancedRTSLayerUtil; baseRaceTrackGeographicMap : BaseRaceTrackGeographicMap_Access);
 

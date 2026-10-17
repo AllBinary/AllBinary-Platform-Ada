@@ -70,7 +70,6 @@ package org.allbinary.image.ImageCache_Package is
    procedure progressEnded (This : in out ImageCache);
    procedure runTask (This : in out ImageCache);
    function isLazy (This : in out ImageCache) return Boolean;
-   procedure isLazy (This : in out ImageCache);
 
 end org.allbinary.image.ImageCache_Package;
 

@@ -45,7 +45,7 @@ package body org.allbinary.game.layer.hud.basic.VelocityWidget_Package is
    function Create (powerOfTenVelocity : Integer; location : Integer; direction : Integer; basicColor : BasicColor_Access) return VelocityWidget_Access is
       This : constant VelocityWidget_Access := new VelocityWidget;
    begin
-      Initialize (This.all, powerOfTenVelocity, location, direction, basicColor);
+      VelocityWidget_Package.Initialize (This.all, powerOfTenVelocity, location, direction, basicColor);
       return This;
    end Create;
 
@@ -97,13 +97,6 @@ package body org.allbinary.game.layer.hud.basic.VelocityWidget_Package is
    begin
         BasicHud (This).paintDXY (graphics, This.string_Id, 0, This.totalDigits, This.KILOMETERS_PER_HOUR_STR, 0, This.totalChars, This.offset2, This.offset);
    end paint;
-
-   procedure get (This : in out VelocityWidget) is
-      Java_Result : constant Integer := VelocityWidget'Class (This).get;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end get;
 
 end org.allbinary.game.layer.hud.basic.VelocityWidget_Package;
 

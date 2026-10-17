@@ -21,7 +21,7 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
-with org.allbinary.time_Case.TimeStampUtil_Package; use org.allbinary.time_Case.TimeStampUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package; use org.allbinary.time.TimeStampUtil_Package;
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
@@ -31,7 +31,7 @@ with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.C
 package org.allbinary.logic.communication.log.LogFormatUtil_Package is
 
    package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
-   package TimeStampUtil_Package renames Standard.org.allbinary.time_Case.TimeStampUtil_Package;
+   package TimeStampUtil_Package renames Standard.org.allbinary.time.TimeStampUtil_Package;
    package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
    package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
@@ -62,7 +62,6 @@ package org.allbinary.logic.communication.log.LogFormatUtil_Package is
    procedure Initialize (This : in out LogFormatUtil'Class);
    function Create return LogFormatUtil_Access;
    function getInstance return LogFormatUtil_Access;
-   procedure getInstance;
    function get (This : in out LogFormatUtil; className : Unbounded_String; functionName : Unbounded_String; specialMessage : Unbounded_String; exception_Id : Java_Object_Access) return Unbounded_String;
    procedure get (This : in out LogFormatUtil; className : Unbounded_String; functionName : Unbounded_String; specialMessage : Unbounded_String; exception_Id : Java_Object_Access);
    function getS (This : in out LogFormatUtil; className : Unbounded_String; functionName : Unbounded_String; specialMessage : Unbounded_String) return Unbounded_String;

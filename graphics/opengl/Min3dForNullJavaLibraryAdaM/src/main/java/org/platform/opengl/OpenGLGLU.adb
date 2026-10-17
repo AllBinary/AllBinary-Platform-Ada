@@ -16,7 +16,7 @@ package body org.platform.opengl.OpenGLGLU_Package is
    function Create return OpenGLGLU_Access is
       This : constant OpenGLGLU_Access := new OpenGLGLU;
    begin
-      Initialize (This.all);
+      OpenGLGLU_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -45,13 +45,6 @@ package body org.platform.opengl.OpenGLGLU_Package is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end glFrustumf;
-
-   procedure getInstance is
-      Java_Result : constant OpenGLGLU_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure gluProject (This : in out OpenGLGLU; gl : GL10_Access; objX : Float; objY : Float; objZ : Float; model : Float_Array_Access; modelOffset : Integer; project : Float_Array_Access; projectOffset : Integer; view : Integer_Array_Access; viewOffset : Integer; win : Float_Array_Access; winOffset : Integer) is
       Java_Result : constant Integer := OpenGLGLU'Class (This).gluProject (gl, objX, objY, objZ, model, modelOffset, project, projectOffset, view, viewOffset, win, winOffset);

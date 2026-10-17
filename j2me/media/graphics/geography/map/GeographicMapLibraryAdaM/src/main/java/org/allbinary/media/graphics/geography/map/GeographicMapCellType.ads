@@ -22,6 +22,7 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.math.SmallIntegerSingletonFactory_Package; use org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
+with org.allbinary.media.graphics.geography.map.GeographicMapCellTypeFactory_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellTypeFactory_Package;
 
 package org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package is
 
@@ -43,9 +44,7 @@ package org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package
    procedure Initialize (This : in out GeographicMapCellType'Class; type_Id : Integer; reset : Integer);
    function Create (type_Id : Integer; reset : Integer) return GeographicMapCellType_Access;
    function getType (This : in out GeographicMapCellType) return Integer;
-   procedure getType (This : in out GeographicMapCellType);
    function toString (This : in out GeographicMapCellType) return Unbounded_String;
-   procedure toString (This : in out GeographicMapCellType);
 
 end org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package;
 

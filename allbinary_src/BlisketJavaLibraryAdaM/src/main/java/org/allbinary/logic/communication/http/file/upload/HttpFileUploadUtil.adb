@@ -36,7 +36,7 @@ package body org.allbinary.logic.communication.http.file.upload.HttpFileUploadUt
    function Create return HttpFileUploadUtil_Access is
       This : constant HttpFileUploadUtil_Access := new HttpFileUploadUtil;
    begin
-      Initialize (This.all);
+      HttpFileUploadUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -105,13 +105,6 @@ package body org.allbinary.logic.communication.http.file.upload.HttpFileUploadUt
             logUtil.putF (stringBuffer.toString, getInstance, To_Unbounded_String ("log()"));
         end if;
    end log;
-
-   procedure getInstance is
-      Java_Result : constant HttpFileUploadUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure isValid (This : in out HttpFileUploadUtil; anyType : Java_Object_Access) is
       Java_Result : constant Boolean := HttpFileUploadUtil'Class (This).isValid (anyType);

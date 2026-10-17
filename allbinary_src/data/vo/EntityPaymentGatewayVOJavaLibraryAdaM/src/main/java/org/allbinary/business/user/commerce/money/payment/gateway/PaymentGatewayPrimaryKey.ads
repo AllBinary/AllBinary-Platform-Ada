@@ -24,6 +24,7 @@ with org.allbinary.business.context.modules.storefront.StoreFront_Package; use o
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.business.user.commerce.money.payment.gateway.Serializable_Package; use org.allbinary.business.user.commerce.money.payment.gateway.Serializable_Package;
+with org.allbinary.business.user.commerce.money.payment.gateway.PaymentGateway_Package; use org.allbinary.business.user.commerce.money.payment.gateway.PaymentGateway_Package;
 
 package org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayPrimaryKey_Package is
 
@@ -44,13 +45,10 @@ package org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewa
    procedure Initialize (This : in out PaymentGatewayPrimaryKey'Class; storeName : Unbounded_String; gatewayName : Unbounded_String);
    function Create (storeName : Unbounded_String; gatewayName : Unbounded_String) return PaymentGatewayPrimaryKey_Access;
    function getStoreName (This : in out PaymentGatewayPrimaryKey) return Unbounded_String;
-   procedure getStoreName (This : in out PaymentGatewayPrimaryKey);
    procedure setStoreName (This : in out PaymentGatewayPrimaryKey; storeName : Unbounded_String);
    function getName (This : in out PaymentGatewayPrimaryKey) return Unbounded_String;
-   procedure getName (This : in out PaymentGatewayPrimaryKey);
    procedure setName (This : in out PaymentGatewayPrimaryKey; name : Unbounded_String);
    function toString (This : in out PaymentGatewayPrimaryKey) return Unbounded_String;
-   procedure toString (This : in out PaymentGatewayPrimaryKey);
 
 end org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayPrimaryKey_Package;
 

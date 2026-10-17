@@ -33,7 +33,7 @@ package body org.allbinary.game.input.PlayerGameInput_Package is
    function Create (gameKeyEventList : BasicArrayList_Access; removalGameKeyEventList : BasicArrayList_Access; playerInputId : Integer) return PlayerGameInput_Access is
       This : constant PlayerGameInput_Access := new PlayerGameInput;
    begin
-      Initialize (This.all, gameKeyEventList, removalGameKeyEventList, playerInputId);
+      PlayerGameInput_Package.Initialize (This.all, gameKeyEventList, removalGameKeyEventList, playerInputId);
       return This;
    end Create;
 
@@ -77,13 +77,6 @@ package body org.allbinary.game.input.PlayerGameInput_Package is
    function getPlayerInputId (This : in out PlayerGameInput) return Integer is
    begin
         return This.playerInputId;
-   end getPlayerInputId;
-
-   procedure getPlayerInputId (This : in out PlayerGameInput) is
-      Java_Result : constant Integer := PlayerGameInput'Class (This).getPlayerInputId;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getPlayerInputId;
 
 end org.allbinary.game.input.PlayerGameInput_Package;

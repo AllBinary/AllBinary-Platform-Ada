@@ -27,6 +27,9 @@ with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.C
 with org.allbinary.string_Id.CommonPhoneStrings_Package; use org.allbinary.string_Id.CommonPhoneStrings_Package;
 with jsinterop.annotations.JsMethod_Package; use jsinterop.annotations.JsMethod_Package;
 with jsinterop.annotations.JsProperty_Package; use jsinterop.annotations.JsProperty_Package;
+with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.ImmutableBasicArrayList_Package; use org.allbinary.util.ImmutableBasicArrayList_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 
 package org.allbinary.util.BasicArrayListUtil_Package is
 
@@ -53,7 +56,6 @@ package org.allbinary.util.BasicArrayListUtil_Package is
    procedure Initialize (This : in out BasicArrayListUtil'Class);
    function Create return BasicArrayListUtil_Access;
    function getInstance return BasicArrayListUtil_Access;
-   procedure getInstance;
    function getRandom (This : in out BasicArrayListUtil; list : BasicArrayList_Access) return Java_Object_Access;
    procedure getRandom (This : in out BasicArrayListUtil; list : BasicArrayList_Access);
    function getRandomIndex (This : in out BasicArrayListUtil; list : BasicArrayList_Access) return Integer;
@@ -62,7 +64,6 @@ package org.allbinary.util.BasicArrayListUtil_Package is
    function log (This : in out BasicArrayListUtil; list : BasicArrayList_Access) return Unbounded_String;
    procedure log (This : in out BasicArrayListUtil; list : BasicArrayList_Access);
    function getImmutableInstance (This : in out BasicArrayListUtil) return BasicArrayList_Access;
-   procedure getImmutableInstance (This : in out BasicArrayListUtil);
    procedure main (args : Unbounded_String_Array_Access);
 
 end org.allbinary.util.BasicArrayListUtil_Package;

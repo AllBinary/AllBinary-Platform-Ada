@@ -67,16 +67,9 @@ package body org.allbinary.input.motion.gesture.TouchMotionGestureFactory_Packag
    function Create return TouchMotionGestureFactory_Access is
       This : constant TouchMotionGestureFactory_Access := new TouchMotionGestureFactory;
    begin
-      Initialize (This.all);
+      TouchMotionGestureFactory_Package.Initialize (This.all);
       return This;
    end Create;
-
-   procedure getInstance is
-      Java_Result : constant TouchMotionGestureFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

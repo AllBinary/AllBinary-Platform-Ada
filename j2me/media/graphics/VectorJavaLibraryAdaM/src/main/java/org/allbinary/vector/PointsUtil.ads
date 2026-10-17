@@ -35,7 +35,6 @@ package org.allbinary.vector.PointsUtil_Package is
    procedure Initialize (This : in out PointsUtil'Class);
    function Create return PointsUtil_Access;
    function getInstance return PointsUtil_Access;
-   procedure getInstance;
    function adjustXY (This : in out PointsUtil; points : Integer_Array_Access_Array_Access_Array_Access; x : Integer; y : Integer) return Integer_Array_Access_Array_Access_Array_Access;
    procedure adjustXY (This : in out PointsUtil; points : Integer_Array_Access_Array_Access_Array_Access; x : Integer; y : Integer);
    function adjust (This : in out PointsUtil; points : Integer_Array_Access_Array_Access; both : Integer) return Integer_Array_Access_Array_Access;

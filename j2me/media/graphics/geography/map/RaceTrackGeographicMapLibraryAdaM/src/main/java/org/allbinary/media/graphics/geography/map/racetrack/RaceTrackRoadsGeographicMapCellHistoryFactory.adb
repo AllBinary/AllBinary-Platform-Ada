@@ -30,20 +30,13 @@ package body org.allbinary.media.graphics.geography.map.racetrack.RaceTrackRoads
    function Create return RaceTrackRoadsGeographicMapCellHistoryFactory_Access is
       This : constant RaceTrackRoadsGeographicMapCellHistoryFactory_Access := new RaceTrackRoadsGeographicMapCellHistoryFactory;
    begin
-      Initialize (This.all);
+      RaceTrackRoadsGeographicMapCellHistoryFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
    function getInstance return GeographicMapCellHistory_Access is
    begin
         return RaceTrackRoadsGeographicMapCellHistoryFactory_Package.geographicMapCellHistory;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant GeographicMapCellHistory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

@@ -25,6 +25,9 @@ with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArr
 with org.allbinary.util.BasicArrayListUtil_Package; use org.allbinary.util.BasicArrayListUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.input.motion.button.BaseTouchInput_Package; use org.allbinary.input.motion.button.BaseTouchInput_Package;
+with org.allbinary.input.motion.button.BasicTouchButtonsBuilder_Package; use org.allbinary.input.motion.button.BasicTouchButtonsBuilder_Package;
+with org.allbinary.input.motion.button.BuildingScrollTouchButtonsBuilder_Package; use org.allbinary.input.motion.button.BuildingScrollTouchButtonsBuilder_Package;
+with org.allbinary.input.motion.button.UpgradeDowngradeTouchButtonsBuilder_Package; use org.allbinary.input.motion.button.UpgradeDowngradeTouchButtonsBuilder_Package;
 
 package org.allbinary.input.motion.button.RTSTouchButtonsBuilder_Package is
 
@@ -45,7 +48,6 @@ package org.allbinary.input.motion.button.RTSTouchButtonsBuilder_Package is
    procedure Initialize (This : in out RTSTouchButtonsBuilder'Class);
    function Create return RTSTouchButtonsBuilder_Access;
    function getList (This : in out RTSTouchButtonsBuilder) return BasicArrayList_Access;
-   procedure getList (This : in out RTSTouchButtonsBuilder);
 
 end org.allbinary.input.motion.button.RTSTouchButtonsBuilder_Package;
 

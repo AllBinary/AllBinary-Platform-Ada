@@ -23,7 +23,7 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 --  with java.sql.ResultSet_Package; use java.sql.ResultSet_Package;
 --  with java.sql.ResultSetMetaData_Package; use java.sql.ResultSetMetaData_Package;
---  with java.util.Calendar_Package; use java.util.Calendar_Package;
+with java.util.Calendar_Package; use java.util.Calendar_Package;
 with org.allbinary.business.installer.Portion_Package; use org.allbinary.business.installer.Portion_Package;
 with org.allbinary.logic.io.AbFileOutputStream_Package; use org.allbinary.logic.io.AbFileOutputStream_Package;
 with org.allbinary.logic.io.BufferedLineReader_Package; use org.allbinary.logic.io.BufferedLineReader_Package;
@@ -39,10 +39,13 @@ with org.allbinary.globals.PATH_GLOBALS_Package; use org.allbinary.globals.PATH_
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.logic.communication.sql.SqlStrings_Package; use org.allbinary.logic.communication.sql.SqlStrings_Package;
+with org.allbinary.logic.communication.sql.AbSqlTable_Package; use org.allbinary.logic.communication.sql.AbSqlTable_Package;
 
 package org.allbinary.logic.communication.sql.AbSqlTableUtil_Package is
 
    package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package Calendar_Package renames Standard.java.util.Calendar_Package;
    package Portion_Package renames Standard.org.allbinary.business.installer.Portion_Package;
    package AbFileOutputStream_Package renames Standard.org.allbinary.logic.io.AbFileOutputStream_Package;
    package BufferedLineReader_Package renames Standard.org.allbinary.logic.io.BufferedLineReader_Package;
@@ -96,7 +99,6 @@ package org.allbinary.logic.communication.sql.AbSqlTableUtil_Package is
    procedure Initialize (This : in out AbSqlTableUtil'Class);
    function Create return AbSqlTableUtil_Access;
    function getInstance return AbSqlTableUtil_Access;
-   procedure getInstance;
    function getOutputStream (This : in out AbSqlTableUtil; backupPath : Unbounded_String; tableName : Unbounded_String) return OutputStream_Access;
    procedure getOutputStream (This : in out AbSqlTableUtil; backupPath : Unbounded_String; tableName : Unbounded_String);
    function backupFile (This : in out AbSqlTableUtil; path : AbPath_Access; backupPath : Unbounded_String; tableName : Unbounded_String) return Boolean;

@@ -43,7 +43,6 @@ package org.allbinary.game.ag.layer.weapon.mine.MineWeaponResources_Package is
    procedure Initialize (This : in out MineWeaponResources'Class);
    function Create return MineWeaponResources_Access;
    function getInstance return MineWeaponResources_Access;
-   procedure getInstance;
 
 end org.allbinary.game.ag.layer.weapon.mine.MineWeaponResources_Package;
 

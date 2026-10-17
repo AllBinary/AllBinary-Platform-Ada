@@ -32,7 +32,7 @@ package body org.allbinary.graphics.j2me.workarea.color.ColorChooser_Package is
    function Create return ColorChooser_Access is
       This : constant ColorChooser_Access := new ColorChooser;
    begin
-      Initialize (This.all);
+      ColorChooser_Package.Initialize (This.all);
       return This;
    end Create;
 

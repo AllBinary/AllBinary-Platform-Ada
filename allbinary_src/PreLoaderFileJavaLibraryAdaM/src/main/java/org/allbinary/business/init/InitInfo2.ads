@@ -41,7 +41,6 @@ package org.allbinary.business.init.InitInfo2_Package is
    procedure Initialize (This : in out InitInfo2'Class);
    function Create return InitInfo2_Access;
    function getInstance return InitInfo2_Access;
-   procedure getInstance;
    function isTestHtmlPathValid (This : in out InitInfo2; value : AbPath_Access) return Boolean;
    procedure isTestHtmlPathValid (This : in out InitInfo2; value : AbPath_Access);
    function isMainPathValid (This : in out InitInfo2; value : AbPath_Access) return Boolean;

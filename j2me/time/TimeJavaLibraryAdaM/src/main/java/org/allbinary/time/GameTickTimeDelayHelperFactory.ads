@@ -20,6 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
+with org.allbinary.time.GameTickTimeDelayHelper_Package; use org.allbinary.time.GameTickTimeDelayHelper_Package;
 
 package org.allbinary.time.GameTickTimeDelayHelperFactory_Package is
 
@@ -35,7 +36,6 @@ package org.allbinary.time.GameTickTimeDelayHelperFactory_Package is
    procedure Initialize (This : in out GameTickTimeDelayHelperFactory'Class);
    function Create return GameTickTimeDelayHelperFactory_Access;
    function getInstance return GameTickTimeDelayHelper_Access;
-   procedure getInstance;
 
 end org.allbinary.time.GameTickTimeDelayHelperFactory_Package;
 

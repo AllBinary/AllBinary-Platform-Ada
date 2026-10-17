@@ -28,7 +28,7 @@ package body org.allbinary.media.audio.NullClip_Package is
    function Create return NullClip_Access is
       This : constant NullClip_Access := new NullClip;
    begin
-      Initialize (This.all);
+      NullClip_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -185,104 +185,6 @@ package body org.allbinary.media.audio.NullClip_Package is
    begin
         null;
    end removeLineListener;
-
-   procedure getFrameLength (This : in out NullClip) is
-      Java_Result : constant Integer := NullClip'Class (This).getFrameLength;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getFrameLength;
-
-   procedure getMicrosecondLength (This : in out NullClip) is
-      Java_Result : constant Long_Long_Integer := NullClip'Class (This).getMicrosecondLength;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getMicrosecondLength;
-
-   procedure isRunning (This : in out NullClip) is
-      Java_Result : constant Boolean := NullClip'Class (This).isRunning;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isRunning;
-
-   procedure isActive (This : in out NullClip) is
-      Java_Result : constant Boolean := NullClip'Class (This).isActive;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isActive;
-
-   procedure getFormat (This : in out NullClip) is
-      Java_Result : constant AudioFormat_Access := NullClip'Class (This).getFormat;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getFormat;
-
-   procedure getBufferSize (This : in out NullClip) is
-      Java_Result : constant Integer := NullClip'Class (This).getBufferSize;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getBufferSize;
-
-   procedure available (This : in out NullClip) is
-      Java_Result : constant Integer := NullClip'Class (This).available;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end available;
-
-   procedure getFramePosition (This : in out NullClip) is
-      Java_Result : constant Integer := NullClip'Class (This).getFramePosition;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getFramePosition;
-
-   procedure getLongFramePosition (This : in out NullClip) is
-      Java_Result : constant Long_Long_Integer := NullClip'Class (This).getLongFramePosition;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getLongFramePosition;
-
-   procedure getMicrosecondPosition (This : in out NullClip) is
-      Java_Result : constant Long_Long_Integer := NullClip'Class (This).getMicrosecondPosition;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getMicrosecondPosition;
-
-   procedure getLevel (This : in out NullClip) is
-      Java_Result : constant Float := NullClip'Class (This).getLevel;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getLevel;
-
-   procedure getLineInfo (This : in out NullClip) is
-      Java_Result : constant Info_Access := NullClip'Class (This).getLineInfo;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getLineInfo;
-
-   procedure isOpen (This : in out NullClip) is
-      Java_Result : constant Boolean := NullClip'Class (This).isOpen;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isOpen;
-
-   procedure getControls (This : in out NullClip) is
-      Java_Result : constant Control_Access_Array_Access := NullClip'Class (This).getControls;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getControls;
 
    procedure isControlSupported (This : in out NullClip; control : Type_Access) is
       Java_Result : constant Boolean := NullClip'Class (This).isControlSupported (control);

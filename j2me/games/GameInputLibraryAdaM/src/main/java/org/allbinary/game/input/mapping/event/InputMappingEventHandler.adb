@@ -31,7 +31,7 @@ package body org.allbinary.game.input.mapping.event.InputMappingEventHandler_Pac
    function Create return InputMappingEventHandler_Access is
       This : constant InputMappingEventHandler_Access := new InputMappingEventHandler;
    begin
-      Initialize (This.all);
+      InputMappingEventHandler_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -47,13 +47,6 @@ package body org.allbinary.game.input.mapping.event.InputMappingEventHandler_Pac
         inputMappingEventListenerInterface := InputMappingEventListenerInterface_Access (eventListenerInterface);
         inputMappingEventListenerInterface.onInputMappingEvent (InputMappingEvent_Access (eventObject));
    end process;
-
-   procedure getInstance is
-      Java_Result : constant InputMappingEventHandler_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

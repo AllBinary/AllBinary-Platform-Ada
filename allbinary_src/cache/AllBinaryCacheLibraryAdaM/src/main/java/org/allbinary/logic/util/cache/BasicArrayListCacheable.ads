@@ -39,7 +39,6 @@ package org.allbinary.logic.util.cache.BasicArrayListCacheable_Package is
    procedure Initialize (This : in out BasicArrayListCacheable'Class);
    function Create return BasicArrayListCacheable_Access;
    function getKey (This : in out BasicArrayListCacheable) return Java_Object_Access;
-   procedure getKey (This : in out BasicArrayListCacheable);
 
 end org.allbinary.logic.util.cache.BasicArrayListCacheable_Package;
 

@@ -53,7 +53,6 @@ package org.allbinary.opengles.JOGL10_Package is
    procedure Initialize (This : in out JOGL10'Class; gl : GL_Access; gl2 : GL2_Access);
    function Create (gl : GL_Access; gl2 : GL2_Access) return JOGL10_Access;
    function getJOGLGL (This : in out JOGL10) return GL2_Access;
-   procedure getJOGLGL (This : in out JOGL10);
    procedure glActiveTexture (This : in out JOGL10; texture : Integer);
    procedure glAlphaFunc (This : in out JOGL10; func : Integer; ref : Float);
    procedure glBindTexture (This : in out JOGL10; target_Case : Integer; texture : Integer);
@@ -92,7 +91,6 @@ package org.allbinary.opengles.JOGL10_Package is
    procedure glGenTextures (This : in out JOGL10; n : Integer; textures : Integer_Array_Access; offset : Integer);
    procedure glGenTextures (This : in out JOGL10; n : Integer; textures : IntBuffer_Access);
    function glGetError (This : in out JOGL10) return Integer;
-   procedure glGetError (This : in out JOGL10);
    procedure glGetIntegerv (This : in out JOGL10; pname_Case : Integer; params_Case : Integer_Array_Access; offset : Integer);
    procedure glGetIntegerv (This : in out JOGL10; pname_Case : Integer; params_Case : IntBuffer_Access);
    function glGetString (This : in out JOGL10; name : Integer) return Unbounded_String;

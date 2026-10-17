@@ -35,7 +35,6 @@ package org.allbinary.logic.math.J2SEMath_Package is
    procedure Initialize (This : in out J2SEMath'Class);
    function Create return J2SEMath_Access;
    function getInstance return J2SEMath_Access;
-   procedure getInstance;
    function round (This : in out J2SEMath; value : Float) return Integer;
    procedure round (This : in out J2SEMath; value : Float);
    function abs_Id (This : in out J2SEMath; value : Float) return Float;

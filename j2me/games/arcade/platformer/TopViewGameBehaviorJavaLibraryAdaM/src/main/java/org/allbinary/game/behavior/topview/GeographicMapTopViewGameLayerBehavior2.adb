@@ -37,7 +37,7 @@ package body org.allbinary.game.behavior.topview.GeographicMapTopViewGameLayerBe
    function Create (maxGravityActionIndex : Integer; autoStepBlocks : Boolean; offsetY : Integer) return GeographicMapTopViewGameLayerBehavior2_Access is
       This : constant GeographicMapTopViewGameLayerBehavior2_Access := new GeographicMapTopViewGameLayerBehavior2;
    begin
-      Initialize (This.all, maxGravityActionIndex, autoStepBlocks, offsetY);
+      GeographicMapTopViewGameLayerBehavior2_Package.Initialize (This.all, maxGravityActionIndex, autoStepBlocks, offsetY);
       return This;
    end Create;
 

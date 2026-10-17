@@ -77,7 +77,7 @@ package body org.allbinary.logic.math.SmallLongFactory_Package is
    function Create return SmallLongFactory_Access is
       This : constant SmallLongFactory_Access := new SmallLongFactory;
    begin
-      Initialize (This.all);
+      SmallLongFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -98,13 +98,6 @@ package body org.allbinary.logic.math.SmallLongFactory_Package is
         end if;
         return This.STRING_ARRAY (i);
    end getString;
-
-   procedure getInstance is
-      Java_Result : constant SmallLongFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure getInstanceNoThrow (This : in out SmallLongFactory; index : Long_Long_Integer) is
       Java_Result : constant Long_Long_Integer := SmallLongFactory'Class (This).getInstanceNoThrow (index);

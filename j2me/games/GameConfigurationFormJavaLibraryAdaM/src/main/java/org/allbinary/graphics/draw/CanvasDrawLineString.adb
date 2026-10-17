@@ -36,7 +36,7 @@ package body org.allbinary.graphics.draw.CanvasDrawLineString_Package is
    function Create (x : Integer; y : Integer) return CanvasDrawLineString_Access is
       This : constant CanvasDrawLineString_Access := new CanvasDrawLineString;
    begin
-      Initialize (This.all, x, y);
+      CanvasDrawLineString_Package.Initialize (This.all, x, y);
       return This;
    end Create;
 

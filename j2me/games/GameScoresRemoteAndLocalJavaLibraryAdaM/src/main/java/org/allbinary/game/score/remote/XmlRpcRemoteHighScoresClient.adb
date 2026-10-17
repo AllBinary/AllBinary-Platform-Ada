@@ -34,7 +34,7 @@ package body org.allbinary.game.score.remote.XmlRpcRemoteHighScoresClient_Packag
    function Create (clientInfo : AbeClientInformationInterface_Access; page : Unbounded_String; remoteMethod : Unbounded_String) return XmlRpcRemoteHighScoresClient_Access is
       This : constant XmlRpcRemoteHighScoresClient_Access := new XmlRpcRemoteHighScoresClient;
    begin
-      Initialize (This.all, clientInfo, page, remoteMethod);
+      XmlRpcRemoteHighScoresClient_Package.Initialize (This.all, clientInfo, page, remoteMethod);
       return This;
    end Create;
 

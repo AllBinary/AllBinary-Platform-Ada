@@ -28,7 +28,7 @@ package body org.allbinary.graphics.form.ItemPaintable_Package is
    function Create return ItemPaintable_Access is
       This : constant ItemPaintable_Access := new ItemPaintable;
    begin
-      Initialize (This.all);
+      ItemPaintable_Package.Initialize (This.all);
       return This;
    end Create;
 

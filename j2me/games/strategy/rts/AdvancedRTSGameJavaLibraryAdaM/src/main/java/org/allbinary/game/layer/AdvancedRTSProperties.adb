@@ -47,23 +47,9 @@ package body org.allbinary.game.layer.AdvancedRTSProperties_Package is
    function Create (shakeListener : ShakeAnimationListener_Access; vibration : AllBinaryVibrationME_Access; duration : Integer; waypointBehaviorBase : TickableInterface_Access) return AdvancedRTSProperties_Access is
       This : constant AdvancedRTSProperties_Access := new AdvancedRTSProperties;
    begin
-      Initialize (This.all, shakeListener, vibration, duration, waypointBehaviorBase);
+      AdvancedRTSProperties_Package.Initialize (This.all, shakeListener, vibration, duration, waypointBehaviorBase);
       return This;
    end Create;
-
-   procedure createPropertiesSimulated is
-      Java_Result : constant AdvancedRTSProperties_Access := createPropertiesSimulated;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end createPropertiesSimulated;
-
-   procedure createProperties is
-      Java_Result : constant AdvancedRTSProperties_Access := createProperties;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end createProperties;
 
 end org.allbinary.game.layer.AdvancedRTSProperties_Package;
 

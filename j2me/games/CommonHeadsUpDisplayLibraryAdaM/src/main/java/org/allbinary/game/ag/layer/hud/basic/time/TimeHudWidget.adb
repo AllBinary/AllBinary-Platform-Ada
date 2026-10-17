@@ -45,7 +45,7 @@ package body org.allbinary.game.ag.layer.hud.basic.time.TimeHudWidget_Package is
    function Create (location : Integer; direction : Integer; bufferZone : Integer; basicColor : BasicColor_Access; timer : Timer_Access) return TimeHudWidget_Access is
       This : constant TimeHudWidget_Access := new TimeHudWidget;
    begin
-      Initialize (This.all, location, direction, bufferZone, basicColor, timer);
+      TimeHudWidget_Package.Initialize (This.all, location, direction, bufferZone, basicColor, timer);
       return This;
    end Create;
 
@@ -86,13 +86,6 @@ package body org.allbinary.game.ag.layer.hud.basic.time.TimeHudWidget_Package is
    begin
       null;
    end getInstance;
-
-   procedure getTimer (This : in out TimeHudWidget) is
-      Java_Result : constant Timer_Access := TimeHudWidget'Class (This).getTimer;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTimer;
 
 end org.allbinary.game.ag.layer.hud.basic.time.TimeHudWidget_Package;
 

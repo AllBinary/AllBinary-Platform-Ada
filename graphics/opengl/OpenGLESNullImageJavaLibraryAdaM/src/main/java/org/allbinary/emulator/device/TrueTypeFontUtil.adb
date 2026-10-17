@@ -36,7 +36,7 @@ package body org.allbinary.emulator.device.TrueTypeFontUtil_Package is
    function Create return TrueTypeFontUtil_Access is
       This : constant TrueTypeFontUtil_Access := new TrueTypeFontUtil;
    begin
-      Initialize (This.all);
+      TrueTypeFontUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -69,13 +69,6 @@ package body org.allbinary.emulator.device.TrueTypeFontUtil_Package is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end getFontWidths;
-
-   procedure getInstance is
-      Java_Result : constant TrueTypeFontUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure getAsTextureSize (This : in out TrueTypeFontUtil; textureSize : Integer) is
       Java_Result : constant Integer := TrueTypeFontUtil'Class (This).getAsTextureSize (textureSize);

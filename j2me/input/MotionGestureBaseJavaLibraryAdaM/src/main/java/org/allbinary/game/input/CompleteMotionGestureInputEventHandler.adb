@@ -37,7 +37,7 @@ package body org.allbinary.game.input.CompleteMotionGestureInputEventHandler_Pac
    function Create return CompleteMotionGestureInputEventHandler_Access is
       This : constant CompleteMotionGestureInputEventHandler_Access := new CompleteMotionGestureInputEventHandler;
    begin
-      Initialize (This.all);
+      CompleteMotionGestureInputEventHandler_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -89,13 +89,6 @@ package body org.allbinary.game.input.CompleteMotionGestureInputEventHandler_Pac
         completeMotionGestureInputEventListenerInterface := CompleteMotionGestureInputEventListenerInterface_Access (eventListenerInterface);
         completeMotionGestureInputEventListenerInterface.onCompleteMotionGestureInputEvent (CompleteMotionGestureInputEvent_Access (eventObject));
    end process;
-
-   procedure getInstance is
-      Java_Result : constant CompleteMotionGestureInputEventHandler_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

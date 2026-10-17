@@ -20,7 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.util.Calendar_Package; use java.util.Calendar_Package;
+with java.util.Calendar_Package; use java.util.Calendar_Package;
 --  with java.util.HashMap_Package; use java.util.HashMap_Package;
 --  with java.util.Random_Package; use java.util.Random_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
@@ -64,6 +64,7 @@ with org.allbinary.data.tables.user.commerce.inventory.order.OrderHistoryEntityI
 
 package org.allbinary.data.tables.user.commerce.inventory.order.OrderHistoryEntity_Package is
 
+   package Calendar_Package renames Standard.java.util.Calendar_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
    package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    package StoreFrontData_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
@@ -129,11 +130,8 @@ package org.allbinary.data.tables.user.commerce.inventory.order.OrderHistoryEnti
    function getOrder (This : in out OrderHistoryEntity; id : Unbounded_String) return OrderHistory_Access;
    procedure getOrder (This : in out OrderHistoryEntity; id : Unbounded_String);
    function createTableStatement (This : in out OrderHistoryEntity) return Unbounded_String;
-   procedure createTableStatement (This : in out OrderHistoryEntity);
    function createTable (This : in out OrderHistoryEntity) return Unbounded_String;
-   procedure createTable (This : in out OrderHistoryEntity);
    function dropTable (This : in out OrderHistoryEntity) return Unbounded_String;
-   procedure dropTable (This : in out OrderHistoryEntity);
    procedure update (This : in out OrderHistoryEntity; whereHashMap : HashMap_Access; orderHashMap : HashMap_Access);
 
 end org.allbinary.data.tables.user.commerce.inventory.order.OrderHistoryEntity_Package;

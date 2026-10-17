@@ -30,6 +30,7 @@ with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArra
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.media.audio.TimeBaseInterface_Package; use org.allbinary.media.audio.TimeBaseInterface_Package;
 with org.allbinary.media.audio.Controllable2_Package; use org.allbinary.media.audio.Controllable2_Package;
+with org.allbinary.media.audio.NullControl_Package; use org.allbinary.media.audio.NullControl_Package;
 
 package org.allbinary.media.audio.BasicPlayer_Package is
 
@@ -53,30 +54,23 @@ package org.allbinary.media.audio.BasicPlayer_Package is
    procedure Initialize (This : in out BasicPlayer'Class);
    function Create return BasicPlayer_Access;
    function getContentType (This : in out BasicPlayer) return Unbounded_String;
-   procedure getContentType (This : in out BasicPlayer);
    function getControl (This : in out BasicPlayer; controlType : Unbounded_String) return Control_Access;
    procedure getControl (This : in out BasicPlayer; controlType : Unbounded_String);
    function getControls (This : in out BasicPlayer) return Control_Access_Array_Access;
-   procedure getControls (This : in out BasicPlayer);
    procedure close (This : in out BasicPlayer);
    procedure addPlayerListener (This : in out BasicPlayer; playerListener : PlayerListener_Access);
    procedure removePlayerListener (This : in out BasicPlayer; playerListener : PlayerListener_Access);
    function getState (This : in out BasicPlayer) return Integer;
-   procedure getState (This : in out BasicPlayer);
    procedure setState (This : in out BasicPlayer; state : Integer);
    function getDuration (This : in out BasicPlayer) return Long_Long_Integer;
-   procedure getDuration (This : in out BasicPlayer);
    function getMediaTime (This : in out BasicPlayer) return Long_Long_Integer;
-   procedure getMediaTime (This : in out BasicPlayer);
    function getTimeBase (This : in out BasicPlayer) return TimeBase_Access;
-   procedure getTimeBase (This : in out BasicPlayer);
    procedure setTimeBase (This : in out BasicPlayer; timeBase : TimeBase_Access);
    procedure deallocate (This : in out BasicPlayer);
    procedure prefetch (This : in out BasicPlayer);
    procedure realize (This : in out BasicPlayer);
    procedure setLoopCount (This : in out BasicPlayer; count : Integer);
    function getLoopCount (This : in out BasicPlayer) return Integer;
-   procedure getLoopCount (This : in out BasicPlayer);
    function setMediaTime (This : in out BasicPlayer; now : Long_Long_Integer) return Long_Long_Integer;
    procedure setMediaTime (This : in out BasicPlayer; now : Long_Long_Integer);
    procedure start (This : in out BasicPlayer);

@@ -33,20 +33,13 @@ package body org.allbinary.logic.visual.transform.template.customizer.bodies.Bod
    function Create return BodyData_Access is
       This : constant BodyData_Access := new BodyData;
    begin
-      Initialize (This.all);
+      BodyData_Package.Initialize (This.all);
       return This;
    end Create;
 
    function getInstance return BodyData_Access is
    begin
         return BodyData_Package.instance;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant BodyData_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

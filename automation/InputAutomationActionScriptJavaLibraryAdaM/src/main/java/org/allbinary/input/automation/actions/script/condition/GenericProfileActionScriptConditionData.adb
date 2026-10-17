@@ -30,7 +30,7 @@ package body org.allbinary.input.automation.actions.script.condition.GenericProf
    function Create return GenericProfileActionScriptConditionData_Access is
       This : constant GenericProfileActionScriptConditionData_Access := new GenericProfileActionScriptConditionData;
    begin
-      Initialize (This.all);
+      GenericProfileActionScriptConditionData_Package.Initialize (This.all);
       return This;
    end Create;
 

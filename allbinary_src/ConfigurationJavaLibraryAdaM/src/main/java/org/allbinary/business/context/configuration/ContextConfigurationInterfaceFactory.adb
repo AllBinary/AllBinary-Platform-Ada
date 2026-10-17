@@ -35,7 +35,7 @@ package body org.allbinary.business.context.configuration.ContextConfigurationIn
    function Create return ContextConfigurationInterfaceFactory_Access is
       This : constant ContextConfigurationInterfaceFactory_Access := new ContextConfigurationInterfaceFactory;
    begin
-      Initialize (This.all);
+      ContextConfigurationInterfaceFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -61,13 +61,6 @@ package body org.allbinary.business.context.configuration.ContextConfigurationIn
         documentString := CryptFileReader_Package.Create (contextConfigurationData.UNCRYPTED_EXTENSION, contextConfigurationData.ENCRYPTED_EXTENSION).get (abPath);
         document := DomDocumentHelper_Package.create (documentString);
         return This.getInstance (document);
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant ContextConfigurationInterfaceFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
    procedure getInstance (This : in out ContextConfigurationInterfaceFactory; document : Document_Access) is

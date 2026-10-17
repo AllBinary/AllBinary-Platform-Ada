@@ -61,7 +61,6 @@ package admin.taghelpers.ShippingHelper_Package is
    function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return ShippingHelper_Access;
    procedure getFormData (This : in out ShippingHelper);
    function setShippingType (This : in out ShippingHelper) return Unbounded_String;
-   procedure setShippingType (This : in out ShippingHelper);
 
 end admin.taghelpers.ShippingHelper_Package;
 

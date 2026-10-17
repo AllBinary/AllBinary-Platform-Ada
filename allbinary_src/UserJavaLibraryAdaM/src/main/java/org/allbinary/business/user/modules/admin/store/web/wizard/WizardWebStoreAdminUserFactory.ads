@@ -23,6 +23,7 @@ with AllBinary_Java; use AllBinary_Java;
 --  with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.business.user.UserFactoryInterface_Package; use org.allbinary.business.user.UserFactoryInterface_Package;
 with org.allbinary.business.user.UserInterface_Package; use org.allbinary.business.user.UserInterface_Package;
+with org.allbinary.business.user.modules.admin.store.web.wizard.WizardWebStoreAdminUser_Package; use org.allbinary.business.user.modules.admin.store.web.wizard.WizardWebStoreAdminUser_Package;
 
 package org.allbinary.business.user.modules.admin.store.web.wizard.WizardWebStoreAdminUserFactory_Package is
 
@@ -39,7 +40,6 @@ package org.allbinary.business.user.modules.admin.store.web.wizard.WizardWebStor
    procedure Initialize (This : in out WizardWebStoreAdminUserFactory'Class);
    function Create return WizardWebStoreAdminUserFactory_Access;
    function getInstance (This : in out WizardWebStoreAdminUserFactory) return UserInterface_Access;
-   procedure getInstance (This : in out WizardWebStoreAdminUserFactory);
    function getInstance (This : in out WizardWebStoreAdminUserFactory; hashMap : HashMap_Access) return UserInterface_Access;
    procedure getInstance (This : in out WizardWebStoreAdminUserFactory; hashMap : HashMap_Access);
 

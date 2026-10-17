@@ -46,7 +46,6 @@ package org.allbinary.game.GameStrings_Package is
    procedure Initialize (This : in out GameStrings'Class);
    function Create return GameStrings_Access;
    function getInstance return GameStrings_Access;
-   procedure getInstance;
 
 end org.allbinary.game.GameStrings_Package;
 

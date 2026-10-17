@@ -57,7 +57,7 @@ package body org.allbinary.logic.communication.sql.AbSqlBasic_Package is
    function Create (databaseConnectionInfoInterface : DbConnectionInfo_Access) return AbSqlBasic_Access is
       This : constant AbSqlBasic_Access := new AbSqlBasic;
    begin
-      Initialize (This.all, databaseConnectionInfoInterface);
+      AbSqlBasic_Package.Initialize (This.all, databaseConnectionInfoInterface);
       return This;
    end Create;
 
@@ -202,13 +202,6 @@ package body org.allbinary.logic.communication.sql.AbSqlBasic_Package is
    begin
       null;
    end create;
-
-   procedure getDatabaseConnectionInfoInterface (This : in out AbSqlBasic) is
-      Java_Result : constant DatabaseConnectionInfoInterface_Access := AbSqlBasic'Class (This).getDatabaseConnectionInfoInterface;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getDatabaseConnectionInfoInterface;
 
 end org.allbinary.logic.communication.sql.AbSqlBasic_Package;
 

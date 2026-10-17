@@ -58,22 +58,17 @@ package org.allbinary.animation.compound.AutoCompoundRotationAnimation_Package i
    function Create (animationInterfaceArray : RotationAnimation_Access_Array_Access; animationBehavior : AnimationBehavior_Access) return AutoCompoundRotationAnimation_Access;
    procedure setFrame (This : in out AutoCompoundRotationAnimation; index : Integer);
    function getFrame (This : in out AutoCompoundRotationAnimation) return Integer;
-   procedure getFrame (This : in out AutoCompoundRotationAnimation);
    function getAnimationSize (This : in out AutoCompoundRotationAnimation) return Integer;
-   procedure getAnimationSize (This : in out AutoCompoundRotationAnimation);
    function getSize (This : in out AutoCompoundRotationAnimation) return Integer;
-   procedure getSize (This : in out AutoCompoundRotationAnimation);
    procedure previousFrame (This : in out AutoCompoundRotationAnimation);
    procedure nextFrame (This : in out AutoCompoundRotationAnimation);
    procedure previousRotation (This : in out AutoCompoundRotationAnimation);
    procedure nextRotation (This : in out AutoCompoundRotationAnimation);
    procedure setSequence (This : in out AutoCompoundRotationAnimation; sequence : Integer_Array_Access);
    function getSequence (This : in out AutoCompoundRotationAnimation) return Integer_Array_Access;
-   procedure getSequence (This : in out AutoCompoundRotationAnimation);
    procedure paintXY (This : in out AutoCompoundRotationAnimation; graphics : Graphics_Access; x : Integer; y : Integer);
    procedure paintThreedXYZ (This : in out AutoCompoundRotationAnimation; graphics : Graphics_Access; x : Integer; y : Integer; z : Integer);
    function getCurrentAnimation (This : in out AutoCompoundRotationAnimation) return IndexedAnimation_Access;
-   procedure getCurrentAnimation (This : in out AutoCompoundRotationAnimation);
    procedure nextAnimation (This : in out AutoCompoundRotationAnimation);
    procedure previousAnimation (This : in out AutoCompoundRotationAnimation);
    procedure setAnimation (This : in out AutoCompoundRotationAnimation; index : Integer);
@@ -82,9 +77,7 @@ package org.allbinary.animation.compound.AutoCompoundRotationAnimation_Package i
    procedure adjustFrameToAngle (This : in out AutoCompoundRotationAnimation; newAngle : Angle_Access);
    procedure adjustFrame (This : in out AutoCompoundRotationAnimation; angle : Short_Integer);
    function getAngleInfoP (This : in out AutoCompoundRotationAnimation) return AngleInfo_Access;
-   procedure getAngleInfoP (This : in out AutoCompoundRotationAnimation);
    function getAnimationInterfaceArray (This : in out AutoCompoundRotationAnimation) return RotationAnimation_Access_Array_Access;
-   procedure getAnimationInterfaceArray (This : in out AutoCompoundRotationAnimation);
    procedure setAnimationInterfaceArray (This : in out AutoCompoundRotationAnimation; animationInterfaceArray : RotationAnimation_Access_Array_Access);
    procedure set (This : in out AutoCompoundRotationAnimation; gl : GL_Access);
 

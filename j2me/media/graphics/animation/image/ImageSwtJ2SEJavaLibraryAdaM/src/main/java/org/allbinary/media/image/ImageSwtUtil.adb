@@ -28,7 +28,7 @@ package body org.allbinary.media.image.ImageSwtUtil_Package is
    function Create return ImageSwtUtil_Access is
       This : constant ImageSwtUtil_Access := new ImageSwtUtil;
    begin
-      Initialize (This.all);
+      ImageSwtUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -36,13 +36,6 @@ package body org.allbinary.media.image.ImageSwtUtil_Package is
    function getInstance return ImageSwtUtil_Access is
    begin
         return ImageSwtUtil_Package.instance;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant ImageSwtUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

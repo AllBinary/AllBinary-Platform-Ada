@@ -28,7 +28,7 @@ package body org.allbinary.graphics.ScreenEmptyListener_Package is
    function Create return ScreenEmptyListener_Access is
       This : constant ScreenEmptyListener_Access := new ScreenEmptyListener;
    begin
-      Initialize (This.all);
+      ScreenEmptyListener_Package.Initialize (This.all);
       return This;
    end Create;
 

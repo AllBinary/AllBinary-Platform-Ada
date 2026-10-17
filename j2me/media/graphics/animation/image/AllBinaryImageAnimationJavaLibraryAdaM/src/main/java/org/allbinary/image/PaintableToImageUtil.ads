@@ -23,6 +23,7 @@ with AllBinary_Java; use AllBinary_Java;
 --  with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
 --  with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
 with org.allbinary.graphics.paint.PaintableInterface_Package; use org.allbinary.graphics.paint.PaintableInterface_Package;
+with org.allbinary.image.GameFeatureImageCacheFactory_Package; use org.allbinary.image.GameFeatureImageCacheFactory_Package;
 
 package org.allbinary.image.PaintableToImageUtil_Package is
 

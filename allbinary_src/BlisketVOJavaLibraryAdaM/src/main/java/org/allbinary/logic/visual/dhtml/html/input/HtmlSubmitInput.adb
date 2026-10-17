@@ -29,7 +29,7 @@ package body org.allbinary.logic.visual.dhtml.html.input.HtmlSubmitInput_Package
    function Create (before : Unbounded_String; name : Unbounded_String; value : Unbounded_String; after : Unbounded_String) return HtmlSubmitInput_Access is
       This : constant HtmlSubmitInput_Access := new HtmlSubmitInput;
    begin
-      Initialize (This.all, before, name, value, after);
+      HtmlSubmitInput_Package.Initialize (This.all, before, name, value, after);
       return This;
    end Create;
 

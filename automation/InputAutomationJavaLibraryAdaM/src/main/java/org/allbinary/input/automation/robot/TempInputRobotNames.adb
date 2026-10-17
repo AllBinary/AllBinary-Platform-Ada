@@ -30,7 +30,7 @@ package body org.allbinary.input.automation.robot.TempInputRobotNames_Package is
    function Create return TempInputRobotNames_Access is
       This : constant TempInputRobotNames_Access := new TempInputRobotNames;
    begin
-      Initialize (This.all);
+      TempInputRobotNames_Package.Initialize (This.all);
       return This;
    end Create;
 

@@ -33,7 +33,7 @@ package body org.allbinary.game.displayable.canvas.GameCanvasPauseRunnable_Packa
    function Create (allBinaryGameCanvas : AllBinaryGameCanvas_Access) return GameCanvasPauseRunnable_Access is
       This : constant GameCanvasPauseRunnable_Access := new GameCanvasPauseRunnable;
    begin
-      Initialize (This.all, allBinaryGameCanvas);
+      GameCanvasPauseRunnable_Package.Initialize (This.all, allBinaryGameCanvas);
       return This;
    end Create;
 

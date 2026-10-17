@@ -30,7 +30,7 @@ package body org.allbinary.log.FileLog_Package is
    function Create return FileLog_Access is
       This : constant FileLog_Access := new FileLog;
    begin
-      Initialize (This.all);
+      FileLog_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -103,7 +103,9 @@ package body org.allbinary.log.FileLog_Package is
         return FileLog_Package.put (specialMessage, anyType, functionName, null);
    end put;
 
-   function put (specialMessage : Unbounded_String; anyType : Java_Object_Access; functionName : Unbounded_String; exception_Id : Java_Throwable) return Unbounded_String is
+   function put (specialMessage_Param : Unbounded_String; anyType : Java_Object_Access; functionName_Param : Unbounded_String; exception_Id : Java_Throwable) return Unbounded_String is
+      specialMessage : Unbounded_String := specialMessage_Param;
+      functionName : Unbounded_String := functionName_Param;
       length : Long_Long_Integer;
       className : Unbounded_String;
       message : Unbounded_String;
@@ -151,7 +153,9 @@ package body org.allbinary.log.FileLog_Package is
         return FileLog_Package.put (specialMessage, className, functionName, null);
    end put;
 
-   function put (specialMessage : Unbounded_String; className : Unbounded_String; functionName : Unbounded_String; exception_Id : Java_Throwable) return Unbounded_String is
+   function put (specialMessage_Param : Unbounded_String; className : Unbounded_String; functionName_Param : Unbounded_String; exception_Id : Java_Throwable) return Unbounded_String is
+      specialMessage : Unbounded_String := specialMessage_Param;
+      functionName : Unbounded_String := functionName_Param;
       length : Long_Long_Integer;
       message : Unbounded_String;
    begin
@@ -194,20 +198,6 @@ package body org.allbinary.log.FileLog_Package is
         return (FileLog_Package.logPath) + (FileLog_Package.fileName);
    end getFilePath;
 
-   procedure createLogFile is
-      Java_Result : constant Boolean := createLogFile;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end createLogFile;
-
-   procedure createLogFileBackup is
-      Java_Result : constant Boolean := createLogFileBackup;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end createLogFileBackup;
-
    procedure put (specialMessage : Unbounded_String; anyType : Java_Object_Access; functionName : Unbounded_String) is
       Java_Result : constant Unbounded_String := put (specialMessage, anyType, functionName);
       pragma Unreferenced (Java_Result);
@@ -215,8 +205,8 @@ package body org.allbinary.log.FileLog_Package is
       null;
    end put;
 
-   procedure put (specialMessage : Unbounded_String; anyType : Java_Object_Access; functionName : Unbounded_String; exception_Id : Java_Throwable) is
-      Java_Result : constant Unbounded_String := put (specialMessage, anyType, functionName, exception_Id);
+   procedure put (specialMessage_Param : Unbounded_String; anyType : Java_Object_Access; functionName_Param : Unbounded_String; exception_Id : Java_Throwable) is
+      Java_Result : constant Unbounded_String := put (specialMessage_Param, anyType, functionName_Param, exception_Id);
       pragma Unreferenced (Java_Result);
    begin
       null;
@@ -229,19 +219,12 @@ package body org.allbinary.log.FileLog_Package is
       null;
    end put;
 
-   procedure put (specialMessage : Unbounded_String; className : Unbounded_String; functionName : Unbounded_String; exception_Id : Java_Throwable) is
-      Java_Result : constant Unbounded_String := put (specialMessage, className, functionName, exception_Id);
+   procedure put (specialMessage_Param : Unbounded_String; className : Unbounded_String; functionName_Param : Unbounded_String; exception_Id : Java_Throwable) is
+      Java_Result : constant Unbounded_String := put (specialMessage_Param, className, functionName_Param, exception_Id);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end put;
-
-   procedure getFilePath is
-      Java_Result : constant Unbounded_String := getFilePath;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getFilePath;
 
 begin
    null;

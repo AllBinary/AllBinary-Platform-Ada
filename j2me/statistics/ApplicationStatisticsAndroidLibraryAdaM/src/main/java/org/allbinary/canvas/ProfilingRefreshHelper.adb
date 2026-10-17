@@ -40,7 +40,7 @@ package body org.allbinary.canvas.ProfilingRefreshHelper_Package is
    function Create return ProfilingRefreshHelper_Access is
       This : constant ProfilingRefreshHelper_Access := new ProfilingRefreshHelper;
    begin
-      Initialize (This.all);
+      ProfilingRefreshHelper_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -71,20 +71,6 @@ package body org.allbinary.canvas.ProfilingRefreshHelper_Package is
    function toString (This : in out ProfilingRefreshHelper) return Unbounded_String is
    begin
         return StringMaker_Package.Create.append (AndroidGameStatistics (This).toString).append (To_Unbounded_String (" Worst: ")).appendint (This.worstFrameProcessingTime).append (To_Unbounded_String (" Best: ")).appendint (This.bestFrameProcessingTime).toString;
-   end toString;
-
-   procedure getInstance is
-      Java_Result : constant AndroidGameStatistics_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure toString (This : in out ProfilingRefreshHelper) is
-      Java_Result : constant Unbounded_String := ProfilingRefreshHelper'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end toString;
 
 begin

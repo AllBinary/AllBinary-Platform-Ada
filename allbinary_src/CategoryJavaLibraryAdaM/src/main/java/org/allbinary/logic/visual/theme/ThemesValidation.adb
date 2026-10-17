@@ -32,7 +32,7 @@ package body org.allbinary.logic.visual.theme.ThemesValidation_Package is
    function Create return ThemesValidation_Access is
       This : constant ThemesValidation_Access := new ThemesValidation;
    begin
-      Initialize (This.all);
+      ThemesValidation_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -47,7 +47,7 @@ package body org.allbinary.logic.visual.theme.ThemesValidation_Package is
    function Create (node : Node_Access) return ThemesValidation_Access is
       This : constant ThemesValidation_Access := new ThemesValidation;
    begin
-      Initialize (This.all, node);
+      ThemesValidation_Package.Initialize (This.all, node);
       return This;
    end Create;
 
@@ -62,7 +62,7 @@ package body org.allbinary.logic.visual.theme.ThemesValidation_Package is
    function Create (hashMap : HashMap_Access) return ThemesValidation_Access is
       This : constant ThemesValidation_Access := new ThemesValidation;
    begin
-      Initialize (This.all, hashMap);
+      ThemesValidation_Package.Initialize (This.all, hashMap);
       return This;
    end Create;
 
@@ -101,27 +101,6 @@ package body org.allbinary.logic.visual.theme.ThemesValidation_Package is
         end loop;
         return node;
    end toXmlNode;
-
-   procedure isValid (This : in out ThemesValidation) is
-      Java_Result : constant Boolean := ThemesValidation'Class (This).isValid;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isValid;
-
-   procedure validationInfo (This : in out ThemesValidation) is
-      Java_Result : constant Unbounded_String := ThemesValidation'Class (This).validationInfo;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end validationInfo;
-
-   procedure toValidationInfoDoc (This : in out ThemesValidation) is
-      Java_Result : constant Document_Access := ThemesValidation'Class (This).toValidationInfoDoc;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toValidationInfoDoc;
 
    procedure toValidationInfoNode (This : in out ThemesValidation; document : Document_Access) is
       Java_Result : constant Node_Access := ThemesValidation'Class (This).toValidationInfoNode (document);

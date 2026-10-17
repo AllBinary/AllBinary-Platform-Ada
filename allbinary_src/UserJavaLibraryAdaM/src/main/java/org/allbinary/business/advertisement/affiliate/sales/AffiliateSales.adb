@@ -30,20 +30,13 @@ package body org.allbinary.business.advertisement.affiliate.sales.AffiliateSales
    function Create return AffiliateSales_Access is
       This : constant AffiliateSales_Access := new AffiliateSales;
    begin
-      Initialize (This.all);
+      AffiliateSales_Package.Initialize (This.all);
       return This;
    end Create;
 
    function isValid (This : in out AffiliateSales) return Boolean is
    begin
         return True;
-   end isValid;
-
-   procedure isValid (This : in out AffiliateSales) is
-      Java_Result : constant Boolean := AffiliateSales'Class (This).isValid;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end isValid;
 
 end org.allbinary.business.advertisement.affiliate.sales.AffiliateSales_Package;

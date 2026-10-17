@@ -32,7 +32,7 @@ package body admin.tags.PaymentProcessTag_Package is
    function Create return PaymentProcessTag_Access is
       This : constant PaymentProcessTag_Access := new PaymentProcessTag;
    begin
-      Initialize (This.all);
+      PaymentProcessTag_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -85,20 +85,6 @@ package body admin.tags.PaymentProcessTag_Package is
             return SKIP_BODY;
                 end;
         end;
-   end doStartTag;
-
-   procedure process (This : in out PaymentProcessTag) is
-      Java_Result : constant Unbounded_String := PaymentProcessTag'Class (This).process;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end process;
-
-   procedure doStartTag (This : in out PaymentProcessTag) is
-      Java_Result : constant Integer := PaymentProcessTag'Class (This).doStartTag;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end doStartTag;
 
 end admin.tags.PaymentProcessTag_Package;

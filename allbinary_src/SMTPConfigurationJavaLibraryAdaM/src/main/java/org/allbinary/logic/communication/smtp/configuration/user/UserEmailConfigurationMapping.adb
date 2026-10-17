@@ -31,7 +31,7 @@ package body org.allbinary.logic.communication.smtp.configuration.user.UserEmail
    function Create (userEmailConfigurationInterface : UserEmailConfigurationInterface_Access) return UserEmailConfigurationMapping_Access is
       This : constant UserEmailConfigurationMapping_Access := new UserEmailConfigurationMapping;
    begin
-      Initialize (This.all, userEmailConfigurationInterface);
+      UserEmailConfigurationMapping_Package.Initialize (This.all, userEmailConfigurationInterface);
       return This;
    end Create;
 
@@ -54,27 +54,6 @@ package body org.allbinary.logic.communication.smtp.configuration.user.UserEmail
    begin
         vector := BasicArrayListD_Package.Create;
         return vector;
-   end toVector;
-
-   procedure toHashMap (This : in out UserEmailConfigurationMapping) is
-      Java_Result : constant HashMap_Access := UserEmailConfigurationMapping'Class (This).toHashMap;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toHashMap;
-
-   procedure getKey (This : in out UserEmailConfigurationMapping) is
-      Java_Result : constant Java_Object_Access := UserEmailConfigurationMapping'Class (This).getKey;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getKey;
-
-   procedure toVector (This : in out UserEmailConfigurationMapping) is
-      Java_Result : constant BasicArrayList_Access := UserEmailConfigurationMapping'Class (This).toVector;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end toVector;
 
 end org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfigurationMapping_Package;

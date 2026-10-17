@@ -30,7 +30,7 @@ package body org.allbinary.game.midlet.DemoGameMidletState_Package is
    function Create return DemoGameMidletState_Access is
       This : constant DemoGameMidletState_Access := new DemoGameMidletState;
    begin
-      Initialize (This.all);
+      DemoGameMidletState_Package.Initialize (This.all);
       return This;
    end Create;
 

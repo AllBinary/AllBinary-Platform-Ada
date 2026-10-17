@@ -28,7 +28,7 @@ package body org.allbinary.android.NullParcelable_Package is
    function Create return NullParcelable_Access is
       This : constant NullParcelable_Access := new NullParcelable;
    begin
-      Initialize (This.all);
+      NullParcelable_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -42,13 +42,6 @@ package body org.allbinary.android.NullParcelable_Package is
    begin
         null;
    end writeToParcel;
-
-   procedure describeContents (This : in out NullParcelable) is
-      Java_Result : constant Integer := NullParcelable'Class (This).describeContents;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end describeContents;
 
 begin
    null;

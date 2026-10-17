@@ -21,6 +21,7 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+with org.allbinary.game.midlet.DemoGameMidletState_Package; use org.allbinary.game.midlet.DemoGameMidletState_Package;
 
 package org.allbinary.game.midlet.DemoGameMidletEvent_Package is
 
@@ -40,7 +41,6 @@ package org.allbinary.game.midlet.DemoGameMidletEvent_Package is
    procedure init (This : in out DemoGameMidletEvent; anyType : Java_Object_Access);
    procedure setDemoGameMidletState (This : in out DemoGameMidletEvent; demoGameMidletState : DemoGameMidletState_Access);
    function getDemoGameMidletState (This : in out DemoGameMidletEvent) return DemoGameMidletState_Access;
-   procedure getDemoGameMidletState (This : in out DemoGameMidletEvent);
 
 end org.allbinary.game.midlet.DemoGameMidletEvent_Package;
 

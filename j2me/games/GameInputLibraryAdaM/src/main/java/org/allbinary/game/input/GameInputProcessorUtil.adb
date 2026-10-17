@@ -28,7 +28,7 @@ package body org.allbinary.game.input.GameInputProcessorUtil_Package is
    function Create return GameInputProcessorUtil_Access is
       This : constant GameInputProcessorUtil_Access := new GameInputProcessorUtil;
    begin
-      Initialize (This.all);
+      GameInputProcessorUtil_Package.Initialize (This.all);
       return This;
    end Create;
 

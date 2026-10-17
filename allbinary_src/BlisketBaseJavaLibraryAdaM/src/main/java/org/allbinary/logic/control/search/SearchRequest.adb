@@ -40,7 +40,7 @@ package body org.allbinary.logic.control.search.SearchRequest_Package is
    function Create (storeFront : StoreFrontInterface_Access; searchParams : SearchParams_Access; xslFile : Unbounded_String; contentType : Unbounded_String; propertiesHashMap : HashMap_Access; pageContext : PageContext_Access) return SearchRequest_Access is
       This : constant SearchRequest_Access := new SearchRequest;
    begin
-      Initialize (This.all, storeFront, searchParams, xslFile, contentType, propertiesHashMap, pageContext);
+      SearchRequest_Package.Initialize (This.all, storeFront, searchParams, xslFile, contentType, propertiesHashMap, pageContext);
       return This;
    end Create;
 
@@ -99,41 +99,6 @@ package body org.allbinary.logic.control.search.SearchRequest_Package is
    begin
         return ModDomHelper_Package.createNameValueNodes (document, SearchData_Package.FILENAME, This.getFileBaseName);
    end getFileBaseNameNode;
-
-   procedure getStoreFront (This : in out SearchRequest) is
-      Java_Result : constant StoreFrontInterface_Access := SearchRequest'Class (This).getStoreFront;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getStoreFront;
-
-   procedure getParams (This : in out SearchRequest) is
-      Java_Result : constant SearchParams_Access := SearchRequest'Class (This).getParams;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getParams;
-
-   procedure getXslFile (This : in out SearchRequest) is
-      Java_Result : constant Unbounded_String := SearchRequest'Class (This).getXslFile;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getXslFile;
-
-   procedure getFileBaseName (This : in out SearchRequest) is
-      Java_Result : constant Unbounded_String := SearchRequest'Class (This).getFileBaseName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getFileBaseName;
-
-   procedure getContentType (This : in out SearchRequest) is
-      Java_Result : constant Unbounded_String := SearchRequest'Class (This).getContentType;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getContentType;
 
    procedure getFileBaseNameNode (This : in out SearchRequest; document : Document_Access) is
       Java_Result : constant Node_Access := SearchRequest'Class (This).getFileBaseNameNode (document);

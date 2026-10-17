@@ -28,7 +28,7 @@ package body javax.microedition.lcdui.PlatformImage_Package is
    function Create return PlatformImage_Access is
       This : constant PlatformImage_Access := new PlatformImage;
    begin
-      Initialize (This.all);
+      PlatformImage_Package.Initialize (This.all);
       return This;
    end Create;
 

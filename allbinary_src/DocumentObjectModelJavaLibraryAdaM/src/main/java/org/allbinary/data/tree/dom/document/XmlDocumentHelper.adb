@@ -38,7 +38,7 @@ package body org.allbinary.data.tree.dom.document.XmlDocumentHelper_Package is
    function Create return XmlDocumentHelper_Access is
       This : constant XmlDocumentHelper_Access := new XmlDocumentHelper;
    begin
-      Initialize (This.all);
+      XmlDocumentHelper_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -104,13 +104,6 @@ package body org.allbinary.data.tree.dom.document.XmlDocumentHelper_Package is
                 end;
         end;
    end toString;
-
-   procedure getInstance is
-      Java_Result : constant XmlDocumentHelper_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure format (This : in out XmlDocumentHelper; xmlString : Unbounded_String) is
       Java_Result : constant Unbounded_String := XmlDocumentHelper'Class (This).format (xmlString);

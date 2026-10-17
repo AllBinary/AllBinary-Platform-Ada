@@ -54,7 +54,6 @@ package org.allbinary.graphics.canvas.transition.progress.AndroidTitleProgressBa
    function Create (title : Unbounded_String; backgroundBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access) return AndroidTitleProgressBar_Access;
    procedure init (This : in out AndroidTitleProgressBar; activity : ProgressActivityInterface_Access);
    function isInitialized (This : in out AndroidTitleProgressBar) return Boolean;
-   procedure isInitialized (This : in out AndroidTitleProgressBar);
    procedure start (This : in out AndroidTitleProgressBar);
    procedure end_Id (This : in out AndroidTitleProgressBar);
    procedure addPortion (This : in out AndroidTitleProgressBar; value : Integer; text : Unbounded_String; index : Integer);

@@ -28,7 +28,7 @@ package body org.allbinary.game.ag.ai.SpinnerAIFactory_Package is
    function Create return SpinnerAIFactory_Access is
       This : constant SpinnerAIFactory_Access := new SpinnerAIFactory;
    begin
-      Initialize (This.all);
+      SpinnerAIFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

@@ -30,7 +30,7 @@ package body org.allbinary.game.input.KeyFactoryInitializer_Package is
    function Create return KeyFactoryInitializer_Access is
       This : constant KeyFactoryInitializer_Access := new KeyFactoryInitializer;
    begin
-      Initialize (This.all);
+      KeyFactoryInitializer_Package.Initialize (This.all);
       return This;
    end Create;
 

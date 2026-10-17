@@ -36,7 +36,6 @@ package org.allbinary.media.graphics.geography.map.racetrack.FinalPositionRaceTr
    procedure Initialize (This : in out FinalPositionRaceTrackFactory'Class);
    function Create return FinalPositionRaceTrackFactory_Access;
    function getInstance return Integer;
-   procedure getInstance;
    procedure reset;
 
 end org.allbinary.media.graphics.geography.map.racetrack.FinalPositionRaceTrackFactory_Package;

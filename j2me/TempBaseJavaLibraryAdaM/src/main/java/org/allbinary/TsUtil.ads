@@ -35,7 +35,6 @@ package org.allbinary.TsUtil_Package is
    procedure Initialize (This : in out TsUtil'Class);
    function Create return TsUtil_Access;
    function getInstance return TsUtil_Access;
-   procedure getInstance;
    function hashCode (This : in out TsUtil; anyType : Java_Object_Access) return Integer;
    procedure hashCode (This : in out TsUtil; anyType : Java_Object_Access);
    procedure waitFor (This : in out TsUtil; any : Java_Object_Access; timeoutMillis : Long_Long_Integer);

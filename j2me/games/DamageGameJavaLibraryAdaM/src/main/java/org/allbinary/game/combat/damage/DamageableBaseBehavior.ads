@@ -36,9 +36,7 @@ package org.allbinary.game.combat.damage.DamageableBaseBehavior_Package is
    procedure Initialize (This : in out DamageableBaseBehavior'Class);
    function Create return DamageableBaseBehavior_Access;
    function getInstance return DamageableBaseBehavior_Access;
-   procedure getInstance;
    function getName (This : in out DamageableBaseBehavior) return Unbounded_String;
-   procedure getName (This : in out DamageableBaseBehavior);
    procedure damage (This : in out DamageableBaseBehavior; damage : Integer; damageType : Integer);
    function getDamage (This : in out DamageableBaseBehavior; damageType : Integer) return Integer;
    procedure getDamage (This : in out DamageableBaseBehavior; damageType : Integer);

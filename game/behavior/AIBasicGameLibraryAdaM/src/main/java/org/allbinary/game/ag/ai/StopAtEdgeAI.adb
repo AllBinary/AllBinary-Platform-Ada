@@ -29,7 +29,7 @@ package body org.allbinary.game.ag.ai.StopAtEdgeAI_Package is
    function Create (ownerLayerInterface : AllBinaryLayer_Access; gameInput : GameInput_Access) return StopAtEdgeAI_Access is
       This : constant StopAtEdgeAI_Access := new StopAtEdgeAI;
    begin
-      Initialize (This.all, ownerLayerInterface, gameInput);
+      StopAtEdgeAI_Package.Initialize (This.all, ownerLayerInterface, gameInput);
       return This;
    end Create;
 

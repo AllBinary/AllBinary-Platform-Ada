@@ -28,7 +28,7 @@ package body org.allbinary.game.input.mapping.MotionInputMappingEventListener_Pa
    function Create return MotionInputMappingEventListener_Access is
       This : constant MotionInputMappingEventListener_Access := new MotionInputMappingEventListener;
    begin
-      Initialize (This.all);
+      MotionInputMappingEventListener_Package.Initialize (This.all);
       return This;
    end Create;
 

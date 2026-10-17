@@ -32,7 +32,7 @@ package body admin.tags.UpdateOrderTag_Package is
    function Create return UpdateOrderTag_Access is
       This : constant UpdateOrderTag_Access := new UpdateOrderTag;
    begin
-      Initialize (This.all);
+      UpdateOrderTag_Package.Initialize (This.all);
       return This;
    end Create;
 

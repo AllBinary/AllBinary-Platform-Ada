@@ -24,6 +24,8 @@ with org.allbinary.logic.java.bool.BooleanFactory_Package; use org.allbinary.log
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbinary.logic.util.event.AllBinaryEventObject_Package;
 with org.allbinary.logic.util.event.EventListenerInterface_Package; use org.allbinary.logic.util.event.EventListenerInterface_Package;
 with org.allbinary.logic.util.event.handler.BasicEventHandler_Package; use org.allbinary.logic.util.event.handler.BasicEventHandler_Package;
+with org.allbinary.input.event.VirtualKeyboardEvent_Package; use org.allbinary.input.event.VirtualKeyboardEvent_Package;
+with org.allbinary.input.event.VirtualKeyboardEventListenerInterface_Package; use org.allbinary.input.event.VirtualKeyboardEventListenerInterface_Package;
 
 package org.allbinary.input.event.VirtualKeyboardEventHandler_Package is
 
@@ -46,7 +48,6 @@ package org.allbinary.input.event.VirtualKeyboardEventHandler_Package is
    procedure Initialize (This : in out VirtualKeyboardEventHandler'Class);
    function Create return VirtualKeyboardEventHandler_Access;
    function getInstance return VirtualKeyboardEventHandler_Access;
-   procedure getInstance;
    procedure process (This : in out VirtualKeyboardEventHandler; eventObject : AllBinaryEventObject_Access; eventListenerInterface : EventListenerInterface_Access);
    procedure open (This : in out VirtualKeyboardEventHandler);
    procedure close (This : in out VirtualKeyboardEventHandler);

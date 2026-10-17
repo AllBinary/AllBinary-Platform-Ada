@@ -31,20 +31,13 @@ package body org.allbinary.layer.AllBinaryLayerFactory_Package is
    function Create (rectangle : Rectangle_Access) return AllBinaryLayerFactory_Access is
       This : constant AllBinaryLayerFactory_Access := new AllBinaryLayerFactory;
    begin
-      Initialize (This.all, rectangle);
+      AllBinaryLayerFactory_Package.Initialize (This.all, rectangle);
       return This;
    end Create;
 
    function getInstance (This : in out AllBinaryLayerFactory) return AllBinaryLayer_Access is
    begin
         return AllBinaryLayer_Package.Create (StringUtil_Package.getInstance.EMPTY_STRING, This.rectangle, ViewPosition_Package.getInstanceD);
-   end getInstance;
-
-   procedure getInstance (This : in out AllBinaryLayerFactory) is
-      Java_Result : constant AllBinaryLayer_Access := AllBinaryLayerFactory'Class (This).getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 end org.allbinary.layer.AllBinaryLayerFactory_Package;

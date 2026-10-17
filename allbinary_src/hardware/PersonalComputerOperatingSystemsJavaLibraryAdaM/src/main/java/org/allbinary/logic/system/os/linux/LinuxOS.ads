@@ -36,7 +36,6 @@ package org.allbinary.logic.system.os.linux.LinuxOS_Package is
    procedure Initialize (This : in out LinuxOS'Class);
    function Create return LinuxOS_Access;
    function isAutoHide (This : in out LinuxOS) return Boolean;
-   procedure isAutoHide (This : in out LinuxOS);
 
 end org.allbinary.logic.system.os.linux.LinuxOS_Package;
 

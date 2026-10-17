@@ -51,21 +51,16 @@ package org.allbinary.util.CircularIndexUtil_Package is
    procedure Initialize (This : in out CircularIndexUtil'Class; index : Integer; size : Integer);
    function Create (index : Integer; size : Integer) return CircularIndexUtil_Access;
    function next (This : in out CircularIndexUtil) return Integer;
-   procedure next (This : in out CircularIndexUtil);
    function previous (This : in out CircularIndexUtil) return Integer;
-   procedure previous (This : in out CircularIndexUtil);
    procedure setIndex (This : in out CircularIndexUtil; index : Integer);
    function getIndex (This : in out CircularIndexUtil) return Integer;
-   procedure getIndex (This : in out CircularIndexUtil);
    function createInstance (max : Integer) return CircularIndexUtil_Access;
    procedure createInstance (max : Integer);
    function createInstanceAt (index : Integer; max : Integer) return CircularIndexUtil_Access;
    procedure createInstanceAt (index : Integer; max : Integer);
    procedure setSize (This : in out CircularIndexUtil; size : Integer);
    function getSize (This : in out CircularIndexUtil) return Integer;
-   procedure getSize (This : in out CircularIndexUtil);
    function toString (This : in out CircularIndexUtil) return Unbounded_String;
-   procedure toString (This : in out CircularIndexUtil);
 
 end org.allbinary.util.CircularIndexUtil_Package;
 

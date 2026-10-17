@@ -35,7 +35,7 @@ package body org.allbinary.media.AllBinaryVisualDebugVibration_Package is
    function Create return AllBinaryVisualDebugVibration_Access is
       This : constant AllBinaryVisualDebugVibration_Access := new AllBinaryVisualDebugVibration;
    begin
-      Initialize (This.all);
+      AllBinaryVisualDebugVibration_Package.Initialize (This.all);
       return This;
    end Create;
 

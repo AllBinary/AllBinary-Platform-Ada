@@ -30,6 +30,8 @@ with org.allbinary.globals.PATH_GLOBALS_Package; use org.allbinary.globals.PATH_
 --  with java.io.FileReader_Package; use java.io.FileReader_Package;
 --  with java.io.LineNumberReader_Package; use java.io.LineNumberReader_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.logic.system.security.licensing.BasicArrayListD_Package; use org.allbinary.logic.system.security.licensing.BasicArrayListD_Package;
+with org.allbinary.logic.system.security.licensing.PrintLicenseInitInfo_Package; use org.allbinary.logic.system.security.licensing.PrintLicenseInitInfo_Package;
 
 package org.allbinary.logic.system.security.licensing.SetLicenseInitInfo_Package is
 
@@ -52,7 +54,6 @@ package org.allbinary.logic.system.security.licensing.SetLicenseInitInfo_Package
    procedure Initialize (This : in out SetLicenseInitInfo'Class; options : Unbounded_String_Array_Access);
    function Create (options : Unbounded_String_Array_Access) return SetLicenseInitInfo_Access;
    function getLicenseInitInfo (This : in out SetLicenseInitInfo) return LicenseInitInfo_Access;
-   procedure getLicenseInitInfo (This : in out SetLicenseInitInfo);
    procedure createNewLicenseInitInfo (This : in out SetLicenseInitInfo; licenceServerVector : BasicArrayList_Access);
    procedure main (args : Unbounded_String_Array_Access);
 

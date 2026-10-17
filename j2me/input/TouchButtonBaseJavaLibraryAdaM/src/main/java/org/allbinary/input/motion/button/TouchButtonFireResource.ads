@@ -36,7 +36,6 @@ package org.allbinary.input.motion.button.TouchButtonFireResource_Package is
    procedure Initialize (This : in out TouchButtonFireResource'Class);
    function Create return TouchButtonFireResource_Access;
    function getInstance return TouchButtonResource_Access;
-   procedure getInstance;
 
 end org.allbinary.input.motion.button.TouchButtonFireResource_Package;
 

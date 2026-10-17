@@ -40,7 +40,6 @@ package org.allbinary.game.layer.geological.resources.GeologicalResource_Package
    procedure add (This : in out GeologicalResource; value : Integer);
    procedure remove (This : in out GeologicalResource; value : Integer);
    function getTotal (This : in out GeologicalResource) return Integer;
-   procedure getTotal (This : in out GeologicalResource);
    procedure setTotal (This : in out GeologicalResource; total : Integer);
 
 end org.allbinary.game.layer.geological.resources.GeologicalResource_Package;

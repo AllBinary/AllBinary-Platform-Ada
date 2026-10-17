@@ -34,7 +34,7 @@ package body org.allbinary.business.context.configuration.ContextConfiguration_P
    function Create return ContextConfiguration_Access is
       This : constant ContextConfiguration_Access := new ContextConfiguration;
    begin
-      Initialize (This.all);
+      ContextConfiguration_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -49,7 +49,7 @@ package body org.allbinary.business.context.configuration.ContextConfiguration_P
    function Create (hashMap : HashMap_Access) return ContextConfiguration_Access is
       This : constant ContextConfiguration_Access := new ContextConfiguration;
    begin
-      Initialize (This.all, hashMap);
+      ContextConfiguration_Package.Initialize (This.all, hashMap);
       return This;
    end Create;
 
@@ -62,13 +62,6 @@ package body org.allbinary.business.context.configuration.ContextConfiguration_P
    begin
         This.emailServerConfigurationInterface := emailServerConfigurationInterface;
    end setEmailServerConfigurationInterface;
-
-   procedure getEmailServerConfigurationInterface (This : in out ContextConfiguration) is
-      Java_Result : constant EmailServerConfigurationInterface_Access := ContextConfiguration'Class (This).getEmailServerConfigurationInterface;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getEmailServerConfigurationInterface;
 
 end org.allbinary.business.context.configuration.ContextConfiguration_Package;
 

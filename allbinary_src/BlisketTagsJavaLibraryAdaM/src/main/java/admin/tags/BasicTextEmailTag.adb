@@ -34,7 +34,7 @@ package body admin.tags.BasicTextEmailTag_Package is
    function Create return BasicTextEmailTag_Access is
       This : constant BasicTextEmailTag_Access := new BasicTextEmailTag;
    begin
-      Initialize (This.all);
+      BasicTextEmailTag_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -91,20 +91,6 @@ package body admin.tags.BasicTextEmailTag_Package is
             return SKIP_BODY;
                 end;
         end;
-   end doStartTag;
-
-   procedure send (This : in out BasicTextEmailTag) is
-      Java_Result : constant Unbounded_String := BasicTextEmailTag'Class (This).send;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end send;
-
-   procedure doStartTag (This : in out BasicTextEmailTag) is
-      Java_Result : constant Integer := BasicTextEmailTag'Class (This).doStartTag;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end doStartTag;
 
 end admin.tags.BasicTextEmailTag_Package;

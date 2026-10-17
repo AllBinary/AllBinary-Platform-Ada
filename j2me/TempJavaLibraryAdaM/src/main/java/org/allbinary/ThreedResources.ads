@@ -35,7 +35,6 @@ package org.allbinary.ThreedResources_Package is
    procedure Initialize (This : in out ThreedResources'Class);
    function Create return ThreedResources_Access;
    function getThreedResources return ThreedResources_Access;
-   procedure getThreedResources;
    procedure add (This : in out ThreedResources);
 
 end org.allbinary.ThreedResources_Package;

@@ -30,7 +30,7 @@ package body views.admin.inventory.listings.InventoryViewFactory_Package is
    function Create return InventoryViewFactory_Access is
       This : constant InventoryViewFactory_Access := new InventoryViewFactory;
    begin
-      Initialize (This.all);
+      InventoryViewFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

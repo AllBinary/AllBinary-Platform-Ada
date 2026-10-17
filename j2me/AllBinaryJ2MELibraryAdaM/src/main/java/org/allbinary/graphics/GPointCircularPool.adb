@@ -36,7 +36,7 @@ package body org.allbinary.graphics.GPointCircularPool_Package is
    function Create (size : Integer) return GPointCircularPool_Access is
       This : constant GPointCircularPool_Access := new GPointCircularPool;
    begin
-      Initialize (This.all, size);
+      GPointCircularPool_Package.Initialize (This.all, size);
       return This;
    end Create;
 

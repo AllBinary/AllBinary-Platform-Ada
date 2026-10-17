@@ -33,7 +33,7 @@ package body org.allbinary.media.image.comparison.ImageComparisonResultFrameCach
    function Create (imageComparisonResult : ImageComparisonResult_Access; frame : Long_Long_Integer) return ImageComparisonResultFrameCacheable_Access is
       This : constant ImageComparisonResultFrameCacheable_Access := new ImageComparisonResultFrameCacheable;
    begin
-      Initialize (This.all, imageComparisonResult, frame);
+      ImageComparisonResultFrameCacheable_Package.Initialize (This.all, imageComparisonResult, frame);
       return This;
    end Create;
 
@@ -70,34 +70,6 @@ package body org.allbinary.media.image.comparison.ImageComparisonResultFrameCach
         stringBuffer.append (To_Unbounded_String (" Frame: "));
         stringBuffer.appendlong (This.getFrame);
         return stringBuffer.toString;
-   end toString;
-
-   procedure getKey (This : in out ImageComparisonResultFrameCacheable) is
-      Java_Result : constant Java_Object_Access := ImageComparisonResultFrameCacheable'Class (This).getKey;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getKey;
-
-   procedure getFrame (This : in out ImageComparisonResultFrameCacheable) is
-      Java_Result : constant Long_Long_Integer := ImageComparisonResultFrameCacheable'Class (This).getFrame;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getFrame;
-
-   procedure getImageComparisonResult (This : in out ImageComparisonResultFrameCacheable) is
-      Java_Result : constant ImageComparisonResult_Access := ImageComparisonResultFrameCacheable'Class (This).getImageComparisonResult;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getImageComparisonResult;
-
-   procedure toString (This : in out ImageComparisonResultFrameCacheable) is
-      Java_Result : constant Unbounded_String := ImageComparisonResultFrameCacheable'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end toString;
 
 end org.allbinary.media.image.comparison.ImageComparisonResultFrameCacheable_Package;

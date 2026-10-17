@@ -53,7 +53,6 @@ package org.allbinary.game.layer.waypoint.WaypointInfoHudPaintable_Package is
    procedure updateSelectionInfo (This : in out WaypointInfoHudPaintable);
    procedure setRtsLayer (This : in out WaypointInfoHudPaintable; rtsLayer : RTSLayer_Access);
    function getRtsLayer (This : in out WaypointInfoHudPaintable) return PathFindingLayerInterface_Access;
-   procedure getRtsLayer (This : in out WaypointInfoHudPaintable);
    procedure paint (This : in out WaypointInfoHudPaintable; graphics : Graphics_Access);
 
 end org.allbinary.game.layer.waypoint.WaypointInfoHudPaintable_Package;

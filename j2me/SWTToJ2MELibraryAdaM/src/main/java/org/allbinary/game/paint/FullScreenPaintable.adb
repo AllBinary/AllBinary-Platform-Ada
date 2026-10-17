@@ -42,7 +42,7 @@ package body org.allbinary.game.paint.FullScreenPaintable_Package is
    function Create return FullScreenPaintable_Access is
       This : constant FullScreenPaintable_Access := new FullScreenPaintable;
    begin
-      Initialize (This.all);
+      FullScreenPaintable_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -64,13 +64,6 @@ package body org.allbinary.game.paint.FullScreenPaintable_Package is
         height := This.displayInfo.getLastHeight;
         graphics.drawString (This.FULLSCREEN_TEXT, (halfWidth) - (This.beginWidth), (height) - (This.Y), This.anchor);
    end paint;
-
-   procedure getInstance is
-      Java_Result : constant FullScreenPaintable_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 end org.allbinary.game.paint.FullScreenPaintable_Package;
 

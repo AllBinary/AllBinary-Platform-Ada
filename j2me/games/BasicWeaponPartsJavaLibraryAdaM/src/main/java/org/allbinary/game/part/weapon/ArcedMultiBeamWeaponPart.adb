@@ -35,7 +35,7 @@ package body org.allbinary.game.part.weapon.ArcedMultiBeamWeaponPart_Package is
    function Create (animationInterface : Animation_Access; sourceLayerInterface : AllBinaryLayer_Access; weaponLayerCircularStaticPool : WeaponLayerCircularPool_Access; total : Integer; weaponProperties : WeaponProperties_Access; scoreableInterface : ScoreableInterface_Access; relativeRelationship : RelativeRelationship_Access) return ArcedMultiBeamWeaponPart_Access is
       This : constant ArcedMultiBeamWeaponPart_Access := new ArcedMultiBeamWeaponPart;
    begin
-      Initialize (This.all, animationInterface, sourceLayerInterface, weaponLayerCircularStaticPool, total, weaponProperties, scoreableInterface, relativeRelationship);
+      ArcedMultiBeamWeaponPart_Package.Initialize (This.all, animationInterface, sourceLayerInterface, weaponLayerCircularStaticPool, total, weaponProperties, scoreableInterface, relativeRelationship);
       return This;
    end Create;
 

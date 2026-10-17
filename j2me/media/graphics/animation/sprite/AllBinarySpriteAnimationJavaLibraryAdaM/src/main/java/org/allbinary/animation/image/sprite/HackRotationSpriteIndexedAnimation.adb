@@ -34,7 +34,7 @@ package body org.allbinary.animation.image.sprite.HackRotationSpriteIndexedAnima
    function Create (sprite : Sprite_Access; image : Image_Access; angleInfo : AngleInfo_Access; animationBehavior : AnimationBehavior_Access) return HackRotationSpriteIndexedAnimation_Access is
       This : constant HackRotationSpriteIndexedAnimation_Access := new HackRotationSpriteIndexedAnimation;
    begin
-      Initialize (This.all, sprite, image, angleInfo, animationBehavior);
+      HackRotationSpriteIndexedAnimation_Package.Initialize (This.all, sprite, image, angleInfo, animationBehavior);
       return This;
    end Create;
 
@@ -94,34 +94,6 @@ package body org.allbinary.animation.image.sprite.HackRotationSpriteIndexedAnima
    function getSequence (This : in out HackRotationSpriteIndexedAnimation) return Integer_Array_Access is
    begin
         return PrimitiveIntUtil_Package.getArrayInstance;
-   end getSequence;
-
-   procedure getAnimationSize (This : in out HackRotationSpriteIndexedAnimation) is
-      Java_Result : constant Integer := HackRotationSpriteIndexedAnimation'Class (This).getAnimationSize;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getAnimationSize;
-
-   procedure getSize (This : in out HackRotationSpriteIndexedAnimation) is
-      Java_Result : constant Integer := HackRotationSpriteIndexedAnimation'Class (This).getSize;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSize;
-
-   procedure getFrame (This : in out HackRotationSpriteIndexedAnimation) is
-      Java_Result : constant Integer := HackRotationSpriteIndexedAnimation'Class (This).getFrame;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getFrame;
-
-   procedure getSequence (This : in out HackRotationSpriteIndexedAnimation) is
-      Java_Result : constant Integer_Array_Access := HackRotationSpriteIndexedAnimation'Class (This).getSequence;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getSequence;
 
 end org.allbinary.animation.image.sprite.HackRotationSpriteIndexedAnimation_Package;

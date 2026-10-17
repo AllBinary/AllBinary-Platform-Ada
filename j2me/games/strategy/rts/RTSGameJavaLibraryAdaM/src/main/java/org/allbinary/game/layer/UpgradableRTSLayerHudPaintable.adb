@@ -48,7 +48,7 @@ package body org.allbinary.game.layer.UpgradableRTSLayerHudPaintable_Package is
    function Create return UpgradableRTSLayerHudPaintable_Access is
       This : constant UpgradableRTSLayerHudPaintable_Access := new UpgradableRTSLayerHudPaintable;
    begin
-      Initialize (This.all);
+      UpgradableRTSLayerHudPaintable_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -120,20 +120,6 @@ package body org.allbinary.game.layer.UpgradableRTSLayerHudPaintable_Package is
    function getRtsLayer (This : in out UpgradableRTSLayerHudPaintable) return CollidableDestroyableDamageableLayer_Access is
    begin
         return This.rtsLayer;
-   end getRtsLayer;
-
-   procedure getInstance is
-      Java_Result : constant UpgradableRTSLayerHudPaintable_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure getRtsLayer (This : in out UpgradableRTSLayerHudPaintable) is
-      Java_Result : constant CollidableDestroyableDamageableLayer_Access := UpgradableRTSLayerHudPaintable'Class (This).getRtsLayer;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getRtsLayer;
 
 begin

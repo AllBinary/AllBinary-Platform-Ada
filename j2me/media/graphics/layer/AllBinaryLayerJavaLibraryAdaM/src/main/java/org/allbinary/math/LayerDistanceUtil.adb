@@ -29,7 +29,7 @@ package body org.allbinary.math.LayerDistanceUtil_Package is
    function Create return LayerDistanceUtil_Access is
       This : constant LayerDistanceUtil_Access := new LayerDistanceUtil;
    begin
-      Initialize (This.all);
+      LayerDistanceUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -67,13 +67,6 @@ package body org.allbinary.math.LayerDistanceUtil_Package is
         dy := (layerInterface.getYP) - (point.getY);
         return Integer (This.mathUtil.sqrt ((((dx) * (dx))) + (((dy) * (dy)))));
    end getDistanceAt;
-
-   procedure getInstance is
-      Java_Result : constant LayerDistanceUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure getDistance (This : in out LayerDistanceUtil; layerInterface : AllBinaryLayer_Access; layerInterface2 : AllBinaryLayer_Access) is
       Java_Result : constant Integer := LayerDistanceUtil'Class (This).getDistance (layerInterface, layerInterface2);

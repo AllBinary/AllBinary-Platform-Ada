@@ -36,9 +36,7 @@ package org.allbinary.logic.math.PrimitiveIntUtil_Package is
    procedure Initialize (This : in out PrimitiveIntUtil'Class);
    function Create return PrimitiveIntUtil_Access;
    function getArrayInstance return Integer_Array_Access;
-   procedure getArrayInstance;
    function getTwoDimensionalArrayInstance return Integer_Array_Access_Array_Access;
-   procedure getTwoDimensionalArrayInstance;
 
 end org.allbinary.logic.math.PrimitiveIntUtil_Package;
 

@@ -47,9 +47,7 @@ package org.allbinary.data.tables.log.LogTableEntity_Package is
    procedure Initialize (This : in out LogTableEntity'Class);
    function Create return LogTableEntity_Access;
    function createTableStatement (This : in out LogTableEntity) return Unbounded_String;
-   procedure createTableStatement (This : in out LogTableEntity);
    function createTable (This : in out LogTableEntity) return Unbounded_String;
-   procedure createTable (This : in out LogTableEntity);
 
 end org.allbinary.data.tables.log.LogTableEntity_Package;
 

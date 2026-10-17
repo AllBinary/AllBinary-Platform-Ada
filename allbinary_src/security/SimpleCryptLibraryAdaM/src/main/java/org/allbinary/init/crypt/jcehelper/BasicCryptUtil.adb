@@ -31,7 +31,7 @@ package body org.allbinary.init.crypt.jcehelper.BasicCryptUtil_Package is
    function Create return BasicCryptUtil_Access is
       This : constant BasicCryptUtil_Access := new BasicCryptUtil;
    begin
-      Initialize (This.all);
+      BasicCryptUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -66,13 +66,6 @@ package body org.allbinary.init.crypt.jcehelper.BasicCryptUtil_Package is
         end if;
         return ByteArrayInputStream_Package.Create (This.tsUtil.getByteArray (decryptedString));
    end getDecryptedInputStream;
-
-   procedure getInstance is
-      Java_Result : constant BasicCryptUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure getDecryptedInputStream (This : in out BasicCryptUtil; inputStream : InputStream_Access; cryptInterface : CryptInterface_Access) is
       Java_Result : constant InputStream_Access := BasicCryptUtil'Class (This).getDecryptedInputStream (inputStream, cryptInterface);

@@ -66,12 +66,9 @@ package org.allbinary.data.tables.staticpages.StaticPagesEntity_Package is
    procedure getFile (This : in out StaticPagesEntity; store : Unbounded_String; keywords : Unbounded_String);
    procedure delete (This : in out StaticPagesEntity; keywords : Unbounded_String);
    function dropTable (This : in out StaticPagesEntity) return Unbounded_String;
-   procedure dropTable (This : in out StaticPagesEntity);
    procedure update (This : in out StaticPagesEntity; updatedValues : HashMap_Access);
    function createTableStatement (This : in out StaticPagesEntity) return Unbounded_String;
-   procedure createTableStatement (This : in out StaticPagesEntity);
    function createTable (This : in out StaticPagesEntity) return Unbounded_String;
-   procedure createTable (This : in out StaticPagesEntity);
 
 end org.allbinary.data.tables.staticpages.StaticPagesEntity_Package;
 

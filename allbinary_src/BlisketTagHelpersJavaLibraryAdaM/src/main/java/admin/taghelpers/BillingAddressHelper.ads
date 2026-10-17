@@ -69,23 +69,14 @@ package admin.taghelpers.BillingAddressHelper_Package is
    function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return BillingAddressHelper_Access;
    procedure getAddressForm (This : in out BillingAddressHelper);
    function drop (This : in out BillingAddressHelper) return Unbounded_String;
-   procedure drop (This : in out BillingAddressHelper);
    function create (This : in out BillingAddressHelper) return Unbounded_String;
-   procedure create (This : in out BillingAddressHelper);
    function restore (This : in out BillingAddressHelper) return Unbounded_String;
-   procedure restore (This : in out BillingAddressHelper);
    function backup (This : in out BillingAddressHelper) return Unbounded_String;
-   procedure backup (This : in out BillingAddressHelper);
    function insert (This : in out BillingAddressHelper) return Unbounded_String;
-   procedure insert (This : in out BillingAddressHelper);
    function update (This : in out BillingAddressHelper) return Unbounded_String;
-   procedure update (This : in out BillingAddressHelper);
    function setToShippingAddress (This : in out BillingAddressHelper) return Unbounded_String;
-   procedure setToShippingAddress (This : in out BillingAddressHelper);
    function delete (This : in out BillingAddressHelper) return Unbounded_String;
-   procedure delete (This : in out BillingAddressHelper);
    function set (This : in out BillingAddressHelper) return Unbounded_String;
-   procedure set (This : in out BillingAddressHelper);
 
 end admin.taghelpers.BillingAddressHelper_Package;
 

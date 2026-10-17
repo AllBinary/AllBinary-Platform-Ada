@@ -37,7 +37,6 @@ package org.allbinary.logic.visual.dhtml.style.color.ColorData_Package is
    procedure Initialize (This : in out ColorData'Class);
    function Create return ColorData_Access;
    function getInstance return ColorData_Access;
-   procedure getInstance;
 
 end org.allbinary.logic.visual.dhtml.style.color.ColorData_Package;
 

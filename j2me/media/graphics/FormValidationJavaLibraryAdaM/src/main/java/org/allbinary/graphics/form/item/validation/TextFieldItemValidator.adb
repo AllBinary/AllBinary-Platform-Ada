@@ -38,7 +38,7 @@ package body org.allbinary.graphics.form.item.validation.TextFieldItemValidator_
    function Create (textFieldItem : ABTextFieldItem_Access; min : Integer; max : Integer; allowOnEmpty : Boolean) return TextFieldItemValidator_Access is
       This : constant TextFieldItemValidator_Access := new TextFieldItemValidator;
    begin
-      Initialize (This.all, textFieldItem, min, max, allowOnEmpty);
+      TextFieldItemValidator_Package.Initialize (This.all, textFieldItem, min, max, allowOnEmpty);
       return This;
    end Create;
 
@@ -86,20 +86,6 @@ package body org.allbinary.graphics.form.item.validation.TextFieldItemValidator_
             end if;
         end if;
         return list;
-   end toList;
-
-   procedure isValid (This : in out TextFieldItemValidator) is
-      Java_Result : constant Boolean := TextFieldItemValidator'Class (This).isValid;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isValid;
-
-   procedure toList (This : in out TextFieldItemValidator) is
-      Java_Result : constant BasicArrayList_Access := TextFieldItemValidator'Class (This).toList;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end toList;
 
 end org.allbinary.graphics.form.item.validation.TextFieldItemValidator_Package;

@@ -28,7 +28,7 @@ package body org.allbinary.graphics.paint.LocationPaintable_Package is
    function Create return LocationPaintable_Access is
       This : constant LocationPaintable_Access := new LocationPaintable;
    begin
-      Initialize (This.all);
+      LocationPaintable_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -42,13 +42,6 @@ package body org.allbinary.graphics.paint.LocationPaintable_Package is
    begin
         null;
    end paintXY;
-
-   procedure getInstance is
-      Java_Result : constant LocationPaintable_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

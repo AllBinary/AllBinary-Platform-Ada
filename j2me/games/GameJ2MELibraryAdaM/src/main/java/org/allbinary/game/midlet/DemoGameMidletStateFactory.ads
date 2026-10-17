@@ -20,6 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
+with org.allbinary.game.midlet.DemoGameMidletState_Package; use org.allbinary.game.midlet.DemoGameMidletState_Package;
 
 package org.allbinary.game.midlet.DemoGameMidletStateFactory_Package is
 
@@ -40,7 +41,6 @@ package org.allbinary.game.midlet.DemoGameMidletStateFactory_Package is
    procedure Initialize (This : in out DemoGameMidletStateFactory'Class);
    function Create return DemoGameMidletStateFactory_Access;
    function getInstance return DemoGameMidletStateFactory_Access;
-   procedure getInstance;
 
 end org.allbinary.game.midlet.DemoGameMidletStateFactory_Package;
 

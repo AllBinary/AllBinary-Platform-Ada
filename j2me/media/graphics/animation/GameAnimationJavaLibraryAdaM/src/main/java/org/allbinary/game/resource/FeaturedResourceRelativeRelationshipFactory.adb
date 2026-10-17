@@ -32,7 +32,7 @@ package body org.allbinary.game.resource.FeaturedResourceRelativeRelationshipFac
    function Create return FeaturedResourceRelativeRelationshipFactory_Access is
       This : constant FeaturedResourceRelativeRelationshipFactory_Access := new FeaturedResourceRelativeRelationshipFactory;
    begin
-      Initialize (This.all);
+      FeaturedResourceRelativeRelationshipFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -80,13 +80,6 @@ package body org.allbinary.game.resource.FeaturedResourceRelativeRelationshipFac
         end loop;
         return newList;
    end duplicate;
-
-   procedure getInstance is
-      Java_Result : constant FeaturedResourceRelativeRelationshipFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure getRelativeRelationshipList (This : in out FeaturedResourceRelativeRelationshipFactory; resource : Unbounded_String; layer : AllBinaryLayer_Access) is
       Java_Result : constant BasicArrayList_Access := FeaturedResourceRelativeRelationshipFactory'Class (This).getRelativeRelationshipList (resource, layer);

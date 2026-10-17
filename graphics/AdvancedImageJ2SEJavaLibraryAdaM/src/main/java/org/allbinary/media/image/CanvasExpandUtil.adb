@@ -30,7 +30,7 @@ package body org.allbinary.media.image.CanvasExpandUtil_Package is
    function Create return CanvasExpandUtil_Access is
       This : constant CanvasExpandUtil_Access := new CanvasExpandUtil;
    begin
-      Initialize (This.all);
+      CanvasExpandUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -60,13 +60,6 @@ package body org.allbinary.media.image.CanvasExpandUtil_Package is
             visitor.visit (subBufferedImageArray (index), This.stringUtil.EMPTY_STRING, index);
         end loop;
    end process;
-
-   procedure getInstance is
-      Java_Result : constant CanvasExpandUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

@@ -38,7 +38,7 @@ package body org.allbinary.game.identification.BasicGroupFactory_Package is
    function Create return BasicGroupFactory_Access is
       This : constant BasicGroupFactory_Access := new BasicGroupFactory;
    begin
-      Initialize (This.all);
+      BasicGroupFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -49,13 +49,6 @@ package body org.allbinary.game.identification.BasicGroupFactory_Package is
             BasicGroupFactory_Package.instance := BasicGroupFactory_Package.Create;
         end if;
         return BasicGroupFactory_Access (BasicGroupFactory_Package.instance);
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant BasicGroupFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

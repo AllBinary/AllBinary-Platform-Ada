@@ -217,7 +217,7 @@ package body org.allbinary.game.input.ABKeyEventWrapper_Package is
    function Create return ABKeyEventWrapper_Access is
       This : constant ABKeyEventWrapper_Access := new ABKeyEventWrapper;
    begin
-      Initialize (This.all);
+      ABKeyEventWrapper_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -225,13 +225,6 @@ package body org.allbinary.game.input.ABKeyEventWrapper_Package is
    function getInstance return ABKeyEventWrapper_Access is
    begin
         return ABKeyEventWrapper_Package.instance;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant ABKeyEventWrapper_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

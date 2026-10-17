@@ -36,7 +36,7 @@ package body views.business.context.HttpContextView_Package is
    function Create (transformInfoInterface : TransformInfoInterface_Access) return HttpContextView_Access is
       This : constant HttpContextView_Access := new HttpContextView;
    begin
-      Initialize (This.all, transformInfoInterface);
+      HttpContextView_Package.Initialize (This.all, transformInfoInterface);
       return This;
    end Create;
 
@@ -61,13 +61,6 @@ package body views.business.context.HttpContextView_Package is
             Java_Throw (e);
                 end;
         end;
-   end view;
-
-   procedure view (This : in out HttpContextView) is
-      Java_Result : constant Unbounded_String := HttpContextView'Class (This).view;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end view;
 
 end views.business.context.HttpContextView_Package;

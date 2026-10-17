@@ -54,11 +54,8 @@ package org.allbinary.logic.visual.transform.data.TransformDocument_Package is
    procedure Initialize (This : in out TransformDocument'Class);
    function Create return TransformDocument_Access;
    function getBaseNode (This : in out TransformDocument) return Node_Access;
-   procedure getBaseNode (This : in out TransformDocument);
    function getDoc (This : in out TransformDocument) return Document_Access;
-   procedure getDoc (This : in out TransformDocument);
    function log (This : in out TransformDocument) return Unbounded_String;
-   procedure log (This : in out TransformDocument);
 
 end org.allbinary.logic.visual.transform.data.TransformDocument_Package;
 

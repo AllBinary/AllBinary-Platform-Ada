@@ -27,6 +27,7 @@ with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface
 with org.allbinary.logic.system.security.licensing.LicensingException_Package; use org.allbinary.logic.system.security.licensing.LicensingException_Package;
 with org.allbinary.logic.visual.transform.TransformInterface_Package; use org.allbinary.logic.visual.transform.TransformInterface_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
 
 package org.allbinary.logic.visual.transform.info.TransformInfoObjectFactory_Package is
 
@@ -51,7 +52,6 @@ package org.allbinary.logic.visual.transform.info.TransformInfoObjectFactory_Pac
    procedure Initialize (This : in out TransformInfoObjectFactory'Class);
    function Create return TransformInfoObjectFactory_Access;
    function getInstance return TransformInfoObjectFactory_Access;
-   procedure getInstance;
    function getInstance (This : in out TransformInfoObjectFactory; abeClientInformation : AbeClientInformationInterface_Access; transformInfoInterface : TransformInfoInterface_Access) return TransformInterface_Access;
    procedure getInstance (This : in out TransformInfoObjectFactory; abeClientInformation : AbeClientInformationInterface_Access; transformInfoInterface : TransformInfoInterface_Access);
 

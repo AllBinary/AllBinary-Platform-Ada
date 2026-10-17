@@ -31,7 +31,7 @@ package body admin.taghelpers.HelperFactory_Package is
    function Create return HelperFactory_Access is
       This : constant HelperFactory_Access := new HelperFactory;
    begin
-      Initialize (This.all);
+      HelperFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

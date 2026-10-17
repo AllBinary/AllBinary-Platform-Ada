@@ -53,7 +53,7 @@ package body org.allbinary.graphics.displayable.screen.CommandForm_Package is
    function Create (commandListener : CommandListener_Access; formTitle : Unbounded_String; backgrounBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access) return CommandForm_Access is
       This : constant CommandForm_Access := new CommandForm;
    begin
-      Initialize (This.all, commandListener, formTitle, backgrounBasicColor, foregroundBasicColor);
+      CommandForm_Package.Initialize (This.all, commandListener, formTitle, backgrounBasicColor, foregroundBasicColor);
       return This;
    end Create;
 
@@ -99,20 +99,6 @@ package body org.allbinary.graphics.displayable.screen.CommandForm_Package is
             Form (This).removeCommand (Command_Access (This.commandStack.pop));
         end loop;
    end removeAllCommands;
-
-   procedure getNullCommandForm is
-      Java_Result : constant CommandForm_Access := getNullCommandForm;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getNullCommandForm;
-
-   procedure getSourceId (This : in out CommandForm) is
-      Java_Result : constant Integer := CommandForm'Class (This).getSourceId;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSourceId;
 
 begin
    null;

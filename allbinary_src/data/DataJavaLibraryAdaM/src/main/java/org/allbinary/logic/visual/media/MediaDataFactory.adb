@@ -48,7 +48,7 @@ package body org.allbinary.logic.visual.media.MediaDataFactory_Package is
    function Create return MediaDataFactory_Access is
       This : constant MediaDataFactory_Access := new MediaDataFactory;
    begin
-      Initialize (This.all);
+      MediaDataFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -56,13 +56,6 @@ package body org.allbinary.logic.visual.media.MediaDataFactory_Package is
    function getInstance return MediaDataFactory_Access is
    begin
         return MediaDataFactory_Package.instance;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant MediaDataFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

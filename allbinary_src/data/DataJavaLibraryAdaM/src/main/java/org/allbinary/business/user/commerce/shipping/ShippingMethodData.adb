@@ -30,7 +30,7 @@ package body org.allbinary.business.user.commerce.shipping.ShippingMethodData_Pa
    function Create return ShippingMethodData_Access is
       This : constant ShippingMethodData_Access := new ShippingMethodData;
    begin
-      Initialize (This.all);
+      ShippingMethodData_Package.Initialize (This.all);
       return This;
    end Create;
 

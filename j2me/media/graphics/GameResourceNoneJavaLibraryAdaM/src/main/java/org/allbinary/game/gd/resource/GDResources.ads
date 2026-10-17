@@ -38,7 +38,6 @@ package org.allbinary.game.gd.resource.GDResources_Package is
    procedure Initialize (This : in out GDResources'Class);
    function Create return GDResources_Access;
    function getInstance return GDResources_Access;
-   procedure getInstance;
 
 end org.allbinary.game.gd.resource.GDResources_Package;
 

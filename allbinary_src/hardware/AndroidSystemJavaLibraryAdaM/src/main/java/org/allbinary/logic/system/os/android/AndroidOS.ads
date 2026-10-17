@@ -24,6 +24,7 @@ with org.allbinary.android.AndroidInfoFactory_Package; use org.allbinary.android
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.system.os.GenericOperatingSystem_Package; use org.allbinary.logic.system.os.GenericOperatingSystem_Package;
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.system.os.android.AndroidSystemProperties_Package; use org.allbinary.logic.system.os.android.AndroidSystemProperties_Package;
 
 package org.allbinary.logic.system.os.android.AndroidOS_Package is
 
@@ -48,13 +49,9 @@ package org.allbinary.logic.system.os.android.AndroidOS_Package is
    procedure Initialize (This : in out AndroidOS'Class);
    function Create return AndroidOS_Access;
    function isOverScan (This : in out AndroidOS) return Boolean;
-   procedure isOverScan (This : in out AndroidOS);
    function getOverScanXPercent (This : in out AndroidOS) return Integer;
-   procedure getOverScanXPercent (This : in out AndroidOS);
    function getOverScanYPercent (This : in out AndroidOS) return Integer;
-   procedure getOverScanYPercent (This : in out AndroidOS);
    function toString (This : in out AndroidOS) return Unbounded_String;
-   procedure toString (This : in out AndroidOS);
 
 end org.allbinary.logic.system.os.android.AndroidOS_Package;
 

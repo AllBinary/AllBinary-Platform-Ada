@@ -32,7 +32,7 @@ package body org.allbinary.game.input.event.UpGameKeyEventHandlerBase_Package is
    function Create return UpGameKeyEventHandlerBase_Access is
       This : constant UpGameKeyEventHandlerBase_Access := new UpGameKeyEventHandlerBase;
    begin
-      Initialize (This.all);
+      UpGameKeyEventHandlerBase_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -117,13 +117,6 @@ package body org.allbinary.game.input.event.UpGameKeyEventHandlerBase_Package is
             end;
         end loop;
         return stringBuffer.toString;
-   end toString;
-
-   procedure toString (This : in out UpGameKeyEventHandlerBase) is
-      Java_Result : constant Unbounded_String := UpGameKeyEventHandlerBase'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end toString;
 
 begin

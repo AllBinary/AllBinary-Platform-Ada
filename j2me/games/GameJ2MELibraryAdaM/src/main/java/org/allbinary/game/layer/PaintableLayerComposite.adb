@@ -32,7 +32,7 @@ package body org.allbinary.game.layer.PaintableLayerComposite_Package is
    function Create (paintableArray : Layer_Access_Array_Access) return PaintableLayerComposite_Access is
       This : constant PaintableLayerComposite_Access := new PaintableLayerComposite;
    begin
-      Initialize (This.all, paintableArray);
+      PaintableLayerComposite_Package.Initialize (This.all, paintableArray);
       return This;
    end Create;
 

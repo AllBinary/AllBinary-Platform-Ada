@@ -35,7 +35,7 @@ package body org.allbinary.physics.movement.ConstantVelocityNotifyViewChangeMove
    function Create return ConstantVelocityNotifyViewChangeMovement_Access is
       This : constant ConstantVelocityNotifyViewChangeMovement_Access := new ConstantVelocityNotifyViewChangeMovement;
    begin
-      Initialize (This.all);
+      ConstantVelocityNotifyViewChangeMovement_Package.Initialize (This.all);
       return This;
    end Create;
 

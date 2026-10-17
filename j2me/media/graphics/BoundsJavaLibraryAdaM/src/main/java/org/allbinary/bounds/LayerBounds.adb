@@ -32,7 +32,7 @@ package body org.allbinary.bounds.LayerBounds_Package is
    function Create (rectangle : Rectangle_Access) return LayerBounds_Access is
       This : constant LayerBounds_Access := new LayerBounds;
    begin
-      Initialize (This.all, rectangle);
+      LayerBounds_Package.Initialize (This.all, rectangle);
       return This;
    end Create;
 
@@ -55,13 +55,6 @@ package body org.allbinary.bounds.LayerBounds_Package is
    begin
         This.rectangle := boundsChangeEvent.getRectangle;
    end onBoundsChangeEvent;
-
-   procedure getRectangleP (This : in out LayerBounds) is
-      Java_Result : constant Rectangle_Access := LayerBounds'Class (This).getRectangleP;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getRectangleP;
 
 end org.allbinary.bounds.LayerBounds_Package;
 

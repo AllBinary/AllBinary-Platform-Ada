@@ -29,7 +29,7 @@ package body org.allbinary.logic.control.validate.Validation_Package is
    function Create return Validation_Access is
       This : constant Validation_Access := new Validation;
    begin
-      Initialize (This.all);
+      Validation_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -58,33 +58,12 @@ package body org.allbinary.logic.control.validate.Validation_Package is
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end validationInfo;
 
-   procedure isValid (This : in out Validation) is
-      Java_Result : constant Boolean := Validation'Class (This).isValid;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isValid;
-
    procedure toValidationInfoNode (This : in out Validation; document : Document_Access) is
       Java_Result : constant Node_Access := Validation'Class (This).toValidationInfoNode (document);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end toValidationInfoNode;
-
-   procedure toValidationInfoDoc (This : in out Validation) is
-      Java_Result : constant Document_Access := Validation'Class (This).toValidationInfoDoc;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toValidationInfoDoc;
-
-   procedure validationInfo (This : in out Validation) is
-      Java_Result : constant Unbounded_String := Validation'Class (This).validationInfo;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end validationInfo;
 
 end org.allbinary.logic.control.validate.Validation_Package;
 

@@ -26,6 +26,9 @@ with org.allbinary.input.media.image.InputImageType_Package; use org.allbinary.i
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.input.automation.module.actions.script.condition.processors.output.JPanel_Package; use org.allbinary.input.automation.module.actions.script.condition.processors.output.JPanel_Package;
+with org.allbinary.input.automation.module.actions.script.condition.processors.output.ImageActionScriptOutputInterface_Package; use org.allbinary.input.automation.module.actions.script.condition.processors.output.ImageActionScriptOutputInterface_Package;
+with org.allbinary.input.automation.module.actions.script.condition.processors.output.ImageTypes_Package; use org.allbinary.input.automation.module.actions.script.condition.processors.output.ImageTypes_Package;
+with org.allbinary.input.automation.module.actions.script.condition.processors.output.DefaultListModel_Package; use org.allbinary.input.automation.module.actions.script.condition.processors.output.DefaultListModel_Package;
 
 package org.allbinary.input.automation.module.actions.script.condition.processors.output.ImageActionScriptOutputJPanel_Package is
 
@@ -61,7 +64,6 @@ package org.allbinary.input.automation.module.actions.script.condition.processor
    procedure update (This : in out ImageActionScriptOutputJPanel);
    procedure setImageTypeJlistModel (This : in out ImageActionScriptOutputJPanel);
    function getCapturedImageActionJDialog (This : in out ImageActionScriptOutputJPanel) return JDialog_Access;
-   procedure getCapturedImageActionJDialog (This : in out ImageActionScriptOutputJPanel);
    procedure setCapturedImageActionJDialog (This : in out ImageActionScriptOutputJPanel; capturedImageActionJDialog : JDialog_Access);
    procedure initComponents (This : in out ImageActionScriptOutputJPanel);
    procedure displayJCheckBoxActionPerformed (This : in out ImageActionScriptOutputJPanel; evt : ActionEvent_Access);

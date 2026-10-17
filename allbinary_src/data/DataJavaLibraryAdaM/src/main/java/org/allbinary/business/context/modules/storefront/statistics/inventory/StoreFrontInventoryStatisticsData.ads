@@ -39,7 +39,6 @@ package org.allbinary.business.context.modules.storefront.statistics.inventory.S
    procedure Initialize (This : in out StoreFrontInventoryStatisticsData'Class);
    function Create return StoreFrontInventoryStatisticsData_Access;
    function getInstance return StoreFrontInventoryStatisticsData_Access;
-   procedure getInstance;
 
 end org.allbinary.business.context.modules.storefront.statistics.inventory.StoreFrontInventoryStatisticsData_Package;
 

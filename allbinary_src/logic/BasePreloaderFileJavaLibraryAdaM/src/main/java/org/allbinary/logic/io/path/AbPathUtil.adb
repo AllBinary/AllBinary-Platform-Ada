@@ -29,7 +29,7 @@ package body org.allbinary.logic.io.path.AbPathUtil_Package is
    function Create return AbPathUtil_Access is
       This : constant AbPathUtil_Access := new AbPathUtil;
    begin
-      Initialize (This.all);
+      AbPathUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -37,13 +37,6 @@ package body org.allbinary.logic.io.path.AbPathUtil_Package is
    function getInstance return AbPathUtil_Access is
    begin
         return AbPathUtil_Package.instance;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant AbPathUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

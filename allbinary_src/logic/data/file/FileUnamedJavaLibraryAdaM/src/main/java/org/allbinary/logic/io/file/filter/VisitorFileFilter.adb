@@ -31,7 +31,7 @@ package body org.allbinary.logic.io.file.filter.VisitorFileFilter_Package is
    function Create (booleanVisitorInterface : VisitorInterface_Access) return VisitorFileFilter_Access is
       This : constant VisitorFileFilter_Access := new VisitorFileFilter;
    begin
-      Initialize (This.all, booleanVisitorInterface);
+      VisitorFileFilter_Package.Initialize (This.all, booleanVisitorInterface);
       return This;
    end Create;
 

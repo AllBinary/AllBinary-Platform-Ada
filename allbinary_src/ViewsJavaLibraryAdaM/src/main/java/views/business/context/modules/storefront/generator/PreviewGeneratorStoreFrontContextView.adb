@@ -31,7 +31,7 @@ package body views.business.context.modules.storefront.generator.PreviewGenerato
    function Create (transformInfoInterface : TransformInfoInterface_Access) return PreviewGeneratorStoreFrontContextView_Access is
       This : constant PreviewGeneratorStoreFrontContextView_Access := new PreviewGeneratorStoreFrontContextView;
    begin
-      Initialize (This.all, transformInfoInterface);
+      PreviewGeneratorStoreFrontContextView_Package.Initialize (This.all, transformInfoInterface);
       return This;
    end Create;
 
@@ -54,13 +54,6 @@ package body views.business.context.modules.storefront.generator.PreviewGenerato
             Java_Throw (e);
                 end;
         end;
-   end view;
-
-   procedure view (This : in out PreviewGeneratorStoreFrontContextView) is
-      Java_Result : constant Unbounded_String := PreviewGeneratorStoreFrontContextView'Class (This).view;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end view;
 
 end views.business.context.modules.storefront.generator.PreviewGeneratorStoreFrontContextView_Package;

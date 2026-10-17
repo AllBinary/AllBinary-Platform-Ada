@@ -68,19 +68,12 @@ package org.allbinary.business.user.commerce.inventory.item.Item_Package is
    procedure setShippingAddress (This : in out Item; value : StreetAddress_Access);
    procedure setSpecial (This : in out Item; value : Unbounded_String);
    function getGroup (This : in out Item) return Unbounded_String;
-   procedure getGroup (This : in out Item);
    function getTax (This : in out Item) return Unbounded_String;
-   procedure getTax (This : in out Item);
    function getShippingType (This : in out Item) return Unbounded_String;
-   procedure getShippingType (This : in out Item);
    function getShippingCost (This : in out Item) return Unbounded_String;
-   procedure getShippingCost (This : in out Item);
    function getShippingAddress (This : in out Item) return StreetAddress_Access;
-   procedure getShippingAddress (This : in out Item);
    function getSpecial (This : in out Item) return Unbounded_String;
-   procedure getSpecial (This : in out Item);
    function toHashMap (This : in out Item) return HashMap_Access;
-   procedure toHashMap (This : in out Item);
 
 end org.allbinary.business.user.commerce.inventory.item.Item_Package;
 

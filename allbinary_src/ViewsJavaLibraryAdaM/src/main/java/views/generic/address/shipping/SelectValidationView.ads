@@ -45,11 +45,8 @@ package views.generic_Id.address.shipping.SelectValidationView_Package is
    procedure Initialize (This : in out SelectValidationView'Class; transformInfoInterface : TransformInfoInterface_Access);
    function Create (transformInfoInterface : TransformInfoInterface_Access) return SelectValidationView_Access;
    function isValid (This : in out SelectValidationView) return Boolean;
-   procedure isValid (This : in out SelectValidationView);
    function validationInfo (This : in out SelectValidationView) return Unbounded_String;
-   procedure validationInfo (This : in out SelectValidationView);
    function toValidationInfoDoc (This : in out SelectValidationView) return Document_Access;
-   procedure toValidationInfoDoc (This : in out SelectValidationView);
    function toValidationInfoNode (This : in out SelectValidationView; document : Document_Access) return Node_Access;
    procedure toValidationInfoNode (This : in out SelectValidationView; document : Document_Access);
 

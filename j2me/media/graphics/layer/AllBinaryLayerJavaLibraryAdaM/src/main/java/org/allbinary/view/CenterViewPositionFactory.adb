@@ -29,7 +29,7 @@ package body org.allbinary.view.CenterViewPositionFactory_Package is
    function Create return CenterViewPositionFactory_Access is
       This : constant CenterViewPositionFactory_Access := new CenterViewPositionFactory;
    begin
-      Initialize (This.all);
+      CenterViewPositionFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

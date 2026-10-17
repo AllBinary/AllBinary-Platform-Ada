@@ -35,7 +35,7 @@ package body org.allbinary.animation.text.CustomTextBoxIndexedAnimation_Package 
    function Create (customTextBox : CustomTextBox_Access) return CustomTextBoxIndexedAnimation_Access is
       This : constant CustomTextBoxIndexedAnimation_Access := new CustomTextBoxIndexedAnimation;
    begin
-      Initialize (This.all, customTextBox);
+      CustomTextBoxIndexedAnimation_Package.Initialize (This.all, customTextBox);
       return This;
    end Create;
 
@@ -96,20 +96,6 @@ package body org.allbinary.animation.text.CustomTextBoxIndexedAnimation_Package 
    begin
         null;
    end paintThreedXYZ;
-
-   procedure getText (This : in out CustomTextBoxIndexedAnimation) is
-      Java_Result : constant Unbounded_String := CustomTextBoxIndexedAnimation'Class (This).getText;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getText;
-
-   procedure getFontHeight (This : in out CustomTextBoxIndexedAnimation) is
-      Java_Result : constant Integer := CustomTextBoxIndexedAnimation'Class (This).getFontHeight;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getFontHeight;
 
 end org.allbinary.animation.text.CustomTextBoxIndexedAnimation_Package;
 

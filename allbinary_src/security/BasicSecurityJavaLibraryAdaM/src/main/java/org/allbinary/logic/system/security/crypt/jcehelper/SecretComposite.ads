@@ -43,12 +43,12 @@ package org.allbinary.logic.system.security.crypt.jcehelper.SecretComposite_Pack
 
    procedure Initialize (This : in out SecretComposite'Class; secretKey : SecretKey_Access; cipher : Cipher_Access; key : Short_Short_Integer_Array_Access);
    function Create (secretKey : SecretKey_Access; cipher : Cipher_Access; key : Short_Short_Integer_Array_Access) return SecretComposite_Access;
-   function encrypt (This : in out SecretComposite; array_Id : Short_Short_Integer_Array_Access) return Short_Short_Integer_Array_Access;
-   procedure encrypt (This : in out SecretComposite; array_Id : Short_Short_Integer_Array_Access);
+   function encrypt (This : in out SecretComposite; array_Id_Param : Short_Short_Integer_Array_Access) return Short_Short_Integer_Array_Access;
+   procedure encrypt (This : in out SecretComposite; array_Id_Param : Short_Short_Integer_Array_Access);
    function decrypt (This : in out SecretComposite; array_Id : Short_Short_Integer_Array_Access) return Short_Short_Integer_Array_Access;
    procedure decrypt (This : in out SecretComposite; array_Id : Short_Short_Integer_Array_Access);
-   function mutilate (This : in out SecretComposite; array_Id : Short_Short_Integer_Array_Access) return Short_Short_Integer_Array_Access;
-   procedure mutilate (This : in out SecretComposite; array_Id : Short_Short_Integer_Array_Access);
+   function mutilate (This : in out SecretComposite; array_Id_Param : Short_Short_Integer_Array_Access) return Short_Short_Integer_Array_Access;
+   procedure mutilate (This : in out SecretComposite; array_Id_Param : Short_Short_Integer_Array_Access);
 
 end org.allbinary.logic.system.security.crypt.jcehelper.SecretComposite_Package;
 

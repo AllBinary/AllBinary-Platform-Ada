@@ -22,6 +22,7 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.data.tables.user.commerce.inventory.item.permissions.PermissionItemsEntity_Package; use org.allbinary.data.tables.user.commerce.inventory.item.permissions.PermissionItemsEntity_Package;
 
 package org.allbinary.data.tables.user.commerce.inventory.item.permissions.PermissionItemsEntityFactory_Package is
 
@@ -41,9 +42,7 @@ package org.allbinary.data.tables.user.commerce.inventory.item.permissions.Permi
    procedure Initialize (This : in out PermissionItemsEntityFactory'Class);
    function Create return PermissionItemsEntityFactory_Access;
    function getInstance return PermissionItemsEntityFactory_Access;
-   procedure getInstance;
    function getPermissionItemsEntityInstance return PermissionItemsEntity_Access;
-   procedure getPermissionItemsEntityInstance;
 
 end org.allbinary.data.tables.user.commerce.inventory.item.permissions.PermissionItemsEntityFactory_Package;
 

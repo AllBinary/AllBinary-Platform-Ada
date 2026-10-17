@@ -23,6 +23,7 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.input.event.GameKeyEvent_Package; use org.allbinary.game.input.event.GameKeyEvent_Package;
 with org.allbinary.layer.AllBinaryLayerManager_Package; use org.allbinary.layer.AllBinaryLayerManager_Package;
 with org.allbinary.game.input.SelectedRTSLayersPlayerGameInputProcessor_Package; use org.allbinary.game.input.SelectedRTSLayersPlayerGameInputProcessor_Package;
+with org.allbinary.game.input.SelectedRTSLayersPlayerGameInput_Package; use org.allbinary.game.input.SelectedRTSLayersPlayerGameInput_Package;
 
 package org.allbinary.game.input.SelectedRTSLayersPlayerUpgradeGameInputProcessor_Package is
 

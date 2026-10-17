@@ -42,10 +42,8 @@ package org.allbinary.input.automation.module.game.skill.GameSkillType_Package i
    procedure Initialize (This : in out GameSkillType'Class; name : Unbounded_String);
    function Create (name : Unbounded_String) return GameSkillType_Access;
    function getName (This : in out GameSkillType) return Unbounded_String;
-   procedure getName (This : in out GameSkillType);
    procedure setName (This : in out GameSkillType; name : Unbounded_String);
    function toString (This : in out GameSkillType) return Unbounded_String;
-   procedure toString (This : in out GameSkillType);
 
 end org.allbinary.input.automation.module.game.skill.GameSkillType_Package;
 

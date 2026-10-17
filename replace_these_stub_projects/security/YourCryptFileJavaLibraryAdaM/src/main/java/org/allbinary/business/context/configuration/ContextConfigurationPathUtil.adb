@@ -16,7 +16,7 @@ package body org.allbinary.business.context.configuration.ContextConfigurationPa
    function Create return ContextConfigurationPathUtil_Access is
       This : constant ContextConfigurationPathUtil_Access := new ContextConfigurationPathUtil;
    begin
-      Initialize (This.all);
+      ContextConfigurationPathUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -57,13 +57,6 @@ package body org.allbinary.business.context.configuration.ContextConfigurationPa
    begin
       null;
    end getAbPath;
-
-   procedure getPath is
-      Java_Result : constant Unbounded_String := getPath;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getPath;
 
    procedure getFileName (contextName : Unbounded_String) is
       Java_Result : constant Unbounded_String := getFileName (contextName);

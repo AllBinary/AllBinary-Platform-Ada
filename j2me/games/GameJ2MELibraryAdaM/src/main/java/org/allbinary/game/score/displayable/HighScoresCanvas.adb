@@ -58,7 +58,7 @@ package body org.allbinary.game.score.displayable.HighScoresCanvas_Package is
    function Create (commandListener : CommandListener_Access; allBinaryGameLayerManager : AllBinaryGameLayerManager_Access; gameInfo : GameInfo_Access; paintable : HighScoresPaintable_Access; highScoresFactoryInterface : HighScoresFactoryInterface_Access; highScoresCanvasInputProcessorFactoryInterface : HighScoresCanvasInputProcessorFactoryInterface_Access) return HighScoresCanvas_Access is
       This : constant HighScoresCanvas_Access := new HighScoresCanvas;
    begin
-      Initialize (This.all, commandListener, allBinaryGameLayerManager, gameInfo, paintable, highScoresFactoryInterface, highScoresCanvasInputProcessorFactoryInterface);
+      HighScoresCanvas_Package.Initialize (This.all, commandListener, allBinaryGameLayerManager, gameInfo, paintable, highScoresFactoryInterface, highScoresCanvasInputProcessorFactoryInterface);
       return This;
    end Create;
 
@@ -177,20 +177,6 @@ package body org.allbinary.game.score.displayable.HighScoresCanvas_Package is
         This.paintable := paintable;
         This.repaintBehavior.onChangeRepaint (This'Unchecked_Access);
    end setPaintable;
-
-   procedure getHighScoresPaintable (This : in out HighScoresCanvas) is
-      Java_Result : constant HighScoresPaintable_Access := HighScoresCanvas'Class (This).getHighScoresPaintable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getHighScoresPaintable;
-
-   procedure getGameInfo (This : in out HighScoresCanvas) is
-      Java_Result : constant GameInfo_Access := HighScoresCanvas'Class (This).getGameInfo;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getGameInfo;
 
 begin
    null;

@@ -29,7 +29,7 @@ package body org.allbinary.logic.communication.java.vm.stats.JvmStatisticsView_P
    function Create return JvmStatisticsView_Access is
       This : constant JvmStatisticsView_Access := new JvmStatisticsView;
    begin
-      Initialize (This.all);
+      JvmStatisticsView_Package.Initialize (This.all);
       return This;
    end Create;
 

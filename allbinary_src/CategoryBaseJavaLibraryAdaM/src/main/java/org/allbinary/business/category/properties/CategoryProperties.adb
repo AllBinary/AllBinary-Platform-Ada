@@ -32,7 +32,7 @@ package body org.allbinary.business.category.properties.CategoryProperties_Packa
    function Create (name : Unbounded_String) return CategoryProperties_Access is
       This : constant CategoryProperties_Access := new CategoryProperties;
    begin
-      Initialize (This.all, name);
+      CategoryProperties_Package.Initialize (This.all, name);
       return This;
    end Create;
 
@@ -46,7 +46,7 @@ package body org.allbinary.business.category.properties.CategoryProperties_Packa
    function Create (node : Node_Access) return CategoryProperties_Access is
       This : constant CategoryProperties_Access := new CategoryProperties;
    begin
-      Initialize (This.all, node);
+      CategoryProperties_Package.Initialize (This.all, node);
       return This;
    end Create;
 
@@ -60,7 +60,7 @@ package body org.allbinary.business.category.properties.CategoryProperties_Packa
    function Create (categoryPropertiesHashMap : HashMap_Access) return CategoryProperties_Access is
       This : constant CategoryProperties_Access := new CategoryProperties;
    begin
-      Initialize (This.all, categoryPropertiesHashMap);
+      CategoryProperties_Package.Initialize (This.all, categoryPropertiesHashMap);
       return This;
    end Create;
 
@@ -193,34 +193,6 @@ package body org.allbinary.business.category.properties.CategoryProperties_Packa
         return Null_Unbounded_String;
    end validationInfo;
 
-   procedure isRealRoot (This : in out CategoryProperties) is
-      Java_Result : constant Boolean := CategoryProperties'Class (This).isRealRoot;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isRealRoot;
-
-   procedure isRoot (This : in out CategoryProperties) is
-      Java_Result : constant Boolean := CategoryProperties'Class (This).isRoot;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isRoot;
-
-   procedure getKey (This : in out CategoryProperties) is
-      Java_Result : constant Java_Object_Access := CategoryProperties'Class (This).getKey;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getKey;
-
-   procedure getValue (This : in out CategoryProperties) is
-      Java_Result : constant Unbounded_String := CategoryProperties'Class (This).getValue;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getValue;
-
    procedure getPath (This : in out CategoryProperties; categoryHierarchyInterface : CategoryHierarchyInterface_Access) is
       Java_Result : constant AbPath_Access := CategoryProperties'Class (This).getPath (categoryHierarchyInterface);
       pragma Unreferenced (Java_Result);
@@ -228,61 +200,12 @@ package body org.allbinary.business.category.properties.CategoryProperties_Packa
       null;
    end getPath;
 
-   procedure getFileName (This : in out CategoryProperties) is
-      Java_Result : constant Unbounded_String := CategoryProperties'Class (This).getFileName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getFileName;
-
-   procedure getWebAppPath (This : in out CategoryProperties) is
-      Java_Result : constant AbPath_Access := CategoryProperties'Class (This).getWebAppPath;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getWebAppPath;
-
-   procedure isValid (This : in out CategoryProperties) is
-      Java_Result : constant Boolean := CategoryProperties'Class (This).isValid;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isValid;
-
-   procedure toHashMap (This : in out CategoryProperties) is
-      Java_Result : constant HashMap_Access := CategoryProperties'Class (This).toHashMap;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toHashMap;
-
-   procedure toVector (This : in out CategoryProperties) is
-      Java_Result : constant BasicArrayList_Access := CategoryProperties'Class (This).toVector;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toVector;
-
-   procedure toValidationInfoDoc (This : in out CategoryProperties) is
-      Java_Result : constant Document_Access := CategoryProperties'Class (This).toValidationInfoDoc;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toValidationInfoDoc;
-
    procedure toValidationInfoNode (This : in out CategoryProperties; document : Document_Access) is
       Java_Result : constant Node_Access := CategoryProperties'Class (This).toValidationInfoNode (document);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end toValidationInfoNode;
-
-   procedure validationInfo (This : in out CategoryProperties) is
-      Java_Result : constant Unbounded_String := CategoryProperties'Class (This).validationInfo;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end validationInfo;
 
 begin
    null;

@@ -33,6 +33,8 @@ with org.allbinary.logic.io.path.AbPath_Package; use org.allbinary.logic.io.path
 with org.allbinary.logic.io.path.AbPathData_Package; use org.allbinary.logic.io.path.AbPathData_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.visual.transform.info.template.TransformInfoTemplateData_Package; use org.allbinary.logic.visual.transform.info.template.TransformInfoTemplateData_Package;
+with org.allbinary.data.tree.dom.URIResolverStrings_Package; use org.allbinary.data.tree.dom.URIResolverStrings_Package;
+with org.allbinary.data.tree.dom.BasicUriResolver_Package; use org.allbinary.data.tree.dom.BasicUriResolver_Package;
 
 package org.allbinary.data.tree.dom.ContextUriResolver_Package is
 
@@ -62,7 +64,6 @@ package org.allbinary.data.tree.dom.ContextUriResolver_Package is
    function resolve (This : in out ContextUriResolver; href : Unbounded_String; base : Unbounded_String) return Source_Access;
    procedure resolve (This : in out ContextUriResolver; href : Unbounded_String; base : Unbounded_String);
    function toString (This : in out ContextUriResolver) return Unbounded_String;
-   procedure toString (This : in out ContextUriResolver);
 
 end org.allbinary.data.tree.dom.ContextUriResolver_Package;
 

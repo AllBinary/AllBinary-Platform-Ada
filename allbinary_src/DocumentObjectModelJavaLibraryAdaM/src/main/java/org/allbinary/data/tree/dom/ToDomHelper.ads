@@ -35,8 +35,8 @@ package org.allbinary.data.tree.dom.ToDomHelper_Package is
 
    procedure Initialize (This : in out ToDomHelper'Class);
    function Create return ToDomHelper_Access;
-   function convertNull (value : Unbounded_String) return Unbounded_String;
-   procedure convertNull (value : Unbounded_String);
+   function convertNull (value_Param : Unbounded_String) return Unbounded_String;
+   procedure convertNull (value_Param : Unbounded_String);
 
 end org.allbinary.data.tree.dom.ToDomHelper_Package;
 

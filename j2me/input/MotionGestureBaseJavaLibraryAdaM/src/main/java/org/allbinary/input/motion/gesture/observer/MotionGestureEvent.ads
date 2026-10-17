@@ -60,18 +60,13 @@ package org.allbinary.input.motion.gesture.observer.MotionGestureEvent_Package i
    procedure Initialize (This : in out MotionGestureEvent'Class; source : Java_Object_Access; id : Integer; motionGesture : MotionGestureInput_Access);
    function Create (source : Java_Object_Access; id : Integer; motionGesture : MotionGestureInput_Access) return MotionGestureEvent_Access;
    function getMotionGesture (This : in out MotionGestureEvent) return MotionGestureInput_Access;
-   procedure getMotionGesture (This : in out MotionGestureEvent);
    procedure setMotionGesture (This : in out MotionGestureEvent; motionGesture : MotionGestureInput_Access);
    function getPreviousPoint (This : in out MotionGestureEvent) return GPoint_Access;
-   procedure getPreviousPoint (This : in out MotionGestureEvent);
    procedure setPreviousPoint (This : in out MotionGestureEvent; previousPoint : GPoint_Access);
    function getCurrentPoint (This : in out MotionGestureEvent) return GPoint_Access;
-   procedure getCurrentPoint (This : in out MotionGestureEvent);
    procedure setCurrentPoint (This : in out MotionGestureEvent; currentPoint : GPoint_Access);
    function toString (This : in out MotionGestureEvent) return Unbounded_String;
-   procedure toString (This : in out MotionGestureEvent);
    function getId (This : in out MotionGestureEvent) return Integer;
-   procedure getId (This : in out MotionGestureEvent);
 
 end org.allbinary.input.motion.gesture.observer.MotionGestureEvent_Package;
 

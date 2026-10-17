@@ -30,7 +30,7 @@ package body org.allbinary.input.automation.actions.script.condition.ColorAtActi
    function Create return ColorAtActionScriptConditionData_Access is
       This : constant ColorAtActionScriptConditionData_Access := new ColorAtActionScriptConditionData;
    begin
-      Initialize (This.all);
+      ColorAtActionScriptConditionData_Package.Initialize (This.all);
       return This;
    end Create;
 

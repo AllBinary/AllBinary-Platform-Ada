@@ -29,7 +29,7 @@ package body org.allbinary.business.init.db.HistoryDbInitInfo_Package is
    function Create return HistoryDbInitInfo_Access is
       This : constant HistoryDbInitInfo_Access := new HistoryDbInitInfo;
    begin
-      Initialize (This.all);
+      HistoryDbInitInfo_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -42,7 +42,7 @@ package body org.allbinary.business.init.db.HistoryDbInitInfo_Package is
    function Create (read : Boolean) return HistoryDbInitInfo_Access is
       This : constant HistoryDbInitInfo_Access := new HistoryDbInitInfo;
    begin
-      Initialize (This.all, read);
+      HistoryDbInitInfo_Package.Initialize (This.all, read);
       return This;
    end Create;
 

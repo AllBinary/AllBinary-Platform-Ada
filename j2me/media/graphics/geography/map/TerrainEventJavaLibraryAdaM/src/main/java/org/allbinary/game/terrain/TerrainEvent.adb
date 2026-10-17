@@ -32,7 +32,7 @@ package body org.allbinary.game.terrain.TerrainEvent_Package is
    function Create (basicTerrainInfo : Java_Object_Access) return TerrainEvent_Access is
       This : constant TerrainEvent_Access := new TerrainEvent;
    begin
-      Initialize (This.all, basicTerrainInfo);
+      TerrainEvent_Package.Initialize (This.all, basicTerrainInfo);
       return This;
    end Create;
 
@@ -60,20 +60,6 @@ package body org.allbinary.game.terrain.TerrainEvent_Package is
    begin
         This.basicTerrainInfo := basicTerrainInfo;
    end setBasicTerrainInfoForCircularStaticPool;
-
-   procedure toString (This : in out TerrainEvent) is
-      Java_Result : constant Unbounded_String := TerrainEvent'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toString;
-
-   procedure getBasicTerrainInfo (This : in out TerrainEvent) is
-      Java_Result : constant BasicTerrainInfo_Access := TerrainEvent'Class (This).getBasicTerrainInfo;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getBasicTerrainInfo;
 
 end org.allbinary.game.terrain.TerrainEvent_Package;
 

@@ -28,7 +28,7 @@ package body org.allbinary.game.layer.waypoint.WaypointInfoHudPaintableSingleton
    function Create return WaypointInfoHudPaintableSingleton_Access is
       This : constant WaypointInfoHudPaintableSingleton_Access := new WaypointInfoHudPaintableSingleton;
    begin
-      Initialize (This.all);
+      WaypointInfoHudPaintableSingleton_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -36,13 +36,6 @@ package body org.allbinary.game.layer.waypoint.WaypointInfoHudPaintableSingleton
    function getInstance return WaypointInfoHudPaintable_Access is
    begin
         return WaypointInfoHudPaintableSingleton_Package.instance;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant WaypointInfoHudPaintable_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

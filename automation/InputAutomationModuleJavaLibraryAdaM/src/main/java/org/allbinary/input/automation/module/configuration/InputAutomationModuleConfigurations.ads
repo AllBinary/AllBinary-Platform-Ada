@@ -32,6 +32,7 @@ with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.w3c.dom.NodeList_Package; use org.w3c.dom.NodeList_Package;
+with org.allbinary.input.automation.module.configuration.InputAutomationModuleConfiguration_Package; use org.allbinary.input.automation.module.configuration.InputAutomationModuleConfiguration_Package;
 
 package org.allbinary.input.automation.module.configuration.InputAutomationModuleConfigurations_Package is
 
@@ -59,7 +60,6 @@ package org.allbinary.input.automation.module.configuration.InputAutomationModul
    procedure add (This : in out InputAutomationModuleConfigurations; inputAutomationModuleConfiguration : InputAutomationModuleConfiguration_Access);
    procedure remove (This : in out InputAutomationModuleConfigurations; inputAutomationModuleConfiguration : InputAutomationModuleConfiguration_Access);
    function getHashMap (This : in out InputAutomationModuleConfigurations) return HashMap_Access;
-   procedure getHashMap (This : in out InputAutomationModuleConfigurations);
    procedure setHashMap (This : in out InputAutomationModuleConfigurations; hashMap : HashMap_Access);
 
 end org.allbinary.input.automation.module.configuration.InputAutomationModuleConfigurations_Package;

@@ -33,7 +33,7 @@ package body org.allbinary.business.user.commerce.inventory.item.ItemView_Packag
    function Create (itemInterface : OrderItemInterface_Access; vector : BasicArrayList_Access) return ItemView_Access is
       This : constant ItemView_Access := new ItemView;
    begin
-      Initialize (This.all, itemInterface, vector);
+      ItemView_Package.Initialize (This.all, itemInterface, vector);
       return This;
    end Create;
 

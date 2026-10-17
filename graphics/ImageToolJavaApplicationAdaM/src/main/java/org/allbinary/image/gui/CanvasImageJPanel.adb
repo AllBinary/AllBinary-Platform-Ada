@@ -51,7 +51,7 @@ package body org.allbinary.image.gui.CanvasImageJPanel_Package is
    function Create (imageProcessorInput : ImageProcessorInput_Access) return CanvasImageJPanel_Access is
       This : constant CanvasImageJPanel_Access := new CanvasImageJPanel;
    begin
-      Initialize (This.all, imageProcessorInput);
+      CanvasImageJPanel_Package.Initialize (This.all, imageProcessorInput);
       return This;
    end Create;
 
@@ -223,13 +223,6 @@ package body org.allbinary.image.gui.CanvasImageJPanel_Package is
         isWritten := ImageIO_Package.write (RenderedImage_Access (This.result), This.imageStrings.PNG, file);
         This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("File: ")).append (StringUtil_Package.getInstance.toString (file)).append (To_Unbounded_String (" Wrote: ")).appendboolean (isWritten).toString, This'Unchecked_Access, This.commonStrings.RUN);
    end visit;
-
-   procedure getImageProcessorInput (This : in out CanvasImageJPanel) is
-      Java_Result : constant ImageProcessorInput_Access := CanvasImageJPanel'Class (This).getImageProcessorInput;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getImageProcessorInput;
 
 end org.allbinary.image.gui.CanvasImageJPanel_Package;
 

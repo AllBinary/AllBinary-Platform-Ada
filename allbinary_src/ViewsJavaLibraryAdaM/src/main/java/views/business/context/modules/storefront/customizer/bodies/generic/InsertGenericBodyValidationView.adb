@@ -34,7 +34,7 @@ package body views.business.context.modules.storefront.customizer.bodies.generic
    function Create (transformInfoInterface : TransformInfoInterface_Access) return InsertGenericBodyValidationView_Access is
       This : constant InsertGenericBodyValidationView_Access := new InsertGenericBodyValidationView;
    begin
-      Initialize (This.all, transformInfoInterface);
+      InsertGenericBodyValidationView_Package.Initialize (This.all, transformInfoInterface);
       return This;
    end Create;
 
@@ -117,47 +117,12 @@ package body views.business.context.modules.storefront.customizer.bodies.generic
         end;
    end view;
 
-   procedure toXmlDoc (This : in out InsertGenericBodyValidationView) is
-      Java_Result : constant Document_Access := InsertGenericBodyValidationView'Class (This).toXmlDoc;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toXmlDoc;
-
-   procedure isValid (This : in out InsertGenericBodyValidationView) is
-      Java_Result : constant Boolean := InsertGenericBodyValidationView'Class (This).isValid;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isValid;
-
-   procedure validationInfo (This : in out InsertGenericBodyValidationView) is
-      Java_Result : constant Unbounded_String := InsertGenericBodyValidationView'Class (This).validationInfo;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end validationInfo;
-
-   procedure toValidationInfoDoc (This : in out InsertGenericBodyValidationView) is
-      Java_Result : constant Document_Access := InsertGenericBodyValidationView'Class (This).toValidationInfoDoc;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toValidationInfoDoc;
-
    procedure toValidationInfoNode (This : in out InsertGenericBodyValidationView; document : Document_Access) is
       Java_Result : constant Node_Access := InsertGenericBodyValidationView'Class (This).toValidationInfoNode (document);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end toValidationInfoNode;
-
-   procedure view (This : in out InsertGenericBodyValidationView) is
-      Java_Result : constant Unbounded_String := InsertGenericBodyValidationView'Class (This).view;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end view;
 
 end views.business.context.modules.storefront.customizer.bodies.generic_Id.InsertGenericBodyValidationView_Package;
 

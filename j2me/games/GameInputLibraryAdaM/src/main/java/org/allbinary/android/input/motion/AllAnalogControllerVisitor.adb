@@ -29,7 +29,7 @@ package body org.allbinary.android.input.motion.AllAnalogControllerVisitor_Packa
    function Create return AllAnalogControllerVisitor_Access is
       This : constant AllAnalogControllerVisitor_Access := new AllAnalogControllerVisitor;
    begin
-      Initialize (This.all);
+      AllAnalogControllerVisitor_Package.Initialize (This.all);
       return This;
    end Create;
 

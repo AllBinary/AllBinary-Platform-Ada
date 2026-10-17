@@ -46,16 +46,12 @@ package org.allbinary.business.category.hierarchy.CategoryHierarchy_Package is
    procedure Initialize (This : in out CategoryHierarchy'Class; rootCategoryInterface : CategoryInterface_Access; parentCategoryInterface : CategoryInterface_Access);
    function Create (rootCategoryInterface : CategoryInterface_Access; parentCategoryInterface : CategoryInterface_Access) return CategoryHierarchy_Access;
    function getLevel (This : in out CategoryHierarchy) return Integer;
-   procedure getLevel (This : in out CategoryHierarchy);
    function getLevelString (This : in out CategoryHierarchy) return Unbounded_String;
-   procedure getLevelString (This : in out CategoryHierarchy);
    procedure setLevel (This : in out CategoryHierarchy; level : Integer);
    procedure setParent (This : in out CategoryHierarchy; categoryInterface : CategoryInterface_Access);
    procedure setRoot (This : in out CategoryHierarchy; categoryInterface : CategoryInterface_Access);
    function getRoot (This : in out CategoryHierarchy) return CategoryInterface_Access;
-   procedure getRoot (This : in out CategoryHierarchy);
    function getParent (This : in out CategoryHierarchy) return CategoryInterface_Access;
-   procedure getParent (This : in out CategoryHierarchy);
 
 end org.allbinary.business.category.hierarchy.CategoryHierarchy_Package;
 

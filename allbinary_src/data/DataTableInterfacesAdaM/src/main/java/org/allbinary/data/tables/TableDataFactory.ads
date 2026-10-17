@@ -40,7 +40,6 @@ package org.allbinary.data.tables.TableDataFactory_Package is
    procedure Initialize (This : in out TableDataFactory'Class);
    function Create return TableDataFactory_Access;
    function getInstance return TableDataFactory_Access;
-   procedure getInstance;
 
 end org.allbinary.data.tables.TableDataFactory_Package;
 

@@ -32,7 +32,7 @@ package body org.allbinary.business.user.commerce.shipping.modules.PickUpShippin
    function Create return PickUpShippingModuleView_Access is
       This : constant PickUpShippingModuleView_Access := new PickUpShippingModuleView;
    begin
-      Initialize (This.all);
+      PickUpShippingModuleView_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -87,20 +87,6 @@ package body org.allbinary.business.user.commerce.shipping.modules.PickUpShippin
         return Null_Unbounded_String;
    end view;
 
-   procedure isValid (This : in out PickUpShippingModuleView) is
-      Java_Result : constant Boolean := PickUpShippingModuleView'Class (This).isValid;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isValid;
-
-   procedure toValidationInfoDoc (This : in out PickUpShippingModuleView) is
-      Java_Result : constant Document_Access := PickUpShippingModuleView'Class (This).toValidationInfoDoc;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toValidationInfoDoc;
-
    procedure toValidationInfoNode (This : in out PickUpShippingModuleView; document : Document_Access) is
       Java_Result : constant Node_Access := PickUpShippingModuleView'Class (This).toValidationInfoNode (document);
       pragma Unreferenced (Java_Result);
@@ -108,33 +94,12 @@ package body org.allbinary.business.user.commerce.shipping.modules.PickUpShippin
       null;
    end toValidationInfoNode;
 
-   procedure toXmlDoc (This : in out PickUpShippingModuleView) is
-      Java_Result : constant Document_Access := PickUpShippingModuleView'Class (This).toXmlDoc;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toXmlDoc;
-
    procedure toXmlNode (This : in out PickUpShippingModuleView; document : Document_Access) is
       Java_Result : constant Node_Access := PickUpShippingModuleView'Class (This).toXmlNode (document);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end toXmlNode;
-
-   procedure validationInfo (This : in out PickUpShippingModuleView) is
-      Java_Result : constant Unbounded_String := PickUpShippingModuleView'Class (This).validationInfo;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end validationInfo;
-
-   procedure view (This : in out PickUpShippingModuleView) is
-      Java_Result : constant Unbounded_String := PickUpShippingModuleView'Class (This).view;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end view;
 
 end org.allbinary.business.user.commerce.shipping.modules.PickUpShippingModuleView_Package;
 

@@ -33,7 +33,7 @@ package body org.allbinary.media.ScaleProperties_Package is
    function Create return ScaleProperties_Access is
       This : constant ScaleProperties_Access := new ScaleProperties;
    begin
-      Initialize (This.all);
+      ScaleProperties_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -41,13 +41,6 @@ package body org.allbinary.media.ScaleProperties_Package is
    function toString (This : in out ScaleProperties) return Unbounded_String is
    begin
         return StringMaker_Package.Create.append (CommonLabels_Package.getInstance.COLON_SEP).appendboolean (This.shouldScale).append (To_Unbounded_String ("scaleX: ")).appendfloat (This.scaleX).append (To_Unbounded_String ("scaleY: ")).appendfloat (This.scaleY).append (To_Unbounded_String ("scaleWidth: ")).appendint (This.scaleWidth).append (To_Unbounded_String ("scaleHeight: ")).appendint (This.scaleHeight).toString;
-   end toString;
-
-   procedure toString (This : in out ScaleProperties) is
-      Java_Result : constant Unbounded_String := ScaleProperties'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end toString;
 
 begin

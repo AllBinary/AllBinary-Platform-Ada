@@ -33,7 +33,7 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
    function Create return InputAutomationTypeJPanel_Access is
       This : constant InputAutomationTypeJPanel_Access := new InputAutomationTypeJPanel;
    begin
-      Initialize (This.all);
+      InputAutomationTypeJPanel_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -59,13 +59,6 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
         layout.setHorizontalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (layout.createSequentialGroup.addComponent (This.jLabel1).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent (This.inputAutomationTypeJComboBox, 0, 98, Short_Package.MAX_VALUE)));
         layout.setVerticalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.BASELINE).addComponent (This.jLabel1).addComponent (This.inputAutomationTypeJComboBox, javax_Package.swing.GroupLayout.PREFERRED_SIZE, javax_Package.swing.GroupLayout.DEFAULT_SIZE, javax_Package.swing.GroupLayout.PREFERRED_SIZE)));
    end initComponents;
-
-   procedure getInputAutomationTypeJComboBox (This : in out InputAutomationTypeJPanel) is
-      Java_Result : constant JComboBox_Access := InputAutomationTypeJPanel'Class (This).getInputAutomationTypeJComboBox;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInputAutomationTypeJComboBox;
 
 end org.allbinary.input.automation.actions.script.condition.processors.input.InputAutomationTypeJPanel_Package;
 

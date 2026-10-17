@@ -61,7 +61,7 @@ package body org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Pa
    function Create (title : Unbounded_String; backgroundBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access) return ProgressCanvas_Access is
       This : constant ProgressCanvas_Access := new ProgressCanvas;
    begin
-      Initialize (This.all, title, backgroundBasicColor, foregroundBasicColor);
+      ProgressCanvas_Package.Initialize (This.all, title, backgroundBasicColor, foregroundBasicColor);
       return This;
    end Create;
 
@@ -232,41 +232,6 @@ package body org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Pa
         return This.background;
    end isBackground;
 
-   procedure getMaxValue (This : in out ProgressCanvas) is
-      Java_Result : constant Float := ProgressCanvas'Class (This).getMaxValue;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getMaxValue;
-
-   procedure isInGame (This : in out ProgressCanvas) is
-      Java_Result : constant Boolean := ProgressCanvas'Class (This).isInGame;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isInGame;
-
-   procedure getValue (This : in out ProgressCanvas) is
-      Java_Result : constant Float := ProgressCanvas'Class (This).getValue;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getValue;
-
-   procedure getText (This : in out ProgressCanvas) is
-      Java_Result : constant Unbounded_String := ProgressCanvas'Class (This).getText;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getText;
-
-   procedure isBackground (This : in out ProgressCanvas) is
-      Java_Result : constant Boolean := ProgressCanvas'Class (This).isBackground;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isBackground;
-
 end org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package;
 
 
@@ -289,7 +254,7 @@ package body org.allbinary.graphics.canvas.transition.progress.ProgressPaintable
    function Create (progressCanvas : ProgressCanvas_Access) return ProgressPaintable_Access is
       This : constant ProgressPaintable_Access := new ProgressPaintable;
    begin
-      Initialize (This.all, progressCanvas);
+      ProgressPaintable_Package.Initialize (This.all, progressCanvas);
       return This;
    end Create;
     

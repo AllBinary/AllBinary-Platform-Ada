@@ -28,7 +28,7 @@ package body org.allbinary.debug.NoDebug_Package is
    function Create return NoDebug_Access is
       This : constant NoDebug_Access := new NoDebug;
    begin
-      Initialize (This.all);
+      NoDebug_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -61,34 +61,6 @@ package body org.allbinary.debug.NoDebug_Package is
    function isRunning (This : in out NoDebug) return Boolean is
    begin
         return False;
-   end isRunning;
-
-   procedure getInstance is
-      Java_Result : constant DebugInterface_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure getMaxTime (This : in out NoDebug) is
-      Java_Result : constant Long_Long_Integer := NoDebug'Class (This).getMaxTime;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getMaxTime;
-
-   procedure getStartTime (This : in out NoDebug) is
-      Java_Result : constant Long_Long_Integer := NoDebug'Class (This).getStartTime;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getStartTime;
-
-   procedure isRunning (This : in out NoDebug) is
-      Java_Result : constant Boolean := NoDebug'Class (This).isRunning;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end isRunning;
 
 begin

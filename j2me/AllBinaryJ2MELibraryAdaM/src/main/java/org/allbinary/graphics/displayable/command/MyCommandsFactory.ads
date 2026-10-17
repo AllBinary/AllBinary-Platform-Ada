@@ -44,7 +44,6 @@ package org.allbinary.graphics.displayable.command.MyCommandsFactory_Package is
    procedure Initialize (This : in out MyCommandsFactory'Class);
    function Create return MyCommandsFactory_Access;
    function getInstance return MyCommandsFactory_Access;
-   procedure getInstance;
 
 end org.allbinary.graphics.displayable.command.MyCommandsFactory_Package;
 

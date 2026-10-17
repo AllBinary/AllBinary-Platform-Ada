@@ -28,7 +28,7 @@ package body org.allbinary.animation.caption.CaptionResources_Package is
    function Create return CaptionResources_Access is
       This : constant CaptionResources_Access := new CaptionResources;
    begin
-      Initialize (This.all);
+      CaptionResources_Package.Initialize (This.all);
       return This;
    end Create;
 

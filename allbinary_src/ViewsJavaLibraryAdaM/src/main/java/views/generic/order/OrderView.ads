@@ -67,7 +67,6 @@ package views.generic_Id.order.OrderView_Package is
    procedure toXmlNode (This : in out OrderView; document : Document_Access);
    procedure addDomNodeInterfaces (This : in out OrderView);
    function view (This : in out OrderView) return Unbounded_String;
-   procedure view (This : in out OrderView);
 
 end views.generic_Id.order.OrderView_Package;
 

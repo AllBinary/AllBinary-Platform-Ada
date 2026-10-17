@@ -38,7 +38,6 @@ package org.allbinary.input.accelerometer.NoAccelerometerSensor_Package is
    procedure Initialize (This : in out NoAccelerometerSensor'Class);
    function Create return NoAccelerometerSensor_Access;
    function getOrientation (This : in out NoAccelerometerSensor) return Orientation_Access;
-   procedure getOrientation (This : in out NoAccelerometerSensor);
    procedure onSensorChange (This : in out NoAccelerometerSensor);
 
 end org.allbinary.input.accelerometer.NoAccelerometerSensor_Package;

@@ -29,7 +29,7 @@ package body org.allbinary.game.collision.layer.CollidableInterfaceLayerManager_
    function Create return CollidableInterfaceLayerManager_Access is
       This : constant CollidableInterfaceLayerManager_Access := new CollidableInterfaceLayerManager;
    begin
-      Initialize (This.all);
+      CollidableInterfaceLayerManager_Package.Initialize (This.all);
       return This;
    end Create;
 

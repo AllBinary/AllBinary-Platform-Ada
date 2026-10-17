@@ -32,7 +32,7 @@ package body org.allbinary.input.automation.module.game.skill.GameSkillType_Pack
    function Create (name : Unbounded_String) return GameSkillType_Access is
       This : constant GameSkillType_Access := new GameSkillType;
    begin
-      Initialize (This.all, name);
+      GameSkillType_Package.Initialize (This.all, name);
       return This;
    end Create;
 
@@ -49,20 +49,6 @@ package body org.allbinary.input.automation.module.game.skill.GameSkillType_Pack
    function toString (This : in out GameSkillType) return Unbounded_String is
    begin
         return This.SPELL_GAME_SKILL_TYPE & This.getName;
-   end toString;
-
-   procedure getName (This : in out GameSkillType) is
-      Java_Result : constant Unbounded_String := GameSkillType'Class (This).getName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getName;
-
-   procedure toString (This : in out GameSkillType) is
-      Java_Result : constant Unbounded_String := GameSkillType'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end toString;
 
 begin

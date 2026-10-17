@@ -59,7 +59,6 @@ package org.allbinary.logic.communication.sql.AbDatabaseManagement_Package is
    procedure Initialize (This : in out AbDatabaseManagement'Class; databaseConnectionInfoInterface : DatabaseConnectionInfoInterface_Access);
    function Create (databaseConnectionInfoInterface : DatabaseConnectionInfoInterface_Access) return AbDatabaseManagement_Access;
    function getHostName (This : in out AbDatabaseManagement) return Unbounded_String;
-   procedure getHostName (This : in out AbDatabaseManagement);
    function addDbUser (This : in out AbDatabaseManagement; hostName : Unbounded_String; db : Unbounded_String; userName : Unbounded_String; password : Unbounded_String) return Boolean;
    procedure addDbUser (This : in out AbDatabaseManagement; hostName : Unbounded_String; db : Unbounded_String; userName : Unbounded_String; password : Unbounded_String);
    function addDbUser (This : in out AbDatabaseManagement; db : Unbounded_String; userName : Unbounded_String; password : Unbounded_String) return Boolean;

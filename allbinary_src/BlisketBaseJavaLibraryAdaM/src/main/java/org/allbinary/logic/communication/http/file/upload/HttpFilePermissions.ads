@@ -28,6 +28,7 @@ with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.lo
 with org.allbinary.logic.io.file.AbFile_Package; use org.allbinary.logic.io.file.AbFile_Package;
 with org.allbinary.logic.io.path.AbPath_Package; use org.allbinary.logic.io.path.AbPath_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.logic.communication.http.file.upload.FileUploadData_Package; use org.allbinary.logic.communication.http.file.upload.FileUploadData_Package;
 
 package org.allbinary.logic.communication.http.file.upload.HttpFilePermissions_Package is
 
@@ -55,9 +56,7 @@ package org.allbinary.logic.communication.http.file.upload.HttpFilePermissions_P
    procedure Initialize (This : in out HttpFilePermissions'Class; fullPath : AbPath_Access);
    function Create (fullPath : AbPath_Access) return HttpFilePermissions_Access;
    function isFile (This : in out HttpFilePermissions) return Boolean;
-   procedure isFile (This : in out HttpFilePermissions);
    function getUserRoles (This : in out HttpFilePermissions) return BasicArrayList_Access;
-   procedure getUserRoles (This : in out HttpFilePermissions);
 
 end org.allbinary.logic.communication.http.file.upload.HttpFilePermissions_Package;
 

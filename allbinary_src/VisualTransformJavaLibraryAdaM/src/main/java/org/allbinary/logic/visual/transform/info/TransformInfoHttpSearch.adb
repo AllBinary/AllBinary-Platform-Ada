@@ -37,7 +37,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoHttpSearch_P
    function Create (searchRequest : SearchRequest_Access) return TransformInfoHttpSearch_Access is
       This : constant TransformInfoHttpSearch_Access := new TransformInfoHttpSearch;
    begin
-      Initialize (This.all, searchRequest);
+      TransformInfoHttpSearch_Package.Initialize (This.all, searchRequest);
       return This;
    end Create;
 
@@ -69,34 +69,6 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoHttpSearch_P
    function getDataFilePath (This : in out TransformInfoHttpSearch) return AbPath_Access is
    begin
         return AbPath_Package.Create (This.getPath, This.getDataFile);
-   end getDataFilePath;
-
-   procedure getPath (This : in out TransformInfoHttpSearch) is
-      Java_Result : constant Unbounded_String := TransformInfoHttpSearch'Class (This).getPath;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getPath;
-
-   procedure getTemplateFilePath (This : in out TransformInfoHttpSearch) is
-      Java_Result : constant AbPath_Access := TransformInfoHttpSearch'Class (This).getTemplateFilePath;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTemplateFilePath;
-
-   procedure getObjectConfigFilePath (This : in out TransformInfoHttpSearch) is
-      Java_Result : constant AbPath_Access := TransformInfoHttpSearch'Class (This).getObjectConfigFilePath;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getObjectConfigFilePath;
-
-   procedure getDataFilePath (This : in out TransformInfoHttpSearch) is
-      Java_Result : constant AbPath_Access := TransformInfoHttpSearch'Class (This).getDataFilePath;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getDataFilePath;
 
 end org.allbinary.logic.visual.transform.info.TransformInfoHttpSearch_Package;

@@ -58,9 +58,7 @@ package admin.tags.ShippingTag_Package is
    procedure setCommand (This : in out ShippingTag; command : Unbounded_String);
    procedure setStoreName (This : in out ShippingTag; value : Unbounded_String);
    function setShippingType (This : in out ShippingTag) return Unbounded_String;
-   procedure setShippingType (This : in out ShippingTag);
    function doStartTag (This : in out ShippingTag) return Integer;
-   procedure doStartTag (This : in out ShippingTag);
 
 end admin.tags.ShippingTag_Package;
 

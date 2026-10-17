@@ -36,10 +36,8 @@ package org.allbinary.canvas.GameStatisticsFactory_Package is
    procedure Initialize (This : in out GameStatisticsFactory'Class);
    function Create return GameStatisticsFactory_Access;
    function getInstance return GameStatisticsFactory_Access;
-   procedure getInstance;
    procedure add (This : in out GameStatisticsFactory; string_Id : Unbounded_String);
    function toString (This : in out GameStatisticsFactory) return Unbounded_String;
-   procedure toString (This : in out GameStatisticsFactory);
 
 end org.allbinary.canvas.GameStatisticsFactory_Package;
 

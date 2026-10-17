@@ -28,6 +28,7 @@ with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.lo
 with org.allbinary.logic.string_Id.StringValidationUtil_Package; use org.allbinary.logic.string_Id.StringValidationUtil_Package;
 with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
 with views.admin.payment.gateway.PaymentGatewayViewAbstract_Package; use views.admin.payment.gateway.PaymentGatewayViewAbstract_Package;
+with views.admin.payment.gateway.PaymentGatewayComponent_Package; use views.admin.payment.gateway.PaymentGatewayComponent_Package;
 
 package views.admin.payment.gateway.GatewayView_Package is
 
@@ -51,7 +52,6 @@ package views.admin.payment.gateway.GatewayView_Package is
    function Create (transformInfoInterface : TransformInfoInterface_Access) return GatewayView_Access;
    procedure getFormData (This : in out GatewayView; request : HttpServletRequest_Access);
    function view (This : in out GatewayView) return Unbounded_String;
-   procedure view (This : in out GatewayView);
 
 end views.admin.payment.gateway.GatewayView_Package;
 

@@ -20,7 +20,7 @@ package body org.allbinary.graphics.form.ScreenInfo_Package is
    function Create return ScreenInfo_Access is
       This : constant ScreenInfo_Access := new ScreenInfo;
    begin
-      Initialize (This.all);
+      ScreenInfo_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -28,13 +28,6 @@ package body org.allbinary.graphics.form.ScreenInfo_Package is
    function getInstance return ScreenInfo_Access is
    begin
         return ScreenInfo_Package.instance;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant ScreenInfo_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

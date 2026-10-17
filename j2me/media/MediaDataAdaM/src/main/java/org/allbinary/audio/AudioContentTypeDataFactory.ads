@@ -20,6 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
+with org.allbinary.audio.AudioContentTypeData_Package; use org.allbinary.audio.AudioContentTypeData_Package;
 
 package org.allbinary.audio.AudioContentTypeDataFactory_Package is
 
@@ -42,7 +43,6 @@ package org.allbinary.audio.AudioContentTypeDataFactory_Package is
    procedure Initialize (This : in out AudioContentTypeDataFactory'Class);
    function Create return AudioContentTypeDataFactory_Access;
    function getInstance return AudioContentTypeDataFactory_Access;
-   procedure getInstance;
 
 end org.allbinary.audio.AudioContentTypeDataFactory_Package;
 

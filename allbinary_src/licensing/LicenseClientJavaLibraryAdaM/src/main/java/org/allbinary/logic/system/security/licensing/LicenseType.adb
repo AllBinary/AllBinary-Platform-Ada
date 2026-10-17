@@ -31,7 +31,7 @@ package body org.allbinary.logic.system.security.licensing.LicenseType_Package i
    function Create (name : Unbounded_String) return LicenseType_Access is
       This : constant LicenseType_Access := new LicenseType;
    begin
-      Initialize (This.all, name);
+      LicenseType_Package.Initialize (This.all, name);
       return This;
    end Create;
 
@@ -43,13 +43,6 @@ package body org.allbinary.logic.system.security.licensing.LicenseType_Package i
    function getName (This : in out LicenseType) return Unbounded_String is
    begin
         return This.name;
-   end getName;
-
-   procedure getName (This : in out LicenseType) is
-      Java_Result : constant Unbounded_String := LicenseType'Class (This).getName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getName;
 
 end org.allbinary.logic.system.security.licensing.LicenseType_Package;

@@ -30,7 +30,7 @@ package body admin.taghelpers.PermissionItemsHelperFactory_Package is
    function Create return PermissionItemsHelperFactory_Access is
       This : constant PermissionItemsHelperFactory_Access := new PermissionItemsHelperFactory;
    begin
-      Initialize (This.all);
+      PermissionItemsHelperFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

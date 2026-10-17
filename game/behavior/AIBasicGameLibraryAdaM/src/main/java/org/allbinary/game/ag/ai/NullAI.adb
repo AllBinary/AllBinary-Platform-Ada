@@ -31,7 +31,7 @@ package body org.allbinary.game.ag.ai.NullAI_Package is
    function Create return NullAI_Access is
       This : constant NullAI_Access := new NullAI;
    begin
-      Initialize (This.all);
+      NullAI_Package.Initialize (This.all);
       return This;
    end Create;
 

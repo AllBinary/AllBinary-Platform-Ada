@@ -36,7 +36,7 @@ package body org.allbinary.graphics.displayable.event.DisplayChangeEventHandler_
    function Create return DisplayChangeEventHandler_Access is
       This : constant DisplayChangeEventHandler_Access := new DisplayChangeEventHandler;
    begin
-      Initialize (This.all);
+      DisplayChangeEventHandler_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -47,13 +47,6 @@ package body org.allbinary.graphics.displayable.event.DisplayChangeEventHandler_
         displayChangeEventListener := (DisplayChangeEventListener_Access (eventListenerInterface));
         displayChangeEventListener.onDisplayChangeEvent (DisplayChangeEvent_Access (eventObject));
    end process;
-
-   procedure getInstance is
-      Java_Result : constant DisplayChangeEventHandler_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

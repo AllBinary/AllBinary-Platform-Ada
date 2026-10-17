@@ -28,7 +28,7 @@ package body org.allbinary.game.ag.ai.scroller.RandomPatrolAIFactory_Package is
    function Create return RandomPatrolAIFactory_Access is
       This : constant RandomPatrolAIFactory_Access := new RandomPatrolAIFactory;
    begin
-      Initialize (This.all);
+      RandomPatrolAIFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

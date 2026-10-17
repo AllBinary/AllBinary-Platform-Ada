@@ -21,6 +21,7 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.math.SmallIntegerSingletonFactory_Package; use org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
+with org.allbinary.game.layer.Aggression_Package; use org.allbinary.game.layer.Aggression_Package;
 
 package org.allbinary.game.layer.Driver_Package is
 
@@ -41,13 +42,10 @@ package org.allbinary.game.layer.Driver_Package is
    procedure Initialize (This : in out Driver'Class; turnSpeed : Integer; trackPathSelectionSkill : Integer; aggression : Aggression_Access);
    function Create (turnSpeed : Integer; trackPathSelectionSkill : Integer; aggression : Aggression_Access) return Driver_Access;
    function getTurnSpeed (This : in out Driver) return Integer;
-   procedure getTurnSpeed (This : in out Driver);
    procedure setTurnSpeed (This : in out Driver; turnSpeed : Integer);
    function getTrackPathSelectionSkill (This : in out Driver) return Integer;
-   procedure getTrackPathSelectionSkill (This : in out Driver);
    procedure setTrackPathSelectionSkill (This : in out Driver; trackPathSelectionSkill : Integer);
    function getAggression (This : in out Driver) return Aggression_Access;
-   procedure getAggression (This : in out Driver);
    procedure setAggression (This : in out Driver; aggression : Aggression_Access);
 
 end org.allbinary.game.layer.Driver_Package;

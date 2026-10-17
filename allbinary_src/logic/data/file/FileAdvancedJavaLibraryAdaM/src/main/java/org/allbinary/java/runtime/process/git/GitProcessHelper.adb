@@ -42,7 +42,7 @@ package body org.allbinary.java.runtime.process.git.GitProcessHelper_Package is
    function Create return GitProcessHelper_Access is
       This : constant GitProcessHelper_Access := new GitProcessHelper;
    begin
-      Initialize (This.all);
+      GitProcessHelper_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -103,13 +103,6 @@ package body org.allbinary.java.runtime.process.git.GitProcessHelper_Package is
                 end;
         end;
    end isTracked;
-
-   procedure getInstance is
-      Java_Result : constant GitProcessHelper_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure trackedFiles (This : in out GitProcessHelper; rootAsString : Unbounded_String; pathspec : Unbounded_String) is
       Java_Result : constant List_Access := GitProcessHelper'Class (This).trackedFiles (rootAsString, pathspec);

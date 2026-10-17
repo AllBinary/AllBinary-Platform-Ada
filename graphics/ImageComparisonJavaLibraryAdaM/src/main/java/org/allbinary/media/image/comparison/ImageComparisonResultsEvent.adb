@@ -32,7 +32,7 @@ package body org.allbinary.media.image.comparison.ImageComparisonResultsEvent_Pa
    function Create (anyType : Java_Object_Access; imageComparisonInfo : ImageComparisonResult_Access) return ImageComparisonResultsEvent_Access is
       This : constant ImageComparisonResultsEvent_Access := new ImageComparisonResultsEvent;
    begin
-      Initialize (This.all, anyType, imageComparisonInfo);
+      ImageComparisonResultsEvent_Package.Initialize (This.all, anyType, imageComparisonInfo);
       return This;
    end Create;
 
@@ -45,13 +45,6 @@ package body org.allbinary.media.image.comparison.ImageComparisonResultsEvent_Pa
    begin
         This.imageComparisonResult := imageComparisonResult;
    end setImageComparisonResult;
-
-   procedure getImageComparisonResult (This : in out ImageComparisonResultsEvent) is
-      Java_Result : constant ImageComparisonResult_Access := ImageComparisonResultsEvent'Class (This).getImageComparisonResult;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getImageComparisonResult;
 
 end org.allbinary.media.image.comparison.ImageComparisonResultsEvent_Package;
 

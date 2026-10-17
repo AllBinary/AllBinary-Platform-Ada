@@ -36,7 +36,7 @@ package body org.allbinary.logic.communication.smtp.event.handler.EmailEventHand
    function Create return EmailEventHandlerUtil_Access is
       This : constant EmailEventHandlerUtil_Access := new EmailEventHandlerUtil;
    begin
-      Initialize (This.all);
+      EmailEventHandlerUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -83,13 +83,6 @@ package body org.allbinary.logic.communication.smtp.event.handler.EmailEventHand
         vector.add (userEmailEventListenerInterface);
         return vector;
    end getUserEmailEventListenerVector;
-
-   procedure getInstance is
-      Java_Result : constant EmailEventHandlerUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure getEventHandler (This : in out EmailEventHandlerUtil; abeClientInformation : AbeClientInformationInterface_Access; userEmailEventNameData : UserEmailEventNameData_Access; userVector : BasicArrayList_Access) is
       Java_Result : constant UserEmailEventHandler_Access := EmailEventHandlerUtil'Class (This).getEventHandler (abeClientInformation, userEmailEventNameData, userVector);

@@ -44,7 +44,6 @@ package org.allbinary.game.IntermissionFactory_Package is
    procedure Initialize (This : in out IntermissionFactory'Class);
    function Create return IntermissionFactory_Access;
    function getInstance return IntermissionFactory_Access;
-   procedure getInstance;
 
 end org.allbinary.game.IntermissionFactory_Package;
 

@@ -31,7 +31,7 @@ package body tags.admin.UserNameOrderHistoryTag_Package is
    function Create return UserNameOrderHistoryTag_Access is
       This : constant UserNameOrderHistoryTag_Access := new UserNameOrderHistoryTag;
    begin
-      Initialize (This.all);
+      UserNameOrderHistoryTag_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -64,13 +64,6 @@ package body tags.admin.UserNameOrderHistoryTag_Package is
             return SKIP_BODY;
                 end;
         end;
-   end doStartTag;
-
-   procedure doStartTag (This : in out UserNameOrderHistoryTag) is
-      Java_Result : constant Integer := UserNameOrderHistoryTag'Class (This).doStartTag;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end doStartTag;
 
 end tags.admin.UserNameOrderHistoryTag_Package;

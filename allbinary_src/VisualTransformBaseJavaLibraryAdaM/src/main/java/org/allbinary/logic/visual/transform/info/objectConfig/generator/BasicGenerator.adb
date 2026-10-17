@@ -32,7 +32,7 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.generator.Ba
    function Create return BasicGenerator_Access is
       This : constant BasicGenerator_Access := new BasicGenerator;
    begin
-      Initialize (This.all);
+      BasicGenerator_Package.Initialize (This.all);
       return This;
    end Create;
 

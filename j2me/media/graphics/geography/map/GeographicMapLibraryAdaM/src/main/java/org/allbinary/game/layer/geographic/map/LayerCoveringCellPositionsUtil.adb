@@ -29,7 +29,7 @@ package body org.allbinary.game.layer.geographic.map.LayerCoveringCellPositionsU
    function Create return LayerCoveringCellPositionsUtil_Access is
       This : constant LayerCoveringCellPositionsUtil_Access := new LayerCoveringCellPositionsUtil;
    begin
-      Initialize (This.all);
+      LayerCoveringCellPositionsUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -63,13 +63,6 @@ package body org.allbinary.game.layer.geographic.map.LayerCoveringCellPositionsU
         end if;
         return This.cellPositionsUtil.getAll (geographicMapInterface, topLeftGeographicMapCellPosition, columns, rows, reusableList);
    end getAll;
-
-   procedure getInstance is
-      Java_Result : constant LayerCoveringCellPositionsUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure getAllXY (This : in out LayerCoveringCellPositionsUtil; geographicMapInterface : BasicGeographicMap_Access; layerInterface : AllBinaryLayer_Access; x : Integer; y : Integer; reusableList : BasicArrayList_Access) is
       Java_Result : constant BasicArrayList_Access := LayerCoveringCellPositionsUtil'Class (This).getAllXY (geographicMapInterface, layerInterface, x, y, reusableList);

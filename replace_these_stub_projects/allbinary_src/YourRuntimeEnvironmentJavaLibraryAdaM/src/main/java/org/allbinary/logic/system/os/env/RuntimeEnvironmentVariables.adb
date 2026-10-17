@@ -20,13 +20,13 @@ package body org.allbinary.logic.system.os.env.RuntimeEnvironmentVariables_Packa
    function Create return RuntimeEnvironmentVariables_Access is
       This : constant RuntimeEnvironmentVariables_Access := new RuntimeEnvironmentVariables;
    begin
-      Initialize (This.all);
+      RuntimeEnvironmentVariables_Package.Initialize (This.all);
       return This;
    end Create;
 
    function getTest1 (This : in out RuntimeEnvironmentVariables) return Unbounded_String is
    begin
-        return System_Package.getProperty (To_Unbounded_String ("java.java.home"));
+        return Java_Get_Property (To_Unbounded_String ("java.java.home"));
    end getTest1;
 
    function getVariable (This : in out RuntimeEnvironmentVariables; var : Unbounded_String) return Unbounded_String is
@@ -96,7 +96,7 @@ package body org.allbinary.logic.system.os.env.RuntimeEnvironmentVariables_Packa
    function getTempDir (This : in out RuntimeEnvironmentVariables) return Unbounded_String is
    begin
         begin
-            return System_Package.getProperty (To_Unbounded_String ("java.io.tmpdir"));
+            return Java_Get_Property (To_Unbounded_String ("java.io.tmpdir"));
         exception
             when Java_Occurrence : others =>
                 declare
@@ -113,7 +113,7 @@ package body org.allbinary.logic.system.os.env.RuntimeEnvironmentVariables_Packa
    function getLibraryPath (This : in out RuntimeEnvironmentVariables) return Unbounded_String is
    begin
         begin
-            return System_Package.getProperty (To_Unbounded_String ("java.library.path"));
+            return Java_Get_Property (To_Unbounded_String ("java.library.path"));
         exception
             when Java_Occurrence : others =>
                 declare
@@ -130,7 +130,7 @@ package body org.allbinary.logic.system.os.env.RuntimeEnvironmentVariables_Packa
    function getClassPath (This : in out RuntimeEnvironmentVariables) return Unbounded_String is
    begin
         begin
-            return System_Package.getProperty (To_Unbounded_String ("java.class.path"));
+            return Java_Get_Property (To_Unbounded_String ("java.class.path"));
         exception
             when Java_Occurrence : others =>
                 declare
@@ -165,7 +165,7 @@ package body org.allbinary.logic.system.os.env.RuntimeEnvironmentVariables_Packa
    function getUserHome (This : in out RuntimeEnvironmentVariables) return Unbounded_String is
    begin
         begin
-            return System_Package.getProperty (To_Unbounded_String ("user.home"));
+            return Java_Get_Property (To_Unbounded_String ("user.home"));
         exception
             when Java_Occurrence : others =>
                 declare
@@ -182,7 +182,7 @@ package body org.allbinary.logic.system.os.env.RuntimeEnvironmentVariables_Packa
    function getUserDir (This : in out RuntimeEnvironmentVariables) return Unbounded_String is
    begin
         begin
-            return System_Package.getProperty (To_Unbounded_String ("user.dir"));
+            return Java_Get_Property (To_Unbounded_String ("user.dir"));
         exception
             when Java_Occurrence : others =>
                 declare
@@ -246,61 +246,12 @@ package body org.allbinary.logic.system.os.env.RuntimeEnvironmentVariables_Packa
         end;
    end setVariable;
 
-   procedure getTest1 (This : in out RuntimeEnvironmentVariables) is
-      Java_Result : constant Unbounded_String := RuntimeEnvironmentVariables'Class (This).getTest1;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTest1;
-
    procedure getVariable (This : in out RuntimeEnvironmentVariables; var : Unbounded_String) is
       Java_Result : constant Unbounded_String := RuntimeEnvironmentVariables'Class (This).getVariable (var);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getVariable;
-
-   procedure get (This : in out RuntimeEnvironmentVariables) is
-      Java_Result : constant Properties_Access := RuntimeEnvironmentVariables'Class (This).get;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end get;
-
-   procedure getTempDir (This : in out RuntimeEnvironmentVariables) is
-      Java_Result : constant Unbounded_String := RuntimeEnvironmentVariables'Class (This).getTempDir;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTempDir;
-
-   procedure getLibraryPath (This : in out RuntimeEnvironmentVariables) is
-      Java_Result : constant Unbounded_String := RuntimeEnvironmentVariables'Class (This).getLibraryPath;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getLibraryPath;
-
-   procedure getClassPath (This : in out RuntimeEnvironmentVariables) is
-      Java_Result : constant Unbounded_String := RuntimeEnvironmentVariables'Class (This).getClassPath;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getClassPath;
-
-   procedure getUserHome (This : in out RuntimeEnvironmentVariables) is
-      Java_Result : constant Unbounded_String := RuntimeEnvironmentVariables'Class (This).getUserHome;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getUserHome;
-
-   procedure getUserDir (This : in out RuntimeEnvironmentVariables) is
-      Java_Result : constant Unbounded_String := RuntimeEnvironmentVariables'Class (This).getUserDir;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getUserDir;
 
 end org.allbinary.logic.system.os.env.RuntimeEnvironmentVariables_Package;
 

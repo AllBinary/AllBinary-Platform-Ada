@@ -21,6 +21,7 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.logic.system.security.licensing.LicenseType_Package; use org.allbinary.logic.system.security.licensing.LicenseType_Package;
 
 package org.allbinary.logic.system.security.licensing.LicenseTypeFactory_Package is
 
@@ -41,7 +42,6 @@ package org.allbinary.logic.system.security.licensing.LicenseTypeFactory_Package
    procedure Initialize (This : in out LicenseTypeFactory'Class);
    function Create return LicenseTypeFactory_Access;
    function getInstance return LicenseTypeFactory_Access;
-   procedure getInstance;
    function getInstance (This : in out LicenseTypeFactory; name : Unbounded_String) return LicenseType_Access;
    procedure getInstance (This : in out LicenseTypeFactory; name : Unbounded_String);
 

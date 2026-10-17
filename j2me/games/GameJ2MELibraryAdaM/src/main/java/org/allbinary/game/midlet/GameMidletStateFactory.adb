@@ -20,7 +20,7 @@ package body org.allbinary.game.midlet.GameMidletStateFactory_Package is
    function Create return GameMidletStateFactory_Access is
       This : constant GameMidletStateFactory_Access := new GameMidletStateFactory;
    begin
-      Initialize (This.all);
+      GameMidletStateFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -39,20 +39,6 @@ package body org.allbinary.game.midlet.GameMidletStateFactory_Package is
         This.logUtil.putF (StringMaker_Package.Create.append (CommonLabels_Package.getInstance.CURRENT).append (To_Unbounded_String (" GameState: ")).append (StringUtil_Package.getInstance.toString (currentGameState)).toString, This'Unchecked_Access, To_Unbounded_String ("setCurrentGameState"));
         This.currentGameState := currentGameState;
    end setCurrentGameState;
-
-   procedure getInstance is
-      Java_Result : constant GameMidletStateFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure getCurrentGameState (This : in out GameMidletStateFactory) is
-      Java_Result : constant GameState_Access := GameMidletStateFactory'Class (This).getCurrentGameState;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getCurrentGameState;
 
 begin
    null;

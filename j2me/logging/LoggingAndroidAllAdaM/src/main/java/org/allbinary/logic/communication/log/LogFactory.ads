@@ -22,6 +22,7 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.logic.communication.log.Log_Package; use org.allbinary.logic.communication.log.Log_Package;
 
 package org.allbinary.logic.communication.log.LogFactory_Package is
 
@@ -38,7 +39,6 @@ package org.allbinary.logic.communication.log.LogFactory_Package is
    procedure Initialize (This : in out LogFactory'Class);
    function Create return LogFactory_Access;
    function getInstanceD return Log_Access;
-   procedure getInstanceD;
    function getInstanceNoF (specialMessage : Unbounded_String; anyType : Java_Object_Access; exception_Id : Java_Object_Access) return Log_Access;
    procedure getInstanceNoF (specialMessage : Unbounded_String; anyType : Java_Object_Access; exception_Id : Java_Object_Access);
    function getInstance (specialMessage : Unbounded_String; anyType : Java_Object_Access; functionName : Unbounded_String; exception_Id : Java_Object_Access) return Log_Access;

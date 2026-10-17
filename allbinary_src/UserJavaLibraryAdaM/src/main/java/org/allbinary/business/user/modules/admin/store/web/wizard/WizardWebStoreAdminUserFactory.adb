@@ -30,7 +30,7 @@ package body org.allbinary.business.user.modules.admin.store.web.wizard.WizardWe
    function Create return WizardWebStoreAdminUserFactory_Access is
       This : constant WizardWebStoreAdminUserFactory_Access := new WizardWebStoreAdminUserFactory;
    begin
-      Initialize (This.all);
+      WizardWebStoreAdminUserFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -44,13 +44,6 @@ package body org.allbinary.business.user.modules.admin.store.web.wizard.WizardWe
    function getInstance (This : in out WizardWebStoreAdminUserFactory; hashMap : HashMap_Access) return UserInterface_Access is
    begin
         return WizardWebStoreAdminUser_Package.Create (hashMap);
-   end getInstance;
-
-   procedure getInstance (This : in out WizardWebStoreAdminUserFactory) is
-      Java_Result : constant UserInterface_Access := WizardWebStoreAdminUserFactory'Class (This).getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
    procedure getInstance (This : in out WizardWebStoreAdminUserFactory; hashMap : HashMap_Access) is

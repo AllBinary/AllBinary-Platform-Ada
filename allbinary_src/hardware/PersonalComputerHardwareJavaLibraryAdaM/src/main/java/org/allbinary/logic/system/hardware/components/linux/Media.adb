@@ -31,7 +31,7 @@ package body org.allbinary.logic.system.hardware.components.linux.Media_Package 
    function Create (data : Unbounded_String) return Media_Access is
       This : constant Media_Access := new Media;
    begin
-      Initialize (This.all, data);
+      Media_Package.Initialize (This.all, data);
       return This;
    end Create;
 
@@ -51,13 +51,6 @@ package body org.allbinary.logic.system.hardware.components.linux.Media_Package 
    begin
       null;
    end compareTo;
-
-   procedure toString (This : in out Media) is
-      Java_Result : constant Unbounded_String := Media'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toString;
 
 end org.allbinary.logic.system.hardware.components.linux.Media_Package;
 

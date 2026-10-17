@@ -31,7 +31,7 @@ package body org.allbinary.game.layer.capital.Capital_Package is
    function Create return Capital_Access is
       This : constant Capital_Access := new Capital;
    begin
-      Initialize (This.all);
+      Capital_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -49,13 +49,6 @@ package body org.allbinary.game.layer.capital.Capital_Package is
    begin
         This.value := (This.value) + (points);
    end addMoney;
-
-   procedure getTotalMoney (This : in out Capital) is
-      Java_Result : constant Integer := Capital'Class (This).getTotalMoney;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTotalMoney;
 
 end org.allbinary.game.layer.capital.Capital_Package;
 

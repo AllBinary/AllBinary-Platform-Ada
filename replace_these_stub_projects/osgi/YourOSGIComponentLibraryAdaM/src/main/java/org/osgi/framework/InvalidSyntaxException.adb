@@ -17,7 +17,7 @@ package body org.osgi.framework.InvalidSyntaxException_Package is
    function Create return InvalidSyntaxException_Access is
       This : constant InvalidSyntaxException_Access := new InvalidSyntaxException;
    begin
-      Initialize (This.all);
+      InvalidSyntaxException_Package.Initialize (This.all);
       return This;
    end Create;
 

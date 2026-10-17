@@ -29,7 +29,7 @@ package body org.allbinary.emulator.swt.SWTProcessorUtil_Package is
    function Create return SWTProcessorUtil_Access is
       This : constant SWTProcessorUtil_Access := new SWTProcessorUtil;
    begin
-      Initialize (This.all);
+      SWTProcessorUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -37,13 +37,6 @@ package body org.allbinary.emulator.swt.SWTProcessorUtil_Package is
    function getInstance return SWTProcessorUtil_Access is
    begin
         return SWTProcessorUtil_Package.instance;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant SWTProcessorUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

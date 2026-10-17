@@ -38,7 +38,7 @@ package body org.allbinary.game.ai.BasicAI_Package is
    function Create (ownerLayerInterface : AllBinaryLayer_Access; gameInput : GameInput_Access) return BasicAI_Access is
       This : constant BasicAI_Access := new BasicAI;
    begin
-      Initialize (This.all, ownerLayerInterface, gameInput);
+      BasicAI_Package.Initialize (This.all, ownerLayerInterface, gameInput);
       return This;
    end Create;
 
@@ -95,48 +95,6 @@ package body org.allbinary.game.ai.BasicAI_Package is
    function getSourceId (This : in out BasicAI) return Integer is
    begin
         return 1;
-   end getSourceId;
-
-   procedure getLastKey (This : in out BasicAI) is
-      Java_Result : constant Integer := BasicAI'Class (This).getLastKey;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getLastKey;
-
-   procedure getOwnerLayerInterface (This : in out BasicAI) is
-      Java_Result : constant AllBinaryLayer_Access := BasicAI'Class (This).getOwnerLayerInterface;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getOwnerLayerInterface;
-
-   procedure getGameInput (This : in out BasicAI) is
-      Java_Result : constant GameInput_Access := BasicAI'Class (This).getGameInput;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getGameInput;
-
-   procedure getName (This : in out BasicAI) is
-      Java_Result : constant Unbounded_String := BasicAI'Class (This).getName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getName;
-
-   procedure toString (This : in out BasicAI) is
-      Java_Result : constant Unbounded_String := BasicAI'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toString;
-
-   procedure getSourceId (This : in out BasicAI) is
-      Java_Result : constant Integer := BasicAI'Class (This).getSourceId;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getSourceId;
 
 begin

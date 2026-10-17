@@ -29,7 +29,7 @@ package body org.allbinary.game.configuration.feature.GraphicsFeature_Package is
    function Create (name : Unbounded_String) return GraphicsFeature_Access is
       This : constant GraphicsFeature_Access := new GraphicsFeature;
    begin
-      Initialize (This.all, name);
+      GraphicsFeature_Package.Initialize (This.all, name);
       return This;
    end Create;
 

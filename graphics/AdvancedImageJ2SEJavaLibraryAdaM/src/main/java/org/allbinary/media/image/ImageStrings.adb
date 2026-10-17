@@ -30,7 +30,7 @@ package body org.allbinary.media.image.ImageStrings_Package is
    function Create return ImageStrings_Access is
       This : constant ImageStrings_Access := new ImageStrings;
    begin
-      Initialize (This.all);
+      ImageStrings_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -38,13 +38,6 @@ package body org.allbinary.media.image.ImageStrings_Package is
    function getInstance return ImageStrings_Access is
    begin
         return ImageStrings_Package.instance;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant ImageStrings_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

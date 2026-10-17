@@ -31,20 +31,13 @@ package body org.allbinary.logic.io.OutputTypeData_Package is
    function Create return OutputTypeData_Access is
       This : constant OutputTypeData_Access := new OutputTypeData;
    begin
-      Initialize (This.all);
+      OutputTypeData_Package.Initialize (This.all);
       return This;
    end Create;
 
    function getInstance return OutputTypeData_Access is
    begin
         return OutputTypeData_Package.instance;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant OutputTypeData_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

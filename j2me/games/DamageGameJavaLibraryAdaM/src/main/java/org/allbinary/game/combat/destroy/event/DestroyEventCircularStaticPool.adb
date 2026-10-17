@@ -36,7 +36,7 @@ package body org.allbinary.game.combat.destroy.event.DestroyEventCircularStaticP
    function Create return DestroyEventCircularStaticPool_Access is
       This : constant DestroyEventCircularStaticPool_Access := new DestroyEventCircularStaticPool;
    begin
-      Initialize (This.all);
+      DestroyEventCircularStaticPool_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -53,13 +53,6 @@ package body org.allbinary.game.combat.destroy.event.DestroyEventCircularStaticP
         destroyedEvent.setLayerInterfaceForCircularStaticPool (layerInterface);
         return destroyedEvent;
    end getInstanceForLayer;
-
-   procedure getInstance is
-      Java_Result : constant DestroyEventCircularStaticPool_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure getInstanceForLayer (This : in out DestroyEventCircularStaticPool; layerInterface : AllBinaryLayer_Access) is
       Java_Result : constant DestroyedEvent_Access := DestroyEventCircularStaticPool'Class (This).getInstanceForLayer (layerInterface);

@@ -43,7 +43,6 @@ package org.allbinary.game.score.Scoreable_Package is
    procedure removePoints (This : in out Scoreable; points : Integer);
    procedure setPoints (This : in out Scoreable; points : Integer);
    function getPoints (This : in out Scoreable) return Integer;
-   procedure getPoints (This : in out Scoreable);
 
 end org.allbinary.game.score.Scoreable_Package;
 

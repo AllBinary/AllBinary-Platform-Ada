@@ -28,7 +28,7 @@ package body org.allbinary.logic.system.security.licensing.ThirdPartyInApplicati
    function Create return ThirdPartyInApplicationPurchase_Access is
       This : constant ThirdPartyInApplicationPurchase_Access := new ThirdPartyInApplicationPurchase;
    begin
-      Initialize (This.all);
+      ThirdPartyInApplicationPurchase_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -104,20 +104,6 @@ package body org.allbinary.logic.system.security.licensing.ThirdPartyInApplicati
    begin
       null;
    end isPurchased;
-
-   procedure getUserName (This : in out ThirdPartyInApplicationPurchase) is
-      Java_Result : constant Unbounded_String := ThirdPartyInApplicationPurchase'Class (This).getUserName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getUserName;
-
-   procedure isEnabled (This : in out ThirdPartyInApplicationPurchase) is
-      Java_Result : constant Boolean := ThirdPartyInApplicationPurchase'Class (This).isEnabled;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isEnabled;
 
 end org.allbinary.logic.system.security.licensing.ThirdPartyInApplicationPurchase_Package;
 

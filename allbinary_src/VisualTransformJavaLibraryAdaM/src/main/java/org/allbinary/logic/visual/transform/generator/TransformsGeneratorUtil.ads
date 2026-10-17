@@ -28,6 +28,7 @@ with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface
 with org.allbinary.logic.visual.transform.info.TransformInfoDomNode_Package; use org.allbinary.logic.visual.transform.info.TransformInfoDomNode_Package;
 with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
 with org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfigInterface_Package; use org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfigInterface_Package;
+with org.allbinary.logic.visual.transform.generator.TransformGeneratorUtil_Package; use org.allbinary.logic.visual.transform.generator.TransformGeneratorUtil_Package;
 
 package org.allbinary.logic.visual.transform.generator.TransformsGeneratorUtil_Package is
 
@@ -53,7 +54,6 @@ package org.allbinary.logic.visual.transform.generator.TransformsGeneratorUtil_P
    procedure Initialize (This : in out TransformsGeneratorUtil'Class);
    function Create return TransformsGeneratorUtil_Access;
    function getInstance return TransformsGeneratorUtil_Access;
-   procedure getInstance;
    function generateComponentsFromObjectConfig (This : in out TransformsGeneratorUtil; abeClientInformation : AbeClientInformationInterface_Access; transformInfoInterface : TransformInfoInterface_Access; group : Unbounded_String) return Unbounded_String;
    procedure generateComponentsFromObjectConfig (This : in out TransformsGeneratorUtil; abeClientInformation : AbeClientInformationInterface_Access; transformInfoInterface : TransformInfoInterface_Access; group : Unbounded_String);
    function generateComponentsFromObjectConfig (This : in out TransformsGeneratorUtil; abeClientInformation : AbeClientInformationInterface_Access; transformInfoObjectConfigInterface : TransformInfoObjectConfigInterface_Access; transformInfoInterface : TransformInfoInterface_Access; group : Unbounded_String) return Unbounded_String;

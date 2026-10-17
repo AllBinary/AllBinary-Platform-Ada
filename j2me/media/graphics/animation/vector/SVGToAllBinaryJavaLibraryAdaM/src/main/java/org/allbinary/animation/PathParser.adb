@@ -16,7 +16,7 @@ package body org.allbinary.animation.PathParser_Package is
    function Create return PathParser_Access is
       This : constant PathParser_Access := new PathParser;
    begin
-      Initialize (This.all);
+      PathParser_Package.Initialize (This.all);
       return This;
    end Create;
 

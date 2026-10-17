@@ -57,7 +57,7 @@ package body org.allbinary.animation.image.PooledImageArrayRotationAnimationFact
    function Create (image : Image_Access; width : Integer; height : Integer; dx : Integer; dy : Integer; angleIncrement : Integer; animationBehaviorFactory : AnimationBehaviorFactory_Access) return PooledImageArrayRotationAnimationFactory_Access is
       This : constant PooledImageArrayRotationAnimationFactory_Access := new PooledImageArrayRotationAnimationFactory;
    begin
-      Initialize (This.all, image, width, height, dx, dy, angleIncrement, animationBehaviorFactory);
+      PooledImageArrayRotationAnimationFactory_Package.Initialize (This.all, image, width, height, dx, dy, angleIncrement, animationBehaviorFactory);
       return This;
    end Create;
 

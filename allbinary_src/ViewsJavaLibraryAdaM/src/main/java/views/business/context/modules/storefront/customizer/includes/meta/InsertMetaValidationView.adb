@@ -31,7 +31,7 @@ package body views.business.context.modules.storefront.customizer.includes.meta.
    function Create (transformInfoInterface : TransformInfoInterface_Access) return InsertMetaValidationView_Access is
       This : constant InsertMetaValidationView_Access := new InsertMetaValidationView;
    begin
-      Initialize (This.all, transformInfoInterface);
+      InsertMetaValidationView_Package.Initialize (This.all, transformInfoInterface);
       return This;
    end Create;
 
@@ -89,34 +89,6 @@ package body views.business.context.modules.storefront.customizer.includes.meta.
    begin
         return null;
    end toValidationInfoNode;
-
-   procedure toXmlDoc (This : in out InsertMetaValidationView) is
-      Java_Result : constant Document_Access := InsertMetaValidationView'Class (This).toXmlDoc;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toXmlDoc;
-
-   procedure isValid (This : in out InsertMetaValidationView) is
-      Java_Result : constant Boolean := InsertMetaValidationView'Class (This).isValid;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isValid;
-
-   procedure validationInfo (This : in out InsertMetaValidationView) is
-      Java_Result : constant Unbounded_String := InsertMetaValidationView'Class (This).validationInfo;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end validationInfo;
-
-   procedure toValidationInfoDoc (This : in out InsertMetaValidationView) is
-      Java_Result : constant Document_Access := InsertMetaValidationView'Class (This).toValidationInfoDoc;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toValidationInfoDoc;
 
    procedure toValidationInfoNode (This : in out InsertMetaValidationView; document : Document_Access) is
       Java_Result : constant Node_Access := InsertMetaValidationView'Class (This).toValidationInfoNode (document);

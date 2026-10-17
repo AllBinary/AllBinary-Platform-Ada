@@ -35,7 +35,7 @@ package body org.allbinary.image.opengles.OpenGLESImage_Package is
    function Create (image : Image_Access; bitmapFactory : PlatformBitmapBaseFactory_Access; textureFactory : PlatformTextureBaseFactory_Access) return OpenGLESImage_Access is
       This : constant OpenGLESImage_Access := new OpenGLESImage;
    begin
-      Initialize (This.all, image, bitmapFactory, textureFactory);
+      OpenGLESImage_Package.Initialize (This.all, image, bitmapFactory, textureFactory);
       return This;
    end Create;
 
@@ -71,13 +71,6 @@ package body org.allbinary.image.opengles.OpenGLESImage_Package is
    begin
       null;
    end initTexture;
-
-   procedure getType (This : in out OpenGLESImage) is
-      Java_Result : constant Integer := OpenGLESImage'Class (This).getType;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getType;
 
 begin
    null;

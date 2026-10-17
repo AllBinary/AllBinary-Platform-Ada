@@ -32,7 +32,7 @@ package body org.allbinary.canvas.RunnableCanvasRefreshHelper_Package is
    function Create (runnableCanvas : MyCanvas_Access) return RunnableCanvasRefreshHelper_Access is
       This : constant RunnableCanvasRefreshHelper_Access := new RunnableCanvasRefreshHelper;
    begin
-      Initialize (This.all, runnableCanvas);
+      RunnableCanvasRefreshHelper_Package.Initialize (This.all, runnableCanvas);
       return This;
    end Create;
 

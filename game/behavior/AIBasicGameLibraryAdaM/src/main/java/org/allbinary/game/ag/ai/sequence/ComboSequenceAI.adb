@@ -29,7 +29,7 @@ package body org.allbinary.game.ag.ai.sequence.ComboSequenceAI_Package is
    function Create (artificialIntelligenceInterface : ArtificialIntelligenceInterface_Access_Array_Access; ownerLayerInterface : AllBinaryLayer_Access; gameInput : GameInput_Access) return ComboSequenceAI_Access is
       This : constant ComboSequenceAI_Access := new ComboSequenceAI;
    begin
-      Initialize (This.all, artificialIntelligenceInterface, ownerLayerInterface, gameInput);
+      ComboSequenceAI_Package.Initialize (This.all, artificialIntelligenceInterface, ownerLayerInterface, gameInput);
       return This;
    end Create;
 

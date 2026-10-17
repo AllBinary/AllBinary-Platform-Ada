@@ -32,7 +32,7 @@ package body org.allbinary.android.input.motion.SingleAnalogControllerVisitor_Pa
    function Create (playerInputId : Integer) return SingleAnalogControllerVisitor_Access is
       This : constant SingleAnalogControllerVisitor_Access := new SingleAnalogControllerVisitor;
    begin
-      Initialize (This.all, playerInputId);
+      SingleAnalogControllerVisitor_Package.Initialize (This.all, playerInputId);
       return This;
    end Create;
 

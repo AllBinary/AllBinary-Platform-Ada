@@ -8,6 +8,8 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
+with org.allbinary.logic.util.cache.PoolType_Package; use org.allbinary.logic.util.cache.PoolType_Package;
+with org.allbinary.logic.util.cache.CacheTypeFactory_Package; use org.allbinary.logic.util.cache.CacheTypeFactory_Package;
 
 package org.allbinary.logic.util.cache.PoolTypeFactory_Package is
 
@@ -25,7 +27,6 @@ package org.allbinary.logic.util.cache.PoolTypeFactory_Package is
    procedure Initialize (This : in out PoolTypeFactory'Class);
    function Create return PoolTypeFactory_Access;
    function getInstance return PoolTypeFactory_Access;
-   procedure getInstance;
 
 end org.allbinary.logic.util.cache.PoolTypeFactory_Package;
 

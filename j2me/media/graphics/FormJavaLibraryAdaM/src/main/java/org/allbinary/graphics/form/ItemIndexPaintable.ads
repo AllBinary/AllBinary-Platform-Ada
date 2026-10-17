@@ -38,7 +38,6 @@ package org.allbinary.graphics.form.ItemIndexPaintable_Package is
    procedure Initialize (This : in out ItemIndexPaintable'Class);
    function Create return ItemIndexPaintable_Access;
    function getInstance return ItemIndexPaintable_Access;
-   procedure getInstance;
    function paint (This : in out ItemIndexPaintable; graphics : Graphics_Access; index : Integer; item : ABCustomItem_Access; dx : Integer; dy : Integer) return Integer;
    procedure paint (This : in out ItemIndexPaintable; graphics : Graphics_Access; index : Integer; item : ABCustomItem_Access; dx : Integer; dy : Integer);
 

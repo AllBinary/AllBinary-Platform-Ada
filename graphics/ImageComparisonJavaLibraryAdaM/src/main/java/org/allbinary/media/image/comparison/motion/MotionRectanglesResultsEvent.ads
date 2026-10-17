@@ -21,6 +21,7 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+with org.allbinary.media.image.comparison.motion.MotionRectangles_Package; use org.allbinary.media.image.comparison.motion.MotionRectangles_Package;
 
 package org.allbinary.media.image.comparison.motion.MotionRectanglesResultsEvent_Package is
 
@@ -39,10 +40,8 @@ package org.allbinary.media.image.comparison.motion.MotionRectanglesResultsEvent
    procedure Initialize (This : in out MotionRectanglesResultsEvent'Class; anyType : Java_Object_Access; frame : Long_Long_Integer; motionRectangles : MotionRectangles_Access);
    function Create (anyType : Java_Object_Access; frame : Long_Long_Integer; motionRectangles : MotionRectangles_Access) return MotionRectanglesResultsEvent_Access;
    function getMotionRectangles (This : in out MotionRectanglesResultsEvent) return MotionRectangles_Access;
-   procedure getMotionRectangles (This : in out MotionRectanglesResultsEvent);
    procedure setMotionRectangles (This : in out MotionRectanglesResultsEvent; motionRectangles : MotionRectangles_Access);
    function getFrame (This : in out MotionRectanglesResultsEvent) return Long_Long_Integer;
-   procedure getFrame (This : in out MotionRectanglesResultsEvent);
 
 end org.allbinary.media.image.comparison.motion.MotionRectanglesResultsEvent_Package;
 

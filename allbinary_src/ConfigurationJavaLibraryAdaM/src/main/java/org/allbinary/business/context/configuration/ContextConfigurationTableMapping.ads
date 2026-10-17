@@ -25,6 +25,8 @@ with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArra
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.data.tables.TableMappingInterface_Package; use org.allbinary.data.tables.TableMappingInterface_Package;
 with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.business.context.configuration.ContextConfigurationInterface_Package; use org.allbinary.business.context.configuration.ContextConfigurationInterface_Package;
+with org.allbinary.business.context.configuration.ContextConfigurationData_Package; use org.allbinary.business.context.configuration.ContextConfigurationData_Package;
 
 package org.allbinary.business.context.configuration.ContextConfigurationTableMapping_Package is
 
@@ -45,11 +47,8 @@ package org.allbinary.business.context.configuration.ContextConfigurationTableMa
    procedure Initialize (This : in out ContextConfigurationTableMapping'Class; contextConfigurationInterface : ContextConfigurationInterface_Access);
    function Create (contextConfigurationInterface : ContextConfigurationInterface_Access) return ContextConfigurationTableMapping_Access;
    function toHashMap (This : in out ContextConfigurationTableMapping) return HashMap_Access;
-   procedure toHashMap (This : in out ContextConfigurationTableMapping);
    function getKey (This : in out ContextConfigurationTableMapping) return Java_Object_Access;
-   procedure getKey (This : in out ContextConfigurationTableMapping);
    function toVector (This : in out ContextConfigurationTableMapping) return BasicArrayList_Access;
-   procedure toVector (This : in out ContextConfigurationTableMapping);
 
 end org.allbinary.business.context.configuration.ContextConfigurationTableMapping_Package;
 

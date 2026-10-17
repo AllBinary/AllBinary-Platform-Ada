@@ -51,7 +51,6 @@ package org.allbinary.logic.io.file.visitor.BooleanFileVisitor_Package is
    function visit (This : in out BooleanFileVisitor; file : AbFile_Access) return Boolean;
    procedure visit (This : in out BooleanFileVisitor; file : AbFile_Access);
    function getFilterStringBasicArrayList (This : in out BooleanFileVisitor) return BasicArrayList_Access;
-   procedure getFilterStringBasicArrayList (This : in out BooleanFileVisitor);
    procedure setFilterStringBasicArrayList (This : in out BooleanFileVisitor; filterStringBasicArrayList : BasicArrayList_Access);
    function visit (This : in out BooleanFileVisitor; file : AbFile_Access; fileNameString : Unbounded_String) return Boolean;
    procedure visit (This : in out BooleanFileVisitor; file : AbFile_Access; fileNameString : Unbounded_String);

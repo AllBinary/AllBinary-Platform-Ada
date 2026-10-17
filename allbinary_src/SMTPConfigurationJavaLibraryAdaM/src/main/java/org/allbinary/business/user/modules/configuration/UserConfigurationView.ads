@@ -31,6 +31,9 @@ with org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfigur
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.w3c.dom.NodeList_Package; use org.w3c.dom.NodeList_Package;
+with org.allbinary.business.user.modules.configuration.UserConfigurationInterface_Package; use org.allbinary.business.user.modules.configuration.UserConfigurationInterface_Package;
+with org.allbinary.business.user.modules.configuration.UserConfiguration_Package; use org.allbinary.business.user.modules.configuration.UserConfiguration_Package;
+with org.allbinary.business.user.modules.configuration.UserConfigurationData_Package; use org.allbinary.business.user.modules.configuration.UserConfigurationData_Package;
 
 package org.allbinary.business.user.modules.configuration.UserConfigurationView_Package is
 
@@ -58,7 +61,6 @@ package org.allbinary.business.user.modules.configuration.UserConfigurationView_
    procedure Initialize (This : in out UserConfigurationView'Class; node : Node_Access);
    function Create (node : Node_Access) return UserConfigurationView_Access;
    function getUserConfigurationInterface (This : in out UserConfigurationView) return UserConfigurationInterface_Access;
-   procedure getUserConfigurationInterface (This : in out UserConfigurationView);
    function toXmlNode (This : in out UserConfigurationView; document : Document_Access) return Node_Access;
    procedure toXmlNode (This : in out UserConfigurationView; document : Document_Access);
 

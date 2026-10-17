@@ -50,7 +50,7 @@ package body org.allbinary.game.paint.help.InputMappingHelpPaintable_Package is
    function Create (gameInputMappingArray : GameInputMapping_Access_Array_Access; backgroundBasicColor : BasicColor_Access; basicColor : BasicColor_Access) return InputMappingHelpPaintable_Access is
       This : constant InputMappingHelpPaintable_Access := new InputMappingHelpPaintable;
    begin
-      Initialize (This.all, gameInputMappingArray, backgroundBasicColor, basicColor);
+      InputMappingHelpPaintable_Package.Initialize (This.all, gameInputMappingArray, backgroundBasicColor, basicColor);
       return This;
    end Create;
 
@@ -298,7 +298,7 @@ package body org.allbinary.game.paint.help.UpdateMyFontProperties_Package is
    function Create return UpdateMyFontProperties_Access is
       This : constant UpdateMyFontProperties_Access := new UpdateMyFontProperties;
    begin
-      Initialize (This.all);
+      UpdateMyFontProperties_Package.Initialize (This.all);
       return This;
    end Create;
 

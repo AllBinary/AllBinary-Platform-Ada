@@ -28,7 +28,7 @@ package body org.allbinary.game.layer.unit.DecalAnimationInterfaceFactory_Packag
    function Create return DecalAnimationInterfaceFactory_Access is
       This : constant DecalAnimationInterfaceFactory_Access := new DecalAnimationInterfaceFactory;
    begin
-      Initialize (This.all);
+      DecalAnimationInterfaceFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -50,13 +50,6 @@ package body org.allbinary.game.layer.unit.DecalAnimationInterfaceFactory_Packag
         end if;
         return animationInterfaceFactoryInterface;
    end getAnimationFactory;
-
-   procedure getInstance is
-      Java_Result : constant DecalAnimationInterfaceFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure getAnimationFactory (This : in out DecalAnimationInterfaceFactory; basicGameResources : BasicGameResources_Access; basicColor : BasicColor_Access) is
       Java_Result : constant AnimationInterfaceFactoryInterface_Access := DecalAnimationInterfaceFactory'Class (This).getAnimationFactory (basicGameResources, basicColor);

@@ -46,7 +46,6 @@ package views.admin.payment.gateway.PaymentGatewayViewAbstract_Package is
    function Create (transformInfoInterface : TransformInfoInterface_Access) return PaymentGatewayViewAbstract_Access;
    procedure getFormData (This : in out PaymentGatewayViewAbstract; request : HttpServletRequest_Access);
    function getPaymentGatewayPrimaryKey (This : in out PaymentGatewayViewAbstract) return PaymentGatewayPrimaryKey_Access;
-   procedure getPaymentGatewayPrimaryKey (This : in out PaymentGatewayViewAbstract);
    procedure setPaymentGatewayPrimaryKey (This : in out PaymentGatewayViewAbstract; paymentGatewayPrimaryKey : PaymentGatewayPrimaryKey_Access);
 
 end views.admin.payment.gateway.PaymentGatewayViewAbstract_Package;

@@ -31,7 +31,7 @@ package body org.allbinary.game.init.CommonGameInitialization_Package is
    function Create (resourceInitializationArray : ResourceInitialization_Access_Array_Access; portion : Integer) return CommonGameInitialization_Access is
       This : constant CommonGameInitialization_Access := new CommonGameInitialization;
    begin
-      Initialize (This.all, resourceInitializationArray, portion);
+      CommonGameInitialization_Package.Initialize (This.all, resourceInitializationArray, portion);
       return This;
    end Create;
 

@@ -22,6 +22,7 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.view.ViewPositionBase_Package; use org.allbinary.view.ViewPositionBase_Package;
 with org.allbinary.view.ViewPositionFactoryInterface_Package; use org.allbinary.view.ViewPositionFactoryInterface_Package;
+with org.allbinary.game.view.StaticTileLayerIntoPositionViewPosition_Package; use org.allbinary.game.view.StaticTileLayerIntoPositionViewPosition_Package;
 
 package org.allbinary.game.view.StaticTileLayerViewPositionFactory_Package is
 
@@ -38,7 +39,6 @@ package org.allbinary.game.view.StaticTileLayerViewPositionFactory_Package is
    procedure Initialize (This : in out StaticTileLayerViewPositionFactory'Class);
    function Create return StaticTileLayerViewPositionFactory_Access;
    function getInstance (This : in out StaticTileLayerViewPositionFactory) return ViewPositionBase_Access;
-   procedure getInstance (This : in out StaticTileLayerViewPositionFactory);
 
 end org.allbinary.game.view.StaticTileLayerViewPositionFactory_Package;
 

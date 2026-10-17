@@ -31,7 +31,7 @@ package body org.allbinary.logic.system.security.licensing.LicensingException_Pa
    function Create return LicensingException_Access is
       This : constant LicensingException_Access := new LicensingException;
    begin
-      Initialize (This.all);
+      LicensingException_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -44,7 +44,7 @@ package body org.allbinary.logic.system.security.licensing.LicensingException_Pa
    function Create (msg : Unbounded_String) return LicensingException_Access is
       This : constant LicensingException_Access := new LicensingException;
    begin
-      Initialize (This.all, msg);
+      LicensingException_Package.Initialize (This.all, msg);
       return This;
    end Create;
 

@@ -30,7 +30,7 @@ package body org.allbinary.logic.communication.sql.AbSqlData_Package is
    function Create return AbSqlData_Access is
       This : constant AbSqlData_Access := new AbSqlData;
    begin
-      Initialize (This.all);
+      AbSqlData_Package.Initialize (This.all);
       return This;
    end Create;
 

@@ -89,13 +89,10 @@ package views.admin.inventory.download.UpdateFileValidationView_Package is
    procedure Initialize (This : in out UpdateFileValidationView'Class; transformInfoInterface : TransformInfoInterface_Access);
    function Create (transformInfoInterface : TransformInfoInterface_Access) return UpdateFileValidationView_Access;
    function isValid (This : in out UpdateFileValidationView) return Boolean;
-   procedure isValid (This : in out UpdateFileValidationView);
    function toValidationInfoDoc (This : in out UpdateFileValidationView) return Document_Access;
-   procedure toValidationInfoDoc (This : in out UpdateFileValidationView);
    function toValidationInfoNode (This : in out UpdateFileValidationView; document : Document_Access) return Node_Access;
    procedure toValidationInfoNode (This : in out UpdateFileValidationView; document : Document_Access);
    function validationInfo (This : in out UpdateFileValidationView) return Unbounded_String;
-   procedure validationInfo (This : in out UpdateFileValidationView);
    function isValid (This : in out UpdateFileValidationView; fileName : Unbounded_String; size : Long_Long_Integer) return Boolean;
    procedure isValid (This : in out UpdateFileValidationView; fileName : Unbounded_String; size : Long_Long_Integer);
    procedure validationInfo (This : in out UpdateFileValidationView; stringBuffer : StringMaker_Access; fileName : Unbounded_String; size : Long_Long_Integer);

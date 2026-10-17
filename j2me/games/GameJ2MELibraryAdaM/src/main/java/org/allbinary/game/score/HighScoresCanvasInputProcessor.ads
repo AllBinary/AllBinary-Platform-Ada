@@ -53,7 +53,6 @@ package org.allbinary.game.score.HighScoresCanvasInputProcessor_Package is
    procedure onUpGameKeyEvent (This : in out HighScoresCanvasInputProcessor; gameKeyEvent : GameKeyEvent_Access);
    procedure paint (This : in out HighScoresCanvasInputProcessor; graphics : Graphics_Access);
    function getHighScoresCanvas (This : in out HighScoresCanvasInputProcessor) return HighScoresCanvas_Access;
-   procedure getHighScoresCanvas (This : in out HighScoresCanvasInputProcessor);
 
 end org.allbinary.game.score.HighScoresCanvasInputProcessor_Package;
 

@@ -43,7 +43,6 @@ package org.allbinary.business.context.modules.storefront.StoreFrontsData_Packag
    procedure Initialize (This : in out StoreFrontsData'Class);
    function Create return StoreFrontsData_Access;
    function getInstance return StoreFrontsData_Access;
-   procedure getInstance;
 
 end org.allbinary.business.context.modules.storefront.StoreFrontsData_Package;
 

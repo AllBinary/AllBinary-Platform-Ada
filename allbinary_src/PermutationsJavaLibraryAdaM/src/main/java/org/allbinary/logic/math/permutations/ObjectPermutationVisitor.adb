@@ -21,7 +21,7 @@ package body org.allbinary.logic.math.permutations.ObjectPermutationVisitor_Pack
    function Create (data : Java_Object_Access_Array_Access) return ObjectPermutationVisitor_Access is
       This : constant ObjectPermutationVisitor_Access := new ObjectPermutationVisitor;
    begin
-      Initialize (This.all, data);
+      ObjectPermutationVisitor_Package.Initialize (This.all, data);
       return This;
    end Create;
 

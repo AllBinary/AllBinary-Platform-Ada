@@ -31,6 +31,7 @@ with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.lo
 with org.allbinary.logic.io.path.AbPath_Package; use org.allbinary.logic.io.path.AbPath_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
+with admin.taghelpers.AuthenticationHelper_Package; use admin.taghelpers.AuthenticationHelper_Package;
 
 package admin.taghelpers.AuthenticationHelperUtil_Package is
 
@@ -59,7 +60,6 @@ package admin.taghelpers.AuthenticationHelperUtil_Package is
    procedure Initialize (This : in out AuthenticationHelperUtil'Class);
    function Create return AuthenticationHelperUtil_Access;
    function getInstance return AuthenticationHelperUtil_Access;
-   procedure getInstance;
    function isAuthorized (This : in out AuthenticationHelperUtil; authenticationHelper : AuthenticationHelper_Access; filePath : Unbounded_String) return Boolean;
    procedure isAuthorized (This : in out AuthenticationHelperUtil; authenticationHelper : AuthenticationHelper_Access; filePath : Unbounded_String);
 

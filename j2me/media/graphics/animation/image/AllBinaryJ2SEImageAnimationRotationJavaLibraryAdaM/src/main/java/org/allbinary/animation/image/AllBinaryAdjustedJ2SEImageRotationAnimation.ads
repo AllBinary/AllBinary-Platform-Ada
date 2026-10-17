@@ -46,10 +46,8 @@ package org.allbinary.animation.image.AllBinaryAdjustedJ2SEImageRotationAnimatio
    procedure init (This : in out AllBinaryAdjustedJ2SEImageRotationAnimation; dx : Integer; dy : Integer);
    procedure setDx (This : in out AllBinaryAdjustedJ2SEImageRotationAnimation; dx : Integer);
    function getDx (This : in out AllBinaryAdjustedJ2SEImageRotationAnimation) return Integer;
-   procedure getDx (This : in out AllBinaryAdjustedJ2SEImageRotationAnimation);
    procedure setDy (This : in out AllBinaryAdjustedJ2SEImageRotationAnimation; dy : Integer);
    function getDy (This : in out AllBinaryAdjustedJ2SEImageRotationAnimation) return Integer;
-   procedure getDy (This : in out AllBinaryAdjustedJ2SEImageRotationAnimation);
    procedure paintXY (This : in out AllBinaryAdjustedJ2SEImageRotationAnimation; graphics : Graphics_Access; x : Integer; y : Integer);
 
 end org.allbinary.animation.image.AllBinaryAdjustedJ2SEImageRotationAnimation_Package;

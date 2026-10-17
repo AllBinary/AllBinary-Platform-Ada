@@ -38,7 +38,7 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
    function Create (genericProfileActionsJPanel : GenericProfileActionsJPanel_Access; name : Unbounded_String) return GenericProfileActions_Access is
       This : constant GenericProfileActions_Access := new GenericProfileActions;
    begin
-      Initialize (This.all, genericProfileActionsJPanel, name);
+      GenericProfileActions_Package.Initialize (This.all, genericProfileActionsJPanel, name);
       return This;
    end Create;
 
@@ -54,7 +54,7 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
    function Create (genericProfileActionsJPanel : GenericProfileActionsJPanel_Access; abPath : AbPath_Access; name : Unbounded_String) return GenericProfileActions_Access is
       This : constant GenericProfileActions_Access := new GenericProfileActions;
    begin
-      Initialize (This.all, genericProfileActionsJPanel, abPath, name);
+      GenericProfileActions_Package.Initialize (This.all, genericProfileActionsJPanel, abPath, name);
       return This;
    end Create;
 
@@ -70,7 +70,7 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
    function Create (genericProfileActionsJPanel : GenericProfileActionsJPanel_Access; fileInputStream : FileInputStream_Access; name : Unbounded_String) return GenericProfileActions_Access is
       This : constant GenericProfileActions_Access := new GenericProfileActions;
    begin
-      Initialize (This.all, genericProfileActionsJPanel, fileInputStream, name);
+      GenericProfileActions_Package.Initialize (This.all, genericProfileActionsJPanel, fileInputStream, name);
       return This;
    end Create;
 
@@ -271,13 +271,6 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
       null;
    end getFile;
 
-   procedure getDefaultListModelHelper (This : in out GenericProfileActions) is
-      Java_Result : constant DefaultListModelHelper_Access := GenericProfileActions'Class (This).getDefaultListModelHelper;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getDefaultListModelHelper;
-
    procedure getAction (This : in out GenericProfileActions; string_Id : Unbounded_String) is
       Java_Result : constant GenericProfileAction_Access := GenericProfileActions'Class (This).getAction (string_Id);
       pragma Unreferenced (Java_Result);
@@ -285,47 +278,12 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
       null;
    end getAction;
 
-   procedure toHashMap (This : in out GenericProfileActions) is
-      Java_Result : constant HashMap_Access := GenericProfileActions'Class (This).toHashMap;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toHashMap;
-
    procedure toXmlNode (This : in out GenericProfileActions; document : Document_Access) is
       Java_Result : constant Node_Access := GenericProfileActions'Class (This).toXmlNode (document);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end toXmlNode;
-
-   procedure toXmlDoc (This : in out GenericProfileActions) is
-      Java_Result : constant Document_Access := GenericProfileActions'Class (This).toXmlDoc;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toXmlDoc;
-
-   procedure getGenericProfileActionsJPanel (This : in out GenericProfileActions) is
-      Java_Result : constant GenericProfileActionsJPanel_Access := GenericProfileActions'Class (This).getGenericProfileActionsJPanel;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getGenericProfileActionsJPanel;
-
-   procedure getHashMap (This : in out GenericProfileActions) is
-      Java_Result : constant HashMap_Access := GenericProfileActions'Class (This).getHashMap;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getHashMap;
-
-   procedure getName (This : in out GenericProfileActions) is
-      Java_Result : constant Unbounded_String := GenericProfileActions'Class (This).getName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getName;
 
 begin
    null;

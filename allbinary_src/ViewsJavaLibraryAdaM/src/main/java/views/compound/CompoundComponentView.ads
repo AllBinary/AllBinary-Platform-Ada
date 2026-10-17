@@ -24,6 +24,7 @@ with org.allbinary.data.tree.dom.document.XmlDocumentHelper_Package; use org.all
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
 with views.business.context.modules.storefront.HttpStoreComponentView_Package; use views.business.context.modules.storefront.HttpStoreComponentView_Package;
+with views.compound.CompoundTransform_Package; use views.compound.CompoundTransform_Package;
 
 package views.compound.CompoundComponentView_Package is
 
@@ -44,7 +45,6 @@ package views.compound.CompoundComponentView_Package is
    procedure Initialize (This : in out CompoundComponentView'Class; transformInfoInterface : TransformInfoInterface_Access);
    function Create (transformInfoInterface : TransformInfoInterface_Access) return CompoundComponentView_Access;
    function view (This : in out CompoundComponentView) return Unbounded_String;
-   procedure view (This : in out CompoundComponentView);
 
 end views.compound.CompoundComponentView_Package;
 

@@ -35,7 +35,7 @@ package body org.allbinary.game.layer.BasicLayerPlacement_Package is
    function Create (layerType : LayerPlacementType_Access; width : Integer; height : Integer) return BasicLayerPlacement_Access is
       This : constant BasicLayerPlacement_Access := new BasicLayerPlacement;
    begin
-      Initialize (This.all, layerType, width, height);
+      BasicLayerPlacement_Package.Initialize (This.all, layerType, width, height);
       return This;
    end Create;
 
@@ -58,27 +58,6 @@ package body org.allbinary.game.layer.BasicLayerPlacement_Package is
    begin
         This.layerType := layerType;
    end setLayerType;
-
-   procedure getWidth (This : in out BasicLayerPlacement) is
-      Java_Result : constant Integer := BasicLayerPlacement'Class (This).getWidth;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getWidth;
-
-   procedure getHeight (This : in out BasicLayerPlacement) is
-      Java_Result : constant Integer := BasicLayerPlacement'Class (This).getHeight;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getHeight;
-
-   procedure getLayerType (This : in out BasicLayerPlacement) is
-      Java_Result : constant LayerPlacementType_Access := BasicLayerPlacement'Class (This).getLayerType;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getLayerType;
 
 end org.allbinary.game.layer.BasicLayerPlacement_Package;
 

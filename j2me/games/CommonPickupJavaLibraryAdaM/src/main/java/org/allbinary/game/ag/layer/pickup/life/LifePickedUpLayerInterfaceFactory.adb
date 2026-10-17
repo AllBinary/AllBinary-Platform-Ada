@@ -37,7 +37,7 @@ package body org.allbinary.game.ag.layer.pickup.life.LifePickedUpLayerInterfaceF
    function Create return LifePickedUpLayerInterfaceFactory_Access is
       This : constant LifePickedUpLayerInterfaceFactory_Access := new LifePickedUpLayerInterfaceFactory;
    begin
-      Initialize (This.all);
+      LifePickedUpLayerInterfaceFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -56,20 +56,6 @@ package body org.allbinary.game.ag.layer.pickup.life.LifePickedUpLayerInterfaceF
    begin
         This.pool.visit (sourceLayerInterface);
    end process;
-
-   procedure getTotal (This : in out LifePickedUpLayerInterfaceFactory) is
-      Java_Result : constant Integer := LifePickedUpLayerInterfaceFactory'Class (This).getTotal;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTotal;
-
-   procedure getInstance is
-      Java_Result : constant PickedUpLayerInterfaceFactoryInterface_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

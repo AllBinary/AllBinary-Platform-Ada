@@ -50,7 +50,6 @@ package org.allbinary.logic.visual.dhtml.html.table.HtmlCell_Package is
    function Create (before : Unbounded_String; width_Case : Unbounded_String; height_Case : Unbounded_String; after : Unbounded_String) return HtmlCell_Access;
    procedure addText (This : in out HtmlCell; body_Id : Unbounded_String);
    function toString (This : in out HtmlCell) return Unbounded_String;
-   procedure toString (This : in out HtmlCell);
 
 end org.allbinary.logic.visual.dhtml.html.table.HtmlCell_Package;
 

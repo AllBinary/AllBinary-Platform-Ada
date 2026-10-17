@@ -32,7 +32,7 @@ package body org.allbinary.game.rts.technology.DamageTechnology_Package is
    function Create (maxLevel : Integer) return DamageTechnology_Access is
       This : constant DamageTechnology_Access := new DamageTechnology;
    begin
-      Initialize (This.all, maxLevel);
+      DamageTechnology_Package.Initialize (This.all, maxLevel);
       return This;
    end Create;
 
@@ -101,76 +101,6 @@ package body org.allbinary.game.rts.technology.DamageTechnology_Package is
    function isSelfUpgradeable (This : in out DamageTechnology) return Boolean is
    begin
         return False;
-   end isSelfUpgradeable;
-
-   procedure isCompleted (This : in out DamageTechnology) is
-      Java_Result : constant Boolean := DamageTechnology'Class (This).isCompleted;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isCompleted;
-
-   procedure getPercentComplete (This : in out DamageTechnology) is
-      Java_Result : constant Integer := DamageTechnology'Class (This).getPercentComplete;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getPercentComplete;
-
-   procedure getLevel (This : in out DamageTechnology) is
-      Java_Result : constant Integer := DamageTechnology'Class (This).getLevel;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getLevel;
-
-   procedure getMaxLevel (This : in out DamageTechnology) is
-      Java_Result : constant Integer := DamageTechnology'Class (This).getMaxLevel;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getMaxLevel;
-
-   procedure getCost (This : in out DamageTechnology) is
-      Java_Result : constant Integer := DamageTechnology'Class (This).getCost;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getCost;
-
-   procedure getDowngradeCost (This : in out DamageTechnology) is
-      Java_Result : constant Integer := DamageTechnology'Class (This).getDowngradeCost;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getDowngradeCost;
-
-   procedure isDowngradeable (This : in out DamageTechnology) is
-      Java_Result : constant Boolean := DamageTechnology'Class (This).isDowngradeable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isDowngradeable;
-
-   procedure getUpgradeCost (This : in out DamageTechnology) is
-      Java_Result : constant Integer := DamageTechnology'Class (This).getUpgradeCost;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getUpgradeCost;
-
-   procedure isUpgradeable (This : in out DamageTechnology) is
-      Java_Result : constant Boolean := DamageTechnology'Class (This).isUpgradeable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isUpgradeable;
-
-   procedure isSelfUpgradeable (This : in out DamageTechnology) is
-      Java_Result : constant Boolean := DamageTechnology'Class (This).isSelfUpgradeable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end isSelfUpgradeable;
 
 end org.allbinary.game.rts.technology.DamageTechnology_Package;

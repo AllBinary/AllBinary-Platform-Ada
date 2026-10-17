@@ -32,7 +32,7 @@ package body views.admin.inventory.AddFileValidationView_Package is
    function Create (transformInfoInterface : TransformInfoInterface_Access) return AddFileValidationView_Access is
       This : constant AddFileValidationView_Access := new AddFileValidationView;
    begin
-      Initialize (This.all, transformInfoInterface);
+      AddFileValidationView_Package.Initialize (This.all, transformInfoInterface);
       return This;
    end Create;
 
@@ -281,33 +281,12 @@ package body views.admin.inventory.AddFileValidationView_Package is
         end if;
    end validationInfo;
 
-   procedure isValid (This : in out AddFileValidationView) is
-      Java_Result : constant Boolean := AddFileValidationView'Class (This).isValid;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isValid;
-
-   procedure toValidationInfoDoc (This : in out AddFileValidationView) is
-      Java_Result : constant Document_Access := AddFileValidationView'Class (This).toValidationInfoDoc;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toValidationInfoDoc;
-
    procedure toValidationInfoNode (This : in out AddFileValidationView; document : Document_Access) is
       Java_Result : constant Node_Access := AddFileValidationView'Class (This).toValidationInfoNode (document);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end toValidationInfoNode;
-
-   procedure validationInfo (This : in out AddFileValidationView) is
-      Java_Result : constant Unbounded_String := AddFileValidationView'Class (This).validationInfo;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end validationInfo;
 
    procedure isValid (This : in out AddFileValidationView; fileName : Unbounded_String; size : Long_Long_Integer) is
       Java_Result : constant Boolean := AddFileValidationView'Class (This).isValid (fileName, size);

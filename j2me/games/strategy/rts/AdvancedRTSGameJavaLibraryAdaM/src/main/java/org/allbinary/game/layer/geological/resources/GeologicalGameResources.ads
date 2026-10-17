@@ -44,9 +44,7 @@ package org.allbinary.game.layer.geological.resources.GeologicalGameResources_Pa
    function Create return GeologicalGameResources_Access;
    procedure append (This : in out GeologicalGameResources; ROOT : Unbounded_String; sizeString : Unbounded_String);
    function getString (This : in out GeologicalGameResources) return Unbounded_String;
-   procedure getString (This : in out GeologicalGameResources);
    function getInstance return BasicGameResources_Access;
-   procedure getInstance;
 
 end org.allbinary.game.layer.geological.resources.GeologicalGameResources_Package;
 

@@ -68,9 +68,8 @@ package admin.taghelpers.OrderHistoryRequestHelper_Package is
    function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return OrderHistoryRequestHelper_Access;
    procedure getFormData (This : in out OrderHistoryRequestHelper);
    function setOrderStatus (This : in out OrderHistoryRequestHelper) return Unbounded_String;
-   procedure setOrderStatus (This : in out OrderHistoryRequestHelper);
-   function setOrderStatus (This : in out OrderHistoryRequestHelper; newStatus : Unbounded_String) return Unbounded_String;
-   procedure setOrderStatus (This : in out OrderHistoryRequestHelper; newStatus : Unbounded_String);
+   function setOrderStatus (This : in out OrderHistoryRequestHelper; newStatus_Param : Unbounded_String) return Unbounded_String;
+   procedure setOrderStatus (This : in out OrderHistoryRequestHelper; newStatus_Param : Unbounded_String);
 
 end admin.taghelpers.OrderHistoryRequestHelper_Package;
 

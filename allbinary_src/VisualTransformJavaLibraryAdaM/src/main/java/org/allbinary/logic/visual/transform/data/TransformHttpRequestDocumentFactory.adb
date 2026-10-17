@@ -30,7 +30,7 @@ package body org.allbinary.logic.visual.transform.data.TransformHttpRequestDocum
    function Create return TransformHttpRequestDocumentFactory_Access is
       This : constant TransformHttpRequestDocumentFactory_Access := new TransformHttpRequestDocumentFactory;
    begin
-      Initialize (This.all);
+      TransformHttpRequestDocumentFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

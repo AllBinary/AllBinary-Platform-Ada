@@ -23,6 +23,8 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbinary.logic.util.event.AllBinaryEventObject_Package;
 with org.allbinary.logic.util.event.EventListenerInterface_Package; use org.allbinary.logic.util.event.EventListenerInterface_Package;
 with org.allbinary.logic.util.event.handler.BasicEventHandler_Package; use org.allbinary.logic.util.event.handler.BasicEventHandler_Package;
+with org.allbinary.bounds.event.BoundsChangeEventListener_Package; use org.allbinary.bounds.event.BoundsChangeEventListener_Package;
+with org.allbinary.bounds.event.BoundsChangeEvent_Package; use org.allbinary.bounds.event.BoundsChangeEvent_Package;
 
 package org.allbinary.bounds.event.BoundsChangeEventHandler_Package is
 
@@ -41,7 +43,6 @@ package org.allbinary.bounds.event.BoundsChangeEventHandler_Package is
    procedure Initialize (This : in out BoundsChangeEventHandler'Class);
    function Create return BoundsChangeEventHandler_Access;
    function getInstance return BasicEventHandler_Access;
-   procedure getInstance;
    procedure process (This : in out BoundsChangeEventHandler; eventObject : AllBinaryEventObject_Access; eventListenerInterface : EventListenerInterface_Access);
 
 end org.allbinary.bounds.event.BoundsChangeEventHandler_Package;

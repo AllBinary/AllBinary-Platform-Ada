@@ -56,7 +56,6 @@ package org.allbinary.game.layer.PlayerGameInputGameLayer_Package is
    procedure Initialize (This : in out PlayerGameInputGameLayer'Class; playerInputId : Integer);
    function Create (playerInputId : Integer) return PlayerGameInputGameLayer_Access;
    function getPlayerGameInput (This : in out PlayerGameInputGameLayer) return PlayerGameInput_Access;
-   procedure getPlayerGameInput (This : in out PlayerGameInputGameLayer);
    procedure initInputProcessors (This : in out PlayerGameInputGameLayer);
    procedure processInput (This : in out PlayerGameInputGameLayer; myManager : AllBinaryLayerManager_Access);
    procedure paint (This : in out PlayerGameInputGameLayer; graphics : Graphics_Access);

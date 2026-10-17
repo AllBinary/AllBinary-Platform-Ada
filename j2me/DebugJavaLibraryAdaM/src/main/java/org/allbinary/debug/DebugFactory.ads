@@ -20,6 +20,8 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
+with org.allbinary.debug.NoDebug_Package; use org.allbinary.debug.NoDebug_Package;
+with org.allbinary.debug.DebugInterface_Package; use org.allbinary.debug.DebugInterface_Package;
 
 package org.allbinary.debug.DebugFactory_Package is
 
@@ -34,7 +36,6 @@ package org.allbinary.debug.DebugFactory_Package is
    procedure Initialize (This : in out DebugFactory'Class);
    function Create return DebugFactory_Access;
    function getInstance return DebugInterface_Access;
-   procedure getInstance;
 
 end org.allbinary.debug.DebugFactory_Package;
 

@@ -30,7 +30,7 @@ package body org.allbinary.game.media.graphics.geography.map.racetrack.DynamicRa
    function Create return DynamicRaceTracksPathPrinter_Access is
       This : constant DynamicRaceTracksPathPrinter_Access := new DynamicRaceTracksPathPrinter;
    begin
-      Initialize (This.all);
+      DynamicRaceTracksPathPrinter_Package.Initialize (This.all);
       return This;
    end Create;
 

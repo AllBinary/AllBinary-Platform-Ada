@@ -25,6 +25,8 @@ with org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Packa
 with org.allbinary.graphics.Rectangle_Package; use org.allbinary.graphics.Rectangle_Package;
 with org.allbinary.view.ViewPositionBase_Package; use org.allbinary.view.ViewPositionBase_Package;
 with org.allbinary.game.multiplayer.layer.MultiPlayerGameLayerInterface_Package; use org.allbinary.game.multiplayer.layer.MultiPlayerGameLayerInterface_Package;
+with org.allbinary.game.multiplayer.layer.RemoteInfo_Package; use org.allbinary.game.multiplayer.layer.RemoteInfo_Package;
+with org.allbinary.game.multiplayer.layer.MultiplayerBehavior_Package; use org.allbinary.game.multiplayer.layer.MultiplayerBehavior_Package;
 
 package org.allbinary.game.multiplayer.layer.MultiPlayerGameLayer_Package is
 
@@ -43,11 +45,9 @@ package org.allbinary.game.multiplayer.layer.MultiPlayerGameLayer_Package is
    procedure Initialize (This : in out MultiPlayerGameLayer'Class; remoteInfo : RemoteInfo_Access; groupInterface : Group_Access_Array_Access; name : Unbounded_String; layerInfo : Rectangle_Access; viewPosition : ViewPositionBase_Access);
    function Create (remoteInfo : RemoteInfo_Access; groupInterface : Group_Access_Array_Access; name : Unbounded_String; layerInfo : Rectangle_Access; viewPosition : ViewPositionBase_Access) return MultiPlayerGameLayer_Access;
    function getMultiplayerBehavior (This : in out MultiPlayerGameLayer) return MultiplayerBehavior_Access;
-   procedure getMultiplayerBehavior (This : in out MultiPlayerGameLayer);
    procedure setPingInfo (This : in out MultiPlayerGameLayer; show : Boolean);
    procedure setFiring (This : in out MultiPlayerGameLayer; firing : Short_Integer);
    function getFiring (This : in out MultiPlayerGameLayer) return Short_Integer;
-   procedure getFiring (This : in out MultiPlayerGameLayer);
 
 end org.allbinary.game.multiplayer.layer.MultiPlayerGameLayer_Package;
 

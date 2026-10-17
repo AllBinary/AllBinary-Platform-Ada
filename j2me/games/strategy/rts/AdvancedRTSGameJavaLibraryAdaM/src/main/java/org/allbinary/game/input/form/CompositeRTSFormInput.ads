@@ -33,6 +33,8 @@ with org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package; use 
 with org.allbinary.media.graphics.geography.map.GeographicMapCompositeInterface_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCompositeInterface_Package;
 with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
 with org.allbinary.game.input.form.RTSFormInput_Package; use org.allbinary.game.input.form.RTSFormInput_Package;
+with org.allbinary.game.input.form.WaypointRTSFormInput_Package; use org.allbinary.game.input.form.WaypointRTSFormInput_Package;
+with org.allbinary.game.input.form.UnitRTSFormInput_Package; use org.allbinary.game.input.form.UnitRTSFormInput_Package;
 
 package org.allbinary.game.input.form.CompositeRTSFormInput_Package is
 
@@ -69,12 +71,9 @@ package org.allbinary.game.input.form.CompositeRTSFormInput_Package is
    procedure processSticky (This : in out CompositeRTSFormInput; associatedRtsLayer : CollidableDestroyableDamageableLayer_Access; rtsPlayerLayerInterface : RTSPlayerLayerInterface_Access; layerManager : AllBinaryLayerManager_Access; point : GPoint_Access);
    procedure processStickyGameSpecific (This : in out CompositeRTSFormInput; associatedRtsLayer : CollidableDestroyableDamageableLayer_Access; rtsPlayerLayerInterface : RTSPlayerLayerInterface_Access; layerManager : AllBinaryLayerManager_Access; item : ABCustomItem_Access; index : Integer);
    function getSelectedStickyItemIndex (This : in out CompositeRTSFormInput) return Integer;
-   procedure getSelectedStickyItemIndex (This : in out CompositeRTSFormInput);
    function isStickyItemSelected (This : in out CompositeRTSFormInput) return Boolean;
-   procedure isStickyItemSelected (This : in out CompositeRTSFormInput);
    procedure setStickyItemSelected (This : in out CompositeRTSFormInput; stickyItemSelected : Boolean);
    function getSelectedStickyItem (This : in out CompositeRTSFormInput) return ABCustomItem_Access;
-   procedure getSelectedStickyItem (This : in out CompositeRTSFormInput);
    procedure setSelectedStickyItem (This : in out CompositeRTSFormInput; selectedStickyItem : ABCustomItem_Access);
 
 end org.allbinary.game.input.form.CompositeRTSFormInput_Package;

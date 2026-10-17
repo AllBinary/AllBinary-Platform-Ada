@@ -31,7 +31,7 @@ package body tags.admin.storefront.statistics.StoreFrontStatisticsTag_Package is
    function Create return StoreFrontStatisticsTag_Access is
       This : constant StoreFrontStatisticsTag_Access := new StoreFrontStatisticsTag;
    begin
-      Initialize (This.all);
+      StoreFrontStatisticsTag_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -58,13 +58,6 @@ package body tags.admin.storefront.statistics.StoreFrontStatisticsTag_Package is
             return SKIP_BODY;
                 end;
         end;
-   end doStartTag;
-
-   procedure doStartTag (This : in out StoreFrontStatisticsTag) is
-      Java_Result : constant Integer := StoreFrontStatisticsTag'Class (This).doStartTag;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end doStartTag;
 
 end tags.admin.storefront.statistics.StoreFrontStatisticsTag_Package;

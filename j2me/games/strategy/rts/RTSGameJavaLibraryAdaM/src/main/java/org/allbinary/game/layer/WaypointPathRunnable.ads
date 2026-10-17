@@ -24,6 +24,7 @@ with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.lo
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
 with org.allbinary.game.layer.WaypointPathRunnableBase_Package; use org.allbinary.game.layer.WaypointPathRunnableBase_Package;
+with org.allbinary.game.layer.WaypointBehaviorBase_Package; use org.allbinary.game.layer.WaypointBehaviorBase_Package;
 
 package org.allbinary.game.layer.WaypointPathRunnable_Package is
 
@@ -44,7 +45,6 @@ package org.allbinary.game.layer.WaypointPathRunnable_Package is
    function Create return WaypointPathRunnable_Access;
    procedure run (This : in out WaypointPathRunnable);
    function isDone (This : in out WaypointPathRunnable) return Boolean;
-   procedure isDone (This : in out WaypointPathRunnable);
 
 end org.allbinary.game.layer.WaypointPathRunnable_Package;
 

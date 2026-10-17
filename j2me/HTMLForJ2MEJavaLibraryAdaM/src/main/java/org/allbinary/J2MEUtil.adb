@@ -30,7 +30,7 @@ package body org.allbinary.J2MEUtil_Package is
    function Create return J2MEUtil_Access is
       This : constant J2MEUtil_Access := new J2MEUtil;
    begin
-      Initialize (This.all);
+      J2MEUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -47,27 +47,6 @@ package body org.allbinary.J2MEUtil_Package is
    function isHTML return Boolean is
    begin
         return True;
-   end isHTML;
-
-   procedure isJ2ME is
-      Java_Result : constant Boolean := isJ2ME;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isJ2ME;
-
-   procedure isJ2SE is
-      Java_Result : constant Boolean := isJ2SE;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isJ2SE;
-
-   procedure isHTML is
-      Java_Result : constant Boolean := isHTML;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end isHTML;
 
 end org.allbinary.J2MEUtil_Package;

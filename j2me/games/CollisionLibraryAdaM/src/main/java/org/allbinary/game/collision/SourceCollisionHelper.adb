@@ -29,7 +29,7 @@ package body org.allbinary.game.collision.SourceCollisionHelper_Package is
    function Create (layerInterface : AllBinaryLayer_Access) return SourceCollisionHelper_Access is
       This : constant SourceCollisionHelper_Access := new SourceCollisionHelper;
    begin
-      Initialize (This.all, layerInterface);
+      SourceCollisionHelper_Package.Initialize (This.all, layerInterface);
       return This;
    end Create;
 

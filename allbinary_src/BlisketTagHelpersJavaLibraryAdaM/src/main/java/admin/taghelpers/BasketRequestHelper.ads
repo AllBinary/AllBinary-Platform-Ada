@@ -70,11 +70,8 @@ package admin.taghelpers.BasketRequestHelper_Package is
    function Create (propertiesHashMap : HashMap_Access; pageContext : PageContext_Access) return BasketRequestHelper_Access;
    procedure getFormData (This : in out BasketRequestHelper);
    function addItemToBasket (This : in out BasketRequestHelper) return Boolean;
-   procedure addItemToBasket (This : in out BasketRequestHelper);
    function removeItemFromBasket (This : in out BasketRequestHelper) return Boolean;
-   procedure removeItemFromBasket (This : in out BasketRequestHelper);
    function adjustBasket (This : in out BasketRequestHelper) return Boolean;
-   procedure adjustBasket (This : in out BasketRequestHelper);
 
 end admin.taghelpers.BasketRequestHelper_Package;
 

@@ -30,7 +30,7 @@ package body org.allbinary.input.motion.button.UpgradeDowngradeTouchButtonsBuild
    function Create return UpgradeDowngradeTouchButtonsBuilder_Access is
       This : constant UpgradeDowngradeTouchButtonsBuilder_Access := new UpgradeDowngradeTouchButtonsBuilder;
    begin
-      Initialize (This.all);
+      UpgradeDowngradeTouchButtonsBuilder_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -67,13 +67,6 @@ package body org.allbinary.input.motion.button.UpgradeDowngradeTouchButtonsBuild
             return BasicArrayListUtil_Package.getInstance.getImmutableInstance;
                 end;
         end;
-   end getList;
-
-   procedure getList (This : in out UpgradeDowngradeTouchButtonsBuilder) is
-      Java_Result : constant BasicArrayList_Access := UpgradeDowngradeTouchButtonsBuilder'Class (This).getList;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getList;
 
 end org.allbinary.input.motion.button.UpgradeDowngradeTouchButtonsBuilder_Package;

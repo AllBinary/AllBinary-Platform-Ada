@@ -98,11 +98,8 @@ package org.allbinary.data.tables.user.commerce.inventory.order.OrderItemsEntity
    function getBasketReview (This : in out OrderItemsEntity; orderId : Unbounded_String) return BasketReview_Access;
    procedure getBasketReview (This : in out OrderItemsEntity; orderId : Unbounded_String);
    function createTableStatement (This : in out OrderItemsEntity) return Unbounded_String;
-   procedure createTableStatement (This : in out OrderItemsEntity);
    function createTable (This : in out OrderItemsEntity) return Unbounded_String;
-   procedure createTable (This : in out OrderItemsEntity);
    function dropTable (This : in out OrderItemsEntity) return Unbounded_String;
-   procedure dropTable (This : in out OrderItemsEntity);
 
 end org.allbinary.data.tables.user.commerce.inventory.order.OrderItemsEntity_Package;
 

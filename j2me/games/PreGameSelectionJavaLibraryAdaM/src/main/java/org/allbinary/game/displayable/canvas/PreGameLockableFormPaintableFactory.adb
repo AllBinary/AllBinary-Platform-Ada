@@ -32,7 +32,7 @@ package body org.allbinary.game.displayable.canvas.PreGameLockableFormPaintableF
    function Create (lockedIndex : Integer) return PreGameLockableFormPaintableFactory_Access is
       This : constant PreGameLockableFormPaintableFactory_Access := new PreGameLockableFormPaintableFactory;
    begin
-      Initialize (This.all, lockedIndex);
+      PreGameLockableFormPaintableFactory_Package.Initialize (This.all, lockedIndex);
       return This;
    end Create;
 

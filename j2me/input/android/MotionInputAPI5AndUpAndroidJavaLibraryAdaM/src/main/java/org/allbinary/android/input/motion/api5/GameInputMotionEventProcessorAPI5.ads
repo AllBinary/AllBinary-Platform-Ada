@@ -29,6 +29,7 @@ with org.allbinary.input.motion.MotionRecognizer_Package; use org.allbinary.inpu
 with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
 with org.allbinary.logic.communication.log.ForcedLogUtil_Package; use org.allbinary.logic.communication.log.ForcedLogUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.android.input.motion.api5.GameInputMotionInfoAPI5_Package; use org.allbinary.android.input.motion.api5.GameInputMotionInfoAPI5_Package;
 
 package org.allbinary.android.input.motion.api5.GameInputMotionEventProcessorAPI5_Package is
 
@@ -58,7 +59,6 @@ package org.allbinary.android.input.motion.api5.GameInputMotionEventProcessorAPI
    procedure Initialize (This : in out GameInputMotionEventProcessorAPI5'Class);
    function Create return GameInputMotionEventProcessorAPI5_Access;
    function getInstance return GameInputMotionEventProcessorAPI5_Access;
-   procedure getInstance;
    function isValid (This : in out GameInputMotionEventProcessorAPI5; pointerId : Integer) return Boolean;
    procedure isValid (This : in out GameInputMotionEventProcessorAPI5; pointerId : Integer);
    procedure process (This : in out GameInputMotionEventProcessorAPI5; motionEvent : MotionEvent_Access);

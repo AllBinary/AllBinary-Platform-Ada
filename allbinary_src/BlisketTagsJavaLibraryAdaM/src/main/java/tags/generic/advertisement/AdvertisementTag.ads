@@ -39,7 +39,6 @@ package tags.generic_Id.advertisement.AdvertisementTag_Package is
    procedure Initialize (This : in out AdvertisementTag'Class);
    function Create return AdvertisementTag_Access;
    function doStartTag (This : in out AdvertisementTag) return Integer;
-   procedure doStartTag (This : in out AdvertisementTag);
 
 end tags.generic_Id.advertisement.AdvertisementTag_Package;
 

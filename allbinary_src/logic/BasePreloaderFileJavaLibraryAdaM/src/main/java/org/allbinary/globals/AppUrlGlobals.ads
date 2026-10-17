@@ -40,14 +40,10 @@ package org.allbinary.globals.AppUrlGlobals_Package is
    procedure Initialize (This : in out AppUrlGlobals'Class);
    function Create return AppUrlGlobals_Access;
    function isTestingMode (This : in out AppUrlGlobals) return Boolean;
-   procedure isTestingMode (This : in out AppUrlGlobals);
    function getWebappPath (This : in out AppUrlGlobals) return Unbounded_String;
-   procedure getWebappPath (This : in out AppUrlGlobals);
    procedure setWebappPath (This : in out AppUrlGlobals; path : Unbounded_String);
    function getTestHtmlPath (This : in out AppUrlGlobals) return Unbounded_String;
-   procedure getTestHtmlPath (This : in out AppUrlGlobals);
    function getMainPath (This : in out AppUrlGlobals) return Unbounded_String;
-   procedure getMainPath (This : in out AppUrlGlobals);
 
 end org.allbinary.globals.AppUrlGlobals_Package;
 

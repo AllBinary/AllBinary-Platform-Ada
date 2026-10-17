@@ -55,7 +55,6 @@ package org.allbinary.graphics.pipeline.BasicGraphicsPipeline_Package is
    procedure rotate (This : in out BasicGraphicsPipeline; angle : Integer);
    procedure mirror (This : in out BasicGraphicsPipeline; width : Integer);
    function getMatrix (This : in out BasicGraphicsPipeline) return BasicArrayList_Access;
-   procedure getMatrix (This : in out BasicGraphicsPipeline);
 
 end org.allbinary.graphics.pipeline.BasicGraphicsPipeline_Package;
 

@@ -28,7 +28,7 @@ package body org.allbinary.image.ImageCacheFactory_Package is
    function Create return ImageCacheFactory_Access is
       This : constant ImageCacheFactory_Access := new ImageCacheFactory;
    begin
-      Initialize (This.all);
+      ImageCacheFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -42,13 +42,6 @@ package body org.allbinary.image.ImageCacheFactory_Package is
    begin
         null;
    end init;
-
-   procedure getInstance is
-      Java_Result : constant ImageCache_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

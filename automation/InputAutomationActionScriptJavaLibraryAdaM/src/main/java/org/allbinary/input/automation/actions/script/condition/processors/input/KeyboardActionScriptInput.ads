@@ -38,6 +38,9 @@ with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.w3c.dom.NodeList_Package; use org.w3c.dom.NodeList_Package;
 with org.allbinary.input.automation.actions.script.condition.processors.input.BasicProfileActionScriptInput_Package; use org.allbinary.input.automation.actions.script.condition.processors.input.BasicProfileActionScriptInput_Package;
 with org.allbinary.input.automation.actions.script.condition.processors.input.KeyboardActionScriptInputInterface_Package; use org.allbinary.input.automation.actions.script.condition.processors.input.KeyboardActionScriptInputInterface_Package;
+with org.allbinary.input.automation.actions.script.condition.processors.input.KeyboardActionScriptInputJPanel_Package; use org.allbinary.input.automation.actions.script.condition.processors.input.KeyboardActionScriptInputJPanel_Package;
+with org.allbinary.input.automation.actions.script.condition.processors.input.KeyboardActionScriptInputData_Package; use org.allbinary.input.automation.actions.script.condition.processors.input.KeyboardActionScriptInputData_Package;
+with org.allbinary.input.automation.actions.script.condition.processors.input.KeyboardInputAutomationProcessor_Package; use org.allbinary.input.automation.actions.script.condition.processors.input.KeyboardInputAutomationProcessor_Package;
 
 package org.allbinary.input.automation.actions.script.condition.processors.input.KeyboardActionScriptInput_Package is
 
@@ -74,36 +77,28 @@ package org.allbinary.input.automation.actions.script.condition.processors.input
    procedure Initialize (This : in out KeyboardActionScriptInput'Class; node : Node_Access);
    function Create (node : Node_Access) return KeyboardActionScriptInput_Access;
    function getDelayBetweenKeys (This : in out KeyboardActionScriptInput) return Integer;
-   procedure getDelayBetweenKeys (This : in out KeyboardActionScriptInput);
    procedure setDelayBetweenKeys (This : in out KeyboardActionScriptInput; delayBetweenKeys : Integer);
    function isPress (This : in out KeyboardActionScriptInput) return Boolean;
-   procedure isPress (This : in out KeyboardActionScriptInput);
    procedure setPress (This : in out KeyboardActionScriptInput; press : Boolean);
    function isRelease (This : in out KeyboardActionScriptInput) return Boolean;
-   procedure isRelease (This : in out KeyboardActionScriptInput);
    procedure setRelease (This : in out KeyboardActionScriptInput; release : Boolean);
    function isNormal (This : in out KeyboardActionScriptInput) return Boolean;
-   procedure isNormal (This : in out KeyboardActionScriptInput);
    procedure setNormal (This : in out KeyboardActionScriptInput);
    function getKeyArray (This : in out KeyboardActionScriptInput) return Integer_Array_Access;
-   procedure getKeyArray (This : in out KeyboardActionScriptInput);
    procedure setKeyArray (This : in out KeyboardActionScriptInput; keyArray : Integer_Array_Access);
    procedure showDialog (This : in out KeyboardActionScriptInput);
    function getText (This : in out KeyboardActionScriptInput) return Unbounded_String;
-   procedure getText (This : in out KeyboardActionScriptInput);
    procedure setText (This : in out KeyboardActionScriptInput; text : Unbounded_String);
    function getText (integerArray : Integer_Array_Access) return Unbounded_String;
    procedure getText (integerArray : Integer_Array_Access);
    function integerArrayValue (This : in out KeyboardActionScriptInput; text : Unbounded_String) return Integer_Array_Access;
    procedure integerArrayValue (This : in out KeyboardActionScriptInput; text : Unbounded_String);
    function toHashMap (This : in out KeyboardActionScriptInput) return HashMap_Access;
-   procedure toHashMap (This : in out KeyboardActionScriptInput);
    function toXmlNode (This : in out KeyboardActionScriptInput; document : Document_Access) return Node_Access;
    procedure toXmlNode (This : in out KeyboardActionScriptInput; document : Document_Access);
    procedure process (This : in out KeyboardActionScriptInput; frame : Long_Long_Integer);
    procedure log (This : in out KeyboardActionScriptInput);
    function toString (This : in out KeyboardActionScriptInput) return Unbounded_String;
-   procedure toString (This : in out KeyboardActionScriptInput);
 
 end org.allbinary.input.automation.actions.script.condition.processors.input.KeyboardActionScriptInput_Package;
 

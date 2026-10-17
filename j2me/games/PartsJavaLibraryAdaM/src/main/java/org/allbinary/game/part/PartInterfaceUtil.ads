@@ -20,6 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
+with org.allbinary.game.part.PartInterface_Package; use org.allbinary.game.part.PartInterface_Package;
 
 package org.allbinary.game.part.PartInterfaceUtil_Package is
 
@@ -35,7 +36,6 @@ package org.allbinary.game.part.PartInterfaceUtil_Package is
    procedure Initialize (This : in out PartInterfaceUtil'Class);
    function Create return PartInterfaceUtil_Access;
    function getZeroArray return PartInterface_Access_Array_Access;
-   procedure getZeroArray;
 
 end org.allbinary.game.part.PartInterfaceUtil_Package;
 

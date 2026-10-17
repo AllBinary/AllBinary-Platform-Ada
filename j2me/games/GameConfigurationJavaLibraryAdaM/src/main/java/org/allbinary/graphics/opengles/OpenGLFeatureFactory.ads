@@ -20,6 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
+with org.allbinary.graphics.opengles.OpenGLFeature_Package; use org.allbinary.graphics.opengles.OpenGLFeature_Package;
 
 package org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package is
 
@@ -58,7 +59,6 @@ package org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package is
    procedure Initialize (This : in out OpenGLFeatureFactory'Class);
    function Create return OpenGLFeatureFactory_Access;
    function getInstance return OpenGLFeatureFactory_Access;
-   procedure getInstance;
 
 end org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package;
 

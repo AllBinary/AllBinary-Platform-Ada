@@ -25,6 +25,7 @@ with AllBinary_Java; use AllBinary_Java;
 with admin.taghelpers.TagHelperFactory_Package; use admin.taghelpers.TagHelperFactory_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.system.security.licensing.LicensingException_Package; use org.allbinary.logic.system.security.licensing.LicensingException_Package;
+with taghelpers.transform.info.TransformInfoRequestHelper_Package; use taghelpers.transform.info.TransformInfoRequestHelper_Package;
 
 package taghelpers.transform.info.TransformInfoRequestHelperFactory_Package is
 

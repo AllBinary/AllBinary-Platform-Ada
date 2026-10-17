@@ -38,7 +38,7 @@ package body org.allbinary.game.score.NoHighScoresFactory_Package is
    function Create return NoHighScoresFactory_Access is
       This : constant NoHighScoresFactory_Access := new NoHighScoresFactory;
    begin
-      Initialize (This.all);
+      NoHighScoresFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -51,20 +51,6 @@ package body org.allbinary.game.score.NoHighScoresFactory_Package is
    function createHighScoresHelper (This : in out NoHighScoresFactory) return HighScoresHelperBaseInterface_Access is
    begin
         return HighScoresHelperBase_Package.Create;
-   end createHighScoresHelper;
-
-   procedure getInstance is
-      Java_Result : constant NoHighScoresFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure createHighScoresHelper (This : in out NoHighScoresFactory) is
-      Java_Result : constant HighScoresHelperBaseInterface_Access := NoHighScoresFactory'Class (This).createHighScoresHelper;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end createHighScoresHelper;
 
 begin

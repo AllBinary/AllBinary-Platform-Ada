@@ -103,7 +103,6 @@ package admin.taghelpers.UpdateOrderHelper_Package is
    function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return UpdateOrderHelper_Access;
    procedure getFormData (This : in out UpdateOrderHelper);
    function update (This : in out UpdateOrderHelper) return Unbounded_String;
-   procedure update (This : in out UpdateOrderHelper);
 
 end admin.taghelpers.UpdateOrderHelper_Package;
 

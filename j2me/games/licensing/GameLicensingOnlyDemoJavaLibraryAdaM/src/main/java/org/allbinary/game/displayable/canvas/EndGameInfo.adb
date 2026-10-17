@@ -33,7 +33,7 @@ package body org.allbinary.game.displayable.canvas.EndGameInfo_Package is
    function Create return EndGameInfo_Access is
       This : constant EndGameInfo_Access := new EndGameInfo;
    begin
-      Initialize (This.all);
+      EndGameInfo_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -68,20 +68,6 @@ package body org.allbinary.game.displayable.canvas.EndGameInfo_Package is
    begin
         This.winStr := winStr;
    end setWinStr;
-
-   procedure getGameOverStr (This : in out EndGameInfo) is
-      Java_Result : constant Unbounded_String := EndGameInfo'Class (This).getGameOverStr;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getGameOverStr;
-
-   procedure getWinStr (This : in out EndGameInfo) is
-      Java_Result : constant Unbounded_String := EndGameInfo'Class (This).getWinStr;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getWinStr;
 
 end org.allbinary.game.displayable.canvas.EndGameInfo_Package;
 

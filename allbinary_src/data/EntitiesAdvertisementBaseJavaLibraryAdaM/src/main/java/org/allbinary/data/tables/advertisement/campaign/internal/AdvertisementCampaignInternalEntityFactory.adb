@@ -30,7 +30,7 @@ package body org.allbinary.data.tables.advertisement.campaign.internal.Advertise
    function Create return AdvertisementCampaignInternalEntityFactory_Access is
       This : constant AdvertisementCampaignInternalEntityFactory_Access := new AdvertisementCampaignInternalEntityFactory;
    begin
-      Initialize (This.all);
+      AdvertisementCampaignInternalEntityFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -53,13 +53,6 @@ package body org.allbinary.data.tables.advertisement.campaign.internal.Advertise
             return null;
                 end;
         end;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant AdvertisementCampaignInternalEntityInterface_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

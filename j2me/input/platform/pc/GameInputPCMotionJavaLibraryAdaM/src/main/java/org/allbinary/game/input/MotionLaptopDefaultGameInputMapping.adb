@@ -99,7 +99,7 @@ package body org.allbinary.game.input.MotionLaptopDefaultGameInputMapping_Packag
    function Create return MotionLaptopDefaultGameInputMapping_Access is
       This : constant MotionLaptopDefaultGameInputMapping_Access := new MotionLaptopDefaultGameInputMapping;
    begin
-      Initialize (This.all);
+      MotionLaptopDefaultGameInputMapping_Package.Initialize (This.all);
       return This;
    end Create;
 

@@ -16,7 +16,7 @@ package body BooleanTest_Package is
    function Create return BooleanTest_Access is
       This : constant BooleanTest_Access := new BooleanTest;
    begin
-      Initialize (This.all);
+      BooleanTest_Package.Initialize (This.all);
       return This;
    end Create;
 

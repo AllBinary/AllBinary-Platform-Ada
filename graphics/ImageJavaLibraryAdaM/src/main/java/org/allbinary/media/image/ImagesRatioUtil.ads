@@ -23,6 +23,9 @@ with AllBinary_Java; use AllBinary_Java;
 --  with java.awt.image.BufferedImage_Package; use java.awt.image.BufferedImage_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
+with org.allbinary.media.image.ImageUtil_Package; use org.allbinary.media.image.ImageUtil_Package;
+with org.allbinary.media.image.Point_Package; use org.allbinary.media.image.Point_Package;
+with org.allbinary.media.image.Graphics2D_Package; use org.allbinary.media.image.Graphics2D_Package;
 
 package org.allbinary.media.image.ImagesRatioUtil_Package is
 
@@ -43,7 +46,6 @@ package org.allbinary.media.image.ImagesRatioUtil_Package is
    procedure Initialize (This : in out ImagesRatioUtil'Class);
    function Create return ImagesRatioUtil_Access;
    function getInstance return ImagesRatioUtil_Access;
-   procedure getInstance;
    function isEqual (This : in out ImagesRatioUtil; bufferedImageArray : BufferedImage_Access_Array_Access; totalImages : Integer) return Boolean;
    procedure isEqual (This : in out ImagesRatioUtil; bufferedImageArray : BufferedImage_Access_Array_Access; totalImages : Integer);
    function getAverage (This : in out ImagesRatioUtil; bufferedImageArray : BufferedImage_Access_Array_Access; totalImages : Integer) return Long_Float;

@@ -45,21 +45,16 @@ package org.allbinary.animation.compound.SimultaneousCompoundIndexAnimation_Pack
    function Create (animationInterfaceArray : IndexedAnimation_Access_Array_Access; animationBehavior : AnimationBehavior_Access) return SimultaneousCompoundIndexAnimation_Access;
    procedure setFrame (This : in out SimultaneousCompoundIndexAnimation; frameIndex : Integer);
    function getFrame (This : in out SimultaneousCompoundIndexAnimation) return Integer;
-   procedure getFrame (This : in out SimultaneousCompoundIndexAnimation);
    function getAnimationSize (This : in out SimultaneousCompoundIndexAnimation) return Integer;
-   procedure getAnimationSize (This : in out SimultaneousCompoundIndexAnimation);
    function getSize (This : in out SimultaneousCompoundIndexAnimation) return Integer;
-   procedure getSize (This : in out SimultaneousCompoundIndexAnimation);
    procedure previousFrame (This : in out SimultaneousCompoundIndexAnimation);
    procedure nextFrame (This : in out SimultaneousCompoundIndexAnimation);
    procedure setSequence (This : in out SimultaneousCompoundIndexAnimation; sequence : Integer_Array_Access);
    function getSequence (This : in out SimultaneousCompoundIndexAnimation) return Integer_Array_Access;
-   procedure getSequence (This : in out SimultaneousCompoundIndexAnimation);
    procedure paintXY (This : in out SimultaneousCompoundIndexAnimation; graphics : Graphics_Access; x : Integer; y : Integer);
    procedure paintThreedXYZ (This : in out SimultaneousCompoundIndexAnimation; graphics : Graphics_Access; x : Integer; y : Integer; z : Integer);
    procedure set (This : in out SimultaneousCompoundIndexAnimation; gl : GL_Access);
    function getAnimationInterfaceArray (This : in out SimultaneousCompoundIndexAnimation) return IndexedAnimation_Access_Array_Access;
-   procedure getAnimationInterfaceArray (This : in out SimultaneousCompoundIndexAnimation);
    procedure setAnimationInterfaceArray (This : in out SimultaneousCompoundIndexAnimation; animationInterfaceArray : IndexedAnimation_Access_Array_Access);
 
 end org.allbinary.animation.compound.SimultaneousCompoundIndexAnimation_Package;

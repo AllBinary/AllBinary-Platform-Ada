@@ -37,7 +37,7 @@ package body org.allbinary.logic.math.permutations.OrderedObjectArrayPermutation
    function Create return OrderedObjectArrayPermutationUtil_Access is
       This : constant OrderedObjectArrayPermutationUtil_Access := new OrderedObjectArrayPermutationUtil;
    begin
-      Initialize (This.all);
+      OrderedObjectArrayPermutationUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -121,13 +121,6 @@ package body org.allbinary.logic.math.permutations.OrderedObjectArrayPermutation
         permutationVisitor.visit (data);
         OrderedObjectArrayPermutationUtil_Package.getInstance.generate (data, permutationVisitor);
    end main;
-
-   procedure getInstance is
-      Java_Result : constant OrderedObjectArrayPermutationUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure factorial (This : in out OrderedObjectArrayPermutationUtil; dataLength : Integer) is
       Java_Result : constant Long_Long_Integer := OrderedObjectArrayPermutationUtil'Class (This).factorial (dataLength);

@@ -28,7 +28,7 @@ package body org.allbinary.data.tables.transform.info.TransformInfoEntityBuilder
    function Create return TransformInfoEntityBuilder_Access is
       This : constant TransformInfoEntityBuilder_Access := new TransformInfoEntityBuilder;
    begin
-      Initialize (This.all);
+      TransformInfoEntityBuilder_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -36,13 +36,6 @@ package body org.allbinary.data.tables.transform.info.TransformInfoEntityBuilder
    function getInstance return TransformInfoEntity_Access is
    begin
         return TransformInfoEntityFactory_Package.getInstance (TransformInfoObjectConfigGeneratorFactory_Package.getInstance, TransformInfoObjectConfigAndManipulatorFactory_Package.getInstance, TransformInfoHttpStoreFactory_Package.getInstance);
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant TransformInfoEntity_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 end org.allbinary.data.tables.transform.info.TransformInfoEntityBuilder_Package;

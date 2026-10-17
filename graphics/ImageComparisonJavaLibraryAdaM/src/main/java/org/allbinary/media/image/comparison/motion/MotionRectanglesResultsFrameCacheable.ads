@@ -22,6 +22,7 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.util.cache.CacheableInterface_Package; use org.allbinary.logic.util.cache.CacheableInterface_Package;
+with org.allbinary.media.image.comparison.motion.MotionRectangles_Package; use org.allbinary.media.image.comparison.motion.MotionRectangles_Package;
 
 package org.allbinary.media.image.comparison.motion.MotionRectanglesResultsFrameCacheable_Package is
 
@@ -41,12 +42,9 @@ package org.allbinary.media.image.comparison.motion.MotionRectanglesResultsFrame
    procedure Initialize (This : in out MotionRectanglesResultsFrameCacheable'Class; motionRectangles : MotionRectangles_Access; frame : Long_Long_Integer);
    function Create (motionRectangles : MotionRectangles_Access; frame : Long_Long_Integer) return MotionRectanglesResultsFrameCacheable_Access;
    function getKey (This : in out MotionRectanglesResultsFrameCacheable) return Java_Object_Access;
-   procedure getKey (This : in out MotionRectanglesResultsFrameCacheable);
    function getMotionRectangles (This : in out MotionRectanglesResultsFrameCacheable) return MotionRectangles_Access;
-   procedure getMotionRectangles (This : in out MotionRectanglesResultsFrameCacheable);
    procedure setMotionRectangles (This : in out MotionRectanglesResultsFrameCacheable; motionRectangles : MotionRectangles_Access);
    function toString (This : in out MotionRectanglesResultsFrameCacheable) return Unbounded_String;
-   procedure toString (This : in out MotionRectanglesResultsFrameCacheable);
 
 end org.allbinary.media.image.comparison.motion.MotionRectanglesResultsFrameCacheable_Package;
 

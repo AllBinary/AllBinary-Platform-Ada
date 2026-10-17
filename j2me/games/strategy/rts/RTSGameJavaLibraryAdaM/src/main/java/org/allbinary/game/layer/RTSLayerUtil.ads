@@ -34,6 +34,9 @@ with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.
 with org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package; use org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
 with org.allbinary.media.graphics.geography.map.racetrack.BaseRaceTrackGeographicMap_Package; use org.allbinary.media.graphics.geography.map.racetrack.BaseRaceTrackGeographicMap_Package;
 with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
+with org.allbinary.game.layer.RTSLayer_Package; use org.allbinary.game.layer.RTSLayer_Package;
+with org.allbinary.game.layer.FakeLayerManager_Package; use org.allbinary.game.layer.FakeLayerManager_Package;
+with org.allbinary.game.layer.AllBinaryGameLayerManager_Package; use org.allbinary.game.layer.AllBinaryGameLayerManager_Package;
 
 package org.allbinary.game.layer.RTSLayerUtil_Package is
 
@@ -67,7 +70,6 @@ package org.allbinary.game.layer.RTSLayerUtil_Package is
    procedure Initialize (This : in out RTSLayerUtil'Class);
    function Create return RTSLayerUtil_Access;
    function getInstance return RTSLayerUtil_Access;
-   procedure getInstance;
    function createWeaponProperties (This : in out RTSLayerUtil; weaponProperties : WeaponProperties_Access; currentLevel : Integer; lastLevel : Integer) return WeaponProperties_Access;
    procedure createWeaponProperties (This : in out RTSLayerUtil; weaponProperties : WeaponProperties_Access; currentLevel : Integer; lastLevel : Integer);
    procedure downgrade (This : in out RTSLayerUtil; rtsLayer : RTSLayer_Access);

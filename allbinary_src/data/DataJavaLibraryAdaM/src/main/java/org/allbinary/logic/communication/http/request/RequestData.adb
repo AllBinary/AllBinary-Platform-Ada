@@ -13,7 +13,7 @@
 --  Generated Code Do Not Modify
 
 
-package body org.allbinary.logic.communication.http.request_Case.RequestData_Package is
+package body org.allbinary.logic.communication.http.request.RequestData_Package is
 
    procedure Initialize_Fields (This : in out RequestData'Class) is
    begin
@@ -30,7 +30,7 @@ package body org.allbinary.logic.communication.http.request_Case.RequestData_Pac
    function Create return RequestData_Access is
       This : constant RequestData_Access := new RequestData;
    begin
-      Initialize (This.all);
+      RequestData_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -41,6 +41,6 @@ begin
    VIEWS := To_Unbounded_String ("REQUESTDATA_VIEWS");
    VISITORS := To_Unbounded_String ("REQUESTDATA_VISITORS");
 
-end org.allbinary.logic.communication.http.request_Case.RequestData_Package;
+end org.allbinary.logic.communication.http.request.RequestData_Package;
 
 

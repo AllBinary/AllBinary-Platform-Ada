@@ -22,6 +22,8 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.util.visitor.Visitor_Package; use org.allbinary.logic.util.visitor.Visitor_Package;
 with org.allbinary.game.input.SelectRTSLayerVisitorFactoryInterface_Package; use org.allbinary.game.input.SelectRTSLayerVisitorFactoryInterface_Package;
+with org.allbinary.game.input.SelectAdvancedRTSLayerVisitor_Package; use org.allbinary.game.input.SelectAdvancedRTSLayerVisitor_Package;
+with org.allbinary.game.input.SelectedRTSLayersPlayerGameInput_Package; use org.allbinary.game.input.SelectedRTSLayersPlayerGameInput_Package;
 
 package org.allbinary.game.input.SelectAdvancedRTSLayerVisitorFactory_Package is
 
@@ -38,7 +40,6 @@ package org.allbinary.game.input.SelectAdvancedRTSLayerVisitorFactory_Package is
    procedure Initialize (This : in out SelectAdvancedRTSLayerVisitorFactory'Class);
    function Create return SelectAdvancedRTSLayerVisitorFactory_Access;
    function getInstance return SelectAdvancedRTSLayerVisitorFactory_Access;
-   procedure getInstance;
    function create (This : in out SelectAdvancedRTSLayerVisitorFactory; selectedRTSLayersPlayerGameInput : SelectedRTSLayersPlayerGameInput_Access) return Visitor_Access;
    procedure create (This : in out SelectAdvancedRTSLayerVisitorFactory; selectedRTSLayersPlayerGameInput : SelectedRTSLayersPlayerGameInput_Access);
 

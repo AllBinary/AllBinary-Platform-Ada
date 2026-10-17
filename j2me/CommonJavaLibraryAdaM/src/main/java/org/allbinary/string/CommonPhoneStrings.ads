@@ -55,7 +55,6 @@ package org.allbinary.string_Id.CommonPhoneStrings_Package is
    procedure Initialize (This : in out CommonPhoneStrings'Class);
    function Create return CommonPhoneStrings_Access;
    function getInstance return CommonPhoneStrings_Access;
-   procedure getInstance;
 
 end org.allbinary.string_Id.CommonPhoneStrings_Package;
 

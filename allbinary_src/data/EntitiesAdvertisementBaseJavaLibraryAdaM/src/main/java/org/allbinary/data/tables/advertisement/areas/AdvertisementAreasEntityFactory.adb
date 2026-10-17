@@ -30,7 +30,7 @@ package body org.allbinary.data.tables.advertisement.areas.AdvertisementAreasEnt
    function Create return AdvertisementAreasEntityFactory_Access is
       This : constant AdvertisementAreasEntityFactory_Access := new AdvertisementAreasEntityFactory;
    begin
-      Initialize (This.all);
+      AdvertisementAreasEntityFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -53,13 +53,6 @@ package body org.allbinary.data.tables.advertisement.areas.AdvertisementAreasEnt
             return null;
                 end;
         end;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant AdvertisementAreasEntityInterface_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

@@ -79,23 +79,16 @@ package org.allbinary.business.init.db.DbInitInfo_Package is
    procedure Initialize (This : in out DbInitInfo'Class; initFileName : Unbounded_String; read : Boolean);
    function Create (initFileName : Unbounded_String; read : Boolean) return DbInitInfo_Access;
    function getUrl (This : in out DbInitInfo) return Unbounded_String;
-   procedure getUrl (This : in out DbInitInfo);
    procedure write (This : in out DbInitInfo);
    procedure load (This : in out DbInitInfo);
    procedure setHasRead (This : in out DbInitInfo; value : Boolean);
    procedure updateIfNeeded (This : in out DbInitInfo);
    function getName (This : in out DbInitInfo) return Unbounded_String;
-   procedure getName (This : in out DbInitInfo);
    function getUserName (This : in out DbInitInfo) return Unbounded_String;
-   procedure getUserName (This : in out DbInitInfo);
    function getPassword (This : in out DbInitInfo) return Unbounded_String;
-   procedure getPassword (This : in out DbInitInfo);
    function getSchema (This : in out DbInitInfo) return Unbounded_String;
-   procedure getSchema (This : in out DbInitInfo);
    function getServer (This : in out DbInitInfo) return Unbounded_String;
-   procedure getServer (This : in out DbInitInfo);
    function getPort (This : in out DbInitInfo) return Unbounded_String;
-   procedure getPort (This : in out DbInitInfo);
 
 end org.allbinary.business.init.db.DbInitInfo_Package;
 

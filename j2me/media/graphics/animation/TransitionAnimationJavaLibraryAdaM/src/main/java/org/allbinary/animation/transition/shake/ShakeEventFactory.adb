@@ -32,7 +32,7 @@ package body org.allbinary.animation.transition.shake.ShakeEventFactory_Package 
    function Create return ShakeEventFactory_Access is
       This : constant ShakeEventFactory_Access := new ShakeEventFactory;
    begin
-      Initialize (This.all);
+      ShakeEventFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -46,13 +46,6 @@ package body org.allbinary.animation.transition.shake.ShakeEventFactory_Package 
    begin
         null;
    end init;
-
-   procedure getInstance is
-      Java_Result : constant ShakeEventFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

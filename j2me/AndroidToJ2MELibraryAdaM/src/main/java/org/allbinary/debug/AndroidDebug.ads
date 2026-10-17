@@ -43,13 +43,10 @@ package org.allbinary.debug.AndroidDebug_Package is
    procedure start (This : in out AndroidDebug);
    procedure stop (This : in out AndroidDebug);
    function getMaxTime (This : in out AndroidDebug) return Long_Long_Integer;
-   procedure getMaxTime (This : in out AndroidDebug);
    procedure setStartTime (This : in out AndroidDebug; startTime : Long_Long_Integer);
    function getStartTime (This : in out AndroidDebug) return Long_Long_Integer;
-   procedure getStartTime (This : in out AndroidDebug);
    procedure setRunning (This : in out AndroidDebug; running : Boolean);
    function isRunning (This : in out AndroidDebug) return Boolean;
-   procedure isRunning (This : in out AndroidDebug);
 
 end org.allbinary.debug.AndroidDebug_Package;
 

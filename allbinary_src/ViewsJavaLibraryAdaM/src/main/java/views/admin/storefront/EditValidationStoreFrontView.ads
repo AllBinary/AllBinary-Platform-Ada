@@ -51,11 +51,8 @@ package views.admin.storefront.EditValidationStoreFrontView_Package is
    procedure Initialize (This : in out EditValidationStoreFrontView'Class; transformInfoInterface : TransformInfoInterface_Access);
    function Create (transformInfoInterface : TransformInfoInterface_Access) return EditValidationStoreFrontView_Access;
    function isValid (This : in out EditValidationStoreFrontView) return Boolean;
-   procedure isValid (This : in out EditValidationStoreFrontView);
    function validationInfo (This : in out EditValidationStoreFrontView) return Unbounded_String;
-   procedure validationInfo (This : in out EditValidationStoreFrontView);
    function toValidationInfoDoc (This : in out EditValidationStoreFrontView) return Document_Access;
-   procedure toValidationInfoDoc (This : in out EditValidationStoreFrontView);
    function toValidationInfoNode (This : in out EditValidationStoreFrontView; document : Document_Access) return Node_Access;
    procedure toValidationInfoNode (This : in out EditValidationStoreFrontView; document : Document_Access);
 

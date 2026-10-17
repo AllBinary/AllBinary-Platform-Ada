@@ -20,6 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
+with org.allbinary.direction.Direction_Package; use org.allbinary.direction.Direction_Package;
 
 package org.allbinary.direction.DirectionCompositeInterface_Package is
 

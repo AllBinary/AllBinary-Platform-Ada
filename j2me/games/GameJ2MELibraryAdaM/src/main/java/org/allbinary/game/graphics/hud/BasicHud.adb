@@ -54,7 +54,7 @@ package body org.allbinary.game.graphics.hud.BasicHud_Package is
    function Create (location : Integer; direction : Integer; bufferZone : Integer; basicColor : BasicColor_Access) return BasicHud_Access is
       This : constant BasicHud_Access := new BasicHud;
    begin
-      Initialize (This.all, location, direction, bufferZone, basicColor);
+      BasicHud_Package.Initialize (This.all, location, direction, bufferZone, basicColor);
       return This;
    end Create;
 
@@ -264,20 +264,6 @@ package body org.allbinary.game.graphics.hud.BasicHud_Package is
         graphics.drawString (string_Id, This.x, y, This.hudGraphicsPosition.getAnchor);
    end paintString;
 
-   procedure getLocation (This : in out BasicHud) is
-      Java_Result : constant Integer := BasicHud'Class (This).getLocation;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getLocation;
-
-   procedure getDirection (This : in out BasicHud) is
-      Java_Result : constant Integer := BasicHud'Class (This).getDirection;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getDirection;
-
    procedure getHudGraphicsPositionWH (This : in out BasicHud; width : Integer; height : Integer; maxWidth : Integer; maxHeight : Integer) is
       Java_Result : constant HudGraphicsPosition_Access := BasicHud'Class (This).getHudGraphicsPositionWH (width, height, maxWidth, maxHeight);
       pragma Unreferenced (Java_Result);
@@ -291,48 +277,6 @@ package body org.allbinary.game.graphics.hud.BasicHud_Package is
    begin
       null;
    end getPoint;
-
-   procedure getBufferZone (This : in out BasicHud) is
-      Java_Result : constant Integer := BasicHud'Class (This).getBufferZone;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getBufferZone;
-
-   procedure getHudGraphicsPosition (This : in out BasicHud) is
-      Java_Result : constant HudGraphicsPosition_Access := BasicHud'Class (This).getHudGraphicsPosition;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getHudGraphicsPosition;
-
-   procedure getColor (This : in out BasicHud) is
-      Java_Result : constant Integer := BasicHud'Class (This).getColor;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getColor;
-
-   procedure getX (This : in out BasicHud) is
-      Java_Result : constant Integer := BasicHud'Class (This).getX;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getX;
-
-   procedure getBasicColorP (This : in out BasicHud) is
-      Java_Result : constant BasicColor_Access := BasicHud'Class (This).getBasicColorP;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getBasicColorP;
-
-   procedure getY (This : in out BasicHud) is
-      Java_Result : constant Integer := BasicHud'Class (This).getY;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getY;
 
 end org.allbinary.game.graphics.hud.BasicHud_Package;
 

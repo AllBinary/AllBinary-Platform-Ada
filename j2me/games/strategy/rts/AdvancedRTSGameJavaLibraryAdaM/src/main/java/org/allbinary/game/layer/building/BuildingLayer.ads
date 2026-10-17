@@ -66,6 +66,9 @@ with org.allbinary.time.TimeDelayHelper_Package; use org.allbinary.time.TimeDela
 with org.allbinary.util.BasicArrayListS_Package; use org.allbinary.util.BasicArrayListS_Package;
 with org.allbinary.game.multiplayer.layer.RemoteInfo_Package; use org.allbinary.game.multiplayer.layer.RemoteInfo_Package;
 with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
+with org.allbinary.game.layer.building.SimulatedBuildingPropertiesFactory_Package; use org.allbinary.game.layer.building.SimulatedBuildingPropertiesFactory_Package;
+with org.allbinary.game.layer.building.BuildingPropertiesFactory_Package; use org.allbinary.game.layer.building.BuildingPropertiesFactory_Package;
+with org.allbinary.game.layer.building.BuildingInfoHudPaintable_Package; use org.allbinary.game.layer.building.BuildingInfoHudPaintable_Package;
 
 package org.allbinary.game.layer.building.BuildingLayer_Package is
 
@@ -137,37 +140,27 @@ package org.allbinary.game.layer.building.BuildingLayer_Package is
    procedure Initialize (This : in out BuildingLayer'Class; remoteInfo : RemoteInfo_Access; buildingPropertiesFactory : BuildingPropertiesFactory_Access; advancedRTSProperties : AdvancedRTSProperties_Access; groupInterface : Group_Access_Array_Access; rootName : Unbounded_String; name : Unbounded_String; healthInterface : Health_Access; rtsFormInput : RTSFormInput_Access; animationInterfaceFactoryInterface : AnimationInterfaceFactoryInterface_Access; emptyAnimationInterfaceFactoryInterface : AnimationInterfaceFactoryInterface_Access; baseAnimationInterfaceFactoryInterface : AnimationInterfaceFactoryInterface_Access; buildAnimationInterfaceFactoryInterface : AnimationInterfaceFactoryInterface_Access; verticleBuildAnimationInterfaceFactoryInterface : AnimationInterfaceFactoryInterface_Access; proceduralAnimationInterfaceFactoryInterface : ProceduralAnimationInterfaceFactoryInterface_Access; rectangle : Rectangle_Access; x : Integer; y : Integer);
    function Create (remoteInfo : RemoteInfo_Access; buildingPropertiesFactory : BuildingPropertiesFactory_Access; advancedRTSProperties : AdvancedRTSProperties_Access; groupInterface : Group_Access_Array_Access; rootName : Unbounded_String; name : Unbounded_String; healthInterface : Health_Access; rtsFormInput : RTSFormInput_Access; animationInterfaceFactoryInterface : AnimationInterfaceFactoryInterface_Access; emptyAnimationInterfaceFactoryInterface : AnimationInterfaceFactoryInterface_Access; baseAnimationInterfaceFactoryInterface : AnimationInterfaceFactoryInterface_Access; buildAnimationInterfaceFactoryInterface : AnimationInterfaceFactoryInterface_Access; verticleBuildAnimationInterfaceFactoryInterface : AnimationInterfaceFactoryInterface_Access; proceduralAnimationInterfaceFactoryInterface : ProceduralAnimationInterfaceFactoryInterface_Access; rectangle : Rectangle_Access; x : Integer; y : Integer) return BuildingLayer_Access;
    function createSimulated return BuildingLayer_Access;
-   procedure createSimulated;
    procedure initVisibility (This : in out BuildingLayer; rtsPlayerLayerInterface : RTSPlayerLayerInterface_Access);
    procedure construct (This : in out BuildingLayer; rtsPlayerLayerInterface : RTSPlayerLayerInterface_Access);
    procedure onMovement (This : in out BuildingLayer; trackingEvent : TrackingEvent_Access);
    procedure processBuiltTick (This : in out BuildingLayer; allBinaryLayerManager : AllBinaryLayerManager_Access);
    function calculateEfficiency (This : in out BuildingLayer) return Integer;
-   procedure calculateEfficiency (This : in out BuildingLayer);
    function getCost (This : in out BuildingLayer) return Integer;
-   procedure getCost (This : in out BuildingLayer);
    function getDowngradeCost (This : in out BuildingLayer) return Integer;
-   procedure getDowngradeCost (This : in out BuildingLayer);
    function getUpgradeCost (This : in out BuildingLayer) return Integer;
-   procedure getUpgradeCost (This : in out BuildingLayer);
    procedure downgrade (This : in out BuildingLayer);
    procedure upgrade (This : in out BuildingLayer);
    function getBuildingLevelCost (This : in out BuildingLayer) return Integer;
-   procedure getBuildingLevelCost (This : in out BuildingLayer);
    procedure setBuildingLevelCost (This : in out BuildingLayer; buildingLevelCost : Integer);
    function getProductivity (This : in out BuildingLayer) return Integer;
-   procedure getProductivity (This : in out BuildingLayer);
    procedure setProductivity (This : in out BuildingLayer; productivity : Integer);
    function getEfficiency (This : in out BuildingLayer) return Integer;
-   procedure getEfficiency (This : in out BuildingLayer);
    procedure setEfficiency (This : in out BuildingLayer; efficiency : Integer);
    procedure generateMoveOutOfBuildAreaPaths (This : in out BuildingLayer);
    function getMoveOutOfBuildAreaPath (This : in out BuildingLayer; geographicMapCellPosition : GeographicMapCellPosition_Access) return BasicArrayList_Access;
    procedure getMoveOutOfBuildAreaPath (This : in out BuildingLayer; geographicMapCellPosition : GeographicMapCellPosition_Access);
    function getEndGeographicMapCellPositionList (This : in out BuildingLayer) return BasicArrayList_Access;
-   procedure getEndGeographicMapCellPositionList (This : in out BuildingLayer);
    function shouldHandleStartSameAsEnd (This : in out BuildingLayer) return Boolean;
-   procedure shouldHandleStartSameAsEnd (This : in out BuildingLayer);
    procedure paint (This : in out BuildingLayer; graphics : Graphics_Access);
    procedure damage (This : in out BuildingLayer; damage : Integer; damageType : Integer);
    function getDamage (This : in out BuildingLayer; damageType : Integer) return Integer;
@@ -176,13 +169,9 @@ package org.allbinary.game.layer.building.BuildingLayer_Package is
    procedure removeVisibility (This : in out BuildingLayer);
    procedure setDestroyed (This : in out BuildingLayer; destroyed : Boolean);
    function createHudPaintable (This : in out BuildingLayer) return SelectionHudPaintable_Access;
-   procedure createHudPaintable (This : in out BuildingLayer);
    function getHudPaintable (This : in out BuildingLayer) return SelectionHudPaintable_Access;
-   procedure getHudPaintable (This : in out BuildingLayer);
    function getType (This : in out BuildingLayer) return Integer;
-   procedure getType (This : in out BuildingLayer);
    function getStaticType return Integer;
-   procedure getStaticType;
 
 end org.allbinary.game.layer.building.BuildingLayer_Package;
 

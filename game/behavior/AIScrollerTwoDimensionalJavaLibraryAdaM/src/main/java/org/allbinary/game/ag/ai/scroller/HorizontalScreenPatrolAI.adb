@@ -42,7 +42,7 @@ package body org.allbinary.game.ag.ai.scroller.HorizontalScreenPatrolAI_Package 
    function Create (hashtable : ABHashtable_Access; ownerLayerInterface : AllBinaryLayer_Access; gameInput : GameInput_Access) return HorizontalScreenPatrolAI_Access is
       This : constant HorizontalScreenPatrolAI_Access := new HorizontalScreenPatrolAI;
    begin
-      Initialize (This.all, hashtable, ownerLayerInterface, gameInput);
+      HorizontalScreenPatrolAI_Package.Initialize (This.all, hashtable, ownerLayerInterface, gameInput);
       return This;
    end Create;
 

@@ -8,6 +8,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
+with org.allbinary.device.OpenGLESGraphics_Package; use org.allbinary.device.OpenGLESGraphics_Package;
 
 package org.allbinary.device.OpenGLESNullGraphicsFactory_Package is
 
@@ -23,7 +24,6 @@ package org.allbinary.device.OpenGLESNullGraphicsFactory_Package is
    procedure Initialize (This : in out OpenGLESNullGraphicsFactory'Class);
    function Create return OpenGLESNullGraphicsFactory_Access;
    function getInstance return OpenGLESGraphics_Access;
-   procedure getInstance;
 
 end org.allbinary.device.OpenGLESNullGraphicsFactory_Package;
 

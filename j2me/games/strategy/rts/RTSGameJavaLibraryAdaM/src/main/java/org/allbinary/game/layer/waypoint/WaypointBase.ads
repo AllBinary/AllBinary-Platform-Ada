@@ -65,10 +65,8 @@ package org.allbinary.game.layer.waypoint.WaypointBase_Package is
    procedure Initialize (This : in out WaypointBase'Class; sound : Sound_Access);
    function Create (sound : Sound_Access) return WaypointBase_Access;
    function getSound (This : in out WaypointBase) return Sound_Access;
-   procedure getSound (This : in out WaypointBase);
    procedure setAllBinaryGameLayerManager (This : in out WaypointBase; allBinaryGameLayerManager : AllBinaryGameLayerManager_Access);
    function getConnectedWaypointList (This : in out WaypointBase) return BasicArrayList_Access;
-   procedure getConnectedWaypointList (This : in out WaypointBase);
    procedure onEvent (This : in out WaypointBase; eventObject : AllBinaryEventObject_Access);
    function getPathFindingInfo (This : in out WaypointBase; geographicMapCellPosition : GeographicMapCellPosition_Access) return PathFindingInfo_Access;
    procedure getPathFindingInfo (This : in out WaypointBase; geographicMapCellPosition : GeographicMapCellPosition_Access);
@@ -81,7 +79,6 @@ package org.allbinary.game.layer.waypoint.WaypointBase_Package is
    procedure visit (This : in out WaypointBase; unitLayer : PathFindingLayerInterface_Access);
    procedure reset (This : in out WaypointBase);
    function getType (This : in out WaypointBase) return Integer;
-   procedure getType (This : in out WaypointBase);
 
 end org.allbinary.game.layer.waypoint.WaypointBase_Package;
 

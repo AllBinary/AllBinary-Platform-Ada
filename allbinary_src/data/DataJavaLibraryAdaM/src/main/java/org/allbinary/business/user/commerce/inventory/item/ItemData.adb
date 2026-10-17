@@ -13,7 +13,7 @@
 --  Generated Code Do Not Modify
 
 
-package body org.allbinary.business.user.commerce.inventory.item_Case.ItemData_Package is
+package body org.allbinary.business.user.commerce.inventory.item.ItemData_Package is
 
    procedure Initialize_Fields (This : in out ItemData'Class) is
    begin
@@ -28,7 +28,7 @@ package body org.allbinary.business.user.commerce.inventory.item_Case.ItemData_P
    function Create return ItemData_Access is
       This : constant ItemData_Access := new ItemData;
    begin
-      Initialize (This.all);
+      ItemData_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -37,6 +37,6 @@ begin
    null;
    ITEM := To_Unbounded_String ("ITEM");
 
-end org.allbinary.business.user.commerce.inventory.item_Case.ItemData_Package;
+end org.allbinary.business.user.commerce.inventory.item.ItemData_Package;
 
 

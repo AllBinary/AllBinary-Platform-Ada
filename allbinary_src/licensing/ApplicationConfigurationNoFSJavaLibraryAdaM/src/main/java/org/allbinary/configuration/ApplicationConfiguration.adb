@@ -41,7 +41,7 @@ package body org.allbinary.configuration.ApplicationConfiguration_Package is
    function Create return ApplicationConfiguration_Access is
       This : constant ApplicationConfiguration_Access := new ApplicationConfiguration;
    begin
-      Initialize (This.all);
+      ApplicationConfiguration_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -121,41 +121,6 @@ package body org.allbinary.configuration.ApplicationConfiguration_Package is
         stringBuffer.append (To_Unbounded_String (" isShowTitleBar: "));
         stringBuffer.appendboolean (This.isShowTitleBar);
         return stringBuffer.toString;
-   end toString;
-
-   procedure getInstance is
-      Java_Result : constant ApplicationConfiguration_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure isFullscreen (This : in out ApplicationConfiguration) is
-      Java_Result : constant Boolean := ApplicationConfiguration'Class (This).isFullscreen;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isFullscreen;
-
-   procedure isShowTitleBar (This : in out ApplicationConfiguration) is
-      Java_Result : constant Boolean := ApplicationConfiguration'Class (This).isShowTitleBar;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isShowTitleBar;
-
-   procedure isProgressBarView (This : in out ApplicationConfiguration) is
-      Java_Result : constant Boolean := ApplicationConfiguration'Class (This).isProgressBarView;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isProgressBarView;
-
-   procedure toString (This : in out ApplicationConfiguration) is
-      Java_Result : constant Unbounded_String := ApplicationConfiguration'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end toString;
 
 begin

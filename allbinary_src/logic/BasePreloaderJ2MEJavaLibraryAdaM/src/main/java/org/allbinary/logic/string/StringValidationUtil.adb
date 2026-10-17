@@ -37,7 +37,7 @@ package body org.allbinary.logic.string_Id.StringValidationUtil_Package is
    function Create return StringValidationUtil_Access is
       This : constant StringValidationUtil_Access := new StringValidationUtil;
    begin
-      Initialize (This.all);
+      StringValidationUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -128,13 +128,6 @@ package body org.allbinary.logic.string_Id.StringValidationUtil_Package is
             return True;
         end if;
    end isEmpty;
-
-   procedure getInstance is
-      Java_Result : constant StringValidationUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure containsSpaces (This : in out StringValidationUtil; value : Unbounded_String) is
       Java_Result : constant Boolean := StringValidationUtil'Class (This).containsSpaces (value);

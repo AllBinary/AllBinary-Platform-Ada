@@ -57,15 +57,11 @@ package views.admin.user.UpdateValidationUserView_Package is
    procedure Initialize (This : in out UpdateValidationUserView'Class; transformInfoInterface : TransformInfoInterface_Access);
    function Create (transformInfoInterface : TransformInfoInterface_Access) return UpdateValidationUserView_Access;
    function isValid (This : in out UpdateValidationUserView) return Boolean;
-   procedure isValid (This : in out UpdateValidationUserView);
    function validationInfo (This : in out UpdateValidationUserView) return Unbounded_String;
-   procedure validationInfo (This : in out UpdateValidationUserView);
    function toValidationInfoDoc (This : in out UpdateValidationUserView) return Document_Access;
-   procedure toValidationInfoDoc (This : in out UpdateValidationUserView);
    function toValidationInfoNode (This : in out UpdateValidationUserView; document : Document_Access) return Node_Access;
    procedure toValidationInfoNode (This : in out UpdateValidationUserView; document : Document_Access);
    function view (This : in out UpdateValidationUserView) return Unbounded_String;
-   procedure view (This : in out UpdateValidationUserView);
 
 end views.admin.user.UpdateValidationUserView_Package;
 

@@ -33,7 +33,7 @@ package body admin.taghelpers.PaymentTransactionResultHelper_Package is
    function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return PaymentTransactionResultHelper_Access is
       This : constant PaymentTransactionResultHelper_Access := new PaymentTransactionResultHelper;
    begin
-      Initialize (This.all, hashMap, pageContext);
+      PaymentTransactionResultHelper_Package.Initialize (This.all, hashMap, pageContext);
       return This;
    end Create;
 
@@ -135,34 +135,6 @@ package body admin.taghelpers.PaymentTransactionResultHelper_Package is
             return error;
                 end;
         end;
-   end backup;
-
-   procedure drop (This : in out PaymentTransactionResultHelper) is
-      Java_Result : constant Unbounded_String := PaymentTransactionResultHelper'Class (This).drop;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end drop;
-
-   procedure create (This : in out PaymentTransactionResultHelper) is
-      Java_Result : constant Unbounded_String := PaymentTransactionResultHelper'Class (This).create;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end create;
-
-   procedure restore (This : in out PaymentTransactionResultHelper) is
-      Java_Result : constant Unbounded_String := PaymentTransactionResultHelper'Class (This).restore;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end restore;
-
-   procedure backup (This : in out PaymentTransactionResultHelper) is
-      Java_Result : constant Unbounded_String := PaymentTransactionResultHelper'Class (This).backup;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end backup;
 
 end admin.taghelpers.PaymentTransactionResultHelper_Package;

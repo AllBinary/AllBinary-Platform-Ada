@@ -54,10 +54,9 @@ package admin.taghelpers.OrderItemsRequestHelper_Package is
    procedure Initialize (This : in out OrderItemsRequestHelper'Class; hashMap : HashMap_Access; pageContext : PageContext_Access);
    function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return OrderItemsRequestHelper_Access;
    procedure getFormData (This : in out OrderItemsRequestHelper);
-   function setOrderStatus (This : in out OrderItemsRequestHelper; newStatus : Unbounded_String) return Unbounded_String;
-   procedure setOrderStatus (This : in out OrderItemsRequestHelper; newStatus : Unbounded_String);
+   function setOrderStatus (This : in out OrderItemsRequestHelper; newStatus_Param : Unbounded_String) return Unbounded_String;
+   procedure setOrderStatus (This : in out OrderItemsRequestHelper; newStatus_Param : Unbounded_String);
    function setOrderStatus (This : in out OrderItemsRequestHelper) return Unbounded_String;
-   procedure setOrderStatus (This : in out OrderItemsRequestHelper);
 
 end admin.taghelpers.OrderItemsRequestHelper_Package;
 

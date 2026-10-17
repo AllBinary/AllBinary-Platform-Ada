@@ -36,7 +36,7 @@ package body org.allbinary.data.tables.user.commerce.inventory.item.customs.Cust
    function Create return CustomItemsEntityFactory_Access is
       This : constant CustomItemsEntityFactory_Access := new CustomItemsEntityFactory;
    begin
-      Initialize (This.all);
+      CustomItemsEntityFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -57,20 +57,6 @@ package body org.allbinary.data.tables.user.commerce.inventory.item.customs.Cust
             return null;
                 end;
         end;
-   end getCustomItemsEntityInstance;
-
-   procedure getInstance is
-      Java_Result : constant CustomItemsEntityFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure getCustomItemsEntityInstance (This : in out CustomItemsEntityFactory) is
-      Java_Result : constant CustomItemsEntity_Access := CustomItemsEntityFactory'Class (This).getCustomItemsEntityInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getCustomItemsEntityInstance;
 
 begin

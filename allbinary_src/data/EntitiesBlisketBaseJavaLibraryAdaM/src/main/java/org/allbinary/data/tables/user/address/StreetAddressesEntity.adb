@@ -32,7 +32,7 @@ package body org.allbinary.data.tables.user.address.StreetAddressesEntity_Packag
    function Create return StreetAddressesEntity_Access is
       This : constant StreetAddressesEntity_Access := new StreetAddressesEntity;
    begin
-      Initialize (This.all);
+      StreetAddressesEntity_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -47,7 +47,7 @@ package body org.allbinary.data.tables.user.address.StreetAddressesEntity_Packag
    function Create (userName : Unbounded_String) return StreetAddressesEntity_Access is
       This : constant StreetAddressesEntity_Access := new StreetAddressesEntity;
    begin
-      Initialize (This.all, userName);
+      StreetAddressesEntity_Package.Initialize (This.all, userName);
       return This;
    end Create;
 
@@ -301,61 +301,12 @@ package body org.allbinary.data.tables.user.address.StreetAddressesEntity_Packag
         return AbSqlBean (This).dropTable;
    end drop;
 
-   procedure getLastId (This : in out StreetAddressesEntity) is
-      Java_Result : constant Unbounded_String := StreetAddressesEntity'Class (This).getLastId;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getLastId;
-
-   procedure get (This : in out StreetAddressesEntity) is
-      Java_Result : constant BasicArrayList_Access := StreetAddressesEntity'Class (This).get;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end get;
-
    procedure get (This : in out StreetAddressesEntity; index : Integer) is
       Java_Result : constant StreetAddress_Access := StreetAddressesEntity'Class (This).get (index);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end get;
-
-   procedure getDefault (This : in out StreetAddressesEntity) is
-      Java_Result : constant StreetAddress_Access := StreetAddressesEntity'Class (This).getDefault;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getDefault;
-
-   procedure getUserName (This : in out StreetAddressesEntity) is
-      Java_Result : constant Unbounded_String := StreetAddressesEntity'Class (This).getUserName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getUserName;
-
-   procedure createTableStatement (This : in out StreetAddressesEntity) is
-      Java_Result : constant Unbounded_String := StreetAddressesEntity'Class (This).createTableStatement;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end createTableStatement;
-
-   procedure createTable (This : in out StreetAddressesEntity) is
-      Java_Result : constant Unbounded_String := StreetAddressesEntity'Class (This).createTable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end createTable;
-
-   procedure drop (This : in out StreetAddressesEntity) is
-      Java_Result : constant Unbounded_String := StreetAddressesEntity'Class (This).drop;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end drop;
 
 end org.allbinary.data.tables.user.address.StreetAddressesEntity_Package;
 

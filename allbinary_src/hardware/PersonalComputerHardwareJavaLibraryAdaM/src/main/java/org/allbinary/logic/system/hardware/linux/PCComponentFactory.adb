@@ -37,7 +37,7 @@ package body org.allbinary.logic.system.hardware.linux.PCComponentFactory_Packag
    function Create return PCComponentFactory_Access is
       This : constant PCComponentFactory_Access := new PCComponentFactory;
    begin
-      Initialize (This.all);
+      PCComponentFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -100,13 +100,6 @@ package body org.allbinary.logic.system.hardware.linux.PCComponentFactory_Packag
         end if;
         return This.componentFactory.UNKNOWN.toString;
    end getComponentType;
-
-   procedure getInstance is
-      Java_Result : constant PCComponentFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure getInstance (This : in out PCComponentFactory; component : Unbounded_String; componentData : Unbounded_String) is
       Java_Result : constant HardwareComponentInterface_Access := PCComponentFactory'Class (This).getInstance (component, componentData);

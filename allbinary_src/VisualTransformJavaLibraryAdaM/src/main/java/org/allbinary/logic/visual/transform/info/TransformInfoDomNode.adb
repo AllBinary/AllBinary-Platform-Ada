@@ -92,7 +92,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoDomNode_Pack
    function Create (node : Node_Access) return TransformInfoDomNode_Access is
       This : constant TransformInfoDomNode_Access := new TransformInfoDomNode;
    begin
-      Initialize (This.all, node);
+      TransformInfoDomNode_Package.Initialize (This.all, node);
       return This;
    end Create;
 
@@ -107,7 +107,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoDomNode_Pack
    function Create (transformInfoInterface : TransformInfoInterface_Access) return TransformInfoDomNode_Access is
       This : constant TransformInfoDomNode_Access := new TransformInfoDomNode;
    begin
-      Initialize (This.all, transformInfoInterface);
+      TransformInfoDomNode_Package.Initialize (This.all, transformInfoInterface);
       return This;
    end Create;
 
@@ -122,7 +122,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoDomNode_Pack
    function Create (transformInfoInterface : TransformInfoInterface_Access; mappedName : Unbounded_String) return TransformInfoDomNode_Access is
       This : constant TransformInfoDomNode_Access := new TransformInfoDomNode;
    begin
-      Initialize (This.all, transformInfoInterface, mappedName);
+      TransformInfoDomNode_Package.Initialize (This.all, transformInfoInterface, mappedName);
       return This;
    end Create;
 
@@ -137,7 +137,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoDomNode_Pack
    function Create (name : Unbounded_String; mappedName : Unbounded_String) return TransformInfoDomNode_Access is
       This : constant TransformInfoDomNode_Access := new TransformInfoDomNode;
    begin
-      Initialize (This.all, name, mappedName);
+      TransformInfoDomNode_Package.Initialize (This.all, name, mappedName);
       return This;
    end Create;
 
@@ -164,27 +164,6 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoDomNode_Pack
             This.logUtil.putF (To_Unbounded_String ("Component Key: ") & key, This'Unchecked_Access, To_Unbounded_String ("getReplaceKey()"));
         end if;
         return key;
-   end getReplaceKey;
-
-   procedure getTransformInfoInterface (This : in out TransformInfoDomNode) is
-      Java_Result : constant TransformInfoInterface_Access := TransformInfoDomNode'Class (This).getTransformInfoInterface;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTransformInfoInterface;
-
-   procedure getMappedName (This : in out TransformInfoDomNode) is
-      Java_Result : constant Unbounded_String := TransformInfoDomNode'Class (This).getMappedName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getMappedName;
-
-   procedure getReplaceKey (This : in out TransformInfoDomNode) is
-      Java_Result : constant Unbounded_String := TransformInfoDomNode'Class (This).getReplaceKey;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getReplaceKey;
 
 end org.allbinary.logic.visual.transform.info.TransformInfoDomNode_Package;

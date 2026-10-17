@@ -30,7 +30,7 @@ package body admin.taghelpers.XmlOptionItemsRequestHelperFactory_Package is
    function Create return XmlOptionItemsRequestHelperFactory_Access is
       This : constant XmlOptionItemsRequestHelperFactory_Access := new XmlOptionItemsRequestHelperFactory;
    begin
-      Initialize (This.all);
+      XmlOptionItemsRequestHelperFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

@@ -47,7 +47,7 @@ package body org.allbinary.game.ag.layer.hud.basic.NumberStringHud_Package is
    function Create (prependString : Unbounded_String; max : Integer; location : Integer; direction : Integer; bufferZone : Integer; basicColor : BasicColor_Access) return NumberStringHud_Access is
       This : constant NumberStringHud_Access := new NumberStringHud;
    begin
-      Initialize (This.all, prependString, max, location, direction, bufferZone, basicColor);
+      NumberStringHud_Package.Initialize (This.all, prependString, max, location, direction, bufferZone, basicColor);
       return This;
    end Create;
 
@@ -109,13 +109,6 @@ package body org.allbinary.game.ag.layer.hud.basic.NumberStringHud_Package is
    begin
         null;
    end paintThreed;
-
-   procedure get (This : in out NumberStringHud) is
-      Java_Result : constant Integer := NumberStringHud'Class (This).get;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end get;
 
 end org.allbinary.game.ag.layer.hud.basic.NumberStringHud_Package;
 

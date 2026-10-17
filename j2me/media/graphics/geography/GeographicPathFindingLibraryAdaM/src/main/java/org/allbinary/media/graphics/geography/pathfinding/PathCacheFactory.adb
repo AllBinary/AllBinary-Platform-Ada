@@ -32,7 +32,7 @@ package body org.allbinary.media.graphics.geography.pathfinding.PathCacheFactory
    function Create return PathCacheFactory_Access is
       This : constant PathCacheFactory_Access := new PathCacheFactory;
    begin
-      Initialize (This.all);
+      PathCacheFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -75,20 +75,6 @@ package body org.allbinary.media.graphics.geography.pathfinding.PathCacheFactory
         end if;
         return BasicArrayList_Access (listCanBeNull);
    end getOrCreate;
-
-   procedure getInstance is
-      Java_Result : constant PathCacheFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure getSize (This : in out PathCacheFactory) is
-      Java_Result : constant Integer := PathCacheFactory'Class (This).getSize;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSize;
 
    procedure getOrCreate (This : in out PathCacheFactory; pathIdInteger : Integer) is
       Java_Result : constant BasicArrayList_Access := PathCacheFactory'Class (This).getOrCreate (pathIdInteger);

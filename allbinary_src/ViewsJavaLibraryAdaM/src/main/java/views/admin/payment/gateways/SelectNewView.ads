@@ -28,6 +28,7 @@ with org.allbinary.data.tables.user.commerce.money.payment.gateway.PaymentGatewa
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
 with views.admin.payment.gateway.PaymentGatewayViewAbstract_Package; use views.admin.payment.gateway.PaymentGatewayViewAbstract_Package;
+with views.admin.payment.gateways.PaymentGatewaysView_Package; use views.admin.payment.gateways.PaymentGatewaysView_Package;
 
 package views.admin.payment.gateways.SelectNewView_Package is
 
@@ -52,7 +53,6 @@ package views.admin.payment.gateways.SelectNewView_Package is
    procedure Initialize (This : in out SelectNewView'Class; transformInfoInterface : TransformInfoInterface_Access);
    function Create (transformInfoInterface : TransformInfoInterface_Access) return SelectNewView_Access;
    function view (This : in out SelectNewView) return Unbounded_String;
-   procedure view (This : in out SelectNewView);
 
 end views.admin.payment.gateways.SelectNewView_Package;
 

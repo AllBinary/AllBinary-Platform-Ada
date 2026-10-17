@@ -69,11 +69,8 @@ package views.business.context.modules.storefront.customizer.includes.style.them
    procedure Initialize (This : in out EditThemeValidationView'Class; transformInfoInterface : TransformInfoInterface_Access);
    function Create (transformInfoInterface : TransformInfoInterface_Access) return EditThemeValidationView_Access;
    function isValid (This : in out EditThemeValidationView) return Boolean;
-   procedure isValid (This : in out EditThemeValidationView);
    function validationInfo (This : in out EditThemeValidationView) return Unbounded_String;
-   procedure validationInfo (This : in out EditThemeValidationView);
    function toValidationInfoDoc (This : in out EditThemeValidationView) return Document_Access;
-   procedure toValidationInfoDoc (This : in out EditThemeValidationView);
    function toValidationInfoNode (This : in out EditThemeValidationView; document : Document_Access) return Node_Access;
    procedure toValidationInfoNode (This : in out EditThemeValidationView; document : Document_Access);
 

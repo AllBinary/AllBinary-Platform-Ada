@@ -33,7 +33,7 @@ package body org.allbinary.layer.event.LayerManagerEvent_Package is
    function Create (layerManager : LayerManager_Access; crud : Unbounded_String) return LayerManagerEvent_Access is
       This : constant LayerManagerEvent_Access := new LayerManagerEvent;
    begin
-      Initialize (This.all, layerManager, crud);
+      LayerManagerEvent_Package.Initialize (This.all, layerManager, crud);
       return This;
    end Create;
 
@@ -57,20 +57,6 @@ package body org.allbinary.layer.event.LayerManagerEvent_Package is
         stringBuffer.append (To_Unbounded_String ("" & ASCII.LF & "CRUD: "));
         stringBuffer.append (This.crud);
         return stringBuffer.toString;
-   end toString;
-
-   procedure getLayerInterface (This : in out LayerManagerEvent) is
-      Java_Result : constant AllBinaryLayer_Access := LayerManagerEvent'Class (This).getLayerInterface;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getLayerInterface;
-
-   procedure toString (This : in out LayerManagerEvent) is
-      Java_Result : constant Unbounded_String := LayerManagerEvent'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end toString;
 
 end org.allbinary.layer.event.LayerManagerEvent_Package;

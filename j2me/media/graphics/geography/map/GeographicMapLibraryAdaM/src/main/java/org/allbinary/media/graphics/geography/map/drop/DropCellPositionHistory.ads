@@ -49,7 +49,6 @@ package org.allbinary.media.graphics.geography.map.drop.DropCellPositionHistory_
    procedure Initialize (This : in out DropCellPositionHistory'Class);
    function Create return DropCellPositionHistory_Access;
    function getInstance return DropCellPositionHistory_Access;
-   procedure getInstance;
    procedure add (This : in out DropCellPositionHistory; cellPosition : CellPosition_Access; layerInterface : AllBinaryLayer_Access);
    procedure addAll (This : in out DropCellPositionHistory; list : BasicArrayList_Access; layerInterface : AllBinaryLayer_Access);
    procedure remove (This : in out DropCellPositionHistory; cellPosition : CellPosition_Access);

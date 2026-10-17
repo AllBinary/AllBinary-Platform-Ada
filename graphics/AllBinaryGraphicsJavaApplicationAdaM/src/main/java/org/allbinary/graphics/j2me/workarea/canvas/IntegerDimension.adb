@@ -33,7 +33,7 @@ package body org.allbinary.graphics.j2me.workarea.canvas.IntegerDimension_Packag
    function Create (width : Integer; height : Integer) return IntegerDimension_Access is
       This : constant IntegerDimension_Access := new IntegerDimension;
    begin
-      Initialize (This.all, width, height);
+      IntegerDimension_Package.Initialize (This.all, width, height);
       return This;
    end Create;
 
@@ -56,20 +56,6 @@ package body org.allbinary.graphics.j2me.workarea.canvas.IntegerDimension_Packag
    begin
         This.height := height;
    end setHeight;
-
-   procedure getWidth (This : in out IntegerDimension) is
-      Java_Result : constant Integer := IntegerDimension'Class (This).getWidth;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getWidth;
-
-   procedure getHeight (This : in out IntegerDimension) is
-      Java_Result : constant Integer := IntegerDimension'Class (This).getHeight;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getHeight;
 
 end org.allbinary.graphics.j2me.workarea.canvas.IntegerDimension_Package;
 

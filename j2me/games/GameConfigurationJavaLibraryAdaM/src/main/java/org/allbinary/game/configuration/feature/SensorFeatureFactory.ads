@@ -20,6 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
+with org.allbinary.game.configuration.feature.SensorFeature_Package; use org.allbinary.game.configuration.feature.SensorFeature_Package;
 
 package org.allbinary.game.configuration.feature.SensorFeatureFactory_Package is
 
@@ -44,7 +45,6 @@ package org.allbinary.game.configuration.feature.SensorFeatureFactory_Package is
    procedure Initialize (This : in out SensorFeatureFactory'Class);
    function Create return SensorFeatureFactory_Access;
    function getInstance return SensorFeatureFactory_Access;
-   procedure getInstance;
 
 end org.allbinary.game.configuration.feature.SensorFeatureFactory_Package;
 

@@ -30,7 +30,7 @@ package body org.allbinary.animation.NullSpecialAnimationFactory_Package is
    function Create return NullSpecialAnimationFactory_Access is
       This : constant NullSpecialAnimationFactory_Access := new NullSpecialAnimationFactory;
    begin
-      Initialize (This.all);
+      NullSpecialAnimationFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -55,13 +55,6 @@ package body org.allbinary.animation.NullSpecialAnimationFactory_Package is
    begin
         null;
    end setInitialScale;
-
-   procedure getFactoryInstance is
-      Java_Result : constant NullSpecialAnimationFactory_Access := getFactoryInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getFactoryInstance;
 
    procedure getInstance (This : in out NullSpecialAnimationFactory; instanceId : Integer) is
       Java_Result : constant Animation_Access := NullSpecialAnimationFactory'Class (This).getInstance (instanceId);

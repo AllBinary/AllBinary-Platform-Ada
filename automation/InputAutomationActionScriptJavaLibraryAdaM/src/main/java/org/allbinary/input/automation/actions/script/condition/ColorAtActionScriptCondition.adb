@@ -77,7 +77,7 @@ package body org.allbinary.input.automation.actions.script.condition.ColorAtActi
    function Create (node : Node_Access) return ColorAtActionScriptCondition_Access is
       This : constant ColorAtActionScriptCondition_Access := new ColorAtActionScriptCondition;
    begin
-      Initialize (This.all, node);
+      ColorAtActionScriptCondition_Package.Initialize (This.all, node);
       return This;
    end Create;
 
@@ -93,7 +93,7 @@ package body org.allbinary.input.automation.actions.script.condition.ColorAtActi
    function Create return ColorAtActionScriptCondition_Access is
       This : constant ColorAtActionScriptCondition_Access := new ColorAtActionScriptCondition;
    begin
-      Initialize (This.all);
+      ColorAtActionScriptCondition_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -180,20 +180,6 @@ package body org.allbinary.input.automation.actions.script.condition.ColorAtActi
         This.colorRangeInterface := colorRangeInterface;
    end setColorRangeInterface;
 
-   procedure getPoint (This : in out ColorAtActionScriptCondition) is
-      Java_Result : constant Point_Access := ColorAtActionScriptCondition'Class (This).getPoint;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getPoint;
-
-   procedure toHashMap (This : in out ColorAtActionScriptCondition) is
-      Java_Result : constant HashMap_Access := ColorAtActionScriptCondition'Class (This).toHashMap;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toHashMap;
-
    procedure toXmlNode (This : in out ColorAtActionScriptCondition; document : Document_Access) is
       Java_Result : constant Node_Access := ColorAtActionScriptCondition'Class (This).toXmlNode (document);
       pragma Unreferenced (Java_Result);
@@ -207,13 +193,6 @@ package body org.allbinary.input.automation.actions.script.condition.ColorAtActi
    begin
       null;
    end shouldProcess;
-
-   procedure getColorRangeInterface (This : in out ColorAtActionScriptCondition) is
-      Java_Result : constant ColorRangeInterface_Access := ColorAtActionScriptCondition'Class (This).getColorRangeInterface;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getColorRangeInterface;
 
 begin
    null;

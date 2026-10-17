@@ -23,6 +23,7 @@ with AllBinary_Java; use AllBinary_Java;
 --  with java.io.FileNotFoundException_Package; use java.io.FileNotFoundException_Package;
 with android.content.Context_Package; use android.content.Context_Package;
 with org.allbinary.data.resource.ResourceUtil_Package; use org.allbinary.data.resource.ResourceUtil_Package;
+with org.allbinary.logic.io.file.AbFile_Package; use org.allbinary.logic.io.file.AbFile_Package;
 
 package org.allbinary.logic.io.file.FileFactory_Package is
 
@@ -42,11 +43,9 @@ package org.allbinary.logic.io.file.FileFactory_Package is
    procedure Initialize (This : in out FileFactory'Class; context : Context_Access);
    function Create (context : Context_Access) return FileFactory_Access;
    function getInstance return FileFactory_Access;
-   procedure getInstance;
    function isFile (This : in out FileFactory; path : Unbounded_String) return Boolean;
    procedure isFile (This : in out FileFactory; path : Unbounded_String);
    function getContext (This : in out FileFactory) return Context_Access;
-   procedure getContext (This : in out FileFactory);
    function getFile (This : in out FileFactory; filePath : Unbounded_String) return AbFile_Access;
    procedure getFile (This : in out FileFactory; filePath : Unbounded_String);
    function getInstance (This : in out FileFactory; file : AbFile_Access; childFilePath : Unbounded_String) return AbFile_Access;

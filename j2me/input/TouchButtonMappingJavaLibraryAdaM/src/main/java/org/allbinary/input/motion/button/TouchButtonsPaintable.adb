@@ -36,7 +36,7 @@ package body org.allbinary.input.motion.button.TouchButtonsPaintable_Package is
    function Create (basicColor : BasicColor_Access) return TouchButtonsPaintable_Access is
       This : constant TouchButtonsPaintable_Access := new TouchButtonsPaintable;
    begin
-      Initialize (This.all, basicColor);
+      TouchButtonsPaintable_Package.Initialize (This.all, basicColor);
       return This;
    end Create;
 

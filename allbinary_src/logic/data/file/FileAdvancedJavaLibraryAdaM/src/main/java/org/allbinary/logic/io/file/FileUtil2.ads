@@ -25,6 +25,8 @@ with org.allbinary.logic.io.AbFileInputStream_Package; use org.allbinary.logic.i
 with org.allbinary.logic.io.StreamUtil_Package; use org.allbinary.logic.io.StreamUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.logic.io.file.SimpleFileUtil_Package; use org.allbinary.logic.io.file.SimpleFileUtil_Package;
+with org.allbinary.logic.io.file.AbFile_Package; use org.allbinary.logic.io.file.AbFile_Package;
 
 package org.allbinary.logic.io.file.FileUtil2_Package is
 
@@ -49,7 +51,6 @@ package org.allbinary.logic.io.file.FileUtil2_Package is
    procedure Initialize (This : in out FileUtil2'Class);
    function Create return FileUtil2_Access;
    function getInstance return FileUtil2_Access;
-   procedure getInstance;
    function loadFileAsList (This : in out FileUtil2; file : AbFile_Access; max : Integer; byteArray1 : Short_Short_Integer_Array_Access) return BasicArrayList_Access;
    procedure loadFileAsList (This : in out FileUtil2; file : AbFile_Access; max : Integer; byteArray1 : Short_Short_Integer_Array_Access);
 

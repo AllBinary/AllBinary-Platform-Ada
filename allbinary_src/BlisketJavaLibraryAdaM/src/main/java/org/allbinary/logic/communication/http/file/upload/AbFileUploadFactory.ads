@@ -29,6 +29,9 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 with org.apache.commons.fileupload.FileItemIterator_Package; use org.apache.commons.fileupload.FileItemIterator_Package;
 with org.apache.commons.fileupload.FileItemStream_Package; use org.apache.commons.fileupload.FileItemStream_Package;
 with org.apache.commons.fileupload.FileItemUtil_Package; use org.apache.commons.fileupload.FileItemUtil_Package;
+with org.allbinary.logic.communication.http.file.upload.AbFileUpload_Package; use org.allbinary.logic.communication.http.file.upload.AbFileUpload_Package;
+with org.allbinary.logic.communication.http.file.upload.HttpFileUploadUtil_Package; use org.allbinary.logic.communication.http.file.upload.HttpFileUploadUtil_Package;
+with org.allbinary.logic.communication.http.file.upload.AbFileItem_Package; use org.allbinary.logic.communication.http.file.upload.AbFileItem_Package;
 
 package org.allbinary.logic.communication.http.file.upload.AbFileUploadFactory_Package is
 
@@ -52,7 +55,6 @@ package org.allbinary.logic.communication.http.file.upload.AbFileUploadFactory_P
    procedure Initialize (This : in out AbFileUploadFactory'Class);
    function Create return AbFileUploadFactory_Access;
    function getInstance return AbFileUploadFactory_Access;
-   procedure getInstance;
    function getFileItemStreamList (This : in out AbFileUploadFactory; httpServletRequest : HttpServletRequest_Access) return List_Access;
    procedure getFileItemStreamList (This : in out AbFileUploadFactory; httpServletRequest : HttpServletRequest_Access);
    function getFileItemList (This : in out AbFileUploadFactory; httpServletRequest : HttpServletRequest_Access) return List_Access;

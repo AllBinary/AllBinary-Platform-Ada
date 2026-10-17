@@ -29,7 +29,7 @@ package body org.allbinary.logic.system.security.licensing.TestClientInformation
    function Create return TestClientInformation_Access is
       This : constant TestClientInformation_Access := new TestClientInformation;
    begin
-      Initialize (This.all);
+      TestClientInformation_Package.Initialize (This.all);
       return This;
    end Create;
 

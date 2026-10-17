@@ -31,6 +31,9 @@ with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Pack
 with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.bouncycastle.jce.provider.BouncyCastleProvider_Package; use org.bouncycastle.jce.provider.BouncyCastleProvider_Package;
+with org.allbinary.logic.system.security.crypt.jcehelper.BaseSecretComposite_Package; use org.allbinary.logic.system.security.crypt.jcehelper.BaseSecretComposite_Package;
+with org.allbinary.logic.system.security.crypt.jcehelper.KeySpecFactory_Package; use org.allbinary.logic.system.security.crypt.jcehelper.KeySpecFactory_Package;
+with org.allbinary.logic.system.security.crypt.jcehelper.SecretComposite_Package; use org.allbinary.logic.system.security.crypt.jcehelper.SecretComposite_Package;
 
 package org.allbinary.logic.system.security.crypt.jcehelper.AbCrypt_Package is
 

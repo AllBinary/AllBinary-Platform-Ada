@@ -37,7 +37,6 @@ package org.allbinary.util.ArrayUtil_Package is
    procedure Initialize (This : in out ArrayUtil'Class);
    function Create return ArrayUtil_Access;
    function getInstance return ArrayUtil_Access;
-   procedure getInstance;
    function copyOf (This : in out ArrayUtil; original : Java_Object_Access_Array_Access; newLength : Integer) return Java_Object_Access_Array_Access;
    procedure copyOf (This : in out ArrayUtil; original : Java_Object_Access_Array_Access; newLength : Integer);
    function copyOfType (This : in out ArrayUtil; original : Java_Object_Access_Array_Access; newLength : Integer; newType : Ada.Tags.Tag) return Java_Object_Access_Array_Access;

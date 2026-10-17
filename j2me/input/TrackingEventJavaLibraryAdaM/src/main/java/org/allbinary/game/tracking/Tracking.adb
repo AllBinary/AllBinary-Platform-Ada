@@ -30,7 +30,7 @@ package body org.allbinary.game.tracking.Tracking_Package is
    function Create return Tracking_Access is
       This : constant Tracking_Access := new Tracking;
    begin
-      Initialize (This.all);
+      Tracking_Package.Initialize (This.all);
       return This;
    end Create;
 

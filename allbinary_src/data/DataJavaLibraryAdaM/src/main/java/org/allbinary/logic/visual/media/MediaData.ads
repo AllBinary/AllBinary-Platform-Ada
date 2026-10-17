@@ -22,6 +22,8 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.logic.visual.media.MediaTypeData_Package; use org.allbinary.logic.visual.media.MediaTypeData_Package;
+with org.allbinary.logic.visual.media.MediaDataFactory_Package; use org.allbinary.logic.visual.media.MediaDataFactory_Package;
 
 package org.allbinary.logic.visual.media.MediaData_Package is
 
@@ -42,21 +44,15 @@ package org.allbinary.logic.visual.media.MediaData_Package is
    procedure Initialize (This : in out MediaData'Class; a_Name : Unbounded_String);
    function Create (a_Name : Unbounded_String) return MediaData_Access;
    function getName (This : in out MediaData) return Unbounded_String;
-   procedure getName (This : in out MediaData);
    function getType (This : in out MediaData) return Unbounded_String;
-   procedure getType (This : in out MediaData);
    function getExtension (This : in out MediaData) return Unbounded_String;
-   procedure getExtension (This : in out MediaData);
    function isConvertableTo (This : in out MediaData; mediaData : MediaData_Access) return Boolean;
    procedure isConvertableTo (This : in out MediaData; mediaData : MediaData_Access);
    function toString (This : in out MediaData) return Unbounded_String;
-   procedure toString (This : in out MediaData);
    function get (a_Name : Unbounded_String) return MediaData_Access;
    procedure get (a_Name : Unbounded_String);
    function getDefault return MediaData_Access;
-   procedure getDefault;
    function toHashMap return HashMap_Access;
-   procedure toHashMap;
 
 end org.allbinary.logic.visual.media.MediaData_Package;
 

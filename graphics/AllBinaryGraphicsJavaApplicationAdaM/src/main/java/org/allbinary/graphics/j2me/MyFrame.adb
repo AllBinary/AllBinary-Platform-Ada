@@ -92,7 +92,7 @@ package body org.allbinary.graphics.j2me.MyFrame_Package is
    function Create return MyFrame_Access is
       This : constant MyFrame_Access := new MyFrame;
    begin
-      Initialize (This.all);
+      MyFrame_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -732,13 +732,6 @@ package body org.allbinary.graphics.j2me.MyFrame_Package is
                 end;
         end;
    end main;
-
-   procedure getSelectedWorkArea (This : in out MyFrame) is
-      Java_Result : constant WorkAreaJPanelInterface_Access := MyFrame'Class (This).getSelectedWorkArea;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSelectedWorkArea;
 
 begin
    null;

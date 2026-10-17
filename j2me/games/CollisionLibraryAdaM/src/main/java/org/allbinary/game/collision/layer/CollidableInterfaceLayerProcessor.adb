@@ -29,7 +29,7 @@ package body org.allbinary.game.collision.layer.CollidableInterfaceLayerProcesso
    function Create return CollidableInterfaceLayerProcessor_Access is
       This : constant CollidableInterfaceLayerProcessor_Access := new CollidableInterfaceLayerProcessor;
    begin
-      Initialize (This.all);
+      CollidableInterfaceLayerProcessor_Package.Initialize (This.all);
       return This;
    end Create;
 

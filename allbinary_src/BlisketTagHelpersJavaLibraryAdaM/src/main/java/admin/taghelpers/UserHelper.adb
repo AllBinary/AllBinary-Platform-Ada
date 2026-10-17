@@ -41,7 +41,7 @@ package body admin.taghelpers.UserHelper_Package is
    function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return UserHelper_Access is
       This : constant UserHelper_Access := new UserHelper;
    begin
-      Initialize (This.all, hashMap, pageContext);
+      UserHelper_Package.Initialize (This.all, hashMap, pageContext);
       return This;
    end Create;
 
@@ -243,55 +243,6 @@ package body admin.taghelpers.UserHelper_Package is
             return error;
                 end;
         end;
-   end backup;
-
-   procedure delete (This : in out UserHelper) is
-      Java_Result : constant Unbounded_String := UserHelper'Class (This).delete;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end delete;
-
-   procedure insert (This : in out UserHelper) is
-      Java_Result : constant Unbounded_String := UserHelper'Class (This).insert;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end insert;
-
-   procedure update (This : in out UserHelper) is
-      Java_Result : constant Unbounded_String := UserHelper'Class (This).update;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end update;
-
-   procedure drop (This : in out UserHelper) is
-      Java_Result : constant Unbounded_String := UserHelper'Class (This).drop;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end drop;
-
-   procedure create (This : in out UserHelper) is
-      Java_Result : constant Unbounded_String := UserHelper'Class (This).create;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end create;
-
-   procedure restore (This : in out UserHelper) is
-      Java_Result : constant Unbounded_String := UserHelper'Class (This).restore;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end restore;
-
-   procedure backup (This : in out UserHelper) is
-      Java_Result : constant Unbounded_String := UserHelper'Class (This).backup;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end backup;
 
 end admin.taghelpers.UserHelper_Package;

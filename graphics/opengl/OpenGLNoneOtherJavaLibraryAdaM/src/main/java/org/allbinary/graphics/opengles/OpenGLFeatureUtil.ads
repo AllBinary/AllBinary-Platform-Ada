@@ -35,9 +35,7 @@ package org.allbinary.graphics.opengles.OpenGLFeatureUtil_Package is
    procedure Initialize (This : in out OpenGLFeatureUtil'Class);
    function Create return OpenGLFeatureUtil_Access;
    function getInstance return OpenGLFeatureUtil_Access;
-   procedure getInstance;
    function isAnyThreed (This : in out OpenGLFeatureUtil) return Boolean;
-   procedure isAnyThreed (This : in out OpenGLFeatureUtil);
 
 end org.allbinary.graphics.opengles.OpenGLFeatureUtil_Package;
 

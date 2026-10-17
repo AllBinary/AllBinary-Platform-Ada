@@ -8,11 +8,12 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.util.Calendar_Package; use java.util.Calendar_Package;
+with java.util.Calendar_Package; use java.util.Calendar_Package;
 --  with java.util.TimeZone_Package; use java.util.TimeZone_Package;
 
 package org.allbinary.time.TimeTypeUtil_Package is
 
+   package Calendar_Package renames Standard.java.util.Calendar_Package;
 
    type TimeTypeUtil is tagged;
    type TimeTypeUtil_Access is access all TimeTypeUtil'Class;
@@ -28,13 +29,9 @@ package org.allbinary.time.TimeTypeUtil_Package is
    procedure Initialize (This : in out TimeTypeUtil'Class);
    function Create return TimeTypeUtil_Access;
    function getInstance return TimeTypeUtil_Access;
-   procedure getInstance;
    function isNight (This : in out TimeTypeUtil) return Boolean;
-   procedure isNight (This : in out TimeTypeUtil);
    function getHourOfDay (This : in out TimeTypeUtil) return Integer;
-   procedure getHourOfDay (This : in out TimeTypeUtil);
    function getNightOrDay (This : in out TimeTypeUtil) return Unbounded_String;
-   procedure getNightOrDay (This : in out TimeTypeUtil);
    function getHourOfDay (This : in out TimeTypeUtil; timeInMillis : Long_Long_Integer) return Integer;
    procedure getHourOfDay (This : in out TimeTypeUtil; timeInMillis : Long_Long_Integer);
    function isNight (This : in out TimeTypeUtil; timeInMillis : Long_Long_Integer) return Boolean;

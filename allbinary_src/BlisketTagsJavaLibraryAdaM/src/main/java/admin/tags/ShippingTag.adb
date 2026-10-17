@@ -35,7 +35,7 @@ package body admin.tags.ShippingTag_Package is
    function Create return ShippingTag_Access is
       This : constant ShippingTag_Access := new ShippingTag;
    begin
-      Initialize (This.all);
+      ShippingTag_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -94,20 +94,6 @@ package body admin.tags.ShippingTag_Package is
             return SKIP_BODY;
                 end;
         end;
-   end doStartTag;
-
-   procedure setShippingType (This : in out ShippingTag) is
-      Java_Result : constant Unbounded_String := ShippingTag'Class (This).setShippingType;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end setShippingType;
-
-   procedure doStartTag (This : in out ShippingTag) is
-      Java_Result : constant Integer := ShippingTag'Class (This).doStartTag;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end doStartTag;
 
 end admin.tags.ShippingTag_Package;

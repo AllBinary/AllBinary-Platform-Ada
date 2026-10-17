@@ -34,7 +34,6 @@ package org.allbinary.business.user.subscription.Subscription_Package is
    procedure Initialize (This : in out Subscription'Class);
    function Create return Subscription_Access;
    function isSubscribed (This : in out Subscription) return Boolean;
-   procedure isSubscribed (This : in out Subscription);
 
 end org.allbinary.business.user.subscription.Subscription_Package;
 

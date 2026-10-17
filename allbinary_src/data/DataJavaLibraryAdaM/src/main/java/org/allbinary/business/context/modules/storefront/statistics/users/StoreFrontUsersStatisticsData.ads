@@ -38,7 +38,6 @@ package org.allbinary.business.context.modules.storefront.statistics.users.Store
    procedure Initialize (This : in out StoreFrontUsersStatisticsData'Class);
    function Create return StoreFrontUsersStatisticsData_Access;
    function getInstance return StoreFrontUsersStatisticsData_Access;
-   procedure getInstance;
 
 end org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatisticsData_Package;
 

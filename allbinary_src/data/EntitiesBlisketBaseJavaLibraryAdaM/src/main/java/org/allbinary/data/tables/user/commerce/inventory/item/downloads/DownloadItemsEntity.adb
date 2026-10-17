@@ -34,7 +34,7 @@ package body org.allbinary.data.tables.user.commerce.inventory.item.downloads.Do
    function Create return DownloadItemsEntity_Access is
       This : constant DownloadItemsEntity_Access := new DownloadItemsEntity;
    begin
-      Initialize (This.all);
+      DownloadItemsEntity_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -160,27 +160,6 @@ package body org.allbinary.data.tables.user.commerce.inventory.item.downloads.Do
    begin
       null;
    end getForItem;
-
-   procedure createTableStatement (This : in out DownloadItemsEntity) is
-      Java_Result : constant Unbounded_String := DownloadItemsEntity'Class (This).createTableStatement;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end createTableStatement;
-
-   procedure createTable (This : in out DownloadItemsEntity) is
-      Java_Result : constant Unbounded_String := DownloadItemsEntity'Class (This).createTable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end createTable;
-
-   procedure dropTable (This : in out DownloadItemsEntity) is
-      Java_Result : constant Unbounded_String := DownloadItemsEntity'Class (This).dropTable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end dropTable;
 
 end org.allbinary.data.tables.user.commerce.inventory.item.downloads.DownloadItemsEntity_Package;
 

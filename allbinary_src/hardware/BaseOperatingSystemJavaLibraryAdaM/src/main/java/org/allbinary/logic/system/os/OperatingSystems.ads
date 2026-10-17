@@ -48,10 +48,8 @@ package org.allbinary.logic.system.os.OperatingSystems_Package is
    procedure Initialize (This : in out OperatingSystems'Class);
    function Create return OperatingSystems_Access;
    function isUnknownSpecificOSAllowed (This : in out OperatingSystems) return Boolean;
-   procedure isUnknownSpecificOSAllowed (This : in out OperatingSystems);
    procedure setUnknownSpecificOSAllowed (This : in out OperatingSystems; aUnknownSpecificOSAllowed : Boolean);
    function getInstance return OperatingSystems_Access;
-   procedure getInstance;
 
 end org.allbinary.logic.system.os.OperatingSystems_Package;
 

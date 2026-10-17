@@ -55,7 +55,6 @@ package org.allbinary.input.automation.module.osgi.InputAutomationModuleServiceF
    procedure getService (This : in out InputAutomationModuleServiceFactory; bundle : Bundle_Access; registration : ServiceRegistration_Access);
    procedure ungetService (This : in out InputAutomationModuleServiceFactory; bundle : Bundle_Access; registration : ServiceRegistration_Access; service : Java_Object_Access);
    function getInputAutomationModuleInterfaceArray (This : in out InputAutomationModuleServiceFactory) return InputAutomationModuleFactoryInterface_Access_Array_Access;
-   procedure getInputAutomationModuleInterfaceArray (This : in out InputAutomationModuleServiceFactory);
    procedure setInputAutomationModuleInterfaceArray (This : in out InputAutomationModuleServiceFactory; inputAutomationModuleInterfaceArray : InputAutomationModuleFactoryInterface_Access_Array_Access);
 
 end org.allbinary.input.automation.module.osgi.InputAutomationModuleServiceFactory_Package;

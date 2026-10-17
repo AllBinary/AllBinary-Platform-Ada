@@ -58,7 +58,7 @@ package body org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package is
    function Create (name : Unbounded_String; dimension : Dimension_Access; x : Integer; y : Integer) return WorkAreaJPanel_Access is
       This : constant WorkAreaJPanel_Access := new WorkAreaJPanel;
    begin
-      Initialize (This.all, name, dimension, x, y);
+      WorkAreaJPanel_Package.Initialize (This.all, name, dimension, x, y);
       return This;
    end Create;
 
@@ -102,7 +102,7 @@ package body org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package is
    function Create (workAreaDom : WorkAreaDom_Access; dimension : Dimension_Access) return WorkAreaJPanel_Access is
       This : constant WorkAreaJPanel_Access := new WorkAreaJPanel;
    begin
-      Initialize (This.all, workAreaDom, dimension);
+      WorkAreaJPanel_Package.Initialize (This.all, workAreaDom, dimension);
       return This;
    end Create;
 
@@ -514,48 +514,6 @@ package body org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package is
                 end;
         end;
    end run;
-
-   procedure getCanvasHashMap (This : in out WorkAreaJPanel) is
-      Java_Result : constant HashMap_Access := WorkAreaJPanel'Class (This).getCanvasHashMap;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getCanvasHashMap;
-
-   procedure isPlaying (This : in out WorkAreaJPanel) is
-      Java_Result : constant Boolean := WorkAreaJPanel'Class (This).isPlaying;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isPlaying;
-
-   procedure getName (This : in out WorkAreaJPanel) is
-      Java_Result : constant Unbounded_String := WorkAreaJPanel'Class (This).getName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getName;
-
-   procedure getCurrentFrame (This : in out WorkAreaJPanel) is
-      Java_Result : constant CanvasJPanel_Access := WorkAreaJPanel'Class (This).getCurrentFrame;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getCurrentFrame;
-
-   procedure getDocument is
-      Java_Result : constant Document_Access := getDocument;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getDocument;
-
-   procedure toDocument (This : in out WorkAreaJPanel) is
-      Java_Result : constant Document_Access := WorkAreaJPanel'Class (This).toDocument;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toDocument;
 
 begin
    null;

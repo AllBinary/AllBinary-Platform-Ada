@@ -28,7 +28,7 @@ package body org.osgi.framework.BaseServiceReference_Package is
    function Create return BaseServiceReference_Access is
       This : constant BaseServiceReference_Access := new BaseServiceReference;
    begin
-      Initialize (This.all);
+      BaseServiceReference_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -54,13 +54,6 @@ package body org.osgi.framework.BaseServiceReference_Package is
    begin
       null;
    end getProperty;
-
-   procedure getPropertyKeys (This : in out BaseServiceReference) is
-      Java_Result : constant Unbounded_String_Array_Access := BaseServiceReference'Class (This).getPropertyKeys;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getPropertyKeys;
 
    procedure compareTo (This : in out BaseServiceReference; o : Java_Object_Access) is
       Java_Result : constant Integer := BaseServiceReference'Class (This).compareTo (o);

@@ -36,7 +36,7 @@ package body org.allbinary.media.graphics.geography.pathfinding.PathFindingNode_
    function Create (parent : Java_Object_Access; geographicMapCellPosition : GeographicMapCellPosition_Access) return PathFindingNode_Access is
       This : constant PathFindingNode_Access := new PathFindingNode;
    begin
-      Initialize (This.all, parent, geographicMapCellPosition);
+      PathFindingNode_Package.Initialize (This.all, parent, geographicMapCellPosition);
       return This;
    end Create;
 
@@ -66,20 +66,6 @@ package body org.allbinary.media.graphics.geography.pathfinding.PathFindingNode_
             pathFindingNode := pathFindingNode.getParentP;
         end loop;
         return stringBuffer.toString;
-   end toString;
-
-   procedure getParentP (This : in out PathFindingNode) is
-      Java_Result : constant PathFindingNode_Access := PathFindingNode'Class (This).getParentP;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getParentP;
-
-   procedure toString (This : in out PathFindingNode) is
-      Java_Result : constant Unbounded_String := PathFindingNode'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end toString;
 
 end org.allbinary.media.graphics.geography.pathfinding.PathFindingNode_Package;

@@ -35,7 +35,7 @@ package body org.allbinary.logic.visual.transform.template.customizer.hedges.hea
    function Create return HeadingValidation_Access is
       This : constant HeadingValidation_Access := new HeadingValidation;
    begin
-      Initialize (This.all);
+      HeadingValidation_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -57,7 +57,7 @@ package body org.allbinary.logic.visual.transform.template.customizer.hedges.hea
    function Create (document : Document_Access) return HeadingValidation_Access is
       This : constant HeadingValidation_Access := new HeadingValidation;
    begin
-      Initialize (This.all, document);
+      HeadingValidation_Package.Initialize (This.all, document);
       return This;
    end Create;
 
@@ -72,7 +72,7 @@ package body org.allbinary.logic.visual.transform.template.customizer.hedges.hea
    function Create (hashMap : HashMap_Access) return HeadingValidation_Access is
       This : constant HeadingValidation_Access := new HeadingValidation;
    begin
-      Initialize (This.all, hashMap);
+      HeadingValidation_Package.Initialize (This.all, hashMap);
       return This;
    end Create;
 
@@ -179,27 +179,6 @@ package body org.allbinary.logic.visual.transform.template.customizer.hedges.hea
         node.appendChild (This.title.toXmlNode (document));
         return node;
    end toXmlNode;
-
-   procedure isValid (This : in out HeadingValidation) is
-      Java_Result : constant Boolean := HeadingValidation'Class (This).isValid;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isValid;
-
-   procedure validationInfo (This : in out HeadingValidation) is
-      Java_Result : constant Unbounded_String := HeadingValidation'Class (This).validationInfo;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end validationInfo;
-
-   procedure toValidationInfoDoc (This : in out HeadingValidation) is
-      Java_Result : constant Document_Access := HeadingValidation'Class (This).toValidationInfoDoc;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toValidationInfoDoc;
 
    procedure toValidationInfoNode (This : in out HeadingValidation; document : Document_Access) is
       Java_Result : constant Node_Access := HeadingValidation'Class (This).toValidationInfoNode (document);

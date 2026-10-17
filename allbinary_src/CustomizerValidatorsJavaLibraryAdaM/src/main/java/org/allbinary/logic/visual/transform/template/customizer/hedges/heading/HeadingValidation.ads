@@ -33,6 +33,7 @@ with org.allbinary.logic.visual.transform.template.customizer.widgets.title.Titl
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.w3c.dom.NodeList_Package; use org.w3c.dom.NodeList_Package;
+with org.allbinary.logic.visual.transform.template.customizer.hedges.heading.HeadingData_Package; use org.allbinary.logic.visual.transform.template.customizer.hedges.heading.HeadingData_Package;
 
 package org.allbinary.logic.visual.transform.template.customizer.hedges.heading.HeadingValidation_Package is
 
@@ -64,11 +65,8 @@ package org.allbinary.logic.visual.transform.template.customizer.hedges.heading.
    function Create return HeadingValidation_Access;
    procedure getFormData (This : in out HeadingValidation; hashMap : HashMap_Access);
    function isValid (This : in out HeadingValidation) return Boolean;
-   procedure isValid (This : in out HeadingValidation);
    function validationInfo (This : in out HeadingValidation) return Unbounded_String;
-   procedure validationInfo (This : in out HeadingValidation);
    function toValidationInfoDoc (This : in out HeadingValidation) return Document_Access;
-   procedure toValidationInfoDoc (This : in out HeadingValidation);
    function toValidationInfoNode (This : in out HeadingValidation; document : Document_Access) return Node_Access;
    procedure toValidationInfoNode (This : in out HeadingValidation; document : Document_Access);
    function toXmlNode (This : in out HeadingValidation; document : Document_Access) return Node_Access;

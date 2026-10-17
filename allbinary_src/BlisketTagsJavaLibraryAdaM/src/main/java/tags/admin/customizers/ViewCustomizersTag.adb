@@ -31,7 +31,7 @@ package body tags.admin.customizers.ViewCustomizersTag_Package is
    function Create return ViewCustomizersTag_Access is
       This : constant ViewCustomizersTag_Access := new ViewCustomizersTag;
    begin
-      Initialize (This.all);
+      ViewCustomizersTag_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -51,13 +51,6 @@ package body tags.admin.customizers.ViewCustomizersTag_Package is
             return SKIP_BODY;
                 end;
         end;
-   end doStartTag;
-
-   procedure doStartTag (This : in out ViewCustomizersTag) is
-      Java_Result : constant Integer := ViewCustomizersTag'Class (This).doStartTag;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end doStartTag;
 
 end tags.admin.customizers.ViewCustomizersTag_Package;

@@ -37,7 +37,7 @@ package body org.allbinary.game.input.event.RawKeyEventHandler_Package is
    function Create return RawKeyEventHandler_Access is
       This : constant RawKeyEventHandler_Access := new RawKeyEventHandler;
    begin
-      Initialize (This.all);
+      RawKeyEventHandler_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -147,27 +147,6 @@ package body org.allbinary.game.input.event.RawKeyEventHandler_Package is
             index := index + 1;
         end loop;
         return stringBuffer.toString;
-   end toString;
-
-   procedure getInstance is
-      Java_Result : constant RawKeyEventHandler_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure getEventListenerInterfaceListP (This : in out RawKeyEventHandler) is
-      Java_Result : constant BasicArrayList_Access := RawKeyEventHandler'Class (This).getEventListenerInterfaceListP;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getEventListenerInterfaceListP;
-
-   procedure toString (This : in out RawKeyEventHandler) is
-      Java_Result : constant Unbounded_String := RawKeyEventHandler'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end toString;
 
 begin

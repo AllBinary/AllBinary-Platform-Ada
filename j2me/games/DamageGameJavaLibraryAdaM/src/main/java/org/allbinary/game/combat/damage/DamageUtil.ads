@@ -24,6 +24,7 @@ with org.allbinary.game.layer.CollidableCompositeLayer_Package; use org.allbinar
 with org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package; use org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.game.combat.damage.DamageableInterface_Package; use org.allbinary.game.combat.damage.DamageableInterface_Package;
 
 package org.allbinary.game.combat.damage.DamageUtil_Package is
 
@@ -46,7 +47,6 @@ package org.allbinary.game.combat.damage.DamageUtil_Package is
    procedure Initialize (This : in out DamageUtil'Class);
    function Create return DamageUtil_Access;
    function getInstance return DamageUtil_Access;
-   procedure getInstance;
    procedure process (This : in out DamageUtil; damageableInterface : DamageableInterface_Access; damageableInterface2 : DamageableInterface_Access);
    procedure debugDamage (This : in out DamageUtil; collidableInterfaceCompositeInterface1 : CollidableCompositeLayer_Access; collidableInterfaceCompositeInterface : CollidableCompositeLayer_Access);
 

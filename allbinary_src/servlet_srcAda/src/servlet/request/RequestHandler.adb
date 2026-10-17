@@ -30,7 +30,7 @@ package body servlet.request.RequestHandler_Package is
    function Create return RequestHandler_Access is
       This : constant RequestHandler_Access := new RequestHandler;
    begin
-      Initialize (This.all);
+      RequestHandler_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -88,13 +88,6 @@ package body servlet.request.RequestHandler_Package is
    function getServletInfo (This : in out RequestHandler) return Unbounded_String is
    begin
         return To_Unbounded_String ("WorkFlow Request Handler");
-   end getServletInfo;
-
-   procedure getServletInfo (This : in out RequestHandler) is
-      Java_Result : constant Unbounded_String := RequestHandler'Class (This).getServletInfo;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getServletInfo;
 
 end servlet.request.RequestHandler_Package;

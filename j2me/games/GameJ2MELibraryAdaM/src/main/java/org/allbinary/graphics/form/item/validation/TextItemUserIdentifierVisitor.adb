@@ -32,7 +32,7 @@ package body org.allbinary.graphics.form.item.validation.TextItemUserIdentifierV
    function Create return TextItemUserIdentifierVisitor_Access is
       This : constant TextItemUserIdentifierVisitor_Access := new TextItemUserIdentifierVisitor;
    begin
-      Initialize (This.all);
+      TextItemUserIdentifierVisitor_Package.Initialize (This.all);
       return This;
    end Create;
 

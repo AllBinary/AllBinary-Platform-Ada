@@ -56,17 +56,12 @@ package views.business.context.modules.storefront.customizer.includes.style.them
    procedure Initialize (This : in out NewThemeValidationView'Class; transformInfoInterface : TransformInfoInterface_Access);
    function Create (transformInfoInterface : TransformInfoInterface_Access) return NewThemeValidationView_Access;
    function toXmlDoc (This : in out NewThemeValidationView) return Document_Access;
-   procedure toXmlDoc (This : in out NewThemeValidationView);
    function isValid (This : in out NewThemeValidationView) return Boolean;
-   procedure isValid (This : in out NewThemeValidationView);
    function validationInfo (This : in out NewThemeValidationView) return Unbounded_String;
-   procedure validationInfo (This : in out NewThemeValidationView);
    function toValidationInfoDoc (This : in out NewThemeValidationView) return Document_Access;
-   procedure toValidationInfoDoc (This : in out NewThemeValidationView);
    function toValidationInfoNode (This : in out NewThemeValidationView; document : Document_Access) return Node_Access;
    procedure toValidationInfoNode (This : in out NewThemeValidationView; document : Document_Access);
    function view (This : in out NewThemeValidationView) return Unbounded_String;
-   procedure view (This : in out NewThemeValidationView);
 
 end views.business.context.modules.storefront.customizer.includes.style.theme.NewThemeValidationView_Package;
 

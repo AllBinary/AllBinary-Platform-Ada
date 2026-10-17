@@ -82,7 +82,6 @@ package org.allbinary.media.image.ImageCopyUtil_Package is
    procedure Initialize (This : in out ImageCopyUtil'Class);
    function Create return ImageCopyUtil_Access;
    function getInstance return ImageCopyUtil_Access;
-   procedure getInstance;
    function createImageForRotation (This : in out ImageCopyUtil; originalImage : Image_Access) return Image_Access;
    procedure createImageForRotation (This : in out ImageCopyUtil; originalImage : Image_Access);
    function createImage (This : in out ImageCopyUtil; originalImage : Image_Access) return Image_Access;

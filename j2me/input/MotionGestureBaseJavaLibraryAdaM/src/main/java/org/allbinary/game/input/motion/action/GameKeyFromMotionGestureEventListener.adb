@@ -31,7 +31,7 @@ package body org.allbinary.game.input.motion.action.GameKeyFromMotionGestureEven
    function Create return GameKeyFromMotionGestureEventListener_Access is
       This : constant GameKeyFromMotionGestureEventListener_Access := new GameKeyFromMotionGestureEventListener;
    begin
-      Initialize (This.all);
+      GameKeyFromMotionGestureEventListener_Package.Initialize (This.all);
       return This;
    end Create;
 

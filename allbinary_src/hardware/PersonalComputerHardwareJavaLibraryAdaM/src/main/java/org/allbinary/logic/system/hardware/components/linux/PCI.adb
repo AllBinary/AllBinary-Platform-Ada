@@ -31,7 +31,7 @@ package body org.allbinary.logic.system.hardware.components.linux.PCI_Package is
    function Create (data : Unbounded_String) return PCI_Access is
       This : constant PCI_Access := new PCI;
    begin
-      Initialize (This.all, data);
+      PCI_Package.Initialize (This.all, data);
       return This;
    end Create;
 
@@ -51,13 +51,6 @@ package body org.allbinary.logic.system.hardware.components.linux.PCI_Package is
    begin
       null;
    end compareTo;
-
-   procedure toString (This : in out PCI) is
-      Java_Result : constant Unbounded_String := PCI'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toString;
 
 end org.allbinary.logic.system.hardware.components.linux.PCI_Package;
 

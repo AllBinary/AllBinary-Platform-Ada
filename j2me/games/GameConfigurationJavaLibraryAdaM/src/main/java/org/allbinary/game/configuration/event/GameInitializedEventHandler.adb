@@ -31,7 +31,7 @@ package body org.allbinary.game.configuration.event.GameInitializedEventHandler_
    function Create return GameInitializedEventHandler_Access is
       This : constant GameInitializedEventHandler_Access := new GameInitializedEventHandler;
    begin
-      Initialize (This.all);
+      GameInitializedEventHandler_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -47,13 +47,6 @@ package body org.allbinary.game.configuration.event.GameInitializedEventHandler_
         gameInitializedListenerInterface := (GameInitializedListenerInterface_Access (eventListenerInterface));
         gameInitializedListenerInterface.onGameInitialized (GameInitializedEvent_Access (eventObject));
    end process;
-
-   procedure getInstance is
-      Java_Result : constant GameInitializedEventHandler_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

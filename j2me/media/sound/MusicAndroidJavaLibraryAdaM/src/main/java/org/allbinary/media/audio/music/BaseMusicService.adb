@@ -26,7 +26,7 @@ package body org.allbinary.media.audio.music.BaseMusicService_Package is
    function Create return BaseMusicService_Access is
       This : constant BaseMusicService_Access := new BaseMusicService;
    begin
-      Initialize (This.all);
+      BaseMusicService_Package.Initialize (This.all);
       return This;
    end Create;
 

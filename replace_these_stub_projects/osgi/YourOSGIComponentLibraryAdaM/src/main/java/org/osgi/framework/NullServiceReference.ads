@@ -40,7 +40,6 @@ package org.osgi.framework.NullServiceReference_Package is
    function getProperty (This : in out NullServiceReference; key : Unbounded_String) return Java_Object_Access;
    procedure getProperty (This : in out NullServiceReference; key : Unbounded_String);
    function getPropertyKeys (This : in out NullServiceReference) return Unbounded_String_Array_Access;
-   procedure getPropertyKeys (This : in out NullServiceReference);
    function compareTo (This : in out NullServiceReference; o : Java_Object_Access) return Integer;
    procedure compareTo (This : in out NullServiceReference; o : Java_Object_Access);
 

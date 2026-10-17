@@ -46,7 +46,7 @@ package body org.allbinary.image.gui.RotationImageJPanel_Package is
    function Create (imageProcessorInput : ImageProcessorInput_Access) return RotationImageJPanel_Access is
       This : constant RotationImageJPanel_Access := new RotationImageJPanel;
    begin
-      Initialize (This.all, imageProcessorInput);
+      RotationImageJPanel_Package.Initialize (This.all, imageProcessorInput);
       return This;
    end Create;
 
@@ -173,13 +173,6 @@ package body org.allbinary.image.gui.RotationImageJPanel_Package is
         isWritten := ImageIO_Package.write (RenderedImage_Access (This.result), This.imageStrings.PNG, file);
         This.logUtil.putF (To_Unbounded_String ("File: ") & Java_Image (file) & To_Unbounded_String (" Wrote: ") & Java_Image (isWritten), This'Unchecked_Access, This.commonStrings.RUN);
    end visit;
-
-   procedure getImageProcessorInput (This : in out RotationImageJPanel) is
-      Java_Result : constant ImageProcessorInput_Access := RotationImageJPanel'Class (This).getImageProcessorInput;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getImageProcessorInput;
 
 end org.allbinary.image.gui.RotationImageJPanel_Package;
 

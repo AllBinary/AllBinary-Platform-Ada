@@ -41,7 +41,6 @@ package org.allbinary.input.gyro.NoGyroSensor_Package is
    procedure Initialize (This : in out NoGyroSensor'Class);
    function Create return NoGyroSensor_Access;
    function getOrientation (This : in out NoGyroSensor) return Orientation_Access;
-   procedure getOrientation (This : in out NoGyroSensor);
    procedure onSensorChange (This : in out NoGyroSensor);
 
 end org.allbinary.input.gyro.NoGyroSensor_Package;

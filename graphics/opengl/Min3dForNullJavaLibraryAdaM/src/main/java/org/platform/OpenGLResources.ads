@@ -24,7 +24,6 @@ package org.platform.OpenGLResources_Package is
    procedure Initialize (This : in out OpenGLResources'Class);
    function Create return OpenGLResources_Access;
    function getInstance return OpenGLResources_Access;
-   procedure getInstance;
    procedure init (This : in out OpenGLResources);
    function isExcluded (This : in out OpenGLResources; name : Unbounded_String) return Boolean;
    procedure isExcluded (This : in out OpenGLResources; name : Unbounded_String);
@@ -37,7 +36,6 @@ package org.platform.OpenGLResources_Package is
    function getResourceAsStream (This : in out OpenGLResources; resourceName : Unbounded_String) return InputStream_Access;
    procedure getResourceAsStream (This : in out OpenGLResources; resourceName : Unbounded_String);
    function getPackageName (This : in out OpenGLResources) return Unbounded_String;
-   procedure getPackageName (This : in out OpenGLResources);
 
 end org.platform.OpenGLResources_Package;
 

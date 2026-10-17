@@ -29,7 +29,7 @@ package body org.allbinary.time.NoTimeDelayHelper_Package is
    function Create return NoTimeDelayHelper_Access is
       This : constant NoTimeDelayHelper_Access := new NoTimeDelayHelper;
    begin
-      Initialize (This.all);
+      NoTimeDelayHelper_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -52,13 +52,6 @@ package body org.allbinary.time.NoTimeDelayHelper_Package is
    begin
         return True;
    end isTimeSince;
-
-   procedure isTimeTNT (This : in out NoTimeDelayHelper) is
-      Java_Result : constant Boolean := NoTimeDelayHelper'Class (This).isTimeTNT;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isTimeTNT;
 
    procedure isTimeSinceTNT (This : in out NoTimeDelayHelper; delay_Id : Integer) is
       Java_Result : constant Boolean := NoTimeDelayHelper'Class (This).isTimeSinceTNT (delay_Id);

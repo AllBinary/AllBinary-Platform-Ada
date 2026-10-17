@@ -37,9 +37,7 @@ package org.allbinary.logic.io.AbIOSystem_Package is
    procedure Initialize (This : in out AbIOSystem'Class);
    function Create return AbIOSystem_Access;
    function getInstance return AbIOSystem_Access;
-   procedure getInstance;
    function getType (This : in out AbIOSystem) return Unbounded_String;
-   procedure getType (This : in out AbIOSystem);
    function isType (This : in out AbIOSystem; type_Id : Unbounded_String) return Boolean;
    procedure isType (This : in out AbIOSystem; type_Id : Unbounded_String);
 

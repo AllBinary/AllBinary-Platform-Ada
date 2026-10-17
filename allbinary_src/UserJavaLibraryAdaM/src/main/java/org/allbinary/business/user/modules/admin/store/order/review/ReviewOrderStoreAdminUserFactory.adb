@@ -30,7 +30,7 @@ package body org.allbinary.business.user.modules.admin.store.order.review.Review
    function Create return ReviewOrderStoreAdminUserFactory_Access is
       This : constant ReviewOrderStoreAdminUserFactory_Access := new ReviewOrderStoreAdminUserFactory;
    begin
-      Initialize (This.all);
+      ReviewOrderStoreAdminUserFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -44,13 +44,6 @@ package body org.allbinary.business.user.modules.admin.store.order.review.Review
    function getInstance (This : in out ReviewOrderStoreAdminUserFactory; hashMap : HashMap_Access) return UserInterface_Access is
    begin
         return ReviewOrderStoreAdminUser_Package.Create (hashMap);
-   end getInstance;
-
-   procedure getInstance (This : in out ReviewOrderStoreAdminUserFactory) is
-      Java_Result : constant UserInterface_Access := ReviewOrderStoreAdminUserFactory'Class (This).getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
    procedure getInstance (This : in out ReviewOrderStoreAdminUserFactory; hashMap : HashMap_Access) is

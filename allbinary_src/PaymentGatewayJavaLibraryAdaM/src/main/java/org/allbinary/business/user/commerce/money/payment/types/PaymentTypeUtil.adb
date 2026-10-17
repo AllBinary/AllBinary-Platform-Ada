@@ -64,7 +64,7 @@ package body org.allbinary.business.user.commerce.money.payment.types.PaymentTyp
    function Create return PaymentTypeUtil_Access is
       This : constant PaymentTypeUtil_Access := new PaymentTypeUtil;
    begin
-      Initialize (This.all);
+      PaymentTypeUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -163,13 +163,6 @@ package body org.allbinary.business.user.commerce.money.payment.types.PaymentTyp
         end loop;
         return diff;
    end difference;
-
-   procedure getInstance is
-      Java_Result : constant PaymentTypeUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure get (This : in out PaymentTypeUtil; paymentTypeString : Unbounded_String) is
       Java_Result : constant PaymentType_Access := PaymentTypeUtil'Class (This).get (paymentTypeString);

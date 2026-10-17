@@ -54,7 +54,6 @@ package org.allbinary.game.configuration.InGameFeatures_Package is
    procedure init (This : in out InGameFeatures);
    procedure addToInGameMenu (This : in out InGameFeatures);
    function isAny (This : in out InGameFeatures) return Boolean;
-   procedure isAny (This : in out InGameFeatures);
 
 end org.allbinary.game.configuration.InGameFeatures_Package;
 

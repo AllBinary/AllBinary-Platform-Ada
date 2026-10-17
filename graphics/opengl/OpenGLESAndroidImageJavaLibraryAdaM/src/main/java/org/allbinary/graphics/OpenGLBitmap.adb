@@ -20,7 +20,7 @@ package body org.allbinary.graphics.OpenGLBitmap_Package is
    function Create (bitmap : Java_Object_Access) return OpenGLBitmap_Access is
       This : constant OpenGLBitmap_Access := new OpenGLBitmap;
    begin
-      Initialize (This.all, bitmap);
+      OpenGLBitmap_Package.Initialize (This.all, bitmap);
       return This;
    end Create;
 
@@ -48,20 +48,6 @@ package body org.allbinary.graphics.OpenGLBitmap_Package is
    begin
         This.bitmap.recycle;
    end recycle;
-
-   procedure getWidth (This : in out OpenGLBitmap) is
-      Java_Result : constant Integer := OpenGLBitmap'Class (This).getWidth;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getWidth;
-
-   procedure getHeight (This : in out OpenGLBitmap) is
-      Java_Result : constant Integer := OpenGLBitmap'Class (This).getHeight;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getHeight;
 
 end org.allbinary.graphics.OpenGLBitmap_Package;
 

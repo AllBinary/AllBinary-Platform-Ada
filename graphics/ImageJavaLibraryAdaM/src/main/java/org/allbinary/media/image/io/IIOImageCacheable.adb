@@ -32,7 +32,7 @@ package body org.allbinary.media.image.io.IIOImageCacheable_Package is
    function Create (key : Unbounded_String) return IIOImageCacheable_Access is
       This : constant IIOImageCacheable_Access := new IIOImageCacheable;
    begin
-      Initialize (This.all, key);
+      IIOImageCacheable_Package.Initialize (This.all, key);
       return This;
    end Create;
 
@@ -63,27 +63,6 @@ package body org.allbinary.media.image.io.IIOImageCacheable_Package is
         stringBuffer.append (To_Unbounded_String (Ada.Tags.Expanded_Name (This.all'Tag)));
         stringBuffer.append (To_Unbounded_String (" Reusable IIOImage"));
         return stringBuffer.toString;
-   end toString;
-
-   procedure getKey (This : in out IIOImageCacheable) is
-      Java_Result : constant Java_Object_Access := IIOImageCacheable'Class (This).getKey;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getKey;
-
-   procedure getIioImage (This : in out IIOImageCacheable) is
-      Java_Result : constant IIOImage_Access := IIOImageCacheable'Class (This).getIioImage;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getIioImage;
-
-   procedure toString (This : in out IIOImageCacheable) is
-      Java_Result : constant Unbounded_String := IIOImageCacheable'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end toString;
 
 end org.allbinary.media.image.io.IIOImageCacheable_Package;

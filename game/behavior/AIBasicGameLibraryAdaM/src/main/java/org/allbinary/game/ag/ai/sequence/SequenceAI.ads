@@ -57,14 +57,10 @@ package org.allbinary.game.ag.ai.sequence.SequenceAI_Package is
    procedure processAI (This : in out SequenceAI; allBinaryLayerManager : AllBinaryLayerManager_Access);
    procedure next (This : in out SequenceAI);
    function getIndex (This : in out SequenceAI) return Integer;
-   procedure getIndex (This : in out SequenceAI);
    procedure setIndex (This : in out SequenceAI; index : Integer);
    function getSelectedArtificialIntelligenceInterface (This : in out SequenceAI) return ArtificialIntelligenceInterface_Access;
-   procedure getSelectedArtificialIntelligenceInterface (This : in out SequenceAI);
    function getName (This : in out SequenceAI) return Unbounded_String;
-   procedure getName (This : in out SequenceAI);
    function toString (This : in out SequenceAI) return Unbounded_String;
-   procedure toString (This : in out SequenceAI);
 
 end org.allbinary.game.ag.ai.sequence.SequenceAI_Package;
 

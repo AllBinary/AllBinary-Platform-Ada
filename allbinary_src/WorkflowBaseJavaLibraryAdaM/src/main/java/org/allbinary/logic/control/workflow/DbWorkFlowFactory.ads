@@ -27,6 +27,8 @@ with org.allbinary.logic.system.loader.AbeFactory_Package; use org.allbinary.log
 with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package; use org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
 with org.allbinary.logic.system.security.licensing.LicensingException_Package; use org.allbinary.logic.system.security.licensing.LicensingException_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.logic.control.workflow.WorkFlowWrapper_Package; use org.allbinary.logic.control.workflow.WorkFlowWrapper_Package;
+with org.allbinary.logic.control.workflow.WorkFlowInterface_Package; use org.allbinary.logic.control.workflow.WorkFlowInterface_Package;
 
 package org.allbinary.logic.control.workflow.DbWorkFlowFactory_Package is
 
@@ -50,7 +52,6 @@ package org.allbinary.logic.control.workflow.DbWorkFlowFactory_Package is
    procedure Initialize (This : in out DbWorkFlowFactory'Class);
    function Create return DbWorkFlowFactory_Access;
    function getInstance return DbWorkFlowFactory_Access;
-   procedure getInstance;
    function getInstance (This : in out DbWorkFlowFactory; abeClientInformation : AbeClientInformationInterface_Access; hashMap : HashMap_Access) return WorkFlowInterface_Access;
    procedure getInstance (This : in out DbWorkFlowFactory; abeClientInformation : AbeClientInformationInterface_Access; hashMap : HashMap_Access);
 

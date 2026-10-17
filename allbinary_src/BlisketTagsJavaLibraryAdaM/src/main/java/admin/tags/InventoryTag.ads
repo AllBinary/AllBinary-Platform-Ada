@@ -27,6 +27,8 @@ with admin.taghelpers.InventoryRequestHelperFactory_Package; use admin.taghelper
 with org.allbinary.business.context.modules.storefront.StoreFrontData_Package; use org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
 with org.allbinary.logic.communication.http.request.AbResponseHandler_Package; use org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
 with admin.tags.TableTag_Package; use admin.tags.TableTag_Package;
+with admin.tags.ParentInventoryTagHelper_Package; use admin.tags.ParentInventoryTagHelper_Package;
+with admin.tags.AbTagData_Package; use admin.tags.AbTagData_Package;
 
 package admin.tags.InventoryTag_Package is
 
@@ -48,7 +50,6 @@ package admin.tags.InventoryTag_Package is
    function Create return InventoryTag_Access;
    procedure setStoreName (This : in out InventoryTag; value : Unbounded_String);
    function doStartTag (This : in out InventoryTag) return Integer;
-   procedure doStartTag (This : in out InventoryTag);
 
 end admin.tags.InventoryTag_Package;
 

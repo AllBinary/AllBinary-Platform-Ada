@@ -23,6 +23,9 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.io.file.FilePathData_Package; use org.allbinary.logic.io.file.FilePathData_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.logic.string_Id.StringValidationUtil_Package; use org.allbinary.logic.string_Id.StringValidationUtil_Package;
+with org.allbinary.logic.io.path.AbPathData_Package; use org.allbinary.logic.io.path.AbPathData_Package;
+with org.allbinary.logic.io.path.AbFilePath_Package; use org.allbinary.logic.io.path.AbFilePath_Package;
+with org.allbinary.logic.io.path.AbPath_Package; use org.allbinary.logic.io.path.AbPath_Package;
 
 package org.allbinary.logic.io.path.PathUtil_Package is
 
@@ -44,7 +47,6 @@ package org.allbinary.logic.io.path.PathUtil_Package is
    procedure Initialize (This : in out PathUtil'Class);
    function Create return PathUtil_Access;
    function getInstance return PathUtil_Access;
-   procedure getInstance;
    function getExtensionWithAbFilePath (This : in out PathUtil; abFilePath : AbFilePath_Access) return Unbounded_String;
    procedure getExtensionWithAbFilePath (This : in out PathUtil; abFilePath : AbFilePath_Access);
    function getExtensionWithAbPath (This : in out PathUtil; abPath : AbPath_Access) return Unbounded_String;
@@ -61,12 +63,12 @@ package org.allbinary.logic.io.path.PathUtil_Package is
    procedure isValidStart (This : in out PathUtil; path : Unbounded_String);
    function isValidEnd (This : in out PathUtil; path : Unbounded_String) return Boolean;
    procedure isValidEnd (This : in out PathUtil; path : Unbounded_String);
-   function adjustStart (This : in out PathUtil; path : Unbounded_String) return Unbounded_String;
-   procedure adjustStart (This : in out PathUtil; path : Unbounded_String);
-   function adjustEnd (This : in out PathUtil; path : Unbounded_String) return Unbounded_String;
-   procedure adjustEnd (This : in out PathUtil; path : Unbounded_String);
-   function adjust (This : in out PathUtil; path : Unbounded_String) return Unbounded_String;
-   procedure adjust (This : in out PathUtil; path : Unbounded_String);
+   function adjustStart (This : in out PathUtil; path_Param : Unbounded_String) return Unbounded_String;
+   procedure adjustStart (This : in out PathUtil; path_Param : Unbounded_String);
+   function adjustEnd (This : in out PathUtil; path_Param : Unbounded_String) return Unbounded_String;
+   procedure adjustEnd (This : in out PathUtil; path_Param : Unbounded_String);
+   function adjust (This : in out PathUtil; path_Param : Unbounded_String) return Unbounded_String;
+   procedure adjust (This : in out PathUtil; path_Param : Unbounded_String);
    function removeNameFromPath (This : in out PathUtil; path : Unbounded_String) return AbPath_Access;
    procedure removeNameFromPath (This : in out PathUtil; path : Unbounded_String);
 

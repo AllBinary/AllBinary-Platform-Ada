@@ -33,7 +33,7 @@ package body org.allbinary.graphics.form.LockablePaintable_Package is
    function Create (lockedIndex : Integer) return LockablePaintable_Access is
       This : constant LockablePaintable_Access := new LockablePaintable;
    begin
-      Initialize (This.all, lockedIndex);
+      LockablePaintable_Package.Initialize (This.all, lockedIndex);
       return This;
    end Create;
 
@@ -52,20 +52,6 @@ package body org.allbinary.graphics.form.LockablePaintable_Package is
    function getAnimation (This : in out LockablePaintable) return Animation_Access is
    begin
         return This.animation;
-   end getAnimation;
-
-   procedure getLockedIndex (This : in out LockablePaintable) is
-      Java_Result : constant Integer := LockablePaintable'Class (This).getLockedIndex;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getLockedIndex;
-
-   procedure getAnimation (This : in out LockablePaintable) is
-      Java_Result : constant Animation_Access := LockablePaintable'Class (This).getAnimation;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getAnimation;
 
 end org.allbinary.graphics.form.LockablePaintable_Package;

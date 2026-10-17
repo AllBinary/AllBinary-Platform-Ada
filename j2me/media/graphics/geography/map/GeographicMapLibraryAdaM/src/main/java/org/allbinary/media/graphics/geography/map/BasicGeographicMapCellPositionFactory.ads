@@ -24,6 +24,10 @@ with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.lo
 with org.allbinary.game.layer.AllBinaryTiledLayer_Package; use org.allbinary.game.layer.AllBinaryTiledLayer_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
+with org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package; use org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
+with org.allbinary.media.graphics.geography.map.GeographicMapCellPositionFactoryInterface_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellPositionFactoryInterface_Package;
+with org.allbinary.media.graphics.geography.map.GeographicMapCellPositionFactoryInitVisitorInterface_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellPositionFactoryInitVisitorInterface_Package;
 
 package org.allbinary.media.graphics.geography.map.BasicGeographicMapCellPositionFactory_Package is
 
@@ -58,9 +62,7 @@ package org.allbinary.media.graphics.geography.map.BasicGeographicMapCellPositio
    function createInstance (This : in out BasicGeographicMapCellPositionFactory; i_column : Integer; i_row : Integer; width : Integer; height : Integer) return GeographicMapCellPosition_Access;
    procedure createInstance (This : in out BasicGeographicMapCellPositionFactory; i_column : Integer; i_row : Integer; width : Integer; height : Integer);
    function getColumns (This : in out BasicGeographicMapCellPositionFactory) return Integer;
-   procedure getColumns (This : in out BasicGeographicMapCellPositionFactory);
    function getRows (This : in out BasicGeographicMapCellPositionFactory) return Integer;
-   procedure getRows (This : in out BasicGeographicMapCellPositionFactory);
 
 end org.allbinary.media.graphics.geography.map.BasicGeographicMapCellPositionFactory_Package;
 

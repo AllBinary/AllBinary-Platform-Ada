@@ -30,7 +30,7 @@ package body org.allbinary.logic.control.validate.ValidatorFactory_Package is
    function Create return ValidatorFactory_Access is
       This : constant ValidatorFactory_Access := new ValidatorFactory;
    begin
-      Initialize (This.all);
+      ValidatorFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

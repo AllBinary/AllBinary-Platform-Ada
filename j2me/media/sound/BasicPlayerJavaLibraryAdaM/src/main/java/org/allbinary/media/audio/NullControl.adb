@@ -28,7 +28,7 @@ package body org.allbinary.media.audio.NullControl_Package is
    function Create return NullControl_Access is
       This : constant NullControl_Access := new NullControl;
    begin
-      Initialize (This.all);
+      NullControl_Package.Initialize (This.all);
       return This;
    end Create;
 

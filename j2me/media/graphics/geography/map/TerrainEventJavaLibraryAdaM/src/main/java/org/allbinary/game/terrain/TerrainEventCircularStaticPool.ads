@@ -21,6 +21,9 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.util.event.AllBinaryEventCircularPool_Package; use org.allbinary.logic.util.event.AllBinaryEventCircularPool_Package;
+with org.allbinary.game.terrain.TerrainEventFactory_Package; use org.allbinary.game.terrain.TerrainEventFactory_Package;
+with org.allbinary.game.terrain.TerrainEvent_Package; use org.allbinary.game.terrain.TerrainEvent_Package;
+with org.allbinary.game.terrain.BasicTerrainInfo_Package; use org.allbinary.game.terrain.BasicTerrainInfo_Package;
 
 package org.allbinary.game.terrain.TerrainEventCircularStaticPool_Package is
 
@@ -39,7 +42,6 @@ package org.allbinary.game.terrain.TerrainEventCircularStaticPool_Package is
    procedure Initialize (This : in out TerrainEventCircularStaticPool'Class);
    function Create return TerrainEventCircularStaticPool_Access;
    function getInstance return TerrainEventCircularStaticPool_Access;
-   procedure getInstance;
    procedure init (This : in out TerrainEventCircularStaticPool);
    function getNext (This : in out TerrainEventCircularStaticPool; basicTerrainInfo : BasicTerrainInfo_Access) return TerrainEvent_Access;
    procedure getNext (This : in out TerrainEventCircularStaticPool; basicTerrainInfo : BasicTerrainInfo_Access);

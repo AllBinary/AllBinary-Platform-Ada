@@ -30,7 +30,7 @@ package body org.allbinary.logic.system.security.crypt.DatabaseEncoder_Package i
    function Create return DatabaseEncoder_Access is
       This : constant DatabaseEncoder_Access := new DatabaseEncoder;
    begin
-      Initialize (This.all);
+      DatabaseEncoder_Package.Initialize (This.all);
       return This;
    end Create;
 

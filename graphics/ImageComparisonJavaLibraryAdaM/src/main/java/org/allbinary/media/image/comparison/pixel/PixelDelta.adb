@@ -35,7 +35,7 @@ package body org.allbinary.media.image.comparison.pixel.PixelDelta_Package is
    function Create (point : GPoint_Access; colorDelta : ColorDelta_Access) return PixelDelta_Access is
       This : constant PixelDelta_Access := new PixelDelta;
    begin
-      Initialize (This.all, point, colorDelta);
+      PixelDelta_Package.Initialize (This.all, point, colorDelta);
       return This;
    end Create;
 
@@ -74,40 +74,12 @@ package body org.allbinary.media.image.comparison.pixel.PixelDelta_Package is
         return StringMaker_Package.Create.append (To_Unbounded_String ("PixelDelta: Point: ")).append (This.point.toString).append (CommonSeps_Package.getInstance.SPACE).append (This.colorDelta.toString).toString;
    end toString;
 
-   procedure getKey (This : in out PixelDelta) is
-      Java_Result : constant Java_Object_Access := PixelDelta'Class (This).getKey;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getKey;
-
    procedure getKey (point : GPoint_Access; colorDelta : ColorDelta_Access) is
       Java_Result : constant Java_Object_Access := getKey (point, colorDelta);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getKey;
-
-   procedure getPoint (This : in out PixelDelta) is
-      Java_Result : constant GPoint_Access := PixelDelta'Class (This).getPoint;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getPoint;
-
-   procedure getColorDelta (This : in out PixelDelta) is
-      Java_Result : constant ColorDelta_Access := PixelDelta'Class (This).getColorDelta;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getColorDelta;
-
-   procedure toString (This : in out PixelDelta) is
-      Java_Result : constant Unbounded_String := PixelDelta'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toString;
 
 end org.allbinary.media.image.comparison.pixel.PixelDelta_Package;
 

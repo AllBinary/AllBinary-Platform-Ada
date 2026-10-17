@@ -62,7 +62,7 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
    function Create (fileName : Unbounded_String) return GenericProfiles_Access is
       This : constant GenericProfiles_Access := new GenericProfiles;
    begin
-      Initialize (This.all, fileName);
+      GenericProfiles_Package.Initialize (This.all, fileName);
       return This;
    end Create;
 
@@ -163,13 +163,6 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
         idOutData.writeBytes (documentString);
    end save;
 
-   procedure getDefaultListModelHelper (This : in out GenericProfiles) is
-      Java_Result : constant DefaultListModelHelper_Access := GenericProfiles'Class (This).getDefaultListModelHelper;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getDefaultListModelHelper;
-
    procedure get (This : in out GenericProfiles; name : Unbounded_String) is
       Java_Result : constant GenericProfile_Access := GenericProfiles'Class (This).get (name);
       pragma Unreferenced (Java_Result);
@@ -183,13 +176,6 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
    begin
       null;
    end toXmlNode;
-
-   procedure toXmlDoc (This : in out GenericProfiles) is
-      Java_Result : constant Document_Access := GenericProfiles'Class (This).toXmlDoc;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toXmlDoc;
 
 begin
    null;

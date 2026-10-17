@@ -45,7 +45,7 @@ package body org.allbinary.media.graphics.geography.map.GeographicMapCellType_Pa
    function Create (type_Id : Integer; reset : Integer) return GeographicMapCellType_Access is
       This : constant GeographicMapCellType_Access := new GeographicMapCellType;
    begin
-      Initialize (This.all, type_Id, reset);
+      GeographicMapCellType_Package.Initialize (This.all, type_Id, reset);
       return This;
    end Create;
 
@@ -57,20 +57,6 @@ package body org.allbinary.media.graphics.geography.map.GeographicMapCellType_Pa
    function toString (This : in out GeographicMapCellType) return Unbounded_String is
    begin
         return SmallIntegerSingletonFactory_Package.getInstance.getAt (This.type_Id).toString;
-   end toString;
-
-   procedure getType (This : in out GeographicMapCellType) is
-      Java_Result : constant Integer := GeographicMapCellType'Class (This).getType;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getType;
-
-   procedure toString (This : in out GeographicMapCellType) is
-      Java_Result : constant Unbounded_String := GeographicMapCellType'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end toString;
 
 begin

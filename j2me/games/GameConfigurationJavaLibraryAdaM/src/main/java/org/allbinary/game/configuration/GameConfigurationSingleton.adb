@@ -38,7 +38,7 @@ package body org.allbinary.game.configuration.GameConfigurationSingleton_Package
    function Create return GameConfigurationSingleton_Access is
       This : constant GameConfigurationSingleton_Access := new GameConfigurationSingleton;
    begin
-      Initialize (This.all);
+      GameConfigurationSingleton_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -62,33 +62,12 @@ package body org.allbinary.game.configuration.GameConfigurationSingleton_Package
         return This.hashtable;
    end getHashtable;
 
-   procedure getInstance is
-      Java_Result : constant GameConfigurationSingleton_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
    procedure getInstanceByName (This : in out GameConfigurationSingleton; name : Unbounded_String) is
       Java_Result : constant GameConfiguration_Access := GameConfigurationSingleton'Class (This).getInstanceByName (name);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInstanceByName;
-
-   procedure getOptionsBasicArrayList (This : in out GameConfigurationSingleton) is
-      Java_Result : constant BasicArrayList_Access := GameConfigurationSingleton'Class (This).getOptionsBasicArrayList;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getOptionsBasicArrayList;
-
-   procedure getHashtable (This : in out GameConfigurationSingleton) is
-      Java_Result : constant ABHashtable_Access := GameConfigurationSingleton'Class (This).getHashtable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getHashtable;
 
 begin
    null;

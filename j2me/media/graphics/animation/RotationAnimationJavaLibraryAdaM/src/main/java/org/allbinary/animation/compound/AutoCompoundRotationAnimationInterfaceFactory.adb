@@ -29,7 +29,7 @@ package body org.allbinary.animation.compound.AutoCompoundRotationAnimationInter
    function Create (basicAnimationInterfaceFactoryInterfaceArray : AnimationInterfaceFactoryInterface_Access_Array_Access; animationBehaviorFactory : AnimationBehaviorFactory_Access) return AutoCompoundRotationAnimationInterfaceFactory_Access is
       This : constant AutoCompoundRotationAnimationInterfaceFactory_Access := new AutoCompoundRotationAnimationInterfaceFactory;
    begin
-      Initialize (This.all, basicAnimationInterfaceFactoryInterfaceArray, animationBehaviorFactory);
+      AutoCompoundRotationAnimationInterfaceFactory_Package.Initialize (This.all, basicAnimationInterfaceFactoryInterfaceArray, animationBehaviorFactory);
       return This;
    end Create;
 

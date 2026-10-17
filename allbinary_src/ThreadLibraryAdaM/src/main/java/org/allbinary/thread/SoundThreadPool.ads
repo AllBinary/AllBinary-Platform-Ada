@@ -20,6 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
+with org.allbinary.thread.ThreadPool_Package; use org.allbinary.thread.ThreadPool_Package;
 
 package org.allbinary.thread.SoundThreadPool_Package is
 
@@ -35,7 +36,6 @@ package org.allbinary.thread.SoundThreadPool_Package is
    procedure Initialize (This : in out SoundThreadPool'Class);
    function Create return SoundThreadPool_Access;
    function getInstance return ThreadPool_Access;
-   procedure getInstance;
 
 end org.allbinary.thread.SoundThreadPool_Package;
 

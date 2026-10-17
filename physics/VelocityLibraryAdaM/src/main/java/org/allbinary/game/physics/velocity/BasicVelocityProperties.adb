@@ -38,7 +38,7 @@ package body org.allbinary.game.physics.velocity.BasicVelocityProperties_Package
    function Create return BasicVelocityProperties_Access is
       This : constant BasicVelocityProperties_Access := new BasicVelocityProperties;
    begin
-      Initialize (This.all);
+      BasicVelocityProperties_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -170,34 +170,6 @@ package body org.allbinary.game.physics.velocity.BasicVelocityProperties_Package
         stringBuffer.append (positionStrings.Z_LABEL);
         stringBuffer.append (stringUtil.toString (This.velocityZBasicDecimal));
         return stringBuffer.toString;
-   end toString;
-
-   procedure getVelocityXBasicDecimalP (This : in out BasicVelocityProperties) is
-      Java_Result : constant BasicDecimal_Access := BasicVelocityProperties'Class (This).getVelocityXBasicDecimalP;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getVelocityXBasicDecimalP;
-
-   procedure getVelocityYBasicDecimalP (This : in out BasicVelocityProperties) is
-      Java_Result : constant BasicDecimal_Access := BasicVelocityProperties'Class (This).getVelocityYBasicDecimalP;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getVelocityYBasicDecimalP;
-
-   procedure getVelocityZBasicDecimalP (This : in out BasicVelocityProperties) is
-      Java_Result : constant BasicDecimal_Access := BasicVelocityProperties'Class (This).getVelocityZBasicDecimalP;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getVelocityZBasicDecimalP;
-
-   procedure toString (This : in out BasicVelocityProperties) is
-      Java_Result : constant Unbounded_String := BasicVelocityProperties'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end toString;
 
 end org.allbinary.game.physics.velocity.BasicVelocityProperties_Package;

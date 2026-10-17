@@ -32,7 +32,7 @@ package body admin.tags.WorkFlowTag_Package is
    function Create return WorkFlowTag_Access is
       This : constant WorkFlowTag_Access := new WorkFlowTag;
    begin
-      Initialize (This.all);
+      WorkFlowTag_Package.Initialize (This.all);
       return This;
    end Create;
 

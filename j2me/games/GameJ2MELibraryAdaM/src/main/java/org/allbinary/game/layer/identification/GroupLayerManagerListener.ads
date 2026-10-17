@@ -68,7 +68,6 @@ package org.allbinary.game.layer.identification.GroupLayerManagerListener_Packag
    procedure Initialize (This : in out GroupLayerManagerListener'Class);
    function Create return GroupLayerManagerListener_Access;
    function getInstance return GroupLayerManagerListener_Access;
-   procedure getInstance;
    procedure clear (This : in out GroupLayerManagerListener);
    function getGroupSizeFromInterface (This : in out GroupLayerManagerListener; groupInterfaceCompositeInterface : GroupInterfaceCompositeInterface_Access) return Integer;
    procedure getGroupSizeFromInterface (This : in out GroupLayerManagerListener; groupInterfaceCompositeInterface : GroupInterfaceCompositeInterface_Access);

@@ -43,6 +43,7 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 with org.allbinary.thread.NullRunnable_Package; use org.allbinary.thread.NullRunnable_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package; use org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package;
 
 package org.allbinary.graphics.opengles.CurrentDisplayableFactory_Package is
 
@@ -95,19 +96,15 @@ package org.allbinary.graphics.opengles.CurrentDisplayableFactory_Package is
    procedure Initialize (This : in out CurrentDisplayableFactory'Class);
    function Create return CurrentDisplayableFactory_Access;
    function getInstance return CurrentDisplayableFactory_Access;
-   procedure getInstance;
    procedure setMyCanvas (This : in out CurrentDisplayableFactory; displayable : MyCanvas_Access);
    procedure setDisplayable (This : in out CurrentDisplayableFactory; displayable : Displayable_Access);
    procedure setOpenGlReadydisplayable (This : in out CurrentDisplayableFactory; openGlReadydisplayable : Displayable_Access);
    function getOpenGlReadydisplayable (This : in out CurrentDisplayableFactory) return Displayable_Access;
-   procedure getOpenGlReadydisplayable (This : in out CurrentDisplayableFactory);
    procedure setRunnable (This : in out CurrentDisplayableFactory; runnable_Case : GameRunnable_Access);
    procedure clearRunnable (This : in out CurrentDisplayableFactory);
    procedure update (This : in out CurrentDisplayableFactory);
    function getDisplayable (This : in out CurrentDisplayableFactory) return Displayable_Access;
-   procedure getDisplayable (This : in out CurrentDisplayableFactory);
    function getUsedRunnable (This : in out CurrentDisplayableFactory) return GameRunnable_Access;
-   procedure getUsedRunnable (This : in out CurrentDisplayableFactory);
    procedure setUsedRunnable (This : in out CurrentDisplayableFactory; usedRunnable : GameRunnable_Access);
 
 end org.allbinary.graphics.opengles.CurrentDisplayableFactory_Package;

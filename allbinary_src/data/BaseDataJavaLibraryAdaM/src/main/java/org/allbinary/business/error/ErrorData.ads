@@ -38,7 +38,6 @@ package org.allbinary.business.error.ErrorData_Package is
    procedure Initialize (This : in out ErrorData'Class);
    function Create return ErrorData_Access;
    function getInstance return ErrorData_Access;
-   procedure getInstance;
 
 end org.allbinary.business.error.ErrorData_Package;
 

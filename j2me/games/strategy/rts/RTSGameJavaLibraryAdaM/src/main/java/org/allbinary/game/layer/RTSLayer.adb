@@ -96,7 +96,7 @@ package body org.allbinary.game.layer.RTSLayer_Package is
    function Create (remoteInfo : RemoteInfo_Access; groupInterface : Group_Access_Array_Access; rootName : Unbounded_String; name : Unbounded_String; healthInterface : Health_Access; rtsFormInput : RTSFormInput_Access; animationInterfaceFactoryInterface : AnimationInterfaceFactoryInterface_Access; emptyAnimationInterfaceFactoryInterface : AnimationInterfaceFactoryInterface_Access; baseAnimationInterfaceFactoryInterface : AnimationInterfaceFactoryInterface_Access; buildAnimationInterfaceFactoryInterface : AnimationInterfaceFactoryInterface_Access; verticleBuildAnimationInterfaceFactoryInterface : AnimationInterfaceFactoryInterface_Access; proceduralAnimationInterfaceFactoryInterface : ProceduralAnimationInterfaceFactoryInterface_Access; rectangle : Rectangle_Access; x : Integer; y : Integer; viewPosition : ViewPositionBase_Access) return RTSLayer_Access is
       This : constant RTSLayer_Access := new RTSLayer;
    begin
-      Initialize (This.all, remoteInfo, groupInterface, rootName, name, healthInterface, rtsFormInput, animationInterfaceFactoryInterface, emptyAnimationInterfaceFactoryInterface, baseAnimationInterfaceFactoryInterface, buildAnimationInterfaceFactoryInterface, verticleBuildAnimationInterfaceFactoryInterface, proceduralAnimationInterfaceFactoryInterface, rectangle, x, y, viewPosition);
+      RTSLayer_Package.Initialize (This.all, remoteInfo, groupInterface, rootName, name, healthInterface, rtsFormInput, animationInterfaceFactoryInterface, emptyAnimationInterfaceFactoryInterface, baseAnimationInterfaceFactoryInterface, buildAnimationInterfaceFactoryInterface, verticleBuildAnimationInterfaceFactoryInterface, proceduralAnimationInterfaceFactoryInterface, rectangle, x, y, viewPosition);
       return This;
    end Create;
 
@@ -595,271 +595,12 @@ package body org.allbinary.game.layer.RTSLayer_Package is
       null;
    end createSimulatedInstance;
 
-   procedure isSelected (This : in out RTSLayer) is
-      Java_Result : constant Boolean := RTSLayer'Class (This).isSelected;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isSelected;
-
-   procedure getPercentComplete (This : in out RTSLayer) is
-      Java_Result : constant Integer := RTSLayer'Class (This).getPercentComplete;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getPercentComplete;
-
-   procedure getScrollSelectionForm (This : in out RTSLayer) is
-      Java_Result : constant ScrollSelectionForm_Access := RTSLayer'Class (This).getScrollSelectionForm;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getScrollSelectionForm;
-
-   procedure getSourceId (This : in out RTSLayer) is
-      Java_Result : constant Integer := RTSLayer'Class (This).getSourceId;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSourceId;
-
-   procedure isCompleted (This : in out RTSLayer) is
-      Java_Result : constant Boolean := RTSLayer'Class (This).isCompleted;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isCompleted;
-
-   procedure isSelfUpgradeable (This : in out RTSLayer) is
-      Java_Result : constant Boolean := RTSLayer'Class (This).isSelfUpgradeable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isSelfUpgradeable;
-
-   procedure getCost (This : in out RTSLayer) is
-      Java_Result : constant Integer := RTSLayer'Class (This).getCost;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getCost;
-
-   procedure getDowngradeCost (This : in out RTSLayer) is
-      Java_Result : constant Integer := RTSLayer'Class (This).getDowngradeCost;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getDowngradeCost;
-
-   procedure getUpgradeCost (This : in out RTSLayer) is
-      Java_Result : constant Integer := RTSLayer'Class (This).getUpgradeCost;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getUpgradeCost;
-
-   procedure isUpgradeable (This : in out RTSLayer) is
-      Java_Result : constant Boolean := RTSLayer'Class (This).isUpgradeable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isUpgradeable;
-
-   procedure isDowngradeable (This : in out RTSLayer) is
-      Java_Result : constant Boolean := RTSLayer'Class (This).isDowngradeable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isDowngradeable;
-
-   procedure getLevel (This : in out RTSLayer) is
-      Java_Result : constant Integer := RTSLayer'Class (This).getLevel;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getLevel;
-
-   procedure getVerticleBuildAnimationInterface (This : in out RTSLayer) is
-      Java_Result : constant Animation_Access := RTSLayer'Class (This).getVerticleBuildAnimationInterface;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getVerticleBuildAnimationInterface;
-
-   procedure getAnimationInterface (This : in out RTSLayer) is
-      Java_Result : constant Animation_Access := RTSLayer'Class (This).getAnimationInterface;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getAnimationInterface;
-
-   procedure createHudPaintable (This : in out RTSLayer) is
-      Java_Result : constant SelectionHudPaintable_Access := RTSLayer'Class (This).createHudPaintable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end createHudPaintable;
-
-   procedure getHudPaintable (This : in out RTSLayer) is
-      Java_Result : constant SelectionHudPaintable_Access := RTSLayer'Class (This).getHudPaintable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getHudPaintable;
-
-   procedure getMaxLevel (This : in out RTSLayer) is
-      Java_Result : constant Integer := RTSLayer'Class (This).getMaxLevel;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getMaxLevel;
-
-   procedure getHealthInterface (This : in out RTSLayer) is
-      Java_Result : constant Health_Access := RTSLayer'Class (This).getHealthInterface;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getHealthInterface;
-
-   procedure getRTSFormInput (This : in out RTSLayer) is
-      Java_Result : constant RTSFormInput_Access := RTSLayer'Class (This).getRTSFormInput;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getRTSFormInput;
-
-   procedure isDestroyed (This : in out RTSLayer) is
-      Java_Result : constant Boolean := RTSLayer'Class (This).isDestroyed;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isDestroyed;
-
-   procedure getEndGeographicMapCellPositionList (This : in out RTSLayer) is
-      Java_Result : constant BasicArrayList_Access := RTSLayer'Class (This).getEndGeographicMapCellPositionList;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getEndGeographicMapCellPositionList;
-
-   procedure getGeographicMapCellPositionArea (This : in out RTSLayer) is
-      Java_Result : constant GeographicMapCellPositionAreaBase_Access := RTSLayer'Class (This).getGeographicMapCellPositionArea;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getGeographicMapCellPositionArea;
-
-   procedure shouldHandleStartSameAsEnd (This : in out RTSLayer) is
-      Java_Result : constant Boolean := RTSLayer'Class (This).shouldHandleStartSameAsEnd;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end shouldHandleStartSameAsEnd;
-
-   procedure getWaypointBehavior (This : in out RTSLayer) is
-      Java_Result : constant WaypointBehaviorBase_Access := RTSLayer'Class (This).getWaypointBehavior;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getWaypointBehavior;
-
-   procedure getParentLayer (This : in out RTSLayer) is
-      Java_Result : constant PathFindingLayerInterface_Access := RTSLayer'Class (This).getParentLayer;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getParentLayer;
-
-   procedure getRTSLayer2LogHelper (This : in out RTSLayer) is
-      Java_Result : constant RTSLayer2LogHelper_Access := RTSLayer'Class (This).getRTSLayer2LogHelper;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getRTSLayer2LogHelper;
-
-   procedure getWaypointLogHelper (This : in out RTSLayer) is
-      Java_Result : constant WaypointLogHelper_Access := RTSLayer'Class (This).getWaypointLogHelper;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getWaypointLogHelper;
-
-   procedure getWaypoint2LogHelper (This : in out RTSLayer) is
-      Java_Result : constant Waypoint2LogHelper_Access := RTSLayer'Class (This).getWaypoint2LogHelper;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getWaypoint2LogHelper;
-
-   procedure getWaypointRunnableLogHelper (This : in out RTSLayer) is
-      Java_Result : constant WaypointRunnableLogHelper_Access := RTSLayer'Class (This).getWaypointRunnableLogHelper;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getWaypointRunnableLogHelper;
-
-   procedure shouldAddWaypointFromBuilding (This : in out RTSLayer) is
-      Java_Result : constant Boolean := RTSLayer'Class (This).shouldAddWaypointFromBuilding;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end shouldAddWaypointFromBuilding;
-
-   procedure getCaptionAnimationHelper (This : in out RTSLayer) is
-      Java_Result : constant CaptionAnimationHelperBase_Access := RTSLayer'Class (This).getCaptionAnimationHelper;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getCaptionAnimationHelper;
-
-   procedure isShowMoreCaptionStates (This : in out RTSLayer) is
-      Java_Result : constant Boolean := RTSLayer'Class (This).isShowMoreCaptionStates;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isShowMoreCaptionStates;
-
-   procedure getCurrentGeographicMapCellPosition (This : in out RTSLayer) is
-      Java_Result : constant GeographicMapCellPosition_Access := RTSLayer'Class (This).getCurrentGeographicMapCellPosition;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getCurrentGeographicMapCellPosition;
-
-   procedure getTopLeftGeographicMapCellPosition (This : in out RTSLayer) is
-      Java_Result : constant GeographicMapCellPosition_Access := RTSLayer'Class (This).getTopLeftGeographicMapCellPosition;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTopLeftGeographicMapCellPosition;
-
    procedure getMoveOutOfBuildAreaPath (This : in out RTSLayer; geographicMapCellPosition : GeographicMapCellPosition_Access) is
       Java_Result : constant BasicArrayList_Access := RTSLayer'Class (This).getMoveOutOfBuildAreaPath (geographicMapCellPosition);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getMoveOutOfBuildAreaPath;
-
-   procedure getSurroundingGeographicMapCellPositionList (This : in out RTSLayer) is
-      Java_Result : constant BasicArrayList_Access := RTSLayer'Class (This).getSurroundingGeographicMapCellPositionList;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSurroundingGeographicMapCellPositionList;
-
-   procedure isWaypointListEmptyOrOnlyTargets (This : in out RTSLayer) is
-      Java_Result : constant Boolean := RTSLayer'Class (This).isWaypointListEmptyOrOnlyTargets;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isWaypointListEmptyOrOnlyTargets;
-
-   procedure getTrackingEvent (This : in out RTSLayer) is
-      Java_Result : constant TrackingEvent_Access := RTSLayer'Class (This).getTrackingEvent;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTrackingEvent;
 
    procedure buildingChase (This : in out RTSLayer; allbinaryLayer : AllBinaryLayer_Access; cellPosition : GeographicMapCellPosition_Access) is
       Java_Result : constant Boolean := RTSLayer'Class (This).buildingChase (allbinaryLayer, cellPosition);
@@ -868,54 +609,12 @@ package body org.allbinary.game.layer.RTSLayer_Package is
       null;
    end buildingChase;
 
-   procedure getMinStaticType is
-      Java_Result : constant Integer := getMinStaticType;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getMinStaticType;
-
-   procedure getMaxStaticType is
-      Java_Result : constant Integer := getMaxStaticType;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getMaxStaticType;
-
    procedure isRTSLayer (layerInterface : AllBinaryLayer_Access) is
       Java_Result : constant Boolean := isRTSLayer (layerInterface);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isRTSLayer;
-
-   procedure implmentsTickableInterface (This : in out RTSLayer) is
-      Java_Result : constant Boolean := RTSLayer'Class (This).implmentsTickableInterface;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end implmentsTickableInterface;
-
-   procedure implmentsGameInputInterface (This : in out RTSLayer) is
-      Java_Result : constant Boolean := RTSLayer'Class (This).implmentsGameInputInterface;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end implmentsGameInputInterface;
-
-   procedure getRootName (This : in out RTSLayer) is
-      Java_Result : constant Unbounded_String := RTSLayer'Class (This).getRootName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getRootName;
-
-   procedure getRotationAnimationInterface (This : in out RTSLayer) is
-      Java_Result : constant RotationAnimation_Access := RTSLayer'Class (This).getRotationAnimationInterface;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getRotationAnimationInterface;
 
 begin
    null;

@@ -37,7 +37,7 @@ package body org.allbinary.game.ag.ai.InputProbability_Package is
    function Create (likelyhoodIntegerArray : Integer_Array_Access_Array_Access; repeatLikelyhoodIntegerArray : Integer_Array_Access; max : Integer; timeDelayHelper : TimeDelayHelper_Access) return InputProbability_Access is
       This : constant InputProbability_Access := new InputProbability;
    begin
-      Initialize (This.all, likelyhoodIntegerArray, repeatLikelyhoodIntegerArray, max, timeDelayHelper);
+      InputProbability_Package.Initialize (This.all, likelyhoodIntegerArray, repeatLikelyhoodIntegerArray, max, timeDelayHelper);
       return This;
    end Create;
 
@@ -67,41 +67,6 @@ package body org.allbinary.game.ag.ai.InputProbability_Package is
         hashtable := StdUtil_Package.getInstance.createHashtable;
         hashtable.put (InputProbability_Package.INPUT_PROBABILITY, This'Unchecked_Access);
         return hashtable;
-   end toHashtable;
-
-   procedure getLikelyhoodIntegerArray (This : in out InputProbability) is
-      Java_Result : constant Integer_Array_Access_Array_Access := InputProbability'Class (This).getLikelyhoodIntegerArray;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getLikelyhoodIntegerArray;
-
-   procedure getRepeatLikelyhoodIntegerArray (This : in out InputProbability) is
-      Java_Result : constant Integer_Array_Access := InputProbability'Class (This).getRepeatLikelyhoodIntegerArray;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getRepeatLikelyhoodIntegerArray;
-
-   procedure getMax (This : in out InputProbability) is
-      Java_Result : constant Integer := InputProbability'Class (This).getMax;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getMax;
-
-   procedure getTimeDelayHelper (This : in out InputProbability) is
-      Java_Result : constant TimeDelayHelper_Access := InputProbability'Class (This).getTimeDelayHelper;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTimeDelayHelper;
-
-   procedure toHashtable (This : in out InputProbability) is
-      Java_Result : constant ABHashtable_Access := InputProbability'Class (This).toHashtable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end toHashtable;
 
 begin

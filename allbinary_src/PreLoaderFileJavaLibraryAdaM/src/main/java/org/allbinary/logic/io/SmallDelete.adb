@@ -35,7 +35,7 @@ package body org.allbinary.logic.io.SmallDelete_Package is
    function Create (fileName : Unbounded_String) return SmallDelete_Access is
       This : constant SmallDelete_Access := new SmallDelete;
    begin
-      Initialize (This.all, fileName);
+      SmallDelete_Package.Initialize (This.all, fileName);
       return This;
    end Create;
 

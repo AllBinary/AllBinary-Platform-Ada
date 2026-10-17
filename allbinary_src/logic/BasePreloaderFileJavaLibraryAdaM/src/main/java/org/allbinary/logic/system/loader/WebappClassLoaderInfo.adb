@@ -30,7 +30,7 @@ package body org.allbinary.logic.system.loader.WebappClassLoaderInfo_Package is
    function Create return WebappClassLoaderInfo_Access is
       This : constant WebappClassLoaderInfo_Access := new WebappClassLoaderInfo;
    begin
-      Initialize (This.all);
+      WebappClassLoaderInfo_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -42,13 +42,6 @@ package body org.allbinary.logic.system.loader.WebappClassLoaderInfo_Package is
    function getLoader return ClassLoader_Access is
    begin
         return ClassLoader_Access (WebappClassLoaderInfo_Package.classLoader);
-   end getLoader;
-
-   procedure getLoader is
-      Java_Result : constant ClassLoader_Access := getLoader;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getLoader;
 
 begin

@@ -31,7 +31,6 @@ package org.allbinary.AndroidResources_Package is
    procedure Initialize (This : in out AndroidResources'Class);
    function Create return AndroidResources_Access;
    function getInstance return AndroidResources_Access;
-   procedure getInstance;
 
 end org.allbinary.AndroidResources_Package;
 

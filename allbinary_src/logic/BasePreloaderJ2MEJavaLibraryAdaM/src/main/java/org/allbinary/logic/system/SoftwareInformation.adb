@@ -35,7 +35,7 @@ package body org.allbinary.logic.system.SoftwareInformation_Package is
    function Create (name : Unbounded_String; version : Unbounded_String; shortName : Unbounded_String) return SoftwareInformation_Access is
       This : constant SoftwareInformation_Access := new SoftwareInformation;
    begin
-      Initialize (This.all, name, version, shortName);
+      SoftwareInformation_Package.Initialize (This.all, name, version, shortName);
       return This;
    end Create;
 
@@ -68,34 +68,6 @@ package body org.allbinary.logic.system.SoftwareInformation_Package is
         stringBuffer.append (VERSION);
         stringBuffer.append (This.getVersion);
         return stringBuffer.toString;
-   end toString;
-
-   procedure getName (This : in out SoftwareInformation) is
-      Java_Result : constant Unbounded_String := SoftwareInformation'Class (This).getName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getName;
-
-   procedure getVersion (This : in out SoftwareInformation) is
-      Java_Result : constant Unbounded_String := SoftwareInformation'Class (This).getVersion;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getVersion;
-
-   procedure toShortString (This : in out SoftwareInformation) is
-      Java_Result : constant Unbounded_String := SoftwareInformation'Class (This).toShortString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toShortString;
-
-   procedure toString (This : in out SoftwareInformation) is
-      Java_Result : constant Unbounded_String := SoftwareInformation'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end toString;
 
 end org.allbinary.logic.system.SoftwareInformation_Package;

@@ -28,7 +28,7 @@ package body org.allbinary.logic.system.hardware.components.interfaces.NoHardwar
    function Create return NoHardwareComponent_Access is
       This : constant NoHardwareComponent_Access := new NoHardwareComponent;
    begin
-      Initialize (This.all);
+      NoHardwareComponent_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -51,26 +51,12 @@ package body org.allbinary.logic.system.hardware.components.interfaces.NoHardwar
         return StringUtil_Package.getInstance.NULL_STRING;
    end toString;
 
-   procedure getInstance is
-      Java_Result : constant NoHardwareComponent_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
    procedure compareTo (This : in out NoHardwareComponent; componentInterface : HardwareComponentInterface_Access) is
       Java_Result : constant Boolean := NoHardwareComponent'Class (This).compareTo (componentInterface);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end compareTo;
-
-   procedure toString (This : in out NoHardwareComponent) is
-      Java_Result : constant Unbounded_String := NoHardwareComponent'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toString;
 
 begin
    null;

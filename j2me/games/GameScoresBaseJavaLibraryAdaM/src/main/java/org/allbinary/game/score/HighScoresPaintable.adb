@@ -37,7 +37,7 @@ package body org.allbinary.game.score.HighScoresPaintable_Package is
    function Create return HighScoresPaintable_Access is
       This : constant HighScoresPaintable_Access := new HighScoresPaintable;
    begin
-      Initialize (This.all);
+      HighScoresPaintable_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -122,13 +122,6 @@ package body org.allbinary.game.score.HighScoresPaintable_Package is
    begin
         This.highScores := highScores;
    end setHighScores;
-
-   procedure getBasicColorP (This : in out HighScoresPaintable) is
-      Java_Result : constant BasicColor_Access := HighScoresPaintable'Class (This).getBasicColorP;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getBasicColorP;
 
 end org.allbinary.game.score.HighScoresPaintable_Package;
 

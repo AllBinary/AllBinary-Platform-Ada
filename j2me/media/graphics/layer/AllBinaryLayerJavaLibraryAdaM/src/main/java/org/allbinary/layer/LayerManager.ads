@@ -16,6 +16,9 @@ with org.allbinary.thread.SynchObject_Package; use org.allbinary.thread.SynchObj
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.logic.ABSystemWrapper_Package; use org.allbinary.logic.ABSystemWrapper_Package;
+with org.allbinary.layer.LayerManagerLoggingBase_Package; use org.allbinary.layer.LayerManagerLoggingBase_Package;
+with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
+with org.allbinary.layer.Layer_Package; use org.allbinary.layer.Layer_Package;
 
 package org.allbinary.layer.LayerManager_Package is
 
@@ -54,7 +57,6 @@ package org.allbinary.layer.LayerManager_Package is
    function getLayerAt (This : in out LayerManager; index : Integer) return Layer_Access;
    procedure getLayerAt (This : in out LayerManager; index : Integer);
    function getSize (This : in out LayerManager) return Integer;
-   procedure getSize (This : in out LayerManager);
    procedure cleanup (This : in out LayerManager);
    procedure paint (This : in out LayerManager; g : Graphics_Access; x : Integer; y : Integer);
 

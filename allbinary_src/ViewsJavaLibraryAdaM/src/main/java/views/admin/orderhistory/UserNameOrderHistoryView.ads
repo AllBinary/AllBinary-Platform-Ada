@@ -80,17 +80,13 @@ package views.admin.orderhistory.UserNameOrderHistoryView_Package is
    function Create (transformInfoInterface : TransformInfoInterface_Access) return UserNameOrderHistoryView_Access;
    procedure addDomNodeInterfaces (This : in out UserNameOrderHistoryView);
    function view (This : in out UserNameOrderHistoryView) return Unbounded_String;
-   procedure view (This : in out UserNameOrderHistoryView);
    function toXmlNode (This : in out UserNameOrderHistoryView; document : Document_Access) return Node_Access;
    procedure toXmlNode (This : in out UserNameOrderHistoryView; document : Document_Access);
    function isValid (This : in out UserNameOrderHistoryView) return Boolean;
-   procedure isValid (This : in out UserNameOrderHistoryView);
    function toValidationInfoDoc (This : in out UserNameOrderHistoryView) return Document_Access;
-   procedure toValidationInfoDoc (This : in out UserNameOrderHistoryView);
    function toValidationInfoNode (This : in out UserNameOrderHistoryView; document : Document_Access) return Node_Access;
    procedure toValidationInfoNode (This : in out UserNameOrderHistoryView; document : Document_Access);
    function validationInfo (This : in out UserNameOrderHistoryView) return Unbounded_String;
-   procedure validationInfo (This : in out UserNameOrderHistoryView);
 
 end views.admin.orderhistory.UserNameOrderHistoryView_Package;
 

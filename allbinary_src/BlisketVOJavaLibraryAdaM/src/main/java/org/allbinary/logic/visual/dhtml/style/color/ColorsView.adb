@@ -34,7 +34,7 @@ package body org.allbinary.logic.visual.dhtml.style.color.ColorsView_Package is
    function Create return ColorsView_Access is
       This : constant ColorsView_Access := new ColorsView;
    begin
-      Initialize (This.all);
+      ColorsView_Package.Initialize (This.all);
       return This;
    end Create;
 

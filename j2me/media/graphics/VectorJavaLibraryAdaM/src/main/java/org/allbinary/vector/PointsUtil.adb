@@ -28,7 +28,7 @@ package body org.allbinary.vector.PointsUtil_Package is
    function Create return PointsUtil_Access is
       This : constant PointsUtil_Access := new PointsUtil;
    begin
-      Initialize (This.all);
+      PointsUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -84,13 +84,6 @@ package body org.allbinary.vector.PointsUtil_Package is
         end loop;
         return newPoints;
    end adjust;
-
-   procedure getInstance is
-      Java_Result : constant PointsUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure adjustXY (This : in out PointsUtil; points : Integer_Array_Access_Array_Access_Array_Access; x : Integer; y : Integer) is
       Java_Result : constant Integer_Array_Access_Array_Access_Array_Access := PointsUtil'Class (This).adjustXY (points, x, y);

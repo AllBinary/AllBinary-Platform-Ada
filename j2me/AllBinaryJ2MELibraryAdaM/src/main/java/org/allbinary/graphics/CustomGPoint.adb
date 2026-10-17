@@ -43,7 +43,7 @@ package body org.allbinary.graphics.CustomGPoint_Package is
    function Create (x : Integer; y : Integer; z : Integer) return CustomGPoint_Access is
       This : constant CustomGPoint_Access := new CustomGPoint;
    begin
-      Initialize (This.all, x, y, z);
+      CustomGPoint_Package.Initialize (This.all, x, y, z);
       return This;
    end Create;
 
@@ -90,27 +90,6 @@ package body org.allbinary.graphics.CustomGPoint_Package is
    begin
       null;
    end getInstance3;
-
-   procedure getX (This : in out CustomGPoint) is
-      Java_Result : constant Integer := CustomGPoint'Class (This).getX;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getX;
-
-   procedure getY (This : in out CustomGPoint) is
-      Java_Result : constant Integer := CustomGPoint'Class (This).getY;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getY;
-
-   procedure getZ (This : in out CustomGPoint) is
-      Java_Result : constant Integer := CustomGPoint'Class (This).getZ;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getZ;
 
 begin
    null;

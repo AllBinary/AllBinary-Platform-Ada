@@ -29,7 +29,7 @@ package body org.allbinary.game.input.InputProcessor_Package is
    function Create return InputProcessor_Access is
       This : constant InputProcessor_Access := new InputProcessor;
    begin
-      Initialize (This.all);
+      InputProcessor_Package.Initialize (This.all);
       return This;
    end Create;
 

@@ -90,13 +90,10 @@ package org.allbinary.input.automation.module.generic_Id.configuration.GenericMo
    procedure selectFirstElement (This : in out GenericModuleConfigurationJPanel);
    procedure updateProfileOptions (This : in out GenericModuleConfigurationJPanel);
    function getBlankGenericProfileActionsJPanel (This : in out GenericModuleConfigurationJPanel) return JPanel_Access;
-   procedure getBlankGenericProfileActionsJPanel (This : in out GenericModuleConfigurationJPanel);
    procedure setBlankGenericProfileActionsJPanel (This : in out GenericModuleConfigurationJPanel; blankGenericProfileActionsJPanel : JPanel_Access);
    function getGenericProfiles (This : in out GenericModuleConfigurationJPanel) return GenericProfiles_Access;
-   procedure getGenericProfiles (This : in out GenericModuleConfigurationJPanel);
    procedure setGenericProfiles (This : in out GenericModuleConfigurationJPanel; genericProfiles : GenericProfiles_Access);
    function getSelectedGenericProfile (This : in out GenericModuleConfigurationJPanel) return GenericProfile_Access;
-   procedure getSelectedGenericProfile (This : in out GenericModuleConfigurationJPanel);
    procedure setSelectedGenericProfile (This : in out GenericModuleConfigurationJPanel; selectedGenericProfile : GenericProfile_Access);
    procedure genericProfilesJListValueChanged (This : in out GenericModuleConfigurationJPanel; evt : ListSelectionEvent_Access);
    procedure deleteProfileJButtonActionPerformed (This : in out GenericModuleConfigurationJPanel; evt : ActionEvent_Access);

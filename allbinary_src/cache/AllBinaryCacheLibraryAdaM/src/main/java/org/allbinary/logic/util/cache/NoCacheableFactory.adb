@@ -30,7 +30,7 @@ package body org.allbinary.logic.util.cache.NoCacheableFactory_Package is
    function Create return NoCacheableFactory_Access is
       This : constant NoCacheableFactory_Access := new NoCacheableFactory;
    begin
-      Initialize (This.all);
+      NoCacheableFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

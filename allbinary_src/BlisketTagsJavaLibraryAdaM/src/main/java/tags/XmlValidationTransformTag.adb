@@ -32,7 +32,7 @@ package body tags.XmlValidationTransformTag_Package is
    function Create return XmlValidationTransformTag_Access is
       This : constant XmlValidationTransformTag_Access := new XmlValidationTransformTag;
    begin
-      Initialize (This.all);
+      XmlValidationTransformTag_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -81,20 +81,6 @@ package body tags.XmlValidationTransformTag_Package is
             return SKIP_BODY;
                 end;
         end;
-   end doStartTag;
-
-   procedure isValid (This : in out XmlValidationTransformTag) is
-      Java_Result : constant Boolean := XmlValidationTransformTag'Class (This).isValid;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isValid;
-
-   procedure doStartTag (This : in out XmlValidationTransformTag) is
-      Java_Result : constant Integer := XmlValidationTransformTag'Class (This).doStartTag;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end doStartTag;
 
 end tags.XmlValidationTransformTag_Package;

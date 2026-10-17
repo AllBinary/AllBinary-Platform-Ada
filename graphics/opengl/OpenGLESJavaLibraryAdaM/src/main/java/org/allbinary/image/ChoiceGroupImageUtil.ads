@@ -26,6 +26,7 @@ with AllBinary_Java; use AllBinary_Java;
 --  with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
 with org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package; use org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package;
 with org.allbinary.game.configuration.feature.Features_Package; use org.allbinary.game.configuration.feature.Features_Package;
+with org.allbinary.image.PreResourceImageUtil_Package; use org.allbinary.image.PreResourceImageUtil_Package;
 
 package org.allbinary.image.ChoiceGroupImageUtil_Package is
 
@@ -43,7 +44,6 @@ package org.allbinary.image.ChoiceGroupImageUtil_Package is
    procedure Initialize (This : in out ChoiceGroupImageUtil'Class);
    function Create return ChoiceGroupImageUtil_Access;
    function getInstance return ChoiceGroupImageUtil_Access;
-   procedure getInstance;
    procedure init (This : in out ChoiceGroupImageUtil);
    procedure update (This : in out ChoiceGroupImageUtil; gl : GL_Access);
    procedure update (This : in out ChoiceGroupImageUtil; graphics : Graphics_Access);

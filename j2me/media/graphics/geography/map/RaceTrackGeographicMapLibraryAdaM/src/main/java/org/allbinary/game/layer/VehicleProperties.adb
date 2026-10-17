@@ -33,7 +33,7 @@ package body org.allbinary.game.layer.VehicleProperties_Package is
    function Create (velocityProperties : VelocityProperties_Access; vehicleFrictionProperties : VehicleFrictionProperties_Access) return VehicleProperties_Access is
       This : constant VehicleProperties_Access := new VehicleProperties;
    begin
-      Initialize (This.all, velocityProperties, vehicleFrictionProperties);
+      VehicleProperties_Package.Initialize (This.all, velocityProperties, vehicleFrictionProperties);
       return This;
    end Create;
 
@@ -50,20 +50,6 @@ package body org.allbinary.game.layer.VehicleProperties_Package is
    function getVelocityProperties (This : in out VehicleProperties) return VelocityProperties_Access is
    begin
         return This.velocityProperties;
-   end getVelocityProperties;
-
-   procedure getVehicleFrictionProperties (This : in out VehicleProperties) is
-      Java_Result : constant VehicleFrictionProperties_Access := VehicleProperties'Class (This).getVehicleFrictionProperties;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getVehicleFrictionProperties;
-
-   procedure getVelocityProperties (This : in out VehicleProperties) is
-      Java_Result : constant VelocityProperties_Access := VehicleProperties'Class (This).getVelocityProperties;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getVelocityProperties;
 
 end org.allbinary.game.layer.VehicleProperties_Package;

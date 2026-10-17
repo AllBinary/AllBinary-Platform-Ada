@@ -32,7 +32,7 @@ package body org.allbinary.input.motion.button.BaseTouchInput_Package is
    function Create return BaseTouchInput_Access is
       This : constant BaseTouchInput_Access := new BaseTouchInput;
    begin
-      Initialize (This.all);
+      BaseTouchInput_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -44,20 +44,6 @@ package body org.allbinary.input.motion.button.BaseTouchInput_Package is
    function toString (This : in out BaseTouchInput) return Unbounded_String is
    begin
         return To_Unbounded_String (Ada.Tags.Expanded_Name (This.all'Tag));
-   end toString;
-
-   procedure getList (This : in out BaseTouchInput) is
-      Java_Result : constant BasicArrayList_Access := BaseTouchInput'Class (This).getList;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getList;
-
-   procedure toString (This : in out BaseTouchInput) is
-      Java_Result : constant Unbounded_String := BaseTouchInput'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end toString;
 
 end org.allbinary.input.motion.button.BaseTouchInput_Package;

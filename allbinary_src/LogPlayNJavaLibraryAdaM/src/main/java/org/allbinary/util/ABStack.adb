@@ -29,7 +29,7 @@ package body org.allbinary.util.ABStack_Package is
    function Create return ABStack_Access is
       This : constant ABStack_Access := new ABStack;
    begin
-      Initialize (This.all);
+      ABStack_Package.Initialize (This.all);
       return This;
    end Create;
 

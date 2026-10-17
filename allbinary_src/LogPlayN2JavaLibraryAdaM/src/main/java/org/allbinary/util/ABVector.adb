@@ -29,7 +29,7 @@ package body org.allbinary.util.ABVector_Package is
    function Create return ABVector_Access is
       This : constant ABVector_Access := new ABVector;
    begin
-      Initialize (This.all);
+      ABVector_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -174,27 +174,6 @@ package body org.allbinary.util.ABVector_Package is
         Vector (This).removeRange (fromIndex, toIndex);
    end removeRange;
 
-   procedure capacity (This : in out ABVector) is
-      Java_Result : constant Integer := ABVector'Class (This).capacity;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end capacity;
-
-   procedure size (This : in out ABVector) is
-      Java_Result : constant Integer := ABVector'Class (This).size;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end size;
-
-   procedure isEmpty (This : in out ABVector) is
-      Java_Result : constant Boolean := ABVector'Class (This).isEmpty;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isEmpty;
-
    procedure contains (This : in out ABVector; obj : Java_Object_Access) is
       Java_Result : constant Boolean := ABVector'Class (This).contains (obj);
       pragma Unreferenced (Java_Result);
@@ -223,40 +202,12 @@ package body org.allbinary.util.ABVector_Package is
       null;
    end elementAt;
 
-   procedure firstElement (This : in out ABVector) is
-      Java_Result : constant Java_Object_Access := ABVector'Class (This).firstElement;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end firstElement;
-
-   procedure lastElement (This : in out ABVector) is
-      Java_Result : constant Java_Object_Access := ABVector'Class (This).lastElement;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end lastElement;
-
    procedure removeElement (This : in out ABVector; obj : Java_Object_Access) is
       Java_Result : constant Boolean := ABVector'Class (This).removeElement (obj);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end removeElement;
-
-   procedure clone (This : in out ABVector) is
-      Java_Result : constant Java_Object_Access := ABVector'Class (This).clone;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end clone;
-
-   procedure toArray (This : in out ABVector) is
-      Java_Result : constant Java_Object_Access_Array_Access := ABVector'Class (This).toArray;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toArray;
 
    procedure set (This : in out ABVector; index : Integer; element : Java_Object_Access) is
       Java_Result : constant Java_Object_Access := ABVector'Class (This).set (index, element);
@@ -292,20 +243,6 @@ package body org.allbinary.util.ABVector_Package is
    begin
       null;
    end equals;
-
-   procedure hashCode (This : in out ABVector) is
-      Java_Result : constant Integer := ABVector'Class (This).hashCode;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end hashCode;
-
-   procedure toString (This : in out ABVector) is
-      Java_Result : constant Unbounded_String := ABVector'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toString;
 
 end org.allbinary.util.ABVector_Package;
 

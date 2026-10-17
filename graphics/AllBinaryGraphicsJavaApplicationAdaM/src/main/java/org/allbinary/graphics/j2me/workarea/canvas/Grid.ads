@@ -42,15 +42,11 @@ package org.allbinary.graphics.j2me.workarea.canvas.Grid_Package is
    procedure Initialize (This : in out Grid'Class);
    function Create return Grid_Access;
    function isGridOn (This : in out Grid) return Boolean;
-   procedure isGridOn (This : in out Grid);
    function isGridPossible (This : in out Grid) return Boolean;
-   procedure isGridPossible (This : in out Grid);
    function getGrid (This : in out Grid) return GPoint_Access;
-   procedure getGrid (This : in out Grid);
    function getZoom (This : in out Grid) return Integer;
-   procedure getZoom (This : in out Grid);
    procedure showGrid (This : in out Grid; value : Boolean);
-   procedure setZoom (This : in out Grid; zoom : Integer);
+   procedure setZoom (This : in out Grid; zoom_Param : Integer);
 
 end org.allbinary.graphics.j2me.workarea.canvas.Grid_Package;
 

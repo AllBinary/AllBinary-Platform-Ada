@@ -22,6 +22,7 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.logic.communication.log.config.LogConfig_Package; use org.allbinary.logic.communication.log.config.LogConfig_Package;
 
 package org.allbinary.logic.communication.log.config.LoggingInitInfo_Package is
 
@@ -44,16 +45,11 @@ package org.allbinary.logic.communication.log.config.LoggingInitInfo_Package is
    procedure setHasRead (value : Boolean);
    procedure updateIfNeeded;
    function isValid (This : in out LoggingInitInfo) return Boolean;
-   procedure isValid (This : in out LoggingInitInfo);
    procedure set (logConfigInfoList : BasicArrayList_Access);
    function get return BasicArrayList_Access;
-   procedure get;
    function getTypeList return BasicArrayList_Access;
-   procedure getTypeList;
    function getNumberOfLogConfigs (This : in out LoggingInitInfo) return Integer;
-   procedure getNumberOfLogConfigs (This : in out LoggingInitInfo);
    function toString (This : in out LoggingInitInfo) return Unbounded_String;
-   procedure toString (This : in out LoggingInitInfo);
 
 end org.allbinary.logic.communication.log.config.LoggingInitInfo_Package;
 

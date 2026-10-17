@@ -35,7 +35,6 @@ package org.allbinary.input.media.image.capture.ProcessingFrameIndexFactory_Pack
    procedure Initialize (This : in out ProcessingFrameIndexFactory'Class);
    function Create return ProcessingFrameIndexFactory_Access;
    function next return Long_Long_Integer;
-   procedure next;
 
 end org.allbinary.input.media.image.capture.ProcessingFrameIndexFactory_Package;
 

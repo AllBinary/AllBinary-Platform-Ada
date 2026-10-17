@@ -21,7 +21,7 @@ package body org.allbinary.logic.math.permutations.IntPermutationVisitor_Package
    function Create (data : Integer_Array_Access) return IntPermutationVisitor_Access is
       This : constant IntPermutationVisitor_Access := new IntPermutationVisitor;
    begin
-      Initialize (This.all, data);
+      IntPermutationVisitor_Package.Initialize (This.all, data);
       return This;
    end Create;
 

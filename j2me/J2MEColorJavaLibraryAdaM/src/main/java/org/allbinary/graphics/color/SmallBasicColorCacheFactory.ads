@@ -21,6 +21,8 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
 
 package org.allbinary.graphics.color.SmallBasicColorCacheFactory_Package is
 
@@ -42,7 +44,6 @@ package org.allbinary.graphics.color.SmallBasicColorCacheFactory_Package is
    procedure Initialize (This : in out SmallBasicColorCacheFactory'Class);
    function Create return SmallBasicColorCacheFactory_Access;
    function getInstance return SmallBasicColorCacheFactory_Access;
-   procedure getInstance;
    procedure add (This : in out SmallBasicColorCacheFactory; basicDefaultColor : BasicColor_Access);
    function getAndOrCreate (This : in out SmallBasicColorCacheFactory; colorAsInt : Integer) return BasicColor_Access;
    procedure getAndOrCreate (This : in out SmallBasicColorCacheFactory; colorAsInt : Integer);

@@ -35,7 +35,7 @@ package body org.allbinary.math.FrameUtil_Package is
    function Create return FrameUtil_Access is
       This : constant FrameUtil_Access := new FrameUtil;
    begin
-      Initialize (This.all);
+      FrameUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -51,7 +51,8 @@ package body org.allbinary.math.FrameUtil_Package is
         return This.adjustAngleToFrameAngle (frameAngle);
    end getFrameAngle;
 
-   function adjustAngleToFrameAngle (This : in out FrameUtil; currentAngle : Integer) return Integer is
+   function adjustAngleToFrameAngle (This : in out FrameUtil; currentAngle_Param : Integer) return Integer is
+      currentAngle : Integer := currentAngle_Param;
       angleFactory : AngleFactory_Access;
    begin
         angleFactory := AngleFactory_Package.getInstance;
@@ -70,13 +71,6 @@ package body org.allbinary.math.FrameUtil_Package is
         return currentAngle;
    end adjustAngleToFrameAngle;
 
-   procedure getInstance is
-      Java_Result : constant FrameUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
    procedure getFrameForAngle (This : in out FrameUtil; angle : Short_Integer; angleIncrement : Integer) is
       Java_Result : constant Integer := FrameUtil'Class (This).getFrameForAngle (angle, angleIncrement);
       pragma Unreferenced (Java_Result);
@@ -91,8 +85,8 @@ package body org.allbinary.math.FrameUtil_Package is
       null;
    end getFrameAngle;
 
-   procedure adjustAngleToFrameAngle (This : in out FrameUtil; currentAngle : Integer) is
-      Java_Result : constant Integer := FrameUtil'Class (This).adjustAngleToFrameAngle (currentAngle);
+   procedure adjustAngleToFrameAngle (This : in out FrameUtil; currentAngle_Param : Integer) is
+      Java_Result : constant Integer := FrameUtil'Class (This).adjustAngleToFrameAngle (currentAngle_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

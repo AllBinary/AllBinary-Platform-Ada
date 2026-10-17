@@ -41,16 +41,9 @@ package body org.allbinary.logic.communication.http.request.AbeHttpRequestInfoDa
    function Create return AbeHttpRequestInfoData_Access is
       This : constant AbeHttpRequestInfoData_Access := new AbeHttpRequestInfoData;
    begin
-      Initialize (This.all);
+      AbeHttpRequestInfoData_Package.Initialize (This.all);
       return This;
    end Create;
-
-   procedure getInstance is
-      Java_Result : constant AbeHttpRequestInfoData_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

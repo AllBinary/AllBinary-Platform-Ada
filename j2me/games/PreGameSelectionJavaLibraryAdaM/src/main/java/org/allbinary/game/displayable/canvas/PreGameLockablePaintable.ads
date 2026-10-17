@@ -49,7 +49,6 @@ package org.allbinary.game.displayable.canvas.PreGameLockablePaintable_Package i
    function Create (paintableForm : ScrollCurrentSelectionForm_Access; lockedIndex : Integer) return PreGameLockablePaintable_Access;
    procedure paint (This : in out PreGameLockablePaintable; graphics : Graphics_Access; currentIndex : Integer; x : Integer; y : Integer);
    function getPaintableForm (This : in out PreGameLockablePaintable) return ScrollCurrentSelectionForm_Access;
-   procedure getPaintableForm (This : in out PreGameLockablePaintable);
 
 end org.allbinary.game.displayable.canvas.PreGameLockablePaintable_Package;
 

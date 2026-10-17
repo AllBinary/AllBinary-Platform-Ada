@@ -34,7 +34,7 @@ package body org.allbinary.business.category.store.theme.StoreThemeCategory_Pack
    function Create (transformInfoInterface : TransformInfoInterface_Access; categoryPropertiesFactoryInterface : CategoryPropertiesFactoryInterface_Access; level : Integer) return StoreThemeCategory_Access is
       This : constant StoreThemeCategory_Access := new StoreThemeCategory;
    begin
-      Initialize (This.all, transformInfoInterface, categoryPropertiesFactoryInterface, level);
+      StoreThemeCategory_Package.Initialize (This.all, transformInfoInterface, categoryPropertiesFactoryInterface, level);
       return This;
    end Create;
 
@@ -50,7 +50,7 @@ package body org.allbinary.business.category.store.theme.StoreThemeCategory_Pack
    function Create (transformInfoInterface : TransformInfoInterface_Access; rootCategoryInterface : CategoryInterface_Access; parentCategoryInterface : CategoryInterface_Access; categoryPropertiesFactoryInterface : CategoryPropertiesFactoryInterface_Access) return StoreThemeCategory_Access is
       This : constant StoreThemeCategory_Access := new StoreThemeCategory;
    begin
-      Initialize (This.all, transformInfoInterface, rootCategoryInterface, parentCategoryInterface, categoryPropertiesFactoryInterface);
+      StoreThemeCategory_Package.Initialize (This.all, transformInfoInterface, rootCategoryInterface, parentCategoryInterface, categoryPropertiesFactoryInterface);
       return This;
    end Create;
 
@@ -67,7 +67,7 @@ package body org.allbinary.business.category.store.theme.StoreThemeCategory_Pack
    function Create (transformInfoInterface : TransformInfoInterface_Access; node : Node_Access; categoryPropertiesFactoryInterface : CategoryPropertiesFactoryInterface_Access; level : Integer) return StoreThemeCategory_Access is
       This : constant StoreThemeCategory_Access := new StoreThemeCategory;
    begin
-      Initialize (This.all, transformInfoInterface, node, categoryPropertiesFactoryInterface, level);
+      StoreThemeCategory_Package.Initialize (This.all, transformInfoInterface, node, categoryPropertiesFactoryInterface, level);
       return This;
    end Create;
 
@@ -84,7 +84,7 @@ package body org.allbinary.business.category.store.theme.StoreThemeCategory_Pack
    function Create (transformInfoInterface : TransformInfoInterface_Access; node : Node_Access; rootCategoryInterface : CategoryInterface_Access; parentCategoryInterface : CategoryInterface_Access; categoryPropertiesFactoryInterface : CategoryPropertiesFactoryInterface_Access) return StoreThemeCategory_Access is
       This : constant StoreThemeCategory_Access := new StoreThemeCategory;
    begin
-      Initialize (This.all, transformInfoInterface, node, rootCategoryInterface, parentCategoryInterface, categoryPropertiesFactoryInterface);
+      StoreThemeCategory_Package.Initialize (This.all, transformInfoInterface, node, rootCategoryInterface, parentCategoryInterface, categoryPropertiesFactoryInterface);
       return This;
    end Create;
 
@@ -144,41 +144,6 @@ package body org.allbinary.business.category.store.theme.StoreThemeCategory_Pack
    begin
         categoryVector := Category (This).toVector;
         return categoryVector;
-   end toVector;
-
-   procedure getTransformInfoInterface (This : in out StoreThemeCategory) is
-      Java_Result : constant TransformInfoInterface_Access := StoreThemeCategory'Class (This).getTransformInfoInterface;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTransformInfoInterface;
-
-   procedure getThemes (This : in out StoreThemeCategory) is
-      Java_Result : constant BasicArrayList_Access := StoreThemeCategory'Class (This).getThemes;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getThemes;
-
-   procedure isValid (This : in out StoreThemeCategory) is
-      Java_Result : constant Boolean := StoreThemeCategory'Class (This).isValid;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isValid;
-
-   procedure toHashMap (This : in out StoreThemeCategory) is
-      Java_Result : constant HashMap_Access := StoreThemeCategory'Class (This).toHashMap;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toHashMap;
-
-   procedure toVector (This : in out StoreThemeCategory) is
-      Java_Result : constant BasicArrayList_Access := StoreThemeCategory'Class (This).toVector;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end toVector;
 
 end org.allbinary.business.category.store.theme.StoreThemeCategory_Package;

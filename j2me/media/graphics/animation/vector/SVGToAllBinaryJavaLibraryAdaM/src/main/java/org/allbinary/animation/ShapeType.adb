@@ -31,20 +31,13 @@ package body org.allbinary.animation.ShapeType_Package is
    function Create (name : Unbounded_String) return ShapeType_Access is
       This : constant ShapeType_Access := new ShapeType;
    begin
-      Initialize (This.all, name);
+      ShapeType_Package.Initialize (This.all, name);
       return This;
    end Create;
 
    function getName (This : in out ShapeType) return Unbounded_String is
    begin
         return This.name;
-   end getName;
-
-   procedure getName (This : in out ShapeType) is
-      Java_Result : constant Unbounded_String := ShapeType'Class (This).getName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getName;
 
 end org.allbinary.animation.ShapeType_Package;

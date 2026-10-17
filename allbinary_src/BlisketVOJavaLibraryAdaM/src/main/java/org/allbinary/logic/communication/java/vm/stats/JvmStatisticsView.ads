@@ -26,6 +26,7 @@ with org.allbinary.data.tree.dom.ModDomHelper_Package; use org.allbinary.data.tr
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.allbinary.logic.communication.java.vm.stats.JvmStatisticsMapping_Package; use org.allbinary.logic.communication.java.vm.stats.JvmStatisticsMapping_Package;
+with org.allbinary.logic.communication.java.vm.stats.JvmStatisticsData_Package; use org.allbinary.logic.communication.java.vm.stats.JvmStatisticsData_Package;
 
 package org.allbinary.logic.communication.java.vm.stats.JvmStatisticsView_Package is
 

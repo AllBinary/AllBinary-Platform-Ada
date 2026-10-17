@@ -39,7 +39,7 @@ package body org.allbinary.input.motion.button.TouchButtonFactory_Package is
    function Create return TouchButtonFactory_Access is
       This : constant TouchButtonFactory_Access := new TouchButtonFactory;
    begin
-      Initialize (This.all);
+      TouchButtonFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -84,20 +84,6 @@ package body org.allbinary.input.motion.button.TouchButtonFactory_Package is
    function getList (This : in out TouchButtonFactory) return BasicArrayList_Access is
    begin
         return This.list_Case;
-   end getList;
-
-   procedure getInstance is
-      Java_Result : constant TouchButtonFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure getList (This : in out TouchButtonFactory) is
-      Java_Result : constant BasicArrayList_Access := TouchButtonFactory'Class (This).getList;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getList;
 
 begin

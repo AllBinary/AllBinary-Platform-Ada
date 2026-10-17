@@ -30,7 +30,7 @@ package body org.allbinary.game.gd.resource.GDResources_Package is
    function Create return GDResources_Access is
       This : constant GDResources_Access := new GDResources;
    begin
-      Initialize (This.all);
+      GDResources_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -38,13 +38,6 @@ package body org.allbinary.game.gd.resource.GDResources_Package is
    function getInstance return GDResources_Access is
    begin
         return GDResources_Package.instance;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant GDResources_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

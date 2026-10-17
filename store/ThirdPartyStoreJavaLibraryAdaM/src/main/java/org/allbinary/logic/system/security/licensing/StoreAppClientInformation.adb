@@ -32,20 +32,13 @@ package body org.allbinary.logic.system.security.licensing.StoreAppClientInforma
    function Create (name : Unbounded_String; version : Unbounded_String; specialName : Unbounded_String; shortName : Unbounded_String; longArrayIdentifier : Long_Long_Integer_Array_Access) return StoreAppClientInformation_Access is
       This : constant StoreAppClientInformation_Access := new StoreAppClientInformation;
    begin
-      Initialize (This.all, name, version, specialName, shortName, longArrayIdentifier);
+      StoreAppClientInformation_Package.Initialize (This.all, name, version, specialName, shortName, longArrayIdentifier);
       return This;
    end Create;
 
    function getLongArrayIdentifier (This : in out StoreAppClientInformation) return Long_Long_Integer_Array_Access is
    begin
         return This.longArrayIdentifier;
-   end getLongArrayIdentifier;
-
-   procedure getLongArrayIdentifier (This : in out StoreAppClientInformation) is
-      Java_Result : constant Long_Long_Integer_Array_Access := StoreAppClientInformation'Class (This).getLongArrayIdentifier;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getLongArrayIdentifier;
 
 end org.allbinary.logic.system.security.licensing.StoreAppClientInformation_Package;

@@ -26,6 +26,9 @@ with org.allbinary.logic.util.event.EventStrings_Package; use org.allbinary.logi
 with org.allbinary.logic.util.event.handler.BasicEventHandler_Package; use org.allbinary.logic.util.event.handler.BasicEventHandler_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.game.input.CompleteMotionGestureInputEventListener_Package; use org.allbinary.game.input.CompleteMotionGestureInputEventListener_Package;
+with org.allbinary.game.input.CompleteMotionGestureInputEvent_Package; use org.allbinary.game.input.CompleteMotionGestureInputEvent_Package;
+with org.allbinary.game.input.CompleteMotionGestureInputEventListenerInterface_Package; use org.allbinary.game.input.CompleteMotionGestureInputEventListenerInterface_Package;
 
 package org.allbinary.game.input.CompleteMotionGestureInputEventHandler_Package is
 
@@ -49,7 +52,6 @@ package org.allbinary.game.input.CompleteMotionGestureInputEventHandler_Package 
    procedure Initialize (This : in out CompleteMotionGestureInputEventHandler'Class);
    function Create return CompleteMotionGestureInputEventHandler_Access;
    function getInstance return CompleteMotionGestureInputEventHandler_Access;
-   procedure getInstance;
    procedure addListener (This : in out CompleteMotionGestureInputEventHandler; completeMotionGestureInputEventListener : CompleteMotionGestureInputEventListener_Access);
    procedure removeAllListeners (This : in out CompleteMotionGestureInputEventHandler);
    procedure removeListener (This : in out CompleteMotionGestureInputEventHandler; eventListenerInterface : EventListenerInterface_Access);

@@ -57,7 +57,6 @@ package views.generic_Id.basket.mini.MiniBasketView_Package is
    procedure toXmlNode (This : in out MiniBasketView; document : Document_Access);
    procedure addDomNodeInterfaces (This : in out MiniBasketView);
    function view (This : in out MiniBasketView) return Unbounded_String;
-   procedure view (This : in out MiniBasketView);
 
 end views.generic_Id.basket.mini.MiniBasketView_Package;
 

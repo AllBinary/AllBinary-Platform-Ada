@@ -23,6 +23,7 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.data.tree.dom.DomNodeInterface_Package; use org.allbinary.data.tree.dom.DomNodeInterface_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.globals.UrlGlobalsView_Package; use org.allbinary.globals.UrlGlobalsView_Package;
 
 package org.allbinary.globals.UrlGlobalsViewFactory_Package is
 
@@ -40,7 +41,6 @@ package org.allbinary.globals.UrlGlobalsViewFactory_Package is
    procedure Initialize (This : in out UrlGlobalsViewFactory'Class);
    function Create return UrlGlobalsViewFactory_Access;
    function getInstance return DomNodeInterface_Access;
-   procedure getInstance;
 
 end org.allbinary.globals.UrlGlobalsViewFactory_Package;
 

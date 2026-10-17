@@ -30,7 +30,7 @@ package body org.allbinary.input.automation.module.generic_Id.constraints.NoImag
    function Create return NoImageComparatorConstraints_Access is
       This : constant NoImageComparatorConstraints_Access := new NoImageComparatorConstraints;
    begin
-      Initialize (This.all);
+      NoImageComparatorConstraints_Package.Initialize (This.all);
       return This;
    end Create;
 

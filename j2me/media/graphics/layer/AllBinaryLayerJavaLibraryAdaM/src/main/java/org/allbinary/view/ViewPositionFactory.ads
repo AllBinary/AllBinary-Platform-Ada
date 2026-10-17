@@ -21,6 +21,8 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.view.ViewPositionFactoryInterface_Package; use org.allbinary.view.ViewPositionFactoryInterface_Package;
+with org.allbinary.view.ViewPosition_Package; use org.allbinary.view.ViewPosition_Package;
+with org.allbinary.view.ViewPositionBase_Package; use org.allbinary.view.ViewPositionBase_Package;
 
 package org.allbinary.view.ViewPositionFactory_Package is
 
@@ -35,7 +37,6 @@ package org.allbinary.view.ViewPositionFactory_Package is
    procedure Initialize (This : in out ViewPositionFactory'Class);
    function Create return ViewPositionFactory_Access;
    function getInstance (This : in out ViewPositionFactory) return ViewPositionBase_Access;
-   procedure getInstance (This : in out ViewPositionFactory);
 
 end org.allbinary.view.ViewPositionFactory_Package;
 

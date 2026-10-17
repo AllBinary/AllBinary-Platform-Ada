@@ -29,7 +29,7 @@ package body org.allbinary.business.init.db.InventoryDbInitInfo_Package is
    function Create return InventoryDbInitInfo_Access is
       This : constant InventoryDbInitInfo_Access := new InventoryDbInitInfo;
    begin
-      Initialize (This.all);
+      InventoryDbInitInfo_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -42,7 +42,7 @@ package body org.allbinary.business.init.db.InventoryDbInitInfo_Package is
    function Create (read : Boolean) return InventoryDbInitInfo_Access is
       This : constant InventoryDbInitInfo_Access := new InventoryDbInitInfo;
    begin
-      Initialize (This.all, read);
+      InventoryDbInitInfo_Package.Initialize (This.all, read);
       return This;
    end Create;
 

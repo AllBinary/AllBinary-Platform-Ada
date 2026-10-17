@@ -39,7 +39,7 @@ package body org.allbinary.logic.control.search.TableSearchRequest_Package is
    function Create (keywords : Unbounded_String; searchParams : SearchParams_Access; xslFile : Unbounded_String; contentType : Unbounded_String) return TableSearchRequest_Access is
       This : constant TableSearchRequest_Access := new TableSearchRequest;
    begin
-      Initialize (This.all, keywords, searchParams, xslFile, contentType);
+      TableSearchRequest_Package.Initialize (This.all, keywords, searchParams, xslFile, contentType);
       return This;
    end Create;
 
@@ -101,41 +101,6 @@ package body org.allbinary.logic.control.search.TableSearchRequest_Package is
    begin
         return ModDomHelper_Package.createNameValueNodes (document, SearchData_Package.FILENAME, This.getFileBaseName);
    end getFileBaseNameNode;
-
-   procedure getKeywords (This : in out TableSearchRequest) is
-      Java_Result : constant Unbounded_String := TableSearchRequest'Class (This).getKeywords;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getKeywords;
-
-   procedure getParams (This : in out TableSearchRequest) is
-      Java_Result : constant SearchParams_Access := TableSearchRequest'Class (This).getParams;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getParams;
-
-   procedure getXslFile (This : in out TableSearchRequest) is
-      Java_Result : constant Unbounded_String := TableSearchRequest'Class (This).getXslFile;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getXslFile;
-
-   procedure getFileBaseName (This : in out TableSearchRequest) is
-      Java_Result : constant Unbounded_String := TableSearchRequest'Class (This).getFileBaseName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getFileBaseName;
-
-   procedure getContentType (This : in out TableSearchRequest) is
-      Java_Result : constant Unbounded_String := TableSearchRequest'Class (This).getContentType;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getContentType;
 
    procedure getFileBaseNameNode (This : in out TableSearchRequest; document : Document_Access) is
       Java_Result : constant Node_Access := TableSearchRequest'Class (This).getFileBaseNameNode (document);

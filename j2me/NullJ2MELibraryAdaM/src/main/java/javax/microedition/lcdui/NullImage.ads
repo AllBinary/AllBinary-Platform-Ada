@@ -20,6 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
+with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
 
 package javax.microedition.lcdui.NullImage_Package is
 

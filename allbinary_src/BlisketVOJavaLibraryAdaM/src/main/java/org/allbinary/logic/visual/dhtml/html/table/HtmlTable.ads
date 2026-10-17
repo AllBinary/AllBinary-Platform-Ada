@@ -26,6 +26,7 @@ with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Packag
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.logic.visual.dhtml.html.HtmlTag_Package; use org.allbinary.logic.visual.dhtml.html.HtmlTag_Package;
 with org.allbinary.string_Id.CommonPhoneStrings_Package; use org.allbinary.string_Id.CommonPhoneStrings_Package;
+with org.allbinary.logic.visual.dhtml.html.table.HtmlRow_Package; use org.allbinary.logic.visual.dhtml.html.table.HtmlRow_Package;
 
 package org.allbinary.logic.visual.dhtml.html.table.HtmlTable_Package is
 
@@ -74,7 +75,6 @@ package org.allbinary.logic.visual.dhtml.html.table.HtmlTable_Package is
    function Create (before : Unbounded_String; cellpadding_Case : Unbounded_String; cellspacing_Case : Unbounded_String; after : Unbounded_String) return HtmlTable_Access;
    procedure addRow (This : in out HtmlTable; htmlRow : HtmlRow_Access);
    function toString (This : in out HtmlTable) return Unbounded_String;
-   procedure toString (This : in out HtmlTable);
 
 end org.allbinary.logic.visual.dhtml.html.table.HtmlTable_Package;
 

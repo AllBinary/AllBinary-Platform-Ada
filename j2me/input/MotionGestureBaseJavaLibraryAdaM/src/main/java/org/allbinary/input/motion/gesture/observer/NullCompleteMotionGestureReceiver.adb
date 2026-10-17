@@ -33,7 +33,7 @@ package body org.allbinary.input.motion.gesture.observer.NullCompleteMotionGestu
    function Create return NullCompleteMotionGestureReceiver_Access is
       This : constant NullCompleteMotionGestureReceiver_Access := new NullCompleteMotionGestureReceiver;
    begin
-      Initialize (This.all);
+      NullCompleteMotionGestureReceiver_Package.Initialize (This.all);
       return This;
    end Create;
 

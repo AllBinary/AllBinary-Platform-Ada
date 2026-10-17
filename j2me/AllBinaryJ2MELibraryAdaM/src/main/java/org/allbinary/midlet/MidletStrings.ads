@@ -37,7 +37,6 @@ package org.allbinary.midlet.MidletStrings_Package is
    procedure Initialize (This : in out MidletStrings'Class);
    function Create return MidletStrings_Access;
    function getInstance return MidletStrings_Access;
-   procedure getInstance;
 
 end org.allbinary.midlet.MidletStrings_Package;
 

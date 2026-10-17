@@ -33,7 +33,7 @@ package body org.allbinary.data.tables.advertisement.areas.AdvertisementAreasEnt
    function Create return AdvertisementAreasEntity_Access is
       This : constant AdvertisementAreasEntity_Access := new AdvertisementAreasEntity;
    begin
-      Initialize (This.all);
+      AdvertisementAreasEntity_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -138,27 +138,6 @@ package body org.allbinary.data.tables.advertisement.areas.AdvertisementAreasEnt
    begin
       null;
    end get;
-
-   procedure createTableStatement (This : in out AdvertisementAreasEntity) is
-      Java_Result : constant Unbounded_String := AdvertisementAreasEntity'Class (This).createTableStatement;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end createTableStatement;
-
-   procedure createTable (This : in out AdvertisementAreasEntity) is
-      Java_Result : constant Unbounded_String := AdvertisementAreasEntity'Class (This).createTable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end createTable;
-
-   procedure dropTable (This : in out AdvertisementAreasEntity) is
-      Java_Result : constant Unbounded_String := AdvertisementAreasEntity'Class (This).dropTable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end dropTable;
 
 end org.allbinary.data.tables.advertisement.areas.AdvertisementAreasEntity_Package;
 

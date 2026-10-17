@@ -31,7 +31,7 @@ package body tags.generic_Id.advertisement.AdvertisementTag_Package is
    function Create return AdvertisementTag_Access is
       This : constant AdvertisementTag_Access := new AdvertisementTag;
    begin
-      Initialize (This.all);
+      AdvertisementTag_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -59,13 +59,6 @@ package body tags.generic_Id.advertisement.AdvertisementTag_Package is
             return SKIP_BODY;
                 end;
         end;
-   end doStartTag;
-
-   procedure doStartTag (This : in out AdvertisementTag) is
-      Java_Result : constant Integer := AdvertisementTag'Class (This).doStartTag;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end doStartTag;
 
 end tags.generic_Id.advertisement.AdvertisementTag_Package;

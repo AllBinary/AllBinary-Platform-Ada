@@ -21,6 +21,7 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackFrictionProperties_Package; use org.allbinary.media.graphics.geography.map.racetrack.RaceTrackFrictionProperties_Package;
 
 package org.allbinary.media.graphics.geography.map.racetrack.RaceTrackInfo_Package is
 
@@ -45,28 +46,20 @@ package org.allbinary.media.graphics.geography.map.racetrack.RaceTrackInfo_Packa
    procedure Initialize (This : in out RaceTrackInfo'Class; id : Integer; name : Unbounded_String; raceTrackFrictionProperties : RaceTrackFrictionProperties_Access; foregroundBasicColor : BasicColor_Access; backgroundBasicColor : BasicColor_Access; qualifyTime : Integer; worstContinuePosition : Integer; totalLaps : Integer);
    function Create (id : Integer; name : Unbounded_String; raceTrackFrictionProperties : RaceTrackFrictionProperties_Access; foregroundBasicColor : BasicColor_Access; backgroundBasicColor : BasicColor_Access; qualifyTime : Integer; worstContinuePosition : Integer; totalLaps : Integer) return RaceTrackInfo_Access;
    function getId (This : in out RaceTrackInfo) return Integer;
-   procedure getId (This : in out RaceTrackInfo);
    procedure setId (This : in out RaceTrackInfo; id : Integer);
    function getName (This : in out RaceTrackInfo) return Unbounded_String;
-   procedure getName (This : in out RaceTrackInfo);
    procedure setName (This : in out RaceTrackInfo; name : Unbounded_String);
    function getQualifyTime (This : in out RaceTrackInfo) return Integer;
-   procedure getQualifyTime (This : in out RaceTrackInfo);
    procedure setQualifyTime (This : in out RaceTrackInfo; qualifyTime : Integer);
    function getWorstContinuePosition (This : in out RaceTrackInfo) return Integer;
-   procedure getWorstContinuePosition (This : in out RaceTrackInfo);
    procedure setWorstContinuePosition (This : in out RaceTrackInfo; worstContinuePosition : Integer);
    function getTotalLaps (This : in out RaceTrackInfo) return Integer;
-   procedure getTotalLaps (This : in out RaceTrackInfo);
    procedure setTotalLaps (This : in out RaceTrackInfo; totalLaps : Integer);
    function getForegroundBasicColor (This : in out RaceTrackInfo) return BasicColor_Access;
-   procedure getForegroundBasicColor (This : in out RaceTrackInfo);
    procedure setForegroundBasicColor (This : in out RaceTrackInfo; foregroundBasicColor : BasicColor_Access);
    function getBackgroundBasicColor (This : in out RaceTrackInfo) return BasicColor_Access;
-   procedure getBackgroundBasicColor (This : in out RaceTrackInfo);
    procedure setBackgroundBasicColor (This : in out RaceTrackInfo; backgroundBasicColor : BasicColor_Access);
    function getRaceTrackFrictionProperties (This : in out RaceTrackInfo) return RaceTrackFrictionProperties_Access;
-   procedure getRaceTrackFrictionProperties (This : in out RaceTrackInfo);
    procedure setRaceTrackFrictionProperties (This : in out RaceTrackInfo; raceTrackFrictionProperties : RaceTrackFrictionProperties_Access);
 
 end org.allbinary.media.graphics.geography.map.racetrack.RaceTrackInfo_Package;

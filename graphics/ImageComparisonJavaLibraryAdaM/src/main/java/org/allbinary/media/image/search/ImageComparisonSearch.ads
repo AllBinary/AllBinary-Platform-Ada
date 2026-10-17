@@ -62,17 +62,12 @@ package org.allbinary.media.image.search.ImageComparisonSearch_Package is
    procedure Initialize (This : in out ImageComparisonSearch'Class; bufferedImage : BufferedImage_Access; bufferedImage2 : BufferedImage_Access; tolerance : Integer);
    function Create (bufferedImage : BufferedImage_Access; bufferedImage2 : BufferedImage_Access; tolerance : Integer) return ImageComparisonSearch_Access;
    function getMatchingPercent (This : in out ImageComparisonSearch) return Float;
-   procedure getMatchingPercent (This : in out ImageComparisonSearch);
    procedure add (This : in out ImageComparisonSearch; pixel : PixelDelta_Access);
    function getNonMatchingPixelVector (This : in out ImageComparisonSearch) return BasicArrayList_Access;
-   procedure getNonMatchingPixelVector (This : in out ImageComparisonSearch);
    function toString (This : in out ImageComparisonSearch) return Unbounded_String;
-   procedure toString (This : in out ImageComparisonSearch);
    function getBufferedImages (This : in out ImageComparisonSearch) return BufferedImage_Access_Array_Access;
-   procedure getBufferedImages (This : in out ImageComparisonSearch);
    procedure setBufferedImages (This : in out ImageComparisonSearch; bufferedImages : BufferedImage_Access_Array_Access);
    function getTolerance (This : in out ImageComparisonSearch) return Integer;
-   procedure getTolerance (This : in out ImageComparisonSearch);
    procedure setTolerance (This : in out ImageComparisonSearch; tolerance : Integer);
 
 end org.allbinary.media.image.search.ImageComparisonSearch_Package;

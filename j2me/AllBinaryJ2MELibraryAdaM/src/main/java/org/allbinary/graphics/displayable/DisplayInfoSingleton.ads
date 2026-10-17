@@ -38,6 +38,8 @@ with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.Com
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.graphics.displayable.BaseScalable_Package; use org.allbinary.graphics.displayable.BaseScalable_Package;
+with org.allbinary.graphics.displayable.ScalableListener_Package; use org.allbinary.graphics.displayable.ScalableListener_Package;
 
 package org.allbinary.graphics.displayable.DisplayInfoSingleton_Package is
 
@@ -109,63 +111,41 @@ package org.allbinary.graphics.displayable.DisplayInfoSingleton_Package is
    procedure Initialize (This : in out DisplayInfoSingleton'Class);
    function Create return DisplayInfoSingleton_Access;
    function getInstance return DisplayInfoSingleton_Access;
-   procedure getInstance;
    function getLastHalf (This : in out DisplayInfoSingleton) return Integer_Array_Access;
-   procedure getLastHalf (This : in out DisplayInfoSingleton);
    function getLast (This : in out DisplayInfoSingleton) return Integer_Array_Access;
-   procedure getLast (This : in out DisplayInfoSingleton);
    function getFull (This : in out DisplayInfoSingleton) return Integer_Array_Access;
-   procedure getFull (This : in out DisplayInfoSingleton);
    function getScaleLargestTo (This : in out DisplayInfoSingleton) return Float;
-   procedure getScaleLargestTo (This : in out DisplayInfoSingleton);
    procedure setScaleLargestTo (This : in out DisplayInfoSingleton; scaleLargestTo : Integer);
    procedure setLastSize (This : in out DisplayInfoSingleton; aLastWidth : Integer; aLastHeight : Integer; reason_Case : Unbounded_String);
-   procedure setLastSizeForce (This : in out DisplayInfoSingleton; aLastWidth : Integer; aLastHeight : Integer; reason_Case : Unbounded_String);
+   procedure setLastSizeForce (This : in out DisplayInfoSingleton; aLastWidth_Param : Integer; aLastHeight_Param : Integer; reason_Case : Unbounded_String);
    function isPortraitWH (This : in out DisplayInfoSingleton; lastWidth : Integer; lastHeight : Integer) return Boolean;
    procedure isPortraitWH (This : in out DisplayInfoSingleton; lastWidth : Integer; lastHeight : Integer);
    function isPortrait (This : in out DisplayInfoSingleton) return Boolean;
-   procedure isPortrait (This : in out DisplayInfoSingleton);
    procedure add (This : in out DisplayInfoSingleton; reason_Case : Unbounded_String);
    procedure process (This : in out DisplayInfoSingleton);
    procedure processForced (This : in out DisplayInfoSingleton);
    procedure update (This : in out DisplayInfoSingleton; displayable : Displayable_Access; reason_Case : Unbounded_String);
    function toString (This : in out DisplayInfoSingleton) return Unbounded_String;
-   procedure toString (This : in out DisplayInfoSingleton);
    function toStringAppend (This : in out DisplayInfoSingleton; stringBuffer : StringMaker_Access) return Unbounded_String;
    procedure toStringAppend (This : in out DisplayInfoSingleton; stringBuffer : StringMaker_Access);
    function getTop (This : in out DisplayInfoSingleton) return Integer;
-   procedure getTop (This : in out DisplayInfoSingleton);
    function getLeft (This : in out DisplayInfoSingleton) return Integer;
-   procedure getLeft (This : in out DisplayInfoSingleton);
    function getLastWidth (This : in out DisplayInfoSingleton) return Integer;
-   procedure getLastWidth (This : in out DisplayInfoSingleton);
    function getLastHeight (This : in out DisplayInfoSingleton) return Integer;
-   procedure getLastHeight (This : in out DisplayInfoSingleton);
    function getLastHalfWidth (This : in out DisplayInfoSingleton) return Integer;
-   procedure getLastHalfWidth (This : in out DisplayInfoSingleton);
    function getLastHalfHeight (This : in out DisplayInfoSingleton) return Integer;
-   procedure getLastHalfHeight (This : in out DisplayInfoSingleton);
    function getCustomLastWidth (This : in out DisplayInfoSingleton) return Integer;
-   procedure getCustomLastWidth (This : in out DisplayInfoSingleton);
    function getCustomLastHeight (This : in out DisplayInfoSingleton) return Integer;
-   procedure getCustomLastHeight (This : in out DisplayInfoSingleton);
    function getRawLastWidth (This : in out DisplayInfoSingleton) return Integer;
-   procedure getRawLastWidth (This : in out DisplayInfoSingleton);
    function getRawLastHeight (This : in out DisplayInfoSingleton) return Integer;
-   procedure getRawLastHeight (This : in out DisplayInfoSingleton);
    procedure setCustom (This : in out DisplayInfoSingleton; width_Case : Integer; height_Case : Integer);
    procedure setScalableListener (This : in out DisplayInfoSingleton; scalableListener : BaseScalable_Access);
    function getScalableListener (This : in out DisplayInfoSingleton) return ScalableListener_Access;
-   procedure getScalableListener (This : in out DisplayInfoSingleton);
    function getRatio (This : in out DisplayInfoSingleton) return Float;
-   procedure getRatio (This : in out DisplayInfoSingleton);
    function getDisplayRatio (This : in out DisplayInfoSingleton) return Float;
-   procedure getDisplayRatio (This : in out DisplayInfoSingleton);
    procedure setOffset (This : in out DisplayInfoSingleton; left : Integer; top : Integer);
    function getxOffset (This : in out DisplayInfoSingleton) return Integer;
-   procedure getxOffset (This : in out DisplayInfoSingleton);
    function getyOffset (This : in out DisplayInfoSingleton) return Integer;
-   procedure getyOffset (This : in out DisplayInfoSingleton);
 
 end org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
 

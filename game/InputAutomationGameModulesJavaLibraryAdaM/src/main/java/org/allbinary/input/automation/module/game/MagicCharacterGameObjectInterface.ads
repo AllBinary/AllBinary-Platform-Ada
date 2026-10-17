@@ -20,6 +20,8 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
+with org.allbinary.input.automation.module.game.HitPointGameObjectInterface_Package; use org.allbinary.input.automation.module.game.HitPointGameObjectInterface_Package;
+with org.allbinary.input.automation.module.game.MagicGameObjectInterface_Package; use org.allbinary.input.automation.module.game.MagicGameObjectInterface_Package;
 
 package org.allbinary.input.automation.module.game.MagicCharacterGameObjectInterface_Package is
 

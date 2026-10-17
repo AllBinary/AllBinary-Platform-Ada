@@ -30,7 +30,7 @@ package body org.allbinary.graphics.j2me.workarea.tools.GraphicItemBuilder_Packa
    function Create return GraphicItemBuilder_Access is
       This : constant GraphicItemBuilder_Access := new GraphicItemBuilder;
    begin
-      Initialize (This.all);
+      GraphicItemBuilder_Package.Initialize (This.all);
       return This;
    end Create;
 

@@ -33,7 +33,7 @@ package body views.generic_Id.advertisement.area.AdvertisementAreaView_Package i
    function Create (transformInfoInterface : TransformInfoInterface_Access) return AdvertisementAreaView_Access is
       This : constant AdvertisementAreaView_Access := new AdvertisementAreaView;
    begin
-      Initialize (This.all, transformInfoInterface);
+      AdvertisementAreaView_Package.Initialize (This.all, transformInfoInterface);
       return This;
    end Create;
 
@@ -89,13 +89,6 @@ package body views.generic_Id.advertisement.area.AdvertisementAreaView_Package i
    begin
       null;
    end toXmlNode;
-
-   procedure view (This : in out AdvertisementAreaView) is
-      Java_Result : constant Unbounded_String := AdvertisementAreaView'Class (This).view;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end view;
 
 end views.generic_Id.advertisement.area.AdvertisementAreaView_Package;
 

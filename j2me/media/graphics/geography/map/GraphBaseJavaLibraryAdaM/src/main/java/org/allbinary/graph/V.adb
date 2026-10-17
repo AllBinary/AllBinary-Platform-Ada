@@ -16,7 +16,7 @@ package body org.allbinary.graph.V_Package is
    function Create return V_Access is
       This : constant V_Access := new V;
    begin
-      Initialize (This.all);
+      V_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -24,13 +24,6 @@ package body org.allbinary.graph.V_Package is
    function getId (This : in out V) return Integer is
    begin
         return 0;
-   end getId;
-
-   procedure getId (This : in out V) is
-      Java_Result : constant Integer := V'Class (This).getId;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getId;
 
 end org.allbinary.graph.V_Package;

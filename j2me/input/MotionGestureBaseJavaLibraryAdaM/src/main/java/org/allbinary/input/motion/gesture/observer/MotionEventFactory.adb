@@ -34,7 +34,7 @@ package body org.allbinary.input.motion.gesture.observer.MotionEventFactory_Pack
    function Create (source : Java_Object_Access; id : Integer) return MotionEventFactory_Access is
       This : constant MotionEventFactory_Access := new MotionEventFactory;
    begin
-      Initialize (This.all, source, id);
+      MotionEventFactory_Package.Initialize (This.all, source, id);
       return This;
    end Create;
 
@@ -49,13 +49,6 @@ package body org.allbinary.input.motion.gesture.observer.MotionEventFactory_Pack
         else
             return MotionGestureEvent_Package.Create (This.source, This.id, MotionGestureInput_Access (input));
         end if;
-   end getInstance;
-
-   procedure getInstance (This : in out MotionEventFactory) is
-      Java_Result : constant AllBinaryEventObject_Access := MotionEventFactory'Class (This).getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

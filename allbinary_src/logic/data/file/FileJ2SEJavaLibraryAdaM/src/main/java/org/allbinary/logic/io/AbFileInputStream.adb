@@ -29,7 +29,7 @@ package body org.allbinary.logic.io.AbFileInputStream_Package is
    function Create (name : Unbounded_String) return AbFileInputStream_Access is
       This : constant AbFileInputStream_Access := new AbFileInputStream;
    begin
-      Initialize (This.all, name);
+      AbFileInputStream_Package.Initialize (This.all, name);
       return This;
    end Create;
 
@@ -42,7 +42,7 @@ package body org.allbinary.logic.io.AbFileInputStream_Package is
    function Create (file : AbFile_Access) return AbFileInputStream_Access is
       This : constant AbFileInputStream_Access := new AbFileInputStream;
    begin
-      Initialize (This.all, file);
+      AbFileInputStream_Package.Initialize (This.all, file);
       return This;
    end Create;
 
@@ -55,7 +55,7 @@ package body org.allbinary.logic.io.AbFileInputStream_Package is
    function Create (file : File_Access) return AbFileInputStream_Access is
       This : constant AbFileInputStream_Access := new AbFileInputStream;
    begin
-      Initialize (This.all, file);
+      AbFileInputStream_Package.Initialize (This.all, file);
       return This;
    end Create;
 

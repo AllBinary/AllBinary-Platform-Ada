@@ -33,7 +33,7 @@ package body org.allbinary.game.ag.ai.scroller.TimedFireAI_Package is
    function Create (delay_Id : Integer; ownerLayerInterface : AllBinaryLayer_Access; gameInput : GameInput_Access) return TimedFireAI_Access is
       This : constant TimedFireAI_Access := new TimedFireAI;
    begin
-      Initialize (This.all, delay_Id, ownerLayerInterface, gameInput);
+      TimedFireAI_Package.Initialize (This.all, delay_Id, ownerLayerInterface, gameInput);
       return This;
    end Create;
 

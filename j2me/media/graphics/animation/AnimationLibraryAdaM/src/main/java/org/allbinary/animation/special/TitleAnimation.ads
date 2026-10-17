@@ -70,14 +70,10 @@ package org.allbinary.animation.special.TitleAnimation_Package is
    procedure createAnimation (animationInterfaceArray : IndexedAnimation_Access_Array_Access; basicColorArray : BasicColor_Access_Array_Access; dxArray : Integer_Array_Access; dyArray : Integer_Array_Access; y : Integer; width : Integer);
    procedure nextFrame (This : in out TitleAnimation);
    function isComplete (This : in out TitleAnimation) return Boolean;
-   procedure isComplete (This : in out TitleAnimation);
    procedure setSequence (This : in out TitleAnimation; sequence : Integer_Array_Access);
    function getSequence (This : in out TitleAnimation) return Integer_Array_Access;
-   procedure getSequence (This : in out TitleAnimation);
    function getSize (This : in out TitleAnimation) return Integer;
-   procedure getSize (This : in out TitleAnimation);
    function getFrame (This : in out TitleAnimation) return Integer;
-   procedure getFrame (This : in out TitleAnimation);
    procedure setFrame (This : in out TitleAnimation; frame : Integer);
    procedure setLastFrame (This : in out TitleAnimation);
    procedure reset (This : in out TitleAnimation);

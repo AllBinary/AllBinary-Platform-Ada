@@ -31,7 +31,7 @@ package body views.compound.objectConfig.CompoundContextTransformInfoObjectConfi
    function Create (abeClientInformation : AbeClientInformationInterface_Access; transformInfoInterface : TransformInfoInterface_Access) return CompoundContextTransformInfoObjectConfig_Access is
       This : constant CompoundContextTransformInfoObjectConfig_Access := new CompoundContextTransformInfoObjectConfig;
    begin
-      Initialize (This.all, abeClientInformation, transformInfoInterface);
+      CompoundContextTransformInfoObjectConfig_Package.Initialize (This.all, abeClientInformation, transformInfoInterface);
       return This;
    end Create;
 
@@ -46,7 +46,7 @@ package body views.compound.objectConfig.CompoundContextTransformInfoObjectConfi
    function Create (abeClientInformation : AbeClientInformationInterface_Access; transformInfoInterface : TransformInfoInterface_Access; document : Document_Access) return CompoundContextTransformInfoObjectConfig_Access is
       This : constant CompoundContextTransformInfoObjectConfig_Access := new CompoundContextTransformInfoObjectConfig;
    begin
-      Initialize (This.all, abeClientInformation, transformInfoInterface, document);
+      CompoundContextTransformInfoObjectConfig_Package.Initialize (This.all, abeClientInformation, transformInfoInterface, document);
       return This;
    end Create;
 
@@ -61,7 +61,7 @@ package body views.compound.objectConfig.CompoundContextTransformInfoObjectConfi
    function Create (abeClientInformation : AbeClientInformationInterface_Access; transformInfoInterface : TransformInfoInterface_Access; name : Unbounded_String; type_Id : Unbounded_String) return CompoundContextTransformInfoObjectConfig_Access is
       This : constant CompoundContextTransformInfoObjectConfig_Access := new CompoundContextTransformInfoObjectConfig;
    begin
-      Initialize (This.all, abeClientInformation, transformInfoInterface, name, type_Id);
+      CompoundContextTransformInfoObjectConfig_Package.Initialize (This.all, abeClientInformation, transformInfoInterface, name, type_Id);
       return This;
    end Create;
 
@@ -141,20 +141,6 @@ package body views.compound.objectConfig.CompoundContextTransformInfoObjectConfi
             This.logUtil.putF (To_Unbounded_String ("Template: ") & Java_New_String (completeTemplateViewBytes).toString, This'Unchecked_Access, To_Unbounded_String ("createInputStream()"));
         end if;
         return bais;
-   end createInputStream;
-
-   procedure get (This : in out CompoundContextTransformInfoObjectConfig) is
-      Java_Result : constant Unbounded_String := CompoundContextTransformInfoObjectConfig'Class (This).get;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end get;
-
-   procedure createInputStream (This : in out CompoundContextTransformInfoObjectConfig) is
-      Java_Result : constant InputStream_Access := CompoundContextTransformInfoObjectConfig'Class (This).createInputStream;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end createInputStream;
 
 end views.compound.objectConfig.CompoundContextTransformInfoObjectConfig_Package;

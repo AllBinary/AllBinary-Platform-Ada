@@ -29,7 +29,7 @@ package body org.allbinary.game.configuration.persistance.NullRecordStore_Packag
    function Create return NullRecordStore_Access is
       This : constant NullRecordStore_Access := new NullRecordStore;
    begin
-      Initialize (This.all);
+      NullRecordStore_Package.Initialize (This.all);
       return This;
    end Create;
 

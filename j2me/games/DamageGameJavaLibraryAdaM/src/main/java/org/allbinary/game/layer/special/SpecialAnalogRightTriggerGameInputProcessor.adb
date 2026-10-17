@@ -29,7 +29,7 @@ package body org.allbinary.game.layer.special.SpecialAnalogRightTriggerGameInput
    function Create (collidableDestroyableDamageableLayer : CollidableDestroyableDamageableLayer_Access) return SpecialAnalogRightTriggerGameInputProcessor_Access is
       This : constant SpecialAnalogRightTriggerGameInputProcessor_Access := new SpecialAnalogRightTriggerGameInputProcessor;
    begin
-      Initialize (This.all, collidableDestroyableDamageableLayer);
+      SpecialAnalogRightTriggerGameInputProcessor_Package.Initialize (This.all, collidableDestroyableDamageableLayer);
       return This;
    end Create;
 

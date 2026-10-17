@@ -35,7 +35,7 @@ package body org.allbinary.business.user.commerce.inventory.item.BasicItemValida
    function Create (itemInterface : ItemInterface_Access) return BasicItemValidation_Access is
       This : constant BasicItemValidation_Access := new BasicItemValidation;
    begin
-      Initialize (This.all, itemInterface);
+      BasicItemValidation_Package.Initialize (This.all, itemInterface);
       return This;
    end Create;
 
@@ -220,27 +220,6 @@ package body org.allbinary.business.user.commerce.inventory.item.BasicItemValida
    begin
         return null;
    end toValidationInfoNode;
-
-   procedure isValid (This : in out BasicItemValidation) is
-      Java_Result : constant Boolean := BasicItemValidation'Class (This).isValid;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isValid;
-
-   procedure validationInfo (This : in out BasicItemValidation) is
-      Java_Result : constant Unbounded_String := BasicItemValidation'Class (This).validationInfo;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end validationInfo;
-
-   procedure toValidationInfoDoc (This : in out BasicItemValidation) is
-      Java_Result : constant Document_Access := BasicItemValidation'Class (This).toValidationInfoDoc;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toValidationInfoDoc;
 
    procedure toValidationInfoNode (This : in out BasicItemValidation; document : Document_Access) is
       Java_Result : constant Node_Access := BasicItemValidation'Class (This).toValidationInfoNode (document);

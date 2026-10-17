@@ -40,7 +40,7 @@ package body views.HttpComponentView_Package is
    function Create (transformInfoInterface : TransformInfoInterface_Access) return HttpComponentView_Access is
       This : constant HttpComponentView_Access := new HttpComponentView;
    begin
-      Initialize (This.all, transformInfoInterface);
+      HttpComponentView_Package.Initialize (This.all, transformInfoInterface);
       return This;
    end Create;
 
@@ -128,41 +128,6 @@ package body views.HttpComponentView_Package is
             Java_Throw (e);
                 end;
         end;
-   end view;
-
-   procedure getTypeId (This : in out HttpComponentView) is
-      Java_Result : constant Integer := HttpComponentView'Class (This).getTypeId;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTypeId;
-
-   procedure getTransformDocumentInterface (This : in out HttpComponentView) is
-      Java_Result : constant TransformDocumentInterface_Access := HttpComponentView'Class (This).getTransformDocumentInterface;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTransformDocumentInterface;
-
-   procedure toXmlDoc (This : in out HttpComponentView) is
-      Java_Result : constant Document_Access := HttpComponentView'Class (This).toXmlDoc;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toXmlDoc;
-
-   procedure getDoc (This : in out HttpComponentView) is
-      Java_Result : constant Document_Access := HttpComponentView'Class (This).getDoc;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getDoc;
-
-   procedure view (This : in out HttpComponentView) is
-      Java_Result : constant Unbounded_String := HttpComponentView'Class (This).view;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end view;
 
 end views.HttpComponentView_Package;

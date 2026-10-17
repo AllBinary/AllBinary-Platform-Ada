@@ -36,7 +36,6 @@ package org.allbinary.business.user.commerce.money.payment.gateway.transaction.P
    procedure Initialize (This : in out PaymentTransactionKeys'Class; value : Unbounded_String);
    function Create (value : Unbounded_String) return PaymentTransactionKeys_Access;
    function toString (This : in out PaymentTransactionKeys) return Unbounded_String;
-   procedure toString (This : in out PaymentTransactionKeys);
 
 end org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionKeys_Package;
 

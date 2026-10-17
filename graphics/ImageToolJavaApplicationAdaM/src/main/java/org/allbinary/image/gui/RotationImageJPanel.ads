@@ -34,6 +34,7 @@ with org.allbinary.media.image.ImageStrings_Package; use org.allbinary.media.ima
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.image.gui.JPanel_Package; use org.allbinary.image.gui.JPanel_Package;
+with org.allbinary.image.gui.Graphics_Package; use org.allbinary.image.gui.Graphics_Package;
 
 package org.allbinary.image.gui.RotationImageJPanel_Package is
 
@@ -75,7 +76,6 @@ package org.allbinary.image.gui.RotationImageJPanel_Package is
    procedure generateJButtonActionPerformed (This : in out RotationImageJPanel; evt : ActionEvent_Access);
    procedure totalAngleJComboBoxActionPerformed (This : in out RotationImageJPanel; evt : ActionEvent_Access);
    function getImageProcessorInput (This : in out RotationImageJPanel) return ImageProcessorInput_Access;
-   procedure getImageProcessorInput (This : in out RotationImageJPanel);
    procedure setImageProcessorInput (This : in out RotationImageJPanel; imageProcessorInput : ImageProcessorInput_Access);
    procedure visit (This : in out RotationImageJPanel; generatedBufferedImage : BufferedImage_Access; name : Unbounded_String; index : Integer);
 

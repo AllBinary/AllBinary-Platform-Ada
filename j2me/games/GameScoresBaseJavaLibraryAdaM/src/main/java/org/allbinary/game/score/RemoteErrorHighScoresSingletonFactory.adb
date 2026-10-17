@@ -28,7 +28,7 @@ package body org.allbinary.game.score.RemoteErrorHighScoresSingletonFactory_Pack
    function Create return RemoteErrorHighScoresSingletonFactory_Access is
       This : constant RemoteErrorHighScoresSingletonFactory_Access := new RemoteErrorHighScoresSingletonFactory;
    begin
-      Initialize (This.all);
+      RemoteErrorHighScoresSingletonFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -36,13 +36,6 @@ package body org.allbinary.game.score.RemoteErrorHighScoresSingletonFactory_Pack
    function getInstance return HighScores_Access is
    begin
         return RemoteErrorHighScoresSingletonFactory_Package.SINGLETON;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant HighScores_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

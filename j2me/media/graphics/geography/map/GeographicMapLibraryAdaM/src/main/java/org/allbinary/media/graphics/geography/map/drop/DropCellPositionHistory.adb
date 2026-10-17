@@ -31,7 +31,7 @@ package body org.allbinary.media.graphics.geography.map.drop.DropCellPositionHis
    function Create return DropCellPositionHistory_Access is
       This : constant DropCellPositionHistory_Access := new DropCellPositionHistory;
    begin
-      Initialize (This.all);
+      DropCellPositionHistory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -124,13 +124,6 @@ package body org.allbinary.media.graphics.geography.map.drop.DropCellPositionHis
             return AllBinaryLayer_Package.NULL_ALLBINARY_LAYER;
         end if;
    end getLayerInterface;
-
-   procedure getInstance is
-      Java_Result : constant DropCellPositionHistory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure isCellPositionWithDrop (This : in out DropCellPositionHistory; cellPosition : CellPosition_Access) is
       Java_Result : constant Boolean := DropCellPositionHistory'Class (This).isCellPositionWithDrop (cellPosition);

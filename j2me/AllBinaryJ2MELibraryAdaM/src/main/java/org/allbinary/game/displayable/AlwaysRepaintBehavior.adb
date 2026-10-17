@@ -30,7 +30,7 @@ package body org.allbinary.game.displayable.AlwaysRepaintBehavior_Package is
    function Create return AlwaysRepaintBehavior_Access is
       This : constant AlwaysRepaintBehavior_Access := new AlwaysRepaintBehavior;
    begin
-      Initialize (This.all);
+      AlwaysRepaintBehavior_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -79,13 +79,6 @@ package body org.allbinary.game.displayable.AlwaysRepaintBehavior_Package is
    begin
         null;
    end onChangeRepaint;
-
-   procedure getInstance is
-      Java_Result : constant AlwaysRepaintBehavior_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

@@ -28,6 +28,7 @@ with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Packag
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.io.AbFileOutputStream_Package; use org.allbinary.logic.io.AbFileOutputStream_Package;
 with org.allbinary.logic.io.StreamUtil_Package; use org.allbinary.logic.io.StreamUtil_Package;
+with org.allbinary.logic.io.file.AbFile_Package; use org.allbinary.logic.io.file.AbFile_Package;
 
 package org.allbinary.logic.io.file.FileLockUtil_Package is
 
@@ -51,7 +52,6 @@ package org.allbinary.logic.io.file.FileLockUtil_Package is
    procedure Initialize (This : in out FileLockUtil'Class);
    function Create return FileLockUtil_Access;
    function getInstance return FileLockUtil_Access;
-   procedure getInstance;
    function getAll (This : in out FileLockUtil; vector : BasicArrayList_Access; isReturnOnFailure : Boolean) return BasicArrayList_Access;
    procedure getAll (This : in out FileLockUtil; vector : BasicArrayList_Access; isReturnOnFailure : Boolean);
    function getAllPossible (This : in out FileLockUtil; vector : BasicArrayList_Access) return BasicArrayList_Access;

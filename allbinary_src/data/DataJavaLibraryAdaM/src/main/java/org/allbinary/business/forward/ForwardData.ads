@@ -39,7 +39,6 @@ package org.allbinary.business.forward.ForwardData_Package is
    procedure Initialize (This : in out ForwardData'Class);
    function Create return ForwardData_Access;
    function getInstance return ForwardData_Access;
-   procedure getInstance;
 
 end org.allbinary.business.forward.ForwardData_Package;
 

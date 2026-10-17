@@ -28,7 +28,7 @@ package body org.allbinary.logic.system.security.crypt.jcehelper.NoCrypt_Package
    function Create return NoCrypt_Access is
       This : constant NoCrypt_Access := new NoCrypt;
    begin
-      Initialize (This.all);
+      NoCrypt_Package.Initialize (This.all);
       return This;
    end Create;
 

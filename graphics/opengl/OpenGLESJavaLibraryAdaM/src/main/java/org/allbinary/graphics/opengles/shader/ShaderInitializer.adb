@@ -29,7 +29,7 @@ package body org.allbinary.graphics.opengles.shader.ShaderInitializer_Package is
    function Create return ShaderInitializer_Access is
       This : constant ShaderInitializer_Access := new ShaderInitializer;
    begin
-      Initialize (This.all);
+      ShaderInitializer_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -43,13 +43,6 @@ package body org.allbinary.graphics.opengles.shader.ShaderInitializer_Package is
    begin
         return -(1);
    end init;
-
-   procedure getInstance is
-      Java_Result : constant ShaderInitializer_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure init (This : in out ShaderInitializer; gl : GL10_Access; shader : Shader_Access_Array_Access; attributeArray : Unbounded_String_Array_Access) is
       Java_Result : constant Integer := ShaderInitializer'Class (This).init (gl, shader, attributeArray);

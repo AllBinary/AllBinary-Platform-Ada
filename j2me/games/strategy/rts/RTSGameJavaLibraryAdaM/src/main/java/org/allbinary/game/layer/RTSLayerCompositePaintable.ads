@@ -24,6 +24,8 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.graphics.paint.Paintable_Package; use org.allbinary.graphics.paint.Paintable_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.game.layer.UpgradableRTSLayerHudPaintable_Package; use org.allbinary.game.layer.UpgradableRTSLayerHudPaintable_Package;
+with org.allbinary.game.layer.RTSLayer_Package; use org.allbinary.game.layer.RTSLayer_Package;
 
 package org.allbinary.game.layer.RTSLayerCompositePaintable_Package is
 
@@ -50,10 +52,8 @@ package org.allbinary.game.layer.RTSLayerCompositePaintable_Package is
    procedure paint (This : in out RTSLayerCompositePaintable; graphics : Graphics_Access);
    procedure setUpgradeCost (This : in out RTSLayerCompositePaintable; upgradeCost : Unbounded_String);
    function getUpgradeCost (This : in out RTSLayerCompositePaintable) return Unbounded_String;
-   procedure getUpgradeCost (This : in out RTSLayerCompositePaintable);
    procedure setDownGradeCost (This : in out RTSLayerCompositePaintable; downGradeCost : Unbounded_String);
    function getDownGradeCost (This : in out RTSLayerCompositePaintable) return Unbounded_String;
-   procedure getDownGradeCost (This : in out RTSLayerCompositePaintable);
 
 end org.allbinary.game.layer.RTSLayerCompositePaintable_Package;
 

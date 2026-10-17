@@ -37,7 +37,7 @@ package body taghelpers.StoreTagWorkFlowHelper_Package is
    function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return StoreTagWorkFlowHelper_Access is
       This : constant StoreTagWorkFlowHelper_Access := new StoreTagWorkFlowHelper;
    begin
-      Initialize (This.all, hashMap, pageContext);
+      StoreTagWorkFlowHelper_Package.Initialize (This.all, hashMap, pageContext);
       return This;
    end Create;
 
@@ -62,13 +62,6 @@ package body taghelpers.StoreTagWorkFlowHelper_Package is
             Java_Throw (e);
                 end;
         end;
-   end process;
-
-   procedure process (This : in out StoreTagWorkFlowHelper) is
-      Java_Result : constant Integer := StoreTagWorkFlowHelper'Class (This).process;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end process;
 
 end taghelpers.StoreTagWorkFlowHelper_Package;

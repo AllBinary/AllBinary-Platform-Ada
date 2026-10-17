@@ -50,7 +50,7 @@ package body org.allbinary.game.ag.layer.hud.basic.PlayerGameNotificationHud_Pac
    function Create (location : Integer; direction : Integer; bufferZone : Integer; basicColor : BasicColor_Access) return PlayerGameNotificationHud_Access is
       This : constant PlayerGameNotificationHud_Access := new PlayerGameNotificationHud;
    begin
-      Initialize (This.all, location, direction, bufferZone, basicColor);
+      PlayerGameNotificationHud_Package.Initialize (This.all, location, direction, bufferZone, basicColor);
       return This;
    end Create;
 
@@ -209,7 +209,7 @@ package body org.allbinary.game.ag.layer.hud.basic.SetAndRemoveProcessor_Package
    function Create (updateMeasurementProcessor : PlayerGameNotificationHud_Access) return SetAndRemoveProcessor_Access is
       This : constant SetAndRemoveProcessor_Access := new SetAndRemoveProcessor;
    begin
-      Initialize (This.all, updateMeasurementProcessor);
+      SetAndRemoveProcessor_Package.Initialize (This.all, updateMeasurementProcessor);
       return This;
    end Create;
     
@@ -241,7 +241,7 @@ package body org.allbinary.game.ag.layer.hud.basic.NextUnremoveableProcessor_Pac
    function Create (updateMeasurementProcessor : PlayerGameNotificationHud_Access) return NextUnremoveableProcessor_Access is
       This : constant NextUnremoveableProcessor_Access := new NextUnremoveableProcessor;
    begin
-      Initialize (This.all, updateMeasurementProcessor);
+      NextUnremoveableProcessor_Package.Initialize (This.all, updateMeasurementProcessor);
       return This;
    end Create;
     

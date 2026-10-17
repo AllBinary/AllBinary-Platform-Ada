@@ -32,7 +32,7 @@ package body org.allbinary.game.layer.special.SpecialGameInputInterfaceProcessor
    function Create (collidableDestroyableDamageableLayer : SpecialGameInputInterface_Access) return SpecialGameInputInterfaceProcessor_Access is
       This : constant SpecialGameInputInterfaceProcessor_Access := new SpecialGameInputInterfaceProcessor;
    begin
-      Initialize (This.all, collidableDestroyableDamageableLayer);
+      SpecialGameInputInterfaceProcessor_Package.Initialize (This.all, collidableDestroyableDamageableLayer);
       return This;
    end Create;
 

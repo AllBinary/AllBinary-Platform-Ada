@@ -28,7 +28,7 @@ package body org.allbinary.globals.URLGLOBALS_Package is
    function Create return URLGLOBALS_Access is
       This : constant URLGLOBALS_Access := new URLGLOBALS;
    begin
-      Initialize (This.all);
+      URLGLOBALS_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -57,34 +57,6 @@ package body org.allbinary.globals.URLGLOBALS_Package is
    function getMainPath return Unbounded_String is
    begin
         return URLGLOBALS.urlGlobalsInterface.getMainPath;
-   end getMainPath;
-
-   procedure isTestingMode is
-      Java_Result : constant Boolean := isTestingMode;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isTestingMode;
-
-   procedure getWebappPath is
-      Java_Result : constant Unbounded_String := getWebappPath;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getWebappPath;
-
-   procedure getTestHtmlPath is
-      Java_Result : constant Unbounded_String := getTestHtmlPath;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTestHtmlPath;
-
-   procedure getMainPath is
-      Java_Result : constant Unbounded_String := getMainPath;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getMainPath;
 
 begin

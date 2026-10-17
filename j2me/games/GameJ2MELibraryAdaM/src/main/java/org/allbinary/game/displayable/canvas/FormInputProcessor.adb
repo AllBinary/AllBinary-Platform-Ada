@@ -39,7 +39,7 @@ package body org.allbinary.game.displayable.canvas.FormInputProcessor_Package is
    function Create (allBinaryGameCanvas : AllBinaryGameCanvas_Access) return FormInputProcessor_Access is
       This : constant FormInputProcessor_Access := new FormInputProcessor;
    begin
-      Initialize (This.all, allBinaryGameCanvas);
+      FormInputProcessor_Package.Initialize (This.all, allBinaryGameCanvas);
       return This;
    end Create;
 

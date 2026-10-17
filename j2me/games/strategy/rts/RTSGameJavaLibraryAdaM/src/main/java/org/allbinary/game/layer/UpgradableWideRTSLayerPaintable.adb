@@ -31,7 +31,7 @@ package body org.allbinary.game.layer.UpgradableWideRTSLayerPaintable_Package is
    function Create (upgradableRTSLayerHudPaintable : UpgradableRTSLayerHudPaintable_Access) return UpgradableWideRTSLayerPaintable_Access is
       This : constant UpgradableWideRTSLayerPaintable_Access := new UpgradableWideRTSLayerPaintable;
    begin
-      Initialize (This.all, upgradableRTSLayerHudPaintable);
+      UpgradableWideRTSLayerPaintable_Package.Initialize (This.all, upgradableRTSLayerHudPaintable);
       return This;
    end Create;
 
@@ -54,13 +54,6 @@ package body org.allbinary.game.layer.UpgradableWideRTSLayerPaintable_Package is
    function getCost (This : in out UpgradableWideRTSLayerPaintable) return Unbounded_String is
    begin
         return This.cost;
-   end getCost;
-
-   procedure getCost (This : in out UpgradableWideRTSLayerPaintable) is
-      Java_Result : constant Unbounded_String := UpgradableWideRTSLayerPaintable'Class (This).getCost;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getCost;
 
 end org.allbinary.game.layer.UpgradableWideRTSLayerPaintable_Package;

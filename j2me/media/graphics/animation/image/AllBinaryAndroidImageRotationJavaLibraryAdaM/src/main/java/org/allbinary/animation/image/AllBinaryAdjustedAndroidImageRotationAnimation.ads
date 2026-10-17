@@ -46,10 +46,8 @@ package org.allbinary.animation.image.AllBinaryAdjustedAndroidImageRotationAnima
    procedure init (This : in out AllBinaryAdjustedAndroidImageRotationAnimation; dx : Integer; dy : Integer);
    procedure setDx (This : in out AllBinaryAdjustedAndroidImageRotationAnimation; dx : Integer);
    function getDx (This : in out AllBinaryAdjustedAndroidImageRotationAnimation) return Integer;
-   procedure getDx (This : in out AllBinaryAdjustedAndroidImageRotationAnimation);
    procedure setDy (This : in out AllBinaryAdjustedAndroidImageRotationAnimation; dy : Integer);
    function getDy (This : in out AllBinaryAdjustedAndroidImageRotationAnimation) return Integer;
-   procedure getDy (This : in out AllBinaryAdjustedAndroidImageRotationAnimation);
    procedure paintXY (This : in out AllBinaryAdjustedAndroidImageRotationAnimation; graphics : Graphics_Access; x : Integer; y : Integer);
 
 end org.allbinary.animation.image.AllBinaryAdjustedAndroidImageRotationAnimation_Package;

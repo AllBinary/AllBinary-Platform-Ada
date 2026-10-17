@@ -22,6 +22,7 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.logic.communication.smtp.info.BasicEmailInfo_Package; use org.allbinary.logic.communication.smtp.info.BasicEmailInfo_Package;
 
 package org.allbinary.logic.communication.smtp.info.EmailInfo_Package is
 
@@ -44,13 +45,9 @@ package org.allbinary.logic.communication.smtp.info.EmailInfo_Package is
    function Create (basicEmailInfo : BasicEmailInfo_Access) return EmailInfo_Access;
    procedure init (This : in out EmailInfo; basicEmailInfo : BasicEmailInfo_Access; htmlAttachment : Unbounded_String; contentBase : Unbounded_String);
    function getBasicEmailInfo (This : in out EmailInfo) return BasicEmailInfo_Access;
-   procedure getBasicEmailInfo (This : in out EmailInfo);
    function getHtmlAttachment (This : in out EmailInfo) return Unbounded_String;
-   procedure getHtmlAttachment (This : in out EmailInfo);
    function getContentBase (This : in out EmailInfo) return Unbounded_String;
-   procedure getContentBase (This : in out EmailInfo);
    function toString (This : in out EmailInfo) return Unbounded_String;
-   procedure toString (This : in out EmailInfo);
 
 end org.allbinary.logic.communication.smtp.info.EmailInfo_Package;
 

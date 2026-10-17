@@ -39,7 +39,7 @@ package body org.allbinary.image.opengles.OpenGLESGL11VBOImage_Package is
    function Create (image : Image_Access; bitmapFactory : PlatformBitmapBaseFactory_Access; textureFactory : PlatformTextureBaseFactory_Access) return OpenGLESGL11VBOImage_Access is
       This : constant OpenGLESGL11VBOImage_Access := new OpenGLESGL11VBOImage;
    begin
-      Initialize (This.all, image, bitmapFactory, textureFactory);
+      OpenGLESGL11VBOImage_Package.Initialize (This.all, image, bitmapFactory, textureFactory);
       return This;
    end Create;
 

@@ -30,7 +30,7 @@ package body org.allbinary.logic.util.cache.CacheInterfaceFactory_Package is
    function Create return CacheInterfaceFactory_Access is
       This : constant CacheInterfaceFactory_Access := new CacheInterfaceFactory;
    begin
-      Initialize (This.all);
+      CacheInterfaceFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

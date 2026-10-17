@@ -60,7 +60,7 @@ package body org.allbinary.graphics.opengles.OpenGLConfiguration_Package is
    function Create return OpenGLConfiguration_Access is
       This : constant OpenGLConfiguration_Access := new OpenGLConfiguration;
    begin
-      Initialize (This.all);
+      OpenGLConfiguration_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -334,55 +334,6 @@ package body org.allbinary.graphics.opengles.OpenGLConfiguration_Package is
         stringBuffer.append (To_Unbounded_String (" Color: "));
         stringBuffer.append (stringUtil.toString (This.getColor));
         return stringBuffer.toString;
-   end toString;
-
-   procedure getInstance is
-      Java_Result : constant OpenGLConfiguration_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure isOpenGL (This : in out OpenGLConfiguration) is
-      Java_Result : constant Boolean := OpenGLConfiguration'Class (This).isOpenGL;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isOpenGL;
-
-   procedure getImageColor (This : in out OpenGLConfiguration) is
-      Java_Result : constant OpenGLFeature_Access := OpenGLConfiguration'Class (This).getImageColor;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getImageColor;
-
-   procedure getColor (This : in out OpenGLConfiguration) is
-      Java_Result : constant OpenGLFeature_Access := OpenGLConfiguration'Class (This).getColor;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getColor;
-
-   procedure getVersionSelector (This : in out OpenGLConfiguration) is
-      Java_Result : constant OpenGLFeature_Access := OpenGLConfiguration'Class (This).getVersionSelector;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getVersionSelector;
-
-   procedure getType (This : in out OpenGLConfiguration) is
-      Java_Result : constant OpenGLFeature_Access := OpenGLConfiguration'Class (This).getType;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getType;
-
-   procedure toString (This : in out OpenGLConfiguration) is
-      Java_Result : constant Unbounded_String := OpenGLConfiguration'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end toString;
 
 begin

@@ -21,6 +21,7 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.input.automation.actions.script.condition.processors.input.ProfileActionScriptInputInterface_Package; use org.allbinary.input.automation.actions.script.condition.processors.input.ProfileActionScriptInputInterface_Package;
+with org.allbinary.input.automation.actions.script.condition.processors.input.Point_Package; use org.allbinary.input.automation.actions.script.condition.processors.input.Point_Package;
 
 package org.allbinary.input.automation.actions.script.condition.processors.input.MouseActionScriptInputInterface_Package is
 

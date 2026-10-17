@@ -32,7 +32,7 @@ package body admin.taghelpers.LogHelperFactory_Package is
    function Create return LogHelperFactory_Access is
       This : constant LogHelperFactory_Access := new LogHelperFactory;
    begin
-      Initialize (This.all);
+      LogHelperFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

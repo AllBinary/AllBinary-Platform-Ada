@@ -28,20 +28,13 @@ package body org.allbinary.media.audio.UpgradeSound_Package is
    function Create return UpgradeSound_Access is
       This : constant UpgradeSound_Access := new UpgradeSound;
    begin
-      Initialize (This.all);
+      UpgradeSound_Package.Initialize (This.all);
       return This;
    end Create;
 
    function getInstance return Sound_Access is
    begin
         return UpgradeSound_Package.soundInterface;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant Sound_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

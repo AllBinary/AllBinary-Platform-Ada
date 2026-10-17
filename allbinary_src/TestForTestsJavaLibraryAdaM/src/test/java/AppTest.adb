@@ -16,7 +16,7 @@ package body AppTest_Package is
    function Create return AppTest_Access is
       This : constant AppTest_Access := new AppTest;
    begin
-      Initialize (This.all);
+      AppTest_Package.Initialize (This.all);
       return This;
    end Create;
 

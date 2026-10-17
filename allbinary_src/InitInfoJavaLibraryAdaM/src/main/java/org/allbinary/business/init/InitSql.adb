@@ -53,7 +53,7 @@ package body org.allbinary.business.init.InitSql_Package is
    function Create (databaseConnectionInfoInterface : DbConnectionInfo_Access) return InitSql_Access is
       This : constant InitSql_Access := new InitSql;
    begin
-      Initialize (This.all, databaseConnectionInfoInterface);
+      InitSql_Package.Initialize (This.all, databaseConnectionInfoInterface);
       return This;
    end Create;
 
@@ -381,13 +381,6 @@ package body org.allbinary.business.init.InitSql_Package is
       null;
    end createTable;
 
-   procedure dropTable (This : in out InitSql) is
-      Java_Result : constant Boolean := InitSql'Class (This).dropTable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end dropTable;
-
    procedure getRow (This : in out InitSql; keysAndValues : HashMap_Access) is
       Java_Result : constant HashMap_Access := InitSql'Class (This).getRow (keysAndValues);
       pragma Unreferenced (Java_Result);
@@ -408,13 +401,6 @@ package body org.allbinary.business.init.InitSql_Package is
    begin
       null;
    end executeSQLStatement;
-
-   procedure getDatabaseConnectionInfoInterface (This : in out InitSql) is
-      Java_Result : constant DatabaseConnectionInfoInterface_Access := InitSql'Class (This).getDatabaseConnectionInfoInterface;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getDatabaseConnectionInfoInterface;
 
 end org.allbinary.business.init.InitSql_Package;
 

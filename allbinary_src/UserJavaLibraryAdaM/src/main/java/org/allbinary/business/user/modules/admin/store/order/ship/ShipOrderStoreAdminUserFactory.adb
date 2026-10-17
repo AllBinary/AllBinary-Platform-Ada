@@ -30,7 +30,7 @@ package body org.allbinary.business.user.modules.admin.store.order.ship.ShipOrde
    function Create return ShipOrderStoreAdminUserFactory_Access is
       This : constant ShipOrderStoreAdminUserFactory_Access := new ShipOrderStoreAdminUserFactory;
    begin
-      Initialize (This.all);
+      ShipOrderStoreAdminUserFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -44,13 +44,6 @@ package body org.allbinary.business.user.modules.admin.store.order.ship.ShipOrde
    function getInstance (This : in out ShipOrderStoreAdminUserFactory; hashMap : HashMap_Access) return UserInterface_Access is
    begin
         return ShipOrderStoreAdminUser_Package.Create (hashMap);
-   end getInstance;
-
-   procedure getInstance (This : in out ShipOrderStoreAdminUserFactory) is
-      Java_Result : constant UserInterface_Access := ShipOrderStoreAdminUserFactory'Class (This).getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
    procedure getInstance (This : in out ShipOrderStoreAdminUserFactory; hashMap : HashMap_Access) is

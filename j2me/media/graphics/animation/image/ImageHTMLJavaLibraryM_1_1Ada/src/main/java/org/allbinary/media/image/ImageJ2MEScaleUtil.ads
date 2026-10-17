@@ -48,7 +48,6 @@ package org.allbinary.media.image.ImageJ2MEScaleUtil_Package is
    procedure Initialize (This : in out ImageJ2MEScaleUtil'Class);
    function Create return ImageJ2MEScaleUtil_Access;
    function getInstance return ImageJ2MEScaleUtil_Access;
-   procedure getInstance;
    function scaleArray (This : in out ImageJ2MEScaleUtil; images : Image_Access_Array_Access; width : Integer; height : Integer) return Image_Access_Array_Access;
    procedure scaleArray (This : in out ImageJ2MEScaleUtil; images : Image_Access_Array_Access; width : Integer; height : Integer);
    function scale (This : in out ImageJ2MEScaleUtil; image : Image_Access; width : Integer; height : Integer) return Image_Access;

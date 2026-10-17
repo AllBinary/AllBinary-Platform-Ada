@@ -48,7 +48,6 @@ package org.allbinary.business.category.CategoryData_Package is
    procedure Initialize (This : in out CategoryData'Class);
    function Create return CategoryData_Access;
    function getInstance return CategoryData_Access;
-   procedure getInstance;
 
 end org.allbinary.business.category.CategoryData_Package;
 

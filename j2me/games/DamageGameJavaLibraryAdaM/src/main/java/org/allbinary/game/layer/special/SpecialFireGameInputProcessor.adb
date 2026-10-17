@@ -29,7 +29,7 @@ package body org.allbinary.game.layer.special.SpecialFireGameInputProcessor_Pack
    function Create (collidableDestroyableDamageableLayer : CollidableDestroyableDamageableLayer_Access) return SpecialFireGameInputProcessor_Access is
       This : constant SpecialFireGameInputProcessor_Access := new SpecialFireGameInputProcessor;
    begin
-      Initialize (This.all, collidableDestroyableDamageableLayer);
+      SpecialFireGameInputProcessor_Package.Initialize (This.all, collidableDestroyableDamageableLayer);
       return This;
    end Create;
 

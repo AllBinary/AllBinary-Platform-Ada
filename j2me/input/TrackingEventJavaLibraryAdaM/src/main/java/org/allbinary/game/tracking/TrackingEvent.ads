@@ -23,6 +23,7 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+with org.allbinary.game.tracking.TrackingEventHandler_Package; use org.allbinary.game.tracking.TrackingEventHandler_Package;
 
 package org.allbinary.game.tracking.TrackingEvent_Package is
 
@@ -43,11 +44,9 @@ package org.allbinary.game.tracking.TrackingEvent_Package is
    function Create (allBinaryLayerInterface : Java_Object_Access) return TrackingEvent_Access;
    procedure init (This : in out TrackingEvent; anyType : Java_Object_Access);
    function getLayerInterface (This : in out TrackingEvent) return AllBinaryLayer_Access;
-   procedure getLayerInterface (This : in out TrackingEvent);
    procedure setLayerInterface (This : in out TrackingEvent; layerInterface : AllBinaryLayer_Access);
    procedure setLayerInterfaceForCircularStaticPool (This : in out TrackingEvent; layerInterface : AllBinaryLayer_Access);
    function toString (This : in out TrackingEvent) return Unbounded_String;
-   procedure toString (This : in out TrackingEvent);
 
 end org.allbinary.game.tracking.TrackingEvent_Package;
 

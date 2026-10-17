@@ -55,7 +55,6 @@ package views.admin.storefront.statistics.StoreFrontStatisticsComponent_Package 
    function Create (transformInfoInterface : TransformInfoInterface_Access) return StoreFrontStatisticsComponent_Access;
    procedure addDomNodeInterfaces (This : in out StoreFrontStatisticsComponent);
    function view (This : in out StoreFrontStatisticsComponent) return Unbounded_String;
-   procedure view (This : in out StoreFrontStatisticsComponent);
 
 end views.admin.storefront.statistics.StoreFrontStatisticsComponent_Package;
 

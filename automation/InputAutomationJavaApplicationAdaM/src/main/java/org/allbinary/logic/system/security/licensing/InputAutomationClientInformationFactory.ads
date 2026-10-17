@@ -20,6 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
+with org.allbinary.logic.system.security.licensing.InputAutomationClientInformation_Package; use org.allbinary.logic.system.security.licensing.InputAutomationClientInformation_Package;
 
 package org.allbinary.logic.system.security.licensing.InputAutomationClientInformationFactory_Package is
 
@@ -35,7 +36,6 @@ package org.allbinary.logic.system.security.licensing.InputAutomationClientInfor
    procedure Initialize (This : in out InputAutomationClientInformationFactory'Class);
    function Create return InputAutomationClientInformationFactory_Access;
    function getInstance return InputAutomationClientInformation_Access;
-   procedure getInstance;
 
 end org.allbinary.logic.system.security.licensing.InputAutomationClientInformationFactory_Package;
 

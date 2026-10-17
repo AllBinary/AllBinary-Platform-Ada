@@ -32,7 +32,7 @@ package body org.allbinary.game.ag.ai.tactical.LurchAI_Package is
    function Create (ownerLayerInterface : AllBinaryLayer_Access; gameInput : GameInput_Access) return LurchAI_Access is
       This : constant LurchAI_Access := new LurchAI;
    begin
-      Initialize (This.all, ownerLayerInterface, gameInput);
+      LurchAI_Package.Initialize (This.all, ownerLayerInterface, gameInput);
       return This;
    end Create;
 

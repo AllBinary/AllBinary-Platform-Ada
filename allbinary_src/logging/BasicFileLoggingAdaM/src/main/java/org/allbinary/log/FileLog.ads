@@ -60,19 +60,16 @@ package org.allbinary.log.FileLog_Package is
    procedure Initialize (This : in out FileLog'Class);
    function Create return FileLog_Access;
    function createLogFile return Boolean;
-   procedure createLogFile;
    function createLogFileBackup return Boolean;
-   procedure createLogFileBackup;
    function put (specialMessage : Unbounded_String; anyType : Java_Object_Access; functionName : Unbounded_String) return Unbounded_String;
    procedure put (specialMessage : Unbounded_String; anyType : Java_Object_Access; functionName : Unbounded_String);
-   function put (specialMessage : Unbounded_String; anyType : Java_Object_Access; functionName : Unbounded_String; exception_Id : Java_Throwable) return Unbounded_String;
-   procedure put (specialMessage : Unbounded_String; anyType : Java_Object_Access; functionName : Unbounded_String; exception_Id : Java_Throwable);
+   function put (specialMessage_Param : Unbounded_String; anyType : Java_Object_Access; functionName_Param : Unbounded_String; exception_Id : Java_Throwable) return Unbounded_String;
+   procedure put (specialMessage_Param : Unbounded_String; anyType : Java_Object_Access; functionName_Param : Unbounded_String; exception_Id : Java_Throwable);
    function put (specialMessage : Unbounded_String; className : Unbounded_String; functionName : Unbounded_String) return Unbounded_String;
    procedure put (specialMessage : Unbounded_String; className : Unbounded_String; functionName : Unbounded_String);
-   function put (specialMessage : Unbounded_String; className : Unbounded_String; functionName : Unbounded_String; exception_Id : Java_Throwable) return Unbounded_String;
-   procedure put (specialMessage : Unbounded_String; className : Unbounded_String; functionName : Unbounded_String; exception_Id : Java_Throwable);
+   function put (specialMessage_Param : Unbounded_String; className : Unbounded_String; functionName_Param : Unbounded_String; exception_Id : Java_Throwable) return Unbounded_String;
+   procedure put (specialMessage_Param : Unbounded_String; className : Unbounded_String; functionName_Param : Unbounded_String; exception_Id : Java_Throwable);
    function getFilePath return Unbounded_String;
-   procedure getFilePath;
 
 end org.allbinary.log.FileLog_Package;
 

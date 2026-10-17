@@ -50,7 +50,6 @@ package org.allbinary.logic.visual.dhtml.html.table.HtmlTableData_Package is
    procedure Initialize (This : in out HtmlTableData'Class);
    function Create return HtmlTableData_Access;
    function getInstance return HtmlTableData_Access;
-   procedure getInstance;
 
 end org.allbinary.logic.visual.dhtml.html.table.HtmlTableData_Package;
 

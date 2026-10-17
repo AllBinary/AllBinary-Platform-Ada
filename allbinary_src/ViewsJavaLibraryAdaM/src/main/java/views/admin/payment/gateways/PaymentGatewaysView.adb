@@ -33,7 +33,7 @@ package body views.admin.payment.gateways.PaymentGatewaysView_Package is
    function Create (transformInfoInterface : TransformInfoInterface_Access; gatewayVector : BasicArrayList_Access) return PaymentGatewaysView_Access is
       This : constant PaymentGatewaysView_Access := new PaymentGatewaysView;
    begin
-      Initialize (This.all, transformInfoInterface, gatewayVector);
+      PaymentGatewaysView_Package.Initialize (This.all, transformInfoInterface, gatewayVector);
       return This;
    end Create;
 
@@ -103,13 +103,6 @@ package body views.admin.payment.gateways.PaymentGatewaysView_Package is
    begin
       null;
    end toXmlNode;
-
-   procedure view (This : in out PaymentGatewaysView) is
-      Java_Result : constant Unbounded_String := PaymentGatewaysView'Class (This).view;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end view;
 
 end views.admin.payment.gateways.PaymentGatewaysView_Package;
 

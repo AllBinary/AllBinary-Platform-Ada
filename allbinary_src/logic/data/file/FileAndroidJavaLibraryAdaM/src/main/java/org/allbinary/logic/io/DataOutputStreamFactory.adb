@@ -28,7 +28,7 @@ package body org.allbinary.logic.io.DataOutputStreamFactory_Package is
    function Create return DataOutputStreamFactory_Access is
       This : constant DataOutputStreamFactory_Access := new DataOutputStreamFactory;
    begin
-      Initialize (This.all);
+      DataOutputStreamFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -58,13 +58,6 @@ package body org.allbinary.logic.io.DataOutputStreamFactory_Package is
         fileOutputStream := fileStreamFactory.getFileOutputStreamInstance (filePath, fileName);
         idOutData := AbDataOutputStream_Package.Create (fileOutputStream);
         return idOutData;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant DataOutputStreamFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
    procedure getInstanceForAbFile (This : in out DataOutputStreamFactory; file : AbFile_Access) is

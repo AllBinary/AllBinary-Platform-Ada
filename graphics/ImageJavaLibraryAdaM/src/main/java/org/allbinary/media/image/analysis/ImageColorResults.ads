@@ -20,6 +20,8 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
+with org.allbinary.media.image.analysis.ColorRange_Package; use org.allbinary.media.image.analysis.ColorRange_Package;
+with org.allbinary.media.image.analysis.ColorAverage_Package; use org.allbinary.media.image.analysis.ColorAverage_Package;
 
 package org.allbinary.media.image.analysis.ImageColorResults_Package is
 
@@ -37,10 +39,8 @@ package org.allbinary.media.image.analysis.ImageColorResults_Package is
    procedure Initialize (This : in out ImageColorResults'Class);
    function Create return ImageColorResults_Access;
    function getColorRange (This : in out ImageColorResults) return ColorRange_Access;
-   procedure getColorRange (This : in out ImageColorResults);
    procedure setColorRange (This : in out ImageColorResults; colorRange : ColorRange_Access);
    function getColorAverage (This : in out ImageColorResults) return ColorAverage_Access;
-   procedure getColorAverage (This : in out ImageColorResults);
    procedure setColorAverage (This : in out ImageColorResults; colorAverage : ColorAverage_Access);
 
 end org.allbinary.media.image.analysis.ImageColorResults_Package;

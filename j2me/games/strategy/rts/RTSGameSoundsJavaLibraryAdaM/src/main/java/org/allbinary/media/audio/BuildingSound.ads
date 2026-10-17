@@ -38,7 +38,6 @@ package org.allbinary.media.audio.BuildingSound_Package is
    procedure Initialize (This : in out BuildingSound'Class);
    function Create return BuildingSound_Access;
    function getInstance return Sound_Access;
-   procedure getInstance;
 
 end org.allbinary.media.audio.BuildingSound_Package;
 

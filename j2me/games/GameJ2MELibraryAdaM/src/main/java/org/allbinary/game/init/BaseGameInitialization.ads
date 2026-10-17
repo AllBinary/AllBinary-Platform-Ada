@@ -85,16 +85,12 @@ package org.allbinary.game.init.BaseGameInitialization_Package is
    procedure init (This : in out BaseGameInitialization; abeClientInformation : AbeClientInformationInterface_Access; commandListener : CommandListener_Access; level : Integer);
    procedure resourceInitialization (This : in out BaseGameInitialization; level : Integer);
    function resourceAnimationChange (This : in out BaseGameInitialization) return Boolean;
-   procedure resourceAnimationChange (This : in out BaseGameInitialization);
    procedure clearResources (This : in out BaseGameInitialization);
    procedure setGameInitialized (This : in out BaseGameInitialization; gameInitialized : Boolean);
    function isGameInitialized (This : in out BaseGameInitialization) return Boolean;
-   procedure isGameInitialized (This : in out BaseGameInitialization);
    function getPortion (This : in out BaseGameInitialization) return Integer;
-   procedure getPortion (This : in out BaseGameInitialization);
    procedure setInitialized (This : in out BaseGameInitialization; initialized : Boolean);
    function isInitialized (This : in out BaseGameInitialization) return Boolean;
-   procedure isInitialized (This : in out BaseGameInitialization);
 
 end org.allbinary.game.init.BaseGameInitialization_Package;
 

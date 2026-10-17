@@ -46,9 +46,7 @@ package workflows.template.data.Properties_Package is
    procedure Initialize (This : in out Properties'Class);
    function Create return Properties_Access;
    function getPropertiesHashMap (This : in out Properties) return HashMap_Access;
-   procedure getPropertiesHashMap (This : in out Properties);
    function doEndTag (This : in out Properties) return Integer;
-   procedure doEndTag (This : in out Properties);
 
 end workflows.template.data.Properties_Package;
 

@@ -17,7 +17,7 @@ package body org.allbinary.animation.FixedPoint_Package is
    function Create return FixedPoint_Access is
       This : constant FixedPoint_Access := new FixedPoint;
    begin
-      Initialize (This.all);
+      FixedPoint_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -51,13 +51,6 @@ package body org.allbinary.animation.FixedPoint_Package is
    begin
         return Java_Shift_Right_Arithmetic (fixed, 16);
    end toInt;
-
-   procedure getInstance is
-      Java_Result : constant FixedPoint_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure toFixed (This : in out FixedPoint; val : Long_Float) is
       Java_Result : constant Integer := FixedPoint'Class (This).toFixed (val);

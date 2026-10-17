@@ -31,7 +31,7 @@ package body tags.admin.inventory.InventoryTag_Package is
    function Create return InventoryTag_Access is
       This : constant InventoryTag_Access := new InventoryTag;
    begin
-      Initialize (This.all);
+      InventoryTag_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -72,13 +72,6 @@ package body tags.admin.inventory.InventoryTag_Package is
             return SKIP_BODY;
                 end;
         end;
-   end doStartTag;
-
-   procedure doStartTag (This : in out InventoryTag) is
-      Java_Result : constant Integer := InventoryTag'Class (This).doStartTag;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end doStartTag;
 
 end tags.admin.inventory.InventoryTag_Package;

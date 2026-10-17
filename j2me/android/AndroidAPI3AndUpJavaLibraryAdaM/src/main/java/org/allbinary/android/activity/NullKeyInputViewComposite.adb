@@ -28,7 +28,7 @@ package body org.allbinary.android.activity.NullKeyInputViewComposite_Package is
    function Create return NullKeyInputViewComposite_Access is
       This : constant NullKeyInputViewComposite_Access := new NullKeyInputViewComposite;
    begin
-      Initialize (This.all);
+      NullKeyInputViewComposite_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -52,20 +52,6 @@ package body org.allbinary.android.activity.NullKeyInputViewComposite_Package is
    begin
         null;
    end runOnUiThread;
-
-   procedure getRootView (This : in out NullKeyInputViewComposite) is
-      Java_Result : constant View_Access := NullKeyInputViewComposite'Class (This).getRootView;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getRootView;
-
-   procedure getView (This : in out NullKeyInputViewComposite) is
-      Java_Result : constant View_Access := NullKeyInputViewComposite'Class (This).getView;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getView;
 
 begin
    null;

@@ -49,7 +49,7 @@ package body org.allbinary.game.layer.AllBinaryGameLayerManager_Package is
    function Create (backgroundBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access; gameInfo : GameInfo_Access) return AllBinaryGameLayerManager_Access is
       This : constant AllBinaryGameLayerManager_Access := new AllBinaryGameLayerManager;
    begin
-      Initialize (This.all, backgroundBasicColor, foregroundBasicColor, gameInfo);
+      AllBinaryGameLayerManager_Package.Initialize (This.all, backgroundBasicColor, foregroundBasicColor, gameInfo);
       return This;
    end Create;
 
@@ -116,48 +116,6 @@ package body org.allbinary.game.layer.AllBinaryGameLayerManager_Package is
    function getPlayerGameInputCompositeInterface (This : in out AllBinaryGameLayerManager) return PlayerGameInputCompositeInterface_Access is
    begin
         return This.playerGameInputCompositeInterface;
-   end getPlayerGameInputCompositeInterface;
-
-   procedure getNullInstance is
-      Java_Result : constant AllBinaryGameLayerManager_Access := getNullInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getNullInstance;
-
-   procedure getLayerManager (This : in out AllBinaryGameLayerManager) is
-      Java_Result : constant AllBinaryLayerManager_Access := AllBinaryGameLayerManager'Class (This).getLayerManager;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getLayerManager;
-
-   procedure getBackgroundBasicColor (This : in out AllBinaryGameLayerManager) is
-      Java_Result : constant BasicColor_Access := AllBinaryGameLayerManager'Class (This).getBackgroundBasicColor;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getBackgroundBasicColor;
-
-   procedure getForegroundBasicColor (This : in out AllBinaryGameLayerManager) is
-      Java_Result : constant BasicColor_Access := AllBinaryGameLayerManager'Class (This).getForegroundBasicColor;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getForegroundBasicColor;
-
-   procedure getGameInfo (This : in out AllBinaryGameLayerManager) is
-      Java_Result : constant GameInfo_Access := AllBinaryGameLayerManager'Class (This).getGameInfo;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getGameInfo;
-
-   procedure getPlayerGameInputCompositeInterface (This : in out AllBinaryGameLayerManager) is
-      Java_Result : constant PlayerGameInputCompositeInterface_Access := AllBinaryGameLayerManager'Class (This).getPlayerGameInputCompositeInterface;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getPlayerGameInputCompositeInterface;
 
 begin

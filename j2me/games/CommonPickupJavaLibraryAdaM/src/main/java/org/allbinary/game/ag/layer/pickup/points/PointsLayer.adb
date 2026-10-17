@@ -32,7 +32,7 @@ package body org.allbinary.game.ag.layer.pickup.points.PointsLayer_Package is
    function Create (points : Integer) return PointsLayer_Access is
       This : constant PointsLayer_Access := new PointsLayer;
    begin
-      Initialize (This.all, points);
+      PointsLayer_Package.Initialize (This.all, points);
       return This;
    end Create;
 

@@ -36,7 +36,6 @@ package org.allbinary.game.collision.CollisionType_Package is
    procedure Initialize (This : in out CollisionType'Class; name : Unbounded_String);
    function Create (name : Unbounded_String) return CollisionType_Access;
    function toString (This : in out CollisionType) return Unbounded_String;
-   procedure toString (This : in out CollisionType);
 
 end org.allbinary.game.collision.CollisionType_Package;
 

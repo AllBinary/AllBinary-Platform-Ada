@@ -42,7 +42,7 @@ package body org.allbinary.game.configuration.feature.GameFeatureItemStateListen
    function Create (gameOptionsForm : GameOptionsForm_Access) return GameFeatureItemStateListener_Access is
       This : constant GameFeatureItemStateListener_Access := new GameFeatureItemStateListener;
    begin
-      Initialize (This.all, gameOptionsForm);
+      GameFeatureItemStateListener_Package.Initialize (This.all, gameOptionsForm);
       return This;
    end Create;
 

@@ -38,7 +38,7 @@ package body org.allbinary.osgi.service.InputAutomationServiceConsumer_Package i
    function Create (registryName : Unbounded_String; bundleContext : BundleContext_Access; osgiServiceVisitorInterface : OSGIServiceVisitorInterface_Access) return InputAutomationServiceConsumer_Access is
       This : constant InputAutomationServiceConsumer_Access := new InputAutomationServiceConsumer;
    begin
-      Initialize (This.all, registryName, bundleContext, osgiServiceVisitorInterface);
+      InputAutomationServiceConsumer_Package.Initialize (This.all, registryName, bundleContext, osgiServiceVisitorInterface);
       return This;
    end Create;
 
@@ -97,34 +97,6 @@ package body org.allbinary.osgi.service.InputAutomationServiceConsumer_Package i
    begin
         This.osgiServiceVisitorInterface := osgiServiceVisitorInterface;
    end setOsgiServiceVisitorInterface;
-
-   procedure getServiceReferences (This : in out InputAutomationServiceConsumer) is
-      Java_Result : constant ServiceReference_Access_Array_Access := InputAutomationServiceConsumer'Class (This).getServiceReferences;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getServiceReferences;
-
-   procedure getBundleContext (This : in out InputAutomationServiceConsumer) is
-      Java_Result : constant BundleContext_Access := InputAutomationServiceConsumer'Class (This).getBundleContext;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getBundleContext;
-
-   procedure getRegistryName (This : in out InputAutomationServiceConsumer) is
-      Java_Result : constant Unbounded_String := InputAutomationServiceConsumer'Class (This).getRegistryName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getRegistryName;
-
-   procedure getOsgiServiceVisitorInterface (This : in out InputAutomationServiceConsumer) is
-      Java_Result : constant OSGIServiceVisitorInterface_Access := InputAutomationServiceConsumer'Class (This).getOsgiServiceVisitorInterface;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getOsgiServiceVisitorInterface;
 
 end org.allbinary.osgi.service.InputAutomationServiceConsumer_Package;
 

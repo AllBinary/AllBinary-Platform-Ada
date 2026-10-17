@@ -16,7 +16,7 @@ package body javax.microedition.lcdui.NullCommandListener_Package is
    function Create return NullCommandListener_Access is
       This : constant NullCommandListener_Access := new NullCommandListener;
    begin
-      Initialize (This.all);
+      NullCommandListener_Package.Initialize (This.all);
       return This;
    end Create;
 

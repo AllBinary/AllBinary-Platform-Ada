@@ -42,7 +42,6 @@ package org.allbinary.logic.system.hardware.components.linux.Monitor_Package is
    function compareTo (This : in out Monitor; componentInterface : HardwareComponentInterface_Access) return Boolean;
    procedure compareTo (This : in out Monitor; componentInterface : HardwareComponentInterface_Access);
    function toString (This : in out Monitor) return Unbounded_String;
-   procedure toString (This : in out Monitor);
 
 end org.allbinary.logic.system.hardware.components.linux.Monitor_Package;
 

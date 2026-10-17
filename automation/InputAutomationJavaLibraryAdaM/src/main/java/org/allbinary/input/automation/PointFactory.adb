@@ -30,7 +30,7 @@ package body org.allbinary.input.automation.PointFactory_Package is
    function Create return PointFactory_Access is
       This : constant PointFactory_Access := new PointFactory;
    begin
-      Initialize (This.all);
+      PointFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

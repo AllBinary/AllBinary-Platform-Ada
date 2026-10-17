@@ -37,7 +37,7 @@ package body org.allbinary.game.input.event.PressGameKeyEventHandler_Package is
    function Create return PressGameKeyEventHandler_Access is
       This : constant PressGameKeyEventHandler_Access := new PressGameKeyEventHandler;
    begin
-      Initialize (This.all);
+      PressGameKeyEventHandler_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -89,13 +89,6 @@ package body org.allbinary.game.input.event.PressGameKeyEventHandler_Package is
         pressGameKeyEventListenerInterface := (PressGameKeyEventListenerInterface_Access (eventListenerInterface));
         pressGameKeyEventListenerInterface.onPressGameKeyEvent (GameKeyEvent_Access (eventObject));
    end process;
-
-   procedure getInstance is
-      Java_Result : constant PressGameKeyEventHandler_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

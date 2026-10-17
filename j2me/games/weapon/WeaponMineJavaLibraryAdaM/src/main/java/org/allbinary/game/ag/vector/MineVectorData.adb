@@ -30,7 +30,7 @@ package body org.allbinary.game.ag.vector.MineVectorData_Package is
    function Create return MineVectorData_Access is
       This : constant MineVectorData_Access := new MineVectorData;
    begin
-      Initialize (This.all);
+      MineVectorData_Package.Initialize (This.all);
       return This;
    end Create;
 

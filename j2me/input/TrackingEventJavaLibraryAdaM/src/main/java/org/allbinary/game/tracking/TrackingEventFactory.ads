@@ -22,6 +22,8 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbinary.logic.util.event.AllBinaryEventObject_Package;
 with org.allbinary.logic.util.event.AllBinaryEventObjectFactoryInterface_Package; use org.allbinary.logic.util.event.AllBinaryEventObjectFactoryInterface_Package;
+with org.allbinary.game.tracking.TrackingEvent_Package; use org.allbinary.game.tracking.TrackingEvent_Package;
+with org.allbinary.game.tracking.TrackingEventHandler_Package; use org.allbinary.game.tracking.TrackingEventHandler_Package;
 
 package org.allbinary.game.tracking.TrackingEventFactory_Package is
 
@@ -38,7 +40,6 @@ package org.allbinary.game.tracking.TrackingEventFactory_Package is
    procedure Initialize (This : in out TrackingEventFactory'Class);
    function Create return TrackingEventFactory_Access;
    function getInstance (This : in out TrackingEventFactory) return AllBinaryEventObject_Access;
-   procedure getInstance (This : in out TrackingEventFactory);
 
 end org.allbinary.game.tracking.TrackingEventFactory_Package;
 

@@ -32,7 +32,7 @@ package body org.allbinary.animation.compound.SimultaneousCompoundRotationAnimat
    function Create (animationInterfaceArray : RotationAnimation_Access_Array_Access; animationBehavior : AnimationBehavior_Access) return SimultaneousCompoundRotationAnimation_Access is
       This : constant SimultaneousCompoundRotationAnimation_Access := new SimultaneousCompoundRotationAnimation;
    begin
-      Initialize (This.all, animationInterfaceArray, animationBehavior);
+      SimultaneousCompoundRotationAnimation_Package.Initialize (This.all, animationInterfaceArray, animationBehavior);
       return This;
    end Create;
 
@@ -182,48 +182,6 @@ package body org.allbinary.animation.compound.SimultaneousCompoundRotationAnimat
             This.animationInterfaceArray (index).set (gl);
         end loop;
    end set;
-
-   procedure getFrame (This : in out SimultaneousCompoundRotationAnimation) is
-      Java_Result : constant Integer := SimultaneousCompoundRotationAnimation'Class (This).getFrame;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getFrame;
-
-   procedure getAnimationSize (This : in out SimultaneousCompoundRotationAnimation) is
-      Java_Result : constant Integer := SimultaneousCompoundRotationAnimation'Class (This).getAnimationSize;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getAnimationSize;
-
-   procedure getSize (This : in out SimultaneousCompoundRotationAnimation) is
-      Java_Result : constant Integer := SimultaneousCompoundRotationAnimation'Class (This).getSize;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSize;
-
-   procedure getSequence (This : in out SimultaneousCompoundRotationAnimation) is
-      Java_Result : constant Integer_Array_Access := SimultaneousCompoundRotationAnimation'Class (This).getSequence;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSequence;
-
-   procedure getAngleInfoP (This : in out SimultaneousCompoundRotationAnimation) is
-      Java_Result : constant AngleInfo_Access := SimultaneousCompoundRotationAnimation'Class (This).getAngleInfoP;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getAngleInfoP;
-
-   procedure getAnimationInterfaceArray (This : in out SimultaneousCompoundRotationAnimation) is
-      Java_Result : constant RotationAnimation_Access_Array_Access := SimultaneousCompoundRotationAnimation'Class (This).getAnimationInterfaceArray;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getAnimationInterfaceArray;
 
 end org.allbinary.animation.compound.SimultaneousCompoundRotationAnimation_Package;
 

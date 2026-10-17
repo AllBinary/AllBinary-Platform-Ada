@@ -34,7 +34,7 @@ package body org.allbinary.game.identification.Group_Package is
    function Create (teamName : Unbounded_String; teamId : Short_Integer) return Group_Access is
       This : constant Group_Access := new Group;
    begin
-      Initialize (This.all, teamName, teamId);
+      Group_Package.Initialize (This.all, teamName, teamId);
       return This;
    end Create;
 
@@ -65,27 +65,6 @@ package body org.allbinary.game.identification.Group_Package is
    function toString (This : in out Group) return Unbounded_String is
    begin
         return This.string_Id;
-   end toString;
-
-   procedure getGroupName (This : in out Group) is
-      Java_Result : constant Unbounded_String := Group'Class (This).getGroupName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getGroupName;
-
-   procedure getGroupId (This : in out Group) is
-      Java_Result : constant Short_Integer := Group'Class (This).getGroupId;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getGroupId;
-
-   procedure toString (This : in out Group) is
-      Java_Result : constant Unbounded_String := Group'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end toString;
 
 end org.allbinary.game.identification.Group_Package;

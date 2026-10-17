@@ -24,6 +24,7 @@ with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBina
 with org.allbinary.layer.AllBinaryLayerManager_Package; use org.allbinary.layer.AllBinaryLayerManager_Package;
 with org.allbinary.layer.BasicLayerProcessor_Package; use org.allbinary.layer.BasicLayerProcessor_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.game.layer.drop.DropLayerInterface_Package; use org.allbinary.game.layer.drop.DropLayerInterface_Package;
 
 package org.allbinary.game.layer.drop.DropLayerProcessor_Package is
 
@@ -43,7 +44,6 @@ package org.allbinary.game.layer.drop.DropLayerProcessor_Package is
    procedure Initialize (This : in out DropLayerProcessor'Class);
    function Create return DropLayerProcessor_Access;
    function getInstance return BasicLayerProcessor_Access;
-   procedure getInstance;
    procedure process (This : in out DropLayerProcessor; allBinaryLayerManager : AllBinaryLayerManager_Access);
 
 end org.allbinary.game.layer.drop.DropLayerProcessor_Package;

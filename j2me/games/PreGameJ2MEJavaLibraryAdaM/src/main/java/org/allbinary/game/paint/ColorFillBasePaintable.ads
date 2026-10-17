@@ -47,9 +47,7 @@ package org.allbinary.game.paint.ColorFillBasePaintable_Package is
    function Create (basicColor : BasicColor_Access) return ColorFillBasePaintable_Access;
    procedure setBasicColorP (This : in out ColorFillBasePaintable; basicColor : BasicColor_Access);
    function getBasicColorP (This : in out ColorFillBasePaintable) return BasicColor_Access;
-   procedure getBasicColorP (This : in out ColorFillBasePaintable);
    function getColor (This : in out ColorFillBasePaintable) return Integer;
-   procedure getColor (This : in out ColorFillBasePaintable);
    procedure setColor (This : in out ColorFillBasePaintable; color : Integer);
    procedure paint (This : in out ColorFillBasePaintable; graphics : Graphics_Access);
 

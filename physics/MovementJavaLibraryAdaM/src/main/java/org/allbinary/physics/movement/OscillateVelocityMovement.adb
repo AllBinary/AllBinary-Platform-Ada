@@ -36,7 +36,7 @@ package body org.allbinary.physics.movement.OscillateVelocityMovement_Package is
    function Create (speedBasicDecimal : BasicDecimal_Access; oscillateMin : Integer; oscillateMax : Integer) return OscillateVelocityMovement_Access is
       This : constant OscillateVelocityMovement_Access := new OscillateVelocityMovement;
    begin
-      Initialize (This.all, speedBasicDecimal, oscillateMin, oscillateMax);
+      OscillateVelocityMovement_Package.Initialize (This.all, speedBasicDecimal, oscillateMin, oscillateMax);
       return This;
    end Create;
 

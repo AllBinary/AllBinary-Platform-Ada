@@ -30,7 +30,7 @@ package body org.allbinary.game.score.remote.TestRemoteHighScoresNotFinished_Pac
    function Create return TestRemoteHighScoresNotFinished_Access is
       This : constant TestRemoteHighScoresNotFinished_Access := new TestRemoteHighScoresNotFinished;
    begin
-      Initialize (This.all);
+      TestRemoteHighScoresNotFinished_Package.Initialize (This.all);
       return This;
    end Create;
 

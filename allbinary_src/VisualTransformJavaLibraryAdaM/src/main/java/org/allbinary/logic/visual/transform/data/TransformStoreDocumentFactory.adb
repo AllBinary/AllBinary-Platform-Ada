@@ -30,7 +30,7 @@ package body org.allbinary.logic.visual.transform.data.TransformStoreDocumentFac
    function Create return TransformStoreDocumentFactory_Access is
       This : constant TransformStoreDocumentFactory_Access := new TransformStoreDocumentFactory;
    begin
-      Initialize (This.all);
+      TransformStoreDocumentFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

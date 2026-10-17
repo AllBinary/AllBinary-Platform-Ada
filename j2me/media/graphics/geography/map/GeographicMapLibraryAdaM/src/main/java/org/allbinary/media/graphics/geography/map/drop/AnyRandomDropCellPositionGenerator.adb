@@ -31,7 +31,7 @@ package body org.allbinary.media.graphics.geography.map.drop.AnyRandomDropCellPo
    function Create return AnyRandomDropCellPositionGenerator_Access is
       This : constant AnyRandomDropCellPositionGenerator_Access := new AnyRandomDropCellPositionGenerator;
    begin
-      Initialize (This.all);
+      AnyRandomDropCellPositionGenerator_Package.Initialize (This.all);
       return This;
    end Create;
 

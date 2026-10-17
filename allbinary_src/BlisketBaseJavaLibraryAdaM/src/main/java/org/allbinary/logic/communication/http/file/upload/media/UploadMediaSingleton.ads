@@ -56,7 +56,6 @@ package org.allbinary.logic.communication.http.file.upload.media.UploadMediaSing
    procedure Initialize (This : in out UploadMediaSingleton'Class);
    function Create return UploadMediaSingleton_Access;
    function getInstance return UploadMediaSingleton_Access;
-   procedure getInstance;
    function isReaderSupported (This : in out UploadMediaSingleton; mediaFileType : Unbounded_String) return Boolean;
    procedure isReaderSupported (This : in out UploadMediaSingleton; mediaFileType : Unbounded_String);
    function isWriterSupported (This : in out UploadMediaSingleton; mediaFileType : Unbounded_String) return Boolean;

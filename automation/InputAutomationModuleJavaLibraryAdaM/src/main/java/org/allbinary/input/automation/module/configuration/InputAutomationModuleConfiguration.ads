@@ -77,13 +77,10 @@ package org.allbinary.input.automation.module.configuration.InputAutomationModul
    function toDomNode (This : in out InputAutomationModuleConfiguration; document : Document_Access) return Node_Access;
    procedure toDomNode (This : in out InputAutomationModuleConfiguration; document : Document_Access);
    function getName (This : in out InputAutomationModuleConfiguration) return Unbounded_String;
-   procedure getName (This : in out InputAutomationModuleConfiguration);
    procedure setName (This : in out InputAutomationModuleConfiguration; name : Unbounded_String);
    function getClassName (This : in out InputAutomationModuleConfiguration) return Unbounded_String;
-   procedure getClassName (This : in out InputAutomationModuleConfiguration);
    procedure setClassName (This : in out InputAutomationModuleConfiguration; className : Unbounded_String);
    function getInputAutomationModuleInterface (This : in out InputAutomationModuleConfiguration) return InputAutomationModuleFactoryInterface_Access;
-   procedure getInputAutomationModuleInterface (This : in out InputAutomationModuleConfiguration);
    procedure setInputAutomationModuleInterface (This : in out InputAutomationModuleConfiguration; inputAutomationModuleInterface : InputAutomationModuleFactoryInterface_Access);
 
 end org.allbinary.input.automation.module.configuration.InputAutomationModuleConfiguration_Package;

@@ -34,7 +34,7 @@ package body org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEvent
    function Create (command : Unbounded_String; treeNode : MutableTreeNode_Access) return MyGraphicItemEventSource_Access is
       This : constant MyGraphicItemEventSource_Access := new MyGraphicItemEventSource;
    begin
-      Initialize (This.all, command, treeNode);
+      MyGraphicItemEventSource_Package.Initialize (This.all, command, treeNode);
       return This;
    end Create;
 
@@ -50,7 +50,7 @@ package body org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEvent
    function Create (command : Unbounded_String; angle : Long_Float; treeNode : MutableTreeNode_Access) return MyGraphicItemEventSource_Access is
       This : constant MyGraphicItemEventSource_Access := new MyGraphicItemEventSource;
    begin
-      Initialize (This.all, command, angle, treeNode);
+      MyGraphicItemEventSource_Package.Initialize (This.all, command, angle, treeNode);
       return This;
    end Create;
 
@@ -73,27 +73,6 @@ package body org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEvent
    begin
         This.angle := angle;
    end setAngle;
-
-   procedure getCommand (This : in out MyGraphicItemEventSource) is
-      Java_Result : constant Unbounded_String := MyGraphicItemEventSource'Class (This).getCommand;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getCommand;
-
-   procedure getTreeNode (This : in out MyGraphicItemEventSource) is
-      Java_Result : constant MutableTreeNode_Access := MyGraphicItemEventSource'Class (This).getTreeNode;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTreeNode;
-
-   procedure getAngle (This : in out MyGraphicItemEventSource) is
-      Java_Result : constant Long_Float := MyGraphicItemEventSource'Class (This).getAngle;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getAngle;
 
 end org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEventSource_Package;
 

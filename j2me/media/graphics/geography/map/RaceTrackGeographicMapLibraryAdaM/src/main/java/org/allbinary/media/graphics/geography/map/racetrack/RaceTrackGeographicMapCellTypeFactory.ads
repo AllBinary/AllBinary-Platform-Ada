@@ -22,6 +22,8 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellTypeFactory_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellTypeFactory_Package;
+with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellType_Package; use org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellType_Package;
+with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellTypes_Package; use org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellTypes_Package;
 
 package org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellTypeFactory_Package is
 
@@ -51,13 +53,9 @@ package org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographic
    procedure Initialize (This : in out RaceTrackGeographicMapCellTypeFactory'Class);
    function Create return RaceTrackGeographicMapCellTypeFactory_Access;
    function getInstance return RaceTrackGeographicMapCellTypeFactory_Access;
-   procedure getInstance;
    function getStartType (This : in out RaceTrackGeographicMapCellTypeFactory) return Integer;
-   procedure getStartType (This : in out RaceTrackGeographicMapCellTypeFactory);
    function getEndType (This : in out RaceTrackGeographicMapCellTypeFactory) return Integer;
-   procedure getEndType (This : in out RaceTrackGeographicMapCellTypeFactory);
    function getEmptyType (This : in out RaceTrackGeographicMapCellTypeFactory) return Integer;
-   procedure getEmptyType (This : in out RaceTrackGeographicMapCellTypeFactory);
    function isPath (This : in out RaceTrackGeographicMapCellTypeFactory; cellType : GeographicMapCellType_Access) return Boolean;
    procedure isPath (This : in out RaceTrackGeographicMapCellTypeFactory; cellType : GeographicMapCellType_Access);
 

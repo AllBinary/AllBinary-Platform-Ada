@@ -35,7 +35,7 @@ package body org.allbinary.ai.ArtificialIntelligence_Package is
    function Create return ArtificialIntelligence_Access is
       This : constant ArtificialIntelligence_Access := new ArtificialIntelligence;
    begin
-      Initialize (This.all);
+      ArtificialIntelligence_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -48,20 +48,6 @@ package body org.allbinary.ai.ArtificialIntelligence_Package is
    function getId (This : in out ArtificialIntelligence) return Integer is
    begin
         return 1;
-   end getId;
-
-   procedure getInstance is
-      Java_Result : constant ArtificialIntelligence_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure getId (This : in out ArtificialIntelligence) is
-      Java_Result : constant Integer := ArtificialIntelligence'Class (This).getId;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getId;
 
 begin

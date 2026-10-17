@@ -38,7 +38,7 @@ package body org.allbinary.game.layer.VehicleFrictionProperties_Package is
    function Create (tireFriction : Integer; brakeFriction : Integer; airFriction : Integer; crashFriction : Integer) return VehicleFrictionProperties_Access is
       This : constant VehicleFrictionProperties_Access := new VehicleFrictionProperties;
    begin
-      Initialize (This.all, tireFriction, brakeFriction, airFriction, crashFriction);
+      VehicleFrictionProperties_Package.Initialize (This.all, tireFriction, brakeFriction, airFriction, crashFriction);
       return This;
    end Create;
 
@@ -60,34 +60,6 @@ package body org.allbinary.game.layer.VehicleFrictionProperties_Package is
    function getCrashFrictionNominator (This : in out VehicleFrictionProperties) return Integer is
    begin
         return This.CRASH_FRICTION_NOMINATOR;
-   end getCrashFrictionNominator;
-
-   procedure getTireFrictionNominator (This : in out VehicleFrictionProperties) is
-      Java_Result : constant Integer := VehicleFrictionProperties'Class (This).getTireFrictionNominator;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTireFrictionNominator;
-
-   procedure getBrakeFrictionNominator (This : in out VehicleFrictionProperties) is
-      Java_Result : constant Integer := VehicleFrictionProperties'Class (This).getBrakeFrictionNominator;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getBrakeFrictionNominator;
-
-   procedure getAirFrictionNominator (This : in out VehicleFrictionProperties) is
-      Java_Result : constant Integer := VehicleFrictionProperties'Class (This).getAirFrictionNominator;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getAirFrictionNominator;
-
-   procedure getCrashFrictionNominator (This : in out VehicleFrictionProperties) is
-      Java_Result : constant Integer := VehicleFrictionProperties'Class (This).getCrashFrictionNominator;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getCrashFrictionNominator;
 
 end org.allbinary.game.layer.VehicleFrictionProperties_Package;

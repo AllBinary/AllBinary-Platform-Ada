@@ -34,7 +34,7 @@ package body views.business.context.RootContextView_Package is
    function Create (transformInfoInterface : TransformInfoInterface_Access) return RootContextView_Access is
       This : constant RootContextView_Access := new RootContextView;
    begin
-      Initialize (This.all, transformInfoInterface);
+      RootContextView_Package.Initialize (This.all, transformInfoInterface);
       return This;
    end Create;
 
@@ -99,20 +99,6 @@ package body views.business.context.RootContextView_Package is
             Java_Throw (e);
                 end;
         end;
-   end getName;
-
-   procedure view (This : in out RootContextView) is
-      Java_Result : constant Unbounded_String := RootContextView'Class (This).view;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end view;
-
-   procedure getName (This : in out RootContextView) is
-      Java_Result : constant Unbounded_String := RootContextView'Class (This).getName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getName;
 
 end views.business.context.RootContextView_Package;

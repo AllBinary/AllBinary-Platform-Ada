@@ -40,7 +40,7 @@ package body org.allbinary.game.part.weapon.StraightMultiProjectileWeaponPart_Pa
    function Create (animationInterface : Animation_Access; sourceLayerInterface : AllBinaryLayer_Access; weaponLayerCircularStaticPool : WeaponLayerCircularPool_Access; total : Integer; weaponProperties : WeaponProperties_Access; scoreableInterface : ScoreableInterface_Access; relativeRelationship : RelativeRelationship_Access) return StraightMultiProjectileWeaponPart_Access is
       This : constant StraightMultiProjectileWeaponPart_Access := new StraightMultiProjectileWeaponPart;
    begin
-      Initialize (This.all, animationInterface, sourceLayerInterface, weaponLayerCircularStaticPool, total, weaponProperties, scoreableInterface, relativeRelationship);
+      StraightMultiProjectileWeaponPart_Package.Initialize (This.all, animationInterface, sourceLayerInterface, weaponLayerCircularStaticPool, total, weaponProperties, scoreableInterface, relativeRelationship);
       return This;
    end Create;
 

@@ -29,7 +29,7 @@ package body org.allbinary.ai.OptimizedArtificialIntelligenceLayerProcessorForCo
    function Create return OptimizedArtificialIntelligenceLayerProcessorForCollidableLayer_Access is
       This : constant OptimizedArtificialIntelligenceLayerProcessorForCollidableLayer_Access := new OptimizedArtificialIntelligenceLayerProcessorForCollidableLayer;
    begin
-      Initialize (This.all);
+      OptimizedArtificialIntelligenceLayerProcessorForCollidableLayer_Package.Initialize (This.all);
       return This;
    end Create;
 

@@ -20,6 +20,10 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
+with org.allbinary.game.GameInfo_Package; use org.allbinary.game.GameInfo_Package;
+with org.allbinary.game.GameTypeFactory_Package; use org.allbinary.game.GameTypeFactory_Package;
+with org.allbinary.game.GameMode_Package; use org.allbinary.game.GameMode_Package;
+with org.allbinary.game.PlayerTypesFactory_Package; use org.allbinary.game.PlayerTypesFactory_Package;
 
 package org.allbinary.game.BasicHighScoresGameInfoFactory_Package is
 
@@ -38,7 +42,6 @@ package org.allbinary.game.BasicHighScoresGameInfoFactory_Package is
    procedure Initialize (This : in out BasicHighScoresGameInfoFactory'Class);
    function Create return BasicHighScoresGameInfoFactory_Access;
    function getInstance return BasicHighScoresGameInfoFactory_Access;
-   procedure getInstance;
 
 end org.allbinary.game.BasicHighScoresGameInfoFactory_Package;
 

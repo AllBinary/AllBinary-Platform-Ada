@@ -37,16 +37,9 @@ package body org.allbinary.business.advertisement.AdvertisementData_Package is
    function Create return AdvertisementData_Access is
       This : constant AdvertisementData_Access := new AdvertisementData;
    begin
-      Initialize (This.all);
+      AdvertisementData_Package.Initialize (This.all);
       return This;
    end Create;
-
-   procedure getInstance is
-      Java_Result : constant AdvertisementData_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

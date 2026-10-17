@@ -38,16 +38,9 @@ package body org.allbinary.business.time.TimeData_Package is
    function Create return TimeData_Access is
       This : constant TimeData_Access := new TimeData;
    begin
-      Initialize (This.all);
+      TimeData_Package.Initialize (This.all);
       return This;
    end Create;
-
-   procedure getInstance is
-      Java_Result : constant TimeData_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

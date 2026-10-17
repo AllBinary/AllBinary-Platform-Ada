@@ -38,7 +38,6 @@ package org.allbinary.logic.visual.transform.template.XslData_Package is
    procedure Initialize (This : in out XslData'Class);
    function Create return XslData_Access;
    function getInstance return XslData_Access;
-   procedure getInstance;
 
 end org.allbinary.logic.visual.transform.template.XslData_Package;
 

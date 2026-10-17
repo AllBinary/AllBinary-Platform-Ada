@@ -29,7 +29,7 @@ package body org.allbinary.business.user.modules.admin.store.web.view.editor.Vie
    function Create return ViewEditorWebStoreAdminUser_Access is
       This : constant ViewEditorWebStoreAdminUser_Access := new ViewEditorWebStoreAdminUser;
    begin
-      Initialize (This.all);
+      ViewEditorWebStoreAdminUser_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -42,7 +42,7 @@ package body org.allbinary.business.user.modules.admin.store.web.view.editor.Vie
    function Create (userHashMap : HashMap_Access) return ViewEditorWebStoreAdminUser_Access is
       This : constant ViewEditorWebStoreAdminUser_Access := new ViewEditorWebStoreAdminUser;
    begin
-      Initialize (This.all, userHashMap);
+      ViewEditorWebStoreAdminUser_Package.Initialize (This.all, userHashMap);
       return This;
    end Create;
 

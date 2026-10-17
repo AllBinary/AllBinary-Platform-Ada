@@ -62,12 +62,9 @@ package org.allbinary.data.tables.user.commerce.inventory.item.customs.CustomIte
    procedure insert (This : in out CustomItemsEntity; values : BasicArrayList_Access);
    procedure delete (This : in out CustomItemsEntity; value : Unbounded_String);
    function createTableStatement (This : in out CustomItemsEntity) return Unbounded_String;
-   procedure createTableStatement (This : in out CustomItemsEntity);
    function createTable (This : in out CustomItemsEntity) return Unbounded_String;
-   procedure createTable (This : in out CustomItemsEntity);
    procedure update (This : in out CustomItemsEntity; updatedValues : HashMap_Access);
    function dropTable (This : in out CustomItemsEntity) return Unbounded_String;
-   procedure dropTable (This : in out CustomItemsEntity);
 
 end org.allbinary.data.tables.user.commerce.inventory.item.customs.CustomItemsEntity_Package;
 

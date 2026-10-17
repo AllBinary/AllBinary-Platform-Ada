@@ -30,7 +30,7 @@ package body org.allbinary.logic.math.PrimitiveIntUtil_Package is
    function Create return PrimitiveIntUtil_Access is
       This : constant PrimitiveIntUtil_Access := new PrimitiveIntUtil;
    begin
-      Initialize (This.all);
+      PrimitiveIntUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -42,20 +42,6 @@ package body org.allbinary.logic.math.PrimitiveIntUtil_Package is
    function getTwoDimensionalArrayInstance return Integer_Array_Access_Array_Access is
    begin
         return NullUtil_Package.getInstance.NULL_INT_ARRAY_ARRAY;
-   end getTwoDimensionalArrayInstance;
-
-   procedure getArrayInstance is
-      Java_Result : constant Integer_Array_Access := getArrayInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getArrayInstance;
-
-   procedure getTwoDimensionalArrayInstance is
-      Java_Result : constant Integer_Array_Access_Array_Access := getTwoDimensionalArrayInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getTwoDimensionalArrayInstance;
 
 end org.allbinary.logic.math.PrimitiveIntUtil_Package;

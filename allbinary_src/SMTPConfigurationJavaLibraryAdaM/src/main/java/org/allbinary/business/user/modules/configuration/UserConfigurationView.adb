@@ -50,7 +50,7 @@ package body org.allbinary.business.user.modules.configuration.UserConfiguration
    function Create (node : Node_Access) return UserConfigurationView_Access is
       This : constant UserConfigurationView_Access := new UserConfigurationView;
    begin
-      Initialize (This.all, node);
+      UserConfigurationView_Package.Initialize (This.all, node);
       return This;
    end Create;
 
@@ -64,7 +64,7 @@ package body org.allbinary.business.user.modules.configuration.UserConfiguration
    function Create (userConfigurationInterface : UserConfigurationInterface_Access) return UserConfigurationView_Access is
       This : constant UserConfigurationView_Access := new UserConfigurationView;
    begin
-      Initialize (This.all, userConfigurationInterface);
+      UserConfigurationView_Package.Initialize (This.all, userConfigurationInterface);
       return This;
    end Create;
 
@@ -89,13 +89,6 @@ package body org.allbinary.business.user.modules.configuration.UserConfiguration
         node.appendChild (timeLastModifiedView.toXmlNode (document));
         return node;
    end toXmlNode;
-
-   procedure getUserConfigurationInterface (This : in out UserConfigurationView) is
-      Java_Result : constant UserConfigurationInterface_Access := UserConfigurationView'Class (This).getUserConfigurationInterface;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getUserConfigurationInterface;
 
    procedure toXmlNode (This : in out UserConfigurationView; document : Document_Access) is
       Java_Result : constant Node_Access := UserConfigurationView'Class (This).toXmlNode (document);

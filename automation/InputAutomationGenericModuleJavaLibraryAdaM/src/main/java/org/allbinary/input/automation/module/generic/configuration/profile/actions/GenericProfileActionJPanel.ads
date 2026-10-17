@@ -28,6 +28,7 @@ with org.allbinary.input.automation.actions.script.condition.TimeIntervalActionS
 with org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.script.GenericProfileActionScriptJPanel_Package; use org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.script.GenericProfileActionScriptJPanel_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.JPanel_Package; use org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.JPanel_Package;
+with org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileAction_Package; use org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileAction_Package;
 
 package org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileActionJPanel_Package is
 
@@ -60,10 +61,8 @@ package org.allbinary.input.automation.module.generic_Id.configuration.profile.a
    function Create return GenericProfileActionJPanel_Access;
    procedure updateProfileActionUI (This : in out GenericProfileActionJPanel);
    function getGenericProfileAction (This : in out GenericProfileActionJPanel) return GenericProfileAction_Access;
-   procedure getGenericProfileAction (This : in out GenericProfileActionJPanel);
    procedure setGenericProfileAction (This : in out GenericProfileActionJPanel; genericProfileAction : GenericProfileAction_Access);
    function getGenericProfileActionScriptJPanel (This : in out GenericProfileActionJPanel) return GenericProfileActionScriptJPanel_Access;
-   procedure getGenericProfileActionScriptJPanel (This : in out GenericProfileActionJPanel);
    procedure setGenericProfileActionScriptJPanel (This : in out GenericProfileActionJPanel; genericProfileActionScriptJPanel : GenericProfileActionScriptJPanel_Access);
    procedure initComponents (This : in out GenericProfileActionJPanel);
    procedure newTimeIntervalJButtonActionPerformed (This : in out GenericProfileActionJPanel; evt : ActionEvent_Access);

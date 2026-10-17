@@ -33,7 +33,7 @@ package body org.allbinary.game.layer.resources.BasicGameResources_Package is
    function Create return BasicGameResources_Access is
       This : constant BasicGameResources_Access := new BasicGameResources;
    begin
-      Initialize (This.all);
+      BasicGameResources_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -83,13 +83,6 @@ package body org.allbinary.game.layer.resources.BasicGameResources_Package is
    function getString (This : in out BasicGameResources) return Unbounded_String is
    begin
         return GameGraphicsResourceUtil_Package.getInstance.getName;
-   end getString;
-
-   procedure getString (This : in out BasicGameResources) is
-      Java_Result : constant Unbounded_String := BasicGameResources'Class (This).getString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getString;
 
 begin

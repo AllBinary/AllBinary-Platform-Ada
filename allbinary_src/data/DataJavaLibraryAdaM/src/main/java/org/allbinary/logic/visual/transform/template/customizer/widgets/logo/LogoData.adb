@@ -39,16 +39,9 @@ package body org.allbinary.logic.visual.transform.template.customizer.widgets.lo
    function Create return LogoData_Access is
       This : constant LogoData_Access := new LogoData;
    begin
-      Initialize (This.all);
+      LogoData_Package.Initialize (This.all);
       return This;
    end Create;
-
-   procedure getInstance is
-      Java_Result : constant LogoData_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

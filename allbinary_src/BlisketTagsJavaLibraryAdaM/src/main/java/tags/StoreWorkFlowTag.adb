@@ -36,7 +36,7 @@ package body tags.StoreWorkFlowTag_Package is
    function Create return StoreWorkFlowTag_Access is
       This : constant StoreWorkFlowTag_Access := new StoreWorkFlowTag;
    begin
-      Initialize (This.all);
+      StoreWorkFlowTag_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -91,20 +91,6 @@ package body tags.StoreWorkFlowTag_Package is
             return SKIP_BODY;
                 end;
         end;
-   end doStartTag;
-
-   procedure process (This : in out StoreWorkFlowTag) is
-      Java_Result : constant Integer := StoreWorkFlowTag'Class (This).process;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end process;
-
-   procedure doStartTag (This : in out StoreWorkFlowTag) is
-      Java_Result : constant Integer := StoreWorkFlowTag'Class (This).doStartTag;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end doStartTag;
 
 end tags.StoreWorkFlowTag_Package;

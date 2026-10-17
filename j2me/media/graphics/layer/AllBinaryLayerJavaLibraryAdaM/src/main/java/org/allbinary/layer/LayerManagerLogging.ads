@@ -26,6 +26,8 @@ with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.layer.LayerManagerLoggingBase_Package; use org.allbinary.layer.LayerManagerLoggingBase_Package;
+with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
+with org.allbinary.layer.LayerManager_Package; use org.allbinary.layer.LayerManager_Package;
 
 package org.allbinary.layer.LayerManagerLogging_Package is
 
@@ -58,7 +60,6 @@ package org.allbinary.layer.LayerManagerLogging_Package is
    procedure Initialize (This : in out LayerManagerLogging'Class);
    function Create return LayerManagerLogging_Access;
    function getInstance return LayerManagerLogging_Access;
-   procedure getInstance;
    procedure append_Case (This : in out LayerManagerLogging; layerInterface : AllBinaryLayer_Access);
    procedure appendAt (This : in out LayerManagerLogging; layerInterface : AllBinaryLayer_Access; index : Integer);
    procedure remove_Case (This : in out LayerManagerLogging; layerInterface : AllBinaryLayer_Access);

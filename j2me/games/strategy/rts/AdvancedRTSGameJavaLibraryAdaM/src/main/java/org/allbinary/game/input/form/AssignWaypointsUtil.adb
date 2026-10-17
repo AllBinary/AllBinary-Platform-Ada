@@ -30,7 +30,7 @@ package body org.allbinary.game.input.form.AssignWaypointsUtil_Package is
    function Create return AssignWaypointsUtil_Access is
       This : constant AssignWaypointsUtil_Access := new AssignWaypointsUtil;
    begin
-      Initialize (This.all);
+      AssignWaypointsUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -70,13 +70,6 @@ package body org.allbinary.game.input.form.AssignWaypointsUtil_Package is
                 end;
         end;
    end set;
-
-   procedure getInstance is
-      Java_Result : constant AssignWaypointsUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

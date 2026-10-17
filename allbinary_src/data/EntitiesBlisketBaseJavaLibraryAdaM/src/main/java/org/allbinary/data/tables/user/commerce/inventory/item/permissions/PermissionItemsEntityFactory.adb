@@ -36,7 +36,7 @@ package body org.allbinary.data.tables.user.commerce.inventory.item.permissions.
    function Create return PermissionItemsEntityFactory_Access is
       This : constant PermissionItemsEntityFactory_Access := new PermissionItemsEntityFactory;
    begin
-      Initialize (This.all);
+      PermissionItemsEntityFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -59,20 +59,6 @@ package body org.allbinary.data.tables.user.commerce.inventory.item.permissions.
             return null;
                 end;
         end;
-   end getPermissionItemsEntityInstance;
-
-   procedure getInstance is
-      Java_Result : constant PermissionItemsEntityFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure getPermissionItemsEntityInstance is
-      Java_Result : constant PermissionItemsEntity_Access := getPermissionItemsEntityInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getPermissionItemsEntityInstance;
 
 begin

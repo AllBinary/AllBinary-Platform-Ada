@@ -38,7 +38,6 @@ package org.allbinary.input.automation.robot.osgi.InputAutomationRobotInterfaceW
    procedure Initialize (This : in out InputAutomationRobotInterfaceWrapper'Class; inputRobotInterface : InputRobotInterface_Access);
    function Create (inputRobotInterface : InputRobotInterface_Access) return InputAutomationRobotInterfaceWrapper_Access;
    function getInputRobotInterface (This : in out InputAutomationRobotInterfaceWrapper) return InputRobotInterface_Access;
-   procedure getInputRobotInterface (This : in out InputAutomationRobotInterfaceWrapper);
    procedure setInputRobotInterface (This : in out InputAutomationRobotInterfaceWrapper; inputRobotInterface : InputRobotInterface_Access);
 
 end org.allbinary.input.automation.robot.osgi.InputAutomationRobotInterfaceWrapper_Package;

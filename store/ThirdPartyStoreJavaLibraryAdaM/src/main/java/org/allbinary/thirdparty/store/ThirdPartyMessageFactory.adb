@@ -31,7 +31,7 @@ package body org.allbinary.thirdparty.store.ThirdPartyMessageFactory_Package is
    function Create return ThirdPartyMessageFactory_Access is
       This : constant ThirdPartyMessageFactory_Access := new ThirdPartyMessageFactory;
    begin
-      Initialize (This.all);
+      ThirdPartyMessageFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -39,13 +39,6 @@ package body org.allbinary.thirdparty.store.ThirdPartyMessageFactory_Package is
    function getInstance return ThirdPartyMessageFactory_Access is
    begin
         return ThirdPartyMessageFactory_Package.instance;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant ThirdPartyMessageFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

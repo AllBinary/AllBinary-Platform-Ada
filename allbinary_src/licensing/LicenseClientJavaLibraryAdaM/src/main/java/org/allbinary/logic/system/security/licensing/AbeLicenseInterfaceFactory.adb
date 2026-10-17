@@ -41,7 +41,7 @@ package body org.allbinary.logic.system.security.licensing.AbeLicenseInterfaceFa
    function Create return AbeLicenseInterfaceFactory_Access is
       This : constant AbeLicenseInterfaceFactory_Access := new AbeLicenseInterfaceFactory;
    begin
-      Initialize (This.all);
+      AbeLicenseInterfaceFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -104,13 +104,6 @@ package body org.allbinary.logic.system.security.licensing.AbeLicenseInterfaceFa
         return This.check;
    end isCheck;
 
-   procedure getInstance is
-      Java_Result : constant AbeLicenseInterfaceFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
    procedure getLicenseInstance (This : in out AbeLicenseInterfaceFactory; abeClientInformation : AbeClientInformationInterface_Access) is
       Java_Result : constant AbeLicenseInterface_Access := AbeLicenseInterfaceFactory'Class (This).getLicenseInstance (abeClientInformation);
       pragma Unreferenced (Java_Result);
@@ -124,20 +117,6 @@ package body org.allbinary.logic.system.security.licensing.AbeLicenseInterfaceFa
    begin
       null;
    end get;
-
-   procedure isTimeToGetKey (This : in out AbeLicenseInterfaceFactory) is
-      Java_Result : constant Boolean := AbeLicenseInterfaceFactory'Class (This).isTimeToGetKey;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isTimeToGetKey;
-
-   procedure isCheck (This : in out AbeLicenseInterfaceFactory) is
-      Java_Result : constant Boolean := AbeLicenseInterfaceFactory'Class (This).isCheck;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isCheck;
 
 begin
    null;

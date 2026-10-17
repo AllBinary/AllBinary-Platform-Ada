@@ -37,7 +37,7 @@ package body org.allbinary.image.opengles.OpenGLImageCache_Package is
    function Create return OpenGLImageCache_Access is
       This : constant OpenGLImageCache_Access := new OpenGLImageCache;
    begin
-      Initialize (This.all);
+      OpenGLImageCache_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -63,7 +63,9 @@ package body org.allbinary.image.opengles.OpenGLImageCache_Package is
    end update;
 
    --  throws Exception
-   function createImage (This : in out OpenGLImageCache; caller : Unbounded_String; width : Integer; height : Integer) return Image_Access is
+   function createImage (This : in out OpenGLImageCache; caller : Unbounded_String; width_Param : Integer; height_Param : Integer) return Image_Access is
+      width : Integer := width_Param;
+      height : Integer := height_Param;
       textureSize : Integer;
       image2 : Image_Access;
       image : Image_Access;
@@ -127,8 +129,8 @@ package body org.allbinary.image.opengles.OpenGLImageCache_Package is
         end;
    end init;
 
-   procedure createImage (This : in out OpenGLImageCache; caller : Unbounded_String; width : Integer; height : Integer) is
-      Java_Result : constant Image_Access := OpenGLImageCache'Class (This).createImage (caller, width, height);
+   procedure createImage (This : in out OpenGLImageCache; caller : Unbounded_String; width_Param : Integer; height_Param : Integer) is
+      Java_Result : constant Image_Access := OpenGLImageCache'Class (This).createImage (caller, width_Param, height_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
@@ -140,13 +142,6 @@ package body org.allbinary.image.opengles.OpenGLImageCache_Package is
    begin
       null;
    end createImageFromInputStream;
-
-   procedure getGlP (This : in out OpenGLImageCache) is
-      Java_Result : constant GL10_Access := OpenGLImageCache'Class (This).getGlP;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getGlP;
 
 end org.allbinary.image.opengles.OpenGLImageCache_Package;
 

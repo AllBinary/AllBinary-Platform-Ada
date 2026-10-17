@@ -36,7 +36,7 @@ package body org.allbinary.media.audio.PlayerComposite_Package is
    function Create (player : Player_Access; repeatTime : Integer) return PlayerComposite_Access is
       This : constant PlayerComposite_Access := new PlayerComposite;
    begin
-      Initialize (This.all, player, repeatTime);
+      PlayerComposite_Package.Initialize (This.all, player, repeatTime);
       return This;
    end Create;
 
@@ -180,34 +180,6 @@ package body org.allbinary.media.audio.PlayerComposite_Package is
         return This.player;
    end getPlayerP;
 
-   procedure getContentType (This : in out PlayerComposite) is
-      Java_Result : constant Unbounded_String := PlayerComposite'Class (This).getContentType;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getContentType;
-
-   procedure getDuration (This : in out PlayerComposite) is
-      Java_Result : constant Long_Long_Integer := PlayerComposite'Class (This).getDuration;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getDuration;
-
-   procedure getMediaTime (This : in out PlayerComposite) is
-      Java_Result : constant Long_Long_Integer := PlayerComposite'Class (This).getMediaTime;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getMediaTime;
-
-   procedure getState (This : in out PlayerComposite) is
-      Java_Result : constant Integer := PlayerComposite'Class (This).getState;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getState;
-
    procedure setMediaTime (This : in out PlayerComposite; now : Long_Long_Integer) is
       Java_Result : constant Long_Long_Integer := PlayerComposite'Class (This).setMediaTime (now);
       pragma Unreferenced (Java_Result);
@@ -221,20 +193,6 @@ package body org.allbinary.media.audio.PlayerComposite_Package is
    begin
       null;
    end getControl;
-
-   procedure getControls (This : in out PlayerComposite) is
-      Java_Result : constant Control_Access_Array_Access := PlayerComposite'Class (This).getControls;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getControls;
-
-   procedure getPlayerP (This : in out PlayerComposite) is
-      Java_Result : constant Player_Access := PlayerComposite'Class (This).getPlayerP;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getPlayerP;
 
 end org.allbinary.media.audio.PlayerComposite_Package;
 

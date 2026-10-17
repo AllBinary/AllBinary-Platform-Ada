@@ -31,7 +31,7 @@ package body views.admin.workflow.UpdateView_Package is
    function Create (transformInfoInterface : TransformInfoInterface_Access) return UpdateView_Access is
       This : constant UpdateView_Access := new UpdateView;
    begin
-      Initialize (This.all, transformInfoInterface);
+      UpdateView_Package.Initialize (This.all, transformInfoInterface);
       return This;
    end Create;
 
@@ -80,27 +80,6 @@ package body views.admin.workflow.UpdateView_Package is
    begin
         return null;
    end toValidationInfoNode;
-
-   procedure isValid (This : in out UpdateView) is
-      Java_Result : constant Boolean := UpdateView'Class (This).isValid;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isValid;
-
-   procedure validationInfo (This : in out UpdateView) is
-      Java_Result : constant Unbounded_String := UpdateView'Class (This).validationInfo;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end validationInfo;
-
-   procedure toValidationInfoDoc (This : in out UpdateView) is
-      Java_Result : constant Document_Access := UpdateView'Class (This).toValidationInfoDoc;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toValidationInfoDoc;
 
    procedure toValidationInfoNode (This : in out UpdateView; document : Document_Access) is
       Java_Result : constant Node_Access := UpdateView'Class (This).toValidationInfoNode (document);

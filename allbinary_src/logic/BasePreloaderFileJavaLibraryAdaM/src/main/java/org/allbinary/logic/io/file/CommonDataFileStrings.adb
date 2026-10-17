@@ -80,7 +80,7 @@ package body org.allbinary.logic.io.file.CommonDataFileStrings_Package is
    function Create return CommonDataFileStrings_Access is
       This : constant CommonDataFileStrings_Access := new CommonDataFileStrings;
    begin
-      Initialize (This.all);
+      CommonDataFileStrings_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -88,13 +88,6 @@ package body org.allbinary.logic.io.file.CommonDataFileStrings_Package is
    function getInstance return CommonDataFileStrings_Access is
    begin
         return CommonDataFileStrings_Package.instance;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant CommonDataFileStrings_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

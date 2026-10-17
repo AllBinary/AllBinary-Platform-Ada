@@ -33,7 +33,7 @@ package body org.allbinary.logic.system.security.crypt.jcehelper.AbCrypt_Package
    function Create (algorithm : Unbounded_String) return AbCrypt_Access is
       This : constant AbCrypt_Access := new AbCrypt;
    begin
-      Initialize (This.all, algorithm);
+      AbCrypt_Package.Initialize (This.all, algorithm);
       return This;
    end Create;
 

@@ -18,7 +18,7 @@ package body org.apache.commons.fileupload.FileItemUtil_Package is
    function Create return FileItemUtil_Access is
       This : constant FileItemUtil_Access := new FileItemUtil;
    begin
-      Initialize (This.all);
+      FileItemUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -78,13 +78,6 @@ package body org.apache.commons.fileupload.FileItemUtil_Package is
    begin
         fileItem.write (AbFileNativeUtil_Package.get (file));
    end write;
-
-   procedure getInstance is
-      Java_Result : constant FileItemUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure getString (This : in out FileItemUtil; byteArray : Short_Short_Integer_Array_Access) is
       Java_Result : constant Unbounded_String := FileItemUtil'Class (This).getString (byteArray);

@@ -48,7 +48,7 @@ package body org.allbinary.logic.communication.log.LogFormatUtil_Package is
    function Create return LogFormatUtil_Access is
       This : constant LogFormatUtil_Access := new LogFormatUtil;
    begin
-      Initialize (This.all);
+      LogFormatUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -73,7 +73,8 @@ package body org.allbinary.logic.communication.log.LogFormatUtil_Package is
         return stringBuffer.toString;
    end getS;
 
-   function getF (This : in out LogFormatUtil; className : Unbounded_String; functionName : Unbounded_String) return StringMaker_Access is
+   function getF (This : in out LogFormatUtil; className : Unbounded_String; functionName_Param : Unbounded_String) return StringMaker_Access is
+      functionName : Unbounded_String := functionName_Param;
       stringBuffer : StringMaker_Access;
    begin
         if (functionName) = (Null_Unbounded_String) then
@@ -114,13 +115,6 @@ package body org.allbinary.logic.communication.log.LogFormatUtil_Package is
         end if;
    end getO;
 
-   procedure getInstance is
-      Java_Result : constant LogFormatUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
    procedure get (This : in out LogFormatUtil; className : Unbounded_String; functionName : Unbounded_String; specialMessage : Unbounded_String; exception_Id : Java_Object_Access) is
       Java_Result : constant Unbounded_String := LogFormatUtil'Class (This).get (className, functionName, specialMessage, exception_Id);
       pragma Unreferenced (Java_Result);
@@ -135,8 +129,8 @@ package body org.allbinary.logic.communication.log.LogFormatUtil_Package is
       null;
    end getS;
 
-   procedure getF (This : in out LogFormatUtil; className : Unbounded_String; functionName : Unbounded_String) is
-      Java_Result : constant StringMaker_Access := LogFormatUtil'Class (This).getF (className, functionName);
+   procedure getF (This : in out LogFormatUtil; className : Unbounded_String; functionName_Param : Unbounded_String) is
+      Java_Result : constant StringMaker_Access := LogFormatUtil'Class (This).getF (className, functionName_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

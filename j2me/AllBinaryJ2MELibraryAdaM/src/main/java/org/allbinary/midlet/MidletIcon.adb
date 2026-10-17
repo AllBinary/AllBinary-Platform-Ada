@@ -28,7 +28,7 @@ package body org.allbinary.midlet.MidletIcon_Package is
    function Create return MidletIcon_Access is
       This : constant MidletIcon_Access := new MidletIcon;
    begin
-      Initialize (This.all);
+      MidletIcon_Package.Initialize (This.all);
       return This;
    end Create;
 

@@ -30,7 +30,7 @@ package body taghelpers.ValidatedViewHelperFactory_Package is
    function Create return ValidatedViewHelperFactory_Access is
       This : constant ValidatedViewHelperFactory_Access := new ValidatedViewHelperFactory;
    begin
-      Initialize (This.all);
+      ValidatedViewHelperFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

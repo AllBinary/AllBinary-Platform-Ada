@@ -29,20 +29,13 @@ package body org.allbinary.media.audio.GameBeginSound_Package is
    function Create return GameBeginSound_Access is
       This : constant GameBeginSound_Access := new GameBeginSound;
    begin
-      Initialize (This.all);
+      GameBeginSound_Package.Initialize (This.all);
       return This;
    end Create;
 
    function getInstance return Sound_Access is
    begin
         return GameBeginSound_Package.soundInterface;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant Sound_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

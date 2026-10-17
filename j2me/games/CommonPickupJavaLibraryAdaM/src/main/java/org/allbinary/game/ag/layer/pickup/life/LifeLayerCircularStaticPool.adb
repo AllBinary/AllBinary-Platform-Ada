@@ -31,7 +31,7 @@ package body org.allbinary.game.ag.layer.pickup.life.LifeLayerCircularStaticPool
    function Create (allbinaryLayerFactoryInterface : AllBinaryLayerFactoryInterface_Access; total : Integer) return LifeLayerCircularStaticPool_Access is
       This : constant LifeLayerCircularStaticPool_Access := new LifeLayerCircularStaticPool;
    begin
-      Initialize (This.all, allbinaryLayerFactoryInterface, total);
+      LifeLayerCircularStaticPool_Package.Initialize (This.all, allbinaryLayerFactoryInterface, total);
       return This;
    end Create;
 

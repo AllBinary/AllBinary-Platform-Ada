@@ -35,7 +35,7 @@ package body org.allbinary.game.layer.pickup.CountedPickedUpLayerInterfaceFactor
    function Create (pickeUpLayerType : PickedUpLayerType_Access; iconLayer : IconLayer_Access; animationInterface : Animation_Access) return CountedPickedUpLayerInterfaceFactory_Access is
       This : constant CountedPickedUpLayerInterfaceFactory_Access := new CountedPickedUpLayerInterfaceFactory;
    begin
-      Initialize (This.all, pickeUpLayerType, iconLayer, animationInterface);
+      CountedPickedUpLayerInterfaceFactory_Package.Initialize (This.all, pickeUpLayerType, iconLayer, animationInterface);
       return This;
    end Create;
 
@@ -61,20 +61,6 @@ package body org.allbinary.game.layer.pickup.CountedPickedUpLayerInterfaceFactor
    begin
       null;
    end getNextInstance;
-
-   procedure getTotal (This : in out CountedPickedUpLayerInterfaceFactory) is
-      Java_Result : constant Integer := CountedPickedUpLayerInterfaceFactory'Class (This).getTotal;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTotal;
-
-   procedure getId (This : in out CountedPickedUpLayerInterfaceFactory) is
-      Java_Result : constant Integer := CountedPickedUpLayerInterfaceFactory'Class (This).getId;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getId;
 
 begin
    null;

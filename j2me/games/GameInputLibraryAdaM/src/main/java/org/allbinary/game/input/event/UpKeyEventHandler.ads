@@ -43,7 +43,6 @@ package org.allbinary.game.input.event.UpKeyEventHandler_Package is
    procedure Initialize (This : in out UpKeyEventHandler'Class);
    function Create return UpKeyEventHandler_Access;
    function getInstance return UpKeyEventHandler_Access;
-   procedure getInstance;
    function getInstanceForDevice (This : in out UpKeyEventHandler; deviceId : Integer) return UpKeyEventHandlerBase_Access;
    procedure getInstanceForDevice (This : in out UpKeyEventHandler; deviceId : Integer);
    function getInstanceForPlayer (This : in out UpKeyEventHandler; playerInputId : Integer) return UpKeyEventHandlerBase_Access;

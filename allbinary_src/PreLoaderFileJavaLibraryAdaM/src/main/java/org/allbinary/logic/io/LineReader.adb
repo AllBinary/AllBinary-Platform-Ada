@@ -54,7 +54,7 @@ package body org.allbinary.logic.io.LineReader_Package is
    function Create (fileName : Unbounded_String) return LineReader_Access is
       This : constant LineReader_Access := new LineReader;
    begin
-      Initialize (This.all, fileName);
+      LineReader_Package.Initialize (This.all, fileName);
       return This;
    end Create;
 
@@ -106,20 +106,6 @@ package body org.allbinary.logic.io.LineReader_Package is
             Java_Throw (e);
                 end;
         end;
-   end next;
-
-   procedure hasNext (This : in out LineReader) is
-      Java_Result : constant Boolean := LineReader'Class (This).hasNext;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end hasNext;
-
-   procedure next (This : in out LineReader) is
-      Java_Result : constant Unbounded_String := LineReader'Class (This).next;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end next;
 
 end org.allbinary.logic.io.LineReader_Package;

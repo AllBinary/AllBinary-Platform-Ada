@@ -28,7 +28,7 @@ package body org.allbinary.media.graphics.geography.map.racetrack.CustomMapGener
    function Create return CustomMapGeneratorBase_Access is
       This : constant CustomMapGeneratorBase_Access := new CustomMapGeneratorBase;
    begin
-      Initialize (This.all);
+      CustomMapGeneratorBase_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -49,13 +49,6 @@ package body org.allbinary.media.graphics.geography.map.racetrack.CustomMapGener
    begin
         return -(1);
    end getCustomType;
-
-   procedure getCustomMapArray (This : in out CustomMapGeneratorBase) is
-      Java_Result : constant Integer_Array_Access_Array_Access := CustomMapGeneratorBase'Class (This).getCustomMapArray;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getCustomMapArray;
 
    procedure getCustomType (This : in out CustomMapGeneratorBase; column : Integer; row : Integer; currentType : Integer) is
       Java_Result : constant Integer := CustomMapGeneratorBase'Class (This).getCustomType (column, row, currentType);

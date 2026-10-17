@@ -35,7 +35,7 @@ package body org.allbinary.logic.io.SmallInsert_Package is
    function Create (fileName : Unbounded_String) return SmallInsert_Access is
       This : constant SmallInsert_Access := new SmallInsert;
    begin
-      Initialize (This.all, fileName);
+      SmallInsert_Package.Initialize (This.all, fileName);
       return This;
    end Create;
 

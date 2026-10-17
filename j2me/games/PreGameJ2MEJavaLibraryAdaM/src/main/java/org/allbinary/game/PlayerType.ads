@@ -39,11 +39,8 @@ package org.allbinary.game.PlayerType_Package is
    procedure Initialize (This : in out PlayerType'Class; name : Unbounded_String; value : Integer);
    function Create (name : Unbounded_String; value : Integer) return PlayerType_Access;
    function getId (This : in out PlayerType) return Integer;
-   procedure getId (This : in out PlayerType);
    function getName (This : in out PlayerType) return Unbounded_String;
-   procedure getName (This : in out PlayerType);
    function toString (This : in out PlayerType) return Unbounded_String;
-   procedure toString (This : in out PlayerType);
 
 end org.allbinary.game.PlayerType_Package;
 

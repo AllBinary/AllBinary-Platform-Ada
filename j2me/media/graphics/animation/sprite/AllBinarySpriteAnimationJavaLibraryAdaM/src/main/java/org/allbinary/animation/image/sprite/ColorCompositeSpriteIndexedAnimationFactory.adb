@@ -33,7 +33,7 @@ package body org.allbinary.animation.image.sprite.ColorCompositeSpriteIndexedAni
    function Create (image : Image_Access; basicColorArray : BasicColor_Access_Array_Access; width : Integer; height : Integer; animationBehaviorFactory : AnimationBehaviorFactory_Access) return ColorCompositeSpriteIndexedAnimationFactory_Access is
       This : constant ColorCompositeSpriteIndexedAnimationFactory_Access := new ColorCompositeSpriteIndexedAnimationFactory;
    begin
-      Initialize (This.all, image, basicColorArray, width, height, animationBehaviorFactory);
+      ColorCompositeSpriteIndexedAnimationFactory_Package.Initialize (This.all, image, basicColorArray, width, height, animationBehaviorFactory);
       return This;
    end Create;
 

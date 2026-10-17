@@ -36,7 +36,6 @@ package org.allbinary.layer.LayerManagerNoDebug_Package is
    procedure Initialize (This : in out LayerManagerNoDebug'Class);
    function Create return LayerManagerNoDebug_Access;
    function getInstance return LayerManagerNoDebug_Access;
-   procedure getInstance;
 
 end org.allbinary.layer.LayerManagerNoDebug_Package;
 

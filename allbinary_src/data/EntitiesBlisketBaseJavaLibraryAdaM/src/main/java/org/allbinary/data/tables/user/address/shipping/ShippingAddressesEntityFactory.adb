@@ -36,7 +36,7 @@ package body org.allbinary.data.tables.user.address.shipping.ShippingAddressesEn
    function Create return ShippingAddressesEntityFactory_Access is
       This : constant ShippingAddressesEntityFactory_Access := new ShippingAddressesEntityFactory;
    begin
-      Initialize (This.all);
+      ShippingAddressesEntityFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -57,13 +57,6 @@ package body org.allbinary.data.tables.user.address.shipping.ShippingAddressesEn
             return null;
                 end;
         end;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant ShippingAddressesEntityFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
    procedure getInstance (This : in out ShippingAddressesEntityFactory; userName : Unbounded_String) is

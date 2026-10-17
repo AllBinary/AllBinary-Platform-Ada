@@ -38,7 +38,7 @@ package body org.allbinary.animation.IndependentVectorExplosionRotationAnimation
    function Create (vectorInfo : VectorInfo_Access; basicColor : BasicColor_Access; vectorAnimationFactoryInterface : VectorAnimationFactoryInterface_Access) return IndependentVectorExplosionRotationAnimationFactory_Access is
       This : constant IndependentVectorExplosionRotationAnimationFactory_Access := new IndependentVectorExplosionRotationAnimationFactory;
    begin
-      Initialize (This.all, vectorInfo, basicColor, vectorAnimationFactoryInterface);
+      IndependentVectorExplosionRotationAnimationFactory_Package.Initialize (This.all, vectorInfo, basicColor, vectorAnimationFactoryInterface);
       return This;
    end Create;
 

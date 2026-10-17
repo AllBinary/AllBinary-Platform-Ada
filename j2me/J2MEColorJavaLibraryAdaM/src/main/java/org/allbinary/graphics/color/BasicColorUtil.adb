@@ -32,7 +32,7 @@ package body org.allbinary.graphics.color.BasicColorUtil_Package is
    function Create return BasicColorUtil_Access is
       This : constant BasicColorUtil_Access := new BasicColorUtil;
    begin
-      Initialize (This.all);
+      BasicColorUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -71,13 +71,6 @@ package body org.allbinary.graphics.color.BasicColorUtil_Package is
    begin
         return Java_Or (((16#FFFFFF#) - (color)), This.ALPHA);
    end invert;
-
-   procedure getInstance is
-      Java_Result : constant BasicColorUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure getRGB (This : in out BasicColorUtil; red : Integer; green : Integer; blue : Integer) is
       Java_Result : constant Integer := BasicColorUtil'Class (This).getRGB (red, green, blue);

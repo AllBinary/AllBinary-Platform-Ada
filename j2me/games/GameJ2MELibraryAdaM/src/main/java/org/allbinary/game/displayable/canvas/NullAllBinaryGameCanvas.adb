@@ -28,7 +28,7 @@ package body org.allbinary.game.displayable.canvas.NullAllBinaryGameCanvas_Packa
    function Create return NullAllBinaryGameCanvas_Access is
       This : constant NullAllBinaryGameCanvas_Access := new NullAllBinaryGameCanvas;
    begin
-      Initialize (This.all);
+      NullAllBinaryGameCanvas_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -62,27 +62,6 @@ package body org.allbinary.game.displayable.canvas.NullAllBinaryGameCanvas_Packa
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end setCommandListener;
-
-   procedure getLayerManager (This : in out NullAllBinaryGameCanvas) is
-      Java_Result : constant AllBinaryGameLayerManager_Access := NullAllBinaryGameCanvas'Class (This).getLayerManager;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getLayerManager;
-
-   procedure getHeight (This : in out NullAllBinaryGameCanvas) is
-      Java_Result : constant Integer := NullAllBinaryGameCanvas'Class (This).getHeight;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getHeight;
-
-   procedure getWidth (This : in out NullAllBinaryGameCanvas) is
-      Java_Result : constant Integer := NullAllBinaryGameCanvas'Class (This).getWidth;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getWidth;
 
 begin
    null;

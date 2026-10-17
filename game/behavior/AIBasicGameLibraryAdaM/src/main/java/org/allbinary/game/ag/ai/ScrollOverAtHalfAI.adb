@@ -29,7 +29,7 @@ package body org.allbinary.game.ag.ai.ScrollOverAtHalfAI_Package is
    function Create (ownerLayerInterface : AllBinaryLayer_Access; gameInput : GameInput_Access) return ScrollOverAtHalfAI_Access is
       This : constant ScrollOverAtHalfAI_Access := new ScrollOverAtHalfAI;
    begin
-      Initialize (This.all, ownerLayerInterface, gameInput);
+      ScrollOverAtHalfAI_Package.Initialize (This.all, ownerLayerInterface, gameInput);
       return This;
    end Create;
 

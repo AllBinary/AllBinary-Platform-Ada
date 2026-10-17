@@ -36,7 +36,7 @@ package body views.ValidationOnlyTempUtil_Package is
    function Create return ValidationOnlyTempUtil_Access is
       This : constant ValidationOnlyTempUtil_Access := new ValidationOnlyTempUtil;
    begin
-      Initialize (This.all);
+      ValidationOnlyTempUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -62,13 +62,6 @@ package body views.ValidationOnlyTempUtil_Package is
                 end;
         end;
    end view;
-
-   procedure getInstance is
-      Java_Result : constant ValidationOnlyTempUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure view (This : in out ValidationOnlyTempUtil; validationComponentInterface : ValidationComponentInterface_Access) is
       Java_Result : constant Unbounded_String := ValidationOnlyTempUtil'Class (This).view (validationComponentInterface);

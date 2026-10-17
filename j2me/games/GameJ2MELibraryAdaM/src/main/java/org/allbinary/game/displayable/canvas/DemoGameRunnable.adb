@@ -34,7 +34,7 @@ package body org.allbinary.game.displayable.canvas.DemoGameRunnable_Package is
    function Create (demoCanvas : DemoCanvas_Access) return DemoGameRunnable_Access is
       This : constant DemoGameRunnable_Access := new DemoGameRunnable;
    begin
-      Initialize (This.all, demoCanvas);
+      DemoGameRunnable_Package.Initialize (This.all, demoCanvas);
       return This;
    end Create;
 

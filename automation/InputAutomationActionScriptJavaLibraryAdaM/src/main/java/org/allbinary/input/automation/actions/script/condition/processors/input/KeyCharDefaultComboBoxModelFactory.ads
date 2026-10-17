@@ -22,6 +22,8 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with abbot.tester.KeyStrokeMap_Package; use abbot.tester.KeyStrokeMap_Package;
 with org.allbinary.input.KeySingletonFactory_Package; use org.allbinary.input.KeySingletonFactory_Package;
+with org.allbinary.input.automation.actions.script.condition.processors.input.DefaultComboBoxModel_Package; use org.allbinary.input.automation.actions.script.condition.processors.input.DefaultComboBoxModel_Package;
+with org.allbinary.input.automation.actions.script.condition.processors.input.KeyStroke_Package; use org.allbinary.input.automation.actions.script.condition.processors.input.KeyStroke_Package;
 
 package org.allbinary.input.automation.actions.script.condition.processors.input.KeyCharDefaultComboBoxModelFactory_Package is
 
@@ -38,7 +40,6 @@ package org.allbinary.input.automation.actions.script.condition.processors.input
    procedure Initialize (This : in out KeyCharDefaultComboBoxModelFactory'Class);
    function Create return KeyCharDefaultComboBoxModelFactory_Access;
    function getInstance return DefaultComboBoxModel_Access;
-   procedure getInstance;
 
 end org.allbinary.input.automation.actions.script.condition.processors.input.KeyCharDefaultComboBoxModelFactory_Package;
 

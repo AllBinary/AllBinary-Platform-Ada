@@ -32,10 +32,8 @@ package org.allbinary.media.graphics.geography.pathfinding.BasicGeographicMapExt
    procedure Initialize (This : in out BasicGeographicMapExtractedPathCacheFactory'Class);
    function Create return BasicGeographicMapExtractedPathCacheFactory_Access;
    function getInstance return BasicGeographicMapExtractedPathCacheFactory_Access;
-   procedure getInstance;
    procedure init (This : in out BasicGeographicMapExtractedPathCacheFactory; maxConcurrentPaths : Integer; maxPaths : Integer);
    function getPath (This : in out BasicGeographicMapExtractedPathCacheFactory) return BasicArrayList_Access;
-   procedure getPath (This : in out BasicGeographicMapExtractedPathCacheFactory);
    procedure release (This : in out BasicGeographicMapExtractedPathCacheFactory; list : BasicArrayList_Access);
 
 end org.allbinary.media.graphics.geography.pathfinding.BasicGeographicMapExtractedPathCacheFactory_Package;

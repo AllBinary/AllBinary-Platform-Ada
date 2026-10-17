@@ -51,23 +51,18 @@ package org.allbinary.animation.compound.CompoundIndexedAnimation_Package is
    function Create (animationInterfaceArray : Animation_Access_Array_Access; animationBehavior : AnimationBehavior_Access) return CompoundIndexedAnimation_Access;
    procedure setFrame (This : in out CompoundIndexedAnimation; index : Integer);
    function getFrame (This : in out CompoundIndexedAnimation) return Integer;
-   procedure getFrame (This : in out CompoundIndexedAnimation);
    function getSize (This : in out CompoundIndexedAnimation) return Integer;
-   procedure getSize (This : in out CompoundIndexedAnimation);
    procedure previousFrame (This : in out CompoundIndexedAnimation);
    procedure setSequence (This : in out CompoundIndexedAnimation; sequence : Integer_Array_Access);
    function getSequence (This : in out CompoundIndexedAnimation) return Integer_Array_Access;
-   procedure getSequence (This : in out CompoundIndexedAnimation);
    procedure nextFrame (This : in out CompoundIndexedAnimation);
    procedure paintXY (This : in out CompoundIndexedAnimation; graphics : Graphics_Access; x : Integer; y : Integer);
    procedure paintThreedXYZ (This : in out CompoundIndexedAnimation; graphics : Graphics_Access; x : Integer; y : Integer; z : Integer);
    function getCurrentAnimation (This : in out CompoundIndexedAnimation) return IndexedAnimation_Access;
-   procedure getCurrentAnimation (This : in out CompoundIndexedAnimation);
    procedure nextAnimation (This : in out CompoundIndexedAnimation);
    procedure previousAnimation (This : in out CompoundIndexedAnimation);
    procedure setAnimation (This : in out CompoundIndexedAnimation; index : Integer);
    function getAnimationInterfaceArray (This : in out CompoundIndexedAnimation) return Animation_Access_Array_Access;
-   procedure getAnimationInterfaceArray (This : in out CompoundIndexedAnimation);
    procedure setAnimationInterfaceArray (This : in out CompoundIndexedAnimation; animationInterfaceArray : Animation_Access_Array_Access);
    procedure set (This : in out CompoundIndexedAnimation; gl : GL_Access);
 

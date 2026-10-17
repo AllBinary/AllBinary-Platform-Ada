@@ -23,6 +23,7 @@ with AllBinary_Java; use AllBinary_Java;
 --  with javax.servlet.http.HttpServletRequest_Package; use javax.servlet.http.HttpServletRequest_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.logic.communication.http.AcceptableResponseUtil_Package; use org.allbinary.logic.communication.http.AcceptableResponseUtil_Package;
 
 package org.allbinary.logic.communication.http.AcceptableResponseGenerator_Package is
 
@@ -42,7 +43,6 @@ package org.allbinary.logic.communication.http.AcceptableResponseGenerator_Packa
    procedure Initialize (This : in out AcceptableResponseGenerator'Class);
    function Create return AcceptableResponseGenerator_Access;
    function getInstance return AcceptableResponseGenerator_Access;
-   procedure getInstance;
    function get (This : in out AcceptableResponseGenerator; httpServletRequest : HttpServletRequest_Access) return Unbounded_String;
    procedure get (This : in out AcceptableResponseGenerator; httpServletRequest : HttpServletRequest_Access);
 

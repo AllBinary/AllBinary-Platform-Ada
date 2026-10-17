@@ -29,7 +29,7 @@ package body org.allbinary.game.input.SelectedRTSLayersPlayerUpgradeGameInputPro
    function Create (selectedRTSLayersPlayerGameInput : SelectedRTSLayersPlayerGameInput_Access) return SelectedRTSLayersPlayerUpgradeGameInputProcessor_Access is
       This : constant SelectedRTSLayersPlayerUpgradeGameInputProcessor_Access := new SelectedRTSLayersPlayerUpgradeGameInputProcessor;
    begin
-      Initialize (This.all, selectedRTSLayersPlayerGameInput);
+      SelectedRTSLayersPlayerUpgradeGameInputProcessor_Package.Initialize (This.all, selectedRTSLayersPlayerGameInput);
       return This;
    end Create;
 

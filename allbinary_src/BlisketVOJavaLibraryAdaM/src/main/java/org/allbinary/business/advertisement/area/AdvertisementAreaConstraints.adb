@@ -35,7 +35,7 @@ package body org.allbinary.business.advertisement.area.AdvertisementAreaConstrai
    function Create (document : Document_Access) return AdvertisementAreaConstraints_Access is
       This : constant AdvertisementAreaConstraints_Access := new AdvertisementAreaConstraints;
    begin
-      Initialize (This.all, document);
+      AdvertisementAreaConstraints_Package.Initialize (This.all, document);
       return This;
    end Create;
 
@@ -57,20 +57,6 @@ package body org.allbinary.business.advertisement.area.AdvertisementAreaConstrai
    function getTwoDimensionContraints (This : in out AdvertisementAreaConstraints) return TwoDimensionalConstraintInterface_Access is
    begin
         return This.twoDimensionConstraintsInterface;
-   end getTwoDimensionContraints;
-
-   procedure getDisplayInBrowserContraints (This : in out AdvertisementAreaConstraints) is
-      Java_Result : constant DisplayInBrowserContraintsInterface_Access := AdvertisementAreaConstraints'Class (This).getDisplayInBrowserContraints;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getDisplayInBrowserContraints;
-
-   procedure getTwoDimensionContraints (This : in out AdvertisementAreaConstraints) is
-      Java_Result : constant TwoDimensionalConstraintInterface_Access := AdvertisementAreaConstraints'Class (This).getTwoDimensionContraints;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getTwoDimensionContraints;
 
 end org.allbinary.business.advertisement.area.AdvertisementAreaConstraints_Package;

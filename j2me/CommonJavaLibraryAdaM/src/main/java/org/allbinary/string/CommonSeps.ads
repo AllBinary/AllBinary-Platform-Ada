@@ -70,7 +70,6 @@ package org.allbinary.string_Id.CommonSeps_Package is
    procedure Initialize (This : in out CommonSeps'Class);
    function Create return CommonSeps_Access;
    function getInstance return CommonSeps_Access;
-   procedure getInstance;
 
 end org.allbinary.string_Id.CommonSeps_Package;
 

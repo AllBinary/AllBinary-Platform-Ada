@@ -21,6 +21,7 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.media.audio.CompositeSound_Package; use org.allbinary.media.audio.CompositeSound_Package;
+with org.allbinary.media.audio.Sound_Package; use org.allbinary.media.audio.Sound_Package;
 
 package org.allbinary.media.audio.ErrorSound_Package is
 
@@ -36,7 +37,6 @@ package org.allbinary.media.audio.ErrorSound_Package is
    procedure Initialize (This : in out ErrorSound'Class);
    function Create return ErrorSound_Access;
    function getInstance return Sound_Access;
-   procedure getInstance;
 
 end org.allbinary.media.audio.ErrorSound_Package;
 

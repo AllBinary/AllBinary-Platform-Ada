@@ -29,7 +29,7 @@ package body org.allbinary.business.user.modules.admin.store.order.review.Review
    function Create return ReviewOrderStoreAdminUser_Access is
       This : constant ReviewOrderStoreAdminUser_Access := new ReviewOrderStoreAdminUser;
    begin
-      Initialize (This.all);
+      ReviewOrderStoreAdminUser_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -42,7 +42,7 @@ package body org.allbinary.business.user.modules.admin.store.order.review.Review
    function Create (userHashMap : HashMap_Access) return ReviewOrderStoreAdminUser_Access is
       This : constant ReviewOrderStoreAdminUser_Access := new ReviewOrderStoreAdminUser;
    begin
-      Initialize (This.all, userHashMap);
+      ReviewOrderStoreAdminUser_Package.Initialize (This.all, userHashMap);
       return This;
    end Create;
 

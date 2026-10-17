@@ -29,7 +29,7 @@ package body org.allbinary.game.physics.velocity.DragVelocityBehavior_Package is
    function Create return DragVelocityBehavior_Access is
       This : constant DragVelocityBehavior_Access := new DragVelocityBehavior;
    begin
-      Initialize (This.all);
+      DragVelocityBehavior_Package.Initialize (This.all);
       return This;
    end Create;
 

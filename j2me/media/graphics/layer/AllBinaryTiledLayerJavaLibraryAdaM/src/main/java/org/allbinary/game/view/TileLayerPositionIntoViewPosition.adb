@@ -31,7 +31,7 @@ package body org.allbinary.game.view.TileLayerPositionIntoViewPosition_Package i
    function Create return TileLayerPositionIntoViewPosition_Access is
       This : constant TileLayerPositionIntoViewPosition_Access := new TileLayerPositionIntoViewPosition;
    begin
-      Initialize (This.all);
+      TileLayerPositionIntoViewPosition_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -54,27 +54,6 @@ package body org.allbinary.game.view.TileLayerPositionIntoViewPosition_Package i
    begin
         This.tiledLayer := tiledLayer;
    end setTiledLayer;
-
-   procedure getX (This : in out TileLayerPositionIntoViewPosition) is
-      Java_Result : constant Integer := TileLayerPositionIntoViewPosition'Class (This).getX;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getX;
-
-   procedure getY (This : in out TileLayerPositionIntoViewPosition) is
-      Java_Result : constant Integer := TileLayerPositionIntoViewPosition'Class (This).getY;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getY;
-
-   procedure getZ (This : in out TileLayerPositionIntoViewPosition) is
-      Java_Result : constant Integer := TileLayerPositionIntoViewPosition'Class (This).getZ;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getZ;
 
 end org.allbinary.game.view.TileLayerPositionIntoViewPosition_Package;
 

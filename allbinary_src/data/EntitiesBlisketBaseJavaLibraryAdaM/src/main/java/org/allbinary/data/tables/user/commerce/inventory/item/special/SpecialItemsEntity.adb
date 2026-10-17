@@ -34,7 +34,7 @@ package body org.allbinary.data.tables.user.commerce.inventory.item.special.Spec
    function Create return SpecialItemsEntity_Access is
       This : constant SpecialItemsEntity_Access := new SpecialItemsEntity;
    begin
-      Initialize (This.all);
+      SpecialItemsEntity_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -97,27 +97,6 @@ package body org.allbinary.data.tables.user.commerce.inventory.item.special.Spec
    function dropTable (This : in out SpecialItemsEntity) return Unbounded_String is
    begin
         return AbSqlBean (This).dropTable;
-   end dropTable;
-
-   procedure createTableStatement (This : in out SpecialItemsEntity) is
-      Java_Result : constant Unbounded_String := SpecialItemsEntity'Class (This).createTableStatement;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end createTableStatement;
-
-   procedure createTable (This : in out SpecialItemsEntity) is
-      Java_Result : constant Unbounded_String := SpecialItemsEntity'Class (This).createTable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end createTable;
-
-   procedure dropTable (This : in out SpecialItemsEntity) is
-      Java_Result : constant Unbounded_String := SpecialItemsEntity'Class (This).dropTable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end dropTable;
 
 end org.allbinary.data.tables.user.commerce.inventory.item.special.SpecialItemsEntity_Package;

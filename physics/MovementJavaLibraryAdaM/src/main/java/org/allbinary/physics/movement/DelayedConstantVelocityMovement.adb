@@ -31,7 +31,7 @@ package body org.allbinary.physics.movement.DelayedConstantVelocityMovement_Pack
    function Create (basicDecimal : BasicDecimal_Access; velocityProperties : BasicVelocityProperties_Access) return DelayedConstantVelocityMovement_Access is
       This : constant DelayedConstantVelocityMovement_Access := new DelayedConstantVelocityMovement;
    begin
-      Initialize (This.all, basicDecimal, velocityProperties);
+      DelayedConstantVelocityMovement_Package.Initialize (This.all, basicDecimal, velocityProperties);
       return This;
    end Create;
 

@@ -33,7 +33,7 @@ package body org.allbinary.graphics.color.BasicColorArrayIndexer_Package is
    function Create (basicColorArray : BasicColor_Access_Array_Access) return BasicColorArrayIndexer_Access is
       This : constant BasicColorArrayIndexer_Access := new BasicColorArrayIndexer;
    begin
-      Initialize (This.all, basicColorArray);
+      BasicColorArrayIndexer_Package.Initialize (This.all, basicColorArray);
       return This;
    end Create;
 
@@ -50,20 +50,6 @@ package body org.allbinary.graphics.color.BasicColorArrayIndexer_Package is
    function getBasicColorArray (This : in out BasicColorArrayIndexer) return BasicColor_Access_Array_Access is
    begin
         return This.basicColorArray;
-   end getBasicColorArray;
-
-   procedure get (This : in out BasicColorArrayIndexer) is
-      Java_Result : constant BasicColor_Access := BasicColorArrayIndexer'Class (This).get;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end get;
-
-   procedure getBasicColorArray (This : in out BasicColorArrayIndexer) is
-      Java_Result : constant BasicColor_Access_Array_Access := BasicColorArrayIndexer'Class (This).getBasicColorArray;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getBasicColorArray;
 
 end org.allbinary.graphics.color.BasicColorArrayIndexer_Package;

@@ -41,7 +41,6 @@ package org.allbinary.math.RectangleCollisionUtil_Package is
    procedure Initialize (This : in out RectangleCollisionUtil'Class);
    function Create return RectangleCollisionUtil_Access;
    function getInstance return RectangleCollisionUtil_Access;
-   procedure getInstance;
    function isCollision (This : in out RectangleCollisionUtil; rectX1 : Integer; rectY1 : Integer; rectX2 : Integer; rectY2 : Integer; rect2X1 : Integer; rect2Y1 : Integer; rect2X2 : Integer; rect2Y2 : Integer) return Boolean;
    procedure isCollision (This : in out RectangleCollisionUtil; rectX1 : Integer; rectY1 : Integer; rectX2 : Integer; rectY2 : Integer; rect2X1 : Integer; rect2Y1 : Integer; rect2X2 : Integer; rect2Y2 : Integer);
    function isInside (This : in out RectangleCollisionUtil; rectX1 : Integer; rectY1 : Integer; rectX2 : Integer; rectY2 : Integer; x : Integer; y : Integer) return Boolean;

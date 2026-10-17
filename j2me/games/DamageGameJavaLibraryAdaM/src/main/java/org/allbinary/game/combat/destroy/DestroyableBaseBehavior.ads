@@ -38,11 +38,8 @@ package org.allbinary.game.combat.destroy.DestroyableBaseBehavior_Package is
    procedure Initialize (This : in out DestroyableBaseBehavior'Class);
    function Create return DestroyableBaseBehavior_Access;
    function getInstance return DestroyableBaseBehavior_Access;
-   procedure getInstance;
    function getName (This : in out DestroyableBaseBehavior) return Unbounded_String;
-   procedure getName (This : in out DestroyableBaseBehavior);
    function isDestroyed (This : in out DestroyableBaseBehavior) return Boolean;
-   procedure isDestroyed (This : in out DestroyableBaseBehavior);
    procedure setDestroyed (This : in out DestroyableBaseBehavior; destroyed : Boolean);
 
 end org.allbinary.game.combat.destroy.DestroyableBaseBehavior_Package;

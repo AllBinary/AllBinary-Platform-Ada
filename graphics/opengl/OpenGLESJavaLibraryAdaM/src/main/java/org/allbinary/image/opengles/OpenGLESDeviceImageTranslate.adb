@@ -33,7 +33,7 @@ package body org.allbinary.image.opengles.OpenGLESDeviceImageTranslate_Package i
    function Create return OpenGLESDeviceImageTranslate_Access is
       This : constant OpenGLESDeviceImageTranslate_Access := new OpenGLESDeviceImageTranslate;
    begin
-      Initialize (This.all);
+      OpenGLESDeviceImageTranslate_Package.Initialize (This.all);
       return This;
    end Create;
 

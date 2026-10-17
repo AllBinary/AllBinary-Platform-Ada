@@ -37,7 +37,7 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.TransformInf
    function Create return TransformInfoObjectConfigAndManipulatorFactory_Access is
       This : constant TransformInfoObjectConfigAndManipulatorFactory_Access := new TransformInfoObjectConfigAndManipulatorFactory;
    begin
-      Initialize (This.all);
+      TransformInfoObjectConfigAndManipulatorFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -117,13 +117,6 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.TransformInf
             Java_Throw (e);
                 end;
         end;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant TransformInfoObjectConfigAndManipulatorFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
    procedure getInstance (This : in out TransformInfoObjectConfigAndManipulatorFactory; abeClientInformation : AbeClientInformationInterface_Access; transformInfoInterface : TransformInfoInterface_Access; objectConfigFileAbPath : AbPath_Access) is

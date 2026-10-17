@@ -36,7 +36,6 @@ package org.allbinary.platform.graphics.PlatformBitmapBase_Package is
    procedure Initialize (This : in out PlatformBitmapBase'Class);
    function Create return PlatformBitmapBase_Access;
    function getImage (This : in out PlatformBitmapBase) return Image_Access;
-   procedure getImage (This : in out PlatformBitmapBase);
 
 end org.allbinary.platform.graphics.PlatformBitmapBase_Package;
 

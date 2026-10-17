@@ -33,6 +33,8 @@ with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Packag
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.java.help.JavaHelpSetNotifier_Package; use org.allbinary.logic.java.help.JavaHelpSetNotifier_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.input.automation.module.DefaultListModelHelper_Package; use org.allbinary.input.automation.module.DefaultListModelHelper_Package;
+with org.allbinary.input.automation.module.InputAutomationModuleFactoryInterface_Package; use org.allbinary.input.automation.module.InputAutomationModuleFactoryInterface_Package;
 
 package org.allbinary.input.automation.module.InputAutomationModuleFactoryFactory_Package is
 
@@ -59,7 +61,6 @@ package org.allbinary.input.automation.module.InputAutomationModuleFactoryFactor
    function Create (inputAutomationModuleConfigurations : InputAutomationModuleConfigurations_Access; helpSetListenerInterface : HelpSetListener_Access) return InputAutomationModuleFactoryFactory_Access;
    procedure add (This : in out InputAutomationModuleFactoryFactory; inputAutomationModuleConfiguration : InputAutomationModuleConfiguration_Access);
    function getListModel (This : in out InputAutomationModuleFactoryFactory) return ListModel_Access;
-   procedure getListModel (This : in out InputAutomationModuleFactoryFactory);
    function getInstance (This : in out InputAutomationModuleFactoryFactory; moduleName : Unbounded_String) return InputAutomationModuleFactoryInterface_Access;
    procedure getInstance (This : in out InputAutomationModuleFactoryFactory; moduleName : Unbounded_String);
 

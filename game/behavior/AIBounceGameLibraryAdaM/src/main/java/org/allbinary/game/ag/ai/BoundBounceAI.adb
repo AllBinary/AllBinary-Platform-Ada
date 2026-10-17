@@ -35,7 +35,7 @@ package body org.allbinary.game.ag.ai.BoundBounceAI_Package is
    function Create (ownerLayerInterface : AllBinaryLayer_Access; gameInput : GameInput_Access; layerBounds : LayerBounds_Access; boundsVisitorInterface : BoundsVisitorInterface_Access) return BoundBounceAI_Access is
       This : constant BoundBounceAI_Access := new BoundBounceAI;
    begin
-      Initialize (This.all, ownerLayerInterface, gameInput, layerBounds, boundsVisitorInterface);
+      BoundBounceAI_Package.Initialize (This.all, ownerLayerInterface, gameInput, layerBounds, boundsVisitorInterface);
       return This;
    end Create;
 

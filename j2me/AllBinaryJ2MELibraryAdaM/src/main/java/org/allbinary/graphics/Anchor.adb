@@ -28,7 +28,7 @@ package body org.allbinary.graphics.Anchor_Package is
    function Create return Anchor_Access is
       This : constant Anchor_Access := new Anchor;
    begin
-      Initialize (This.all);
+      Anchor_Package.Initialize (This.all);
       return This;
    end Create;
 

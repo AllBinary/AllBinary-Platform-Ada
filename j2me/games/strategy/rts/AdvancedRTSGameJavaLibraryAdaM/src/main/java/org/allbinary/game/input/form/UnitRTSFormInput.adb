@@ -38,7 +38,7 @@ package body org.allbinary.game.input.form.UnitRTSFormInput_Package is
    function Create (groupInterface : Group_Access_Array_Access) return UnitRTSFormInput_Access is
       This : constant UnitRTSFormInput_Access := new UnitRTSFormInput;
    begin
-      Initialize (This.all, groupInterface);
+      UnitRTSFormInput_Package.Initialize (This.all, groupInterface);
       return This;
    end Create;
 

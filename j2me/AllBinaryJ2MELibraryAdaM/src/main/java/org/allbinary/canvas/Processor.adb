@@ -28,7 +28,7 @@ package body org.allbinary.canvas.Processor_Package is
    function Create return Processor_Access is
       This : constant Processor_Access := new Processor;
    begin
-      Initialize (This.all);
+      Processor_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -49,13 +49,6 @@ package body org.allbinary.canvas.Processor_Package is
    begin
         null;
    end processt;
-
-   procedure getInstance is
-      Java_Result : constant Processor_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

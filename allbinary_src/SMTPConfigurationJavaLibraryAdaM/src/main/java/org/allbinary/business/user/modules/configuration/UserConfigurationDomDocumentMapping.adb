@@ -31,7 +31,7 @@ package body org.allbinary.business.user.modules.configuration.UserConfiguration
    function Create (userConfigurationInterface : UserConfigurationInterface_Access) return UserConfigurationDomDocumentMapping_Access is
       This : constant UserConfigurationDomDocumentMapping_Access := new UserConfigurationDomDocumentMapping;
    begin
-      Initialize (This.all, userConfigurationInterface);
+      UserConfigurationDomDocumentMapping_Package.Initialize (This.all, userConfigurationInterface);
       return This;
    end Create;
 
@@ -50,20 +50,6 @@ package body org.allbinary.business.user.modules.configuration.UserConfiguration
    function toDomDocumentString (This : in out UserConfigurationDomDocumentMapping) return Unbounded_String is
    begin
         return XmlDocumentHelper_Package.toString (This.toXmlDoc);
-   end toDomDocumentString;
-
-   procedure toXmlDoc (This : in out UserConfigurationDomDocumentMapping) is
-      Java_Result : constant Document_Access := UserConfigurationDomDocumentMapping'Class (This).toXmlDoc;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toXmlDoc;
-
-   procedure toDomDocumentString (This : in out UserConfigurationDomDocumentMapping) is
-      Java_Result : constant Unbounded_String := UserConfigurationDomDocumentMapping'Class (This).toDomDocumentString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end toDomDocumentString;
 
 end org.allbinary.business.user.modules.configuration.UserConfigurationDomDocumentMapping_Package;

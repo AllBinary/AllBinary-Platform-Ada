@@ -28,7 +28,7 @@ package body org.allbinary.animation.VectorAnimationFactory_Package is
    function Create return VectorAnimationFactory_Access is
       This : constant VectorAnimationFactory_Access := new VectorAnimationFactory;
    begin
-      Initialize (This.all);
+      VectorAnimationFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

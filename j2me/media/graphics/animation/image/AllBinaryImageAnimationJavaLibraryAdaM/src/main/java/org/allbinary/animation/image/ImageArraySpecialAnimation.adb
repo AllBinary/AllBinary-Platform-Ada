@@ -34,7 +34,7 @@ package body org.allbinary.animation.image.ImageArraySpecialAnimation_Package is
    function Create (imageArray : Image_Access_Array_Access; animationBehavior : AnimationBehavior_Access) return ImageArraySpecialAnimation_Access is
       This : constant ImageArraySpecialAnimation_Access := new ImageArraySpecialAnimation;
    begin
-      Initialize (This.all, imageArray, animationBehavior);
+      ImageArraySpecialAnimation_Package.Initialize (This.all, imageArray, animationBehavior);
       return This;
    end Create;
 
@@ -75,26 +75,14 @@ package body org.allbinary.animation.image.ImageArraySpecialAnimation_Package is
         end if;
    end isComplete;
 
-   procedure paintXY (This : in out ImageArraySpecialAnimation; graphics : Graphics_Access; x : Integer; y : Integer) is
+   procedure paintXY (This : in out ImageArraySpecialAnimation; graphics : Graphics_Access; x_Param : Integer; y_Param : Integer) is
+      x : Integer := x_Param;
+      y : Integer := y_Param;
    begin
         x := (DisplayInfoSingleton_Package.getInstance.getLastHalfWidth) - ((Java_Shift_Right_Arithmetic (This.getImage (This.circularIndexUtil.getIndex).getWidth, 1)));
         y := 5;
         ImageArrayAnimation (This).paintXY (graphics, x, y);
    end paintXY;
-
-   procedure getLoopCount (This : in out ImageArraySpecialAnimation) is
-      Java_Result : constant Integer := ImageArraySpecialAnimation'Class (This).getLoopCount;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getLoopCount;
-
-   procedure isComplete (This : in out ImageArraySpecialAnimation) is
-      Java_Result : constant Boolean := ImageArraySpecialAnimation'Class (This).isComplete;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isComplete;
 
 end org.allbinary.animation.image.ImageArraySpecialAnimation_Package;
 

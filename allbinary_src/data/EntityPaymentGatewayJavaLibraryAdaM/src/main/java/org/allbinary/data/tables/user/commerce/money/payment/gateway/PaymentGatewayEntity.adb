@@ -36,7 +36,7 @@ package body org.allbinary.data.tables.user.commerce.money.payment.gateway.Payme
    function Create return PaymentGatewayEntity_Access is
       This : constant PaymentGatewayEntity_Access := new PaymentGatewayEntity;
    begin
-      Initialize (This.all);
+      PaymentGatewayEntity_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -341,27 +341,6 @@ package body org.allbinary.data.tables.user.commerce.money.payment.gateway.Payme
    begin
       null;
    end findPaymentTypeVectorByStore;
-
-   procedure createTableStatement (This : in out PaymentGatewayEntity) is
-      Java_Result : constant Unbounded_String := PaymentGatewayEntity'Class (This).createTableStatement;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end createTableStatement;
-
-   procedure createTable (This : in out PaymentGatewayEntity) is
-      Java_Result : constant Unbounded_String := PaymentGatewayEntity'Class (This).createTable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end createTable;
-
-   procedure dropTable (This : in out PaymentGatewayEntity) is
-      Java_Result : constant Unbounded_String := PaymentGatewayEntity'Class (This).dropTable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end dropTable;
 
 end org.allbinary.data.tables.user.commerce.money.payment.gateway.PaymentGatewayEntity_Package;
 

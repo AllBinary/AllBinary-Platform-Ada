@@ -47,7 +47,7 @@ package body org.allbinary.animation.image.LazyImageRotationAnimation_Package is
    function Create (layoutIndex : Integer; instanceId : Integer; scaleProperties : ScaleProperties_Access; animationInterfaceFactoryInterface : BaseImageAnimationFactory_Access; animationBehavior : AnimationBehavior_Access) return LazyImageRotationAnimation_Access is
       This : constant LazyImageRotationAnimation_Access := new LazyImageRotationAnimation;
    begin
-      Initialize (This.all, layoutIndex, instanceId, scaleProperties, animationInterfaceFactoryInterface, animationBehavior);
+      LazyImageRotationAnimation_Package.Initialize (This.all, layoutIndex, instanceId, scaleProperties, animationInterfaceFactoryInterface, animationBehavior);
       return This;
    end Create;
 
@@ -279,111 +279,6 @@ package body org.allbinary.animation.image.LazyImageRotationAnimation_Package is
         commonSeps := CommonSeps_Package.getInstance;
         image := This.animationInterfaceFactoryInterface.getImage;
         return StringMaker_Package.Create.append (RotationAnimation (This).toString).append (commonSeps.SPACE).append (image.getName).append (commonSeps.SPACE).appendint (Integer (image.getWidth)).append (commonSeps.SPACE).appendint (Integer (image.getHeight)).toString;
-   end toString;
-
-   procedure getAnimationBehavior (This : in out LazyImageRotationAnimation) is
-      Java_Result : constant AnimationBehavior_Access := LazyImageRotationAnimation'Class (This).getAnimationBehavior;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getAnimationBehavior;
-
-   procedure getBasicColorP (This : in out LazyImageRotationAnimation) is
-      Java_Result : constant BasicColor_Access := LazyImageRotationAnimation'Class (This).getBasicColorP;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getBasicColorP;
-
-   procedure getChangeBasicColor (This : in out LazyImageRotationAnimation) is
-      Java_Result : constant BasicColor_Access := LazyImageRotationAnimation'Class (This).getChangeBasicColor;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getChangeBasicColor;
-
-   procedure getChangeColor (This : in out LazyImageRotationAnimation) is
-      Java_Result : constant Integer := LazyImageRotationAnimation'Class (This).getChangeColor;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getChangeColor;
-
-   procedure getColor (This : in out LazyImageRotationAnimation) is
-      Java_Result : constant Integer := LazyImageRotationAnimation'Class (This).getColor;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getColor;
-
-   procedure getDx (This : in out LazyImageRotationAnimation) is
-      Java_Result : constant Integer := LazyImageRotationAnimation'Class (This).getDx;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getDx;
-
-   procedure getDy (This : in out LazyImageRotationAnimation) is
-      Java_Result : constant Integer := LazyImageRotationAnimation'Class (This).getDy;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getDy;
-
-   procedure isThreed (This : in out LazyImageRotationAnimation) is
-      Java_Result : constant Boolean := LazyImageRotationAnimation'Class (This).isThreed;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isThreed;
-
-   procedure getFrame (This : in out LazyImageRotationAnimation) is
-      Java_Result : constant Integer := LazyImageRotationAnimation'Class (This).getFrame;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getFrame;
-
-   procedure getAnimationSize (This : in out LazyImageRotationAnimation) is
-      Java_Result : constant Integer := LazyImageRotationAnimation'Class (This).getAnimationSize;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getAnimationSize;
-
-   procedure getSize (This : in out LazyImageRotationAnimation) is
-      Java_Result : constant Integer := LazyImageRotationAnimation'Class (This).getSize;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSize;
-
-   procedure isLastFrame (This : in out LazyImageRotationAnimation) is
-      Java_Result : constant Boolean := LazyImageRotationAnimation'Class (This).isLastFrame;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isLastFrame;
-
-   procedure getSequence (This : in out LazyImageRotationAnimation) is
-      Java_Result : constant Integer_Array_Access := LazyImageRotationAnimation'Class (This).getSequence;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSequence;
-
-   procedure getWidth (This : in out LazyImageRotationAnimation) is
-      Java_Result : constant Integer := LazyImageRotationAnimation'Class (This).getWidth;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getWidth;
-
-   procedure toString (This : in out LazyImageRotationAnimation) is
-      Java_Result : constant Unbounded_String := LazyImageRotationAnimation'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end toString;
 
 begin

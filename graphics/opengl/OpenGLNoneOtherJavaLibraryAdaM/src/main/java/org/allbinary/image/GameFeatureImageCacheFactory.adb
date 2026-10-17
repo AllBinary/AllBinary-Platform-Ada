@@ -28,7 +28,7 @@ package body org.allbinary.image.GameFeatureImageCacheFactory_Package is
    function Create return GameFeatureImageCacheFactory_Access is
       This : constant GameFeatureImageCacheFactory_Access := new GameFeatureImageCacheFactory;
    begin
-      Initialize (This.all);
+      GameFeatureImageCacheFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -47,13 +47,6 @@ package body org.allbinary.image.GameFeatureImageCacheFactory_Package is
    begin
         ImageCacheFactory_Package.getInstance.releaseAll;
    end releaseAll;
-
-   procedure getInstance is
-      Java_Result : constant ImageCache_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 end org.allbinary.image.GameFeatureImageCacheFactory_Package;
 

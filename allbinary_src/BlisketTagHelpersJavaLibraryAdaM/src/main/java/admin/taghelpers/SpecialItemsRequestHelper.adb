@@ -43,7 +43,7 @@ package body admin.taghelpers.SpecialItemsRequestHelper_Package is
    function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return SpecialItemsRequestHelper_Access is
       This : constant SpecialItemsRequestHelper_Access := new SpecialItemsRequestHelper;
    begin
-      Initialize (This.all, hashMap, pageContext);
+      SpecialItemsRequestHelper_Package.Initialize (This.all, hashMap, pageContext);
       return This;
    end Create;
 
@@ -166,34 +166,6 @@ package body admin.taghelpers.SpecialItemsRequestHelper_Package is
             return error;
                 end;
         end;
-   end update;
-
-   procedure getHashMap (This : in out SpecialItemsRequestHelper) is
-      Java_Result : constant HashMap_Access := SpecialItemsRequestHelper'Class (This).getHashMap;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getHashMap;
-
-   procedure insert (This : in out SpecialItemsRequestHelper) is
-      Java_Result : constant Unbounded_String := SpecialItemsRequestHelper'Class (This).insert;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end insert;
-
-   procedure delete (This : in out SpecialItemsRequestHelper) is
-      Java_Result : constant Unbounded_String := SpecialItemsRequestHelper'Class (This).delete;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end delete;
-
-   procedure update (This : in out SpecialItemsRequestHelper) is
-      Java_Result : constant Unbounded_String := SpecialItemsRequestHelper'Class (This).update;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end update;
 
 end admin.taghelpers.SpecialItemsRequestHelper_Package;

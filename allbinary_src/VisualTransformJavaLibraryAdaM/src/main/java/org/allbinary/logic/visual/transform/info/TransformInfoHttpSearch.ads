@@ -49,13 +49,9 @@ package org.allbinary.logic.visual.transform.info.TransformInfoHttpSearch_Packag
    procedure Initialize (This : in out TransformInfoHttpSearch'Class; searchRequest : SearchRequest_Access);
    function Create (searchRequest : SearchRequest_Access) return TransformInfoHttpSearch_Access;
    function getPath (This : in out TransformInfoHttpSearch) return Unbounded_String;
-   procedure getPath (This : in out TransformInfoHttpSearch);
    function getTemplateFilePath (This : in out TransformInfoHttpSearch) return AbPath_Access;
-   procedure getTemplateFilePath (This : in out TransformInfoHttpSearch);
    function getObjectConfigFilePath (This : in out TransformInfoHttpSearch) return AbPath_Access;
-   procedure getObjectConfigFilePath (This : in out TransformInfoHttpSearch);
    function getDataFilePath (This : in out TransformInfoHttpSearch) return AbPath_Access;
-   procedure getDataFilePath (This : in out TransformInfoHttpSearch);
 
 end org.allbinary.logic.visual.transform.info.TransformInfoHttpSearch_Package;
 

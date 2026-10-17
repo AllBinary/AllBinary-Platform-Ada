@@ -31,7 +31,7 @@ package body org.allbinary.business.category.store.theme.StoreThemeCategoriesVie
    function Create (categoryInterface : StoreThemeCategoryInterface_Access) return StoreThemeCategoriesView_Access is
       This : constant StoreThemeCategoriesView_Access := new StoreThemeCategoriesView;
    begin
-      Initialize (This.all, categoryInterface);
+      StoreThemeCategoriesView_Package.Initialize (This.all, categoryInterface);
       return This;
    end Create;
 

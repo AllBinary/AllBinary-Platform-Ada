@@ -31,7 +31,7 @@ package body org.allbinary.business.init.InitInfoDocument_Package is
    function Create return InitInfoDocument_Access is
       This : constant InitInfoDocument_Access := new InitInfoDocument;
    begin
-      Initialize (This.all);
+      InitInfoDocument_Package.Initialize (This.all);
       return This;
    end Create;
 

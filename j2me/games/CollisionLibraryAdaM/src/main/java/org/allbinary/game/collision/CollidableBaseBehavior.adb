@@ -34,7 +34,7 @@ package body org.allbinary.game.collision.CollidableBaseBehavior_Package is
    function Create (collidable : Boolean) return CollidableBaseBehavior_Access is
       This : constant CollidableBaseBehavior_Access := new CollidableBaseBehavior;
    begin
-      Initialize (This.all, collidable);
+      CollidableBaseBehavior_Package.Initialize (This.all, collidable);
       return This;
    end Create;
 
@@ -89,13 +89,6 @@ package body org.allbinary.game.collision.CollidableBaseBehavior_Package is
    begin
         return CollisionTypeFactory_Package.getInstance.NONE;
    end getCollisionTypeWith;
-
-   procedure getName (This : in out CollidableBaseBehavior) is
-      Java_Result : constant Unbounded_String := CollidableBaseBehavior'Class (This).getName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getName;
 
    procedure isCollidable (This : in out CollidableBaseBehavior; ownerLayer : CollidableCompositeLayer_Access) is
       Java_Result : constant Boolean := CollidableBaseBehavior'Class (This).isCollidable (ownerLayer);

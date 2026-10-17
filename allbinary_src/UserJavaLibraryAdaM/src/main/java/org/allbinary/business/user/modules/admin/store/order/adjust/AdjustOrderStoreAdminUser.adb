@@ -29,7 +29,7 @@ package body org.allbinary.business.user.modules.admin.store.order.adjust.Adjust
    function Create return AdjustOrderStoreAdminUser_Access is
       This : constant AdjustOrderStoreAdminUser_Access := new AdjustOrderStoreAdminUser;
    begin
-      Initialize (This.all);
+      AdjustOrderStoreAdminUser_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -42,7 +42,7 @@ package body org.allbinary.business.user.modules.admin.store.order.adjust.Adjust
    function Create (userHashMap : HashMap_Access) return AdjustOrderStoreAdminUser_Access is
       This : constant AdjustOrderStoreAdminUser_Access := new AdjustOrderStoreAdminUser;
    begin
-      Initialize (This.all, userHashMap);
+      AdjustOrderStoreAdminUser_Package.Initialize (This.all, userHashMap);
       return This;
    end Create;
 

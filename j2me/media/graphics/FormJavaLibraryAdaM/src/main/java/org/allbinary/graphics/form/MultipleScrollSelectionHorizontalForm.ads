@@ -23,6 +23,10 @@ with org.allbinary.graphics.paint.Paintable_Package; use org.allbinary.graphics.
 with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.graphics.form.ScrollSelectionForm_Package; use org.allbinary.graphics.form.ScrollSelectionForm_Package;
+with org.allbinary.graphics.form.ItemPaintableFactory_Package; use org.allbinary.graphics.form.ItemPaintableFactory_Package;
+with org.allbinary.graphics.form.FormType_Package; use org.allbinary.graphics.form.FormType_Package;
+with org.allbinary.graphics.form.ItemIndexPaintable_Package; use org.allbinary.graphics.form.ItemIndexPaintable_Package;
+with org.allbinary.graphics.form.FormTypeFactory_Package; use org.allbinary.graphics.form.FormTypeFactory_Package;
 
 package org.allbinary.graphics.form.MultipleScrollSelectionHorizontalForm_Package is
 
@@ -60,12 +64,11 @@ package org.allbinary.graphics.form.MultipleScrollSelectionHorizontalForm_Packag
    procedure fillRect (This : in out MultipleScrollSelectionHorizontalForm; graphics : Graphics_Access);
    procedure init (This : in out MultipleScrollSelectionHorizontalForm; rectangle : Rectangle_Access; formType : FormType_Access);
    procedure updateMeasurement (This : in out MultipleScrollSelectionHorizontalForm; graphics : Graphics_Access);
-   function paintHorizontal (This : in out MultipleScrollSelectionHorizontalForm; graphics : Graphics_Access; index : Integer; item : ABCustomItem_Access; dx : Integer; dy : Integer) return Integer;
-   procedure paintHorizontal (This : in out MultipleScrollSelectionHorizontalForm; graphics : Graphics_Access; index : Integer; item : ABCustomItem_Access; dx : Integer; dy : Integer);
+   function paintHorizontal (This : in out MultipleScrollSelectionHorizontalForm; graphics : Graphics_Access; index : Integer; item : ABCustomItem_Access; dx_Param : Integer; dy : Integer) return Integer;
+   procedure paintHorizontal (This : in out MultipleScrollSelectionHorizontalForm; graphics : Graphics_Access; index : Integer; item : ABCustomItem_Access; dx_Param : Integer; dy : Integer);
    function paintVertical (This : in out MultipleScrollSelectionHorizontalForm; graphics : Graphics_Access; index : Integer; item : ABCustomItem_Access; dx : Integer; dy : Integer) return Integer;
    procedure paintVertical (This : in out MultipleScrollSelectionHorizontalForm; graphics : Graphics_Access; index : Integer; item : ABCustomItem_Access; dx : Integer; dy : Integer);
    function getStartIndex (This : in out MultipleScrollSelectionHorizontalForm) return Integer;
-   procedure getStartIndex (This : in out MultipleScrollSelectionHorizontalForm);
    procedure paint (This : in out MultipleScrollSelectionHorizontalForm; graphics : Graphics_Access);
 
 end org.allbinary.graphics.form.MultipleScrollSelectionHorizontalForm_Package;
@@ -93,6 +96,10 @@ with org.allbinary.graphics.paint.Paintable_Package; use org.allbinary.graphics.
 with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.graphics.form.ScrollSelectionForm_Package; use org.allbinary.graphics.form.ScrollSelectionForm_Package;
+with org.allbinary.graphics.form.ItemPaintableFactory_Package; use org.allbinary.graphics.form.ItemPaintableFactory_Package;
+with org.allbinary.graphics.form.FormType_Package; use org.allbinary.graphics.form.FormType_Package;
+with org.allbinary.graphics.form.ItemIndexPaintable_Package; use org.allbinary.graphics.form.ItemIndexPaintable_Package;
+with org.allbinary.graphics.form.FormTypeFactory_Package; use org.allbinary.graphics.form.FormTypeFactory_Package;
 
 package org.allbinary.graphics.form.MultipleScrollSelectionFormHorizontalPaintable_Package is
 
@@ -148,6 +155,10 @@ with org.allbinary.graphics.paint.Paintable_Package; use org.allbinary.graphics.
 with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.graphics.form.ScrollSelectionForm_Package; use org.allbinary.graphics.form.ScrollSelectionForm_Package;
+with org.allbinary.graphics.form.ItemPaintableFactory_Package; use org.allbinary.graphics.form.ItemPaintableFactory_Package;
+with org.allbinary.graphics.form.FormType_Package; use org.allbinary.graphics.form.FormType_Package;
+with org.allbinary.graphics.form.ItemIndexPaintable_Package; use org.allbinary.graphics.form.ItemIndexPaintable_Package;
+with org.allbinary.graphics.form.FormTypeFactory_Package; use org.allbinary.graphics.form.FormTypeFactory_Package;
 
 package org.allbinary.graphics.form.MultipleScrollSelectionFormVerticalPaintable_Package is
 

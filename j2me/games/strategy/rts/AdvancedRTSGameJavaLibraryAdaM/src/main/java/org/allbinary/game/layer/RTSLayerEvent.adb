@@ -30,7 +30,7 @@ package body org.allbinary.game.layer.RTSLayerEvent_Package is
    function Create (rtsLayer : PathFindingLayerInterface_Access) return RTSLayerEvent_Access is
       This : constant RTSLayerEvent_Access := new RTSLayerEvent;
    begin
-      Initialize (This.all, rtsLayer);
+      RTSLayerEvent_Package.Initialize (This.all, rtsLayer);
       return This;
    end Create;
 
@@ -53,20 +53,6 @@ package body org.allbinary.game.layer.RTSLayerEvent_Package is
    begin
         This.rtsLayer := rtsLayer;
    end setRtsLayer;
-
-   procedure toString (This : in out RTSLayerEvent) is
-      Java_Result : constant Unbounded_String := RTSLayerEvent'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toString;
-
-   procedure getRtsLayer (This : in out RTSLayerEvent) is
-      Java_Result : constant PathFindingLayerInterface_Access := RTSLayerEvent'Class (This).getRtsLayer;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getRtsLayer;
 
 end org.allbinary.game.layer.RTSLayerEvent_Package;
 

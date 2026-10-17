@@ -40,16 +40,9 @@ package body org.allbinary.media.graphics.geography.map.racetrack.EmptyRaceRaceT
    function Create return EmptyRaceRaceTrackGeographicMapCellTypeFactory_Access is
       This : constant EmptyRaceRaceTrackGeographicMapCellTypeFactory_Access := new EmptyRaceRaceTrackGeographicMapCellTypeFactory;
    begin
-      Initialize (This.all);
+      EmptyRaceRaceTrackGeographicMapCellTypeFactory_Package.Initialize (This.all);
       return This;
    end Create;
-
-   procedure getInstance is
-      Java_Result : constant EmptyRaceRaceTrackGeographicMapCellTypeFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

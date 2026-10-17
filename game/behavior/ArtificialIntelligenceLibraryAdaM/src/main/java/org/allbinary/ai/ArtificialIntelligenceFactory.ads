@@ -21,6 +21,7 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.ai.ArtificialIntelligenceFactoryInterface_Package; use org.allbinary.ai.ArtificialIntelligenceFactoryInterface_Package;
+with org.allbinary.ai.ArtificialIntelligence_Package; use org.allbinary.ai.ArtificialIntelligence_Package;
 
 package org.allbinary.ai.ArtificialIntelligenceFactory_Package is
 

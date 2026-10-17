@@ -36,7 +36,6 @@ package org.allbinary.graphics.j2me.workarea.canvas.CanvasTreeLabel_Package is
    procedure Initialize (This : in out CanvasTreeLabel'Class; str : Unbounded_String);
    function Create (str : Unbounded_String) return CanvasTreeLabel_Access;
    function toString (This : in out CanvasTreeLabel) return Unbounded_String;
-   procedure toString (This : in out CanvasTreeLabel);
 
 end org.allbinary.graphics.j2me.workarea.canvas.CanvasTreeLabel_Package;
 

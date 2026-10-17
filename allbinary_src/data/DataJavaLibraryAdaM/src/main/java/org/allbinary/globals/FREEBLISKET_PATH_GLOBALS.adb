@@ -72,16 +72,9 @@ package body org.allbinary.globals.FREEBLISKET_PATH_GLOBALS_Package is
    function Create return FREEBLISKET_PATH_GLOBALS_Access is
       This : constant FREEBLISKET_PATH_GLOBALS_Access := new FREEBLISKET_PATH_GLOBALS;
    begin
-      Initialize (This.all);
+      FREEBLISKET_PATH_GLOBALS_Package.Initialize (This.all);
       return This;
    end Create;
-
-   procedure getInstance is
-      Java_Result : constant FREEBLISKET_PATH_GLOBALS_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

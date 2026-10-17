@@ -37,7 +37,7 @@ package body org.allbinary.media.graphics.geography.map.GeographicMapEventHandle
    function Create return GeographicMapEventHandler_Access is
       This : constant GeographicMapEventHandler_Access := new GeographicMapEventHandler;
    begin
-      Initialize (This.all);
+      GeographicMapEventHandler_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -79,13 +79,6 @@ package body org.allbinary.media.graphics.geography.map.GeographicMapEventHandle
             end;
         end loop;
    end fireEvent;
-
-   procedure getInstance is
-      Java_Result : constant GeographicMapEventHandler_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

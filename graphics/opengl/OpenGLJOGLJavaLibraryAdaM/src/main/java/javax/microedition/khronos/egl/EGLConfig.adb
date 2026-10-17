@@ -18,7 +18,7 @@ package body javax.microedition.khronos.egl.EGLConfig_Package is
    function Create return EGLConfig_Access is
       This : constant EGLConfig_Access := new EGLConfig;
    begin
-      Initialize (This.all);
+      EGLConfig_Package.Initialize (This.all);
       return This;
    end Create;
 

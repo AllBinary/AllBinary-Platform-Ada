@@ -38,16 +38,9 @@ package body org.allbinary.business.context.modules.storefront.statistics.invent
    function Create return StoreFrontInventoryStatisticsData_Access is
       This : constant StoreFrontInventoryStatisticsData_Access := new StoreFrontInventoryStatisticsData;
    begin
-      Initialize (This.all);
+      StoreFrontInventoryStatisticsData_Package.Initialize (This.all);
       return This;
    end Create;
-
-   procedure getInstance is
-      Java_Result : constant StoreFrontInventoryStatisticsData_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

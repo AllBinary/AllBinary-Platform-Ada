@@ -31,7 +31,7 @@ package body org.allbinary.logic.util.event.AllBinaryEventObject_Package is
    function Create (anyType : Java_Object_Access) return AllBinaryEventObject_Access is
       This : constant AllBinaryEventObject_Access := new AllBinaryEventObject;
    begin
-      Initialize (This.all, anyType);
+      AllBinaryEventObject_Package.Initialize (This.all, anyType);
       return This;
    end Create;
 
@@ -44,13 +44,6 @@ package body org.allbinary.logic.util.event.AllBinaryEventObject_Package is
    begin
         This.source := source;
    end setSource;
-
-   procedure getSource (This : in out AllBinaryEventObject) is
-      Java_Result : constant Java_Object_Access := AllBinaryEventObject'Class (This).getSource;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSource;
 
 begin
    null;

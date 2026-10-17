@@ -40,7 +40,7 @@ package body org.allbinary.game.layer.GeographicMapCellPositionArea_Package is
    function Create (layerInterface : AllBinaryLayer_Access) return GeographicMapCellPositionArea_Access is
       This : constant GeographicMapCellPositionArea_Access := new GeographicMapCellPositionArea;
    begin
-      Initialize (This.all, layerInterface);
+      GeographicMapCellPositionArea_Package.Initialize (This.all, layerInterface);
       return This;
    end Create;
 
@@ -68,27 +68,6 @@ package body org.allbinary.game.layer.GeographicMapCellPositionArea_Package is
         geographicMapCellPosition := GeographicMapCellPosition_Access (This.surroundingGeographicMapCellPositionList.get (This.surroundingCircularIndexUtil.getIndex));
         This.surroundingCircularIndexUtil.next;
         return geographicMapCellPosition;
-   end getNextSurroundingGeographicMapCellPosition;
-
-   procedure getOccupyingGeographicMapCellPositionList (This : in out GeographicMapCellPositionArea) is
-      Java_Result : constant BasicArrayList_Access := GeographicMapCellPositionArea'Class (This).getOccupyingGeographicMapCellPositionList;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getOccupyingGeographicMapCellPositionList;
-
-   procedure getSurroundingGeographicMapCellPositionList (This : in out GeographicMapCellPositionArea) is
-      Java_Result : constant BasicArrayList_Access := GeographicMapCellPositionArea'Class (This).getSurroundingGeographicMapCellPositionList;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSurroundingGeographicMapCellPositionList;
-
-   procedure getNextSurroundingGeographicMapCellPosition (This : in out GeographicMapCellPositionArea) is
-      Java_Result : constant GeographicMapCellPosition_Access := GeographicMapCellPositionArea'Class (This).getNextSurroundingGeographicMapCellPosition;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getNextSurroundingGeographicMapCellPosition;
 
 end org.allbinary.game.layer.GeographicMapCellPositionArea_Package;

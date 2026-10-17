@@ -23,6 +23,8 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbinary.logic.util.event.AllBinaryEventObject_Package;
 with org.allbinary.logic.util.event.EventListenerInterface_Package; use org.allbinary.logic.util.event.EventListenerInterface_Package;
 with org.allbinary.logic.util.event.handler.BasicEventHandler_Package; use org.allbinary.logic.util.event.handler.BasicEventHandler_Package;
+with org.allbinary.game.tracking.TrackingEventListenerInterface_Package; use org.allbinary.game.tracking.TrackingEventListenerInterface_Package;
+with org.allbinary.game.tracking.TrackingEvent_Package; use org.allbinary.game.tracking.TrackingEvent_Package;
 
 package org.allbinary.game.tracking.TrackingEventHandler_Package is
 
@@ -41,7 +43,6 @@ package org.allbinary.game.tracking.TrackingEventHandler_Package is
    procedure Initialize (This : in out TrackingEventHandler'Class);
    function Create return TrackingEventHandler_Access;
    function getInstance return TrackingEventHandler_Access;
-   procedure getInstance;
    procedure process (This : in out TrackingEventHandler; eventObject : AllBinaryEventObject_Access; eventListenerInterface : EventListenerInterface_Access);
 
 end org.allbinary.game.tracking.TrackingEventHandler_Package;

@@ -29,7 +29,7 @@ package body org.allbinary.media.graphics.geography.pathfinding.GeographicPathFi
    function Create return GeographicPathFinderBase_Access is
       This : constant GeographicPathFinderBase_Access := new GeographicPathFinderBase;
    begin
-      Initialize (This.all);
+      GeographicPathFinderBase_Package.Initialize (This.all);
       return This;
    end Create;
 

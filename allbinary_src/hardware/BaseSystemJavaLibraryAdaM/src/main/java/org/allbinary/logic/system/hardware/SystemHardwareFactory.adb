@@ -38,7 +38,7 @@ package body org.allbinary.logic.system.hardware.SystemHardwareFactory_Package i
    function Create return SystemHardwareFactory_Access is
       This : constant SystemHardwareFactory_Access := new SystemHardwareFactory;
    begin
-      Initialize (This.all);
+      SystemHardwareFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -75,26 +75,12 @@ package body org.allbinary.logic.system.hardware.SystemHardwareFactory_Package i
         return osBuffer.toString;
    end static_toString;
 
-   procedure getInstance is
-      Java_Result : constant SystemHardwareFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
    procedure getInstance (This : in out SystemHardwareFactory; operatingSystemInterface : GenericOperatingSystem_Access) is
       Java_Result : constant HardwareInterface_Access := SystemHardwareFactory'Class (This).getInstance (operatingSystemInterface);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInstance;
-
-   procedure static_toString is
-      Java_Result : constant Unbounded_String := static_toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end static_toString;
 
 begin
    null;

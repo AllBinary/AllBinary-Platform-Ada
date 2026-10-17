@@ -33,7 +33,7 @@ package body org.allbinary.game.ag.ai.ThrustAIVisitor_Package is
    function Create return ThrustAIVisitor_Access is
       This : constant ThrustAIVisitor_Access := new ThrustAIVisitor;
    begin
-      Initialize (This.all);
+      ThrustAIVisitor_Package.Initialize (This.all);
       return This;
    end Create;
 

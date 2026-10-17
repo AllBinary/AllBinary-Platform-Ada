@@ -29,7 +29,7 @@ package body org.allbinary.logic.util.cache.BasicArrayListCacheable_Package is
    function Create return BasicArrayListCacheable_Access is
       This : constant BasicArrayListCacheable_Access := new BasicArrayListCacheable;
    begin
-      Initialize (This.all);
+      BasicArrayListCacheable_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -37,13 +37,6 @@ package body org.allbinary.logic.util.cache.BasicArrayListCacheable_Package is
    function getKey (This : in out BasicArrayListCacheable) return Java_Object_Access is
    begin
         return StringUtil_Package.getInstance.EMPTY_STRING;
-   end getKey;
-
-   procedure getKey (This : in out BasicArrayListCacheable) is
-      Java_Result : constant Java_Object_Access := BasicArrayListCacheable'Class (This).getKey;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getKey;
 
 end org.allbinary.logic.util.cache.BasicArrayListCacheable_Package;

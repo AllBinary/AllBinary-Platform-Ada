@@ -54,9 +54,7 @@ package org.allbinary.canvas.AndroidGameStatistics_Package is
    procedure process (This : in out AndroidGameStatistics);
    procedure nextOnDraw (This : in out AndroidGameStatistics);
    function toStringArray (This : in out AndroidGameStatistics) return Unbounded_String_Array_Access;
-   procedure toStringArray (This : in out AndroidGameStatistics);
    function toString (This : in out AndroidGameStatistics) return Unbounded_String;
-   procedure toString (This : in out AndroidGameStatistics);
 
 end org.allbinary.canvas.AndroidGameStatistics_Package;
 

@@ -34,7 +34,7 @@ package body org.allbinary.logic.visual.dhtml.html.input.HtmlLengthInput_Package
    function Create (before : Unbounded_String; type_Id : Unbounded_String; name : Unbounded_String; value : Unbounded_String; after : Unbounded_String) return HtmlLengthInput_Access is
       This : constant HtmlLengthInput_Access := new HtmlLengthInput;
    begin
-      Initialize (This.all, before, type_Id, name, value, after);
+      HtmlLengthInput_Package.Initialize (This.all, before, type_Id, name, value, after);
       return This;
    end Create;
 

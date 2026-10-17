@@ -34,7 +34,7 @@ package body views.business.context.OverrideObjectConfigRootContextView_Package 
    function Create (transformInfoInterface : TransformInfoInterface_Access) return OverrideObjectConfigRootContextView_Access is
       This : constant OverrideObjectConfigRootContextView_Access := new OverrideObjectConfigRootContextView;
    begin
-      Initialize (This.all, transformInfoInterface);
+      OverrideObjectConfigRootContextView_Package.Initialize (This.all, transformInfoInterface);
       return This;
    end Create;
 
@@ -91,13 +91,6 @@ package body views.business.context.OverrideObjectConfigRootContextView_Package 
             Java_Throw (e);
                 end;
         end;
-   end view;
-
-   procedure view (This : in out OverrideObjectConfigRootContextView) is
-      Java_Result : constant Unbounded_String := OverrideObjectConfigRootContextView'Class (This).view;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end view;
 
 end views.business.context.OverrideObjectConfigRootContextView_Package;

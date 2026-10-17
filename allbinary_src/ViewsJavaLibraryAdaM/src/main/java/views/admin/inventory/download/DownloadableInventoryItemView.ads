@@ -90,20 +90,15 @@ package views.admin.inventory.download.DownloadableInventoryItemView_Package is
    procedure Initialize (This : in out DownloadableInventoryItemView'Class; transformInfoInterface : TransformInfoInterface_Access);
    function Create (transformInfoInterface : TransformInfoInterface_Access) return DownloadableInventoryItemView_Access;
    function getTypeId (This : in out DownloadableInventoryItemView) return Integer;
-   procedure getTypeId (This : in out DownloadableInventoryItemView);
    procedure getFormData (This : in out DownloadableInventoryItemView);
    procedure addDomNodeInterfaces (This : in out DownloadableInventoryItemView);
    function view (This : in out DownloadableInventoryItemView) return Unbounded_String;
-   procedure view (This : in out DownloadableInventoryItemView);
    procedure processFile (This : in out DownloadableInventoryItemView; fileItem : FileItem_Access);
    procedure unzip (This : in out DownloadableInventoryItemView; fileItem : FileItem_Access);
    function getItemFilePath (This : in out DownloadableInventoryItemView) return Unbounded_String;
-   procedure getItemFilePath (This : in out DownloadableInventoryItemView);
    procedure setRequestHashMap (This : in out DownloadableInventoryItemView; requestHashMap : HashMap_Access);
    function getRequestHashMap (This : in out DownloadableInventoryItemView) return HashMap_Access;
-   procedure getRequestHashMap (This : in out DownloadableInventoryItemView);
    function getDownloadableItem (This : in out DownloadableInventoryItemView) return DownloadableItem_Access;
-   procedure getDownloadableItem (This : in out DownloadableInventoryItemView);
 
 end views.admin.inventory.download.DownloadableInventoryItemView_Package;
 

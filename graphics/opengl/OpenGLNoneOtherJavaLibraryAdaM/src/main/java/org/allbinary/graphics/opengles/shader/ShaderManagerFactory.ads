@@ -20,6 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
+with org.allbinary.graphics.opengles.shader.ShaderManager_Package; use org.allbinary.graphics.opengles.shader.ShaderManager_Package;
 
 package org.allbinary.graphics.opengles.shader.ShaderManagerFactory_Package is
 
@@ -35,9 +36,7 @@ package org.allbinary.graphics.opengles.shader.ShaderManagerFactory_Package is
    procedure Initialize (This : in out ShaderManagerFactory'Class);
    function Create return ShaderManagerFactory_Access;
    function getInstance return ShaderManagerFactory_Access;
-   procedure getInstance;
    function create (This : in out ShaderManagerFactory) return ShaderManager_Access;
-   procedure create (This : in out ShaderManagerFactory);
 
 end org.allbinary.graphics.opengles.shader.ShaderManagerFactory_Package;
 

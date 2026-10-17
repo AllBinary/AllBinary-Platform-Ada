@@ -29,6 +29,9 @@ with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.C
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.time.TimeDelayHelper_Package; use org.allbinary.time.TimeDelayHelper_Package;
 with org.allbinary.media.image.comparison.ImageComparisonResultsListener_Package; use org.allbinary.media.image.comparison.ImageComparisonResultsListener_Package;
+with org.allbinary.media.image.comparison.ImageComparisonResultsEvent_Package; use org.allbinary.media.image.comparison.ImageComparisonResultsEvent_Package;
+with org.allbinary.media.image.comparison.ImageComparisonResult_Package; use org.allbinary.media.image.comparison.ImageComparisonResult_Package;
+with org.allbinary.media.image.comparison.ComparisonImageInputOutput_Package; use org.allbinary.media.image.comparison.ComparisonImageInputOutput_Package;
 
 package org.allbinary.media.image.comparison.SaveImageComparisonWorker_Package is
 
@@ -58,7 +61,6 @@ package org.allbinary.media.image.comparison.SaveImageComparisonWorker_Package i
    procedure onImageComparisonResultsEvent (This : in out SaveImageComparisonWorker; imageComparisonResultsEvent : ImageComparisonResultsEvent_Access);
    procedure onEvent (This : in out SaveImageComparisonWorker; allBinaryEventObject : AllBinaryEventObject_Access);
    function isRunning (This : in out SaveImageComparisonWorker) return Boolean;
-   procedure isRunning (This : in out SaveImageComparisonWorker);
    procedure setRunning (This : in out SaveImageComparisonWorker; running : Boolean);
    procedure run (This : in out SaveImageComparisonWorker);
 

@@ -28,7 +28,7 @@ package body org.allbinary.game.score.remote.RemoteHighScoresProcessorFactory_Pa
    function Create return RemoteHighScoresProcessorFactory_Access is
       This : constant RemoteHighScoresProcessorFactory_Access := new RemoteHighScoresProcessorFactory;
    begin
-      Initialize (This.all);
+      RemoteHighScoresProcessorFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -36,13 +36,6 @@ package body org.allbinary.game.score.remote.RemoteHighScoresProcessorFactory_Pa
    function getInstance return RemoteHighScoresProcessorInterface_Access is
    begin
         return RemoteHighScoresProcessorFactory_Package.SINGLETON;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant RemoteHighScoresProcessorInterface_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

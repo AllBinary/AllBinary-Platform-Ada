@@ -29,7 +29,7 @@ package body org.allbinary.game.configuration.InGameFeatures_Package is
    function Create return InGameFeatures_Access is
       This : constant InGameFeatures_Access := new InGameFeatures;
    begin
-      Initialize (This.all);
+      InGameFeatures_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -97,13 +97,6 @@ package body org.allbinary.game.configuration.InGameFeatures_Package is
             return True;
         end if;
         return False;
-   end isAny;
-
-   procedure isAny (This : in out InGameFeatures) is
-      Java_Result : constant Boolean := InGameFeatures'Class (This).isAny;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end isAny;
 
 end org.allbinary.game.configuration.InGameFeatures_Package;

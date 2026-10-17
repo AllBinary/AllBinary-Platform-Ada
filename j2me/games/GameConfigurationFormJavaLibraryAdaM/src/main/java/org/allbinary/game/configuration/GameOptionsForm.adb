@@ -40,7 +40,7 @@ package body org.allbinary.game.configuration.GameOptionsForm_Package is
    function Create (commandListener : CommandListener_Access; title : Unbounded_String; backgrounBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access) return GameOptionsForm_Access is
       This : constant GameOptionsForm_Access := new GameOptionsForm;
    begin
-      Initialize (This.all, commandListener, title, backgrounBasicColor, foregroundBasicColor);
+      GameOptionsForm_Package.Initialize (This.all, commandListener, title, backgrounBasicColor, foregroundBasicColor);
       return This;
    end Create;
 

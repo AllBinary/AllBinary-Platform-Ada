@@ -49,7 +49,7 @@ package body org.allbinary.logic.system.security.licensing.registration.Registra
    function Create return RegistrationConfiguration_Access is
       This : constant RegistrationConfiguration_Access := new RegistrationConfiguration;
    begin
-      Initialize (This.all);
+      RegistrationConfiguration_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -105,27 +105,6 @@ package body org.allbinary.logic.system.security.licensing.registration.Registra
    function getRegistrationCode (This : in out RegistrationConfiguration) return Unbounded_String is
    begin
         return This.registrationCode;
-   end getRegistrationCode;
-
-   procedure getInstance is
-      Java_Result : constant RegistrationConfiguration_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure toString (This : in out RegistrationConfiguration) is
-      Java_Result : constant Unbounded_String := RegistrationConfiguration'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toString;
-
-   procedure getRegistrationCode (This : in out RegistrationConfiguration) is
-      Java_Result : constant Unbounded_String := RegistrationConfiguration'Class (This).getRegistrationCode;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getRegistrationCode;
 
 begin

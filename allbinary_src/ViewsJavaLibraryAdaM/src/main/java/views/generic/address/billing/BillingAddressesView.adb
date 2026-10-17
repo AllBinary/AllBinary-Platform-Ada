@@ -36,7 +36,7 @@ package body views.generic_Id.address.billing.BillingAddressesView_Package is
    function Create (transformInfoInterface : TransformInfoInterface_Access) return BillingAddressesView_Access is
       This : constant BillingAddressesView_Access := new BillingAddressesView;
    begin
-      Initialize (This.all, transformInfoInterface);
+      BillingAddressesView_Package.Initialize (This.all, transformInfoInterface);
       return This;
    end Create;
 
@@ -97,26 +97,12 @@ package body views.generic_Id.address.billing.BillingAddressesView_Package is
         end;
    end view;
 
-   procedure getRequest (This : in out BillingAddressesView) is
-      Java_Result : constant HttpServletRequest_Access := BillingAddressesView'Class (This).getRequest;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getRequest;
-
    procedure toXmlNode (This : in out BillingAddressesView; document : Document_Access) is
       Java_Result : constant Node_Access := BillingAddressesView'Class (This).toXmlNode (document);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end toXmlNode;
-
-   procedure view (This : in out BillingAddressesView) is
-      Java_Result : constant Unbounded_String := BillingAddressesView'Class (This).view;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end view;
 
 end views.generic_Id.address.billing.BillingAddressesView_Package;
 

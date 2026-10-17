@@ -54,11 +54,8 @@ package views.business.context.modules.storefront.customizer.includes.style.css.
    procedure Initialize (This : in out EditCssValidationView'Class; transformInfoInterface : TransformInfoInterface_Access);
    function Create (transformInfoInterface : TransformInfoInterface_Access) return EditCssValidationView_Access;
    function isValid (This : in out EditCssValidationView) return Boolean;
-   procedure isValid (This : in out EditCssValidationView);
    function validationInfo (This : in out EditCssValidationView) return Unbounded_String;
-   procedure validationInfo (This : in out EditCssValidationView);
    function toValidationInfoDoc (This : in out EditCssValidationView) return Document_Access;
-   procedure toValidationInfoDoc (This : in out EditCssValidationView);
    function toValidationInfoNode (This : in out EditCssValidationView; document : Document_Access) return Node_Access;
    procedure toValidationInfoNode (This : in out EditCssValidationView; document : Document_Access);
 

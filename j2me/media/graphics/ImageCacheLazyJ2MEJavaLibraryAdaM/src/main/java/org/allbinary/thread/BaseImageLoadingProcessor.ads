@@ -35,7 +35,6 @@ package org.allbinary.thread.BaseImageLoadingProcessor_Package is
    procedure Initialize (This : in out BaseImageLoadingProcessor'Class);
    function Create return BaseImageLoadingProcessor_Access;
    function getInstance return BaseImageLoadingProcessor_Access;
-   procedure getInstance;
    procedure runTask (This : in out BaseImageLoadingProcessor);
 
 end org.allbinary.thread.BaseImageLoadingProcessor_Package;

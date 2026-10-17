@@ -23,6 +23,12 @@ with AllBinary_Java; use AllBinary_Java;
 --  with javax.microedition.lcdui.Command_Package; use javax.microedition.lcdui.Command_Package;
 with org.allbinary.data.resource.ResourceUtil_Package; use org.allbinary.data.resource.ResourceUtil_Package;
 with org.allbinary.TsUtil_Package; use org.allbinary.TsUtil_Package;
+with org.allbinary.content.Context_Package; use org.allbinary.content.Context_Package;
+with org.allbinary.content.NotificationManager_Package; use org.allbinary.content.NotificationManager_Package;
+with org.allbinary.content.CommandUriAction_Package; use org.allbinary.content.CommandUriAction_Package;
+with org.allbinary.content.Intent_Package; use org.allbinary.content.Intent_Package;
+with org.allbinary.content.Notification_Package; use org.allbinary.content.Notification_Package;
+with org.allbinary.content.PendingIntent_Package; use org.allbinary.content.PendingIntent_Package;
 
 package org.allbinary.content.NotificationUtil_Package is
 
@@ -42,7 +48,6 @@ package org.allbinary.content.NotificationUtil_Package is
    procedure Initialize (This : in out NotificationUtil'Class);
    function Create return NotificationUtil_Access;
    function getInstance return NotificationUtil_Access;
-   procedure getInstance;
    procedure notify (This : in out NotificationUtil; command : Command_Access; resource : Unbounded_String; message : Unbounded_String);
 
 end org.allbinary.content.NotificationUtil_Package;

@@ -36,11 +36,8 @@ package org.allbinary.business.time.Time_Package is
    procedure Initialize (This : in out Time'Class; time : Unbounded_String);
    function Create (time : Unbounded_String) return Time_Access;
    function getLong (This : in out Time) return Long_Long_Integer;
-   procedure getLong (This : in out Time);
    function getlong (This : in out Time) return Long_Long_Integer;
-   procedure getlong (This : in out Time);
    function toString (This : in out Time) return Unbounded_String;
-   procedure toString (This : in out Time);
 
 end org.allbinary.business.time.Time_Package;
 

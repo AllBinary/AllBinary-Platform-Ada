@@ -20,6 +20,8 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
+with org.allbinary.graphics.paint.NullPaintable_Package; use org.allbinary.graphics.paint.NullPaintable_Package;
+with org.allbinary.graphics.paint.Paintable_Package; use org.allbinary.graphics.paint.Paintable_Package;
 
 package org.allbinary.graphics.paint.PaintableFactory_Package is
 
@@ -34,7 +36,6 @@ package org.allbinary.graphics.paint.PaintableFactory_Package is
    procedure Initialize (This : in out PaintableFactory'Class);
    function Create return PaintableFactory_Access;
    function getInstance (This : in out PaintableFactory) return Paintable_Access;
-   procedure getInstance (This : in out PaintableFactory);
 
 end org.allbinary.graphics.paint.PaintableFactory_Package;
 

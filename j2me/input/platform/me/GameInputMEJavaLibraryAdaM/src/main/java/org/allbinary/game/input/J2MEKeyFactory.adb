@@ -36,7 +36,7 @@ package body org.allbinary.game.input.J2MEKeyFactory_Package is
    function Create return J2MEKeyFactory_Access is
       This : constant J2MEKeyFactory_Access := new J2MEKeyFactory;
    begin
-      Initialize (This.all);
+      J2MEKeyFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -113,13 +113,6 @@ package body org.allbinary.game.input.J2MEKeyFactory_Package is
         end if;
         return False;
    end isEnter;
-
-   procedure getInstance is
-      Java_Result : constant J2MEKeyFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure isSubmission (This : in out J2MEKeyFactory; input : Input_Access) is
       Java_Result : constant Boolean := J2MEKeyFactory'Class (This).isSubmission (input);

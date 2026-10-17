@@ -28,6 +28,7 @@ with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Packag
 with org.allbinary.logic.control.validate.Validation_Package; use org.allbinary.logic.control.validate.Validation_Package;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
+with org.allbinary.logic.visual.theme.ThemesData_Package; use org.allbinary.logic.visual.theme.ThemesData_Package;
 
 package org.allbinary.logic.visual.theme.ThemesValidation_Package is
 
@@ -51,11 +52,8 @@ package org.allbinary.logic.visual.theme.ThemesValidation_Package is
    procedure Initialize (This : in out ThemesValidation'Class);
    function Create return ThemesValidation_Access;
    function isValid (This : in out ThemesValidation) return Boolean;
-   procedure isValid (This : in out ThemesValidation);
    function validationInfo (This : in out ThemesValidation) return Unbounded_String;
-   procedure validationInfo (This : in out ThemesValidation);
    function toValidationInfoDoc (This : in out ThemesValidation) return Document_Access;
-   procedure toValidationInfoDoc (This : in out ThemesValidation);
    function toValidationInfoNode (This : in out ThemesValidation; document : Document_Access) return Node_Access;
    procedure toValidationInfoNode (This : in out ThemesValidation; document : Document_Access);
    function toXmlNode (This : in out ThemesValidation; document : Document_Access) return Node_Access;

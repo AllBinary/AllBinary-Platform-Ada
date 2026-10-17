@@ -31,7 +31,7 @@ package body org.allbinary.thread.ThreadPoolStrings_Package is
    function Create return ThreadPoolStrings_Access is
       This : constant ThreadPoolStrings_Access := new ThreadPoolStrings;
    begin
-      Initialize (This.all);
+      ThreadPoolStrings_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -39,13 +39,6 @@ package body org.allbinary.thread.ThreadPoolStrings_Package is
    function getInstance return ThreadPoolStrings_Access is
    begin
         return ThreadPoolStrings_Package.instance;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant ThreadPoolStrings_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

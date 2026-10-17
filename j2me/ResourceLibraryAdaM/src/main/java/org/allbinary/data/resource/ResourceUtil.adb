@@ -36,7 +36,7 @@ package body org.allbinary.data.resource.ResourceUtil_Package is
    function Create return ResourceUtil_Access is
       This : constant ResourceUtil_Access := new ResourceUtil;
    begin
-      Initialize (This.all);
+      ResourceUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -96,13 +96,6 @@ package body org.allbinary.data.resource.ResourceUtil_Package is
    begin
         null;
    end addResource;
-
-   procedure getInstance is
-      Java_Result : constant ResourceUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure getResourceAsStream (This : in out ResourceUtil; resource : Unbounded_String) is
       Java_Result : constant InputStream_Access := ResourceUtil'Class (This).getResourceAsStream (resource);

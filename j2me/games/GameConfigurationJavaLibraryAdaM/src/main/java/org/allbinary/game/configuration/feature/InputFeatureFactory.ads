@@ -20,6 +20,8 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
+with org.allbinary.game.configuration.feature.InputFeature_Package; use org.allbinary.game.configuration.feature.InputFeature_Package;
+with org.allbinary.game.configuration.feature.Features_Package; use org.allbinary.game.configuration.feature.Features_Package;
 
 package org.allbinary.game.configuration.feature.InputFeatureFactory_Package is
 
@@ -41,9 +43,7 @@ package org.allbinary.game.configuration.feature.InputFeatureFactory_Package is
    procedure Initialize (This : in out InputFeatureFactory'Class);
    function Create return InputFeatureFactory_Access;
    function getInstance return InputFeatureFactory_Access;
-   procedure getInstance;
    function isSingleKeyProcessing (This : in out InputFeatureFactory) return Boolean;
-   procedure isSingleKeyProcessing (This : in out InputFeatureFactory);
 
 end org.allbinary.game.configuration.feature.InputFeatureFactory_Package;
 

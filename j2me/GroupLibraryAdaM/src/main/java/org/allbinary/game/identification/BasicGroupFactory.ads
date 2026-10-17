@@ -21,6 +21,7 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
+with org.allbinary.game.identification.Group_Package; use org.allbinary.game.identification.Group_Package;
 
 package org.allbinary.game.identification.BasicGroupFactory_Package is
 
@@ -48,7 +49,6 @@ package org.allbinary.game.identification.BasicGroupFactory_Package is
    procedure Initialize (This : in out BasicGroupFactory'Class);
    function Create return BasicGroupFactory_Access;
    function getInstance return BasicGroupFactory_Access;
-   procedure getInstance;
 
 end org.allbinary.game.identification.BasicGroupFactory_Package;
 

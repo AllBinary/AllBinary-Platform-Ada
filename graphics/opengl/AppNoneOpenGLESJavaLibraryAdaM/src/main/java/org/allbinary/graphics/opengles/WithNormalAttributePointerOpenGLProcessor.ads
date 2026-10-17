@@ -38,7 +38,6 @@ package org.allbinary.graphics.opengles.WithNormalAttributePointerOpenGLProcesso
    procedure Initialize (This : in out WithNormalAttributePointerOpenGLProcessor'Class);
    function Create return WithNormalAttributePointerOpenGLProcessor_Access;
    function getInstance return WithNormalAttributePointerOpenGLProcessor_Access;
-   procedure getInstance;
    procedure process (This : in out WithNormalAttributePointerOpenGLProcessor; gl : GL10_Access; aObject3d : Java_Object_Access);
 
 end org.allbinary.graphics.opengles.WithNormalAttributePointerOpenGLProcessor_Package;

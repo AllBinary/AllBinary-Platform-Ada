@@ -53,17 +53,12 @@ package views.business.context.modules.storefront.customizer.includes.globals.Ne
    procedure Initialize (This : in out NewGlobalsValidationView'Class; transformInfoInterface : TransformInfoInterface_Access);
    function Create (transformInfoInterface : TransformInfoInterface_Access) return NewGlobalsValidationView_Access;
    function toXmlDoc (This : in out NewGlobalsValidationView) return Document_Access;
-   procedure toXmlDoc (This : in out NewGlobalsValidationView);
    function isValid (This : in out NewGlobalsValidationView) return Boolean;
-   procedure isValid (This : in out NewGlobalsValidationView);
    function validationInfo (This : in out NewGlobalsValidationView) return Unbounded_String;
-   procedure validationInfo (This : in out NewGlobalsValidationView);
    function toValidationInfoDoc (This : in out NewGlobalsValidationView) return Document_Access;
-   procedure toValidationInfoDoc (This : in out NewGlobalsValidationView);
    function toValidationInfoNode (This : in out NewGlobalsValidationView; document : Document_Access) return Node_Access;
    procedure toValidationInfoNode (This : in out NewGlobalsValidationView; document : Document_Access);
    function view (This : in out NewGlobalsValidationView) return Unbounded_String;
-   procedure view (This : in out NewGlobalsValidationView);
 
 end views.business.context.modules.storefront.customizer.includes.globals.NewGlobalsValidationView_Package;
 

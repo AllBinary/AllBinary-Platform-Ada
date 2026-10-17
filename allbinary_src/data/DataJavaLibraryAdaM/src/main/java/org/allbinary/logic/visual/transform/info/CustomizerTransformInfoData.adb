@@ -30,7 +30,7 @@ package body org.allbinary.logic.visual.transform.info.CustomizerTransformInfoDa
    function Create return CustomizerTransformInfoData_Access is
       This : constant CustomizerTransformInfoData_Access := new CustomizerTransformInfoData;
    begin
-      Initialize (This.all);
+      CustomizerTransformInfoData_Package.Initialize (This.all);
       return This;
    end Create;
 

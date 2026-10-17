@@ -37,7 +37,7 @@ package body org.allbinary.graphics.Line_Package is
    function Create (p1 : GPoint_Access; p2 : GPoint_Access) return Line_Access is
       This : constant Line_Access := new Line;
    begin
-      Initialize (This.all, p1, p2);
+      Line_Package.Initialize (This.all, p1, p2);
       return This;
    end Create;
 
@@ -83,41 +83,6 @@ package body org.allbinary.graphics.Line_Package is
         This.p2 := p2;
         This.update;
    end setP2;
-
-   procedure getGradient (This : in out Line) is
-      Java_Result : constant Long_Float := Line'Class (This).getGradient;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getGradient;
-
-   procedure getDeltaX (This : in out Line) is
-      Java_Result : constant Long_Float := Line'Class (This).getDeltaX;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getDeltaX;
-
-   procedure getDeltaY (This : in out Line) is
-      Java_Result : constant Long_Float := Line'Class (This).getDeltaY;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getDeltaY;
-
-   procedure getP1 (This : in out Line) is
-      Java_Result : constant GPoint_Access := Line'Class (This).getP1;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getP1;
-
-   procedure getP2 (This : in out Line) is
-      Java_Result : constant GPoint_Access := Line'Class (This).getP2;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getP2;
 
 end org.allbinary.graphics.Line_Package;
 

@@ -20,6 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
+with org.allbinary.game.layer.LayerPlacementType_Package; use org.allbinary.game.layer.LayerPlacementType_Package;
 
 package org.allbinary.game.layer.BasicLayerPlacement_Package is
 
@@ -38,11 +39,8 @@ package org.allbinary.game.layer.BasicLayerPlacement_Package is
    procedure Initialize (This : in out BasicLayerPlacement'Class; layerType : LayerPlacementType_Access; width : Integer; height : Integer);
    function Create (layerType : LayerPlacementType_Access; width : Integer; height : Integer) return BasicLayerPlacement_Access;
    function getWidth (This : in out BasicLayerPlacement) return Integer;
-   procedure getWidth (This : in out BasicLayerPlacement);
    function getHeight (This : in out BasicLayerPlacement) return Integer;
-   procedure getHeight (This : in out BasicLayerPlacement);
    function getLayerType (This : in out BasicLayerPlacement) return LayerPlacementType_Access;
-   procedure getLayerType (This : in out BasicLayerPlacement);
    procedure setLayerType (This : in out BasicLayerPlacement; layerType : LayerPlacementType_Access);
 
 end org.allbinary.game.layer.BasicLayerPlacement_Package;

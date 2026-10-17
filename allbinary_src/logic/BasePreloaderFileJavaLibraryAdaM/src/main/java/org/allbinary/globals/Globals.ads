@@ -26,6 +26,9 @@ with org.allbinary.logic.string_Id.StringValidationUtil_Package; use org.allbina
 with org.allbinary.logic.system.loader.WebappClassLoaderInfo_Package; use org.allbinary.logic.system.loader.WebappClassLoaderInfo_Package;
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.globals.AppUrlGlobals_Package; use org.allbinary.globals.AppUrlGlobals_Package;
+with org.allbinary.globals.URLGLOBALS_Package; use org.allbinary.globals.URLGLOBALS_Package;
+with org.allbinary.globals.ClassLoader_Package; use org.allbinary.globals.ClassLoader_Package;
 
 package org.allbinary.globals.Globals_Package is
 
@@ -49,7 +52,6 @@ package org.allbinary.globals.Globals_Package is
    procedure Initialize (This : in out Globals'Class);
    function Create return Globals_Access;
    function getInstance return Globals_Access;
-   procedure getInstance;
    procedure init (This : in out Globals; classLoader : ClassLoader_Access; pathString : Unbounded_String);
 
 end org.allbinary.globals.Globals_Package;

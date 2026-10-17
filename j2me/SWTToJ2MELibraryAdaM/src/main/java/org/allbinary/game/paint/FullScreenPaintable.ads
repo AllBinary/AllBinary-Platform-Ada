@@ -55,7 +55,6 @@ package org.allbinary.game.paint.FullScreenPaintable_Package is
    procedure Initialize (This : in out FullScreenPaintable'Class);
    function Create return FullScreenPaintable_Access;
    function getInstance return FullScreenPaintable_Access;
-   procedure getInstance;
    procedure updateMeasurement (This : in out FullScreenPaintable; graphics : Graphics_Access);
    procedure paint (This : in out FullScreenPaintable; graphics : Graphics_Access);
 

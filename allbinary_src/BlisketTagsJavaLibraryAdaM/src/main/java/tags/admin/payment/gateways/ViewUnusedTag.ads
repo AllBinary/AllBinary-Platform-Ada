@@ -39,7 +39,6 @@ package tags.admin.payment.gateways.ViewUnusedTag_Package is
    procedure Initialize (This : in out ViewUnusedTag'Class);
    function Create return ViewUnusedTag_Access;
    function doStartTag (This : in out ViewUnusedTag) return Integer;
-   procedure doStartTag (This : in out ViewUnusedTag);
 
 end tags.admin.payment.gateways.ViewUnusedTag_Package;
 

@@ -24,6 +24,8 @@ with android.app.Activity_Package; use android.app.Activity_Package;
 with android.content.res.Configuration_Package; use android.content.res.Configuration_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
+with org.allbinary.input.motion.button.TouchScreenFactory_Package; use org.allbinary.input.motion.button.TouchScreenFactory_Package;
+with org.allbinary.input.motion.button.TouchScreenTypesFactory_Package; use org.allbinary.input.motion.button.TouchScreenTypesFactory_Package;
 
 package org.allbinary.input.motion.button.TouchScreenTypeFactory_Package is
 
@@ -43,7 +45,6 @@ package org.allbinary.input.motion.button.TouchScreenTypeFactory_Package is
    procedure Initialize (This : in out TouchScreenTypeFactory'Class);
    function Create return TouchScreenTypeFactory_Access;
    function getInstance return TouchScreenTypeFactory_Access;
-   procedure getInstance;
    procedure update (This : in out TouchScreenTypeFactory; activity : Activity_Access);
 
 end org.allbinary.input.motion.button.TouchScreenTypeFactory_Package;

@@ -31,7 +31,7 @@ package body org.allbinary.input.automation.module.actions.script.condition.proc
    function Create return ImageActionScriptOutputProcessor_Access is
       This : constant ImageActionScriptOutputProcessor_Access := new ImageActionScriptOutputProcessor;
    begin
-      Initialize (This.all);
+      ImageActionScriptOutputProcessor_Package.Initialize (This.all);
       return This;
    end Create;
 

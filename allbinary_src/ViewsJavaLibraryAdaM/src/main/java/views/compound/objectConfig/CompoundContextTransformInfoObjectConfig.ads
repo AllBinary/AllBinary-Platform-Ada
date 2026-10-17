@@ -74,9 +74,7 @@ package views.compound.objectConfig.CompoundContextTransformInfoObjectConfig_Pac
    procedure Initialize (This : in out CompoundContextTransformInfoObjectConfig'Class; abeClientInformation : AbeClientInformationInterface_Access; transformInfoInterface : TransformInfoInterface_Access);
    function Create (abeClientInformation : AbeClientInformationInterface_Access; transformInfoInterface : TransformInfoInterface_Access) return CompoundContextTransformInfoObjectConfig_Access;
    function get (This : in out CompoundContextTransformInfoObjectConfig) return Unbounded_String;
-   procedure get (This : in out CompoundContextTransformInfoObjectConfig);
    function createInputStream (This : in out CompoundContextTransformInfoObjectConfig) return InputStream_Access;
-   procedure createInputStream (This : in out CompoundContextTransformInfoObjectConfig);
 
 end views.compound.objectConfig.CompoundContextTransformInfoObjectConfig_Package;
 

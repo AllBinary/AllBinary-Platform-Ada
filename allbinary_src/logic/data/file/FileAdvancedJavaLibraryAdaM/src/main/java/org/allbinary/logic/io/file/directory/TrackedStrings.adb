@@ -39,7 +39,7 @@ package body org.allbinary.logic.io.file.directory.TrackedStrings_Package is
    function Create return TrackedStrings_Access is
       This : constant TrackedStrings_Access := new TrackedStrings;
    begin
-      Initialize (This.all);
+      TrackedStrings_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -47,13 +47,6 @@ package body org.allbinary.logic.io.file.directory.TrackedStrings_Package is
    function getInstance return TrackedStrings_Access is
    begin
         return TrackedStrings_Package.instance;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant TrackedStrings_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

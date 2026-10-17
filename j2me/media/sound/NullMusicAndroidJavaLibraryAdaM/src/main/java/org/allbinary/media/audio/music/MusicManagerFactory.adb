@@ -28,7 +28,7 @@ package body org.allbinary.media.audio.music.MusicManagerFactory_Package is
    function Create return MusicManagerFactory_Access is
       This : constant MusicManagerFactory_Access := new MusicManagerFactory;
    begin
-      Initialize (This.all);
+      MusicManagerFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

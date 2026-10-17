@@ -33,7 +33,7 @@ package body org.allbinary.data.tree.dom.BasicUriResolver_Package is
    function Create (extension : Unbounded_String) return BasicUriResolver_Access is
       This : constant BasicUriResolver_Access := new BasicUriResolver;
    begin
-      Initialize (This.all, extension);
+      BasicUriResolver_Package.Initialize (This.all, extension);
       return This;
    end Create;
 
@@ -98,26 +98,12 @@ package body org.allbinary.data.tree.dom.BasicUriResolver_Package is
         end;
    end toString;
 
-   procedure getExtension (This : in out BasicUriResolver) is
-      Java_Result : constant Unbounded_String := BasicUriResolver'Class (This).getExtension;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getExtension;
-
    procedure resolve (This : in out BasicUriResolver; href : Unbounded_String; base : Unbounded_String) is
       Java_Result : constant Source_Access := BasicUriResolver'Class (This).resolve (href, base);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end resolve;
-
-   procedure toString (This : in out BasicUriResolver) is
-      Java_Result : constant Unbounded_String := BasicUriResolver'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toString;
 
 end org.allbinary.data.tree.dom.BasicUriResolver_Package;
 

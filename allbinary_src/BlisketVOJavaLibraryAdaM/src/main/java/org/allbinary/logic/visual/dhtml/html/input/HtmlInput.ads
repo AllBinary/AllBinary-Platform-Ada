@@ -48,7 +48,6 @@ package org.allbinary.logic.visual.dhtml.html.input.HtmlInput_Package is
    procedure Initialize (This : in out HtmlInput'Class; before : Unbounded_String; type_Case_Id : Unbounded_String; name_Case : Unbounded_String; after : Unbounded_String);
    function Create (before : Unbounded_String; type_Case_Id : Unbounded_String; name_Case : Unbounded_String; after : Unbounded_String) return HtmlInput_Access;
    function toString (This : in out HtmlInput) return Unbounded_String;
-   procedure toString (This : in out HtmlInput);
 
 end org.allbinary.logic.visual.dhtml.html.input.HtmlInput_Package;
 

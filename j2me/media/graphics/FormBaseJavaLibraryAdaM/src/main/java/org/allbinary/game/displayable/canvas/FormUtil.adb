@@ -28,7 +28,7 @@ package body org.allbinary.game.displayable.canvas.FormUtil_Package is
    function Create return FormUtil_Access is
       This : constant FormUtil_Access := new FormUtil;
    begin
-      Initialize (This.all);
+      FormUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -47,20 +47,6 @@ package body org.allbinary.game.displayable.canvas.FormUtil_Package is
         pointFactory := PointFactory_Package.getInstance;
         rectangle := Rectangle_Package.Create (pointFactory.createXY (30, 10), (displayInfo.getLastWidth) - (30), (displayInfo.getLastHeight) - (35));
         return rectangle;
-   end createFormRectangle;
-
-   procedure getInstance is
-      Java_Result : constant FormUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure createFormRectangle (This : in out FormUtil) is
-      Java_Result : constant Rectangle_Access := FormUtil'Class (This).createFormRectangle;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end createFormRectangle;
 
 begin

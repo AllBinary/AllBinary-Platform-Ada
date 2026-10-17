@@ -37,11 +37,12 @@ package body org.allbinary.media.image.MirrorImageUtil_Package is
    function Create return MirrorImageUtil_Access is
       This : constant MirrorImageUtil_Access := new MirrorImageUtil;
    begin
-      Initialize (This.all);
+      MirrorImageUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
-   function getImage (This : in out MirrorImageUtil; bufferedImage : BufferedImage_Access; verticle : Boolean; horizontal : Boolean) return BufferedImage_Access is
+   function getImage (This : in out MirrorImageUtil; bufferedImage_Param : BufferedImage_Access; verticle : Boolean; horizontal : Boolean) return BufferedImage_Access is
+      bufferedImage : BufferedImage_Access := bufferedImage_Param;
       newBufferedImage : BufferedImage_Access;
       g : Graphics2D_Access;
       tx : AffineTransform_Access;
@@ -104,15 +105,8 @@ package body org.allbinary.media.image.MirrorImageUtil_Package is
         return bufferedImageArray;
    end getImages;
 
-   procedure getInstance is
-      Java_Result : constant MirrorImageUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure getImage (This : in out MirrorImageUtil; bufferedImage : BufferedImage_Access; verticle : Boolean; horizontal : Boolean) is
-      Java_Result : constant BufferedImage_Access := MirrorImageUtil'Class (This).getImage (bufferedImage, verticle, horizontal);
+   procedure getImage (This : in out MirrorImageUtil; bufferedImage_Param : BufferedImage_Access; verticle : Boolean; horizontal : Boolean) is
+      Java_Result : constant BufferedImage_Access := MirrorImageUtil'Class (This).getImage (bufferedImage_Param, verticle, horizontal);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -40,7 +40,7 @@ package body org.allbinary.game.input.LocalPlayerInputIdFactory_Package is
    function Create return LocalPlayerInputIdFactory_Access is
       This : constant LocalPlayerInputIdFactory_Access := new LocalPlayerInputIdFactory;
    begin
-      Initialize (This.all);
+      LocalPlayerInputIdFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -119,13 +119,6 @@ package body org.allbinary.game.input.LocalPlayerInputIdFactory_Package is
         return This.playersInPlay;
    end getPlayersInPlay;
 
-   procedure getInstance is
-      Java_Result : constant LocalPlayerInputIdFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
    procedure getDeviceId (This : in out LocalPlayerInputIdFactory; playerInputId : Integer) is
       Java_Result : constant Integer := LocalPlayerInputIdFactory'Class (This).getDeviceId (playerInputId);
       pragma Unreferenced (Java_Result);
@@ -140,26 +133,12 @@ package body org.allbinary.game.input.LocalPlayerInputIdFactory_Package is
       null;
    end getPlayerForDevice;
 
-   procedure getTotalDevicesInPlay (This : in out LocalPlayerInputIdFactory) is
-      Java_Result : constant Integer := LocalPlayerInputIdFactory'Class (This).getTotalDevicesInPlay;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTotalDevicesInPlay;
-
    procedure isPlayerInPlay (This : in out LocalPlayerInputIdFactory; playerInputId : Integer) is
       Java_Result : constant Boolean := LocalPlayerInputIdFactory'Class (This).isPlayerInPlay (playerInputId);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isPlayerInPlay;
-
-   procedure getPlayersInPlay (This : in out LocalPlayerInputIdFactory) is
-      Java_Result : constant Boolean_Array_Access := LocalPlayerInputIdFactory'Class (This).getPlayersInPlay;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getPlayersInPlay;
 
 begin
    null;

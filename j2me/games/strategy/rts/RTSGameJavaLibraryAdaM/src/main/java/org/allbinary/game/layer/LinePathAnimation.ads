@@ -40,7 +40,6 @@ package org.allbinary.game.layer.LinePathAnimation_Package is
    procedure Initialize (This : in out LinePathAnimation'Class);
    function Create return LinePathAnimation_Access;
    function getInstance return LinePathAnimation_Access;
-   procedure getInstance;
    procedure paint (This : in out LinePathAnimation; graphics : Graphics_Access; point : GPoint_Access; nextPoint : GPoint_Access; tiledLayer : Layer_Access);
 
 end org.allbinary.game.layer.LinePathAnimation_Package;

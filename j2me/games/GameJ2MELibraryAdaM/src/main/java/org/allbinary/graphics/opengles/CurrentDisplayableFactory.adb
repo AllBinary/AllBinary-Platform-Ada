@@ -53,7 +53,7 @@ package body org.allbinary.graphics.opengles.CurrentDisplayableFactory_Package i
    function Create return CurrentDisplayableFactory_Access is
       This : constant CurrentDisplayableFactory_Access := new CurrentDisplayableFactory;
    begin
-      Initialize (This.all);
+      CurrentDisplayableFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -143,34 +143,6 @@ package body org.allbinary.graphics.opengles.CurrentDisplayableFactory_Package i
         PreLogUtil_Package.put (StringMaker_Package.Create.append (This.RUNNABLE).append (This.stringUtil.toString (This.runnable_Case)).append (CommonSeps_Package.getInstance.COLON_SEP).append (This.stringUtil.toString (usedRunnable)).toString, This'Unchecked_Access, This.SET_USED_RUNNABLE);
         This.usedRunnable := usedRunnable;
    end setUsedRunnable;
-
-   procedure getInstance is
-      Java_Result : constant CurrentDisplayableFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure getOpenGlReadydisplayable (This : in out CurrentDisplayableFactory) is
-      Java_Result : constant Displayable_Access := CurrentDisplayableFactory'Class (This).getOpenGlReadydisplayable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getOpenGlReadydisplayable;
-
-   procedure getDisplayable (This : in out CurrentDisplayableFactory) is
-      Java_Result : constant Displayable_Access := CurrentDisplayableFactory'Class (This).getDisplayable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getDisplayable;
-
-   procedure getUsedRunnable (This : in out CurrentDisplayableFactory) is
-      Java_Result : constant GameRunnable_Access := CurrentDisplayableFactory'Class (This).getUsedRunnable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getUsedRunnable;
 
 begin
    null;

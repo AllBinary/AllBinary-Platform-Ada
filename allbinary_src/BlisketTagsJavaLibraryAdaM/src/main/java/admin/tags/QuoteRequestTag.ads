@@ -53,9 +53,7 @@ package admin.tags.QuoteRequestTag_Package is
    function Create return QuoteRequestTag_Access;
    procedure setStoreName (This : in out QuoteRequestTag; storeName : Unbounded_String);
    function email (This : in out QuoteRequestTag) return Unbounded_String;
-   procedure email (This : in out QuoteRequestTag);
    function doStartTag (This : in out QuoteRequestTag) return Integer;
-   procedure doStartTag (This : in out QuoteRequestTag);
 
 end admin.tags.QuoteRequestTag_Package;
 

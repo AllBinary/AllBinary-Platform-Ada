@@ -45,7 +45,6 @@ package org.allbinary.logic.visual.dhtml.html.input.HtmlInputData_Package is
    procedure Initialize (This : in out HtmlInputData'Class);
    function Create return HtmlInputData_Access;
    function getInstance return HtmlInputData_Access;
-   procedure getInstance;
 
 end org.allbinary.logic.visual.dhtml.html.input.HtmlInputData_Package;
 

@@ -20,6 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
+with org.allbinary.game.resource.ResourceLoadingLevel_Package; use org.allbinary.game.resource.ResourceLoadingLevel_Package;
 
 package org.allbinary.game.resource.ResourceLoadingLevelFactory_Package is
 
@@ -43,7 +44,6 @@ package org.allbinary.game.resource.ResourceLoadingLevelFactory_Package is
    procedure Initialize (This : in out ResourceLoadingLevelFactory'Class);
    function Create return ResourceLoadingLevelFactory_Access;
    function getInstance return ResourceLoadingLevelFactory_Access;
-   procedure getInstance;
    function getLevelString (This : in out ResourceLoadingLevelFactory; level_Case : Integer) return Unbounded_String;
    procedure getLevelString (This : in out ResourceLoadingLevelFactory; level_Case : Integer);
 

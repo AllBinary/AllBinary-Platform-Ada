@@ -37,16 +37,9 @@ package body org.allbinary.input.motion.touch.action.DownTouchInputToGameKeyEven
    function Create return DownTouchInputToGameKeyEventAction_Access is
       This : constant DownTouchInputToGameKeyEventAction_Access := new DownTouchInputToGameKeyEventAction;
    begin
-      Initialize (This.all);
+      DownTouchInputToGameKeyEventAction_Package.Initialize (This.all);
       return This;
    end Create;
-
-   procedure getInstance is
-      Java_Result : constant GameKeyCompleteMotionGestureInputEvent_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

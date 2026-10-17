@@ -40,7 +40,7 @@ package body org.allbinary.animation.vector.VectorCenterGenerator_Package is
    function Create return VectorCenterGenerator_Access is
       This : constant VectorCenterGenerator_Access := new VectorCenterGenerator;
    begin
-      Initialize (This.all);
+      VectorCenterGenerator_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -174,20 +174,6 @@ package body org.allbinary.animation.vector.VectorCenterGenerator_Package is
    begin
       null;
    end translate;
-
-   procedure getWidth (This : in out VectorCenterGenerator) is
-      Java_Result : constant Integer := VectorCenterGenerator'Class (This).getWidth;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getWidth;
-
-   procedure getHeight (This : in out VectorCenterGenerator) is
-      Java_Result : constant Integer := VectorCenterGenerator'Class (This).getHeight;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getHeight;
 
 end org.allbinary.animation.vector.VectorCenterGenerator_Package;
 

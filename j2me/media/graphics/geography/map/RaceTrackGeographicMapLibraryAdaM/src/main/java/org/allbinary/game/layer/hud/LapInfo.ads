@@ -41,13 +41,9 @@ package org.allbinary.game.layer.hud.LapInfo_Package is
    function Create (totalLaps : Integer) return LapInfo_Access;
    procedure add (This : in out LapInfo);
    function getCurrentLap (This : in out LapInfo) return Integer;
-   procedure getCurrentLap (This : in out LapInfo);
    function getTotalLaps (This : in out LapInfo) return Integer;
-   procedure getTotalLaps (This : in out LapInfo);
    function isDone (This : in out LapInfo) return Boolean;
-   procedure isDone (This : in out LapInfo);
    function toString (This : in out LapInfo) return Unbounded_String;
-   procedure toString (This : in out LapInfo);
 
 end org.allbinary.game.layer.hud.LapInfo_Package;
 

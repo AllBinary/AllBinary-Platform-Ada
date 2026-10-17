@@ -48,15 +48,10 @@ package org.allbinary.game.ag.ai.InputProbability_Package is
    procedure Initialize (This : in out InputProbability'Class; likelyhoodIntegerArray : Integer_Array_Access_Array_Access; repeatLikelyhoodIntegerArray : Integer_Array_Access; max : Integer; timeDelayHelper : TimeDelayHelper_Access);
    function Create (likelyhoodIntegerArray : Integer_Array_Access_Array_Access; repeatLikelyhoodIntegerArray : Integer_Array_Access; max : Integer; timeDelayHelper : TimeDelayHelper_Access) return InputProbability_Access;
    function getLikelyhoodIntegerArray (This : in out InputProbability) return Integer_Array_Access_Array_Access;
-   procedure getLikelyhoodIntegerArray (This : in out InputProbability);
    function getRepeatLikelyhoodIntegerArray (This : in out InputProbability) return Integer_Array_Access;
-   procedure getRepeatLikelyhoodIntegerArray (This : in out InputProbability);
    function getMax (This : in out InputProbability) return Integer;
-   procedure getMax (This : in out InputProbability);
    function getTimeDelayHelper (This : in out InputProbability) return TimeDelayHelper_Access;
-   procedure getTimeDelayHelper (This : in out InputProbability);
    function toHashtable (This : in out InputProbability) return ABHashtable_Access;
-   procedure toHashtable (This : in out InputProbability);
 
 end org.allbinary.game.ag.ai.InputProbability_Package;
 

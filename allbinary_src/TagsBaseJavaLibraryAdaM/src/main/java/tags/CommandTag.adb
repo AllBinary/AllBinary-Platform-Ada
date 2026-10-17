@@ -33,7 +33,7 @@ package body tags.CommandTag_Package is
    function Create return CommandTag_Access is
       This : constant CommandTag_Access := new CommandTag;
    begin
-      Initialize (This.all);
+      CommandTag_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -45,13 +45,6 @@ package body tags.CommandTag_Package is
    function getCommand (This : in out CommandTag) return Unbounded_String is
    begin
         return This.command;
-   end getCommand;
-
-   procedure getCommand (This : in out CommandTag) is
-      Java_Result : constant Unbounded_String := CommandTag'Class (This).getCommand;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getCommand;
 
 end tags.CommandTag_Package;

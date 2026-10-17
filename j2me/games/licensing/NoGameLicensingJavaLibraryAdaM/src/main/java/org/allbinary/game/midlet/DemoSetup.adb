@@ -28,7 +28,7 @@ package body org.allbinary.game.midlet.DemoSetup_Package is
    function Create return DemoSetup_Access is
       This : constant DemoSetup_Access := new DemoSetup;
    begin
-      Initialize (This.all);
+      DemoSetup_Package.Initialize (This.all);
       return This;
    end Create;
 

@@ -29,7 +29,7 @@ package body org.allbinary.logic.util.visitor.Visitor_Package is
    function Create return Visitor_Access is
       This : constant Visitor_Access := new Visitor;
    begin
-      Initialize (This.all);
+      Visitor_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -50,13 +50,6 @@ package body org.allbinary.logic.util.visitor.Visitor_Package is
    begin
       null;
    end visit;
-
-   procedure getInstance is
-      Java_Result : constant Visitor_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

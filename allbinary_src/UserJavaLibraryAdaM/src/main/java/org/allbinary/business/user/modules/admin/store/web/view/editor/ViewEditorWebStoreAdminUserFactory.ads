@@ -23,6 +23,7 @@ with AllBinary_Java; use AllBinary_Java;
 --  with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.business.user.UserFactoryInterface_Package; use org.allbinary.business.user.UserFactoryInterface_Package;
 with org.allbinary.business.user.UserInterface_Package; use org.allbinary.business.user.UserInterface_Package;
+with org.allbinary.business.user.modules.admin.store.web.view.editor.ViewEditorWebStoreAdminUser_Package; use org.allbinary.business.user.modules.admin.store.web.view.editor.ViewEditorWebStoreAdminUser_Package;
 
 package org.allbinary.business.user.modules.admin.store.web.view.editor.ViewEditorWebStoreAdminUserFactory_Package is
 
@@ -39,7 +40,6 @@ package org.allbinary.business.user.modules.admin.store.web.view.editor.ViewEdit
    procedure Initialize (This : in out ViewEditorWebStoreAdminUserFactory'Class);
    function Create return ViewEditorWebStoreAdminUserFactory_Access;
    function getInstance (This : in out ViewEditorWebStoreAdminUserFactory) return UserInterface_Access;
-   procedure getInstance (This : in out ViewEditorWebStoreAdminUserFactory);
    function getInstance (This : in out ViewEditorWebStoreAdminUserFactory; hashMap : HashMap_Access) return UserInterface_Access;
    procedure getInstance (This : in out ViewEditorWebStoreAdminUserFactory; hashMap : HashMap_Access);
 

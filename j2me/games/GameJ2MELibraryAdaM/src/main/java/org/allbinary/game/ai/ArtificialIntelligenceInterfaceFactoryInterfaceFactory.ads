@@ -24,6 +24,8 @@ with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.util.BasicArrayListUtil_Package; use org.allbinary.util.BasicArrayListUtil_Package;
+with org.allbinary.game.ai.BasicAI_Package; use org.allbinary.game.ai.BasicAI_Package;
+with org.allbinary.game.ai.ArtificialIntelligenceInterfaceFactoryInterface_Package; use org.allbinary.game.ai.ArtificialIntelligenceInterfaceFactoryInterface_Package;
 
 package org.allbinary.game.ai.ArtificialIntelligenceInterfaceFactoryInterfaceFactory_Package is
 
@@ -46,7 +48,6 @@ package org.allbinary.game.ai.ArtificialIntelligenceInterfaceFactoryInterfaceFac
    function Create return ArtificialIntelligenceInterfaceFactoryInterfaceFactory_Access;
    procedure clear (This : in out ArtificialIntelligenceInterfaceFactoryInterfaceFactory);
    function getInstance return ArtificialIntelligenceInterfaceFactoryInterfaceFactory_Access;
-   procedure getInstance;
    function getInstanceFromCollection (This : in out ArtificialIntelligenceInterfaceFactoryInterfaceFactory; hashtable : ABHashtable_Access) return ArtificialIntelligenceInterfaceFactoryInterface_Access;
    procedure getInstanceFromCollection (This : in out ArtificialIntelligenceInterfaceFactoryInterfaceFactory; hashtable : ABHashtable_Access);
    procedure add (This : in out ArtificialIntelligenceInterfaceFactoryInterfaceFactory; artificialIntelligenceInterfaceFactoryInterface : ArtificialIntelligenceInterfaceFactoryInterface_Access);

@@ -46,9 +46,7 @@ package org.allbinary.logic.system.security.licensing.PartnerIdentifierFileUtil_
    procedure Initialize (This : in out PartnerIdentifierFileUtil'Class);
    function Create return PartnerIdentifierFileUtil_Access;
    function getInstance return PartnerIdentifierFileUtil_Access;
-   procedure getInstance;
    function get (This : in out PartnerIdentifierFileUtil) return Unbounded_String;
-   procedure get (This : in out PartnerIdentifierFileUtil);
 
 end org.allbinary.logic.system.security.licensing.PartnerIdentifierFileUtil_Package;
 

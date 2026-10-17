@@ -28,7 +28,7 @@ package body org.allbinary.game.health.NullHealthListener_Package is
    function Create return NullHealthListener_Access is
       This : constant NullHealthListener_Access := new NullHealthListener;
    begin
-      Initialize (This.all);
+      NullHealthListener_Package.Initialize (This.all);
       return This;
    end Create;
 

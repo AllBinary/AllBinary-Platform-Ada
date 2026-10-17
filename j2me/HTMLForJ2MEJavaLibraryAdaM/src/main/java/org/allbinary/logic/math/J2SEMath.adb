@@ -28,7 +28,7 @@ package body org.allbinary.logic.math.J2SEMath_Package is
    function Create return J2SEMath_Access is
       This : constant J2SEMath_Access := new J2SEMath;
    begin
-      Initialize (This.all);
+      J2SEMath_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -52,13 +52,6 @@ package body org.allbinary.logic.math.J2SEMath_Package is
    begin
         return (if ((value) < (0.0)) then -(value) else value);
    end absdouble;
-
-   procedure getInstance is
-      Java_Result : constant J2SEMath_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure round (This : in out J2SEMath; value : Float) is
       Java_Result : constant Integer := J2SEMath'Class (This).round (value);

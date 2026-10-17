@@ -42,7 +42,6 @@ package org.allbinary.logic.java.characters.CharacterSetData_Package is
    procedure Initialize (This : in out CharacterSetData'Class);
    function Create return CharacterSetData_Access;
    function getInstance return CharacterSetData_Access;
-   procedure getInstance;
 
 end org.allbinary.logic.java.characters.CharacterSetData_Package;
 

@@ -20,6 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
+with org.allbinary.logic.io.file.AbFile_Package; use org.allbinary.logic.io.file.AbFile_Package;
 
 package org.allbinary.logic.io.file.FileFactory_Package is
 
@@ -35,7 +36,6 @@ package org.allbinary.logic.io.file.FileFactory_Package is
    procedure Initialize (This : in out FileFactory'Class);
    function Create return FileFactory_Access;
    function getInstance return FileFactory_Access;
-   procedure getInstance;
    function getInstance (This : in out FileFactory; filePath : Unbounded_String) return AbFile_Access;
    procedure getInstance (This : in out FileFactory; filePath : Unbounded_String);
    function getInstance (This : in out FileFactory; file : AbFile_Access; childFilePath : Unbounded_String) return AbFile_Access;

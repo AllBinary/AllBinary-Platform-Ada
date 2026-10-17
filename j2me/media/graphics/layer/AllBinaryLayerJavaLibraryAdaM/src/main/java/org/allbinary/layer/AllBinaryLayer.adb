@@ -50,7 +50,7 @@ package body org.allbinary.layer.AllBinaryLayer_Package is
    function Create (name : Unbounded_String; rectangle : Rectangle_Access; viewPosition : ViewPositionBase_Access) return AllBinaryLayer_Access is
       This : constant AllBinaryLayer_Access := new AllBinaryLayer;
    begin
-      Initialize (This.all, name, rectangle, viewPosition);
+      AllBinaryLayer_Package.Initialize (This.all, name, rectangle, viewPosition);
       return This;
    end Create;
 
@@ -195,125 +195,6 @@ package body org.allbinary.layer.AllBinaryLayer_Package is
         stringBuffer := StringMaker_Package.Create;
         This.toStringAppend (stringBuffer);
         return stringBuffer.toString;
-   end toString;
-
-   procedure getX2 (This : in out AllBinaryLayer) is
-      Java_Result : constant Integer := AllBinaryLayer'Class (This).getX2;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getX2;
-
-   procedure getY2 (This : in out AllBinaryLayer) is
-      Java_Result : constant Integer := AllBinaryLayer'Class (This).getY2;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getY2;
-
-   procedure getZ2 (This : in out AllBinaryLayer) is
-      Java_Result : constant Integer := AllBinaryLayer'Class (This).getZ2;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getZ2;
-
-   procedure getName (This : in out AllBinaryLayer) is
-      Java_Result : constant Unbounded_String := AllBinaryLayer'Class (This).getName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getName;
-
-   procedure getHalfWidth (This : in out AllBinaryLayer) is
-      Java_Result : constant Integer := AllBinaryLayer'Class (This).getHalfWidth;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getHalfWidth;
-
-   procedure getHalfHeight (This : in out AllBinaryLayer) is
-      Java_Result : constant Integer := AllBinaryLayer'Class (This).getHalfHeight;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getHalfHeight;
-
-   procedure getHalfDepth (This : in out AllBinaryLayer) is
-      Java_Result : constant Integer := AllBinaryLayer'Class (This).getHalfDepth;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getHalfDepth;
-
-   procedure getViewPosition (This : in out AllBinaryLayer) is
-      Java_Result : constant ViewPositionBase_Access := AllBinaryLayer'Class (This).getViewPosition;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getViewPosition;
-
-   procedure getGroupInterface (This : in out AllBinaryLayer) is
-      Java_Result : constant Group_Access_Array_Access := AllBinaryLayer'Class (This).getGroupInterface;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getGroupInterface;
-
-   procedure implmentsTickableInterface (This : in out AllBinaryLayer) is
-      Java_Result : constant Boolean := AllBinaryLayer'Class (This).implmentsTickableInterface;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end implmentsTickableInterface;
-
-   procedure implmentsGameInputInterface (This : in out AllBinaryLayer) is
-      Java_Result : constant Boolean := AllBinaryLayer'Class (This).implmentsGameInputInterface;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end implmentsGameInputInterface;
-
-   procedure implmentsArtificialIntelligenceCompositeInterface (This : in out AllBinaryLayer) is
-      Java_Result : constant Boolean := AllBinaryLayer'Class (This).implmentsArtificialIntelligenceCompositeInterface;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end implmentsArtificialIntelligenceCompositeInterface;
-
-   procedure implmentsCollidableInterface (This : in out AllBinaryLayer) is
-      Java_Result : constant Boolean := AllBinaryLayer'Class (This).implmentsCollidableInterface;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end implmentsCollidableInterface;
-
-   procedure implementsThreedInterface (This : in out AllBinaryLayer) is
-      Java_Result : constant Boolean := AllBinaryLayer'Class (This).implementsThreedInterface;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end implementsThreedInterface;
-
-   procedure getType (This : in out AllBinaryLayer) is
-      Java_Result : constant Integer := AllBinaryLayer'Class (This).getType;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getType;
-
-   procedure getMultiPlayerType (This : in out AllBinaryLayer) is
-      Java_Result : constant Integer := AllBinaryLayer'Class (This).getMultiPlayerType;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getMultiPlayerType;
-
-   procedure toString (This : in out AllBinaryLayer) is
-      Java_Result : constant Unbounded_String := AllBinaryLayer'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end toString;
 
 begin

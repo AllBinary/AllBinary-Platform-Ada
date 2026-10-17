@@ -28,7 +28,7 @@ package body org.allbinary.logic.util.event.NullEventListener_Package is
    function Create return NullEventListener_Access is
       This : constant NullEventListener_Access := new NullEventListener;
    begin
-      Initialize (This.all);
+      NullEventListener_Package.Initialize (This.all);
       return This;
    end Create;
 

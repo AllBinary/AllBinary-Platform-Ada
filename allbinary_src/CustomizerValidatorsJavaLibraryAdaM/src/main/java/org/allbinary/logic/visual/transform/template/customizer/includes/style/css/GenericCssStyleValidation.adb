@@ -32,7 +32,7 @@ package body org.allbinary.logic.visual.transform.template.customizer.includes.s
    function Create return GenericCssStyleValidation_Access is
       This : constant GenericCssStyleValidation_Access := new GenericCssStyleValidation;
    begin
-      Initialize (This.all);
+      GenericCssStyleValidation_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -48,7 +48,7 @@ package body org.allbinary.logic.visual.transform.template.customizer.includes.s
    function Create (document : Document_Access) return GenericCssStyleValidation_Access is
       This : constant GenericCssStyleValidation_Access := new GenericCssStyleValidation;
    begin
-      Initialize (This.all, document);
+      GenericCssStyleValidation_Package.Initialize (This.all, document);
       return This;
    end Create;
 
@@ -63,7 +63,7 @@ package body org.allbinary.logic.visual.transform.template.customizer.includes.s
    function Create (hashMap : HashMap_Access) return GenericCssStyleValidation_Access is
       This : constant GenericCssStyleValidation_Access := new GenericCssStyleValidation;
    begin
-      Initialize (This.all, hashMap);
+      GenericCssStyleValidation_Package.Initialize (This.all, hashMap);
       return This;
    end Create;
 
@@ -134,27 +134,6 @@ package body org.allbinary.logic.visual.transform.template.customizer.includes.s
         node := ModDomHelper_Package.createNameValueNodes (document, BodyData_Package.getInstance.NAME, StringUtil_Package.getInstance.EMPTY_STRING);
         return node;
    end toXmlNode;
-
-   procedure isValid (This : in out GenericCssStyleValidation) is
-      Java_Result : constant Boolean := GenericCssStyleValidation'Class (This).isValid;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isValid;
-
-   procedure validationInfo (This : in out GenericCssStyleValidation) is
-      Java_Result : constant Unbounded_String := GenericCssStyleValidation'Class (This).validationInfo;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end validationInfo;
-
-   procedure toValidationInfoDoc (This : in out GenericCssStyleValidation) is
-      Java_Result : constant Document_Access := GenericCssStyleValidation'Class (This).toValidationInfoDoc;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toValidationInfoDoc;
 
    procedure toValidationInfoNode (This : in out GenericCssStyleValidation; document : Document_Access) is
       Java_Result : constant Node_Access := GenericCssStyleValidation'Class (This).toValidationInfoNode (document);

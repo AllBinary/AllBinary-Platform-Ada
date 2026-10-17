@@ -45,6 +45,8 @@ with org.allbinary.logic.string_Id.StringValidationUtil_Package; use org.allbina
 with org.allbinary.logic.visual.transform.info.TransformInfoHttpInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoHttpInterface_Package;
 with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionInterfaceFactory_Package; use org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionInterfaceFactory_Package;
+with org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionInterface_Package; use org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionInterface_Package;
 
 package org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionInterfaceRequestFactory_Package is
 
@@ -85,7 +87,6 @@ package org.allbinary.business.user.commerce.money.payment.gateway.transaction.P
    procedure Initialize (This : in out PaymentTransactionInterfaceRequestFactory'Class);
    function Create return PaymentTransactionInterfaceRequestFactory_Access;
    function getInstance return PaymentTransactionInterfaceRequestFactory_Access;
-   procedure getInstance;
    function getInstance (This : in out PaymentTransactionInterfaceRequestFactory; transformInfoInterface : TransformInfoInterface_Access) return PaymentTransactionInterface_Access;
    procedure getInstance (This : in out PaymentTransactionInterfaceRequestFactory; transformInfoInterface : TransformInfoInterface_Access);
    function generateFromTestData (This : in out PaymentTransactionInterfaceRequestFactory; transformInfoInterface : TransformInfoInterface_Access) return PaymentTransactionInterface_Access;

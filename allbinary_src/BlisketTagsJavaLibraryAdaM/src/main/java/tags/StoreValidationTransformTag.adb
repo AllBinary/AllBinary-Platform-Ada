@@ -32,7 +32,7 @@ package body tags.StoreValidationTransformTag_Package is
    function Create return StoreValidationTransformTag_Access is
       This : constant StoreValidationTransformTag_Access := new StoreValidationTransformTag;
    begin
-      Initialize (This.all);
+      StoreValidationTransformTag_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -59,13 +59,6 @@ package body tags.StoreValidationTransformTag_Package is
             return SKIP_BODY;
                 end;
         end;
-   end doStartTag;
-
-   procedure doStartTag (This : in out StoreValidationTransformTag) is
-      Java_Result : constant Integer := StoreValidationTransformTag'Class (This).doStartTag;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end doStartTag;
 
 end tags.StoreValidationTransformTag_Package;

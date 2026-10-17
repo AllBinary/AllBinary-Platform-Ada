@@ -114,7 +114,7 @@ package body org.allbinary.logic.math.SmallIntegerSingletonFactory_Package is
    function Create return SmallIntegerSingletonFactory_Access is
       This : constant SmallIntegerSingletonFactory_Access := new SmallIntegerSingletonFactory;
    begin
-      Initialize (This.all);
+      SmallIntegerSingletonFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -150,27 +150,6 @@ package body org.allbinary.logic.math.SmallIntegerSingletonFactory_Package is
         end if;
         return This.STRING_ARRAY (i);
    end getString;
-
-   procedure getInstance is
-      Java_Result : constant SmallIntegerSingletonFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure getMin (This : in out SmallIntegerSingletonFactory) is
-      Java_Result : constant Integer := SmallIntegerSingletonFactory'Class (This).getMin;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getMin;
-
-   procedure getMinAllowed (This : in out SmallIntegerSingletonFactory) is
-      Java_Result : constant Integer := SmallIntegerSingletonFactory'Class (This).getMinAllowed;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getMinAllowed;
 
    procedure getAt (This : in out SmallIntegerSingletonFactory; index : Integer) is
       Java_Result : constant Integer := SmallIntegerSingletonFactory'Class (This).getAt (index);

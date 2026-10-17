@@ -28,7 +28,7 @@ package body org.allbinary.android.input.motion.ActivityFractureInputUtilFactory
    function Create return ActivityFractureInputUtilFactory_Access is
       This : constant ActivityFractureInputUtilFactory_Access := new ActivityFractureInputUtilFactory;
    begin
-      Initialize (This.all);
+      ActivityFractureInputUtilFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -46,13 +46,6 @@ package body org.allbinary.android.input.motion.ActivityFractureInputUtilFactory
         else
             return ActivityFractureUtilAPI19_Package.getInstance;
         end if;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant ActivityFractureUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 end org.allbinary.android.input.motion.ActivityFractureInputUtilFactory_Package;

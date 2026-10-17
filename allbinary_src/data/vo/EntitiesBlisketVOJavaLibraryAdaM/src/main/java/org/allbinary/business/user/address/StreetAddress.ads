@@ -34,6 +34,7 @@ with org.allbinary.logic.string_Id.StringValidationUtil_Package; use org.allbina
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
+with org.allbinary.business.user.address.StreetAddressData_Package; use org.allbinary.business.user.address.StreetAddressData_Package;
 
 package org.allbinary.business.user.address.StreetAddress_Package is
 
@@ -77,33 +78,20 @@ package org.allbinary.business.user.address.StreetAddress_Package is
    procedure setCode (This : in out StreetAddress; value : Unbounded_String);
    procedure setCountry (This : in out StreetAddress; value : Unbounded_String);
    function getName (This : in out StreetAddress) return Unbounded_String;
-   procedure getName (This : in out StreetAddress);
    function getStreet (This : in out StreetAddress) return Unbounded_String;
-   procedure getStreet (This : in out StreetAddress);
    function getCity (This : in out StreetAddress) return Unbounded_String;
-   procedure getCity (This : in out StreetAddress);
    function getState (This : in out StreetAddress) return Unbounded_String;
-   procedure getState (This : in out StreetAddress);
    function getCode (This : in out StreetAddress) return Unbounded_String;
-   procedure getCode (This : in out StreetAddress);
    function getCountry (This : in out StreetAddress) return Unbounded_String;
-   procedure getCountry (This : in out StreetAddress);
    function getId (This : in out StreetAddress) return Unbounded_String;
-   procedure getId (This : in out StreetAddress);
    function isDefault (This : in out StreetAddress) return Boolean;
-   procedure isDefault (This : in out StreetAddress);
    function isEmpty (This : in out StreetAddress) return Boolean;
-   procedure isEmpty (This : in out StreetAddress);
    function isValid (This : in out StreetAddress) return Boolean;
-   procedure isValid (This : in out StreetAddress);
    function validationInfo (This : in out StreetAddress) return Unbounded_String;
-   procedure validationInfo (This : in out StreetAddress);
    function toValidationInfoDoc (This : in out StreetAddress) return Document_Access;
-   procedure toValidationInfoDoc (This : in out StreetAddress);
    function toValidationInfoNode (This : in out StreetAddress; document : Document_Access) return Node_Access;
    procedure toValidationInfoNode (This : in out StreetAddress; document : Document_Access);
    function toHashMap (This : in out StreetAddress) return HashMap_Access;
-   procedure toHashMap (This : in out StreetAddress);
    function toXmlNode (This : in out StreetAddress; document : Document_Access) return Node_Access;
    procedure toXmlNode (This : in out StreetAddress; document : Document_Access);
 

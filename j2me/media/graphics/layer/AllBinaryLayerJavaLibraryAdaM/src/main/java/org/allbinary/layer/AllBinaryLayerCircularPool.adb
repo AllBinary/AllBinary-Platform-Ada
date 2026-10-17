@@ -31,7 +31,7 @@ package body org.allbinary.layer.AllBinaryLayerCircularPool_Package is
    function Create return AllBinaryLayerCircularPool_Access is
       This : constant AllBinaryLayerCircularPool_Access := new AllBinaryLayerCircularPool;
    begin
-      Initialize (This.all);
+      AllBinaryLayerCircularPool_Package.Initialize (This.all);
       return This;
    end Create;
 

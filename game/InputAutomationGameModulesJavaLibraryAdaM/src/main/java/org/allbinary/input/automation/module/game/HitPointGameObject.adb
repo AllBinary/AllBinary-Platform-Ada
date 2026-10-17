@@ -45,7 +45,7 @@ package body org.allbinary.input.automation.module.game.HitPointGameObject_Packa
    function Create (bufferedImage : BufferedImage_Access_Array_Access; minX : Integer; maxX : Integer; y : Integer) return HitPointGameObject_Access is
       This : constant HitPointGameObject_Access := new HitPointGameObject;
    begin
-      Initialize (This.all, bufferedImage, minX, maxX, y);
+      HitPointGameObject_Package.Initialize (This.all, bufferedImage, minX, maxX, y);
       return This;
    end Create;
 
@@ -101,27 +101,6 @@ package body org.allbinary.input.automation.module.game.HitPointGameObject_Packa
    begin
       null;
    end isMoreThan;
-
-   procedure isCloseDeath (This : in out HitPointGameObject) is
-      Java_Result : constant Boolean := HitPointGameObject'Class (This).isCloseDeath;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isCloseDeath;
-
-   procedure isDamaged (This : in out HitPointGameObject) is
-      Java_Result : constant Boolean := HitPointGameObject'Class (This).isDamaged;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isDamaged;
-
-   procedure toString (This : in out HitPointGameObject) is
-      Java_Result : constant Unbounded_String := HitPointGameObject'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toString;
 
 end org.allbinary.input.automation.module.game.HitPointGameObject_Package;
 

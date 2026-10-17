@@ -47,15 +47,10 @@ package org.allbinary.logic.StdUtil_Package is
    procedure Initialize (This : in out StdUtil'Class);
    function Create return StdUtil_Access;
    function getInstance return StdUtil_Access;
-   procedure getInstance;
    function createStack (This : in out StdUtil) return ABStack_Access;
-   procedure createStack (This : in out StdUtil);
    function createVector (This : in out StdUtil) return ABVector_Access;
-   procedure createVector (This : in out StdUtil);
    function createHashtable (This : in out StdUtil) return ABHashtable_Access;
-   procedure createHashtable (This : in out StdUtil);
    function createHashMap (This : in out StdUtil) return ABHashMap_Access;
-   procedure createHashMap (This : in out StdUtil);
 
 end org.allbinary.logic.StdUtil_Package;
 

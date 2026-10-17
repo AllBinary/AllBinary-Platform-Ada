@@ -21,7 +21,7 @@ with org.allbinary.logic.io.AbDataOutputStream_Package; use org.allbinary.logic.
 with org.allbinary.logic.io.FileStreamFactory_Package; use org.allbinary.logic.io.FileStreamFactory_Package;
 with org.allbinary.logic.io.NullCloseable_Package; use org.allbinary.logic.io.NullCloseable_Package;
 with org.allbinary.logic.io.StreamUtil_Package; use org.allbinary.logic.io.StreamUtil_Package;
-with org.allbinary.logic.io.file_Case.FileFactory_Package; use org.allbinary.logic.io.file_Case.FileFactory_Package;
+with org.allbinary.logic.io.file.FileFactory_Package; use org.allbinary.logic.io.file.FileFactory_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
@@ -38,7 +38,7 @@ package org.allbinary.configuration.ApplicationConfiguration_Package is
    package FileStreamFactory_Package renames Standard.org.allbinary.logic.io.FileStreamFactory_Package;
    package NullCloseable_Package renames Standard.org.allbinary.logic.io.NullCloseable_Package;
    package StreamUtil_Package renames Standard.org.allbinary.logic.io.StreamUtil_Package;
-   package FileFactory_Package renames Standard.org.allbinary.logic.io.file_Case.FileFactory_Package;
+   package FileFactory_Package renames Standard.org.allbinary.logic.io.file.FileFactory_Package;
    package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
@@ -60,21 +60,16 @@ package org.allbinary.configuration.ApplicationConfiguration_Package is
    procedure Initialize (This : in out ApplicationConfiguration'Class);
    function Create return ApplicationConfiguration_Access;
    function getInstance return ApplicationConfiguration_Access;
-   procedure getInstance;
    procedure read (This : in out ApplicationConfiguration);
    procedure write (This : in out ApplicationConfiguration);
    procedure update (This : in out ApplicationConfiguration; gameFeature : Feature_Access);
    procedure setFullscreen (This : in out ApplicationConfiguration; fullscreen : Boolean);
    function isFullscreen (This : in out ApplicationConfiguration) return Boolean;
-   procedure isFullscreen (This : in out ApplicationConfiguration);
    procedure setShowTitleBar (This : in out ApplicationConfiguration; showTitleBar : Boolean);
    function isShowTitleBar (This : in out ApplicationConfiguration) return Boolean;
-   procedure isShowTitleBar (This : in out ApplicationConfiguration);
    procedure setProgressBarView (This : in out ApplicationConfiguration; progressBarView : Boolean);
    function isProgressBarView (This : in out ApplicationConfiguration) return Boolean;
-   procedure isProgressBarView (This : in out ApplicationConfiguration);
    function toString (This : in out ApplicationConfiguration) return Unbounded_String;
-   procedure toString (This : in out ApplicationConfiguration);
 
 end org.allbinary.configuration.ApplicationConfiguration_Package;
 

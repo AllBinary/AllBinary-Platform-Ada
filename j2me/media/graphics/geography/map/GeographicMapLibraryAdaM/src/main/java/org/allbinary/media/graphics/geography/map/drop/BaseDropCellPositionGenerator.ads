@@ -43,7 +43,6 @@ package org.allbinary.media.graphics.geography.map.drop.BaseDropCellPositionGene
    procedure Initialize (This : in out BaseDropCellPositionGenerator'Class);
    function Create return BaseDropCellPositionGenerator_Access;
    function getName (This : in out BaseDropCellPositionGenerator) return Unbounded_String;
-   procedure getName (This : in out BaseDropCellPositionGenerator);
    procedure update (This : in out BaseDropCellPositionGenerator; allBinaryGameLayerManager : AllBinaryGameLayerManager_Access; geographicMapInterface : BasicGeographicMap_Access);
    function isDropAllowedAt (This : in out BaseDropCellPositionGenerator; geographicMapCellPosition : GeographicMapCellPosition_Access) return Boolean;
    procedure isDropAllowedAt (This : in out BaseDropCellPositionGenerator; geographicMapCellPosition : GeographicMapCellPosition_Access);

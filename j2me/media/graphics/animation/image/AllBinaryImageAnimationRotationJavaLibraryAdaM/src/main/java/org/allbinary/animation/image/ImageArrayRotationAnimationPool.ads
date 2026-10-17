@@ -24,6 +24,9 @@ with org.allbinary.logic.util.cache.BasicArrayListResetablePool_Package; use org
 with org.allbinary.logic.util.cache.CacheableInterface_Package; use org.allbinary.logic.util.cache.CacheableInterface_Package;
 with org.allbinary.logic.util.cache.CacheableInterfaceFactoryInterface_Package; use org.allbinary.logic.util.cache.CacheableInterfaceFactoryInterface_Package;
 with org.allbinary.logic.util.cache.PoolInterface_Package; use org.allbinary.logic.util.cache.PoolInterface_Package;
+with org.allbinary.animation.image.ImageArrayRotationAnimationCacheableInterfaceFactory_Package; use org.allbinary.animation.image.ImageArrayRotationAnimationCacheableInterfaceFactory_Package;
+with org.allbinary.animation.image.ImageArrayRotationAnimationInfo_Package; use org.allbinary.animation.image.ImageArrayRotationAnimationInfo_Package;
+with org.allbinary.animation.image.ImageArrayRotationAnimationCacheable_Package; use org.allbinary.animation.image.ImageArrayRotationAnimationCacheable_Package;
 
 package org.allbinary.animation.image.ImageArrayRotationAnimationPool_Package is
 
@@ -43,7 +46,6 @@ package org.allbinary.animation.image.ImageArrayRotationAnimationPool_Package is
    procedure Initialize (This : in out ImageArrayRotationAnimationPool'Class; cacheableInterfaceFactoryInterface : CacheableInterfaceFactoryInterface_Access);
    function Create (cacheableInterfaceFactoryInterface : CacheableInterfaceFactoryInterface_Access) return ImageArrayRotationAnimationPool_Access;
    function getInstance return PoolInterface_Access;
-   procedure getInstance;
    function remove (This : in out ImageArrayRotationAnimationPool; key : Java_Object_Access) return CacheableInterface_Access;
    procedure remove (This : in out ImageArrayRotationAnimationPool; key : Java_Object_Access);
 

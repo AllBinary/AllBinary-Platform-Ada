@@ -72,6 +72,9 @@ with org.allbinary.logic.util.event.EventStrings_Package; use org.allbinary.logi
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.game.displayable.canvas.MenuListener_Package; use org.allbinary.game.displayable.canvas.MenuListener_Package;
+with org.allbinary.game.displayable.canvas.NoMenuInputProcessor_Package; use org.allbinary.game.displayable.canvas.NoMenuInputProcessor_Package;
+with org.allbinary.game.displayable.canvas.BasicMenuInputProcessor_Package; use org.allbinary.game.displayable.canvas.BasicMenuInputProcessor_Package;
+with org.allbinary.game.displayable.canvas.ImmediateCommandFormInputProcessor_Package; use org.allbinary.game.displayable.canvas.ImmediateCommandFormInputProcessor_Package;
 
 package org.allbinary.game.displayable.canvas.GameCommandCanvas_Package is
 
@@ -159,14 +162,12 @@ package org.allbinary.game.displayable.canvas.GameCommandCanvas_Package is
    procedure initCommands (This : in out GameCommandCanvas; cmdListener : CommandListener_Access);
    procedure initMenu (This : in out GameCommandCanvas);
    function createForm (This : in out GameCommandCanvas) return ScrollSelectionForm_Access;
-   procedure createForm (This : in out GameCommandCanvas);
    function createRectangle (This : in out GameCommandCanvas; size : Integer) return Rectangle_Access;
    procedure createRectangle (This : in out GameCommandCanvas; size : Integer);
    procedure open (This : in out GameCommandCanvas);
    procedure close (This : in out GameCommandCanvas);
    procedure update (This : in out GameCommandCanvas);
    function getSourceId (This : in out GameCommandCanvas) return Integer;
-   procedure getSourceId (This : in out GameCommandCanvas);
    procedure keyPressed (This : in out GameCommandCanvas; keyCode : Integer);
    procedure keyReleased (This : in out GameCommandCanvas; keyCode : Integer);
    procedure keyRepeated (This : in out GameCommandCanvas; keyCode : Integer);
@@ -178,7 +179,6 @@ package org.allbinary.game.displayable.canvas.GameCommandCanvas_Package is
    procedure paint (This : in out GameCommandCanvas; graphics : Graphics_Access);
    procedure setMenuInputProcessor (This : in out GameCommandCanvas; menuInputProcessor : BasicMenuInputProcessor_Access);
    function getMenuInputProcessor (This : in out GameCommandCanvas) return BasicMenuInputProcessor_Access;
-   procedure getMenuInputProcessor (This : in out GameCommandCanvas);
 
 end org.allbinary.game.displayable.canvas.GameCommandCanvas_Package;
 

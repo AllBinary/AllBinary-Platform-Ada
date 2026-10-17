@@ -31,7 +31,7 @@ package body org.allbinary.game.gd.resource.GDLazyResources_Package is
    function Create return GDLazyResources_Access is
       This : constant GDLazyResources_Access := new GDLazyResources;
    begin
-      Initialize (This.all);
+      GDLazyResources_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -39,13 +39,6 @@ package body org.allbinary.game.gd.resource.GDLazyResources_Package is
    function getInstance return GDLazyResources_Access is
    begin
         return GDLazyResources_Package.instance;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant GDLazyResources_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

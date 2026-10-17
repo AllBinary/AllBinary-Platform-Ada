@@ -20,7 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.util.Calendar_Package; use java.util.Calendar_Package;
+with java.util.Calendar_Package; use java.util.Calendar_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 --  with javax.servlet.http.HttpServletRequest_Package; use javax.servlet.http.HttpServletRequest_Package;
@@ -42,6 +42,7 @@ with tags.CustomTagSupport_Package; use tags.CustomTagSupport_Package;
 
 package admin.tags.FileAuthenticationTag_Package is
 
+   package Calendar_Package renames Standard.java.util.Calendar_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
    package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    package InstallerInfo_Package renames Standard.org.allbinary.business.init.InstallerInfo_Package;
@@ -90,27 +91,16 @@ package admin.tags.FileAuthenticationTag_Package is
    procedure getFormData (This : in out FileAuthenticationTag);
    procedure nextAttempt (This : in out FileAuthenticationTag);
    function changePassword (This : in out FileAuthenticationTag) return Boolean;
-   procedure changePassword (This : in out FileAuthenticationTag);
    function invalidateSession (This : in out FileAuthenticationTag) return Integer;
-   procedure invalidateSession (This : in out FileAuthenticationTag);
    function isSessionOld (This : in out FileAuthenticationTag) return Boolean;
-   procedure isSessionOld (This : in out FileAuthenticationTag);
    function isRarelyUsedSession (This : in out FileAuthenticationTag) return Boolean;
-   procedure isRarelyUsedSession (This : in out FileAuthenticationTag);
    function isRoleValid (This : in out FileAuthenticationTag) return Boolean;
-   procedure isRoleValid (This : in out FileAuthenticationTag);
    function validRole (This : in out FileAuthenticationTag) return Unbounded_String;
-   procedure validRole (This : in out FileAuthenticationTag);
    function invalidRole (This : in out FileAuthenticationTag) return Unbounded_String;
-   procedure invalidRole (This : in out FileAuthenticationTag);
    function isAuthenticationSessionValid (This : in out FileAuthenticationTag) return Boolean;
-   procedure isAuthenticationSessionValid (This : in out FileAuthenticationTag);
    function processIfNewLogin (This : in out FileAuthenticationTag) return Boolean;
-   procedure processIfNewLogin (This : in out FileAuthenticationTag);
    function processInvalidation (This : in out FileAuthenticationTag) return Boolean;
-   procedure processInvalidation (This : in out FileAuthenticationTag);
    function doStartTag (This : in out FileAuthenticationTag) return Integer;
-   procedure doStartTag (This : in out FileAuthenticationTag);
 
 end admin.tags.FileAuthenticationTag_Package;
 

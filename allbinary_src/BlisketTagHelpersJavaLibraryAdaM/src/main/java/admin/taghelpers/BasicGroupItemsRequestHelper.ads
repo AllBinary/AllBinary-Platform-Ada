@@ -20,7 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.util.Calendar_Package; use java.util.Calendar_Package;
+with java.util.Calendar_Package; use java.util.Calendar_Package;
 --  with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
@@ -38,6 +38,7 @@ with admin.taghelpers.ModifyTable_Package; use admin.taghelpers.ModifyTable_Pack
 
 package admin.taghelpers.BasicGroupItemsRequestHelper_Package is
 
+   package Calendar_Package renames Standard.java.util.Calendar_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
    package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    package EntryData_Package renames Standard.org.allbinary.business.entry_Id.EntryData_Package;
@@ -77,13 +78,9 @@ package admin.taghelpers.BasicGroupItemsRequestHelper_Package is
    function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return BasicGroupItemsRequestHelper_Access;
    procedure getFormData (This : in out BasicGroupItemsRequestHelper);
    function getHashMap (This : in out BasicGroupItemsRequestHelper) return HashMap_Access;
-   procedure getHashMap (This : in out BasicGroupItemsRequestHelper);
    function insert (This : in out BasicGroupItemsRequestHelper) return Unbounded_String;
-   procedure insert (This : in out BasicGroupItemsRequestHelper);
    function delete (This : in out BasicGroupItemsRequestHelper) return Unbounded_String;
-   procedure delete (This : in out BasicGroupItemsRequestHelper);
    function update (This : in out BasicGroupItemsRequestHelper) return Unbounded_String;
-   procedure update (This : in out BasicGroupItemsRequestHelper);
 
 end admin.taghelpers.BasicGroupItemsRequestHelper_Package;
 

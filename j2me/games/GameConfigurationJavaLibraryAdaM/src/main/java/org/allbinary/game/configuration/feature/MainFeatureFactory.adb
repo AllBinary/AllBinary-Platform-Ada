@@ -33,7 +33,7 @@ package body org.allbinary.game.configuration.feature.MainFeatureFactory_Package
    function Create return MainFeatureFactory_Access is
       This : constant MainFeatureFactory_Access := new MainFeatureFactory;
    begin
-      Initialize (This.all);
+      MainFeatureFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -41,13 +41,6 @@ package body org.allbinary.game.configuration.feature.MainFeatureFactory_Package
    function getInstance return MainFeatureFactory_Access is
    begin
         return MainFeatureFactory_Package.instance;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant MainFeatureFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

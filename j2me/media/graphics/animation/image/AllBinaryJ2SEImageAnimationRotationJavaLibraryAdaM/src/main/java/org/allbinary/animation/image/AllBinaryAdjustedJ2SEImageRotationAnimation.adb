@@ -33,7 +33,7 @@ package body org.allbinary.animation.image.AllBinaryAdjustedJ2SEImageRotationAni
    function Create (originalImage : Image_Access; image : Image_Access; angleInfo : AngleInfo_Access; totalAngle : Short_Integer; dx : Integer; dy : Integer; animationBehavior : AnimationBehavior_Access) return AllBinaryAdjustedJ2SEImageRotationAnimation_Access is
       This : constant AllBinaryAdjustedJ2SEImageRotationAnimation_Access := new AllBinaryAdjustedJ2SEImageRotationAnimation;
    begin
-      Initialize (This.all, originalImage, image, angleInfo, totalAngle, dx, dy, animationBehavior);
+      AllBinaryAdjustedJ2SEImageRotationAnimation_Package.Initialize (This.all, originalImage, image, angleInfo, totalAngle, dx, dy, animationBehavior);
       return This;
    end Create;
 
@@ -68,20 +68,6 @@ package body org.allbinary.animation.image.AllBinaryAdjustedJ2SEImageRotationAni
    begin
         AllBinaryJ2SEImageRotationAnimation (This).paintXY (graphics, (x) + (This.dx), (y) + (This.dy));
    end paintXY;
-
-   procedure getDx (This : in out AllBinaryAdjustedJ2SEImageRotationAnimation) is
-      Java_Result : constant Integer := AllBinaryAdjustedJ2SEImageRotationAnimation'Class (This).getDx;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getDx;
-
-   procedure getDy (This : in out AllBinaryAdjustedJ2SEImageRotationAnimation) is
-      Java_Result : constant Integer := AllBinaryAdjustedJ2SEImageRotationAnimation'Class (This).getDy;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getDy;
 
 end org.allbinary.animation.image.AllBinaryAdjustedJ2SEImageRotationAnimation_Package;
 

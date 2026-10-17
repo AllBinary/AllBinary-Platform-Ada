@@ -142,12 +142,10 @@ package org.allbinary.input.automation.InputAutomationJFrame_Package is
    procedure stopJMenuItemActionPerformed (This : in out InputAutomationJFrame; evt : ActionEvent_Access);
    procedure startJMenuItemActionPerformed (This : in out InputAutomationJFrame; evt : ActionEvent_Access);
    function getInstance return InputAutomationJFrame_Access;
-   procedure getInstance;
    procedure destroy;
    procedure create (inputAutomationBundleActivatorListenerInterface : InputAutomationBundleActivatorListenerInterface_Access);
    procedure main (args : Unbounded_String_Array_Access);
    function getAutomationModuleConfigurationJPanel (This : in out InputAutomationJFrame) return JPanel_Access;
-   procedure getAutomationModuleConfigurationJPanel (This : in out InputAutomationJFrame);
    procedure setAutomationModuleConfigurationJPanel (This : in out InputAutomationJFrame; automationModuleConfigurationJPanel : JPanel_Access);
    procedure onAdd (This : in out InputAutomationJFrame; inputAutomationRobotChangeEvent : InputAutomationRobotChangeEvent_Access);
    procedure onRemove (This : in out InputAutomationJFrame; inputAutomationRobotChangeEvent : InputAutomationRobotChangeEvent_Access);

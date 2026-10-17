@@ -39,11 +39,12 @@ package body org.allbinary.media.audio.music.MusicManager_Package is
    function Create (musicServiceClass : Ada.Tags.Tag; songList : BasicArrayList_Access) return MusicManager_Access is
       This : constant MusicManager_Access := new MusicManager;
    begin
-      Initialize (This.all, musicServiceClass, songList);
+      MusicManager_Package.Initialize (This.all, musicServiceClass, songList);
       return This;
    end Create;
 
-   procedure nextSong (This : in out MusicManager; nextSongSound : Sound_Access; leftVolume : Integer; rightVolume : Integer) is
+   procedure nextSong (This : in out MusicManager; nextSongSound_Param : Sound_Access; leftVolume : Integer; rightVolume : Integer) is
+      nextSongSound : Sound_Access := nextSongSound_Param;
    begin
         if (nextSongSound) = (null) then
             nextSongSound := NoSound_Package.getInstance;

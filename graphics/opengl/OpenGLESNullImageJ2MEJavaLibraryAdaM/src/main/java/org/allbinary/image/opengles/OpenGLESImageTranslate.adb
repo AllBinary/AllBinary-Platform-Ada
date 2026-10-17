@@ -28,7 +28,7 @@ package body org.allbinary.image.opengles.OpenGLESImageTranslate_Package is
    function Create return OpenGLESImageTranslate_Access is
       This : constant OpenGLESImageTranslate_Access := new OpenGLESImageTranslate;
    begin
-      Initialize (This.all);
+      OpenGLESImageTranslate_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -47,13 +47,6 @@ package body org.allbinary.image.opengles.OpenGLESImageTranslate_Package is
    begin
         null;
    end translate2;
-
-   procedure getInstance is
-      Java_Result : constant OpenGLESImageTranslate_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

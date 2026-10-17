@@ -28,7 +28,7 @@ package body org.allbinary.media.audio.AllBinaryMediaManagerShutdown_Package is
    function Create return AllBinaryMediaManagerShutdown_Access is
       This : constant AllBinaryMediaManagerShutdown_Access := new AllBinaryMediaManagerShutdown;
    begin
-      Initialize (This.all);
+      AllBinaryMediaManagerShutdown_Package.Initialize (This.all);
       return This;
    end Create;
 

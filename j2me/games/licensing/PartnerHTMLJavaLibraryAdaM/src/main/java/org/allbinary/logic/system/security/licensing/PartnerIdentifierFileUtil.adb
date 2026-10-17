@@ -30,7 +30,7 @@ package body org.allbinary.logic.system.security.licensing.PartnerIdentifierFile
    function Create return PartnerIdentifierFileUtil_Access is
       This : constant PartnerIdentifierFileUtil_Access := new PartnerIdentifierFileUtil;
    begin
-      Initialize (This.all);
+      PartnerIdentifierFileUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -59,20 +59,6 @@ package body org.allbinary.logic.system.security.licensing.PartnerIdentifierFile
             return StringUtil_Package.getInstance.NULL_STRING;
                 end;
         end;
-   end get;
-
-   procedure getInstance is
-      Java_Result : constant PartnerIdentifierFileUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure get (This : in out PartnerIdentifierFileUtil) is
-      Java_Result : constant Unbounded_String := PartnerIdentifierFileUtil'Class (This).get;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end get;
 
 begin

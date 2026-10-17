@@ -32,7 +32,7 @@ package body views.business.context.modules.storefront.customizer.bodies.generic
    function Create (transformInfoInterface : TransformInfoInterface_Access) return GenericBodyCustomizerView_Access is
       This : constant GenericBodyCustomizerView_Access := new GenericBodyCustomizerView;
    begin
-      Initialize (This.all, transformInfoInterface);
+      GenericBodyCustomizerView_Package.Initialize (This.all, transformInfoInterface);
       return This;
    end Create;
 
@@ -83,13 +83,6 @@ package body views.business.context.modules.storefront.customizer.bodies.generic
    begin
       null;
    end toXmlNode;
-
-   procedure view (This : in out GenericBodyCustomizerView) is
-      Java_Result : constant Unbounded_String := GenericBodyCustomizerView'Class (This).view;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end view;
 
 begin
    null;

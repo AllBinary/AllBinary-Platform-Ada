@@ -32,7 +32,7 @@ package body org.allbinary.game.displayable.canvas.EndLevelIntermissionProcessor
    function Create (gameCanvas : AllBinaryGameCanvas_Access) return EndLevelIntermissionProcessor_Access is
       This : constant EndLevelIntermissionProcessor_Access := new EndLevelIntermissionProcessor;
    begin
-      Initialize (This.all, gameCanvas);
+      EndLevelIntermissionProcessor_Package.Initialize (This.all, gameCanvas);
       return This;
    end Create;
 

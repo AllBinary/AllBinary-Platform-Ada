@@ -32,7 +32,7 @@ package body org.allbinary.media.image.comparison.motion.MotionRectanglesImageIn
    function Create return MotionRectanglesImageInputOutput_Access is
       This : constant MotionRectanglesImageInputOutput_Access := new MotionRectanglesImageInputOutput;
    begin
-      Initialize (This.all);
+      MotionRectanglesImageInputOutput_Package.Initialize (This.all);
       return This;
    end Create;
 

@@ -36,7 +36,7 @@ package body org.allbinary.game.layer.item.RTSLayerTextAnimation_Package is
    function Create (text : Unbounded_String; image : Image_Access) return RTSLayerTextAnimation_Access is
       This : constant RTSLayerTextAnimation_Access := new RTSLayerTextAnimation;
    begin
-      Initialize (This.all, text, image);
+      RTSLayerTextAnimation_Package.Initialize (This.all, text, image);
       return This;
    end Create;
 

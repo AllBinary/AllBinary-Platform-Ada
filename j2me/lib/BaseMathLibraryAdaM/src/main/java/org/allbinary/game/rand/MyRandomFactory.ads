@@ -51,7 +51,6 @@ package org.allbinary.game.rand.MyRandomFactory_Package is
    procedure Initialize (This : in out MyRandomFactory'Class);
    function Create return MyRandomFactory_Access;
    function getInstance return MyRandomFactory_Access;
-   procedure getInstance;
    procedure setSeed (This : in out MyRandomFactory; seed : Long_Long_Integer);
    function getNextInt (This : in out MyRandomFactory; range_Id : Integer) return Integer;
    procedure getNextInt (This : in out MyRandomFactory; range_Id : Integer);

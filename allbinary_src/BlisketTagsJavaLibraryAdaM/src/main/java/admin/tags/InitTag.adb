@@ -32,7 +32,7 @@ package body admin.tags.InitTag_Package is
    function Create return InitTag_Access is
       This : constant InitTag_Access := new InitTag;
    begin
-      Initialize (This.all);
+      InitTag_Package.Initialize (This.all);
       return This;
    end Create;
 

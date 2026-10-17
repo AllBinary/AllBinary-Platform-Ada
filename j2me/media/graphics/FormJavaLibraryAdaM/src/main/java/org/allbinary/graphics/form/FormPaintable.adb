@@ -32,7 +32,7 @@ package body org.allbinary.graphics.form.FormPaintable_Package is
    function Create (form : PaintableForm_Access) return FormPaintable_Access is
       This : constant FormPaintable_Access := new FormPaintable;
    begin
-      Initialize (This.all, form);
+      FormPaintable_Package.Initialize (This.all, form);
       return This;
    end Create;
 
@@ -44,13 +44,6 @@ package body org.allbinary.graphics.form.FormPaintable_Package is
    function getForm (This : in out FormPaintable) return PaintableForm_Access is
    begin
         return This.form;
-   end getForm;
-
-   procedure getForm (This : in out FormPaintable) is
-      Java_Result : constant PaintableForm_Access := FormPaintable'Class (This).getForm;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getForm;
 
 end org.allbinary.graphics.form.FormPaintable_Package;

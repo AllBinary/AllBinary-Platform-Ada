@@ -16,7 +16,7 @@ package body org.allbinary.device.OpenGLESNullGraphicsFactory_Package is
    function Create return OpenGLESNullGraphicsFactory_Access is
       This : constant OpenGLESNullGraphicsFactory_Access := new OpenGLESNullGraphicsFactory;
    begin
-      Initialize (This.all);
+      OpenGLESNullGraphicsFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -24,13 +24,6 @@ package body org.allbinary.device.OpenGLESNullGraphicsFactory_Package is
    function getInstance return OpenGLESGraphics_Access is
    begin
         return OpenGLESNullGraphicsFactory_Package.instance;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant OpenGLESGraphics_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

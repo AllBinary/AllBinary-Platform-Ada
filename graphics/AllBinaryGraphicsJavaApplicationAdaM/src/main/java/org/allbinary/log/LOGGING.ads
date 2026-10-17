@@ -64,7 +64,6 @@ package org.allbinary.log.LOGGING_Package is
    function contains (logType : LOGGING_Access) return Boolean;
    procedure contains (logType : LOGGING_Access);
    function toString (This : in out LOGGING) return Unbounded_String;
-   procedure toString (This : in out LOGGING);
 
 end org.allbinary.log.LOGGING_Package;
 

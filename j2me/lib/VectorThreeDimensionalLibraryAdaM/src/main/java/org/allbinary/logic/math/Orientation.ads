@@ -21,6 +21,7 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.math.BasicDecimal_Package; use org.allbinary.logic.math.BasicDecimal_Package;
 
 package org.allbinary.logic.math.Orientation_Package is
 
@@ -44,7 +45,6 @@ package org.allbinary.logic.math.Orientation_Package is
    function getInstance (yaw : Integer; pitch : Integer; roll : Integer) return Orientation_Access;
    procedure getInstance (yaw : Integer; pitch : Integer; roll : Integer);
    function toString (This : in out Orientation) return Unbounded_String;
-   procedure toString (This : in out Orientation);
 
 end org.allbinary.logic.math.Orientation_Package;
 

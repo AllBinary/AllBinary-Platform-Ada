@@ -31,7 +31,7 @@ package body org.allbinary.logic.util.queue.BasicQueue_Package is
    function Create return BasicQueue_Access is
       This : constant BasicQueue_Access := new BasicQueue;
    begin
-      Initialize (This.all);
+      BasicQueue_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -61,13 +61,6 @@ package body org.allbinary.logic.util.queue.BasicQueue_Package is
    begin
       null;
    end offer;
-
-   procedure removeLast (This : in out BasicQueue) is
-      Java_Result : constant Java_Object_Access := BasicQueue'Class (This).removeLast;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end removeLast;
 
 end org.allbinary.logic.util.queue.BasicQueue_Package;
 

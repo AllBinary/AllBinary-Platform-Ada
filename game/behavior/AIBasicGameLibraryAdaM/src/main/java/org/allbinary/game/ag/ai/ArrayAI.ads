@@ -47,7 +47,6 @@ package org.allbinary.game.ag.ai.ArrayAI_Package is
    function Create (artificialIntelligenceInterface : ArtificialIntelligenceInterface_Access_Array_Access; ownerLayerInterface : AllBinaryLayer_Access; gameInput : GameInput_Access) return ArrayAI_Access;
    procedure processAI (This : in out ArrayAI; allBinaryLayerManager : AllBinaryLayerManager_Access);
    function getArtificialIntelligenceInterface (This : in out ArrayAI) return ArtificialIntelligenceInterface_Access_Array_Access;
-   procedure getArtificialIntelligenceInterface (This : in out ArrayAI);
 
 end org.allbinary.game.ag.ai.ArrayAI_Package;
 

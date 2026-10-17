@@ -39,7 +39,6 @@ package org.allbinary.logic.visual.dhtml.html.head.meta.HtmlMetaAttributeValuesD
    procedure Initialize (This : in out HtmlMetaAttributeValuesData'Class);
    function Create return HtmlMetaAttributeValuesData_Access;
    function getInstance return HtmlMetaAttributeValuesData_Access;
-   procedure getInstance;
 
 end org.allbinary.logic.visual.dhtml.html.head.meta.HtmlMetaAttributeValuesData_Package;
 

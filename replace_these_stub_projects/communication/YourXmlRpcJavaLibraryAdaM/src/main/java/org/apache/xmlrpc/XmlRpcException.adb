@@ -17,7 +17,7 @@ package body org.apache.xmlrpc.XmlRpcException_Package is
    function Create (code : Integer; message : Unbounded_String) return XmlRpcException_Access is
       This : constant XmlRpcException_Access := new XmlRpcException;
    begin
-      Initialize (This.all, code, message);
+      XmlRpcException_Package.Initialize (This.all, code, message);
       return This;
    end Create;
 

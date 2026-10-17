@@ -22,6 +22,7 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.math.BasicDecimal_Package; use org.allbinary.logic.math.BasicDecimal_Package;
 with org.allbinary.game.physics.velocity.VelocityBehaviorBase_Package; use org.allbinary.game.physics.velocity.VelocityBehaviorBase_Package;
+with org.allbinary.game.physics.velocity.BasicVelocityProperties_Package; use org.allbinary.game.physics.velocity.BasicVelocityProperties_Package;
 
 package org.allbinary.game.physics.velocity.DragVelocityBehavior_Package is
 

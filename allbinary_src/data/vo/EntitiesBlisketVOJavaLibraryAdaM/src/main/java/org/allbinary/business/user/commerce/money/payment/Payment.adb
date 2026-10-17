@@ -69,7 +69,7 @@ package body org.allbinary.business.user.commerce.money.payment.Payment_Package 
    function Create (payment : HashMap_Access) return Payment_Access is
       This : constant Payment_Access := new Payment;
    begin
-      Initialize (This.all, payment);
+      Payment_Package.Initialize (This.all, payment);
       return This;
    end Create;
 
@@ -96,7 +96,7 @@ package body org.allbinary.business.user.commerce.money.payment.Payment_Package 
    function Create (request : ServletRequest_Access) return Payment_Access is
       This : constant Payment_Access := new Payment;
    begin
-      Initialize (This.all, request);
+      Payment_Package.Initialize (This.all, request);
       return This;
    end Create;
 
@@ -110,7 +110,7 @@ package body org.allbinary.business.user.commerce.money.payment.Payment_Package 
    function Create return Payment_Access is
       This : constant Payment_Access := new Payment;
    begin
-      Initialize (This.all);
+      Payment_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -357,146 +357,6 @@ package body org.allbinary.business.user.commerce.money.payment.Payment_Package 
         return Null_Unbounded_String;
    end validationInfo;
 
-   procedure isValid (This : in out Payment) is
-      Java_Result : constant Boolean := Payment'Class (This).isValid;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isValid;
-
-   procedure getId (This : in out Payment) is
-      Java_Result : constant Unbounded_String := Payment'Class (This).getId;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getId;
-
-   procedure getName (This : in out Payment) is
-      Java_Result : constant Unbounded_String := Payment'Class (This).getName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getName;
-
-   procedure getType (This : in out Payment) is
-      Java_Result : constant Unbounded_String := Payment'Class (This).getType;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getType;
-
-   procedure getExpiration (This : in out Payment) is
-      Java_Result : constant Unbounded_String := Payment'Class (This).getExpiration;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getExpiration;
-
-   procedure getEncryption (This : in out Payment) is
-      Java_Result : constant Unbounded_String := Payment'Class (This).getEncryption;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getEncryption;
-
-   procedure getNumber (This : in out Payment) is
-      Java_Result : constant Unbounded_String := Payment'Class (This).getNumber;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getNumber;
-
-   procedure getTenderType (This : in out Payment) is
-      Java_Result : constant Unbounded_String := Payment'Class (This).getTenderType;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTenderType;
-
-   procedure getTransactionType (This : in out Payment) is
-      Java_Result : constant Unbounded_String := Payment'Class (This).getTransactionType;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTransactionType;
-
-   procedure getAba (This : in out Payment) is
-      Java_Result : constant Unbounded_String := Payment'Class (This).getAba;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getAba;
-
-   procedure getAccount (This : in out Payment) is
-      Java_Result : constant Unbounded_String := Payment'Class (This).getAccount;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getAccount;
-
-   procedure getAccountType (This : in out Payment) is
-      Java_Result : constant Unbounded_String := Payment'Class (This).getAccountType;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getAccountType;
-
-   procedure getAuthorizationCode (This : in out Payment) is
-      Java_Result : constant Unbounded_String := Payment'Class (This).getAuthorizationCode;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getAuthorizationCode;
-
-   procedure getCheckNumber (This : in out Payment) is
-      Java_Result : constant Unbounded_String := Payment'Class (This).getCheckNumber;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getCheckNumber;
-
-   procedure getCheckType (This : in out Payment) is
-      Java_Result : constant Unbounded_String := Payment'Class (This).getCheckType;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getCheckType;
-
-   procedure getDriversLicense (This : in out Payment) is
-      Java_Result : constant Unbounded_String := Payment'Class (This).getDriversLicense;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getDriversLicense;
-
-   procedure getMagneticInkCheckReader (This : in out Payment) is
-      Java_Result : constant Unbounded_String := Payment'Class (This).getMagneticInkCheckReader;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getMagneticInkCheckReader;
-
-   procedure getLastFour (This : in out Payment) is
-      Java_Result : constant Unbounded_String := Payment'Class (This).getLastFour;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getLastFour;
-
-   procedure isDefault (This : in out Payment) is
-      Java_Result : constant Boolean := Payment'Class (This).isDefault;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isDefault;
-
-   procedure toHashMap (This : in out Payment) is
-      Java_Result : constant HashMap_Access := Payment'Class (This).toHashMap;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toHashMap;
-
    procedure toXmlNode (This : in out Payment; document : Document_Access) is
       Java_Result : constant Node_Access := Payment'Class (This).toXmlNode (document);
       pragma Unreferenced (Java_Result);
@@ -504,40 +364,12 @@ package body org.allbinary.business.user.commerce.money.payment.Payment_Package 
       null;
    end toXmlNode;
 
-   procedure toXmlDoc (This : in out Payment) is
-      Java_Result : constant Document_Access := Payment'Class (This).toXmlDoc;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toXmlDoc;
-
-   procedure view (This : in out Payment) is
-      Java_Result : constant Unbounded_String := Payment'Class (This).view;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end view;
-
-   procedure toValidationInfoDoc (This : in out Payment) is
-      Java_Result : constant Document_Access := Payment'Class (This).toValidationInfoDoc;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toValidationInfoDoc;
-
    procedure toValidationInfoNode (This : in out Payment; document : Document_Access) is
       Java_Result : constant Node_Access := Payment'Class (This).toValidationInfoNode (document);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end toValidationInfoNode;
-
-   procedure validationInfo (This : in out Payment) is
-      Java_Result : constant Unbounded_String := Payment'Class (This).validationInfo;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end validationInfo;
 
 end org.allbinary.business.user.commerce.money.payment.Payment_Package;
 

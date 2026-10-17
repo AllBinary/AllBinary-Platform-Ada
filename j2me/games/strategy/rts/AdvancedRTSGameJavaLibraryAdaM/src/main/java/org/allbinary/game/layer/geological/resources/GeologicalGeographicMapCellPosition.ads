@@ -21,6 +21,7 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
+with org.allbinary.game.layer.geological.resources.GeologicalResource_Package; use org.allbinary.game.layer.geological.resources.GeologicalResource_Package;
 
 package org.allbinary.game.layer.geological.resources.GeologicalGeographicMapCellPosition_Package is
 
@@ -38,7 +39,6 @@ package org.allbinary.game.layer.geological.resources.GeologicalGeographicMapCel
    procedure Initialize (This : in out GeologicalGeographicMapCellPosition'Class; column : Integer; row : Integer; columns : Integer; rows : Integer; width : Integer; height : Integer; geologicalResource : GeologicalResource_Access);
    function Create (column : Integer; row : Integer; columns : Integer; rows : Integer; width : Integer; height : Integer; geologicalResource : GeologicalResource_Access) return GeologicalGeographicMapCellPosition_Access;
    function getGeologicalResource (This : in out GeologicalGeographicMapCellPosition) return GeologicalResource_Access;
-   procedure getGeologicalResource (This : in out GeologicalGeographicMapCellPosition);
 
 end org.allbinary.game.layer.geological.resources.GeologicalGeographicMapCellPosition_Package;
 

@@ -76,7 +76,7 @@ package body org.allbinary.image.gui.ImageToolJFrame_Package is
    function Create return ImageToolJFrame_Access is
       This : constant ImageToolJFrame_Access := new ImageToolJFrame;
    begin
-      Initialize (This.all);
+      ImageToolJFrame_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -632,55 +632,6 @@ package body org.allbinary.image.gui.ImageToolJFrame_Package is
    begin
         This.minRedJTextField := This.minRedJTextField;
    end setMinRedJTextField;
-
-   procedure getColorRangeInterface (This : in out ImageToolJFrame) is
-      Java_Result : constant ColorRangeInterface_Access := ImageToolJFrame'Class (This).getColorRangeInterface;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getColorRangeInterface;
-
-   procedure getMaxBlueJTextField (This : in out ImageToolJFrame) is
-      Java_Result : constant JTextField_Access := ImageToolJFrame'Class (This).getMaxBlueJTextField;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getMaxBlueJTextField;
-
-   procedure getMaxGreenJTextField (This : in out ImageToolJFrame) is
-      Java_Result : constant JTextField_Access := ImageToolJFrame'Class (This).getMaxGreenJTextField;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getMaxGreenJTextField;
-
-   procedure getMaxRedJTextField (This : in out ImageToolJFrame) is
-      Java_Result : constant JTextField_Access := ImageToolJFrame'Class (This).getMaxRedJTextField;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getMaxRedJTextField;
-
-   procedure getMinBlueJTextField (This : in out ImageToolJFrame) is
-      Java_Result : constant JTextField_Access := ImageToolJFrame'Class (This).getMinBlueJTextField;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getMinBlueJTextField;
-
-   procedure getMinGreenJTextField (This : in out ImageToolJFrame) is
-      Java_Result : constant JTextField_Access := ImageToolJFrame'Class (This).getMinGreenJTextField;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getMinGreenJTextField;
-
-   procedure getMinRedJTextField (This : in out ImageToolJFrame) is
-      Java_Result : constant JTextField_Access := ImageToolJFrame'Class (This).getMinRedJTextField;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getMinRedJTextField;
 
 begin
    null;

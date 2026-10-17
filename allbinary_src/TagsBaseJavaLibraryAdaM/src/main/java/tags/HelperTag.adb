@@ -37,7 +37,7 @@ package body tags.HelperTag_Package is
    function Create (tagHelperFactoryInterface : TagHelperFactoryInterface_Access) return HelperTag_Access is
       This : constant HelperTag_Access := new HelperTag;
    begin
-      Initialize (This.all, tagHelperFactoryInterface);
+      HelperTag_Package.Initialize (This.all, tagHelperFactoryInterface);
       return This;
    end Create;
 
@@ -64,20 +64,6 @@ package body tags.HelperTag_Package is
         end if;
         This.anyType := null;
         return PropertiesTag (This).doEndTag;
-   end doEndTag;
-
-   procedure getHelper (This : in out HelperTag) is
-      Java_Result : constant Java_Object_Access := HelperTag'Class (This).getHelper;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getHelper;
-
-   procedure doEndTag (This : in out HelperTag) is
-      Java_Result : constant Integer := HelperTag'Class (This).doEndTag;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end doEndTag;
 
 end tags.HelperTag_Package;

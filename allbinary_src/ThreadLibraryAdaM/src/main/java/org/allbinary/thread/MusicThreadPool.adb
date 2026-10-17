@@ -34,7 +34,7 @@ package body org.allbinary.thread.MusicThreadPool_Package is
    function Create (poolName : Unbounded_String; numThreads : Integer; priority : Integer) return MusicThreadPool_Access is
       This : constant MusicThreadPool_Access := new MusicThreadPool;
    begin
-      Initialize (This.all, poolName, numThreads, priority);
+      MusicThreadPool_Package.Initialize (This.all, poolName, numThreads, priority);
       return This;
    end Create;
 
@@ -53,13 +53,6 @@ package body org.allbinary.thread.MusicThreadPool_Package is
    begin
         This.logUtil.putF (StringMaker_Package.Create.append (This.threadPoolStrings.COMPLETE_TASK).append (StringUtil_Package.getInstance.toString (task_Id)).appendlong (Long_Long_Integer (Java_Current_Time_Millis)).toString, This'Unchecked_Access, This.commonStrings.RUN);
    end completedTask;
-
-   procedure getInstance is
-      Java_Result : constant ThreadPool_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

@@ -24,6 +24,7 @@ with org.allbinary.logic.control.validate.ValidationInterface_Package; use org.a
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.allbinary.business.category.store.theme.StoreThemeCategoryView_Package; use org.allbinary.business.category.store.theme.StoreThemeCategoryView_Package;
+with org.allbinary.business.category.store.theme.StoreThemeCategoryInterface_Package; use org.allbinary.business.category.store.theme.StoreThemeCategoryInterface_Package;
 
 package org.allbinary.business.category.store.theme.StoreThemeCategoryValidationView_Package is
 
@@ -41,13 +42,10 @@ package org.allbinary.business.category.store.theme.StoreThemeCategoryValidation
    procedure Initialize (This : in out StoreThemeCategoryValidationView'Class; categoryInterface : StoreThemeCategoryInterface_Access);
    function Create (categoryInterface : StoreThemeCategoryInterface_Access) return StoreThemeCategoryValidationView_Access;
    function isValid (This : in out StoreThemeCategoryValidationView) return Boolean;
-   procedure isValid (This : in out StoreThemeCategoryValidationView);
    function toValidationInfoDoc (This : in out StoreThemeCategoryValidationView) return Document_Access;
-   procedure toValidationInfoDoc (This : in out StoreThemeCategoryValidationView);
    function toValidationInfoNode (This : in out StoreThemeCategoryValidationView; document : Document_Access) return Node_Access;
    procedure toValidationInfoNode (This : in out StoreThemeCategoryValidationView; document : Document_Access);
    function validationInfo (This : in out StoreThemeCategoryValidationView) return Unbounded_String;
-   procedure validationInfo (This : in out StoreThemeCategoryValidationView);
 
 end org.allbinary.business.category.store.theme.StoreThemeCategoryValidationView_Package;
 

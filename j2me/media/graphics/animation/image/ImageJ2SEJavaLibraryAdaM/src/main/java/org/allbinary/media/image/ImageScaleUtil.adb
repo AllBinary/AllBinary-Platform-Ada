@@ -38,7 +38,7 @@ package body org.allbinary.media.image.ImageScaleUtil_Package is
    function Create return ImageScaleUtil_Access is
       This : constant ImageScaleUtil_Access := new ImageScaleUtil;
    begin
-      Initialize (This.all);
+      ImageScaleUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -96,13 +96,6 @@ package body org.allbinary.media.image.ImageScaleUtil_Package is
         g.drawRenderedImage (bufferedImage, at_Id);
         g.dispose;
    end scale;
-
-   procedure getInstance is
-      Java_Result : constant ImageScaleUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure createImage2 (This : in out ImageScaleUtil; imageCache : ImageCache_Access; originalImage : Image_Access; scaleNominatorX : Float; scaleDenominatorX : Float; scaleNominatorY : Float; scaleDenominatorY : Float; cached : Boolean) is
       Java_Result : constant Image_Access := ImageScaleUtil'Class (This).createImage2 (imageCache, originalImage, scaleNominatorX, scaleDenominatorX, scaleNominatorY, scaleDenominatorY, cached);

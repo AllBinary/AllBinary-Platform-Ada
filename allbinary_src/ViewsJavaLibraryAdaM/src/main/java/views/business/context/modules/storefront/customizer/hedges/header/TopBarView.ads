@@ -54,7 +54,6 @@ package views.business.context.modules.storefront.customizer.hedges.header.TopBa
    function toXmlNode (This : in out TopBarView; document : Document_Access) return Node_Access;
    procedure toXmlNode (This : in out TopBarView; document : Document_Access);
    function view (This : in out TopBarView) return Unbounded_String;
-   procedure view (This : in out TopBarView);
 
 end views.business.context.modules.storefront.customizer.hedges.header.TopBarView_Package;
 

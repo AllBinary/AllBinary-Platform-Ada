@@ -30,7 +30,7 @@ package body org.allbinary.input.automation.actions.script.condition.TimeInterva
    function Create return TimeIntervalActionScriptConditionData_Access is
       This : constant TimeIntervalActionScriptConditionData_Access := new TimeIntervalActionScriptConditionData;
    begin
-      Initialize (This.all);
+      TimeIntervalActionScriptConditionData_Package.Initialize (This.all);
       return This;
    end Create;
 

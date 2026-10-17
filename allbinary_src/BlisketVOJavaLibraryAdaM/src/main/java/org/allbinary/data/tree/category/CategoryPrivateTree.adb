@@ -37,7 +37,7 @@ package body org.allbinary.data.tree.category.CategoryPrivateTree_Package is
    function Create (categoryFactoryInterface : CategoryFactoryInterface_Access) return CategoryPrivateTree_Access is
       This : constant CategoryPrivateTree_Access := new CategoryPrivateTree;
    begin
-      Initialize (This.all, categoryFactoryInterface);
+      CategoryPrivateTree_Package.Initialize (This.all, categoryFactoryInterface);
       return This;
    end Create;
 

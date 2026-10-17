@@ -31,7 +31,7 @@ package body org.allbinary.logic.string_Id.ServletStrings_Package is
    function Create return ServletStrings_Access is
       This : constant ServletStrings_Access := new ServletStrings;
    begin
-      Initialize (This.all);
+      ServletStrings_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -39,13 +39,6 @@ package body org.allbinary.logic.string_Id.ServletStrings_Package is
    function getInstance return ServletStrings_Access is
    begin
         return ServletStrings_Package.instance;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant ServletStrings_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

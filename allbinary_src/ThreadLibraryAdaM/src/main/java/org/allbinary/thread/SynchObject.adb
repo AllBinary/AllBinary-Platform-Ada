@@ -28,7 +28,7 @@ package body org.allbinary.thread.SynchObject_Package is
    function Create return SynchObject_Access is
       This : constant SynchObject_Access := new SynchObject;
    begin
-      Initialize (This.all);
+      SynchObject_Package.Initialize (This.all);
       return This;
    end Create;
 

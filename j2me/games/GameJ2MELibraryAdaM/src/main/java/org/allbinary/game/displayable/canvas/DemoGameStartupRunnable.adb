@@ -33,7 +33,7 @@ package body org.allbinary.game.displayable.canvas.DemoGameStartupRunnable_Packa
    function Create (demoCanvas : DemoCanvas_Access) return DemoGameStartupRunnable_Access is
       This : constant DemoGameStartupRunnable_Access := new DemoGameStartupRunnable;
    begin
-      Initialize (This.all, demoCanvas);
+      DemoGameStartupRunnable_Package.Initialize (This.all, demoCanvas);
       return This;
    end Create;
 
@@ -61,13 +61,6 @@ package body org.allbinary.game.displayable.canvas.DemoGameStartupRunnable_Packa
    function getType (This : in out DemoGameStartupRunnable) return Integer is
    begin
         return DemoGameStartupRunnable_Package.TYPE_Id;
-   end getType;
-
-   procedure getType (This : in out DemoGameStartupRunnable) is
-      Java_Result : constant Integer := DemoGameStartupRunnable'Class (This).getType;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getType;
 
 begin

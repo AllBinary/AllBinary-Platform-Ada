@@ -24,6 +24,8 @@ with AllBinary_Java; use AllBinary_Java;
 --  with java.io.IOException_Package; use java.io.IOException_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.media.image.ImageProcessorInput_Package; use org.allbinary.media.image.ImageProcessorInput_Package;
+with org.allbinary.media.image.ImageProcessedVisitor_Package; use org.allbinary.media.image.ImageProcessedVisitor_Package;
 
 package org.allbinary.media.image.CanvasTrimUtil_Package is
 
@@ -44,7 +46,6 @@ package org.allbinary.media.image.CanvasTrimUtil_Package is
    procedure Initialize (This : in out CanvasTrimUtil'Class);
    function Create return CanvasTrimUtil_Access;
    function getInstance return CanvasTrimUtil_Access;
-   procedure getInstance;
    procedure process (This : in out CanvasTrimUtil; imageProcessorInput : ImageProcessorInput_Access; cutCanvasFromLeftReduction : Integer; cutCanvasFromTopReduction : Integer; cutCanvasFromRightReduction : Integer; cutCanvasFromBottomReduction : Integer; visitor : ImageProcessedVisitor_Access);
 
 end org.allbinary.media.image.CanvasTrimUtil_Package;

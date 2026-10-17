@@ -48,9 +48,7 @@ package admin.tags.PaymentProcessTag_Package is
    procedure Initialize (This : in out PaymentProcessTag'Class);
    function Create return PaymentProcessTag_Access;
    function process (This : in out PaymentProcessTag) return Unbounded_String;
-   procedure process (This : in out PaymentProcessTag);
    function doStartTag (This : in out PaymentProcessTag) return Integer;
-   procedure doStartTag (This : in out PaymentProcessTag);
 
 end admin.tags.PaymentProcessTag_Package;
 

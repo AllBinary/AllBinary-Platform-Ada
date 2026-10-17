@@ -51,11 +51,8 @@ package org.allbinary.business.user.username.UserName_Package is
    procedure Initialize (This : in out UserName'Class);
    function Create return UserName_Access;
    function getInstance return UserName_Access;
-   procedure getInstance;
    function isValid (This : in out UserName) return Boolean;
-   procedure isValid (This : in out UserName);
    function get (This : in out UserName) return Unbounded_String;
-   procedure get (This : in out UserName);
    function isValid (This : in out UserName; aUserName : Unbounded_String) return Boolean;
    procedure isValid (This : in out UserName; aUserName : Unbounded_String);
    function getValidationInfo (aUserName : Unbounded_String) return Unbounded_String;

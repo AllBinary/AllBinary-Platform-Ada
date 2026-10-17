@@ -29,7 +29,7 @@ package body org.allbinary.game.health.HealthBarTwodAnimation_Package is
    function Create (layerInterface : AllBinaryLayer_Access; location : Integer) return HealthBarTwodAnimation_Access is
       This : constant HealthBarTwodAnimation_Access := new HealthBarTwodAnimation;
    begin
-      Initialize (This.all, layerInterface, location);
+      HealthBarTwodAnimation_Package.Initialize (This.all, layerInterface, location);
       return This;
    end Create;
 

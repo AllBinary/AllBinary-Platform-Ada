@@ -29,7 +29,7 @@ package body org.allbinary.business.category.store.theme.StoreThemeCategoryValid
    function Create (categoryInterface : StoreThemeCategoryInterface_Access) return StoreThemeCategoryValidationView_Access is
       This : constant StoreThemeCategoryValidationView_Access := new StoreThemeCategoryValidationView;
    begin
-      Initialize (This.all, categoryInterface);
+      StoreThemeCategoryValidationView_Package.Initialize (This.all, categoryInterface);
       return This;
    end Create;
 
@@ -57,33 +57,12 @@ package body org.allbinary.business.category.store.theme.StoreThemeCategoryValid
         return To_Unbounded_String ("Error");
    end validationInfo;
 
-   procedure isValid (This : in out StoreThemeCategoryValidationView) is
-      Java_Result : constant Boolean := StoreThemeCategoryValidationView'Class (This).isValid;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isValid;
-
-   procedure toValidationInfoDoc (This : in out StoreThemeCategoryValidationView) is
-      Java_Result : constant Document_Access := StoreThemeCategoryValidationView'Class (This).toValidationInfoDoc;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toValidationInfoDoc;
-
    procedure toValidationInfoNode (This : in out StoreThemeCategoryValidationView; document : Document_Access) is
       Java_Result : constant Node_Access := StoreThemeCategoryValidationView'Class (This).toValidationInfoNode (document);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end toValidationInfoNode;
-
-   procedure validationInfo (This : in out StoreThemeCategoryValidationView) is
-      Java_Result : constant Unbounded_String := StoreThemeCategoryValidationView'Class (This).validationInfo;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end validationInfo;
 
 end org.allbinary.business.category.store.theme.StoreThemeCategoryValidationView_Package;
 

@@ -29,7 +29,7 @@ package body org.allbinary.business.user.modules.admin.store.web.wizard.WizardWe
    function Create return WizardWebStoreAdminUser_Access is
       This : constant WizardWebStoreAdminUser_Access := new WizardWebStoreAdminUser;
    begin
-      Initialize (This.all);
+      WizardWebStoreAdminUser_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -42,7 +42,7 @@ package body org.allbinary.business.user.modules.admin.store.web.wizard.WizardWe
    function Create (userHashMap : HashMap_Access) return WizardWebStoreAdminUser_Access is
       This : constant WizardWebStoreAdminUser_Access := new WizardWebStoreAdminUser;
    begin
-      Initialize (This.all, userHashMap);
+      WizardWebStoreAdminUser_Package.Initialize (This.all, userHashMap);
       return This;
    end Create;
 

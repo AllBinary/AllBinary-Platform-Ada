@@ -34,7 +34,7 @@ package body org.allbinary.data.tree.category.CategoryLoader_Package is
    function Create (categoryFactoryInterface : CategoryFactoryInterface_Access) return CategoryLoader_Access is
       This : constant CategoryLoader_Access := new CategoryLoader;
    begin
-      Initialize (This.all, categoryFactoryInterface);
+      CategoryLoader_Package.Initialize (This.all, categoryFactoryInterface);
       return This;
    end Create;
 

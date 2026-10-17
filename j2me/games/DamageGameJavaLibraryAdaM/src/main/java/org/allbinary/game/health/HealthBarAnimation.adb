@@ -49,7 +49,7 @@ package body org.allbinary.game.health.HealthBarAnimation_Package is
    function Create (layerInterface : AllBinaryLayer_Access; location : Integer) return HealthBarAnimation_Access is
       This : constant HealthBarAnimation_Access := new HealthBarAnimation;
    begin
-      Initialize (This.all, layerInterface, location);
+      HealthBarAnimation_Package.Initialize (This.all, layerInterface, location);
       return This;
    end Create;
 
@@ -83,13 +83,6 @@ package body org.allbinary.game.health.HealthBarAnimation_Package is
             return (This.allbinaryLayer.getViewPosition.getY2) + (4);
         end if;
         return -(1);
-   end getY;
-
-   procedure getY (This : in out HealthBarAnimation) is
-      Java_Result : constant Integer := HealthBarAnimation'Class (This).getY;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getY;
 
 end org.allbinary.game.health.HealthBarAnimation_Package;

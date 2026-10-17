@@ -28,7 +28,7 @@ package body org.allbinary.media.graphics.geography.map.MultiGeographicMapBehavi
    function Create return MultiGeographicMapBehavior_Access is
       This : constant MultiGeographicMapBehavior_Access := new MultiGeographicMapBehavior;
    begin
-      Initialize (This.all);
+      MultiGeographicMapBehavior_Package.Initialize (This.all);
       return This;
    end Create;
 

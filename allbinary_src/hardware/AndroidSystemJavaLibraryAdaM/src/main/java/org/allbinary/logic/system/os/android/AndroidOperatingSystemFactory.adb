@@ -37,7 +37,7 @@ package body org.allbinary.logic.system.os.android.AndroidOperatingSystemFactory
    function Create return AndroidOperatingSystemFactory_Access is
       This : constant AndroidOperatingSystemFactory_Access := new AndroidOperatingSystemFactory;
    begin
-      Initialize (This.all);
+      AndroidOperatingSystemFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -72,20 +72,6 @@ package body org.allbinary.logic.system.os.android.AndroidOperatingSystemFactory
             return NoOperatingSystem_Package.NO_OPERATING_SYSTEM;
                 end;
         end;
-   end getOperatingSystemInstance;
-
-   procedure getInstance is
-      Java_Result : constant AndroidOperatingSystemFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure getOperatingSystemInstance (This : in out AndroidOperatingSystemFactory) is
-      Java_Result : constant GenericOperatingSystem_Access := AndroidOperatingSystemFactory'Class (This).getOperatingSystemInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getOperatingSystemInstance;
 
 begin

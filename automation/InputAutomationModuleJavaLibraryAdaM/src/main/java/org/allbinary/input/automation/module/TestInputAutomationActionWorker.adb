@@ -34,7 +34,7 @@ package body org.allbinary.input.automation.module.TestInputAutomationActionWork
    function Create (sleep : Integer; inputAutomationActionInterface : InputAutomationActionInterface_Access; imageComparatorConstraintsInterface : ImageComparatorConstraintsInterface_Access; motionRectangleConstraintsInterface : MotionRectangleConstraintsInterface_Access) return TestInputAutomationActionWorker_Access is
       This : constant TestInputAutomationActionWorker_Access := new TestInputAutomationActionWorker;
    begin
-      Initialize (This.all, sleep, inputAutomationActionInterface, imageComparatorConstraintsInterface, motionRectangleConstraintsInterface);
+      TestInputAutomationActionWorker_Package.Initialize (This.all, sleep, inputAutomationActionInterface, imageComparatorConstraintsInterface, motionRectangleConstraintsInterface);
       return This;
    end Create;
 

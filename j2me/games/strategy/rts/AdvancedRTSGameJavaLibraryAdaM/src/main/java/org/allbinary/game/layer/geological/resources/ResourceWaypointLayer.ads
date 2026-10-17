@@ -28,6 +28,8 @@ with org.allbinary.game.identification.Group_Package; use org.allbinary.game.ide
 with org.allbinary.game.layer.PathFindingLayerInterface_Package; use org.allbinary.game.layer.PathFindingLayerInterface_Package;
 with org.allbinary.graphics.Rectangle_Package; use org.allbinary.graphics.Rectangle_Package;
 with org.allbinary.game.multiplayer.layer.RemoteInfo_Package; use org.allbinary.game.multiplayer.layer.RemoteInfo_Package;
+with org.allbinary.game.layer.geological.resources.GeologicalResourceInfoHudPaintableSingleton_Package; use org.allbinary.game.layer.geological.resources.GeologicalResourceInfoHudPaintableSingleton_Package;
+with org.allbinary.game.layer.geological.resources.GeologicalResourceInfoHudPaintable_Package; use org.allbinary.game.layer.geological.resources.GeologicalResourceInfoHudPaintable_Package;
 
 package org.allbinary.game.layer.geological.resources.ResourceWaypointLayer_Package is
 
@@ -50,9 +52,7 @@ package org.allbinary.game.layer.geological.resources.ResourceWaypointLayer_Pack
    procedure Initialize (This : in out ResourceWaypointLayer'Class; remoteInfo : RemoteInfo_Access; parentLayer : PathFindingLayerInterface_Access; groupInterface : Group_Access_Array_Access; rootName : Unbounded_String; name : Unbounded_String; animationInterfaceFactoryInterface : AnimationInterfaceFactoryInterface_Access; proceduralAnimationInterfaceFactoryInterface : ProceduralAnimationInterfaceFactoryInterface_Access; rectangle : Rectangle_Access; x : Integer; y : Integer);
    function Create (remoteInfo : RemoteInfo_Access; parentLayer : PathFindingLayerInterface_Access; groupInterface : Group_Access_Array_Access; rootName : Unbounded_String; name : Unbounded_String; animationInterfaceFactoryInterface : AnimationInterfaceFactoryInterface_Access; proceduralAnimationInterfaceFactoryInterface : ProceduralAnimationInterfaceFactoryInterface_Access; rectangle : Rectangle_Access; x : Integer; y : Integer) return ResourceWaypointLayer_Access;
    function createHudPaintable (This : in out ResourceWaypointLayer) return SelectionHudPaintable_Access;
-   procedure createHudPaintable (This : in out ResourceWaypointLayer);
    function getHudPaintable (This : in out ResourceWaypointLayer) return SelectionHudPaintable_Access;
-   procedure getHudPaintable (This : in out ResourceWaypointLayer);
 
 end org.allbinary.game.layer.geological.resources.ResourceWaypointLayer_Package;
 

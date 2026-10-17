@@ -48,7 +48,6 @@ package org.allbinary.logic.NullUtil_Package is
    procedure Initialize (This : in out NullUtil'Class);
    function Create return NullUtil_Access;
    function getInstance return NullUtil_Access;
-   procedure getInstance;
 
 end org.allbinary.logic.NullUtil_Package;
 

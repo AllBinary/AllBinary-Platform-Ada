@@ -35,6 +35,13 @@ with org.allbinary.layer.event.ScrollMapEventHandler_Package; use org.allbinary.
 with org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package; use org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.game.input.PlayerGameInput_Package; use org.allbinary.game.input.PlayerGameInput_Package;
+with org.allbinary.game.input.GameInputProcessor_Package; use org.allbinary.game.input.GameInputProcessor_Package;
+with org.allbinary.game.input.InputFactory_Package; use org.allbinary.game.input.InputFactory_Package;
+with org.allbinary.game.input.ScrollMapUpGameInputProcessor_Package; use org.allbinary.game.input.ScrollMapUpGameInputProcessor_Package;
+with org.allbinary.game.input.ScrollMapDownGameInputProcessor_Package; use org.allbinary.game.input.ScrollMapDownGameInputProcessor_Package;
+with org.allbinary.game.input.ScrollMapRightGameInputProcessor_Package; use org.allbinary.game.input.ScrollMapRightGameInputProcessor_Package;
+with org.allbinary.game.input.ScrollMapLeftGameInputProcessor_Package; use org.allbinary.game.input.ScrollMapLeftGameInputProcessor_Package;
+with org.allbinary.game.input.GameInputProcessorUtil_Package; use org.allbinary.game.input.GameInputProcessorUtil_Package;
 
 package org.allbinary.game.input.ScrollMapPlayerGameInput_Package is
 
@@ -81,9 +88,7 @@ package org.allbinary.game.input.ScrollMapPlayerGameInput_Package is
    procedure processInputKey (This : in out ScrollMapPlayerGameInput; key : Integer);
    procedure processInput (This : in out ScrollMapPlayerGameInput; layerManager : AllBinaryLayerManager_Access);
    function getSpecialHeight (This : in out ScrollMapPlayerGameInput) return Integer;
-   procedure getSpecialHeight (This : in out ScrollMapPlayerGameInput);
    function getSpecialWidth (This : in out ScrollMapPlayerGameInput) return Integer;
-   procedure getSpecialWidth (This : in out ScrollMapPlayerGameInput);
    function keepOnMapMaxY (This : in out ScrollMapPlayerGameInput; newY : Integer) return Boolean;
    procedure keepOnMapMaxY (This : in out ScrollMapPlayerGameInput; newY : Integer);
    function keepOnMapMinY (This : in out ScrollMapPlayerGameInput; newY : Integer) return Boolean;

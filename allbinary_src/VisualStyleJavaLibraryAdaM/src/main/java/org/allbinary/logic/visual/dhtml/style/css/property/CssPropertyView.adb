@@ -32,7 +32,7 @@ package body org.allbinary.logic.visual.dhtml.style.css.property.CssPropertyView
    function Create (name : Unbounded_String) return CssPropertyView_Access is
       This : constant CssPropertyView_Access := new CssPropertyView;
    begin
-      Initialize (This.all, name);
+      CssPropertyView_Package.Initialize (This.all, name);
       return This;
    end Create;
 
@@ -46,7 +46,7 @@ package body org.allbinary.logic.visual.dhtml.style.css.property.CssPropertyView
    function Create (node : Node_Access) return CssPropertyView_Access is
       This : constant CssPropertyView_Access := new CssPropertyView;
    begin
-      Initialize (This.all, node);
+      CssPropertyView_Package.Initialize (This.all, node);
       return This;
    end Create;
 
@@ -60,13 +60,6 @@ package body org.allbinary.logic.visual.dhtml.style.css.property.CssPropertyView
    begin
         return This.cssProperty.toXmlNode (document);
    end toXmlNode;
-
-   procedure getProperty (This : in out CssPropertyView) is
-      Java_Result : constant CssProperty_Access := CssPropertyView'Class (This).getProperty;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getProperty;
 
    procedure toXmlNode (This : in out CssPropertyView; document : Document_Access) is
       Java_Result : constant Node_Access := CssPropertyView'Class (This).toXmlNode (document);

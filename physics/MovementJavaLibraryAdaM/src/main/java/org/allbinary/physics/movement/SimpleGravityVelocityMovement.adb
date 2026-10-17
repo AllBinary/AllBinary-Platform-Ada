@@ -31,7 +31,7 @@ package body org.allbinary.physics.movement.SimpleGravityVelocityMovement_Packag
    function Create (speedBasicDecimal : BasicDecimal_Access) return SimpleGravityVelocityMovement_Access is
       This : constant SimpleGravityVelocityMovement_Access := new SimpleGravityVelocityMovement;
    begin
-      Initialize (This.all, speedBasicDecimal);
+      SimpleGravityVelocityMovement_Package.Initialize (This.all, speedBasicDecimal);
       return This;
    end Create;
 

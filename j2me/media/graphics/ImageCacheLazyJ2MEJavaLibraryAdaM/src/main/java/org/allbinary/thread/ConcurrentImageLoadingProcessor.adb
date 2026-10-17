@@ -33,7 +33,7 @@ package body org.allbinary.thread.ConcurrentImageLoadingProcessor_Package is
    function Create (imageCache : ImageCache_Access) return ConcurrentImageLoadingProcessor_Access is
       This : constant ConcurrentImageLoadingProcessor_Access := new ConcurrentImageLoadingProcessor;
    begin
-      Initialize (This.all, imageCache);
+      ConcurrentImageLoadingProcessor_Package.Initialize (This.all, imageCache);
       return This;
    end Create;
 
@@ -66,7 +66,7 @@ package body org.allbinary.thread.ImageCacheRunnable_Package is
    function Create (imageCache : ImageCache_Access) return ImageCacheRunnable_Access is
       This : constant ImageCacheRunnable_Access := new ImageCacheRunnable;
    begin
-      Initialize (This.all, imageCache);
+      ImageCacheRunnable_Package.Initialize (This.all, imageCache);
       return This;
    end Create;
     

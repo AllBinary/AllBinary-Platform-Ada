@@ -36,15 +36,11 @@ package org.allbinary.debug.NoDebug_Package is
    procedure Initialize (This : in out NoDebug'Class);
    function Create return NoDebug_Access;
    function getInstance return DebugInterface_Access;
-   procedure getInstance;
    procedure start (This : in out NoDebug);
    procedure stop (This : in out NoDebug);
    function getMaxTime (This : in out NoDebug) return Long_Long_Integer;
-   procedure getMaxTime (This : in out NoDebug);
    function getStartTime (This : in out NoDebug) return Long_Long_Integer;
-   procedure getStartTime (This : in out NoDebug);
    function isRunning (This : in out NoDebug) return Boolean;
-   procedure isRunning (This : in out NoDebug);
 
 end org.allbinary.debug.NoDebug_Package;
 

@@ -33,7 +33,7 @@ package body views.generic_Id.user.EditValidationUserView_Package is
    function Create (transformInfoInterface : TransformInfoInterface_Access) return EditValidationUserView_Access is
       This : constant EditValidationUserView_Access := new EditValidationUserView;
    begin
-      Initialize (This.all, transformInfoInterface);
+      EditValidationUserView_Package.Initialize (This.all, transformInfoInterface);
       return This;
    end Create;
 
@@ -110,27 +110,6 @@ package body views.generic_Id.user.EditValidationUserView_Package is
    begin
         return null;
    end toValidationInfoNode;
-
-   procedure isValid (This : in out EditValidationUserView) is
-      Java_Result : constant Boolean := EditValidationUserView'Class (This).isValid;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isValid;
-
-   procedure validationInfo (This : in out EditValidationUserView) is
-      Java_Result : constant Unbounded_String := EditValidationUserView'Class (This).validationInfo;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end validationInfo;
-
-   procedure toValidationInfoDoc (This : in out EditValidationUserView) is
-      Java_Result : constant Document_Access := EditValidationUserView'Class (This).toValidationInfoDoc;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toValidationInfoDoc;
 
    procedure toValidationInfoNode (This : in out EditValidationUserView; document : Document_Access) is
       Java_Result : constant Node_Access := EditValidationUserView'Class (This).toValidationInfoNode (document);

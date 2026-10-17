@@ -25,6 +25,7 @@ with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.lo
 with org.allbinary.logic.math.SmallIntegerSingletonFactory_Package; use org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.game.input.Input_Package; use org.allbinary.game.input.Input_Package;
 
 package org.allbinary.game.input.InputFactory_Package is
 
@@ -53,10 +54,9 @@ package org.allbinary.game.input.InputFactory_Package is
    procedure Initialize (This : in out InputFactory'Class);
    function Create return InputFactory_Access;
    function getInstance return InputFactory_Access;
-   procedure getInstance;
    procedure add (This : in out InputFactory; id : Integer; input : Input_Access);
-   function getInstanceById (This : in out InputFactory; id : Integer) return Input_Access;
-   procedure getInstanceById (This : in out InputFactory; id : Integer);
+   function getInstanceById (This : in out InputFactory; id_Param : Integer) return Input_Access;
+   procedure getInstanceById (This : in out InputFactory; id_Param : Integer);
 
 end org.allbinary.game.input.InputFactory_Package;
 

@@ -28,7 +28,7 @@ package body org.allbinary.graphics.form.CommandCurrentSelectionFormFactory_Pack
    function Create return CommandCurrentSelectionFormFactory_Access is
       This : constant CommandCurrentSelectionFormFactory_Access := new CommandCurrentSelectionFormFactory;
    begin
-      Initialize (This.all);
+      CommandCurrentSelectionFormFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

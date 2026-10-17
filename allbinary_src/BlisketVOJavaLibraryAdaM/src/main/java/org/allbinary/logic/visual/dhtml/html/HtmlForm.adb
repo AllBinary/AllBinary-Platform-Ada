@@ -42,7 +42,7 @@ package body org.allbinary.logic.visual.dhtml.html.HtmlForm_Package is
    function Create (action_Case : Unbounded_String) return HtmlForm_Access is
       This : constant HtmlForm_Access := new HtmlForm;
    begin
-      Initialize (This.all, action_Case);
+      HtmlForm_Package.Initialize (This.all, action_Case);
       return This;
    end Create;
 
@@ -91,13 +91,6 @@ package body org.allbinary.logic.visual.dhtml.html.HtmlForm_Package is
         end loop;
         result := result & This.FORMEND;
         return result;
-   end toString;
-
-   procedure toString (This : in out HtmlForm) is
-      Java_Result : constant Unbounded_String := HtmlForm'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end toString;
 
 end org.allbinary.logic.visual.dhtml.html.HtmlForm_Package;

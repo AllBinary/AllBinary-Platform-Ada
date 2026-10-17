@@ -31,7 +31,7 @@ package body org.allbinary.input.motion.button.TouchScreenType_Package is
    function Create (name : Unbounded_String) return TouchScreenType_Access is
       This : constant TouchScreenType_Access := new TouchScreenType;
    begin
-      Initialize (This.all, name);
+      TouchScreenType_Package.Initialize (This.all, name);
       return This;
    end Create;
 
@@ -43,20 +43,6 @@ package body org.allbinary.input.motion.button.TouchScreenType_Package is
    function toString (This : in out TouchScreenType) return Unbounded_String is
    begin
         return This.getName;
-   end toString;
-
-   procedure getName (This : in out TouchScreenType) is
-      Java_Result : constant Unbounded_String := TouchScreenType'Class (This).getName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getName;
-
-   procedure toString (This : in out TouchScreenType) is
-      Java_Result : constant Unbounded_String := TouchScreenType'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end toString;
 
 end org.allbinary.input.motion.button.TouchScreenType_Package;

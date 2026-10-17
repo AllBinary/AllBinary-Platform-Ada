@@ -33,6 +33,7 @@ with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.animation.text.TextChangeListener_Package; use org.allbinary.animation.text.TextChangeListener_Package;
 
 package org.allbinary.animation.text.TextAnimation_Package is
 
@@ -72,9 +73,7 @@ package org.allbinary.animation.text.TextAnimation_Package is
    procedure setTextWithOnMeasure (This : in out TextAnimation; text : Unbounded_String; textChangeListener : TextChangeListener_Access);
    procedure setText (This : in out TextAnimation; text : Unbounded_String);
    function getTextArray (This : in out TextAnimation) return Unbounded_String_Array_Access;
-   procedure getTextArray (This : in out TextAnimation);
    function getFontHeight (This : in out TextAnimation) return Integer;
-   procedure getFontHeight (This : in out TextAnimation);
 
 end org.allbinary.animation.text.TextAnimation_Package;
 

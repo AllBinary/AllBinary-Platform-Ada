@@ -31,7 +31,7 @@ package body org.allbinary.game.layer.LayerPlacementType_Package is
    function Create (type_Id : Integer) return LayerPlacementType_Access is
       This : constant LayerPlacementType_Access := new LayerPlacementType;
    begin
-      Initialize (This.all, type_Id);
+      LayerPlacementType_Package.Initialize (This.all, type_Id);
       return This;
    end Create;
 
@@ -44,13 +44,6 @@ package body org.allbinary.game.layer.LayerPlacementType_Package is
    begin
         This.type_Id := type_Id;
    end setType;
-
-   procedure getType (This : in out LayerPlacementType) is
-      Java_Result : constant Integer := LayerPlacementType'Class (This).getType;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getType;
 
 end org.allbinary.game.layer.LayerPlacementType_Package;
 

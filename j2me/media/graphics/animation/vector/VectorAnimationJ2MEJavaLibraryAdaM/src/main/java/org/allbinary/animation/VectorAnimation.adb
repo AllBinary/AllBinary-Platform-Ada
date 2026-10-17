@@ -48,7 +48,7 @@ package body org.allbinary.animation.VectorAnimation_Package is
    function Create (currentPoints : Integer_Array_Access_Array_Access_Array_Access; basicColor : BasicColor_Access; animationBehavior : AnimationBehavior_Access) return VectorAnimation_Access is
       This : constant VectorAnimation_Access := new VectorAnimation;
    begin
-      Initialize (This.all, currentPoints, basicColor, animationBehavior);
+      VectorAnimation_Package.Initialize (This.all, currentPoints, basicColor, animationBehavior);
       return This;
    end Create;
 
@@ -208,34 +208,6 @@ package body org.allbinary.animation.VectorAnimation_Package is
    begin
       null;
    end createVectorAnimation;
-
-   procedure getAnimationSize (This : in out VectorAnimation) is
-      Java_Result : constant Integer := VectorAnimation'Class (This).getAnimationSize;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getAnimationSize;
-
-   procedure getSize (This : in out VectorAnimation) is
-      Java_Result : constant Integer := VectorAnimation'Class (This).getSize;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSize;
-
-   procedure getSequence (This : in out VectorAnimation) is
-      Java_Result : constant Integer_Array_Access := VectorAnimation'Class (This).getSequence;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSequence;
-
-   procedure getFrame (This : in out VectorAnimation) is
-      Java_Result : constant Integer := VectorAnimation'Class (This).getFrame;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getFrame;
 
    procedure getPoints (This : in out VectorAnimation; frame : Integer) is
       Java_Result : constant Integer_Array_Access_Array_Access := VectorAnimation'Class (This).getPoints (frame);

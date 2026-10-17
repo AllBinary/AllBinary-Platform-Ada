@@ -29,7 +29,7 @@ package body org.allbinary.canvas.GameStatisticsFactory_Package is
    function Create return GameStatisticsFactory_Access is
       This : constant GameStatisticsFactory_Access := new GameStatisticsFactory;
    begin
-      Initialize (This.all);
+      GameStatisticsFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -47,20 +47,6 @@ package body org.allbinary.canvas.GameStatisticsFactory_Package is
    function toString (This : in out GameStatisticsFactory) return Unbounded_String is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
-   end toString;
-
-   procedure getInstance is
-      Java_Result : constant GameStatisticsFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure toString (This : in out GameStatisticsFactory) is
-      Java_Result : constant Unbounded_String := GameStatisticsFactory'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end toString;
 
 begin

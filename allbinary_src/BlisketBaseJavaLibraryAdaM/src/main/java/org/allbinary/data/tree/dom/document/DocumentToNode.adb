@@ -30,12 +30,13 @@ package body org.allbinary.data.tree.dom.document.DocumentToNode_Package is
    function Create return DocumentToNode_Access is
       This : constant DocumentToNode_Access := new DocumentToNode;
    begin
-      Initialize (This.all);
+      DocumentToNode_Package.Initialize (This.all);
       return This;
    end Create;
 
    --  throws Exception
-   function convertDocumentToNodeString (documentString : Unbounded_String) return Unbounded_String is
+   function convertDocumentToNodeString (documentString_Param : Unbounded_String) return Unbounded_String is
+      documentString : Unbounded_String := documentString_Param;
       replaceXmlRoot : Replace_Access;
    begin
         documentString := DocumentToNode_Package.remove (documentString, DocumentToNode_Package.XMLJSPROOTSTART, DocumentToNode_Package.XMLEND);
@@ -69,8 +70,8 @@ package body org.allbinary.data.tree.dom.document.DocumentToNode_Package is
         return documentString;
    end remove;
 
-   procedure convertDocumentToNodeString (documentString : Unbounded_String) is
-      Java_Result : constant Unbounded_String := convertDocumentToNodeString (documentString);
+   procedure convertDocumentToNodeString (documentString_Param : Unbounded_String) is
+      Java_Result : constant Unbounded_String := convertDocumentToNodeString (documentString_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

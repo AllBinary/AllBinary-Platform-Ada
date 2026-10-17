@@ -21,6 +21,9 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
+with org.allbinary.game.input.GameKey_Package; use org.allbinary.game.input.GameKey_Package;
+with org.allbinary.game.input.InputFactory_Package; use org.allbinary.game.input.InputFactory_Package;
+with org.allbinary.game.input.GameKeyFactory_Package; use org.allbinary.game.input.GameKeyFactory_Package;
 
 package org.allbinary.game.input.GameKeyMappingFactory_Package is
 
@@ -39,7 +42,6 @@ package org.allbinary.game.input.GameKeyMappingFactory_Package is
    procedure Initialize (This : in out GameKeyMappingFactory'Class);
    function Create return GameKeyMappingFactory_Access;
    function getInstance return GameKeyMappingFactory_Access;
-   procedure getInstance;
    function getGameKey (This : in out GameKeyMappingFactory; key : Integer) return GameKey_Access;
    procedure getGameKey (This : in out GameKeyMappingFactory; key : Integer);
    procedure setGameKey (This : in out GameKeyMappingFactory; gameKey : GameKey_Access);

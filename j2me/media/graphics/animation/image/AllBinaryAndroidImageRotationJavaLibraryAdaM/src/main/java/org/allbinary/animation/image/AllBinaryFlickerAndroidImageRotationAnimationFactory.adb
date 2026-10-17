@@ -35,7 +35,7 @@ package body org.allbinary.animation.image.AllBinaryFlickerAndroidImageRotationA
    function Create (image : Image_Access; width : Integer; height : Integer; angleIncrement : Short_Integer; animationBehaviorFactory : AnimationBehaviorFactory_Access) return AllBinaryFlickerAndroidImageRotationAnimationFactory_Access is
       This : constant AllBinaryFlickerAndroidImageRotationAnimationFactory_Access := new AllBinaryFlickerAndroidImageRotationAnimationFactory;
    begin
-      Initialize (This.all, image, width, height, angleIncrement, animationBehaviorFactory);
+      AllBinaryFlickerAndroidImageRotationAnimationFactory_Package.Initialize (This.all, image, width, height, angleIncrement, animationBehaviorFactory);
       return This;
    end Create;
 
@@ -73,20 +73,6 @@ package body org.allbinary.animation.image.AllBinaryFlickerAndroidImageRotationA
    begin
       null;
    end getInstance;
-
-   procedure getAngleIncrement (This : in out AllBinaryFlickerAndroidImageRotationAnimationFactory) is
-      Java_Result : constant Short_Integer := AllBinaryFlickerAndroidImageRotationAnimationFactory'Class (This).getAngleIncrement;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getAngleIncrement;
-
-   procedure getImage (This : in out AllBinaryFlickerAndroidImageRotationAnimationFactory) is
-      Java_Result : constant Image_Access := AllBinaryFlickerAndroidImageRotationAnimationFactory'Class (This).getImage;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getImage;
 
 end org.allbinary.animation.image.AllBinaryFlickerAndroidImageRotationAnimationFactory_Package;
 

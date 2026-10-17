@@ -42,7 +42,6 @@ package org.allbinary.game.canvas.ABToGBUtil_Package is
    procedure Initialize (This : in out ABToGBUtil'Class);
    function Create return ABToGBUtil_Access;
    function getInstance return ABToGBUtil_Access;
-   procedure getInstance;
 
 end org.allbinary.game.canvas.ABToGBUtil_Package;
 

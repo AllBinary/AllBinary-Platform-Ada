@@ -43,7 +43,6 @@ package org.allbinary.input.motion.gyro.action.RightOrientationInputToGameKeyEve
    procedure Initialize (This : in out RightOrientationInputToGameKeyEventAction'Class);
    function Create return RightOrientationInputToGameKeyEventAction_Access;
    function getInstance return GameKeyCompleteMotionGestureInputEvent_Access;
-   procedure getInstance;
 
 end org.allbinary.input.motion.gyro.action.RightOrientationInputToGameKeyEventAction_Package;
 

@@ -43,9 +43,7 @@ package org.allbinary.game.displayable.canvas.FormUtil_Package is
    procedure Initialize (This : in out FormUtil'Class);
    function Create return FormUtil_Access;
    function getInstance return FormUtil_Access;
-   procedure getInstance;
    function createFormRectangle (This : in out FormUtil) return Rectangle_Access;
-   procedure createFormRectangle (This : in out FormUtil);
 
 end org.allbinary.game.displayable.canvas.FormUtil_Package;
 

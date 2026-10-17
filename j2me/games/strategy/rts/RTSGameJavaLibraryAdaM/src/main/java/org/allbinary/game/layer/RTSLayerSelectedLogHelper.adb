@@ -33,7 +33,7 @@ package body org.allbinary.game.layer.RTSLayerSelectedLogHelper_Package is
    function Create return RTSLayerSelectedLogHelper_Access is
       This : constant RTSLayerSelectedLogHelper_Access := new RTSLayerSelectedLogHelper;
    begin
-      Initialize (This.all);
+      RTSLayerSelectedLogHelper_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -167,13 +167,6 @@ package body org.allbinary.game.layer.RTSLayerSelectedLogHelper_Package is
         stringUtil := StringUtil_Package.getInstance;
         This.logUtil.putF (StringMaker_Package.Create.append (associatedAdvancedRTSGameLayer.getName).append (CommonSeps_Package.getInstance.SPACE).appendint (Integer (geographicMapCellHistory.getTotalVisited)).append (CommonSeps_Package.getInstance.SPACE).append (stringUtil.toString (currentGeographicMapCellPosition)).append (To_Unbounded_String (" - trying to move but not on path: ")).append (stringUtil.toString (pathList)).toString, This'Unchecked_Access, To_Unbounded_String ("turnTo"));
    end notOnPath;
-
-   procedure getInstance is
-      Java_Result : constant RTSLayerSelectedLogHelper_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

@@ -28,7 +28,7 @@ package body org.allbinary.game.input.GameKeyUtil_Package is
    function Create return GameKeyUtil_Access is
       This : constant GameKeyUtil_Access := new GameKeyUtil;
    begin
-      Initialize (This.all);
+      GameKeyUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -53,13 +53,6 @@ package body org.allbinary.game.input.GameKeyUtil_Package is
    begin
       null;
    end isDirectionKey;
-
-   procedure getInstance is
-      Java_Result : constant GameKeyUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

@@ -72,9 +72,7 @@ package org.allbinary.input.automation.module.generic_Id.configuration.profile.a
    procedure addCondition (This : in out GenericProfileActionScript; profileActionScriptNodeInterface : ProfileActionScriptNodeInterface_Access);
    procedure removeCondition (This : in out GenericProfileActionScript; profileActionScriptNodeInterface : ProfileActionScriptNodeInterface_Access);
    function toHashMap (This : in out GenericProfileActionScript) return HashMap_Access;
-   procedure toHashMap (This : in out GenericProfileActionScript);
    function getProfileActionConditionInterfaceVector (This : in out GenericProfileActionScript) return BasicArrayList_Access;
-   procedure getProfileActionConditionInterfaceVector (This : in out GenericProfileActionScript);
    procedure setProfileActionConditionInterfaceVector (This : in out GenericProfileActionScript; profileActionConditionInterfaceVector : BasicArrayList_Access);
    function toXmlNode (This : in out GenericProfileActionScript; document : Document_Access) return Node_Access;
    procedure toXmlNode (This : in out GenericProfileActionScript; document : Document_Access);

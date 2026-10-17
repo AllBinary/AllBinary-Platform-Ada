@@ -36,7 +36,6 @@ package org.allbinary.input.motion.button.TouchButtonTurnRightResource_Package i
    procedure Initialize (This : in out TouchButtonTurnRightResource'Class);
    function Create return TouchButtonTurnRightResource_Access;
    function getInstance return TouchButtonResource_Access;
-   procedure getInstance;
 
 end org.allbinary.input.motion.button.TouchButtonTurnRightResource_Package;
 

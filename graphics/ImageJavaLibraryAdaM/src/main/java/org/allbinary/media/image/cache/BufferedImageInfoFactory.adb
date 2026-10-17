@@ -30,7 +30,7 @@ package body org.allbinary.media.image.cache.BufferedImageInfoFactory_Package is
    function Create return BufferedImageInfoFactory_Access is
       This : constant BufferedImageInfoFactory_Access := new BufferedImageInfoFactory;
    begin
-      Initialize (This.all);
+      BufferedImageInfoFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

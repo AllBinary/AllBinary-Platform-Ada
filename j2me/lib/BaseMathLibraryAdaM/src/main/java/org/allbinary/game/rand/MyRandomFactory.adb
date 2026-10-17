@@ -37,7 +37,7 @@ package body org.allbinary.game.rand.MyRandomFactory_Package is
    function Create return MyRandomFactory_Access is
       This : constant MyRandomFactory_Access := new MyRandomFactory;
    begin
-      Initialize (This.all);
+      MyRandomFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -173,13 +173,6 @@ package body org.allbinary.game.rand.MyRandomFactory_Package is
             end if;
         end loop;
    end main;
-
-   procedure getInstance is
-      Java_Result : constant MyRandomFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure getNextInt (This : in out MyRandomFactory; range_Id : Integer) is
       Java_Result : constant Integer := MyRandomFactory'Class (This).getNextInt (range_Id);

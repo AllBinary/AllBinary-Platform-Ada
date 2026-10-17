@@ -39,7 +39,6 @@ package org.allbinary.logic.communication.http.file.upload.HttpFilePermissionsUt
    procedure Initialize (This : in out HttpFilePermissionsUtil'Class);
    function Create return HttpFilePermissionsUtil_Access;
    function getInstance return HttpFilePermissionsUtil_Access;
-   procedure getInstance;
    procedure create (This : in out HttpFilePermissionsUtil; path : AbPath_Access);
 
 end org.allbinary.logic.communication.http.file.upload.HttpFilePermissionsUtil_Package;

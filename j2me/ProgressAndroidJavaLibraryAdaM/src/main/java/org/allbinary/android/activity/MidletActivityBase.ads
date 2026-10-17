@@ -60,9 +60,7 @@ package org.allbinary.android.activity.MidletActivityBase_Package is
    procedure onDismissProgress (This : in out MidletActivityBase; animationSequence : Integer_Array_Access);
    procedure onShowProgress (This : in out MidletActivityBase; indeterminate : Boolean; animationSequence : Integer_Array_Access);
    function getRootView (This : in out MidletActivityBase) return View_Access;
-   procedure getRootView (This : in out MidletActivityBase);
    function getView (This : in out MidletActivityBase) return View_Access;
-   procedure getView (This : in out MidletActivityBase);
    procedure setKeyInputView (This : in out MidletActivityBase; keyInputView : View_Access);
    function onGenericMotionEvent (This : in out MidletActivityBase; event : MotionEvent_Access) return Boolean;
    procedure onGenericMotionEvent (This : in out MidletActivityBase; event : MotionEvent_Access);

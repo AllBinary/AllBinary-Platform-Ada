@@ -35,7 +35,7 @@ package body org.allbinary.game.input.GameInputProcessor_Package is
    function Create return GameInputProcessor_Access is
       This : constant GameInputProcessor_Access := new GameInputProcessor;
    begin
-      Initialize (This.all);
+      GameInputProcessor_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -68,13 +68,6 @@ package body org.allbinary.game.input.GameInputProcessor_Package is
    begin
         null;
    end processReleased;
-
-   procedure getInstance is
-      Java_Result : constant GameInputProcessor_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

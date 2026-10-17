@@ -26,6 +26,8 @@ with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArr
 with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.input.automation.module.game.skill.GameSkillType_Package; use org.allbinary.input.automation.module.game.skill.GameSkillType_Package;
+with org.allbinary.input.automation.module.game.skill.GameSkillPropertyInterface_Package; use org.allbinary.input.automation.module.game.skill.GameSkillPropertyInterface_Package;
 
 package org.allbinary.input.automation.module.game.skill.GameSkill_Package is
 
@@ -54,21 +56,16 @@ package org.allbinary.input.automation.module.game.skill.GameSkill_Package is
    procedure Initialize (This : in out GameSkill'Class; gameSkillType : GameSkillType_Access; extra : Unbounded_String; time : Integer);
    function Create (gameSkillType : GameSkillType_Access; extra : Unbounded_String; time : Integer) return GameSkill_Access;
    function getGameSkillType (This : in out GameSkill) return GameSkillType_Access;
-   procedure getGameSkillType (This : in out GameSkill);
    procedure setGameSkillType (This : in out GameSkill; gameSkillType : GameSkillType_Access);
    function getExtra (This : in out GameSkill) return Unbounded_String;
-   procedure getExtra (This : in out GameSkill);
    procedure setExtra (This : in out GameSkill; extra : Unbounded_String);
    function getTime (This : in out GameSkill) return Integer;
-   procedure getTime (This : in out GameSkill);
    procedure setTime (This : in out GameSkill; time : Integer);
    procedure addProperty (This : in out GameSkill; gameSkillPropertyInterface : GameSkillPropertyInterface_Access);
    function getProperties (This : in out GameSkill) return BasicArrayList_Access;
-   procedure getProperties (This : in out GameSkill);
    function getInstance (gameSkillType : GameSkillType_Access; extra : Unbounded_String) return GameSkill_Access;
    procedure getInstance (gameSkillType : GameSkillType_Access; extra : Unbounded_String);
    function toString (This : in out GameSkill) return Unbounded_String;
-   procedure toString (This : in out GameSkill);
 
 end org.allbinary.input.automation.module.game.skill.GameSkill_Package;
 

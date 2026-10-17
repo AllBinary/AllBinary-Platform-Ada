@@ -52,7 +52,7 @@ package body org.allbinary.game.input.HumanRTSPlayerGameInput_Package is
    function Create (gameCanvas : AllBinaryGameCanvas_Access; inputList : BasicArrayList_Access; playerInputId : Integer; towerInfoPaintable : RTSLayerInfoPaintable_Access; rtsPlayerLayerInterface : RTSPlayerLayerInterface_Access; layerPositionFinderInterface : LayerPositionFinderInterface_Access; selectRTSLayerVisitorFactoryInterface : SelectRTSLayerVisitorFactoryInterface_Access; touchButtonsBuilderFactory : TouchButtonsBuilderFactory_Access) return HumanRTSPlayerGameInput_Access is
       This : constant HumanRTSPlayerGameInput_Access := new HumanRTSPlayerGameInput;
    begin
-      Initialize (This.all, gameCanvas, inputList, playerInputId, towerInfoPaintable, rtsPlayerLayerInterface, layerPositionFinderInterface, selectRTSLayerVisitorFactoryInterface, touchButtonsBuilderFactory);
+      HumanRTSPlayerGameInput_Package.Initialize (This.all, gameCanvas, inputList, playerInputId, towerInfoPaintable, rtsPlayerLayerInterface, layerPositionFinderInterface, selectRTSLayerVisitorFactoryInterface, touchButtonsBuilderFactory);
       return This;
    end Create;
 
@@ -363,13 +363,6 @@ package body org.allbinary.game.input.HumanRTSPlayerGameInput_Package is
    begin
       null;
    end processDraggingMotionInput;
-
-   procedure getSelectedRtsLayer (This : in out HumanRTSPlayerGameInput) is
-      Java_Result : constant CollidableDestroyableDamageableLayer_Access := HumanRTSPlayerGameInput'Class (This).getSelectedRtsLayer;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSelectedRtsLayer;
 
 end org.allbinary.game.input.HumanRTSPlayerGameInput_Package;
 

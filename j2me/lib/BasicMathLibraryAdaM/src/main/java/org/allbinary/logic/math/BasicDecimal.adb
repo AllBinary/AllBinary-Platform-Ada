@@ -40,7 +40,7 @@ package body org.allbinary.logic.math.BasicDecimal_Package is
    function Create (units : Long_Long_Integer) return BasicDecimal_Access is
       This : constant BasicDecimal_Access := new BasicDecimal;
    begin
-      Initialize (This.all, units);
+      BasicDecimal_Package.Initialize (This.all, units);
       return This;
    end Create;
 
@@ -170,41 +170,6 @@ package body org.allbinary.logic.math.BasicDecimal_Package is
    begin
       null;
    end createBigDecimal;
-
-   procedure getUnscaled (This : in out BasicDecimal) is
-      Java_Result : constant Long_Long_Integer := BasicDecimal'Class (This).getUnscaled;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getUnscaled;
-
-   procedure getScaled (This : in out BasicDecimal) is
-      Java_Result : constant Integer := BasicDecimal'Class (This).getScaled;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getScaled;
-
-   procedure toString (This : in out BasicDecimal) is
-      Java_Result : constant Unbounded_String := BasicDecimal'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toString;
-
-   procedure getScaledFactor (This : in out BasicDecimal) is
-      Java_Result : constant Integer := BasicDecimal'Class (This).getScaledFactor;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getScaledFactor;
-
-   procedure getScaledFactorValue (This : in out BasicDecimal) is
-      Java_Result : constant Integer := BasicDecimal'Class (This).getScaledFactorValue;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getScaledFactorValue;
 
 begin
    null;

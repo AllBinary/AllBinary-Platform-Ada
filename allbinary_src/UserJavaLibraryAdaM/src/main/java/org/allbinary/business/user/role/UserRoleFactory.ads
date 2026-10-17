@@ -23,7 +23,7 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.business.user.modules.UserFactory_Package; use org.allbinary.business.user.modules.UserFactory_Package;
 with org.allbinary.business.user.modules.admin.AdminUserFactory_Package; use org.allbinary.business.user.modules.admin.AdminUserFactory_Package;
 with org.allbinary.business.user.modules.admin.store.StoreAdminUserFactory_Package; use org.allbinary.business.user.modules.admin.store.StoreAdminUserFactory_Package;
-with org.allbinary.business.user.modules.admin.store.customer_Case.CustomerStoreAdminUserFactory_Package; use org.allbinary.business.user.modules.admin.store.customer_Case.CustomerStoreAdminUserFactory_Package;
+with org.allbinary.business.user.modules.admin.store.customer.CustomerStoreAdminUserFactory_Package; use org.allbinary.business.user.modules.admin.store.customer.CustomerStoreAdminUserFactory_Package;
 with org.allbinary.business.user.modules.admin.store.order.OrderStoreAdminUserFactory_Package; use org.allbinary.business.user.modules.admin.store.order.OrderStoreAdminUserFactory_Package;
 with org.allbinary.business.user.modules.admin.store.order.adjust.AdjustOrderStoreAdminUserFactory_Package; use org.allbinary.business.user.modules.admin.store.order.adjust.AdjustOrderStoreAdminUserFactory_Package;
 with org.allbinary.business.user.modules.admin.store.order.review.ReviewOrderStoreAdminUserFactory_Package; use org.allbinary.business.user.modules.admin.store.order.review.ReviewOrderStoreAdminUserFactory_Package;
@@ -32,17 +32,20 @@ with org.allbinary.business.user.modules.admin.store.payment.PaymentStoreAdminUs
 with org.allbinary.business.user.modules.admin.store.product.ProductStoreAdminUserFactory_Package; use org.allbinary.business.user.modules.admin.store.product.ProductStoreAdminUserFactory_Package;
 with org.allbinary.business.user.modules.admin.store.web.WebStoreAdminUserFactory_Package; use org.allbinary.business.user.modules.admin.store.web.WebStoreAdminUserFactory_Package;
 with org.allbinary.business.user.modules.admin.store.web.view.editor.ViewEditorWebStoreAdminUserFactory_Package; use org.allbinary.business.user.modules.admin.store.web.view.editor.ViewEditorWebStoreAdminUserFactory_Package;
-with org.allbinary.business.user.modules.admin.store.web.wizard_Case.WizardWebStoreAdminUserFactory_Package; use org.allbinary.business.user.modules.admin.store.web.wizard_Case.WizardWebStoreAdminUserFactory_Package;
+with org.allbinary.business.user.modules.admin.store.web.wizard.WizardWebStoreAdminUserFactory_Package; use org.allbinary.business.user.modules.admin.store.web.wizard.WizardWebStoreAdminUserFactory_Package;
 with org.allbinary.business.user.modules.admin.store.web.workflow.editor.WorkflowEditorWebStoreAdminUserFactory_Package; use org.allbinary.business.user.modules.admin.store.web.workflow.editor.WorkflowEditorWebStoreAdminUserFactory_Package;
-with org.allbinary.business.user.modules.customer_Case.subscriber.SubscriberUserFactory_Package; use org.allbinary.business.user.modules.customer_Case.subscriber.SubscriberUserFactory_Package;
-with org.allbinary.business.user.modules.customer_Case.wholesale.WholesaleUserFactory_Package; use org.allbinary.business.user.modules.customer_Case.wholesale.WholesaleUserFactory_Package;
+with org.allbinary.business.user.modules.customer.subscriber.SubscriberUserFactory_Package; use org.allbinary.business.user.modules.customer.subscriber.SubscriberUserFactory_Package;
+with org.allbinary.business.user.modules.customer.wholesale.WholesaleUserFactory_Package; use org.allbinary.business.user.modules.customer.wholesale.WholesaleUserFactory_Package;
+with org.allbinary.business.user.role.BasicUserRoleFactory_Package; use org.allbinary.business.user.role.BasicUserRoleFactory_Package;
+with org.allbinary.business.user.role.UserRoleB_Package; use org.allbinary.business.user.role.UserRoleB_Package;
+with org.allbinary.business.user.role.UserRole_Package; use org.allbinary.business.user.role.UserRole_Package;
 
 package org.allbinary.business.user.role.UserRoleFactory_Package is
 
    package UserFactory_Package renames Standard.org.allbinary.business.user.modules.UserFactory_Package;
    package AdminUserFactory_Package renames Standard.org.allbinary.business.user.modules.admin.AdminUserFactory_Package;
    package StoreAdminUserFactory_Package renames Standard.org.allbinary.business.user.modules.admin.store.StoreAdminUserFactory_Package;
-   package CustomerStoreAdminUserFactory_Package renames Standard.org.allbinary.business.user.modules.admin.store.customer_Case.CustomerStoreAdminUserFactory_Package;
+   package CustomerStoreAdminUserFactory_Package renames Standard.org.allbinary.business.user.modules.admin.store.customer.CustomerStoreAdminUserFactory_Package;
    package OrderStoreAdminUserFactory_Package renames Standard.org.allbinary.business.user.modules.admin.store.order.OrderStoreAdminUserFactory_Package;
    package AdjustOrderStoreAdminUserFactory_Package renames Standard.org.allbinary.business.user.modules.admin.store.order.adjust.AdjustOrderStoreAdminUserFactory_Package;
    package ReviewOrderStoreAdminUserFactory_Package renames Standard.org.allbinary.business.user.modules.admin.store.order.review.ReviewOrderStoreAdminUserFactory_Package;
@@ -51,10 +54,10 @@ package org.allbinary.business.user.role.UserRoleFactory_Package is
    package ProductStoreAdminUserFactory_Package renames Standard.org.allbinary.business.user.modules.admin.store.product.ProductStoreAdminUserFactory_Package;
    package WebStoreAdminUserFactory_Package renames Standard.org.allbinary.business.user.modules.admin.store.web.WebStoreAdminUserFactory_Package;
    package ViewEditorWebStoreAdminUserFactory_Package renames Standard.org.allbinary.business.user.modules.admin.store.web.view.editor.ViewEditorWebStoreAdminUserFactory_Package;
-   package WizardWebStoreAdminUserFactory_Package renames Standard.org.allbinary.business.user.modules.admin.store.web.wizard_Case.WizardWebStoreAdminUserFactory_Package;
+   package WizardWebStoreAdminUserFactory_Package renames Standard.org.allbinary.business.user.modules.admin.store.web.wizard.WizardWebStoreAdminUserFactory_Package;
    package WorkflowEditorWebStoreAdminUserFactory_Package renames Standard.org.allbinary.business.user.modules.admin.store.web.workflow.editor.WorkflowEditorWebStoreAdminUserFactory_Package;
-   package SubscriberUserFactory_Package renames Standard.org.allbinary.business.user.modules.customer_Case.subscriber.SubscriberUserFactory_Package;
-   package WholesaleUserFactory_Package renames Standard.org.allbinary.business.user.modules.customer_Case.wholesale.WholesaleUserFactory_Package;
+   package SubscriberUserFactory_Package renames Standard.org.allbinary.business.user.modules.customer.subscriber.SubscriberUserFactory_Package;
+   package WholesaleUserFactory_Package renames Standard.org.allbinary.business.user.modules.customer.wholesale.WholesaleUserFactory_Package;
 
    type UserRoleFactory is tagged;
    type UserRoleFactory_Access is access all UserRoleFactory'Class;
@@ -86,7 +89,6 @@ package org.allbinary.business.user.role.UserRoleFactory_Package is
    procedure Initialize (This : in out UserRoleFactory'Class);
    function Create return UserRoleFactory_Access;
    function getInstance return UserRoleFactory_Access;
-   procedure getInstance;
 
 end org.allbinary.business.user.role.UserRoleFactory_Package;
 

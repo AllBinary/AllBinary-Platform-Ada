@@ -29,7 +29,7 @@ package body org.allbinary.logic.java.character_Id.CharArrayFactory_Package is
    function Create return CharArrayFactory_Access is
       This : constant CharArrayFactory_Access := new CharArrayFactory;
    begin
-      Initialize (This.all);
+      CharArrayFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -42,20 +42,6 @@ package body org.allbinary.logic.java.character_Id.CharArrayFactory_Package is
    function getZeroCharArray (This : in out CharArrayFactory) return Character_Array_Access is
    begin
         return This.zeroCharArray;
-   end getZeroCharArray;
-
-   procedure getInstance is
-      Java_Result : constant CharArrayFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure getZeroCharArray (This : in out CharArrayFactory) is
-      Java_Result : constant Character_Array_Access := CharArrayFactory'Class (This).getZeroCharArray;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getZeroCharArray;
 
 begin

@@ -63,7 +63,6 @@ package org.allbinary.logic.io.file.zip.ZipFileUtil_Package is
    procedure Initialize (This : in out ZipFileUtil'Class);
    function Create return ZipFileUtil_Access;
    function getInstance return ZipFileUtil_Access;
-   procedure getInstance;
    procedure create (This : in out ZipFileUtil; outFilename : Unbounded_String; fileBasicArrayList : BasicArrayList_Access);
    procedure unzip (This : in out ZipFileUtil; path : Unbounded_String; zipFile : AbFile_Access; fileName : Unbounded_String);
 

@@ -37,7 +37,7 @@ package body admin.taghelpers.OrderItemsRequestHelper_Package is
    function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return OrderItemsRequestHelper_Access is
       This : constant OrderItemsRequestHelper_Access := new OrderItemsRequestHelper;
    begin
-      Initialize (This.all, hashMap, pageContext);
+      OrderItemsRequestHelper_Package.Initialize (This.all, hashMap, pageContext);
       return This;
    end Create;
 
@@ -48,7 +48,8 @@ package body admin.taghelpers.OrderItemsRequestHelper_Package is
         This.status := This.request.getParameter (OrderHistoryData_Package.STATUS);
    end getFormData;
 
-   function setOrderStatus (This : in out OrderItemsRequestHelper; newStatus : Unbounded_String) return Unbounded_String is
+   function setOrderStatus (This : in out OrderItemsRequestHelper; newStatus_Param : Unbounded_String) return Unbounded_String is
+      newStatus : Unbounded_String := newStatus_Param;
       success : Unbounded_String;
       error : Unbounded_String;
    begin
@@ -101,15 +102,8 @@ package body admin.taghelpers.OrderItemsRequestHelper_Package is
         end;
    end setOrderStatus;
 
-   procedure setOrderStatus (This : in out OrderItemsRequestHelper; newStatus : Unbounded_String) is
-      Java_Result : constant Unbounded_String := OrderItemsRequestHelper'Class (This).setOrderStatus (newStatus);
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end setOrderStatus;
-
-   procedure setOrderStatus (This : in out OrderItemsRequestHelper) is
-      Java_Result : constant Unbounded_String := OrderItemsRequestHelper'Class (This).setOrderStatus;
+   procedure setOrderStatus (This : in out OrderItemsRequestHelper; newStatus_Param : Unbounded_String) is
+      Java_Result : constant Unbounded_String := OrderItemsRequestHelper'Class (This).setOrderStatus (newStatus_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

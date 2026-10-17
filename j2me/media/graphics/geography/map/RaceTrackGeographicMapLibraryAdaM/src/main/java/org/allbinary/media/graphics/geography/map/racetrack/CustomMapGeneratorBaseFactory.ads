@@ -20,6 +20,8 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
+with org.allbinary.media.graphics.geography.map.racetrack.CustomMapGeneratorBase_Package; use org.allbinary.media.graphics.geography.map.racetrack.CustomMapGeneratorBase_Package;
+with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMap_Package; use org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMap_Package;
 
 package org.allbinary.media.graphics.geography.map.racetrack.CustomMapGeneratorBaseFactory_Package is
 
@@ -35,7 +37,6 @@ package org.allbinary.media.graphics.geography.map.racetrack.CustomMapGeneratorB
    procedure Initialize (This : in out CustomMapGeneratorBaseFactory'Class);
    function Create return CustomMapGeneratorBaseFactory_Access;
    function getInstance return CustomMapGeneratorBaseFactory_Access;
-   procedure getInstance;
    function create (This : in out CustomMapGeneratorBaseFactory; raceTrackGeographicMap : RaceTrackGeographicMap_Access) return CustomMapGeneratorBase_Access;
    procedure create (This : in out CustomMapGeneratorBaseFactory; raceTrackGeographicMap : RaceTrackGeographicMap_Access);
 

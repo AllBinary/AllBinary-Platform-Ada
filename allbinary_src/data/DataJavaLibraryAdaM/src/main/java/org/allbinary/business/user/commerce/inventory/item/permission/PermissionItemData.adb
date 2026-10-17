@@ -28,7 +28,7 @@ package body org.allbinary.business.user.commerce.inventory.item.permission.Perm
    function Create return PermissionItemData_Access is
       This : constant PermissionItemData_Access := new PermissionItemData;
    begin
-      Initialize (This.all);
+      PermissionItemData_Package.Initialize (This.all);
       return This;
    end Create;
 

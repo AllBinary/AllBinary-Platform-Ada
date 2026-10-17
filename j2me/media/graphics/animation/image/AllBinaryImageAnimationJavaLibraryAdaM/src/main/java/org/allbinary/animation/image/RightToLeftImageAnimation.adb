@@ -34,7 +34,7 @@ package body org.allbinary.animation.image.RightToLeftImageAnimation_Package is
    function Create (image : Image_Access; animationBehavior : AnimationBehavior_Access) return RightToLeftImageAnimation_Access is
       This : constant RightToLeftImageAnimation_Access := new RightToLeftImageAnimation;
    begin
-      Initialize (This.all, image, animationBehavior);
+      RightToLeftImageAnimation_Package.Initialize (This.all, image, animationBehavior);
       return This;
    end Create;
 

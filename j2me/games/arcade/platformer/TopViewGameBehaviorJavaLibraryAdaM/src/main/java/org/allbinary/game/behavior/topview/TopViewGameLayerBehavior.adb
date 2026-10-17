@@ -36,7 +36,7 @@ package body org.allbinary.game.behavior.topview.TopViewGameLayerBehavior_Packag
    function Create (maxGravityActionIndex : Integer) return TopViewGameLayerBehavior_Access is
       This : constant TopViewGameLayerBehavior_Access := new TopViewGameLayerBehavior;
    begin
-      Initialize (This.all, maxGravityActionIndex);
+      TopViewGameLayerBehavior_Package.Initialize (This.all, maxGravityActionIndex);
       return This;
    end Create;
 

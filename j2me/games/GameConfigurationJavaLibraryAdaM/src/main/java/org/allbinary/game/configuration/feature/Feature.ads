@@ -46,9 +46,7 @@ package org.allbinary.game.configuration.feature.Feature_Package is
    procedure getInstance (name : Unbounded_String);
    procedure add (name : Unbounded_String; gameFeature : Feature_Access);
    function toString (This : in out Feature) return Unbounded_String;
-   procedure toString (This : in out Feature);
    function getName (This : in out Feature) return Unbounded_String;
-   procedure getName (This : in out Feature);
 
 end org.allbinary.game.configuration.feature.Feature_Package;
 

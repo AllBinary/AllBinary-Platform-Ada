@@ -20,6 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
+with org.allbinary.game.input.InputProcessor_Package; use org.allbinary.game.input.InputProcessor_Package;
 
 package org.allbinary.game.input.InputProcessorFactory_Package is
 
@@ -37,9 +38,7 @@ package org.allbinary.game.input.InputProcessorFactory_Package is
    procedure Initialize (This : in out InputProcessorFactory'Class);
    function Create return InputProcessorFactory_Access;
    function getInstance return InputProcessorFactory_Access;
-   procedure getInstance;
    function getInputProcessor (This : in out InputProcessorFactory) return InputProcessor_Access;
-   procedure getInputProcessor (This : in out InputProcessorFactory);
 
 end org.allbinary.game.input.InputProcessorFactory_Package;
 

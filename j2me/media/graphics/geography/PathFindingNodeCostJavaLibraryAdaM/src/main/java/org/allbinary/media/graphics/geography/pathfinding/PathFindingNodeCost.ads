@@ -26,6 +26,7 @@ with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Packag
 with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
 with org.allbinary.media.graphics.geography.pathfinding.PathFindingNode_Package; use org.allbinary.media.graphics.geography.pathfinding.PathFindingNode_Package;
 with org.allbinary.media.graphics.geography.pathfinding.Comparable_Package; use org.allbinary.media.graphics.geography.pathfinding.Comparable_Package;
+with org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfo_Package; use org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfo_Package;
 
 package org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCost_Package is
 
@@ -48,12 +49,10 @@ package org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCost_P
    procedure Initialize (This : in out PathFindingNodeCost'Class; parent : Java_Object_Access; geographicMapCellPosition : GeographicMapCellPosition_Access; pathFindingNodeCostInfo : PathFindingNodeCostInfo_Access);
    function Create (parent : Java_Object_Access; geographicMapCellPosition : GeographicMapCellPosition_Access; pathFindingNodeCostInfo : PathFindingNodeCostInfo_Access) return PathFindingNodeCost_Access;
    function getPathFindingNodeCostInfo (This : in out PathFindingNodeCost) return PathFindingNodeCostInfo_Access;
-   procedure getPathFindingNodeCostInfo (This : in out PathFindingNodeCost);
    procedure setPathFindingNodeCostInfo (This : in out PathFindingNodeCost; pathFindingNodeCostInfo : PathFindingNodeCostInfo_Access);
    function compareTo (This : in out PathFindingNodeCost; pathFindingNodeCost : PathFindingNodeCost_Access) return Integer;
    procedure compareTo (This : in out PathFindingNodeCost; pathFindingNodeCost : PathFindingNodeCost_Access);
    function toString (This : in out PathFindingNodeCost) return Unbounded_String;
-   procedure toString (This : in out PathFindingNodeCost);
 
 end org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCost_Package;
 

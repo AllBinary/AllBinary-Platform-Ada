@@ -30,7 +30,7 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
    function Create return GenericProfileActionData_Access is
       This : constant GenericProfileActionData_Access := new GenericProfileActionData;
    begin
-      Initialize (This.all);
+      GenericProfileActionData_Package.Initialize (This.all);
       return This;
    end Create;
 

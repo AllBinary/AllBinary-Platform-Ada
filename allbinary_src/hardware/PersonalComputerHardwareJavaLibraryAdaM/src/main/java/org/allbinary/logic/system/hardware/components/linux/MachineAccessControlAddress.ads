@@ -42,7 +42,6 @@ package org.allbinary.logic.system.hardware.components.linux.MachineAccessContro
    function compareTo (This : in out MachineAccessControlAddress; componentInterface : HardwareComponentInterface_Access) return Boolean;
    procedure compareTo (This : in out MachineAccessControlAddress; componentInterface : HardwareComponentInterface_Access);
    function toString (This : in out MachineAccessControlAddress) return Unbounded_String;
-   procedure toString (This : in out MachineAccessControlAddress);
 
 end org.allbinary.logic.system.hardware.components.linux.MachineAccessControlAddress_Package;
 

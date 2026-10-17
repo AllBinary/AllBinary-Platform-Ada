@@ -32,6 +32,13 @@ with org.allbinary.logic.system.SoftwareInformation_Package; use org.allbinary.l
 with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package; use org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
 with org.allbinary.thread.SecondaryThreadPool_Package; use org.allbinary.thread.SecondaryThreadPool_Package;
 with org.allbinary.game.score.HighScoresBase_Package; use org.allbinary.game.score.HighScoresBase_Package;
+with org.allbinary.game.score.HighScores_Package; use org.allbinary.game.score.HighScores_Package;
+with org.allbinary.game.score.HighScoresResultsListener_Package; use org.allbinary.game.score.HighScoresResultsListener_Package;
+with org.allbinary.game.score.RecordStoreHighScores_Package; use org.allbinary.game.score.RecordStoreHighScores_Package;
+with org.allbinary.game.score.ScoreComparator_Package; use org.allbinary.game.score.ScoreComparator_Package;
+with org.allbinary.game.score.LastFetchHighScoresFactory_Package; use org.allbinary.game.score.LastFetchHighScoresFactory_Package;
+with org.allbinary.game.score.HighScoresHelper2_Package; use org.allbinary.game.score.HighScoresHelper2_Package;
+with org.allbinary.game.score.HighScoresHelperBaseInterface_Package; use org.allbinary.game.score.HighScoresHelperBaseInterface_Package;
 
 package org.allbinary.game.score.BasicHighScoresFactory_Package is
 
@@ -69,7 +76,6 @@ package org.allbinary.game.score.BasicHighScoresFactory_Package is
    procedure fetchHighScores (This : in out BasicHighScoresFactory; gameInfo : GameInfo_Access; highScoresResultsListener : HighScoresResultsListener_Access);
    procedure fetchHighScoresPreload (This : in out BasicHighScoresFactory; gameInfo : GameInfo_Access; highScoresResultsListener : HighScoresResultsListener_Access; preload : Boolean);
    function createHighScoresHelper (This : in out BasicHighScoresFactory) return HighScoresHelperBaseInterface_Access;
-   procedure createHighScoresHelper (This : in out BasicHighScoresFactory);
    function loaded (index2 : Integer) return Boolean;
    procedure loaded (index2 : Integer);
 

@@ -33,7 +33,7 @@ package body org.allbinary.android.input.motion.GameInputMotionInfo_Package is
    function Create (maxApi : Integer; maxPointers : Integer) return GameInputMotionInfo_Access is
       This : constant GameInputMotionInfo_Access := new GameInputMotionInfo;
    begin
-      Initialize (This.all, maxApi, maxPointers);
+      GameInputMotionInfo_Package.Initialize (This.all, maxApi, maxPointers);
       return This;
    end Create;
 

@@ -23,6 +23,7 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.input.mapping.PersistentInputMapping_Package; use org.allbinary.game.input.mapping.PersistentInputMapping_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.game.input.NormalJ2MEGameInputMapping_Package; use org.allbinary.game.input.NormalJ2MEGameInputMapping_Package;
 
 package org.allbinary.game.input.PlatformInputMappingFactory_Package is
 
@@ -44,9 +45,7 @@ package org.allbinary.game.input.PlatformInputMappingFactory_Package is
    procedure Initialize (This : in out PlatformInputMappingFactory'Class);
    function Create return PlatformInputMappingFactory_Access;
    function getInstance return PlatformInputMappingFactory_Access;
-   procedure getInstance;
    function getPersistentInputMappingInstance (This : in out PlatformInputMappingFactory) return PersistentInputMapping_Access;
-   procedure getPersistentInputMappingInstance (This : in out PlatformInputMappingFactory);
 
 end org.allbinary.game.input.PlatformInputMappingFactory_Package;
 

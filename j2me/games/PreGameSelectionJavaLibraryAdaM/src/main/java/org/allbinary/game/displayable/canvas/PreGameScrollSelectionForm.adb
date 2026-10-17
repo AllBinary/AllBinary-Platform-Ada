@@ -29,7 +29,7 @@ package body org.allbinary.game.displayable.canvas.PreGameScrollSelectionForm_Pa
    function Create (title : Unbounded_String; items : ABCustomItem_Access_Array_Access; formPaintableFactory : ItemPaintableFactory_Access; backgroundBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access) return PreGameScrollSelectionForm_Access is
       This : constant PreGameScrollSelectionForm_Access := new PreGameScrollSelectionForm;
    begin
-      Initialize (This.all, title, items, formPaintableFactory, backgroundBasicColor, foregroundBasicColor);
+      PreGameScrollSelectionForm_Package.Initialize (This.all, title, items, formPaintableFactory, backgroundBasicColor, foregroundBasicColor);
       return This;
    end Create;
 

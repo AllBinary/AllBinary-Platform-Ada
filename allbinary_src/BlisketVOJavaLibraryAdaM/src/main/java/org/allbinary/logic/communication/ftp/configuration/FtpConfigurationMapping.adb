@@ -31,7 +31,7 @@ package body org.allbinary.logic.communication.ftp.configuration.FtpConfiguratio
    function Create (ftpConfigurationInterface : FtpConfigurationInterface_Access) return FtpConfigurationMapping_Access is
       This : constant FtpConfigurationMapping_Access := new FtpConfigurationMapping;
    begin
-      Initialize (This.all, ftpConfigurationInterface);
+      FtpConfigurationMapping_Package.Initialize (This.all, ftpConfigurationInterface);
       return This;
    end Create;
 
@@ -62,27 +62,6 @@ package body org.allbinary.logic.communication.ftp.configuration.FtpConfiguratio
         vector.add (This.ftpConfigurationInterface.getPassword);
         vector.add (This.ftpConfigurationInterface.getPath);
         return vector;
-   end toVector;
-
-   procedure toHashMap (This : in out FtpConfigurationMapping) is
-      Java_Result : constant HashMap_Access := FtpConfigurationMapping'Class (This).toHashMap;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toHashMap;
-
-   procedure getKey (This : in out FtpConfigurationMapping) is
-      Java_Result : constant Java_Object_Access := FtpConfigurationMapping'Class (This).getKey;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getKey;
-
-   procedure toVector (This : in out FtpConfigurationMapping) is
-      Java_Result : constant BasicArrayList_Access := FtpConfigurationMapping'Class (This).toVector;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end toVector;
 
 end org.allbinary.logic.communication.ftp.configuration.FtpConfigurationMapping_Package;

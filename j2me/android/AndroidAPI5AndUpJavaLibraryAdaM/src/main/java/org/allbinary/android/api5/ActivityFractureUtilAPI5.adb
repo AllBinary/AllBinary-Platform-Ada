@@ -32,7 +32,7 @@ package body org.allbinary.android.api5.ActivityFractureUtilAPI5_Package is
    function Create return ActivityFractureUtilAPI5_Access is
       This : constant ActivityFractureUtilAPI5_Access := new ActivityFractureUtilAPI5;
    begin
-      Initialize (This.all);
+      ActivityFractureUtilAPI5_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -76,13 +76,6 @@ package body org.allbinary.android.api5.ActivityFractureUtilAPI5_Package is
    begin
         return activity.getPackageManager.hasSystemFeature (property);
    end isFeature;
-
-   procedure getInstance is
-      Java_Result : constant ActivityFractureUtilAPI5_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure isTouch (This : in out ActivityFractureUtilAPI5; activity : Activity_Access) is
       Java_Result : constant Boolean := ActivityFractureUtilAPI5'Class (This).isTouch (activity);

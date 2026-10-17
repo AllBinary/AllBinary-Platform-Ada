@@ -33,7 +33,7 @@ package body admin.tags.PaymentGatewayTag_Package is
    function Create return PaymentGatewayTag_Access is
       This : constant PaymentGatewayTag_Access := new PaymentGatewayTag;
    begin
-      Initialize (This.all);
+      PaymentGatewayTag_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -91,20 +91,6 @@ package body admin.tags.PaymentGatewayTag_Package is
             return SKIP_BODY;
                 end;
         end;
-   end doStartTag;
-
-   procedure process (This : in out PaymentGatewayTag) is
-      Java_Result : constant Unbounded_String := PaymentGatewayTag'Class (This).process;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end process;
-
-   procedure doStartTag (This : in out PaymentGatewayTag) is
-      Java_Result : constant Integer := PaymentGatewayTag'Class (This).doStartTag;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end doStartTag;
 
 end admin.tags.PaymentGatewayTag_Package;

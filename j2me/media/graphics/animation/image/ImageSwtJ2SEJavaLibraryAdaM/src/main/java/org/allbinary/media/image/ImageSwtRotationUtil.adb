@@ -41,7 +41,7 @@ package body org.allbinary.media.image.ImageSwtRotationUtil_Package is
    function Create return ImageSwtRotationUtil_Access is
       This : constant ImageSwtRotationUtil_Access := new ImageSwtRotationUtil;
    begin
-      Initialize (This.all);
+      ImageSwtRotationUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -134,13 +134,6 @@ package body org.allbinary.media.image.ImageSwtRotationUtil_Package is
         gc.dispose;
         return bufferedImage;
    end createSpriteImage;
-
-   procedure getInstance is
-      Java_Result : constant ImageSwtRotationUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure getRotatedImage (This : in out ImageSwtRotationUtil; bufferedImage : Image_Access; totalAngle : Integer) is
       Java_Result : constant Image_Access := ImageSwtRotationUtil'Class (This).getRotatedImage (bufferedImage, totalAngle);

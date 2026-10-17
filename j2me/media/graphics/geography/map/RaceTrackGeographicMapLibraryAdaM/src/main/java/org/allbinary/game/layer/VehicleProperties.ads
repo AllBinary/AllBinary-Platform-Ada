@@ -21,6 +21,7 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.physics.velocity.VelocityProperties_Package; use org.allbinary.game.physics.velocity.VelocityProperties_Package;
+with org.allbinary.game.layer.VehicleFrictionProperties_Package; use org.allbinary.game.layer.VehicleFrictionProperties_Package;
 
 package org.allbinary.game.layer.VehicleProperties_Package is
 
@@ -39,10 +40,8 @@ package org.allbinary.game.layer.VehicleProperties_Package is
    procedure Initialize (This : in out VehicleProperties'Class; velocityProperties : VelocityProperties_Access; vehicleFrictionProperties : VehicleFrictionProperties_Access);
    function Create (velocityProperties : VelocityProperties_Access; vehicleFrictionProperties : VehicleFrictionProperties_Access) return VehicleProperties_Access;
    function getVehicleFrictionProperties (This : in out VehicleProperties) return VehicleFrictionProperties_Access;
-   procedure getVehicleFrictionProperties (This : in out VehicleProperties);
    procedure setVehicleFrictionProperties (This : in out VehicleProperties; vehicleFrictionProperties : VehicleFrictionProperties_Access);
    function getVelocityProperties (This : in out VehicleProperties) return VelocityProperties_Access;
-   procedure getVelocityProperties (This : in out VehicleProperties);
 
 end org.allbinary.game.layer.VehicleProperties_Package;
 

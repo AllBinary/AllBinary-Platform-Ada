@@ -28,7 +28,7 @@ package body org.allbinary.android.NullAndroidCanvas_Package is
    function Create return NullAndroidCanvas_Access is
       This : constant NullAndroidCanvas_Access := new NullAndroidCanvas;
    begin
-      Initialize (This.all);
+      NullAndroidCanvas_Package.Initialize (This.all);
       return This;
    end Create;
 

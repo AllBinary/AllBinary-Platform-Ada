@@ -34,7 +34,7 @@ package body org.allbinary.animation.image.AnimationFactoryInitializationVisitor
    function Create return AnimationFactoryInitializationVisitor_Access is
       This : constant AnimationFactoryInitializationVisitor_Access := new AnimationFactoryInitializationVisitor;
    begin
-      Initialize (This.all);
+      AnimationFactoryInitializationVisitor_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -60,13 +60,6 @@ package body org.allbinary.animation.image.AnimationFactoryInitializationVisitor
         stringBuffer.append (commonLabels.HEIGHT_LABEL);
         stringBuffer.appendint (This.height);
         return stringBuffer.toString;
-   end toString;
-
-   procedure toString (This : in out AnimationFactoryInitializationVisitor) is
-      Java_Result : constant Unbounded_String := AnimationFactoryInitializationVisitor'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end toString;
 
 end org.allbinary.animation.image.AnimationFactoryInitializationVisitor_Package;

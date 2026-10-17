@@ -31,7 +31,7 @@ package body org.allbinary.logic.visual.dhtml.html.HtmlTags_Package is
    function Create return HtmlTags_Access is
       This : constant HtmlTags_Access := new HtmlTags;
    begin
-      Initialize (This.all);
+      HtmlTags_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -56,13 +56,6 @@ package body org.allbinary.logic.visual.dhtml.html.HtmlTags_Package is
    begin
       null;
    end get;
-
-   procedure size (This : in out HtmlTags) is
-      Java_Result : constant Integer := HtmlTags'Class (This).size;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end size;
 
 end org.allbinary.logic.visual.dhtml.html.HtmlTags_Package;
 

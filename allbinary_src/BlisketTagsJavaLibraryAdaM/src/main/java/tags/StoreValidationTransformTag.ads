@@ -46,7 +46,6 @@ package tags.StoreValidationTransformTag_Package is
    function Create return StoreValidationTransformTag_Access;
    procedure setStoreName (This : in out StoreValidationTransformTag; value : Unbounded_String);
    function doStartTag (This : in out StoreValidationTransformTag) return Integer;
-   procedure doStartTag (This : in out StoreValidationTransformTag);
 
 end tags.StoreValidationTransformTag_Package;
 

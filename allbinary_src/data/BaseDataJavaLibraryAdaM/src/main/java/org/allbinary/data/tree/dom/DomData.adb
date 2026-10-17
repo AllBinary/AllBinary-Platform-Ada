@@ -30,7 +30,7 @@ package body org.allbinary.data.tree.dom.DomData_Package is
    function Create return DomData_Access is
       This : constant DomData_Access := new DomData;
    begin
-      Initialize (This.all);
+      DomData_Package.Initialize (This.all);
       return This;
    end Create;
 

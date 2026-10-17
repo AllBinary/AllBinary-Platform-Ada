@@ -35,6 +35,8 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 with org.allbinary.time.TimeDelayHelper_Package; use org.allbinary.time.TimeDelayHelper_Package;
 with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
 with org.allbinary.media.image.comparison.motion.MotionRectanglesResultsListener_Package; use org.allbinary.media.image.comparison.motion.MotionRectanglesResultsListener_Package;
+with org.allbinary.media.image.comparison.motion.MotionRectanglesResultsEvent_Package; use org.allbinary.media.image.comparison.motion.MotionRectanglesResultsEvent_Package;
+with org.allbinary.media.image.comparison.motion.MotionRectangles_Package; use org.allbinary.media.image.comparison.motion.MotionRectangles_Package;
 
 package org.allbinary.media.image.comparison.motion.TestInputForMotionRectanglesResultsWorker_Package is
 
@@ -66,11 +68,9 @@ package org.allbinary.media.image.comparison.motion.TestInputForMotionRectangles
    procedure Initialize (This : in out TestInputForMotionRectanglesResultsWorker'Class);
    function Create return TestInputForMotionRectanglesResultsWorker_Access;
    function getMotionRectanglesVector (This : in out TestInputForMotionRectanglesResultsWorker) return BasicArrayList_Access;
-   procedure getMotionRectanglesVector (This : in out TestInputForMotionRectanglesResultsWorker);
    procedure onMotionRectanglesImageComparisonResultsEvent (This : in out TestInputForMotionRectanglesResultsWorker; motionRectanglesImageComparisonResultsEvent : MotionRectanglesResultsEvent_Access);
    procedure onEvent (This : in out TestInputForMotionRectanglesResultsWorker; allBinaryEventObject : AllBinaryEventObject_Access);
    function isRunning (This : in out TestInputForMotionRectanglesResultsWorker) return Boolean;
-   procedure isRunning (This : in out TestInputForMotionRectanglesResultsWorker);
    procedure setRunning (This : in out TestInputForMotionRectanglesResultsWorker; running : Boolean);
    procedure run (This : in out TestInputForMotionRectanglesResultsWorker);
 

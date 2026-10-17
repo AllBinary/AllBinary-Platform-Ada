@@ -20,7 +20,7 @@ package body org.allbinary.logic.string_Id.StringMaker_Package is
    function Create return StringMaker_Access is
       This : constant StringMaker_Access := new StringMaker;
    begin
-      Initialize (This.all);
+      StringMaker_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -216,20 +216,6 @@ package body org.allbinary.logic.string_Id.StringMaker_Package is
    begin
       null;
    end delete;
-
-   procedure length (This : in out StringMaker) is
-      Java_Result : constant Integer := StringMaker'Class (This).length;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end length;
-
-   procedure toString (This : in out StringMaker) is
-      Java_Result : constant Unbounded_String := StringMaker'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toString;
 
 end org.allbinary.logic.string_Id.StringMaker_Package;
 

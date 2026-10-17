@@ -41,7 +41,7 @@ package body org.allbinary.game.score.BasicHighScoresFactory_Package is
    function Create (abeClientInformation : AbeClientInformationInterface_Access; softwareInformation : SoftwareInformation_Access) return BasicHighScoresFactory_Access is
       This : constant BasicHighScoresFactory_Access := new BasicHighScoresFactory;
    begin
-      Initialize (This.all, abeClientInformation, softwareInformation);
+      BasicHighScoresFactory_Package.Initialize (This.all, abeClientInformation, softwareInformation);
       return This;
    end Create;
 
@@ -101,13 +101,6 @@ package body org.allbinary.game.score.BasicHighScoresFactory_Package is
         end if;
         return False;
    end loaded;
-
-   procedure createHighScoresHelper (This : in out BasicHighScoresFactory) is
-      Java_Result : constant HighScoresHelperBaseInterface_Access := BasicHighScoresFactory'Class (This).createHighScoresHelper;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end createHighScoresHelper;
 
    procedure loaded (index2 : Integer) is
       Java_Result : constant Boolean := loaded (index2);

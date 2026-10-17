@@ -61,7 +61,7 @@ package body org.allbinary.image.gui.ResizeImageJPanel_Package is
    function Create (imageProcessorInput : ImageProcessorInput_Access) return ResizeImageJPanel_Access is
       This : constant ResizeImageJPanel_Access := new ResizeImageJPanel;
    begin
-      Initialize (This.all, imageProcessorInput);
+      ResizeImageJPanel_Package.Initialize (This.all, imageProcessorInput);
       return This;
    end Create;
 
@@ -318,13 +318,6 @@ package body org.allbinary.image.gui.ResizeImageJPanel_Package is
    begin
         This.updateFor16Below;
    end adjustFor16BelowJButtonActionPerformed;
-
-   procedure getImageProcessorInput (This : in out ResizeImageJPanel) is
-      Java_Result : constant ImageProcessorInput_Access := ResizeImageJPanel'Class (This).getImageProcessorInput;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getImageProcessorInput;
 
 end org.allbinary.image.gui.ResizeImageJPanel_Package;
 

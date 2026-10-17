@@ -24,7 +24,7 @@ package body org.allbinary.game.input.analog.AnalogLocationInputFactory_Package 
    function Create return AnalogLocationInputFactory_Access is
       This : constant AnalogLocationInputFactory_Access := new AnalogLocationInputFactory;
    begin
-      Initialize (This.all);
+      AnalogLocationInputFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -51,26 +51,12 @@ package body org.allbinary.game.input.analog.AnalogLocationInputFactory_Package 
         return This.list;
    end getList;
 
-   procedure getInstance is
-      Java_Result : constant AnalogLocationInputFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
    procedure getInstanceForPlayer (This : in out AnalogLocationInputFactory; playerInputId : Integer) is
       Java_Result : constant AnalogLocationInput_Access := AnalogLocationInputFactory'Class (This).getInstanceForPlayer (playerInputId);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInstanceForPlayer;
-
-   procedure getList (This : in out AnalogLocationInputFactory) is
-      Java_Result : constant BasicArrayList_Access := AnalogLocationInputFactory'Class (This).getList;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getList;
 
 begin
    null;

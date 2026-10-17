@@ -28,7 +28,7 @@ package body org.allbinary.business.user.commerce.inventory.item.group.BasicGrou
    function Create return BasicGroupItemData_Access is
       This : constant BasicGroupItemData_Access := new BasicGroupItemData;
    begin
-      Initialize (This.all);
+      BasicGroupItemData_Package.Initialize (This.all);
       return This;
    end Create;
 

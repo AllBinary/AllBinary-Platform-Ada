@@ -24,9 +24,7 @@ package org.allbinary.KotlinUtil_Package is
    procedure Initialize (This : in out KotlinUtil'Class);
    function Create return KotlinUtil_Access;
    function isKotlin return Boolean;
-   procedure isKotlin;
    function getShortName return Unbounded_String;
-   procedure getShortName;
 
 end org.allbinary.KotlinUtil_Package;
 

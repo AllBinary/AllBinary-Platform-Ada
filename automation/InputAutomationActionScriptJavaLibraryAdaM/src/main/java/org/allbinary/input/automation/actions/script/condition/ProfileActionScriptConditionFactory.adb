@@ -30,7 +30,7 @@ package body org.allbinary.input.automation.actions.script.condition.ProfileActi
    function Create return ProfileActionScriptConditionFactory_Access is
       This : constant ProfileActionScriptConditionFactory_Access := new ProfileActionScriptConditionFactory;
    begin
-      Initialize (This.all);
+      ProfileActionScriptConditionFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

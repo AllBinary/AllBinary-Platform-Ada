@@ -31,20 +31,13 @@ package body org.allbinary.logic.system.os.linux.LinuxOS_Package is
    function Create return LinuxOS_Access is
       This : constant LinuxOS_Access := new LinuxOS;
    begin
-      Initialize (This.all);
+      LinuxOS_Package.Initialize (This.all);
       return This;
    end Create;
 
    function isAutoHide (This : in out LinuxOS) return Boolean is
    begin
         return True;
-   end isAutoHide;
-
-   procedure isAutoHide (This : in out LinuxOS) is
-      Java_Result : constant Boolean := LinuxOS'Class (This).isAutoHide;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end isAutoHide;
 
 end org.allbinary.logic.system.os.linux.LinuxOS_Package;

@@ -31,6 +31,7 @@ with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.s
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.allbinary.business.user.commerce.money.payment.PaymentInterface_Package; use org.allbinary.business.user.commerce.money.payment.PaymentInterface_Package;
+with org.allbinary.business.user.commerce.money.payment.PaymentData_Package; use org.allbinary.business.user.commerce.money.payment.PaymentData_Package;
 
 package org.allbinary.business.user.commerce.money.payment.Payment_Package is
 
@@ -71,7 +72,6 @@ package org.allbinary.business.user.commerce.money.payment.Payment_Package is
    procedure Initialize (This : in out Payment'Class; payment : HashMap_Access);
    function Create (payment : HashMap_Access) return Payment_Access;
    function isValid (This : in out Payment) return Boolean;
-   procedure isValid (This : in out Payment);
    procedure setTenderType (This : in out Payment; value : Unbounded_String);
    procedure setTransactionType (This : in out Payment; value : Unbounded_String);
    procedure setAuthorizationCode (This : in out Payment; value : Unbounded_String);
@@ -86,55 +86,32 @@ package org.allbinary.business.user.commerce.money.payment.Payment_Package is
    procedure setExpiration (This : in out Payment; value : Unbounded_String);
    procedure setNumber (This : in out Payment; value : Unbounded_String);
    function getId (This : in out Payment) return Unbounded_String;
-   procedure getId (This : in out Payment);
    function getName (This : in out Payment) return Unbounded_String;
-   procedure getName (This : in out Payment);
    function getType (This : in out Payment) return Unbounded_String;
-   procedure getType (This : in out Payment);
    function getExpiration (This : in out Payment) return Unbounded_String;
-   procedure getExpiration (This : in out Payment);
    function getEncryption (This : in out Payment) return Unbounded_String;
-   procedure getEncryption (This : in out Payment);
    function getNumber (This : in out Payment) return Unbounded_String;
-   procedure getNumber (This : in out Payment);
    function getTenderType (This : in out Payment) return Unbounded_String;
-   procedure getTenderType (This : in out Payment);
    function getTransactionType (This : in out Payment) return Unbounded_String;
-   procedure getTransactionType (This : in out Payment);
    function getAba (This : in out Payment) return Unbounded_String;
-   procedure getAba (This : in out Payment);
    function getAccount (This : in out Payment) return Unbounded_String;
-   procedure getAccount (This : in out Payment);
    function getAccountType (This : in out Payment) return Unbounded_String;
-   procedure getAccountType (This : in out Payment);
    function getAuthorizationCode (This : in out Payment) return Unbounded_String;
-   procedure getAuthorizationCode (This : in out Payment);
    function getCheckNumber (This : in out Payment) return Unbounded_String;
-   procedure getCheckNumber (This : in out Payment);
    function getCheckType (This : in out Payment) return Unbounded_String;
-   procedure getCheckType (This : in out Payment);
    function getDriversLicense (This : in out Payment) return Unbounded_String;
-   procedure getDriversLicense (This : in out Payment);
    function getMagneticInkCheckReader (This : in out Payment) return Unbounded_String;
-   procedure getMagneticInkCheckReader (This : in out Payment);
    function getLastFour (This : in out Payment) return Unbounded_String;
-   procedure getLastFour (This : in out Payment);
    function isDefault (This : in out Payment) return Boolean;
-   procedure isDefault (This : in out Payment);
    function toHashMap (This : in out Payment) return HashMap_Access;
-   procedure toHashMap (This : in out Payment);
    function toXmlNode (This : in out Payment; document : Document_Access) return Node_Access;
    procedure toXmlNode (This : in out Payment; document : Document_Access);
    function toXmlDoc (This : in out Payment) return Document_Access;
-   procedure toXmlDoc (This : in out Payment);
    function view (This : in out Payment) return Unbounded_String;
-   procedure view (This : in out Payment);
    function toValidationInfoDoc (This : in out Payment) return Document_Access;
-   procedure toValidationInfoDoc (This : in out Payment);
    function toValidationInfoNode (This : in out Payment; document : Document_Access) return Node_Access;
    procedure toValidationInfoNode (This : in out Payment; document : Document_Access);
    function validationInfo (This : in out Payment) return Unbounded_String;
-   procedure validationInfo (This : in out Payment);
 
 end org.allbinary.business.user.commerce.money.payment.Payment_Package;
 

@@ -28,7 +28,7 @@ package body org.allbinary.image.opengles.OpenGLImageUtilBase_Package is
    function Create return OpenGLImageUtilBase_Access is
       This : constant OpenGLImageUtilBase_Access := new OpenGLImageUtilBase;
    begin
-      Initialize (This.all);
+      OpenGLImageUtilBase_Package.Initialize (This.all);
       return This;
    end Create;
 

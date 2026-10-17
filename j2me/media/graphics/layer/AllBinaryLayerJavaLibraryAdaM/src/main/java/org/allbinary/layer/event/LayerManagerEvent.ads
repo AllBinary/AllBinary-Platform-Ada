@@ -45,10 +45,8 @@ package org.allbinary.layer.event.LayerManagerEvent_Package is
    procedure Initialize (This : in out LayerManagerEvent'Class; layerManager : LayerManager_Access; crud : Unbounded_String);
    function Create (layerManager : LayerManager_Access; crud : Unbounded_String) return LayerManagerEvent_Access;
    function getLayerInterface (This : in out LayerManagerEvent) return AllBinaryLayer_Access;
-   procedure getLayerInterface (This : in out LayerManagerEvent);
    procedure setLayerInterface (This : in out LayerManagerEvent; layerInterface : AllBinaryLayer_Access);
    function toString (This : in out LayerManagerEvent) return Unbounded_String;
-   procedure toString (This : in out LayerManagerEvent);
 
 end org.allbinary.layer.event.LayerManagerEvent_Package;
 

@@ -32,7 +32,7 @@ package body org.allbinary.graphics.opengles.shader.AppRendererShaderUpdaterFact
    function Create return AppRendererShaderUpdaterFactory_Access is
       This : constant AppRendererShaderUpdaterFactory_Access := new AppRendererShaderUpdaterFactory;
    begin
-      Initialize (This.all);
+      AppRendererShaderUpdaterFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -51,20 +51,6 @@ package body org.allbinary.graphics.opengles.shader.AppRendererShaderUpdaterFact
    begin
         null;
    end setShaderComposite;
-
-   procedure getInstance is
-      Java_Result : constant AppRendererShaderUpdaterFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure getTestShaders (This : in out AppRendererShaderUpdaterFactory) is
-      Java_Result : constant ShaderOpenGLProcessor_Access_Array_Access := AppRendererShaderUpdaterFactory'Class (This).getTestShaders;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTestShaders;
 
 begin
    null;

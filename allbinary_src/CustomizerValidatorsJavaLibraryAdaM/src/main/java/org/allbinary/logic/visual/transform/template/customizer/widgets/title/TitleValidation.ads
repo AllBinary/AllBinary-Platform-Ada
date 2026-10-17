@@ -28,6 +28,7 @@ with org.allbinary.logic.string_Id.StringValidationUtil_Package; use org.allbina
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.allbinary.logic.visual.transform.template.customizer.widgets.title.TitleView_Package; use org.allbinary.logic.visual.transform.template.customizer.widgets.title.TitleView_Package;
+with org.allbinary.logic.visual.transform.template.customizer.widgets.title.TitleData_Package; use org.allbinary.logic.visual.transform.template.customizer.widgets.title.TitleData_Package;
 
 package org.allbinary.logic.visual.transform.template.customizer.widgets.title.TitleValidation_Package is
 
@@ -50,11 +51,8 @@ package org.allbinary.logic.visual.transform.template.customizer.widgets.title.T
    procedure Initialize (This : in out TitleValidation'Class);
    function Create return TitleValidation_Access;
    function isValid (This : in out TitleValidation) return Boolean;
-   procedure isValid (This : in out TitleValidation);
    function validationInfo (This : in out TitleValidation) return Unbounded_String;
-   procedure validationInfo (This : in out TitleValidation);
    function toValidationInfoDoc (This : in out TitleValidation) return Document_Access;
-   procedure toValidationInfoDoc (This : in out TitleValidation);
    function toValidationInfoNode (This : in out TitleValidation; document : Document_Access) return Node_Access;
    procedure toValidationInfoNode (This : in out TitleValidation; document : Document_Access);
 

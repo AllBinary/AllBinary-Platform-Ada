@@ -39,7 +39,6 @@ package org.allbinary.input.automation.module.generic_Id.GenericInputAutomationA
    function Create return GenericInputAutomationAction_Access;
    procedure test (This : in out GenericInputAutomationAction);
    function getInputRobotInterfaceArray (This : in out GenericInputAutomationAction) return InputRobotInterface_Access_Array_Access;
-   procedure getInputRobotInterfaceArray (This : in out GenericInputAutomationAction);
 
 end org.allbinary.input.automation.module.generic_Id.GenericInputAutomationAction_Package;
 

@@ -42,16 +42,12 @@ package org.allbinary.logic.control.contraints.display.browser.DisplayInBrowserC
    procedure Initialize (This : in out DisplayInBrowserContraints'Class; node : Node_Access);
    function Create (node : Node_Access) return DisplayInBrowserContraints_Access;
    function isMountable (This : in out DisplayInBrowserContraints) return Boolean;
-   procedure isMountable (This : in out DisplayInBrowserContraints);
    procedure setMountable (This : in out DisplayInBrowserContraints; mountable : Boolean);
    function isFrameable (This : in out DisplayInBrowserContraints) return Boolean;
-   procedure isFrameable (This : in out DisplayInBrowserContraints);
    procedure setFrameable (This : in out DisplayInBrowserContraints; frameable : Boolean);
    function isQuickFrameable (This : in out DisplayInBrowserContraints) return Boolean;
-   procedure isQuickFrameable (This : in out DisplayInBrowserContraints);
    procedure setQuickFrameable (This : in out DisplayInBrowserContraints; quickFrameable : Boolean);
    function getMountedLink (This : in out DisplayInBrowserContraints) return Unbounded_String;
-   procedure getMountedLink (This : in out DisplayInBrowserContraints);
    procedure setMountedLink (This : in out DisplayInBrowserContraints; mountedLink : Unbounded_String);
 
 end org.allbinary.logic.control.contraints.display.browser.DisplayInBrowserContraints_Package;

@@ -42,7 +42,6 @@ package org.allbinary.logic.communication.http.request.AbeHttpRequestInfoData_Pa
    procedure Initialize (This : in out AbeHttpRequestInfoData'Class);
    function Create return AbeHttpRequestInfoData_Access;
    function getInstance return AbeHttpRequestInfoData_Access;
-   procedure getInstance;
 
 end org.allbinary.logic.communication.http.request.AbeHttpRequestInfoData_Package;
 

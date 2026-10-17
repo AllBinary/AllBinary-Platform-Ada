@@ -85,7 +85,6 @@ package views.generic_Id.shipping.ShippingMethodsView_Package is
    procedure toXmlNode (This : in out ShippingMethodsView; document : Document_Access);
    procedure addDomNodeInterfaces (This : in out ShippingMethodsView);
    function view (This : in out ShippingMethodsView) return Unbounded_String;
-   procedure view (This : in out ShippingMethodsView);
 
 end views.generic_Id.shipping.ShippingMethodsView_Package;
 

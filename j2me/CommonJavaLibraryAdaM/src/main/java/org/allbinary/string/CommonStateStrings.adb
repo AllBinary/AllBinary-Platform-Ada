@@ -40,7 +40,7 @@ package body org.allbinary.string_Id.CommonStateStrings_Package is
    function Create return CommonStateStrings_Access is
       This : constant CommonStateStrings_Access := new CommonStateStrings;
    begin
-      Initialize (This.all);
+      CommonStateStrings_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -48,13 +48,6 @@ package body org.allbinary.string_Id.CommonStateStrings_Package is
    function getInstance return CommonStateStrings_Access is
    begin
         return CommonStateStrings_Package.instance;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant CommonStateStrings_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

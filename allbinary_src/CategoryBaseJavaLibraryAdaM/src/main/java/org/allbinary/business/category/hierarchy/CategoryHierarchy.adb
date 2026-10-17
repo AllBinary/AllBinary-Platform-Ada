@@ -35,7 +35,7 @@ package body org.allbinary.business.category.hierarchy.CategoryHierarchy_Package
    function Create (rootCategoryInterface : CategoryInterface_Access; parentCategoryInterface : CategoryInterface_Access) return CategoryHierarchy_Access is
       This : constant CategoryHierarchy_Access := new CategoryHierarchy;
    begin
-      Initialize (This.all, rootCategoryInterface, parentCategoryInterface);
+      CategoryHierarchy_Package.Initialize (This.all, rootCategoryInterface, parentCategoryInterface);
       return This;
    end Create;
 
@@ -51,7 +51,7 @@ package body org.allbinary.business.category.hierarchy.CategoryHierarchy_Package
    function Create (rootCategoryInterface : CategoryInterface_Access; parentCategoryInterface : CategoryInterface_Access; level : Integer) return CategoryHierarchy_Access is
       This : constant CategoryHierarchy_Access := new CategoryHierarchy;
    begin
-      Initialize (This.all, rootCategoryInterface, parentCategoryInterface, level);
+      CategoryHierarchy_Package.Initialize (This.all, rootCategoryInterface, parentCategoryInterface, level);
       return This;
    end Create;
 
@@ -69,7 +69,7 @@ package body org.allbinary.business.category.hierarchy.CategoryHierarchy_Package
    function Create (rootCategoryInterface : CategoryInterface_Access; parentCategoryInterface : CategoryInterface_Access; categoryPropertiesHashMap : HashMap_Access) return CategoryHierarchy_Access is
       This : constant CategoryHierarchy_Access := new CategoryHierarchy;
    begin
-      Initialize (This.all, rootCategoryInterface, parentCategoryInterface, categoryPropertiesHashMap);
+      CategoryHierarchy_Package.Initialize (This.all, rootCategoryInterface, parentCategoryInterface, categoryPropertiesHashMap);
       return This;
    end Create;
 
@@ -106,34 +106,6 @@ package body org.allbinary.business.category.hierarchy.CategoryHierarchy_Package
    function getParent (This : in out CategoryHierarchy) return CategoryInterface_Access is
    begin
         return This.parentCategoryInterface;
-   end getParent;
-
-   procedure getLevel (This : in out CategoryHierarchy) is
-      Java_Result : constant Integer := CategoryHierarchy'Class (This).getLevel;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getLevel;
-
-   procedure getLevelString (This : in out CategoryHierarchy) is
-      Java_Result : constant Unbounded_String := CategoryHierarchy'Class (This).getLevelString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getLevelString;
-
-   procedure getRoot (This : in out CategoryHierarchy) is
-      Java_Result : constant CategoryInterface_Access := CategoryHierarchy'Class (This).getRoot;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getRoot;
-
-   procedure getParent (This : in out CategoryHierarchy) is
-      Java_Result : constant CategoryInterface_Access := CategoryHierarchy'Class (This).getParent;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getParent;
 
 end org.allbinary.business.category.hierarchy.CategoryHierarchy_Package;

@@ -32,7 +32,7 @@ package body org.allbinary.logic.util.event.AllBinaryEventCircularPool_Package i
    function Create (max : Integer) return AllBinaryEventCircularPool_Access is
       This : constant AllBinaryEventCircularPool_Access := new AllBinaryEventCircularPool;
    begin
-      Initialize (This.all, max);
+      AllBinaryEventCircularPool_Package.Initialize (This.all, max);
       return This;
    end Create;
 

@@ -25,6 +25,7 @@ with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Packag
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
+with org.allbinary.content.Intent_Package; use org.allbinary.content.Intent_Package;
 
 package org.allbinary.content.CommandUriAction_Package is
 
@@ -48,7 +49,6 @@ package org.allbinary.content.CommandUriAction_Package is
    procedure Initialize (This : in out CommandUriAction'Class);
    function Create return CommandUriAction_Access;
    function getInstance return CommandUriAction_Access;
-   procedure getInstance;
    procedure add (This : in out CommandUriAction; command : Command_Access; url : Unbounded_String);
    procedure process (This : in out CommandUriAction; command : Command_Access);
    function getIntent (This : in out CommandUriAction; command : Command_Access) return Intent_Access;

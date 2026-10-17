@@ -22,6 +22,8 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.layer.weapon.WeaponLayerCircularPool_Package; use org.allbinary.game.layer.weapon.WeaponLayerCircularPool_Package;
 with org.allbinary.view.ViewPositionFactoryInterface_Package; use org.allbinary.view.ViewPositionFactoryInterface_Package;
+with org.allbinary.game.ag.layer.weapon.mine.MineCountedPickedUpLayerInterfaceFactory_Package; use org.allbinary.game.ag.layer.weapon.mine.MineCountedPickedUpLayerInterfaceFactory_Package;
+with org.allbinary.game.ag.layer.weapon.mine.MineLayerFactory_Package; use org.allbinary.game.ag.layer.weapon.mine.MineLayerFactory_Package;
 
 package org.allbinary.game.ag.layer.weapon.mine.MineLayerCircularStaticPool_Package is
 
@@ -40,7 +42,6 @@ package org.allbinary.game.ag.layer.weapon.mine.MineLayerCircularStaticPool_Pack
    function Create return MineLayerCircularStaticPool_Access;
    procedure init (viewPositionFactoryInterface : ViewPositionFactoryInterface_Access);
    function getInstance return WeaponLayerCircularPool_Access;
-   procedure getInstance;
 
 end org.allbinary.game.ag.layer.weapon.mine.MineLayerCircularStaticPool_Package;
 

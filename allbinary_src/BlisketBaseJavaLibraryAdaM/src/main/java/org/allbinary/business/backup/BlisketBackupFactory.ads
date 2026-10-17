@@ -72,7 +72,6 @@ package org.allbinary.business.backup.BlisketBackupFactory_Package is
    procedure Initialize (This : in out BlisketBackupFactory'Class);
    function Create return BlisketBackupFactory_Access;
    function getInstance return BlisketBackupFactory_Access;
-   procedure getInstance;
    function getFileBasicArrayList (This : in out BlisketBackupFactory; pathString : Unbounded_String) return BasicArrayList_Access;
    procedure getFileBasicArrayList (This : in out BlisketBackupFactory; pathString : Unbounded_String);
    procedure backup (This : in out BlisketBackupFactory);

@@ -30,7 +30,7 @@ package body org.allbinary.game.collision.CollidableNeverCollideBehaviorFactory_
    function Create return CollidableNeverCollideBehaviorFactory_Access is
       This : constant CollidableNeverCollideBehaviorFactory_Access := new CollidableNeverCollideBehaviorFactory;
    begin
-      Initialize (This.all);
+      CollidableNeverCollideBehaviorFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -43,20 +43,6 @@ package body org.allbinary.game.collision.CollidableNeverCollideBehaviorFactory_
    function createBehavior (This : in out CollidableNeverCollideBehaviorFactory) return CollidableBaseBehavior_Access is
    begin
         return This.instance;
-   end createBehavior;
-
-   procedure getInstance is
-      Java_Result : constant CollidableNeverCollideBehaviorFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure createBehavior (This : in out CollidableNeverCollideBehaviorFactory) is
-      Java_Result : constant CollidableBaseBehavior_Access := CollidableNeverCollideBehaviorFactory'Class (This).createBehavior;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end createBehavior;
 
 begin

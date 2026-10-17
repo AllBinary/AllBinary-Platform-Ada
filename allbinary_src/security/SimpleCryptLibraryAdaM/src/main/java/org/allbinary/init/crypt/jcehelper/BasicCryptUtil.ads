@@ -25,6 +25,7 @@ with java.io.ByteArrayOutputStream_Package; use java.io.ByteArrayOutputStream_Pa
 --  with java.io.InputStream_Package; use java.io.InputStream_Package;
 with org.allbinary.TsUtil_Package; use org.allbinary.TsUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.init.crypt.jcehelper.CryptInterface_Package; use org.allbinary.init.crypt.jcehelper.CryptInterface_Package;
 
 package org.allbinary.init.crypt.jcehelper.BasicCryptUtil_Package is
 
@@ -47,7 +48,6 @@ package org.allbinary.init.crypt.jcehelper.BasicCryptUtil_Package is
    procedure Initialize (This : in out BasicCryptUtil'Class);
    function Create return BasicCryptUtil_Access;
    function getInstance return BasicCryptUtil_Access;
-   procedure getInstance;
    function getDecryptedInputStream (This : in out BasicCryptUtil; inputStream : InputStream_Access; cryptInterface : CryptInterface_Access) return InputStream_Access;
    procedure getDecryptedInputStream (This : in out BasicCryptUtil; inputStream : InputStream_Access; cryptInterface : CryptInterface_Access);
 

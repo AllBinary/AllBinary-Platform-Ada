@@ -39,7 +39,7 @@ package body org.allbinary.logic.control.workflow.request.BasicWorkFlow_Package 
    function Create return BasicWorkFlow_Access is
       This : constant BasicWorkFlow_Access := new BasicWorkFlow;
    begin
-      Initialize (This.all);
+      BasicWorkFlow_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -59,7 +59,7 @@ package body org.allbinary.logic.control.workflow.request.BasicWorkFlow_Package 
    function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return BasicWorkFlow_Access is
       This : constant BasicWorkFlow_Access := new BasicWorkFlow;
    begin
-      Initialize (This.all, hashMap, pageContext);
+      BasicWorkFlow_Package.Initialize (This.all, hashMap, pageContext);
       return This;
    end Create;
 
@@ -75,7 +75,7 @@ package body org.allbinary.logic.control.workflow.request.BasicWorkFlow_Package 
    function Create (hashMap : HashMap_Access) return BasicWorkFlow_Access is
       This : constant BasicWorkFlow_Access := new BasicWorkFlow;
    begin
-      Initialize (This.all, hashMap);
+      BasicWorkFlow_Package.Initialize (This.all, hashMap);
       return This;
    end Create;
 
@@ -233,75 +233,12 @@ package body org.allbinary.logic.control.workflow.request.BasicWorkFlow_Package 
         return null;
    end toValidationInfoNode;
 
-   procedure getName (This : in out BasicWorkFlow) is
-      Java_Result : constant Unbounded_String := BasicWorkFlow'Class (This).getName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getName;
-
-   procedure getStoreName (This : in out BasicWorkFlow) is
-      Java_Result : constant Unbounded_String := BasicWorkFlow'Class (This).getStoreName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getStoreName;
-
-   procedure getKey (This : in out BasicWorkFlow) is
-      Java_Result : constant Java_Object_Access := BasicWorkFlow'Class (This).getKey;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getKey;
-
-   procedure toVector (This : in out BasicWorkFlow) is
-      Java_Result : constant BasicArrayList_Access := BasicWorkFlow'Class (This).toVector;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toVector;
-
-   procedure toHashMap (This : in out BasicWorkFlow) is
-      Java_Result : constant HashMap_Access := BasicWorkFlow'Class (This).toHashMap;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toHashMap;
-
    procedure toXmlNode (This : in out BasicWorkFlow; document : Document_Access) is
       Java_Result : constant Node_Access := BasicWorkFlow'Class (This).toXmlNode (document);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end toXmlNode;
-
-   procedure toXmlDoc (This : in out BasicWorkFlow) is
-      Java_Result : constant Document_Access := BasicWorkFlow'Class (This).toXmlDoc;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toXmlDoc;
-
-   procedure isValid (This : in out BasicWorkFlow) is
-      Java_Result : constant Boolean := BasicWorkFlow'Class (This).isValid;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isValid;
-
-   procedure validationInfo (This : in out BasicWorkFlow) is
-      Java_Result : constant Unbounded_String := BasicWorkFlow'Class (This).validationInfo;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end validationInfo;
-
-   procedure toValidationInfoDoc (This : in out BasicWorkFlow) is
-      Java_Result : constant Document_Access := BasicWorkFlow'Class (This).toValidationInfoDoc;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toValidationInfoDoc;
 
    procedure toValidationInfoNode (This : in out BasicWorkFlow; document : Document_Access) is
       Java_Result : constant Node_Access := BasicWorkFlow'Class (This).toValidationInfoNode (document);

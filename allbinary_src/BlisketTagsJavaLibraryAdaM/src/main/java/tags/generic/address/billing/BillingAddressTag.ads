@@ -43,7 +43,6 @@ package tags.generic_Id.address.billing.BillingAddressTag_Package is
    procedure Initialize (This : in out BillingAddressTag'Class);
    function Create return BillingAddressTag_Access;
    function doStartTag (This : in out BillingAddressTag) return Integer;
-   procedure doStartTag (This : in out BillingAddressTag);
 
 end tags.generic_Id.address.billing.BillingAddressTag_Package;
 

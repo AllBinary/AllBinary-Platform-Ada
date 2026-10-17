@@ -30,7 +30,7 @@ package body admin.taghelpers.BasicTextEmailHelperFactory_Package is
    function Create return BasicTextEmailHelperFactory_Access is
       This : constant BasicTextEmailHelperFactory_Access := new BasicTextEmailHelperFactory;
    begin
-      Initialize (This.all);
+      BasicTextEmailHelperFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

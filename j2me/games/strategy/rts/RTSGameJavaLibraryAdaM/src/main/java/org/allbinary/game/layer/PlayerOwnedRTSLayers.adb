@@ -29,7 +29,7 @@ package body org.allbinary.game.layer.PlayerOwnedRTSLayers_Package is
    function Create return PlayerOwnedRTSLayers_Access is
       This : constant PlayerOwnedRTSLayers_Access := new PlayerOwnedRTSLayers;
    begin
-      Initialize (This.all);
+      PlayerOwnedRTSLayers_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -41,13 +41,6 @@ package body org.allbinary.game.layer.PlayerOwnedRTSLayers_Package is
         stringBuffer.append (To_Unbounded_String ("All: "));
         stringBuffer.appendint (This.rtsLayerList.size);
         return stringBuffer.toString;
-   end toString;
-
-   procedure toString (This : in out PlayerOwnedRTSLayers) is
-      Java_Result : constant Unbounded_String := PlayerOwnedRTSLayers'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end toString;
 
 end org.allbinary.game.layer.PlayerOwnedRTSLayers_Package;

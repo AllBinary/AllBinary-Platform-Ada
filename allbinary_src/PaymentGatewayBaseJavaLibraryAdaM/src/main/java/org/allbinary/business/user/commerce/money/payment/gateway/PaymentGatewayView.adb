@@ -33,7 +33,7 @@ package body org.allbinary.business.user.commerce.money.payment.gateway.PaymentG
    function Create (paymentGatewayInterface : PaymentGatewayInterface_Access) return PaymentGatewayView_Access is
       This : constant PaymentGatewayView_Access := new PaymentGatewayView;
    begin
-      Initialize (This.all, paymentGatewayInterface);
+      PaymentGatewayView_Package.Initialize (This.all, paymentGatewayInterface);
       return This;
    end Create;
 
@@ -75,20 +75,6 @@ package body org.allbinary.business.user.commerce.money.payment.gateway.PaymentG
                 end;
         end;
    end toXmlNode;
-
-   procedure getPaymentGatewayInterface (This : in out PaymentGatewayView) is
-      Java_Result : constant PaymentGatewayInterface_Access := PaymentGatewayView'Class (This).getPaymentGatewayInterface;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getPaymentGatewayInterface;
-
-   procedure toHashMap (This : in out PaymentGatewayView) is
-      Java_Result : constant HashMap_Access := PaymentGatewayView'Class (This).toHashMap;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toHashMap;
 
    procedure toXmlNode (This : in out PaymentGatewayView; document : Document_Access) is
       Java_Result : constant Node_Access := PaymentGatewayView'Class (This).toXmlNode (document);

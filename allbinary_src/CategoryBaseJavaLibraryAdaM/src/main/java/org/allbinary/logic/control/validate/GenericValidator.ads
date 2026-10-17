@@ -39,7 +39,6 @@ package org.allbinary.logic.control.validate.GenericValidator_Package is
    procedure Initialize (This : in out GenericValidator'Class);
    function Create return GenericValidator_Access;
    function toValidationInfoDoc (This : in out GenericValidator) return Document_Access;
-   procedure toValidationInfoDoc (This : in out GenericValidator);
    function toValidationInfoNode (This : in out GenericValidator; document : Document_Access) return Node_Access;
    procedure toValidationInfoNode (This : in out GenericValidator; document : Document_Access);
 

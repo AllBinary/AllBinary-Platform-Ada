@@ -31,20 +31,13 @@ package body org.allbinary.game.state.GameState_Package is
    function Create (name : Unbounded_String; state : Integer) return GameState_Access is
       This : constant GameState_Access := new GameState;
    begin
-      Initialize (This.all, name, state);
+      GameState_Package.Initialize (This.all, name, state);
       return This;
    end Create;
 
    function toString (This : in out GameState) return Unbounded_String is
    begin
         return This.name;
-   end toString;
-
-   procedure toString (This : in out GameState) is
-      Java_Result : constant Unbounded_String := GameState'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end toString;
 
 end org.allbinary.game.state.GameState_Package;

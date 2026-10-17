@@ -36,6 +36,10 @@ with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArra
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.util.BasicArrayListUtil_Package; use org.allbinary.util.BasicArrayListUtil_Package;
 with org.allbinary.media.graphics.geography.pathfinding.GeographicPathFinderBase_Package; use org.allbinary.media.graphics.geography.pathfinding.GeographicPathFinderBase_Package;
+with org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCost_Package; use org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCost_Package;
+with org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfo_Package; use org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfo_Package;
+with org.allbinary.media.graphics.geography.pathfinding.PathFindingNode_Package; use org.allbinary.media.graphics.geography.pathfinding.PathFindingNode_Package;
+with org.allbinary.media.graphics.geography.pathfinding.MultipassState_Package; use org.allbinary.media.graphics.geography.pathfinding.MultipassState_Package;
 
 package org.allbinary.media.graphics.geography.pathfinding.PathFinder_Package is
 
@@ -85,8 +89,8 @@ package org.allbinary.media.graphics.geography.pathfinding.PathFinder_Package is
    procedure findPathStart (This : in out PathFinder; start : GeographicMapCellPosition_Access; target : GeographicMapCellPosition_Access; multipassState : MultipassState_Access);
    function findPathEnd (This : in out PathFinder; start : GeographicMapCellPosition_Access; target : GeographicMapCellPosition_Access; multipassState : MultipassState_Access) return BasicArrayList_Access;
    procedure findPathEnd (This : in out PathFinder; start : GeographicMapCellPosition_Access; target : GeographicMapCellPosition_Access; multipassState : MultipassState_Access);
-   function extractPath (This : in out PathFinder; start : GeographicMapCellPosition_Access; current : PathFindingNodeCost_Access) return BasicArrayList_Access;
-   procedure extractPath (This : in out PathFinder; start : GeographicMapCellPosition_Access; current : PathFindingNodeCost_Access);
+   function extractPath (This : in out PathFinder; start : GeographicMapCellPosition_Access; current_Param : PathFindingNodeCost_Access) return BasicArrayList_Access;
+   procedure extractPath (This : in out PathFinder; start : GeographicMapCellPosition_Access; current_Param : PathFindingNodeCost_Access);
 
 end org.allbinary.media.graphics.geography.pathfinding.PathFinder_Package;
 

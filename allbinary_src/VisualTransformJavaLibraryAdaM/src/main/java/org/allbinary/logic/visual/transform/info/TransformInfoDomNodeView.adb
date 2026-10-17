@@ -29,7 +29,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoDomNodeView_
    function Create (transformInfoInterface : TransformInfoInterface_Access; mapping : Unbounded_String) return TransformInfoDomNodeView_Access is
       This : constant TransformInfoDomNodeView_Access := new TransformInfoDomNodeView;
    begin
-      Initialize (This.all, transformInfoInterface, mapping);
+      TransformInfoDomNodeView_Package.Initialize (This.all, transformInfoInterface, mapping);
       return This;
    end Create;
 
@@ -42,7 +42,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoDomNodeView_
    function Create (transformInfoInterface : TransformInfoInterface_Access) return TransformInfoDomNodeView_Access is
       This : constant TransformInfoDomNodeView_Access := new TransformInfoDomNodeView;
    begin
-      Initialize (This.all, transformInfoInterface);
+      TransformInfoDomNodeView_Package.Initialize (This.all, transformInfoInterface);
       return This;
    end Create;
 
@@ -55,7 +55,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoDomNodeView_
    function Create (name : Unbounded_String; mappedName : Unbounded_String) return TransformInfoDomNodeView_Access is
       This : constant TransformInfoDomNodeView_Access := new TransformInfoDomNodeView;
    begin
-      Initialize (This.all, name, mappedName);
+      TransformInfoDomNodeView_Package.Initialize (This.all, name, mappedName);
       return This;
    end Create;
 
@@ -68,7 +68,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoDomNodeView_
    function Create (name : Unbounded_String) return TransformInfoDomNodeView_Access is
       This : constant TransformInfoDomNodeView_Access := new TransformInfoDomNodeView;
    begin
-      Initialize (This.all, name);
+      TransformInfoDomNodeView_Package.Initialize (This.all, name);
       return This;
    end Create;
 

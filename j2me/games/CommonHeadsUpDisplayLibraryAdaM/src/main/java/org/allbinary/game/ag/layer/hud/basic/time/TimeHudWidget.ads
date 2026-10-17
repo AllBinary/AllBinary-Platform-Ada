@@ -26,6 +26,7 @@ with org.allbinary.game.graphics.hud.BasicHud_Package; use org.allbinary.game.gr
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
 with org.allbinary.graphics.font.MyFontProcessor_Package; use org.allbinary.graphics.font.MyFontProcessor_Package;
 with org.allbinary.logic.math.PrimitiveLongSingleton_Package; use org.allbinary.logic.math.PrimitiveLongSingleton_Package;
+with org.allbinary.game.ag.layer.hud.basic.time.Timer_Package; use org.allbinary.game.ag.layer.hud.basic.time.Timer_Package;
 
 package org.allbinary.game.ag.layer.hud.basic.time.TimeHudWidget_Package is
 
@@ -56,7 +57,6 @@ package org.allbinary.game.ag.layer.hud.basic.time.TimeHudWidget_Package is
    procedure update (This : in out TimeHudWidget);
    procedure set (This : in out TimeHudWidget);
    function getTimer (This : in out TimeHudWidget) return Timer_Access;
-   procedure getTimer (This : in out TimeHudWidget);
    procedure paint (This : in out TimeHudWidget; graphics : Graphics_Access);
 
 end org.allbinary.game.ag.layer.hud.basic.time.TimeHudWidget_Package;

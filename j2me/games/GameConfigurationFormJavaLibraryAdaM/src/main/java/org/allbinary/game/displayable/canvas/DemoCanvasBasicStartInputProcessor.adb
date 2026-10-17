@@ -29,7 +29,7 @@ package body org.allbinary.game.displayable.canvas.DemoCanvasBasicStartInputProc
    function Create (gameKeyEventList : BasicArrayList_Access; gameCanvas : RunnableCanvas_Access) return DemoCanvasBasicStartInputProcessor_Access is
       This : constant DemoCanvasBasicStartInputProcessor_Access := new DemoCanvasBasicStartInputProcessor;
    begin
-      Initialize (This.all, gameKeyEventList, gameCanvas);
+      DemoCanvasBasicStartInputProcessor_Package.Initialize (This.all, gameKeyEventList, gameCanvas);
       return This;
    end Create;
 
@@ -49,13 +49,6 @@ package body org.allbinary.game.displayable.canvas.DemoCanvasBasicStartInputProc
         end loop;
         This.getCanvas.getCustomCommandListener.commandAction (GameCommandsFactory_Package.getInstance.START_COMMAND, NullCanvas_Package.NULL_CANVAS);
         return size;
-   end processInputList;
-
-   procedure processInputList (This : in out DemoCanvasBasicStartInputProcessor) is
-      Java_Result : constant Integer := DemoCanvasBasicStartInputProcessor'Class (This).processInputList;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end processInputList;
 
 end org.allbinary.game.displayable.canvas.DemoCanvasBasicStartInputProcessor_Package;

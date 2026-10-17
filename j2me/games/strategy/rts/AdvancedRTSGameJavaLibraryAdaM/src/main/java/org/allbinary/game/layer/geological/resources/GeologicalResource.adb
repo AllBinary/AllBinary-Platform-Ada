@@ -33,7 +33,7 @@ package body org.allbinary.game.layer.geological.resources.GeologicalResource_Pa
    function Create (initTotal : Integer) return GeologicalResource_Access is
       This : constant GeologicalResource_Access := new GeologicalResource;
    begin
-      Initialize (This.all, initTotal);
+      GeologicalResource_Package.Initialize (This.all, initTotal);
       return This;
    end Create;
 
@@ -71,13 +71,6 @@ package body org.allbinary.game.layer.geological.resources.GeologicalResource_Pa
    begin
         This.total := total;
    end setTotal;
-
-   procedure getTotal (This : in out GeologicalResource) is
-      Java_Result : constant Integer := GeologicalResource'Class (This).getTotal;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTotal;
 
 end org.allbinary.game.layer.geological.resources.GeologicalResource_Package;
 

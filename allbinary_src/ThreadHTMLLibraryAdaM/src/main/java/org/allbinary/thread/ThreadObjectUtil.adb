@@ -17,7 +17,7 @@ package body org.allbinary.thread.ThreadObjectUtil_Package is
    function Create return ThreadObjectUtil_Access is
       This : constant ThreadObjectUtil_Access := new ThreadObjectUtil;
    begin
-      Initialize (This.all);
+      ThreadObjectUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -48,13 +48,6 @@ package body org.allbinary.thread.ThreadObjectUtil_Package is
    begin
         runnable.run;
    end processThread;
-
-   procedure getInstance is
-      Java_Result : constant ThreadObjectUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

@@ -31,20 +31,13 @@ package body org.allbinary.game.GameType_Package is
    function Create (name : Unbounded_String) return GameType_Access is
       This : constant GameType_Access := new GameType;
    begin
-      Initialize (This.all, name);
+      GameType_Package.Initialize (This.all, name);
       return This;
    end Create;
 
    function toString (This : in out GameType) return Unbounded_String is
    begin
         return This.name;
-   end toString;
-
-   procedure toString (This : in out GameType) is
-      Java_Result : constant Unbounded_String := GameType'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end toString;
 
 end org.allbinary.game.GameType_Package;

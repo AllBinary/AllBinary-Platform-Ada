@@ -26,6 +26,8 @@ with org.allbinary.data.tree.dom.DomNodeInterface_Package; use org.allbinary.dat
 with org.allbinary.logic.visual.theme.ThemeValidation_Package; use org.allbinary.logic.visual.theme.ThemeValidation_Package;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
+with org.allbinary.business.category.store.theme.StoreThemeCategoryInterface_Package; use org.allbinary.business.category.store.theme.StoreThemeCategoryInterface_Package;
+with org.allbinary.business.category.store.theme.ThemeComparator_Package; use org.allbinary.business.category.store.theme.ThemeComparator_Package;
 
 package org.allbinary.business.category.store.theme.StoreThemeCategoryView_Package is
 

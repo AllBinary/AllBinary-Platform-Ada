@@ -33,7 +33,7 @@ package body org.allbinary.media.audio.PlayerQueue_Package is
    function Create (max : Integer) return PlayerQueue_Access is
       This : constant PlayerQueue_Access := new PlayerQueue;
    begin
-      Initialize (This.all, max);
+      PlayerQueue_Package.Initialize (This.all, max);
       return This;
    end Create;
 
@@ -95,20 +95,6 @@ package body org.allbinary.media.audio.PlayerQueue_Package is
    function toString (This : in out PlayerQueue) return Unbounded_String is
    begin
         return StringMaker_Package.Create.append (PlayerQueue_Package.TOTAL).appendint (This.list.size).toString;
-   end toString;
-
-   procedure process (This : in out PlayerQueue) is
-      Java_Result : constant Boolean := PlayerQueue'Class (This).process;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end process;
-
-   procedure toString (This : in out PlayerQueue) is
-      Java_Result : constant Unbounded_String := PlayerQueue'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end toString;
 
 begin

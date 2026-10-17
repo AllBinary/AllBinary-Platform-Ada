@@ -64,7 +64,6 @@ package org.allbinary.game.layer.weapon.CollidableDamageWeaponBehavior_Package i
    function getCollisionTypeWith (This : in out CollidableDamageWeaponBehavior; layerInterface : AllBinaryLayer_Access) return CollisionType_Access;
    procedure getCollisionTypeWith (This : in out CollidableDamageWeaponBehavior; layerInterface : AllBinaryLayer_Access);
    function isCollided (This : in out CollidableDamageWeaponBehavior) return Boolean;
-   procedure isCollided (This : in out CollidableDamageWeaponBehavior);
    procedure setCollided (This : in out CollidableDamageWeaponBehavior; collided : Boolean);
 
 end org.allbinary.game.layer.weapon.CollidableDamageWeaponBehavior_Package;

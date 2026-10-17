@@ -32,7 +32,7 @@ package body admin.tags.PermissionItemsTag_Package is
    function Create return PermissionItemsTag_Access is
       This : constant PermissionItemsTag_Access := new PermissionItemsTag;
    begin
-      Initialize (This.all);
+      PermissionItemsTag_Package.Initialize (This.all);
       return This;
    end Create;
 

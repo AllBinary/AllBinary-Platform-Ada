@@ -69,7 +69,7 @@ package body org.allbinary.logic.communication.xmlrpc.XmlRpcAbeClient_Package is
    function Create (clientInfo : AbeClientInformationInterface_Access; remoteMethod : Unbounded_String) return XmlRpcAbeClient_Access is
       This : constant XmlRpcAbeClient_Access := new XmlRpcAbeClient;
    begin
-      Initialize (This.all, clientInfo, remoteMethod);
+      XmlRpcAbeClient_Package.Initialize (This.all, clientInfo, remoteMethod);
       return This;
    end Create;
 
@@ -169,55 +169,6 @@ package body org.allbinary.logic.communication.xmlrpc.XmlRpcAbeClient_Package is
    begin
       null;
    end tryAnother;
-
-   procedure getClientInfo (This : in out XmlRpcAbeClient) is
-      Java_Result : constant AbeClientInformationInterface_Access := XmlRpcAbeClient'Class (This).getClientInfo;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getClientInfo;
-
-   procedure getClient (This : in out XmlRpcAbeClient) is
-      Java_Result : constant XmlRpcHandler_Access := XmlRpcAbeClient'Class (This).getClient;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getClient;
-
-   procedure getServer (This : in out XmlRpcAbeClient) is
-      Java_Result : constant Integer := XmlRpcAbeClient'Class (This).getServer;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getServer;
-
-   procedure getStart (This : in out XmlRpcAbeClient) is
-      Java_Result : constant Integer := XmlRpcAbeClient'Class (This).getStart;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getStart;
-
-   procedure getMaxServers (This : in out XmlRpcAbeClient) is
-      Java_Result : constant Integer := XmlRpcAbeClient'Class (This).getMaxServers;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getMaxServers;
-
-   procedure isIsDone (This : in out XmlRpcAbeClient) is
-      Java_Result : constant Boolean := XmlRpcAbeClient'Class (This).isIsDone;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isIsDone;
-
-   procedure getRemoteMethod (This : in out XmlRpcAbeClient) is
-      Java_Result : constant Unbounded_String := XmlRpcAbeClient'Class (This).getRemoteMethod;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getRemoteMethod;
 
 begin
    null;

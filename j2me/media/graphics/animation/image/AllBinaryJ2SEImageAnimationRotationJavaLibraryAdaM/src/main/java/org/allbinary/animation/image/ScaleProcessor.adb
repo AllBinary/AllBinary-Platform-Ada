@@ -32,7 +32,7 @@ package body org.allbinary.animation.image.ScaleProcessor_Package is
    function Create return ScaleProcessor_Access is
       This : constant ScaleProcessor_Access := new ScaleProcessor;
    begin
-      Initialize (This.all);
+      ScaleProcessor_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -55,13 +55,6 @@ package body org.allbinary.animation.image.ScaleProcessor_Package is
                 end;
         end;
    end update;
-
-   procedure getInstance is
-      Java_Result : constant ScaleBaseProcessor_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

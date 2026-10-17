@@ -36,7 +36,7 @@ package body org.allbinary.view.ViewPosition_Package is
    function Create (x : Integer; y : Integer; z : Integer) return ViewPosition_Access is
       This : constant ViewPosition_Access := new ViewPosition;
    begin
-      Initialize (This.all, x, y, z);
+      ViewPosition_Package.Initialize (This.all, x, y, z);
       return This;
    end Create;
 
@@ -74,55 +74,6 @@ package body org.allbinary.view.ViewPosition_Package is
    begin
         This.allbinaryLayer := AllBinaryLayer_Access (allbinaryLayer);
    end setAllbinaryLayer;
-
-   procedure getInstanceD is
-      Java_Result : constant ViewPosition_Access := getInstanceD;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstanceD;
-
-   procedure getX (This : in out ViewPosition) is
-      Java_Result : constant Integer := ViewPosition'Class (This).getX;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getX;
-
-   procedure getY (This : in out ViewPosition) is
-      Java_Result : constant Integer := ViewPosition'Class (This).getY;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getY;
-
-   procedure getZ (This : in out ViewPosition) is
-      Java_Result : constant Integer := ViewPosition'Class (This).getZ;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getZ;
-
-   procedure getX2 (This : in out ViewPosition) is
-      Java_Result : constant Integer := ViewPosition'Class (This).getX2;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getX2;
-
-   procedure getY2 (This : in out ViewPosition) is
-      Java_Result : constant Integer := ViewPosition'Class (This).getY2;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getY2;
-
-   procedure getZ2 (This : in out ViewPosition) is
-      Java_Result : constant Integer := ViewPosition'Class (This).getZ2;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getZ2;
 
 end org.allbinary.view.ViewPosition_Package;
 

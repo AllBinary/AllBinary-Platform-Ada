@@ -28,7 +28,7 @@ package body org.allbinary.business.user.commerce.shipping.ShippingMethodsData_P
    function Create return ShippingMethodsData_Access is
       This : constant ShippingMethodsData_Access := new ShippingMethodsData;
    begin
-      Initialize (This.all);
+      ShippingMethodsData_Package.Initialize (This.all);
       return This;
    end Create;
 

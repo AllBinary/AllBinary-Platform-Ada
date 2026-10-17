@@ -35,7 +35,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoHttpStoreFac
    function Create return TransformInfoHttpStoreFactory_Access is
       This : constant TransformInfoHttpStoreFactory_Access := new TransformInfoHttpStoreFactory;
    begin
-      Initialize (This.all);
+      TransformInfoHttpStoreFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -43,13 +43,6 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoHttpStoreFac
    function getInstance (This : in out TransformInfoHttpStoreFactory; databaseHashMap : HashMap_Access; propertiesHashMap : HashMap_Access; pageContext : PageContext_Access) return TransformInfoInterface_Access is
    begin
         return TransformInfoHttpStore_Package.Create (databaseHashMap, propertiesHashMap, pageContext);
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant TransformInfoHttpStoreFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
    procedure getInstance (This : in out TransformInfoHttpStoreFactory; databaseHashMap : HashMap_Access; propertiesHashMap : HashMap_Access; pageContext : PageContext_Access) is

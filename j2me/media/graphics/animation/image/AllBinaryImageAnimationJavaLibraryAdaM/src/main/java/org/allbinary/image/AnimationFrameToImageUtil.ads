@@ -23,6 +23,7 @@ with AllBinary_Java; use AllBinary_Java;
 --  with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
 --  with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
 with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Animation_Package;
+with org.allbinary.image.GameFeatureImageCacheFactory_Package; use org.allbinary.image.GameFeatureImageCacheFactory_Package;
 
 package org.allbinary.image.AnimationFrameToImageUtil_Package is
 
@@ -39,7 +40,6 @@ package org.allbinary.image.AnimationFrameToImageUtil_Package is
    procedure Initialize (This : in out AnimationFrameToImageUtil'Class);
    function Create return AnimationFrameToImageUtil_Access;
    function getInstance return AnimationFrameToImageUtil_Access;
-   procedure getInstance;
    function getInstanceTranslate (This : in out AnimationFrameToImageUtil; width : Integer; height : Integer; animationInterface : Animation_Access) return Image_Access;
    procedure getInstanceTranslate (This : in out AnimationFrameToImageUtil; width : Integer; height : Integer; animationInterface : Animation_Access);
    function getInstanceWH (This : in out AnimationFrameToImageUtil; width : Integer; height : Integer; animationInterface : Animation_Access) return Image_Access;

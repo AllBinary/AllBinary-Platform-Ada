@@ -28,7 +28,7 @@ package body org.allbinary.logic.system.security.licensing.InputAutomationClient
    function Create return InputAutomationClientInformationFactory_Access is
       This : constant InputAutomationClientInformationFactory_Access := new InputAutomationClientInformationFactory;
    begin
-      Initialize (This.all);
+      InputAutomationClientInformationFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -36,13 +36,6 @@ package body org.allbinary.logic.system.security.licensing.InputAutomationClient
    function getInstance return InputAutomationClientInformation_Access is
    begin
         return InputAutomationClientInformationFactory_Package.instance;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant InputAutomationClientInformation_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

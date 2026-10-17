@@ -24,6 +24,7 @@ with org.allbinary.game.rand.MyRandomFactory_Package; use org.allbinary.game.ran
 with org.allbinary.logic.system.security.licensing.LockedUtil_Package; use org.allbinary.logic.system.security.licensing.LockedUtil_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.business.advertisement.AdvertisementProcessorInterface_Package; use org.allbinary.business.advertisement.AdvertisementProcessorInterface_Package;
 
 package org.allbinary.business.advertisement.Advertisements_Package is
 

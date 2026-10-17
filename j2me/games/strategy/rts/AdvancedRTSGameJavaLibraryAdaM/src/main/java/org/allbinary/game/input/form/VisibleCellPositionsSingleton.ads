@@ -69,7 +69,6 @@ package org.allbinary.game.input.form.VisibleCellPositionsSingleton_Package is
    procedure Initialize (This : in out VisibleCellPositionsSingleton'Class);
    function Create return VisibleCellPositionsSingleton_Access;
    function getInstance return VisibleCellPositionsSingleton_Access;
-   procedure getInstance;
    procedure init (This : in out VisibleCellPositionsSingleton; simpleTiledLayer : SimpleTiledLayer_Access);
    procedure onEvent (This : in out VisibleCellPositionsSingleton; eventObject : AllBinaryEventObject_Access);
    procedure onBuildingEvent (This : in out VisibleCellPositionsSingleton; event : RTSLayerEvent_Access);
@@ -78,7 +77,6 @@ package org.allbinary.game.input.form.VisibleCellPositionsSingleton_Package is
    procedure removeStationaryCellPositions (This : in out VisibleCellPositionsSingleton; list : BasicArrayList_Access);
    procedure update (This : in out VisibleCellPositionsSingleton);
    function shouldProcess (This : in out VisibleCellPositionsSingleton) return Boolean;
-   procedure shouldProcess (This : in out VisibleCellPositionsSingleton);
    procedure addCellPositions (This : in out VisibleCellPositionsSingleton; list : BasicArrayList_Access);
    function isVisible (This : in out VisibleCellPositionsSingleton; cellPosition : CellPosition_Access) return Boolean;
    procedure isVisible (This : in out VisibleCellPositionsSingleton; cellPosition : CellPosition_Access);
@@ -86,7 +84,6 @@ package org.allbinary.game.input.form.VisibleCellPositionsSingleton_Package is
    procedure paint (This : in out VisibleCellPositionsSingleton; graphics : Graphics_Access);
    procedure setSimpleTiledLayer (This : in out VisibleCellPositionsSingleton; simpleTiledLayer : SimpleTiledLayer_Access);
    function getSimpleTiledLayer (This : in out VisibleCellPositionsSingleton) return SimpleTiledLayer_Access;
-   procedure getSimpleTiledLayer (This : in out VisibleCellPositionsSingleton);
 
 end org.allbinary.game.input.form.VisibleCellPositionsSingleton_Package;
 

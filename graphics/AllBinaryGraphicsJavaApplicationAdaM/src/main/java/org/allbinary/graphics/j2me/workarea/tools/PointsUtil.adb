@@ -28,7 +28,7 @@ package body org.allbinary.graphics.j2me.workarea.tools.PointsUtil_Package is
    function Create return PointsUtil_Access is
       This : constant PointsUtil_Access := new PointsUtil;
    begin
-      Initialize (This.all);
+      PointsUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -43,13 +43,6 @@ package body org.allbinary.graphics.j2me.workarea.tools.PointsUtil_Package is
    begin
         return VectorRotationGenerator_Package.getInstance.getListAtAngle (fulcrumPoint.getX, fulcrumPoint.getY, pointVector, AngleFactory_Package.getInstance.getAt (angle.intValue));
    end doTransforms;
-
-   procedure getInstance is
-      Java_Result : constant PointsUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure doTransforms (This : in out PointsUtil; pointVector : BasicArrayList_Access; angle : Long_Float; fulcrumPoint : GPoint_Access) is
       Java_Result : constant BasicArrayList_Access := PointsUtil'Class (This).doTransforms (pointVector, angle, fulcrumPoint);

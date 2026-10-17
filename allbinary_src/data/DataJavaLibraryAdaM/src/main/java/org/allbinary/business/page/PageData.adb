@@ -36,16 +36,9 @@ package body org.allbinary.business.page.PageData_Package is
    function Create return PageData_Access is
       This : constant PageData_Access := new PageData;
    begin
-      Initialize (This.all);
+      PageData_Package.Initialize (This.all);
       return This;
    end Create;
-
-   procedure getInstance is
-      Java_Result : constant PageData_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

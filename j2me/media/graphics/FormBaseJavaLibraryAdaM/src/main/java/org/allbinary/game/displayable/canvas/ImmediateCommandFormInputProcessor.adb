@@ -33,7 +33,7 @@ package body org.allbinary.game.displayable.canvas.ImmediateCommandFormInputProc
    function Create (gameKeyEventList : BasicArrayList_Access; playerInputId : Integer; gameCommandCanvas : GameCommandCanvas_Access; form : ScrollSelectionForm_Access) return ImmediateCommandFormInputProcessor_Access is
       This : constant ImmediateCommandFormInputProcessor_Access := new ImmediateCommandFormInputProcessor;
    begin
-      Initialize (This.all, gameKeyEventList, playerInputId, gameCommandCanvas, form);
+      ImmediateCommandFormInputProcessor_Package.Initialize (This.all, gameKeyEventList, playerInputId, gameCommandCanvas, form);
       return This;
    end Create;
 

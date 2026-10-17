@@ -24,6 +24,8 @@ with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.s
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.logic.system.security.licensing.AbeLicenseInterface_Package; use org.allbinary.logic.system.security.licensing.AbeLicenseInterface_Package;
+with org.allbinary.logic.system.security.licensing.LicenseTypeFactory_Package; use org.allbinary.logic.system.security.licensing.LicenseTypeFactory_Package;
+with org.allbinary.logic.system.security.licensing.LicenseType_Package; use org.allbinary.logic.system.security.licensing.LicenseType_Package;
 
 package org.allbinary.logic.system.security.licensing.AbeNoLicense_Package is
 
@@ -44,21 +46,14 @@ package org.allbinary.logic.system.security.licensing.AbeNoLicense_Package is
    procedure Initialize (This : in out AbeNoLicense'Class);
    function Create return AbeNoLicense_Access;
    function getInstance return AbeNoLicense_Access;
-   procedure getInstance;
    function hasKey (This : in out AbeNoLicense) return Boolean;
-   procedure hasKey (This : in out AbeNoLicense);
    function getKey (This : in out AbeNoLicense; keyName : Unbounded_String) return Unbounded_String;
    procedure getKey (This : in out AbeNoLicense; keyName : Unbounded_String);
    function getLicenseId (This : in out AbeNoLicense) return Unbounded_String;
-   procedure getLicenseId (This : in out AbeNoLicense);
    function getSpecial (This : in out AbeNoLicense) return Unbounded_String;
-   procedure getSpecial (This : in out AbeNoLicense);
    function getServers (This : in out AbeNoLicense) return BasicArrayList_Access;
-   procedure getServers (This : in out AbeNoLicense);
    function isValid (This : in out AbeNoLicense) return Boolean;
-   procedure isValid (This : in out AbeNoLicense);
    function getLicenseType (This : in out AbeNoLicense) return LicenseType_Access;
-   procedure getLicenseType (This : in out AbeNoLicense);
 
 end org.allbinary.logic.system.security.licensing.AbeNoLicense_Package;
 

@@ -24,7 +24,7 @@ package body org.allbinary.game.displayable.canvas.NullDisplayable_Package is
    function Create return NullDisplayable_Access is
       This : constant NullDisplayable_Access := new NullDisplayable;
    begin
-      Initialize (This.all);
+      NullDisplayable_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -32,13 +32,6 @@ package body org.allbinary.game.displayable.canvas.NullDisplayable_Package is
    begin
         null;
    end paint;
-
-   procedure getInstance is
-      Java_Result : constant NullDisplayable_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

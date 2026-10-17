@@ -35,7 +35,7 @@ package body org.allbinary.business.user.commerce.money.payment.types.Authorizat
    function Create return AuthorizationTypeFactory_Access is
       This : constant AuthorizationTypeFactory_Access := new AuthorizationTypeFactory;
    begin
-      Initialize (This.all);
+      AuthorizationTypeFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -43,13 +43,6 @@ package body org.allbinary.business.user.commerce.money.payment.types.Authorizat
    function getInstance return AuthorizationTypeFactory_Access is
    begin
         return AuthorizationTypeFactory_Package.instance;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant AuthorizationTypeFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

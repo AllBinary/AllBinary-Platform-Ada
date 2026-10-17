@@ -35,9 +35,7 @@ package org.allbinary.thread.NullPriorityRunnable_Package is
    procedure Initialize (This : in out NullPriorityRunnable'Class);
    function Create return NullPriorityRunnable_Access;
    function getPriority (This : in out NullPriorityRunnable) return Integer;
-   procedure getPriority (This : in out NullPriorityRunnable);
    function isDone (This : in out NullPriorityRunnable) return Boolean;
-   procedure isDone (This : in out NullPriorityRunnable);
    procedure reset (This : in out NullPriorityRunnable);
    procedure run (This : in out NullPriorityRunnable);
 

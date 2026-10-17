@@ -29,7 +29,7 @@ package body org.allbinary.input.gyro.AccelerometerSensorUpdateProcessor_Package
    function Create return AccelerometerSensorUpdateProcessor_Access is
       This : constant AccelerometerSensorUpdateProcessor_Access := new AccelerometerSensorUpdateProcessor;
    begin
-      Initialize (This.all);
+      AccelerometerSensorUpdateProcessor_Package.Initialize (This.all);
       return This;
    end Create;
 

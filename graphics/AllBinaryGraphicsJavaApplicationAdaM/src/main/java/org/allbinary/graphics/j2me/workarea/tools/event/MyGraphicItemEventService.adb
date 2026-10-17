@@ -30,7 +30,7 @@ package body org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEvent
    function Create return MyGraphicItemEventService_Access is
       This : constant MyGraphicItemEventService_Access := new MyGraphicItemEventService;
    begin
-      Initialize (This.all);
+      MyGraphicItemEventService_Package.Initialize (This.all);
       return This;
    end Create;
 

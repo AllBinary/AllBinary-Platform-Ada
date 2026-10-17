@@ -45,16 +45,9 @@ package body org.allbinary.business.category.CategoryData_Package is
    function Create return CategoryData_Access is
       This : constant CategoryData_Access := new CategoryData;
    begin
-      Initialize (This.all);
+      CategoryData_Package.Initialize (This.all);
       return This;
    end Create;
-
-   procedure getInstance is
-      Java_Result : constant CategoryData_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

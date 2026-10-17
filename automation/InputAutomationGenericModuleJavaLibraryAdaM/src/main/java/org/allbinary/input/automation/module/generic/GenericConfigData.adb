@@ -30,7 +30,7 @@ package body org.allbinary.input.automation.module.generic_Id.GenericConfigData_
    function Create return GenericConfigData_Access is
       This : constant GenericConfigData_Access := new GenericConfigData;
    begin
-      Initialize (This.all);
+      GenericConfigData_Package.Initialize (This.all);
       return This;
    end Create;
 

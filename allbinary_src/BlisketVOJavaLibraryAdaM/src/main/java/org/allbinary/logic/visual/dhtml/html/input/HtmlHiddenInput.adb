@@ -30,7 +30,7 @@ package body org.allbinary.logic.visual.dhtml.html.input.HtmlHiddenInput_Package
    function Create return HtmlHiddenInput_Access is
       This : constant HtmlHiddenInput_Access := new HtmlHiddenInput;
    begin
-      Initialize (This.all);
+      HtmlHiddenInput_Package.Initialize (This.all);
       return This;
    end Create;
 

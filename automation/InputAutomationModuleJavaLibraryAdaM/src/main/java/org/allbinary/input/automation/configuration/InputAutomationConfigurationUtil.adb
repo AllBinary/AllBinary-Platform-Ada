@@ -30,7 +30,7 @@ package body org.allbinary.input.automation.configuration.InputAutomationConfigu
    function Create return InputAutomationConfigurationUtil_Access is
       This : constant InputAutomationConfigurationUtil_Access := new InputAutomationConfigurationUtil;
    begin
-      Initialize (This.all);
+      InputAutomationConfigurationUtil_Package.Initialize (This.all);
       return This;
    end Create;
 

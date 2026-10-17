@@ -31,7 +31,7 @@ package body org.allbinary.logic.system.security.licensing.LicenseTypeFactory_Pa
    function Create return LicenseTypeFactory_Access is
       This : constant LicenseTypeFactory_Access := new LicenseTypeFactory;
    begin
-      Initialize (This.all);
+      LicenseTypeFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -49,13 +49,6 @@ package body org.allbinary.logic.system.security.licensing.LicenseTypeFactory_Pa
             return This.NORMAL;
         end if;
         return This.UNKNOWN;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant LicenseTypeFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
    procedure getInstance (This : in out LicenseTypeFactory; name : Unbounded_String) is

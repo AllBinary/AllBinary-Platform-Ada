@@ -29,7 +29,7 @@ package body org.allbinary.ai.ArtificialIntelligenceLayerProcessor_Package is
    function Create return ArtificialIntelligenceLayerProcessor_Access is
       This : constant ArtificialIntelligenceLayerProcessor_Access := new ArtificialIntelligenceLayerProcessor;
    begin
-      Initialize (This.all);
+      ArtificialIntelligenceLayerProcessor_Package.Initialize (This.all);
       return This;
    end Create;
 

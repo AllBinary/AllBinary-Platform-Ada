@@ -44,6 +44,7 @@ with org.allbinary.time.TimeDelayHelper_Package; use org.allbinary.time.TimeDela
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.util.BasicArrayListUtil_Package; use org.allbinary.util.BasicArrayListUtil_Package;
+with org.allbinary.game.layer.unit.UnitLayer_Package; use org.allbinary.game.layer.unit.UnitLayer_Package;
 
 package org.allbinary.game.layer.unit.UnitWaypointBehavior_Package is
 
@@ -107,7 +108,6 @@ package org.allbinary.game.layer.unit.UnitWaypointBehavior_Package is
    procedure addWaypointFromUser (This : in out UnitWaypointBehavior; advancedRTSGameLayer : AdvancedRTSGameLayer_Access);
    procedure addWaypointFromBuilding (This : in out UnitWaypointBehavior; advancedRTSGameLayer : AdvancedRTSGameLayer_Access);
    function isWaypointListEmptyOrOnlyTargets (This : in out UnitWaypointBehavior) return Boolean;
-   procedure isWaypointListEmptyOrOnlyTargets (This : in out UnitWaypointBehavior);
    function insertWaypoint (This : in out UnitWaypointBehavior; index : Integer; rtsLayer : CollidableDestroyableDamageableLayer_Access) return Boolean;
    procedure insertWaypoint (This : in out UnitWaypointBehavior; index : Integer; rtsLayer : CollidableDestroyableDamageableLayer_Access);
    procedure move (This : in out UnitWaypointBehavior);
@@ -118,41 +118,27 @@ package org.allbinary.game.layer.unit.UnitWaypointBehavior_Package is
    procedure addBuildingChase (This : in out UnitWaypointBehavior; allbinaryLayer : AllBinaryLayer_Access; cellPosition : GeographicMapCellPosition_Access);
    procedure moveAwayFromBuilding (This : in out UnitWaypointBehavior; buildingLayer : BuildingLayer_Access);
    function needToMove (This : in out UnitWaypointBehavior) return Boolean;
-   procedure needToMove (This : in out UnitWaypointBehavior);
    function getMovementLogicAsString (This : in out UnitWaypointBehavior) return Unbounded_String;
-   procedure getMovementLogicAsString (This : in out UnitWaypointBehavior);
    function isMovingFromStopped (This : in out UnitWaypointBehavior) return Boolean;
-   procedure isMovingFromStopped (This : in out UnitWaypointBehavior);
    procedure setMovingFromStopped (This : in out UnitWaypointBehavior; movingFromStopped : Boolean);
    procedure setWaypointPathsList (This : in out UnitWaypointBehavior; waypointPathsList : BasicArrayList_Access);
    function getWaypointPathsList (This : in out UnitWaypointBehavior) return BasicArrayList_Access;
-   procedure getWaypointPathsList (This : in out UnitWaypointBehavior);
    function isMoving (This : in out UnitWaypointBehavior) return Boolean;
-   procedure isMoving (This : in out UnitWaypointBehavior);
    procedure setMoving (This : in out UnitWaypointBehavior; moving : Boolean);
    function isTrackingWaypoint (This : in out UnitWaypointBehavior) return Boolean;
-   procedure isTrackingWaypoint (This : in out UnitWaypointBehavior);
    function getPossibleTargetList (This : in out UnitWaypointBehavior) return BasicArrayList_Access;
-   procedure getPossibleTargetList (This : in out UnitWaypointBehavior);
    procedure setLastPathGeographicMapCellPosition (This : in out UnitWaypointBehavior; lastPathGeographicMapCellPosition : GeographicMapCellPosition_Access);
    function getLastPathGeographicMapCellPosition (This : in out UnitWaypointBehavior) return GeographicMapCellPosition_Access;
-   procedure getLastPathGeographicMapCellPosition (This : in out UnitWaypointBehavior);
    procedure setCurrentPathGeographicMapCellPosition (This : in out UnitWaypointBehavior; currentPathGeographicMapCellPosition : GeographicMapCellPosition_Access);
    function getCurrentPathGeographicMapCellPosition (This : in out UnitWaypointBehavior) return GeographicMapCellPosition_Access;
-   procedure getCurrentPathGeographicMapCellPosition (This : in out UnitWaypointBehavior);
    procedure setSensorAction (This : in out UnitWaypointBehavior; sensorAction : SensorAction_Access);
    function getSensorAction (This : in out UnitWaypointBehavior) return SensorAction_Access;
-   procedure getSensorAction (This : in out UnitWaypointBehavior);
    procedure setCurrentTargetLayerInterface (This : in out UnitWaypointBehavior; currentTargetLayerInterface : CollidableDestroyableDamageableLayer_Access);
    function getCurrentTargetLayerInterface (This : in out UnitWaypointBehavior) return CollidableDestroyableDamageableLayer_Access;
-   procedure getCurrentTargetLayerInterface (This : in out UnitWaypointBehavior);
    procedure setCurrentTargetDistance (This : in out UnitWaypointBehavior; currentTargetDistance : Integer);
    function getCurrentTargetDistance (This : in out UnitWaypointBehavior) return Integer;
-   procedure getCurrentTargetDistance (This : in out UnitWaypointBehavior);
    function getCompleteTimeDelayHelper (This : in out UnitWaypointBehavior) return TimeDelayHelper_Access;
-   procedure getCompleteTimeDelayHelper (This : in out UnitWaypointBehavior);
    function getCurrentGeographicMapCellHistory (This : in out UnitWaypointBehavior) return GeographicMapCellHistory_Access;
-   procedure getCurrentGeographicMapCellHistory (This : in out UnitWaypointBehavior);
    procedure setTrackingWaypoint (This : in out UnitWaypointBehavior; trackingWaypoint : Boolean);
 
 end org.allbinary.game.layer.unit.UnitWaypointBehavior_Package;

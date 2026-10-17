@@ -30,7 +30,7 @@ package body org.allbinary.graphics.RendererStateFactory_Package is
    function Create return RendererStateFactory_Access is
       This : constant RendererStateFactory_Access := new RendererStateFactory;
    begin
-      Initialize (This.all);
+      RendererStateFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -58,27 +58,6 @@ package body org.allbinary.graphics.RendererStateFactory_Package is
    function isSurfaceChanged (This : in out RendererStateFactory) return Boolean is
    begin
         return This.surfaceChanged;
-   end isSurfaceChanged;
-
-   procedure getInstance is
-      Java_Result : constant RendererStateFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure isLoaded (This : in out RendererStateFactory) is
-      Java_Result : constant Boolean := RendererStateFactory'Class (This).isLoaded;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isLoaded;
-
-   procedure isSurfaceChanged (This : in out RendererStateFactory) is
-      Java_Result : constant Boolean := RendererStateFactory'Class (This).isSurfaceChanged;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end isSurfaceChanged;
 
 begin

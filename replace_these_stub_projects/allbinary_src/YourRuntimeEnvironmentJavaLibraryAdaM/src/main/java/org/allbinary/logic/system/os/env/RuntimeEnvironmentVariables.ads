@@ -16,6 +16,8 @@ with org.allbinary.logic.system.os.GenericOperatingSystem_Package; use org.allbi
 with org.allbinary.logic.system.os.OperatingSystemFactory_Package; use org.allbinary.logic.system.os.OperatingSystemFactory_Package;
 with org.allbinary.logic.system.os.OperatingSystems_Package; use org.allbinary.logic.system.os.OperatingSystems_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.logic.system.os.env.Process_Package; use org.allbinary.logic.system.os.env.Process_Package;
+with org.allbinary.logic.system.os.env.Runtime_Package; use org.allbinary.logic.system.os.env.Runtime_Package;
 
 package org.allbinary.logic.system.os.env.RuntimeEnvironmentVariables_Package is
 
@@ -38,22 +40,15 @@ package org.allbinary.logic.system.os.env.RuntimeEnvironmentVariables_Package is
    procedure Initialize (This : in out RuntimeEnvironmentVariables'Class);
    function Create return RuntimeEnvironmentVariables_Access;
    function getTest1 (This : in out RuntimeEnvironmentVariables) return Unbounded_String;
-   procedure getTest1 (This : in out RuntimeEnvironmentVariables);
    function getVariable (This : in out RuntimeEnvironmentVariables; var : Unbounded_String) return Unbounded_String;
    procedure getVariable (This : in out RuntimeEnvironmentVariables; var : Unbounded_String);
    function get (This : in out RuntimeEnvironmentVariables) return Properties_Access;
-   procedure get (This : in out RuntimeEnvironmentVariables);
    function getTempDir (This : in out RuntimeEnvironmentVariables) return Unbounded_String;
-   procedure getTempDir (This : in out RuntimeEnvironmentVariables);
    function getLibraryPath (This : in out RuntimeEnvironmentVariables) return Unbounded_String;
-   procedure getLibraryPath (This : in out RuntimeEnvironmentVariables);
    function getClassPath (This : in out RuntimeEnvironmentVariables) return Unbounded_String;
-   procedure getClassPath (This : in out RuntimeEnvironmentVariables);
    procedure updateLibraryPath (This : in out RuntimeEnvironmentVariables; libPath : Unbounded_String);
    function getUserHome (This : in out RuntimeEnvironmentVariables) return Unbounded_String;
-   procedure getUserHome (This : in out RuntimeEnvironmentVariables);
    function getUserDir (This : in out RuntimeEnvironmentVariables) return Unbounded_String;
-   procedure getUserDir (This : in out RuntimeEnvironmentVariables);
    procedure set (This : in out RuntimeEnvironmentVariables);
    procedure setVariable (This : in out RuntimeEnvironmentVariables; var : Unbounded_String; val : Unbounded_String);
 

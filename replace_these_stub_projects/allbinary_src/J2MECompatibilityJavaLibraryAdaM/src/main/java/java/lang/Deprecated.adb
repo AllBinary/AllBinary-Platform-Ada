@@ -16,7 +16,7 @@ package body java.lang.Deprecated_Package is
    function Create return Deprecated_Access is
       This : constant Deprecated_Access := new Deprecated;
    begin
-      Initialize (This.all);
+      Deprecated_Package.Initialize (This.all);
       return This;
    end Create;
 

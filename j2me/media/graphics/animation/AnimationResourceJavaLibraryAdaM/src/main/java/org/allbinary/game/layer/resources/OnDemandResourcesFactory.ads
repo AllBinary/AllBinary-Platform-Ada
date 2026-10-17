@@ -20,6 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
+with org.allbinary.game.layer.resources.OnDemandResources_Package; use org.allbinary.game.layer.resources.OnDemandResources_Package;
 
 package org.allbinary.game.layer.resources.OnDemandResourcesFactory_Package is
 
@@ -34,7 +35,6 @@ package org.allbinary.game.layer.resources.OnDemandResourcesFactory_Package is
    procedure Initialize (This : in out OnDemandResourcesFactory'Class);
    function Create return OnDemandResourcesFactory_Access;
    function size (This : in out OnDemandResourcesFactory) return Integer;
-   procedure size (This : in out OnDemandResourcesFactory);
    function remove (This : in out OnDemandResourcesFactory; layerId : Integer) return OnDemandResources_Access;
    procedure remove (This : in out OnDemandResourcesFactory; layerId : Integer);
 

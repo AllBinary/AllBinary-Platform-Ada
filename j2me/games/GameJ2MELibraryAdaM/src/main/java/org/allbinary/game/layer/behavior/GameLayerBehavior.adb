@@ -28,7 +28,7 @@ package body org.allbinary.game.layer.behavior.GameLayerBehavior_Package is
    function Create return GameLayerBehavior_Access is
       This : constant GameLayerBehavior_Access := new GameLayerBehavior;
    begin
-      Initialize (This.all);
+      GameLayerBehavior_Package.Initialize (This.all);
       return This;
    end Create;
 

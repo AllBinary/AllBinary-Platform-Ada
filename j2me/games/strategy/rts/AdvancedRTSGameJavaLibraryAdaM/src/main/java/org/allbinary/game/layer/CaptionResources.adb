@@ -36,16 +36,9 @@ package body org.allbinary.game.layer.CaptionResources_Package is
    function Create return CaptionResources_Access is
       This : constant CaptionResources_Access := new CaptionResources;
    begin
-      Initialize (This.all);
+      CaptionResources_Package.Initialize (This.all);
       return This;
    end Create;
-
-   procedure getInstance is
-      Java_Result : constant CaptionResources_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

@@ -29,7 +29,7 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.generator.Tr
    function Create return TransformInfoObjectConfigGenerator_Access is
       This : constant TransformInfoObjectConfigGenerator_Access := new TransformInfoObjectConfigGenerator;
    begin
-      Initialize (This.all);
+      TransformInfoObjectConfigGenerator_Package.Initialize (This.all);
       return This;
    end Create;
 

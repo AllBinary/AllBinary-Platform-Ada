@@ -28,7 +28,7 @@ package body org.allbinary.util.ABCharacter_Package is
    function Create return ABCharacter_Access is
       This : constant ABCharacter_Access := new ABCharacter;
    begin
-      Initialize (This.all);
+      ABCharacter_Package.Initialize (This.all);
       return This;
    end Create;
 

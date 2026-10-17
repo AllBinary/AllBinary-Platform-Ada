@@ -41,7 +41,6 @@ package org.allbinary.opengles.GLUtil_Package is
    procedure Initialize (This : in out GLUtil'Class);
    function Create return GLUtil_Access;
    function getInstance return GLUtil_Access;
-   procedure getInstance;
    function makeFloatBuffer3 (This : in out GLUtil; p_a : Float; p_b : Float; p_c : Float) return FloatBuffer_Access;
    procedure makeFloatBuffer3 (This : in out GLUtil; p_a : Float; p_b : Float; p_c : Float);
    function makeFloatBuffer4 (This : in out GLUtil; p_a : Float; p_b : Float; p_c : Float; p_d : Float) return FloatBuffer_Access;

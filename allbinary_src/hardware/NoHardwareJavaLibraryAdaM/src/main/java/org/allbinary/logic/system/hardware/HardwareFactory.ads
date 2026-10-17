@@ -21,6 +21,8 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.system.os.OperatingSystemInterface_Package; use org.allbinary.logic.system.os.OperatingSystemInterface_Package;
+with org.allbinary.logic.system.hardware.NoHardware_Package; use org.allbinary.logic.system.hardware.NoHardware_Package;
+with org.allbinary.logic.system.hardware.HardwareInterface_Package; use org.allbinary.logic.system.hardware.HardwareInterface_Package;
 
 package org.allbinary.logic.system.hardware.HardwareFactory_Package is
 
@@ -39,7 +41,6 @@ package org.allbinary.logic.system.hardware.HardwareFactory_Package is
    procedure Initialize (This : in out HardwareFactory'Class);
    function Create return HardwareFactory_Access;
    function getInstance return HardwareFactory_Access;
-   procedure getInstance;
    function getInstance (This : in out HardwareFactory; os : OperatingSystemInterface_Access) return HardwareInterface_Access;
    procedure getInstance (This : in out HardwareFactory; os : OperatingSystemInterface_Access);
 

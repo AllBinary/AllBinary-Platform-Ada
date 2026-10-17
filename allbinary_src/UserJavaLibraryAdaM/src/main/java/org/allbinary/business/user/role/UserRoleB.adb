@@ -30,7 +30,7 @@ package body org.allbinary.business.user.role.UserRoleB_Package is
    function Create (aBasicUserRole : BasicUserRole_Access; aUserFactoryInterface : UserFactoryInterface_Access) return UserRoleB_Access is
       This : constant UserRoleB_Access := new UserRoleB;
    begin
-      Initialize (This.all, aBasicUserRole, aUserFactoryInterface);
+      UserRoleB_Package.Initialize (This.all, aBasicUserRole, aUserFactoryInterface);
       return This;
    end Create;
 
@@ -67,13 +67,6 @@ package body org.allbinary.business.user.role.UserRoleB_Package is
    begin
       null;
    end getRole;
-
-   procedure getAll is
-      Java_Result : constant BasicArrayList_Access := getAll;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getAll;
 
 begin
    null;

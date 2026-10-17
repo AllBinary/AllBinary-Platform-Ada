@@ -1,7 +1,7 @@
 --  Generated Code Do Not Modify
 
 
-package body org.allbinary.logic.util.cache_Case.CacheTypeFactory_Package is
+package body org.allbinary.logic.util.cache.CacheTypeFactory_Package is
 
    procedure Initialize_Fields (This : in out CacheTypeFactory'Class) is
    begin
@@ -20,7 +20,7 @@ package body org.allbinary.logic.util.cache_Case.CacheTypeFactory_Package is
    function Create return CacheTypeFactory_Access is
       This : constant CacheTypeFactory_Access := new CacheTypeFactory;
    begin
-      Initialize (This.all);
+      CacheTypeFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -30,17 +30,10 @@ package body org.allbinary.logic.util.cache_Case.CacheTypeFactory_Package is
         return CacheTypeFactory_Package.instance;
    end getInstance;
 
-   procedure getInstance is
-      Java_Result : constant CacheTypeFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
 begin
    null;
    instance := CacheTypeFactory_Package.Create;
 
-end org.allbinary.logic.util.cache_Case.CacheTypeFactory_Package;
+end org.allbinary.logic.util.cache.CacheTypeFactory_Package;
 
 

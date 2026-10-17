@@ -37,7 +37,7 @@ package body org.allbinary.game.ag.layer.pickup.points.Points30kPickedUpLayerInt
    function Create return Points30kPickedUpLayerInterfaceFactory_Access is
       This : constant Points30kPickedUpLayerInterfaceFactory_Access := new Points30kPickedUpLayerInterfaceFactory;
    begin
-      Initialize (This.all);
+      Points30kPickedUpLayerInterfaceFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -56,20 +56,6 @@ package body org.allbinary.game.ag.layer.pickup.points.Points30kPickedUpLayerInt
    begin
         This.pool.visit (sourceLayerInterface);
    end process;
-
-   procedure getTotal (This : in out Points30kPickedUpLayerInterfaceFactory) is
-      Java_Result : constant Integer := Points30kPickedUpLayerInterfaceFactory'Class (This).getTotal;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTotal;
-
-   procedure getInstance is
-      Java_Result : constant PickedUpLayerInterfaceFactoryInterface_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

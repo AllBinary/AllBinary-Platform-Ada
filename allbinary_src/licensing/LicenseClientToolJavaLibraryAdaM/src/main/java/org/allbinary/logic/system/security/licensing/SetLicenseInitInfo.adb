@@ -35,7 +35,7 @@ package body org.allbinary.logic.system.security.licensing.SetLicenseInitInfo_Pa
    function Create (options : Unbounded_String_Array_Access) return SetLicenseInitInfo_Access is
       This : constant SetLicenseInitInfo_Access := new SetLicenseInitInfo;
    begin
-      Initialize (This.all, options);
+      SetLicenseInitInfo_Package.Initialize (This.all, options);
       return This;
    end Create;
 
@@ -96,13 +96,6 @@ package body org.allbinary.logic.system.security.licensing.SetLicenseInitInfo_Pa
         initInfo := SetLicenseInitInfo_Package.Create (args);
         initInfo.createNewLicenseInitInfo (BasicArrayListD_Package.Create);
    end main;
-
-   procedure getLicenseInitInfo (This : in out SetLicenseInitInfo) is
-      Java_Result : constant LicenseInitInfo_Access := SetLicenseInitInfo'Class (This).getLicenseInitInfo;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getLicenseInitInfo;
 
 begin
    null;

@@ -30,6 +30,7 @@ with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArra
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
+with org.allbinary.game.input.mapping.InputToGameKeyMapping_Package; use org.allbinary.game.input.mapping.InputToGameKeyMapping_Package;
 
 package org.allbinary.game.input.mapping.InputMapping_Package is
 
@@ -59,11 +60,8 @@ package org.allbinary.game.input.mapping.InputMapping_Package is
    procedure Initialize (This : in out InputMapping'Class);
    function Create return InputMapping_Access;
    function getTotalMapped (This : in out InputMapping) return Integer;
-   procedure getTotalMapped (This : in out InputMapping);
    function isDefaultNew (This : in out InputMapping) return Boolean;
-   procedure isDefaultNew (This : in out InputMapping);
    function getDefault (This : in out InputMapping) return InputToGameKeyMapping_Access;
-   procedure getDefault (This : in out InputMapping);
    procedure removeAll (This : in out InputMapping);
    procedure remove (This : in out InputMapping; input : Input_Access; mappedToInput : Input_Access);
    procedure addMapping (This : in out InputMapping; inputToGameKeyMapping : InputToGameKeyMapping_Access);
@@ -73,7 +71,6 @@ package org.allbinary.game.input.mapping.InputMapping_Package is
    function getMappedInput (This : in out InputMapping; id : Input_Access) return BasicArrayList_Access;
    procedure getMappedInput (This : in out InputMapping; id : Input_Access);
    function getHashtable (This : in out InputMapping) return ABHashtable_Access;
-   procedure getHashtable (This : in out InputMapping);
 
 end org.allbinary.game.input.mapping.InputMapping_Package;
 

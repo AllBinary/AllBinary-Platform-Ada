@@ -30,7 +30,7 @@ package body org.allbinary.business.user.modules.customer.wholesale.WholesaleUse
    function Create return WholesaleUserFactory_Access is
       This : constant WholesaleUserFactory_Access := new WholesaleUserFactory;
    begin
-      Initialize (This.all);
+      WholesaleUserFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -44,13 +44,6 @@ package body org.allbinary.business.user.modules.customer.wholesale.WholesaleUse
    function getInstance (This : in out WholesaleUserFactory; hashMap : HashMap_Access) return UserInterface_Access is
    begin
         return WholesaleUser_Package.Create (hashMap);
-   end getInstance;
-
-   procedure getInstance (This : in out WholesaleUserFactory) is
-      Java_Result : constant UserInterface_Access := WholesaleUserFactory'Class (This).getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
    procedure getInstance (This : in out WholesaleUserFactory; hashMap : HashMap_Access) is

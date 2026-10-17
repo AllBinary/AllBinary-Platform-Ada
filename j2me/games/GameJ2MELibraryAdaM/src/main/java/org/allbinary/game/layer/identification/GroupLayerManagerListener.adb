@@ -38,7 +38,7 @@ package body org.allbinary.game.layer.identification.GroupLayerManagerListener_P
    function Create return GroupLayerManagerListener_Access is
       This : constant GroupLayerManagerListener_Access := new GroupLayerManagerListener;
    begin
-      Initialize (This.all);
+      GroupLayerManagerListener_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -242,13 +242,6 @@ package body org.allbinary.game.layer.identification.GroupLayerManagerListener_P
         end loop;
         This.logUtil.putF (stringBuffer.toString, This'Unchecked_Access, To_Unbounded_String ("log"));
    end log;
-
-   procedure getInstance is
-      Java_Result : constant GroupLayerManagerListener_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure getGroupSizeFromInterface (This : in out GroupLayerManagerListener; groupInterfaceCompositeInterface : GroupInterfaceCompositeInterface_Access) is
       Java_Result : constant Integer := GroupLayerManagerListener'Class (This).getGroupSizeFromInterface (groupInterfaceCompositeInterface);

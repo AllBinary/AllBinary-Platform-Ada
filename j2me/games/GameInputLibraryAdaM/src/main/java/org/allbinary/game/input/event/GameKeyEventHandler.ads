@@ -23,6 +23,9 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.util.event.EventListenerInterface_Package; use org.allbinary.logic.util.event.EventListenerInterface_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.game.input.event.PressGameKeyEventHandler_Package; use org.allbinary.game.input.event.PressGameKeyEventHandler_Package;
+with org.allbinary.game.input.event.UpGameKeyEventHandler_Package; use org.allbinary.game.input.event.UpGameKeyEventHandler_Package;
+with org.allbinary.game.input.event.DownGameKeyEventHandler_Package; use org.allbinary.game.input.event.DownGameKeyEventHandler_Package;
 
 package org.allbinary.game.input.event.GameKeyEventHandler_Package is
 
@@ -47,7 +50,6 @@ package org.allbinary.game.input.event.GameKeyEventHandler_Package is
    procedure Initialize (This : in out GameKeyEventHandler'Class);
    function Create return GameKeyEventHandler_Access;
    function getInstance return GameKeyEventHandler_Access;
-   procedure getInstance;
    procedure removeAllListeners (This : in out GameKeyEventHandler);
    procedure addListenerForPlayer (This : in out GameKeyEventHandler; eventListenerInterface : EventListenerInterface_Access; playerInputId : Integer);
    procedure addListener (This : in out GameKeyEventHandler; eventListenerInterface : EventListenerInterface_Access);

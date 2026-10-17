@@ -53,7 +53,6 @@ package org.allbinary.input.motion.touch.action.ReleaseTouchInputToGameKeyEventA
    procedure Initialize (This : in out ReleaseTouchInputToGameKeyEventAction'Class);
    function Create return ReleaseTouchInputToGameKeyEventAction_Access;
    function getInstance return GameKeyCompleteMotionGestureInputEvent_Access;
-   procedure getInstance;
    procedure update (This : in out ReleaseTouchInputToGameKeyEventAction);
 
 end org.allbinary.input.motion.touch.action.ReleaseTouchInputToGameKeyEventAction_Package;

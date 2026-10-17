@@ -38,7 +38,7 @@ package body org.allbinary.animation.image.LazyImageRotationAnimationFactory_Pac
    function Create (layoutIndex : Integer; associatedLazyAnimationId : Integer; animationInterfaceFactoryInterface : BaseImageAnimationFactory_Access) return LazyImageRotationAnimationFactory_Access is
       This : constant LazyImageRotationAnimationFactory_Access := new LazyImageRotationAnimationFactory;
    begin
-      Initialize (This.all, layoutIndex, associatedLazyAnimationId, animationInterfaceFactoryInterface);
+      LazyImageRotationAnimationFactory_Package.Initialize (This.all, layoutIndex, associatedLazyAnimationId, animationInterfaceFactoryInterface);
       return This;
    end Create;
 

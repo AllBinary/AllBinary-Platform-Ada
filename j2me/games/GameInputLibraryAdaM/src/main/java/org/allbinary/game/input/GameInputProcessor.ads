@@ -39,7 +39,6 @@ package org.allbinary.game.input.GameInputProcessor_Package is
    procedure Initialize (This : in out GameInputProcessor'Class);
    function Create return GameInputProcessor_Access;
    function getInstance return GameInputProcessor_Access;
-   procedure getInstance;
    procedure processEvent (This : in out GameInputProcessor; allbinaryLayerManager : AllBinaryLayerManager_Access; gameKeyEvent : GameKeyEvent_Access);
    procedure processReleasedEvent (This : in out GameInputProcessor; allbinaryLayerManager : AllBinaryLayerManager_Access; gameKeyEvent : GameKeyEvent_Access);
    procedure processAnalog (This : in out GameInputProcessor; allbinaryLayerManager : AllBinaryLayerManager_Access; gameKeyEvent : GameKeyEvent_Access; analogValue : Integer);

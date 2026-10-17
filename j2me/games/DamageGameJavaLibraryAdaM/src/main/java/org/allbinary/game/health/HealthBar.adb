@@ -38,7 +38,7 @@ package body org.allbinary.game.health.HealthBar_Package is
    function Create (layerInterface : AllBinaryLayer_Access; healthInterface : Health_Access; animationInterface : HealthBarAnimation_Access; direction : Integer) return HealthBar_Access is
       This : constant HealthBar_Access := new HealthBar;
    begin
-      Initialize (This.all, layerInterface, healthInterface, animationInterface, direction);
+      HealthBar_Package.Initialize (This.all, layerInterface, healthInterface, animationInterface, direction);
       return This;
    end Create;
 

@@ -35,6 +35,8 @@ with playn.core.PlayN_Package; use playn.core.PlayN_Package;
 with playn.html.HtmlGraphics_Package; use playn.html.HtmlGraphics_Package;
 with playn.html.HtmlImage_Package; use playn.html.HtmlImage_Package;
 with org.allbinary.animation.image.ImageBaseRotationAnimation_Package; use org.allbinary.animation.image.ImageBaseRotationAnimation_Package;
+with org.allbinary.animation.image.AlphaBaseProcessor_Package; use org.allbinary.animation.image.AlphaBaseProcessor_Package;
+with org.allbinary.animation.image.AlphaProcessor_Package; use org.allbinary.animation.image.AlphaProcessor_Package;
 
 package org.allbinary.animation.image.AllBinaryHTMLImageRotationAnimation_Package is
 

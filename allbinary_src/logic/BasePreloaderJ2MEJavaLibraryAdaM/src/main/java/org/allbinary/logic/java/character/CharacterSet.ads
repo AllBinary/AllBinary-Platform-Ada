@@ -34,7 +34,6 @@ package org.allbinary.logic.java.character_Id.CharacterSet_Package is
    procedure Initialize (This : in out CharacterSet'Class);
    function Create return CharacterSet_Access;
    function toString (This : in out CharacterSet) return Unbounded_String;
-   procedure toString (This : in out CharacterSet);
 
 end org.allbinary.logic.java.character_Id.CharacterSet_Package;
 

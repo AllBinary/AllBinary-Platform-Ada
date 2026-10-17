@@ -29,7 +29,7 @@ package body org.allbinary.game.input.RTSPlayerRightGameInputProcessor_Package i
    function Create (rtsPlayerGameInput : RTSPlayerGameInput_Access) return RTSPlayerRightGameInputProcessor_Access is
       This : constant RTSPlayerRightGameInputProcessor_Access := new RTSPlayerRightGameInputProcessor;
    begin
-      Initialize (This.all, rtsPlayerGameInput);
+      RTSPlayerRightGameInputProcessor_Package.Initialize (This.all, rtsPlayerGameInput);
       return This;
    end Create;
 

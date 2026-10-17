@@ -32,6 +32,8 @@ with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.s
 with org.allbinary.logic.string_Id.StringValidationUtil_Package; use org.allbinary.logic.string_Id.StringValidationUtil_Package;
 with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package; use org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.business.installer.DynamicInitDb_Package; use org.allbinary.business.installer.DynamicInitDb_Package;
+with org.allbinary.business.installer.InitializerData_Package; use org.allbinary.business.installer.InitializerData_Package;
 
 package org.allbinary.business.installer.InitializerDatabase_Package is
 
@@ -71,34 +73,23 @@ package org.allbinary.business.installer.InitializerDatabase_Package is
    function isJdbcDriverValid (This : in out InitializerDatabase; jdbcDriverClassPathString : Unbounded_String) return Boolean;
    procedure isJdbcDriverValid (This : in out InitializerDatabase; jdbcDriverClassPathString : Unbounded_String);
    function isValid (This : in out InitializerDatabase) return Boolean;
-   procedure isValid (This : in out InitializerDatabase);
    function getJdbcDriverValidationInfo (This : in out InitializerDatabase; jdbcDriver : Unbounded_String) return Unbounded_String;
    procedure getJdbcDriverValidationInfo (This : in out InitializerDatabase; jdbcDriver : Unbounded_String);
    function getInvalidInfo (This : in out InitializerDatabase) return Unbounded_String;
-   procedure getInvalidInfo (This : in out InitializerDatabase);
    function createUsers (This : in out InitializerDatabase) return Boolean;
-   procedure createUsers (This : in out InitializerDatabase);
    function createDatabases (This : in out InitializerDatabase) return Boolean;
-   procedure createDatabases (This : in out InitializerDatabase);
    function createTables (This : in out InitializerDatabase) return Boolean;
-   procedure createTables (This : in out InitializerDatabase);
    function getAdminDbUserName (This : in out InitializerDatabase) return Unbounded_String;
-   procedure getAdminDbUserName (This : in out InitializerDatabase);
    procedure setAdminDbUserName (This : in out InitializerDatabase; adminDbUserName : Unbounded_String);
    function getAdminDbPassword (This : in out InitializerDatabase) return Unbounded_String;
-   procedure getAdminDbPassword (This : in out InitializerDatabase);
    procedure setAdminDbPassword (This : in out InitializerDatabase; adminDbPassword : Unbounded_String);
    function getAdminJdbcDriver (This : in out InitializerDatabase) return Unbounded_String;
-   procedure getAdminJdbcDriver (This : in out InitializerDatabase);
    procedure setAdminJdbcDriver (This : in out InitializerDatabase; adminJdbcDriver : Unbounded_String);
    function getAdminSchema (This : in out InitializerDatabase) return Unbounded_String;
-   procedure getAdminSchema (This : in out InitializerDatabase);
    procedure setAdminSchema (This : in out InitializerDatabase; adminSchema : Unbounded_String);
    function getAdminServer (This : in out InitializerDatabase) return Unbounded_String;
-   procedure getAdminServer (This : in out InitializerDatabase);
    procedure setAdminServer (This : in out InitializerDatabase; adminServer : Unbounded_String);
    function getAdminPort (This : in out InitializerDatabase) return Unbounded_String;
-   procedure getAdminPort (This : in out InitializerDatabase);
    procedure setAdminPort (This : in out InitializerDatabase; adminPort : Unbounded_String);
 
 end org.allbinary.business.installer.InitializerDatabase_Package;

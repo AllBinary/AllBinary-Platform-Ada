@@ -49,7 +49,7 @@ package body org.allbinary.game.input.event.UpKeyEventHandler_Package is
    function Create return UpKeyEventHandler_Access is
       This : constant UpKeyEventHandler_Access := new UpKeyEventHandler;
    begin
-      Initialize (This.all);
+      UpKeyEventHandler_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -79,13 +79,6 @@ package body org.allbinary.game.input.event.UpKeyEventHandler_Package is
             UpKeyEventHandler_Package.instanceArray (index).removeListener (eventListenerInterface);
         end loop;
    end removeListener;
-
-   procedure getInstance is
-      Java_Result : constant UpKeyEventHandler_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure getInstanceForDevice (This : in out UpKeyEventHandler; deviceId : Integer) is
       Java_Result : constant UpKeyEventHandlerBase_Access := UpKeyEventHandler'Class (This).getInstanceForDevice (deviceId);

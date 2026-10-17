@@ -54,7 +54,7 @@ package body org.allbinary.string_Id.CommonSeps_Package is
    function Create return CommonSeps_Access is
       This : constant CommonSeps_Access := new CommonSeps;
    begin
-      Initialize (This.all);
+      CommonSeps_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -62,13 +62,6 @@ package body org.allbinary.string_Id.CommonSeps_Package is
    function getInstance return CommonSeps_Access is
    begin
         return CommonSeps_Package.instance;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant CommonSeps_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

@@ -31,7 +31,7 @@ package body org.allbinary.input.motion.gesture.MirrorMotionGestureEventUtil_Pac
    function Create return MirrorMotionGestureEventUtil_Access is
       This : constant MirrorMotionGestureEventUtil_Access := new MirrorMotionGestureEventUtil;
    begin
-      Initialize (This.all);
+      MirrorMotionGestureEventUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -85,13 +85,6 @@ package body org.allbinary.input.motion.gesture.MirrorMotionGestureEventUtil_Pac
    begin
       null;
    end getNewX;
-
-   procedure getInstance is
-      Java_Result : constant MirrorMotionGestureEventUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

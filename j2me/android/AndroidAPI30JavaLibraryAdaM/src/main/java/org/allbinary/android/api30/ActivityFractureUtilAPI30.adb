@@ -29,7 +29,7 @@ package body org.allbinary.android.api30.ActivityFractureUtilAPI30_Package is
    function Create return ActivityFractureUtilAPI30_Access is
       This : constant ActivityFractureUtilAPI30_Access := new ActivityFractureUtilAPI30;
    begin
-      Initialize (This.all);
+      ActivityFractureUtilAPI30_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -48,13 +48,6 @@ package body org.allbinary.android.api30.ActivityFractureUtilAPI30_Package is
         windowInsetsController.hide (WindowInsetsCompat_Package.Type_Id.systemBars);
         windowInsetsController.setSystemBarsBehavior (WindowInsetsControllerCompat_Package.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE);
    end setFullScreen;
-
-   procedure getInstance is
-      Java_Result : constant ActivityFractureUtilAPI30_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

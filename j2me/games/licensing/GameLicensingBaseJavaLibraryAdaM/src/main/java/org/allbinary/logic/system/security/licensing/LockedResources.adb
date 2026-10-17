@@ -29,7 +29,7 @@ package body org.allbinary.logic.system.security.licensing.LockedResources_Packa
    function Create return LockedResources_Access is
       This : constant LockedResources_Access := new LockedResources;
    begin
-      Initialize (This.all);
+      LockedResources_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -37,13 +37,6 @@ package body org.allbinary.logic.system.security.licensing.LockedResources_Packa
    function getInstance return LockedResources_Access is
    begin
         return LockedResources_Package.instance;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant LockedResources_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

@@ -30,7 +30,7 @@ package body admin.taghelpers.UpdateOrderHelperFactory_Package is
    function Create return UpdateOrderHelperFactory_Access is
       This : constant UpdateOrderHelperFactory_Access := new UpdateOrderHelperFactory;
    begin
-      Initialize (This.all);
+      UpdateOrderHelperFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

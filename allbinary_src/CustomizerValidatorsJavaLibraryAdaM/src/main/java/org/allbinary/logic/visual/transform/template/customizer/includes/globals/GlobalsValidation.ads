@@ -30,6 +30,7 @@ with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
+with org.allbinary.logic.visual.transform.template.customizer.includes.globals.GlobalsData_Package; use org.allbinary.logic.visual.transform.template.customizer.includes.globals.GlobalsData_Package;
 
 package org.allbinary.logic.visual.transform.template.customizer.includes.globals.GlobalsValidation_Package is
 
@@ -57,11 +58,8 @@ package org.allbinary.logic.visual.transform.template.customizer.includes.global
    procedure Initialize (This : in out GlobalsValidation'Class; storeName : Unbounded_String);
    function Create (storeName : Unbounded_String) return GlobalsValidation_Access;
    function isValid (This : in out GlobalsValidation) return Boolean;
-   procedure isValid (This : in out GlobalsValidation);
    function validationInfo (This : in out GlobalsValidation) return Unbounded_String;
-   procedure validationInfo (This : in out GlobalsValidation);
    function toValidationInfoDoc (This : in out GlobalsValidation) return Document_Access;
-   procedure toValidationInfoDoc (This : in out GlobalsValidation);
    function toValidationInfoNode (This : in out GlobalsValidation; document : Document_Access) return Node_Access;
    procedure toValidationInfoNode (This : in out GlobalsValidation; document : Document_Access);
    function toXmlNode (This : in out GlobalsValidation; document : Document_Access) return Node_Access;

@@ -36,7 +36,7 @@ package body org.allbinary.data.tables.user.quoterequest.QuoteRequestEntityFacto
    function Create return QuoteRequestEntityFactory_Access is
       This : constant QuoteRequestEntityFactory_Access := new QuoteRequestEntityFactory;
    begin
-      Initialize (This.all);
+      QuoteRequestEntityFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -57,20 +57,6 @@ package body org.allbinary.data.tables.user.quoterequest.QuoteRequestEntityFacto
             return null;
                 end;
         end;
-   end getQuoteRequestEntityInstance;
-
-   procedure getInstance is
-      Java_Result : constant QuoteRequestEntityFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure getQuoteRequestEntityInstance (This : in out QuoteRequestEntityFactory) is
-      Java_Result : constant QuoteRequestEntity_Access := QuoteRequestEntityFactory'Class (This).getQuoteRequestEntityInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getQuoteRequestEntityInstance;
 
 begin

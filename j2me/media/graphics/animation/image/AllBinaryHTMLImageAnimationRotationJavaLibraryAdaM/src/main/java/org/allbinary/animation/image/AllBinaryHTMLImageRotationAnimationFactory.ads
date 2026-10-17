@@ -29,6 +29,8 @@ with org.allbinary.media.image.ImageCopyUtil_Package; use org.allbinary.media.im
 with org.allbinary.math.AngleFactory_Package; use org.allbinary.math.AngleFactory_Package;
 with org.allbinary.math.AngleInfo_Package; use org.allbinary.math.AngleInfo_Package;
 with org.allbinary.animation.image.BaseImageAnimationFactory_Package; use org.allbinary.animation.image.BaseImageAnimationFactory_Package;
+with org.allbinary.animation.image.AllBinaryHTMLImageRotationAnimation_Package; use org.allbinary.animation.image.AllBinaryHTMLImageRotationAnimation_Package;
+with org.allbinary.animation.image.AllBinaryAdjustedHTMLImageRotationAnimation_Package; use org.allbinary.animation.image.AllBinaryAdjustedHTMLImageRotationAnimation_Package;
 
 package org.allbinary.animation.image.AllBinaryHTMLImageRotationAnimationFactory_Package is
 
@@ -57,7 +59,6 @@ package org.allbinary.animation.image.AllBinaryHTMLImageRotationAnimationFactory
    function getInstance (This : in out AllBinaryHTMLImageRotationAnimationFactory; instanceId : Integer) return Animation_Access;
    procedure getInstance (This : in out AllBinaryHTMLImageRotationAnimationFactory; instanceId : Integer);
    function getAngleIncrement (This : in out AllBinaryHTMLImageRotationAnimationFactory) return Short_Integer;
-   procedure getAngleIncrement (This : in out AllBinaryHTMLImageRotationAnimationFactory);
 
 end org.allbinary.animation.image.AllBinaryHTMLImageRotationAnimationFactory_Package;
 

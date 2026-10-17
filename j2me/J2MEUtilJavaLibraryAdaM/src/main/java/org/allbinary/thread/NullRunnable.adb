@@ -36,16 +36,9 @@ package body org.allbinary.thread.NullRunnable_Package is
    function Create return NullRunnable_Access is
       This : constant NullRunnable_Access := new NullRunnable;
    begin
-      Initialize (This.all);
+      NullRunnable_Package.Initialize (This.all);
       return This;
    end Create;
-
-   procedure getInstance is
-      Java_Result : constant NullRunnable_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

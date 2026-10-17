@@ -47,11 +47,8 @@ package org.allbinary.logic.visual.dhtml.style.css.property.font.FontFamilyValid
    procedure Initialize (This : in out FontFamilyValidation'Class);
    function Create return FontFamilyValidation_Access;
    function isValid (This : in out FontFamilyValidation) return Boolean;
-   procedure isValid (This : in out FontFamilyValidation);
    function validationInfo (This : in out FontFamilyValidation) return Unbounded_String;
-   procedure validationInfo (This : in out FontFamilyValidation);
    function toValidationInfoDoc (This : in out FontFamilyValidation) return Document_Access;
-   procedure toValidationInfoDoc (This : in out FontFamilyValidation);
    function toValidationInfoNode (This : in out FontFamilyValidation; document : Document_Access) return Node_Access;
    procedure toValidationInfoNode (This : in out FontFamilyValidation; document : Document_Access);
 

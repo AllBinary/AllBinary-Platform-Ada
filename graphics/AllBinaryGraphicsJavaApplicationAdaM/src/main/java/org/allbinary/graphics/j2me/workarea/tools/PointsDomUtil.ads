@@ -27,6 +27,7 @@ with org.allbinary.graphics.j2me.workarea.canvas.CanvasDom_Package; use org.allb
 with org.allbinary.math.PositionStrings_Package; use org.allbinary.math.PositionStrings_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
+with org.allbinary.graphics.j2me.workarea.tools.PointsUtil_Package; use org.allbinary.graphics.j2me.workarea.tools.PointsUtil_Package;
 
 package org.allbinary.graphics.j2me.workarea.tools.PointsDomUtil_Package is
 
@@ -56,7 +57,6 @@ package org.allbinary.graphics.j2me.workarea.tools.PointsDomUtil_Package is
    procedure Initialize (This : in out PointsDomUtil'Class);
    function Create return PointsDomUtil_Access;
    function getInstance return PointsDomUtil_Access;
-   procedure getInstance;
    function toDom (This : in out PointsDomUtil; canvasDom : CanvasDom_Access; pointVector : BasicArrayList_Access) return Node_Access;
    procedure toDom (This : in out PointsDomUtil; canvasDom : CanvasDom_Access; pointVector : BasicArrayList_Access);
    function getPointNode (This : in out PointsDomUtil; point : GPoint_Access; pointName : Unbounded_String) return Node_Access;

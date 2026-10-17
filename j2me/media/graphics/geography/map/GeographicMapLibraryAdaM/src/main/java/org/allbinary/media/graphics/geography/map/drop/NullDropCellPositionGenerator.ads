@@ -36,7 +36,6 @@ package org.allbinary.media.graphics.geography.map.drop.NullDropCellPositionGene
    procedure Initialize (This : in out NullDropCellPositionGenerator'Class);
    function Create return NullDropCellPositionGenerator_Access;
    function getInstance return NullDropCellPositionGenerator_Access;
-   procedure getInstance;
 
 end org.allbinary.media.graphics.geography.map.drop.NullDropCellPositionGenerator_Package;
 

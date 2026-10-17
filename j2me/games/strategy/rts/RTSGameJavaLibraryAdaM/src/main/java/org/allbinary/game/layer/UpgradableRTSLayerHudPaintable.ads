@@ -28,6 +28,9 @@ with org.allbinary.graphics.displayable.DisplayInfoSingleton_Package; use org.al
 with org.allbinary.graphics.font.MyFontProcessor_Package; use org.allbinary.graphics.font.MyFontProcessor_Package;
 with org.allbinary.input.motion.button.CommonButtons_Package; use org.allbinary.input.motion.button.CommonButtons_Package;
 with org.allbinary.game.layer.SelectionHudPaintable_Package; use org.allbinary.game.layer.SelectionHudPaintable_Package;
+with org.allbinary.game.layer.RTSLayerCompositePaintable_Package; use org.allbinary.game.layer.RTSLayerCompositePaintable_Package;
+with org.allbinary.game.layer.UpgradableWideRTSLayerPaintable_Package; use org.allbinary.game.layer.UpgradableWideRTSLayerPaintable_Package;
+with org.allbinary.game.layer.RTSLayer_Package; use org.allbinary.game.layer.RTSLayer_Package;
 
 package org.allbinary.game.layer.UpgradableRTSLayerHudPaintable_Package is
 
@@ -61,7 +64,6 @@ package org.allbinary.game.layer.UpgradableRTSLayerHudPaintable_Package is
    procedure Initialize (This : in out UpgradableRTSLayerHudPaintable'Class);
    function Create return UpgradableRTSLayerHudPaintable_Access;
    function getInstance return UpgradableRTSLayerHudPaintable_Access;
-   procedure getInstance;
    procedure updateMeasurement (This : in out UpgradableRTSLayerHudPaintable; graphics : Graphics_Access);
    procedure update (This : in out UpgradableRTSLayerHudPaintable);
    procedure updateSelectionInfo (This : in out UpgradableRTSLayerHudPaintable);
@@ -69,7 +71,6 @@ package org.allbinary.game.layer.UpgradableRTSLayerHudPaintable_Package is
    procedure paint (This : in out UpgradableRTSLayerHudPaintable; graphics : Graphics_Access);
    procedure setRtsLayer (This : in out UpgradableRTSLayerHudPaintable; rtsLayer : RTSLayer_Access);
    function getRtsLayer (This : in out UpgradableRTSLayerHudPaintable) return CollidableDestroyableDamageableLayer_Access;
-   procedure getRtsLayer (This : in out UpgradableRTSLayerHudPaintable);
 
 end org.allbinary.game.layer.UpgradableRTSLayerHudPaintable_Package;
 

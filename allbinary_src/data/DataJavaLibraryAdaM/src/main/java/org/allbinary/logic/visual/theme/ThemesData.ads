@@ -37,7 +37,6 @@ package org.allbinary.logic.visual.theme.ThemesData_Package is
    procedure Initialize (This : in out ThemesData'Class);
    function Create return ThemesData_Access;
    function getInstance return ThemesData_Access;
-   procedure getInstance;
 
 end org.allbinary.logic.visual.theme.ThemesData_Package;
 

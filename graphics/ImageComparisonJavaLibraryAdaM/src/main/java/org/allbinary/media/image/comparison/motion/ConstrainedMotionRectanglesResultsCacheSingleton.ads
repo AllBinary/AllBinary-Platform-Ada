@@ -49,7 +49,6 @@ package org.allbinary.media.image.comparison.motion.ConstrainedMotionRectanglesR
    procedure Initialize (This : in out ConstrainedMotionRectanglesResultsCacheSingleton'Class);
    function Create return ConstrainedMotionRectanglesResultsCacheSingleton_Access;
    function getInstance return CacheInterface_Access;
-   procedure getInstance;
 
 end org.allbinary.media.image.comparison.motion.ConstrainedMotionRectanglesResultsCacheSingleton_Package;
 

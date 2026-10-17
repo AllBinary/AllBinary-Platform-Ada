@@ -40,7 +40,6 @@ package org.allbinary.game.physics.acceleration.GravityUtil_Package is
    procedure Initialize (This : in out GravityUtil'Class);
    function Create return GravityUtil_Access;
    function getInstance return GravityUtil_Access;
-   procedure getInstance;
    procedure process (This : in out GravityUtil; velocityProperties : BasicVelocityProperties_Access; customGravity : Integer);
 
 end org.allbinary.game.physics.acceleration.GravityUtil_Package;

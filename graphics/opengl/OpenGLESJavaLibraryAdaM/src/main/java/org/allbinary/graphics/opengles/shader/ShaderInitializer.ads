@@ -22,6 +22,7 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with javax.microedition.khronos.opengles.GL10_Package; use javax.microedition.khronos.opengles.GL10_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.graphics.opengles.shader.Shader_Package; use org.allbinary.graphics.opengles.shader.Shader_Package;
 
 package org.allbinary.graphics.opengles.shader.ShaderInitializer_Package is
 
@@ -40,7 +41,6 @@ package org.allbinary.graphics.opengles.shader.ShaderInitializer_Package is
    procedure Initialize (This : in out ShaderInitializer'Class);
    function Create return ShaderInitializer_Access;
    function getInstance return ShaderInitializer_Access;
-   procedure getInstance;
    function init (This : in out ShaderInitializer; gl : GL10_Access; shader : Shader_Access_Array_Access; attributeArray : Unbounded_String_Array_Access) return Integer;
    procedure init (This : in out ShaderInitializer; gl : GL10_Access; shader : Shader_Access_Array_Access; attributeArray : Unbounded_String_Array_Access);
 

@@ -42,7 +42,6 @@ package org.allbinary.logic.system.hardware.components.linux.Media_Package is
    function compareTo (This : in out Media; componentInterface : HardwareComponentInterface_Access) return Boolean;
    procedure compareTo (This : in out Media; componentInterface : HardwareComponentInterface_Access);
    function toString (This : in out Media) return Unbounded_String;
-   procedure toString (This : in out Media);
 
 end org.allbinary.logic.system.hardware.components.linux.Media_Package;
 

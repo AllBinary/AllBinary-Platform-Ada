@@ -31,7 +31,7 @@ package body org.allbinary.input.automation.module.generic_Id.CaptureWorkerUtil_
    function Create return CaptureWorkerUtil_Access is
       This : constant CaptureWorkerUtil_Access := new CaptureWorkerUtil;
    begin
-      Initialize (This.all);
+      CaptureWorkerUtil_Package.Initialize (This.all);
       return This;
    end Create;
 

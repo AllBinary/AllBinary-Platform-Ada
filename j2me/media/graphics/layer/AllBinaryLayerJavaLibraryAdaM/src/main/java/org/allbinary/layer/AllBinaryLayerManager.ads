@@ -23,6 +23,9 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.layer.event.LayerManagerEvent_Package; use org.allbinary.layer.event.LayerManagerEvent_Package;
 with org.allbinary.layer.event.LayerManagerEventHandler_Package; use org.allbinary.layer.event.LayerManagerEventHandler_Package;
 with org.allbinary.layer.LayerManager_Package; use org.allbinary.layer.LayerManager_Package;
+with org.allbinary.layer.LayerProcessor_Package; use org.allbinary.layer.LayerProcessor_Package;
+with org.allbinary.layer.LayerManagerNoDebug_Package; use org.allbinary.layer.LayerManagerNoDebug_Package;
+with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
 
 package org.allbinary.layer.AllBinaryLayerManager_Package is
 
@@ -44,7 +47,6 @@ package org.allbinary.layer.AllBinaryLayerManager_Package is
    procedure Initialize (This : in out AllBinaryLayerManager'Class);
    function Create return AllBinaryLayerManager_Access;
    function getLayerProcessorArray (This : in out AllBinaryLayerManager) return LayerProcessor_Access_Array_Access;
-   procedure getLayerProcessorArray (This : in out AllBinaryLayerManager);
    procedure setLayerProcessorArray (This : in out AllBinaryLayerManager; layerProcessorArray : LayerProcessor_Access_Array_Access);
    procedure log (This : in out AllBinaryLayerManager);
    procedure append (This : in out AllBinaryLayerManager; layerInterface : AllBinaryLayer_Access);

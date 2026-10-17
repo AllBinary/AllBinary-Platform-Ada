@@ -60,12 +60,9 @@ package org.allbinary.data.tables.user.commerce.inventory.item.options.XmlOption
    procedure insert (This : in out XmlOptionItemsEntity; values : BasicArrayList_Access);
    procedure delete (This : in out XmlOptionItemsEntity; value : Unbounded_String);
    function createTableStatement (This : in out XmlOptionItemsEntity) return Unbounded_String;
-   procedure createTableStatement (This : in out XmlOptionItemsEntity);
    function createTable (This : in out XmlOptionItemsEntity) return Unbounded_String;
-   procedure createTable (This : in out XmlOptionItemsEntity);
    procedure update (This : in out XmlOptionItemsEntity; updatedValues : HashMap_Access);
    function dropTable (This : in out XmlOptionItemsEntity) return Unbounded_String;
-   procedure dropTable (This : in out XmlOptionItemsEntity);
 
 end org.allbinary.data.tables.user.commerce.inventory.item.options.XmlOptionItemsEntity_Package;
 

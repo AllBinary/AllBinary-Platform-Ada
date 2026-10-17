@@ -34,7 +34,7 @@ package body org.allbinary.media.image.comparison.motion.MotionRectanglesResults
    function Create (anyType : Java_Object_Access; frame : Long_Long_Integer; motionRectangles : MotionRectangles_Access) return MotionRectanglesResultsEvent_Access is
       This : constant MotionRectanglesResultsEvent_Access := new MotionRectanglesResultsEvent;
    begin
-      Initialize (This.all, anyType, frame, motionRectangles);
+      MotionRectanglesResultsEvent_Package.Initialize (This.all, anyType, frame, motionRectangles);
       return This;
    end Create;
 
@@ -51,20 +51,6 @@ package body org.allbinary.media.image.comparison.motion.MotionRectanglesResults
    function getFrame (This : in out MotionRectanglesResultsEvent) return Long_Long_Integer is
    begin
         return This.frame;
-   end getFrame;
-
-   procedure getMotionRectangles (This : in out MotionRectanglesResultsEvent) is
-      Java_Result : constant MotionRectangles_Access := MotionRectanglesResultsEvent'Class (This).getMotionRectangles;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getMotionRectangles;
-
-   procedure getFrame (This : in out MotionRectanglesResultsEvent) is
-      Java_Result : constant Long_Long_Integer := MotionRectanglesResultsEvent'Class (This).getFrame;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getFrame;
 
 end org.allbinary.media.image.comparison.motion.MotionRectanglesResultsEvent_Package;

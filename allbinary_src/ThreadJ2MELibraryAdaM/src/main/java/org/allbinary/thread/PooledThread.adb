@@ -37,7 +37,7 @@ package body org.allbinary.thread.PooledThread_Package is
    function Create (threadPool : ThreadPool_Access) return PooledThread_Access is
       This : constant PooledThread_Access := new PooledThread;
    begin
-      Initialize (This.all, threadPool);
+      PooledThread_Package.Initialize (This.all, threadPool);
       return This;
    end Create;
 

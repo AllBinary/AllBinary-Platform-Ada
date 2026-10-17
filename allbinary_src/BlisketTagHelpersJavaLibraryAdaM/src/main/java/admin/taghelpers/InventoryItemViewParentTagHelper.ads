@@ -49,7 +49,6 @@ package admin.taghelpers.InventoryItemViewParentTagHelper_Package is
    procedure Initialize (This : in out InventoryItemViewParentTagHelper'Class);
    function Create return InventoryItemViewParentTagHelper_Access;
    function getInstance return InventoryItemViewParentTagHelper_Access;
-   procedure getInstance;
    function getInventoryItemView (This : in out InventoryItemViewParentTagHelper; inventoryTag : HelperTag_Access) return InventoryItemView_Access;
    procedure getInventoryItemView (This : in out InventoryItemViewParentTagHelper; inventoryTag : HelperTag_Access);
    function getDownloadableInventoryItemView (This : in out InventoryItemViewParentTagHelper; inventoryTag : HelperTag_Access) return DownloadableInventoryItemView_Access;

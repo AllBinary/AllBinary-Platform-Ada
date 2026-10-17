@@ -45,7 +45,7 @@ package body org.allbinary.game.layer.unit.Unit3DecalGameResources_Package is
    function Create return Unit3DecalGameResources_Access is
       This : constant Unit3DecalGameResources_Access := new Unit3DecalGameResources;
    begin
-      Initialize (This.all);
+      Unit3DecalGameResources_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -68,20 +68,6 @@ package body org.allbinary.game.layer.unit.Unit3DecalGameResources_Package is
    function getInstance return BasicGameResources_Access is
    begin
         return Unit3DecalGameResources_Package.instance;
-   end getInstance;
-
-   procedure getString (This : in out Unit3DecalGameResources) is
-      Java_Result : constant Unbounded_String := Unit3DecalGameResources'Class (This).getString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getString;
-
-   procedure getInstance is
-      Java_Result : constant BasicGameResources_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

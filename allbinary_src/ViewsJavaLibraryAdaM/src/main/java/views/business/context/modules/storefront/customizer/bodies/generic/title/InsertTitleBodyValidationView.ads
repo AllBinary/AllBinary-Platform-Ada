@@ -60,17 +60,12 @@ package views.business.context.modules.storefront.customizer.bodies.generic_Id.t
    procedure Initialize (This : in out InsertTitleBodyValidationView'Class; transformInfoInterface : TransformInfoInterface_Access);
    function Create (transformInfoInterface : TransformInfoInterface_Access) return InsertTitleBodyValidationView_Access;
    function toXmlDoc (This : in out InsertTitleBodyValidationView) return Document_Access;
-   procedure toXmlDoc (This : in out InsertTitleBodyValidationView);
    function isValid (This : in out InsertTitleBodyValidationView) return Boolean;
-   procedure isValid (This : in out InsertTitleBodyValidationView);
    function validationInfo (This : in out InsertTitleBodyValidationView) return Unbounded_String;
-   procedure validationInfo (This : in out InsertTitleBodyValidationView);
    function toValidationInfoDoc (This : in out InsertTitleBodyValidationView) return Document_Access;
-   procedure toValidationInfoDoc (This : in out InsertTitleBodyValidationView);
    function toValidationInfoNode (This : in out InsertTitleBodyValidationView; document : Document_Access) return Node_Access;
    procedure toValidationInfoNode (This : in out InsertTitleBodyValidationView; document : Document_Access);
    function view (This : in out InsertTitleBodyValidationView) return Unbounded_String;
-   procedure view (This : in out InsertTitleBodyValidationView);
 
 end views.business.context.modules.storefront.customizer.bodies.generic_Id.title.InsertTitleBodyValidationView_Package;
 

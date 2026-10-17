@@ -46,6 +46,7 @@ with org.allbinary.logic.visual.media.MediaData_Package; use org.allbinary.logic
 with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
 with org.apache.commons.fileupload.FileItem_Package; use org.apache.commons.fileupload.FileItem_Package;
 with views.business.context.modules.storefront.HttpStoreComponentView_Package; use views.business.context.modules.storefront.HttpStoreComponentView_Package;
+with views.admin.inventory.InventoryUploadMediaUtil_Package; use views.admin.inventory.InventoryUploadMediaUtil_Package;
 
 package views.admin.inventory.InventoryItemView_Package is
 
@@ -93,17 +94,13 @@ package views.admin.inventory.InventoryItemView_Package is
    procedure Initialize (This : in out InventoryItemView'Class; transformInfoInterface : TransformInfoInterface_Access);
    function Create (transformInfoInterface : TransformInfoInterface_Access) return InventoryItemView_Access;
    function getTypeId (This : in out InventoryItemView) return Integer;
-   procedure getTypeId (This : in out InventoryItemView);
    procedure getFormData (This : in out InventoryItemView);
    procedure addDomNodeInterfaces (This : in out InventoryItemView);
    function getItemInterface (This : in out InventoryItemView) return ItemInterface_Access;
-   procedure getItemInterface (This : in out InventoryItemView);
    function view (This : in out InventoryItemView) return Unbounded_String;
-   procedure view (This : in out InventoryItemView);
    procedure processImageFiles (This : in out InventoryItemView);
    procedure setRequestHashMap (This : in out InventoryItemView; requestHashMap : HashMap_Access);
    function getRequestHashMap (This : in out InventoryItemView) return HashMap_Access;
-   procedure getRequestHashMap (This : in out InventoryItemView);
 
 end views.admin.inventory.InventoryItemView_Package;
 

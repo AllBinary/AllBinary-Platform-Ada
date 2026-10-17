@@ -22,6 +22,9 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with javax.help.HelpSet_Package; use javax.help.HelpSet_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.input.automation.Point_Package; use org.allbinary.input.automation.Point_Package;
+with org.allbinary.input.automation.PointHelper_Package; use org.allbinary.input.automation.PointHelper_Package;
+with org.allbinary.input.automation.Rectangle_Package; use org.allbinary.input.automation.Rectangle_Package;
 
 package org.allbinary.input.automation.AbstractInputRobot_Package is
 
@@ -40,7 +43,6 @@ package org.allbinary.input.automation.AbstractInputRobot_Package is
    procedure Initialize (This : in out AbstractInputRobot'Class; helpSet : HelpSet_Access);
    function Create (helpSet : HelpSet_Access) return AbstractInputRobot_Access;
    function getHelpSet (This : in out AbstractInputRobot) return HelpSet_Access;
-   procedure getHelpSet (This : in out AbstractInputRobot);
    procedure mouseMove (This : in out AbstractInputRobot; point : Point_Access);
    procedure mouseMoveToTarget (This : in out AbstractInputRobot; rectangle : Rectangle_Access; x : Integer; y : Integer);
    procedure mouseMoveToTarget (This : in out AbstractInputRobot; rectangle : Rectangle_Access);

@@ -31,6 +31,8 @@ with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.w3c.dom.NodeList_Package; use org.w3c.dom.NodeList_Package;
 with org.allbinary.input.automation.actions.script.condition.BasicProfileActionScriptCondition_Package; use org.allbinary.input.automation.actions.script.condition.BasicProfileActionScriptCondition_Package;
 with org.allbinary.input.automation.actions.script.condition.AlwaysActionScriptConditionInterface_Package; use org.allbinary.input.automation.actions.script.condition.AlwaysActionScriptConditionInterface_Package;
+with org.allbinary.input.automation.actions.script.condition.AlwaysActionScriptConditionJPanel_Package; use org.allbinary.input.automation.actions.script.condition.AlwaysActionScriptConditionJPanel_Package;
+with org.allbinary.input.automation.actions.script.condition.AlwaysActionScriptConditionData_Package; use org.allbinary.input.automation.actions.script.condition.AlwaysActionScriptConditionData_Package;
 
 package org.allbinary.input.automation.actions.script.condition.AlwaysActionScriptCondition_Package is
 
@@ -59,11 +61,9 @@ package org.allbinary.input.automation.actions.script.condition.AlwaysActionScri
    function Create (node : Node_Access) return AlwaysActionScriptCondition_Access;
    procedure init (This : in out AlwaysActionScriptCondition);
    function isIsOn (This : in out AlwaysActionScriptCondition) return Boolean;
-   procedure isIsOn (This : in out AlwaysActionScriptCondition);
    procedure setIsOn (This : in out AlwaysActionScriptCondition; isOn : Boolean);
    procedure showDialog (This : in out AlwaysActionScriptCondition);
    function toHashMap (This : in out AlwaysActionScriptCondition) return HashMap_Access;
-   procedure toHashMap (This : in out AlwaysActionScriptCondition);
    function toXmlNode (This : in out AlwaysActionScriptCondition; document : Document_Access) return Node_Access;
    procedure toXmlNode (This : in out AlwaysActionScriptCondition; document : Document_Access);
    function shouldProcess (This : in out AlwaysActionScriptCondition; frame : Long_Long_Integer) return Boolean;

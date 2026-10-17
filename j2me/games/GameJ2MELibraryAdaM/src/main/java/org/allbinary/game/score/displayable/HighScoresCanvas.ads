@@ -109,11 +109,9 @@ package org.allbinary.game.score.displayable.HighScoresCanvas_Package is
    procedure paint (This : in out HighScoresCanvas; graphics : Graphics_Access);
    procedure executeUpdate (This : in out HighScoresCanvas);
    function getHighScoresPaintable (This : in out HighScoresCanvas) return HighScoresPaintable_Access;
-   procedure getHighScoresPaintable (This : in out HighScoresCanvas);
    procedure setHighScoresArray (This : in out HighScoresCanvas; highScoresArray : HighScores_Access_Array_Access);
    procedure updateCommand (This : in out HighScoresCanvas; command : Command_Access);
    function getGameInfo (This : in out HighScoresCanvas) return GameInfo_Access;
-   procedure getGameInfo (This : in out HighScoresCanvas);
    procedure setPaintable (This : in out HighScoresCanvas; paintable : Paintable_Access);
 
 end org.allbinary.game.score.displayable.HighScoresCanvas_Package;

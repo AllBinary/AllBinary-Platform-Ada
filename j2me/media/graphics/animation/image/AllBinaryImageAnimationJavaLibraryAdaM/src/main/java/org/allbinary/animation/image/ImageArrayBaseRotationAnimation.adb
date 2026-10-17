@@ -39,7 +39,7 @@ package body org.allbinary.animation.image.ImageArrayBaseRotationAnimation_Packa
    function Create (originalImageArray : Image_Access_Array_Access; angleInfo : AngleInfo_Access; animationBehavior : AnimationBehavior_Access) return ImageArrayBaseRotationAnimation_Access is
       This : constant ImageArrayBaseRotationAnimation_Access := new ImageArrayBaseRotationAnimation;
    begin
-      Initialize (This.all, originalImageArray, angleInfo, animationBehavior);
+      ImageArrayBaseRotationAnimation_Package.Initialize (This.all, originalImageArray, angleInfo, animationBehavior);
       return This;
    end Create;
 
@@ -146,20 +146,6 @@ package body org.allbinary.animation.image.ImageArrayBaseRotationAnimation_Packa
         end loop;
         disposalUtil.disposeImage (This.currentImage);
    end finalize;
-
-   procedure getAnimationSize (This : in out ImageArrayBaseRotationAnimation) is
-      Java_Result : constant Integer := ImageArrayBaseRotationAnimation'Class (This).getAnimationSize;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getAnimationSize;
-
-   procedure getSequence (This : in out ImageArrayBaseRotationAnimation) is
-      Java_Result : constant Integer_Array_Access := ImageArrayBaseRotationAnimation'Class (This).getSequence;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSequence;
 
 end org.allbinary.animation.image.ImageArrayBaseRotationAnimation_Package;
 

@@ -32,7 +32,7 @@ package body org.allbinary.graphics.displayable.screen.ScreenRepaintProcessor_Pa
    function Create (displayable : Displayable_Access) return ScreenRepaintProcessor_Access is
       This : constant ScreenRepaintProcessor_Access := new ScreenRepaintProcessor;
    begin
-      Initialize (This.all, displayable);
+      ScreenRepaintProcessor_Package.Initialize (This.all, displayable);
       return This;
    end Create;
 

@@ -21,6 +21,8 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.awt.image.BufferedImage_Package; use java.awt.image.BufferedImage_Package;
+with org.allbinary.media.image.comparison.motion.Dimension_Package; use org.allbinary.media.image.comparison.motion.Dimension_Package;
+with org.allbinary.media.image.comparison.motion.Rectangle_Package; use org.allbinary.media.image.comparison.motion.Rectangle_Package;
 
 package org.allbinary.media.image.comparison.motion.MotionRectangleConstraintsInterface_Package is
 

@@ -28,7 +28,7 @@ package body org.allbinary.game.input.RTSLayerFormFactory_Package is
    function Create return RTSLayerFormFactory_Access is
       This : constant RTSLayerFormFactory_Access := new RTSLayerFormFactory;
    begin
-      Initialize (This.all);
+      RTSLayerFormFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

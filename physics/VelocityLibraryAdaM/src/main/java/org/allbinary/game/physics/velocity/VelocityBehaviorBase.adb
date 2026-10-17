@@ -28,7 +28,7 @@ package body org.allbinary.game.physics.velocity.VelocityBehaviorBase_Package is
    function Create return VelocityBehaviorBase_Access is
       This : constant VelocityBehaviorBase_Access := new VelocityBehaviorBase;
    begin
-      Initialize (This.all);
+      VelocityBehaviorBase_Package.Initialize (This.all);
       return This;
    end Create;
 

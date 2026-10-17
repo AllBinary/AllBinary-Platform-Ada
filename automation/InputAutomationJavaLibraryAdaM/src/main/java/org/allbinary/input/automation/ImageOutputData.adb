@@ -30,13 +30,13 @@ package body org.allbinary.input.automation.ImageOutputData_Package is
    function Create return ImageOutputData_Access is
       This : constant ImageOutputData_Access := new ImageOutputData;
    begin
-      Initialize (This.all);
+      ImageOutputData_Package.Initialize (This.all);
       return This;
    end Create;
 
 begin
    null;
-   SAVE_PATH := StringMaker_Package.Create.append (System_Package.getProperty (To_Unbounded_String ("user.dir"))).appendchar (FilePathData_Package.getInstance.SEPARATORCHAR).append (To_Unbounded_String ("saves")).appendchar (FilePathData_Package.getInstance.SEPARATORCHAR).toString;
+   SAVE_PATH := StringMaker_Package.Create.append (Java_Get_Property (To_Unbounded_String ("user.dir"))).appendchar (FilePathData_Package.getInstance.SEPARATORCHAR).append (To_Unbounded_String ("saves")).appendchar (FilePathData_Package.getInstance.SEPARATORCHAR).toString;
 
 end org.allbinary.input.automation.ImageOutputData_Package;
 

@@ -46,7 +46,7 @@ package body views.admin.orderhistory.UserNameOrderHistoryView_Package is
    function Create (transformInfoInterface : TransformInfoInterface_Access) return UserNameOrderHistoryView_Access is
       This : constant UserNameOrderHistoryView_Access := new UserNameOrderHistoryView;
    begin
-      Initialize (This.all, transformInfoInterface);
+      UserNameOrderHistoryView_Package.Initialize (This.all, transformInfoInterface);
       return This;
    end Create;
 
@@ -150,13 +150,6 @@ package body views.admin.orderhistory.UserNameOrderHistoryView_Package is
         return To_Unbounded_String ("Unknown Error<br />");
    end validationInfo;
 
-   procedure view (This : in out UserNameOrderHistoryView) is
-      Java_Result : constant Unbounded_String := UserNameOrderHistoryView'Class (This).view;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end view;
-
    procedure toXmlNode (This : in out UserNameOrderHistoryView; document : Document_Access) is
       Java_Result : constant Node_Access := UserNameOrderHistoryView'Class (This).toXmlNode (document);
       pragma Unreferenced (Java_Result);
@@ -164,33 +157,12 @@ package body views.admin.orderhistory.UserNameOrderHistoryView_Package is
       null;
    end toXmlNode;
 
-   procedure isValid (This : in out UserNameOrderHistoryView) is
-      Java_Result : constant Boolean := UserNameOrderHistoryView'Class (This).isValid;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isValid;
-
-   procedure toValidationInfoDoc (This : in out UserNameOrderHistoryView) is
-      Java_Result : constant Document_Access := UserNameOrderHistoryView'Class (This).toValidationInfoDoc;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toValidationInfoDoc;
-
    procedure toValidationInfoNode (This : in out UserNameOrderHistoryView; document : Document_Access) is
       Java_Result : constant Node_Access := UserNameOrderHistoryView'Class (This).toValidationInfoNode (document);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end toValidationInfoNode;
-
-   procedure validationInfo (This : in out UserNameOrderHistoryView) is
-      Java_Result : constant Unbounded_String := UserNameOrderHistoryView'Class (This).validationInfo;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end validationInfo;
 
 end views.admin.orderhistory.UserNameOrderHistoryView_Package;
 

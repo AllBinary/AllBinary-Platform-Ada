@@ -50,7 +50,6 @@ package views.generic_Id.user.UserView_Package is
    function Create (transformInfoInterface : TransformInfoInterface_Access) return UserView_Access;
    procedure addDomNodeInterfaces (This : in out UserView);
    function view (This : in out UserView) return Unbounded_String;
-   procedure view (This : in out UserView);
 
 end views.generic_Id.user.UserView_Package;
 

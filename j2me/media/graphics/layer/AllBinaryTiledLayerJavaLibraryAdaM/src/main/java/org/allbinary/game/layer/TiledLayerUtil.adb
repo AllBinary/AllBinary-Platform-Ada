@@ -28,7 +28,7 @@ package body org.allbinary.game.layer.TiledLayerUtil_Package is
    function Create return TiledLayerUtil_Access is
       This : constant TiledLayerUtil_Access := new TiledLayerUtil;
    begin
-      Initialize (This.all);
+      TiledLayerUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -97,13 +97,6 @@ package body org.allbinary.game.layer.TiledLayerUtil_Package is
         end if;
         return newY;
    end keepOnMapY;
-
-   procedure getInstance is
-      Java_Result : constant TiledLayerUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure keepOnBorderdMapX (This : in out TiledLayerUtil; terrainTiledLayer : AllBinaryTiledLayer_Access; x : Integer; width : Integer; mapBorderBufferWidth : Integer) is
       Java_Result : constant Integer := TiledLayerUtil'Class (This).keepOnBorderdMapX (terrainTiledLayer, x, width, mapBorderBufferWidth);

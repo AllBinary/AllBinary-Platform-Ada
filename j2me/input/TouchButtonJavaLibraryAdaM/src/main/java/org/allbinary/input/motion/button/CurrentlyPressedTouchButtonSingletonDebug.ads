@@ -25,6 +25,7 @@ with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.input.motion.button.CurrentlyPressedTouchButtonSingleton_Package; use org.allbinary.input.motion.button.CurrentlyPressedTouchButtonSingleton_Package;
+with org.allbinary.input.motion.button.TouchButtonInput_Package; use org.allbinary.input.motion.button.TouchButtonInput_Package;
 
 package org.allbinary.input.motion.button.CurrentlyPressedTouchButtonSingletonDebug_Package is
 
@@ -54,7 +55,6 @@ package org.allbinary.input.motion.button.CurrentlyPressedTouchButtonSingletonDe
    procedure Initialize (This : in out CurrentlyPressedTouchButtonSingletonDebug'Class);
    function Create return CurrentlyPressedTouchButtonSingletonDebug_Access;
    function getInstance return CurrentlyPressedTouchButtonSingleton_Access;
-   procedure getInstance;
    procedure appendTouchButtonInput (This : in out CurrentlyPressedTouchButtonSingletonDebug; append : Unbounded_String; touchButtonInput : TouchButtonInput_Access);
    procedure append (This : in out CurrentlyPressedTouchButtonSingletonDebug; append : Unbounded_String);
    procedure clearLog (This : in out CurrentlyPressedTouchButtonSingletonDebug; x : Integer; y : Integer);
@@ -70,7 +70,6 @@ package org.allbinary.input.motion.button.CurrentlyPressedTouchButtonSingletonDe
    procedure remove (This : in out CurrentlyPressedTouchButtonSingletonDebug; touchButtonInput : TouchButtonInput_Access);
    procedure add (This : in out CurrentlyPressedTouchButtonSingletonDebug; touchButtonInput : TouchButtonInput_Access);
    function toString (This : in out CurrentlyPressedTouchButtonSingletonDebug) return Unbounded_String;
-   procedure toString (This : in out CurrentlyPressedTouchButtonSingletonDebug);
 
 end org.allbinary.input.motion.button.CurrentlyPressedTouchButtonSingletonDebug_Package;
 

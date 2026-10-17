@@ -41,7 +41,7 @@ package body org.allbinary.game.part.weapon.BasicWeaponPart_Package is
    function Create (animationInterface : Animation_Access; sourceLayerInterface : AllBinaryLayer_Access; weaponProperties : WeaponProperties_Access; scoreableInterface : ScoreableInterface_Access; relativeRelationship : RelativeRelationship_Access) return BasicWeaponPart_Access is
       This : constant BasicWeaponPart_Access := new BasicWeaponPart;
    begin
-      Initialize (This.all, animationInterface, sourceLayerInterface, weaponProperties, scoreableInterface, relativeRelationship);
+      BasicWeaponPart_Package.Initialize (This.all, animationInterface, sourceLayerInterface, weaponProperties, scoreableInterface, relativeRelationship);
       return This;
    end Create;
 
@@ -117,27 +117,6 @@ package body org.allbinary.game.part.weapon.BasicWeaponPart_Package is
    begin
       null;
    end createBasicWeaponPart;
-
-   procedure getOwnerLayerInterface (This : in out BasicWeaponPart) is
-      Java_Result : constant AllBinaryLayer_Access := BasicWeaponPart'Class (This).getOwnerLayerInterface;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getOwnerLayerInterface;
-
-   procedure getAnimationInterface (This : in out BasicWeaponPart) is
-      Java_Result : constant Animation_Access := BasicWeaponPart'Class (This).getAnimationInterface;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getAnimationInterface;
-
-   procedure getWeaponProperties (This : in out BasicWeaponPart) is
-      Java_Result : constant WeaponProperties_Access := BasicWeaponPart'Class (This).getWeaponProperties;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getWeaponProperties;
 
 begin
    null;

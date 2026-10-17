@@ -38,7 +38,6 @@ package org.allbinary.business.advertisement.AdvertisementData_Package is
    procedure Initialize (This : in out AdvertisementData'Class);
    function Create return AdvertisementData_Access;
    function getInstance return AdvertisementData_Access;
-   procedure getInstance;
 
 end org.allbinary.business.advertisement.AdvertisementData_Package;
 

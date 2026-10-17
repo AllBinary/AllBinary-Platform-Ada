@@ -35,7 +35,7 @@ package body views.admin.storefront.statistics.StoreFrontStatisticsComponent_Pac
    function Create (transformInfoInterface : TransformInfoInterface_Access) return StoreFrontStatisticsComponent_Access is
       This : constant StoreFrontStatisticsComponent_Access := new StoreFrontStatisticsComponent;
    begin
-      Initialize (This.all, transformInfoInterface);
+      StoreFrontStatisticsComponent_Package.Initialize (This.all, transformInfoInterface);
       return This;
    end Create;
 
@@ -61,13 +61,6 @@ package body views.admin.storefront.statistics.StoreFrontStatisticsComponent_Pac
             Java_Throw (e);
                 end;
         end;
-   end view;
-
-   procedure view (This : in out StoreFrontStatisticsComponent) is
-      Java_Result : constant Unbounded_String := StoreFrontStatisticsComponent'Class (This).view;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end view;
 
 end views.admin.storefront.statistics.StoreFrontStatisticsComponent_Package;

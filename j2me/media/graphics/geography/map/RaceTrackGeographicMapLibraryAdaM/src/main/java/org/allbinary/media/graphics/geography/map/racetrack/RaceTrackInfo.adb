@@ -45,7 +45,7 @@ package body org.allbinary.media.graphics.geography.map.racetrack.RaceTrackInfo_
    function Create (id : Integer; name : Unbounded_String; raceTrackFrictionProperties : RaceTrackFrictionProperties_Access; foregroundBasicColor : BasicColor_Access; backgroundBasicColor : BasicColor_Access; qualifyTime : Integer; worstContinuePosition : Integer; totalLaps : Integer) return RaceTrackInfo_Access is
       This : constant RaceTrackInfo_Access := new RaceTrackInfo;
    begin
-      Initialize (This.all, id, name, raceTrackFrictionProperties, foregroundBasicColor, backgroundBasicColor, qualifyTime, worstContinuePosition, totalLaps);
+      RaceTrackInfo_Package.Initialize (This.all, id, name, raceTrackFrictionProperties, foregroundBasicColor, backgroundBasicColor, qualifyTime, worstContinuePosition, totalLaps);
       return This;
    end Create;
 
@@ -128,62 +128,6 @@ package body org.allbinary.media.graphics.geography.map.racetrack.RaceTrackInfo_
    begin
         This.raceTrackFrictionProperties := raceTrackFrictionProperties;
    end setRaceTrackFrictionProperties;
-
-   procedure getId (This : in out RaceTrackInfo) is
-      Java_Result : constant Integer := RaceTrackInfo'Class (This).getId;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getId;
-
-   procedure getName (This : in out RaceTrackInfo) is
-      Java_Result : constant Unbounded_String := RaceTrackInfo'Class (This).getName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getName;
-
-   procedure getQualifyTime (This : in out RaceTrackInfo) is
-      Java_Result : constant Integer := RaceTrackInfo'Class (This).getQualifyTime;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getQualifyTime;
-
-   procedure getWorstContinuePosition (This : in out RaceTrackInfo) is
-      Java_Result : constant Integer := RaceTrackInfo'Class (This).getWorstContinuePosition;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getWorstContinuePosition;
-
-   procedure getTotalLaps (This : in out RaceTrackInfo) is
-      Java_Result : constant Integer := RaceTrackInfo'Class (This).getTotalLaps;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTotalLaps;
-
-   procedure getForegroundBasicColor (This : in out RaceTrackInfo) is
-      Java_Result : constant BasicColor_Access := RaceTrackInfo'Class (This).getForegroundBasicColor;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getForegroundBasicColor;
-
-   procedure getBackgroundBasicColor (This : in out RaceTrackInfo) is
-      Java_Result : constant BasicColor_Access := RaceTrackInfo'Class (This).getBackgroundBasicColor;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getBackgroundBasicColor;
-
-   procedure getRaceTrackFrictionProperties (This : in out RaceTrackInfo) is
-      Java_Result : constant RaceTrackFrictionProperties_Access := RaceTrackInfo'Class (This).getRaceTrackFrictionProperties;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getRaceTrackFrictionProperties;
 
 end org.allbinary.media.graphics.geography.map.racetrack.RaceTrackInfo_Package;
 

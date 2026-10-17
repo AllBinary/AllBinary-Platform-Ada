@@ -29,7 +29,7 @@ package body org.allbinary.device.OpenGLESGraphicsCompositeFactory_Package is
    function Create return OpenGLESGraphicsCompositeFactory_Access is
       This : constant OpenGLESGraphicsCompositeFactory_Access := new OpenGLESGraphicsCompositeFactory;
    begin
-      Initialize (This.all);
+      OpenGLESGraphicsCompositeFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -47,20 +47,6 @@ package body org.allbinary.device.OpenGLESGraphicsCompositeFactory_Package is
    function get (This : in out OpenGLESGraphicsCompositeFactory) return OpenGLESGraphicsFactory_Access is
    begin
         return This.openGLESGraphicsFactory;
-   end get;
-
-   procedure getInstance is
-      Java_Result : constant OpenGLESGraphicsCompositeFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure get (This : in out OpenGLESGraphicsCompositeFactory) is
-      Java_Result : constant OpenGLESGraphicsFactory_Access := OpenGLESGraphicsCompositeFactory'Class (This).get;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end get;
 
 begin

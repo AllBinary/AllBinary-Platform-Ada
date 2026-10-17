@@ -28,7 +28,7 @@ package body org.allbinary.graphics.threed.RatioProcessor_Package is
    function Create return RatioProcessor_Access is
       This : constant RatioProcessor_Access := new RatioProcessor;
    begin
-      Initialize (This.all);
+      RatioProcessor_Package.Initialize (This.all);
       return This;
    end Create;
 

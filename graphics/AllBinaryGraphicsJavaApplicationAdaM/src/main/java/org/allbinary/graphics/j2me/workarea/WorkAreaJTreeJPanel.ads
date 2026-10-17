@@ -35,6 +35,7 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.graphics.j2me.workarea.JPanel_Package; use org.allbinary.graphics.j2me.workarea.JPanel_Package;
+with org.allbinary.graphics.j2me.workarea.JTree_Package; use org.allbinary.graphics.j2me.workarea.JTree_Package;
 
 package org.allbinary.graphics.j2me.workarea.WorkAreaJTreeJPanel_Package is
 
@@ -86,7 +87,6 @@ package org.allbinary.graphics.j2me.workarea.WorkAreaJTreeJPanel_Package is
    procedure copy (This : in out WorkAreaJTreeJPanel; treePath : TreePath_Access);
    procedure rotate (This : in out WorkAreaJTreeJPanel; treePath : TreePath_Access; angle : Long_Float);
    function getRootTreeNode (This : in out WorkAreaJTreeJPanel) return MutableTreeNode_Access;
-   procedure getRootTreeNode (This : in out WorkAreaJTreeJPanel);
    procedure expand (This : in out WorkAreaJTreeJPanel);
    procedure expand (This : in out WorkAreaJTreeJPanel; treePath : TreePath_Access);
    procedure initComponents (This : in out WorkAreaJTreeJPanel);

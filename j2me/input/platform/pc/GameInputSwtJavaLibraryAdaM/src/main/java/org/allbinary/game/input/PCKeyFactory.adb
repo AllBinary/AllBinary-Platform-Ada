@@ -108,7 +108,7 @@ package body org.allbinary.game.input.PCKeyFactory_Package is
    function Create return PCKeyFactory_Access is
       This : constant PCKeyFactory_Access := new PCKeyFactory;
    begin
-      Initialize (This.all);
+      PCKeyFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -181,13 +181,6 @@ package body org.allbinary.game.input.PCKeyFactory_Package is
         end if;
         return False;
    end isEnter;
-
-   procedure getInstance is
-      Java_Result : constant PCKeyFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure isSubmission (This : in out PCKeyFactory; input : Input_Access) is
       Java_Result : constant Boolean := PCKeyFactory'Class (This).isSubmission (input);

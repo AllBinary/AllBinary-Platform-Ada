@@ -68,7 +68,7 @@ package body org.allbinary.game.displayable.canvas.GameCommandCanvas_Package is
    function Create (cmdListener : CommandListener_Access; name : Unbounded_String; backgroundBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access) return GameCommandCanvas_Access is
       This : constant GameCommandCanvas_Access := new GameCommandCanvas;
    begin
-      Initialize (This.all, cmdListener, name, backgroundBasicColor, foregroundBasicColor);
+      GameCommandCanvas_Package.Initialize (This.all, cmdListener, name, backgroundBasicColor, foregroundBasicColor);
       return This;
    end Create;
 
@@ -272,33 +272,12 @@ package body org.allbinary.game.displayable.canvas.GameCommandCanvas_Package is
         return This.menuInputProcessor;
    end getMenuInputProcessor;
 
-   procedure createForm (This : in out GameCommandCanvas) is
-      Java_Result : constant ScrollSelectionForm_Access := GameCommandCanvas'Class (This).createForm;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end createForm;
-
    procedure createRectangle (This : in out GameCommandCanvas; size : Integer) is
       Java_Result : constant Rectangle_Access := GameCommandCanvas'Class (This).createRectangle (size);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createRectangle;
-
-   procedure getSourceId (This : in out GameCommandCanvas) is
-      Java_Result : constant Integer := GameCommandCanvas'Class (This).getSourceId;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSourceId;
-
-   procedure getMenuInputProcessor (This : in out GameCommandCanvas) is
-      Java_Result : constant BasicMenuInputProcessor_Access := GameCommandCanvas'Class (This).getMenuInputProcessor;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getMenuInputProcessor;
 
 begin
    null;

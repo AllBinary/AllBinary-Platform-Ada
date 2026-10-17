@@ -23,6 +23,8 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.math.PositionStrings_Package; use org.allbinary.math.PositionStrings_Package;
 with org.allbinary.string_Id.CommonPhoneStrings_Package; use org.allbinary.string_Id.CommonPhoneStrings_Package;
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.game.input.PCGameKey_Package; use org.allbinary.game.input.PCGameKey_Package;
+with org.allbinary.game.input.Input_Package; use org.allbinary.game.input.Input_Package;
 
 package org.allbinary.game.input.PCKeyFactory_Package is
 
@@ -122,7 +124,6 @@ package org.allbinary.game.input.PCKeyFactory_Package is
    procedure Initialize (This : in out PCKeyFactory'Class);
    function Create return PCKeyFactory_Access;
    function getInstance return PCKeyFactory_Access;
-   procedure getInstance;
    function isSubmission (This : in out PCKeyFactory; input : Input_Access) return Boolean;
    procedure isSubmission (This : in out PCKeyFactory; input : Input_Access);
    function isDelete (This : in out PCKeyFactory; input : Input_Access) return Boolean;

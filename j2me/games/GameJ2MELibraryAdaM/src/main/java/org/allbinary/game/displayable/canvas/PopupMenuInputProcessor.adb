@@ -35,7 +35,7 @@ package body org.allbinary.game.displayable.canvas.PopupMenuInputProcessor_Packa
    function Create (gameKeyEventList : BasicArrayList_Access; playerInputId : Integer; gameCanvas : MyCanvas_Access; rectangle : Rectangle_Access) return PopupMenuInputProcessor_Access is
       This : constant PopupMenuInputProcessor_Access := new PopupMenuInputProcessor;
    begin
-      Initialize (This.all, gameKeyEventList, playerInputId, gameCanvas, rectangle);
+      PopupMenuInputProcessor_Package.Initialize (This.all, gameKeyEventList, playerInputId, gameCanvas, rectangle);
       return This;
    end Create;
 
@@ -143,20 +143,6 @@ package body org.allbinary.game.displayable.canvas.PopupMenuInputProcessor_Packa
    begin
       null;
    end processInput;
-
-   procedure processInputList (This : in out PopupMenuInputProcessor) is
-      Java_Result : constant Integer := PopupMenuInputProcessor'Class (This).processInputList;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end processInputList;
-
-   procedure processMotionInputs (This : in out PopupMenuInputProcessor) is
-      Java_Result : constant Integer := PopupMenuInputProcessor'Class (This).processMotionInputs;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end processMotionInputs;
 
 end org.allbinary.game.displayable.canvas.PopupMenuInputProcessor_Package;
 

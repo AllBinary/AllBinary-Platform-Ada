@@ -20,7 +20,7 @@ package body org.allbinary.graphics.form.item.CustomCustomItem_Package is
    function Create (label : Unbounded_String; backgroundBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access) return CustomCustomItem_Access is
       This : constant CustomCustomItem_Access := new CustomCustomItem;
    begin
-      Initialize (This.all, label, backgroundBasicColor, foregroundBasicColor);
+      CustomCustomItem_Package.Initialize (This.all, label, backgroundBasicColor, foregroundBasicColor);
       return This;
    end Create;
 

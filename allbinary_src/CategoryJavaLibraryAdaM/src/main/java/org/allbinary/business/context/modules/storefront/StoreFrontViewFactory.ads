@@ -25,6 +25,7 @@ with org.allbinary.data.tables.context.module.storefronts.StoreFrontsEntityFacto
 with org.allbinary.data.tree.dom.DomNodeInterface_Package; use org.allbinary.data.tree.dom.DomNodeInterface_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.business.context.modules.storefront.StoreFrontView_Package; use org.allbinary.business.context.modules.storefront.StoreFrontView_Package;
 
 package org.allbinary.business.context.modules.storefront.StoreFrontViewFactory_Package is
 

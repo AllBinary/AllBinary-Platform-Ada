@@ -30,7 +30,7 @@ package body org.allbinary.media.graphics.geography.map.racetrack.FinalPositionR
    function Create return FinalPositionRaceTrackFactory_Access is
       This : constant FinalPositionRaceTrackFactory_Access := new FinalPositionRaceTrackFactory;
    begin
-      Initialize (This.all);
+      FinalPositionRaceTrackFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -43,13 +43,6 @@ package body org.allbinary.media.graphics.geography.map.racetrack.FinalPositionR
    begin
         FinalPositionRaceTrackFactory_Package.index := FinalPositionRaceTrackFactory_Package.FIRST_POSITION;
    end reset;
-
-   procedure getInstance is
-      Java_Result : constant Integer := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

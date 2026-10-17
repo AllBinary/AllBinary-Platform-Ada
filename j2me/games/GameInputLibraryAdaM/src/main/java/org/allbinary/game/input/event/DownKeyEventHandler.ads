@@ -43,7 +43,6 @@ package org.allbinary.game.input.event.DownKeyEventHandler_Package is
    procedure Initialize (This : in out DownKeyEventHandler'Class);
    function Create return DownKeyEventHandler_Access;
    function getInstance return DownKeyEventHandler_Access;
-   procedure getInstance;
    function getInstanceForDevice (This : in out DownKeyEventHandler; deviceId : Integer) return DownKeyEventHandlerBase_Access;
    procedure getInstanceForDevice (This : in out DownKeyEventHandler; deviceId : Integer);
    function getInstanceForPlayer (This : in out DownKeyEventHandler; playerInputId : Integer) return DownKeyEventHandlerBase_Access;

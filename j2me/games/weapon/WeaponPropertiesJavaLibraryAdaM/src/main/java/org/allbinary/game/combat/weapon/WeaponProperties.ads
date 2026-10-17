@@ -57,19 +57,14 @@ package org.allbinary.game.combat.weapon.WeaponProperties_Package is
    function Create (reloadTime : Long_Long_Integer; targetingTime : Long_Long_Integer; speed : Long_Long_Integer; damage_Case : Integer; dissipation : Short_Integer) return WeaponProperties_Access;
    procedure setReloadTime (This : in out WeaponProperties; reloadTime : Long_Long_Integer);
    function getReloadTime (This : in out WeaponProperties) return Long_Long_Integer;
-   procedure getReloadTime (This : in out WeaponProperties);
    procedure setTargetingTime (This : in out WeaponProperties; targetingTime : Long_Long_Integer);
    function getTargetingTime (This : in out WeaponProperties) return Long_Long_Integer;
-   procedure getTargetingTime (This : in out WeaponProperties);
    function getSpeed (This : in out WeaponProperties) return BasicDecimal_Access;
-   procedure getSpeed (This : in out WeaponProperties);
    procedure setSpeed (This : in out WeaponProperties; speed : BasicDecimal_Access);
    function getDamageI (This : in out WeaponProperties; range_Case_Id : Integer) return Integer;
    procedure getDamageI (This : in out WeaponProperties; range_Case_Id : Integer);
    function toStringArray (This : in out WeaponProperties) return Unbounded_String_Array_Access;
-   procedure toStringArray (This : in out WeaponProperties);
    function toString (This : in out WeaponProperties) return Unbounded_String;
-   procedure toString (This : in out WeaponProperties);
 
 end org.allbinary.game.combat.weapon.WeaponProperties_Package;
 

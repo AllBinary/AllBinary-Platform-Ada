@@ -44,7 +44,6 @@ package tags.admin.UsersTag_Package is
    function Create return UsersTag_Access;
    procedure setRole (This : in out UsersTag; value : Unbounded_String);
    function doStartTag (This : in out UsersTag) return Integer;
-   procedure doStartTag (This : in out UsersTag);
 
 end tags.admin.UsersTag_Package;
 

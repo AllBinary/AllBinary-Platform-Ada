@@ -11,6 +11,8 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.GameAdState_Package; use org.allbinary.game.GameAdState_Package;
 with org.allbinary.logic.system.SoftwareInformation_Package; use org.allbinary.logic.system.SoftwareInformation_Package;
 with org.allbinary.business.advertisement.GameAdStateFactoryInterface_Package; use org.allbinary.business.advertisement.GameAdStateFactoryInterface_Package;
+with org.allbinary.business.advertisement.AppNameLicensingAdConfiguration_Package; use org.allbinary.business.advertisement.AppNameLicensingAdConfiguration_Package;
+with org.allbinary.business.advertisement.GameAdStateBase_Package; use org.allbinary.business.advertisement.GameAdStateBase_Package;
 
 package org.allbinary.business.advertisement.GameAdStateFactory_Package is
 
@@ -31,13 +33,10 @@ package org.allbinary.business.advertisement.GameAdStateFactory_Package is
    procedure Initialize (This : in out GameAdStateFactory'Class);
    function Create return GameAdStateFactory_Access;
    function getInstance return GameAdStateFactory_Access;
-   procedure getInstance;
    function getCurrentInstance (This : in out GameAdStateFactory) return GameAdState_Access;
-   procedure getCurrentInstance (This : in out GameAdStateFactory);
    function getInstanceForApp (This : in out GameAdStateFactory; softwareInformation : SoftwareInformation_Access) return GameAdStateBase_Access;
    procedure getInstanceForApp (This : in out GameAdStateFactory; softwareInformation : SoftwareInformation_Access);
    function isEnabled (This : in out GameAdStateFactory) return Boolean;
-   procedure isEnabled (This : in out GameAdStateFactory);
 
 end org.allbinary.business.advertisement.GameAdStateFactory_Package;
 

@@ -29,7 +29,7 @@ package body org.allbinary.media.audio.EarlySoundsFactory_Package is
    function Create return EarlySoundsFactory_Access is
       This : constant EarlySoundsFactory_Access := new EarlySoundsFactory;
    begin
-      Initialize (This.all);
+      EarlySoundsFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -49,20 +49,6 @@ package body org.allbinary.media.audio.EarlySoundsFactory_Package is
    function getInstance return EarlySoundsFactory_Access is
    begin
         return EarlySoundsFactory_Package.instance;
-   end getInstance;
-
-   procedure getSoundInterfaceArray (This : in out EarlySoundsFactory) is
-      Java_Result : constant Sound_Access_Array_Access := EarlySoundsFactory'Class (This).getSoundInterfaceArray;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSoundInterfaceArray;
-
-   procedure getInstance is
-      Java_Result : constant EarlySoundsFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

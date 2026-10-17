@@ -36,7 +36,7 @@ package body org.allbinary.dom.DomHelper_Package is
    function Create return DomHelper_Access is
       This : constant DomHelper_Access := new DomHelper;
    begin
-      Initialize (This.all);
+      DomHelper_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -218,20 +218,6 @@ package body org.allbinary.dom.DomHelper_Package is
         end loop;
         Java_Throw (Java_New_Exception ("Exception", nodeName & To_Unbounded_String (" Node Not Found in search")));
    end searchNodeList;
-
-   procedure getInstance is
-      Java_Result : constant DomHelper_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure createDocument (This : in out DomHelper) is
-      Java_Result : constant Document_Access := DomHelper'Class (This).createDocument;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end createDocument;
 
    procedure createDocument (This : in out DomHelper; xmlFile : File_Access) is
       Java_Result : constant Document_Access := DomHelper'Class (This).createDocument (xmlFile);

@@ -30,6 +30,8 @@ with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Packag
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
+with org.allbinary.logic.visual.dhtml.style.css.property.CssPropertyValues_Package; use org.allbinary.logic.visual.dhtml.style.css.property.CssPropertyValues_Package;
+with org.allbinary.logic.visual.dhtml.style.css.property.CssPropertyData_Package; use org.allbinary.logic.visual.dhtml.style.css.property.CssPropertyData_Package;
 
 package org.allbinary.logic.visual.dhtml.style.css.property.CssProperty_Package is
 
@@ -57,9 +59,7 @@ package org.allbinary.logic.visual.dhtml.style.css.property.CssProperty_Package 
    procedure Initialize (This : in out CssProperty'Class; name : Unbounded_String);
    function Create (name : Unbounded_String) return CssProperty_Access;
    function getName (This : in out CssProperty) return Unbounded_String;
-   procedure getName (This : in out CssProperty);
    function toHashMap (This : in out CssProperty) return HashMap_Access;
-   procedure toHashMap (This : in out CssProperty);
    function toXmlNode (This : in out CssProperty; document : Document_Access) return Node_Access;
    procedure toXmlNode (This : in out CssProperty; document : Document_Access);
 

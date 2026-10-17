@@ -63,11 +63,8 @@ package org.allbinary.game.physics.velocity.BasicVelocityProperties_Package is
    function Create return BasicVelocityProperties_Access;
    procedure zero (This : in out BasicVelocityProperties);
    function getVelocityXBasicDecimalP (This : in out BasicVelocityProperties) return BasicDecimal_Access;
-   procedure getVelocityXBasicDecimalP (This : in out BasicVelocityProperties);
    function getVelocityYBasicDecimalP (This : in out BasicVelocityProperties) return BasicDecimal_Access;
-   procedure getVelocityYBasicDecimalP (This : in out BasicVelocityProperties);
    function getVelocityZBasicDecimalP (This : in out BasicVelocityProperties) return BasicDecimal_Access;
-   procedure getVelocityZBasicDecimalP (This : in out BasicVelocityProperties);
    procedure setVelocityWithBigDecimalAndDirection (This : in out BasicVelocityProperties; magnitudeBasicDecimal : BasicDecimal_Access; direction : Direction_Access; otherDirection : Direction_Access);
    procedure setVelocityWithDirection (This : in out BasicVelocityProperties; magnitude : Long_Long_Integer; direction : Direction_Access; otherDirection : Direction_Access);
    procedure addVelocityWithBigDecimalAndDirection (This : in out BasicVelocityProperties; magnitudeBasicDecimal : BasicDecimal_Access; direction : Direction_Access; otherDirection : Direction_Access);
@@ -79,7 +76,6 @@ package org.allbinary.game.physics.velocity.BasicVelocityProperties_Package is
    procedure setVelocityi (This : in out BasicVelocityProperties; magnitude : Long_Long_Integer; angle : Integer; otherAngle : Integer);
    procedure addVelocityi (This : in out BasicVelocityProperties; magnitude : Long_Long_Integer; angle : Integer; otherAngle : Integer);
    function toString (This : in out BasicVelocityProperties) return Unbounded_String;
-   procedure toString (This : in out BasicVelocityProperties);
 
 end org.allbinary.game.physics.velocity.BasicVelocityProperties_Package;
 

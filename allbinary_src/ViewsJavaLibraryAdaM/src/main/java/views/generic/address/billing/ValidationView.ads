@@ -45,11 +45,8 @@ package views.generic_Id.address.billing.ValidationView_Package is
    procedure Initialize (This : in out ValidationView'Class; transformInfoInterface : TransformInfoInterface_Access);
    function Create (transformInfoInterface : TransformInfoInterface_Access) return ValidationView_Access;
    function isValid (This : in out ValidationView) return Boolean;
-   procedure isValid (This : in out ValidationView);
    function validationInfo (This : in out ValidationView) return Unbounded_String;
-   procedure validationInfo (This : in out ValidationView);
    function toValidationInfoDoc (This : in out ValidationView) return Document_Access;
-   procedure toValidationInfoDoc (This : in out ValidationView);
    function toValidationInfoNode (This : in out ValidationView; document : Document_Access) return Node_Access;
    procedure toValidationInfoNode (This : in out ValidationView; document : Document_Access);
 

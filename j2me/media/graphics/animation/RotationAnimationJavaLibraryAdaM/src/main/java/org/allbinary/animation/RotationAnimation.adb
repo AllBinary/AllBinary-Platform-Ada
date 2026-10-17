@@ -36,7 +36,7 @@ package body org.allbinary.animation.RotationAnimation_Package is
    function Create (angleInfo : AngleInfo_Access; circularIndexUtil : CircularIndexUtil_Access; animationBehavior : AnimationBehavior_Access) return RotationAnimation_Access is
       This : constant RotationAnimation_Access := new RotationAnimation;
    begin
-      Initialize (This.all, angleInfo, circularIndexUtil, animationBehavior);
+      RotationAnimation_Package.Initialize (This.all, angleInfo, circularIndexUtil, animationBehavior);
       return This;
    end Create;
 
@@ -118,34 +118,6 @@ package body org.allbinary.animation.RotationAnimation_Package is
    function toString (This : in out RotationAnimation) return Unbounded_String is
    begin
         return StringMaker_Package.Create.append (IndexedAnimation (This).toString).append (To_Unbounded_String ("circularIndexUtil: ")).append (This.circularIndexUtil.toString).append (To_Unbounded_String ("angleInfo: ")).append (This.angleInfo.toString).toString;
-   end toString;
-
-   procedure getFrame (This : in out RotationAnimation) is
-      Java_Result : constant Integer := RotationAnimation'Class (This).getFrame;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getFrame;
-
-   procedure getSize (This : in out RotationAnimation) is
-      Java_Result : constant Integer := RotationAnimation'Class (This).getSize;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSize;
-
-   procedure getAngleInfoP (This : in out RotationAnimation) is
-      Java_Result : constant AngleInfo_Access := RotationAnimation'Class (This).getAngleInfoP;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getAngleInfoP;
-
-   procedure toString (This : in out RotationAnimation) is
-      Java_Result : constant Unbounded_String := RotationAnimation'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end toString;
 
 end org.allbinary.animation.RotationAnimation_Package;

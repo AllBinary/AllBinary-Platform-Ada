@@ -17,7 +17,7 @@ package body org.bouncycastle.jce.provider.BouncyCastleProvider_Package is
    function Create return BouncyCastleProvider_Access is
       This : constant BouncyCastleProvider_Access := new BouncyCastleProvider;
    begin
-      Initialize (This.all);
+      BouncyCastleProvider_Package.Initialize (This.all);
       return This;
    end Create;
 

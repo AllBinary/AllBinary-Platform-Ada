@@ -30,7 +30,7 @@ package body org.allbinary.logic.io.file.filter.BasicFileFilterUtil_Package is
    function Create return BasicFileFilterUtil_Access is
       This : constant BasicFileFilterUtil_Access := new BasicFileFilterUtil;
    begin
-      Initialize (This.all);
+      BasicFileFilterUtil_Package.Initialize (This.all);
       return This;
    end Create;
 

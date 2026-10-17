@@ -81,26 +81,18 @@ package org.allbinary.game.layer.SelectionHudPaintable_Package is
    procedure updateSelectionInfo (This : in out SelectionHudPaintable);
    procedure updateInfo (This : in out SelectionHudPaintable);
    function getPrimitiveLongUtil (This : in out SelectionHudPaintable) return PrimitiveLongUtil_Access;
-   procedure getPrimitiveLongUtil (This : in out SelectionHudPaintable);
    procedure setAnimationInterface (This : in out SelectionHudPaintable; animationInterface : Animation_Access);
    function getAnimationInterface (This : in out SelectionHudPaintable) return Animation_Access;
-   procedure getAnimationInterface (This : in out SelectionHudPaintable);
    procedure setName (This : in out SelectionHudPaintable; name : Unbounded_String);
    function getName (This : in out SelectionHudPaintable) return Unbounded_String;
-   procedure getName (This : in out SelectionHudPaintable);
    procedure setBasicColorP (This : in out SelectionHudPaintable; basicColor : BasicColor_Access);
    function getBasicColorP (This : in out SelectionHudPaintable) return BasicColor_Access;
-   procedure getBasicColorP (This : in out SelectionHudPaintable);
    procedure setColor (This : in out SelectionHudPaintable; color : Integer);
    function getColor (This : in out SelectionHudPaintable) return Integer;
-   procedure getColor (This : in out SelectionHudPaintable);
    function getWidth (This : in out SelectionHudPaintable) return Integer;
-   procedure getWidth (This : in out SelectionHudPaintable);
    procedure setHeight (This : in out SelectionHudPaintable; height : Integer);
    function getHeight (This : in out SelectionHudPaintable) return Integer;
-   procedure getHeight (This : in out SelectionHudPaintable);
    function getX (This : in out SelectionHudPaintable) return Integer;
-   procedure getX (This : in out SelectionHudPaintable);
    procedure paint (This : in out SelectionHudPaintable; graphics : Graphics_Access);
 
 end org.allbinary.game.layer.SelectionHudPaintable_Package;

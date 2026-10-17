@@ -20,6 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
+with org.allbinary.business.user.commerce.money.payment.types.AuthorizationType_Package; use org.allbinary.business.user.commerce.money.payment.types.AuthorizationType_Package;
 
 package org.allbinary.business.user.commerce.money.payment.types.AuthorizationTypeFactory_Package is
 
@@ -43,7 +44,6 @@ package org.allbinary.business.user.commerce.money.payment.types.AuthorizationTy
    procedure Initialize (This : in out AuthorizationTypeFactory'Class);
    function Create return AuthorizationTypeFactory_Access;
    function getInstance return AuthorizationTypeFactory_Access;
-   procedure getInstance;
 
 end org.allbinary.business.user.commerce.money.payment.types.AuthorizationTypeFactory_Package;
 

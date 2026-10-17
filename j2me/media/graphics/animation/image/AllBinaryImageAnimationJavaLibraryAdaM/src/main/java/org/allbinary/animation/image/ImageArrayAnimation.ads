@@ -52,21 +52,16 @@ package org.allbinary.animation.image.ImageArrayAnimation_Package is
    procedure Initialize (This : in out ImageArrayAnimation'Class; imageArray : Image_Access_Array_Access; animationBehavior : AnimationBehavior_Access);
    function Create (imageArray : Image_Access_Array_Access; animationBehavior : AnimationBehavior_Access) return ImageArrayAnimation_Access;
    function getAnimationSize (This : in out ImageArrayAnimation) return Integer;
-   procedure getAnimationSize (This : in out ImageArrayAnimation);
    procedure nextFrame (This : in out ImageArrayAnimation);
    procedure previousFrame (This : in out ImageArrayAnimation);
    procedure setFrame (This : in out ImageArrayAnimation; index : Integer);
    function getFrame (This : in out ImageArrayAnimation) return Integer;
-   procedure getFrame (This : in out ImageArrayAnimation);
    function getSize (This : in out ImageArrayAnimation) return Integer;
-   procedure getSize (This : in out ImageArrayAnimation);
    procedure setSequence (This : in out ImageArrayAnimation; sequence : Integer_Array_Access);
    function getSequence (This : in out ImageArrayAnimation) return Integer_Array_Access;
-   procedure getSequence (This : in out ImageArrayAnimation);
    function getImage (This : in out ImageArrayAnimation; index : Integer) return Image_Access;
    procedure getImage (This : in out ImageArrayAnimation; index : Integer);
    function getImageArray (This : in out ImageArrayAnimation) return Image_Access_Array_Access;
-   procedure getImageArray (This : in out ImageArrayAnimation);
    procedure setImageArray (This : in out ImageArrayAnimation; imageArray : Image_Access_Array_Access);
    procedure paintXY (This : in out ImageArrayAnimation; graphics : Graphics_Access; x : Integer; y : Integer);
 

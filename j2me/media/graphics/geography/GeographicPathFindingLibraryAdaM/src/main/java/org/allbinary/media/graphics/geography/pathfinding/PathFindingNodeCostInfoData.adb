@@ -37,16 +37,9 @@ package body org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeC
    function Create return PathFindingNodeCostInfoData_Access is
       This : constant PathFindingNodeCostInfoData_Access := new PathFindingNodeCostInfoData;
    begin
-      Initialize (This.all);
+      PathFindingNodeCostInfoData_Package.Initialize (This.all);
       return This;
    end Create;
-
-   procedure getInstance is
-      Java_Result : constant PathFindingNodeCostInfoData_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

@@ -31,7 +31,7 @@ package body org.allbinary.data.tree.dom.FileDomDataModel_Package is
    function Create (file : AbFile_Access) return FileDomDataModel_Access is
       This : constant FileDomDataModel_Access := new FileDomDataModel;
    begin
-      Initialize (This.all, file);
+      FileDomDataModel_Package.Initialize (This.all, file);
       return This;
    end Create;
 

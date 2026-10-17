@@ -30,7 +30,7 @@ package body org.allbinary.logic.visual.transform.info.GeneratorTransformInfoDat
    function Create return GeneratorTransformInfoData_Access is
       This : constant GeneratorTransformInfoData_Access := new GeneratorTransformInfoData;
    begin
-      Initialize (This.all);
+      GeneratorTransformInfoData_Package.Initialize (This.all);
       return This;
    end Create;
 

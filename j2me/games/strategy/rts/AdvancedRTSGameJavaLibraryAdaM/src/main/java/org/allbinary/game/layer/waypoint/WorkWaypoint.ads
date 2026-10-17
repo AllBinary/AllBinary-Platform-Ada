@@ -30,6 +30,7 @@ with org.allbinary.media.audio.WorkSound_Package; use org.allbinary.media.audio.
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.logic.math.SmallIntegerSingletonFactory_Package; use org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
 with org.allbinary.game.layer.waypoint.Waypoint_Package; use org.allbinary.game.layer.waypoint.Waypoint_Package;
+with org.allbinary.game.layer.waypoint.WaypointInfoHudPaintable_Package; use org.allbinary.game.layer.waypoint.WaypointInfoHudPaintable_Package;
 
 package org.allbinary.game.layer.waypoint.WorkWaypoint_Package is
 
@@ -55,7 +56,6 @@ package org.allbinary.game.layer.waypoint.WorkWaypoint_Package is
    function Create (ownerLayer : PathFindingLayerInterface_Access) return WorkWaypoint_Access;
    procedure visit (This : in out WorkWaypoint; unitLayer : UnitLayer_Access);
    function getType (This : in out WorkWaypoint) return Integer;
-   procedure getType (This : in out WorkWaypoint);
 
 end org.allbinary.game.layer.waypoint.WorkWaypoint_Package;
 

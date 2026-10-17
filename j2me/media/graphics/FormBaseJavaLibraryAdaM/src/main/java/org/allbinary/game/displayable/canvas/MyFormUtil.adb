@@ -31,7 +31,7 @@ package body org.allbinary.game.displayable.canvas.MyFormUtil_Package is
    function Create return MyFormUtil_Access is
       This : constant MyFormUtil_Access := new MyFormUtil;
    begin
-      Initialize (This.all);
+      MyFormUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -67,20 +67,6 @@ package body org.allbinary.game.displayable.canvas.MyFormUtil_Package is
    function getPopupMenuRectangle (This : in out MyFormUtil) return Rectangle_Access is
    begin
         return This.popupMenuRectangle;
-   end getPopupMenuRectangle;
-
-   procedure getInstance is
-      Java_Result : constant MyFormUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure getPopupMenuRectangle (This : in out MyFormUtil) is
-      Java_Result : constant Rectangle_Access := MyFormUtil'Class (This).getPopupMenuRectangle;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getPopupMenuRectangle;
 
 begin

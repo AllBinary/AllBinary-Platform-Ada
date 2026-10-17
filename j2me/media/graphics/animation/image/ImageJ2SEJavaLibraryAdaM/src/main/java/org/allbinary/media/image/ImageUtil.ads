@@ -60,9 +60,7 @@ package org.allbinary.media.image.ImageUtil_Package is
    procedure Initialize (This : in out ImageUtil'Class);
    function Create return ImageUtil_Access;
    function getInstance return ImageUtil_Access;
-   procedure getInstance;
    function getDefaultConfiguration (This : in out ImageUtil) return GraphicsConfiguration_Access;
-   procedure getDefaultConfiguration (This : in out ImageUtil);
    function create (This : in out ImageUtil; width : Integer; height : Integer) return BufferedImage_Access;
    procedure create (This : in out ImageUtil; width : Integer; height : Integer);
    function createBufferedImageForResize (This : in out ImageUtil; bufferedImageArray : BufferedImage_Access_Array_Access; percent : Integer; scale : Boolean) return BufferedImage_Access_Array_Access;

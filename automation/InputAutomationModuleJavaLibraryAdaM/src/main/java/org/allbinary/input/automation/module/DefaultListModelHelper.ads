@@ -23,6 +23,8 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.input.automation.module.DefaultListModel_Package; use org.allbinary.input.automation.module.DefaultListModel_Package;
+with org.allbinary.input.automation.module.ListModel_Package; use org.allbinary.input.automation.module.ListModel_Package;
 
 package org.allbinary.input.automation.module.DefaultListModelHelper_Package is
 
@@ -44,7 +46,6 @@ package org.allbinary.input.automation.module.DefaultListModelHelper_Package is
    function Create return DefaultListModelHelper_Access;
    procedure initDefaultModelList (This : in out DefaultListModelHelper);
    function getListModel (This : in out DefaultListModelHelper) return ListModel_Access;
-   procedure getListModel (This : in out DefaultListModelHelper);
    procedure add (This : in out DefaultListModelHelper; string_Id : Unbounded_String);
    procedure remove (This : in out DefaultListModelHelper; string_Id : Unbounded_String);
 

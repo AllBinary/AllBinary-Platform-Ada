@@ -28,7 +28,7 @@ package body org.allbinary.game.input.form.PlayersSingletonFactory_Package is
    function Create return PlayersSingletonFactory_Access is
       This : constant PlayersSingletonFactory_Access := new PlayersSingletonFactory;
    begin
-      Initialize (This.all);
+      PlayersSingletonFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

@@ -28,7 +28,7 @@ package body org.allbinary.logic.string_Id.SpecialCharacterUtil_Package is
    function Create return SpecialCharacterUtil_Access is
       This : constant SpecialCharacterUtil_Access := new SpecialCharacterUtil;
    begin
-      Initialize (This.all);
+      SpecialCharacterUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -68,13 +68,6 @@ package body org.allbinary.logic.string_Id.SpecialCharacterUtil_Package is
         hashMap.put (To_Unbounded_String ("~"), stringUtil.EMPTY_STRING);
         hashMap.put (To_Unbounded_String ("`"), stringUtil.EMPTY_STRING);
         return hashMap;
-   end getHashMap;
-
-   procedure getHashMap is
-      Java_Result : constant HashMap_Access := getHashMap;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getHashMap;
 
 end org.allbinary.logic.string_Id.SpecialCharacterUtil_Package;

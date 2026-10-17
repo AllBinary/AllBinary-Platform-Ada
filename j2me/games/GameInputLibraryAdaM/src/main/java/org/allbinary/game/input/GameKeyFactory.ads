@@ -23,6 +23,8 @@ with AllBinary_Java; use AllBinary_Java;
 --  with javax.microedition.lcdui.Canvas_Package; use javax.microedition.lcdui.Canvas_Package;
 with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
 with org.allbinary.string_Id.CommonPhoneStrings_Package; use org.allbinary.string_Id.CommonPhoneStrings_Package;
+with org.allbinary.game.input.GameKey_Package; use org.allbinary.game.input.GameKey_Package;
+with org.allbinary.game.input.InputFactory_Package; use org.allbinary.game.input.InputFactory_Package;
 
 package org.allbinary.game.input.GameKeyFactory_Package is
 
@@ -65,7 +67,6 @@ package org.allbinary.game.input.GameKeyFactory_Package is
    procedure Initialize (This : in out GameKeyFactory'Class);
    function Create return GameKeyFactory_Access;
    function getInstance return GameKeyFactory_Access;
-   procedure getInstance;
 
 end org.allbinary.game.input.GameKeyFactory_Package;
 

@@ -30,6 +30,8 @@ with org.allbinary.input.automation.robot.InputRobotInterface_Package; use org.a
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.osgi.OSGIActivatorUtil_Package; use org.allbinary.osgi.OSGIActivatorUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.input.automation.robot.osgi.InputAutomationRobotUtil_Package; use org.allbinary.input.automation.robot.osgi.InputAutomationRobotUtil_Package;
+with org.allbinary.input.automation.robot.osgi.InputAutomationRobotChangeEvent_Package; use org.allbinary.input.automation.robot.osgi.InputAutomationRobotChangeEvent_Package;
 
 package org.allbinary.input.automation.robot.osgi.InputAutomationRobotBundleActivator_Package is
 
@@ -67,10 +69,8 @@ package org.allbinary.input.automation.robot.osgi.InputAutomationRobotBundleActi
    procedure start (This : in out InputAutomationRobotBundleActivator; context : BundleContext_Access);
    procedure stop (This : in out InputAutomationRobotBundleActivator; context : BundleContext_Access);
    function getServiceFactory (This : in out InputAutomationRobotBundleActivator) return Java_Object_Access;
-   procedure getServiceFactory (This : in out InputAutomationRobotBundleActivator);
    procedure setServiceFactory (This : in out InputAutomationRobotBundleActivator; serviceObject : ServiceFactory_Access);
    function getInputRobotInterface (This : in out InputAutomationRobotBundleActivator) return InputRobotInterface_Access_Array_Access;
-   procedure getInputRobotInterface (This : in out InputAutomationRobotBundleActivator);
    procedure setInputRobotInterface (This : in out InputAutomationRobotBundleActivator; inputRobotInterface : InputRobotInterface_Access_Array_Access);
 
 end org.allbinary.input.automation.robot.osgi.InputAutomationRobotBundleActivator_Package;

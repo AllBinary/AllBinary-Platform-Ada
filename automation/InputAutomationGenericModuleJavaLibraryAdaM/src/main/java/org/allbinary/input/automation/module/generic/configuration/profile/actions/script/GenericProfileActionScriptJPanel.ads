@@ -29,6 +29,9 @@ with org.allbinary.input.automation.actions.script.condition.CustomTreeNodeInter
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.script.JPanel_Package; use org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.script.JPanel_Package;
+with org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.script.GenericProfileActionScript_Package; use org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.script.GenericProfileActionScript_Package;
+with org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.script.JPopupMenu_Package; use org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.script.JPopupMenu_Package;
+with org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.script.JComponent_Package; use org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.script.JComponent_Package;
 
 package org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.script.GenericProfileActionScriptJPanel_Package is
 
@@ -55,10 +58,8 @@ package org.allbinary.input.automation.module.generic_Id.configuration.profile.a
    function Create return GenericProfileActionScriptJPanel_Access;
    procedure updateJTree (This : in out GenericProfileActionScriptJPanel);
    function getGenericProfileActionScript (This : in out GenericProfileActionScriptJPanel) return GenericProfileActionScript_Access;
-   procedure getGenericProfileActionScript (This : in out GenericProfileActionScriptJPanel);
    procedure setGenericProfileActionScript (This : in out GenericProfileActionScriptJPanel; genericProfileActionScript : GenericProfileActionScript_Access);
    function getActionScriptJTree (This : in out GenericProfileActionScriptJPanel) return JTree_Access;
-   procedure getActionScriptJTree (This : in out GenericProfileActionScriptJPanel);
    procedure setActionScriptJTree (This : in out GenericProfileActionScriptJPanel; actionScriptJTree : JTree_Access);
    procedure initComponents (This : in out GenericProfileActionScriptJPanel);
    procedure actionScriptJTreeMouseReleased (This : in out GenericProfileActionScriptJPanel; evt : MouseEvent_Access);

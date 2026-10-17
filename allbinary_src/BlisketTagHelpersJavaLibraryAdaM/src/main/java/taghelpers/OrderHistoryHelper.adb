@@ -51,7 +51,7 @@ package body taghelpers.OrderHistoryHelper_Package is
    function Create (propertiesHashMap : HashMap_Access; pageContext : PageContext_Access) return OrderHistoryHelper_Access is
       This : constant OrderHistoryHelper_Access := new OrderHistoryHelper;
    begin
-      Initialize (This.all, propertiesHashMap, pageContext);
+      OrderHistoryHelper_Package.Initialize (This.all, propertiesHashMap, pageContext);
       return This;
    end Create;
 
@@ -104,13 +104,6 @@ package body taghelpers.OrderHistoryHelper_Package is
             return error & To_Unbounded_String ("<br/>") & To_Unbounded_String ("Exception: ") & Java_Image (e) & To_Unbounded_String ("<br/>");
                 end;
         end;
-   end setOrderStatus;
-
-   procedure setOrderStatus (This : in out OrderHistoryHelper) is
-      Java_Result : constant Unbounded_String := OrderHistoryHelper'Class (This).setOrderStatus;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end setOrderStatus;
 
 end taghelpers.OrderHistoryHelper_Package;

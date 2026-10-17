@@ -30,7 +30,7 @@ package body org.allbinary.media.image.comparison.motion.AllMotionRectangles_Pac
    function Create (imageComparisonResult : ImageComparisonResult_Access) return AllMotionRectangles_Access is
       This : constant AllMotionRectangles_Access := new AllMotionRectangles;
    begin
-      Initialize (This.all, imageComparisonResult);
+      AllMotionRectangles_Package.Initialize (This.all, imageComparisonResult);
       return This;
    end Create;
 

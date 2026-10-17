@@ -28,7 +28,7 @@ package body org.allbinary.layer.event.LayerManagerEventListener_Package is
    function Create return LayerManagerEventListener_Access is
       This : constant LayerManagerEventListener_Access := new LayerManagerEventListener;
    begin
-      Initialize (This.all);
+      LayerManagerEventListener_Package.Initialize (This.all);
       return This;
    end Create;
 

@@ -43,7 +43,7 @@ package body org.allbinary.business.advertisement.Advertisement_Package is
    function Create return Advertisement_Access is
       This : constant Advertisement_Access := new Advertisement;
    begin
-      Initialize (This.all);
+      Advertisement_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -170,97 +170,6 @@ package body org.allbinary.business.advertisement.Advertisement_Package is
    function getDisplayInBrowserContraintsInterface (This : in out Advertisement) return DisplayInBrowserContraintsInterface_Access is
    begin
         return This.displayInBrowserContraintsInterface;
-   end getDisplayInBrowserContraintsInterface;
-
-   procedure getArtist (This : in out Advertisement) is
-      Java_Result : constant Unbounded_String := Advertisement'Class (This).getArtist;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getArtist;
-
-   procedure getArtistLink (This : in out Advertisement) is
-      Java_Result : constant Unbounded_String := Advertisement'Class (This).getArtistLink;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getArtistLink;
-
-   procedure getTitle (This : in out Advertisement) is
-      Java_Result : constant Unbounded_String := Advertisement'Class (This).getTitle;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTitle;
-
-   procedure getDateAdded (This : in out Advertisement) is
-      Java_Result : constant Unbounded_String := Advertisement'Class (This).getDateAdded;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getDateAdded;
-
-   procedure getDirectory (This : in out Advertisement) is
-      Java_Result : constant Unbounded_String := Advertisement'Class (This).getDirectory;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getDirectory;
-
-   procedure getFramedLink (This : in out Advertisement) is
-      Java_Result : constant Unbounded_String := Advertisement'Class (This).getFramedLink;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getFramedLink;
-
-   procedure getListPrice (This : in out Advertisement) is
-      Java_Result : constant Money_Access := Advertisement'Class (This).getListPrice;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getListPrice;
-
-   procedure getOurPrice (This : in out Advertisement) is
-      Java_Result : constant Money_Access := Advertisement'Class (This).getOurPrice;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getOurPrice;
-
-   procedure getRank (This : in out Advertisement) is
-      Java_Result : constant Integer := Advertisement'Class (This).getRank;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getRank;
-
-   procedure getImage (This : in out Advertisement) is
-      Java_Result : constant AdvertisementImageInterface_Access := Advertisement'Class (This).getImage;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getImage;
-
-   procedure getProduct (This : in out Advertisement) is
-      Java_Result : constant AdvertisementProductInterface_Access := Advertisement'Class (This).getProduct;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getProduct;
-
-   procedure getThumbnail (This : in out Advertisement) is
-      Java_Result : constant AdvertisementThumbnailInterface_Access := Advertisement'Class (This).getThumbnail;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getThumbnail;
-
-   procedure getDisplayInBrowserContraintsInterface (This : in out Advertisement) is
-      Java_Result : constant DisplayInBrowserContraintsInterface_Access := Advertisement'Class (This).getDisplayInBrowserContraintsInterface;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getDisplayInBrowserContraintsInterface;
 
 end org.allbinary.business.advertisement.Advertisement_Package;

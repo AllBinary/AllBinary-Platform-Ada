@@ -44,6 +44,7 @@ with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.s
 with org.allbinary.midlet.AllBinaryMidlet_Package; use org.allbinary.midlet.AllBinaryMidlet_Package;
 with org.allbinary.thread.PathFindingThreadPool_Package; use org.allbinary.thread.PathFindingThreadPool_Package;
 with org.allbinary.thread.ThreadPool_Package; use org.allbinary.thread.ThreadPool_Package;
+with org.allbinary.graphics.canvas.transition.progress.ProgressEndListener_Package; use org.allbinary.graphics.canvas.transition.progress.ProgressEndListener_Package;
 
 package org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package is
 
@@ -103,7 +104,6 @@ package org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package
    procedure update (This : in out ProgressCanvas; graphics : Graphics_Access);
    procedure initCommands (This : in out ProgressCanvas; cmdListener : CommandListener_Access);
    function getMaxValue (This : in out ProgressCanvas) return Float;
-   procedure getMaxValue (This : in out ProgressCanvas);
    procedure start (This : in out ProgressCanvas);
    procedure startBackground (This : in out ProgressCanvas; background : Boolean);
    procedure endActual (This : in out ProgressCanvas);
@@ -111,7 +111,6 @@ package org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package
    procedure end_Id (This : in out ProgressCanvas);
    procedure endFromInitialLazyLoadingComplete (This : in out ProgressCanvas);
    function isInGame (This : in out ProgressCanvas) return Boolean;
-   procedure isInGame (This : in out ProgressCanvas);
    procedure endIfPaintedSinceStart (This : in out ProgressCanvas);
    procedure addEarlyPortion (This : in out ProgressCanvas; value : Integer; text_Case : Unbounded_String; index : Integer);
    procedure addPortion (This : in out ProgressCanvas; value : Integer; text_Case : Unbounded_String; index : Integer);
@@ -121,13 +120,10 @@ package org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package
    procedure paint2 (This : in out ProgressCanvas; graphics : Graphics_Access);
    procedure paintThreed (This : in out ProgressCanvas; graphics : Graphics_Access);
    function getValue (This : in out ProgressCanvas) return Float;
-   procedure getValue (This : in out ProgressCanvas);
    procedure setText (This : in out ProgressCanvas; text_Case : Unbounded_String);
    function getText (This : in out ProgressCanvas) return Unbounded_String;
-   procedure getText (This : in out ProgressCanvas);
    procedure setBackground (This : in out ProgressCanvas; background : Boolean);
    function isBackground (This : in out ProgressCanvas) return Boolean;
-   procedure isBackground (This : in out ProgressCanvas);
 
 end org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package;
 
@@ -163,6 +159,7 @@ with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.s
 with org.allbinary.midlet.AllBinaryMidlet_Package; use org.allbinary.midlet.AllBinaryMidlet_Package;
 with org.allbinary.thread.PathFindingThreadPool_Package; use org.allbinary.thread.PathFindingThreadPool_Package;
 with org.allbinary.thread.ThreadPool_Package; use org.allbinary.thread.ThreadPool_Package;
+with org.allbinary.graphics.canvas.transition.progress.ProgressEndListener_Package; use org.allbinary.graphics.canvas.transition.progress.ProgressEndListener_Package;
 
 package org.allbinary.graphics.canvas.transition.progress.ProgressPaintable_Package is
 

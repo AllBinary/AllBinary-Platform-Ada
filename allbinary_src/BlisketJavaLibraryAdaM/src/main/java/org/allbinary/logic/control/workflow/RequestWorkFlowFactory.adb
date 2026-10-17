@@ -30,7 +30,7 @@ package body org.allbinary.logic.control.workflow.RequestWorkFlowFactory_Package
    function Create return RequestWorkFlowFactory_Access is
       This : constant RequestWorkFlowFactory_Access := new RequestWorkFlowFactory;
    begin
-      Initialize (This.all);
+      RequestWorkFlowFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

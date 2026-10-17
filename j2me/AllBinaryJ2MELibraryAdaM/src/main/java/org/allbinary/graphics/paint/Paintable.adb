@@ -28,7 +28,7 @@ package body org.allbinary.graphics.paint.Paintable_Package is
    function Create return Paintable_Access is
       This : constant Paintable_Access := new Paintable;
    begin
-      Initialize (This.all);
+      Paintable_Package.Initialize (This.all);
       return This;
    end Create;
 

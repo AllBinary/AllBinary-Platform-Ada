@@ -24,6 +24,8 @@ with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.lo
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.input.motion.button.TouchScreenTypesFactory_Package; use org.allbinary.input.motion.button.TouchScreenTypesFactory_Package;
+with org.allbinary.input.motion.button.TouchScreenType_Package; use org.allbinary.input.motion.button.TouchScreenType_Package;
 
 package org.allbinary.input.motion.button.TouchScreenFactory_Package is
 
@@ -49,21 +51,15 @@ package org.allbinary.input.motion.button.TouchScreenFactory_Package is
    procedure Initialize (This : in out TouchScreenFactory'Class);
    function Create return TouchScreenFactory_Access;
    function getInstance return TouchScreenFactory_Access;
-   procedure getInstance;
    procedure setMultiTouch (This : in out TouchScreenFactory; multiTouch : Boolean);
    function isMultiTouch (This : in out TouchScreenFactory) return Boolean;
-   procedure isMultiTouch (This : in out TouchScreenFactory);
    procedure setTouch (This : in out TouchScreenFactory; touch : Boolean);
    function isTouch (This : in out TouchScreenFactory) return Boolean;
-   procedure isTouch (This : in out TouchScreenFactory);
    procedure setMultiTouchDistinct (This : in out TouchScreenFactory; multiTouchDistinct : Boolean);
    function isMultiTouchDistinct (This : in out TouchScreenFactory) return Boolean;
-   procedure isMultiTouchDistinct (This : in out TouchScreenFactory);
    procedure setTouchScreenType (This : in out TouchScreenFactory; touchScreenType : TouchScreenType_Access);
    function getTouchScreenType (This : in out TouchScreenFactory) return TouchScreenType_Access;
-   procedure getTouchScreenType (This : in out TouchScreenFactory);
    function toString (This : in out TouchScreenFactory) return Unbounded_String;
-   procedure toString (This : in out TouchScreenFactory);
 
 end org.allbinary.input.motion.button.TouchScreenFactory_Package;
 

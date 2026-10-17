@@ -71,7 +71,6 @@ package org.allbinary.game.paint.PressStartMenuPaintable_Package is
    procedure paint (This : in out PressStartMenuPaintable; graphics : Graphics_Access);
    procedure setFlash (This : in out PressStartMenuPaintable; flash : Boolean);
    function isFlash (This : in out PressStartMenuPaintable) return Boolean;
-   procedure isFlash (This : in out PressStartMenuPaintable);
 
 end org.allbinary.game.paint.PressStartMenuPaintable_Package;
 

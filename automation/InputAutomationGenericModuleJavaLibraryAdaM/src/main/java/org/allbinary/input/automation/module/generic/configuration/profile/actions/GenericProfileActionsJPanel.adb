@@ -46,7 +46,7 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
    function Create return GenericProfileActionsJPanel_Access is
       This : constant GenericProfileActionsJPanel_Access := new GenericProfileActionsJPanel;
    begin
-      Initialize (This.all);
+      GenericProfileActionsJPanel_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -265,20 +265,6 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
    begin
         This.newProfileActionJDialog.setVisible (True);
    end newActionJButtonActionPerformed;
-
-   procedure getGenericProfileActionJPanel (This : in out GenericProfileActionsJPanel) is
-      Java_Result : constant GenericProfileActionJPanel_Access := GenericProfileActionsJPanel'Class (This).getGenericProfileActionJPanel;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getGenericProfileActionJPanel;
-
-   procedure getGenericProfileActions (This : in out GenericProfileActionsJPanel) is
-      Java_Result : constant GenericProfileActions_Access := GenericProfileActionsJPanel'Class (This).getGenericProfileActions;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getGenericProfileActions;
 
 end org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileActionsJPanel_Package;
 

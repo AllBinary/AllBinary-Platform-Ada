@@ -21,7 +21,7 @@ package body org.allbinary.game.layer.weapon.TempExplosionWeaponLayer_Package is
    function Create (name : Unbounded_String; movement : Movement_Access; animationInterface : Animation_Access; rectangle : Rectangle_Access; viewPosition : ViewPositionBase_Access; timeDelay : Integer) return TempExplosionWeaponLayer_Access is
       This : constant TempExplosionWeaponLayer_Access := new TempExplosionWeaponLayer;
    begin
-      Initialize (This.all, name, movement, animationInterface, rectangle, viewPosition, timeDelay);
+      TempExplosionWeaponLayer_Package.Initialize (This.all, name, movement, animationInterface, rectangle, viewPosition, timeDelay);
       return This;
    end Create;
 

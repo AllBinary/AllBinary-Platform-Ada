@@ -32,7 +32,7 @@ package body admin.tags.PaymentTransactionResultTag_Package is
    function Create return PaymentTransactionResultTag_Access is
       This : constant PaymentTransactionResultTag_Access := new PaymentTransactionResultTag;
    begin
-      Initialize (This.all);
+      PaymentTransactionResultTag_Package.Initialize (This.all);
       return This;
    end Create;
 

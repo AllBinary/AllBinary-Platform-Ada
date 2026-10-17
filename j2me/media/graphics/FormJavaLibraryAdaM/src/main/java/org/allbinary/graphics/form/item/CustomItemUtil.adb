@@ -29,7 +29,7 @@ package body org.allbinary.graphics.form.item.CustomItemUtil_Package is
    function Create return CustomItemUtil_Access is
       This : constant CustomItemUtil_Access := new CustomItemUtil;
    begin
-      Initialize (This.all);
+      CustomItemUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -37,13 +37,6 @@ package body org.allbinary.graphics.form.item.CustomItemUtil_Package is
    function getInstance return CustomItemUtil_Access is
    begin
         return CustomItemUtil_Package.instance;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant CustomItemUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

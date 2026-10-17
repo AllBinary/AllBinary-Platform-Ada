@@ -34,7 +34,7 @@ package body org.allbinary.thread.PathFindingThreadPool_Package is
    function Create (poolName : Unbounded_String; numThreads : Integer; priority : Integer) return PathFindingThreadPool_Access is
       This : constant PathFindingThreadPool_Access := new PathFindingThreadPool;
    begin
-      Initialize (This.all, poolName, numThreads, priority);
+      PathFindingThreadPool_Package.Initialize (This.all, poolName, numThreads, priority);
       return This;
    end Create;
 
@@ -57,13 +57,6 @@ package body org.allbinary.thread.PathFindingThreadPool_Package is
    begin
         null;
    end completedTask;
-
-   procedure getInstance is
-      Java_Result : constant ThreadPool_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

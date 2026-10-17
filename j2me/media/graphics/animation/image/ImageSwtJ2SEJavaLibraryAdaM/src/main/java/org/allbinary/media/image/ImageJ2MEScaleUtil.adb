@@ -35,7 +35,7 @@ package body org.allbinary.media.image.ImageJ2MEScaleUtil_Package is
    function Create return ImageJ2MEScaleUtil_Access is
       This : constant ImageJ2MEScaleUtil_Access := new ImageJ2MEScaleUtil;
    begin
-      Initialize (This.all);
+      ImageJ2MEScaleUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -59,13 +59,6 @@ package body org.allbinary.media.image.ImageJ2MEScaleUtil_Package is
         scaledImage := ImageCopyUtil_Package.getInstance.createImageWH (image, width, height, True);
         return scaledImage;
    end scale;
-
-   procedure getInstance is
-      Java_Result : constant ImageJ2MEScaleUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure scaleArray (This : in out ImageJ2MEScaleUtil; images : Image_Access_Array_Access; width : Integer; height : Integer) is
       Java_Result : constant Image_Access_Array_Access := ImageJ2MEScaleUtil'Class (This).scaleArray (images, width, height);

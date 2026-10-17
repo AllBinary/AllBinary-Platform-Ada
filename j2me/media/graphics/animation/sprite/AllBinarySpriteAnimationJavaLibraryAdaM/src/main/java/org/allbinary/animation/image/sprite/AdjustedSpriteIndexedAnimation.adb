@@ -34,7 +34,7 @@ package body org.allbinary.animation.image.sprite.AdjustedSpriteIndexedAnimation
    function Create (sprite : Sprite_Access; image : Image_Access; basicColorArray : BasicColor_Access_Array_Access; dx : Integer; dy : Integer; animationBehavior : AnimationBehavior_Access) return AdjustedSpriteIndexedAnimation_Access is
       This : constant AdjustedSpriteIndexedAnimation_Access := new AdjustedSpriteIndexedAnimation;
    begin
-      Initialize (This.all, sprite, image, basicColorArray, dx, dy, animationBehavior);
+      AdjustedSpriteIndexedAnimation_Package.Initialize (This.all, sprite, image, basicColorArray, dx, dy, animationBehavior);
       return This;
    end Create;
 

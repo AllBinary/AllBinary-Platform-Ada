@@ -50,7 +50,7 @@ package body org.allbinary.business.context.modules.storefront.statistics.invent
    function Create (storeFrontInterface : StoreFrontInterface_Access) return StoreFrontInventoryStatistics_Access is
       This : constant StoreFrontInventoryStatistics_Access := new StoreFrontInventoryStatistics;
    begin
-      Initialize (This.all, storeFrontInterface);
+      StoreFrontInventoryStatistics_Package.Initialize (This.all, storeFrontInterface);
       return This;
    end Create;
 
@@ -81,41 +81,6 @@ package body org.allbinary.business.context.modules.storefront.statistics.invent
    function getKey (This : in out StoreFrontInventoryStatistics) return Java_Object_Access is
    begin
         return null;
-   end getKey;
-
-   procedure getNumber (This : in out StoreFrontInventoryStatistics) is
-      Java_Result : constant Long_Long_Integer := StoreFrontInventoryStatistics'Class (This).getNumber;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getNumber;
-
-   procedure getTotal (This : in out StoreFrontInventoryStatistics) is
-      Java_Result : constant Money_Access := StoreFrontInventoryStatistics'Class (This).getTotal;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTotal;
-
-   procedure toHashMap (This : in out StoreFrontInventoryStatistics) is
-      Java_Result : constant HashMap_Access := StoreFrontInventoryStatistics'Class (This).toHashMap;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toHashMap;
-
-   procedure toVector (This : in out StoreFrontInventoryStatistics) is
-      Java_Result : constant BasicArrayList_Access := StoreFrontInventoryStatistics'Class (This).toVector;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toVector;
-
-   procedure getKey (This : in out StoreFrontInventoryStatistics) is
-      Java_Result : constant Java_Object_Access := StoreFrontInventoryStatistics'Class (This).getKey;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getKey;
 
 end org.allbinary.business.context.modules.storefront.statistics.inventory.StoreFrontInventoryStatistics_Package;

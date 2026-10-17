@@ -31,7 +31,7 @@ package body org.allbinary.game.layer.FakeLayerManager_Package is
    function Create (gameInfo : GameInfo_Access) return FakeLayerManager_Access is
       This : constant FakeLayerManager_Access := new FakeLayerManager;
    begin
-      Initialize (This.all, gameInfo);
+      FakeLayerManager_Package.Initialize (This.all, gameInfo);
       return This;
    end Create;
 
@@ -49,20 +49,6 @@ package body org.allbinary.game.layer.FakeLayerManager_Package is
    function geographicMapCellTypeArray (This : in out FakeLayerManager) return GeographicMapCellType_Access_Array_Access is
    begin
         return This.geographicMapCellTypeArray;
-   end geographicMapCellTypeArray;
-
-   procedure getGeographicMapInterface (This : in out FakeLayerManager) is
-      Java_Result : constant BasicGeographicMap_Access_Array_Access := FakeLayerManager'Class (This).getGeographicMapInterface;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getGeographicMapInterface;
-
-   procedure geographicMapCellTypeArray (This : in out FakeLayerManager) is
-      Java_Result : constant GeographicMapCellType_Access_Array_Access := FakeLayerManager'Class (This).geographicMapCellTypeArray;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end geographicMapCellTypeArray;
 
 end org.allbinary.game.layer.FakeLayerManager_Package;

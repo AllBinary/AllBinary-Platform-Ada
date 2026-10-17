@@ -62,7 +62,6 @@ package views.admin.workflow.WorkFlowsView_Package is
    function Create (transformInfoInterface : TransformInfoInterface_Access) return WorkFlowsView_Access;
    procedure addDomNodeInterfaces (This : in out WorkFlowsView);
    function view (This : in out WorkFlowsView) return Unbounded_String;
-   procedure view (This : in out WorkFlowsView);
    function toXmlNode (This : in out WorkFlowsView; document : Document_Access) return Node_Access;
    procedure toXmlNode (This : in out WorkFlowsView; document : Document_Access);
 

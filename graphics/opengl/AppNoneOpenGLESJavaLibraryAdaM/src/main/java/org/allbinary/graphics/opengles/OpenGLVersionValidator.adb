@@ -29,7 +29,7 @@ package body org.allbinary.graphics.opengles.OpenGLVersionValidator_Package is
    function Create return OpenGLVersionValidator_Access is
       This : constant OpenGLVersionValidator_Access := new OpenGLVersionValidator;
    begin
-      Initialize (This.all);
+      OpenGLVersionValidator_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -53,20 +53,6 @@ package body org.allbinary.graphics.opengles.OpenGLVersionValidator_Package is
    begin
         null;
    end setShaderComposite;
-
-   procedure getInstance is
-      Java_Result : constant OpenGLVersionValidator_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure isGL31OrHigher (This : in out OpenGLVersionValidator) is
-      Java_Result : constant Boolean := OpenGLVersionValidator'Class (This).isGL31OrHigher;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isGL31OrHigher;
 
    procedure isAvailable (This : in out OpenGLVersionValidator; glVersionRequired : Unbounded_String) is
       Java_Result : constant Boolean := OpenGLVersionValidator'Class (This).isAvailable (glVersionRequired);

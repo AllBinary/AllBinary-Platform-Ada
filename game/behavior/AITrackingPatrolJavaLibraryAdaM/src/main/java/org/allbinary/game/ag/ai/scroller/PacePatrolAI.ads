@@ -73,12 +73,10 @@ package org.allbinary.game.ag.ai.scroller.PacePatrolAI_Package is
    function Create (hashtable : ABHashtable_Access; ownerLayerInterface : AllBinaryLayer_Access; gameInput : GameInput_Access) return PacePatrolAI_Access;
    procedure processAI (This : in out PacePatrolAI; allBinaryLayerManager : AllBinaryLayerManager_Access);
    function setFiringDirectionForTargetIfInRange (This : in out PacePatrolAI) return Direction_Access;
-   procedure setFiringDirectionForTargetIfInRange (This : in out PacePatrolAI);
    procedure disable (This : in out PacePatrolAI);
    procedure onEvent (This : in out PacePatrolAI; eventObject : AllBinaryEventObject_Access);
    procedure onMovement (This : in out PacePatrolAI; trackingEvent : TrackingEvent_Access);
    function getFiringDistance (This : in out PacePatrolAI) return Integer;
-   procedure getFiringDistance (This : in out PacePatrolAI);
    procedure setFiringDistance (This : in out PacePatrolAI; firingDistance : Integer);
 
 end org.allbinary.game.ag.ai.scroller.PacePatrolAI_Package;

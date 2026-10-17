@@ -71,7 +71,7 @@ package body admin.taghelpers.UpdateOrderHelper_Package is
    function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return UpdateOrderHelper_Access is
       This : constant UpdateOrderHelper_Access := new UpdateOrderHelper;
    begin
-      Initialize (This.all, hashMap, pageContext);
+      UpdateOrderHelper_Package.Initialize (This.all, hashMap, pageContext);
       return This;
    end Create;
 
@@ -179,13 +179,6 @@ package body admin.taghelpers.UpdateOrderHelper_Package is
             return error;
                 end;
         end;
-   end update;
-
-   procedure update (This : in out UpdateOrderHelper) is
-      Java_Result : constant Unbounded_String := UpdateOrderHelper'Class (This).update;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end update;
 
 end admin.taghelpers.UpdateOrderHelper_Package;

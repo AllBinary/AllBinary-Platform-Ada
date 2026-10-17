@@ -42,7 +42,7 @@ package body org.allbinary.game.input.ScrollMapPlayerGameInput_Package is
    function Create (geographicMapInterface : BasicGeographicMap_Access; list : BasicArrayList_Access; playerInputId : Integer) return ScrollMapPlayerGameInput_Access is
       This : constant ScrollMapPlayerGameInput_Access := new ScrollMapPlayerGameInput;
    begin
-      Initialize (This.all, geographicMapInterface, list, playerInputId);
+      ScrollMapPlayerGameInput_Package.Initialize (This.all, geographicMapInterface, list, playerInputId);
       return This;
    end Create;
 
@@ -257,20 +257,6 @@ package body org.allbinary.game.input.ScrollMapPlayerGameInput_Package is
             return True;
         end if;
    end keepOnMapMinX;
-
-   procedure getSpecialHeight (This : in out ScrollMapPlayerGameInput) is
-      Java_Result : constant Integer := ScrollMapPlayerGameInput'Class (This).getSpecialHeight;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSpecialHeight;
-
-   procedure getSpecialWidth (This : in out ScrollMapPlayerGameInput) is
-      Java_Result : constant Integer := ScrollMapPlayerGameInput'Class (This).getSpecialWidth;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSpecialWidth;
 
    procedure keepOnMapMaxY (This : in out ScrollMapPlayerGameInput; newY : Integer) is
       Java_Result : constant Boolean := ScrollMapPlayerGameInput'Class (This).keepOnMapMaxY (newY);

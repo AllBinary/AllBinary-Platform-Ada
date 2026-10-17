@@ -31,7 +31,7 @@ package body org.allbinary.game.configuration.GameOptionsFormFactory_Package is
    function Create return GameOptionsFormFactory_Access is
       This : constant GameOptionsFormFactory_Access := new GameOptionsFormFactory;
    begin
-      Initialize (This.all);
+      GameOptionsFormFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -56,13 +56,6 @@ package body org.allbinary.game.configuration.GameOptionsFormFactory_Package is
                 end;
         end;
    end init;
-
-   procedure getInstance is
-      Java_Result : constant GameOptionsFormFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure init (This : in out GameOptionsFormFactory; commandListener : CommandListener_Access; title : Unbounded_String; backgrounBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access) is
       Java_Result : constant CommandForm_Access := GameOptionsFormFactory'Class (This).init (commandListener, title, backgrounBasicColor, foregroundBasicColor);

@@ -56,20 +56,13 @@ package body org.allbinary.media.image.comparison.ImageComparisonResultCacheSing
    function Create return ImageComparisonResultCacheSingleton_Access is
       This : constant ImageComparisonResultCacheSingleton_Access := new ImageComparisonResultCacheSingleton;
    begin
-      Initialize (This.all);
+      ImageComparisonResultCacheSingleton_Package.Initialize (This.all);
       return This;
    end Create;
 
    function getInstance return CacheInterface_Access is
    begin
         return ImageComparisonResultCacheSingleton_Package.cacheInterface;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant CacheInterface_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

@@ -34,7 +34,7 @@ package body org.allbinary.graphics.form.CommandCurrentSelectionForm_Package is
    function Create (title : Unbounded_String; items : ABCustomItem_Access_Array_Access; border : Integer; moveForSmallScreen : Boolean; backgroundBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access) return CommandCurrentSelectionForm_Access is
       This : constant CommandCurrentSelectionForm_Access := new CommandCurrentSelectionForm;
    begin
-      Initialize (This.all, title, items, border, moveForSmallScreen, backgroundBasicColor, foregroundBasicColor);
+      CommandCurrentSelectionForm_Package.Initialize (This.all, title, items, border, moveForSmallScreen, backgroundBasicColor, foregroundBasicColor);
       return This;
    end Create;
 
@@ -222,13 +222,6 @@ package body org.allbinary.graphics.form.CommandCurrentSelectionForm_Package is
         This.unSelectedAnimationArray (index).paintXY (graphics, x, y);
         return ScrollCurrentSelectionForm (This).paintUnselectedItem (graphics, index, item, x, y);
    end paintUnselectedItem;
-
-   procedure getSelectedCommand (This : in out CommandCurrentSelectionForm) is
-      Java_Result : constant Command_Access := CommandCurrentSelectionForm'Class (This).getSelectedCommand;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSelectedCommand;
 
    procedure append (This : in out CommandCurrentSelectionForm; item : ABCustomItem_Access) is
       Java_Result : constant Integer := CommandCurrentSelectionForm'Class (This).append (item);

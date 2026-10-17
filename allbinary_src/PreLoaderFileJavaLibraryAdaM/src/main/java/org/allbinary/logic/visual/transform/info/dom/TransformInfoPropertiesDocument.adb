@@ -34,7 +34,7 @@ package body org.allbinary.logic.visual.transform.info.dom.TransformInfoProperti
    function Create (filePath : Unbounded_String) return TransformInfoPropertiesDocument_Access is
       This : constant TransformInfoPropertiesDocument_Access := new TransformInfoPropertiesDocument;
    begin
-      Initialize (This.all, filePath);
+      TransformInfoPropertiesDocument_Package.Initialize (This.all, filePath);
       return This;
    end Create;
 
@@ -78,13 +78,6 @@ package body org.allbinary.logic.visual.transform.info.dom.TransformInfoProperti
             return null;
                 end;
         end;
-   end toTransformInfoPropertiesHashMap;
-
-   procedure toTransformInfoPropertiesHashMap (This : in out TransformInfoPropertiesDocument) is
-      Java_Result : constant HashMap_Access := TransformInfoPropertiesDocument'Class (This).toTransformInfoPropertiesHashMap;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end toTransformInfoPropertiesHashMap;
 
 end org.allbinary.logic.visual.transform.info.dom.TransformInfoPropertiesDocument_Package;

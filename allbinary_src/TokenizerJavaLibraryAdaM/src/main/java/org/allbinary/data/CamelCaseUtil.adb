@@ -29,7 +29,7 @@ package body org.allbinary.data.CamelCaseUtil_Package is
    function Create return CamelCaseUtil_Access is
       This : constant CamelCaseUtil_Access := new CamelCaseUtil;
    begin
-      Initialize (This.all);
+      CamelCaseUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -65,13 +65,6 @@ package body org.allbinary.data.CamelCaseUtil_Package is
         end loop;
         return stringBuilder.toString;
    end getAsCamelCase;
-
-   procedure getInstance is
-      Java_Result : constant CamelCaseUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure getAsCamelCase (This : in out CamelCaseUtil; string_Id : Unbounded_String; stringBuilder : StringMaker_Access) is
       Java_Result : constant Unbounded_String := CamelCaseUtil'Class (This).getAsCamelCase (string_Id, stringBuilder);

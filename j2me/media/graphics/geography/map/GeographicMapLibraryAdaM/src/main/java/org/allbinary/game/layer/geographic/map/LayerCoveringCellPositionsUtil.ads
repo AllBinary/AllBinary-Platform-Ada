@@ -47,7 +47,6 @@ package org.allbinary.game.layer.geographic.map.LayerCoveringCellPositionsUtil_P
    procedure Initialize (This : in out LayerCoveringCellPositionsUtil'Class);
    function Create return LayerCoveringCellPositionsUtil_Access;
    function getInstance return LayerCoveringCellPositionsUtil_Access;
-   procedure getInstance;
    function getAllXY (This : in out LayerCoveringCellPositionsUtil; geographicMapInterface : BasicGeographicMap_Access; layerInterface : AllBinaryLayer_Access; x : Integer; y : Integer; reusableList : BasicArrayList_Access) return BasicArrayList_Access;
    procedure getAllXY (This : in out LayerCoveringCellPositionsUtil; geographicMapInterface : BasicGeographicMap_Access; layerInterface : AllBinaryLayer_Access; x : Integer; y : Integer; reusableList : BasicArrayList_Access);
    function getAll (This : in out LayerCoveringCellPositionsUtil; geographicMapInterface : BasicGeographicMap_Access; topLeftGeographicMapCellPosition : GeographicMapCellPosition_Access; layerInterface : AllBinaryLayer_Access; reusableList : BasicArrayList_Access) return BasicArrayList_Access;

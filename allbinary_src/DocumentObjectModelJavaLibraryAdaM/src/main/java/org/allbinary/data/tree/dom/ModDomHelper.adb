@@ -30,7 +30,7 @@ package body org.allbinary.data.tree.dom.ModDomHelper_Package is
    function Create return ModDomHelper_Access is
       This : constant ModDomHelper_Access := new ModDomHelper;
    begin
-      Initialize (This.all);
+      ModDomHelper_Package.Initialize (This.all);
       return This;
    end Create;
 

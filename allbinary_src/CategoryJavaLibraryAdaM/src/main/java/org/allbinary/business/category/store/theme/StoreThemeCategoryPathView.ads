@@ -27,6 +27,7 @@ with org.allbinary.logic.visual.theme.ThemePropertiesView_Package; use org.allbi
 with org.allbinary.logic.visual.theme.ThemeValidation_Package; use org.allbinary.logic.visual.theme.ThemeValidation_Package;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
+with org.allbinary.business.category.store.theme.StoreThemeCategoryInterface_Package; use org.allbinary.business.category.store.theme.StoreThemeCategoryInterface_Package;
 
 package org.allbinary.business.category.store.theme.StoreThemeCategoryPathView_Package is
 

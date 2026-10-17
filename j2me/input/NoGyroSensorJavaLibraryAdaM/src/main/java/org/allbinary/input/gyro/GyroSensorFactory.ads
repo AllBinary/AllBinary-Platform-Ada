@@ -20,6 +20,8 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
+with org.allbinary.input.gyro.AllBinaryOrientationSensor_Package; use org.allbinary.input.gyro.AllBinaryOrientationSensor_Package;
+with org.allbinary.input.gyro.NoGyroSensor_Package; use org.allbinary.input.gyro.NoGyroSensor_Package;
 
 package org.allbinary.input.gyro.GyroSensorFactory_Package is
 
@@ -36,7 +38,6 @@ package org.allbinary.input.gyro.GyroSensorFactory_Package is
    function Create return GyroSensorFactory_Access;
    procedure init;
    function getInstance return AllBinaryOrientationSensor_Access;
-   procedure getInstance;
 
 end org.allbinary.input.gyro.GyroSensorFactory_Package;
 

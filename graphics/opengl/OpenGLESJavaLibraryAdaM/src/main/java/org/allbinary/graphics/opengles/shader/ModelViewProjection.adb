@@ -28,7 +28,7 @@ package body org.allbinary.graphics.opengles.shader.ModelViewProjection_Package 
    function Create return ModelViewProjection_Access is
       This : constant ModelViewProjection_Access := new ModelViewProjection;
    begin
-      Initialize (This.all);
+      ModelViewProjection_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -41,20 +41,6 @@ package body org.allbinary.graphics.opengles.shader.ModelViewProjection_Package 
    function get (This : in out ModelViewProjection) return Float_Array_Access is
    begin
         return null;
-   end get;
-
-   procedure getInstance is
-      Java_Result : constant ModelViewProjection_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure get (This : in out ModelViewProjection) is
-      Java_Result : constant Float_Array_Access := ModelViewProjection'Class (This).get;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end get;
 
 begin

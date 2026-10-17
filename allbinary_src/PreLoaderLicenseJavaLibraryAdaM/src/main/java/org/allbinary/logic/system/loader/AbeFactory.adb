@@ -37,7 +37,7 @@ package body org.allbinary.logic.system.loader.AbeFactory_Package is
    function Create return AbeFactory_Access is
       This : constant AbeFactory_Access := new AbeFactory;
    begin
-      Initialize (This.all);
+      AbeFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -126,13 +126,6 @@ package body org.allbinary.logic.system.loader.AbeFactory_Package is
                 end;
         end;
    end getClass;
-
-   procedure getInstance is
-      Java_Result : constant AbeFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure getInstance (This : in out AbeFactory; abeClientInformation : AbeClientInformationInterface_Access; className : Unbounded_String) is
       Java_Result : constant Java_Object_Access := AbeFactory'Class (This).getInstance (abeClientInformation, className);

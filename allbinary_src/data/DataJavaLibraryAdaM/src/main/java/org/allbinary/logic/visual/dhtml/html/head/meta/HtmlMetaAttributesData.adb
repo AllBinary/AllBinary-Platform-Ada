@@ -37,16 +37,9 @@ package body org.allbinary.logic.visual.dhtml.html.head.meta.HtmlMetaAttributesD
    function Create return HtmlMetaAttributesData_Access is
       This : constant HtmlMetaAttributesData_Access := new HtmlMetaAttributesData;
    begin
-      Initialize (This.all);
+      HtmlMetaAttributesData_Package.Initialize (This.all);
       return This;
    end Create;
-
-   procedure getInstance is
-      Java_Result : constant HtmlMetaAttributesData_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

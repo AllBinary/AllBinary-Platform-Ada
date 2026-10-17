@@ -36,7 +36,7 @@ package body views.admin.storefront.AddValidationStoreFrontView_Package is
    function Create (transformInfoInterface : TransformInfoInterface_Access) return AddValidationStoreFrontView_Access is
       This : constant AddValidationStoreFrontView_Access := new AddValidationStoreFrontView;
    begin
-      Initialize (This.all, transformInfoInterface);
+      AddValidationStoreFrontView_Package.Initialize (This.all, transformInfoInterface);
       return This;
    end Create;
 
@@ -123,47 +123,12 @@ package body views.admin.storefront.AddValidationStoreFrontView_Package is
         return This.views.ValidationOnlyTempUtil.getInstance.view (This'Unchecked_Access);
    end view;
 
-   procedure isValid (This : in out AddValidationStoreFrontView) is
-      Java_Result : constant Boolean := AddValidationStoreFrontView'Class (This).isValid;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isValid;
-
-   procedure getStoreViewsPath (This : in out AddValidationStoreFrontView) is
-      Java_Result : constant Unbounded_String := AddValidationStoreFrontView'Class (This).getStoreViewsPath;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getStoreViewsPath;
-
-   procedure validationInfo (This : in out AddValidationStoreFrontView) is
-      Java_Result : constant Unbounded_String := AddValidationStoreFrontView'Class (This).validationInfo;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end validationInfo;
-
-   procedure toValidationInfoDoc (This : in out AddValidationStoreFrontView) is
-      Java_Result : constant Document_Access := AddValidationStoreFrontView'Class (This).toValidationInfoDoc;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toValidationInfoDoc;
-
    procedure toValidationInfoNode (This : in out AddValidationStoreFrontView; document : Document_Access) is
       Java_Result : constant Node_Access := AddValidationStoreFrontView'Class (This).toValidationInfoNode (document);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end toValidationInfoNode;
-
-   procedure view (This : in out AddValidationStoreFrontView) is
-      Java_Result : constant Unbounded_String := AddValidationStoreFrontView'Class (This).view;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end view;
 
 end views.admin.storefront.AddValidationStoreFrontView_Package;
 

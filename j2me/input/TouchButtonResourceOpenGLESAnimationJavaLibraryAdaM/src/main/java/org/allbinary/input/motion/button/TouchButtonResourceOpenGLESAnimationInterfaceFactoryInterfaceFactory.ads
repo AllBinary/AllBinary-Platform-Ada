@@ -42,7 +42,6 @@ package org.allbinary.input.motion.button.TouchButtonResourceOpenGLESAnimationIn
    function Create return TouchButtonResourceOpenGLESAnimationInterfaceFactoryInterfaceFactory_Access;
    procedure init (This : in out TouchButtonResourceOpenGLESAnimationInterfaceFactoryInterfaceFactory; level : Integer);
    function isFeature (This : in out TouchButtonResourceOpenGLESAnimationInterfaceFactoryInterfaceFactory) return Boolean;
-   procedure isFeature (This : in out TouchButtonResourceOpenGLESAnimationInterfaceFactoryInterfaceFactory);
 
 end org.allbinary.input.motion.button.TouchButtonResourceOpenGLESAnimationInterfaceFactoryInterfaceFactory_Package;
 

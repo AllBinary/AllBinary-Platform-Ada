@@ -29,7 +29,7 @@ package body org.allbinary.math.DistanceUtil_Package is
    function Create return DistanceUtil_Access is
       This : constant DistanceUtil_Access := new DistanceUtil;
    begin
-      Initialize (This.all);
+      DistanceUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -47,13 +47,6 @@ package body org.allbinary.math.DistanceUtil_Package is
         dy := (y1) - (y2);
         return Integer (This.mathUtil.sqrt ((((dx) * (dx))) + (((dy) * (dy)))));
    end getDistance;
-
-   procedure getInstance is
-      Java_Result : constant DistanceUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure getDistance (This : in out DistanceUtil; x1 : Integer; y1 : Integer; x2 : Integer; y2 : Integer) is
       Java_Result : constant Integer := DistanceUtil'Class (This).getDistance (x1, y1, x2, y2);

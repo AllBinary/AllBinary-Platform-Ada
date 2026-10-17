@@ -32,7 +32,7 @@ package body org.allbinary.logic.communication.smtp.event.modules.event.user.Use
    function Create (userInterface : UserInterface_Access) return UserEmailEventListenerModule_Access is
       This : constant UserEmailEventListenerModule_Access := new UserEmailEventListenerModule;
    begin
-      Initialize (This.all, userInterface);
+      UserEmailEventListenerModule_Package.Initialize (This.all, userInterface);
       return This;
    end Create;
 

@@ -74,7 +74,7 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
    function Create (node : Node_Access) return MouseActionScriptInput_Access is
       This : constant MouseActionScriptInput_Access := new MouseActionScriptInput;
    begin
-      Initialize (This.all, node);
+      MouseActionScriptInput_Package.Initialize (This.all, node);
       return This;
    end Create;
 
@@ -91,7 +91,7 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
    function Create return MouseActionScriptInput_Access is
       This : constant MouseActionScriptInput_Access := new MouseActionScriptInput;
    begin
-      Initialize (This.all);
+      MouseActionScriptInput_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -177,27 +177,6 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
         end if;
         This.logUtil.putF (To_Unbounded_String ("Input Type: ") & This.getInputRobotInterface.getName & To_Unbounded_String (" Point: ") & Java_Image (This.getPoint) & To_Unbounded_String (" Buttons Clicked: ") & buttonStringBuffer.toString, This'Unchecked_Access, To_Unbounded_String ("log"));
    end log;
-
-   procedure getPoint (This : in out MouseActionScriptInput) is
-      Java_Result : constant Point_Access := MouseActionScriptInput'Class (This).getPoint;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getPoint;
-
-   procedure getButtonClicks (This : in out MouseActionScriptInput) is
-      Java_Result : constant Integer := MouseActionScriptInput'Class (This).getButtonClicks;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getButtonClicks;
-
-   procedure toHashMap (This : in out MouseActionScriptInput) is
-      Java_Result : constant HashMap_Access := MouseActionScriptInput'Class (This).toHashMap;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toHashMap;
 
    procedure toXmlNode (This : in out MouseActionScriptInput; document : Document_Access) is
       Java_Result : constant Node_Access := MouseActionScriptInput'Class (This).toXmlNode (document);

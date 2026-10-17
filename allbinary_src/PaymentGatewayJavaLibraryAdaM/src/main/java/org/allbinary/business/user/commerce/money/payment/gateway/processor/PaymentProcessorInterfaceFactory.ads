@@ -28,6 +28,8 @@ with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.lo
 with org.allbinary.logic.string_Id.StringValidationUtil_Package; use org.allbinary.logic.string_Id.StringValidationUtil_Package;
 with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.business.user.commerce.money.payment.gateway.processor.PaymentProcessorInterfaceFactoryInterface_Package; use org.allbinary.business.user.commerce.money.payment.gateway.processor.PaymentProcessorInterfaceFactoryInterface_Package;
+with org.allbinary.business.user.commerce.money.payment.gateway.processor.PaymentProcessorInterface_Package; use org.allbinary.business.user.commerce.money.payment.gateway.processor.PaymentProcessorInterface_Package;
 
 package org.allbinary.business.user.commerce.money.payment.gateway.processor.PaymentProcessorInterfaceFactory_Package is
 
@@ -53,7 +55,6 @@ package org.allbinary.business.user.commerce.money.payment.gateway.processor.Pay
    procedure Initialize (This : in out PaymentProcessorInterfaceFactory'Class);
    function Create return PaymentProcessorInterfaceFactory_Access;
    function getInstance return PaymentProcessorInterfaceFactory_Access;
-   procedure getInstance;
    function getInstance (This : in out PaymentProcessorInterfaceFactory; transformInfoInterface : TransformInfoInterface_Access) return PaymentProcessorInterface_Access;
    procedure getInstance (This : in out PaymentProcessorInterfaceFactory; transformInfoInterface : TransformInfoInterface_Access);
 

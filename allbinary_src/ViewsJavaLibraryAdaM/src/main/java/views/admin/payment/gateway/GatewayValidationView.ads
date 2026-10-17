@@ -25,6 +25,7 @@ with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package; u
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with views.business.context.modules.storefront.HttpStoreComponentView_Package; use views.business.context.modules.storefront.HttpStoreComponentView_Package;
+with views.admin.payment.gateway.GatewayView_Package; use views.admin.payment.gateway.GatewayView_Package;
 
 package views.admin.payment.gateway.GatewayValidationView_Package is
 
@@ -44,19 +45,14 @@ package views.admin.payment.gateway.GatewayValidationView_Package is
    procedure Initialize (This : in out GatewayValidationView'Class; transformInfoInterface : TransformInfoInterface_Access);
    function Create (transformInfoInterface : TransformInfoInterface_Access) return GatewayValidationView_Access;
    function isValid (This : in out GatewayValidationView) return Boolean;
-   procedure isValid (This : in out GatewayValidationView);
    function toValidationInfoDoc (This : in out GatewayValidationView) return Document_Access;
-   procedure toValidationInfoDoc (This : in out GatewayValidationView);
    function toValidationInfoNode (This : in out GatewayValidationView; document : Document_Access) return Node_Access;
    procedure toValidationInfoNode (This : in out GatewayValidationView; document : Document_Access);
    function validationInfo (This : in out GatewayValidationView) return Unbounded_String;
-   procedure validationInfo (This : in out GatewayValidationView);
    function toXmlDoc (This : in out GatewayValidationView) return Document_Access;
-   procedure toXmlDoc (This : in out GatewayValidationView);
    function toXmlNode (This : in out GatewayValidationView; document : Document_Access) return Node_Access;
    procedure toXmlNode (This : in out GatewayValidationView; document : Document_Access);
    function view (This : in out GatewayValidationView) return Unbounded_String;
-   procedure view (This : in out GatewayValidationView);
 
 end views.admin.payment.gateway.GatewayValidationView_Package;
 

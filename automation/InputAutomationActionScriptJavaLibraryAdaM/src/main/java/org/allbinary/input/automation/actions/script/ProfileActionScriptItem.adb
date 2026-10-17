@@ -35,7 +35,7 @@ package body org.allbinary.input.automation.actions.script.ProfileActionScriptIt
    function Create (label : Unbounded_String; node : Node_Access) return ProfileActionScriptItem_Access is
       This : constant ProfileActionScriptItem_Access := new ProfileActionScriptItem;
    begin
-      Initialize (This.all, label, node);
+      ProfileActionScriptItem_Package.Initialize (This.all, label, node);
       return This;
    end Create;
 
@@ -51,7 +51,7 @@ package body org.allbinary.input.automation.actions.script.ProfileActionScriptIt
    function Create (label : Unbounded_String) return ProfileActionScriptItem_Access is
       This : constant ProfileActionScriptItem_Access := new ProfileActionScriptItem;
    begin
-      Initialize (This.all, label);
+      ProfileActionScriptItem_Package.Initialize (This.all, label);
       return This;
    end Create;
 
@@ -95,13 +95,6 @@ package body org.allbinary.input.automation.actions.script.ProfileActionScriptIt
    begin
         This.jPopupMenu := jPopupMenu;
    end setJPopupMenu;
-
-   procedure getJPopupMenu (This : in out ProfileActionScriptItem) is
-      Java_Result : constant JPopupMenu_Access := ProfileActionScriptItem'Class (This).getJPopupMenu;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getJPopupMenu;
 
 begin
    null;

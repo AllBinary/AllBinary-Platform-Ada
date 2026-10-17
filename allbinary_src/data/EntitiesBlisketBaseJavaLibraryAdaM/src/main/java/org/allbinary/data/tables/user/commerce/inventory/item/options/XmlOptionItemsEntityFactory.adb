@@ -36,7 +36,7 @@ package body org.allbinary.data.tables.user.commerce.inventory.item.options.XmlO
    function Create return XmlOptionItemsEntityFactory_Access is
       This : constant XmlOptionItemsEntityFactory_Access := new XmlOptionItemsEntityFactory;
    begin
-      Initialize (This.all);
+      XmlOptionItemsEntityFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -57,20 +57,6 @@ package body org.allbinary.data.tables.user.commerce.inventory.item.options.XmlO
             return null;
                 end;
         end;
-   end getXmlOptionItemsEntityInstance;
-
-   procedure getInstance is
-      Java_Result : constant XmlOptionItemsEntityFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure getXmlOptionItemsEntityInstance (This : in out XmlOptionItemsEntityFactory) is
-      Java_Result : constant XmlOptionItemsEntity_Access := XmlOptionItemsEntityFactory'Class (This).getXmlOptionItemsEntityInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getXmlOptionItemsEntityInstance;
 
 begin

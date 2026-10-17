@@ -30,7 +30,7 @@ package body org.allbinary.logic.visual.transform.data.TransformDocumentFactory_
    function Create return TransformDocumentFactory_Access is
       This : constant TransformDocumentFactory_Access := new TransformDocumentFactory;
    begin
-      Initialize (This.all);
+      TransformDocumentFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -38,13 +38,6 @@ package body org.allbinary.logic.visual.transform.data.TransformDocumentFactory_
    function getInstance return TransformDocumentInterface_Access is
    begin
         return TransformDocumentInterface_Access (TransformDocument_Package.Create);
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant TransformDocumentInterface_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 end org.allbinary.logic.visual.transform.data.TransformDocumentFactory_Package;

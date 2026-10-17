@@ -50,6 +50,8 @@ with org.allbinary.thread.PathFindingThreadPool_Package; use org.allbinary.threa
 with org.allbinary.thread.ThreadPool_Package; use org.allbinary.thread.ThreadPool_Package;
 with org.allbinary.time.TimeDelayHelper_Package; use org.allbinary.time.TimeDelayHelper_Package;
 with org.allbinary.game.layer.unit.UnitWaypointBehavior_Package; use org.allbinary.game.layer.unit.UnitWaypointBehavior_Package;
+with org.allbinary.game.layer.unit.UnitWaypointStrings_Package; use org.allbinary.game.layer.unit.UnitWaypointStrings_Package;
+with org.allbinary.game.layer.unit.UnitLayer_Package; use org.allbinary.game.layer.unit.UnitLayer_Package;
 
 package org.allbinary.game.layer.unit.UnitWaypointBehavior2_Package is
 
@@ -114,9 +116,7 @@ package org.allbinary.game.layer.unit.UnitWaypointBehavior2_Package is
    function Create (ownerAdvancedRTSGameLayer : UnitLayer_Access; fakeWaypoint : AdvancedRTSGameLayer_Access) return UnitWaypointBehavior2_Access;
    procedure initRange (This : in out UnitWaypointBehavior2; weaponRange : Integer);
    function getNextUnvisitedPathGeographicMapCellPosition (This : in out UnitWaypointBehavior2) return GeographicMapCellPosition_Access;
-   procedure getNextUnvisitedPathGeographicMapCellPosition (This : in out UnitWaypointBehavior2);
    function isRunning (This : in out UnitWaypointBehavior2) return Boolean;
-   procedure isRunning (This : in out UnitWaypointBehavior2);
    procedure processTick (This : in out UnitWaypointBehavior2; allBinaryLayerManager : AllBinaryLayerManager_Access);
    procedure onEnemyMovement (This : in out UnitWaypointBehavior2; layerInterface : AdvancedRTSGameLayer_Access);
    procedure processPossibleTarget (This : in out UnitWaypointBehavior2; layerInterface : AdvancedRTSGameLayer_Access; anotherTargetDistance : Integer);
@@ -136,13 +136,11 @@ package org.allbinary.game.layer.unit.UnitWaypointBehavior2_Package is
    procedure removeWaypoint (This : in out UnitWaypointBehavior2; waypointLayer : RTSLayer_Access; reason : Unbounded_String);
    procedure clearTarget (This : in out UnitWaypointBehavior2);
    function isWaypointListEmptyOrOnlyTargets (This : in out UnitWaypointBehavior2) return Boolean;
-   procedure isWaypointListEmptyOrOnlyTargets (This : in out UnitWaypointBehavior2);
    function isCloseRange (This : in out UnitWaypointBehavior2; layerInterface : AdvancedRTSGameLayer_Access; targetDistance : Integer) return Boolean;
    procedure isCloseRange (This : in out UnitWaypointBehavior2; layerInterface : AdvancedRTSGameLayer_Access; targetDistance : Integer);
    function isInSensorRange (This : in out UnitWaypointBehavior2; layerInterface : CollidableDestroyableDamageableLayer_Access; targetDistance : Integer) return Boolean;
    procedure isInSensorRange (This : in out UnitWaypointBehavior2; layerInterface : CollidableDestroyableDamageableLayer_Access; targetDistance : Integer);
    function getCurrentTargetingStateString (This : in out UnitWaypointBehavior2) return Unbounded_String;
-   procedure getCurrentTargetingStateString (This : in out UnitWaypointBehavior2);
    procedure addWaypointFromUser (This : in out UnitWaypointBehavior2; advancedRTSGameLayer : AdvancedRTSGameLayer_Access);
    procedure addBuildingChase (This : in out UnitWaypointBehavior2; allbinaryLayer : AllBinaryLayer_Access; cellPosition : GeographicMapCellPosition_Access);
    function buildingChase (This : in out UnitWaypointBehavior2; allbinaryLayer : AllBinaryLayer_Access; cellPosition : GeographicMapCellPosition_Access) return Boolean;
@@ -188,6 +186,8 @@ with org.allbinary.thread.PathFindingThreadPool_Package; use org.allbinary.threa
 with org.allbinary.thread.ThreadPool_Package; use org.allbinary.thread.ThreadPool_Package;
 with org.allbinary.time.TimeDelayHelper_Package; use org.allbinary.time.TimeDelayHelper_Package;
 with org.allbinary.game.layer.unit.UnitWaypointBehavior_Package; use org.allbinary.game.layer.unit.UnitWaypointBehavior_Package;
+with org.allbinary.game.layer.unit.UnitWaypointStrings_Package; use org.allbinary.game.layer.unit.UnitWaypointStrings_Package;
+with org.allbinary.game.layer.unit.UnitLayer_Package; use org.allbinary.game.layer.unit.UnitLayer_Package;
 
 package org.allbinary.game.layer.unit.BuildingSteeringVisitor_Package is
 
@@ -235,7 +235,6 @@ package org.allbinary.game.layer.unit.BuildingSteeringVisitor_Package is
    function visit (This : in out BuildingSteeringVisitor; anyType : Java_Object_Access) return Java_Object_Access;
    procedure visit (This : in out BuildingSteeringVisitor; anyType : Java_Object_Access);
    function getPositionList (This : in out BuildingSteeringVisitor) return BasicArrayList_Access;
-   procedure getPositionList (This : in out BuildingSteeringVisitor);
 
 end org.allbinary.game.layer.unit.BuildingSteeringVisitor_Package;
 

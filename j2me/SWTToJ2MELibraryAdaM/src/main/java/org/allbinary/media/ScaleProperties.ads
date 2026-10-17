@@ -45,7 +45,6 @@ package org.allbinary.media.ScaleProperties_Package is
    procedure Initialize (This : in out ScaleProperties'Class);
    function Create return ScaleProperties_Access;
    function toString (This : in out ScaleProperties) return Unbounded_String;
-   procedure toString (This : in out ScaleProperties);
 
 end org.allbinary.media.ScaleProperties_Package;
 

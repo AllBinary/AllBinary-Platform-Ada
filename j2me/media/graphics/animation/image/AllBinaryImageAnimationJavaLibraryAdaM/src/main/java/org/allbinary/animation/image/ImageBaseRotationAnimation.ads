@@ -53,17 +53,12 @@ package org.allbinary.animation.image.ImageBaseRotationAnimation_Package is
    procedure Initialize (This : in out ImageBaseRotationAnimation'Class; image : Image_Access; angleInfo : AngleInfo_Access; totalAngle : Short_Integer; animationBehavior : AnimationBehavior_Access);
    function Create (image : Image_Access; angleInfo : AngleInfo_Access; totalAngle : Short_Integer; animationBehavior : AnimationBehavior_Access) return ImageBaseRotationAnimation_Access;
    function getAnimationSize (This : in out ImageBaseRotationAnimation) return Integer;
-   procedure getAnimationSize (This : in out ImageBaseRotationAnimation);
    procedure setSequence (This : in out ImageBaseRotationAnimation; sequence : Integer_Array_Access);
    function getSequence (This : in out ImageBaseRotationAnimation) return Integer_Array_Access;
-   procedure getSequence (This : in out ImageBaseRotationAnimation);
    procedure paintXY (This : in out ImageBaseRotationAnimation; graphics : Graphics_Access; x : Integer; y : Integer);
    function getImage (This : in out ImageBaseRotationAnimation) return Image_Access;
-   procedure getImage (This : in out ImageBaseRotationAnimation);
    function getWidth (This : in out ImageBaseRotationAnimation) return Integer;
-   procedure getWidth (This : in out ImageBaseRotationAnimation);
    function getHeight (This : in out ImageBaseRotationAnimation) return Integer;
-   procedure getHeight (This : in out ImageBaseRotationAnimation);
    procedure close (This : in out ImageBaseRotationAnimation);
    procedure finalize (This : in out ImageBaseRotationAnimation);
 

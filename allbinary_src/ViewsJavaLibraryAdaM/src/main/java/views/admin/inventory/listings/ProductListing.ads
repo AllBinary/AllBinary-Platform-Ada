@@ -26,10 +26,10 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package; use org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
-with org.allbinary.business.user.commerce.inventory_Case.item.BasicItemData_Package; use org.allbinary.business.user.commerce.inventory_Case.item.BasicItemData_Package;
+with org.allbinary.business.user.commerce.inventory.item.BasicItemData_Package; use org.allbinary.business.user.commerce.inventory.item.BasicItemData_Package;
 with org.allbinary.data.tables.context.module.storefronts.StoreFrontsEntity_Package; use org.allbinary.data.tables.context.module.storefronts.StoreFrontsEntity_Package;
 with org.allbinary.data.tables.staticpages.StaticPagesEntity_Package; use org.allbinary.data.tables.staticpages.StaticPagesEntity_Package;
-with org.allbinary.data.tables.user.commerce.inventory_Case.item.InventoryEntity_Package; use org.allbinary.data.tables.user.commerce.inventory_Case.item.InventoryEntity_Package;
+with org.allbinary.data.tables.user.commerce.inventory.item.InventoryEntity_Package; use org.allbinary.data.tables.user.commerce.inventory.item.InventoryEntity_Package;
 with org.allbinary.globals.GLOBALS2_Package; use org.allbinary.globals.GLOBALS2_Package;
 with org.allbinary.globals.URLGLOBALS_Package; use org.allbinary.globals.URLGLOBALS_Package;
 with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
@@ -54,19 +54,19 @@ with org.allbinary.logic.system.security.licensing.ServiceClientInformationInter
 with org.allbinary.string_Id.CommonPhoneStrings_Package; use org.allbinary.string_Id.CommonPhoneStrings_Package;
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with views.generic_Id.inventory_Case.InventoryColumnUtil_Package; use views.generic_Id.inventory_Case.InventoryColumnUtil_Package;
-with views.generic_Id.inventory_Case.InventorySearchUtil_Package; use views.generic_Id.inventory_Case.InventorySearchUtil_Package;
-with views.admin.inventory_Case.listings.ProductListingInterface_Package; use views.admin.inventory_Case.listings.ProductListingInterface_Package;
+with views.generic_Id.inventory.InventoryColumnUtil_Package; use views.generic_Id.inventory.InventoryColumnUtil_Package;
+with views.generic_Id.inventory.InventorySearchUtil_Package; use views.generic_Id.inventory.InventorySearchUtil_Package;
+with views.admin.inventory.listings.ProductListingInterface_Package; use views.admin.inventory.listings.ProductListingInterface_Package;
 
-package views.admin.inventory_Case.listings.ProductListing_Package is
+package views.admin.inventory.listings.ProductListing_Package is
 
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
    package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    package StoreFrontInterface_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
-   package BasicItemData_Package renames Standard.org.allbinary.business.user.commerce.inventory_Case.item.BasicItemData_Package;
+   package BasicItemData_Package renames Standard.org.allbinary.business.user.commerce.inventory.item.BasicItemData_Package;
    package StoreFrontsEntity_Package renames Standard.org.allbinary.data.tables.context.module.storefronts.StoreFrontsEntity_Package;
    package StaticPagesEntity_Package renames Standard.org.allbinary.data.tables.staticpages.StaticPagesEntity_Package;
-   package InventoryEntity_Package renames Standard.org.allbinary.data.tables.user.commerce.inventory_Case.item.InventoryEntity_Package;
+   package InventoryEntity_Package renames Standard.org.allbinary.data.tables.user.commerce.inventory.item.InventoryEntity_Package;
    package GLOBALS2_Package renames Standard.org.allbinary.globals.GLOBALS2_Package;
    package URLGLOBALS_Package renames Standard.org.allbinary.globals.URLGLOBALS_Package;
    package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
@@ -91,8 +91,8 @@ package views.admin.inventory_Case.listings.ProductListing_Package is
    package CommonPhoneStrings_Package renames Standard.org.allbinary.string_Id.CommonPhoneStrings_Package;
    package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package InventoryColumnUtil_Package renames Standard.views.generic_Id.inventory_Case.InventoryColumnUtil_Package;
-   package InventorySearchUtil_Package renames Standard.views.generic_Id.inventory_Case.InventorySearchUtil_Package;
+   package InventoryColumnUtil_Package renames Standard.views.generic_Id.inventory.InventoryColumnUtil_Package;
+   package InventorySearchUtil_Package renames Standard.views.generic_Id.inventory.InventorySearchUtil_Package;
 
    type ProductListing is tagged;
    type ProductListing_Access is access all ProductListing'Class;
@@ -118,10 +118,9 @@ package views.admin.inventory_Case.listings.ProductListing_Package is
    procedure create (This : in out ProductListing; keywordData : Unbounded_String; keywordFilenameHashMap : HashMap_Access; vector : BasicArrayList_Access; staticPath : AbPath_Access);
    procedure addStaticPageInfoToDatabase (This : in out ProductListing; storeFront : StoreFrontInterface_Access; keywordFilenameHashMap : HashMap_Access);
    function generateAll (This : in out ProductListing) return Unbounded_String;
-   procedure generateAll (This : in out ProductListing);
-   function generateAll (This : in out ProductListing; storeName : Unbounded_String) return Unbounded_String;
-   procedure generateAll (This : in out ProductListing; storeName : Unbounded_String);
+   function generateAll (This : in out ProductListing; storeName_Param : Unbounded_String) return Unbounded_String;
+   procedure generateAll (This : in out ProductListing; storeName_Param : Unbounded_String);
 
-end views.admin.inventory_Case.listings.ProductListing_Package;
+end views.admin.inventory.listings.ProductListing_Package;
 
 

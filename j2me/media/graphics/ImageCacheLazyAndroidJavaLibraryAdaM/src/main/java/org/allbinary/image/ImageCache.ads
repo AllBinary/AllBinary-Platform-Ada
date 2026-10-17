@@ -70,7 +70,6 @@ package org.allbinary.image.ImageCache_Package is
    function createImage (This : in out ImageCache; key : Java_Object_Access; inputStream : InputStream_Access) return Image_Access;
    procedure createImage (This : in out ImageCache; key : Java_Object_Access; inputStream : InputStream_Access);
    function isLazy (This : in out ImageCache) return Boolean;
-   procedure isLazy (This : in out ImageCache);
 
 end org.allbinary.image.ImageCache_Package;
 

@@ -56,7 +56,7 @@ package body org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeogr
    function Create return RaceTrackGeographicMapCellTypeFactory_Access is
       This : constant RaceTrackGeographicMapCellTypeFactory_Access := new RaceTrackGeographicMapCellTypeFactory;
    begin
-      Initialize (This.all);
+      RaceTrackGeographicMapCellTypeFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -82,34 +82,6 @@ package body org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeogr
         end if;
         return False;
    end isPath;
-
-   procedure getInstance is
-      Java_Result : constant RaceTrackGeographicMapCellTypeFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure getStartType (This : in out RaceTrackGeographicMapCellTypeFactory) is
-      Java_Result : constant Integer := RaceTrackGeographicMapCellTypeFactory'Class (This).getStartType;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getStartType;
-
-   procedure getEndType (This : in out RaceTrackGeographicMapCellTypeFactory) is
-      Java_Result : constant Integer := RaceTrackGeographicMapCellTypeFactory'Class (This).getEndType;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getEndType;
-
-   procedure getEmptyType (This : in out RaceTrackGeographicMapCellTypeFactory) is
-      Java_Result : constant Integer := RaceTrackGeographicMapCellTypeFactory'Class (This).getEmptyType;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getEmptyType;
 
    procedure isPath (This : in out RaceTrackGeographicMapCellTypeFactory; cellType : GeographicMapCellType_Access) is
       Java_Result : constant Boolean := RaceTrackGeographicMapCellTypeFactory'Class (This).isPath (cellType);

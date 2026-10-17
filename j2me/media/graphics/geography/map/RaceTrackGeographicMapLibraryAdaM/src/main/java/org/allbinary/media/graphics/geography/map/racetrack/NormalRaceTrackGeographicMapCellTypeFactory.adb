@@ -38,16 +38,9 @@ package body org.allbinary.media.graphics.geography.map.racetrack.NormalRaceTrac
    function Create return NormalRaceTrackGeographicMapCellTypeFactory_Access is
       This : constant NormalRaceTrackGeographicMapCellTypeFactory_Access := new NormalRaceTrackGeographicMapCellTypeFactory;
    begin
-      Initialize (This.all);
+      NormalRaceTrackGeographicMapCellTypeFactory_Package.Initialize (This.all);
       return This;
    end Create;
-
-   procedure getInstance is
-      Java_Result : constant NormalRaceTrackGeographicMapCellTypeFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

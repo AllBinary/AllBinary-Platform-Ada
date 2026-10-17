@@ -38,7 +38,7 @@ package body org.allbinary.business.context.AbContext_Package is
    function Create (propertiesHashMap : HashMap_Access; pageContext : PageContext_Access) return AbContext_Access is
       This : constant AbContext_Access := new AbContext;
    begin
-      Initialize (This.all, propertiesHashMap, pageContext);
+      AbContext_Package.Initialize (This.all, propertiesHashMap, pageContext);
       return This;
    end Create;
 
@@ -55,27 +55,6 @@ package body org.allbinary.business.context.AbContext_Package is
    function getPropertiesHashMap (This : in out AbContext) return HashMap_Access is
    begin
         return This.propertiesHashMap;
-   end getPropertiesHashMap;
-
-   procedure getWeblisketSession (This : in out AbContext) is
-      Java_Result : constant WeblisketSessionInterface_Access := AbContext'Class (This).getWeblisketSession;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getWeblisketSession;
-
-   procedure getPageContext (This : in out AbContext) is
-      Java_Result : constant PageContext_Access := AbContext'Class (This).getPageContext;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getPageContext;
-
-   procedure getPropertiesHashMap (This : in out AbContext) is
-      Java_Result : constant HashMap_Access := AbContext'Class (This).getPropertiesHashMap;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getPropertiesHashMap;
 
 end org.allbinary.business.context.AbContext_Package;

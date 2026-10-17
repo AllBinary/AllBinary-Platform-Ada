@@ -33,7 +33,7 @@ package body org.allbinary.logic.visual.transform.template.customizer.includes.s
    function Create return CssStyleValidation_Access is
       This : constant CssStyleValidation_Access := new CssStyleValidation;
    begin
-      Initialize (This.all);
+      CssStyleValidation_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -48,7 +48,7 @@ package body org.allbinary.logic.visual.transform.template.customizer.includes.s
    function Create (document : Document_Access) return CssStyleValidation_Access is
       This : constant CssStyleValidation_Access := new CssStyleValidation;
    begin
-      Initialize (This.all, document);
+      CssStyleValidation_Package.Initialize (This.all, document);
       return This;
    end Create;
 
@@ -63,7 +63,7 @@ package body org.allbinary.logic.visual.transform.template.customizer.includes.s
    function Create (hashMap : HashMap_Access) return CssStyleValidation_Access is
       This : constant CssStyleValidation_Access := new CssStyleValidation;
    begin
-      Initialize (This.all, hashMap);
+      CssStyleValidation_Package.Initialize (This.all, hashMap);
       return This;
    end Create;
 
@@ -149,27 +149,6 @@ package body org.allbinary.logic.visual.transform.template.customizer.includes.s
         end loop;
         return node;
    end toXmlNode;
-
-   procedure isValid (This : in out CssStyleValidation) is
-      Java_Result : constant Boolean := CssStyleValidation'Class (This).isValid;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isValid;
-
-   procedure validationInfo (This : in out CssStyleValidation) is
-      Java_Result : constant Unbounded_String := CssStyleValidation'Class (This).validationInfo;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end validationInfo;
-
-   procedure toValidationInfoDoc (This : in out CssStyleValidation) is
-      Java_Result : constant Document_Access := CssStyleValidation'Class (This).toValidationInfoDoc;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toValidationInfoDoc;
 
    procedure toValidationInfoNode (This : in out CssStyleValidation; document : Document_Access) is
       Java_Result : constant Node_Access := CssStyleValidation'Class (This).toValidationInfoNode (document);

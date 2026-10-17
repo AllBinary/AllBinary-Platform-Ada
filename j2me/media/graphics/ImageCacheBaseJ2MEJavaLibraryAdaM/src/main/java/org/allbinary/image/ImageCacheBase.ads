@@ -31,6 +31,7 @@ with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.Com
 with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.image.ImageFactory_Package; use org.allbinary.image.ImageFactory_Package;
 
 package org.allbinary.image.ImageCacheBase_Package is
 
@@ -79,9 +80,7 @@ package org.allbinary.image.ImageCacheBase_Package is
    function createImageFromInputStream (This : in out ImageCacheBase; key : Java_Object_Access; inputStream : InputStream_Access) return Image_Access;
    procedure createImageFromInputStream (This : in out ImageCacheBase; key : Java_Object_Access; inputStream : InputStream_Access);
    function toString (This : in out ImageCacheBase) return Unbounded_String;
-   procedure toString (This : in out ImageCacheBase);
    function getHashtableP (This : in out ImageCacheBase) return ABHashtable_Access;
-   procedure getHashtableP (This : in out ImageCacheBase);
    procedure init (This : in out ImageCacheBase; image : Image_Access);
    procedure initProgress (This : in out ImageCacheBase);
 

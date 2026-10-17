@@ -34,16 +34,9 @@ package body org.allbinary.game.input.resource.TouchButtonDowngradeResource_Pack
    function Create return TouchButtonDowngradeResource_Access is
       This : constant TouchButtonDowngradeResource_Access := new TouchButtonDowngradeResource;
    begin
-      Initialize (This.all);
+      TouchButtonDowngradeResource_Package.Initialize (This.all);
       return This;
    end Create;
-
-   procedure getInstance is
-      Java_Result : constant TouchButtonResource_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

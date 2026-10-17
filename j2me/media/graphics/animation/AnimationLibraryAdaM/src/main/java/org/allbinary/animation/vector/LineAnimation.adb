@@ -34,7 +34,7 @@ package body org.allbinary.animation.vector.LineAnimation_Package is
    function Create (basicColor : BasicColor_Access) return LineAnimation_Access is
       This : constant LineAnimation_Access := new LineAnimation;
    begin
-      Initialize (This.all, basicColor);
+      LineAnimation_Package.Initialize (This.all, basicColor);
       return This;
    end Create;
 

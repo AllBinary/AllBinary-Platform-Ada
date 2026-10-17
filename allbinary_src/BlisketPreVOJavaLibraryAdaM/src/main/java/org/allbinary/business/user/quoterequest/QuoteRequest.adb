@@ -50,7 +50,7 @@ package body org.allbinary.business.user.quoterequest.QuoteRequest_Package is
    function Create (userName : Unbounded_String; request : HttpServletRequest_Access) return QuoteRequest_Access is
       This : constant QuoteRequest_Access := new QuoteRequest;
    begin
-      Initialize (This.all, userName, request);
+      QuoteRequest_Package.Initialize (This.all, userName, request);
       return This;
    end Create;
 
@@ -75,7 +75,7 @@ package body org.allbinary.business.user.quoterequest.QuoteRequest_Package is
    function Create (hashMap : HashMap_Access) return QuoteRequest_Access is
       This : constant QuoteRequest_Access := new QuoteRequest;
    begin
-      Initialize (This.all, hashMap);
+      QuoteRequest_Package.Initialize (This.all, hashMap);
       return This;
    end Create;
 
@@ -256,76 +256,6 @@ package body org.allbinary.business.user.quoterequest.QuoteRequest_Package is
    function getComments (This : in out QuoteRequest) return Unbounded_String is
    begin
         return This.comments;
-   end getComments;
-
-   procedure isValid (This : in out QuoteRequest) is
-      Java_Result : constant Boolean := QuoteRequest'Class (This).isValid;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isValid;
-
-   procedure validationInfo (This : in out QuoteRequest) is
-      Java_Result : constant Unbounded_String := QuoteRequest'Class (This).validationInfo;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end validationInfo;
-
-   procedure toVector (This : in out QuoteRequest) is
-      Java_Result : constant BasicArrayList_Access := QuoteRequest'Class (This).toVector;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toVector;
-
-   procedure toHashMap (This : in out QuoteRequest) is
-      Java_Result : constant HashMap_Access := QuoteRequest'Class (This).toHashMap;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toHashMap;
-
-   procedure getUserName (This : in out QuoteRequest) is
-      Java_Result : constant Unbounded_String := QuoteRequest'Class (This).getUserName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getUserName;
-
-   procedure getProjectInfo (This : in out QuoteRequest) is
-      Java_Result : constant Unbounded_String := QuoteRequest'Class (This).getProjectInfo;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getProjectInfo;
-
-   procedure getUserComments (This : in out QuoteRequest) is
-      Java_Result : constant Unbounded_String := QuoteRequest'Class (This).getUserComments;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getUserComments;
-
-   procedure getBudget (This : in out QuoteRequest) is
-      Java_Result : constant Unbounded_String := QuoteRequest'Class (This).getBudget;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getBudget;
-
-   procedure getTimeFrame (This : in out QuoteRequest) is
-      Java_Result : constant Unbounded_String := QuoteRequest'Class (This).getTimeFrame;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTimeFrame;
-
-   procedure getComments (This : in out QuoteRequest) is
-      Java_Result : constant Unbounded_String := QuoteRequest'Class (This).getComments;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getComments;
 
 end org.allbinary.business.user.quoterequest.QuoteRequest_Package;

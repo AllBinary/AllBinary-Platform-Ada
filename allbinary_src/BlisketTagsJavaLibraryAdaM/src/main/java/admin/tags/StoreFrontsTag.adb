@@ -33,7 +33,7 @@ package body admin.tags.StoreFrontsTag_Package is
    function Create return StoreFrontsTag_Access is
       This : constant StoreFrontsTag_Access := new StoreFrontsTag;
    begin
-      Initialize (This.all);
+      StoreFrontsTag_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -137,34 +137,6 @@ package body admin.tags.StoreFrontsTag_Package is
             return SKIP_BODY;
                 end;
         end;
-   end doStartTag;
-
-   procedure generateSelect (This : in out StoreFrontsTag) is
-      Java_Result : constant Unbounded_String := StoreFrontsTag'Class (This).generateSelect;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end generateSelect;
-
-   procedure install (This : in out StoreFrontsTag) is
-      Java_Result : constant Unbounded_String := StoreFrontsTag'Class (This).install;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end install;
-
-   procedure sendStoreCreatedEmails (This : in out StoreFrontsTag) is
-      Java_Result : constant Unbounded_String := StoreFrontsTag'Class (This).sendStoreCreatedEmails;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end sendStoreCreatedEmails;
-
-   procedure doStartTag (This : in out StoreFrontsTag) is
-      Java_Result : constant Integer := StoreFrontsTag'Class (This).doStartTag;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end doStartTag;
 
 end admin.tags.StoreFrontsTag_Package;

@@ -41,7 +41,6 @@ package org.allbinary.logic.visual.transform.info.TransformInfosData_Package is
    procedure Initialize (This : in out TransformInfosData'Class);
    function Create return TransformInfosData_Access;
    function getInstance return TransformInfosData_Access;
-   procedure getInstance;
 
 end org.allbinary.logic.visual.transform.info.TransformInfosData_Package;
 

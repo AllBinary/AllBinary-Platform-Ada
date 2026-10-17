@@ -20,7 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.util.Calendar_Package; use java.util.Calendar_Package;
+with java.util.Calendar_Package; use java.util.Calendar_Package;
 --  with java.util.HashMap_Package; use java.util.HashMap_Package;
 --  with java.util.Set_Package; use java.util.Set_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
@@ -44,6 +44,7 @@ with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 
 package org.allbinary.logic.control.workflow.request.BasicWorkFlow_Package is
 
+   package Calendar_Package renames Standard.java.util.Calendar_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
    package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    package StoreFrontData_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
@@ -78,25 +79,16 @@ package org.allbinary.logic.control.workflow.request.BasicWorkFlow_Package is
    procedure Initialize (This : in out BasicWorkFlow'Class);
    function Create return BasicWorkFlow_Access;
    function getName (This : in out BasicWorkFlow) return Unbounded_String;
-   procedure getName (This : in out BasicWorkFlow);
    function getStoreName (This : in out BasicWorkFlow) return Unbounded_String;
-   procedure getStoreName (This : in out BasicWorkFlow);
    function getKey (This : in out BasicWorkFlow) return Java_Object_Access;
-   procedure getKey (This : in out BasicWorkFlow);
    function toVector (This : in out BasicWorkFlow) return BasicArrayList_Access;
-   procedure toVector (This : in out BasicWorkFlow);
    function toHashMap (This : in out BasicWorkFlow) return HashMap_Access;
-   procedure toHashMap (This : in out BasicWorkFlow);
    function toXmlNode (This : in out BasicWorkFlow; document : Document_Access) return Node_Access;
    procedure toXmlNode (This : in out BasicWorkFlow; document : Document_Access);
    function toXmlDoc (This : in out BasicWorkFlow) return Document_Access;
-   procedure toXmlDoc (This : in out BasicWorkFlow);
    function isValid (This : in out BasicWorkFlow) return Boolean;
-   procedure isValid (This : in out BasicWorkFlow);
    function validationInfo (This : in out BasicWorkFlow) return Unbounded_String;
-   procedure validationInfo (This : in out BasicWorkFlow);
    function toValidationInfoDoc (This : in out BasicWorkFlow) return Document_Access;
-   procedure toValidationInfoDoc (This : in out BasicWorkFlow);
    function toValidationInfoNode (This : in out BasicWorkFlow; document : Document_Access) return Node_Access;
    procedure toValidationInfoNode (This : in out BasicWorkFlow; document : Document_Access);
 

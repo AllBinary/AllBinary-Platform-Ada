@@ -38,11 +38,9 @@ package org.allbinary.logic.system.hardware.components.interfaces.NoHardwareComp
    procedure Initialize (This : in out NoHardwareComponent'Class);
    function Create return NoHardwareComponent_Access;
    function getInstance return NoHardwareComponent_Access;
-   procedure getInstance;
    function compareTo (This : in out NoHardwareComponent; componentInterface : HardwareComponentInterface_Access) return Boolean;
    procedure compareTo (This : in out NoHardwareComponent; componentInterface : HardwareComponentInterface_Access);
    function toString (This : in out NoHardwareComponent) return Unbounded_String;
-   procedure toString (This : in out NoHardwareComponent);
 
 end org.allbinary.logic.system.hardware.components.interfaces.NoHardwareComponent_Package;
 

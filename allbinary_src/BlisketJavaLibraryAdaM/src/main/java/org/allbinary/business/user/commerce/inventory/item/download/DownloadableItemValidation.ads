@@ -27,6 +27,7 @@ with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.
 with org.allbinary.logic.string_Id.StringValidationUtil_Package; use org.allbinary.logic.string_Id.StringValidationUtil_Package;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
+with org.allbinary.business.user.commerce.inventory.item.download.DownloadableItem_Package; use org.allbinary.business.user.commerce.inventory.item.download.DownloadableItem_Package;
 
 package org.allbinary.business.user.commerce.inventory.item.download.DownloadableItemValidation_Package is
 
@@ -51,11 +52,8 @@ package org.allbinary.business.user.commerce.inventory.item.download.Downloadabl
    procedure Initialize (This : in out DownloadableItemValidation'Class; downloadableItem : DownloadableItem_Access);
    function Create (downloadableItem : DownloadableItem_Access) return DownloadableItemValidation_Access;
    function isValid (This : in out DownloadableItemValidation) return Boolean;
-   procedure isValid (This : in out DownloadableItemValidation);
    function validationInfo (This : in out DownloadableItemValidation) return Unbounded_String;
-   procedure validationInfo (This : in out DownloadableItemValidation);
    function toValidationInfoDoc (This : in out DownloadableItemValidation) return Document_Access;
-   procedure toValidationInfoDoc (This : in out DownloadableItemValidation);
    function toValidationInfoNode (This : in out DownloadableItemValidation; document : Document_Access) return Node_Access;
    procedure toValidationInfoNode (This : in out DownloadableItemValidation; document : Document_Access);
 

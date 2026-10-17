@@ -27,6 +27,7 @@ with org.allbinary.logic.system.os.NoOperatingSystem_Package; use org.allbinary.
 with org.allbinary.logic.system.os.OperatingSystems_Package; use org.allbinary.logic.system.os.OperatingSystems_Package;
 with org.allbinary.logic.system.os.SystemProperties_Package; use org.allbinary.logic.system.os.SystemProperties_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.logic.system.os.android.AndroidOS_Package; use org.allbinary.logic.system.os.android.AndroidOS_Package;
 
 package org.allbinary.logic.system.os.android.AndroidOperatingSystemFactory_Package is
 
@@ -52,9 +53,7 @@ package org.allbinary.logic.system.os.android.AndroidOperatingSystemFactory_Pack
    procedure Initialize (This : in out AndroidOperatingSystemFactory'Class);
    function Create return AndroidOperatingSystemFactory_Access;
    function getInstance return AndroidOperatingSystemFactory_Access;
-   procedure getInstance;
    function getOperatingSystemInstance (This : in out AndroidOperatingSystemFactory) return GenericOperatingSystem_Access;
-   procedure getOperatingSystemInstance (This : in out AndroidOperatingSystemFactory);
 
 end org.allbinary.logic.system.os.android.AndroidOperatingSystemFactory_Package;
 

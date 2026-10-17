@@ -33,7 +33,7 @@ package body org.allbinary.media.image.ImageUnifierCell_Package is
    function Create (width : Integer; height : Integer) return ImageUnifierCell_Access is
       This : constant ImageUnifierCell_Access := new ImageUnifierCell;
    begin
-      Initialize (This.all, width, height);
+      ImageUnifierCell_Package.Initialize (This.all, width, height);
       return This;
    end Create;
 
@@ -56,20 +56,6 @@ package body org.allbinary.media.image.ImageUnifierCell_Package is
    begin
         This.height := height;
    end setHeight;
-
-   procedure getWidth (This : in out ImageUnifierCell) is
-      Java_Result : constant Integer := ImageUnifierCell'Class (This).getWidth;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getWidth;
-
-   procedure getHeight (This : in out ImageUnifierCell) is
-      Java_Result : constant Integer := ImageUnifierCell'Class (This).getHeight;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getHeight;
 
 end org.allbinary.media.image.ImageUnifierCell_Package;
 

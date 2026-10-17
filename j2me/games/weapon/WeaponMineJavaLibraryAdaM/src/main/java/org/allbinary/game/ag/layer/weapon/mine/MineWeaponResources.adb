@@ -56,16 +56,9 @@ package body org.allbinary.game.ag.layer.weapon.mine.MineWeaponResources_Package
    function Create return MineWeaponResources_Access is
       This : constant MineWeaponResources_Access := new MineWeaponResources;
    begin
-      Initialize (This.all);
+      MineWeaponResources_Package.Initialize (This.all);
       return This;
    end Create;
-
-   procedure getInstance is
-      Java_Result : constant MineWeaponResources_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

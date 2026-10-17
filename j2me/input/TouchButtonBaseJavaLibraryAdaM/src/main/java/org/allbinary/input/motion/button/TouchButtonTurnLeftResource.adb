@@ -34,16 +34,9 @@ package body org.allbinary.input.motion.button.TouchButtonTurnLeftResource_Packa
    function Create return TouchButtonTurnLeftResource_Access is
       This : constant TouchButtonTurnLeftResource_Access := new TouchButtonTurnLeftResource;
    begin
-      Initialize (This.all);
+      TouchButtonTurnLeftResource_Package.Initialize (This.all);
       return This;
    end Create;
-
-   procedure getInstance is
-      Java_Result : constant TouchButtonResource_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

@@ -31,20 +31,13 @@ package body org.allbinary.graphics.paint.NullInitUpdatePaintable_Package is
    function Create return NullInitUpdatePaintable_Access is
       This : constant NullInitUpdatePaintable_Access := new NullInitUpdatePaintable;
    begin
-      Initialize (This.all);
+      NullInitUpdatePaintable_Package.Initialize (This.all);
       return This;
    end Create;
 
    function getInstance return InitUpdatePaintable_Access is
    begin
         return NullInitUpdatePaintable_Package.SINGLETON;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant InitUpdatePaintable_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

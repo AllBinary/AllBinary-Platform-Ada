@@ -29,7 +29,7 @@ package body org.allbinary.game.input.OptimizedGameInputLayerProcessorForCollida
    function Create return OptimizedGameInputLayerProcessorForCollidableLayer_Access is
       This : constant OptimizedGameInputLayerProcessorForCollidableLayer_Access := new OptimizedGameInputLayerProcessorForCollidableLayer;
    begin
-      Initialize (This.all);
+      OptimizedGameInputLayerProcessorForCollidableLayer_Package.Initialize (This.all);
       return This;
    end Create;
 

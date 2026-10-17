@@ -21,6 +21,7 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.system.loader.ClassLoader_Package; use org.allbinary.logic.system.loader.ClassLoader_Package;
 
 package org.allbinary.logic.system.loader.WebappClassLoaderInfo_Package is
 
@@ -38,7 +39,6 @@ package org.allbinary.logic.system.loader.WebappClassLoaderInfo_Package is
    function Create return WebappClassLoaderInfo_Access;
    procedure setLoader (classLoader : ClassLoader_Access);
    function getLoader return ClassLoader_Access;
-   procedure getLoader;
 
 end org.allbinary.logic.system.loader.WebappClassLoaderInfo_Package;
 

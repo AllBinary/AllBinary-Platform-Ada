@@ -20,6 +20,7 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.media.audio.CompositeSound_Package; use org.allbinary.media.audio.CompositeSound_Package;
+with org.allbinary.media.audio.Sound_Package; use org.allbinary.media.audio.Sound_Package;
 
 package org.allbinary.media.audio.AttackSound_Package is
 
@@ -35,7 +36,6 @@ package org.allbinary.media.audio.AttackSound_Package is
    procedure Initialize (This : in out AttackSound'Class);
    function Create return AttackSound_Access;
    function getInstance return Sound_Access;
-   procedure getInstance;
 
 end org.allbinary.media.audio.AttackSound_Package;
 

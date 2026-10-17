@@ -22,7 +22,7 @@ package body org.allbinary.game.multiplayer.layer.RemoteInfo_Package is
    function Create (username : Unbounded_String; actorSessionId : Integer; playerInputId : Integer; id : Integer) return RemoteInfo_Access is
       This : constant RemoteInfo_Access := new RemoteInfo;
    begin
-      Initialize (This.all, username, actorSessionId, playerInputId, id);
+      RemoteInfo_Package.Initialize (This.all, username, actorSessionId, playerInputId, id);
       return This;
    end Create;
 

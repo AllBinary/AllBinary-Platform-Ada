@@ -32,7 +32,7 @@ package body org.allbinary.graphics.paint.AnimationCompositePaintable_Package is
    function Create (animationInterface : Animation_Access) return AnimationCompositePaintable_Access is
       This : constant AnimationCompositePaintable_Access := new AnimationCompositePaintable;
    begin
-      Initialize (This.all, animationInterface);
+      AnimationCompositePaintable_Package.Initialize (This.all, animationInterface);
       return This;
    end Create;
 

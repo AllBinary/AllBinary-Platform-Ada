@@ -48,7 +48,6 @@ package org.allbinary.game.layer.SpriteFactory_Package is
    procedure Initialize (This : in out SpriteFactory'Class);
    function Create return SpriteFactory_Access;
    function getInstance return SpriteFactory_Access;
-   procedure getInstance;
    function createSprite (This : in out SpriteFactory; image : Image_Access; frameWidth : Integer; frameHeight : Integer) return Sprite_Access;
    procedure createSprite (This : in out SpriteFactory; image : Image_Access; frameWidth : Integer; frameHeight : Integer);
 

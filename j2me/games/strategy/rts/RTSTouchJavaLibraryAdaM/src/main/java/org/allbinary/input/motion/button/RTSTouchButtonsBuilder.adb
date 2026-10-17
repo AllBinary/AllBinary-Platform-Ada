@@ -30,7 +30,7 @@ package body org.allbinary.input.motion.button.RTSTouchButtonsBuilder_Package is
    function Create return RTSTouchButtonsBuilder_Access is
       This : constant RTSTouchButtonsBuilder_Access := new RTSTouchButtonsBuilder;
    begin
-      Initialize (This.all);
+      RTSTouchButtonsBuilder_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -54,13 +54,6 @@ package body org.allbinary.input.motion.button.RTSTouchButtonsBuilder_Package is
             return BasicArrayListUtil_Package.getInstance.getImmutableInstance;
                 end;
         end;
-   end getList;
-
-   procedure getList (This : in out RTSTouchButtonsBuilder) is
-      Java_Result : constant BasicArrayList_Access := RTSTouchButtonsBuilder'Class (This).getList;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getList;
 
 end org.allbinary.input.motion.button.RTSTouchButtonsBuilder_Package;

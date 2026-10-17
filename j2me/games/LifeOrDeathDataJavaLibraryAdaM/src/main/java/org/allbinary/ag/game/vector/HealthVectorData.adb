@@ -28,7 +28,7 @@ package body org.allbinary.ag.game.vector.HealthVectorData_Package is
    function Create return HealthVectorData_Access is
       This : constant HealthVectorData_Access := new HealthVectorData;
    begin
-      Initialize (This.all);
+      HealthVectorData_Package.Initialize (This.all);
       return This;
    end Create;
 

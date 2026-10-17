@@ -28,7 +28,7 @@ package body org.allbinary.thread.NullPriorityRunnable_Package is
    function Create return NullPriorityRunnable_Access is
       This : constant NullPriorityRunnable_Access := new NullPriorityRunnable;
    begin
-      Initialize (This.all);
+      NullPriorityRunnable_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -52,20 +52,6 @@ package body org.allbinary.thread.NullPriorityRunnable_Package is
    begin
         null;
    end run;
-
-   procedure getPriority (This : in out NullPriorityRunnable) is
-      Java_Result : constant Integer := NullPriorityRunnable'Class (This).getPriority;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getPriority;
-
-   procedure isDone (This : in out NullPriorityRunnable) is
-      Java_Result : constant Boolean := NullPriorityRunnable'Class (This).isDone;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isDone;
 
 end org.allbinary.thread.NullPriorityRunnable_Package;
 

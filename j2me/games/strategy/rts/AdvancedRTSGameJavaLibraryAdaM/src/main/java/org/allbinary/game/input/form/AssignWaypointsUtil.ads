@@ -30,6 +30,7 @@ with org.allbinary.game.layer.unit.UnitWaypointBehavior_Package; use org.allbina
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.game.input.form.PrimaryWaypointHelper_Package; use org.allbinary.game.input.form.PrimaryWaypointHelper_Package;
 
 package org.allbinary.game.input.form.AssignWaypointsUtil_Package is
 
@@ -58,7 +59,6 @@ package org.allbinary.game.input.form.AssignWaypointsUtil_Package is
    procedure Initialize (This : in out AssignWaypointsUtil'Class);
    function Create return AssignWaypointsUtil_Access;
    function getInstance return AssignWaypointsUtil_Access;
-   procedure getInstance;
    procedure set (This : in out AssignWaypointsUtil; unitLayer : UnitLayer_Access; ownerAdvancedRTSGameLayer : AdvancedRTSGameLayer_Access);
 
 end org.allbinary.game.input.form.AssignWaypointsUtil_Package;

@@ -21,6 +21,9 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.layer.AllBinaryLayerCircularPool_Package; use org.allbinary.layer.AllBinaryLayerCircularPool_Package;
+with org.allbinary.game.layer.pickup.PickupLayer_Package; use org.allbinary.game.layer.pickup.PickupLayer_Package;
+with org.allbinary.game.layer.pickup.PickedUpLayerInterface_Package; use org.allbinary.game.layer.pickup.PickedUpLayerInterface_Package;
+with org.allbinary.game.layer.pickup.PickedUpLayerInterfaceFactoryInterface_Package; use org.allbinary.game.layer.pickup.PickedUpLayerInterfaceFactoryInterface_Package;
 
 package org.allbinary.game.layer.pickup.PickupLayerCircularStaticPool_Package is
 
@@ -37,7 +40,6 @@ package org.allbinary.game.layer.pickup.PickupLayerCircularStaticPool_Package is
    procedure Initialize (This : in out PickupLayerCircularStaticPool'Class);
    function Create return PickupLayerCircularStaticPool_Access;
    function getInstance return PickupLayerCircularStaticPool_Access;
-   procedure getInstance;
    function getInstanceXYZ (This : in out PickupLayerCircularStaticPool; pickedUpLayerInterfaceFactoryInterface : PickedUpLayerInterfaceFactoryInterface_Access; x : Integer; y : Integer; z : Integer) return PickedUpLayerInterface_Access;
    procedure getInstanceXYZ (This : in out PickupLayerCircularStaticPool; pickedUpLayerInterfaceFactoryInterface : PickedUpLayerInterfaceFactoryInterface_Access; x : Integer; y : Integer; z : Integer);
 

@@ -47,7 +47,7 @@ package body org.allbinary.game.layer.TechnologyRTSInterfaceImageItem_Package is
    function Create (label : Unbounded_String; img : Image_Access; layout : Integer; altText : Unbounded_String; basicColor : BasicColor_Access; rtsInterface : RTSInterface_Access) return TechnologyRTSInterfaceImageItem_Access is
       This : constant TechnologyRTSInterfaceImageItem_Access := new TechnologyRTSInterfaceImageItem;
    begin
-      Initialize (This.all, label, img, layout, altText, basicColor, rtsInterface);
+      TechnologyRTSInterfaceImageItem_Package.Initialize (This.all, label, img, layout, altText, basicColor, rtsInterface);
       return This;
    end Create;
 
@@ -95,13 +95,6 @@ package body org.allbinary.game.layer.TechnologyRTSInterfaceImageItem_Package is
         graphics.drawString (This.LEVEL, xa, (y) + (This.adjustedLevelY), 0);
         graphics.drawChars (This.levelString, 0, This.levelLength, (x) + (This.adjustedLevelX), (y) + (This.adjustedLevelY), 0);
    end paintXY;
-
-   procedure getRtsInterface (This : in out TechnologyRTSInterfaceImageItem) is
-      Java_Result : constant RTSInterface_Access := TechnologyRTSInterfaceImageItem'Class (This).getRtsInterface;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getRtsInterface;
 
 end org.allbinary.game.layer.TechnologyRTSInterfaceImageItem_Package;
 

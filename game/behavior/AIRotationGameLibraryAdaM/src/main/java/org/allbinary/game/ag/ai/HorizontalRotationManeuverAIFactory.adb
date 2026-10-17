@@ -28,7 +28,7 @@ package body org.allbinary.game.ag.ai.HorizontalRotationManeuverAIFactory_Packag
    function Create return HorizontalRotationManeuverAIFactory_Access is
       This : constant HorizontalRotationManeuverAIFactory_Access := new HorizontalRotationManeuverAIFactory;
    begin
-      Initialize (This.all);
+      HorizontalRotationManeuverAIFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

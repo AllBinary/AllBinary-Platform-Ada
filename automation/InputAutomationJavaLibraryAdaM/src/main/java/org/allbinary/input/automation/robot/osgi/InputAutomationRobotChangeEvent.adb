@@ -31,7 +31,7 @@ package body org.allbinary.input.automation.robot.osgi.InputAutomationRobotChang
    function Create (inputAutomationRobotInterfaceWrapper : InputAutomationRobotInterfaceWrapper_Access) return InputAutomationRobotChangeEvent_Access is
       This : constant InputAutomationRobotChangeEvent_Access := new InputAutomationRobotChangeEvent;
    begin
-      Initialize (This.all, inputAutomationRobotInterfaceWrapper);
+      InputAutomationRobotChangeEvent_Package.Initialize (This.all, inputAutomationRobotInterfaceWrapper);
       return This;
    end Create;
 
@@ -44,13 +44,6 @@ package body org.allbinary.input.automation.robot.osgi.InputAutomationRobotChang
    begin
         This.inputAutomationRobotInterfaceWrapper := inputAutomationRobotInterfaceWrapper;
    end setInputAutomationRobotInterfaceWrapper;
-
-   procedure getInputAutomationRobotInterfaceWrapper (This : in out InputAutomationRobotChangeEvent) is
-      Java_Result : constant InputAutomationRobotInterfaceWrapper_Access := InputAutomationRobotChangeEvent'Class (This).getInputAutomationRobotInterfaceWrapper;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInputAutomationRobotInterfaceWrapper;
 
 end org.allbinary.input.automation.robot.osgi.InputAutomationRobotChangeEvent_Package;
 

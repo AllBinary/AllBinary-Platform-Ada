@@ -40,7 +40,7 @@ package body org.allbinary.game.ag.layer.hud.basic.life.LivesHudWidget_Package i
    function Create (animationInterface : Animation_Access; lifeInterface : Life_Access; location : Integer; direction : Integer) return LivesHudWidget_Access is
       This : constant LivesHudWidget_Access := new LivesHudWidget;
    begin
-      Initialize (This.all, animationInterface, lifeInterface, location, direction);
+      LivesHudWidget_Package.Initialize (This.all, animationInterface, lifeInterface, location, direction);
       return This;
    end Create;
 
@@ -85,13 +85,6 @@ package body org.allbinary.game.ag.layer.hud.basic.life.LivesHudWidget_Package i
    function getLifeInterface (This : in out LivesHudWidget) return Life_Access is
    begin
         return This.lifeInterface;
-   end getLifeInterface;
-
-   procedure getLifeInterface (This : in out LivesHudWidget) is
-      Java_Result : constant Life_Access := LivesHudWidget'Class (This).getLifeInterface;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getLifeInterface;
 
 end org.allbinary.game.ag.layer.hud.basic.life.LivesHudWidget_Package;

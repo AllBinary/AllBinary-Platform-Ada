@@ -39,7 +39,7 @@ package body admin.taghelpers.PaymentHelper_Package is
    function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return PaymentHelper_Access is
       This : constant PaymentHelper_Access := new PaymentHelper;
    begin
-      Initialize (This.all, hashMap, pageContext);
+      PaymentHelper_Package.Initialize (This.all, hashMap, pageContext);
       return This;
    end Create;
 
@@ -245,62 +245,6 @@ package body admin.taghelpers.PaymentHelper_Package is
    function update (This : in out PaymentHelper) return Unbounded_String is
    begin
         return This.commonStrings.NOT_IMPLEMENTED;
-   end update;
-
-   procedure insert (This : in out PaymentHelper) is
-      Java_Result : constant Unbounded_String := PaymentHelper'Class (This).insert;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end insert;
-
-   procedure select_Id (This : in out PaymentHelper) is
-      Java_Result : constant Unbounded_String := PaymentHelper'Class (This).select_Id;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end select_Id;
-
-   procedure delete (This : in out PaymentHelper) is
-      Java_Result : constant Unbounded_String := PaymentHelper'Class (This).delete;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end delete;
-
-   procedure drop (This : in out PaymentHelper) is
-      Java_Result : constant Unbounded_String := PaymentHelper'Class (This).drop;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end drop;
-
-   procedure create (This : in out PaymentHelper) is
-      Java_Result : constant Unbounded_String := PaymentHelper'Class (This).create;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end create;
-
-   procedure restore (This : in out PaymentHelper) is
-      Java_Result : constant Unbounded_String := PaymentHelper'Class (This).restore;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end restore;
-
-   procedure backup (This : in out PaymentHelper) is
-      Java_Result : constant Unbounded_String := PaymentHelper'Class (This).backup;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end backup;
-
-   procedure update (This : in out PaymentHelper) is
-      Java_Result : constant Unbounded_String := PaymentHelper'Class (This).update;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end update;
 
 end admin.taghelpers.PaymentHelper_Package;

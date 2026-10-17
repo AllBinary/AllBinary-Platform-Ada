@@ -37,6 +37,8 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.w3c.dom.NodeList_Package; use org.w3c.dom.NodeList_Package;
+with org.allbinary.logic.visual.dhtml.style.css.CssElementData_Package; use org.allbinary.logic.visual.dhtml.style.css.CssElementData_Package;
+with org.allbinary.logic.visual.dhtml.style.css.CssElementsValidationFactory_Package; use org.allbinary.logic.visual.dhtml.style.css.CssElementsValidationFactory_Package;
 
 package org.allbinary.logic.visual.dhtml.style.css.CssElementView_Package is
 
@@ -77,9 +79,7 @@ package org.allbinary.logic.visual.dhtml.style.css.CssElementView_Package is
    procedure Initialize (This : in out CssElementView'Class);
    function Create return CssElementView_Access;
    function getValue (This : in out CssElementView) return Unbounded_String;
-   procedure getValue (This : in out CssElementView);
    function toHashMap (This : in out CssElementView) return HashMap_Access;
-   procedure toHashMap (This : in out CssElementView);
    function toXmlNode (This : in out CssElementView; document : Document_Access) return Node_Access;
    procedure toXmlNode (This : in out CssElementView; document : Document_Access);
 

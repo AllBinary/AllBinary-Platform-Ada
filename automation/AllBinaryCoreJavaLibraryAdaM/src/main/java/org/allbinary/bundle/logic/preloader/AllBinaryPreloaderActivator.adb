@@ -32,7 +32,7 @@ package body org.allbinary.bundle.logic.preloader.AllBinaryPreloaderActivator_Pa
    function Create return AllBinaryPreloaderActivator_Access is
       This : constant AllBinaryPreloaderActivator_Access := new AllBinaryPreloaderActivator;
    begin
-      Initialize (This.all);
+      AllBinaryPreloaderActivator_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -79,13 +79,6 @@ package body org.allbinary.bundle.logic.preloader.AllBinaryPreloaderActivator_Pa
    begin
         This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, To_Unbounded_String ("stop"));
    end stop;
-
-   procedure getBundleContext is
-      Java_Result : constant BundleContext_Access := getBundleContext;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getBundleContext;
 
 begin
    null;

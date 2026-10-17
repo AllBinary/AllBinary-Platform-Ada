@@ -46,16 +46,9 @@ package body org.allbinary.logic.math.MathData_Package is
    function Create return MathData_Access is
       This : constant MathData_Access := new MathData;
    begin
-      Initialize (This.all);
+      MathData_Package.Initialize (This.all);
       return This;
    end Create;
-
-   procedure getInstance is
-      Java_Result : constant MathData_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

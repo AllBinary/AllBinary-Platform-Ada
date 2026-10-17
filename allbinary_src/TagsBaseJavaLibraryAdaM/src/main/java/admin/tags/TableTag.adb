@@ -40,7 +40,7 @@ package body admin.tags.TableTag_Package is
    function Create return TableTag_Access is
       This : constant TableTag_Access := new TableTag;
    begin
-      Initialize (This.all);
+      TableTag_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -384,97 +384,6 @@ package body admin.tags.TableTag_Package is
             return SKIP_BODY;
                 end;
         end;
-   end doStartTag;
-
-   procedure isEnabled (This : in out TableTag) is
-      Java_Result : constant Boolean := TableTag'Class (This).isEnabled;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isEnabled;
-
-   procedure getTagHelperFactoryInterface (This : in out TableTag) is
-      Java_Result : constant TagHelperFactoryInterface_Access := TableTag'Class (This).getTagHelperFactoryInterface;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTagHelperFactoryInterface;
-
-   procedure getTagRequestHelperFactoryInterface (This : in out TableTag) is
-      Java_Result : constant TagHelperFactoryInterface_Access := TableTag'Class (This).getTagRequestHelperFactoryInterface;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTagRequestHelperFactoryInterface;
-
-   procedure getCurrent (This : in out TableTag) is
-      Java_Result : constant Integer := TableTag'Class (This).getCurrent;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getCurrent;
-
-   procedure getTotal (This : in out TableTag) is
-      Java_Result : constant Integer := TableTag'Class (This).getTotal;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTotal;
-
-   procedure drop (This : in out TableTag) is
-      Java_Result : constant Unbounded_String := TableTag'Class (This).drop;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end drop;
-
-   procedure create (This : in out TableTag) is
-      Java_Result : constant Unbounded_String := TableTag'Class (This).create;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end create;
-
-   procedure restore (This : in out TableTag) is
-      Java_Result : constant Unbounded_String := TableTag'Class (This).restore;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end restore;
-
-   procedure backup (This : in out TableTag) is
-      Java_Result : constant Unbounded_String := TableTag'Class (This).backup;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end backup;
-
-   procedure insert (This : in out TableTag) is
-      Java_Result : constant Unbounded_String := TableTag'Class (This).insert;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end insert;
-
-   procedure delete (This : in out TableTag) is
-      Java_Result : constant Unbounded_String := TableTag'Class (This).delete;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end delete;
-
-   procedure update (This : in out TableTag) is
-      Java_Result : constant Unbounded_String := TableTag'Class (This).update;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end update;
-
-   procedure doStartTag (This : in out TableTag) is
-      Java_Result : constant Integer := TableTag'Class (This).doStartTag;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end doStartTag;
 
 end admin.tags.TableTag_Package;

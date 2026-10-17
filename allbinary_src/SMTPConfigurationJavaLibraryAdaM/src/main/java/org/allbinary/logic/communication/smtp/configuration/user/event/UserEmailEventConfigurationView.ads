@@ -28,6 +28,10 @@ with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Packag
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.w3c.dom.NodeList_Package; use org.w3c.dom.NodeList_Package;
+with org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventConfigurationInterface_Package; use org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventConfigurationInterface_Package;
+with org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventConfigurationData_Package; use org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventConfigurationData_Package;
+with org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventConfiguration_Package; use org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventConfiguration_Package;
+with org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventConfigurationMapping_Package; use org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventConfigurationMapping_Package;
 
 package org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventConfigurationView_Package is
 
@@ -53,7 +57,6 @@ package org.allbinary.logic.communication.smtp.configuration.user.event.UserEmai
    function toXmlNode (This : in out UserEmailEventConfigurationView; document : Document_Access) return Node_Access;
    procedure toXmlNode (This : in out UserEmailEventConfigurationView; document : Document_Access);
    function getUserEmailEventConfigurationInterface (This : in out UserEmailEventConfigurationView) return UserEmailEventConfigurationInterface_Access;
-   procedure getUserEmailEventConfigurationInterface (This : in out UserEmailEventConfigurationView);
    procedure setUserEmailEventConfigurationInterface (This : in out UserEmailEventConfigurationView; userEmailEventConfigurationInterface : UserEmailEventConfigurationInterface_Access);
 
 end org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventConfigurationView_Package;

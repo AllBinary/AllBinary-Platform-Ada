@@ -26,6 +26,8 @@ with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.s
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.game.identification.Group_Package; use org.allbinary.game.identification.Group_Package;
+with org.allbinary.game.identification.GroupCommonFactory_Package; use org.allbinary.game.identification.GroupCommonFactory_Package;
 
 package org.allbinary.game.identification.CompositeGroup_Package is
 
@@ -54,7 +56,6 @@ package org.allbinary.game.identification.CompositeGroup_Package is
    function isInGroup (This : in out CompositeGroup; groupInterface : Group_Access) return Boolean;
    procedure isInGroup (This : in out CompositeGroup; groupInterface : Group_Access);
    function getGroup (This : in out CompositeGroup) return Group_Access;
-   procedure getGroup (This : in out CompositeGroup);
 
 end org.allbinary.game.identification.CompositeGroup_Package;
 

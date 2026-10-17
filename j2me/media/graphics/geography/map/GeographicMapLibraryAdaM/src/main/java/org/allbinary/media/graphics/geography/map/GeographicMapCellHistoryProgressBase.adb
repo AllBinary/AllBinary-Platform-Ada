@@ -35,7 +35,7 @@ package body org.allbinary.media.graphics.geography.map.GeographicMapCellHistory
    function Create return GeographicMapCellHistoryProgressBase_Access is
       This : constant GeographicMapCellHistoryProgressBase_Access := new GeographicMapCellHistoryProgressBase;
    begin
-      Initialize (This.all);
+      GeographicMapCellHistoryProgressBase_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -47,20 +47,6 @@ package body org.allbinary.media.graphics.geography.map.GeographicMapCellHistory
    function isAnyProgress (This : in out GeographicMapCellHistoryProgressBase) return Boolean is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
-   end isAnyProgress;
-
-   procedure getInstance is
-      Java_Result : constant GeographicMapCellHistoryProgressBase_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure isAnyProgress (This : in out GeographicMapCellHistoryProgressBase) is
-      Java_Result : constant Boolean := GeographicMapCellHistoryProgressBase'Class (This).isAnyProgress;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end isAnyProgress;
 
 begin

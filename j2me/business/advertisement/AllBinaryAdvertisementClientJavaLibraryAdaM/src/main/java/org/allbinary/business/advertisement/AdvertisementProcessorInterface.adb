@@ -28,7 +28,7 @@ package body org.allbinary.business.advertisement.AdvertisementProcessorInterfac
    function Create return AdvertisementProcessorInterface_Access is
       This : constant AdvertisementProcessorInterface_Access := new AdvertisementProcessorInterface;
    begin
-      Initialize (This.all);
+      AdvertisementProcessorInterface_Package.Initialize (This.all);
       return This;
    end Create;
 

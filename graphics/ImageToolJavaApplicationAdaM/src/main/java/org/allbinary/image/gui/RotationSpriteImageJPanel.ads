@@ -34,6 +34,7 @@ with org.allbinary.string_Id.CommonPhoneStrings_Package; use org.allbinary.strin
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.image.gui.JPanel_Package; use org.allbinary.image.gui.JPanel_Package;
+with org.allbinary.image.gui.Graphics_Package; use org.allbinary.image.gui.Graphics_Package;
 
 package org.allbinary.image.gui.RotationSpriteImageJPanel_Package is
 
@@ -77,7 +78,6 @@ package org.allbinary.image.gui.RotationSpriteImageJPanel_Package is
    procedure generateJButtonActionPerformed (This : in out RotationSpriteImageJPanel; evt : ActionEvent_Access);
    procedure totalAngleJComboBoxActionPerformed (This : in out RotationSpriteImageJPanel; evt : ActionEvent_Access);
    function getImageProcessorInput (This : in out RotationSpriteImageJPanel) return ImageProcessorInput_Access;
-   procedure getImageProcessorInput (This : in out RotationSpriteImageJPanel);
    procedure setImageProcessorInput (This : in out RotationSpriteImageJPanel; imageProcessorInput : ImageProcessorInput_Access);
 
 end org.allbinary.image.gui.RotationSpriteImageJPanel_Package;

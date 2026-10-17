@@ -49,11 +49,9 @@ package org.allbinary.logic.string_Id.StringUtil_Package is
    procedure Initialize (This : in out StringUtil'Class);
    function Create return StringUtil_Access;
    function getInstance return StringUtil_Access;
-   procedure getInstance;
    function getNonNull (This : in out StringUtil; string_Id : Unbounded_String) return Unbounded_String;
    procedure getNonNull (This : in out StringUtil; string_Id : Unbounded_String);
    function getArrayInstance (This : in out StringUtil) return Unbounded_String_Array_Access;
-   procedure getArrayInstance (This : in out StringUtil);
    function count (This : in out StringUtil; string_Id : Unbounded_String; aChar : Character) return Integer;
    procedure count (This : in out StringUtil; string_Id : Unbounded_String; aChar : Character);
    function toString (This : in out StringUtil; anyType : Java_Object_Access) return Unbounded_String;

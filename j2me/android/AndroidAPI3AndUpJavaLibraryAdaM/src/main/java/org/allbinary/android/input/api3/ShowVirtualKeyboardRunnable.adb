@@ -32,7 +32,7 @@ package body org.allbinary.android.input.api3.ShowVirtualKeyboardRunnable_Packag
    function Create (activity : Activity_Access) return ShowVirtualKeyboardRunnable_Access is
       This : constant ShowVirtualKeyboardRunnable_Access := new ShowVirtualKeyboardRunnable;
    begin
-      Initialize (This.all, activity);
+      ShowVirtualKeyboardRunnable_Package.Initialize (This.all, activity);
       return This;
    end Create;
 

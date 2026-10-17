@@ -31,7 +31,7 @@ package body org.allbinary.animation.BaseAnimationInterfaceFactoryInterfaceCompo
    function Create (basicAnimationInterfaceFactoryInterfaceArray : BasicAnimationInterfaceFactoryInterface_Access_Array_Access) return BaseAnimationInterfaceFactoryInterfaceComposite_Access is
       This : constant BaseAnimationInterfaceFactoryInterfaceComposite_Access := new BaseAnimationInterfaceFactoryInterfaceComposite;
    begin
-      Initialize (This.all, basicAnimationInterfaceFactoryInterfaceArray);
+      BaseAnimationInterfaceFactoryInterfaceComposite_Package.Initialize (This.all, basicAnimationInterfaceFactoryInterfaceArray);
       return This;
    end Create;
 
@@ -62,13 +62,6 @@ package body org.allbinary.animation.BaseAnimationInterfaceFactoryInterfaceCompo
    begin
       null;
    end getInstance;
-
-   procedure getBasicAnimationInterfaceFactoryInterfaceArray (This : in out BaseAnimationInterfaceFactoryInterfaceComposite) is
-      Java_Result : constant BasicAnimationInterfaceFactoryInterface_Access_Array_Access := BaseAnimationInterfaceFactoryInterfaceComposite'Class (This).getBasicAnimationInterfaceFactoryInterfaceArray;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getBasicAnimationInterfaceFactoryInterfaceArray;
 
 end org.allbinary.animation.BaseAnimationInterfaceFactoryInterfaceComposite_Package;
 

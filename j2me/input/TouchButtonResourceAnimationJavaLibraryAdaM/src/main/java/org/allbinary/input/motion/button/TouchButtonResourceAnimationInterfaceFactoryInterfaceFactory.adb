@@ -34,7 +34,7 @@ package body org.allbinary.input.motion.button.TouchButtonResourceAnimationInter
    function Create (name : Unbounded_String) return TouchButtonResourceAnimationInterfaceFactoryInterfaceFactory_Access is
       This : constant TouchButtonResourceAnimationInterfaceFactoryInterfaceFactory_Access := new TouchButtonResourceAnimationInterfaceFactoryInterfaceFactory;
    begin
-      Initialize (This.all, name);
+      TouchButtonResourceAnimationInterfaceFactoryInterfaceFactory_Package.Initialize (This.all, name);
       return This;
    end Create;
 
@@ -168,26 +168,12 @@ package body org.allbinary.input.motion.button.TouchButtonResourceAnimationInter
         end if;
    end isFeature;
 
-   procedure createFactory is
-      Java_Result : constant TouchButtonResourceAnimationInterfaceFactoryInterfaceFactory_Access := createFactory;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end createFactory;
-
    procedure isLoadingLevel (This : in out TouchButtonResourceAnimationInterfaceFactoryInterfaceFactory; level : Integer) is
       Java_Result : constant Boolean := TouchButtonResourceAnimationInterfaceFactoryInterfaceFactory'Class (This).isLoadingLevel (level);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isLoadingLevel;
-
-   procedure isFeature (This : in out TouchButtonResourceAnimationInterfaceFactoryInterfaceFactory) is
-      Java_Result : constant Boolean := TouchButtonResourceAnimationInterfaceFactoryInterfaceFactory'Class (This).isFeature;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isFeature;
 
 end org.allbinary.input.motion.button.TouchButtonResourceAnimationInterfaceFactoryInterfaceFactory_Package;
 

@@ -30,7 +30,7 @@ package body org.allbinary.logic.math.vector.XAxisMathVector_Package is
    function Create (magnitudeBasicDecimal : BasicDecimal_Access; direction : Integer) return XAxisMathVector_Access is
       This : constant XAxisMathVector_Access := new XAxisMathVector;
    begin
-      Initialize (This.all, magnitudeBasicDecimal, direction);
+      XAxisMathVector_Package.Initialize (This.all, magnitudeBasicDecimal, direction);
       return This;
    end Create;
 

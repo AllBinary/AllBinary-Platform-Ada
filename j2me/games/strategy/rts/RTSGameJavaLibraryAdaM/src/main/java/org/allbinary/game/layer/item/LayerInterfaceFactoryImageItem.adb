@@ -34,7 +34,7 @@ package body org.allbinary.game.layer.item.LayerInterfaceFactoryImageItem_Packag
    function Create (label : Unbounded_String; img : Image_Access; layout : Integer; altText : Unbounded_String; basicColor : BasicColor_Access; animationArray : Animation_Access_Array_Access; layerInterfaceFactoryInterface : LayerInterfaceFactoryInterface_Access) return LayerInterfaceFactoryImageItem_Access is
       This : constant LayerInterfaceFactoryImageItem_Access := new LayerInterfaceFactoryImageItem;
    begin
-      Initialize (This.all, label, img, layout, altText, basicColor, animationArray, layerInterfaceFactoryInterface);
+      LayerInterfaceFactoryImageItem_Package.Initialize (This.all, label, img, layout, altText, basicColor, animationArray, layerInterfaceFactoryInterface);
       return This;
    end Create;
 
@@ -52,13 +52,6 @@ package body org.allbinary.game.layer.item.LayerInterfaceFactoryImageItem_Packag
             This.animationArray (index).paintXY (graphics, x, y);
         end loop;
    end paintXY;
-
-   procedure getLayerInterfaceFactoryInterface (This : in out LayerInterfaceFactoryImageItem) is
-      Java_Result : constant LayerInterfaceFactoryInterface_Access := LayerInterfaceFactoryImageItem'Class (This).getLayerInterfaceFactoryInterface;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getLayerInterfaceFactoryInterface;
 
 end org.allbinary.game.layer.item.LayerInterfaceFactoryImageItem_Package;
 

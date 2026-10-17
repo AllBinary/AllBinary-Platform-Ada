@@ -43,13 +43,10 @@ package org.allbinary.logic.control.validate.Validation_Package is
    procedure Initialize (This : in out Validation'Class);
    function Create return Validation_Access;
    function isValid (This : in out Validation) return Boolean;
-   procedure isValid (This : in out Validation);
    function toValidationInfoNode (This : in out Validation; document : Document_Access) return Node_Access;
    procedure toValidationInfoNode (This : in out Validation; document : Document_Access);
    function toValidationInfoDoc (This : in out Validation) return Document_Access;
-   procedure toValidationInfoDoc (This : in out Validation);
    function validationInfo (This : in out Validation) return Unbounded_String;
-   procedure validationInfo (This : in out Validation);
 
 end org.allbinary.logic.control.validate.Validation_Package;
 

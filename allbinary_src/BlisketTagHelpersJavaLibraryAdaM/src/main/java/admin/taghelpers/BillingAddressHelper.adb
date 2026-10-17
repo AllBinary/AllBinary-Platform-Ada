@@ -41,7 +41,7 @@ package body admin.taghelpers.BillingAddressHelper_Package is
    function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return BillingAddressHelper_Access is
       This : constant BillingAddressHelper_Access := new BillingAddressHelper;
    begin
-      Initialize (This.all, hashMap, pageContext);
+      BillingAddressHelper_Package.Initialize (This.all, hashMap, pageContext);
       return This;
    end Create;
 
@@ -282,69 +282,6 @@ package body admin.taghelpers.BillingAddressHelper_Package is
             return error;
                 end;
         end;
-   end set;
-
-   procedure drop (This : in out BillingAddressHelper) is
-      Java_Result : constant Unbounded_String := BillingAddressHelper'Class (This).drop;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end drop;
-
-   procedure create (This : in out BillingAddressHelper) is
-      Java_Result : constant Unbounded_String := BillingAddressHelper'Class (This).create;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end create;
-
-   procedure restore (This : in out BillingAddressHelper) is
-      Java_Result : constant Unbounded_String := BillingAddressHelper'Class (This).restore;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end restore;
-
-   procedure backup (This : in out BillingAddressHelper) is
-      Java_Result : constant Unbounded_String := BillingAddressHelper'Class (This).backup;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end backup;
-
-   procedure insert (This : in out BillingAddressHelper) is
-      Java_Result : constant Unbounded_String := BillingAddressHelper'Class (This).insert;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end insert;
-
-   procedure update (This : in out BillingAddressHelper) is
-      Java_Result : constant Unbounded_String := BillingAddressHelper'Class (This).update;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end update;
-
-   procedure setToShippingAddress (This : in out BillingAddressHelper) is
-      Java_Result : constant Unbounded_String := BillingAddressHelper'Class (This).setToShippingAddress;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end setToShippingAddress;
-
-   procedure delete (This : in out BillingAddressHelper) is
-      Java_Result : constant Unbounded_String := BillingAddressHelper'Class (This).delete;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end delete;
-
-   procedure set (This : in out BillingAddressHelper) is
-      Java_Result : constant Unbounded_String := BillingAddressHelper'Class (This).set;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end set;
 
 end admin.taghelpers.BillingAddressHelper_Package;

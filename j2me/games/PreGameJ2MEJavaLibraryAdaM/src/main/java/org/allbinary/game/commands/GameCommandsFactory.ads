@@ -72,7 +72,6 @@ package org.allbinary.game.commands.GameCommandsFactory_Package is
    procedure Initialize (This : in out GameCommandsFactory'Class);
    function Create return GameCommandsFactory_Access;
    function getInstance return GameCommandsFactory_Access;
-   procedure getInstance;
 
 end org.allbinary.game.commands.GameCommandsFactory_Package;
 

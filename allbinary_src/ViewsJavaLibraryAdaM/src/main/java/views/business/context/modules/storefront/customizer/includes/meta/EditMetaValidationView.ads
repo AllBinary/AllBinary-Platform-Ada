@@ -49,11 +49,8 @@ package views.business.context.modules.storefront.customizer.includes.meta.EditM
    procedure Initialize (This : in out EditMetaValidationView'Class; transformInfoInterface : TransformInfoInterface_Access);
    function Create (transformInfoInterface : TransformInfoInterface_Access) return EditMetaValidationView_Access;
    function isValid (This : in out EditMetaValidationView) return Boolean;
-   procedure isValid (This : in out EditMetaValidationView);
    function validationInfo (This : in out EditMetaValidationView) return Unbounded_String;
-   procedure validationInfo (This : in out EditMetaValidationView);
    function toValidationInfoDoc (This : in out EditMetaValidationView) return Document_Access;
-   procedure toValidationInfoDoc (This : in out EditMetaValidationView);
    function toValidationInfoNode (This : in out EditMetaValidationView; document : Document_Access) return Node_Access;
    procedure toValidationInfoNode (This : in out EditMetaValidationView; document : Document_Access);
 

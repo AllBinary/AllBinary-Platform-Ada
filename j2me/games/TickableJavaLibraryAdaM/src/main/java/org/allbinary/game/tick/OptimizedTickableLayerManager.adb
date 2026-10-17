@@ -29,7 +29,7 @@ package body org.allbinary.game.tick.OptimizedTickableLayerManager_Package is
    function Create return OptimizedTickableLayerManager_Access is
       This : constant OptimizedTickableLayerManager_Access := new OptimizedTickableLayerManager;
    begin
-      Initialize (This.all);
+      OptimizedTickableLayerManager_Package.Initialize (This.all);
       return This;
    end Create;
 

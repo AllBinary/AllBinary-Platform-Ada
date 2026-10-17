@@ -34,7 +34,7 @@ package body tags.workflow.processing.basic.BasicWorkFlowTag_Package is
    function Create return BasicWorkFlowTag_Access is
       This : constant BasicWorkFlowTag_Access := new BasicWorkFlowTag;
    begin
-      Initialize (This.all);
+      BasicWorkFlowTag_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -56,13 +56,6 @@ package body tags.workflow.processing.basic.BasicWorkFlowTag_Package is
             return SKIP_BODY;
                 end;
         end;
-   end doStartTag;
-
-   procedure doStartTag (This : in out BasicWorkFlowTag) is
-      Java_Result : constant Integer := BasicWorkFlowTag'Class (This).doStartTag;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end doStartTag;
 
 end tags.workflow.processing.basic.BasicWorkFlowTag_Package;

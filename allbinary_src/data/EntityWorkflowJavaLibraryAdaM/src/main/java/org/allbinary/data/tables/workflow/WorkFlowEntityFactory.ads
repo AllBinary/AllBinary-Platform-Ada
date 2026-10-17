@@ -22,6 +22,7 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.data.tables.workflow.WorkFlowEntity_Package; use org.allbinary.data.tables.workflow.WorkFlowEntity_Package;
 
 package org.allbinary.data.tables.workflow.WorkFlowEntityFactory_Package is
 
@@ -41,9 +42,7 @@ package org.allbinary.data.tables.workflow.WorkFlowEntityFactory_Package is
    procedure Initialize (This : in out WorkFlowEntityFactory'Class);
    function Create return WorkFlowEntityFactory_Access;
    function getInstance return WorkFlowEntityFactory_Access;
-   procedure getInstance;
    function create2 (This : in out WorkFlowEntityFactory) return WorkFlowEntity_Access;
-   procedure create2 (This : in out WorkFlowEntityFactory);
 
 end org.allbinary.data.tables.workflow.WorkFlowEntityFactory_Package;
 

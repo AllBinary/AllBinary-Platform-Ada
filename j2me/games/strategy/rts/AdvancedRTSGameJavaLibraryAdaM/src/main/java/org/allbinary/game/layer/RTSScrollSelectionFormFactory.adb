@@ -28,7 +28,7 @@ package body org.allbinary.game.layer.RTSScrollSelectionFormFactory_Package is
    function Create return RTSScrollSelectionFormFactory_Access is
       This : constant RTSScrollSelectionFormFactory_Access := new RTSScrollSelectionFormFactory;
    begin
-      Initialize (This.all);
+      RTSScrollSelectionFormFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

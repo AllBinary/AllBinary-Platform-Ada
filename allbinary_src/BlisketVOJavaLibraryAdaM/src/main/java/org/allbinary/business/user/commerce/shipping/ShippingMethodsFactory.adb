@@ -92,7 +92,7 @@ package body org.allbinary.business.user.commerce.shipping.ShippingMethodsFactor
    function Create (abeClientInformation : AbeClientInformationInterface_Access; storeFrontInterface : StoreFrontInterface_Access) return ShippingMethodsFactory_Access is
       This : constant ShippingMethodsFactory_Access := new ShippingMethodsFactory;
    begin
-      Initialize (This.all, abeClientInformation, storeFrontInterface);
+      ShippingMethodsFactory_Package.Initialize (This.all, abeClientInformation, storeFrontInterface);
       return This;
    end Create;
 
@@ -105,20 +105,6 @@ package body org.allbinary.business.user.commerce.shipping.ShippingMethodsFactor
    function getDefaultInstance (This : in out ShippingMethodsFactory) return ShippingInterface_Access is
    begin
         return This.defaultShippingMethodInterface;
-   end getDefaultInstance;
-
-   procedure getInstance (This : in out ShippingMethodsFactory) is
-      Java_Result : constant BasicArrayList_Access := ShippingMethodsFactory'Class (This).getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure getDefaultInstance (This : in out ShippingMethodsFactory) is
-      Java_Result : constant ShippingInterface_Access := ShippingMethodsFactory'Class (This).getDefaultInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getDefaultInstance;
 
 begin

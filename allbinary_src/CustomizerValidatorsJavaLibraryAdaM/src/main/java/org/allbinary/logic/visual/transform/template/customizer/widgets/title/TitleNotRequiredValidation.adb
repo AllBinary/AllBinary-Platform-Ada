@@ -31,7 +31,7 @@ package body org.allbinary.logic.visual.transform.template.customizer.widgets.ti
    function Create return TitleNotRequiredValidation_Access is
       This : constant TitleNotRequiredValidation_Access := new TitleNotRequiredValidation;
    begin
-      Initialize (This.all);
+      TitleNotRequiredValidation_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -45,7 +45,7 @@ package body org.allbinary.logic.visual.transform.template.customizer.widgets.ti
    function Create (node : Node_Access) return TitleNotRequiredValidation_Access is
       This : constant TitleNotRequiredValidation_Access := new TitleNotRequiredValidation;
    begin
-      Initialize (This.all, node);
+      TitleNotRequiredValidation_Package.Initialize (This.all, node);
       return This;
    end Create;
 
@@ -59,7 +59,7 @@ package body org.allbinary.logic.visual.transform.template.customizer.widgets.ti
    function Create (hashMap : HashMap_Access) return TitleNotRequiredValidation_Access is
       This : constant TitleNotRequiredValidation_Access := new TitleNotRequiredValidation;
    begin
-      Initialize (This.all, hashMap);
+      TitleNotRequiredValidation_Package.Initialize (This.all, hashMap);
       return This;
    end Create;
 
@@ -126,27 +126,6 @@ package body org.allbinary.logic.visual.transform.template.customizer.widgets.ti
    begin
         return null;
    end toValidationInfoNode;
-
-   procedure isValid (This : in out TitleNotRequiredValidation) is
-      Java_Result : constant Boolean := TitleNotRequiredValidation'Class (This).isValid;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isValid;
-
-   procedure validationInfo (This : in out TitleNotRequiredValidation) is
-      Java_Result : constant Unbounded_String := TitleNotRequiredValidation'Class (This).validationInfo;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end validationInfo;
-
-   procedure toValidationInfoDoc (This : in out TitleNotRequiredValidation) is
-      Java_Result : constant Document_Access := TitleNotRequiredValidation'Class (This).toValidationInfoDoc;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toValidationInfoDoc;
 
    procedure toValidationInfoNode (This : in out TitleNotRequiredValidation; document : Document_Access) is
       Java_Result : constant Node_Access := TitleNotRequiredValidation'Class (This).toValidationInfoNode (document);

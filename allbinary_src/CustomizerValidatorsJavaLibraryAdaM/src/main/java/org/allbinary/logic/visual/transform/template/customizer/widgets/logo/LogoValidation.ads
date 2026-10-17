@@ -36,6 +36,8 @@ with org.allbinary.logic.string_Id.StringValidationUtil_Package; use org.allbina
 with org.apache.commons.fileupload.FileItem_Package; use org.apache.commons.fileupload.FileItem_Package;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
+with org.allbinary.logic.visual.transform.template.customizer.widgets.logo.LogoData_Package; use org.allbinary.logic.visual.transform.template.customizer.widgets.logo.LogoData_Package;
+with org.allbinary.logic.visual.transform.template.customizer.widgets.logo.LogoImageFileUtil_Package; use org.allbinary.logic.visual.transform.template.customizer.widgets.logo.LogoImageFileUtil_Package;
 
 package org.allbinary.logic.visual.transform.template.customizer.widgets.logo.LogoValidation_Package is
 
@@ -72,15 +74,11 @@ package org.allbinary.logic.visual.transform.template.customizer.widgets.logo.Lo
    function Create return LogoValidation_Access;
    procedure getFormData (This : in out LogoValidation; hashMap : HashMap_Access);
    function isValid (This : in out LogoValidation) return Boolean;
-   procedure isValid (This : in out LogoValidation);
    function validationInfo (This : in out LogoValidation) return Unbounded_String;
-   procedure validationInfo (This : in out LogoValidation);
    function toValidationInfoDoc (This : in out LogoValidation) return Document_Access;
-   procedure toValidationInfoDoc (This : in out LogoValidation);
    function toValidationInfoNode (This : in out LogoValidation; document : Document_Access) return Node_Access;
    procedure toValidationInfoNode (This : in out LogoValidation; document : Document_Access);
    function toHashMap (This : in out LogoValidation) return HashMap_Access;
-   procedure toHashMap (This : in out LogoValidation);
    function toXmlNode (This : in out LogoValidation; document : Document_Access) return Node_Access;
    procedure toXmlNode (This : in out LogoValidation; document : Document_Access);
    procedure processLogoFile (This : in out LogoValidation);

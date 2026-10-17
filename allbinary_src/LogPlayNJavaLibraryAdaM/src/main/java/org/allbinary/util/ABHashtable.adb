@@ -29,7 +29,7 @@ package body org.allbinary.util.ABHashtable_Package is
    function Create (initialCapacity : Integer) return ABHashtable_Access is
       This : constant ABHashtable_Access := new ABHashtable;
    begin
-      Initialize (This.all, initialCapacity);
+      ABHashtable_Package.Initialize (This.all, initialCapacity);
       return This;
    end Create;
 
@@ -42,7 +42,7 @@ package body org.allbinary.util.ABHashtable_Package is
    function Create return ABHashtable_Access is
       This : constant ABHashtable_Access := new ABHashtable;
    begin
-      Initialize (This.all);
+      ABHashtable_Package.Initialize (This.all);
       return This;
    end Create;
 

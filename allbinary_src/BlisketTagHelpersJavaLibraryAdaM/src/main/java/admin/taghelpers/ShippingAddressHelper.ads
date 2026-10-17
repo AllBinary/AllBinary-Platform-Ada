@@ -69,23 +69,14 @@ package admin.taghelpers.ShippingAddressHelper_Package is
    function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return ShippingAddressHelper_Access;
    procedure getAddressForm (This : in out ShippingAddressHelper);
    function drop (This : in out ShippingAddressHelper) return Unbounded_String;
-   procedure drop (This : in out ShippingAddressHelper);
    function create (This : in out ShippingAddressHelper) return Unbounded_String;
-   procedure create (This : in out ShippingAddressHelper);
    function restore (This : in out ShippingAddressHelper) return Unbounded_String;
-   procedure restore (This : in out ShippingAddressHelper);
    function backup (This : in out ShippingAddressHelper) return Unbounded_String;
-   procedure backup (This : in out ShippingAddressHelper);
    function insert (This : in out ShippingAddressHelper) return Unbounded_String;
-   procedure insert (This : in out ShippingAddressHelper);
    function update (This : in out ShippingAddressHelper) return Unbounded_String;
-   procedure update (This : in out ShippingAddressHelper);
    function setToBillingAddress (This : in out ShippingAddressHelper) return Unbounded_String;
-   procedure setToBillingAddress (This : in out ShippingAddressHelper);
    function delete (This : in out ShippingAddressHelper) return Unbounded_String;
-   procedure delete (This : in out ShippingAddressHelper);
    function set (This : in out ShippingAddressHelper) return Unbounded_String;
-   procedure set (This : in out ShippingAddressHelper);
 
 end admin.taghelpers.ShippingAddressHelper_Package;
 

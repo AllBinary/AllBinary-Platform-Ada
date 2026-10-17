@@ -17,7 +17,7 @@ package body org.allbinary.game.collision.Collision2DProcessor_Package is
    function Create return Collision2DProcessor_Access is
       This : constant Collision2DProcessor_Access := new Collision2DProcessor;
    begin
-      Initialize (This.all);
+      Collision2DProcessor_Package.Initialize (This.all);
       return This;
    end Create;
 

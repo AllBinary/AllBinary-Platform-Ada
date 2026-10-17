@@ -21,6 +21,10 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package; use org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.communication.log.JDialog_Package; use org.allbinary.logic.communication.log.JDialog_Package;
+with org.allbinary.logic.communication.log.GridLayout_Package; use org.allbinary.logic.communication.log.GridLayout_Package;
+with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
 
 package org.allbinary.logic.communication.log.GuiLog_Package is
 
@@ -40,7 +44,6 @@ package org.allbinary.logic.communication.log.GuiLog_Package is
    procedure Initialize (This : in out GuiLog'Class);
    function Create return GuiLog_Access;
    function getInstance return GuiLog_Access;
-   procedure getInstance;
    procedure showDialog (This : in out GuiLog; msg : Unbounded_String);
    function put (This : in out GuiLog; specialMessage : Unbounded_String; anyType : Java_Object_Access; functionName : Unbounded_String) return Unbounded_String;
    procedure put (This : in out GuiLog; specialMessage : Unbounded_String; anyType : Java_Object_Access; functionName : Unbounded_String);

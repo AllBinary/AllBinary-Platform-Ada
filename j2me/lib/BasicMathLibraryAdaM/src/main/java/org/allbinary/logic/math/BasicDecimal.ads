@@ -20,6 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
+with org.allbinary.logic.math.ScaleFactorFactory_Package; use org.allbinary.logic.math.ScaleFactorFactory_Package;
 
 package org.allbinary.logic.math.BasicDecimal_Package is
 
@@ -57,16 +58,11 @@ package org.allbinary.logic.math.BasicDecimal_Package is
    procedure dividelong (This : in out BasicDecimal; value : Long_Long_Integer);
    procedure divide (This : in out BasicDecimal; bigDecimal : BasicDecimal_Access);
    function getUnscaled (This : in out BasicDecimal) return Long_Long_Integer;
-   procedure getUnscaled (This : in out BasicDecimal);
    procedure updateScaled (This : in out BasicDecimal);
    function getScaled (This : in out BasicDecimal) return Integer;
-   procedure getScaled (This : in out BasicDecimal);
    function toString (This : in out BasicDecimal) return Unbounded_String;
-   procedure toString (This : in out BasicDecimal);
    function getScaledFactor (This : in out BasicDecimal) return Integer;
-   procedure getScaledFactor (This : in out BasicDecimal);
    function getScaledFactorValue (This : in out BasicDecimal) return Integer;
-   procedure getScaledFactorValue (This : in out BasicDecimal);
 
 end org.allbinary.logic.math.BasicDecimal_Package;
 

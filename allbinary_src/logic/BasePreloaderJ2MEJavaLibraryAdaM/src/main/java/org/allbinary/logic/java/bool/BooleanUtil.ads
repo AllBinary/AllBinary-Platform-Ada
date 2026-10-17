@@ -23,6 +23,7 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.TsUtil_Package; use org.allbinary.TsUtil_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringValidationUtil_Package; use org.allbinary.logic.string_Id.StringValidationUtil_Package;
+with org.allbinary.logic.java.bool.BooleanFactory_Package; use org.allbinary.logic.java.bool.BooleanFactory_Package;
 
 package org.allbinary.logic.java.bool.BooleanUtil_Package is
 
@@ -43,7 +44,6 @@ package org.allbinary.logic.java.bool.BooleanUtil_Package is
    procedure Initialize (This : in out BooleanUtil'Class);
    function Create return BooleanUtil_Access;
    function getInstance return BooleanUtil_Access;
-   procedure getInstance;
    function getFromString (This : in out BooleanUtil; booleanString : Unbounded_String) return Boolean;
    procedure getFromString (This : in out BooleanUtil; booleanString : Unbounded_String);
    function isStringBoolean (This : in out BooleanUtil; booleanString : Unbounded_String) return Boolean;

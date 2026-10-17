@@ -37,7 +37,7 @@ package body org.allbinary.graphics.RelativeRelationship_Package is
    function Create (point : GPoint_Access; typesAllowedList : BasicArrayList_Access) return RelativeRelationship_Access is
       This : constant RelativeRelationship_Access := new RelativeRelationship;
    begin
-      Initialize (This.all, point, typesAllowedList);
+      RelativeRelationship_Package.Initialize (This.all, point, typesAllowedList);
       return This;
    end Create;
 
@@ -65,34 +65,6 @@ package body org.allbinary.graphics.RelativeRelationship_Package is
    begin
         This.typesAllowedList := typesAllowedList;
    end setTypesAllowedList;
-
-   procedure getX (This : in out RelativeRelationship) is
-      Java_Result : constant Integer := RelativeRelationship'Class (This).getX;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getX;
-
-   procedure getY (This : in out RelativeRelationship) is
-      Java_Result : constant Integer := RelativeRelationship'Class (This).getY;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getY;
-
-   procedure getZ (This : in out RelativeRelationship) is
-      Java_Result : constant Integer := RelativeRelationship'Class (This).getZ;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getZ;
-
-   procedure getTypesAllowedList (This : in out RelativeRelationship) is
-      Java_Result : constant BasicArrayList_Access := RelativeRelationship'Class (This).getTypesAllowedList;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTypesAllowedList;
 
 begin
    null;

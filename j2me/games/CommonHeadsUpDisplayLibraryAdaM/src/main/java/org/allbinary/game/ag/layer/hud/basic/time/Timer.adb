@@ -40,7 +40,7 @@ package body org.allbinary.game.ag.layer.hud.basic.time.Timer_Package is
    function Create (maxTime : Integer) return Timer_Access is
       This : constant Timer_Access := new Timer;
    begin
-      Initialize (This.all, maxTime);
+      Timer_Package.Initialize (This.all, maxTime);
       return This;
    end Create;
 
@@ -93,27 +93,6 @@ package body org.allbinary.game.ag.layer.hud.basic.time.Timer_Package is
    function getCurrentTotalDigits (This : in out Timer) return Integer is
    begin
         return This.totalDigits;
-   end getCurrentTotalDigits;
-
-   procedure get (This : in out Timer) is
-      Java_Result : constant Long_Long_Integer := Timer'Class (This).get;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end get;
-
-   procedure getTimeChars (This : in out Timer) is
-      Java_Result : constant Character_Array_Access := Timer'Class (This).getTimeChars;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTimeChars;
-
-   procedure getCurrentTotalDigits (This : in out Timer) is
-      Java_Result : constant Integer := Timer'Class (This).getCurrentTotalDigits;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getCurrentTotalDigits;
 
 end org.allbinary.game.ag.layer.hud.basic.time.Timer_Package;

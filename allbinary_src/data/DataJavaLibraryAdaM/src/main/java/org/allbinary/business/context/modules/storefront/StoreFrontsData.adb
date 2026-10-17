@@ -35,7 +35,7 @@ package body org.allbinary.business.context.modules.storefront.StoreFrontsData_P
    function Create return StoreFrontsData_Access is
       This : constant StoreFrontsData_Access := new StoreFrontsData;
    begin
-      Initialize (This.all);
+      StoreFrontsData_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -43,13 +43,6 @@ package body org.allbinary.business.context.modules.storefront.StoreFrontsData_P
    function getInstance return StoreFrontsData_Access is
    begin
         return StoreFrontsData_Package.instance;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant StoreFrontsData_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

@@ -36,7 +36,7 @@ package body org.allbinary.animation.Animation_Package is
    function Create return Animation_Access is
       This : constant Animation_Access := new Animation;
    begin
-      Initialize (This.all);
+      Animation_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -137,55 +137,6 @@ package body org.allbinary.animation.Animation_Package is
    function getDy (This : in out Animation) return Integer is
    begin
         return 0;
-   end getDy;
-
-   procedure isThreed (This : in out Animation) is
-      Java_Result : constant Boolean := Animation'Class (This).isThreed;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isThreed;
-
-   procedure getBasicColorP (This : in out Animation) is
-      Java_Result : constant BasicColor_Access := Animation'Class (This).getBasicColorP;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getBasicColorP;
-
-   procedure getChangeBasicColor (This : in out Animation) is
-      Java_Result : constant BasicColor_Access := Animation'Class (This).getChangeBasicColor;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getChangeBasicColor;
-
-   procedure getChangeColor (This : in out Animation) is
-      Java_Result : constant Integer := Animation'Class (This).getChangeColor;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getChangeColor;
-
-   procedure getColor (This : in out Animation) is
-      Java_Result : constant Integer := Animation'Class (This).getColor;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getColor;
-
-   procedure getDx (This : in out Animation) is
-      Java_Result : constant Integer := Animation'Class (This).getDx;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getDx;
-
-   procedure getDy (This : in out Animation) is
-      Java_Result : constant Integer := Animation'Class (This).getDy;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getDy;
 
 end org.allbinary.animation.Animation_Package;

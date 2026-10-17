@@ -28,6 +28,7 @@ with org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Packa
 with org.allbinary.game.part.weapon.BasicWeaponPart_Package; use org.allbinary.game.part.weapon.BasicWeaponPart_Package;
 with org.allbinary.graphics.font.UpdateMyFontInterface_Package; use org.allbinary.graphics.font.UpdateMyFontInterface_Package;
 with org.allbinary.game.layer.SelectionHudPaintable_Package; use org.allbinary.game.layer.SelectionHudPaintable_Package;
+with org.allbinary.game.layer.RTSLayer_Package; use org.allbinary.game.layer.RTSLayer_Package;
 
 package org.allbinary.game.layer.RTSLayerHudPaintable_Package is
 
@@ -54,13 +55,11 @@ package org.allbinary.game.layer.RTSLayerHudPaintable_Package is
    procedure Initialize (This : in out RTSLayerHudPaintable'Class);
    function Create return RTSLayerHudPaintable_Access;
    function getInstance return RTSLayerHudPaintable_Access;
-   procedure getInstance;
    procedure updateMeasurement (This : in out RTSLayerHudPaintable; graphics : Graphics_Access);
    procedure updateSelectionInfo (This : in out RTSLayerHudPaintable);
    procedure paint (This : in out RTSLayerHudPaintable; graphics : Graphics_Access);
    procedure setRtsLayer (This : in out RTSLayerHudPaintable; rtsLayer : RTSLayer_Access);
    function getRtsLayer (This : in out RTSLayerHudPaintable) return CollidableDestroyableDamageableLayer_Access;
-   procedure getRtsLayer (This : in out RTSLayerHudPaintable);
 
 end org.allbinary.game.layer.RTSLayerHudPaintable_Package;
 

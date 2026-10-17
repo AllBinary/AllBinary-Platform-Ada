@@ -35,7 +35,7 @@ package body org.allbinary.game.midlet.DemoRunnable_Package is
    function Create (demoGameMidlet : DemoGameMidlet_Access) return DemoRunnable_Access is
       This : constant DemoRunnable_Access := new DemoRunnable;
    begin
-      Initialize (This.all, demoGameMidlet);
+      DemoRunnable_Package.Initialize (This.all, demoGameMidlet);
       return This;
    end Create;
 

@@ -28,6 +28,7 @@ with org.allbinary.logic.system.os.NoOperatingSystem_Package; use org.allbinary.
 with org.allbinary.logic.system.os.OperatingSystems_Package; use org.allbinary.logic.system.os.OperatingSystems_Package;
 with org.allbinary.logic.system.os.SystemProperties_Package; use org.allbinary.logic.system.os.SystemProperties_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.logic.system.os.linux.LinuxOS_Package; use org.allbinary.logic.system.os.linux.LinuxOS_Package;
 
 package org.allbinary.logic.system.os.linux.LinuxOperatingSystemFactory_Package is
 
@@ -53,9 +54,7 @@ package org.allbinary.logic.system.os.linux.LinuxOperatingSystemFactory_Package 
    procedure Initialize (This : in out LinuxOperatingSystemFactory'Class);
    function Create return LinuxOperatingSystemFactory_Access;
    function getInstance return LinuxOperatingSystemFactory_Access;
-   procedure getInstance;
    function getOperatingSystemInstance (This : in out LinuxOperatingSystemFactory) return GenericOperatingSystem_Access;
-   procedure getOperatingSystemInstance (This : in out LinuxOperatingSystemFactory);
 
 end org.allbinary.logic.system.os.linux.LinuxOperatingSystemFactory_Package;
 

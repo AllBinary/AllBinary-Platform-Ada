@@ -36,7 +36,6 @@ package org.allbinary.time.NoTimeDelayHelper_Package is
    procedure Initialize (This : in out NoTimeDelayHelper'Class);
    function Create return NoTimeDelayHelper_Access;
    function isTimeTNT (This : in out NoTimeDelayHelper) return Boolean;
-   procedure isTimeTNT (This : in out NoTimeDelayHelper);
    function isTimeSinceTNT (This : in out NoTimeDelayHelper; delay_Id : Integer) return Boolean;
    procedure isTimeSinceTNT (This : in out NoTimeDelayHelper; delay_Id : Integer);
    function isTime (This : in out NoTimeDelayHelper; currentTime : Long_Long_Integer) return Boolean;

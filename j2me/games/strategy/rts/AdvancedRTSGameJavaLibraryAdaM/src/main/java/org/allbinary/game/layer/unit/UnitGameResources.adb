@@ -36,7 +36,7 @@ package body org.allbinary.game.layer.unit.UnitGameResources_Package is
    function Create return UnitGameResources_Access is
       This : constant UnitGameResources_Access := new UnitGameResources;
    begin
-      Initialize (This.all);
+      UnitGameResources_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -78,13 +78,6 @@ package body org.allbinary.game.layer.unit.UnitGameResources_Package is
         else
             return BasicGameResources (This).getString;
         end if;
-   end getString;
-
-   procedure getString (This : in out UnitGameResources) is
-      Java_Result : constant Unbounded_String := UnitGameResources'Class (This).getString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getString;
 
 begin

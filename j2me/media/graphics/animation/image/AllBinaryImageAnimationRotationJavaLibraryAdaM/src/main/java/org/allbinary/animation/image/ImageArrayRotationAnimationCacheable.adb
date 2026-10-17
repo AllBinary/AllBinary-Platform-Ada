@@ -29,7 +29,7 @@ package body org.allbinary.animation.image.ImageArrayRotationAnimationCacheable_
    function Create (anyType : Java_Object_Access; animationBehavior : AnimationBehavior_Access) return ImageArrayRotationAnimationCacheable_Access is
       This : constant ImageArrayRotationAnimationCacheable_Access := new ImageArrayRotationAnimationCacheable;
    begin
-      Initialize (This.all, anyType, animationBehavior);
+      ImageArrayRotationAnimationCacheable_Package.Initialize (This.all, anyType, animationBehavior);
       return This;
    end Create;
 
@@ -41,20 +41,6 @@ package body org.allbinary.animation.image.ImageArrayRotationAnimationCacheable_
    function toString (This : in out ImageArrayRotationAnimationCacheable) return Unbounded_String is
    begin
         return StringUtil_Package.getInstance.EMPTY_STRING;
-   end toString;
-
-   procedure getKey (This : in out ImageArrayRotationAnimationCacheable) is
-      Java_Result : constant Java_Object_Access := ImageArrayRotationAnimationCacheable'Class (This).getKey;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getKey;
-
-   procedure toString (This : in out ImageArrayRotationAnimationCacheable) is
-      Java_Result : constant Unbounded_String := ImageArrayRotationAnimationCacheable'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end toString;
 
 end org.allbinary.animation.image.ImageArrayRotationAnimationCacheable_Package;

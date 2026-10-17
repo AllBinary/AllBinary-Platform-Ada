@@ -33,7 +33,7 @@ package body org.allbinary.game.combat.destroy.event.DestroyedEvent_Package is
    function Create (combatGameCanvas : AllBinaryGameCanvas_Access) return DestroyedEvent_Access is
       This : constant DestroyedEvent_Access := new DestroyedEvent;
    begin
-      Initialize (This.all, combatGameCanvas);
+      DestroyedEvent_Package.Initialize (This.all, combatGameCanvas);
       return This;
    end Create;
 
@@ -67,27 +67,6 @@ package body org.allbinary.game.combat.destroy.event.DestroyedEvent_Package is
         stringBuffer.append (To_Unbounded_String ("" & ASCII.LF & "AllBinaryGameCanvas: "));
         stringBuffer.append (StringUtil_Package.getInstance.toString (This.getAllBinaryGameCanvas));
         return stringBuffer.toString;
-   end toString;
-
-   procedure getAllBinaryGameCanvas (This : in out DestroyedEvent) is
-      Java_Result : constant AllBinaryGameCanvas_Access := DestroyedEvent'Class (This).getAllBinaryGameCanvas;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getAllBinaryGameCanvas;
-
-   procedure getLayerInterface (This : in out DestroyedEvent) is
-      Java_Result : constant AllBinaryLayer_Access := DestroyedEvent'Class (This).getLayerInterface;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getLayerInterface;
-
-   procedure toString (This : in out DestroyedEvent) is
-      Java_Result : constant Unbounded_String := DestroyedEvent'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end toString;
 
 end org.allbinary.game.combat.destroy.event.DestroyedEvent_Package;

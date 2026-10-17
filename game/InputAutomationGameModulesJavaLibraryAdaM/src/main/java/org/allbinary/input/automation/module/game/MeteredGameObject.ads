@@ -24,6 +24,7 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.input.automation.module.game.MeteredGameObjectInterface_Package; use org.allbinary.input.automation.module.game.MeteredGameObjectInterface_Package;
+with org.allbinary.input.automation.module.game.GraphicsAnalysisUtil_Package; use org.allbinary.input.automation.module.game.GraphicsAnalysisUtil_Package;
 
 package org.allbinary.input.automation.module.game.MeteredGameObject_Package is
 
@@ -51,27 +52,19 @@ package org.allbinary.input.automation.module.game.MeteredGameObject_Package is
    procedure Initialize (This : in out MeteredGameObject'Class; bufferedImage : BufferedImage_Access_Array_Access; minX : Integer; maxX : Integer; y : Integer);
    function Create (bufferedImage : BufferedImage_Access_Array_Access; minX : Integer; maxX : Integer; y : Integer) return MeteredGameObject_Access;
    function isGood (This : in out MeteredGameObject) return Boolean;
-   procedure isGood (This : in out MeteredGameObject);
    procedure setGood (This : in out MeteredGameObject; good : Boolean);
    function isDropping (This : in out MeteredGameObject) return Boolean;
-   procedure isDropping (This : in out MeteredGameObject);
    procedure setDropping (This : in out MeteredGameObject; dropping : Boolean);
    function getRatios (This : in out MeteredGameObject) return Long_Float_Array_Access;
-   procedure getRatios (This : in out MeteredGameObject);
    function toString (This : in out MeteredGameObject) return Unbounded_String;
-   procedure toString (This : in out MeteredGameObject);
    procedure setRatios (This : in out MeteredGameObject; ratios : Long_Float_Array_Access);
    function getMinX (This : in out MeteredGameObject) return Integer;
-   procedure getMinX (This : in out MeteredGameObject);
    procedure setMinX (This : in out MeteredGameObject; minX : Integer);
    function getMaxX (This : in out MeteredGameObject) return Integer;
-   procedure getMaxX (This : in out MeteredGameObject);
    procedure setMaxX (This : in out MeteredGameObject; maxX : Integer);
    function getY (This : in out MeteredGameObject) return Integer;
-   procedure getY (This : in out MeteredGameObject);
    procedure setY (This : in out MeteredGameObject; y : Integer);
    function getSize (This : in out MeteredGameObject) return Integer;
-   procedure getSize (This : in out MeteredGameObject);
    procedure setSize (This : in out MeteredGameObject; size : Integer);
 
 end org.allbinary.input.automation.module.game.MeteredGameObject_Package;

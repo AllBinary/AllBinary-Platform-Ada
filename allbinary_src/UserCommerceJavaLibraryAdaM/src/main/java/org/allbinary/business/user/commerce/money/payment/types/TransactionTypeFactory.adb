@@ -34,7 +34,7 @@ package body org.allbinary.business.user.commerce.money.payment.types.Transactio
    function Create return TransactionTypeFactory_Access is
       This : constant TransactionTypeFactory_Access := new TransactionTypeFactory;
    begin
-      Initialize (This.all);
+      TransactionTypeFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -42,13 +42,6 @@ package body org.allbinary.business.user.commerce.money.payment.types.Transactio
    function getInstance return TransactionTypeFactory_Access is
    begin
         return TransactionTypeFactory_Package.instance;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant TransactionTypeFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

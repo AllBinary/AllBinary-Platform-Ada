@@ -38,7 +38,6 @@ package org.allbinary.graphics.displayable.screen.AboutCommandProcessor_Package 
    procedure Initialize (This : in out AboutCommandProcessor'Class);
    function Create return AboutCommandProcessor_Access;
    function getInstance return AboutCommandProcessor_Access;
-   procedure getInstance;
    procedure process (This : in out AboutCommandProcessor; midletCommandListener : CommandListener_Access; command : Command_Access; canvas : Canvas_Access);
 
 end org.allbinary.graphics.displayable.screen.AboutCommandProcessor_Package;

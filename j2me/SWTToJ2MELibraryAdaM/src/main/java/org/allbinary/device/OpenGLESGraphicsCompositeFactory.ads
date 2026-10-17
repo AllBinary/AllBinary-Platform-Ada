@@ -20,6 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
+with org.allbinary.device.OpenGLESGraphicsFactory_Package; use org.allbinary.device.OpenGLESGraphicsFactory_Package;
 
 package org.allbinary.device.OpenGLESGraphicsCompositeFactory_Package is
 
@@ -37,10 +38,8 @@ package org.allbinary.device.OpenGLESGraphicsCompositeFactory_Package is
    procedure Initialize (This : in out OpenGLESGraphicsCompositeFactory'Class);
    function Create return OpenGLESGraphicsCompositeFactory_Access;
    function getInstance return OpenGLESGraphicsCompositeFactory_Access;
-   procedure getInstance;
    procedure set (This : in out OpenGLESGraphicsCompositeFactory; openGLESGraphicsFactory : OpenGLESGraphicsFactory_Access);
    function get (This : in out OpenGLESGraphicsCompositeFactory) return OpenGLESGraphicsFactory_Access;
-   procedure get (This : in out OpenGLESGraphicsCompositeFactory);
 
 end org.allbinary.device.OpenGLESGraphicsCompositeFactory_Package;
 

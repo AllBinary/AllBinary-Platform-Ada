@@ -28,7 +28,7 @@ package body org.allbinary.logic.communication.log.ForcedLogUtil_Package is
    function Create return ForcedLogUtil_Access is
       This : constant ForcedLogUtil_Access := new ForcedLogUtil;
    begin
-      Initialize (This.all);
+      ForcedLogUtil_Package.Initialize (This.all);
       return This;
    end Create;
 

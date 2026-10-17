@@ -13,7 +13,7 @@
 --  Generated Code Do Not Modify
 
 
-package body org.allbinary.game.layer.geological.resources_Case.GeologicalResourceInfoHudPaintable_Package is
+package body org.allbinary.game.layer.geological.resources.GeologicalResourceInfoHudPaintable_Package is
 
    procedure Initialize_Fields (This : in out GeologicalResourceInfoHudPaintable'Class) is
    begin
@@ -33,7 +33,7 @@ package body org.allbinary.game.layer.geological.resources_Case.GeologicalResour
    function Create return GeologicalResourceInfoHudPaintable_Access is
       This : constant GeologicalResourceInfoHudPaintable_Access := new GeologicalResourceInfoHudPaintable;
    begin
-      Initialize (This.all);
+      GeologicalResourceInfoHudPaintable_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -74,6 +74,6 @@ begin
    null;
    RESOURCES := To_Unbounded_String ("Resources: ");
 
-end org.allbinary.game.layer.geological.resources_Case.GeologicalResourceInfoHudPaintable_Package;
+end org.allbinary.game.layer.geological.resources.GeologicalResourceInfoHudPaintable_Package;
 
 

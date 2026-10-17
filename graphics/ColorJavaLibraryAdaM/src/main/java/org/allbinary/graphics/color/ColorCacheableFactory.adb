@@ -30,7 +30,7 @@ package body org.allbinary.graphics.color.ColorCacheableFactory_Package is
    function Create return ColorCacheableFactory_Access is
       This : constant ColorCacheableFactory_Access := new ColorCacheableFactory;
    begin
-      Initialize (This.all);
+      ColorCacheableFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

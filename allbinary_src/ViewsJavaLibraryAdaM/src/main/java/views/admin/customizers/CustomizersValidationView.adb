@@ -31,7 +31,7 @@ package body views.admin.customizers.CustomizersValidationView_Package is
    function Create (transformInfoInterface : TransformInfoInterface_Access) return CustomizersValidationView_Access is
       This : constant CustomizersValidationView_Access := new CustomizersValidationView;
    begin
-      Initialize (This.all, transformInfoInterface);
+      CustomizersValidationView_Package.Initialize (This.all, transformInfoInterface);
       return This;
    end Create;
 
@@ -82,27 +82,6 @@ package body views.admin.customizers.CustomizersValidationView_Package is
    begin
         return null;
    end toValidationInfoNode;
-
-   procedure isValid (This : in out CustomizersValidationView) is
-      Java_Result : constant Boolean := CustomizersValidationView'Class (This).isValid;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isValid;
-
-   procedure validationInfo (This : in out CustomizersValidationView) is
-      Java_Result : constant Unbounded_String := CustomizersValidationView'Class (This).validationInfo;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end validationInfo;
-
-   procedure toValidationInfoDoc (This : in out CustomizersValidationView) is
-      Java_Result : constant Document_Access := CustomizersValidationView'Class (This).toValidationInfoDoc;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toValidationInfoDoc;
 
    procedure toValidationInfoNode (This : in out CustomizersValidationView; document : Document_Access) is
       Java_Result : constant Node_Access := CustomizersValidationView'Class (This).toValidationInfoNode (document);

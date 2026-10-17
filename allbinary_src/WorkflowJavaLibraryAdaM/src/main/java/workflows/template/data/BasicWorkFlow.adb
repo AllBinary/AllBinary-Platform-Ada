@@ -41,7 +41,7 @@ package body workflows.template.data.BasicWorkFlow_Package is
    function Create (propertiesHashMap : HashMap_Access; pageContext : PageContext_Access) return BasicWorkFlow_Access is
       This : constant BasicWorkFlow_Access := new BasicWorkFlow;
    begin
-      Initialize (This.all, propertiesHashMap, pageContext);
+      BasicWorkFlow_Package.Initialize (This.all, propertiesHashMap, pageContext);
       return This;
    end Create;
 
@@ -74,34 +74,6 @@ package body workflows.template.data.BasicWorkFlow_Package is
             This.pageContext.getOut.print (This.validationDomNodeInterface.validationInfo);
             return To_Unbounded_String (Java_Image (TagSupport_Package.SKIP_BODY));
         end if;
-   end process;
-
-   procedure getName (This : in out BasicWorkFlow) is
-      Java_Result : constant Unbounded_String := BasicWorkFlow'Class (This).getName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getName;
-
-   procedure getPropertiesHashMap (This : in out BasicWorkFlow) is
-      Java_Result : constant HashMap_Access := BasicWorkFlow'Class (This).getPropertiesHashMap;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getPropertiesHashMap;
-
-   procedure getPageContext (This : in out BasicWorkFlow) is
-      Java_Result : constant PageContext_Access := BasicWorkFlow'Class (This).getPageContext;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getPageContext;
-
-   procedure process (This : in out BasicWorkFlow) is
-      Java_Result : constant Integer := BasicWorkFlow'Class (This).process;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end process;
 
 end workflows.template.data.BasicWorkFlow_Package;

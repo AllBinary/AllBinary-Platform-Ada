@@ -28,7 +28,7 @@ package body org.allbinary.logic.math.permutations.ComparableObject_Package is
    function Create return ComparableObject_Access is
       This : constant ComparableObject_Access := new ComparableObject;
    begin
-      Initialize (This.all);
+      ComparableObject_Package.Initialize (This.all);
       return This;
    end Create;
 

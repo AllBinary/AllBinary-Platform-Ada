@@ -37,7 +37,7 @@ package body org.allbinary.input.motion.gesture.observer.MotionGestureEvent_Pack
    function Create (source : Java_Object_Access; id : Integer; motionGesture : MotionGestureInput_Access) return MotionGestureEvent_Access is
       This : constant MotionGestureEvent_Access := new MotionGestureEvent;
    begin
-      Initialize (This.all, source, id, motionGesture);
+      MotionGestureEvent_Package.Initialize (This.all, source, id, motionGesture);
       return This;
    end Create;
 
@@ -90,41 +90,6 @@ package body org.allbinary.input.motion.gesture.observer.MotionGestureEvent_Pack
    function getId (This : in out MotionGestureEvent) return Integer is
    begin
         return This.id;
-   end getId;
-
-   procedure getMotionGesture (This : in out MotionGestureEvent) is
-      Java_Result : constant MotionGestureInput_Access := MotionGestureEvent'Class (This).getMotionGesture;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getMotionGesture;
-
-   procedure getPreviousPoint (This : in out MotionGestureEvent) is
-      Java_Result : constant GPoint_Access := MotionGestureEvent'Class (This).getPreviousPoint;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getPreviousPoint;
-
-   procedure getCurrentPoint (This : in out MotionGestureEvent) is
-      Java_Result : constant GPoint_Access := MotionGestureEvent'Class (This).getCurrentPoint;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getCurrentPoint;
-
-   procedure toString (This : in out MotionGestureEvent) is
-      Java_Result : constant Unbounded_String := MotionGestureEvent'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toString;
-
-   procedure getId (This : in out MotionGestureEvent) is
-      Java_Result : constant Integer := MotionGestureEvent'Class (This).getId;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getId;
 
 begin

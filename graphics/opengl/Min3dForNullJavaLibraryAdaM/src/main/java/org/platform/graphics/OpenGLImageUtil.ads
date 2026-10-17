@@ -25,7 +25,6 @@ package org.platform.graphics.OpenGLImageUtil_Package is
    procedure Initialize (This : in out OpenGLImageUtil'Class);
    function Create return OpenGLImageUtil_Access;
    function getInstance return OpenGLImageUtil_Access;
-   procedure getInstance;
 
 end org.platform.graphics.OpenGLImageUtil_Package;
 

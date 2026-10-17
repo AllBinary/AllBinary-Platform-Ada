@@ -29,7 +29,7 @@ package body org.allbinary.logic.system.security.licensing.LockableFeatureFactor
    function Create return LockableFeatureFactory_Access is
       This : constant LockableFeatureFactory_Access := new LockableFeatureFactory;
    begin
-      Initialize (This.all);
+      LockableFeatureFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -42,20 +42,6 @@ package body org.allbinary.logic.system.security.licensing.LockableFeatureFactor
    function getList (This : in out LockableFeatureFactory) return BasicArrayList_Access is
    begin
         return This.list;
-   end getList;
-
-   procedure getInstance is
-      Java_Result : constant LockableFeatureFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure getList (This : in out LockableFeatureFactory) is
-      Java_Result : constant BasicArrayList_Access := LockableFeatureFactory'Class (This).getList;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getList;
 
 begin

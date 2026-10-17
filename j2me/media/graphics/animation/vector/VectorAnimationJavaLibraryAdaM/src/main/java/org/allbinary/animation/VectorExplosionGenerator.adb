@@ -39,7 +39,7 @@ package body org.allbinary.animation.VectorExplosionGenerator_Package is
    function Create return VectorExplosionGenerator_Access is
       This : constant VectorExplosionGenerator_Access := new VectorExplosionGenerator;
    begin
-      Initialize (This.all);
+      VectorExplosionGenerator_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -160,13 +160,6 @@ package body org.allbinary.animation.VectorExplosionGenerator_Package is
         end loop;
         return firstPointBasicArrayList;
    end createPointsBasicArrayList;
-
-   procedure getInstance is
-      Java_Result : constant VectorExplosionGenerator_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure createList (This : in out VectorExplosionGenerator; list : BasicArrayList_Access; howMuch : Integer; type_Id : VectorExplosionType_Access) is
       Java_Result : constant BasicArrayList_Access := VectorExplosionGenerator'Class (This).createList (list, howMuch, type_Id);

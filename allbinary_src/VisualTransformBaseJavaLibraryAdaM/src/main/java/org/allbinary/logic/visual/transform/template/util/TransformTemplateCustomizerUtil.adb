@@ -55,7 +55,7 @@ package body org.allbinary.logic.visual.transform.template.util.TransformTemplat
    function Create return TransformTemplateCustomizerUtil_Access is
       This : constant TransformTemplateCustomizerUtil_Access := new TransformTemplateCustomizerUtil;
    begin
-      Initialize (This.all);
+      TransformTemplateCustomizerUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -86,13 +86,6 @@ package body org.allbinary.logic.visual.transform.template.util.TransformTemplat
         end if;
         return rootViewName;
    end getPageNameHack;
-
-   procedure getInstance is
-      Java_Result : constant TransformTemplateCustomizerUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure getPageNameHack (This : in out TransformTemplateCustomizerUtil; viewName : Unbounded_String; storeName : Unbounded_String) is
       Java_Result : constant Unbounded_String := TransformTemplateCustomizerUtil'Class (This).getPageNameHack (viewName, storeName);

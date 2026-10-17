@@ -30,6 +30,8 @@ with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Packag
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
+with org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileActionJPanel_Package; use org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileActionJPanel_Package;
+with org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileActionData_Package; use org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileActionData_Package;
 
 package org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileAction_Package is
 
@@ -58,14 +60,11 @@ package org.allbinary.input.automation.module.generic_Id.configuration.profile.a
    procedure Initialize (This : in out GenericProfileAction'Class; genericProfileActionJPanel : GenericProfileActionJPanel_Access; node : Node_Access);
    function Create (genericProfileActionJPanel : GenericProfileActionJPanel_Access; node : Node_Access) return GenericProfileAction_Access;
    function getName (This : in out GenericProfileAction) return Unbounded_String;
-   procedure getName (This : in out GenericProfileAction);
    procedure setName (This : in out GenericProfileAction; name : Unbounded_String);
    function toHashMap (This : in out GenericProfileAction) return HashMap_Access;
-   procedure toHashMap (This : in out GenericProfileAction);
    function toXmlNode (This : in out GenericProfileAction; document : Document_Access) return Node_Access;
    procedure toXmlNode (This : in out GenericProfileAction; document : Document_Access);
    function getGenericProfileActionScript (This : in out GenericProfileAction) return GenericProfileActionScript_Access;
-   procedure getGenericProfileActionScript (This : in out GenericProfileAction);
    procedure setGenericProfileActionScript (This : in out GenericProfileAction; genericProfileActionScript : GenericProfileActionScript_Access);
 
 end org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileAction_Package;

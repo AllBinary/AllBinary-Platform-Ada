@@ -22,6 +22,8 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
 with org.allbinary.logic.util.event.AllBinaryEventCircularPool_Package; use org.allbinary.logic.util.event.AllBinaryEventCircularPool_Package;
+with org.allbinary.game.tracking.TrackingEventFactory_Package; use org.allbinary.game.tracking.TrackingEventFactory_Package;
+with org.allbinary.game.tracking.TrackingEvent_Package; use org.allbinary.game.tracking.TrackingEvent_Package;
 
 package org.allbinary.game.tracking.TrackingEventCircularStaticPool_Package is
 
@@ -41,7 +43,6 @@ package org.allbinary.game.tracking.TrackingEventCircularStaticPool_Package is
    procedure Initialize (This : in out TrackingEventCircularStaticPool'Class);
    function Create return TrackingEventCircularStaticPool_Access;
    function getInstance return TrackingEventCircularStaticPool_Access;
-   procedure getInstance;
    procedure init (This : in out TrackingEventCircularStaticPool);
    function getNextInstance (This : in out TrackingEventCircularStaticPool; layerInterface : AllBinaryLayer_Access) return TrackingEvent_Access;
    procedure getNextInstance (This : in out TrackingEventCircularStaticPool; layerInterface : AllBinaryLayer_Access);

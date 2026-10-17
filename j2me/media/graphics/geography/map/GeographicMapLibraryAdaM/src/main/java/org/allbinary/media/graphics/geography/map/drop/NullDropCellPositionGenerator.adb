@@ -29,7 +29,7 @@ package body org.allbinary.media.graphics.geography.map.drop.NullDropCellPositio
    function Create return NullDropCellPositionGenerator_Access is
       This : constant NullDropCellPositionGenerator_Access := new NullDropCellPositionGenerator;
    begin
-      Initialize (This.all);
+      NullDropCellPositionGenerator_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -37,13 +37,6 @@ package body org.allbinary.media.graphics.geography.map.drop.NullDropCellPositio
    function getInstance return NullDropCellPositionGenerator_Access is
    begin
         return NullDropCellPositionGenerator_Package.instance;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant NullDropCellPositionGenerator_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

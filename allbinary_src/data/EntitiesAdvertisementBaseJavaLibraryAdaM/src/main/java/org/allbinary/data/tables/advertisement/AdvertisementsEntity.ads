@@ -69,12 +69,9 @@ package org.allbinary.data.tables.advertisement.AdvertisementsEntity_Package is
    function get (This : in out AdvertisementsEntity; storeName : Unbounded_String; advertismentName : Unbounded_String) return AdvertisementInterface_Access;
    procedure get (This : in out AdvertisementsEntity; storeName : Unbounded_String; advertismentName : Unbounded_String);
    function createTableStatement (This : in out AdvertisementsEntity) return Unbounded_String;
-   procedure createTableStatement (This : in out AdvertisementsEntity);
    function createTable (This : in out AdvertisementsEntity) return Unbounded_String;
-   procedure createTable (This : in out AdvertisementsEntity);
    procedure update (This : in out AdvertisementsEntity; updatedValues : HashMap_Access);
    function dropTable (This : in out AdvertisementsEntity) return Unbounded_String;
-   procedure dropTable (This : in out AdvertisementsEntity);
 
 end org.allbinary.data.tables.advertisement.AdvertisementsEntity_Package;
 

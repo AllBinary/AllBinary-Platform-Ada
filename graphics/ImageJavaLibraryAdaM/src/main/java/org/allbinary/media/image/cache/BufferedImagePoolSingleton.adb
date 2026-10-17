@@ -55,20 +55,13 @@ package body org.allbinary.media.image.cache.BufferedImagePoolSingleton_Package 
    function Create return BufferedImagePoolSingleton_Access is
       This : constant BufferedImagePoolSingleton_Access := new BufferedImagePoolSingleton;
    begin
-      Initialize (This.all);
+      BufferedImagePoolSingleton_Package.Initialize (This.all);
       return This;
    end Create;
 
    function getInstance return PoolInterface_Access is
    begin
         return BufferedImagePoolSingleton_Package.poolInterface;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant PoolInterface_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

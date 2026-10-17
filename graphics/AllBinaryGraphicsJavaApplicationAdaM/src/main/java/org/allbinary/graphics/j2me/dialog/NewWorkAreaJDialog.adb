@@ -80,7 +80,7 @@ package body org.allbinary.graphics.j2me.dialog.NewWorkAreaJDialog_Package is
    function Create (parent : MyFrame_Access; modal : Boolean; dimension : Dimension_Access; newName : Unbounded_String) return NewWorkAreaJDialog_Access is
       This : constant NewWorkAreaJDialog_Access := new NewWorkAreaJDialog;
    begin
-      Initialize (This.all, parent, modal, dimension, newName);
+      NewWorkAreaJDialog_Package.Initialize (This.all, parent, modal, dimension, newName);
       return This;
    end Create;
 

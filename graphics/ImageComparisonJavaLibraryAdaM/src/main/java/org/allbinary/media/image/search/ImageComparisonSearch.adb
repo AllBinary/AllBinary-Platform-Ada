@@ -70,7 +70,7 @@ package body org.allbinary.media.image.search.ImageComparisonSearch_Package is
    function Create (bufferedImage : BufferedImage_Access; bufferedImage2 : BufferedImage_Access; tolerance : Integer) return ImageComparisonSearch_Access is
       This : constant ImageComparisonSearch_Access := new ImageComparisonSearch;
    begin
-      Initialize (This.all, bufferedImage, bufferedImage2, tolerance);
+      ImageComparisonSearch_Package.Initialize (This.all, bufferedImage, bufferedImage2, tolerance);
       return This;
    end Create;
 
@@ -116,41 +116,6 @@ package body org.allbinary.media.image.search.ImageComparisonSearch_Package is
    begin
         This.tolerance := tolerance;
    end setTolerance;
-
-   procedure getMatchingPercent (This : in out ImageComparisonSearch) is
-      Java_Result : constant Float := ImageComparisonSearch'Class (This).getMatchingPercent;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getMatchingPercent;
-
-   procedure getNonMatchingPixelVector (This : in out ImageComparisonSearch) is
-      Java_Result : constant BasicArrayList_Access := ImageComparisonSearch'Class (This).getNonMatchingPixelVector;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getNonMatchingPixelVector;
-
-   procedure toString (This : in out ImageComparisonSearch) is
-      Java_Result : constant Unbounded_String := ImageComparisonSearch'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toString;
-
-   procedure getBufferedImages (This : in out ImageComparisonSearch) is
-      Java_Result : constant BufferedImage_Access_Array_Access := ImageComparisonSearch'Class (This).getBufferedImages;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getBufferedImages;
-
-   procedure getTolerance (This : in out ImageComparisonSearch) is
-      Java_Result : constant Integer := ImageComparisonSearch'Class (This).getTolerance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTolerance;
 
 end org.allbinary.media.image.search.ImageComparisonSearch_Package;
 

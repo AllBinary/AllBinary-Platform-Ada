@@ -33,7 +33,7 @@ package body org.allbinary.graphics.draw.DrawVerticalStringUtil_Package is
    function Create return DrawVerticalStringUtil_Access is
       This : constant DrawVerticalStringUtil_Access := new DrawVerticalStringUtil;
    begin
-      Initialize (This.all);
+      DrawVerticalStringUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -150,13 +150,6 @@ package body org.allbinary.graphics.draw.DrawVerticalStringUtil_Package is
             end if;
         end loop;
    end drawCenterStrings;
-
-   procedure getInstance is
-      Java_Result : constant DrawVerticalStringUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

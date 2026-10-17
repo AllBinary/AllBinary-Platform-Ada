@@ -44,7 +44,7 @@ package body org.allbinary.game.score.displayable.HighScoreUtil_Package is
    function Create (highScoresFactoryInterface : HighScoresFactoryInterface_Access; highScoresHelper : HighScoresHelperBaseInterface_Access; abeClientInformation : AbeClientInformationInterface_Access; gameInfo : GameInfo_Access; cmdListener : CommandListener_Access; name : Unbounded_String; highScore : HighScore_Access) return HighScoreUtil_Access is
       This : constant HighScoreUtil_Access := new HighScoreUtil;
    begin
-      Initialize (This.all, highScoresFactoryInterface, highScoresHelper, abeClientInformation, gameInfo, cmdListener, name, highScore);
+      HighScoreUtil_Package.Initialize (This.all, highScoresFactoryInterface, highScoresHelper, abeClientInformation, gameInfo, cmdListener, name, highScore);
       return This;
    end Create;
 

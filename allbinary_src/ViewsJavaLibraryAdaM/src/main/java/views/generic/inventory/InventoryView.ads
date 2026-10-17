@@ -71,7 +71,6 @@ package views.generic_Id.inventory.InventoryView_Package is
    procedure toXmlNode (This : in out InventoryView; document : Document_Access);
    procedure addDomNodeInterfaces (This : in out InventoryView);
    function view (This : in out InventoryView) return Unbounded_String;
-   procedure view (This : in out InventoryView);
 
 end views.generic_Id.inventory.InventoryView_Package;
 

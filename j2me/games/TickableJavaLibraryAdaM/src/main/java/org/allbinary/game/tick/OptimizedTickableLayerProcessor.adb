@@ -29,7 +29,7 @@ package body org.allbinary.game.tick.OptimizedTickableLayerProcessor_Package is
    function Create return OptimizedTickableLayerProcessor_Access is
       This : constant OptimizedTickableLayerProcessor_Access := new OptimizedTickableLayerProcessor;
    begin
-      Initialize (This.all);
+      OptimizedTickableLayerProcessor_Package.Initialize (This.all);
       return This;
    end Create;
 

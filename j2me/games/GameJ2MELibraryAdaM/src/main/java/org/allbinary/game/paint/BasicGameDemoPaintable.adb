@@ -38,7 +38,7 @@ package body org.allbinary.game.paint.BasicGameDemoPaintable_Package is
    function Create (mainDemoStatePaintable : Paintable_Access; ownershipPaintable : Paintable_Access; helpPaintableInterface : Paintable_Access) return BasicGameDemoPaintable_Access is
       This : constant BasicGameDemoPaintable_Access := new BasicGameDemoPaintable;
    begin
-      Initialize (This.all, mainDemoStatePaintable, ownershipPaintable, helpPaintableInterface);
+      BasicGameDemoPaintable_Package.Initialize (This.all, mainDemoStatePaintable, ownershipPaintable, helpPaintableInterface);
       return This;
    end Create;
 
@@ -76,27 +76,6 @@ package body org.allbinary.game.paint.BasicGameDemoPaintable_Package is
    function getMainDemoStatePaintable (This : in out BasicGameDemoPaintable) return Paintable_Access is
    begin
         return This.mainDemoStatePaintable;
-   end getMainDemoStatePaintable;
-
-   procedure getHelpPaintableInterface (This : in out BasicGameDemoPaintable) is
-      Java_Result : constant Paintable_Access := BasicGameDemoPaintable'Class (This).getHelpPaintableInterface;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getHelpPaintableInterface;
-
-   procedure getCurrentStatePaintable (This : in out BasicGameDemoPaintable) is
-      Java_Result : constant Paintable_Access := BasicGameDemoPaintable'Class (This).getCurrentStatePaintable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getCurrentStatePaintable;
-
-   procedure getMainDemoStatePaintable (This : in out BasicGameDemoPaintable) is
-      Java_Result : constant Paintable_Access := BasicGameDemoPaintable'Class (This).getMainDemoStatePaintable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getMainDemoStatePaintable;
 
 end org.allbinary.game.paint.BasicGameDemoPaintable_Package;

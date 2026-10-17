@@ -35,10 +35,8 @@ package org.allbinary.media.graphics.geography.map.GeographicMapCellHistoryProgr
    procedure Initialize (This : in out GeographicMapCellHistoryProgressBase'Class);
    function Create return GeographicMapCellHistoryProgressBase_Access;
    function getInstance return GeographicMapCellHistoryProgressBase_Access;
-   procedure getInstance;
    procedure init (This : in out GeographicMapCellHistoryProgressBase);
    function isAnyProgress (This : in out GeographicMapCellHistoryProgressBase) return Boolean;
-   procedure isAnyProgress (This : in out GeographicMapCellHistoryProgressBase);
 
 end org.allbinary.media.graphics.geography.map.GeographicMapCellHistoryProgressBase_Package;
 

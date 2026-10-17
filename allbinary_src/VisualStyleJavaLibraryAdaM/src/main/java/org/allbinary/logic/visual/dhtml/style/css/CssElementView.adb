@@ -44,7 +44,7 @@ package body org.allbinary.logic.visual.dhtml.style.css.CssElementView_Package i
    function Create return CssElementView_Access is
       This : constant CssElementView_Access := new CssElementView;
    begin
-      Initialize (This.all);
+      CssElementView_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -100,7 +100,7 @@ package body org.allbinary.logic.visual.dhtml.style.css.CssElementView_Package i
    function Create (node : Node_Access) return CssElementView_Access is
       This : constant CssElementView_Access := new CssElementView;
    begin
-      Initialize (This.all, node);
+      CssElementView_Package.Initialize (This.all, node);
       return This;
    end Create;
 
@@ -146,20 +146,6 @@ package body org.allbinary.logic.visual.dhtml.style.css.CssElementView_Package i
         end loop;
         return node;
    end toXmlNode;
-
-   procedure getValue (This : in out CssElementView) is
-      Java_Result : constant Unbounded_String := CssElementView'Class (This).getValue;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getValue;
-
-   procedure toHashMap (This : in out CssElementView) is
-      Java_Result : constant HashMap_Access := CssElementView'Class (This).toHashMap;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toHashMap;
 
    procedure toXmlNode (This : in out CssElementView; document : Document_Access) is
       Java_Result : constant Node_Access := CssElementView'Class (This).toXmlNode (document);

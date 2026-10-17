@@ -39,7 +39,6 @@ package org.allbinary.animation.VectorAnimationUtil_Package is
    procedure Initialize (This : in out VectorAnimationUtil'Class);
    function Create return VectorAnimationUtil_Access;
    function getInstance return VectorAnimationUtil_Access;
-   procedure getInstance;
    function toAnimationArrayFromListOfPointListWithPointsPerFrame (This : in out VectorAnimationUtil; vector : BasicArrayList_Access; pointsPerFrame : Integer) return Integer_Array_Access_Array_Access_Array_Access;
    procedure toAnimationArrayFromListOfPointListWithPointsPerFrame (This : in out VectorAnimationUtil; vector : BasicArrayList_Access; pointsPerFrame : Integer);
    function toAnimationArrayFromListOfPointList (This : in out VectorAnimationUtil; vector : BasicArrayList_Access) return Integer_Array_Access_Array_Access_Array_Access;

@@ -31,7 +31,7 @@ package body org.allbinary.animation.vector.LineAnimationFactory_Package is
    function Create (basicColor : BasicColor_Access) return LineAnimationFactory_Access is
       This : constant LineAnimationFactory_Access := new LineAnimationFactory;
    begin
-      Initialize (This.all, basicColor);
+      LineAnimationFactory_Package.Initialize (This.all, basicColor);
       return This;
    end Create;
 

@@ -29,7 +29,7 @@ package body org.allbinary.graphics.canvas.transition.progress.LazyProgressCanva
    function Create (title : Unbounded_String; backgroundBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access) return LazyProgressCanvas_Access is
       This : constant LazyProgressCanvas_Access := new LazyProgressCanvas;
    begin
-      Initialize (This.all, title, backgroundBasicColor, foregroundBasicColor);
+      LazyProgressCanvas_Package.Initialize (This.all, title, backgroundBasicColor, foregroundBasicColor);
       return This;
    end Create;
 

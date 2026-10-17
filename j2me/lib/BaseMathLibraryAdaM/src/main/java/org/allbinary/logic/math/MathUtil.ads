@@ -27,9 +27,8 @@ package org.allbinary.logic.math.MathUtil_Package is
    procedure Initialize (This : in out MathUtil'Class);
    function Create return MathUtil_Access;
    function getInstance return MathUtil_Access;
-   procedure getInstance;
-   function getTotalDigits (This : in out MathUtil; digits_Id : Integer) return Integer;
-   procedure getTotalDigits (This : in out MathUtil; digits_Id : Integer);
+   function getTotalDigits (This : in out MathUtil; digits_Id_Param : Integer) return Integer;
+   procedure getTotalDigits (This : in out MathUtil; digits_Id_Param : Integer);
    function sqrt (This : in out MathUtil; value : Integer) return Integer;
    procedure sqrt (This : in out MathUtil; value : Integer);
    function sqrtd (This : in out MathUtil; x : Integer) return Long_Float;

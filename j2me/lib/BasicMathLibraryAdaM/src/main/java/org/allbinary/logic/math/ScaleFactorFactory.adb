@@ -30,7 +30,7 @@ package body org.allbinary.logic.math.ScaleFactorFactory_Package is
    function Create return ScaleFactorFactory_Access is
       This : constant ScaleFactorFactory_Access := new ScaleFactorFactory;
    begin
-      Initialize (This.all);
+      ScaleFactorFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -38,13 +38,6 @@ package body org.allbinary.logic.math.ScaleFactorFactory_Package is
    function getInstance return ScaleFactorFactory_Access is
    begin
         return ScaleFactorFactory_Package.instance;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant ScaleFactorFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

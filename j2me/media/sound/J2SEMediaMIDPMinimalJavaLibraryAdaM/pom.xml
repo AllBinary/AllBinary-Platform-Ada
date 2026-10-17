@@ -216,7 +216,29 @@
                                 <argument>${ada.fail.on.error}</argument>
                                 <argument>${ada.runtime.source.path}</argument>
                                 <argument>${ada.jsinterop.source.path}</argument>
+                                <argument>${project.build.directory}/ada-dependencies/META-INF/ada</argument>
                             </arguments>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>3.8.1</version>
+                <executions>
+                    <execution>
+                        <id>unpack-ada-dependencies</id>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>unpack-dependencies</goal>
+                        </goals>
+                        <configuration>
+                            <includeGroupIds>org.allbinary</includeGroupIds>
+                            <includes>META-INF/ada/**</includes>
+                            <outputDirectory>${project.build.directory}/ada-dependencies</outputDirectory>
+                            <overWriteSnapshots>true</overWriteSnapshots>
                         </configuration>
                     </execution>
                 </executions>

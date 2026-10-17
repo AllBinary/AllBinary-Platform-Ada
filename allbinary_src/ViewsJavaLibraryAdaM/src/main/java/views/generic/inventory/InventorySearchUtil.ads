@@ -51,6 +51,7 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
+with views.generic_Id.inventory.InventoryColumnUtil_Package; use views.generic_Id.inventory.InventoryColumnUtil_Package;
 
 package views.generic_Id.inventory.InventorySearchUtil_Package is
 
@@ -101,7 +102,6 @@ package views.generic_Id.inventory.InventorySearchUtil_Package is
    procedure Initialize (This : in out InventorySearchUtil'Class);
    function Create return InventorySearchUtil_Access;
    function getInstance return InventorySearchUtil_Access;
-   procedure getInstance;
    function getBasicItemIdColumn (This : in out InventorySearchUtil; searchRequest : SearchRequest_Access) return BasicArrayList_Access;
    procedure getBasicItemIdColumn (This : in out InventorySearchUtil; searchRequest : SearchRequest_Access);
    function getNoResults (This : in out InventorySearchUtil; viewDocumentInterface : TransformDocumentInterface_Access; inventoryNode : Node_Access) return Unbounded_String;

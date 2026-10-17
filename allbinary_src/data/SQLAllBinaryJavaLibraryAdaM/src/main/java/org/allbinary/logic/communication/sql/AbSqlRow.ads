@@ -84,7 +84,6 @@ package org.allbinary.logic.communication.sql.AbSqlRow_Package is
    function getRows (This : in out AbSqlRow; keysAndValues : HashMap_Access; more : Unbounded_String) return BasicArrayList_Access;
    procedure getRows (This : in out AbSqlRow; keysAndValues : HashMap_Access; more : Unbounded_String);
    function getAllRows (This : in out AbSqlRow) return BasicArrayList_Access;
-   procedure getAllRows (This : in out AbSqlRow);
    function getRowsWhereBetween (This : in out AbSqlRow; whereKeyValuePairs : HashMap_Access; betweenColumn : Unbounded_String; smallest : Unbounded_String; largest : Unbounded_String) return BasicArrayList_Access;
    procedure getRowsWhereBetween (This : in out AbSqlRow; whereKeyValuePairs : HashMap_Access; betweenColumn : Unbounded_String; smallest : Unbounded_String; largest : Unbounded_String);
    function getRowsWhereBetween (This : in out AbSqlRow; betweenColumn : Unbounded_String; smallest : Unbounded_String; largest : Unbounded_String) return BasicArrayList_Access;

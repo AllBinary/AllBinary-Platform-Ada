@@ -28,7 +28,7 @@ package body org.allbinary.logic.MEUtil_Package is
    function Create return MEUtil_Access is
       This : constant MEUtil_Access := new MEUtil;
    begin
-      Initialize (This.all);
+      MEUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -42,13 +42,6 @@ package body org.allbinary.logic.MEUtil_Package is
    begin
         form.append (item);
    end appendItem;
-
-   procedure getInstance is
-      Java_Result : constant MEUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

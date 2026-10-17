@@ -20,7 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.util.Calendar_Package; use java.util.Calendar_Package;
+with java.util.Calendar_Package; use java.util.Calendar_Package;
 --  with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
@@ -53,9 +53,11 @@ with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.Com
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
+with org.allbinary.logic.visual.transform.info.TransformInfoData_Package; use org.allbinary.logic.visual.transform.info.TransformInfoData_Package;
 
 package org.allbinary.logic.visual.transform.info.TransformInfo_Package is
 
+   package Calendar_Package renames Standard.java.util.Calendar_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
    package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    package StoreFrontData_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
@@ -113,11 +115,9 @@ package org.allbinary.logic.visual.transform.info.TransformInfo_Package is
    function Create return TransformInfo_Access;
    procedure override (This : in out TransformInfo; hashMap : HashMap_Access);
    function log (This : in out TransformInfo) return Unbounded_String;
-   procedure log (This : in out TransformInfo);
    procedure setName (This : in out TransformInfo; value : Unbounded_String);
    procedure setStoreName (This : in out TransformInfo; value : Unbounded_String);
    function getStoreName (This : in out TransformInfo) return Unbounded_String;
-   procedure getStoreName (This : in out TransformInfo);
    procedure setObject (This : in out TransformInfo; anyType : Java_Object_Access);
    procedure setObjectFile (This : in out TransformInfo; value : Unbounded_String);
    procedure setTemplate (This : in out TransformInfo; value : Unbounded_String);
@@ -128,40 +128,23 @@ package org.allbinary.logic.visual.transform.info.TransformInfo_Package is
    procedure setDataFile (This : in out TransformInfo; value : Unbounded_String);
    procedure setData (This : in out TransformInfo; value : Unbounded_String);
    function getName (This : in out TransformInfo) return Unbounded_String;
-   procedure getName (This : in out TransformInfo);
    function getObject (This : in out TransformInfo) return Java_Object_Access;
-   procedure getObject (This : in out TransformInfo);
    function getObjectFile (This : in out TransformInfo) return Unbounded_String;
-   procedure getObjectFile (This : in out TransformInfo);
    function getTemplate (This : in out TransformInfo) return Unbounded_String;
-   procedure getTemplate (This : in out TransformInfo);
    function getTemplateFile (This : in out TransformInfo) return Unbounded_String;
-   procedure getTemplateFile (This : in out TransformInfo);
    function getTemplateFilePath (This : in out TransformInfo) return AbPath_Access;
-   procedure getTemplateFilePath (This : in out TransformInfo);
    function getObjectConfigFilePath (This : in out TransformInfo) return AbPath_Access;
-   procedure getObjectConfigFilePath (This : in out TransformInfo);
    function getDataFilePath (This : in out TransformInfo) return AbPath_Access;
-   procedure getDataFilePath (This : in out TransformInfo);
    function getObjectConfigFile (This : in out TransformInfo) return Unbounded_String;
-   procedure getObjectConfigFile (This : in out TransformInfo);
    function getData (This : in out TransformInfo) return Unbounded_String;
-   procedure getData (This : in out TransformInfo);
    function getDataDocument (This : in out TransformInfo) return Document_Access;
-   procedure getDataDocument (This : in out TransformInfo);
    function getDataFile (This : in out TransformInfo) return Unbounded_String;
-   procedure getDataFile (This : in out TransformInfo);
    function toHashMap (This : in out TransformInfo) return HashMap_Access;
-   procedure toHashMap (This : in out TransformInfo);
    function toVector (This : in out TransformInfo) return BasicArrayList_Access;
-   procedure toVector (This : in out TransformInfo);
    function getKey (This : in out TransformInfo) return Java_Object_Access;
-   procedure getKey (This : in out TransformInfo);
    procedure setChild (This : in out TransformInfo);
    function isChild (This : in out TransformInfo) return Boolean;
-   procedure isChild (This : in out TransformInfo);
    function getObjectConfigInterface (This : in out TransformInfo) return TransformInfoObjectConfigInterface_Access;
-   procedure getObjectConfigInterface (This : in out TransformInfo);
    procedure setObjectConfigInterface (This : in out TransformInfo; objectConfigInterface : TransformInfoObjectConfigInterface_Access);
 
 end org.allbinary.logic.visual.transform.info.TransformInfo_Package;

@@ -31,6 +31,10 @@ with org.allbinary.media.graphics.geography.map.GeographicMapCellHistory_Package
 with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.game.layer.PathFindingLayerInterface_Package; use org.allbinary.game.layer.PathFindingLayerInterface_Package;
+with org.allbinary.game.layer.GeographicMapCellPositionAreaBase_Package; use org.allbinary.game.layer.GeographicMapCellPositionAreaBase_Package;
+with org.allbinary.game.layer.SelectionHudPaintable_Package; use org.allbinary.game.layer.SelectionHudPaintable_Package;
+with org.allbinary.game.layer.RTSLayer2LogHelper_Package; use org.allbinary.game.layer.RTSLayer2LogHelper_Package;
+with org.allbinary.game.layer.WaypointBehaviorBase_Package; use org.allbinary.game.layer.WaypointBehaviorBase_Package;
 
 package org.allbinary.game.layer.NullPathFindingLayer_Package is
 
@@ -56,20 +60,13 @@ package org.allbinary.game.layer.NullPathFindingLayer_Package is
    procedure Initialize (This : in out NullPathFindingLayer'Class);
    function Create return NullPathFindingLayer_Access;
    function getName (This : in out NullPathFindingLayer) return Unbounded_String;
-   procedure getName (This : in out NullPathFindingLayer);
    function getEndGeographicMapCellPositionList (This : in out NullPathFindingLayer) return BasicArrayList_Access;
-   procedure getEndGeographicMapCellPositionList (This : in out NullPathFindingLayer);
    function shouldHandleStartSameAsEnd (This : in out NullPathFindingLayer) return Boolean;
-   procedure shouldHandleStartSameAsEnd (This : in out NullPathFindingLayer);
    function getGeographicMapCellPositionArea (This : in out NullPathFindingLayer) return GeographicMapCellPositionAreaBase_Access;
-   procedure getGeographicMapCellPositionArea (This : in out NullPathFindingLayer);
    function getHudPaintable (This : in out NullPathFindingLayer) return SelectionHudPaintable_Access;
-   procedure getHudPaintable (This : in out NullPathFindingLayer);
    procedure handleCost (This : in out NullPathFindingLayer; ownerLayer : PathFindingLayerInterface_Access);
    function getParentLayer (This : in out NullPathFindingLayer) return PathFindingLayerInterface_Access;
-   procedure getParentLayer (This : in out NullPathFindingLayer);
    function getRTSLayer2LogHelper (This : in out NullPathFindingLayer) return RTSLayer2LogHelper_Access;
-   procedure getRTSLayer2LogHelper (This : in out NullPathFindingLayer);
    procedure setTarget (This : in out NullPathFindingLayer; targetGameLayer : PathFindingLayerInterface_Access);
    procedure init (This : in out NullPathFindingLayer; geographicMapCellHistory : GeographicMapCellHistory_Access; geographicMapCellPositionBasicArrayList : BasicArrayList_Access);
    function getMoveOutOfBuildAreaPath (This : in out NullPathFindingLayer; geographicMapCellPosition : GeographicMapCellPosition_Access) return BasicArrayList_Access;
@@ -78,42 +75,26 @@ package org.allbinary.game.layer.NullPathFindingLayer_Package is
    procedure teleportTo (This : in out NullPathFindingLayer; geographicMapCellPosition : GeographicMapCellPosition_Access);
    procedure setLoad (This : in out NullPathFindingLayer; resource : Integer);
    function getSurroundingGeographicMapCellPositionList (This : in out NullPathFindingLayer) return BasicArrayList_Access;
-   procedure getSurroundingGeographicMapCellPositionList (This : in out NullPathFindingLayer);
    function isSelected (This : in out NullPathFindingLayer) return Boolean;
-   procedure isSelected (This : in out NullPathFindingLayer);
    function shouldAddWaypointFromBuilding (This : in out NullPathFindingLayer) return Boolean;
-   procedure shouldAddWaypointFromBuilding (This : in out NullPathFindingLayer);
    function isShowMoreCaptionStates (This : in out NullPathFindingLayer) return Boolean;
-   procedure isShowMoreCaptionStates (This : in out NullPathFindingLayer);
    procedure trackTo (This : in out NullPathFindingLayer; reason : Unbounded_String);
    procedure trackToDXY (This : in out NullPathFindingLayer; dx : Integer; dy : Integer);
    function buildingChase (This : in out NullPathFindingLayer; allbinaryLayer : AllBinaryLayer_Access; cellPosition : GeographicMapCellPosition_Access) return Boolean;
    procedure buildingChase (This : in out NullPathFindingLayer; allbinaryLayer : AllBinaryLayer_Access; cellPosition : GeographicMapCellPosition_Access);
    function getTrackingEvent (This : in out NullPathFindingLayer) return TrackingEvent_Access;
-   procedure getTrackingEvent (This : in out NullPathFindingLayer);
    procedure allStop (This : in out NullPathFindingLayer);
    function isWaypointListEmptyOrOnlyTargets (This : in out NullPathFindingLayer) return Boolean;
-   procedure isWaypointListEmptyOrOnlyTargets (This : in out NullPathFindingLayer);
    function getCurrentGeographicMapCellPosition (This : in out NullPathFindingLayer) return GeographicMapCellPosition_Access;
-   procedure getCurrentGeographicMapCellPosition (This : in out NullPathFindingLayer);
    function getTopLeftGeographicMapCellPosition (This : in out NullPathFindingLayer) return GeographicMapCellPosition_Access;
-   procedure getTopLeftGeographicMapCellPosition (This : in out NullPathFindingLayer);
    function getCaptionAnimationHelper (This : in out NullPathFindingLayer) return CaptionAnimationHelperBase_Access;
-   procedure getCaptionAnimationHelper (This : in out NullPathFindingLayer);
    function getWaypointBehavior (This : in out NullPathFindingLayer) return WaypointBehaviorBase_Access;
-   procedure getWaypointBehavior (This : in out NullPathFindingLayer);
    function getWaypointLogHelper (This : in out NullPathFindingLayer) return WaypointLogHelper_Access;
-   procedure getWaypointLogHelper (This : in out NullPathFindingLayer);
    function getWaypoint2LogHelper (This : in out NullPathFindingLayer) return Waypoint2LogHelper_Access;
-   procedure getWaypoint2LogHelper (This : in out NullPathFindingLayer);
    function getWaypointRunnableLogHelper (This : in out NullPathFindingLayer) return WaypointRunnableLogHelper_Access;
-   procedure getWaypointRunnableLogHelper (This : in out NullPathFindingLayer);
    function getGroupInterface (This : in out NullPathFindingLayer) return Group_Access_Array_Access;
-   procedure getGroupInterface (This : in out NullPathFindingLayer);
    function isDestroyed (This : in out NullPathFindingLayer) return Boolean;
-   procedure isDestroyed (This : in out NullPathFindingLayer);
    function getSourceId (This : in out NullPathFindingLayer) return Integer;
-   procedure getSourceId (This : in out NullPathFindingLayer);
 
 end org.allbinary.game.layer.NullPathFindingLayer_Package;
 

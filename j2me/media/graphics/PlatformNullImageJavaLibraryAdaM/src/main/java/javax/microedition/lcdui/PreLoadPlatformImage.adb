@@ -29,7 +29,7 @@ package body javax.microedition.lcdui.PreLoadPlatformImage_Package is
    function Create return PreLoadPlatformImage_Access is
       This : constant PreLoadPlatformImage_Access := new PreLoadPlatformImage;
    begin
-      Initialize (This.all);
+      PreLoadPlatformImage_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -37,13 +37,6 @@ package body javax.microedition.lcdui.PreLoadPlatformImage_Package is
    function getInstance return PreLoadPlatformImage_Access is
    begin
         return PreLoadPlatformImage_Package.instance;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant PreLoadPlatformImage_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

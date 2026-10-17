@@ -66,6 +66,8 @@ with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Packag
 with org.allbinary.media.graphics.geography.map.GeographicMapCompositeInterface_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCompositeInterface_Package;
 with org.allbinary.view.ViewPositionBase_Package; use org.allbinary.view.ViewPositionBase_Package;
 with org.allbinary.game.input.RTSPlayerGameInput_Package; use org.allbinary.game.input.RTSPlayerGameInput_Package;
+with org.allbinary.game.input.LayerPositionFinderInterface_Package; use org.allbinary.game.input.LayerPositionFinderInterface_Package;
+with org.allbinary.game.input.SelectRTSLayerVisitorFactoryInterface_Package; use org.allbinary.game.input.SelectRTSLayerVisitorFactoryInterface_Package;
 
 package org.allbinary.game.input.HumanRTSPlayerGameInput_Package is
 
@@ -156,7 +158,6 @@ package org.allbinary.game.input.HumanRTSPlayerGameInput_Package is
    procedure onMotionGestureEvent (This : in out HumanRTSPlayerGameInput; motionGestureEvent : MotionGestureEvent_Access);
    procedure onScrolledMotionGestureEvent (This : in out HumanRTSPlayerGameInput; motionGestureEvent : MotionGestureEvent_Access);
    function getSelectedRtsLayer (This : in out HumanRTSPlayerGameInput) return CollidableDestroyableDamageableLayer_Access;
-   procedure getSelectedRtsLayer (This : in out HumanRTSPlayerGameInput);
    procedure setSelectedRtsLayer (This : in out HumanRTSPlayerGameInput; selectedRtsLayer : CollidableDestroyableDamageableLayer_Access);
 
 end org.allbinary.game.input.HumanRTSPlayerGameInput_Package;

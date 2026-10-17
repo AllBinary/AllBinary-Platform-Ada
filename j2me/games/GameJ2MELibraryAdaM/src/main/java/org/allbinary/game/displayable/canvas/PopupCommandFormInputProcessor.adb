@@ -29,7 +29,7 @@ package body org.allbinary.game.displayable.canvas.PopupCommandFormInputProcesso
    function Create (gameKeyEventList : BasicArrayList_Access; playerInputId : Integer; gameCanvas : MyCanvas_Access; form : ScrollSelectionForm_Access; popupMenuInputProcessor : PopupMenuInputProcessor_Access) return PopupCommandFormInputProcessor_Access is
       This : constant PopupCommandFormInputProcessor_Access := new PopupCommandFormInputProcessor;
    begin
-      Initialize (This.all, gameKeyEventList, playerInputId, gameCanvas, form, popupMenuInputProcessor);
+      PopupCommandFormInputProcessor_Package.Initialize (This.all, gameKeyEventList, playerInputId, gameCanvas, form, popupMenuInputProcessor);
       return This;
    end Create;
 

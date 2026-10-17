@@ -32,7 +32,7 @@ package body org.allbinary.media.graphics.geography.map.event.GeographicMapCellP
    function Create (anyType : Java_Object_Access) return GeographicMapCellPositionEventUtil_Access is
       This : constant GeographicMapCellPositionEventUtil_Access := new GeographicMapCellPositionEventUtil;
    begin
-      Initialize (This.all, anyType);
+      GeographicMapCellPositionEventUtil_Package.Initialize (This.all, anyType);
       return This;
    end Create;
 

@@ -28,7 +28,7 @@ package body org.allbinary.game.layer.pickup.RaceTrackPickupLayerFactory_Package
    function Create return RaceTrackPickupLayerFactory_Access is
       This : constant RaceTrackPickupLayerFactory_Access := new RaceTrackPickupLayerFactory;
    begin
-      Initialize (This.all);
+      RaceTrackPickupLayerFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -37,13 +37,6 @@ package body org.allbinary.game.layer.pickup.RaceTrackPickupLayerFactory_Package
    function getInstance (This : in out RaceTrackPickupLayerFactory) return AllBinaryLayer_Access is
    begin
         return RaceTrackPickupLayer_Package.Create;
-   end getInstance;
-
-   procedure getInstance (This : in out RaceTrackPickupLayerFactory) is
-      Java_Result : constant AllBinaryLayer_Access := RaceTrackPickupLayerFactory'Class (This).getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 end org.allbinary.game.layer.pickup.RaceTrackPickupLayerFactory_Package;

@@ -33,7 +33,7 @@ package body org.allbinary.game.ag.ai.SpinnerAI_Package is
    function Create (direction : Integer_Array_Access; ownerLayerInterface : AllBinaryLayer_Access; gameInput : GameInput_Access) return SpinnerAI_Access is
       This : constant SpinnerAI_Access := new SpinnerAI;
    begin
-      Initialize (This.all, direction, ownerLayerInterface, gameInput);
+      SpinnerAI_Package.Initialize (This.all, direction, ownerLayerInterface, gameInput);
       return This;
    end Create;
 

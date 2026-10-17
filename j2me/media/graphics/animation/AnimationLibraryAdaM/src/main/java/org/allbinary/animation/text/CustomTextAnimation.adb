@@ -38,7 +38,7 @@ package body org.allbinary.animation.text.CustomTextAnimation_Package is
    function Create (text : Unbounded_String; fontSize : Integer; animationBehavior : AnimationBehavior_Access) return CustomTextAnimation_Access is
       This : constant CustomTextAnimation_Access := new CustomTextAnimation;
    begin
-      Initialize (This.all, text, fontSize, animationBehavior);
+      CustomTextAnimation_Package.Initialize (This.all, text, fontSize, animationBehavior);
       return This;
    end Create;
 
@@ -87,27 +87,6 @@ package body org.allbinary.animation.text.CustomTextAnimation_Package is
    function getFontHeight (This : in out CustomTextAnimation) return Integer is
    begin
         return This.font.getHeight;
-   end getFontHeight;
-
-   procedure getText (This : in out CustomTextAnimation) is
-      Java_Result : constant Unbounded_String := CustomTextAnimation'Class (This).getText;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getText;
-
-   procedure getWidth (This : in out CustomTextAnimation) is
-      Java_Result : constant Integer := CustomTextAnimation'Class (This).getWidth;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getWidth;
-
-   procedure getFontHeight (This : in out CustomTextAnimation) is
-      Java_Result : constant Integer := CustomTextAnimation'Class (This).getFontHeight;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getFontHeight;
 
 end org.allbinary.animation.text.CustomTextAnimation_Package;

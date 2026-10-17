@@ -47,11 +47,8 @@ package views.admin.customizers.CustomizersValidationView_Package is
    procedure Initialize (This : in out CustomizersValidationView'Class; transformInfoInterface : TransformInfoInterface_Access);
    function Create (transformInfoInterface : TransformInfoInterface_Access) return CustomizersValidationView_Access;
    function isValid (This : in out CustomizersValidationView) return Boolean;
-   procedure isValid (This : in out CustomizersValidationView);
    function validationInfo (This : in out CustomizersValidationView) return Unbounded_String;
-   procedure validationInfo (This : in out CustomizersValidationView);
    function toValidationInfoDoc (This : in out CustomizersValidationView) return Document_Access;
-   procedure toValidationInfoDoc (This : in out CustomizersValidationView);
    function toValidationInfoNode (This : in out CustomizersValidationView; document : Document_Access) return Node_Access;
    procedure toValidationInfoNode (This : in out CustomizersValidationView; document : Document_Access);
 

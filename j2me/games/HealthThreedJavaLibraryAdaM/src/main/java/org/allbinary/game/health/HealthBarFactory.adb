@@ -28,7 +28,7 @@ package body org.allbinary.game.health.HealthBarFactory_Package is
    function Create return HealthBarFactory_Access is
       This : constant HealthBarFactory_Access := new HealthBarFactory;
    begin
-      Initialize (This.all);
+      HealthBarFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

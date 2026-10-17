@@ -21,6 +21,7 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.game.GameType_Package; use org.allbinary.game.GameType_Package;
 
 package org.allbinary.game.GameTypeFactory_Package is
 
@@ -43,7 +44,6 @@ package org.allbinary.game.GameTypeFactory_Package is
    procedure Initialize (This : in out GameTypeFactory'Class);
    function Create return GameTypeFactory_Access;
    function getInstance return GameTypeFactory_Access;
-   procedure getInstance;
 
 end org.allbinary.game.GameTypeFactory_Package;
 

@@ -42,7 +42,6 @@ package org.allbinary.logic.communication.http.HttpData_Package is
    procedure Initialize (This : in out HttpData'Class);
    function Create return HttpData_Access;
    function getInstance return HttpData_Access;
-   procedure getInstance;
 
 end org.allbinary.logic.communication.http.HttpData_Package;
 

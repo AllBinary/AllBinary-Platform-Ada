@@ -31,7 +31,7 @@ package body org.allbinary.servlet.ImageServlet_Package is
    function Create return ImageServlet_Access is
       This : constant ImageServlet_Access := new ImageServlet;
    begin
-      Initialize (This.all);
+      ImageServlet_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -88,13 +88,6 @@ package body org.allbinary.servlet.ImageServlet_Package is
    function getServletInfo (This : in out ImageServlet) return Unbounded_String is
    begin
         return To_Unbounded_String ("Serves Up Image");
-   end getServletInfo;
-
-   procedure getServletInfo (This : in out ImageServlet) is
-      Java_Result : constant Unbounded_String := ImageServlet'Class (This).getServletInfo;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getServletInfo;
 
 end org.allbinary.servlet.ImageServlet_Package;

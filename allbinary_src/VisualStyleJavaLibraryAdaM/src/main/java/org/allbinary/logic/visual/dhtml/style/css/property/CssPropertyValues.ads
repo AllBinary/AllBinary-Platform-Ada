@@ -34,6 +34,8 @@ with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
+with org.allbinary.logic.visual.dhtml.style.css.property.CssPropertyValueData_Package; use org.allbinary.logic.visual.dhtml.style.css.property.CssPropertyValueData_Package;
+with org.allbinary.logic.visual.dhtml.style.css.property.CssPropertyData_Package; use org.allbinary.logic.visual.dhtml.style.css.property.CssPropertyData_Package;
 
 package org.allbinary.logic.visual.dhtml.style.css.property.CssPropertyValues_Package is
 
@@ -64,7 +66,6 @@ package org.allbinary.logic.visual.dhtml.style.css.property.CssPropertyValues_Pa
    procedure Initialize (This : in out CssPropertyValues'Class);
    function Create return CssPropertyValues_Access;
    function toHashMap (This : in out CssPropertyValues) return HashMap_Access;
-   procedure toHashMap (This : in out CssPropertyValues);
    function toXmlNode (This : in out CssPropertyValues; document : Document_Access) return Node_Access;
    procedure toXmlNode (This : in out CssPropertyValues; document : Document_Access);
 

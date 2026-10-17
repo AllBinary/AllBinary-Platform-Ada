@@ -48,7 +48,6 @@ package views.business.context.modules.storefront.customizer.includes.style.css.
    function Create (transformInfoInterface : TransformInfoInterface_Access) return CssCustomizerView_Access;
    procedure addDomNodeInterfaces (This : in out CssCustomizerView);
    function view (This : in out CssCustomizerView) return Unbounded_String;
-   procedure view (This : in out CssCustomizerView);
 
 end views.business.context.modules.storefront.customizer.includes.style.css.CssCustomizerView_Package;
 

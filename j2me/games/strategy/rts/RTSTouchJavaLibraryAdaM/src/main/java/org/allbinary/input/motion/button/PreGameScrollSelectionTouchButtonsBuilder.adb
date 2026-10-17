@@ -30,7 +30,7 @@ package body org.allbinary.input.motion.button.PreGameScrollSelectionTouchButton
    function Create return PreGameScrollSelectionTouchButtonsBuilder_Access is
       This : constant PreGameScrollSelectionTouchButtonsBuilder_Access := new PreGameScrollSelectionTouchButtonsBuilder;
    begin
-      Initialize (This.all);
+      PreGameScrollSelectionTouchButtonsBuilder_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -66,13 +66,6 @@ package body org.allbinary.input.motion.button.PreGameScrollSelectionTouchButton
             return BasicArrayListUtil_Package.getInstance.getImmutableInstance;
                 end;
         end;
-   end getList;
-
-   procedure getList (This : in out PreGameScrollSelectionTouchButtonsBuilder) is
-      Java_Result : constant BasicArrayList_Access := PreGameScrollSelectionTouchButtonsBuilder'Class (This).getList;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getList;
 
 end org.allbinary.input.motion.button.PreGameScrollSelectionTouchButtonsBuilder_Package;

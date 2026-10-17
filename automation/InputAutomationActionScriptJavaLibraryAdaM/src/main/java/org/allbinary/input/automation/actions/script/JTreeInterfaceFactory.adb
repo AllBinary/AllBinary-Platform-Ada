@@ -21,7 +21,7 @@ package body org.allbinary.input.automation.actions.script.JTreeInterfaceFactory
    function Create return JTreeInterfaceFactory_Access is
       This : constant JTreeInterfaceFactory_Access := new JTreeInterfaceFactory;
    begin
-      Initialize (This.all);
+      JTreeInterfaceFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -39,20 +39,6 @@ package body org.allbinary.input.automation.actions.script.JTreeInterfaceFactory
    function getJTreeInterface (This : in out JTreeInterfaceFactory) return JTreeInterface_Access is
    begin
         return This.jTreeInterface;
-   end getJTreeInterface;
-
-   procedure getInstance is
-      Java_Result : constant JTreeInterfaceFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure getJTreeInterface (This : in out JTreeInterfaceFactory) is
-      Java_Result : constant JTreeInterface_Access := JTreeInterfaceFactory'Class (This).getJTreeInterface;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getJTreeInterface;
 
 begin

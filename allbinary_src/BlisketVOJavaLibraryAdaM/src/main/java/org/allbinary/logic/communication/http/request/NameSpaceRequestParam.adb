@@ -89,7 +89,7 @@ package body org.allbinary.logic.communication.http.request.NameSpaceRequestPara
    function Create (nameSpace : Unbounded_String; value : Unbounded_String) return NameSpaceRequestParam_Access is
       This : constant NameSpaceRequestParam_Access := new NameSpaceRequestParam;
    begin
-      Initialize (This.all, nameSpace, value);
+      NameSpaceRequestParam_Package.Initialize (This.all, nameSpace, value);
       return This;
    end Create;
 
@@ -165,26 +165,12 @@ package body org.allbinary.logic.communication.http.request.NameSpaceRequestPara
         return packagePropertiesHashMap;
    end generatePackagePropertiesHashMap;
 
-   procedure getPackages (This : in out NameSpaceRequestParam) is
-      Java_Result : constant BasicArrayList_Access := NameSpaceRequestParam'Class (This).getPackages;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getPackages;
-
    procedure getPackageProperties (This : in out NameSpaceRequestParam; packageIndex : Integer) is
       Java_Result : constant HashMap_Access := NameSpaceRequestParam'Class (This).getPackageProperties (packageIndex);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getPackageProperties;
-
-   procedure getValue (This : in out NameSpaceRequestParam) is
-      Java_Result : constant Unbounded_String := NameSpaceRequestParam'Class (This).getValue;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getValue;
 
    procedure generatePackagePropertiesHashMap (This : in out NameSpaceRequestParam; properties : Unbounded_String) is
       Java_Result : constant HashMap_Access := NameSpaceRequestParam'Class (This).generatePackagePropertiesHashMap (properties);

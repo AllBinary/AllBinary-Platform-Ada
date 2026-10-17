@@ -35,7 +35,7 @@ package body org.allbinary.business.user.commerce.inventory.item.ItemInfo_Packag
    function Create return ItemInfo_Access is
       This : constant ItemInfo_Access := new ItemInfo;
    begin
-      Initialize (This.all);
+      ItemInfo_Package.Initialize (This.all);
       return This;
    end Create;
 

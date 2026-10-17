@@ -28,7 +28,7 @@ package body org.allbinary.graphics.displayable.screen.ScreenRepaintUtil_Package
    function Create return ScreenRepaintUtil_Access is
       This : constant ScreenRepaintUtil_Access := new ScreenRepaintUtil;
    begin
-      Initialize (This.all);
+      ScreenRepaintUtil_Package.Initialize (This.all);
       return This;
    end Create;
 

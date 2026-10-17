@@ -51,13 +51,11 @@ package org.allbinary.animation.image.ImageArraySpecialAnimation_Package is
    procedure Initialize (This : in out ImageArraySpecialAnimation'Class; imageArray : Image_Access_Array_Access; animationBehavior : AnimationBehavior_Access);
    function Create (imageArray : Image_Access_Array_Access; animationBehavior : AnimationBehavior_Access) return ImageArraySpecialAnimation_Access;
    function getLoopCount (This : in out ImageArraySpecialAnimation) return Integer;
-   procedure getLoopCount (This : in out ImageArraySpecialAnimation);
    procedure setLastFrame (This : in out ImageArraySpecialAnimation);
    procedure reset (This : in out ImageArraySpecialAnimation);
    procedure nextFrame (This : in out ImageArraySpecialAnimation);
    function isComplete (This : in out ImageArraySpecialAnimation) return Boolean;
-   procedure isComplete (This : in out ImageArraySpecialAnimation);
-   procedure paintXY (This : in out ImageArraySpecialAnimation; graphics : Graphics_Access; x : Integer; y : Integer);
+   procedure paintXY (This : in out ImageArraySpecialAnimation; graphics : Graphics_Access; x_Param : Integer; y_Param : Integer);
 
 end org.allbinary.animation.image.ImageArraySpecialAnimation_Package;
 

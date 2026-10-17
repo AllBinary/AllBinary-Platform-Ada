@@ -42,7 +42,6 @@ package org.allbinary.thread.SecondaryThreadPool_Package is
    procedure Initialize (This : in out SecondaryThreadPool'Class; poolName : Unbounded_String; numThreads : Integer; priority : Integer);
    function Create (poolName : Unbounded_String; numThreads : Integer; priority : Integer) return SecondaryThreadPool_Access;
    function getInstance return ThreadPool_Access;
-   procedure getInstance;
    procedure runTask (This : in out SecondaryThreadPool; task_Id : Runnable_Access);
    procedure startTask (This : in out SecondaryThreadPool; task_Id : Runnable_Access);
    procedure completedTask (This : in out SecondaryThreadPool; task_Id : Runnable_Access);

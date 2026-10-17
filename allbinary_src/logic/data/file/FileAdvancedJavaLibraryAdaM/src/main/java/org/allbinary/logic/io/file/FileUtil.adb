@@ -43,7 +43,7 @@ package body org.allbinary.logic.io.file.FileUtil_Package is
    function Create return FileUtil_Access is
       This : constant FileUtil_Access := new FileUtil;
    begin
-      Initialize (This.all);
+      FileUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -56,7 +56,8 @@ package body org.allbinary.logic.io.file.FileUtil_Package is
    end write;
 
    --  throws Exception
-   procedure write (This : in out FileUtil; inputStream : InputStream_Access; dataOutputStream : AbDataOutputStream_Access) is
+   procedure write (This : in out FileUtil; inputStream : InputStream_Access; dataOutputStream_Param : AbDataOutputStream_Access) is
+      dataOutputStream : AbDataOutputStream_Access := dataOutputStream_Param;
    begin
         begin
             dataOutputStream := AbDataOutputStream_Access (StreamUtil_Package.getInstance.get (inputStream, dataOutputStream, new Short_Short_Integer_Array'(0 .. (16384) - 1 => 0)));
@@ -69,7 +70,8 @@ package body org.allbinary.logic.io.file.FileUtil_Package is
    end write;
 
    --  throws Exception
-   procedure write (This : in out FileUtil; inputStream : InputStream_Access; dataOutputStream : AbDataOutputStream_Access; buffer : Short_Short_Integer_Array_Access) is
+   procedure write (This : in out FileUtil; inputStream : InputStream_Access; dataOutputStream_Param : AbDataOutputStream_Access; buffer : Short_Short_Integer_Array_Access) is
+      dataOutputStream : AbDataOutputStream_Access := dataOutputStream_Param;
    begin
         begin
             dataOutputStream := AbDataOutputStream_Access (StreamUtil_Package.getInstance.get (inputStream, dataOutputStream, buffer));
@@ -82,7 +84,8 @@ package body org.allbinary.logic.io.file.FileUtil_Package is
    end write;
 
    --  throws Exception
-   procedure copy (This : in out FileUtil; dataInputStream : AbFileInputStream_Access; dataOutputStream : AbDataOutputStream_Access) is
+   procedure copy (This : in out FileUtil; dataInputStream : AbFileInputStream_Access; dataOutputStream_Param : AbDataOutputStream_Access) is
+      dataOutputStream : AbDataOutputStream_Access := dataOutputStream_Param;
    begin
         begin
             dataOutputStream := AbDataOutputStream_Access (StreamUtil_Package.getInstance.get (dataInputStream, dataOutputStream, new Short_Short_Integer_Array'(0 .. (16384) - 1 => 0)));
@@ -595,13 +598,6 @@ package body org.allbinary.logic.io.file.FileUtil_Package is
    begin
         return FileUtil2_Package.getInstance.loadFileAsList (file, max, byteArray1);
    end loadFileAsList;
-
-   procedure getInstance is
-      Java_Result : constant FileUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure fixPath (This : in out FileUtil; file : AbFile_Access; path : AbPath_Access; realPath : AbPath_Access; cloud : Unbounded_String) is
       Java_Result : constant AbPath_Access := FileUtil'Class (This).fixPath (file, path, realPath, cloud);

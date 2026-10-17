@@ -32,7 +32,7 @@ package body org.allbinary.graphics.paint.PaintableComposite_Package is
    function Create (paintableArray : PaintableInterface_Access_Array_Access) return PaintableComposite_Access is
       This : constant PaintableComposite_Access := new PaintableComposite;
    begin
-      Initialize (This.all, paintableArray);
+      PaintableComposite_Package.Initialize (This.all, paintableArray);
       return This;
    end Create;
 

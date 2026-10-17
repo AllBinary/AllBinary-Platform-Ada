@@ -44,7 +44,7 @@ package body org.allbinary.game.layer.hud.basic.ImageHealthGraphic_Package is
    function Create (animationInterface : AnimationInterface_Access; healthInterface : HealthInterface_Access; location : Integer; direction : Integer) return ImageHealthGraphic_Access is
       This : constant ImageHealthGraphic_Access := new ImageHealthGraphic;
    begin
-      Initialize (This.all, animationInterface, healthInterface, location, direction);
+      ImageHealthGraphic_Package.Initialize (This.all, animationInterface, healthInterface, location, direction);
       return This;
    end Create;
 

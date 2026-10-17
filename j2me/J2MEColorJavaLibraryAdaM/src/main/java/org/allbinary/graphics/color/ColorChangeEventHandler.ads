@@ -37,7 +37,6 @@ package org.allbinary.graphics.color.ColorChangeEventHandler_Package is
    procedure Initialize (This : in out ColorChangeEventHandler'Class);
    function Create return ColorChangeEventHandler_Access;
    function getInstance return ColorChangeEventHandler_Access;
-   procedure getInstance;
 
 end org.allbinary.graphics.color.ColorChangeEventHandler_Package;
 

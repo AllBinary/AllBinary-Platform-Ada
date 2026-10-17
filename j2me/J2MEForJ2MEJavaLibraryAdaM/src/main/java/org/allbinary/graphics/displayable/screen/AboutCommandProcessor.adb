@@ -28,7 +28,7 @@ package body org.allbinary.graphics.displayable.screen.AboutCommandProcessor_Pac
    function Create return AboutCommandProcessor_Access is
       This : constant AboutCommandProcessor_Access := new AboutCommandProcessor;
    begin
-      Initialize (This.all);
+      AboutCommandProcessor_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -42,13 +42,6 @@ package body org.allbinary.graphics.displayable.screen.AboutCommandProcessor_Pac
    begin
         midletCommandListener.commandAction (command, canvas);
    end process;
-
-   procedure getInstance is
-      Java_Result : constant AboutCommandProcessor_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

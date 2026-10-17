@@ -49,11 +49,8 @@ package views.business.context.modules.storefront.customizer.includes.globals.Ed
    procedure Initialize (This : in out EditGlobalsValidationView'Class; transformInfoInterface : TransformInfoInterface_Access);
    function Create (transformInfoInterface : TransformInfoInterface_Access) return EditGlobalsValidationView_Access;
    function isValid (This : in out EditGlobalsValidationView) return Boolean;
-   procedure isValid (This : in out EditGlobalsValidationView);
    function validationInfo (This : in out EditGlobalsValidationView) return Unbounded_String;
-   procedure validationInfo (This : in out EditGlobalsValidationView);
    function toValidationInfoDoc (This : in out EditGlobalsValidationView) return Document_Access;
-   procedure toValidationInfoDoc (This : in out EditGlobalsValidationView);
    function toValidationInfoNode (This : in out EditGlobalsValidationView; document : Document_Access) return Node_Access;
    procedure toValidationInfoNode (This : in out EditGlobalsValidationView; document : Document_Access);
 

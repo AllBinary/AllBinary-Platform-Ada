@@ -30,7 +30,7 @@ package body org.allbinary.input.automation.module.generic_Id.GenericInputAutoma
    function Create return GenericInputAutomationAction_Access is
       This : constant GenericInputAutomationAction_Access := new GenericInputAutomationAction;
    begin
-      Initialize (This.all);
+      GenericInputAutomationAction_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -43,13 +43,6 @@ package body org.allbinary.input.automation.module.generic_Id.GenericInputAutoma
    function getInputRobotInterfaceArray (This : in out GenericInputAutomationAction) return InputRobotInterface_Access_Array_Access is
    begin
         return null;
-   end getInputRobotInterfaceArray;
-
-   procedure getInputRobotInterfaceArray (This : in out GenericInputAutomationAction) is
-      Java_Result : constant InputRobotInterface_Access_Array_Access := GenericInputAutomationAction'Class (This).getInputRobotInterfaceArray;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInputRobotInterfaceArray;
 
 end org.allbinary.input.automation.module.generic_Id.GenericInputAutomationAction_Package;

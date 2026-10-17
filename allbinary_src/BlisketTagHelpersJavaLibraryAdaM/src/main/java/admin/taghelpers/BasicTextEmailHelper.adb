@@ -35,7 +35,7 @@ package body admin.taghelpers.BasicTextEmailHelper_Package is
    function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return BasicTextEmailHelper_Access is
       This : constant BasicTextEmailHelper_Access := new BasicTextEmailHelper;
    begin
-      Initialize (This.all, hashMap, pageContext);
+      BasicTextEmailHelper_Package.Initialize (This.all, hashMap, pageContext);
       return This;
    end Create;
 

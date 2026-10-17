@@ -29,20 +29,13 @@ package body org.allbinary.media.audio.ErrorSound_Package is
    function Create return ErrorSound_Access is
       This : constant ErrorSound_Access := new ErrorSound;
    begin
-      Initialize (This.all);
+      ErrorSound_Package.Initialize (This.all);
       return This;
    end Create;
 
    function getInstance return Sound_Access is
    begin
         return ErrorSound_Package.soundInterface;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant Sound_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

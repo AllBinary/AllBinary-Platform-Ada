@@ -43,7 +43,6 @@ package org.allbinary.input.motion.trackball.action.UpTrackballInputToGameKeyEve
    procedure Initialize (This : in out UpTrackballInputToGameKeyEventAction'Class);
    function Create return UpTrackballInputToGameKeyEventAction_Access;
    function getInstance return GameKeyCompleteMotionGestureInputEvent_Access;
-   procedure getInstance;
 
 end org.allbinary.input.motion.trackball.action.UpTrackballInputToGameKeyEventAction_Package;
 

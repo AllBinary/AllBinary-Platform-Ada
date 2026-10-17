@@ -33,7 +33,7 @@ package body org.allbinary.game.graphics.hud.HudGraphicsPosition_Package is
    function Create (point : GPoint_Access; anchor : Integer) return HudGraphicsPosition_Access is
       This : constant HudGraphicsPosition_Access := new HudGraphicsPosition;
    begin
-      Initialize (This.all, point, anchor);
+      HudGraphicsPosition_Package.Initialize (This.all, point, anchor);
       return This;
    end Create;
 
@@ -56,20 +56,6 @@ package body org.allbinary.game.graphics.hud.HudGraphicsPosition_Package is
    begin
         This.point := point;
    end setPoint;
-
-   procedure getAnchor (This : in out HudGraphicsPosition) is
-      Java_Result : constant Integer := HudGraphicsPosition'Class (This).getAnchor;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getAnchor;
-
-   procedure getPoint (This : in out HudGraphicsPosition) is
-      Java_Result : constant GPoint_Access := HudGraphicsPosition'Class (This).getPoint;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getPoint;
 
 begin
    null;

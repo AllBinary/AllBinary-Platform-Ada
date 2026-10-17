@@ -31,7 +31,7 @@ package body org.allbinary.business.time.created.TimeCreatedView_Package is
    function Create (timeCreated : TimeCreated_Access) return TimeCreatedView_Access is
       This : constant TimeCreatedView_Access := new TimeCreatedView;
    begin
-      Initialize (This.all, timeCreated);
+      TimeCreatedView_Package.Initialize (This.all, timeCreated);
       return This;
    end Create;
 
@@ -45,7 +45,7 @@ package body org.allbinary.business.time.created.TimeCreatedView_Package is
    function Create (node : Node_Access) return TimeCreatedView_Access is
       This : constant TimeCreatedView_Access := new TimeCreatedView;
    begin
-      Initialize (This.all, node);
+      TimeCreatedView_Package.Initialize (This.all, node);
       return This;
    end Create;
 
@@ -71,13 +71,6 @@ package body org.allbinary.business.time.created.TimeCreatedView_Package is
    begin
       null;
    end toXmlNode;
-
-   procedure getTimeCreated (This : in out TimeCreatedView) is
-      Java_Result : constant TimeCreated_Access := TimeCreatedView'Class (This).getTimeCreated;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTimeCreated;
 
 end org.allbinary.business.time.created.TimeCreatedView_Package;
 

@@ -26,6 +26,11 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.util.BasicArrayListUtil_Package; use org.allbinary.util.BasicArrayListUtil_Package;
+with org.allbinary.thread.NullRunnable_Package; use org.allbinary.thread.NullRunnable_Package;
+with org.allbinary.thread.ThreadPoolStrings_Package; use org.allbinary.thread.ThreadPoolStrings_Package;
+with org.allbinary.thread.ThreadObjectUtil_Package; use org.allbinary.thread.ThreadObjectUtil_Package;
+with org.allbinary.thread.PooledThread_Package; use org.allbinary.thread.PooledThread_Package;
+with org.allbinary.thread.PriorityRunnable_Package; use org.allbinary.thread.PriorityRunnable_Package;
 
 package org.allbinary.thread.ThreadPool_Package is
 
@@ -65,18 +70,15 @@ package org.allbinary.thread.ThreadPool_Package is
    procedure runTaskWithPriority (This : in out ThreadPool; task_Id : PriorityRunnable_Access);
    procedure runTask (This : in out ThreadPool; task_Id : Runnable_Access);
    function getTask (This : in out ThreadPool) return Runnable_Access;
-   procedure getTask (This : in out ThreadPool);
    procedure clear (This : in out ThreadPool);
    procedure close (This : in out ThreadPool);
    procedure join (This : in out ThreadPool);
    function isBusy (This : in out ThreadPool) return Boolean;
-   procedure isBusy (This : in out ThreadPool);
    procedure threadStarted (This : in out ThreadPool);
    procedure threadStopped (This : in out ThreadPool);
    procedure startTask (This : in out ThreadPool; task_Id : Runnable_Access);
    procedure completedTask (This : in out ThreadPool; task_Id : Runnable_Access);
    function createName (This : in out ThreadPool) return Unbounded_String;
-   procedure createName (This : in out ThreadPool);
 
 end org.allbinary.thread.ThreadPool_Package;
 

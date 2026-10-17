@@ -38,7 +38,7 @@ package body org.allbinary.data.generator.ProductIdGenerator_Package is
    function Create return ProductIdGenerator_Access is
       This : constant ProductIdGenerator_Access := new ProductIdGenerator;
    begin
-      Initialize (This.all);
+      ProductIdGenerator_Package.Initialize (This.all);
       return This;
    end Create;
 

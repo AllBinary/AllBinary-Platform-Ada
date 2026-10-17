@@ -117,7 +117,6 @@ package org.allbinary.game.input.form.BuildingRTSFormInput_Package is
    procedure setAllBinaryGameLayerManager (This : in out BuildingRTSFormInput; allBinaryGameLayerManager : AllBinaryGameLayerManager_Access);
    procedure processGameSpecific (This : in out BuildingRTSFormInput; associatedRtsLayer : CollidableDestroyableDamageableLayer_Access; rtsPlayerLayerInterface : RTSPlayerLayerInterface_Access; layerManager : AllBinaryLayerManager_Access; item : ABCustomItem_Access; itemIndex : Integer);
    function isPositionBlocked (This : in out BuildingRTSFormInput) return Boolean;
-   procedure isPositionBlocked (This : in out BuildingRTSFormInput);
    function isDemoLocked (This : in out BuildingRTSFormInput; item : ABCustomItem_Access) return Boolean;
    procedure isDemoLocked (This : in out BuildingRTSFormInput; item : ABCustomItem_Access);
    procedure buildFromMotionInput (This : in out BuildingRTSFormInput; rtsPlayerLayerInterface : RTSPlayerLayerInterface_Access; layerManager : AllBinaryLayerManager_Access; item : ABCustomItem_Access; itemIndex : Integer);

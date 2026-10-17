@@ -35,7 +35,7 @@ package body org.allbinary.logic.util.cache.CachePolicyFactory_Package is
    function Create return CachePolicyFactory_Access is
       This : constant CachePolicyFactory_Access := new CachePolicyFactory;
    begin
-      Initialize (This.all);
+      CachePolicyFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -43,13 +43,6 @@ package body org.allbinary.logic.util.cache.CachePolicyFactory_Package is
    function getInstance return CachePolicyFactory_Access is
    begin
         return CachePolicyFactory_Package.instance;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant CachePolicyFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

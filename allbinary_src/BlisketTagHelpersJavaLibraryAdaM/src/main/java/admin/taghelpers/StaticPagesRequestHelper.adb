@@ -39,7 +39,7 @@ package body admin.taghelpers.StaticPagesRequestHelper_Package is
    function Create (propertiesHashMap : HashMap_Access; pageContext : PageContext_Access) return StaticPagesRequestHelper_Access is
       This : constant StaticPagesRequestHelper_Access := new StaticPagesRequestHelper;
    begin
-      Initialize (This.all, propertiesHashMap, pageContext);
+      StaticPagesRequestHelper_Package.Initialize (This.all, propertiesHashMap, pageContext);
       return This;
    end Create;
 
@@ -146,20 +146,6 @@ package body admin.taghelpers.StaticPagesRequestHelper_Package is
             return error;
                 end;
         end;
-   end makePublic;
-
-   procedure generateStaticPages (This : in out StaticPagesRequestHelper) is
-      Java_Result : constant Unbounded_String := StaticPagesRequestHelper'Class (This).generateStaticPages;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end generateStaticPages;
-
-   procedure makePublic (This : in out StaticPagesRequestHelper) is
-      Java_Result : constant Unbounded_String := StaticPagesRequestHelper'Class (This).makePublic;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end makePublic;
 
 end admin.taghelpers.StaticPagesRequestHelper_Package;

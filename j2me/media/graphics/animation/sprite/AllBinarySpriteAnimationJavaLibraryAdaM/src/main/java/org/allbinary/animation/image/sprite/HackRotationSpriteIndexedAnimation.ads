@@ -50,20 +50,16 @@ package org.allbinary.animation.image.sprite.HackRotationSpriteIndexedAnimation_
    procedure Initialize (This : in out HackRotationSpriteIndexedAnimation'Class; sprite : Sprite_Access; image : Image_Access; angleInfo : AngleInfo_Access; animationBehavior : AnimationBehavior_Access);
    function Create (sprite : Sprite_Access; image : Image_Access; angleInfo : AngleInfo_Access; animationBehavior : AnimationBehavior_Access) return HackRotationSpriteIndexedAnimation_Access;
    function getAnimationSize (This : in out HackRotationSpriteIndexedAnimation) return Integer;
-   procedure getAnimationSize (This : in out HackRotationSpriteIndexedAnimation);
    procedure paintFrame (This : in out HackRotationSpriteIndexedAnimation; g : Graphics_Access; frame : Integer; x : Integer; y : Integer);
    procedure paintXY (This : in out HackRotationSpriteIndexedAnimation; g : Graphics_Access; x : Integer; y : Integer);
    procedure paint (This : in out HackRotationSpriteIndexedAnimation; g : Graphics_Access);
    procedure nextRotation (This : in out HackRotationSpriteIndexedAnimation);
    procedure previousRotation (This : in out HackRotationSpriteIndexedAnimation);
    function getSize (This : in out HackRotationSpriteIndexedAnimation) return Integer;
-   procedure getSize (This : in out HackRotationSpriteIndexedAnimation);
    procedure setFrame (This : in out HackRotationSpriteIndexedAnimation; frame : Integer);
    function getFrame (This : in out HackRotationSpriteIndexedAnimation) return Integer;
-   procedure getFrame (This : in out HackRotationSpriteIndexedAnimation);
    procedure setSequence (This : in out HackRotationSpriteIndexedAnimation; sequence : Integer_Array_Access);
    function getSequence (This : in out HackRotationSpriteIndexedAnimation) return Integer_Array_Access;
-   procedure getSequence (This : in out HackRotationSpriteIndexedAnimation);
 
 end org.allbinary.animation.image.sprite.HackRotationSpriteIndexedAnimation_Package;
 

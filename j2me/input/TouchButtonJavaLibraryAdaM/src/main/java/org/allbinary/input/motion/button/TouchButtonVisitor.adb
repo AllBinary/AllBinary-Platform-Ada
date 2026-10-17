@@ -28,7 +28,7 @@ package body org.allbinary.input.motion.button.TouchButtonVisitor_Package is
    function Create return TouchButtonVisitor_Access is
       This : constant TouchButtonVisitor_Access := new TouchButtonVisitor;
    begin
-      Initialize (This.all);
+      TouchButtonVisitor_Package.Initialize (This.all);
       return This;
    end Create;
 

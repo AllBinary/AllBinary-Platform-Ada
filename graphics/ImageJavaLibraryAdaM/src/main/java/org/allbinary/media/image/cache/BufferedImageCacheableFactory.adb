@@ -30,7 +30,7 @@ package body org.allbinary.media.image.cache.BufferedImageCacheableFactory_Packa
    function Create return BufferedImageCacheableFactory_Access is
       This : constant BufferedImageCacheableFactory_Access := new BufferedImageCacheableFactory;
    begin
-      Initialize (This.all);
+      BufferedImageCacheableFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

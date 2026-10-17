@@ -30,7 +30,7 @@ package body org.allbinary.game.part.MakeCountedPartsSingletonArrayFactory_Packa
    function Create return MakeCountedPartsSingletonArrayFactory_Access is
       This : constant MakeCountedPartsSingletonArrayFactory_Access := new MakeCountedPartsSingletonArrayFactory;
    begin
-      Initialize (This.all);
+      MakeCountedPartsSingletonArrayFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -76,13 +76,6 @@ package body org.allbinary.game.part.MakeCountedPartsSingletonArrayFactory_Packa
         end loop;
         return newPartInterfaceArray;
    end getUpdated;
-
-   procedure getInstance is
-      Java_Result : constant MakeCountedPartsSingletonArrayFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure getUpdated (This : in out MakeCountedPartsSingletonArrayFactory; partInterfaceArray : PartInterface_Access_Array_Access) is
       Java_Result : constant PartInterface_Access_Array_Access := MakeCountedPartsSingletonArrayFactory'Class (This).getUpdated (partInterfaceArray);

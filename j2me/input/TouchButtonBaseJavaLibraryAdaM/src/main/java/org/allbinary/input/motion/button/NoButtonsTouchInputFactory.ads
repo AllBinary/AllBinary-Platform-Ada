@@ -20,6 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
+with org.allbinary.input.motion.button.BaseTouchInput_Package; use org.allbinary.input.motion.button.BaseTouchInput_Package;
 
 package org.allbinary.input.motion.button.NoButtonsTouchInputFactory_Package is
 
@@ -35,7 +36,6 @@ package org.allbinary.input.motion.button.NoButtonsTouchInputFactory_Package is
    procedure Initialize (This : in out NoButtonsTouchInputFactory'Class);
    function Create return NoButtonsTouchInputFactory_Access;
    function getInstance return BaseTouchInput_Access;
-   procedure getInstance;
 
 end org.allbinary.input.motion.button.NoButtonsTouchInputFactory_Package;
 

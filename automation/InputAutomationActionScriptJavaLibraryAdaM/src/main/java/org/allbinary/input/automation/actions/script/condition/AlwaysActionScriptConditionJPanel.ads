@@ -23,6 +23,7 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.input.automation.actions.script.condition.JPanel_Package; use org.allbinary.input.automation.actions.script.condition.JPanel_Package;
+with org.allbinary.input.automation.actions.script.condition.AlwaysActionScriptConditionInterface_Package; use org.allbinary.input.automation.actions.script.condition.AlwaysActionScriptConditionInterface_Package;
 
 package org.allbinary.input.automation.actions.script.condition.AlwaysActionScriptConditionJPanel_Package is
 
@@ -52,7 +53,6 @@ package org.allbinary.input.automation.actions.script.condition.AlwaysActionScri
    procedure set (This : in out AlwaysActionScriptConditionJPanel);
    procedure update (This : in out AlwaysActionScriptConditionJPanel);
    function getAlwaysActionJDialog (This : in out AlwaysActionScriptConditionJPanel) return JDialog_Access;
-   procedure getAlwaysActionJDialog (This : in out AlwaysActionScriptConditionJPanel);
    procedure setAlwaysActionJDialog (This : in out AlwaysActionScriptConditionJPanel; alwaysActionJDialog : JDialog_Access);
    procedure initComponents (This : in out AlwaysActionScriptConditionJPanel);
    procedure okJButtonActionPerformed (This : in out AlwaysActionScriptConditionJPanel; evt : ActionEvent_Access);

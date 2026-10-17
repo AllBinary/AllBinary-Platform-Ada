@@ -36,7 +36,7 @@ package body org.allbinary.game.layer.RTSLayerCompositePaintable_Package is
    function Create (upgradableRTSLayerHudPaintable : UpgradableRTSLayerHudPaintable_Access) return RTSLayerCompositePaintable_Access is
       This : constant RTSLayerCompositePaintable_Access := new RTSLayerCompositePaintable;
    begin
-      Initialize (This.all, upgradableRTSLayerHudPaintable);
+      RTSLayerCompositePaintable_Package.Initialize (This.all, upgradableRTSLayerHudPaintable);
       return This;
    end Create;
 
@@ -78,20 +78,6 @@ package body org.allbinary.game.layer.RTSLayerCompositePaintable_Package is
    function getDownGradeCost (This : in out RTSLayerCompositePaintable) return Unbounded_String is
    begin
         return This.downGradeCost;
-   end getDownGradeCost;
-
-   procedure getUpgradeCost (This : in out RTSLayerCompositePaintable) is
-      Java_Result : constant Unbounded_String := RTSLayerCompositePaintable'Class (This).getUpgradeCost;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getUpgradeCost;
-
-   procedure getDownGradeCost (This : in out RTSLayerCompositePaintable) is
-      Java_Result : constant Unbounded_String := RTSLayerCompositePaintable'Class (This).getDownGradeCost;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getDownGradeCost;
 
 end org.allbinary.game.layer.RTSLayerCompositePaintable_Package;

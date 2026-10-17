@@ -32,7 +32,7 @@ package body views.generic_Id.address.StatesView_Package is
    function Create return StatesView_Access is
       This : constant StatesView_Access := new StatesView;
    begin
-      Initialize (This.all);
+      StatesView_Package.Initialize (This.all);
       return This;
    end Create;
 

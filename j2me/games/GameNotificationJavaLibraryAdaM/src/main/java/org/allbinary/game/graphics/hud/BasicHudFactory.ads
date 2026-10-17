@@ -46,7 +46,6 @@ package org.allbinary.game.graphics.hud.BasicHudFactory_Package is
    procedure Initialize (This : in out BasicHudFactory'Class);
    function Create return BasicHudFactory_Access;
    function getInstance return BasicHudFactory_Access;
-   procedure getInstance;
 
 end org.allbinary.game.graphics.hud.BasicHudFactory_Package;
 

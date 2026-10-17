@@ -53,9 +53,7 @@ package admin.tags.BasicTextEmailTag_Package is
    procedure setSubject (This : in out BasicTextEmailTag; value : Unbounded_String);
    procedure setBody (This : in out BasicTextEmailTag; value : Unbounded_String);
    function send (This : in out BasicTextEmailTag) return Unbounded_String;
-   procedure send (This : in out BasicTextEmailTag);
    function doStartTag (This : in out BasicTextEmailTag) return Integer;
-   procedure doStartTag (This : in out BasicTextEmailTag);
 
 end admin.tags.BasicTextEmailTag_Package;
 

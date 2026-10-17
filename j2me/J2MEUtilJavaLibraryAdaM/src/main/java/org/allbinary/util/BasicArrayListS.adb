@@ -33,7 +33,7 @@ package body org.allbinary.util.BasicArrayListS_Package is
    function Create (size : Integer) return BasicArrayListS_Access is
       This : constant BasicArrayListS_Access := new BasicArrayListS;
    begin
-      Initialize (This.all, size);
+      BasicArrayListS_Package.Initialize (This.all, size);
       return This;
    end Create;
 

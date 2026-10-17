@@ -52,13 +52,9 @@ package tags.ModifyTag_Package is
    procedure Initialize (This : in out ModifyTag'Class; tagHelperFactoryInterface : TagHelperFactoryInterface_Access);
    function Create (tagHelperFactoryInterface : TagHelperFactoryInterface_Access) return ModifyTag_Access;
    function insert (This : in out ModifyTag) return Unbounded_String;
-   procedure insert (This : in out ModifyTag);
    function delete (This : in out ModifyTag) return Unbounded_String;
-   procedure delete (This : in out ModifyTag);
    function update (This : in out ModifyTag) return Unbounded_String;
-   procedure update (This : in out ModifyTag);
    function doStartTag (This : in out ModifyTag) return Integer;
-   procedure doStartTag (This : in out ModifyTag);
 
 end tags.ModifyTag_Package;
 

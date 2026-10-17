@@ -21,7 +21,7 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 
-package org.allbinary.logic.communication.http.request_Case.RequestData_Package is
+package org.allbinary.logic.communication.http.request.RequestData_Package is
 
 
    type RequestData is tagged;
@@ -38,6 +38,6 @@ package org.allbinary.logic.communication.http.request_Case.RequestData_Package 
    procedure Initialize (This : in out RequestData'Class);
    function Create return RequestData_Access;
 
-end org.allbinary.logic.communication.http.request_Case.RequestData_Package;
+end org.allbinary.logic.communication.http.request.RequestData_Package;
 
 

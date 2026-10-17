@@ -22,6 +22,7 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.util.CircularIndexUtil_Package; use org.allbinary.util.CircularIndexUtil_Package;
 with org.allbinary.game.score.HighScoresHelperBase_Package; use org.allbinary.game.score.HighScoresHelperBase_Package;
+with org.allbinary.game.score.HighScores_Package; use org.allbinary.game.score.HighScores_Package;
 
 package org.allbinary.game.score.HighScoresHelper_Package is
 
@@ -41,9 +42,7 @@ package org.allbinary.game.score.HighScoresHelper_Package is
    function Create return HighScoresHelper_Access;
    procedure setHighScoresArray (This : in out HighScoresHelper; highScoresArrayP : HighScores_Access_Array_Access);
    function getNextHighScores (This : in out HighScoresHelper) return HighScores_Access;
-   procedure getNextHighScores (This : in out HighScoresHelper);
    function isAnyHighScores (This : in out HighScoresHelper) return Boolean;
-   procedure isAnyHighScores (This : in out HighScoresHelper);
 
 end org.allbinary.game.score.HighScoresHelper_Package;
 

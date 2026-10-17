@@ -33,7 +33,7 @@ package body org.allbinary.input.automation.module.DefaultListModelHelper_Packag
    function Create return DefaultListModelHelper_Access is
       This : constant DefaultListModelHelper_Access := new DefaultListModelHelper;
    begin
-      Initialize (This.all);
+      DefaultListModelHelper_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -64,13 +64,6 @@ package body org.allbinary.input.automation.module.DefaultListModelHelper_Packag
    begin
         This.vector.remove (string_Id);
    end remove;
-
-   procedure getListModel (This : in out DefaultListModelHelper) is
-      Java_Result : constant ListModel_Access := DefaultListModelHelper'Class (This).getListModel;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getListModel;
 
 end org.allbinary.input.automation.module.DefaultListModelHelper_Package;
 

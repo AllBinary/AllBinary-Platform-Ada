@@ -34,7 +34,7 @@ package body org.allbinary.data.tables.user.commerce.inventory.item.InventoryEnt
    function Create return InventoryEntity_Access is
       This : constant InventoryEntity_Access := new InventoryEntity;
    begin
-      Initialize (This.all);
+      InventoryEntity_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -231,27 +231,6 @@ package body org.allbinary.data.tables.user.commerce.inventory.item.InventoryEnt
    begin
       null;
    end getWeight;
-
-   procedure createTableStatement (This : in out InventoryEntity) is
-      Java_Result : constant Unbounded_String := InventoryEntity'Class (This).createTableStatement;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end createTableStatement;
-
-   procedure createTable (This : in out InventoryEntity) is
-      Java_Result : constant Unbounded_String := InventoryEntity'Class (This).createTable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end createTable;
-
-   procedure dropTable (This : in out InventoryEntity) is
-      Java_Result : constant Unbounded_String := InventoryEntity'Class (This).dropTable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end dropTable;
 
 end org.allbinary.data.tables.user.commerce.inventory.item.InventoryEntity_Package;
 

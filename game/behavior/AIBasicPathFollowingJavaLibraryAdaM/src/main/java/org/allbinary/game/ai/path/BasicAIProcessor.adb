@@ -42,7 +42,7 @@ package body org.allbinary.game.ai.path.BasicAIProcessor_Package is
    function Create (name : Unbounded_String; geographicMapCellHistory : GeographicMapCellHistory_Access; geographicMapCellPathHistoryInfo : GeographicMapCellPathHistoryInfo_Access; chosenPathList : BasicArrayList_Access; angleInfo : AngleInfo_Access; seed : Integer) return BasicAIProcessor_Access is
       This : constant BasicAIProcessor_Access := new BasicAIProcessor;
    begin
-      Initialize (This.all, name, geographicMapCellHistory, geographicMapCellPathHistoryInfo, chosenPathList, angleInfo, seed);
+      BasicAIProcessor_Package.Initialize (This.all, name, geographicMapCellHistory, geographicMapCellPathHistoryInfo, chosenPathList, angleInfo, seed);
       return This;
    end Create;
 
@@ -141,27 +141,6 @@ package body org.allbinary.game.ai.path.BasicAIProcessor_Package is
    begin
       null;
    end processAI;
-
-   procedure getName (This : in out BasicAIProcessor) is
-      Java_Result : constant Unbounded_String := BasicAIProcessor'Class (This).getName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getName;
-
-   procedure getGeographicMapCellPathHistoryInfo (This : in out BasicAIProcessor) is
-      Java_Result : constant GeographicMapCellPathHistoryInfo_Access := BasicAIProcessor'Class (This).getGeographicMapCellPathHistoryInfo;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getGeographicMapCellPathHistoryInfo;
-
-   procedure getGeographicMapCellHistory (This : in out BasicAIProcessor) is
-      Java_Result : constant GeographicMapCellHistory_Access := BasicAIProcessor'Class (This).getGeographicMapCellHistory;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getGeographicMapCellHistory;
 
 end org.allbinary.game.ai.path.BasicAIProcessor_Package;
 

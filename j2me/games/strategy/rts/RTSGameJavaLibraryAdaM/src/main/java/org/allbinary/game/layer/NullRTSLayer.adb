@@ -29,7 +29,7 @@ package body org.allbinary.game.layer.NullRTSLayer_Package is
    function Create return NullRTSLayer_Access is
       This : constant NullRTSLayer_Access := new NullRTSLayer;
    begin
-      Initialize (This.all);
+      NullRTSLayer_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -115,69 +115,6 @@ package body org.allbinary.game.layer.NullRTSLayer_Package is
    function implmentsArtificialIntelligenceCompositeInterface (This : in out NullRTSLayer) return Boolean is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
-   end implmentsArtificialIntelligenceCompositeInterface;
-
-   procedure getName (This : in out NullRTSLayer) is
-      Java_Result : constant Unbounded_String := NullRTSLayer'Class (This).getName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getName;
-
-   procedure getGameNotificationHud (This : in out NullRTSLayer) is
-      Java_Result : constant GameNotificationHud_Access := NullRTSLayer'Class (This).getGameNotificationHud;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getGameNotificationHud;
-
-   procedure getCurrentScrollSelectionForm (This : in out NullRTSLayer) is
-      Java_Result : constant ScrollSelectionForm_Access := NullRTSLayer'Class (This).getCurrentScrollSelectionForm;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getCurrentScrollSelectionForm;
-
-   procedure getBuildingScrollSelectionForm (This : in out NullRTSLayer) is
-      Java_Result : constant ScrollSelectionForm_Access := NullRTSLayer'Class (This).getBuildingScrollSelectionForm;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getBuildingScrollSelectionForm;
-
-   procedure getPlayerGameInput (This : in out NullRTSLayer) is
-      Java_Result : constant PlayerGameInput_Access := NullRTSLayer'Class (This).getPlayerGameInput;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getPlayerGameInput;
-
-   procedure getCapital (This : in out NullRTSLayer) is
-      Java_Result : constant Capital_Access := NullRTSLayer'Class (This).getCapital;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getCapital;
-
-   procedure getRTSFormInput (This : in out NullRTSLayer) is
-      Java_Result : constant RTSFormInput_Access := NullRTSLayer'Class (This).getRTSFormInput;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getRTSFormInput;
-
-   procedure getPlayerOwnedRTSLayers (This : in out NullRTSLayer) is
-      Java_Result : constant PlayerOwnedRTSLayers_Access := NullRTSLayer'Class (This).getPlayerOwnedRTSLayers;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getPlayerOwnedRTSLayers;
-
-   procedure implmentsArtificialIntelligenceCompositeInterface (This : in out NullRTSLayer) is
-      Java_Result : constant Boolean := NullRTSLayer'Class (This).implmentsArtificialIntelligenceCompositeInterface;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end implmentsArtificialIntelligenceCompositeInterface;
 
 begin

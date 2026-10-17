@@ -44,7 +44,7 @@ package body org.allbinary.game.paint.OwnershipPaintable_Package is
    function Create return OwnershipPaintable_Access is
       This : constant OwnershipPaintable_Access := new OwnershipPaintable;
    begin
-      Initialize (This.all);
+      OwnershipPaintable_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -78,20 +78,6 @@ package body org.allbinary.game.paint.OwnershipPaintable_Package is
         height := This.displayInfo.getLastHeight;
         graphics.drawString (This.COPYRIGHT, (halfWidth) - (This.beginWidth), (height) - (This.COPYRIGHT_Y), This.anchor);
    end paint;
-
-   procedure getInstance is
-      Java_Result : constant OwnershipPaintable_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure getBasicColorP (This : in out OwnershipPaintable) is
-      Java_Result : constant BasicColor_Access := OwnershipPaintable'Class (This).getBasicColorP;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getBasicColorP;
 
 end org.allbinary.game.paint.OwnershipPaintable_Package;
 

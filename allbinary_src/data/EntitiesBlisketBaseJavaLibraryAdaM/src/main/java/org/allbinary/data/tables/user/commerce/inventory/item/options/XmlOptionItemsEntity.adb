@@ -34,7 +34,7 @@ package body org.allbinary.data.tables.user.commerce.inventory.item.options.XmlO
    function Create return XmlOptionItemsEntity_Access is
       This : constant XmlOptionItemsEntity_Access := new XmlOptionItemsEntity;
    begin
-      Initialize (This.all);
+      XmlOptionItemsEntity_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -98,27 +98,6 @@ package body org.allbinary.data.tables.user.commerce.inventory.item.options.XmlO
    function dropTable (This : in out XmlOptionItemsEntity) return Unbounded_String is
    begin
         return AbSqlBean (This).dropTable;
-   end dropTable;
-
-   procedure createTableStatement (This : in out XmlOptionItemsEntity) is
-      Java_Result : constant Unbounded_String := XmlOptionItemsEntity'Class (This).createTableStatement;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end createTableStatement;
-
-   procedure createTable (This : in out XmlOptionItemsEntity) is
-      Java_Result : constant Unbounded_String := XmlOptionItemsEntity'Class (This).createTable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end createTable;
-
-   procedure dropTable (This : in out XmlOptionItemsEntity) is
-      Java_Result : constant Unbounded_String := XmlOptionItemsEntity'Class (This).dropTable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end dropTable;
 
 end org.allbinary.data.tables.user.commerce.inventory.item.options.XmlOptionItemsEntity_Package;

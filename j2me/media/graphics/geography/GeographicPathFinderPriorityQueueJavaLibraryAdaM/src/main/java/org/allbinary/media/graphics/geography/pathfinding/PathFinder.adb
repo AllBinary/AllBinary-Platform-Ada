@@ -36,7 +36,7 @@ package body org.allbinary.media.graphics.geography.pathfinding.PathFinder_Packa
    function Create return PathFinder_Access is
       This : constant PathFinder_Access := new PathFinder;
    begin
-      Initialize (This.all);
+      PathFinder_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -305,7 +305,8 @@ package body org.allbinary.media.graphics.geography.pathfinding.PathFinder_Packa
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end findPathEnd;
 
-   function extractPath (This : in out PathFinder; start : GeographicMapCellPosition_Access; current : PathFindingNodeCost_Access) return BasicArrayList_Access is
+   function extractPath (This : in out PathFinder; start : GeographicMapCellPosition_Access; current_Param : PathFindingNodeCost_Access) return BasicArrayList_Access is
+      current : PathFindingNodeCost_Access := current_Param;
       path : BasicArrayList_Access;
    begin
         path := BasicArrayListD_Package.Create;
@@ -360,8 +361,8 @@ package body org.allbinary.media.graphics.geography.pathfinding.PathFinder_Packa
       null;
    end findPathEnd;
 
-   procedure extractPath (This : in out PathFinder; start : GeographicMapCellPosition_Access; current : PathFindingNodeCost_Access) is
-      Java_Result : constant BasicArrayList_Access := PathFinder'Class (This).extractPath (start, current);
+   procedure extractPath (This : in out PathFinder; start : GeographicMapCellPosition_Access; current_Param : PathFindingNodeCost_Access) is
+      Java_Result : constant BasicArrayList_Access := PathFinder'Class (This).extractPath (start, current_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

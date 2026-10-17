@@ -36,7 +36,7 @@ package body org.allbinary.logic.communication.sql.AbSqlTable_Package is
    function Create (databaseConnectionInfoInterface : DbConnectionInfo_Access) return AbSqlTable_Access is
       This : constant AbSqlTable_Access := new AbSqlTable;
    begin
-      Initialize (This.all, databaseConnectionInfoInterface);
+      AbSqlTable_Package.Initialize (This.all, databaseConnectionInfoInterface);
       return This;
    end Create;
 
@@ -94,26 +94,12 @@ package body org.allbinary.logic.communication.sql.AbSqlTable_Package is
         end;
    end dropTable;
 
-   procedure getTableName (This : in out AbSqlTable) is
-      Java_Result : constant Unbounded_String := AbSqlTable'Class (This).getTableName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTableName;
-
    procedure createTable (This : in out AbSqlTable; data : Unbounded_String) is
       Java_Result : constant Unbounded_String := AbSqlTable'Class (This).createTable (data);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createTable;
-
-   procedure dropTable (This : in out AbSqlTable) is
-      Java_Result : constant Unbounded_String := AbSqlTable'Class (This).dropTable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end dropTable;
 
 end org.allbinary.logic.communication.sql.AbSqlTable_Package;
 

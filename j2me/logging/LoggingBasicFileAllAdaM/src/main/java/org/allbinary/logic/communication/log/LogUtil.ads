@@ -24,6 +24,7 @@ with org.allbinary.log.FileLog_Package; use org.allbinary.log.FileLog_Package;
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.communication.log.Log_Package; use org.allbinary.logic.communication.log.Log_Package;
 
 package org.allbinary.logic.communication.log.LogUtil_Package is
 
@@ -43,7 +44,6 @@ package org.allbinary.logic.communication.log.LogUtil_Package is
    procedure Initialize (This : in out LogUtil'Class);
    function Create return LogUtil_Access;
    function getInstance return LogUtil_Access;
-   procedure getInstance;
    procedure putL (This : in out LogUtil; log : Log_Access);
    procedure putF (This : in out LogUtil; specialMessage : Unbounded_String; anyType : Java_Object_Access; functionName : Unbounded_String);
    procedure putFS (This : in out LogUtil; specialMessage : Unbounded_String; className : Unbounded_String; functionName : Unbounded_String);

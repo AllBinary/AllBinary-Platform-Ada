@@ -35,7 +35,7 @@ package body org.allbinary.input.automation.module.ImageComparatorConstraints_Pa
    function Create (doImageComparisonEveryNthFrame : Integer) return ImageComparatorConstraints_Access is
       This : constant ImageComparatorConstraints_Access := new ImageComparatorConstraints;
    begin
-      Initialize (This.all, doImageComparisonEveryNthFrame);
+      ImageComparatorConstraints_Package.Initialize (This.all, doImageComparisonEveryNthFrame);
       return This;
    end Create;
 
@@ -135,13 +135,6 @@ package body org.allbinary.input.automation.module.ImageComparatorConstraints_Pa
         end loop;
    end log;
 
-   procedure getAvoidVector (This : in out ImageComparatorConstraints) is
-      Java_Result : constant BasicArrayList_Access := ImageComparatorConstraints'Class (This).getAvoidVector;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getAvoidVector;
-
    procedure isColorAllowed (This : in out ImageComparatorConstraints; frame : Integer; point : GPoint_Access; color : Color_Access) is
       Java_Result : constant Boolean := ImageComparatorConstraints'Class (This).isColorAllowed (frame, point, color);
       pragma Unreferenced (Java_Result);
@@ -162,13 +155,6 @@ package body org.allbinary.input.automation.module.ImageComparatorConstraints_Pa
    begin
       null;
    end isCollisionWithAvoidRectangles;
-
-   procedure getMaxNonMatchingPixelDeltas (This : in out ImageComparatorConstraints) is
-      Java_Result : constant Integer := ImageComparatorConstraints'Class (This).getMaxNonMatchingPixelDeltas;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getMaxNonMatchingPixelDeltas;
 
    procedure isFrameAllowed (This : in out ImageComparatorConstraints; frame : Integer) is
       Java_Result : constant Boolean := ImageComparatorConstraints'Class (This).isFrameAllowed (frame);

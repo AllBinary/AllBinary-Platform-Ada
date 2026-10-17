@@ -32,7 +32,7 @@ package body org.allbinary.image.gui.ImageIconUnique_Package is
    function Create (bufferedImage : BufferedImage_Access; index : Integer) return ImageIconUnique_Access is
       This : constant ImageIconUnique_Access := new ImageIconUnique;
    begin
-      Initialize (This.all, bufferedImage, index);
+      ImageIconUnique_Package.Initialize (This.all, bufferedImage, index);
       return This;
    end Create;
 
@@ -45,13 +45,6 @@ package body org.allbinary.image.gui.ImageIconUnique_Package is
    begin
         This.id := id;
    end setId;
-
-   procedure getId (This : in out ImageIconUnique) is
-      Java_Result : constant Integer := ImageIconUnique'Class (This).getId;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getId;
 
 end org.allbinary.image.gui.ImageIconUnique_Package;
 

@@ -67,21 +67,14 @@ package org.allbinary.media.image.comparison.ImageComparisonResult_Package is
    procedure Initialize (This : in out ImageComparisonResult'Class; name : Unbounded_String; bufferedImage : BufferedImage_Access; bufferedImage2 : BufferedImage_Access; frameOne : Long_Long_Integer; frameTwo : Long_Long_Integer; tolerance : Integer);
    function Create (name : Unbounded_String; bufferedImage : BufferedImage_Access; bufferedImage2 : BufferedImage_Access; frameOne : Long_Long_Integer; frameTwo : Long_Long_Integer; tolerance : Integer) return ImageComparisonResult_Access;
    function getMatchingPercent (This : in out ImageComparisonResult) return Float;
-   procedure getMatchingPercent (This : in out ImageComparisonResult);
    procedure add (This : in out ImageComparisonResult; pixel : PixelDelta_Access);
    function getNonMatchingPixelVector (This : in out ImageComparisonResult) return BasicArrayList_Access;
-   procedure getNonMatchingPixelVector (This : in out ImageComparisonResult);
    function toString (This : in out ImageComparisonResult) return Unbounded_String;
-   procedure toString (This : in out ImageComparisonResult);
    function getBufferedImages (This : in out ImageComparisonResult) return BufferedImage_Access_Array_Access;
-   procedure getBufferedImages (This : in out ImageComparisonResult);
    function getTolerance (This : in out ImageComparisonResult) return Integer;
-   procedure getTolerance (This : in out ImageComparisonResult);
    procedure setTolerance (This : in out ImageComparisonResult; tolerance : Integer);
    function getFrameOne (This : in out ImageComparisonResult) return Long_Long_Integer;
-   procedure getFrameOne (This : in out ImageComparisonResult);
    function getFrameTwo (This : in out ImageComparisonResult) return Long_Long_Integer;
-   procedure getFrameTwo (This : in out ImageComparisonResult);
 
 end org.allbinary.media.image.comparison.ImageComparisonResult_Package;
 

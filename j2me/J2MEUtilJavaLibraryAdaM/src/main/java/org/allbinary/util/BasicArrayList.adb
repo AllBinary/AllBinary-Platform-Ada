@@ -21,7 +21,7 @@ package body org.allbinary.util.BasicArrayList_Package is
    function Create (objectArray : Java_Object_Access_Array_Access) return BasicArrayList_Access is
       This : constant BasicArrayList_Access := new BasicArrayList;
    begin
-      Initialize (This.all, objectArray);
+      BasicArrayList_Package.Initialize (This.all, objectArray);
       return This;
    end Create;
 
@@ -387,20 +387,6 @@ package body org.allbinary.util.BasicArrayList_Package is
       null;
    end set;
 
-   procedure size_Case (This : in out BasicArrayList) is
-      Java_Result : constant Integer := BasicArrayList'Class (This).size_Case;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end size_Case;
-
-   procedure isEmpty (This : in out BasicArrayList) is
-      Java_Result : constant Boolean := BasicArrayList'Class (This).isEmpty;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isEmpty;
-
    procedure contains (This : in out BasicArrayList; anyType : Java_Object_Access) is
       Java_Result : constant Boolean := BasicArrayList'Class (This).contains (anyType);
       pragma Unreferenced (Java_Result);
@@ -408,33 +394,12 @@ package body org.allbinary.util.BasicArrayList_Package is
       null;
    end contains;
 
-   procedure toArray (This : in out BasicArrayList) is
-      Java_Result : constant Java_Object_Access_Array_Access := BasicArrayList'Class (This).toArray;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toArray;
-
    procedure toArrayType (This : in out BasicArrayList; objectArray : Java_Object_Access_Array_Access) is
       Java_Result : constant Java_Object_Access_Array_Access := BasicArrayList'Class (This).toArrayType (objectArray);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end toArrayType;
-
-   procedure clone (This : in out BasicArrayList) is
-      Java_Result : constant Java_Object_Access := BasicArrayList'Class (This).clone;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end clone;
-
-   procedure toString (This : in out BasicArrayList) is
-      Java_Result : constant Unbounded_String := BasicArrayList'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toString;
 
 begin
    null;

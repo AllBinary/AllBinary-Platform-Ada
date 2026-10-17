@@ -31,6 +31,9 @@ with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.thread.ABRunnable_Package; use org.allbinary.thread.ABRunnable_Package;
+with org.allbinary.thread.PrimaryThreadPool_Package; use org.allbinary.thread.PrimaryThreadPool_Package;
+with org.allbinary.thread.ThreadPool_Package; use org.allbinary.thread.ThreadPool_Package;
 
 package org.allbinary.thread.ThreadFactoryUtil_Package is
 
@@ -59,7 +62,6 @@ package org.allbinary.thread.ThreadFactoryUtil_Package is
    procedure Initialize (This : in out ThreadFactoryUtil'Class);
    function Create return ThreadFactoryUtil_Access;
    function getInstance return ThreadFactoryUtil_Access;
-   procedure getInstance;
    function getInstanceGameCanvasRunnable (This : in out ThreadFactoryUtil; runnable : GameCanvasRunnableInterface_Access) return Thread_Access;
    procedure getInstanceGameCanvasRunnable (This : in out ThreadFactoryUtil; runnable : GameCanvasRunnableInterface_Access);
    function getInstanceForRunnable (This : in out ThreadFactoryUtil; runnable : ABRunnable_Access) return Thread_Access;

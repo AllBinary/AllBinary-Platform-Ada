@@ -47,9 +47,7 @@ package org.allbinary.business.user.commerce.shipping.modules.PickUpShippingModu
    function getCost (This : in out PickUpShippingModule; order : OrderInterface_Access) return Money_Access;
    procedure getCost (This : in out PickUpShippingModule; order : OrderInterface_Access);
    function getDescription (This : in out PickUpShippingModule) return Unbounded_String;
-   procedure getDescription (This : in out PickUpShippingModule);
    function getName (This : in out PickUpShippingModule) return Unbounded_String;
-   procedure getName (This : in out PickUpShippingModule);
 
 end org.allbinary.business.user.commerce.shipping.modules.PickUpShippingModule_Package;
 

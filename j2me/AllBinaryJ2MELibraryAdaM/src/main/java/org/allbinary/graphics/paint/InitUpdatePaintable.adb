@@ -31,7 +31,7 @@ package body org.allbinary.graphics.paint.InitUpdatePaintable_Package is
    function Create return InitUpdatePaintable_Access is
       This : constant InitUpdatePaintable_Access := new InitUpdatePaintable;
    begin
-      Initialize (This.all);
+      InitUpdatePaintable_Package.Initialize (This.all);
       return This;
    end Create;
 

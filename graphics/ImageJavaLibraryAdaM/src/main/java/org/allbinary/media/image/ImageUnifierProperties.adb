@@ -33,7 +33,7 @@ package body org.allbinary.media.image.ImageUnifierProperties_Package is
    function Create return ImageUnifierProperties_Access is
       This : constant ImageUnifierProperties_Access := new ImageUnifierProperties;
    begin
-      Initialize (This.all);
+      ImageUnifierProperties_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -76,41 +76,6 @@ package body org.allbinary.media.image.ImageUnifierProperties_Package is
    begin
         This.imageUnifierCell := imageUnifierCell;
    end setImageUnifierCell;
-
-   procedure getWidth (This : in out ImageUnifierProperties) is
-      Java_Result : constant Integer := ImageUnifierProperties'Class (This).getWidth;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getWidth;
-
-   procedure getHeight (This : in out ImageUnifierProperties) is
-      Java_Result : constant Integer := ImageUnifierProperties'Class (This).getHeight;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getHeight;
-
-   procedure getRows (This : in out ImageUnifierProperties) is
-      Java_Result : constant Integer := ImageUnifierProperties'Class (This).getRows;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getRows;
-
-   procedure getColumns (This : in out ImageUnifierProperties) is
-      Java_Result : constant Integer := ImageUnifierProperties'Class (This).getColumns;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getColumns;
-
-   procedure getImageUnifierCell (This : in out ImageUnifierProperties) is
-      Java_Result : constant ImageUnifierCell_Access := ImageUnifierProperties'Class (This).getImageUnifierCell;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getImageUnifierCell;
 
 end org.allbinary.media.image.ImageUnifierProperties_Package;
 

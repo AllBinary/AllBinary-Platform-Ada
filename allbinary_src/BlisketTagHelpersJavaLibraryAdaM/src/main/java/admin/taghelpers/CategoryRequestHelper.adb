@@ -53,7 +53,7 @@ package body admin.taghelpers.CategoryRequestHelper_Package is
    function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return CategoryRequestHelper_Access is
       This : constant CategoryRequestHelper_Access := new CategoryRequestHelper;
    begin
-      Initialize (This.all, hashMap, pageContext);
+      CategoryRequestHelper_Package.Initialize (This.all, hashMap, pageContext);
       return This;
    end Create;
 
@@ -294,41 +294,6 @@ package body admin.taghelpers.CategoryRequestHelper_Package is
             return error;
                 end;
         end;
-   end update;
-
-   procedure insert (This : in out CategoryRequestHelper) is
-      Java_Result : constant Unbounded_String := CategoryRequestHelper'Class (This).insert;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end insert;
-
-   procedure delete (This : in out CategoryRequestHelper) is
-      Java_Result : constant Unbounded_String := CategoryRequestHelper'Class (This).delete;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end delete;
-
-   procedure viewCategory (This : in out CategoryRequestHelper) is
-      Java_Result : constant Unbounded_String := CategoryRequestHelper'Class (This).viewCategory;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end viewCategory;
-
-   procedure viewCategories (This : in out CategoryRequestHelper) is
-      Java_Result : constant Unbounded_String := CategoryRequestHelper'Class (This).viewCategories;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end viewCategories;
-
-   procedure update (This : in out CategoryRequestHelper) is
-      Java_Result : constant Unbounded_String := CategoryRequestHelper'Class (This).update;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end update;
 
 begin

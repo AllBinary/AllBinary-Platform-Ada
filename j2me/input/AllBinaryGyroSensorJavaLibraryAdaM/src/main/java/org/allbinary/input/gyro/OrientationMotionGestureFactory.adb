@@ -51,16 +51,9 @@ package body org.allbinary.input.gyro.OrientationMotionGestureFactory_Package is
    function Create return OrientationMotionGestureFactory_Access is
       This : constant OrientationMotionGestureFactory_Access := new OrientationMotionGestureFactory;
    begin
-      Initialize (This.all);
+      OrientationMotionGestureFactory_Package.Initialize (This.all);
       return This;
    end Create;
-
-   procedure getInstance is
-      Java_Result : constant OrientationMotionGestureFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

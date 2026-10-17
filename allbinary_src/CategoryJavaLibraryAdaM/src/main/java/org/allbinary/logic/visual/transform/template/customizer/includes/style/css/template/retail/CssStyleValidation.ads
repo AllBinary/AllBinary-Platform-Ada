@@ -64,11 +64,8 @@ package org.allbinary.logic.visual.transform.template.customizer.includes.style.
    procedure Initialize (This : in out CssStyleValidation'Class);
    function Create return CssStyleValidation_Access;
    function isValid (This : in out CssStyleValidation) return Boolean;
-   procedure isValid (This : in out CssStyleValidation);
    function validationInfo (This : in out CssStyleValidation) return Unbounded_String;
-   procedure validationInfo (This : in out CssStyleValidation);
    function toValidationInfoDoc (This : in out CssStyleValidation) return Document_Access;
-   procedure toValidationInfoDoc (This : in out CssStyleValidation);
    function toValidationInfoNode (This : in out CssStyleValidation; document : Document_Access) return Node_Access;
    procedure toValidationInfoNode (This : in out CssStyleValidation; document : Document_Access);
    function toXmlNode (This : in out CssStyleValidation; document : Document_Access) return Node_Access;

@@ -32,7 +32,7 @@ package body admin.tags.CustomItemsTag_Package is
    function Create return CustomItemsTag_Access is
       This : constant CustomItemsTag_Access := new CustomItemsTag;
    begin
-      Initialize (This.all);
+      CustomItemsTag_Package.Initialize (This.all);
       return This;
    end Create;
 

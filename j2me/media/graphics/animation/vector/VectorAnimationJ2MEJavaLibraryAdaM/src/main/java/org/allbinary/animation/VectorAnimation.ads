@@ -28,6 +28,7 @@ with org.allbinary.logic.math.PrimitiveIntUtil_Package; use org.allbinary.logic.
 with org.allbinary.util.CircularIndexUtil_Package; use org.allbinary.util.CircularIndexUtil_Package;
 with org.allbinary.animation.IndexedAnimation_Package; use org.allbinary.animation.IndexedAnimation_Package;
 with org.allbinary.animation.VectorAnimationInterface_Package; use org.allbinary.animation.VectorAnimationInterface_Package;
+with org.allbinary.animation.AnimationBehavior_Package; use org.allbinary.animation.AnimationBehavior_Package;
 
 package org.allbinary.animation.VectorAnimation_Package is
 
@@ -57,18 +58,14 @@ package org.allbinary.animation.VectorAnimation_Package is
    procedure setMaxScale (This : in out VectorAnimation; maxScaleX : Float; maxScaleY : Float);
    procedure updateModifiers (This : in out VectorAnimation);
    function getAnimationSize (This : in out VectorAnimation) return Integer;
-   procedure getAnimationSize (This : in out VectorAnimation);
    function getSize (This : in out VectorAnimation) return Integer;
-   procedure getSize (This : in out VectorAnimation);
    procedure setSequence (This : in out VectorAnimation; sequence : Integer_Array_Access);
    function getSequence (This : in out VectorAnimation) return Integer_Array_Access;
-   procedure getSequence (This : in out VectorAnimation);
    procedure nextFrame (This : in out VectorAnimation);
    procedure previousFrame (This : in out VectorAnimation);
    procedure paintVectors (This : in out VectorAnimation; graphics : Graphics_Access; x : Integer; y : Integer);
    procedure paintXY (This : in out VectorAnimation; graphics : Graphics_Access; x : Integer; y : Integer);
    function getFrame (This : in out VectorAnimation) return Integer;
-   procedure getFrame (This : in out VectorAnimation);
    procedure setFrame (This : in out VectorAnimation; index : Integer);
    function getPoints (This : in out VectorAnimation; frame : Integer) return Integer_Array_Access_Array_Access;
    procedure getPoints (This : in out VectorAnimation; frame : Integer);

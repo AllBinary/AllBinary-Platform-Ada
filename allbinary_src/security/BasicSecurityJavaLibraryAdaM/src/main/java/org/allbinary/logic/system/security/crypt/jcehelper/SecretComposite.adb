@@ -37,12 +37,13 @@ package body org.allbinary.logic.system.security.crypt.jcehelper.SecretComposite
    function Create (secretKey : SecretKey_Access; cipher : Cipher_Access; key : Short_Short_Integer_Array_Access) return SecretComposite_Access is
       This : constant SecretComposite_Access := new SecretComposite;
    begin
-      Initialize (This.all, secretKey, cipher, key);
+      SecretComposite_Package.Initialize (This.all, secretKey, cipher, key);
       return This;
    end Create;
 
    --  throws Exception
-   function encrypt (This : in out SecretComposite; array_Id : Short_Short_Integer_Array_Access) return Short_Short_Integer_Array_Access is
+   function encrypt (This : in out SecretComposite; array_Id_Param : Short_Short_Integer_Array_Access) return Short_Short_Integer_Array_Access is
+      array_Id : Short_Short_Integer_Array_Access := array_Id_Param;
    begin
         array_Id := This.mutilate (array_Id);
         This.cipher.init (Cipher_Package.ENCRYPT_MODE, This.secretKey);
@@ -56,7 +57,8 @@ package body org.allbinary.logic.system.security.crypt.jcehelper.SecretComposite
         return This.mutilate (This.cipher.doFinal (array_Id));
    end decrypt;
 
-   function mutilate (This : in out SecretComposite; array_Id : Short_Short_Integer_Array_Access) return Short_Short_Integer_Array_Access is
+   function mutilate (This : in out SecretComposite; array_Id_Param : Short_Short_Integer_Array_Access) return Short_Short_Integer_Array_Access is
+      array_Id : Short_Short_Integer_Array_Access := array_Id_Param;
       value : Short_Short_Integer;
       index : Integer;
    begin
@@ -69,8 +71,8 @@ package body org.allbinary.logic.system.security.crypt.jcehelper.SecretComposite
         return array_Id;
    end mutilate;
 
-   procedure encrypt (This : in out SecretComposite; array_Id : Short_Short_Integer_Array_Access) is
-      Java_Result : constant Short_Short_Integer_Array_Access := SecretComposite'Class (This).encrypt (array_Id);
+   procedure encrypt (This : in out SecretComposite; array_Id_Param : Short_Short_Integer_Array_Access) is
+      Java_Result : constant Short_Short_Integer_Array_Access := SecretComposite'Class (This).encrypt (array_Id_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
@@ -83,8 +85,8 @@ package body org.allbinary.logic.system.security.crypt.jcehelper.SecretComposite
       null;
    end decrypt;
 
-   procedure mutilate (This : in out SecretComposite; array_Id : Short_Short_Integer_Array_Access) is
-      Java_Result : constant Short_Short_Integer_Array_Access := SecretComposite'Class (This).mutilate (array_Id);
+   procedure mutilate (This : in out SecretComposite; array_Id_Param : Short_Short_Integer_Array_Access) is
+      Java_Result : constant Short_Short_Integer_Array_Access := SecretComposite'Class (This).mutilate (array_Id_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -21,6 +21,7 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.util.event.BasicEventListenerInterface_Package; use org.allbinary.logic.util.event.BasicEventListenerInterface_Package;
+with org.allbinary.media.image.search.ImageComparisonSearchResultsEvent_Package; use org.allbinary.media.image.search.ImageComparisonSearchResultsEvent_Package;
 
 package org.allbinary.media.image.search.ImageComparisonSearchResultsListener_Package is
 

@@ -43,7 +43,7 @@ package body org.allbinary.media.graphics.geography.map.GeographicMapCellHistory
    function Create return GeographicMapCellHistory_Access is
       This : constant GeographicMapCellHistory_Access := new GeographicMapCellHistory;
    begin
-      Initialize (This.all);
+      GeographicMapCellHistory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -317,61 +317,12 @@ package body org.allbinary.media.graphics.geography.map.GeographicMapCellHistory
         This.totalVisited := 0;
    end init;
 
-   procedure getTotalVisited (This : in out GeographicMapCellHistory) is
-      Java_Result : constant Integer := GeographicMapCellHistory'Class (This).getTotalVisited;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTotalVisited;
-
-   procedure getTotalNotVisited (This : in out GeographicMapCellHistory) is
-      Java_Result : constant Integer := GeographicMapCellHistory'Class (This).getTotalNotVisited;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTotalNotVisited;
-
-   procedure getSize (This : in out GeographicMapCellHistory) is
-      Java_Result : constant Integer := GeographicMapCellHistory'Class (This).getSize;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSize;
-
-   procedure getTracked (This : in out GeographicMapCellHistory) is
-      Java_Result : constant BasicArrayList_Access := GeographicMapCellHistory'Class (This).getTracked;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTracked;
-
-   procedure getVisited (This : in out GeographicMapCellHistory) is
-      Java_Result : constant BasicArrayList_Access := GeographicMapCellHistory'Class (This).getVisited;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getVisited;
-
    procedure getAfterIfNotLast (This : in out GeographicMapCellHistory; geographicMapCellPosition : GeographicMapCellPosition_Access) is
       Java_Result : constant GeographicMapCellPosition_Access := GeographicMapCellHistory'Class (This).getAfterIfNotLast (geographicMapCellPosition);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getAfterIfNotLast;
-
-   procedure getFirstUnvisited (This : in out GeographicMapCellHistory) is
-      Java_Result : constant GeographicMapCellPosition_Access := GeographicMapCellHistory'Class (This).getFirstUnvisited;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getFirstUnvisited;
-
-   procedure getFirstUnvisitedIndex (This : in out GeographicMapCellHistory) is
-      Java_Result : constant Integer := GeographicMapCellHistory'Class (This).getFirstUnvisitedIndex;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getFirstUnvisitedIndex;
 
    procedure getInPathButNotTracked (This : in out GeographicMapCellHistory; pathList : BasicArrayList_Access) is
       Java_Result : constant BasicArrayList_Access := GeographicMapCellHistory'Class (This).getInPathButNotTracked (pathList);
@@ -393,20 +344,6 @@ package body org.allbinary.media.graphics.geography.map.GeographicMapCellHistory
    begin
       null;
    end visit;
-
-   procedure isAllVisited (This : in out GeographicMapCellHistory) is
-      Java_Result : constant Boolean := GeographicMapCellHistory'Class (This).isAllVisited;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isAllVisited;
-
-   procedure isAllVisited2 (This : in out GeographicMapCellHistory) is
-      Java_Result : constant Boolean := GeographicMapCellHistory'Class (This).isAllVisited2;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isAllVisited2;
 
    procedure isPortionVisited (This : in out GeographicMapCellHistory; basicDecimal : BasicDecimal_Access) is
       Java_Result : constant Boolean := GeographicMapCellHistory'Class (This).isPortionVisited (basicDecimal);

@@ -29,7 +29,7 @@ package body org.allbinary.media.graphics.geography.map.racetrack.CustomMapGener
    function Create return CustomMapGeneratorFactory_Access is
       This : constant CustomMapGeneratorFactory_Access := new CustomMapGeneratorFactory;
    begin
-      Initialize (This.all);
+      CustomMapGeneratorFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

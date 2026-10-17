@@ -43,13 +43,9 @@ package org.allbinary.game.layer.VehicleFrictionProperties_Package is
    procedure Initialize (This : in out VehicleFrictionProperties'Class; tireFriction : Integer; brakeFriction : Integer; airFriction : Integer; crashFriction : Integer);
    function Create (tireFriction : Integer; brakeFriction : Integer; airFriction : Integer; crashFriction : Integer) return VehicleFrictionProperties_Access;
    function getTireFrictionNominator (This : in out VehicleFrictionProperties) return Integer;
-   procedure getTireFrictionNominator (This : in out VehicleFrictionProperties);
    function getBrakeFrictionNominator (This : in out VehicleFrictionProperties) return Integer;
-   procedure getBrakeFrictionNominator (This : in out VehicleFrictionProperties);
    function getAirFrictionNominator (This : in out VehicleFrictionProperties) return Integer;
-   procedure getAirFrictionNominator (This : in out VehicleFrictionProperties);
    function getCrashFrictionNominator (This : in out VehicleFrictionProperties) return Integer;
-   procedure getCrashFrictionNominator (This : in out VehicleFrictionProperties);
 
 end org.allbinary.game.layer.VehicleFrictionProperties_Package;
 

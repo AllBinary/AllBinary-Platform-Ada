@@ -21,6 +21,7 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.direction.DirectionFactory_Package; use org.allbinary.direction.DirectionFactory_Package;
+with org.allbinary.game.layer.LayerPlacementType_Package; use org.allbinary.game.layer.LayerPlacementType_Package;
 
 package org.allbinary.game.layer.LayerPlacementTypeFactory_Package is
 
@@ -43,7 +44,6 @@ package org.allbinary.game.layer.LayerPlacementTypeFactory_Package is
    procedure Initialize (This : in out LayerPlacementTypeFactory'Class);
    function Create return LayerPlacementTypeFactory_Access;
    function getInstance return LayerPlacementTypeFactory_Access;
-   procedure getInstance;
 
 end org.allbinary.game.layer.LayerPlacementTypeFactory_Package;
 

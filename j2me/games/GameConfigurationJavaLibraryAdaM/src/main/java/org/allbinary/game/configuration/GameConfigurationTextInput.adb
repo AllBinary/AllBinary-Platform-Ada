@@ -34,7 +34,7 @@ package body org.allbinary.game.configuration.GameConfigurationTextInput_Package
    function Create (label : Unbounded_String; text : Unbounded_String) return GameConfigurationTextInput_Access is
       This : constant GameConfigurationTextInput_Access := new GameConfigurationTextInput;
    begin
-      Initialize (This.all, label, text);
+      GameConfigurationTextInput_Package.Initialize (This.all, label, text);
       return This;
    end Create;
 
@@ -70,27 +70,6 @@ package body org.allbinary.game.configuration.GameConfigurationTextInput_Package
    function getHashtable return ABHashtable_Access is
    begin
         return GameConfigurationTextInput_Package.hashtable;
-   end getHashtable;
-
-   procedure getText (This : in out GameConfigurationTextInput) is
-      Java_Result : constant Unbounded_String := GameConfigurationTextInput'Class (This).getText;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getText;
-
-   procedure getLabel (This : in out GameConfigurationTextInput) is
-      Java_Result : constant Unbounded_String := GameConfigurationTextInput'Class (This).getLabel;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getLabel;
-
-   procedure getHashtable is
-      Java_Result : constant ABHashtable_Access := getHashtable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getHashtable;
 
 begin

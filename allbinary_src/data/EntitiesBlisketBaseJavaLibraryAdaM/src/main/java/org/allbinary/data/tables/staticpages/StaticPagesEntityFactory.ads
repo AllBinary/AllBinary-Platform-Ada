@@ -22,6 +22,7 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.data.tables.staticpages.StaticPagesEntity_Package; use org.allbinary.data.tables.staticpages.StaticPagesEntity_Package;
 
 package org.allbinary.data.tables.staticpages.StaticPagesEntityFactory_Package is
 
@@ -41,9 +42,7 @@ package org.allbinary.data.tables.staticpages.StaticPagesEntityFactory_Package i
    procedure Initialize (This : in out StaticPagesEntityFactory'Class);
    function Create return StaticPagesEntityFactory_Access;
    function getInstance return StaticPagesEntityFactory_Access;
-   procedure getInstance;
    function getStaticPagesEntityInstance (This : in out StaticPagesEntityFactory) return StaticPagesEntity_Access;
-   procedure getStaticPagesEntityInstance (This : in out StaticPagesEntityFactory);
 
 end org.allbinary.data.tables.staticpages.StaticPagesEntityFactory_Package;
 

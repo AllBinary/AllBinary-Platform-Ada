@@ -48,7 +48,7 @@ package body org.allbinary.game.layer.MultipassWaypointPathRunnable_Package is
    function Create return MultipassWaypointPathRunnable_Access is
       This : constant MultipassWaypointPathRunnable_Access := new MultipassWaypointPathRunnable;
    begin
-      Initialize (This.all);
+      MultipassWaypointPathRunnable_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -186,13 +186,6 @@ package body org.allbinary.game.layer.MultipassWaypointPathRunnable_Package is
         This.finish;
    end processEndRunnable;
 
-   procedure isDone (This : in out MultipassWaypointPathRunnable) is
-      Java_Result : constant Boolean := MultipassWaypointPathRunnable'Class (This).isDone;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isDone;
-
 end org.allbinary.game.layer.MultipassWaypointPathRunnable_Package;
 
 
@@ -215,7 +208,7 @@ package body org.allbinary.game.layer.FirstRunnable_Package is
    function Create (multipassWaypointPathRunnable : MultipassWaypointPathRunnable_Access) return FirstRunnable_Access is
       This : constant FirstRunnable_Access := new FirstRunnable;
    begin
-      Initialize (This.all, multipassWaypointPathRunnable);
+      FirstRunnable_Package.Initialize (This.all, multipassWaypointPathRunnable);
       return This;
    end Create;
     
@@ -246,7 +239,7 @@ package body org.allbinary.game.layer.SecondRunnable_Package is
    function Create (multipassWaypointPathRunnable : MultipassWaypointPathRunnable_Access) return SecondRunnable_Access is
       This : constant SecondRunnable_Access := new SecondRunnable;
    begin
-      Initialize (This.all, multipassWaypointPathRunnable);
+      SecondRunnable_Package.Initialize (This.all, multipassWaypointPathRunnable);
       return This;
    end Create;
     
@@ -277,7 +270,7 @@ package body org.allbinary.game.layer.EndRunnable_Package is
    function Create (multipassWaypointPathRunnable : MultipassWaypointPathRunnable_Access) return EndRunnable_Access is
       This : constant EndRunnable_Access := new EndRunnable;
    begin
-      Initialize (This.all, multipassWaypointPathRunnable);
+      EndRunnable_Package.Initialize (This.all, multipassWaypointPathRunnable);
       return This;
    end Create;
     

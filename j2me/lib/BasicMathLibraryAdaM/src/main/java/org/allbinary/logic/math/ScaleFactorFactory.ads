@@ -38,7 +38,6 @@ package org.allbinary.logic.math.ScaleFactorFactory_Package is
    procedure Initialize (This : in out ScaleFactorFactory'Class);
    function Create return ScaleFactorFactory_Access;
    function getInstance return ScaleFactorFactory_Access;
-   procedure getInstance;
 
 end org.allbinary.logic.math.ScaleFactorFactory_Package;
 

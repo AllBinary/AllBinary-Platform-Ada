@@ -38,7 +38,7 @@ package body org.allbinary.game.input.form.CompositeRTSFormInput_Package is
    function Create (groupInterface : Group_Access_Array_Access; isPrimaryWaypointCreator : Boolean; itemIndex : Integer_Array_Access) return CompositeRTSFormInput_Access is
       This : constant CompositeRTSFormInput_Access := new CompositeRTSFormInput;
    begin
-      Initialize (This.all, groupInterface, isPrimaryWaypointCreator, itemIndex);
+      CompositeRTSFormInput_Package.Initialize (This.all, groupInterface, isPrimaryWaypointCreator, itemIndex);
       return This;
    end Create;
 
@@ -132,27 +132,6 @@ package body org.allbinary.game.input.form.CompositeRTSFormInput_Package is
    begin
       null;
    end processSticky;
-
-   procedure getSelectedStickyItemIndex (This : in out CompositeRTSFormInput) is
-      Java_Result : constant Integer := CompositeRTSFormInput'Class (This).getSelectedStickyItemIndex;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSelectedStickyItemIndex;
-
-   procedure isStickyItemSelected (This : in out CompositeRTSFormInput) is
-      Java_Result : constant Boolean := CompositeRTSFormInput'Class (This).isStickyItemSelected;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isStickyItemSelected;
-
-   procedure getSelectedStickyItem (This : in out CompositeRTSFormInput) is
-      Java_Result : constant ABCustomItem_Access := CompositeRTSFormInput'Class (This).getSelectedStickyItem;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSelectedStickyItem;
 
 end org.allbinary.game.input.form.CompositeRTSFormInput_Package;
 

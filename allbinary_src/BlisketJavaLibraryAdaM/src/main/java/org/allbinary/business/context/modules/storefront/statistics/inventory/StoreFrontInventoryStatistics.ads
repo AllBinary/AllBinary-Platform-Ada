@@ -30,6 +30,7 @@ with org.allbinary.data.tables.user.commerce.inventory.item.InventoryEntityFacto
 with org.allbinary.data.tables.user.commerce.inventory.item.InventoryEntityInterface_Package; use org.allbinary.data.tables.user.commerce.inventory.item.InventoryEntityInterface_Package;
 with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.business.context.modules.storefront.statistics.inventory.StoreFrontInventoryStatisticsInterface_Package; use org.allbinary.business.context.modules.storefront.statistics.inventory.StoreFrontInventoryStatisticsInterface_Package;
+with org.allbinary.business.context.modules.storefront.statistics.inventory.StoreFrontInventoryStatisticsData_Package; use org.allbinary.business.context.modules.storefront.statistics.inventory.StoreFrontInventoryStatisticsData_Package;
 
 package org.allbinary.business.context.modules.storefront.statistics.inventory.StoreFrontInventoryStatistics_Package is
 
@@ -55,15 +56,10 @@ package org.allbinary.business.context.modules.storefront.statistics.inventory.S
    procedure Initialize (This : in out StoreFrontInventoryStatistics'Class; storeFrontInterface : StoreFrontInterface_Access);
    function Create (storeFrontInterface : StoreFrontInterface_Access) return StoreFrontInventoryStatistics_Access;
    function getNumber (This : in out StoreFrontInventoryStatistics) return Long_Long_Integer;
-   procedure getNumber (This : in out StoreFrontInventoryStatistics);
    function getTotal (This : in out StoreFrontInventoryStatistics) return Money_Access;
-   procedure getTotal (This : in out StoreFrontInventoryStatistics);
    function toHashMap (This : in out StoreFrontInventoryStatistics) return HashMap_Access;
-   procedure toHashMap (This : in out StoreFrontInventoryStatistics);
    function toVector (This : in out StoreFrontInventoryStatistics) return BasicArrayList_Access;
-   procedure toVector (This : in out StoreFrontInventoryStatistics);
    function getKey (This : in out StoreFrontInventoryStatistics) return Java_Object_Access;
-   procedure getKey (This : in out StoreFrontInventoryStatistics);
 
 end org.allbinary.business.context.modules.storefront.statistics.inventory.StoreFrontInventoryStatistics_Package;
 

@@ -35,7 +35,7 @@ package body org.allbinary.media.image.ImageCreationUtil_Package is
    function Create return ImageCreationUtil_Access is
       This : constant ImageCreationUtil_Access := new ImageCreationUtil;
    begin
-      Initialize (This.all);
+      ImageCreationUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -54,13 +54,6 @@ package body org.allbinary.media.image.ImageCreationUtil_Package is
         image := GameFeatureImageCacheFactory_Package.getInstance.get (To_Unbounded_String (Ada.Tags.Expanded_Name (This.all'Tag)), (Integer (((Float (width)) * (maxScaleX)))) + (1), (Integer (((Float (height)) * (maxScaleY)))) + (1));
         return image;
    end createImage;
-
-   procedure getInstance is
-      Java_Result : constant ImageCreationUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure createImageWH (This : in out ImageCreationUtil; width : Integer; height : Integer) is
       Java_Result : constant Image_Access := ImageCreationUtil'Class (This).createImageWH (width, height);

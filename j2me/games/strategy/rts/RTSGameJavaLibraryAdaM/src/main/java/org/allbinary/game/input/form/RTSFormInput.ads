@@ -97,19 +97,14 @@ package org.allbinary.game.input.form.RTSFormInput_Package is
    function getInstance (This : in out RTSFormInput; layerManager : AllBinaryLayerManager_Access; aItem : ABCustomItem_Access; geographicMapCellPosition : GeographicMapCellPosition_Access) return CollidableDestroyableDamageableLayer_Access;
    procedure getInstance (This : in out RTSFormInput; layerManager : AllBinaryLayerManager_Access; aItem : ABCustomItem_Access; geographicMapCellPosition : GeographicMapCellPosition_Access);
    function getSelectedGeographicCellPosition (This : in out RTSFormInput) return GeographicMapCellPosition_Access;
-   procedure getSelectedGeographicCellPosition (This : in out RTSFormInput);
    procedure setSelectedGeographicCellPosition (This : in out RTSFormInput; selectedGeographicCellPosition : GeographicMapCellPosition_Access);
    function isStickyItemSelected (This : in out RTSFormInput) return Boolean;
-   procedure isStickyItemSelected (This : in out RTSFormInput);
    procedure setStickyItemSelected (This : in out RTSFormInput; stickyItemSelected : Boolean);
    function getSelectedStickyItem (This : in out RTSFormInput) return ABCustomItem_Access;
-   procedure getSelectedStickyItem (This : in out RTSFormInput);
    procedure setSelectedStickyItem (This : in out RTSFormInput; selectedStickyItem : ABCustomItem_Access);
    function getSelectedStickyItemIndex (This : in out RTSFormInput) return Integer;
-   procedure getSelectedStickyItemIndex (This : in out RTSFormInput);
    procedure setSelectedStickyItemIndex (This : in out RTSFormInput; selectedStickyItemIndex : Integer);
    function getHashtable (This : in out RTSFormInput) return ABHashtable_Access;
-   procedure getHashtable (This : in out RTSFormInput);
 
 end org.allbinary.game.input.form.RTSFormInput_Package;
 

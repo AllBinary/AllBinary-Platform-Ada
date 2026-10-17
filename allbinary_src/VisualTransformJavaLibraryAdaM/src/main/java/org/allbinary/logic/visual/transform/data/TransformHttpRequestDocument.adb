@@ -61,7 +61,7 @@ package body org.allbinary.logic.visual.transform.data.TransformHttpRequestDocum
    function Create (pageContext : PageContext_Access; weblisketSession : WeblisketSession_Access) return TransformHttpRequestDocument_Access is
       This : constant TransformHttpRequestDocument_Access := new TransformHttpRequestDocument;
    begin
-      Initialize (This.all, pageContext, weblisketSession);
+      TransformHttpRequestDocument_Package.Initialize (This.all, pageContext, weblisketSession);
       return This;
    end Create;
 
@@ -99,7 +99,7 @@ package body org.allbinary.logic.visual.transform.data.TransformHttpRequestDocum
    function Create (searchRequest : SearchRequest_Access) return TransformHttpRequestDocument_Access is
       This : constant TransformHttpRequestDocument_Access := new TransformHttpRequestDocument;
    begin
-      Initialize (This.all, searchRequest);
+      TransformHttpRequestDocument_Package.Initialize (This.all, searchRequest);
       return This;
    end Create;
 
@@ -127,27 +127,6 @@ package body org.allbinary.logic.visual.transform.data.TransformHttpRequestDocum
         stringBuffer.append (To_Unbounded_String ("" & ASCII.LF & "Document: "));
         stringBuffer.append (XmlDocumentHelper_Package.toString (This.document));
         return stringBuffer.toString;
-   end log;
-
-   procedure getBaseNode (This : in out TransformHttpRequestDocument) is
-      Java_Result : constant Node_Access := TransformHttpRequestDocument'Class (This).getBaseNode;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getBaseNode;
-
-   procedure getDoc (This : in out TransformHttpRequestDocument) is
-      Java_Result : constant Document_Access := TransformHttpRequestDocument'Class (This).getDoc;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getDoc;
-
-   procedure log (This : in out TransformHttpRequestDocument) is
-      Java_Result : constant Unbounded_String := TransformHttpRequestDocument'Class (This).log;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end log;
 
 begin

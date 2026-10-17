@@ -29,7 +29,7 @@ package body org.allbinary.content.NotificationBuilderAPI23_Package is
    function Create return NotificationBuilderAPI23_Access is
       This : constant NotificationBuilderAPI23_Access := new NotificationBuilderAPI23;
    begin
-      Initialize (This.all);
+      NotificationBuilderAPI23_Package.Initialize (This.all);
       return This;
    end Create;
 

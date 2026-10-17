@@ -13,7 +13,7 @@
 --  Generated Code Do Not Modify
 
 
-package body org.allbinary.business.user.commerce.inventory_Case.InventoryData_Package is
+package body org.allbinary.business.user.commerce.inventory.InventoryData_Package is
 
    procedure Initialize_Fields (This : in out InventoryData'Class) is
    begin
@@ -28,7 +28,7 @@ package body org.allbinary.business.user.commerce.inventory_Case.InventoryData_P
    function Create return InventoryData_Access is
       This : constant InventoryData_Access := new InventoryData;
    begin
-      Initialize (This.all);
+      InventoryData_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -37,6 +37,6 @@ begin
    null;
    INVENTORY := To_Unbounded_String ("INVENTORY");
 
-end org.allbinary.business.user.commerce.inventory_Case.InventoryData_Package;
+end org.allbinary.business.user.commerce.inventory.InventoryData_Package;
 
 

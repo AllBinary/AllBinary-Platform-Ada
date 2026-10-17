@@ -21,6 +21,7 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.system.Runtime_Package; use org.allbinary.system.Runtime_Package;
 
 package org.allbinary.system.Memory_Package is
 
@@ -36,7 +37,6 @@ package org.allbinary.system.Memory_Package is
    procedure Initialize (This : in out Memory'Class);
    function Create return Memory_Access;
    function getInfo return Unbounded_String;
-   procedure getInfo;
 
 end org.allbinary.system.Memory_Package;
 

@@ -28,7 +28,7 @@ package body org.allbinary.midlet.MidletExitProcessorFactory_Package is
    function Create return MidletExitProcessorFactory_Access is
       This : constant MidletExitProcessorFactory_Access := new MidletExitProcessorFactory;
    begin
-      Initialize (This.all);
+      MidletExitProcessorFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -46,13 +46,6 @@ package body org.allbinary.midlet.MidletExitProcessorFactory_Package is
             return MidletExitProcessor_Package.Create (midlet);
         end if;
    end getExitInstance;
-
-   procedure getInstance is
-      Java_Result : constant MidletExitProcessorFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure getExitInstance (This : in out MidletExitProcessorFactory; midlet : MIDlet_Access) is
       Java_Result : constant Processor_Access := MidletExitProcessorFactory'Class (This).getExitInstance (midlet);

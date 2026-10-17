@@ -49,7 +49,7 @@ package body org.allbinary.business.context.modules.storefront.statistics.users.
    function Create (storeFrontInterface : StoreFrontInterface_Access) return StoreFrontUsersStatistics_Access is
       This : constant StoreFrontUsersStatistics_Access := new StoreFrontUsersStatistics;
    begin
-      Initialize (This.all, storeFrontInterface);
+      StoreFrontUsersStatistics_Package.Initialize (This.all, storeFrontInterface);
       return This;
    end Create;
 
@@ -115,40 +115,12 @@ package body org.allbinary.business.context.modules.storefront.statistics.users.
       null;
    end getNewTotal;
 
-   procedure getNumberOfUsers (This : in out StoreFrontUsersStatistics) is
-      Java_Result : constant Long_Long_Integer := StoreFrontUsersStatistics'Class (This).getNumberOfUsers;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getNumberOfUsers;
-
    procedure getNumberOfUsersByRole (This : in out StoreFrontUsersStatistics; role : Unbounded_String) is
       Java_Result : constant Long_Long_Integer := StoreFrontUsersStatistics'Class (This).getNumberOfUsersByRole (role);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getNumberOfUsersByRole;
-
-   procedure toHashMap (This : in out StoreFrontUsersStatistics) is
-      Java_Result : constant HashMap_Access := StoreFrontUsersStatistics'Class (This).toHashMap;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toHashMap;
-
-   procedure toVector (This : in out StoreFrontUsersStatistics) is
-      Java_Result : constant BasicArrayList_Access := StoreFrontUsersStatistics'Class (This).toVector;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toVector;
-
-   procedure getKey (This : in out StoreFrontUsersStatistics) is
-      Java_Result : constant Java_Object_Access := StoreFrontUsersStatistics'Class (This).getKey;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getKey;
 
 end org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatistics_Package;
 

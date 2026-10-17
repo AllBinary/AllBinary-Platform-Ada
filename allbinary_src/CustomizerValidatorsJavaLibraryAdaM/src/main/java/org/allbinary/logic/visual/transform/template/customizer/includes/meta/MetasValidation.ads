@@ -35,6 +35,7 @@ with org.allbinary.logic.visual.dhtml.html.head.meta.HtmlMetasData_Package; use 
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
+with org.allbinary.logic.visual.transform.template.customizer.includes.meta.MetaValidation_Package; use org.allbinary.logic.visual.transform.template.customizer.includes.meta.MetaValidation_Package;
 
 package org.allbinary.logic.visual.transform.template.customizer.includes.meta.MetasValidation_Package is
 
@@ -68,11 +69,8 @@ package org.allbinary.logic.visual.transform.template.customizer.includes.meta.M
    procedure Initialize (This : in out MetasValidation'Class; storeName : Unbounded_String);
    function Create (storeName : Unbounded_String) return MetasValidation_Access;
    function isValid (This : in out MetasValidation) return Boolean;
-   procedure isValid (This : in out MetasValidation);
    function validationInfo (This : in out MetasValidation) return Unbounded_String;
-   procedure validationInfo (This : in out MetasValidation);
    function toValidationInfoDoc (This : in out MetasValidation) return Document_Access;
-   procedure toValidationInfoDoc (This : in out MetasValidation);
    function toValidationInfoNode (This : in out MetasValidation; document : Document_Access) return Node_Access;
    procedure toValidationInfoNode (This : in out MetasValidation; document : Document_Access);
    function toXmlNode (This : in out MetasValidation; document : Document_Access) return Node_Access;

@@ -49,7 +49,6 @@ package org.allbinary.game.layer.geographic.map.LayerPartialCellPositionsUtil_Pa
    function getAllDXY (This : in out LayerPartialCellPositionsUtil; geographicMapInterface : BasicGeographicMap_Access; layerInterface : AllBinaryLayer_Access; dx : Integer; dy : Integer; reusableList : BasicArrayList_Access) return BasicArrayList_Access;
    procedure getAllDXY (This : in out LayerPartialCellPositionsUtil; geographicMapInterface : BasicGeographicMap_Access; layerInterface : AllBinaryLayer_Access; dx : Integer; dy : Integer; reusableList : BasicArrayList_Access);
    function getInstance return LayerPartialCellPositionsUtil_Access;
-   procedure getInstance;
 
 end org.allbinary.game.layer.geographic.map.LayerPartialCellPositionsUtil_Package;
 

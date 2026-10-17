@@ -45,6 +45,9 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.allbinary.graphics.j2me.JFrame_Package; use org.allbinary.graphics.j2me.JFrame_Package;
 with org.allbinary.graphics.j2me.KeyListener_Package; use org.allbinary.graphics.j2me.KeyListener_Package;
+with org.allbinary.graphics.j2me.Dimension_Package; use org.allbinary.graphics.j2me.Dimension_Package;
+with org.allbinary.graphics.j2me.GridLayout_Package; use org.allbinary.graphics.j2me.GridLayout_Package;
+with org.allbinary.graphics.j2me.JPanel_Package; use org.allbinary.graphics.j2me.JPanel_Package;
 
 package org.allbinary.graphics.j2me.MyFrame_Package is
 
@@ -171,7 +174,6 @@ package org.allbinary.graphics.j2me.MyFrame_Package is
    procedure save (This : in out MyFrame);
    procedure onHashMap (This : in out MyFrame; hashMap : HashMap_Access);
    function getSelectedWorkArea (This : in out MyFrame) return WorkAreaJPanelInterface_Access;
-   procedure getSelectedWorkArea (This : in out MyFrame);
    procedure updateSelectedWorkArea (This : in out MyFrame);
    procedure add (This : in out MyFrame; newCanvasInterface : WorkAreaJPanelInterface_Access);
    procedure keyPressed (This : in out MyFrame; keyEvent : KeyEvent_Access);

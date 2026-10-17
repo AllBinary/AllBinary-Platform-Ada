@@ -61,7 +61,7 @@ package body org.allbinary.input.automation.robot.InputRobotFactory_Package is
    function Create return InputRobotFactory_Access is
       This : constant InputRobotFactory_Access := new InputRobotFactory;
    begin
-      Initialize (This.all);
+      InputRobotFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -170,20 +170,6 @@ package body org.allbinary.input.automation.robot.InputRobotFactory_Package is
    begin
         This.logUtil.putF (To_Unbounded_String ("Getting Robot: ") & name, This'Unchecked_Access, To_Unbounded_String ("getRobots"));
         return InputRobotInterface_Access (This.hashtable.get (name));
-   end get;
-
-   procedure getInstance is
-      Java_Result : constant InputRobotFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure get (This : in out InputRobotFactory) is
-      Java_Result : constant ABHashtable_Access := InputRobotFactory'Class (This).get;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end get;
 
    procedure get (This : in out InputRobotFactory; name : Unbounded_String) is

@@ -26,6 +26,8 @@ with org.allbinary.logic.util.event.EventStrings_Package; use org.allbinary.logi
 with org.allbinary.logic.util.event.handler.BasicEventHandler_Package; use org.allbinary.logic.util.event.handler.BasicEventHandler_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.android.input.motion.event.AnalogControllerConfigurationEventListenerInterface_Package; use org.allbinary.android.input.motion.event.AnalogControllerConfigurationEventListenerInterface_Package;
+with org.allbinary.android.input.motion.event.AnalogControllerConfigurationEvent_Package; use org.allbinary.android.input.motion.event.AnalogControllerConfigurationEvent_Package;
 
 package org.allbinary.android.input.motion.event.AnalogControllerConfigurationEventHandler_Package is
 
@@ -49,7 +51,6 @@ package org.allbinary.android.input.motion.event.AnalogControllerConfigurationEv
    procedure Initialize (This : in out AnalogControllerConfigurationEventHandler'Class);
    function Create return AnalogControllerConfigurationEventHandler_Access;
    function getInstance return AnalogControllerConfigurationEventHandler_Access;
-   procedure getInstance;
    procedure addListener (This : in out AnalogControllerConfigurationEventHandler; analogControllerConfigurationEventListenerInterface : AnalogControllerConfigurationEventListenerInterface_Access);
    procedure removeAllListeners (This : in out AnalogControllerConfigurationEventHandler);
    procedure removeListener (This : in out AnalogControllerConfigurationEventHandler; eventListenerInterface : EventListenerInterface_Access);

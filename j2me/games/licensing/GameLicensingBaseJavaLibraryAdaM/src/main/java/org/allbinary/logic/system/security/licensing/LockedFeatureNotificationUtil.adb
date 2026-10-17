@@ -29,7 +29,7 @@ package body org.allbinary.logic.system.security.licensing.LockedFeatureNotifica
    function Create return LockedFeatureNotificationUtil_Access is
       This : constant LockedFeatureNotificationUtil_Access := new LockedFeatureNotificationUtil;
    begin
-      Initialize (This.all);
+      LockedFeatureNotificationUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -53,13 +53,6 @@ package body org.allbinary.logic.system.security.licensing.LockedFeatureNotifica
         This.gameNotificationEvent.setBasicColorP (basicColor);
         GameNotificationEventHandler_Package.getInstance.fireEvent (This.gameNotificationEvent);
    end fireWithColor;
-
-   procedure getInstance is
-      Java_Result : constant LockedFeatureNotificationUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

@@ -31,7 +31,7 @@ package body org.allbinary.android.input.api1.VirtualKeyboardAPI1_Package is
    function Create (activity : Activity_Access) return VirtualKeyboardAPI1_Access is
       This : constant VirtualKeyboardAPI1_Access := new VirtualKeyboardAPI1;
    begin
-      Initialize (This.all, activity);
+      VirtualKeyboardAPI1_Package.Initialize (This.all, activity);
       return This;
    end Create;
 

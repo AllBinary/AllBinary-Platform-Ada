@@ -22,6 +22,8 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.canvas.Processor_Package; use org.allbinary.canvas.Processor_Package;
 with org.allbinary.input.gyro.SensorGameUpdateProcessor_Package; use org.allbinary.input.gyro.SensorGameUpdateProcessor_Package;
+with org.allbinary.input.gyro.AccelerometerSensorUpdateProcessor_Package; use org.allbinary.input.gyro.AccelerometerSensorUpdateProcessor_Package;
+with org.allbinary.input.gyro.GyroSensorUpdateProcessor_Package; use org.allbinary.input.gyro.GyroSensorUpdateProcessor_Package;
 
 package org.allbinary.input.gyro.SingleSensorGameUpdateProcessor_Package is
 

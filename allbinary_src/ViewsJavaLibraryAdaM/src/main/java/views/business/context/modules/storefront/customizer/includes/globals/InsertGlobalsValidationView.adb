@@ -31,7 +31,7 @@ package body views.business.context.modules.storefront.customizer.includes.globa
    function Create (transformInfoInterface : TransformInfoInterface_Access) return InsertGlobalsValidationView_Access is
       This : constant InsertGlobalsValidationView_Access := new InsertGlobalsValidationView;
    begin
-      Initialize (This.all, transformInfoInterface);
+      InsertGlobalsValidationView_Package.Initialize (This.all, transformInfoInterface);
       return This;
    end Create;
 
@@ -89,34 +89,6 @@ package body views.business.context.modules.storefront.customizer.includes.globa
    begin
         return null;
    end toValidationInfoNode;
-
-   procedure toXmlDoc (This : in out InsertGlobalsValidationView) is
-      Java_Result : constant Document_Access := InsertGlobalsValidationView'Class (This).toXmlDoc;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toXmlDoc;
-
-   procedure isValid (This : in out InsertGlobalsValidationView) is
-      Java_Result : constant Boolean := InsertGlobalsValidationView'Class (This).isValid;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isValid;
-
-   procedure validationInfo (This : in out InsertGlobalsValidationView) is
-      Java_Result : constant Unbounded_String := InsertGlobalsValidationView'Class (This).validationInfo;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end validationInfo;
-
-   procedure toValidationInfoDoc (This : in out InsertGlobalsValidationView) is
-      Java_Result : constant Document_Access := InsertGlobalsValidationView'Class (This).toValidationInfoDoc;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toValidationInfoDoc;
 
    procedure toValidationInfoNode (This : in out InsertGlobalsValidationView; document : Document_Access) is
       Java_Result : constant Node_Access := InsertGlobalsValidationView'Class (This).toValidationInfoNode (document);

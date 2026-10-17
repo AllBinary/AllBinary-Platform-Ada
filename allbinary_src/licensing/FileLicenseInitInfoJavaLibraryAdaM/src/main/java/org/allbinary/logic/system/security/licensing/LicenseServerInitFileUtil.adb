@@ -31,7 +31,7 @@ package body org.allbinary.logic.system.security.licensing.LicenseServerInitFile
    function Create return LicenseServerInitFileUtil_Access is
       This : constant LicenseServerInitFileUtil_Access := new LicenseServerInitFileUtil;
    begin
-      Initialize (This.all);
+      LicenseServerInitFileUtil_Package.Initialize (This.all);
       return This;
    end Create;
 

@@ -23,6 +23,7 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package; use org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package;
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbinary.logic.util.event.AllBinaryEventObject_Package;
 with org.allbinary.logic.util.event.AllBinaryEventObjectFactoryInterface_Package; use org.allbinary.logic.util.event.AllBinaryEventObjectFactoryInterface_Package;
+with org.allbinary.game.combat.destroy.event.DestroyedEvent_Package; use org.allbinary.game.combat.destroy.event.DestroyedEvent_Package;
 
 package org.allbinary.game.combat.destroy.event.DestroyEventFactory_Package is
 
@@ -42,7 +43,6 @@ package org.allbinary.game.combat.destroy.event.DestroyEventFactory_Package is
    procedure Initialize (This : in out DestroyEventFactory'Class; combatGameCanvas : AllBinaryGameCanvas_Access);
    function Create (combatGameCanvas : AllBinaryGameCanvas_Access) return DestroyEventFactory_Access;
    function getInstance (This : in out DestroyEventFactory) return AllBinaryEventObject_Access;
-   procedure getInstance (This : in out DestroyEventFactory);
 
 end org.allbinary.game.combat.destroy.event.DestroyEventFactory_Package;
 

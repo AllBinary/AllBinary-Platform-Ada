@@ -20,6 +20,8 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
+with org.allbinary.game.score.remote.RemoteHighScoresSubmissionProcessor_Package; use org.allbinary.game.score.remote.RemoteHighScoresSubmissionProcessor_Package;
+with org.allbinary.game.score.remote.RemoteHighScoresSubmissionProcessorInterface_Package; use org.allbinary.game.score.remote.RemoteHighScoresSubmissionProcessorInterface_Package;
 
 package org.allbinary.game.score.remote.RemoteHighScoresSubmissionProcessorFactory_Package is
 
@@ -35,7 +37,6 @@ package org.allbinary.game.score.remote.RemoteHighScoresSubmissionProcessorFacto
    procedure Initialize (This : in out RemoteHighScoresSubmissionProcessorFactory'Class);
    function Create return RemoteHighScoresSubmissionProcessorFactory_Access;
    function getInstance return RemoteHighScoresSubmissionProcessorInterface_Access;
-   procedure getInstance;
 
 end org.allbinary.game.score.remote.RemoteHighScoresSubmissionProcessorFactory_Package;
 

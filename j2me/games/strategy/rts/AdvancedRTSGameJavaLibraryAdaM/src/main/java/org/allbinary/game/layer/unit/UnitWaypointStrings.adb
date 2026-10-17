@@ -41,7 +41,7 @@ package body org.allbinary.game.layer.unit.UnitWaypointStrings_Package is
    function Create return UnitWaypointStrings_Access is
       This : constant UnitWaypointStrings_Access := new UnitWaypointStrings;
    begin
-      Initialize (This.all);
+      UnitWaypointStrings_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -49,13 +49,6 @@ package body org.allbinary.game.layer.unit.UnitWaypointStrings_Package is
    function getInstance return UnitWaypointStrings_Access is
    begin
         return UnitWaypointStrings_Package.instance;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant UnitWaypointStrings_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

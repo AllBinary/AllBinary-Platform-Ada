@@ -29,6 +29,7 @@ with org.allbinary.layer.AllBinaryLayerManager_Package; use org.allbinary.layer.
 with org.allbinary.media.graphics.geography.map.GeographicMapCellHistory_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellHistory_Package;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
 with org.allbinary.util.BasicArrayListS_Package; use org.allbinary.util.BasicArrayListS_Package;
+with org.allbinary.game.layer.PathFindingLayerInterface_Package; use org.allbinary.game.layer.PathFindingLayerInterface_Package;
 
 package org.allbinary.game.layer.WaypointBehaviorBase_Package is
 
@@ -57,42 +58,26 @@ package org.allbinary.game.layer.WaypointBehaviorBase_Package is
    procedure Initialize (This : in out WaypointBehaviorBase'Class);
    function Create return WaypointBehaviorBase_Access;
    function getName (This : in out WaypointBehaviorBase) return Unbounded_String;
-   procedure getName (This : in out WaypointBehaviorBase);
    function isRunning (This : in out WaypointBehaviorBase) return Boolean;
-   procedure isRunning (This : in out WaypointBehaviorBase);
    procedure processTick (This : in out WaypointBehaviorBase; allBinaryLayerManager : AllBinaryLayerManager_Access);
    function getOwnedWaypointList (This : in out WaypointBehaviorBase) return BasicArrayList_Access;
-   procedure getOwnedWaypointList (This : in out WaypointBehaviorBase);
    function getWaypoint (This : in out WaypointBehaviorBase) return WaypointBase_Access;
-   procedure getWaypoint (This : in out WaypointBehaviorBase);
    procedure setWaypoint (This : in out WaypointBehaviorBase; waypoint : WaypointBase_Access);
    function getSteeringVisitorList (This : in out WaypointBehaviorBase) return BasicArrayList_Access;
-   procedure getSteeringVisitorList (This : in out WaypointBehaviorBase);
    function getMovementLogicAsString (This : in out WaypointBehaviorBase) return Unbounded_String;
-   procedure getMovementLogicAsString (This : in out WaypointBehaviorBase);
    function isWaypointListEmptyOrOnlyTargets (This : in out WaypointBehaviorBase) return Boolean;
-   procedure isWaypointListEmptyOrOnlyTargets (This : in out WaypointBehaviorBase);
    function isInSensorRange (This : in out WaypointBehaviorBase; layerInterface : CollidableDestroyableDamageableLayer_Access; targetDistance : Integer) return Boolean;
    procedure isInSensorRange (This : in out WaypointBehaviorBase; layerInterface : CollidableDestroyableDamageableLayer_Access; targetDistance : Integer);
    function getCurrentTargetLayerInterface (This : in out WaypointBehaviorBase) return CollidableDestroyableDamageableLayer_Access;
-   procedure getCurrentTargetLayerInterface (This : in out WaypointBehaviorBase);
    function getCurrentTargetingStateString (This : in out WaypointBehaviorBase) return Unbounded_String;
-   procedure getCurrentTargetingStateString (This : in out WaypointBehaviorBase);
    function isTrackingWaypoint (This : in out WaypointBehaviorBase) return Boolean;
-   procedure isTrackingWaypoint (This : in out WaypointBehaviorBase);
    function getCurrentPathGeographicMapCellPosition (This : in out WaypointBehaviorBase) return GeographicMapCellPosition_Access;
-   procedure getCurrentPathGeographicMapCellPosition (This : in out WaypointBehaviorBase);
    function getCurrentGeographicMapCellHistory (This : in out WaypointBehaviorBase) return GeographicMapCellHistory_Access;
-   procedure getCurrentGeographicMapCellHistory (This : in out WaypointBehaviorBase);
    function isWaypointOverridesAttacking (This : in out WaypointBehaviorBase) return Boolean;
-   procedure isWaypointOverridesAttacking (This : in out WaypointBehaviorBase);
    function getNextUnvisitedPathGeographicMapCellPosition (This : in out WaypointBehaviorBase) return GeographicMapCellPosition_Access;
-   procedure getNextUnvisitedPathGeographicMapCellPosition (This : in out WaypointBehaviorBase);
    function needToMove (This : in out WaypointBehaviorBase) return Boolean;
-   procedure needToMove (This : in out WaypointBehaviorBase);
    procedure setWaypointPathsList (This : in out WaypointBehaviorBase; waypointPathsList : BasicArrayList_Access);
    function getWaypointPathsList (This : in out WaypointBehaviorBase) return BasicArrayList_Access;
-   procedure getWaypointPathsList (This : in out WaypointBehaviorBase);
    procedure setTarget (This : in out WaypointBehaviorBase; layerInterface : PathFindingLayerInterface_Access);
    procedure setTargetWithDistance (This : in out WaypointBehaviorBase; layerInterface : PathFindingLayerInterface_Access; anotherTargetDistance : Integer);
    procedure clearTarget (This : in out WaypointBehaviorBase);

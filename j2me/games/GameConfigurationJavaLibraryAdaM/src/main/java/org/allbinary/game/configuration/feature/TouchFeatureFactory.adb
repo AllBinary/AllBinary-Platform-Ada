@@ -39,16 +39,9 @@ package body org.allbinary.game.configuration.feature.TouchFeatureFactory_Packag
    function Create return TouchFeatureFactory_Access is
       This : constant TouchFeatureFactory_Access := new TouchFeatureFactory;
    begin
-      Initialize (This.all);
+      TouchFeatureFactory_Package.Initialize (This.all);
       return This;
    end Create;
-
-   procedure getInstance is
-      Java_Result : constant TouchFeatureFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

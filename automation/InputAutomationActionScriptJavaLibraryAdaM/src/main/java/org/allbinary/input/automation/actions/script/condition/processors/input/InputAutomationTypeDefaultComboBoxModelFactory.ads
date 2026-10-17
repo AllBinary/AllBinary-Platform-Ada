@@ -22,6 +22,7 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.util.Set_Package; use java.util.Set_Package;
 with org.allbinary.input.automation.robot.InputRobotFactory_Package; use org.allbinary.input.automation.robot.InputRobotFactory_Package;
+with org.allbinary.input.automation.actions.script.condition.processors.input.DefaultComboBoxModel_Package; use org.allbinary.input.automation.actions.script.condition.processors.input.DefaultComboBoxModel_Package;
 
 package org.allbinary.input.automation.actions.script.condition.processors.input.InputAutomationTypeDefaultComboBoxModelFactory_Package is
 
@@ -37,7 +38,6 @@ package org.allbinary.input.automation.actions.script.condition.processors.input
    procedure Initialize (This : in out InputAutomationTypeDefaultComboBoxModelFactory'Class);
    function Create return InputAutomationTypeDefaultComboBoxModelFactory_Access;
    function getInstance return DefaultComboBoxModel_Access;
-   procedure getInstance;
 
 end org.allbinary.input.automation.actions.script.condition.processors.input.InputAutomationTypeDefaultComboBoxModelFactory_Package;
 

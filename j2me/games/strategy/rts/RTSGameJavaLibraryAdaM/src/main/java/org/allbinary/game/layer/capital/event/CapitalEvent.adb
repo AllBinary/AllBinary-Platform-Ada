@@ -30,7 +30,7 @@ package body org.allbinary.game.layer.capital.event.CapitalEvent_Package is
    function Create (anyType : Java_Object_Access) return CapitalEvent_Access is
       This : constant CapitalEvent_Access := new CapitalEvent;
    begin
-      Initialize (This.all, anyType);
+      CapitalEvent_Package.Initialize (This.all, anyType);
       return This;
    end Create;
 
@@ -52,20 +52,6 @@ package body org.allbinary.game.layer.capital.event.CapitalEvent_Package is
    begin
         This.value := value;
    end setValue;
-
-   procedure toString (This : in out CapitalEvent) is
-      Java_Result : constant Unbounded_String := CapitalEvent'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toString;
-
-   procedure getValue (This : in out CapitalEvent) is
-      Java_Result : constant Integer := CapitalEvent'Class (This).getValue;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getValue;
 
 end org.allbinary.game.layer.capital.event.CapitalEvent_Package;
 

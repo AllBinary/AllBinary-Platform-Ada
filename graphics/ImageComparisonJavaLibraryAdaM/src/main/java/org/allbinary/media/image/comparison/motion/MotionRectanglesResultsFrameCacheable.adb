@@ -33,7 +33,7 @@ package body org.allbinary.media.image.comparison.motion.MotionRectanglesResults
    function Create (motionRectangles : MotionRectangles_Access; frame : Long_Long_Integer) return MotionRectanglesResultsFrameCacheable_Access is
       This : constant MotionRectanglesResultsFrameCacheable_Access := new MotionRectanglesResultsFrameCacheable;
    begin
-      Initialize (This.all, motionRectangles, frame);
+      MotionRectanglesResultsFrameCacheable_Package.Initialize (This.all, motionRectangles, frame);
       return This;
    end Create;
 
@@ -60,27 +60,6 @@ package body org.allbinary.media.image.comparison.motion.MotionRectanglesResults
         stringBuffer.append (To_Unbounded_String (" Frame: "));
         stringBuffer.append (This.getKey.toString);
         return stringBuffer.toString;
-   end toString;
-
-   procedure getKey (This : in out MotionRectanglesResultsFrameCacheable) is
-      Java_Result : constant Java_Object_Access := MotionRectanglesResultsFrameCacheable'Class (This).getKey;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getKey;
-
-   procedure getMotionRectangles (This : in out MotionRectanglesResultsFrameCacheable) is
-      Java_Result : constant MotionRectangles_Access := MotionRectanglesResultsFrameCacheable'Class (This).getMotionRectangles;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getMotionRectangles;
-
-   procedure toString (This : in out MotionRectanglesResultsFrameCacheable) is
-      Java_Result : constant Unbounded_String := MotionRectanglesResultsFrameCacheable'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end toString;
 
 end org.allbinary.media.image.comparison.motion.MotionRectanglesResultsFrameCacheable_Package;

@@ -24,6 +24,9 @@ with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.lo
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.game.score.HighScoresHelperBaseInterface_Package; use org.allbinary.game.score.HighScoresHelperBaseInterface_Package;
+with org.allbinary.game.score.LastFetchHighScoresFactory_Package; use org.allbinary.game.score.LastFetchHighScoresFactory_Package;
+with org.allbinary.game.score.HighScores_Package; use org.allbinary.game.score.HighScores_Package;
+with org.allbinary.game.score.NullHighScoresSingletonFactory_Package; use org.allbinary.game.score.NullHighScoresSingletonFactory_Package;
 
 package org.allbinary.game.score.HighScoresHelperBase_Package is
 
@@ -45,14 +48,10 @@ package org.allbinary.game.score.HighScoresHelperBase_Package is
    function Create return HighScoresHelperBase_Access;
    procedure setHighScoresArray (This : in out HighScoresHelperBase; highScoresArrayP : HighScores_Access_Array_Access);
    function getNextHighScores (This : in out HighScoresHelperBase) return HighScores_Access;
-   procedure getNextHighScores (This : in out HighScoresHelperBase);
    function isAnyHighScores (This : in out HighScoresHelperBase) return Boolean;
-   procedure isAnyHighScores (This : in out HighScoresHelperBase);
    procedure setSelectedHighScores (This : in out HighScoresHelperBase; selectedHighScores : HighScores_Access);
    function getSelectedHighScores (This : in out HighScoresHelperBase) return HighScores_Access;
-   procedure getSelectedHighScores (This : in out HighScoresHelperBase);
    function getHighScoresArray (This : in out HighScoresHelperBase) return HighScores_Access_Array_Access;
-   procedure getHighScoresArray (This : in out HighScoresHelperBase);
    procedure selectHighScores (This : in out HighScoresHelperBase);
 
 end org.allbinary.game.score.HighScoresHelperBase_Package;

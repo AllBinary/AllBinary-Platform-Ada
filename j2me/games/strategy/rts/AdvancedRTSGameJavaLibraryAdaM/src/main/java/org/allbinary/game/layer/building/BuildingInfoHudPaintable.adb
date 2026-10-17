@@ -100,7 +100,7 @@ package body org.allbinary.game.layer.building.BuildingInfoHudPaintable_Package 
    function Create return BuildingInfoHudPaintable_Access is
       This : constant BuildingInfoHudPaintable_Access := new BuildingInfoHudPaintable;
    begin
-      Initialize (This.all);
+      BuildingInfoHudPaintable_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -152,13 +152,6 @@ package body org.allbinary.game.layer.building.BuildingInfoHudPaintable_Package 
    begin
         This.rtsLayer := rtsLayer;
    end setRtsLayer;
-
-   procedure getInstance is
-      Java_Result : constant BuildingInfoHudPaintable_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

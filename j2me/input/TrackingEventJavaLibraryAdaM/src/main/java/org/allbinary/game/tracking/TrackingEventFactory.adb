@@ -30,20 +30,13 @@ package body org.allbinary.game.tracking.TrackingEventFactory_Package is
    function Create return TrackingEventFactory_Access is
       This : constant TrackingEventFactory_Access := new TrackingEventFactory;
    begin
-      Initialize (This.all);
+      TrackingEventFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
    function getInstance (This : in out TrackingEventFactory) return AllBinaryEventObject_Access is
    begin
         return TrackingEvent_Package.Create (TrackingEventHandler_Package.getInstance);
-   end getInstance;
-
-   procedure getInstance (This : in out TrackingEventFactory) is
-      Java_Result : constant AllBinaryEventObject_Access := TrackingEventFactory'Class (This).getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 end org.allbinary.game.tracking.TrackingEventFactory_Package;

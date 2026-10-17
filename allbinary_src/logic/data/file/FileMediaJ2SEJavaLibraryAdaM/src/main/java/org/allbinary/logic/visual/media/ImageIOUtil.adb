@@ -16,7 +16,7 @@ package body org.allbinary.logic.visual.media.ImageIOUtil_Package is
    function Create return ImageIOUtil_Access is
       This : constant ImageIOUtil_Access := new ImageIOUtil;
    begin
-      Initialize (This.all);
+      ImageIOUtil_Package.Initialize (This.all);
       return This;
    end Create;
 

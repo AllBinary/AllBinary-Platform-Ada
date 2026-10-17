@@ -29,7 +29,7 @@ package body org.allbinary.physics.movement.NoMovementFactory_Package is
    function Create return NoMovementFactory_Access is
       This : constant NoMovementFactory_Access := new NoMovementFactory;
    begin
-      Initialize (This.all);
+      NoMovementFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -42,20 +42,6 @@ package body org.allbinary.physics.movement.NoMovementFactory_Package is
    function getMovmentInstance (This : in out NoMovementFactory) return Movement_Access is
    begin
         return This.movement;
-   end getMovmentInstance;
-
-   procedure getInstance is
-      Java_Result : constant NoMovementFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure getMovmentInstance (This : in out NoMovementFactory) is
-      Java_Result : constant Movement_Access := NoMovementFactory'Class (This).getMovmentInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getMovmentInstance;
 
 begin

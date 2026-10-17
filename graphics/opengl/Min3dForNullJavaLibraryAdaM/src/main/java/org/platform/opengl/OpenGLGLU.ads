@@ -24,7 +24,6 @@ package org.platform.opengl.OpenGLGLU_Package is
    procedure Initialize (This : in out OpenGLGLU'Class);
    function Create return OpenGLGLU_Access;
    function getInstance return OpenGLGLU_Access;
-   procedure getInstance;
    procedure gluLookAt (This : in out OpenGLGLU; gl : GL10_Access; eyeX : Float; eyeY : Float; eyeZ : Float; centerX : Float; centerY : Float; centerZ : Float; upX : Float; upY : Float; upZ : Float);
    function gluProject (This : in out OpenGLGLU; gl : GL10_Access; objX : Float; objY : Float; objZ : Float; model : Float_Array_Access; modelOffset : Integer; project : Float_Array_Access; projectOffset : Integer; view : Integer_Array_Access; viewOffset : Integer; win : Float_Array_Access; winOffset : Integer) return Integer;
    procedure gluProject (This : in out OpenGLGLU; gl : GL10_Access; objX : Float; objY : Float; objZ : Float; model : Float_Array_Access; modelOffset : Integer; project : Float_Array_Access; projectOffset : Integer; view : Integer_Array_Access; viewOffset : Integer; win : Float_Array_Access; winOffset : Integer);

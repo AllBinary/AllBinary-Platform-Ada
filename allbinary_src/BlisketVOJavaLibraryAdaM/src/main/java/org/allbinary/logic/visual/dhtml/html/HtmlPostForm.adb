@@ -30,7 +30,7 @@ package body org.allbinary.logic.visual.dhtml.html.HtmlPostForm_Package is
    function Create (action : Unbounded_String) return HtmlPostForm_Access is
       This : constant HtmlPostForm_Access := new HtmlPostForm;
    begin
-      Initialize (This.all, action);
+      HtmlPostForm_Package.Initialize (This.all, action);
       return This;
    end Create;
 

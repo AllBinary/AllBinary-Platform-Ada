@@ -23,6 +23,10 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.GameInfo_Package; use org.allbinary.game.GameInfo_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.game.score.HighScoresBase_Package; use org.allbinary.game.score.HighScoresBase_Package;
+with org.allbinary.game.score.HighScores_Package; use org.allbinary.game.score.HighScores_Package;
+with org.allbinary.game.score.HighScoresResultsListener_Package; use org.allbinary.game.score.HighScoresResultsListener_Package;
+with org.allbinary.game.score.HighScoresHelperBase_Package; use org.allbinary.game.score.HighScoresHelperBase_Package;
+with org.allbinary.game.score.HighScoresHelperBaseInterface_Package; use org.allbinary.game.score.HighScoresHelperBaseInterface_Package;
 
 package org.allbinary.game.score.NoHighScoresFactory_Package is
 
@@ -43,10 +47,8 @@ package org.allbinary.game.score.NoHighScoresFactory_Package is
    procedure Initialize (This : in out NoHighScoresFactory'Class);
    function Create return NoHighScoresFactory_Access;
    function getInstance return NoHighScoresFactory_Access;
-   procedure getInstance;
    procedure fetchHighScores (This : in out NoHighScoresFactory; gameInfo : GameInfo_Access; highScoresResultsListener : HighScoresResultsListener_Access);
    function createHighScoresHelper (This : in out NoHighScoresFactory) return HighScoresHelperBaseInterface_Access;
-   procedure createHighScoresHelper (This : in out NoHighScoresFactory);
 
 end org.allbinary.game.score.NoHighScoresFactory_Package;
 

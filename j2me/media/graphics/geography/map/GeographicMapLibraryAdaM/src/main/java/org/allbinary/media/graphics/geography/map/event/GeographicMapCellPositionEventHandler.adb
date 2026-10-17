@@ -37,7 +37,7 @@ package body org.allbinary.media.graphics.geography.map.event.GeographicMapCellP
    function Create return GeographicMapCellPositionEventHandler_Access is
       This : constant GeographicMapCellPositionEventHandler_Access := new GeographicMapCellPositionEventHandler;
    begin
-      Initialize (This.all);
+      GeographicMapCellPositionEventHandler_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -132,13 +132,6 @@ package body org.allbinary.media.graphics.geography.map.event.GeographicMapCellP
         geographicMapCellPositionEventListenerInterface := (GeographicMapCellPositionEventListenerInterface_Access (eventListenerInterface));
         geographicMapCellPositionEventListenerInterface.onGeographicMapCellPositionEvent (GeographicMapCellPositionEvent_Access (eventObject));
    end process;
-
-   procedure getInstance is
-      Java_Result : constant GeographicMapCellPositionEventHandler_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

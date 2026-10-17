@@ -29,7 +29,7 @@ package body org.allbinary.logic.math.vector.AxisMathVectorUtil_Package is
    function Create return AxisMathVectorUtil_Access is
       This : constant AxisMathVectorUtil_Access := new AxisMathVectorUtil;
    begin
-      Initialize (This.all);
+      AxisMathVectorUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -53,13 +53,6 @@ package body org.allbinary.logic.math.vector.AxisMathVectorUtil_Package is
    begin
         return ((magnitude) * (This.noDecimalTrigTable.sin (otherAngle))) / (10);
    end calculateZ;
-
-   procedure getInstance is
-      Java_Result : constant AxisMathVectorUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure calculateX (This : in out AxisMathVectorUtil; magnitude : Long_Long_Integer; angle : Integer) is
       Java_Result : constant Long_Long_Integer := AxisMathVectorUtil'Class (This).calculateX (magnitude, angle);

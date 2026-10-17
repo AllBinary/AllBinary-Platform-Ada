@@ -42,11 +42,8 @@ package org.allbinary.game.behavior.topview.CharacterFrictionProperties_Package 
    procedure Initialize (This : in out CharacterFrictionProperties'Class; airFriction : Integer; waterFriction : Integer; collisionFriction : Integer);
    function Create (airFriction : Integer; waterFriction : Integer; collisionFriction : Integer) return CharacterFrictionProperties_Access;
    function getWATER_FRICTION_NOMINATOR (This : in out CharacterFrictionProperties) return Integer;
-   procedure getWATER_FRICTION_NOMINATOR (This : in out CharacterFrictionProperties);
    function getAIR_FRICTION_NOMINATOR (This : in out CharacterFrictionProperties) return Integer;
-   procedure getAIR_FRICTION_NOMINATOR (This : in out CharacterFrictionProperties);
    function getCOLLISION_FRICTION_NOMINATOR (This : in out CharacterFrictionProperties) return Integer;
-   procedure getCOLLISION_FRICTION_NOMINATOR (This : in out CharacterFrictionProperties);
 
 end org.allbinary.game.behavior.topview.CharacterFrictionProperties_Package;
 

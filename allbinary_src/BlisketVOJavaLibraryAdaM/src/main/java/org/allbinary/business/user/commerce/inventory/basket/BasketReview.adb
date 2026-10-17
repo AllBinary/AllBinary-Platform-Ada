@@ -31,7 +31,7 @@ package body org.allbinary.business.user.commerce.inventory.basket.BasketReview_
    function Create return BasketReview_Access is
       This : constant BasketReview_Access := new BasketReview;
    begin
-      Initialize (This.all);
+      BasketReview_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -155,41 +155,6 @@ package body org.allbinary.business.user.commerce.inventory.basket.BasketReview_
         end loop;
         return node;
    end toXmlNode;
-
-   procedure isValid (This : in out BasketReview) is
-      Java_Result : constant Boolean := BasketReview'Class (This).isValid;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isValid;
-
-   procedure getItems (This : in out BasketReview) is
-      Java_Result : constant BasicArrayList_Access := BasketReview'Class (This).getItems;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getItems;
-
-   procedure getTotalWeight (This : in out BasketReview) is
-      Java_Result : constant Unbounded_String := BasketReview'Class (This).getTotalWeight;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTotalWeight;
-
-   procedure getNumberOfItems (This : in out BasketReview) is
-      Java_Result : constant Integer := BasketReview'Class (This).getNumberOfItems;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getNumberOfItems;
-
-   procedure getIds (This : in out BasketReview) is
-      Java_Result : constant Set_Access := BasketReview'Class (This).getIds;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getIds;
 
    procedure getNumberOf (This : in out BasketReview; id : Unbounded_String) is
       Java_Result : constant Integer := BasketReview'Class (This).getNumberOf (id);

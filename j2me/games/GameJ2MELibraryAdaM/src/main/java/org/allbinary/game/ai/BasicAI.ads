@@ -70,17 +70,11 @@ package org.allbinary.game.ai.BasicAI_Package is
    procedure processKeyAI (This : in out BasicAI; key : Integer);
    procedure setLastKey (This : in out BasicAI; lastKey : Integer);
    function getLastKey (This : in out BasicAI) return Integer;
-   procedure getLastKey (This : in out BasicAI);
    function getOwnerLayerInterface (This : in out BasicAI) return AllBinaryLayer_Access;
-   procedure getOwnerLayerInterface (This : in out BasicAI);
    function getGameInput (This : in out BasicAI) return GameInput_Access;
-   procedure getGameInput (This : in out BasicAI);
    function getName (This : in out BasicAI) return Unbounded_String;
-   procedure getName (This : in out BasicAI);
    function toString (This : in out BasicAI) return Unbounded_String;
-   procedure toString (This : in out BasicAI);
    function getSourceId (This : in out BasicAI) return Integer;
-   procedure getSourceId (This : in out BasicAI);
 
 end org.allbinary.game.ai.BasicAI_Package;
 

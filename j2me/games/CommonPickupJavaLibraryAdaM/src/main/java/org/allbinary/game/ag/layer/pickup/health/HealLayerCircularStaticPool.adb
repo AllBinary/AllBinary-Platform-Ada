@@ -31,7 +31,7 @@ package body org.allbinary.game.ag.layer.pickup.health.HealLayerCircularStaticPo
    function Create (allbinaryLayerFactoryInterface : AllBinaryLayerFactoryInterface_Access; total : Integer) return HealLayerCircularStaticPool_Access is
       This : constant HealLayerCircularStaticPool_Access := new HealLayerCircularStaticPool;
    begin
-      Initialize (This.all, allbinaryLayerFactoryInterface, total);
+      HealLayerCircularStaticPool_Package.Initialize (This.all, allbinaryLayerFactoryInterface, total);
       return This;
    end Create;
 

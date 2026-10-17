@@ -28,7 +28,7 @@ package body org.allbinary.input.automation.module.InputAutomationModuleFactoryI
    function Create return InputAutomationModuleFactoryInterface_Access is
       This : constant InputAutomationModuleFactoryInterface_Access := new InputAutomationModuleFactoryInterface;
    begin
-      Initialize (This.all);
+      InputAutomationModuleFactoryInterface_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -52,34 +52,6 @@ package body org.allbinary.input.automation.module.InputAutomationModuleFactoryI
    function getInstance (This : in out InputAutomationModuleFactoryInterface) return RunnableInterface_Access is
    begin
         return null;
-   end getInstance;
-
-   procedure getName (This : in out InputAutomationModuleFactoryInterface) is
-      Java_Result : constant Unbounded_String := InputAutomationModuleFactoryInterface'Class (This).getName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getName;
-
-   procedure getConfigurationJPanel (This : in out InputAutomationModuleFactoryInterface) is
-      Java_Result : constant JPanel_Access := InputAutomationModuleFactoryInterface'Class (This).getConfigurationJPanel;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getConfigurationJPanel;
-
-   procedure getHelpSet (This : in out InputAutomationModuleFactoryInterface) is
-      Java_Result : constant HelpSet_Access := InputAutomationModuleFactoryInterface'Class (This).getHelpSet;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getHelpSet;
-
-   procedure getInstance (This : in out InputAutomationModuleFactoryInterface) is
-      Java_Result : constant RunnableInterface_Access := InputAutomationModuleFactoryInterface'Class (This).getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 end org.allbinary.input.automation.module.InputAutomationModuleFactoryInterface_Package;

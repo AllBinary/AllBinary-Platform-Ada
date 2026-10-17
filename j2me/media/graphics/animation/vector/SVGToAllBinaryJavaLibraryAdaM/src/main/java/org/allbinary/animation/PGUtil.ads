@@ -8,6 +8,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
+with org.allbinary.animation.FixedPoint_Package; use org.allbinary.animation.FixedPoint_Package;
 
 package org.allbinary.animation.PGUtil_Package is
 
@@ -23,7 +24,6 @@ package org.allbinary.animation.PGUtil_Package is
    procedure Initialize (This : in out PGUtil'Class);
    function Create return PGUtil_Access;
    function getInstance return PGUtil_Access;
-   procedure getInstance;
    procedure flattenCubicBezier (This : in out PGUtil; x0 : Integer; y0 : Integer; x1 : Integer; y1 : Integer; x2 : Integer; y2 : Integer; x3 : Integer; y3 : Integer; outX : Integer_Array_Access; outY : Integer_Array_Access; count : Integer_Array_Access; maxPoints : Integer);
 
 end org.allbinary.animation.PGUtil_Package;

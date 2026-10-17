@@ -43,7 +43,7 @@ package body org.allbinary.business.advertisement.area.AdvertisementArea_Package
    function Create (hashMap : HashMap_Access) return AdvertisementArea_Access is
       This : constant AdvertisementArea_Access := new AdvertisementArea;
    begin
-      Initialize (This.all, hashMap);
+      AdvertisementArea_Package.Initialize (This.all, hashMap);
       return This;
    end Create;
 
@@ -96,41 +96,6 @@ package body org.allbinary.business.advertisement.area.AdvertisementArea_Package
    begin
         This.campaign := campaign;
    end setCampaign;
-
-   procedure getName (This : in out AdvertisementArea) is
-      Java_Result : constant Unbounded_String := AdvertisementArea'Class (This).getName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getName;
-
-   procedure getStoreName (This : in out AdvertisementArea) is
-      Java_Result : constant Unbounded_String := AdvertisementArea'Class (This).getStoreName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getStoreName;
-
-   procedure getDescription (This : in out AdvertisementArea) is
-      Java_Result : constant Unbounded_String := AdvertisementArea'Class (This).getDescription;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getDescription;
-
-   procedure getConstraints (This : in out AdvertisementArea) is
-      Java_Result : constant AdvertisementAreaConstraintsInterface_Access := AdvertisementArea'Class (This).getConstraints;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getConstraints;
-
-   procedure getCampaign (This : in out AdvertisementArea) is
-      Java_Result : constant Unbounded_String := AdvertisementArea'Class (This).getCampaign;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getCampaign;
 
 end org.allbinary.business.advertisement.area.AdvertisementArea_Package;
 

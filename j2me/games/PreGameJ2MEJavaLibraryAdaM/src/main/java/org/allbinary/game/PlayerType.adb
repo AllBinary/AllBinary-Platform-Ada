@@ -33,7 +33,7 @@ package body org.allbinary.game.PlayerType_Package is
    function Create (name : Unbounded_String; value : Integer) return PlayerType_Access is
       This : constant PlayerType_Access := new PlayerType;
    begin
-      Initialize (This.all, name, value);
+      PlayerType_Package.Initialize (This.all, name, value);
       return This;
    end Create;
 
@@ -50,27 +50,6 @@ package body org.allbinary.game.PlayerType_Package is
    function toString (This : in out PlayerType) return Unbounded_String is
    begin
         return This.getName;
-   end toString;
-
-   procedure getId (This : in out PlayerType) is
-      Java_Result : constant Integer := PlayerType'Class (This).getId;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getId;
-
-   procedure getName (This : in out PlayerType) is
-      Java_Result : constant Unbounded_String := PlayerType'Class (This).getName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getName;
-
-   procedure toString (This : in out PlayerType) is
-      Java_Result : constant Unbounded_String := PlayerType'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end toString;
 
 end org.allbinary.game.PlayerType_Package;

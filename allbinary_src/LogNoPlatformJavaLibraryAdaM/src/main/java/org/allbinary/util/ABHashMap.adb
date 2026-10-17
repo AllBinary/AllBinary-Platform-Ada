@@ -29,7 +29,7 @@ package body org.allbinary.util.ABHashMap_Package is
    function Create return ABHashMap_Access is
       This : constant ABHashMap_Access := new ABHashMap;
    begin
-      Initialize (This.all);
+      ABHashMap_Package.Initialize (This.all);
       return This;
    end Create;
 

@@ -44,7 +44,6 @@ package org.allbinary.graphics.GraphicsStrings_Package is
    procedure Initialize (This : in out GraphicsStrings'Class);
    function Create return GraphicsStrings_Access;
    function getInstance return GraphicsStrings_Access;
-   procedure getInstance;
 
 end org.allbinary.graphics.GraphicsStrings_Package;
 

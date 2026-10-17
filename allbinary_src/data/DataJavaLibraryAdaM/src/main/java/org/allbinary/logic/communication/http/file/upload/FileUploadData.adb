@@ -13,7 +13,7 @@
 --  Generated Code Do Not Modify
 
 
-package body org.allbinary.logic.communication.http.file_Case.upload.FileUploadData_Package is
+package body org.allbinary.logic.communication.http.file.upload.FileUploadData_Package is
 
    procedure Initialize_Fields (This : in out FileUploadData'Class) is
    begin
@@ -31,7 +31,7 @@ package body org.allbinary.logic.communication.http.file_Case.upload.FileUploadD
    function Create return FileUploadData_Access is
       This : constant FileUploadData_Access := new FileUploadData;
    begin
-      Initialize (This.all);
+      FileUploadData_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -41,17 +41,10 @@ package body org.allbinary.logic.communication.http.file_Case.upload.FileUploadD
         return FileUploadData_Package.instance;
    end getInstance;
 
-   procedure getInstance is
-      Java_Result : constant FileUploadData_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
 begin
    null;
    instance := FileUploadData_Package.Create;
 
-end org.allbinary.logic.communication.http.file_Case.upload.FileUploadData_Package;
+end org.allbinary.logic.communication.http.file.upload.FileUploadData_Package;
 
 

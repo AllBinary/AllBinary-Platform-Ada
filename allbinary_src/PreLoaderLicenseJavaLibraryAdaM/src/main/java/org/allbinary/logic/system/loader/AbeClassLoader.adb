@@ -37,7 +37,7 @@ package body org.allbinary.logic.system.loader.AbeClassLoader_Package is
    function Create (parent : ClassLoader_Access; key : Unbounded_String) return AbeClassLoader_Access is
       This : constant AbeClassLoader_Access := new AbeClassLoader;
    begin
-      Initialize (This.all, parent, key);
+      AbeClassLoader_Package.Initialize (This.all, parent, key);
       return This;
    end Create;
 

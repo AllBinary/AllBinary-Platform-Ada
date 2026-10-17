@@ -39,7 +39,6 @@ package org.allbinary.input.magnetic.field.NoMagneticFieldSensor_Package is
    procedure Initialize (This : in out NoMagneticFieldSensor'Class);
    function Create return NoMagneticFieldSensor_Access;
    function getOrientation (This : in out NoMagneticFieldSensor) return Orientation_Access;
-   procedure getOrientation (This : in out NoMagneticFieldSensor);
    procedure onSensorChange (This : in out NoMagneticFieldSensor);
 
 end org.allbinary.input.magnetic.field.NoMagneticFieldSensor_Package;

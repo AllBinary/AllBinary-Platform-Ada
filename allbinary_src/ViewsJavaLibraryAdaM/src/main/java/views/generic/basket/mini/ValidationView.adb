@@ -29,7 +29,7 @@ package body views.generic_Id.basket.mini.ValidationView_Package is
    function Create (transformInfoInterface : TransformInfoInterface_Access) return ValidationView_Access is
       This : constant ValidationView_Access := new ValidationView;
    begin
-      Initialize (This.all, transformInfoInterface);
+      ValidationView_Package.Initialize (This.all, transformInfoInterface);
       return This;
    end Create;
 
@@ -53,33 +53,12 @@ package body views.generic_Id.basket.mini.ValidationView_Package is
         return MESSAGES.CONTACTADMIN;
    end validationInfo;
 
-   procedure isValid (This : in out ValidationView) is
-      Java_Result : constant Boolean := ValidationView'Class (This).isValid;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isValid;
-
-   procedure toValidationInfoDoc (This : in out ValidationView) is
-      Java_Result : constant Document_Access := ValidationView'Class (This).toValidationInfoDoc;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toValidationInfoDoc;
-
    procedure toValidationInfoNode (This : in out ValidationView; document : Document_Access) is
       Java_Result : constant Node_Access := ValidationView'Class (This).toValidationInfoNode (document);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end toValidationInfoNode;
-
-   procedure validationInfo (This : in out ValidationView) is
-      Java_Result : constant Unbounded_String := ValidationView'Class (This).validationInfo;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end validationInfo;
 
 end views.generic_Id.basket.mini.ValidationView_Package;
 

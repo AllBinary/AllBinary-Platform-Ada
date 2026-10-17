@@ -28,6 +28,9 @@ with org.allbinary.game.layer.pickup.PickedUpLayerInterfaceFactoryInterface_Pack
 with org.allbinary.game.layer.pickup.PickedUpLayerTypeFactory_Package; use org.allbinary.game.layer.pickup.PickedUpLayerTypeFactory_Package;
 with org.allbinary.game.layer.pickup.PickupProcessorInterface_Package; use org.allbinary.game.layer.pickup.PickupProcessorInterface_Package;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
+with org.allbinary.game.ag.layer.pickup.life.LifeLayerCircularStaticPool_Package; use org.allbinary.game.ag.layer.pickup.life.LifeLayerCircularStaticPool_Package;
+with org.allbinary.game.ag.layer.pickup.life.LifeLayerFactory_Package; use org.allbinary.game.ag.layer.pickup.life.LifeLayerFactory_Package;
+with org.allbinary.game.ag.layer.pickup.life.LifeResources_Package; use org.allbinary.game.ag.layer.pickup.life.LifeResources_Package;
 
 package org.allbinary.game.ag.layer.pickup.life.LifePickedUpLayerInterfaceFactory_Package is
 
@@ -54,9 +57,7 @@ package org.allbinary.game.ag.layer.pickup.life.LifePickedUpLayerInterfaceFactor
    function Create return LifePickedUpLayerInterfaceFactory_Access;
    procedure init;
    function getTotal (This : in out LifePickedUpLayerInterfaceFactory) return Integer;
-   procedure getTotal (This : in out LifePickedUpLayerInterfaceFactory);
    function getInstance return PickedUpLayerInterfaceFactoryInterface_Access;
-   procedure getInstance;
    procedure process (This : in out LifePickedUpLayerInterfaceFactory; sourceLayerInterface : AllBinaryLayer_Access);
 
 end org.allbinary.game.ag.layer.pickup.life.LifePickedUpLayerInterfaceFactory_Package;

@@ -38,7 +38,7 @@ package body org.allbinary.input.motion.gesture.configuration.MotionGestureConfi
    function Create return MotionGestureConfiguration_Access is
       This : constant MotionGestureConfiguration_Access := new MotionGestureConfiguration;
    begin
-      Initialize (This.all);
+      MotionGestureConfiguration_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -126,62 +126,6 @@ package body org.allbinary.input.motion.gesture.configuration.MotionGestureConfi
    begin
         This.mouseButtonMask := mouseButtonMask;
    end setMouseButtonMask;
-
-   procedure getAssociateCommandActionsList (This : in out MotionGestureConfiguration) is
-      Java_Result : constant BasicArrayList_Access := MotionGestureConfiguration'Class (This).getAssociateCommandActionsList;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getAssociateCommandActionsList;
-
-   procedure isDiagonalMotionGestureAllowed (This : in out MotionGestureConfiguration) is
-      Java_Result : constant Boolean := MotionGestureConfiguration'Class (This).isDiagonalMotionGestureAllowed;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isDiagonalMotionGestureAllowed;
-
-   procedure isExecutingActionsAllowed (This : in out MotionGestureConfiguration) is
-      Java_Result : constant Boolean := MotionGestureConfiguration'Class (This).isExecutingActionsAllowed;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isExecutingActionsAllowed;
-
-   procedure getDiagonalTolerance (This : in out MotionGestureConfiguration) is
-      Java_Result : constant Integer := MotionGestureConfiguration'Class (This).getDiagonalTolerance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getDiagonalTolerance;
-
-   procedure getMinimumMotionGesture (This : in out MotionGestureConfiguration) is
-      Java_Result : constant Integer := MotionGestureConfiguration'Class (This).getMinimumMotionGesture;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getMinimumMotionGesture;
-
-   procedure getButton (This : in out MotionGestureConfiguration) is
-      Java_Result : constant Unbounded_String := MotionGestureConfiguration'Class (This).getButton;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getButton;
-
-   procedure getColor (This : in out MotionGestureConfiguration) is
-      Java_Result : constant BasicColor_Access := MotionGestureConfiguration'Class (This).getColor;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getColor;
-
-   procedure getMouseButtonMask (This : in out MotionGestureConfiguration) is
-      Java_Result : constant Integer := MotionGestureConfiguration'Class (This).getMouseButtonMask;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getMouseButtonMask;
 
 end org.allbinary.input.motion.gesture.configuration.MotionGestureConfiguration_Package;
 

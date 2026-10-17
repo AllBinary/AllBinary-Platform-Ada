@@ -57,7 +57,6 @@ package org.allbinary.bundle.logic.preloader.AllBinaryPreloaderActivator_Package
    procedure Initialize (This : in out AllBinaryPreloaderActivator'Class);
    function Create return AllBinaryPreloaderActivator_Access;
    function getBundleContext return BundleContext_Access;
-   procedure getBundleContext;
    procedure start (This : in out AllBinaryPreloaderActivator; context : BundleContext_Access);
    procedure registerAsService (This : in out AllBinaryPreloaderActivator);
    procedure stop (This : in out AllBinaryPreloaderActivator; context : BundleContext_Access);

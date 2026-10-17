@@ -20,6 +20,8 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
+with org.allbinary.globals.AppUrlGlobals_Package; use org.allbinary.globals.AppUrlGlobals_Package;
+with org.allbinary.globals.UrlGlobalsInterface_Package; use org.allbinary.globals.UrlGlobalsInterface_Package;
 
 package org.allbinary.globals.URLGLOBALS_Package is
 
@@ -36,13 +38,9 @@ package org.allbinary.globals.URLGLOBALS_Package is
    function Create return URLGLOBALS_Access;
    procedure init (urlGlobalsInterface : UrlGlobalsInterface_Access);
    function isTestingMode return Boolean;
-   procedure isTestingMode;
    function getWebappPath return Unbounded_String;
-   procedure getWebappPath;
    function getTestHtmlPath return Unbounded_String;
-   procedure getTestHtmlPath;
    function getMainPath return Unbounded_String;
-   procedure getMainPath;
 
 end org.allbinary.globals.URLGLOBALS_Package;
 

@@ -28,7 +28,7 @@ package body org.allbinary.data.tree.dom.DomNodeListHelper_Package is
    function Create return DomNodeListHelper_Access is
       This : constant DomNodeListHelper_Access := new DomNodeListHelper;
    begin
-      Initialize (This.all);
+      DomNodeListHelper_Package.Initialize (This.all);
       return This;
    end Create;
 

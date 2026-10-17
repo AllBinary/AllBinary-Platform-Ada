@@ -21,6 +21,7 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.score.Scoreable_Package; use org.allbinary.game.score.Scoreable_Package;
+with org.allbinary.game.ag.layer.hud.basic.score.ScoreHudWidget_Package; use org.allbinary.game.ag.layer.hud.basic.score.ScoreHudWidget_Package;
 
 package org.allbinary.game.ag.layer.hud.basic.score.ScoreableAddOnlyForHud_Package is
 
@@ -40,7 +41,6 @@ package org.allbinary.game.ag.layer.hud.basic.score.ScoreableAddOnlyForHud_Packa
    procedure removePoints (This : in out ScoreableAddOnlyForHud; points : Integer);
    procedure addPoints (This : in out ScoreableAddOnlyForHud; points : Integer);
    function getScoreHudWidget (This : in out ScoreableAddOnlyForHud) return ScoreHudWidget_Access;
-   procedure getScoreHudWidget (This : in out ScoreableAddOnlyForHud);
 
 end org.allbinary.game.ag.layer.hud.basic.score.ScoreableAddOnlyForHud_Package;
 

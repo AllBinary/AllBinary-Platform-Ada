@@ -79,9 +79,7 @@ package org.allbinary.business.installer.InitializerData_Package is
    procedure Initialize (This : in out InitializerData'Class);
    function Create return InitializerData_Access;
    function getInstance return InitializerData_Access;
-   procedure getInstance;
    function getJdbcDriverSolutionInfo (This : in out InitializerData) return Unbounded_String;
-   procedure getJdbcDriverSolutionInfo (This : in out InitializerData);
 
 end org.allbinary.business.installer.InitializerData_Package;
 

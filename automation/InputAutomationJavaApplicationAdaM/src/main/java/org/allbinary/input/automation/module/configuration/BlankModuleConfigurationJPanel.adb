@@ -32,7 +32,7 @@ package body org.allbinary.input.automation.module.configuration.BlankModuleConf
    function Create return BlankModuleConfigurationJPanel_Access is
       This : constant BlankModuleConfigurationJPanel_Access := new BlankModuleConfigurationJPanel;
    begin
-      Initialize (This.all);
+      BlankModuleConfigurationJPanel_Package.Initialize (This.all);
       return This;
    end Create;
 

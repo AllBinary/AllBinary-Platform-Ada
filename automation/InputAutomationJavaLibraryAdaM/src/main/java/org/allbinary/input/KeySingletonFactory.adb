@@ -57,7 +57,7 @@ package body org.allbinary.input.KeySingletonFactory_Package is
    function Create return KeySingletonFactory_Access is
       This : constant KeySingletonFactory_Access := new KeySingletonFactory;
    begin
-      Initialize (This.all);
+      KeySingletonFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -76,26 +76,12 @@ package body org.allbinary.input.KeySingletonFactory_Package is
         return KeySingletonFactory_Package.keyArray;
    end getArray;
 
-   procedure getHashtable is
-      Java_Result : constant ABHashtable_Access := getHashtable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getHashtable;
-
    procedure getInstance (index : Integer) is
       Java_Result : constant Integer := getInstance (index);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInstance;
-
-   procedure getArray is
-      Java_Result : constant Integer_Array_Access := getArray;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getArray;
 
 begin
    null;

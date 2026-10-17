@@ -66,7 +66,6 @@ package views.business.context.OverrideObjectConfigRootContextView_Package is
    procedure Initialize (This : in out OverrideObjectConfigRootContextView'Class; transformInfoInterface : TransformInfoInterface_Access);
    function Create (transformInfoInterface : TransformInfoInterface_Access) return OverrideObjectConfigRootContextView_Access;
    function view (This : in out OverrideObjectConfigRootContextView) return Unbounded_String;
-   procedure view (This : in out OverrideObjectConfigRootContextView);
 
 end views.business.context.OverrideObjectConfigRootContextView_Package;
 

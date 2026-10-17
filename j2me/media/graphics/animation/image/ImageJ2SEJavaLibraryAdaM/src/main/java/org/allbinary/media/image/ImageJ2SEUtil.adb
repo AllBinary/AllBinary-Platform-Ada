@@ -29,7 +29,7 @@ package body org.allbinary.media.image.ImageJ2SEUtil_Package is
    function Create return ImageJ2SEUtil_Access is
       This : constant ImageJ2SEUtil_Access := new ImageJ2SEUtil;
    begin
-      Initialize (This.all);
+      ImageJ2SEUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -37,13 +37,6 @@ package body org.allbinary.media.image.ImageJ2SEUtil_Package is
    function getInstance return ImageJ2SEUtil_Access is
    begin
         return ImageJ2SEUtil_Package.instance;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant ImageJ2SEUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

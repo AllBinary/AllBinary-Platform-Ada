@@ -28,7 +28,7 @@ package body org.allbinary.image.opengles.OpenGLESImageProcessor_Package is
    function Create return OpenGLESImageProcessor_Access is
       This : constant OpenGLESImageProcessor_Access := new OpenGLESImageProcessor;
    begin
-      Initialize (This.all);
+      OpenGLESImageProcessor_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -57,13 +57,6 @@ package body org.allbinary.image.opengles.OpenGLESImageProcessor_Package is
    begin
         null;
    end colorMask;
-
-   procedure getInstance is
-      Java_Result : constant OpenGLESImageProcessor_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

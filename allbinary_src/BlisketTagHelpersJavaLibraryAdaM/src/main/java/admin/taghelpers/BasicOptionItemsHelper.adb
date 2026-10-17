@@ -33,7 +33,7 @@ package body admin.taghelpers.BasicOptionItemsHelper_Package is
    function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return BasicOptionItemsHelper_Access is
       This : constant BasicOptionItemsHelper_Access := new BasicOptionItemsHelper;
    begin
-      Initialize (This.all, hashMap, pageContext);
+      BasicOptionItemsHelper_Package.Initialize (This.all, hashMap, pageContext);
       return This;
    end Create;
 
@@ -137,34 +137,6 @@ package body admin.taghelpers.BasicOptionItemsHelper_Package is
             return error;
                 end;
         end;
-   end backup;
-
-   procedure create (This : in out BasicOptionItemsHelper) is
-      Java_Result : constant Unbounded_String := BasicOptionItemsHelper'Class (This).create;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end create;
-
-   procedure drop (This : in out BasicOptionItemsHelper) is
-      Java_Result : constant Unbounded_String := BasicOptionItemsHelper'Class (This).drop;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end drop;
-
-   procedure restore (This : in out BasicOptionItemsHelper) is
-      Java_Result : constant Unbounded_String := BasicOptionItemsHelper'Class (This).restore;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end restore;
-
-   procedure backup (This : in out BasicOptionItemsHelper) is
-      Java_Result : constant Unbounded_String := BasicOptionItemsHelper'Class (This).backup;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end backup;
 
 end admin.taghelpers.BasicOptionItemsHelper_Package;

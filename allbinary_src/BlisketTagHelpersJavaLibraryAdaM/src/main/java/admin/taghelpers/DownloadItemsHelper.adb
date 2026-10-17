@@ -33,7 +33,7 @@ package body admin.taghelpers.DownloadItemsHelper_Package is
    function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return DownloadItemsHelper_Access is
       This : constant DownloadItemsHelper_Access := new DownloadItemsHelper;
    begin
-      Initialize (This.all, hashMap, pageContext);
+      DownloadItemsHelper_Package.Initialize (This.all, hashMap, pageContext);
       return This;
    end Create;
 
@@ -135,34 +135,6 @@ package body admin.taghelpers.DownloadItemsHelper_Package is
             return error;
                 end;
         end;
-   end backup;
-
-   procedure create (This : in out DownloadItemsHelper) is
-      Java_Result : constant Unbounded_String := DownloadItemsHelper'Class (This).create;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end create;
-
-   procedure drop (This : in out DownloadItemsHelper) is
-      Java_Result : constant Unbounded_String := DownloadItemsHelper'Class (This).drop;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end drop;
-
-   procedure restore (This : in out DownloadItemsHelper) is
-      Java_Result : constant Unbounded_String := DownloadItemsHelper'Class (This).restore;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end restore;
-
-   procedure backup (This : in out DownloadItemsHelper) is
-      Java_Result : constant Unbounded_String := DownloadItemsHelper'Class (This).backup;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end backup;
 
 end admin.taghelpers.DownloadItemsHelper_Package;

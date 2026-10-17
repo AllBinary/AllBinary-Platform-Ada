@@ -35,7 +35,7 @@ package body admin.tags.OrderTag_Package is
    function Create return OrderTag_Access is
       This : constant OrderTag_Access := new OrderTag;
    begin
-      Initialize (This.all);
+      OrderTag_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -122,27 +122,6 @@ package body admin.tags.OrderTag_Package is
             return SKIP_BODY;
                 end;
         end;
-   end doStartTag;
-
-   procedure process (This : in out OrderTag) is
-      Java_Result : constant Unbounded_String := OrderTag'Class (This).process;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end process;
-
-   procedure setPaymentGateway (This : in out OrderTag) is
-      Java_Result : constant Boolean := OrderTag'Class (This).setPaymentGateway;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end setPaymentGateway;
-
-   procedure doStartTag (This : in out OrderTag) is
-      Java_Result : constant Integer := OrderTag'Class (This).doStartTag;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end doStartTag;
 
 end admin.tags.OrderTag_Package;

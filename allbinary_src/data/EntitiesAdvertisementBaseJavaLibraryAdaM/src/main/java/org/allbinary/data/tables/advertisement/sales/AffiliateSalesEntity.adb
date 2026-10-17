@@ -33,7 +33,7 @@ package body org.allbinary.data.tables.advertisement.sales.AffiliateSalesEntity_
    function Create return AffiliateSalesEntity_Access is
       This : constant AffiliateSalesEntity_Access := new AffiliateSalesEntity;
    begin
-      Initialize (This.all);
+      AffiliateSalesEntity_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -84,27 +84,6 @@ package body org.allbinary.data.tables.advertisement.sales.AffiliateSalesEntity_
    function dropTable (This : in out AffiliateSalesEntity) return Unbounded_String is
    begin
         return AbSqlBean (This).dropTable;
-   end dropTable;
-
-   procedure createTableStatement (This : in out AffiliateSalesEntity) is
-      Java_Result : constant Unbounded_String := AffiliateSalesEntity'Class (This).createTableStatement;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end createTableStatement;
-
-   procedure createTable (This : in out AffiliateSalesEntity) is
-      Java_Result : constant Unbounded_String := AffiliateSalesEntity'Class (This).createTable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end createTable;
-
-   procedure dropTable (This : in out AffiliateSalesEntity) is
-      Java_Result : constant Unbounded_String := AffiliateSalesEntity'Class (This).dropTable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end dropTable;
 
 end org.allbinary.data.tables.advertisement.sales.AffiliateSalesEntity_Package;

@@ -34,7 +34,7 @@ package body org.allbinary.media.image.comparison.SaveImageComparisonWorker_Pack
    function Create return SaveImageComparisonWorker_Access is
       This : constant SaveImageComparisonWorker_Access := new SaveImageComparisonWorker;
    begin
-      Initialize (This.all);
+      SaveImageComparisonWorker_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -85,13 +85,6 @@ package body org.allbinary.media.image.comparison.SaveImageComparisonWorker_Pack
                 end;
         end;
    end run;
-
-   procedure isRunning (This : in out SaveImageComparisonWorker) is
-      Java_Result : constant Boolean := SaveImageComparisonWorker'Class (This).isRunning;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isRunning;
 
 end org.allbinary.media.image.comparison.SaveImageComparisonWorker_Package;
 

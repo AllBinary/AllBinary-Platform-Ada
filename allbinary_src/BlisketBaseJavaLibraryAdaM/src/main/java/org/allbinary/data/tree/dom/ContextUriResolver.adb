@@ -33,7 +33,7 @@ package body org.allbinary.data.tree.dom.ContextUriResolver_Package is
    function Create (basicURIResolver : BasicUriResolver_Access) return ContextUriResolver_Access is
       This : constant ContextUriResolver_Access := new ContextUriResolver;
    begin
-      Initialize (This.all, basicURIResolver);
+      ContextUriResolver_Package.Initialize (This.all, basicURIResolver);
       return This;
    end Create;
 
@@ -96,13 +96,6 @@ package body org.allbinary.data.tree.dom.ContextUriResolver_Package is
    begin
       null;
    end resolve;
-
-   procedure toString (This : in out ContextUriResolver) is
-      Java_Result : constant Unbounded_String := ContextUriResolver'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toString;
 
 end org.allbinary.data.tree.dom.ContextUriResolver_Package;
 

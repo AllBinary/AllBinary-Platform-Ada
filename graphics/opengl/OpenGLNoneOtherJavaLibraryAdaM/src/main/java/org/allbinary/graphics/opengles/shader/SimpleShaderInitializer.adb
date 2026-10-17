@@ -29,7 +29,7 @@ package body org.allbinary.graphics.opengles.shader.SimpleShaderInitializer_Pack
    function Create return SimpleShaderInitializer_Access is
       This : constant SimpleShaderInitializer_Access := new SimpleShaderInitializer;
    begin
-      Initialize (This.all);
+      SimpleShaderInitializer_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -37,13 +37,6 @@ package body org.allbinary.graphics.opengles.shader.SimpleShaderInitializer_Pack
    function getInstance return SimpleShaderInitializer_Access is
    begin
         return SimpleShaderInitializer_Package.instanceC;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant SimpleShaderInitializer_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

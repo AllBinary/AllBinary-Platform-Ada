@@ -39,7 +39,7 @@ package body org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package is
    function Create (title : Unbounded_String; items : ABCustomItem_Access_Array_Access; formPaintableFactory : ItemPaintableFactory_Access; border : Integer; adjustedExtraBorder : Integer; moveForSmallScreen : Boolean; backgroundBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access) return ScrollCurrentSelectionForm_Access is
       This : constant ScrollCurrentSelectionForm_Access := new ScrollCurrentSelectionForm;
    begin
-      Initialize (This.all, title, items, formPaintableFactory, border, adjustedExtraBorder, moveForSmallScreen, backgroundBasicColor, foregroundBasicColor);
+      ScrollCurrentSelectionForm_Package.Initialize (This.all, title, items, formPaintableFactory, border, adjustedExtraBorder, moveForSmallScreen, backgroundBasicColor, foregroundBasicColor);
       return This;
    end Create;
 
@@ -238,20 +238,6 @@ package body org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package is
       null;
    end getDiffX;
 
-   procedure getDx (This : in out ScrollCurrentSelectionForm) is
-      Java_Result : constant Integer := ScrollCurrentSelectionForm'Class (This).getDx;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getDx;
-
-   procedure getDy (This : in out ScrollCurrentSelectionForm) is
-      Java_Result : constant Integer := ScrollCurrentSelectionForm'Class (This).getDy;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getDy;
-
 end org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package;
 
 
@@ -274,7 +260,7 @@ package body org.allbinary.graphics.form.TempHorizontalFormProcessor_Package is
    function Create (scrollCurrentSelectionForm : ScrollCurrentSelectionForm_Access) return TempHorizontalFormProcessor_Access is
       This : constant TempHorizontalFormProcessor_Access := new TempHorizontalFormProcessor;
    begin
-      Initialize (This.all, scrollCurrentSelectionForm);
+      TempHorizontalFormProcessor_Package.Initialize (This.all, scrollCurrentSelectionForm);
       return This;
    end Create;
     
@@ -307,7 +293,7 @@ package body org.allbinary.graphics.form.HorizontalFormProcessor_Package is
    function Create (scrollCurrentSelectionForm : ScrollCurrentSelectionForm_Access) return HorizontalFormProcessor_Access is
       This : constant HorizontalFormProcessor_Access := new HorizontalFormProcessor;
    begin
-      Initialize (This.all, scrollCurrentSelectionForm);
+      HorizontalFormProcessor_Package.Initialize (This.all, scrollCurrentSelectionForm);
       return This;
    end Create;
     
@@ -340,7 +326,7 @@ package body org.allbinary.graphics.form.VerticalFormProcessor_Package is
    function Create (scrollCurrentSelectionForm : ScrollCurrentSelectionForm_Access) return VerticalFormProcessor_Access is
       This : constant VerticalFormProcessor_Access := new VerticalFormProcessor;
    begin
-      Initialize (This.all, scrollCurrentSelectionForm);
+      VerticalFormProcessor_Package.Initialize (This.all, scrollCurrentSelectionForm);
       return This;
    end Create;
     
@@ -373,7 +359,7 @@ package body org.allbinary.graphics.form.TempHorizontalItemIndexDx_Package is
    function Create (scrollCurrentSelectionForm : ScrollCurrentSelectionForm_Access) return TempHorizontalItemIndexDx_Access is
       This : constant TempHorizontalItemIndexDx_Access := new TempHorizontalItemIndexDx;
    begin
-      Initialize (This.all, scrollCurrentSelectionForm);
+      TempHorizontalItemIndexDx_Package.Initialize (This.all, scrollCurrentSelectionForm);
       return This;
    end Create;
     
@@ -412,7 +398,7 @@ package body org.allbinary.graphics.form.HorizontalItemIndexDx_Package is
    function Create (scrollCurrentSelectionForm : ScrollCurrentSelectionForm_Access) return HorizontalItemIndexDx_Access is
       This : constant HorizontalItemIndexDx_Access := new HorizontalItemIndexDx;
    begin
-      Initialize (This.all, scrollCurrentSelectionForm);
+      HorizontalItemIndexDx_Package.Initialize (This.all, scrollCurrentSelectionForm);
       return This;
    end Create;
     
@@ -451,7 +437,7 @@ package body org.allbinary.graphics.form.VerticalItemIndexDx_Package is
    function Create (scrollCurrentSelectionForm : ScrollCurrentSelectionForm_Access) return VerticalItemIndexDx_Access is
       This : constant VerticalItemIndexDx_Access := new VerticalItemIndexDx;
    begin
-      Initialize (This.all, scrollCurrentSelectionForm);
+      VerticalItemIndexDx_Package.Initialize (This.all, scrollCurrentSelectionForm);
       return This;
    end Create;
     

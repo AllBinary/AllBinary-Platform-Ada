@@ -38,7 +38,6 @@ package org.allbinary.emulator.swt.SWTRunnableProcessor_Package is
    procedure Initialize (This : in out SWTRunnableProcessor'Class);
    function Create return SWTRunnableProcessor_Access;
    function getInstance return SWTRunnableProcessor_Access;
-   procedure getInstance;
    procedure process (This : in out SWTRunnableProcessor; display : Display_Access);
 
 end org.allbinary.emulator.swt.SWTRunnableProcessor_Package;

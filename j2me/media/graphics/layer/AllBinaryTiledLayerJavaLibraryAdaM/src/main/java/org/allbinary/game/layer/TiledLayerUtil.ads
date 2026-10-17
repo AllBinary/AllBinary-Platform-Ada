@@ -20,6 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
+with org.allbinary.game.layer.AllBinaryTiledLayer_Package; use org.allbinary.game.layer.AllBinaryTiledLayer_Package;
 
 package org.allbinary.game.layer.TiledLayerUtil_Package is
 
@@ -35,7 +36,6 @@ package org.allbinary.game.layer.TiledLayerUtil_Package is
    procedure Initialize (This : in out TiledLayerUtil'Class);
    function Create return TiledLayerUtil_Access;
    function getInstance return TiledLayerUtil_Access;
-   procedure getInstance;
    function keepOnBorderdMapX (This : in out TiledLayerUtil; terrainTiledLayer : AllBinaryTiledLayer_Access; x : Integer; width : Integer; mapBorderBufferWidth : Integer) return Integer;
    procedure keepOnBorderdMapX (This : in out TiledLayerUtil; terrainTiledLayer : AllBinaryTiledLayer_Access; x : Integer; width : Integer; mapBorderBufferWidth : Integer);
    function keepOnBorderdMapY (This : in out TiledLayerUtil; terrainTiledLayer : AllBinaryTiledLayer_Access; y : Integer; height : Integer; mapBorderBufferHeight : Integer) return Integer;

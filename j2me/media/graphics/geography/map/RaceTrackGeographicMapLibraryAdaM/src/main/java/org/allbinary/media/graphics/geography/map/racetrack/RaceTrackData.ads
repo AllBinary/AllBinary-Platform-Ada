@@ -53,34 +53,24 @@ package org.allbinary.media.graphics.geography.map.racetrack.RaceTrackData_Packa
    function Create (id : Integer; cellWidth : Integer; cellHeight : Integer; miniCellWidth : Integer; miniCellHeight : Integer; cellTypeIdToGeographicMapCellTypeArray : Integer_Array_Access; mapArray : Integer_Array_Access_Array_Access) return RaceTrackData_Access;
    procedure setMapArray (This : in out RaceTrackData; mapArray : Integer_Array_Access_Array_Access);
    function getMapArray (This : in out RaceTrackData) return Integer_Array_Access_Array_Access;
-   procedure getMapArray (This : in out RaceTrackData);
    procedure setCellTypeIdToGeographicMapCellTypeArray (This : in out RaceTrackData; cellTypeIdToGeographicMapCellTypeArray : Integer_Array_Access);
    function getCellTypeIdToGeographicMapCellTypeArray (This : in out RaceTrackData) return Integer_Array_Access;
-   procedure getCellTypeIdToGeographicMapCellTypeArray (This : in out RaceTrackData);
    procedure setCellWidth (This : in out RaceTrackData; cellWidth : Integer);
    function getCellWidth (This : in out RaceTrackData) return Integer;
-   procedure getCellWidth (This : in out RaceTrackData);
    procedure setCellHeight (This : in out RaceTrackData; cellHeight : Integer);
    function getCellHeight (This : in out RaceTrackData) return Integer;
-   procedure getCellHeight (This : in out RaceTrackData);
    function getOverPassGeographicMapCellPositionArray (This : in out RaceTrackData) return CellPosition_Access_Array_Access;
-   procedure getOverPassGeographicMapCellPositionArray (This : in out RaceTrackData);
    procedure setOverPassGeographicMapCellPositionArray (This : in out RaceTrackData; overPassGeographicMapCellPositionArray : CellPosition_Access_Array_Access);
    function getTileSetImage (This : in out RaceTrackData) return Image_Access;
-   procedure getTileSetImage (This : in out RaceTrackData);
    procedure setTileSetImage (This : in out RaceTrackData; tileSetImage : Image_Access);
    function getMiniTileSetImage (This : in out RaceTrackData) return Image_Access;
-   procedure getMiniTileSetImage (This : in out RaceTrackData);
    procedure setMiniTileSetImage (This : in out RaceTrackData; miniTileSetImage : Image_Access);
    function getMiniCellWidth (This : in out RaceTrackData) return Integer;
-   procedure getMiniCellWidth (This : in out RaceTrackData);
    procedure setMiniCellWidth (This : in out RaceTrackData; miniCellWidth : Integer);
    function getMiniCellHeight (This : in out RaceTrackData) return Integer;
-   procedure getMiniCellHeight (This : in out RaceTrackData);
    procedure setMiniCellHeight (This : in out RaceTrackData; miniCellHeight : Integer);
    procedure setId (This : in out RaceTrackData; id : Integer);
    function getId (This : in out RaceTrackData) return Integer;
-   procedure getId (This : in out RaceTrackData);
 
 end org.allbinary.media.graphics.geography.map.racetrack.RaceTrackData_Package;
 

@@ -51,24 +51,17 @@ package org.allbinary.animation.image.ImageSegmentAnimation_Package is
    procedure previousFrame (This : in out ImageSegmentAnimation);
    procedure setFrame (This : in out ImageSegmentAnimation; index : Integer);
    function getFrame (This : in out ImageSegmentAnimation) return Integer;
-   procedure getFrame (This : in out ImageSegmentAnimation);
    function getSize (This : in out ImageSegmentAnimation) return Integer;
-   procedure getSize (This : in out ImageSegmentAnimation);
    procedure setSequence (This : in out ImageSegmentAnimation; sequenceArray : Integer_Array_Access);
    function getSequence (This : in out ImageSegmentAnimation) return Integer_Array_Access;
-   procedure getSequence (This : in out ImageSegmentAnimation);
    procedure paintXY (This : in out ImageSegmentAnimation; graphics : Graphics_Access; x : Integer; y : Integer);
    function getStartX (This : in out ImageSegmentAnimation) return Integer;
-   procedure getStartX (This : in out ImageSegmentAnimation);
    procedure setStartX (This : in out ImageSegmentAnimation; startX : Integer);
    function getStartY (This : in out ImageSegmentAnimation) return Integer;
-   procedure getStartY (This : in out ImageSegmentAnimation);
    procedure setStartY (This : in out ImageSegmentAnimation; startY : Integer);
    function getDrawWidth (This : in out ImageSegmentAnimation) return Integer;
-   procedure getDrawWidth (This : in out ImageSegmentAnimation);
    procedure setDrawWidth (This : in out ImageSegmentAnimation; drawWidth : Integer);
    function getDrawHeight (This : in out ImageSegmentAnimation) return Integer;
-   procedure getDrawHeight (This : in out ImageSegmentAnimation);
    procedure setDrawHeight (This : in out ImageSegmentAnimation; drawHeight : Integer);
 
 end org.allbinary.animation.image.ImageSegmentAnimation_Package;

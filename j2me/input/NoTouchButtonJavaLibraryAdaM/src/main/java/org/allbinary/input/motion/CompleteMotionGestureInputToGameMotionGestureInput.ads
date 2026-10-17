@@ -41,7 +41,6 @@ package org.allbinary.input.motion.CompleteMotionGestureInputToGameMotionGesture
    procedure Initialize (This : in out CompleteMotionGestureInputToGameMotionGestureInput'Class);
    function Create return CompleteMotionGestureInputToGameMotionGestureInput_Access;
    function getInstance return CompleteMotionGestureInputToGameMotionGestureInput_Access;
-   procedure getInstance;
    procedure init (This : in out CompleteMotionGestureInputToGameMotionGestureInput);
 
 end org.allbinary.input.motion.CompleteMotionGestureInputToGameMotionGestureInput_Package;

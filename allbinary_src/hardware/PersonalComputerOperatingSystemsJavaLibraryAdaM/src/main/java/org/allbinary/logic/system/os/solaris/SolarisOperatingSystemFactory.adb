@@ -36,7 +36,7 @@ package body org.allbinary.logic.system.os.solaris.SolarisOperatingSystemFactory
    function Create return SolarisOperatingSystemFactory_Access is
       This : constant SolarisOperatingSystemFactory_Access := new SolarisOperatingSystemFactory;
    begin
-      Initialize (This.all);
+      SolarisOperatingSystemFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -72,20 +72,6 @@ package body org.allbinary.logic.system.os.solaris.SolarisOperatingSystemFactory
             return NoOperatingSystem_Package.NO_OPERATING_SYSTEM;
                 end;
         end;
-   end getOperatingSystemInstance;
-
-   procedure getInstance is
-      Java_Result : constant SolarisOperatingSystemFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure getOperatingSystemInstance (This : in out SolarisOperatingSystemFactory) is
-      Java_Result : constant GenericOperatingSystem_Access := SolarisOperatingSystemFactory'Class (This).getOperatingSystemInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getOperatingSystemInstance;
 
 begin

@@ -56,14 +56,11 @@ package org.allbinary.physics.movement.NoZBasicConstantVelocityMovement_Package 
    procedure moveOutsideRadius (This : in out NoZBasicConstantVelocityMovement; layer : AllBinaryLayer_Access; radius : Long_Long_Integer; angle : Integer; otherAngle : Integer);
    procedure process (This : in out NoZBasicConstantVelocityMovement; layer : AllBinaryGameLayer_Access);
    function toString (This : in out NoZBasicConstantVelocityMovement) return Unbounded_String;
-   procedure toString (This : in out NoZBasicConstantVelocityMovement);
    procedure stop (This : in out NoZBasicConstantVelocityMovement);
    function getVelocityProperties (This : in out NoZBasicConstantVelocityMovement) return BasicVelocityProperties_Access;
-   procedure getVelocityProperties (This : in out NoZBasicConstantVelocityMovement);
    procedure setVelocityProperties (This : in out NoZBasicConstantVelocityMovement; velocityProperties : BasicVelocityProperties_Access);
    procedure setSpeedBasicDecimal (This : in out NoZBasicConstantVelocityMovement; speedBasicDecimal : BasicDecimal_Access);
    function getSpeedBasicDecimal (This : in out NoZBasicConstantVelocityMovement) return BasicDecimal_Access;
-   procedure getSpeedBasicDecimal (This : in out NoZBasicConstantVelocityMovement);
 
 end org.allbinary.physics.movement.NoZBasicConstantVelocityMovement_Package;
 

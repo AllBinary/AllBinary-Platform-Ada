@@ -35,6 +35,8 @@ with org.allbinary.logic.java.anyType.InterfaceUtil_Package; use org.allbinary.l
 with org.allbinary.logic.system.loader.SecuredNativeLibraryInterface_Package; use org.allbinary.logic.system.loader.SecuredNativeLibraryInterface_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
+with org.allbinary.input.automation.robot.InputRobotInterface_Package; use org.allbinary.input.automation.robot.InputRobotInterface_Package;
+with org.allbinary.input.automation.robot.InputRobot_Package; use org.allbinary.input.automation.robot.InputRobot_Package;
 
 package org.allbinary.input.automation.robot.InputRobotFactory_Package is
 
@@ -62,7 +64,6 @@ package org.allbinary.input.automation.robot.InputRobotFactory_Package is
    procedure Initialize (This : in out InputRobotFactory'Class);
    function Create return InputRobotFactory_Access;
    function getInstance return InputRobotFactory_Access;
-   procedure getInstance;
    procedure addListener (This : in out InputRobotFactory; helpSetListenerInterface : HelpSetListener_Access);
    procedure add (This : in out InputRobotFactory; inputRobotInterface : InputRobotInterface_Access);
    procedure loadLibraries (This : in out InputRobotFactory);
@@ -70,7 +71,6 @@ package org.allbinary.input.automation.robot.InputRobotFactory_Package is
    procedure loadLibrary (inputRobotInterface : InputRobotInterface_Access);
    procedure unloadLibraries (This : in out InputRobotFactory);
    function get (This : in out InputRobotFactory) return ABHashtable_Access;
-   procedure get (This : in out InputRobotFactory);
    function get (This : in out InputRobotFactory; name : Unbounded_String) return InputRobotInterface_Access;
    procedure get (This : in out InputRobotFactory; name : Unbounded_String);
 

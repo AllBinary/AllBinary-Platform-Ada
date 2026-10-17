@@ -97,9 +97,7 @@ package admin.taghelpers.StaticPagesRequestHelper_Package is
    procedure getFormData (This : in out StaticPagesRequestHelper);
    procedure email (This : in out StaticPagesRequestHelper);
    function generateStaticPages (This : in out StaticPagesRequestHelper) return Unbounded_String;
-   procedure generateStaticPages (This : in out StaticPagesRequestHelper);
    function makePublic (This : in out StaticPagesRequestHelper) return Unbounded_String;
-   procedure makePublic (This : in out StaticPagesRequestHelper);
 
 end admin.taghelpers.StaticPagesRequestHelper_Package;
 

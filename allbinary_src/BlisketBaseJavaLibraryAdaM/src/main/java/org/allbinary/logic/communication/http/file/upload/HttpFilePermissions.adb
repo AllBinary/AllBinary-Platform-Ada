@@ -43,7 +43,7 @@ package body org.allbinary.logic.communication.http.file.upload.HttpFilePermissi
    function Create (fullPath : AbPath_Access) return HttpFilePermissions_Access is
       This : constant HttpFilePermissions_Access := new HttpFilePermissions;
    begin
-      Initialize (This.all, fullPath);
+      HttpFilePermissions_Package.Initialize (This.all, fullPath);
       return This;
    end Create;
 
@@ -55,20 +55,6 @@ package body org.allbinary.logic.communication.http.file.upload.HttpFilePermissi
    function getUserRoles (This : in out HttpFilePermissions) return BasicArrayList_Access is
    begin
         return This.userRoles;
-   end getUserRoles;
-
-   procedure isFile (This : in out HttpFilePermissions) is
-      Java_Result : constant Boolean := HttpFilePermissions'Class (This).isFile;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isFile;
-
-   procedure getUserRoles (This : in out HttpFilePermissions) is
-      Java_Result : constant BasicArrayList_Access := HttpFilePermissions'Class (This).getUserRoles;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getUserRoles;
 
 end org.allbinary.logic.communication.http.file.upload.HttpFilePermissions_Package;

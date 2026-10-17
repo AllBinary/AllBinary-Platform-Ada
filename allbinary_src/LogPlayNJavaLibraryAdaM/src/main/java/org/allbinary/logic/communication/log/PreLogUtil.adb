@@ -30,7 +30,7 @@ package body org.allbinary.logic.communication.log.PreLogUtil_Package is
    function Create return PreLogUtil_Access is
       This : constant PreLogUtil_Access := new PreLogUtil;
    begin
-      Initialize (This.all);
+      PreLogUtil_Package.Initialize (This.all);
       return This;
    end Create;
 

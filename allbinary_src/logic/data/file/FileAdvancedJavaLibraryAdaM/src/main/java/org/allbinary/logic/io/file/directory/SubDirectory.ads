@@ -25,6 +25,7 @@ with org.allbinary.logic.io.file.AbFile_Package; use org.allbinary.logic.io.file
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.logic.io.file.directory.Directory_Package; use org.allbinary.logic.io.file.directory.Directory_Package;
 
 package org.allbinary.logic.io.file.directory.SubDirectory_Package is
 
@@ -46,7 +47,6 @@ package org.allbinary.logic.io.file.directory.SubDirectory_Package is
    procedure Initialize (This : in out SubDirectory'Class);
    function Create return SubDirectory_Access;
    function getInstance return SubDirectory_Access;
-   procedure getInstance;
    function search (This : in out SubDirectory; fileFilter : FileFilter_Access; file : AbFile_Access) return BasicArrayList_Access;
    procedure search (This : in out SubDirectory; fileFilter : FileFilter_Access; file : AbFile_Access);
    function search (This : in out SubDirectory; file : AbFile_Access) return BasicArrayList_Access;

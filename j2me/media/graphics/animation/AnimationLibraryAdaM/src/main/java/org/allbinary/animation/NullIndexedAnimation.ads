@@ -9,6 +9,7 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.animation.IndexedAnimation_Package; use org.allbinary.animation.IndexedAnimation_Package;
+with org.allbinary.animation.AnimationBehavior_Package; use org.allbinary.animation.AnimationBehavior_Package;
 
 package org.allbinary.animation.NullIndexedAnimation_Package is
 
@@ -23,7 +24,6 @@ package org.allbinary.animation.NullIndexedAnimation_Package is
    procedure Initialize (This : in out NullIndexedAnimation'Class; animationBehavior : AnimationBehavior_Access);
    function Create (animationBehavior : AnimationBehavior_Access) return NullIndexedAnimation_Access;
    function getAnimationSize (This : in out NullIndexedAnimation) return Integer;
-   procedure getAnimationSize (This : in out NullIndexedAnimation);
 
 end org.allbinary.animation.NullIndexedAnimation_Package;
 

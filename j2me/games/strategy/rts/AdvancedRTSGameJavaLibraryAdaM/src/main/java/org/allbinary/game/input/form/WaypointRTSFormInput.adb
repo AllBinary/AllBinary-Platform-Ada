@@ -50,7 +50,7 @@ package body org.allbinary.game.input.form.WaypointRTSFormInput_Package is
    function Create (groupInterface : Group_Access_Array_Access; isPrimaryWaypointCreator : Boolean) return WaypointRTSFormInput_Access is
       This : constant WaypointRTSFormInput_Access := new WaypointRTSFormInput;
    begin
-      Initialize (This.all, groupInterface, isPrimaryWaypointCreator);
+      WaypointRTSFormInput_Package.Initialize (This.all, groupInterface, isPrimaryWaypointCreator);
       return This;
    end Create;
 

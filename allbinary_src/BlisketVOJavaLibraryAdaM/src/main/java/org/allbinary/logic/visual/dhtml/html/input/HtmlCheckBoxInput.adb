@@ -30,7 +30,7 @@ package body org.allbinary.logic.visual.dhtml.html.input.HtmlCheckBoxInput_Packa
    function Create return HtmlCheckBoxInput_Access is
       This : constant HtmlCheckBoxInput_Access := new HtmlCheckBoxInput;
    begin
-      Initialize (This.all);
+      HtmlCheckBoxInput_Package.Initialize (This.all);
       return This;
    end Create;
 

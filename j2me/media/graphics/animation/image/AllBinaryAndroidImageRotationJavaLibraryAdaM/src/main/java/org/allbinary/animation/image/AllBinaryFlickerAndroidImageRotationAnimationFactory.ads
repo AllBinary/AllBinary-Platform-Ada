@@ -30,6 +30,7 @@ with org.allbinary.media.image.ImageCopyUtil_Package; use org.allbinary.media.im
 with org.allbinary.math.AngleFactory_Package; use org.allbinary.math.AngleFactory_Package;
 with org.allbinary.math.AngleInfo_Package; use org.allbinary.math.AngleInfo_Package;
 with org.allbinary.media.ScaleProperties_Package; use org.allbinary.media.ScaleProperties_Package;
+with org.allbinary.animation.image.AllBinaryFlickerAndroidImageRotationAnimation_Package; use org.allbinary.animation.image.AllBinaryFlickerAndroidImageRotationAnimation_Package;
 
 package org.allbinary.animation.image.AllBinaryFlickerAndroidImageRotationAnimationFactory_Package is
 
@@ -58,10 +59,8 @@ package org.allbinary.animation.image.AllBinaryFlickerAndroidImageRotationAnimat
    function getInstance (This : in out AllBinaryFlickerAndroidImageRotationAnimationFactory; instanceId : Integer) return Animation_Access;
    procedure getInstance (This : in out AllBinaryFlickerAndroidImageRotationAnimationFactory; instanceId : Integer);
    function getAngleIncrement (This : in out AllBinaryFlickerAndroidImageRotationAnimationFactory) return Short_Integer;
-   procedure getAngleIncrement (This : in out AllBinaryFlickerAndroidImageRotationAnimationFactory);
    procedure setImage (This : in out AllBinaryFlickerAndroidImageRotationAnimationFactory; image : Image_Access);
    function getImage (This : in out AllBinaryFlickerAndroidImageRotationAnimationFactory) return Image_Access;
-   procedure getImage (This : in out AllBinaryFlickerAndroidImageRotationAnimationFactory);
    procedure setInitialScale (This : in out AllBinaryFlickerAndroidImageRotationAnimationFactory; scaleProperties : ScaleProperties_Access);
 
 end org.allbinary.animation.image.AllBinaryFlickerAndroidImageRotationAnimationFactory_Package;

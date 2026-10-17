@@ -29,7 +29,7 @@ package body org.allbinary.input.event.VirtualKeyboardEvent_Package is
    function Create (anyType : Java_Object_Access) return VirtualKeyboardEvent_Access is
       This : constant VirtualKeyboardEvent_Access := new VirtualKeyboardEvent;
    begin
-      Initialize (This.all, anyType);
+      VirtualKeyboardEvent_Package.Initialize (This.all, anyType);
       return This;
    end Create;
 

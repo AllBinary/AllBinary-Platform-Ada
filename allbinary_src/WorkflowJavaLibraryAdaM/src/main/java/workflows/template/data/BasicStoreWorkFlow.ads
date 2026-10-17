@@ -41,7 +41,6 @@ package workflows.template.data.BasicStoreWorkFlow_Package is
    procedure Initialize (This : in out BasicStoreWorkFlow'Class; propertiesHashMap : HashMap_Access; pageContext : PageContext_Access);
    function Create (propertiesHashMap : HashMap_Access; pageContext : PageContext_Access) return BasicStoreWorkFlow_Access;
    function getStoreName (This : in out BasicStoreWorkFlow) return Unbounded_String;
-   procedure getStoreName (This : in out BasicStoreWorkFlow);
 
 end workflows.template.data.BasicStoreWorkFlow_Package;
 

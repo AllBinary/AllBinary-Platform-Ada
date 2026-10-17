@@ -29,7 +29,7 @@ package body org.allbinary.business.category.properties.root.store.theme.RootSto
    function Create (transformInfoInterface : TransformInfoInterface_Access) return RootStoreThemeCategoryProperties_Access is
       This : constant RootStoreThemeCategoryProperties_Access := new RootStoreThemeCategoryProperties;
    begin
-      Initialize (This.all, transformInfoInterface);
+      RootStoreThemeCategoryProperties_Package.Initialize (This.all, transformInfoInterface);
       return This;
    end Create;
 
@@ -42,7 +42,7 @@ package body org.allbinary.business.category.properties.root.store.theme.RootSto
    function Create (transformInfoInterface : TransformInfoInterface_Access; abPath : AbPath_Access) return RootStoreThemeCategoryProperties_Access is
       This : constant RootStoreThemeCategoryProperties_Access := new RootStoreThemeCategoryProperties;
    begin
-      Initialize (This.all, transformInfoInterface, abPath);
+      RootStoreThemeCategoryProperties_Package.Initialize (This.all, transformInfoInterface, abPath);
       return This;
    end Create;
 
@@ -55,7 +55,7 @@ package body org.allbinary.business.category.properties.root.store.theme.RootSto
    function Create (transformInfoInterface : TransformInfoInterface_Access; node : Node_Access) return RootStoreThemeCategoryProperties_Access is
       This : constant RootStoreThemeCategoryProperties_Access := new RootStoreThemeCategoryProperties;
    begin
-      Initialize (This.all, transformInfoInterface, node);
+      RootStoreThemeCategoryProperties_Package.Initialize (This.all, transformInfoInterface, node);
       return This;
    end Create;
 
@@ -68,7 +68,7 @@ package body org.allbinary.business.category.properties.root.store.theme.RootSto
    function Create (transformInfoInterface : TransformInfoInterface_Access; categoryPropertiesHashMap : HashMap_Access) return RootStoreThemeCategoryProperties_Access is
       This : constant RootStoreThemeCategoryProperties_Access := new RootStoreThemeCategoryProperties;
    begin
-      Initialize (This.all, transformInfoInterface, categoryPropertiesHashMap);
+      RootStoreThemeCategoryProperties_Package.Initialize (This.all, transformInfoInterface, categoryPropertiesHashMap);
       return This;
    end Create;
 

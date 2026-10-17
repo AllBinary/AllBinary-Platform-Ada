@@ -30,7 +30,7 @@ package body org.allbinary.logic.communication.http.request.session.WeblisketSes
    function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return WeblisketSession_Access is
       This : constant WeblisketSession_Access := new WeblisketSession;
    begin
-      Initialize (This.all, hashMap, pageContext);
+      WeblisketSession_Package.Initialize (This.all, hashMap, pageContext);
       return This;
    end Create;
 
@@ -51,7 +51,7 @@ package body org.allbinary.logic.communication.http.request.session.WeblisketSes
    function Create (hashMap : HashMap_Access; httpServletRequest : HttpServletRequest_Access) return WeblisketSession_Access is
       This : constant WeblisketSession_Access := new WeblisketSession;
    begin
-      Initialize (This.all, hashMap, httpServletRequest);
+      WeblisketSession_Package.Initialize (This.all, hashMap, httpServletRequest);
       return This;
    end Create;
 
@@ -205,97 +205,6 @@ package body org.allbinary.logic.communication.http.request.session.WeblisketSes
             This.session.removeAttribute (basketName);
         end if;
    end removeBasket;
-
-   procedure getId (This : in out WeblisketSession) is
-      Java_Result : constant Unbounded_String := WeblisketSession'Class (This).getId;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getId;
-
-   procedure getWebAppPath (This : in out WeblisketSession) is
-      Java_Result : constant Unbounded_String := WeblisketSession'Class (This).getWebAppPath;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getWebAppPath;
-
-   procedure getUserName (This : in out WeblisketSession) is
-      Java_Result : constant Unbounded_String := WeblisketSession'Class (This).getUserName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getUserName;
-
-   procedure getPassword (This : in out WeblisketSession) is
-      Java_Result : constant Unbounded_String := WeblisketSession'Class (This).getPassword;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getPassword;
-
-   procedure getPaymentMethod (This : in out WeblisketSession) is
-      Java_Result : constant Unbounded_String := WeblisketSession'Class (This).getPaymentMethod;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getPaymentMethod;
-
-   procedure getAuthentication (This : in out WeblisketSession) is
-      Java_Result : constant Unbounded_String := WeblisketSession'Class (This).getAuthentication;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getAuthentication;
-
-   procedure getAttempts (This : in out WeblisketSession) is
-      Java_Result : constant Integer := WeblisketSession'Class (This).getAttempts;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getAttempts;
-
-   procedure getTimeout (This : in out WeblisketSession) is
-      Java_Result : constant Unbounded_String := WeblisketSession'Class (This).getTimeout;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTimeout;
-
-   procedure getStoreName (This : in out WeblisketSession) is
-      Java_Result : constant Unbounded_String := WeblisketSession'Class (This).getStoreName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getStoreName;
-
-   procedure getRole (This : in out WeblisketSession) is
-      Java_Result : constant UserRole_Access := WeblisketSession'Class (This).getRole;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getRole;
-
-   procedure getOrder (This : in out WeblisketSession) is
-      Java_Result : constant OrderInterface_Access := WeblisketSession'Class (This).getOrder;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getOrder;
-
-   procedure getCreationTime (This : in out WeblisketSession) is
-      Java_Result : constant Long_Long_Integer := WeblisketSession'Class (This).getCreationTime;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getCreationTime;
-
-   procedure getLastAccessedTime (This : in out WeblisketSession) is
-      Java_Result : constant Long_Long_Integer := WeblisketSession'Class (This).getLastAccessedTime;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getLastAccessedTime;
 
 end org.allbinary.logic.communication.http.request.session.WeblisketSession_Package;
 

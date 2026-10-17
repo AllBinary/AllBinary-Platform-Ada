@@ -34,7 +34,7 @@ package body org.allbinary.logic.java.bool.BooleanFactory_Package is
    function Create return BooleanFactory_Access is
       This : constant BooleanFactory_Access := new BooleanFactory;
    begin
-      Initialize (This.all);
+      BooleanFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -52,13 +52,6 @@ package body org.allbinary.logic.java.bool.BooleanFactory_Package is
             return This.FALSE_STRING;
         end if;
    end toStringb;
-
-   procedure getInstance is
-      Java_Result : constant BooleanFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure toStringb (This : in out BooleanFactory; bool : Boolean) is
       Java_Result : constant Unbounded_String := BooleanFactory'Class (This).toStringb (bool);

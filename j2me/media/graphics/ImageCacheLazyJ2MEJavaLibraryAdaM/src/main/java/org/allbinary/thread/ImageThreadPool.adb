@@ -36,7 +36,7 @@ package body org.allbinary.thread.ImageThreadPool_Package is
    function Create (poolName : Unbounded_String; numThreads : Integer; priority : Integer) return ImageThreadPool_Access is
       This : constant ImageThreadPool_Access := new ImageThreadPool;
    begin
-      Initialize (This.all, poolName, numThreads, priority);
+      ImageThreadPool_Package.Initialize (This.all, poolName, numThreads, priority);
       return This;
    end Create;
 
@@ -54,13 +54,6 @@ package body org.allbinary.thread.ImageThreadPool_Package is
    begin
         null;
    end completedTask;
-
-   procedure getInstance is
-      Java_Result : constant ThreadPool_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

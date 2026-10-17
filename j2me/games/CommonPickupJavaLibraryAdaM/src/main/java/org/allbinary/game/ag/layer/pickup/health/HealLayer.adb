@@ -29,7 +29,7 @@ package body org.allbinary.game.ag.layer.pickup.health.HealLayer_Package is
    function Create return HealLayer_Access is
       This : constant HealLayer_Access := new HealLayer;
    begin
-      Initialize (This.all);
+      HealLayer_Package.Initialize (This.all);
       return This;
    end Create;
 

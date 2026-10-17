@@ -29,7 +29,7 @@ package body views.generic_Id.address.shipping.SetValidationView_Package is
    function Create (transformInfoInterface : TransformInfoInterface_Access) return SetValidationView_Access is
       This : constant SetValidationView_Access := new SetValidationView;
    begin
-      Initialize (This.all, transformInfoInterface);
+      SetValidationView_Package.Initialize (This.all, transformInfoInterface);
       return This;
    end Create;
 
@@ -52,27 +52,6 @@ package body views.generic_Id.address.shipping.SetValidationView_Package is
    begin
         return null;
    end toValidationInfoNode;
-
-   procedure isValid (This : in out SetValidationView) is
-      Java_Result : constant Boolean := SetValidationView'Class (This).isValid;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isValid;
-
-   procedure validationInfo (This : in out SetValidationView) is
-      Java_Result : constant Unbounded_String := SetValidationView'Class (This).validationInfo;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end validationInfo;
-
-   procedure toValidationInfoDoc (This : in out SetValidationView) is
-      Java_Result : constant Document_Access := SetValidationView'Class (This).toValidationInfoDoc;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toValidationInfoDoc;
 
    procedure toValidationInfoNode (This : in out SetValidationView; document : Document_Access) is
       Java_Result : constant Node_Access := SetValidationView'Class (This).toValidationInfoNode (document);

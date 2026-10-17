@@ -46,7 +46,7 @@ package body org.allbinary.logic.visual.transform.template.customizer.includes.m
    function Create (storeName : Unbounded_String) return MetasValidation_Access is
       This : constant MetasValidation_Access := new MetasValidation;
    begin
-      Initialize (This.all, storeName);
+      MetasValidation_Package.Initialize (This.all, storeName);
       return This;
    end Create;
 
@@ -61,7 +61,7 @@ package body org.allbinary.logic.visual.transform.template.customizer.includes.m
    function Create (document : Document_Access) return MetasValidation_Access is
       This : constant MetasValidation_Access := new MetasValidation;
    begin
-      Initialize (This.all, document);
+      MetasValidation_Package.Initialize (This.all, document);
       return This;
    end Create;
 
@@ -130,27 +130,6 @@ package body org.allbinary.logic.visual.transform.template.customizer.includes.m
         end loop;
         return node;
    end toXmlNode;
-
-   procedure isValid (This : in out MetasValidation) is
-      Java_Result : constant Boolean := MetasValidation'Class (This).isValid;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isValid;
-
-   procedure validationInfo (This : in out MetasValidation) is
-      Java_Result : constant Unbounded_String := MetasValidation'Class (This).validationInfo;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end validationInfo;
-
-   procedure toValidationInfoDoc (This : in out MetasValidation) is
-      Java_Result : constant Document_Access := MetasValidation'Class (This).toValidationInfoDoc;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toValidationInfoDoc;
 
    procedure toValidationInfoNode (This : in out MetasValidation; document : Document_Access) is
       Java_Result : constant Node_Access := MetasValidation'Class (This).toValidationInfoNode (document);

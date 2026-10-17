@@ -11,6 +11,7 @@ with AllBinary_Java; use AllBinary_Java;
 with android.view.KeyEvent_Package; use android.view.KeyEvent_Package;
 with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
 with org.allbinary.game.input.AndroidKeyFactory_Package; use org.allbinary.game.input.AndroidKeyFactory_Package;
+with org.allbinary.game.input.AndroidGameKey_Package; use org.allbinary.game.input.AndroidGameKey_Package;
 
 package org.allbinary.game.input.AndroidAPI9KeyFactory_Package is
 
@@ -28,7 +29,6 @@ package org.allbinary.game.input.AndroidAPI9KeyFactory_Package is
    procedure Initialize (This : in out AndroidAPI9KeyFactory'Class);
    function Create return AndroidAPI9KeyFactory_Access;
    function getInstance return AndroidAPI9KeyFactory_Access;
-   procedure getInstance;
 
 end org.allbinary.game.input.AndroidAPI9KeyFactory_Package;
 

@@ -36,7 +36,6 @@ package org.allbinary.image.opengles.OpenGLESImageProcessor_Package is
    procedure Initialize (This : in out OpenGLESImageProcessor'Class);
    function Create return OpenGLESImageProcessor_Access;
    function getInstance return OpenGLESImageProcessor_Access;
-   procedure getInstance;
    procedure translate (This : in out OpenGLESImageProcessor; gl : GL10_Access; translateX : Float; translateY : Float);
    procedure rotate (This : in out OpenGLESImageProcessor; gl : GL10_Access; angle : Float);
    procedure scale (This : in out OpenGLESImageProcessor; gl : GL10_Access; scaleX : Float; scaleY : Float);

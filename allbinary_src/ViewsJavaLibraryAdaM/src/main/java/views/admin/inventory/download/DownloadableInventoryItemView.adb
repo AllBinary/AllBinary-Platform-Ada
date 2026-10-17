@@ -39,7 +39,7 @@ package body views.admin.inventory.download.DownloadableInventoryItemView_Packag
    function Create (transformInfoInterface : TransformInfoInterface_Access) return DownloadableInventoryItemView_Access is
       This : constant DownloadableInventoryItemView_Access := new DownloadableInventoryItemView;
    begin
-      Initialize (This.all, transformInfoInterface);
+      DownloadableInventoryItemView_Package.Initialize (This.all, transformInfoInterface);
       return This;
    end Create;
 
@@ -54,7 +54,7 @@ package body views.admin.inventory.download.DownloadableInventoryItemView_Packag
    function Create (transformInfoInterface : TransformInfoInterface_Access; empty : Unbounded_String) return DownloadableInventoryItemView_Access is
       This : constant DownloadableInventoryItemView_Access := new DownloadableInventoryItemView;
    begin
-      Initialize (This.all, transformInfoInterface, empty);
+      DownloadableInventoryItemView_Package.Initialize (This.all, transformInfoInterface, empty);
       return This;
    end Create;
 
@@ -173,41 +173,6 @@ package body views.admin.inventory.download.DownloadableInventoryItemView_Packag
    function getDownloadableItem (This : in out DownloadableInventoryItemView) return DownloadableItem_Access is
    begin
         return This.downloadableItem;
-   end getDownloadableItem;
-
-   procedure getTypeId (This : in out DownloadableInventoryItemView) is
-      Java_Result : constant Integer := DownloadableInventoryItemView'Class (This).getTypeId;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTypeId;
-
-   procedure view (This : in out DownloadableInventoryItemView) is
-      Java_Result : constant Unbounded_String := DownloadableInventoryItemView'Class (This).view;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end view;
-
-   procedure getItemFilePath (This : in out DownloadableInventoryItemView) is
-      Java_Result : constant Unbounded_String := DownloadableInventoryItemView'Class (This).getItemFilePath;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getItemFilePath;
-
-   procedure getRequestHashMap (This : in out DownloadableInventoryItemView) is
-      Java_Result : constant HashMap_Access := DownloadableInventoryItemView'Class (This).getRequestHashMap;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getRequestHashMap;
-
-   procedure getDownloadableItem (This : in out DownloadableInventoryItemView) is
-      Java_Result : constant DownloadableItem_Access := DownloadableInventoryItemView'Class (This).getDownloadableItem;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getDownloadableItem;
 
 begin

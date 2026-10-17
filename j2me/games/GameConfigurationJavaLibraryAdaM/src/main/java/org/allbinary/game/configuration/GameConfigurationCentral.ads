@@ -31,6 +31,7 @@ with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.Com
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.game.configuration.GameConfiguration_Package; use org.allbinary.game.configuration.GameConfiguration_Package;
 
 package org.allbinary.game.configuration.GameConfigurationCentral_Package is
 
@@ -75,13 +76,10 @@ package org.allbinary.game.configuration.GameConfigurationCentral_Package is
    procedure Initialize (This : in out GameConfigurationCentral'Class);
    function Create return GameConfigurationCentral_Access;
    function getInstance return GameConfigurationCentral_Access;
-   procedure getInstance;
    procedure load (This : in out GameConfigurationCentral; abeClientInformation : AbeClientInformationInterface_Access);
    procedure setGameControlFidelity (This : in out GameConfigurationCentral; gameControlFidelity : Integer);
    function getGameControlFidelity (This : in out GameConfigurationCentral) return Integer;
-   procedure getGameControlFidelity (This : in out GameConfigurationCentral);
    function toString (This : in out GameConfigurationCentral) return Unbounded_String;
-   procedure toString (This : in out GameConfigurationCentral);
 
 end org.allbinary.game.configuration.GameConfigurationCentral_Package;
 

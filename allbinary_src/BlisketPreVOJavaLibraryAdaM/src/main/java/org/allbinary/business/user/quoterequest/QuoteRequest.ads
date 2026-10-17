@@ -20,7 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.util.Calendar_Package; use java.util.Calendar_Package;
+with java.util.Calendar_Package; use java.util.Calendar_Package;
 --  with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
@@ -38,6 +38,7 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 
 package org.allbinary.business.user.quoterequest.QuoteRequest_Package is
 
+   package Calendar_Package renames Standard.java.util.Calendar_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
    package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    package EntryData_Package renames Standard.org.allbinary.business.entry_Id.EntryData_Package;
@@ -71,13 +72,9 @@ package org.allbinary.business.user.quoterequest.QuoteRequest_Package is
    procedure Initialize (This : in out QuoteRequest'Class; userName : Unbounded_String; request : HttpServletRequest_Access);
    function Create (userName : Unbounded_String; request : HttpServletRequest_Access) return QuoteRequest_Access;
    function isValid (This : in out QuoteRequest) return Boolean;
-   procedure isValid (This : in out QuoteRequest);
    function validationInfo (This : in out QuoteRequest) return Unbounded_String;
-   procedure validationInfo (This : in out QuoteRequest);
    function toVector (This : in out QuoteRequest) return BasicArrayList_Access;
-   procedure toVector (This : in out QuoteRequest);
    function toHashMap (This : in out QuoteRequest) return HashMap_Access;
-   procedure toHashMap (This : in out QuoteRequest);
    procedure setUserName (This : in out QuoteRequest; value : Unbounded_String);
    procedure setProjectInfo (This : in out QuoteRequest; value : Unbounded_String);
    procedure setUserComments (This : in out QuoteRequest; value : Unbounded_String);
@@ -85,17 +82,11 @@ package org.allbinary.business.user.quoterequest.QuoteRequest_Package is
    procedure setTimeFrame (This : in out QuoteRequest; value : Unbounded_String);
    procedure setComments (This : in out QuoteRequest; value : Unbounded_String);
    function getUserName (This : in out QuoteRequest) return Unbounded_String;
-   procedure getUserName (This : in out QuoteRequest);
    function getProjectInfo (This : in out QuoteRequest) return Unbounded_String;
-   procedure getProjectInfo (This : in out QuoteRequest);
    function getUserComments (This : in out QuoteRequest) return Unbounded_String;
-   procedure getUserComments (This : in out QuoteRequest);
    function getBudget (This : in out QuoteRequest) return Unbounded_String;
-   procedure getBudget (This : in out QuoteRequest);
    function getTimeFrame (This : in out QuoteRequest) return Unbounded_String;
-   procedure getTimeFrame (This : in out QuoteRequest);
    function getComments (This : in out QuoteRequest) return Unbounded_String;
-   procedure getComments (This : in out QuoteRequest);
 
 end org.allbinary.business.user.quoterequest.QuoteRequest_Package;
 

@@ -29,7 +29,7 @@ package body org.allbinary.util.ABHashMap_Package is
    function Create return ABHashMap_Access is
       This : constant ABHashMap_Access := new ABHashMap;
    begin
-      Initialize (This.all);
+      ABHashMap_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -104,20 +104,6 @@ package body org.allbinary.util.ABHashMap_Package is
         return HashMap (This).clone;
    end clone;
 
-   procedure size (This : in out ABHashMap) is
-      Java_Result : constant Integer := ABHashMap'Class (This).size;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end size;
-
-   procedure isEmpty (This : in out ABHashMap) is
-      Java_Result : constant Boolean := ABHashMap'Class (This).isEmpty;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isEmpty;
-
    procedure get (This : in out ABHashMap; key : Java_Object_Access) is
       Java_Result : constant Java_Object_Access := ABHashMap'Class (This).get (key);
       pragma Unreferenced (Java_Result);
@@ -153,20 +139,6 @@ package body org.allbinary.util.ABHashMap_Package is
       null;
    end containsValue;
 
-   procedure keySet (This : in out ABHashMap) is
-      Java_Result : constant Set_Access := ABHashMap'Class (This).keySet;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end keySet;
-
-   procedure entrySet (This : in out ABHashMap) is
-      Java_Result : constant Set_Access := ABHashMap'Class (This).entrySet;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end entrySet;
-
    procedure getOrDefault (This : in out ABHashMap; key : Java_Object_Access; defaultValue : Java_Object_Access) is
       Java_Result : constant Java_Object_Access := ABHashMap'Class (This).getOrDefault (key, defaultValue);
       pragma Unreferenced (Java_Result);
@@ -180,13 +152,6 @@ package body org.allbinary.util.ABHashMap_Package is
    begin
       null;
    end putIfAbsent;
-
-   procedure clone (This : in out ABHashMap) is
-      Java_Result : constant Java_Object_Access := ABHashMap'Class (This).clone;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end clone;
 
 end org.allbinary.util.ABHashMap_Package;
 

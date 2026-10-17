@@ -40,7 +40,7 @@ package body org.allbinary.game.rts.technology.UnitTechnologySingletonFactory_Pa
    function Create return UnitTechnologySingletonFactory_Access is
       This : constant UnitTechnologySingletonFactory_Access := new UnitTechnologySingletonFactory;
    begin
-      Initialize (This.all);
+      UnitTechnologySingletonFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -102,48 +102,6 @@ package body org.allbinary.game.rts.technology.UnitTechnologySingletonFactory_Pa
    begin
         This.speed := speed;
    end setSpeed;
-
-   procedure getInstance is
-      Java_Result : constant UnitTechnologySingletonFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure getDamage (This : in out UnitTechnologySingletonFactory) is
-      Java_Result : constant Integer := UnitTechnologySingletonFactory'Class (This).getDamage;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getDamage;
-
-   procedure getHealth (This : in out UnitTechnologySingletonFactory) is
-      Java_Result : constant Integer := UnitTechnologySingletonFactory'Class (This).getHealth;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getHealth;
-
-   procedure getReload (This : in out UnitTechnologySingletonFactory) is
-      Java_Result : constant Integer := UnitTechnologySingletonFactory'Class (This).getReload;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getReload;
-
-   procedure getRepair (This : in out UnitTechnologySingletonFactory) is
-      Java_Result : constant Integer := UnitTechnologySingletonFactory'Class (This).getRepair;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getRepair;
-
-   procedure getSpeed (This : in out UnitTechnologySingletonFactory) is
-      Java_Result : constant Integer := UnitTechnologySingletonFactory'Class (This).getSpeed;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSpeed;
 
 begin
    null;

@@ -51,7 +51,6 @@ package org.allbinary.game.configuration.SaveGameForm_Package is
    function createForm (commandListener : CommandListener_Access; title : Unbounded_String; backgrounBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access) return CommandForm_Access;
    procedure createForm (commandListener : CommandListener_Access; title : Unbounded_String; backgrounBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access);
    function getInstance return CommandForm_Access;
-   procedure getInstance;
    procedure initCommands (This : in out SaveGameForm; cmdListener : CommandListener_Access);
 
 end org.allbinary.game.configuration.SaveGameForm_Package;

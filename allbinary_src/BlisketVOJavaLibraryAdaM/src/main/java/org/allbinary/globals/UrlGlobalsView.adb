@@ -30,7 +30,7 @@ package body org.allbinary.globals.UrlGlobalsView_Package is
    function Create return UrlGlobalsView_Access is
       This : constant UrlGlobalsView_Access := new UrlGlobalsView;
    begin
-      Initialize (This.all);
+      UrlGlobalsView_Package.Initialize (This.all);
       return This;
    end Create;
 

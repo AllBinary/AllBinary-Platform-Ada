@@ -29,7 +29,7 @@ package body org.allbinary.game.displayable.canvas.DemoLimitedCommandTextItemArr
    function Create return DemoLimitedCommandTextItemArrayFactory_Access is
       This : constant DemoLimitedCommandTextItemArrayFactory_Access := new DemoLimitedCommandTextItemArrayFactory;
    begin
-      Initialize (This.all);
+      DemoLimitedCommandTextItemArrayFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -42,20 +42,6 @@ package body org.allbinary.game.displayable.canvas.DemoLimitedCommandTextItemArr
    function getCommandTextItemArrayFactory (This : in out DemoLimitedCommandTextItemArrayFactory) return CommandTextItemArrayFactory_Access is
    begin
         return This.commandTextItemArrayFactory;
-   end getCommandTextItemArrayFactory;
-
-   procedure getInstance is
-      Java_Result : constant DemoLimitedCommandTextItemArrayFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure getCommandTextItemArrayFactory (This : in out DemoLimitedCommandTextItemArrayFactory) is
-      Java_Result : constant CommandTextItemArrayFactory_Access := DemoLimitedCommandTextItemArrayFactory'Class (This).getCommandTextItemArrayFactory;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getCommandTextItemArrayFactory;
 
 begin

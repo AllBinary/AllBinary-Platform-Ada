@@ -40,6 +40,8 @@ with org.allbinary.thread.ThreadObjectUtil_Package; use org.allbinary.thread.Thr
 with org.allbinary.time.TimeDelayHelper_Package; use org.allbinary.time.TimeDelayHelper_Package;
 with org.allbinary.game.input.GameInputProcessorInterface_Package; use org.allbinary.game.input.GameInputProcessorInterface_Package;
 with org.allbinary.game.input.PlayerGameInputCompositeInterface_Package; use org.allbinary.game.input.PlayerGameInputCompositeInterface_Package;
+with org.allbinary.game.input.PlayerGameInput_Package; use org.allbinary.game.input.PlayerGameInput_Package;
+with org.allbinary.game.input.GameInputProcessorComposite_Package; use org.allbinary.game.input.GameInputProcessorComposite_Package;
 
 package org.allbinary.game.input.MapSelectionGameInputProcessor_Package is
 
@@ -84,9 +86,7 @@ package org.allbinary.game.input.MapSelectionGameInputProcessor_Package is
    procedure processInput (This : in out MapSelectionGameInputProcessor; layerManager : AllBinaryLayerManager_Access);
    procedure initInputProcessors (This : in out MapSelectionGameInputProcessor);
    function getName (This : in out MapSelectionGameInputProcessor) return Unbounded_String;
-   procedure getName (This : in out MapSelectionGameInputProcessor);
    function getPlayerGameInput (This : in out MapSelectionGameInputProcessor) return PlayerGameInput_Access;
-   procedure getPlayerGameInput (This : in out MapSelectionGameInputProcessor);
 
 end org.allbinary.game.input.MapSelectionGameInputProcessor_Package;
 

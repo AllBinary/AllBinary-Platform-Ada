@@ -26,6 +26,7 @@ with android.graphics.Bitmap_Package; use android.graphics.Bitmap_Package;
 with android.graphics.Canvas_Package; use android.graphics.Canvas_Package;
 with android.graphics.Matrix_Package; use android.graphics.Matrix_Package;
 with org.microemu.android.device.AndroidImageInterface_Package; use org.microemu.android.device.AndroidImageInterface_Package;
+with org.allbinary.media.image.ImageCreationUtil_Package; use org.allbinary.media.image.ImageCreationUtil_Package;
 
 package org.allbinary.media.image.ImageRotationUtil_Package is
 
@@ -49,7 +50,6 @@ package org.allbinary.media.image.ImageRotationUtil_Package is
    procedure Initialize (This : in out ImageRotationUtil'Class);
    function Create return ImageRotationUtil_Access;
    function getInstance return ImageRotationUtil_Access;
-   procedure getInstance;
    function createRotatedImage (This : in out ImageRotationUtil; originalImage : Image_Access; rotationInDegrees : Integer) return Image_Access;
    procedure createRotatedImage (This : in out ImageRotationUtil; originalImage : Image_Access; rotationInDegrees : Integer);
 

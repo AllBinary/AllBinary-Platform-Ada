@@ -32,7 +32,7 @@ package body org.allbinary.graphics.opengles.shader.ShaderStrings_Package is
    function Create return ShaderStrings_Access is
       This : constant ShaderStrings_Access := new ShaderStrings;
    begin
-      Initialize (This.all);
+      ShaderStrings_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -40,13 +40,6 @@ package body org.allbinary.graphics.opengles.shader.ShaderStrings_Package is
    function getInstance return ShaderStrings_Access is
    begin
         return ShaderStrings_Package.instance;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant ShaderStrings_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

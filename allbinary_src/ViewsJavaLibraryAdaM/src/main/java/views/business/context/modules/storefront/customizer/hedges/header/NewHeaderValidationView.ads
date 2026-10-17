@@ -55,13 +55,9 @@ package views.business.context.modules.storefront.customizer.hedges.header.NewHe
    procedure Initialize (This : in out NewHeaderValidationView'Class; transformInfoInterface : TransformInfoInterface_Access);
    function Create (transformInfoInterface : TransformInfoInterface_Access) return NewHeaderValidationView_Access;
    function toXmlDoc (This : in out NewHeaderValidationView) return Document_Access;
-   procedure toXmlDoc (This : in out NewHeaderValidationView);
    function isValid (This : in out NewHeaderValidationView) return Boolean;
-   procedure isValid (This : in out NewHeaderValidationView);
    function validationInfo (This : in out NewHeaderValidationView) return Unbounded_String;
-   procedure validationInfo (This : in out NewHeaderValidationView);
    function toValidationInfoDoc (This : in out NewHeaderValidationView) return Document_Access;
-   procedure toValidationInfoDoc (This : in out NewHeaderValidationView);
    function toValidationInfoNode (This : in out NewHeaderValidationView; document : Document_Access) return Node_Access;
    procedure toValidationInfoNode (This : in out NewHeaderValidationView; document : Document_Access);
 

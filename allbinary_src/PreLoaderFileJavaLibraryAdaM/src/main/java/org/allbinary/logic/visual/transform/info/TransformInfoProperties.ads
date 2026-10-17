@@ -46,17 +46,11 @@ package org.allbinary.logic.visual.transform.info.TransformInfoProperties_Packag
    procedure setTemplateFile (This : in out TransformInfoProperties; value : Unbounded_String);
    procedure setObjectConfigFile (This : in out TransformInfoProperties; value : Unbounded_String);
    function getName (This : in out TransformInfoProperties) return Unbounded_String;
-   procedure getName (This : in out TransformInfoProperties);
    function getLabel (This : in out TransformInfoProperties) return Unbounded_String;
-   procedure getLabel (This : in out TransformInfoProperties);
    function getDescription (This : in out TransformInfoProperties) return Unbounded_String;
-   procedure getDescription (This : in out TransformInfoProperties);
    function getViewFile (This : in out TransformInfoProperties) return Unbounded_String;
-   procedure getViewFile (This : in out TransformInfoProperties);
    function getTemplateFile (This : in out TransformInfoProperties) return Unbounded_String;
-   procedure getTemplateFile (This : in out TransformInfoProperties);
    function getObjectConfigFile (This : in out TransformInfoProperties) return Unbounded_String;
-   procedure getObjectConfigFile (This : in out TransformInfoProperties);
 
 end org.allbinary.logic.visual.transform.info.TransformInfoProperties_Package;
 

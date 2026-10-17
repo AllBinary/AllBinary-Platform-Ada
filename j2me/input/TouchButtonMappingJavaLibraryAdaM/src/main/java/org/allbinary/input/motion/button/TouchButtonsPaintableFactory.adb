@@ -28,7 +28,7 @@ package body org.allbinary.input.motion.button.TouchButtonsPaintableFactory_Pack
    function Create return TouchButtonsPaintableFactory_Access is
       This : constant TouchButtonsPaintableFactory_Access := new TouchButtonsPaintableFactory;
    begin
-      Initialize (This.all);
+      TouchButtonsPaintableFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

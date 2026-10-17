@@ -57,15 +57,11 @@ package org.allbinary.logic.visual.transform.AbTransformer_Package is
    procedure Initialize (This : in out AbTransformer'Class; transformInfoInterface : TransformInfoInterface_Access);
    function Create (transformInfoInterface : TransformInfoInterface_Access) return AbTransformer_Access;
    function getTransformInfoInterface (This : in out AbTransformer) return TransformInfoInterface_Access;
-   procedure getTransformInfoInterface (This : in out AbTransformer);
    procedure setInputStream (This : in out AbTransformer; inputStream : InputStream_Access);
    procedure setURIResolver (This : in out AbTransformer; uriResolver : URIResolver_Access);
    function getInputStream (This : in out AbTransformer) return InputStream_Access;
-   procedure getInputStream (This : in out AbTransformer);
    function getURIResolver (This : in out AbTransformer) return URIResolver_Access;
-   procedure getURIResolver (This : in out AbTransformer);
    function getStreamSource (This : in out AbTransformer) return StreamSource_Access;
-   procedure getStreamSource (This : in out AbTransformer);
    function translate (This : in out AbTransformer; xmlDocumentStr : Unbounded_String) return Unbounded_String;
    procedure translate (This : in out AbTransformer; xmlDocumentStr : Unbounded_String);
 

@@ -37,7 +37,7 @@ package body org.allbinary.business.context.modules.storefront.StoreFrontView_Pa
    function Create (storeFrontInterface : StoreFrontInterface_Access) return StoreFrontView_Access is
       This : constant StoreFrontView_Access := new StoreFrontView;
    begin
-      Initialize (This.all, storeFrontInterface);
+      StoreFrontView_Package.Initialize (This.all, storeFrontInterface);
       return This;
    end Create;
 

@@ -29,7 +29,7 @@ package body org.allbinary.math.AngleIncrementInfoFactory_Package is
    function Create return AngleIncrementInfoFactory_Access is
       This : constant AngleIncrementInfoFactory_Access := new AngleIncrementInfoFactory;
    begin
-      Initialize (This.all);
+      AngleIncrementInfoFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -56,13 +56,6 @@ package body org.allbinary.math.AngleIncrementInfoFactory_Package is
         end if;
         return angleIncrementInfo;
    end getAt;
-
-   procedure getInstance is
-      Java_Result : constant AngleIncrementInfoFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure getAt (This : in out AngleIncrementInfoFactory; angleIncrement : Short_Integer) is
       Java_Result : constant AngleIncrementInfo_Access := AngleIncrementInfoFactory'Class (This).getAt (angleIncrement);

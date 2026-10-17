@@ -20,7 +20,7 @@ package body org.allbinary.game.input.AndroidGameKey_Package is
    function Create (keyCode : Integer; name : Unbounded_String) return AndroidGameKey_Access is
       This : constant AndroidGameKey_Access := new AndroidGameKey;
    begin
-      Initialize (This.all, keyCode, name);
+      AndroidGameKey_Package.Initialize (This.all, keyCode, name);
       return This;
    end Create;
 
@@ -39,13 +39,6 @@ package body org.allbinary.game.input.AndroidGameKey_Package is
             return StringUtil_Package.getInstance.EMPTY_STRING;
         end if;
    end getString;
-
-   procedure toString (This : in out AndroidGameKey) is
-      Java_Result : constant Unbounded_String := AndroidGameKey'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toString;
 
    procedure getString (keyCode : Integer) is
       Java_Result : constant Unbounded_String := getString (keyCode);

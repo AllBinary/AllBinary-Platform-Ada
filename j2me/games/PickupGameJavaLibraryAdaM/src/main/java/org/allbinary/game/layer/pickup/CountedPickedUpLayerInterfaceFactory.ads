@@ -28,6 +28,10 @@ with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.game.layer.pickup.PickedUpLayerInterfaceFactory_Package; use org.allbinary.game.layer.pickup.PickedUpLayerInterfaceFactory_Package;
 with org.allbinary.game.layer.pickup.CountedPickedUpLayerInterfaceFactoryInterface_Package; use org.allbinary.game.layer.pickup.CountedPickedUpLayerInterfaceFactoryInterface_Package;
+with org.allbinary.game.layer.pickup.PickedUpLayerTypeFactory_Package; use org.allbinary.game.layer.pickup.PickedUpLayerTypeFactory_Package;
+with org.allbinary.game.layer.pickup.IconLayer_Package; use org.allbinary.game.layer.pickup.IconLayer_Package;
+with org.allbinary.game.layer.pickup.CountedPickedUpLayerInterfaceFactoryPool_Package; use org.allbinary.game.layer.pickup.CountedPickedUpLayerInterfaceFactoryPool_Package;
+with org.allbinary.game.layer.pickup.PickedUpLayerType_Package; use org.allbinary.game.layer.pickup.PickedUpLayerType_Package;
 
 package org.allbinary.game.layer.pickup.CountedPickedUpLayerInterfaceFactory_Package is
 
@@ -53,9 +57,7 @@ package org.allbinary.game.layer.pickup.CountedPickedUpLayerInterfaceFactory_Pac
    function getNextInstance (This : in out CountedPickedUpLayerInterfaceFactory; hashtable : ABHashtable_Access; x : Integer; y : Integer; z : Integer) return AllBinaryLayer_Access;
    procedure getNextInstance (This : in out CountedPickedUpLayerInterfaceFactory; hashtable : ABHashtable_Access; x : Integer; y : Integer; z : Integer);
    function getTotal (This : in out CountedPickedUpLayerInterfaceFactory) return Integer;
-   procedure getTotal (This : in out CountedPickedUpLayerInterfaceFactory);
    function getId (This : in out CountedPickedUpLayerInterfaceFactory) return Integer;
-   procedure getId (This : in out CountedPickedUpLayerInterfaceFactory);
 
 end org.allbinary.game.layer.pickup.CountedPickedUpLayerInterfaceFactory_Package;
 

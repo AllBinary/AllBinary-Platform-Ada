@@ -34,7 +34,7 @@ package body admin.tags.CustomLoaderTag_Package is
    function Create return CustomLoaderTag_Access is
       This : constant CustomLoaderTag_Access := new CustomLoaderTag;
    begin
-      Initialize (This.all);
+      CustomLoaderTag_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -90,13 +90,6 @@ package body admin.tags.CustomLoaderTag_Package is
             return SKIP_BODY;
                 end;
         end;
-   end doStartTag;
-
-   procedure doStartTag (This : in out CustomLoaderTag) is
-      Java_Result : constant Integer := CustomLoaderTag'Class (This).doStartTag;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end doStartTag;
 
 end admin.tags.CustomLoaderTag_Package;

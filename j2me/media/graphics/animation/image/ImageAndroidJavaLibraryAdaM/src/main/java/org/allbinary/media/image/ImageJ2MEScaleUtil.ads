@@ -22,6 +22,7 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
 with org.allbinary.image.GameFeatureImageCacheFactory_Package; use org.allbinary.image.GameFeatureImageCacheFactory_Package;
+with org.allbinary.media.image.ImageScaleUtil_Package; use org.allbinary.media.image.ImageScaleUtil_Package;
 
 package org.allbinary.media.image.ImageJ2MEScaleUtil_Package is
 
@@ -38,7 +39,6 @@ package org.allbinary.media.image.ImageJ2MEScaleUtil_Package is
    procedure Initialize (This : in out ImageJ2MEScaleUtil'Class);
    function Create return ImageJ2MEScaleUtil_Access;
    function getInstance return ImageJ2MEScaleUtil_Access;
-   procedure getInstance;
    function scaleArray (This : in out ImageJ2MEScaleUtil; images : Image_Access_Array_Access; width : Integer; height : Integer) return Image_Access_Array_Access;
    procedure scaleArray (This : in out ImageJ2MEScaleUtil; images : Image_Access_Array_Access; width : Integer; height : Integer);
    function scale (This : in out ImageJ2MEScaleUtil; image : Image_Access; width : Integer; height : Integer) return Image_Access;

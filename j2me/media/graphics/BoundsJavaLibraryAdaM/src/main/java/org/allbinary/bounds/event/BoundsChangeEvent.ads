@@ -38,7 +38,6 @@ package org.allbinary.bounds.event.BoundsChangeEvent_Package is
    procedure Initialize (This : in out BoundsChangeEvent'Class; rectangle : Rectangle_Access);
    function Create (rectangle : Rectangle_Access) return BoundsChangeEvent_Access;
    function getRectangle (This : in out BoundsChangeEvent) return Rectangle_Access;
-   procedure getRectangle (This : in out BoundsChangeEvent);
 
 end org.allbinary.bounds.event.BoundsChangeEvent_Package;
 

@@ -31,7 +31,7 @@ package body org.allbinary.input.automation.module.game.test.TestModuleFactory_P
    function Create return TestModuleFactory_Access is
       This : constant TestModuleFactory_Access := new TestModuleFactory;
    begin
-      Initialize (This.all);
+      TestModuleFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -49,27 +49,6 @@ package body org.allbinary.input.automation.module.game.test.TestModuleFactory_P
    function getInstance (This : in out TestModuleFactory) return RunnableInterface_Access is
    begin
         return null;
-   end getInstance;
-
-   procedure getName (This : in out TestModuleFactory) is
-      Java_Result : constant Unbounded_String := TestModuleFactory'Class (This).getName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getName;
-
-   procedure getConfigurationJPanel (This : in out TestModuleFactory) is
-      Java_Result : constant JPanel_Access := TestModuleFactory'Class (This).getConfigurationJPanel;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getConfigurationJPanel;
-
-   procedure getInstance (This : in out TestModuleFactory) is
-      Java_Result : constant RunnableInterface_Access := TestModuleFactory'Class (This).getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

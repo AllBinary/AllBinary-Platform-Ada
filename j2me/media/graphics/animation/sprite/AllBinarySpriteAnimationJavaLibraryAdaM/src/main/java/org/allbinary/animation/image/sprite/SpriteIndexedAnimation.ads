@@ -57,27 +57,20 @@ package org.allbinary.animation.image.sprite.SpriteIndexedAnimation_Package is
    procedure Initialize (This : in out SpriteIndexedAnimation'Class; sprite : Sprite_Access; image : Image_Access; basicColorArray : BasicColor_Access_Array_Access; animationBehavior : AnimationBehavior_Access);
    function Create (sprite : Sprite_Access; image : Image_Access; basicColorArray : BasicColor_Access_Array_Access; animationBehavior : AnimationBehavior_Access) return SpriteIndexedAnimation_Access;
    function getAnimationSize (This : in out SpriteIndexedAnimation) return Integer;
-   procedure getAnimationSize (This : in out SpriteIndexedAnimation);
    procedure setBasicColorP (This : in out SpriteIndexedAnimation; basicColor : BasicColor_Access);
    function getBasicColorP (This : in out SpriteIndexedAnimation) return BasicColor_Access;
-   procedure getBasicColorP (This : in out SpriteIndexedAnimation);
    procedure paintFrame (This : in out SpriteIndexedAnimation; graphics : Graphics_Access; frame : Integer; x : Integer; y : Integer);
    procedure paintXY (This : in out SpriteIndexedAnimation; graphics : Graphics_Access; x : Integer; y : Integer);
    procedure paint (This : in out SpriteIndexedAnimation; graphics : Graphics_Access);
    procedure nextFrame (This : in out SpriteIndexedAnimation);
    procedure previousFrame (This : in out SpriteIndexedAnimation);
    function getSize (This : in out SpriteIndexedAnimation) return Integer;
-   procedure getSize (This : in out SpriteIndexedAnimation);
    procedure setFrame (This : in out SpriteIndexedAnimation; frame : Integer);
    function getFrame (This : in out SpriteIndexedAnimation) return Integer;
-   procedure getFrame (This : in out SpriteIndexedAnimation);
    function isLastFrame (This : in out SpriteIndexedAnimation) return Boolean;
-   procedure isLastFrame (This : in out SpriteIndexedAnimation);
    function getLastFrame (This : in out SpriteIndexedAnimation) return Integer;
-   procedure getLastFrame (This : in out SpriteIndexedAnimation);
    procedure setSequence (This : in out SpriteIndexedAnimation; sequence : Integer_Array_Access);
    function getSequence (This : in out SpriteIndexedAnimation) return Integer_Array_Access;
-   procedure getSequence (This : in out SpriteIndexedAnimation);
    procedure close (This : in out SpriteIndexedAnimation);
    procedure finalize (This : in out SpriteIndexedAnimation);
 

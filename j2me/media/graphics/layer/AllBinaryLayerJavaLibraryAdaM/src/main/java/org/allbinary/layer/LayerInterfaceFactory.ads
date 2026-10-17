@@ -28,6 +28,9 @@ with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.util.BasicArrayListUtil_Package; use org.allbinary.util.BasicArrayListUtil_Package;
+with org.allbinary.layer.Layer_Package; use org.allbinary.layer.Layer_Package;
+with org.allbinary.layer.LayerInterfaceFactoryInterface_Package; use org.allbinary.layer.LayerInterfaceFactoryInterface_Package;
+with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
 
 package org.allbinary.layer.LayerInterfaceFactory_Package is
 
@@ -55,7 +58,6 @@ package org.allbinary.layer.LayerInterfaceFactory_Package is
    procedure Initialize (This : in out LayerInterfaceFactory'Class);
    function Create return LayerInterfaceFactory_Access;
    function getInstance return LayerInterfaceFactory_Access;
-   procedure getInstance;
    procedure init (This : in out LayerInterfaceFactory);
    function getNexInstance (This : in out LayerInterfaceFactory; hashtable : ABHashtable_Access; x : Integer; y : Integer; z : Integer) return AllBinaryLayer_Access;
    procedure getNexInstance (This : in out LayerInterfaceFactory; hashtable : ABHashtable_Access; x : Integer; y : Integer; z : Integer);

@@ -29,7 +29,7 @@ package body org.allbinary.business.category.store.theme.StoreThemeCategoryPathV
    function Create (categoryInterface : StoreThemeCategoryInterface_Access) return StoreThemeCategoryPathView_Access is
       This : constant StoreThemeCategoryPathView_Access := new StoreThemeCategoryPathView;
    begin
-      Initialize (This.all, categoryInterface);
+      StoreThemeCategoryPathView_Package.Initialize (This.all, categoryInterface);
       return This;
    end Create;
 

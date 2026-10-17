@@ -34,7 +34,7 @@ package body org.allbinary.business.advertisement.product.AdvertisementProduct_P
    function Create return AdvertisementProduct_Access is
       This : constant AdvertisementProduct_Access := new AdvertisementProduct;
    begin
-      Initialize (This.all);
+      AdvertisementProduct_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -56,34 +56,6 @@ package body org.allbinary.business.advertisement.product.AdvertisementProduct_P
    function getTwoDimensionalConstraint (This : in out AdvertisementProduct) return TwoDimensionalConstraintInterface_Access is
    begin
         return This.constraint;
-   end getTwoDimensionalConstraint;
-
-   procedure getType (This : in out AdvertisementProduct) is
-      Java_Result : constant Unbounded_String := AdvertisementProduct'Class (This).getType;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getType;
-
-   procedure getLink (This : in out AdvertisementProduct) is
-      Java_Result : constant Unbounded_String := AdvertisementProduct'Class (This).getLink;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getLink;
-
-   procedure getNumber (This : in out AdvertisementProduct) is
-      Java_Result : constant Integer := AdvertisementProduct'Class (This).getNumber;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getNumber;
-
-   procedure getTwoDimensionalConstraint (This : in out AdvertisementProduct) is
-      Java_Result : constant TwoDimensionalConstraintInterface_Access := AdvertisementProduct'Class (This).getTwoDimensionalConstraint;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getTwoDimensionalConstraint;
 
 end org.allbinary.business.advertisement.product.AdvertisementProduct_Package;

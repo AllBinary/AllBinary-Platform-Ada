@@ -40,7 +40,6 @@ package org.allbinary.graphics.opengles.shader.ShaderStrings_Package is
    procedure Initialize (This : in out ShaderStrings'Class);
    function Create return ShaderStrings_Access;
    function getInstance return ShaderStrings_Access;
-   procedure getInstance;
 
 end org.allbinary.graphics.opengles.shader.ShaderStrings_Package;
 

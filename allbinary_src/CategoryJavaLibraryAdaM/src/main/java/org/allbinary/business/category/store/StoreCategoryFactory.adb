@@ -36,7 +36,7 @@ package body org.allbinary.business.category.store.StoreCategoryFactory_Package 
    function Create (transformInfoInterface : TransformInfoInterface_Access) return StoreCategoryFactory_Access is
       This : constant StoreCategoryFactory_Access := new StoreCategoryFactory;
    begin
-      Initialize (This.all, transformInfoInterface);
+      StoreCategoryFactory_Package.Initialize (This.all, transformInfoInterface);
       return This;
    end Create;
 
@@ -102,13 +102,6 @@ package body org.allbinary.business.category.store.StoreCategoryFactory_Package 
                 end;
         end;
    end getRootInstanceFromNode;
-
-   procedure getRootInstance (This : in out StoreCategoryFactory) is
-      Java_Result : constant CategoryInterface_Access := StoreCategoryFactory'Class (This).getRootInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getRootInstance;
 
    procedure getRootInstance (This : in out StoreCategoryFactory; categoryPath : AbPath_Access) is
       Java_Result : constant CategoryInterface_Access := StoreCategoryFactory'Class (This).getRootInstance (categoryPath);

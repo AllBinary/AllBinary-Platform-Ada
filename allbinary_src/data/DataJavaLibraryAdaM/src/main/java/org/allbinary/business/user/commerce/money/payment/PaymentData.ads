@@ -21,7 +21,7 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 
-package org.allbinary.business.user.commerce.money.payment_Case.PaymentData_Package is
+package org.allbinary.business.user.commerce.money.payment.PaymentData_Package is
 
 
    type PaymentData is tagged;
@@ -57,6 +57,6 @@ package org.allbinary.business.user.commerce.money.payment_Case.PaymentData_Pack
    procedure Initialize (This : in out PaymentData'Class);
    function Create return PaymentData_Access;
 
-end org.allbinary.business.user.commerce.money.payment_Case.PaymentData_Package;
+end org.allbinary.business.user.commerce.money.payment.PaymentData_Package;
 
 

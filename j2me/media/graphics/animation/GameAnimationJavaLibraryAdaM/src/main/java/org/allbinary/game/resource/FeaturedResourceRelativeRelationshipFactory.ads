@@ -29,6 +29,7 @@ with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArra
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.util.BasicArrayListUtil_Package; use org.allbinary.util.BasicArrayListUtil_Package;
 with org.allbinary.game.resource.FeaturedResourceFactory_Package; use org.allbinary.game.resource.FeaturedResourceFactory_Package;
+with org.allbinary.game.resource.ResourceRelativeRelationshipFactoryInterface_Package; use org.allbinary.game.resource.ResourceRelativeRelationshipFactoryInterface_Package;
 
 package org.allbinary.game.resource.FeaturedResourceRelativeRelationshipFactory_Package is
 
@@ -54,7 +55,6 @@ package org.allbinary.game.resource.FeaturedResourceRelativeRelationshipFactory_
    procedure Initialize (This : in out FeaturedResourceRelativeRelationshipFactory'Class);
    function Create return FeaturedResourceRelativeRelationshipFactory_Access;
    function getInstance return FeaturedResourceRelativeRelationshipFactory_Access;
-   procedure getInstance;
    function getRelativeRelationshipList (This : in out FeaturedResourceRelativeRelationshipFactory; resource : Unbounded_String; layer : AllBinaryLayer_Access) return BasicArrayList_Access;
    procedure getRelativeRelationshipList (This : in out FeaturedResourceRelativeRelationshipFactory; resource : Unbounded_String; layer : AllBinaryLayer_Access);
    function duplicate (This : in out FeaturedResourceRelativeRelationshipFactory; list : BasicArrayList_Access; layer : AllBinaryLayer_Access) return BasicArrayList_Access;

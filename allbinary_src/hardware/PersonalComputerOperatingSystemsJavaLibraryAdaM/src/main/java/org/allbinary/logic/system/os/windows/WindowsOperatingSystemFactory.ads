@@ -28,6 +28,7 @@ with org.allbinary.logic.system.os.NoOperatingSystem_Package; use org.allbinary.
 with org.allbinary.logic.system.os.OperatingSystems_Package; use org.allbinary.logic.system.os.OperatingSystems_Package;
 with org.allbinary.logic.system.os.SystemProperties_Package; use org.allbinary.logic.system.os.SystemProperties_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.logic.system.os.windows.WindowsOS_Package; use org.allbinary.logic.system.os.windows.WindowsOS_Package;
 
 package org.allbinary.logic.system.os.windows.WindowsOperatingSystemFactory_Package is
 
@@ -53,9 +54,7 @@ package org.allbinary.logic.system.os.windows.WindowsOperatingSystemFactory_Pack
    procedure Initialize (This : in out WindowsOperatingSystemFactory'Class);
    function Create return WindowsOperatingSystemFactory_Access;
    function getInstance return WindowsOperatingSystemFactory_Access;
-   procedure getInstance;
    function getOperatingSystemInstance (This : in out WindowsOperatingSystemFactory) return GenericOperatingSystem_Access;
-   procedure getOperatingSystemInstance (This : in out WindowsOperatingSystemFactory);
 
 end org.allbinary.logic.system.os.windows.WindowsOperatingSystemFactory_Package;
 

@@ -38,7 +38,7 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
    function Create return GenericProfileActionScriptJPanel_Access is
       This : constant GenericProfileActionScriptJPanel_Access := new GenericProfileActionScriptJPanel;
    begin
-      Initialize (This.all);
+      GenericProfileActionScriptJPanel_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -118,20 +118,6 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
    begin
         null;
    end actionScriptJTreeMouseClicked;
-
-   procedure getGenericProfileActionScript (This : in out GenericProfileActionScriptJPanel) is
-      Java_Result : constant GenericProfileActionScript_Access := GenericProfileActionScriptJPanel'Class (This).getGenericProfileActionScript;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getGenericProfileActionScript;
-
-   procedure getActionScriptJTree (This : in out GenericProfileActionScriptJPanel) is
-      Java_Result : constant JTree_Access := GenericProfileActionScriptJPanel'Class (This).getActionScriptJTree;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getActionScriptJTree;
 
 end org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.script.GenericProfileActionScriptJPanel_Package;
 

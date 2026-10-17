@@ -25,6 +25,8 @@ with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.logic.communication.sql.SqlStrings_Package; use org.allbinary.logic.communication.sql.SqlStrings_Package;
+with org.allbinary.logic.communication.sql.AbSqlTable_Package; use org.allbinary.logic.communication.sql.AbSqlTable_Package;
 
 package org.allbinary.logic.communication.sql.AbSqlTableUtil_Package is
 
@@ -51,7 +53,6 @@ package org.allbinary.logic.communication.sql.AbSqlTableUtil_Package is
    procedure Initialize (This : in out AbSqlTableUtil'Class);
    function Create return AbSqlTableUtil_Access;
    function getInstance return AbSqlTableUtil_Access;
-   procedure getInstance;
    function backupTable (This : in out AbSqlTableUtil; abSqlTable : AbSqlTable_Access) return Unbounded_String;
    procedure backupTable (This : in out AbSqlTableUtil; abSqlTable : AbSqlTable_Access);
    function restoreTable (This : in out AbSqlTableUtil; abSqlTable : AbSqlTable_Access; portion : Portion_Access) return Unbounded_String;

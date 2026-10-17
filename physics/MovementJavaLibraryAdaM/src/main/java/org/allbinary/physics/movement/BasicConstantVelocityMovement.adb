@@ -35,7 +35,7 @@ package body org.allbinary.physics.movement.BasicConstantVelocityMovement_Packag
    function Create (basicDecimal : BasicDecimal_Access; velocityProperties : BasicVelocityProperties_Access) return BasicConstantVelocityMovement_Access is
       This : constant BasicConstantVelocityMovement_Access := new BasicConstantVelocityMovement;
    begin
-      Initialize (This.all, basicDecimal, velocityProperties);
+      BasicConstantVelocityMovement_Package.Initialize (This.all, basicDecimal, velocityProperties);
       return This;
    end Create;
 
@@ -94,27 +94,6 @@ package body org.allbinary.physics.movement.BasicConstantVelocityMovement_Packag
    function getSpeedBasicDecimal (This : in out BasicConstantVelocityMovement) return BasicDecimal_Access is
    begin
         return This.speedBasicDecimal;
-   end getSpeedBasicDecimal;
-
-   procedure toString (This : in out BasicConstantVelocityMovement) is
-      Java_Result : constant Unbounded_String := BasicConstantVelocityMovement'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toString;
-
-   procedure getVelocityProperties (This : in out BasicConstantVelocityMovement) is
-      Java_Result : constant BasicVelocityProperties_Access := BasicConstantVelocityMovement'Class (This).getVelocityProperties;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getVelocityProperties;
-
-   procedure getSpeedBasicDecimal (This : in out BasicConstantVelocityMovement) is
-      Java_Result : constant BasicDecimal_Access := BasicConstantVelocityMovement'Class (This).getSpeedBasicDecimal;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getSpeedBasicDecimal;
 
 end org.allbinary.physics.movement.BasicConstantVelocityMovement_Package;

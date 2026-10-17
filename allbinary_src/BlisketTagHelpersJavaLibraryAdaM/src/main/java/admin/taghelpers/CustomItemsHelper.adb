@@ -33,7 +33,7 @@ package body admin.taghelpers.CustomItemsHelper_Package is
    function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return CustomItemsHelper_Access is
       This : constant CustomItemsHelper_Access := new CustomItemsHelper;
    begin
-      Initialize (This.all, hashMap, pageContext);
+      CustomItemsHelper_Package.Initialize (This.all, hashMap, pageContext);
       return This;
    end Create;
 
@@ -135,34 +135,6 @@ package body admin.taghelpers.CustomItemsHelper_Package is
             return error;
                 end;
         end;
-   end backup;
-
-   procedure create (This : in out CustomItemsHelper) is
-      Java_Result : constant Unbounded_String := CustomItemsHelper'Class (This).create;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end create;
-
-   procedure drop (This : in out CustomItemsHelper) is
-      Java_Result : constant Unbounded_String := CustomItemsHelper'Class (This).drop;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end drop;
-
-   procedure restore (This : in out CustomItemsHelper) is
-      Java_Result : constant Unbounded_String := CustomItemsHelper'Class (This).restore;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end restore;
-
-   procedure backup (This : in out CustomItemsHelper) is
-      Java_Result : constant Unbounded_String := CustomItemsHelper'Class (This).backup;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end backup;
 
 end admin.taghelpers.CustomItemsHelper_Package;

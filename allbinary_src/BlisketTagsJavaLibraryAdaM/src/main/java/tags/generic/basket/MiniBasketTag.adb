@@ -31,7 +31,7 @@ package body tags.generic_Id.basket.MiniBasketTag_Package is
    function Create return MiniBasketTag_Access is
       This : constant MiniBasketTag_Access := new MiniBasketTag;
    begin
-      Initialize (This.all);
+      MiniBasketTag_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -59,13 +59,6 @@ package body tags.generic_Id.basket.MiniBasketTag_Package is
             return SKIP_BODY;
                 end;
         end;
-   end doStartTag;
-
-   procedure doStartTag (This : in out MiniBasketTag) is
-      Java_Result : constant Integer := MiniBasketTag'Class (This).doStartTag;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end doStartTag;
 
 end tags.generic_Id.basket.MiniBasketTag_Package;

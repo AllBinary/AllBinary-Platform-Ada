@@ -28,7 +28,7 @@ package body org.allbinary.logic.VectorUtil_Package is
    function Create return VectorUtil_Access is
       This : constant VectorUtil_Access := new VectorUtil;
    begin
-      Initialize (This.all);
+      VectorUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -51,13 +51,6 @@ package body org.allbinary.logic.VectorUtil_Package is
         vector := Vector_Access (anyType);
         return vector.elementAt (index);
    end elementAt;
-
-   procedure getInstance is
-      Java_Result : constant VectorUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure getSize (This : in out VectorUtil; anyType : Java_Object_Access) is
       Java_Result : constant Integer := VectorUtil'Class (This).getSize (anyType);

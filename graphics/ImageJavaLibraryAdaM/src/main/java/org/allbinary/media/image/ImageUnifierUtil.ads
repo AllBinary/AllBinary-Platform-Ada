@@ -23,6 +23,12 @@ with AllBinary_Java; use AllBinary_Java;
 --  with java.awt.image.BufferedImage_Package; use java.awt.image.BufferedImage_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
+with org.allbinary.media.image.ImageUtil_Package; use org.allbinary.media.image.ImageUtil_Package;
+with org.allbinary.media.image.GraphicsEnvironment_Package; use org.allbinary.media.image.GraphicsEnvironment_Package;
+with org.allbinary.media.image.GraphicsDevice_Package; use org.allbinary.media.image.GraphicsDevice_Package;
+with org.allbinary.media.image.GraphicsConfiguration_Package; use org.allbinary.media.image.GraphicsConfiguration_Package;
+with org.allbinary.media.image.Graphics2D_Package; use org.allbinary.media.image.Graphics2D_Package;
+with org.allbinary.media.image.ImageUnifierProperties_Package; use org.allbinary.media.image.ImageUnifierProperties_Package;
 
 package org.allbinary.media.image.ImageUnifierUtil_Package is
 
@@ -43,9 +49,7 @@ package org.allbinary.media.image.ImageUnifierUtil_Package is
    procedure Initialize (This : in out ImageUnifierUtil'Class);
    function Create return ImageUnifierUtil_Access;
    function getInstance return ImageUnifierUtil_Access;
-   procedure getInstance;
    function getDefaultConfiguration (This : in out ImageUnifierUtil) return GraphicsConfiguration_Access;
-   procedure getDefaultConfiguration (This : in out ImageUnifierUtil);
    function getImage (This : in out ImageUnifierUtil; bufferedImageArray : BufferedImage_Access_Array_Access; imageUnifierProperties : ImageUnifierProperties_Access) return BufferedImage_Access;
    procedure getImage (This : in out ImageUnifierUtil; bufferedImageArray : BufferedImage_Access_Array_Access; imageUnifierProperties : ImageUnifierProperties_Access);
 

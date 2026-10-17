@@ -29,7 +29,7 @@ package body org.allbinary.business.init.db.UserDbInitInfo_Package is
    function Create return UserDbInitInfo_Access is
       This : constant UserDbInitInfo_Access := new UserDbInitInfo;
    begin
-      Initialize (This.all);
+      UserDbInitInfo_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -42,7 +42,7 @@ package body org.allbinary.business.init.db.UserDbInitInfo_Package is
    function Create (read : Boolean) return UserDbInitInfo_Access is
       This : constant UserDbInitInfo_Access := new UserDbInitInfo;
    begin
-      Initialize (This.all, read);
+      UserDbInitInfo_Package.Initialize (This.all, read);
       return This;
    end Create;
 

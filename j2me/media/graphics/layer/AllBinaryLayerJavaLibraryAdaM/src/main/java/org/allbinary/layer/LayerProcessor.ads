@@ -22,6 +22,9 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.layer.LayerProcessorInterface_Package; use org.allbinary.layer.LayerProcessorInterface_Package;
+with org.allbinary.layer.LayerManager_Package; use org.allbinary.layer.LayerManager_Package;
+with org.allbinary.layer.AllBinaryLayerManager_Package; use org.allbinary.layer.AllBinaryLayerManager_Package;
+with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
 
 package org.allbinary.layer.LayerProcessor_Package is
 
@@ -43,7 +46,6 @@ package org.allbinary.layer.LayerProcessor_Package is
    function isProcessorLayer (This : in out LayerProcessor; layerInterface : AllBinaryLayer_Access) return Boolean;
    procedure isProcessorLayer (This : in out LayerProcessor; layerInterface : AllBinaryLayer_Access);
    function getLayerManager (This : in out LayerProcessor) return LayerManager_Access;
-   procedure getLayerManager (This : in out LayerProcessor);
    procedure process (This : in out LayerProcessor; allBinaryLayerManager : AllBinaryLayerManager_Access);
 
 end org.allbinary.layer.LayerProcessor_Package;

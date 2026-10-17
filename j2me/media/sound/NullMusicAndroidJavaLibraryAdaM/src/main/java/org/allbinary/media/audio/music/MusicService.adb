@@ -29,7 +29,7 @@ package body org.allbinary.media.audio.music.MusicService_Package is
    function Create return MusicService_Access is
       This : constant MusicService_Access := new MusicService;
    begin
-      Initialize (This.all);
+      MusicService_Package.Initialize (This.all);
       return This;
    end Create;
 

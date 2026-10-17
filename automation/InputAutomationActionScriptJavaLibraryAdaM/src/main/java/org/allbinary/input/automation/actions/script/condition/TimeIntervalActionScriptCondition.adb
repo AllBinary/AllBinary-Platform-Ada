@@ -54,7 +54,7 @@ package body org.allbinary.input.automation.actions.script.condition.TimeInterva
    function Create (node : Node_Access) return TimeIntervalActionScriptCondition_Access is
       This : constant TimeIntervalActionScriptCondition_Access := new TimeIntervalActionScriptCondition;
    begin
-      Initialize (This.all, node);
+      TimeIntervalActionScriptCondition_Package.Initialize (This.all, node);
       return This;
    end Create;
 
@@ -70,7 +70,7 @@ package body org.allbinary.input.automation.actions.script.condition.TimeInterva
    function Create return TimeIntervalActionScriptCondition_Access is
       This : constant TimeIntervalActionScriptCondition_Access := new TimeIntervalActionScriptCondition;
    begin
-      Initialize (This.all);
+      TimeIntervalActionScriptCondition_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -129,26 +129,12 @@ package body org.allbinary.input.automation.actions.script.condition.TimeInterva
         return False;
    end shouldProcess;
 
-   procedure toHashMap (This : in out TimeIntervalActionScriptCondition) is
-      Java_Result : constant HashMap_Access := TimeIntervalActionScriptCondition'Class (This).toHashMap;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toHashMap;
-
    procedure toXmlNode (This : in out TimeIntervalActionScriptCondition; document : Document_Access) is
       Java_Result : constant Node_Access := TimeIntervalActionScriptCondition'Class (This).toXmlNode (document);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end toXmlNode;
-
-   procedure getTimeDelayHelper (This : in out TimeIntervalActionScriptCondition) is
-      Java_Result : constant TimeDelayHelper_Access := TimeIntervalActionScriptCondition'Class (This).getTimeDelayHelper;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTimeDelayHelper;
 
    procedure shouldProcess (This : in out TimeIntervalActionScriptCondition; frame : Long_Long_Integer) is
       Java_Result : constant Boolean := TimeIntervalActionScriptCondition'Class (This).shouldProcess (frame);

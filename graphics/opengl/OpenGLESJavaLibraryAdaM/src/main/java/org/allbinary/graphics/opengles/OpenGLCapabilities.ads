@@ -36,6 +36,8 @@ with org.allbinary.logic.string_Id.tokens.Tokenizer_Package; use org.allbinary.l
 with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
 with org.allbinary.game.configuration.feature.Features_Package; use org.allbinary.game.configuration.feature.Features_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package; use org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package;
+with org.allbinary.graphics.opengles.OpenGLFeature_Package; use org.allbinary.graphics.opengles.OpenGLFeature_Package;
 
 package org.allbinary.graphics.opengles.OpenGLCapabilities_Package is
 
@@ -96,35 +98,23 @@ package org.allbinary.graphics.opengles.OpenGLCapabilities_Package is
    procedure Initialize (This : in out OpenGLCapabilities'Class);
    function Create return OpenGLCapabilities_Access;
    function getInstance return OpenGLCapabilities_Access;
-   procedure getInstance;
    function isInitialized (This : in out OpenGLCapabilities) return Boolean;
-   procedure isInitialized (This : in out OpenGLCapabilities);
    procedure requireInitialization (This : in out OpenGLCapabilities);
    procedure initCapabilities (This : in out OpenGLCapabilities; gl : GL10_Access);
    function isExtension (This : in out OpenGLCapabilities; gameFeature : OpenGLFeature_Access) return Boolean;
    procedure isExtension (This : in out OpenGLCapabilities; gameFeature : OpenGLFeature_Access);
    function isGlExtensionDrawTexture (This : in out OpenGLCapabilities) return Boolean;
-   procedure isGlExtensionDrawTexture (This : in out OpenGLCapabilities);
    function isGlExtensionGPUShader100 (This : in out OpenGLCapabilities) return Boolean;
-   procedure isGlExtensionGPUShader100 (This : in out OpenGLCapabilities);
    function isGlExtensionGPUShader4 (This : in out OpenGLCapabilities) return Boolean;
-   procedure isGlExtensionGPUShader4 (This : in out OpenGLCapabilities);
    function getGlVersion (This : in out OpenGLCapabilities) return Unbounded_String;
-   procedure getGlVersion (This : in out OpenGLCapabilities);
    function getGlVersionString (This : in out OpenGLCapabilities) return Unbounded_String;
-   procedure getGlVersionString (This : in out OpenGLCapabilities);
    function getGlShaderVersion (This : in out OpenGLCapabilities) return Unbounded_String;
-   procedure getGlShaderVersion (This : in out OpenGLCapabilities);
    function isGlThreedDrawTexture (This : in out OpenGLCapabilities) return Boolean;
-   procedure isGlThreedDrawTexture (This : in out OpenGLCapabilities);
    function getGlRenderer (This : in out OpenGLCapabilities) return Unbounded_String;
-   procedure getGlRenderer (This : in out OpenGLCapabilities);
    function isVertexBufferObjectSupport (This : in out OpenGLCapabilities) return Boolean;
-   procedure isVertexBufferObjectSupport (This : in out OpenGLCapabilities);
    function isTextureSizeValid (This : in out OpenGLCapabilities; widthAndHeight : Integer) return Boolean;
    procedure isTextureSizeValid (This : in out OpenGLCapabilities; widthAndHeight : Integer);
    function toString (This : in out OpenGLCapabilities) return Unbounded_String;
-   procedure toString (This : in out OpenGLCapabilities);
 
 end org.allbinary.graphics.opengles.OpenGLCapabilities_Package;
 

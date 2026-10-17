@@ -32,7 +32,7 @@ package body org.allbinary.business.category.properties.root.store.RootStoreCate
    function Create (transformInfoInterface : TransformInfoInterface_Access) return RootStoreCategoryPropertiesFactory_Access is
       This : constant RootStoreCategoryPropertiesFactory_Access := new RootStoreCategoryPropertiesFactory;
    begin
-      Initialize (This.all, transformInfoInterface);
+      RootStoreCategoryPropertiesFactory_Package.Initialize (This.all, transformInfoInterface);
       return This;
    end Create;
 
@@ -46,7 +46,7 @@ package body org.allbinary.business.category.properties.root.store.RootStoreCate
    function Create (transformInfoInterface : TransformInfoInterface_Access; abPath : AbPath_Access) return RootStoreCategoryPropertiesFactory_Access is
       This : constant RootStoreCategoryPropertiesFactory_Access := new RootStoreCategoryPropertiesFactory;
    begin
-      Initialize (This.all, transformInfoInterface, abPath);
+      RootStoreCategoryPropertiesFactory_Package.Initialize (This.all, transformInfoInterface, abPath);
       return This;
    end Create;
 
@@ -60,7 +60,7 @@ package body org.allbinary.business.category.properties.root.store.RootStoreCate
    function Create (transformInfoInterface : TransformInfoInterface_Access; node : Node_Access) return RootStoreCategoryPropertiesFactory_Access is
       This : constant RootStoreCategoryPropertiesFactory_Access := new RootStoreCategoryPropertiesFactory;
    begin
-      Initialize (This.all, transformInfoInterface, node);
+      RootStoreCategoryPropertiesFactory_Package.Initialize (This.all, transformInfoInterface, node);
       return This;
    end Create;
 
@@ -74,7 +74,7 @@ package body org.allbinary.business.category.properties.root.store.RootStoreCate
    function Create (transformInfoInterface : TransformInfoInterface_Access; categoryPropertiesHashMap : HashMap_Access) return RootStoreCategoryPropertiesFactory_Access is
       This : constant RootStoreCategoryPropertiesFactory_Access := new RootStoreCategoryPropertiesFactory;
    begin
-      Initialize (This.all, transformInfoInterface, categoryPropertiesHashMap);
+      RootStoreCategoryPropertiesFactory_Package.Initialize (This.all, transformInfoInterface, categoryPropertiesHashMap);
       return This;
    end Create;
 
@@ -95,13 +95,6 @@ package body org.allbinary.business.category.properties.root.store.RootStoreCate
             return null;
                 end;
         end;
-   end getInstance;
-
-   procedure getInstance (This : in out RootStoreCategoryPropertiesFactory) is
-      Java_Result : constant CategoryPropertiesInterface_Access := RootStoreCategoryPropertiesFactory'Class (This).getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 end org.allbinary.business.category.properties.root.store.RootStoreCategoryPropertiesFactory_Package;

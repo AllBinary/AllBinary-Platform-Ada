@@ -28,7 +28,7 @@ package body org.allbinary.view.NullEmulatorView_Package is
    function Create return NullEmulatorView_Access is
       This : constant NullEmulatorView_Access := new NullEmulatorView;
    begin
-      Initialize (This.all);
+      NullEmulatorView_Package.Initialize (This.all);
       return This;
    end Create;
 

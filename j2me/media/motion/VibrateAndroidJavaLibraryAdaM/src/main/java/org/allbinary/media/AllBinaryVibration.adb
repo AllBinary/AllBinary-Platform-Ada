@@ -32,7 +32,7 @@ package body org.allbinary.media.AllBinaryVibration_Package is
    function Create return AllBinaryVibration_Access is
       This : constant AllBinaryVibration_Access := new AllBinaryVibration;
    begin
-      Initialize (This.all);
+      AllBinaryVibration_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -54,13 +54,6 @@ package body org.allbinary.media.AllBinaryVibration_Package is
    begin
         This.vibrator.vibrate (Long_Long_Integer (duration));
    end vibrate;
-
-   procedure getInstance is
-      Java_Result : constant AllBinaryVibrationME_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

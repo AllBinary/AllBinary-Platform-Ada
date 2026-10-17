@@ -31,7 +31,7 @@ package body org.allbinary.business.time.modified.TimeLastModifiedView_Package i
    function Create (timeLastModified : TimeLastModified_Access) return TimeLastModifiedView_Access is
       This : constant TimeLastModifiedView_Access := new TimeLastModifiedView;
    begin
-      Initialize (This.all, timeLastModified);
+      TimeLastModifiedView_Package.Initialize (This.all, timeLastModified);
       return This;
    end Create;
 
@@ -45,7 +45,7 @@ package body org.allbinary.business.time.modified.TimeLastModifiedView_Package i
    function Create (node : Node_Access) return TimeLastModifiedView_Access is
       This : constant TimeLastModifiedView_Access := new TimeLastModifiedView;
    begin
-      Initialize (This.all, node);
+      TimeLastModifiedView_Package.Initialize (This.all, node);
       return This;
    end Create;
 
@@ -71,13 +71,6 @@ package body org.allbinary.business.time.modified.TimeLastModifiedView_Package i
    begin
       null;
    end toXmlNode;
-
-   procedure getTimeLastModified (This : in out TimeLastModifiedView) is
-      Java_Result : constant TimeLastModified_Access := TimeLastModifiedView'Class (This).getTimeLastModified;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTimeLastModified;
 
 end org.allbinary.business.time.modified.TimeLastModifiedView_Package;
 

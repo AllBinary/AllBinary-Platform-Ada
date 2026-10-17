@@ -33,7 +33,7 @@ package body org.allbinary.input.motion.gesture.MotionGestureToMotionGestureActi
    function Create (list : BasicArrayList_Access; commandAction : CompleteMotionGestureInputEvent_Access) return MotionGestureToMotionGestureActionAssociation_Access is
       This : constant MotionGestureToMotionGestureActionAssociation_Access := new MotionGestureToMotionGestureActionAssociation;
    begin
-      Initialize (This.all, list, commandAction);
+      MotionGestureToMotionGestureActionAssociation_Package.Initialize (This.all, list, commandAction);
       return This;
    end Create;
 
@@ -72,20 +72,6 @@ package body org.allbinary.input.motion.gesture.MotionGestureToMotionGestureActi
         end loop;
         return True;
    end isMotionGestureArrayEquals;
-
-   procedure getMotionGesture (This : in out MotionGestureToMotionGestureActionAssociation) is
-      Java_Result : constant BasicArrayList_Access := MotionGestureToMotionGestureActionAssociation'Class (This).getMotionGesture;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getMotionGesture;
-
-   procedure getCommandAction (This : in out MotionGestureToMotionGestureActionAssociation) is
-      Java_Result : constant CompleteMotionGestureInputEvent_Access := MotionGestureToMotionGestureActionAssociation'Class (This).getCommandAction;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getCommandAction;
 
    procedure isMotionGestureArrayEquals (This : in out MotionGestureToMotionGestureActionAssociation; aList : BasicArrayList_Access) is
       Java_Result : constant Boolean := MotionGestureToMotionGestureActionAssociation'Class (This).isMotionGestureArrayEquals (aList);

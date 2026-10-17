@@ -32,7 +32,7 @@ package body org.allbinary.game.layer.hud.event.GameNotificationEventHandler_Pac
    function Create return GameNotificationEventHandler_Access is
       This : constant GameNotificationEventHandler_Access := new GameNotificationEventHandler;
    begin
-      Initialize (This.all);
+      GameNotificationEventHandler_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -66,13 +66,6 @@ package body org.allbinary.game.layer.hud.event.GameNotificationEventHandler_Pac
         gameNotificationListenerInterface := GameNotificationListenerInterface_Access (eventListenerInterface);
         gameNotificationListenerInterface.onGameNotificationEvent (GameNotificationEvent_Access (eventObject));
    end process;
-
-   procedure getInstance is
-      Java_Result : constant GameNotificationEventHandler_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

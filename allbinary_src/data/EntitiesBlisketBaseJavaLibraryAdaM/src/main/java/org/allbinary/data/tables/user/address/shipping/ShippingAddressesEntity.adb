@@ -32,7 +32,7 @@ package body org.allbinary.data.tables.user.address.shipping.ShippingAddressesEn
    function Create (userName : Unbounded_String) return ShippingAddressesEntity_Access is
       This : constant ShippingAddressesEntity_Access := new ShippingAddressesEntity;
    begin
-      Initialize (This.all, userName);
+      ShippingAddressesEntity_Package.Initialize (This.all, userName);
       return This;
    end Create;
 

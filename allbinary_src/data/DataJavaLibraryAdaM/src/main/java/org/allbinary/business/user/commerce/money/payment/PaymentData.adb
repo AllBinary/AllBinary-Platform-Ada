@@ -13,7 +13,7 @@
 --  Generated Code Do Not Modify
 
 
-package body org.allbinary.business.user.commerce.money.payment_Case.PaymentData_Package is
+package body org.allbinary.business.user.commerce.money.payment.PaymentData_Package is
 
    procedure Initialize_Fields (This : in out PaymentData'Class) is
    begin
@@ -28,7 +28,7 @@ package body org.allbinary.business.user.commerce.money.payment_Case.PaymentData
    function Create return PaymentData_Access is
       This : constant PaymentData_Access := new PaymentData;
    begin
-      Initialize (This.all);
+      PaymentData_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -59,6 +59,6 @@ begin
    DRIVERSLICENSE := To_Unbounded_String ("PAYMENT_DRIVERSLICENSE");
    MAGNETICINKCHECKREADER := To_Unbounded_String ("PAYMENT_MAGNETICINKCHECKREADER");
 
-end org.allbinary.business.user.commerce.money.payment_Case.PaymentData_Package;
+end org.allbinary.business.user.commerce.money.payment.PaymentData_Package;
 
 

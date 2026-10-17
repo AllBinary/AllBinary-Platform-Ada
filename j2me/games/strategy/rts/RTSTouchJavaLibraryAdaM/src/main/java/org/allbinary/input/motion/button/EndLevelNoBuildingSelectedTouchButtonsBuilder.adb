@@ -30,7 +30,7 @@ package body org.allbinary.input.motion.button.EndLevelNoBuildingSelectedTouchBu
    function Create return EndLevelNoBuildingSelectedTouchButtonsBuilder_Access is
       This : constant EndLevelNoBuildingSelectedTouchButtonsBuilder_Access := new EndLevelNoBuildingSelectedTouchButtonsBuilder;
    begin
-      Initialize (This.all);
+      EndLevelNoBuildingSelectedTouchButtonsBuilder_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -54,13 +54,6 @@ package body org.allbinary.input.motion.button.EndLevelNoBuildingSelectedTouchBu
             return BasicArrayListUtil_Package.getInstance.getImmutableInstance;
                 end;
         end;
-   end getList;
-
-   procedure getList (This : in out EndLevelNoBuildingSelectedTouchButtonsBuilder) is
-      Java_Result : constant BasicArrayList_Access := EndLevelNoBuildingSelectedTouchButtonsBuilder'Class (This).getList;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getList;
 
 end org.allbinary.input.motion.button.EndLevelNoBuildingSelectedTouchButtonsBuilder_Package;

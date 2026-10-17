@@ -30,7 +30,7 @@ package body org.allbinary.game.input.motion.action.NoCompleteMotionGestureInput
    function Create return NoCompleteMotionGestureInputEventListener_Access is
       This : constant NoCompleteMotionGestureInputEventListener_Access := new NoCompleteMotionGestureInputEventListener;
    begin
-      Initialize (This.all);
+      NoCompleteMotionGestureInputEventListener_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -47,13 +47,6 @@ package body org.allbinary.game.input.motion.action.NoCompleteMotionGestureInput
    function getInstance return NoCompleteMotionGestureInputEventListener_Access is
    begin
         return NoCompleteMotionGestureInputEventListener_Package.instance;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant NoCompleteMotionGestureInputEventListener_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

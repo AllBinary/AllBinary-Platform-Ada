@@ -75,9 +75,7 @@ package org.allbinary.game.layer.unit.UnitItemArrayFactory_Package is
    function createNamedFlagItem (This : in out UnitItemArrayFactory; flagResources : FlagGameResources_Access; name : Unbounded_String; layerInterfaceFactoryInterface : LayerInterfaceFactoryInterface_Access) return ABCustomItem_Access;
    procedure createNamedFlagItem (This : in out UnitItemArrayFactory; flagResources : FlagGameResources_Access; name : Unbounded_String; layerInterfaceFactoryInterface : LayerInterfaceFactoryInterface_Access);
    function getItems (This : in out UnitItemArrayFactory) return ABCustomItem_Access_Array_Access;
-   procedure getItems (This : in out UnitItemArrayFactory);
    function getResources (This : in out UnitItemArrayFactory) return BasicGameResources_Access_Array_Access;
-   procedure getResources (This : in out UnitItemArrayFactory);
    function indexOf (This : in out UnitItemArrayFactory; basicGameResources : BasicGameResources_Access) return Integer;
    procedure indexOf (This : in out UnitItemArrayFactory; basicGameResources : BasicGameResources_Access);
 

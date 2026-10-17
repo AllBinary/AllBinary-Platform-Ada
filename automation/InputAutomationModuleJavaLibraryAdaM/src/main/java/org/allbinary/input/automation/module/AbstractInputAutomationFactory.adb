@@ -36,7 +36,7 @@ package body org.allbinary.input.automation.module.AbstractInputAutomationFactor
    function Create (name : Unbounded_String; jPanel : JPanel_Access; helpSet : HelpSet_Access) return AbstractInputAutomationFactory_Access is
       This : constant AbstractInputAutomationFactory_Access := new AbstractInputAutomationFactory;
    begin
-      Initialize (This.all, name, jPanel, helpSet);
+      AbstractInputAutomationFactory_Package.Initialize (This.all, name, jPanel, helpSet);
       return This;
    end Create;
 
@@ -55,7 +55,7 @@ package body org.allbinary.input.automation.module.AbstractInputAutomationFactor
    function Create (name : Unbounded_String; jPanel : JPanel_Access) return AbstractInputAutomationFactory_Access is
       This : constant AbstractInputAutomationFactory_Access := new AbstractInputAutomationFactory;
    begin
-      Initialize (This.all, name, jPanel);
+      AbstractInputAutomationFactory_Package.Initialize (This.all, name, jPanel);
       return This;
    end Create;
 
@@ -72,27 +72,6 @@ package body org.allbinary.input.automation.module.AbstractInputAutomationFactor
    function getHelpSet (This : in out AbstractInputAutomationFactory) return HelpSet_Access is
    begin
         return This.helpSet;
-   end getHelpSet;
-
-   procedure getName (This : in out AbstractInputAutomationFactory) is
-      Java_Result : constant Unbounded_String := AbstractInputAutomationFactory'Class (This).getName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getName;
-
-   procedure getConfigurationJPanel (This : in out AbstractInputAutomationFactory) is
-      Java_Result : constant JPanel_Access := AbstractInputAutomationFactory'Class (This).getConfigurationJPanel;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getConfigurationJPanel;
-
-   procedure getHelpSet (This : in out AbstractInputAutomationFactory) is
-      Java_Result : constant HelpSet_Access := AbstractInputAutomationFactory'Class (This).getHelpSet;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getHelpSet;
 
 end org.allbinary.input.automation.module.AbstractInputAutomationFactory_Package;

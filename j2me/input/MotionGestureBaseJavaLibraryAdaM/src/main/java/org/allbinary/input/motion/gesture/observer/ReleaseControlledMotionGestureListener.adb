@@ -37,7 +37,7 @@ package body org.allbinary.input.motion.gesture.observer.ReleaseControlledMotion
    function Create (signed : CompleteMotionGestureListenerInterface_Access) return ReleaseControlledMotionGestureListener_Access is
       This : constant ReleaseControlledMotionGestureListener_Access := new ReleaseControlledMotionGestureListener;
    begin
-      Initialize (This.all, signed);
+      ReleaseControlledMotionGestureListener_Package.Initialize (This.all, signed);
       return This;
    end Create;
 

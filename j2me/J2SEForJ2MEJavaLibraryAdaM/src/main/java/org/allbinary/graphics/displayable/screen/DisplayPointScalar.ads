@@ -37,7 +37,6 @@ package org.allbinary.graphics.displayable.screen.DisplayPointScalar_Package is
    procedure Initialize (This : in out DisplayPointScalar'Class);
    function Create return DisplayPointScalar_Access;
    function getInstance return DisplayPointScalar_Access;
-   procedure getInstance;
    function processX (This : in out DisplayPointScalar; value : Integer) return Integer;
    procedure processX (This : in out DisplayPointScalar; value : Integer);
    function processY (This : in out DisplayPointScalar; value : Integer) return Integer;

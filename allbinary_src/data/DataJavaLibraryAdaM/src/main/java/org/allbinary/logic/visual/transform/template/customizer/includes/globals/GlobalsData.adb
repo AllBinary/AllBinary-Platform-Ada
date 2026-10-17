@@ -30,7 +30,7 @@ package body org.allbinary.logic.visual.transform.template.customizer.includes.g
    function Create return GlobalsData_Access is
       This : constant GlobalsData_Access := new GlobalsData;
    begin
-      Initialize (This.all);
+      GlobalsData_Package.Initialize (This.all);
       return This;
    end Create;
 

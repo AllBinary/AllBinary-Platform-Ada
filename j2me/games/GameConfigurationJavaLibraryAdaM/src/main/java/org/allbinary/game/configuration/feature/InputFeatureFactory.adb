@@ -40,7 +40,7 @@ package body org.allbinary.game.configuration.feature.InputFeatureFactory_Packag
    function Create return InputFeatureFactory_Access is
       This : constant InputFeatureFactory_Access := new InputFeatureFactory;
    begin
-      Initialize (This.all);
+      InputFeatureFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -53,20 +53,6 @@ package body org.allbinary.game.configuration.feature.InputFeatureFactory_Packag
         else
             return False;
         end if;
-   end isSingleKeyProcessing;
-
-   procedure getInstance is
-      Java_Result : constant InputFeatureFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure isSingleKeyProcessing (This : in out InputFeatureFactory) is
-      Java_Result : constant Boolean := InputFeatureFactory'Class (This).isSingleKeyProcessing;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end isSingleKeyProcessing;
 
 begin

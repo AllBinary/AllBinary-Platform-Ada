@@ -33,7 +33,7 @@ package body org.allbinary.game.identification.GroupCommonFactory_Package is
    function Create return GroupCommonFactory_Access is
       This : constant GroupCommonFactory_Access := new GroupCommonFactory;
    begin
-      Initialize (This.all);
+      GroupCommonFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -44,13 +44,6 @@ package body org.allbinary.game.identification.GroupCommonFactory_Package is
             GroupCommonFactory_Package.instance := GroupCommonFactory_Package.Create;
         end if;
         return GroupCommonFactory_Access (GroupCommonFactory_Package.instance);
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant GroupCommonFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

@@ -34,7 +34,7 @@ package body org.allbinary.game.input.NoPlayerGameInput_Package is
    function Create return NoPlayerGameInput_Access is
       This : constant NoPlayerGameInput_Access := new NoPlayerGameInput;
    begin
-      Initialize (This.all);
+      NoPlayerGameInput_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -47,13 +47,6 @@ package body org.allbinary.game.input.NoPlayerGameInput_Package is
    begin
         null;
    end onUpGameKeyEvent;
-
-   procedure getInstance is
-      Java_Result : constant NoPlayerGameInput_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

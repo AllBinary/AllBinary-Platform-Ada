@@ -26,6 +26,7 @@ with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary
 with org.allbinary.time.TimeDelayHelper_Package; use org.allbinary.time.TimeDelayHelper_Package;
 with org.allbinary.util.HashtableUtil_Package; use org.allbinary.util.HashtableUtil_Package;
 with org.microemu.device.playn.PlaynImage_Package; use org.microemu.device.playn.PlaynImage_Package;
+with org.allbinary.media.image.Hashtable_Package; use org.allbinary.media.image.Hashtable_Package;
 
 package org.allbinary.media.image.ImageCompleteUtil_Package is
 
@@ -49,7 +50,6 @@ package org.allbinary.media.image.ImageCompleteUtil_Package is
    procedure Initialize (This : in out ImageCompleteUtil'Class);
    function Create return ImageCompleteUtil_Access;
    function getInstance return ImageCompleteUtil_Access;
-   procedure getInstance;
    procedure waitForImage (This : in out ImageCompleteUtil; image : Image_Access; name : Unbounded_String);
    function isReady (This : in out ImageCompleteUtil; image : Image_Access; name : Unbounded_String; timeDelayHelper : TimeDelayHelper_Access) return Boolean;
    procedure isReady (This : in out ImageCompleteUtil; image : Image_Access; name : Unbounded_String; timeDelayHelper : TimeDelayHelper_Access);

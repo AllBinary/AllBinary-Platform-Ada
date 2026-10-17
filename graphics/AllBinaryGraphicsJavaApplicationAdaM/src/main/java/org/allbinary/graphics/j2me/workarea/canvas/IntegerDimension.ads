@@ -37,10 +37,8 @@ package org.allbinary.graphics.j2me.workarea.canvas.IntegerDimension_Package is
    procedure Initialize (This : in out IntegerDimension'Class; width : Integer; height : Integer);
    function Create (width : Integer; height : Integer) return IntegerDimension_Access;
    function getWidth (This : in out IntegerDimension) return Integer;
-   procedure getWidth (This : in out IntegerDimension);
    procedure setWidth (This : in out IntegerDimension; width : Integer);
    function getHeight (This : in out IntegerDimension) return Integer;
-   procedure getHeight (This : in out IntegerDimension);
    procedure setHeight (This : in out IntegerDimension; height : Integer);
 
 end org.allbinary.graphics.j2me.workarea.canvas.IntegerDimension_Package;

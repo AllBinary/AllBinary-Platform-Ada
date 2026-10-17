@@ -33,7 +33,7 @@ package body org.allbinary.data.tables.user.quoterequest.QuoteRequestEntity_Pack
    function Create return QuoteRequestEntity_Access is
       This : constant QuoteRequestEntity_Access := new QuoteRequestEntity;
    begin
-      Initialize (This.all);
+      QuoteRequestEntity_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -156,27 +156,6 @@ package body org.allbinary.data.tables.user.quoterequest.QuoteRequestEntity_Pack
    begin
       null;
    end getIds;
-
-   procedure createTableStatement (This : in out QuoteRequestEntity) is
-      Java_Result : constant Unbounded_String := QuoteRequestEntity'Class (This).createTableStatement;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end createTableStatement;
-
-   procedure createTable (This : in out QuoteRequestEntity) is
-      Java_Result : constant Unbounded_String := QuoteRequestEntity'Class (This).createTable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end createTable;
-
-   procedure dropTable (This : in out QuoteRequestEntity) is
-      Java_Result : constant Unbounded_String := QuoteRequestEntity'Class (This).dropTable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end dropTable;
 
 end org.allbinary.data.tables.user.quoterequest.QuoteRequestEntity_Package;
 

@@ -26,6 +26,7 @@ with org.allbinary.data.tree.dom.DomNodeInterface_Package; use org.allbinary.dat
 with org.allbinary.data.tree.dom.ModDomHelper_Package; use org.allbinary.data.tree.dom.ModDomHelper_Package;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
+with org.allbinary.business.time.created.TimeCreated_Package; use org.allbinary.business.time.created.TimeCreated_Package;
 
 package org.allbinary.business.time.created.TimeCreatedView_Package is
 
@@ -50,7 +51,6 @@ package org.allbinary.business.time.created.TimeCreatedView_Package is
    function toXmlNode (This : in out TimeCreatedView; document : Document_Access) return Node_Access;
    procedure toXmlNode (This : in out TimeCreatedView; document : Document_Access);
    function getTimeCreated (This : in out TimeCreatedView) return TimeCreated_Access;
-   procedure getTimeCreated (This : in out TimeCreatedView);
    procedure setTimeCreated (This : in out TimeCreatedView; timeCreated : TimeCreated_Access);
 
 end org.allbinary.business.time.created.TimeCreatedView_Package;

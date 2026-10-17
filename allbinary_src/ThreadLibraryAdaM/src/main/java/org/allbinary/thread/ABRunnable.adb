@@ -29,7 +29,7 @@ package body org.allbinary.thread.ABRunnable_Package is
    function Create return ABRunnable_Access is
       This : constant ABRunnable_Access := new ABRunnable;
    begin
-      Initialize (This.all);
+      ABRunnable_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -57,20 +57,6 @@ package body org.allbinary.thread.ABRunnable_Package is
    function getType (This : in out ABRunnable) return Integer is
    begin
         return -(1);
-   end getType;
-
-   procedure isRunning (This : in out ABRunnable) is
-      Java_Result : constant Boolean := ABRunnable'Class (This).isRunning;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isRunning;
-
-   procedure getType (This : in out ABRunnable) is
-      Java_Result : constant Integer := ABRunnable'Class (This).getType;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getType;
 
 end org.allbinary.thread.ABRunnable_Package;

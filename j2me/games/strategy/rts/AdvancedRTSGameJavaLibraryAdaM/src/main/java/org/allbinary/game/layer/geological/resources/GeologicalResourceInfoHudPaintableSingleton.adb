@@ -28,7 +28,7 @@ package body org.allbinary.game.layer.geological.resources.GeologicalResourceInf
    function Create return GeologicalResourceInfoHudPaintableSingleton_Access is
       This : constant GeologicalResourceInfoHudPaintableSingleton_Access := new GeologicalResourceInfoHudPaintableSingleton;
    begin
-      Initialize (This.all);
+      GeologicalResourceInfoHudPaintableSingleton_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -36,13 +36,6 @@ package body org.allbinary.game.layer.geological.resources.GeologicalResourceInf
    function getInstance return GeologicalResourceInfoHudPaintable_Access is
    begin
         return GeologicalResourceInfoHudPaintableSingleton_Package.instance;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant GeologicalResourceInfoHudPaintable_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

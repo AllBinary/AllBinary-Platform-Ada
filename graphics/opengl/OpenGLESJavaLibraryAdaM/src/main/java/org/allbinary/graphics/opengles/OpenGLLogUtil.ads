@@ -10,14 +10,14 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with javax.microedition.khronos.opengles.GL10_Package; use javax.microedition.khronos.opengles.GL10_Package;
 --  with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
-with org.allbinary.image_Case.opengles.OpenGLStrings_Package; use org.allbinary.image_Case.opengles.OpenGLStrings_Package;
+with org.allbinary.image.opengles.OpenGLStrings_Package; use org.allbinary.image.opengles.OpenGLStrings_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.communication.log.ForcedLogUtil_Package; use org.allbinary.logic.communication.log.ForcedLogUtil_Package;
 with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
 
 package org.allbinary.graphics.opengles.OpenGLLogUtil_Package is
 
-   package OpenGLStrings_Package renames Standard.org.allbinary.image_Case.opengles.OpenGLStrings_Package;
+   package OpenGLStrings_Package renames Standard.org.allbinary.image.opengles.OpenGLStrings_Package;
    package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    package ForcedLogUtil_Package renames Standard.org.allbinary.logic.communication.log.ForcedLogUtil_Package;
    package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
@@ -37,7 +37,6 @@ package org.allbinary.graphics.opengles.OpenGLLogUtil_Package is
    procedure Initialize (This : in out OpenGLLogUtil'Class);
    function Create return OpenGLLogUtil_Access;
    function getInstance return OpenGLLogUtil_Access;
-   procedure getInstance;
    procedure logError (This : in out OpenGLLogUtil; gl : GL10_Access);
    procedure logError (This : in out OpenGLLogUtil; gl : GL10_Access; image_Case : Image_Access);
 

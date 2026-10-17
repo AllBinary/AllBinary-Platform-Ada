@@ -33,7 +33,7 @@ package body org.allbinary.logic.communication.sql.AbSqlBean_Package is
    function Create (databaseConnectionInfoInterface : DbConnectionInfo_Access) return AbSqlBean_Access is
       This : constant AbSqlBean_Access := new AbSqlBean;
    begin
-      Initialize (This.all, databaseConnectionInfoInterface);
+      AbSqlBean_Package.Initialize (This.all, databaseConnectionInfoInterface);
       return This;
    end Create;
 

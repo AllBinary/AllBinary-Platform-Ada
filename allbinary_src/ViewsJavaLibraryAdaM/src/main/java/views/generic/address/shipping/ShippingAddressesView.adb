@@ -36,7 +36,7 @@ package body views.generic_Id.address.shipping.ShippingAddressesView_Package is
    function Create (transformInfoInterface : TransformInfoInterface_Access) return ShippingAddressesView_Access is
       This : constant ShippingAddressesView_Access := new ShippingAddressesView;
    begin
-      Initialize (This.all, transformInfoInterface);
+      ShippingAddressesView_Package.Initialize (This.all, transformInfoInterface);
       return This;
    end Create;
 
@@ -98,26 +98,12 @@ package body views.generic_Id.address.shipping.ShippingAddressesView_Package is
         end;
    end view;
 
-   procedure getRequest (This : in out ShippingAddressesView) is
-      Java_Result : constant HttpServletRequest_Access := ShippingAddressesView'Class (This).getRequest;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getRequest;
-
    procedure toXmlNode (This : in out ShippingAddressesView; document : Document_Access) is
       Java_Result : constant Node_Access := ShippingAddressesView'Class (This).toXmlNode (document);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end toXmlNode;
-
-   procedure view (This : in out ShippingAddressesView) is
-      Java_Result : constant Unbounded_String := ShippingAddressesView'Class (This).view;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end view;
 
 end views.generic_Id.address.shipping.ShippingAddressesView_Package;
 

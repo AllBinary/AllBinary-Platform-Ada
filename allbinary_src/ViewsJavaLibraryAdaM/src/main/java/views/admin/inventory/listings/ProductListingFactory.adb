@@ -30,7 +30,7 @@ package body views.admin.inventory.listings.ProductListingFactory_Package is
    function Create return ProductListingFactory_Access is
       This : constant ProductListingFactory_Access := new ProductListingFactory;
    begin
-      Initialize (This.all);
+      ProductListingFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

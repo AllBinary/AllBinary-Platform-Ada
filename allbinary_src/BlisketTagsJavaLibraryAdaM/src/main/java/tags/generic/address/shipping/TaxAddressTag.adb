@@ -31,7 +31,7 @@ package body tags.generic_Id.address.shipping.TaxAddressTag_Package is
    function Create return TaxAddressTag_Access is
       This : constant TaxAddressTag_Access := new TaxAddressTag;
    begin
-      Initialize (This.all);
+      TaxAddressTag_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -67,13 +67,6 @@ package body tags.generic_Id.address.shipping.TaxAddressTag_Package is
             return SKIP_BODY;
                 end;
         end;
-   end doStartTag;
-
-   procedure doStartTag (This : in out TaxAddressTag) is
-      Java_Result : constant Integer := TaxAddressTag'Class (This).doStartTag;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end doStartTag;
 
 end tags.generic_Id.address.shipping.TaxAddressTag_Package;

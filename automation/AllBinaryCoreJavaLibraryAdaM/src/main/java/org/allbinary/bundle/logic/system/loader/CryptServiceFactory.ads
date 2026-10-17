@@ -25,6 +25,7 @@ with org.osgi.framework.ServiceFactory_Package; use org.osgi.framework.ServiceFa
 with org.osgi.framework.ServiceRegistration_Package; use org.osgi.framework.ServiceRegistration_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.bundle.logic.system.loader.CryptService_Package; use org.allbinary.bundle.logic.system.loader.CryptService_Package;
 
 package org.allbinary.bundle.logic.system.loader.CryptServiceFactory_Package is
 

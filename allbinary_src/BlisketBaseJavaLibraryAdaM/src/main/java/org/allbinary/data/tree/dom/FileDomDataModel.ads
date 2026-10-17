@@ -26,6 +26,8 @@ with org.allbinary.logic.io.file.AbFile_Package; use org.allbinary.logic.io.file
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.allbinary.data.tree.dom.DomNodeInterface_Package; use org.allbinary.data.tree.dom.DomNodeInterface_Package;
+with org.allbinary.data.tree.dom.FileTableMapping_Package; use org.allbinary.data.tree.dom.FileTableMapping_Package;
+with org.allbinary.data.tree.dom.ModDomHelper_Package; use org.allbinary.data.tree.dom.ModDomHelper_Package;
 
 package org.allbinary.data.tree.dom.FileDomDataModel_Package is
 

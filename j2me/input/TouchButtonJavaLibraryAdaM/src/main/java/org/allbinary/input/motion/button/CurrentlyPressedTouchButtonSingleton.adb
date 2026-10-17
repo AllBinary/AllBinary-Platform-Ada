@@ -36,7 +36,7 @@ package body org.allbinary.input.motion.button.CurrentlyPressedTouchButtonSingle
    function Create return CurrentlyPressedTouchButtonSingleton_Access is
       This : constant CurrentlyPressedTouchButtonSingleton_Access := new CurrentlyPressedTouchButtonSingleton;
    begin
-      Initialize (This.all);
+      CurrentlyPressedTouchButtonSingleton_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -69,20 +69,6 @@ package body org.allbinary.input.motion.button.CurrentlyPressedTouchButtonSingle
    begin
         This.list.add (touchButtonInput);
    end add;
-
-   procedure getInstance is
-      Java_Result : constant CurrentlyPressedTouchButtonSingleton_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure size (This : in out CurrentlyPressedTouchButtonSingleton) is
-      Java_Result : constant Integer := CurrentlyPressedTouchButtonSingleton'Class (This).size;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end size;
 
    procedure removeAt (This : in out CurrentlyPressedTouchButtonSingleton; index : Integer) is
       Java_Result : constant TouchButtonInput_Access := CurrentlyPressedTouchButtonSingleton'Class (This).removeAt (index);

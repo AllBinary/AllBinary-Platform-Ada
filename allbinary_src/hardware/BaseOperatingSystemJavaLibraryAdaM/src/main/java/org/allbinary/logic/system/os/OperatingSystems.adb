@@ -42,7 +42,7 @@ package body org.allbinary.logic.system.os.OperatingSystems_Package is
    function Create return OperatingSystems_Access is
       This : constant OperatingSystems_Access := new OperatingSystems;
    begin
-      Initialize (This.all);
+      OperatingSystems_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -59,20 +59,6 @@ package body org.allbinary.logic.system.os.OperatingSystems_Package is
    function getInstance return OperatingSystems_Access is
    begin
         return OperatingSystems_Package.instance;
-   end getInstance;
-
-   procedure isUnknownSpecificOSAllowed (This : in out OperatingSystems) is
-      Java_Result : constant Boolean := OperatingSystems'Class (This).isUnknownSpecificOSAllowed;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isUnknownSpecificOSAllowed;
-
-   procedure getInstance is
-      Java_Result : constant OperatingSystems_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

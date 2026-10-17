@@ -37,7 +37,6 @@ package org.allbinary.canvas.FullScreenUtil_Package is
    procedure Initialize (This : in out FullScreenUtil'Class);
    function Create return FullScreenUtil_Access;
    function getInstance return FullScreenUtil_Access;
-   procedure getInstance;
    procedure initOnRun (This : in out FullScreenUtil; fullScreenInterface : Canvas_Access; commandListener : CommandListener_Access);
    procedure init (This : in out FullScreenUtil; fullScreenInterface : Canvas_Access);
    function isScreenChange (This : in out FullScreenUtil; isFullScreen : Boolean) return Boolean;

@@ -20,6 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
+with org.allbinary.business.user.commerce.money.payment.types.CreditCardType_Package; use org.allbinary.business.user.commerce.money.payment.types.CreditCardType_Package;
 
 package org.allbinary.business.user.commerce.money.payment.types.CreditCardTypeFactory_Package is
 
@@ -40,7 +41,6 @@ package org.allbinary.business.user.commerce.money.payment.types.CreditCardTypeF
    procedure Initialize (This : in out CreditCardTypeFactory'Class);
    function Create return CreditCardTypeFactory_Access;
    function getInstance return CreditCardTypeFactory_Access;
-   procedure getInstance;
 
 end org.allbinary.business.user.commerce.money.payment.types.CreditCardTypeFactory_Package;
 

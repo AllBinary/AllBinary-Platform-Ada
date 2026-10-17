@@ -20,6 +20,8 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
+with org.allbinary.graphics.ScreenEmptyListener_Package; use org.allbinary.graphics.ScreenEmptyListener_Package;
+with org.allbinary.graphics.ScreenListenerInterface_Package; use org.allbinary.graphics.ScreenListenerInterface_Package;
 
 package org.allbinary.graphics.ScreenListenerHandler_Package is
 
@@ -37,7 +39,6 @@ package org.allbinary.graphics.ScreenListenerHandler_Package is
    procedure Initialize (This : in out ScreenListenerHandler'Class);
    function Create return ScreenListenerHandler_Access;
    function getInstance return ScreenListenerHandler_Access;
-   procedure getInstance;
    procedure setListener (This : in out ScreenListenerHandler; screenListenerInterface : ScreenListenerInterface_Access);
    procedure fireWithState (This : in out ScreenListenerHandler; isFullScreen : Boolean);
    procedure fire (This : in out ScreenListenerHandler);

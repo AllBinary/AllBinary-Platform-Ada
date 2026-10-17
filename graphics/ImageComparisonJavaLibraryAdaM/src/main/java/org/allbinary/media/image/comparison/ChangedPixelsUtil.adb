@@ -30,7 +30,7 @@ package body org.allbinary.media.image.comparison.ChangedPixelsUtil_Package is
    function Create return ChangedPixelsUtil_Access is
       This : constant ChangedPixelsUtil_Access := new ChangedPixelsUtil;
    begin
-      Initialize (This.all);
+      ChangedPixelsUtil_Package.Initialize (This.all);
       return This;
    end Create;
 

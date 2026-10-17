@@ -35,7 +35,7 @@ package body org.allbinary.game.ag.ai.scroller.PacePatrolAI_Package is
    function Create (hashtable : ABHashtable_Access; ownerLayerInterface : AllBinaryLayer_Access; gameInput : GameInput_Access) return PacePatrolAI_Access is
       This : constant PacePatrolAI_Access := new PacePatrolAI;
    begin
-      Initialize (This.all, hashtable, ownerLayerInterface, gameInput);
+      PacePatrolAI_Package.Initialize (This.all, hashtable, ownerLayerInterface, gameInput);
       return This;
    end Create;
 
@@ -139,20 +139,6 @@ package body org.allbinary.game.ag.ai.scroller.PacePatrolAI_Package is
    begin
         This.firingDistance := firingDistance;
    end setFiringDistance;
-
-   procedure setFiringDirectionForTargetIfInRange (This : in out PacePatrolAI) is
-      Java_Result : constant Direction_Access := PacePatrolAI'Class (This).setFiringDirectionForTargetIfInRange;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end setFiringDirectionForTargetIfInRange;
-
-   procedure getFiringDistance (This : in out PacePatrolAI) is
-      Java_Result : constant Integer := PacePatrolAI'Class (This).getFiringDistance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getFiringDistance;
 
 end org.allbinary.game.ag.ai.scroller.PacePatrolAI_Package;
 

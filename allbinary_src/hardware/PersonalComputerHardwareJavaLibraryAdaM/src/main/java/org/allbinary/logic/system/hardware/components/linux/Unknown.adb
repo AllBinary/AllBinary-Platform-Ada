@@ -31,7 +31,7 @@ package body org.allbinary.logic.system.hardware.components.linux.Unknown_Packag
    function Create (data : Unbounded_String) return Unknown_Access is
       This : constant Unknown_Access := new Unknown;
    begin
-      Initialize (This.all, data);
+      Unknown_Package.Initialize (This.all, data);
       return This;
    end Create;
 
@@ -51,13 +51,6 @@ package body org.allbinary.logic.system.hardware.components.linux.Unknown_Packag
    begin
       null;
    end compareTo;
-
-   procedure toString (This : in out Unknown) is
-      Java_Result : constant Unbounded_String := Unknown'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toString;
 
 end org.allbinary.logic.system.hardware.components.linux.Unknown_Package;
 

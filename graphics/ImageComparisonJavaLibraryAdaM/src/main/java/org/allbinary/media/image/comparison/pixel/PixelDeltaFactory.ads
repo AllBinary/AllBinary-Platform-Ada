@@ -30,6 +30,7 @@ with org.allbinary.logic.util.cache.CacheTypeFactory_Package; use org.allbinary.
 with org.allbinary.media.image.comparison.color.ColorDelta_Package; use org.allbinary.media.image.comparison.color.ColorDelta_Package;
 with org.allbinary.media.image.comparison.color.ColorDeltaFactory_Package; use org.allbinary.media.image.comparison.color.ColorDeltaFactory_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.media.image.comparison.pixel.PixelDelta_Package; use org.allbinary.media.image.comparison.pixel.PixelDelta_Package;
 
 package org.allbinary.media.image.comparison.pixel.PixelDeltaFactory_Package is
 

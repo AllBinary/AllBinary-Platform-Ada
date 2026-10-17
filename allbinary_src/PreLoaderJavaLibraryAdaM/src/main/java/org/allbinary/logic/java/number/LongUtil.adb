@@ -30,7 +30,7 @@ package body org.allbinary.logic.java.number.LongUtil_Package is
    function Create return LongUtil_Access is
       This : constant LongUtil_Access := new LongUtil;
    begin
-      Initialize (This.all);
+      LongUtil_Package.Initialize (This.all);
       return This;
    end Create;
 

@@ -87,11 +87,9 @@ package org.allbinary.data.tables.user.UserEntity_Package is
    function Create return UserEntity_Access;
    procedure insert (This : in out UserEntity; values : BasicArrayList_Access);
    function getAdministrators (This : in out UserEntity) return BasicArrayList_Access;
-   procedure getAdministrators (This : in out UserEntity);
    function getStoreManagers (This : in out UserEntity; storeFrontInterface : StoreFrontInterface_Access) return BasicArrayList_Access;
    procedure getStoreManagers (This : in out UserEntity; storeFrontInterface : StoreFrontInterface_Access);
    function getCustomers (This : in out UserEntity) return BasicArrayList_Access;
-   procedure getCustomers (This : in out UserEntity);
    function getUsersWithRole (This : in out UserEntity; userRole : UserRole_Access) return BasicArrayList_Access;
    procedure getUsersWithRole (This : in out UserEntity; userRole : UserRole_Access);
    function getUsers (This : in out UserEntity; storeFrontInterface : StoreFrontInterface_Access) return BasicArrayList_Access;
@@ -103,11 +101,8 @@ package org.allbinary.data.tables.user.UserEntity_Package is
    procedure login (This : in out UserEntity; userName : Unbounded_String; password : Unbounded_String);
    procedure update (This : in out UserEntity; userName : Unbounded_String; updatedValues : HashMap_Access);
    function dropTables (This : in out UserEntity) return Unbounded_String;
-   procedure dropTables (This : in out UserEntity);
    function createTableStatement (This : in out UserEntity) return Unbounded_String;
-   procedure createTableStatement (This : in out UserEntity);
    function createTable (This : in out UserEntity) return Unbounded_String;
-   procedure createTable (This : in out UserEntity);
 
 end org.allbinary.data.tables.user.UserEntity_Package;
 

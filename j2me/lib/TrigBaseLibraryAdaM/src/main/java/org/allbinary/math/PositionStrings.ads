@@ -50,7 +50,6 @@ package org.allbinary.math.PositionStrings_Package is
    procedure Initialize (This : in out PositionStrings'Class);
    function Create return PositionStrings_Access;
    function getInstance return PositionStrings_Access;
-   procedure getInstance;
 
 end org.allbinary.math.PositionStrings_Package;
 

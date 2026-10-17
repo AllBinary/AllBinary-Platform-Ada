@@ -29,7 +29,7 @@ package body org.allbinary.logic.communication.http.AbFileItemFactory_Package is
    function Create return AbFileItemFactory_Access is
       This : constant AbFileItemFactory_Access := new AbFileItemFactory;
    begin
-      Initialize (This.all);
+      AbFileItemFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

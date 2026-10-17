@@ -66,7 +66,6 @@ package org.allbinary.game.input.mapping.InputToGameKeyMapping_Package is
    procedure Initialize (This : in out InputToGameKeyMapping'Class);
    function Create return InputToGameKeyMapping_Access;
    function getNullInstance return InputToGameKeyMapping_Access;
-   procedure getNullInstance;
    procedure clear (This : in out InputToGameKeyMapping);
    procedure removeAll (This : in out InputToGameKeyMapping);
    procedure addMapping (This : in out InputToGameKeyMapping; inputToGameKeyMapping : InputToGameKeyMapping_Access);
@@ -75,7 +74,6 @@ package org.allbinary.game.input.mapping.InputToGameKeyMapping_Package is
    procedure remove (This : in out InputToGameKeyMapping; input : Input_Access; mappedToInput : Input_Access);
    procedure set (This : in out InputToGameKeyMapping; input : Input_Access; mappedToInput : Input_Access);
    function getMaxMappable (This : in out InputToGameKeyMapping) return Integer;
-   procedure getMaxMappable (This : in out InputToGameKeyMapping);
    function getReverseInstance (This : in out InputToGameKeyMapping; id : Integer) return BasicArrayList_Access;
    procedure getReverseInstance (This : in out InputToGameKeyMapping; id : Integer);
    procedure initGameKey (This : in out InputToGameKeyMapping; canvas : Canvas_Access; gameKey : GameKey_Access);

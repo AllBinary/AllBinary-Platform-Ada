@@ -33,7 +33,7 @@ package body org.allbinary.game.input.mapping.GameInputMapping_Package is
    function Create (name : Unbounded_String; gameKey : GameKey_Access) return GameInputMapping_Access is
       This : constant GameInputMapping_Access := new GameInputMapping;
    begin
-      Initialize (This.all, name, gameKey);
+      GameInputMapping_Package.Initialize (This.all, name, gameKey);
       return This;
    end Create;
 
@@ -55,20 +55,6 @@ package body org.allbinary.game.input.mapping.GameInputMapping_Package is
    function getName (This : in out GameInputMapping) return Unbounded_String is
    begin
         return This.name;
-   end getName;
-
-   procedure getGameKey (This : in out GameInputMapping) is
-      Java_Result : constant GameKey_Access := GameInputMapping'Class (This).getGameKey;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getGameKey;
-
-   procedure getName (This : in out GameInputMapping) is
-      Java_Result : constant Unbounded_String := GameInputMapping'Class (This).getName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getName;
 
 end org.allbinary.game.input.mapping.GameInputMapping_Package;

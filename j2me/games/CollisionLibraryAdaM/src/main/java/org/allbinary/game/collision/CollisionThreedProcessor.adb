@@ -17,7 +17,7 @@ package body org.allbinary.game.collision.CollisionThreedProcessor_Package is
    function Create return CollisionThreedProcessor_Access is
       This : constant CollisionThreedProcessor_Access := new CollisionThreedProcessor;
    begin
-      Initialize (This.all);
+      CollisionThreedProcessor_Package.Initialize (This.all);
       return This;
    end Create;
 

@@ -20,6 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
+with org.allbinary.logic.util.cache.CachePolicy_Package; use org.allbinary.logic.util.cache.CachePolicy_Package;
 
 package org.allbinary.logic.util.cache.CachePolicyFactory_Package is
 
@@ -43,7 +44,6 @@ package org.allbinary.logic.util.cache.CachePolicyFactory_Package is
    procedure Initialize (This : in out CachePolicyFactory'Class);
    function Create return CachePolicyFactory_Access;
    function getInstance return CachePolicyFactory_Access;
-   procedure getInstance;
 
 end org.allbinary.logic.util.cache.CachePolicyFactory_Package;
 

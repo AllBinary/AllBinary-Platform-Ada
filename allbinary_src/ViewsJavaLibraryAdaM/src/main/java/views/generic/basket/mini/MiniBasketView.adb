@@ -31,7 +31,7 @@ package body views.generic_Id.basket.mini.MiniBasketView_Package is
    function Create (transformInfoInterface : TransformInfoInterface_Access) return MiniBasketView_Access is
       This : constant MiniBasketView_Access := new MiniBasketView;
    begin
-      Initialize (This.all, transformInfoInterface);
+      MiniBasketView_Package.Initialize (This.all, transformInfoInterface);
       return This;
    end Create;
 
@@ -105,13 +105,6 @@ package body views.generic_Id.basket.mini.MiniBasketView_Package is
    begin
       null;
    end toXmlNode;
-
-   procedure view (This : in out MiniBasketView) is
-      Java_Result : constant Unbounded_String := MiniBasketView'Class (This).view;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end view;
 
 end views.generic_Id.basket.mini.MiniBasketView_Package;
 

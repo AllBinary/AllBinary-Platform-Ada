@@ -31,7 +31,7 @@ package body org.allbinary.game.layer.SensorAction_Package is
    function Create (name : Unbounded_String) return SensorAction_Access is
       This : constant SensorAction_Access := new SensorAction;
    begin
-      Initialize (This.all, name);
+      SensorAction_Package.Initialize (This.all, name);
       return This;
    end Create;
 

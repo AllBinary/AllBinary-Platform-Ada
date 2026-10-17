@@ -31,7 +31,7 @@ package body org.allbinary.util.BasicArrayListUtil_Package is
    function Create return BasicArrayListUtil_Access is
       This : constant BasicArrayListUtil_Access := new BasicArrayListUtil;
    begin
-      Initialize (This.all);
+      BasicArrayListUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -116,13 +116,6 @@ package body org.allbinary.util.BasicArrayListUtil_Package is
         Ada.Text_IO.Put_Line (Java_Image (list.toString));
    end main;
 
-   procedure getInstance is
-      Java_Result : constant BasicArrayListUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
    procedure getRandom (This : in out BasicArrayListUtil; list : BasicArrayList_Access) is
       Java_Result : constant Java_Object_Access := BasicArrayListUtil'Class (This).getRandom (list);
       pragma Unreferenced (Java_Result);
@@ -143,13 +136,6 @@ package body org.allbinary.util.BasicArrayListUtil_Package is
    begin
       null;
    end log;
-
-   procedure getImmutableInstance (This : in out BasicArrayListUtil) is
-      Java_Result : constant BasicArrayList_Access := BasicArrayListUtil'Class (This).getImmutableInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getImmutableInstance;
 
 begin
    null;

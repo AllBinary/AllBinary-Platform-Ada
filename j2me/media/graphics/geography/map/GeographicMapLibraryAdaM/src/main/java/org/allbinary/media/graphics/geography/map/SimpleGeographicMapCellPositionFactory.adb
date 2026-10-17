@@ -28,7 +28,7 @@ package body org.allbinary.media.graphics.geography.map.SimpleGeographicMapCellP
    function Create return SimpleGeographicMapCellPositionFactory_Access is
       This : constant SimpleGeographicMapCellPositionFactory_Access := new SimpleGeographicMapCellPositionFactory;
    begin
-      Initialize (This.all);
+      SimpleGeographicMapCellPositionFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

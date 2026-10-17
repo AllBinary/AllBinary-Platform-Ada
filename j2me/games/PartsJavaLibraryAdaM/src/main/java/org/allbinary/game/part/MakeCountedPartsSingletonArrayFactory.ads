@@ -28,6 +28,8 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.util.BasicArrayListUtil_Package; use org.allbinary.util.BasicArrayListUtil_Package;
+with org.allbinary.game.part.CountedLayerInterfaceFactoryPart_Package; use org.allbinary.game.part.CountedLayerInterfaceFactoryPart_Package;
+with org.allbinary.game.part.PartInterface_Package; use org.allbinary.game.part.PartInterface_Package;
 
 package org.allbinary.game.part.MakeCountedPartsSingletonArrayFactory_Package is
 
@@ -54,7 +56,6 @@ package org.allbinary.game.part.MakeCountedPartsSingletonArrayFactory_Package is
    procedure Initialize (This : in out MakeCountedPartsSingletonArrayFactory'Class);
    function Create return MakeCountedPartsSingletonArrayFactory_Access;
    function getInstance return MakeCountedPartsSingletonArrayFactory_Access;
-   procedure getInstance;
    function getUpdated (This : in out MakeCountedPartsSingletonArrayFactory; partInterfaceArray : PartInterface_Access_Array_Access) return PartInterface_Access_Array_Access;
    procedure getUpdated (This : in out MakeCountedPartsSingletonArrayFactory; partInterfaceArray : PartInterface_Access_Array_Access);
 

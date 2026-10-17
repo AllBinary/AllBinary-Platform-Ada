@@ -44,16 +44,9 @@ package body org.allbinary.game.configuration.feature.GraphicsFeatureFactory_Pac
    function Create return GraphicsFeatureFactory_Access is
       This : constant GraphicsFeatureFactory_Access := new GraphicsFeatureFactory;
    begin
-      Initialize (This.all);
+      GraphicsFeatureFactory_Package.Initialize (This.all);
       return This;
    end Create;
-
-   procedure getInstance is
-      Java_Result : constant GraphicsFeatureFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

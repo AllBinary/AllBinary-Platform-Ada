@@ -45,7 +45,6 @@ package tags.generic_Id.address.shipping.ShippingAddressTag_Package is
    procedure Initialize (This : in out ShippingAddressTag'Class);
    function Create return ShippingAddressTag_Access;
    function doStartTag (This : in out ShippingAddressTag) return Integer;
-   procedure doStartTag (This : in out ShippingAddressTag);
 
 end tags.generic_Id.address.shipping.ShippingAddressTag_Package;
 

@@ -29,7 +29,7 @@ package body org.allbinary.game.layer.LinePathRelativeAnimation_Package is
    function Create return LinePathRelativeAnimation_Access is
       This : constant LinePathRelativeAnimation_Access := new LinePathRelativeAnimation;
    begin
-      Initialize (This.all);
+      LinePathRelativeAnimation_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -43,13 +43,6 @@ package body org.allbinary.game.layer.LinePathRelativeAnimation_Package is
    begin
         graphics.drawLine ((nextPoint.getX) - (tiledLayer.getXP), (nextPoint.getY) - (tiledLayer.getYP), (point.getX) - (tiledLayer.getXP), (point.getY) - (tiledLayer.getYP));
    end paint;
-
-   procedure getInstance is
-      Java_Result : constant LinePathAnimation_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

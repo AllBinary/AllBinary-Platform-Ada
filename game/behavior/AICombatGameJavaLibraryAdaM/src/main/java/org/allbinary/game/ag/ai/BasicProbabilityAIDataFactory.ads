@@ -24,6 +24,7 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.math.SmallIntegerSingletonFactory_Package; use org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
 with org.allbinary.time.NoTimeDelayHelper_Package; use org.allbinary.time.NoTimeDelayHelper_Package;
 with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
+with org.allbinary.game.ag.ai.InputProbability_Package; use org.allbinary.game.ag.ai.InputProbability_Package;
 
 package org.allbinary.game.ag.ai.BasicProbabilityAIDataFactory_Package is
 
@@ -41,7 +42,6 @@ package org.allbinary.game.ag.ai.BasicProbabilityAIDataFactory_Package is
    procedure Initialize (This : in out BasicProbabilityAIDataFactory'Class);
    function Create return BasicProbabilityAIDataFactory_Access;
    function getInstance (This : in out BasicProbabilityAIDataFactory) return ABHashtable_Access;
-   procedure getInstance (This : in out BasicProbabilityAIDataFactory);
 
 end org.allbinary.game.ag.ai.BasicProbabilityAIDataFactory_Package;
 

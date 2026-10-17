@@ -32,6 +32,7 @@ with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary
 with org.eclipse.swt.graphics.ImageData_Package; use org.eclipse.swt.graphics.ImageData_Package;
 with org.microemu.device.swt.SwtImmutableImage_Package; use org.microemu.device.swt.SwtImmutableImage_Package;
 with org.microemu.device.swt.SwtMutableImage_Package; use org.microemu.device.swt.SwtMutableImage_Package;
+with org.allbinary.media.image.ImageCopyUtil_Package; use org.allbinary.media.image.ImageCopyUtil_Package;
 
 package org.allbinary.media.image.ImageModifierUtil_Package is
 
@@ -62,7 +63,6 @@ package org.allbinary.media.image.ImageModifierUtil_Package is
    procedure Initialize (This : in out ImageModifierUtil'Class);
    function Create return ImageModifierUtil_Access;
    function getInstanceOrCreate return ImageModifierUtil_Access;
-   procedure getInstanceOrCreate;
    procedure setBasicColorP (This : in out ImageModifierUtil; basicColor : BasicColor_Access);
    procedure setColor (This : in out ImageModifierUtil; unusedOriginalImage : Image_Access; image : Image_Access; imageIndex : Integer; basicColor : BasicColor_Access);
    procedure changeColor (This : in out ImageModifierUtil; unusedOriginalImage : Image_Access; image : Image_Access; imageIndex : Integer; basicColor : BasicColor_Access);

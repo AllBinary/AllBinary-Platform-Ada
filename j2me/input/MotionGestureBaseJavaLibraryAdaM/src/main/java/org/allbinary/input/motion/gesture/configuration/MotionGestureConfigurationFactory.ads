@@ -20,6 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
+with org.allbinary.input.motion.gesture.configuration.MotionGestureConfiguration_Package; use org.allbinary.input.motion.gesture.configuration.MotionGestureConfiguration_Package;
 
 package org.allbinary.input.motion.gesture.configuration.MotionGestureConfigurationFactory_Package is
 
@@ -35,7 +36,6 @@ package org.allbinary.input.motion.gesture.configuration.MotionGestureConfigurat
    procedure Initialize (This : in out MotionGestureConfigurationFactory'Class);
    function Create return MotionGestureConfigurationFactory_Access;
    function getInstance return MotionGestureConfiguration_Access;
-   procedure getInstance;
 
 end org.allbinary.input.motion.gesture.configuration.MotionGestureConfigurationFactory_Package;
 

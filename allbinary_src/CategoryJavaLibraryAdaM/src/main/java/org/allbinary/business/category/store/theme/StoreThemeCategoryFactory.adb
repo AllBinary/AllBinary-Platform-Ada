@@ -36,7 +36,7 @@ package body org.allbinary.business.category.store.theme.StoreThemeCategoryFacto
    function Create (transformInfoInterface : TransformInfoInterface_Access) return StoreThemeCategoryFactory_Access is
       This : constant StoreThemeCategoryFactory_Access := new StoreThemeCategoryFactory;
    begin
-      Initialize (This.all, transformInfoInterface);
+      StoreThemeCategoryFactory_Package.Initialize (This.all, transformInfoInterface);
       return This;
    end Create;
 
@@ -216,13 +216,6 @@ package body org.allbinary.business.category.store.theme.StoreThemeCategoryFacto
                 end;
         end;
    end getInstance;
-
-   procedure getRootInstance (This : in out StoreThemeCategoryFactory) is
-      Java_Result : constant CategoryInterface_Access := StoreThemeCategoryFactory'Class (This).getRootInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getRootInstance;
 
    procedure getRootInstance (This : in out StoreThemeCategoryFactory; categoryAbPath : AbPath_Access) is
       Java_Result : constant CategoryInterface_Access := StoreThemeCategoryFactory'Class (This).getRootInstance (categoryAbPath);

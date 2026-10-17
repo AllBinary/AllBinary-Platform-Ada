@@ -24,6 +24,7 @@ with org.allbinary.animation.special.SpecialAnimation_Package; use org.allbinary
 with org.allbinary.media.ScaleProperties_Package; use org.allbinary.media.ScaleProperties_Package;
 with org.allbinary.animation.AnimationInterfaceFactoryInterface_Package; use org.allbinary.animation.AnimationInterfaceFactoryInterface_Package;
 with org.allbinary.animation.ProceduralAnimationInterfaceFactoryInterface_Package; use org.allbinary.animation.ProceduralAnimationInterfaceFactoryInterface_Package;
+with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Animation_Package;
 
 package org.allbinary.animation.NullSpecialAnimationFactory_Package is
 
@@ -41,7 +42,6 @@ package org.allbinary.animation.NullSpecialAnimationFactory_Package is
    procedure Initialize (This : in out NullSpecialAnimationFactory'Class);
    function Create return NullSpecialAnimationFactory_Access;
    function getFactoryInstance return NullSpecialAnimationFactory_Access;
-   procedure getFactoryInstance;
    function getInstance (This : in out NullSpecialAnimationFactory; instanceId : Integer) return Animation_Access;
    procedure getInstance (This : in out NullSpecialAnimationFactory; instanceId : Integer);
    function getInstanceAnimation (This : in out NullSpecialAnimationFactory; animationInterface : Animation_Access) return Animation_Access;

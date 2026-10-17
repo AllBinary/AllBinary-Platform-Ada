@@ -32,7 +32,7 @@ package body org.allbinary.graphics.form.item.CommandTextItem_Package is
    function Create (command : Command_Access; layout : Integer; altText : Unbounded_String; backgroundBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access) return CommandTextItem_Access is
       This : constant CommandTextItem_Access := new CommandTextItem;
    begin
-      Initialize (This.all, command, layout, altText, backgroundBasicColor, foregroundBasicColor);
+      CommandTextItem_Package.Initialize (This.all, command, layout, altText, backgroundBasicColor, foregroundBasicColor);
       return This;
    end Create;
 
@@ -44,20 +44,6 @@ package body org.allbinary.graphics.form.item.CommandTextItem_Package is
    function getCommand (This : in out CommandTextItem) return Command_Access is
    begin
         return This.command;
-   end getCommand;
-
-   procedure isFocusable (This : in out CommandTextItem) is
-      Java_Result : constant Boolean := CommandTextItem'Class (This).isFocusable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isFocusable;
-
-   procedure getCommand (This : in out CommandTextItem) is
-      Java_Result : constant Command_Access := CommandTextItem'Class (This).getCommand;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getCommand;
 
 end org.allbinary.graphics.form.item.CommandTextItem_Package;

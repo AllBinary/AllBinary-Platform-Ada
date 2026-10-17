@@ -65,19 +65,13 @@ package views.CustomUriTransformView_Package is
    procedure Initialize (This : in out CustomUriTransformView'Class; transformInfoInterface : TransformInfoInterface_Access);
    function Create (transformInfoInterface : TransformInfoInterface_Access) return CustomUriTransformView_Access;
    function getTypeId (This : in out CustomUriTransformView) return Integer;
-   procedure getTypeId (This : in out CustomUriTransformView);
    function getTransformInfoInterface (This : in out CustomUriTransformView) return TransformInfoInterface_Access;
-   procedure getTransformInfoInterface (This : in out CustomUriTransformView);
    procedure setTransformInfoInterface (This : in out CustomUriTransformView; transformInfoInterface : TransformInfoInterface_Access);
    function getTransformDocumentInterface (This : in out CustomUriTransformView) return TransformDocumentInterface_Access;
-   procedure getTransformDocumentInterface (This : in out CustomUriTransformView);
    procedure setTransformDocumentInterface (This : in out CustomUriTransformView; transformDocumentInterface : TransformDocumentInterface_Access);
    function toXmlDoc (This : in out CustomUriTransformView) return Document_Access;
-   procedure toXmlDoc (This : in out CustomUriTransformView);
    function getDoc (This : in out CustomUriTransformView) return Document_Access;
-   procedure getDoc (This : in out CustomUriTransformView);
    function view (This : in out CustomUriTransformView) return Unbounded_String;
-   procedure view (This : in out CustomUriTransformView);
 
 end views.CustomUriTransformView_Package;
 

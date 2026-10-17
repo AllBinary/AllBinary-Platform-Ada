@@ -51,7 +51,7 @@ package body org.allbinary.game.layer.unit.UnitWaypointBehavior2_Package is
    function Create (ownerAdvancedRTSGameLayer : UnitLayer_Access; fakeWaypoint : AdvancedRTSGameLayer_Access) return UnitWaypointBehavior2_Access is
       This : constant UnitWaypointBehavior2_Access := new UnitWaypointBehavior2;
    begin
-      Initialize (This.all, ownerAdvancedRTSGameLayer, fakeWaypoint);
+      UnitWaypointBehavior2_Package.Initialize (This.all, ownerAdvancedRTSGameLayer, fakeWaypoint);
       return This;
    end Create;
 
@@ -507,33 +507,12 @@ package body org.allbinary.game.layer.unit.UnitWaypointBehavior2_Package is
         return This.associatedAdvancedRTSGameLayer.buildingChase (allbinaryLayer, cellPosition);
    end buildingChase;
 
-   procedure getNextUnvisitedPathGeographicMapCellPosition (This : in out UnitWaypointBehavior2) is
-      Java_Result : constant GeographicMapCellPosition_Access := UnitWaypointBehavior2'Class (This).getNextUnvisitedPathGeographicMapCellPosition;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getNextUnvisitedPathGeographicMapCellPosition;
-
-   procedure isRunning (This : in out UnitWaypointBehavior2) is
-      Java_Result : constant Boolean := UnitWaypointBehavior2'Class (This).isRunning;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isRunning;
-
    procedure visitIfAtMidPoint (This : in out UnitWaypointBehavior2; geographicMapCellPosition : GeographicMapCellPosition_Access) is
       Java_Result : constant Boolean := UnitWaypointBehavior2'Class (This).visitIfAtMidPoint (geographicMapCellPosition);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end visitIfAtMidPoint;
-
-   procedure isWaypointListEmptyOrOnlyTargets (This : in out UnitWaypointBehavior2) is
-      Java_Result : constant Boolean := UnitWaypointBehavior2'Class (This).isWaypointListEmptyOrOnlyTargets;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isWaypointListEmptyOrOnlyTargets;
 
    procedure isCloseRange (This : in out UnitWaypointBehavior2; layerInterface : AdvancedRTSGameLayer_Access; targetDistance : Integer) is
       Java_Result : constant Boolean := UnitWaypointBehavior2'Class (This).isCloseRange (layerInterface, targetDistance);
@@ -548,13 +527,6 @@ package body org.allbinary.game.layer.unit.UnitWaypointBehavior2_Package is
    begin
       null;
    end isInSensorRange;
-
-   procedure getCurrentTargetingStateString (This : in out UnitWaypointBehavior2) is
-      Java_Result : constant Unbounded_String := UnitWaypointBehavior2'Class (This).getCurrentTargetingStateString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getCurrentTargetingStateString;
 
    procedure buildingChase (This : in out UnitWaypointBehavior2; allbinaryLayer : AllBinaryLayer_Access; cellPosition : GeographicMapCellPosition_Access) is
       Java_Result : constant Boolean := UnitWaypointBehavior2'Class (This).buildingChase (allbinaryLayer, cellPosition);
@@ -589,7 +561,7 @@ package body org.allbinary.game.layer.unit.BuildingSteeringVisitor_Package is
    function Create return BuildingSteeringVisitor_Access is
       This : constant BuildingSteeringVisitor_Access := new BuildingSteeringVisitor;
    begin
-      Initialize (This.all);
+      BuildingSteeringVisitor_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -638,13 +610,6 @@ package body org.allbinary.game.layer.unit.BuildingSteeringVisitor_Package is
    begin
       null;
    end visit;
-
-   procedure getPositionList (This : in out BuildingSteeringVisitor) is
-      Java_Result : constant BasicArrayList_Access := BuildingSteeringVisitor'Class (This).getPositionList;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getPositionList;
 
 end org.allbinary.game.layer.unit.BuildingSteeringVisitor_Package;
 

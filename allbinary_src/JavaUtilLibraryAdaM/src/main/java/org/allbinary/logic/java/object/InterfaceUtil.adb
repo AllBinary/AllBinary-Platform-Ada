@@ -30,7 +30,7 @@ package body org.allbinary.logic.java.anyType.InterfaceUtil_Package is
    function Create return InterfaceUtil_Access is
       This : constant InterfaceUtil_Access := new InterfaceUtil;
    begin
-      Initialize (This.all);
+      InterfaceUtil_Package.Initialize (This.all);
       return This;
    end Create;
 

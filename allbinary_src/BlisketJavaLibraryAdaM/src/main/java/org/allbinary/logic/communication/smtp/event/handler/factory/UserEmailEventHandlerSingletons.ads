@@ -62,7 +62,6 @@ package org.allbinary.logic.communication.smtp.event.handler.factory.UserEmailEv
    procedure Initialize (This : in out UserEmailEventHandlerSingletons'Class);
    function Create return UserEmailEventHandlerSingletons_Access;
    function getInstance return UserEmailEventHandlerSingletons_Access;
-   procedure getInstance;
    function getInstance (This : in out UserEmailEventHandlerSingletons; abeClientInformation : AbeClientInformationInterface_Access; userEmailEventNameData : UserEmailEventNameData_Access; userInterface : UserInterface_Access) return UserEmailEventHandler_Access;
    procedure getInstance (This : in out UserEmailEventHandlerSingletons; abeClientInformation : AbeClientInformationInterface_Access; userEmailEventNameData : UserEmailEventNameData_Access; userInterface : UserInterface_Access);
 

@@ -100,7 +100,6 @@ package org.allbinary.business.init.InitSql_Package is
    function createTable (This : in out InitSql; tableData : Unbounded_String) return Boolean;
    procedure createTable (This : in out InitSql; tableData : Unbounded_String);
    function dropTable (This : in out InitSql) return Boolean;
-   procedure dropTable (This : in out InitSql);
    function getRow (This : in out InitSql; keysAndValues : HashMap_Access) return HashMap_Access;
    procedure getRow (This : in out InitSql; keysAndValues : HashMap_Access);
    procedure updateWhere (This : in out InitSql; key : Unbounded_String; value : Unbounded_String; updatedKeyValuePairs : HashMap_Access);
@@ -112,7 +111,6 @@ package org.allbinary.business.init.InitSql_Package is
    procedure createConnection (This : in out InitSql);
    procedure initialize (This : in out InitSql);
    function getDatabaseConnectionInfoInterface (This : in out InitSql) return DatabaseConnectionInfoInterface_Access;
-   procedure getDatabaseConnectionInfoInterface (This : in out InitSql);
 
 end org.allbinary.business.init.InitSql_Package;
 

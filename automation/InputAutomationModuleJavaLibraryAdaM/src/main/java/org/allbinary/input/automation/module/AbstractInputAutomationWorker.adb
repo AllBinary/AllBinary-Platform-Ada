@@ -39,7 +39,7 @@ package body org.allbinary.input.automation.module.AbstractInputAutomationWorker
    function Create (inputAutomationActionInterface : InputAutomationActionInterface_Access) return AbstractInputAutomationWorker_Access is
       This : constant AbstractInputAutomationWorker_Access := new AbstractInputAutomationWorker;
    begin
-      Initialize (This.all, inputAutomationActionInterface);
+      AbstractInputAutomationWorker_Package.Initialize (This.all, inputAutomationActionInterface);
       return This;
    end Create;
 
@@ -163,48 +163,6 @@ package body org.allbinary.input.automation.module.AbstractInputAutomationWorker
    begin
         This.motionRectanglesWorker := motionRectanglesWorker;
    end setMotionRectanglesWorker;
-
-   procedure isRunning (This : in out AbstractInputAutomationWorker) is
-      Java_Result : constant Boolean := AbstractInputAutomationWorker'Class (This).isRunning;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isRunning;
-
-   procedure isAnyDataWorkerRunning (This : in out AbstractInputAutomationWorker) is
-      Java_Result : constant Boolean := AbstractInputAutomationWorker'Class (This).isAnyDataWorkerRunning;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isAnyDataWorkerRunning;
-
-   procedure getInputAutomationActionInterface (This : in out AbstractInputAutomationWorker) is
-      Java_Result : constant InputAutomationActionInterface_Access := AbstractInputAutomationWorker'Class (This).getInputAutomationActionInterface;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInputAutomationActionInterface;
-
-   procedure getCaptureWorker (This : in out AbstractInputAutomationWorker) is
-      Java_Result : constant CaptureWorkerInterface_Access := AbstractInputAutomationWorker'Class (This).getCaptureWorker;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getCaptureWorker;
-
-   procedure getImageComparisonWorker (This : in out AbstractInputAutomationWorker) is
-      Java_Result : constant ImageComparisonWorker_Access := AbstractInputAutomationWorker'Class (This).getImageComparisonWorker;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getImageComparisonWorker;
-
-   procedure getMotionRectanglesWorker (This : in out AbstractInputAutomationWorker) is
-      Java_Result : constant MotionRectanglesWorker_Access := AbstractInputAutomationWorker'Class (This).getMotionRectanglesWorker;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getMotionRectanglesWorker;
 
 end org.allbinary.input.automation.module.AbstractInputAutomationWorker_Package;
 

@@ -27,7 +27,7 @@ package body org.allbinary.animation.NullRotationAnimation_Package is
    function Create (angleInfo : AngleInfo_Access; circularIndexUtil : CircularIndexUtil_Access; animationBehavior : AnimationBehavior_Access) return NullRotationAnimation_Access is
       This : constant NullRotationAnimation_Access := new NullRotationAnimation;
    begin
-      Initialize (This.all, angleInfo, circularIndexUtil, animationBehavior);
+      NullRotationAnimation_Package.Initialize (This.all, angleInfo, circularIndexUtil, animationBehavior);
       return This;
    end Create;
 
@@ -50,13 +50,6 @@ package body org.allbinary.animation.NullRotationAnimation_Package is
    begin
       null;
    end createQuarter;
-
-   procedure getAnimationSize (This : in out NullRotationAnimation) is
-      Java_Result : constant Integer := NullRotationAnimation'Class (This).getAnimationSize;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getAnimationSize;
 
 end org.allbinary.animation.NullRotationAnimation_Package;
 

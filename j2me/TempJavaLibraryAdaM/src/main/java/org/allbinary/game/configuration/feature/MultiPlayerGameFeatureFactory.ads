@@ -23,7 +23,6 @@ package org.allbinary.game.configuration.feature.MultiPlayerGameFeatureFactory_P
    procedure Initialize (This : in out MultiPlayerGameFeatureFactory'Class);
    function Create return MultiPlayerGameFeatureFactory_Access;
    function getInstance return MultiPlayerGameFeatureFactory_Access;
-   procedure getInstance;
    procedure addCommands (This : in out MultiPlayerGameFeatureFactory; anyType : Java_Object_Access);
 
 end org.allbinary.game.configuration.feature.MultiPlayerGameFeatureFactory_Package;

@@ -43,7 +43,6 @@ package org.allbinary.logic.math.SmallLongFactory_Package is
    procedure Initialize (This : in out SmallLongFactory'Class);
    function Create return SmallLongFactory_Access;
    function getInstance return SmallLongFactory_Access;
-   procedure getInstance;
    procedure initWithRange (This : in out SmallLongFactory; value : Integer; negativeValue : Integer);
    procedure init (This : in out SmallLongFactory);
    function getInstanceNoThrow (This : in out SmallLongFactory; index : Long_Long_Integer) return Long_Long_Integer;

@@ -33,7 +33,7 @@ package body org.allbinary.data.generator.UniqueIdGenerator_Package is
    function Create return UniqueIdGenerator_Access is
       This : constant UniqueIdGenerator_Access := new UniqueIdGenerator;
    begin
-      Initialize (This.all);
+      UniqueIdGenerator_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -101,13 +101,6 @@ package body org.allbinary.data.generator.UniqueIdGenerator_Package is
             StreamUtil_Package.getInstance.close (idData);
             StreamUtil_Package.getInstance.close (idOutData);
         end;
-   end getNext;
-
-   procedure getNext (This : in out UniqueIdGenerator) is
-      Java_Result : constant Unbounded_String := UniqueIdGenerator'Class (This).getNext;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getNext;
 
 begin

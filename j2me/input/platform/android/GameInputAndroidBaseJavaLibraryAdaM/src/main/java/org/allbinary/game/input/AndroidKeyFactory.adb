@@ -134,7 +134,7 @@ package body org.allbinary.game.input.AndroidKeyFactory_Package is
    function Create return AndroidKeyFactory_Access is
       This : constant AndroidKeyFactory_Access := new AndroidKeyFactory;
    begin
-      Initialize (This.all);
+      AndroidKeyFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

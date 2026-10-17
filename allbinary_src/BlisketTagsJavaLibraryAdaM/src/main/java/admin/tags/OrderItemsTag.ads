@@ -53,9 +53,7 @@ package admin.tags.OrderItemsTag_Package is
    function Create return OrderItemsTag_Access;
    procedure setStatus (This : in out OrderItemsTag; value : Unbounded_String);
    function setOrderStatus (This : in out OrderItemsTag) return Unbounded_String;
-   procedure setOrderStatus (This : in out OrderItemsTag);
    function doStartTag (This : in out OrderItemsTag) return Integer;
-   procedure doStartTag (This : in out OrderItemsTag);
 
 end admin.tags.OrderItemsTag_Package;
 

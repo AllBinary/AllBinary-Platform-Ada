@@ -41,13 +41,9 @@ package admin.taghelpers.AdminConfigurationHelper_Package is
    procedure Initialize (This : in out AdminConfigurationHelper'Class; hashMap : HashMap_Access; pageContext : PageContext_Access);
    function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return AdminConfigurationHelper_Access;
    function create (This : in out AdminConfigurationHelper) return Unbounded_String;
-   procedure create (This : in out AdminConfigurationHelper);
    function drop (This : in out AdminConfigurationHelper) return Unbounded_String;
-   procedure drop (This : in out AdminConfigurationHelper);
    function restore (This : in out AdminConfigurationHelper) return Unbounded_String;
-   procedure restore (This : in out AdminConfigurationHelper);
    function backup (This : in out AdminConfigurationHelper) return Unbounded_String;
-   procedure backup (This : in out AdminConfigurationHelper);
 
 end admin.taghelpers.AdminConfigurationHelper_Package;
 

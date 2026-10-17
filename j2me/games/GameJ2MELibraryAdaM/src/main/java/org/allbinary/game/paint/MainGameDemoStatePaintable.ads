@@ -41,9 +41,7 @@ package org.allbinary.game.paint.MainGameDemoStatePaintable_Package is
    function Create (ownershipPaintableInterface : Paintable_Access; menuPaintableInterface : Paintable_Access) return MainGameDemoStatePaintable_Access;
    procedure paint (This : in out MainGameDemoStatePaintable; graphics : Graphics_Access);
    function getOwnershipPaintableInterface (This : in out MainGameDemoStatePaintable) return Paintable_Access;
-   procedure getOwnershipPaintableInterface (This : in out MainGameDemoStatePaintable);
    function getMenuPaintableInterface (This : in out MainGameDemoStatePaintable) return Paintable_Access;
-   procedure getMenuPaintableInterface (This : in out MainGameDemoStatePaintable);
 
 end org.allbinary.game.paint.MainGameDemoStatePaintable_Package;
 

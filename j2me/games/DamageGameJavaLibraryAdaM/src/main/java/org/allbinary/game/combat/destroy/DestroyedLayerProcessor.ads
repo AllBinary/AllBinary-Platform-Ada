@@ -56,7 +56,6 @@ package org.allbinary.game.combat.destroy.DestroyedLayerProcessor_Package is
    function Create return DestroyedLayerProcessor_Access;
    procedure init;
    function getInstance return BasicLayerProcessor_Access;
-   procedure getInstance;
    procedure process (This : in out DestroyedLayerProcessor; allBinaryLayerManager : AllBinaryLayerManager_Access);
 
 end org.allbinary.game.combat.destroy.DestroyedLayerProcessor_Package;

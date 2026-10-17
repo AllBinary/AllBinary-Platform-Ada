@@ -39,7 +39,6 @@ package org.allbinary.logic.io.file.FilePathData_Package is
    procedure Initialize (This : in out FilePathData'Class);
    function Create return FilePathData_Access;
    function getInstance return FilePathData_Access;
-   procedure getInstance;
 
 end org.allbinary.logic.io.file.FilePathData_Package;
 

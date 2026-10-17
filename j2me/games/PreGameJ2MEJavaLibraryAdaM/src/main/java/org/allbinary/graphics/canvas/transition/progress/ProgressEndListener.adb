@@ -28,7 +28,7 @@ package body org.allbinary.graphics.canvas.transition.progress.ProgressEndListen
    function Create return ProgressEndListener_Access is
       This : constant ProgressEndListener_Access := new ProgressEndListener;
    begin
-      Initialize (This.all);
+      ProgressEndListener_Package.Initialize (This.all);
       return This;
    end Create;
 

@@ -57,10 +57,8 @@ package org.allbinary.game.resource.ResourceRelativeRelationshipFactory_Package 
    function isLoadingLevel (This : in out ResourceRelativeRelationshipFactory; level : Integer) return Boolean;
    procedure isLoadingLevel (This : in out ResourceRelativeRelationshipFactory; level : Integer);
    function isFeature (This : in out ResourceRelativeRelationshipFactory) return Boolean;
-   procedure isFeature (This : in out ResourceRelativeRelationshipFactory);
    procedure setInitialized (This : in out ResourceRelativeRelationshipFactory; initialized : Boolean);
    function isInitialized (This : in out ResourceRelativeRelationshipFactory) return Boolean;
-   procedure isInitialized (This : in out ResourceRelativeRelationshipFactory);
 
 end org.allbinary.game.resource.ResourceRelativeRelationshipFactory_Package;
 

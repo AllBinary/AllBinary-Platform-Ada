@@ -29,6 +29,9 @@ with org.allbinary.layer.LayerInterfaceVisitor_Package; use org.allbinary.layer.
 with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.EnumerationUtil_Package; use org.allbinary.util.EnumerationUtil_Package;
+with org.allbinary.game.layer.LayerPlacementInterface_Package; use org.allbinary.game.layer.LayerPlacementInterface_Package;
+with org.allbinary.game.layer.LayerPlacementType_Package; use org.allbinary.game.layer.LayerPlacementType_Package;
+with org.allbinary.game.layer.LayerPlacementTypeFactory_Package; use org.allbinary.game.layer.LayerPlacementTypeFactory_Package;
 
 package org.allbinary.game.layer.LayerPlacer_Package is
 

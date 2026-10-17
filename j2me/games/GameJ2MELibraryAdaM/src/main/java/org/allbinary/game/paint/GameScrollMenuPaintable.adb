@@ -31,7 +31,7 @@ package body org.allbinary.game.paint.GameScrollMenuPaintable_Package is
    function Create (mainDemoStatePaintable : Paintable_Access; ownershipPaintable : Paintable_Access; helpPaintableInterface : Paintable_Access; basicColor : BasicColor_Access) return GameScrollMenuPaintable_Access is
       This : constant GameScrollMenuPaintable_Access := new GameScrollMenuPaintable;
    begin
-      Initialize (This.all, mainDemoStatePaintable, ownershipPaintable, helpPaintableInterface, basicColor);
+      GameScrollMenuPaintable_Package.Initialize (This.all, mainDemoStatePaintable, ownershipPaintable, helpPaintableInterface, basicColor);
       return This;
    end Create;
 

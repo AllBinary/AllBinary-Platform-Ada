@@ -36,7 +36,7 @@ package body org.allbinary.input.gyro.OrientationToGameKeyEvent_Package is
    function Create return OrientationToGameKeyEvent_Access is
       This : constant OrientationToGameKeyEvent_Access := new OrientationToGameKeyEvent;
    begin
-      Initialize (This.all);
+      OrientationToGameKeyEvent_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -61,13 +61,6 @@ package body org.allbinary.input.gyro.OrientationToGameKeyEvent_Package is
    begin
         null;
    end updateGameKeyEvents;
-
-   procedure getAllBinaryGyroSensor (This : in out OrientationToGameKeyEvent) is
-      Java_Result : constant AllBinaryOrientationSensor_Access := OrientationToGameKeyEvent'Class (This).getAllBinaryGyroSensor;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getAllBinaryGyroSensor;
 
 end org.allbinary.input.gyro.OrientationToGameKeyEvent_Package;
 

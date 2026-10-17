@@ -29,7 +29,7 @@ package body org.allbinary.logic.system.security.licensing.InputAutomationClient
    function Create return InputAutomationClientInformation_Access is
       This : constant InputAutomationClientInformation_Access := new InputAutomationClientInformation;
    begin
-      Initialize (This.all);
+      InputAutomationClientInformation_Package.Initialize (This.all);
       return This;
    end Create;
 

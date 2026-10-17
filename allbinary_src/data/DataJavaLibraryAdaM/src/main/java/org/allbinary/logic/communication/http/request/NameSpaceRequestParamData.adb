@@ -30,7 +30,7 @@ package body org.allbinary.logic.communication.http.request.NameSpaceRequestPara
    function Create return NameSpaceRequestParamData_Access is
       This : constant NameSpaceRequestParamData_Access := new NameSpaceRequestParamData;
    begin
-      Initialize (This.all);
+      NameSpaceRequestParamData_Package.Initialize (This.all);
       return This;
    end Create;
 

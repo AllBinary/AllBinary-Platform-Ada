@@ -18,6 +18,8 @@ with org.allbinary.graphics.form.item.ABCustomItem_Package; use org.allbinary.gr
 with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.graphics.form.ABCustomForm_Package; use org.allbinary.graphics.form.ABCustomForm_Package;
+with org.allbinary.graphics.form.FormTypeFactory_Package; use org.allbinary.graphics.form.FormTypeFactory_Package;
+with org.allbinary.graphics.form.FormType_Package; use org.allbinary.graphics.form.FormType_Package;
 
 package org.allbinary.graphics.form.PaintableForm_Package is
 
@@ -48,10 +50,8 @@ package org.allbinary.graphics.form.PaintableForm_Package is
    procedure Initialize (This : in out PaintableForm'Class; title : Unbounded_String; items : ABCustomItem_Access_Array_Access; backgroundBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access);
    function Create (title : Unbounded_String; items : ABCustomItem_Access_Array_Access; backgroundBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access) return PaintableForm_Access;
    function getNullPaintableForm return PaintableForm_Access;
-   procedure getNullPaintableForm;
    procedure init (This : in out PaintableForm; rectangle : Rectangle_Access; formType : FormType_Access);
    function getWidth (This : in out PaintableForm) return Integer;
-   procedure getWidth (This : in out PaintableForm);
 
 end org.allbinary.graphics.form.PaintableForm_Package;
 

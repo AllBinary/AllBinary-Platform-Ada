@@ -32,7 +32,7 @@ package body org.allbinary.game.ag.ai.scroller.RandomPatrolAI_Package is
    function Create (hashtable : ABHashtable_Access; ownerLayerInterface : AllBinaryLayer_Access; gameInput : GameInput_Access) return RandomPatrolAI_Access is
       This : constant RandomPatrolAI_Access := new RandomPatrolAI;
    begin
-      Initialize (This.all, hashtable, ownerLayerInterface, gameInput);
+      RandomPatrolAI_Package.Initialize (This.all, hashtable, ownerLayerInterface, gameInput);
       return This;
    end Create;
 

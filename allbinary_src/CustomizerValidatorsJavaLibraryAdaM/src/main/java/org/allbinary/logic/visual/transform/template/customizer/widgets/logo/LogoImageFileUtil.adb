@@ -34,7 +34,7 @@ package body org.allbinary.logic.visual.transform.template.customizer.widgets.lo
    function Create (imageAbPath : AbPath_Access; imageFile : Unbounded_String) return LogoImageFileUtil_Access is
       This : constant LogoImageFileUtil_Access := new LogoImageFileUtil;
    begin
-      Initialize (This.all, imageAbPath, imageFile);
+      LogoImageFileUtil_Package.Initialize (This.all, imageAbPath, imageFile);
       return This;
    end Create;
 

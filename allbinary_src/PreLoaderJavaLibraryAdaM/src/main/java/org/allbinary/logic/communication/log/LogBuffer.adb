@@ -32,7 +32,7 @@ package body org.allbinary.logic.communication.log.LogBuffer_Package is
    function Create return LogBuffer_Access is
       This : constant LogBuffer_Access := new LogBuffer;
    begin
-      Initialize (This.all);
+      LogBuffer_Package.Initialize (This.all);
       return This;
    end Create;
 

@@ -29,7 +29,7 @@ package body org.allbinary.graphics.form.ItemPaintableFactory_Package is
    function Create return ItemPaintableFactory_Access is
       This : constant ItemPaintableFactory_Access := new ItemPaintableFactory;
    begin
-      Initialize (This.all);
+      ItemPaintableFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -44,13 +44,6 @@ package body org.allbinary.graphics.form.ItemPaintableFactory_Package is
    begin
         return ItemPaintableFactory_Package.instance;
    end getInstanceItemPaintable;
-
-   procedure getInstance is
-      Java_Result : constant ItemPaintableFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure getInstanceItemPaintable (This : in out ItemPaintableFactory; paintableForm : PaintableForm_Access) is
       Java_Result : constant ItemPaintable_Access := ItemPaintableFactory'Class (This).getInstanceItemPaintable (paintableForm);

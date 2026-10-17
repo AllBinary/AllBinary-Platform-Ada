@@ -28,7 +28,7 @@ package body org.allbinary.canvas.FullScreenUtil_Package is
    function Create return FullScreenUtil_Access is
       This : constant FullScreenUtil_Access := new FullScreenUtil;
    begin
-      Initialize (This.all);
+      FullScreenUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -76,13 +76,6 @@ package body org.allbinary.canvas.FullScreenUtil_Package is
    begin
         return This.isScreenChange (fullScreenInterface.isFullScreenMode);
    end isScreenChangeCanvas;
-
-   procedure getInstance is
-      Java_Result : constant FullScreenUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure isScreenChange (This : in out FullScreenUtil; isFullScreen : Boolean) is
       Java_Result : constant Boolean := FullScreenUtil'Class (This).isScreenChange (isFullScreen);

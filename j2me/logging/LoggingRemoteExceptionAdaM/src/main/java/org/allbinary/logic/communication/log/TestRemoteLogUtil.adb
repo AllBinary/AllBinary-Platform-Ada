@@ -35,7 +35,7 @@ package body org.allbinary.logic.communication.log.TestRemoteLogUtil_Package is
    function Create return TestRemoteLogUtil_Access is
       This : constant TestRemoteLogUtil_Access := new TestRemoteLogUtil;
    begin
-      Initialize (This.all);
+      TestRemoteLogUtil_Package.Initialize (This.all);
       return This;
    end Create;
 

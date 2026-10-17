@@ -42,7 +42,6 @@ package org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObje
    procedure Initialize (This : in out TransformInfoObjectConfigData'Class);
    function Create return TransformInfoObjectConfigData_Access;
    function getInstance return TransformInfoObjectConfigData_Access;
-   procedure getInstance;
 
 end org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfigData_Package;
 

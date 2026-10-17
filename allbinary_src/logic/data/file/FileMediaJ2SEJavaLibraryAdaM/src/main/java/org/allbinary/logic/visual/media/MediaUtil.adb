@@ -24,7 +24,7 @@ package body org.allbinary.logic.visual.media.MediaUtil_Package is
    function Create return MediaUtil_Access is
       This : constant MediaUtil_Access := new MediaUtil;
    begin
-      Initialize (This.all);
+      MediaUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -97,13 +97,6 @@ package body org.allbinary.logic.visual.media.MediaUtil_Package is
         end if;
         return hashMap;
    end getImageBufferPropertyHashMap;
-
-   procedure getInstance is
-      Java_Result : constant MediaUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure getImageBufferPropertyHashMap (bufferedImage : BufferedImage_Access) is
       Java_Result : constant HashMap_Access := getImageBufferPropertyHashMap (bufferedImage);

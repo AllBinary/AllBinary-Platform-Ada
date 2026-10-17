@@ -25,6 +25,8 @@ with org.allbinary.data.tree.dom.document.XmlDocumentHelper_Package; use org.all
 with org.allbinary.data.tree.dom.document.mapping.DomDocumentMappingInterface_Package; use org.allbinary.data.tree.dom.document.mapping.DomDocumentMappingInterface_Package;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
+with org.allbinary.business.context.configuration.ContextConfigurationInterface_Package; use org.allbinary.business.context.configuration.ContextConfigurationInterface_Package;
+with org.allbinary.business.context.configuration.ContextConfigurationView_Package; use org.allbinary.business.context.configuration.ContextConfigurationView_Package;
 
 package org.allbinary.business.context.configuration.ContextConfigurationDomDocumentMapping_Package is
 
@@ -46,9 +48,7 @@ package org.allbinary.business.context.configuration.ContextConfigurationDomDocu
    procedure Initialize (This : in out ContextConfigurationDomDocumentMapping'Class; contextConfigurationInterface : ContextConfigurationInterface_Access);
    function Create (contextConfigurationInterface : ContextConfigurationInterface_Access) return ContextConfigurationDomDocumentMapping_Access;
    function toXmlDoc (This : in out ContextConfigurationDomDocumentMapping) return Document_Access;
-   procedure toXmlDoc (This : in out ContextConfigurationDomDocumentMapping);
    function toDomDocumentString (This : in out ContextConfigurationDomDocumentMapping) return Unbounded_String;
-   procedure toDomDocumentString (This : in out ContextConfigurationDomDocumentMapping);
 
 end org.allbinary.business.context.configuration.ContextConfigurationDomDocumentMapping_Package;
 

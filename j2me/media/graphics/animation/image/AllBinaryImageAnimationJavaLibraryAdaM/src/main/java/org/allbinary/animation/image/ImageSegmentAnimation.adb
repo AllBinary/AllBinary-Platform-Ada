@@ -42,7 +42,7 @@ package body org.allbinary.animation.image.ImageSegmentAnimation_Package is
    function Create (image : Image_Access; sequenceArray : Integer_Array_Access; animationBehavior : AnimationBehavior_Access) return ImageSegmentAnimation_Access is
       This : constant ImageSegmentAnimation_Access := new ImageSegmentAnimation;
    begin
-      Initialize (This.all, image, sequenceArray, animationBehavior);
+      ImageSegmentAnimation_Package.Initialize (This.all, image, sequenceArray, animationBehavior);
       return This;
    end Create;
 
@@ -125,55 +125,6 @@ package body org.allbinary.animation.image.ImageSegmentAnimation_Package is
    begin
         This.drawHeight := drawHeight;
    end setDrawHeight;
-
-   procedure getFrame (This : in out ImageSegmentAnimation) is
-      Java_Result : constant Integer := ImageSegmentAnimation'Class (This).getFrame;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getFrame;
-
-   procedure getSize (This : in out ImageSegmentAnimation) is
-      Java_Result : constant Integer := ImageSegmentAnimation'Class (This).getSize;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSize;
-
-   procedure getSequence (This : in out ImageSegmentAnimation) is
-      Java_Result : constant Integer_Array_Access := ImageSegmentAnimation'Class (This).getSequence;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSequence;
-
-   procedure getStartX (This : in out ImageSegmentAnimation) is
-      Java_Result : constant Integer := ImageSegmentAnimation'Class (This).getStartX;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getStartX;
-
-   procedure getStartY (This : in out ImageSegmentAnimation) is
-      Java_Result : constant Integer := ImageSegmentAnimation'Class (This).getStartY;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getStartY;
-
-   procedure getDrawWidth (This : in out ImageSegmentAnimation) is
-      Java_Result : constant Integer := ImageSegmentAnimation'Class (This).getDrawWidth;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getDrawWidth;
-
-   procedure getDrawHeight (This : in out ImageSegmentAnimation) is
-      Java_Result : constant Integer := ImageSegmentAnimation'Class (This).getDrawHeight;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getDrawHeight;
 
 end org.allbinary.animation.image.ImageSegmentAnimation_Package;
 

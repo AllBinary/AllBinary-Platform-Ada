@@ -28,7 +28,7 @@ package body org.allbinary.animation.transition.shake.ShakeAnimationListenerFact
    function Create return ShakeAnimationListenerFactory_Access is
       This : constant ShakeAnimationListenerFactory_Access := new ShakeAnimationListenerFactory;
    begin
-      Initialize (This.all);
+      ShakeAnimationListenerFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -36,13 +36,6 @@ package body org.allbinary.animation.transition.shake.ShakeAnimationListenerFact
    function getInstance return ShakeAnimationListener_Access is
    begin
         return NoShakeAnimationListener_Package.Create;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant ShakeAnimationListener_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 end org.allbinary.animation.transition.shake.ShakeAnimationListenerFactory_Package;

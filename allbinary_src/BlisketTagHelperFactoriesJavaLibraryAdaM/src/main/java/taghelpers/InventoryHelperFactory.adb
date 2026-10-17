@@ -31,7 +31,7 @@ package body taghelpers.InventoryHelperFactory_Package is
    function Create return InventoryHelperFactory_Access is
       This : constant InventoryHelperFactory_Access := new InventoryHelperFactory;
    begin
-      Initialize (This.all);
+      InventoryHelperFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

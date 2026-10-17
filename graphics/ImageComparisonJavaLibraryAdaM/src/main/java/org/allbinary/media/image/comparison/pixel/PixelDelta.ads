@@ -50,17 +50,13 @@ package org.allbinary.media.image.comparison.pixel.PixelDelta_Package is
    procedure Initialize (This : in out PixelDelta'Class; point : GPoint_Access; colorDelta : ColorDelta_Access);
    function Create (point : GPoint_Access; colorDelta : ColorDelta_Access) return PixelDelta_Access;
    function getKey (This : in out PixelDelta) return Java_Object_Access;
-   procedure getKey (This : in out PixelDelta);
    function getKey (point : GPoint_Access; colorDelta : ColorDelta_Access) return Java_Object_Access;
    procedure getKey (point : GPoint_Access; colorDelta : ColorDelta_Access);
    function getPoint (This : in out PixelDelta) return GPoint_Access;
-   procedure getPoint (This : in out PixelDelta);
    procedure setPoint (This : in out PixelDelta; point : GPoint_Access);
    function getColorDelta (This : in out PixelDelta) return ColorDelta_Access;
-   procedure getColorDelta (This : in out PixelDelta);
    procedure setColorDelta (This : in out PixelDelta; colorDelta : ColorDelta_Access);
    function toString (This : in out PixelDelta) return Unbounded_String;
-   procedure toString (This : in out PixelDelta);
 
 end org.allbinary.media.image.comparison.pixel.PixelDelta_Package;
 

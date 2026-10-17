@@ -47,9 +47,7 @@ package org.allbinary.business.user.commerce.shipping.modules.NoShippingModule_P
    function getCost (This : in out NoShippingModule; order : OrderInterface_Access) return Money_Access;
    procedure getCost (This : in out NoShippingModule; order : OrderInterface_Access);
    function getDescription (This : in out NoShippingModule) return Unbounded_String;
-   procedure getDescription (This : in out NoShippingModule);
    function getName (This : in out NoShippingModule) return Unbounded_String;
-   procedure getName (This : in out NoShippingModule);
 
 end org.allbinary.business.user.commerce.shipping.modules.NoShippingModule_Package;
 

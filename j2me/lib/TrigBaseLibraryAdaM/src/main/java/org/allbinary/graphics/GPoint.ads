@@ -53,19 +53,12 @@ package org.allbinary.graphics.GPoint_Package is
    function getInstance (point : GPoint_Access) return GPoint_Access;
    procedure getInstance (point : GPoint_Access);
    function getX (This : in out GPoint) return Integer;
-   procedure getX (This : in out GPoint);
    function getY (This : in out GPoint) return Integer;
-   procedure getY (This : in out GPoint);
    function getZ (This : in out GPoint) return Integer;
-   procedure getZ (This : in out GPoint);
    function getRawX (This : in out GPoint) return Integer;
-   procedure getRawX (This : in out GPoint);
    function getRawY (This : in out GPoint) return Integer;
-   procedure getRawY (This : in out GPoint);
    function getRawZ (This : in out GPoint) return Integer;
-   procedure getRawZ (This : in out GPoint);
    function toString (This : in out GPoint) return Unbounded_String;
-   procedure toString (This : in out GPoint);
    function toStringStatic (x : Integer; y : Integer; z : Integer) return Unbounded_String;
    procedure toStringStatic (x : Integer; y : Integer; z : Integer);
 

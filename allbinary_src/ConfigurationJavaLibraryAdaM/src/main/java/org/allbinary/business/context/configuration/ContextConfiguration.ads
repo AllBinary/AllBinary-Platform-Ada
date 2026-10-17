@@ -48,7 +48,6 @@ package org.allbinary.business.context.configuration.ContextConfiguration_Packag
    procedure Initialize (This : in out ContextConfiguration'Class);
    function Create return ContextConfiguration_Access;
    function getEmailServerConfigurationInterface (This : in out ContextConfiguration) return EmailServerConfigurationInterface_Access;
-   procedure getEmailServerConfigurationInterface (This : in out ContextConfiguration);
    procedure setEmailServerConfigurationInterface (This : in out ContextConfiguration; emailServerConfigurationInterface : EmailServerConfigurationInterface_Access);
 
 end org.allbinary.business.context.configuration.ContextConfiguration_Package;

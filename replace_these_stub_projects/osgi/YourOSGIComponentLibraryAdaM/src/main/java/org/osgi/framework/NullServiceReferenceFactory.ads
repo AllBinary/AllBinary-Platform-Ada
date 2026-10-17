@@ -20,6 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
+with org.osgi.framework.NullServiceReference_Package; use org.osgi.framework.NullServiceReference_Package;
 
 package org.osgi.framework.NullServiceReferenceFactory_Package is
 
@@ -37,7 +38,6 @@ package org.osgi.framework.NullServiceReferenceFactory_Package is
    procedure Initialize (This : in out NullServiceReferenceFactory'Class);
    function Create return NullServiceReferenceFactory_Access;
    function getInstance return NullServiceReferenceFactory_Access;
-   procedure getInstance;
 
 end org.osgi.framework.NullServiceReferenceFactory_Package;
 

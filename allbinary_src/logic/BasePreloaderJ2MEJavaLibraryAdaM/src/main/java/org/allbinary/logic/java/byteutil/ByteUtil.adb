@@ -35,7 +35,7 @@ package body org.allbinary.logic.java.byteutil.ByteUtil_Package is
    function Create return ByteUtil_Access is
       This : constant ByteUtil_Access := new ByteUtil;
    begin
-      Initialize (This.all);
+      ByteUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -143,13 +143,6 @@ package body org.allbinary.logic.java.byteutil.ByteUtil_Package is
         end loop;
         return True;
    end compareWithStats;
-
-   procedure getInstance is
-      Java_Result : constant ByteUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure xor_Id (This : in out ByteUtil; array_Id : Short_Short_Integer_Array_Access; mask : Short_Short_Integer) is
       Java_Result : constant Short_Short_Integer_Array_Access := ByteUtil'Class (This).xor_Id (array_Id, mask);

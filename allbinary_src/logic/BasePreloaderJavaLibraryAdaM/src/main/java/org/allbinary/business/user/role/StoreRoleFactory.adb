@@ -44,7 +44,7 @@ package body org.allbinary.business.user.role.StoreRoleFactory_Package is
    function Create return StoreRoleFactory_Access is
       This : constant StoreRoleFactory_Access := new StoreRoleFactory;
    begin
-      Initialize (This.all);
+      StoreRoleFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -61,34 +61,6 @@ package body org.allbinary.business.user.role.StoreRoleFactory_Package is
    function getWholesaleRoles (This : in out StoreRoleFactory) return BasicArrayList_Access is
    begin
         return This.wholesaleRoles;
-   end getWholesaleRoles;
-
-   procedure getInstance is
-      Java_Result : constant StoreRoleFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure getRoles (This : in out StoreRoleFactory) is
-      Java_Result : constant BasicArrayList_Access := StoreRoleFactory'Class (This).getRoles;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getRoles;
-
-   procedure getSubscriberRoles (This : in out StoreRoleFactory) is
-      Java_Result : constant BasicArrayList_Access := StoreRoleFactory'Class (This).getSubscriberRoles;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSubscriberRoles;
-
-   procedure getWholesaleRoles (This : in out StoreRoleFactory) is
-      Java_Result : constant BasicArrayList_Access := StoreRoleFactory'Class (This).getWholesaleRoles;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getWholesaleRoles;
 
 begin

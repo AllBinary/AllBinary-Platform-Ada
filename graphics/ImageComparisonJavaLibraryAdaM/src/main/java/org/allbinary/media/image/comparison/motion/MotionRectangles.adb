@@ -36,7 +36,7 @@ package body org.allbinary.media.image.comparison.motion.MotionRectangles_Packag
    function Create (name : Unbounded_String; imageComparisonResult : ImageComparisonResult_Access) return MotionRectangles_Access is
       This : constant MotionRectangles_Access := new MotionRectangles;
    begin
-      Initialize (This.all, name, imageComparisonResult);
+      MotionRectangles_Package.Initialize (This.all, name, imageComparisonResult);
       return This;
    end Create;
 
@@ -64,27 +64,6 @@ package body org.allbinary.media.image.comparison.motion.MotionRectangles_Packag
    begin
         This.imageComparisonResult := imageComparisonResult;
    end setImageComparisonResult;
-
-   procedure getVector (This : in out MotionRectangles) is
-      Java_Result : constant BasicArrayList_Access := MotionRectangles'Class (This).getVector;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getVector;
-
-   procedure getName (This : in out MotionRectangles) is
-      Java_Result : constant Unbounded_String := MotionRectangles'Class (This).getName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getName;
-
-   procedure getImageComparisonResult (This : in out MotionRectangles) is
-      Java_Result : constant ImageComparisonResult_Access := MotionRectangles'Class (This).getImageComparisonResult;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getImageComparisonResult;
 
 end org.allbinary.media.image.comparison.motion.MotionRectangles_Package;
 

@@ -29,7 +29,7 @@ package body org.allbinary.logic.io.AbDataInputStream_Package is
    function Create (out_Id : InputStream_Access) return AbDataInputStream_Access is
       This : constant AbDataInputStream_Access := new AbDataInputStream;
    begin
-      Initialize (This.all, out_Id);
+      AbDataInputStream_Package.Initialize (This.all, out_Id);
       return This;
    end Create;
 

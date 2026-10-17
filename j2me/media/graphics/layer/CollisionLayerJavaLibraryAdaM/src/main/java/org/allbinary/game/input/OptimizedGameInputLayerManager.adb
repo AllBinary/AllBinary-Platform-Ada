@@ -29,7 +29,7 @@ package body org.allbinary.game.input.OptimizedGameInputLayerManager_Package is
    function Create return OptimizedGameInputLayerManager_Access is
       This : constant OptimizedGameInputLayerManager_Access := new OptimizedGameInputLayerManager;
    begin
-      Initialize (This.all);
+      OptimizedGameInputLayerManager_Package.Initialize (This.all);
       return This;
    end Create;
 

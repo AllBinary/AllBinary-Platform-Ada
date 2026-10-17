@@ -35,7 +35,7 @@ package body org.allbinary.graphics.Rectangle_Package is
    function Create (point : GPoint_Access; width : Integer; height : Integer) return Rectangle_Access is
       This : constant Rectangle_Access := new Rectangle;
    begin
-      Initialize (This.all, point, width, height);
+      Rectangle_Package.Initialize (This.all, point, width, height);
       return This;
    end Create;
 
@@ -95,48 +95,6 @@ package body org.allbinary.graphics.Rectangle_Package is
         stringBuffer.append (To_Unbounded_String (" MaxY: "));
         stringBuffer.appendint (This.getMaxY);
         return stringBuffer.toString;
-   end toString;
-
-   procedure getPoint (This : in out Rectangle) is
-      Java_Result : constant GPoint_Access := Rectangle'Class (This).getPoint;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getPoint;
-
-   procedure getMaxX (This : in out Rectangle) is
-      Java_Result : constant Integer := Rectangle'Class (This).getMaxX;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getMaxX;
-
-   procedure getMaxY (This : in out Rectangle) is
-      Java_Result : constant Integer := Rectangle'Class (This).getMaxY;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getMaxY;
-
-   procedure getWidth (This : in out Rectangle) is
-      Java_Result : constant Integer := Rectangle'Class (This).getWidth;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getWidth;
-
-   procedure getHeight (This : in out Rectangle) is
-      Java_Result : constant Integer := Rectangle'Class (This).getHeight;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getHeight;
-
-   procedure toString (This : in out Rectangle) is
-      Java_Result : constant Unbounded_String := Rectangle'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end toString;
 
 end org.allbinary.graphics.Rectangle_Package;

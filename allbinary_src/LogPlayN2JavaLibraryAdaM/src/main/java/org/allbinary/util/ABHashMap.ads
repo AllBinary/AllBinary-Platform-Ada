@@ -39,9 +39,7 @@ package org.allbinary.util.ABHashMap_Package is
    procedure Initialize (This : in out ABHashMap'Class);
    function Create return ABHashMap_Access;
    function size (This : in out ABHashMap) return Integer;
-   procedure size (This : in out ABHashMap);
    function isEmpty (This : in out ABHashMap) return Boolean;
-   procedure isEmpty (This : in out ABHashMap);
    function get (This : in out ABHashMap; key : Java_Object_Access) return Java_Object_Access;
    procedure get (This : in out ABHashMap; key : Java_Object_Access);
    function containsKey (This : in out ABHashMap; key : Java_Object_Access) return Boolean;
@@ -55,15 +53,12 @@ package org.allbinary.util.ABHashMap_Package is
    function containsValue (This : in out ABHashMap; value : Java_Object_Access) return Boolean;
    procedure containsValue (This : in out ABHashMap; value : Java_Object_Access);
    function keySet (This : in out ABHashMap) return Set_Access;
-   procedure keySet (This : in out ABHashMap);
    function entrySet (This : in out ABHashMap) return Set_Access;
-   procedure entrySet (This : in out ABHashMap);
    function getOrDefault (This : in out ABHashMap; key : Java_Object_Access; defaultValue : Java_Object_Access) return Java_Object_Access;
    procedure getOrDefault (This : in out ABHashMap; key : Java_Object_Access; defaultValue : Java_Object_Access);
    function putIfAbsent (This : in out ABHashMap; key : Java_Object_Access; value : Java_Object_Access) return Java_Object_Access;
    procedure putIfAbsent (This : in out ABHashMap; key : Java_Object_Access; value : Java_Object_Access);
    function clone (This : in out ABHashMap) return Java_Object_Access;
-   procedure clone (This : in out ABHashMap);
 
 end org.allbinary.util.ABHashMap_Package;
 

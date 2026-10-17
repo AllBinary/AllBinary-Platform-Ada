@@ -22,6 +22,7 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.configuration.GameConfigurationCentral_Package; use org.allbinary.game.configuration.GameConfigurationCentral_Package;
 with org.allbinary.media.AllBinaryVibrationME_Package; use org.allbinary.media.AllBinaryVibrationME_Package;
+with org.allbinary.media.AllBinaryNoVibration_Package; use org.allbinary.media.AllBinaryNoVibration_Package;
 
 package org.allbinary.media.AllBinaryVibration_Package is
 
@@ -38,7 +39,6 @@ package org.allbinary.media.AllBinaryVibration_Package is
    procedure Initialize (This : in out AllBinaryVibration'Class);
    function Create return AllBinaryVibration_Access;
    function getInstance return AllBinaryVibrationME_Access;
-   procedure getInstance;
    procedure init;
    procedure vibrate (This : in out AllBinaryVibration; duration : Integer; type_Id : Integer; volume : Integer);
 

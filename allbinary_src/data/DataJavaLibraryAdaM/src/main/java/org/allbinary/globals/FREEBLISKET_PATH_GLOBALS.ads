@@ -22,6 +22,7 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.io.path.AbPathData_Package; use org.allbinary.logic.io.path.AbPathData_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.globals.PATH_GLOBALS_Package; use org.allbinary.globals.PATH_GLOBALS_Package;
 
 package org.allbinary.globals.FREEBLISKET_PATH_GLOBALS_Package is
 
@@ -52,7 +53,6 @@ package org.allbinary.globals.FREEBLISKET_PATH_GLOBALS_Package is
    procedure Initialize (This : in out FREEBLISKET_PATH_GLOBALS'Class);
    function Create return FREEBLISKET_PATH_GLOBALS_Access;
    function getInstance return FREEBLISKET_PATH_GLOBALS_Access;
-   procedure getInstance;
 
 end org.allbinary.globals.FREEBLISKET_PATH_GLOBALS_Package;
 

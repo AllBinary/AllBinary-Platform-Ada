@@ -59,7 +59,7 @@ package body org.allbinary.input.automation.actions.script.condition.ColorAtActi
    function Create (colorAtActionScriptConditionInterface : ColorAtActionScriptConditionInterface_Access) return ColorAtActionScriptConditionJPanel_Access is
       This : constant ColorAtActionScriptConditionJPanel_Access := new ColorAtActionScriptConditionJPanel;
    begin
-      Initialize (This.all, colorAtActionScriptConditionInterface);
+      ColorAtActionScriptConditionJPanel_Package.Initialize (This.all, colorAtActionScriptConditionInterface);
       return This;
    end Create;
 
@@ -276,76 +276,6 @@ package body org.allbinary.input.automation.actions.script.condition.ColorAtActi
    begin
         This.getColorAtActionJDialog.setVisible (True);
    end colorAtActionJButtonActionPerformed;
-
-   procedure getColorAtXJTextField (This : in out ColorAtActionScriptConditionJPanel) is
-      Java_Result : constant JTextField_Access := ColorAtActionScriptConditionJPanel'Class (This).getColorAtXJTextField;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getColorAtXJTextField;
-
-   procedure getColorAtYJTextField (This : in out ColorAtActionScriptConditionJPanel) is
-      Java_Result : constant JTextField_Access := ColorAtActionScriptConditionJPanel'Class (This).getColorAtYJTextField;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getColorAtYJTextField;
-
-   procedure getMaxBlueJTextField (This : in out ColorAtActionScriptConditionJPanel) is
-      Java_Result : constant JTextField_Access := ColorAtActionScriptConditionJPanel'Class (This).getMaxBlueJTextField;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getMaxBlueJTextField;
-
-   procedure getMaxGreenJTextField (This : in out ColorAtActionScriptConditionJPanel) is
-      Java_Result : constant JTextField_Access := ColorAtActionScriptConditionJPanel'Class (This).getMaxGreenJTextField;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getMaxGreenJTextField;
-
-   procedure getMaxRedJTextField (This : in out ColorAtActionScriptConditionJPanel) is
-      Java_Result : constant JTextField_Access := ColorAtActionScriptConditionJPanel'Class (This).getMaxRedJTextField;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getMaxRedJTextField;
-
-   procedure getMinBlueJTextField (This : in out ColorAtActionScriptConditionJPanel) is
-      Java_Result : constant JTextField_Access := ColorAtActionScriptConditionJPanel'Class (This).getMinBlueJTextField;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getMinBlueJTextField;
-
-   procedure getMinGreenJTextField (This : in out ColorAtActionScriptConditionJPanel) is
-      Java_Result : constant JTextField_Access := ColorAtActionScriptConditionJPanel'Class (This).getMinGreenJTextField;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getMinGreenJTextField;
-
-   procedure getMinRedJTextField (This : in out ColorAtActionScriptConditionJPanel) is
-      Java_Result : constant JTextField_Access := ColorAtActionScriptConditionJPanel'Class (This).getMinRedJTextField;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getMinRedJTextField;
-
-   procedure getYJLabel (This : in out ColorAtActionScriptConditionJPanel) is
-      Java_Result : constant JLabel_Access := ColorAtActionScriptConditionJPanel'Class (This).getYJLabel;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getYJLabel;
-
-   procedure getColorAtActionJDialog (This : in out ColorAtActionScriptConditionJPanel) is
-      Java_Result : constant JDialog_Access := ColorAtActionScriptConditionJPanel'Class (This).getColorAtActionJDialog;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getColorAtActionJDialog;
 
 end org.allbinary.input.automation.actions.script.condition.ColorAtActionScriptConditionJPanel_Package;
 

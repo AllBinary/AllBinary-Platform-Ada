@@ -38,7 +38,7 @@ package body org.allbinary.media.image.ImageJ2SERotationUtil_Package is
    function Create return ImageJ2SERotationUtil_Access is
       This : constant ImageJ2SERotationUtil_Access := new ImageJ2SERotationUtil;
    begin
-      Initialize (This.all);
+      ImageJ2SERotationUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -135,13 +135,6 @@ package body org.allbinary.media.image.ImageJ2SERotationUtil_Package is
         g.dispose;
         return bufferedImage;
    end createSpriteImage;
-
-   procedure getInstance is
-      Java_Result : constant ImageJ2SERotationUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure getRotatedImage (This : in out ImageJ2SERotationUtil; bufferedImage : Image_Access; totalAngle : Integer) is
       Java_Result : constant BufferedImage_Access := ImageJ2SERotationUtil'Class (This).getRotatedImage (bufferedImage, totalAngle);

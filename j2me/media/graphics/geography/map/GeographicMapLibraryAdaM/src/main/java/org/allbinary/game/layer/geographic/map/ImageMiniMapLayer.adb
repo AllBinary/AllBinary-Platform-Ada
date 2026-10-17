@@ -32,7 +32,7 @@ package body org.allbinary.game.layer.geographic.map.ImageMiniMapLayer_Package i
    function Create (geographicMapInterface : BasicGeographicMap_Access; viewPosition : ViewPositionBase_Access) return ImageMiniMapLayer_Access is
       This : constant ImageMiniMapLayer_Access := new ImageMiniMapLayer;
    begin
-      Initialize (This.all, geographicMapInterface, viewPosition);
+      ImageMiniMapLayer_Package.Initialize (This.all, geographicMapInterface, viewPosition);
       return This;
    end Create;
 

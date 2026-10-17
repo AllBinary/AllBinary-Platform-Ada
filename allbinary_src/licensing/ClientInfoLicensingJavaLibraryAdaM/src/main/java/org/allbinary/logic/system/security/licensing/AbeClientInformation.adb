@@ -31,7 +31,7 @@ package body org.allbinary.logic.system.security.licensing.AbeClientInformation_
    function Create (name : Unbounded_String; version : Unbounded_String; specialName : Unbounded_String; shortName : Unbounded_String) return AbeClientInformation_Access is
       This : constant AbeClientInformation_Access := new AbeClientInformation;
    begin
-      Initialize (This.all, name, version, specialName, shortName);
+      AbeClientInformation_Package.Initialize (This.all, name, version, specialName, shortName);
       return This;
    end Create;
 

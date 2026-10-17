@@ -54,7 +54,6 @@ package views.business.context.modules.storefront.customizer.includes.meta.MetaV
    function toXmlNode (This : in out MetaView; document : Document_Access) return Node_Access;
    procedure toXmlNode (This : in out MetaView; document : Document_Access);
    function view (This : in out MetaView) return Unbounded_String;
-   procedure view (This : in out MetaView);
 
 end views.business.context.modules.storefront.customizer.includes.meta.MetaView_Package;
 

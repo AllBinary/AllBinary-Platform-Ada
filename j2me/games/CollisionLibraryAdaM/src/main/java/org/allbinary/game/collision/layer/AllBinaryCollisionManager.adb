@@ -30,7 +30,7 @@ package body org.allbinary.game.collision.layer.AllBinaryCollisionManager_Packag
    function Create return AllBinaryCollisionManager_Access is
       This : constant AllBinaryCollisionManager_Access := new AllBinaryCollisionManager;
    begin
-      Initialize (This.all);
+      AllBinaryCollisionManager_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -66,13 +66,6 @@ package body org.allbinary.game.collision.layer.AllBinaryCollisionManager_Packag
             end if;
         end if;
    end collide;
-
-   procedure getInstance is
-      Java_Result : constant AllBinaryCollisionManager_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

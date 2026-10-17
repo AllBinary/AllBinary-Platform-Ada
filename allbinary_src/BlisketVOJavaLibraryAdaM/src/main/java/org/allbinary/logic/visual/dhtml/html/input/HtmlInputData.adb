@@ -37,7 +37,7 @@ package body org.allbinary.logic.visual.dhtml.html.input.HtmlInputData_Package i
    function Create return HtmlInputData_Access is
       This : constant HtmlInputData_Access := new HtmlInputData;
    begin
-      Initialize (This.all);
+      HtmlInputData_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -45,13 +45,6 @@ package body org.allbinary.logic.visual.dhtml.html.input.HtmlInputData_Package i
    function getInstance return HtmlInputData_Access is
    begin
         return HtmlInputData_Package.instance;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant HtmlInputData_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

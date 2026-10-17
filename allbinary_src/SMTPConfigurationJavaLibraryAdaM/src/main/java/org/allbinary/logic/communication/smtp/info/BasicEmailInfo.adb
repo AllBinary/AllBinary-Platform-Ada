@@ -40,7 +40,7 @@ package body org.allbinary.logic.communication.smtp.info.BasicEmailInfo_Package 
    function Create (subject : Unbounded_String; textBody : Unbounded_String) return BasicEmailInfo_Access is
       This : constant BasicEmailInfo_Access := new BasicEmailInfo;
    begin
-      Initialize (This.all, subject, textBody);
+      BasicEmailInfo_Package.Initialize (This.all, subject, textBody);
       return This;
    end Create;
 
@@ -82,34 +82,6 @@ package body org.allbinary.logic.communication.smtp.info.BasicEmailInfo_Package 
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end init;
-
-   procedure getSubject (This : in out BasicEmailInfo) is
-      Java_Result : constant Unbounded_String := BasicEmailInfo'Class (This).getSubject;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSubject;
-
-   procedure getTextBody (This : in out BasicEmailInfo) is
-      Java_Result : constant Unbounded_String := BasicEmailInfo'Class (This).getTextBody;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTextBody;
-
-   procedure getEmailServerConfigurationInterface (This : in out BasicEmailInfo) is
-      Java_Result : constant EmailServerConfigurationInterface_Access := BasicEmailInfo'Class (This).getEmailServerConfigurationInterface;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getEmailServerConfigurationInterface;
-
-   procedure toString (This : in out BasicEmailInfo) is
-      Java_Result : constant Unbounded_String := BasicEmailInfo'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toString;
 
 end org.allbinary.logic.communication.smtp.info.BasicEmailInfo_Package;
 

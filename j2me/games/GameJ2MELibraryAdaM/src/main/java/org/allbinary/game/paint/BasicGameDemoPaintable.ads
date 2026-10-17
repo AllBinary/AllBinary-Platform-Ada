@@ -48,12 +48,9 @@ package org.allbinary.game.paint.BasicGameDemoPaintable_Package is
    procedure setState (This : in out BasicGameDemoPaintable; state : Integer);
    procedure paint (This : in out BasicGameDemoPaintable; graphics : Graphics_Access);
    function getHelpPaintableInterface (This : in out BasicGameDemoPaintable) return Paintable_Access;
-   procedure getHelpPaintableInterface (This : in out BasicGameDemoPaintable);
    procedure setCurrentStatePaintable (This : in out BasicGameDemoPaintable; currentStatePaintable : Paintable_Access);
    function getCurrentStatePaintable (This : in out BasicGameDemoPaintable) return Paintable_Access;
-   procedure getCurrentStatePaintable (This : in out BasicGameDemoPaintable);
    function getMainDemoStatePaintable (This : in out BasicGameDemoPaintable) return Paintable_Access;
-   procedure getMainDemoStatePaintable (This : in out BasicGameDemoPaintable);
 
 end org.allbinary.game.paint.BasicGameDemoPaintable_Package;
 

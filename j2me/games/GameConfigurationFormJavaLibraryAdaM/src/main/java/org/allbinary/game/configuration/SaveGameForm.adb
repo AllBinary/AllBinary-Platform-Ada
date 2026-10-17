@@ -48,7 +48,7 @@ package body org.allbinary.game.configuration.SaveGameForm_Package is
    function Create (commandListener : CommandListener_Access; title : Unbounded_String; backgrounBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access) return SaveGameForm_Access is
       This : constant SaveGameForm_Access := new SaveGameForm;
    begin
-      Initialize (This.all, commandListener, title, backgrounBasicColor, foregroundBasicColor);
+      SaveGameForm_Package.Initialize (This.all, commandListener, title, backgrounBasicColor, foregroundBasicColor);
       return This;
    end Create;
 
@@ -68,13 +68,6 @@ package body org.allbinary.game.configuration.SaveGameForm_Package is
    begin
       null;
    end createForm;
-
-   procedure getInstance is
-      Java_Result : constant CommandForm_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

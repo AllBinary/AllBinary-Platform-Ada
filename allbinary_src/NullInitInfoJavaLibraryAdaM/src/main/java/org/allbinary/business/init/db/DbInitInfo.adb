@@ -29,7 +29,7 @@ package body org.allbinary.business.init.db.DbInitInfo_Package is
    function Create (initFileName : Unbounded_String; read : Boolean) return DbInitInfo_Access is
       This : constant DbInitInfo_Access := new DbInitInfo;
    begin
-      Initialize (This.all, initFileName, read);
+      DbInitInfo_Package.Initialize (This.all, initFileName, read);
       return This;
    end Create;
 
@@ -57,13 +57,6 @@ package body org.allbinary.business.init.db.DbInitInfo_Package is
    begin
         null;
    end setHasRead;
-
-   procedure getUrl (This : in out DbInitInfo) is
-      Java_Result : constant Unbounded_String := DbInitInfo'Class (This).getUrl;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getUrl;
 
 end org.allbinary.business.init.db.DbInitInfo_Package;
 

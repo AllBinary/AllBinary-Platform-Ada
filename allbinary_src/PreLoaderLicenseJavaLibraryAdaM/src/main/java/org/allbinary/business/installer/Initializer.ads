@@ -33,6 +33,7 @@ with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.lo
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringValidationUtil_Package; use org.allbinary.logic.string_Id.StringValidationUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.business.installer.InitializerData_Package; use org.allbinary.business.installer.InitializerData_Package;
 
 package org.allbinary.business.installer.Initializer_Package is
 
@@ -101,13 +102,10 @@ package org.allbinary.business.installer.Initializer_Package is
    function isJdbcDriverValid (This : in out Initializer; jdbcDriverClassPathString : Unbounded_String) return Boolean;
    procedure isJdbcDriverValid (This : in out Initializer; jdbcDriverClassPathString : Unbounded_String);
    function isValid (This : in out Initializer) return Boolean;
-   procedure isValid (This : in out Initializer);
    function getJdbcDriverValidationInfo (This : in out Initializer; jdbcDriver : Unbounded_String) return Unbounded_String;
    procedure getJdbcDriverValidationInfo (This : in out Initializer; jdbcDriver : Unbounded_String);
    function getJdbcDriverSolutionInfo (This : in out Initializer) return Unbounded_String;
-   procedure getJdbcDriverSolutionInfo (This : in out Initializer);
    function getInvalidInfo (This : in out Initializer) return Unbounded_String;
-   procedure getInvalidInfo (This : in out Initializer);
    procedure set (This : in out Initializer);
 
 end org.allbinary.business.installer.Initializer_Package;

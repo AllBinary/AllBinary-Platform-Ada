@@ -28,7 +28,7 @@ package body org.allbinary.game.paint.ColorFillPaintableFactory_Package is
    function Create return ColorFillPaintableFactory_Access is
       This : constant ColorFillPaintableFactory_Access := new ColorFillPaintableFactory;
    begin
-      Initialize (This.all);
+      ColorFillPaintableFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -47,13 +47,6 @@ package body org.allbinary.game.paint.ColorFillPaintableFactory_Package is
         else
             return ColorFillPaintable_Package.Create (basicColor);
         end if;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant ColorFillPaintableFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
    procedure getInstance (This : in out ColorFillPaintableFactory; basicColor : BasicColor_Access; forThreedCanvas : Boolean) is

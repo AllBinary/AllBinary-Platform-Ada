@@ -29,7 +29,7 @@ package body org.allbinary.animation.compound.CompoundIndexedAnimationInterfaceF
    function Create (basicAnimationInterfaceFactoryInterfaceArray : AnimationInterfaceFactoryInterface_Access_Array_Access; animationBehaviorFactory : AnimationBehaviorFactory_Access) return CompoundIndexedAnimationInterfaceFactory_Access is
       This : constant CompoundIndexedAnimationInterfaceFactory_Access := new CompoundIndexedAnimationInterfaceFactory;
    begin
-      Initialize (This.all, basicAnimationInterfaceFactoryInterfaceArray, animationBehaviorFactory);
+      CompoundIndexedAnimationInterfaceFactory_Package.Initialize (This.all, basicAnimationInterfaceFactoryInterfaceArray, animationBehaviorFactory);
       return This;
    end Create;
 

@@ -28,6 +28,7 @@ with org.allbinary.game.health.HealthInterface_Package; use org.allbinary.game.h
 with org.allbinary.game.health.HealthListenerInterface_Package; use org.allbinary.game.health.HealthListenerInterface_Package;
 with org.allbinary.graphics.paint.Paintable_Package; use org.allbinary.graphics.paint.Paintable_Package;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
+with org.allbinary.game.ag.life.Life_Package; use org.allbinary.game.ag.life.Life_Package;
 
 package org.allbinary.game.ag.life.HealthIncludingLifeBar_Package is
 

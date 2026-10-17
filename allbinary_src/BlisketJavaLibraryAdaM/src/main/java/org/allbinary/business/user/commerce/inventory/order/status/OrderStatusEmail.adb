@@ -41,7 +41,7 @@ package body org.allbinary.business.user.commerce.inventory.order.status.OrderSt
    function Create (abeClientInformation : AbeClientInformationInterface_Access; orderHistory : OrderHistory_Access) return OrderStatusEmail_Access is
       This : constant OrderStatusEmail_Access := new OrderStatusEmail;
    begin
-      Initialize (This.all, abeClientInformation, orderHistory);
+      OrderStatusEmail_Package.Initialize (This.all, abeClientInformation, orderHistory);
       return This;
    end Create;
 

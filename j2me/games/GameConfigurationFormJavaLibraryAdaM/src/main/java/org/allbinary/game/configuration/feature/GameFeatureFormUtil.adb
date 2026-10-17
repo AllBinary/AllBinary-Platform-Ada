@@ -30,7 +30,7 @@ package body org.allbinary.game.configuration.feature.GameFeatureFormUtil_Packag
    function Create return GameFeatureFormUtil_Access is
       This : constant GameFeatureFormUtil_Access := new GameFeatureFormUtil;
    begin
-      Initialize (This.all);
+      GameFeatureFormUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -109,13 +109,6 @@ package body org.allbinary.game.configuration.feature.GameFeatureFormUtil_Packag
             end if;
         end loop;
    end setDefault;
-
-   procedure getInstance is
-      Java_Result : constant GameFeatureFormUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure getChoiceGroup (This : in out GameFeatureFormUtil; hashtable : ABHashtable_Access; name : Unbounded_String; option : Integer) is
       Java_Result : constant ChoiceGroup_Access := GameFeatureFormUtil'Class (This).getChoiceGroup (hashtable, name, option);

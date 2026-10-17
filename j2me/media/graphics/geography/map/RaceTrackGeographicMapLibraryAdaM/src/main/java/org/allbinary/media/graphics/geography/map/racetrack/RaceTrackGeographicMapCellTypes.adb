@@ -50,16 +50,9 @@ package body org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeogr
    function Create return RaceTrackGeographicMapCellTypes_Access is
       This : constant RaceTrackGeographicMapCellTypes_Access := new RaceTrackGeographicMapCellTypes;
    begin
-      Initialize (This.all);
+      RaceTrackGeographicMapCellTypes_Package.Initialize (This.all);
       return This;
    end Create;
-
-   procedure getInstance is
-      Java_Result : constant RaceTrackGeographicMapCellTypes_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

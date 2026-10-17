@@ -29,7 +29,7 @@ package body org.allbinary.business.init.db.LogDbInitInfo_Package is
    function Create return LogDbInitInfo_Access is
       This : constant LogDbInitInfo_Access := new LogDbInitInfo;
    begin
-      Initialize (This.all);
+      LogDbInitInfo_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -42,7 +42,7 @@ package body org.allbinary.business.init.db.LogDbInitInfo_Package is
    function Create (read : Boolean) return LogDbInitInfo_Access is
       This : constant LogDbInitInfo_Access := new LogDbInitInfo;
    begin
-      Initialize (This.all, read);
+      LogDbInitInfo_Package.Initialize (This.all, read);
       return This;
    end Create;
 

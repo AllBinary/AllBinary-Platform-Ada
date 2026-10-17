@@ -28,6 +28,10 @@ with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.C
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.time.TimeDelayHelper_Package; use org.allbinary.time.TimeDelayHelper_Package;
 with org.allbinary.input.media.image.capture.CaptureWorkerInterface_Package; use org.allbinary.input.media.image.capture.CaptureWorkerInterface_Package;
+with org.allbinary.input.media.image.capture.ScreenScavangerRobot_Package; use org.allbinary.input.media.image.capture.ScreenScavangerRobot_Package;
+with org.allbinary.input.media.image.capture.ProcessingFrameIndexFactory_Package; use org.allbinary.input.media.image.capture.ProcessingFrameIndexFactory_Package;
+with org.allbinary.input.media.image.capture.CapturedBufferedImagesCacheSingleton_Package; use org.allbinary.input.media.image.capture.CapturedBufferedImagesCacheSingleton_Package;
+with org.allbinary.input.media.image.capture.CapturedImageWorkerResultsEvent_Package; use org.allbinary.input.media.image.capture.CapturedImageWorkerResultsEvent_Package;
 
 package org.allbinary.input.media.image.capture.ScreenCaptureImagesWorker_Package is
 
@@ -54,7 +58,6 @@ package org.allbinary.input.media.image.capture.ScreenCaptureImagesWorker_Packag
    procedure Initialize (This : in out ScreenCaptureImagesWorker'Class);
    function Create return ScreenCaptureImagesWorker_Access;
    function isRunning (This : in out ScreenCaptureImagesWorker) return Boolean;
-   procedure isRunning (This : in out ScreenCaptureImagesWorker);
    procedure setRunning (This : in out ScreenCaptureImagesWorker; running : Boolean);
    procedure setThread (This : in out ScreenCaptureImagesWorker; thread : Thread_Access);
    procedure run (This : in out ScreenCaptureImagesWorker);

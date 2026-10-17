@@ -69,7 +69,7 @@ package body org.allbinary.business.installer.InitializerData_Package is
    function Create return InitializerData_Access is
       This : constant InitializerData_Access := new InitializerData;
    begin
-      Initialize (This.all);
+      InitializerData_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -93,20 +93,6 @@ package body org.allbinary.business.installer.InitializerData_Package is
         stringBuffer.append (To_Unbounded_String ("3. The JDBC driver you specified is not valid.<br/>"));
         stringBuffer.append (To_Unbounded_String ("Solution: Use a valid JDBC driver.<p/>"));
         return stringBuffer.toString;
-   end getJdbcDriverSolutionInfo;
-
-   procedure getInstance is
-      Java_Result : constant InitializerData_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure getJdbcDriverSolutionInfo (This : in out InitializerData) is
-      Java_Result : constant Unbounded_String := InitializerData'Class (This).getJdbcDriverSolutionInfo;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getJdbcDriverSolutionInfo;
 
 begin

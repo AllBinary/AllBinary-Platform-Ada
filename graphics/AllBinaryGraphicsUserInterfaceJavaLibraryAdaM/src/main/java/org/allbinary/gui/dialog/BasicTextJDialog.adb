@@ -35,7 +35,7 @@ package body org.allbinary.gui.dialog.BasicTextJDialog_Package is
    function Create (parent : Frame_Access; modal : Boolean; text : Unbounded_String) return BasicTextJDialog_Access is
       This : constant BasicTextJDialog_Access := new BasicTextJDialog;
    begin
-      Initialize (This.all, parent, modal, text);
+      BasicTextJDialog_Package.Initialize (This.all, parent, modal, text);
       return This;
    end Create;
 
@@ -61,7 +61,7 @@ package body org.allbinary.gui.dialog.BasicTextJDialog_Package is
    function Create (text : Unbounded_String) return BasicTextJDialog_Access is
       This : constant BasicTextJDialog_Access := new BasicTextJDialog;
    begin
-      Initialize (This.all, text);
+      BasicTextJDialog_Package.Initialize (This.all, text);
       return This;
    end Create;
 

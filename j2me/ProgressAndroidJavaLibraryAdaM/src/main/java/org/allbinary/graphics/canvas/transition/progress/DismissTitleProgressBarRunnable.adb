@@ -32,7 +32,7 @@ package body org.allbinary.graphics.canvas.transition.progress.DismissTitleProgr
    function Create (midletActivity : Activity_Access; progressCanvas : ProgressCanvas_Access) return DismissTitleProgressBarRunnable_Access is
       This : constant DismissTitleProgressBarRunnable_Access := new DismissTitleProgressBarRunnable;
    begin
-      Initialize (This.all, midletActivity, progressCanvas);
+      DismissTitleProgressBarRunnable_Package.Initialize (This.all, midletActivity, progressCanvas);
       return This;
    end Create;
 

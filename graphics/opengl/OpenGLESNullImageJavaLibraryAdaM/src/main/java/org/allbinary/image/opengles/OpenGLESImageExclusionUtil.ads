@@ -42,7 +42,6 @@ package org.allbinary.image.opengles.OpenGLESImageExclusionUtil_Package is
    procedure Initialize (This : in out OpenGLESImageExclusionUtil'Class);
    function Create return OpenGLESImageExclusionUtil_Access;
    function getInstance return OpenGLESImageExclusionUtil_Access;
-   procedure getInstance;
    function isCustomScaling (This : in out OpenGLESImageExclusionUtil; image : Image_Access) return Boolean;
    procedure isCustomScaling (This : in out OpenGLESImageExclusionUtil; image : Image_Access);
 

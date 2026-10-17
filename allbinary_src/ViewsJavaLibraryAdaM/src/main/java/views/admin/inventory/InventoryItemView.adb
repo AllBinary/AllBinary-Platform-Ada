@@ -40,7 +40,7 @@ package body views.admin.inventory.InventoryItemView_Package is
    function Create (transformInfoInterface : TransformInfoInterface_Access) return InventoryItemView_Access is
       This : constant InventoryItemView_Access := new InventoryItemView;
    begin
-      Initialize (This.all, transformInfoInterface);
+      InventoryItemView_Package.Initialize (This.all, transformInfoInterface);
       return This;
    end Create;
 
@@ -55,7 +55,7 @@ package body views.admin.inventory.InventoryItemView_Package is
    function Create (transformInfoInterface : TransformInfoInterface_Access; empty : Unbounded_String) return InventoryItemView_Access is
       This : constant InventoryItemView_Access := new InventoryItemView;
    begin
-      Initialize (This.all, transformInfoInterface, empty);
+      InventoryItemView_Package.Initialize (This.all, transformInfoInterface, empty);
       return This;
    end Create;
 
@@ -168,34 +168,6 @@ package body views.admin.inventory.InventoryItemView_Package is
    function getRequestHashMap (This : in out InventoryItemView) return HashMap_Access is
    begin
         return This.requestHashMap;
-   end getRequestHashMap;
-
-   procedure getTypeId (This : in out InventoryItemView) is
-      Java_Result : constant Integer := InventoryItemView'Class (This).getTypeId;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTypeId;
-
-   procedure getItemInterface (This : in out InventoryItemView) is
-      Java_Result : constant ItemInterface_Access := InventoryItemView'Class (This).getItemInterface;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getItemInterface;
-
-   procedure view (This : in out InventoryItemView) is
-      Java_Result : constant Unbounded_String := InventoryItemView'Class (This).view;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end view;
-
-   procedure getRequestHashMap (This : in out InventoryItemView) is
-      Java_Result : constant HashMap_Access := InventoryItemView'Class (This).getRequestHashMap;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getRequestHashMap;
 
 begin

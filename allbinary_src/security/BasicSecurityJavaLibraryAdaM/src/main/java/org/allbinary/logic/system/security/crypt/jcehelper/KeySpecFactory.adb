@@ -38,7 +38,7 @@ package body org.allbinary.logic.system.security.crypt.jcehelper.KeySpecFactory_
    function Create return KeySpecFactory_Access is
       This : constant KeySpecFactory_Access := new KeySpecFactory;
    begin
-      Initialize (This.all);
+      KeySpecFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -65,13 +65,6 @@ package body org.allbinary.logic.system.security.crypt.jcehelper.KeySpecFactory_
             Java_Throw (Java_New_Exception ("RuntimeException"));
                 end;
         end;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant KeySpecFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
    procedure getInstance (This : in out KeySpecFactory; algorithm : Unbounded_String; keyData : Short_Short_Integer_Array_Access) is

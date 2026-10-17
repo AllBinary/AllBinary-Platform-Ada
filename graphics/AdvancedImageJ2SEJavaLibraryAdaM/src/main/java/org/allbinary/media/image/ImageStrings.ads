@@ -38,7 +38,6 @@ package org.allbinary.media.image.ImageStrings_Package is
    procedure Initialize (This : in out ImageStrings'Class);
    function Create return ImageStrings_Access;
    function getInstance return ImageStrings_Access;
-   procedure getInstance;
 
 end org.allbinary.media.image.ImageStrings_Package;
 

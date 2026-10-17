@@ -28,7 +28,7 @@ package body org.allbinary.game.displayable.canvas.BaseMenuBehavior_Package is
    function Create return BaseMenuBehavior_Access is
       This : constant BaseMenuBehavior_Access := new BaseMenuBehavior;
    begin
-      Initialize (This.all);
+      BaseMenuBehavior_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -71,13 +71,6 @@ package body org.allbinary.game.displayable.canvas.BaseMenuBehavior_Package is
    begin
         null;
    end closeMenu;
-
-   procedure getInstance is
-      Java_Result : constant BaseMenuBehavior_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

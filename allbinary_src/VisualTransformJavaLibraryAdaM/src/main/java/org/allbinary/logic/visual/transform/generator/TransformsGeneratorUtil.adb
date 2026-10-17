@@ -36,7 +36,7 @@ package body org.allbinary.logic.visual.transform.generator.TransformsGeneratorU
    function Create return TransformsGeneratorUtil_Access is
       This : constant TransformsGeneratorUtil_Access := new TransformsGeneratorUtil;
    begin
-      Initialize (This.all);
+      TransformsGeneratorUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -93,13 +93,6 @@ package body org.allbinary.logic.visual.transform.generator.TransformsGeneratorU
         stringBuffer.append (To_Unbounded_String ("-->"));
         return stringBuffer.toString;
    end generateComponentsFromObjectConfig;
-
-   procedure getInstance is
-      Java_Result : constant TransformsGeneratorUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure generateComponentsFromObjectConfig (This : in out TransformsGeneratorUtil; abeClientInformation : AbeClientInformationInterface_Access; transformInfoInterface : TransformInfoInterface_Access; group : Unbounded_String) is
       Java_Result : constant Unbounded_String := TransformsGeneratorUtil'Class (This).generateComponentsFromObjectConfig (abeClientInformation, transformInfoInterface, group);

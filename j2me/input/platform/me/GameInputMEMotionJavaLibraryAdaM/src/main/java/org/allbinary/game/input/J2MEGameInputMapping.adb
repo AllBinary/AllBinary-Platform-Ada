@@ -29,7 +29,7 @@ package body org.allbinary.game.input.J2MEGameInputMapping_Package is
    function Create return J2MEGameInputMapping_Access is
       This : constant J2MEGameInputMapping_Access := new J2MEGameInputMapping;
    begin
-      Initialize (This.all);
+      J2MEGameInputMapping_Package.Initialize (This.all);
       return This;
    end Create;
 

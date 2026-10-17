@@ -32,7 +32,7 @@ package body org.allbinary.layer.relationship.RelativeLayerRelationship_Package 
    function Create (layer : AllBinaryLayer_Access; point : GPoint_Access; typesAllowedList : BasicArrayList_Access) return RelativeLayerRelationship_Access is
       This : constant RelativeLayerRelationship_Access := new RelativeLayerRelationship;
    begin
-      Initialize (This.all, layer, point, typesAllowedList);
+      RelativeLayerRelationship_Package.Initialize (This.all, layer, point, typesAllowedList);
       return This;
    end Create;
 
@@ -49,27 +49,6 @@ package body org.allbinary.layer.relationship.RelativeLayerRelationship_Package 
    function getZ (This : in out RelativeLayerRelationship) return Integer is
    begin
         return (This.layer.getZP) + (RelativeRelationship (This).getZ);
-   end getZ;
-
-   procedure getX (This : in out RelativeLayerRelationship) is
-      Java_Result : constant Integer := RelativeLayerRelationship'Class (This).getX;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getX;
-
-   procedure getY (This : in out RelativeLayerRelationship) is
-      Java_Result : constant Integer := RelativeLayerRelationship'Class (This).getY;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getY;
-
-   procedure getZ (This : in out RelativeLayerRelationship) is
-      Java_Result : constant Integer := RelativeLayerRelationship'Class (This).getZ;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getZ;
 
 end org.allbinary.layer.relationship.RelativeLayerRelationship_Package;

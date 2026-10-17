@@ -32,7 +32,7 @@ package body org.allbinary.business.category.CategoryAbstractFactory_Package is
    function Create return CategoryAbstractFactory_Access is
       This : constant CategoryAbstractFactory_Access := new CategoryAbstractFactory;
    begin
-      Initialize (This.all);
+      CategoryAbstractFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -160,13 +160,6 @@ package body org.allbinary.business.category.CategoryAbstractFactory_Package is
                 end;
         end;
    end getInstance;
-
-   procedure getRootInstance (This : in out CategoryAbstractFactory) is
-      Java_Result : constant CategoryInterface_Access := CategoryAbstractFactory'Class (This).getRootInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getRootInstance;
 
    procedure getRootInstance (This : in out CategoryAbstractFactory; categoryAbPath : AbPath_Access) is
       Java_Result : constant CategoryInterface_Access := CategoryAbstractFactory'Class (This).getRootInstance (categoryAbPath);

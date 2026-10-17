@@ -33,7 +33,7 @@ package body org.allbinary.logic.util.cache.KeylessBasicArrayListCache_Package i
    function Create return KeylessBasicArrayListCache_Access is
       This : constant KeylessBasicArrayListCache_Access := new KeylessBasicArrayListCache;
    begin
-      Initialize (This.all);
+      KeylessBasicArrayListCache_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -86,20 +86,6 @@ package body org.allbinary.logic.util.cache.KeylessBasicArrayListCache_Package i
             stringBuffer.appendint (basicArrayList.size);
         end loop;
         return stringBuffer.toString;
-   end log;
-
-   procedure get (This : in out KeylessBasicArrayListCache) is
-      Java_Result : constant BasicArrayList_Access := KeylessBasicArrayListCache'Class (This).get;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end get;
-
-   procedure log (This : in out KeylessBasicArrayListCache) is
-      Java_Result : constant Unbounded_String := KeylessBasicArrayListCache'Class (This).log;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end log;
 
 end org.allbinary.logic.util.cache.KeylessBasicArrayListCache_Package;

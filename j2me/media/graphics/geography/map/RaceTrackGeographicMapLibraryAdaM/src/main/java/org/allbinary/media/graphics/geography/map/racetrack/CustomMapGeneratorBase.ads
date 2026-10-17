@@ -37,7 +37,6 @@ package org.allbinary.media.graphics.geography.map.racetrack.CustomMapGeneratorB
    function Create return CustomMapGeneratorBase_Access;
    procedure copyMapIntoCustomMap (This : in out CustomMapGeneratorBase);
    function getCustomMapArray (This : in out CustomMapGeneratorBase) return Integer_Array_Access_Array_Access;
-   procedure getCustomMapArray (This : in out CustomMapGeneratorBase);
    function getCustomType (This : in out CustomMapGeneratorBase; column : Integer; row : Integer; currentType : Integer) return Integer;
    procedure getCustomType (This : in out CustomMapGeneratorBase; column : Integer; row : Integer; currentType : Integer);
 

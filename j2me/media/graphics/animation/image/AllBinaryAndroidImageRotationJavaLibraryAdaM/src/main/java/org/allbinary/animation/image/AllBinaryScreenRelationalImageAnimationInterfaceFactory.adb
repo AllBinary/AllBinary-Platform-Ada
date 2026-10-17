@@ -39,7 +39,7 @@ package body org.allbinary.animation.image.AllBinaryScreenRelationalImageAnimati
    function Create (image : Image_Access; animationBehaviorFactory : AnimationBehaviorFactory_Access) return AllBinaryScreenRelationalImageAnimationInterfaceFactory_Access is
       This : constant AllBinaryScreenRelationalImageAnimationInterfaceFactory_Access := new AllBinaryScreenRelationalImageAnimationInterfaceFactory;
    begin
-      Initialize (This.all, image, animationBehaviorFactory);
+      AllBinaryScreenRelationalImageAnimationInterfaceFactory_Package.Initialize (This.all, image, animationBehaviorFactory);
       return This;
    end Create;
 

@@ -51,19 +51,13 @@ package org.allbinary.game.input.event.GameKeyEvent_Package is
    procedure init (This : in out GameKeyEvent; anyType : Java_Object_Access);
    procedure setRepeatEvents (This : in out GameKeyEvent; repeated : Boolean);
    function hasRepeatEvents (This : in out GameKeyEvent) return Boolean;
-   procedure hasRepeatEvents (This : in out GameKeyEvent);
    function getKey (This : in out GameKeyEvent) return Integer;
-   procedure getKey (This : in out GameKeyEvent);
    function toString (This : in out GameKeyEvent) return Unbounded_String;
-   procedure toString (This : in out GameKeyEvent);
    function getOriginalKey (This : in out GameKeyEvent) return Integer;
-   procedure getOriginalKey (This : in out GameKeyEvent);
    procedure setOriginalKey (This : in out GameKeyEvent; originalKey : Integer);
    function getGameActionKey (This : in out GameKeyEvent) return Integer;
-   procedure getGameActionKey (This : in out GameKeyEvent);
    procedure setGameActionKey (This : in out GameKeyEvent; gameActionKey : Integer);
    function getSourceId (This : in out GameKeyEvent) return Integer;
-   procedure getSourceId (This : in out GameKeyEvent);
 
 end org.allbinary.game.input.event.GameKeyEvent_Package;
 

@@ -20,8 +20,9 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
+with org.allbinary.game.collision.CollisionType_Package; use org.allbinary.game.collision.CollisionType_Package;
 
-package org.allbinary.game.collision_Case.CollisionTypeFactory_Package is
+package org.allbinary.game.collision.CollisionTypeFactory_Package is
 
 
    type CollisionTypeFactory is tagged;
@@ -40,8 +41,7 @@ package org.allbinary.game.collision_Case.CollisionTypeFactory_Package is
    procedure Initialize (This : in out CollisionTypeFactory'Class);
    function Create return CollisionTypeFactory_Access;
    function getInstance return CollisionTypeFactory_Access;
-   procedure getInstance;
 
-end org.allbinary.game.collision_Case.CollisionTypeFactory_Package;
+end org.allbinary.game.collision.CollisionTypeFactory_Package;
 
 

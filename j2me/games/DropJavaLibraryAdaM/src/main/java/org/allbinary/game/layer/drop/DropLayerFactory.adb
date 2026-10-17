@@ -32,7 +32,7 @@ package body org.allbinary.game.layer.drop.DropLayerFactory_Package is
    function Create return DropLayerFactory_Access is
       This : constant DropLayerFactory_Access := new DropLayerFactory;
    begin
-      Initialize (This.all);
+      DropLayerFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -64,34 +64,6 @@ package body org.allbinary.game.layer.drop.DropLayerFactory_Package is
    function getList (This : in out DropLayerFactory) return BasicArrayList_Access is
    begin
         return This.list;
-   end getList;
-
-   procedure getInstance is
-      Java_Result : constant DropLayerFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure getSize (This : in out DropLayerFactory) is
-      Java_Result : constant Integer := DropLayerFactory'Class (This).getSize;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSize;
-
-   procedure getRandomInstance (This : in out DropLayerFactory) is
-      Java_Result : constant PickedUpLayerInterfaceFactoryInterface_Access := DropLayerFactory'Class (This).getRandomInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getRandomInstance;
-
-   procedure getList (This : in out DropLayerFactory) is
-      Java_Result : constant BasicArrayList_Access := DropLayerFactory'Class (This).getList;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getList;
 
 begin

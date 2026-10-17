@@ -35,7 +35,7 @@ package body org.allbinary.game.input.form.TechRTSFormInput_Package is
    function Create (groupInterface : Group_Access_Array_Access) return TechRTSFormInput_Access is
       This : constant TechRTSFormInput_Access := new TechRTSFormInput;
    begin
-      Initialize (This.all, groupInterface);
+      TechRTSFormInput_Package.Initialize (This.all, groupInterface);
       return This;
    end Create;
 

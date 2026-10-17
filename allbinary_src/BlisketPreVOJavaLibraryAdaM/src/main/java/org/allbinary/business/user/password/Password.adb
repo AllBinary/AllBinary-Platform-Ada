@@ -32,7 +32,7 @@ package body org.allbinary.business.user.password.Password_Package is
    function Create (password : Unbounded_String) return Password_Access is
       This : constant Password_Access := new Password;
    begin
-      Initialize (This.all, password);
+      Password_Package.Initialize (This.all, password);
       return This;
    end Create;
 
@@ -111,27 +111,6 @@ package body org.allbinary.business.user.password.Password_Package is
         values.put (UserData_Package.PASSWORD, SuperCrypt_Package.Create (random).encrypt (This.password));
         return values;
    end toHashMap;
-
-   procedure get (This : in out Password) is
-      Java_Result : constant Unbounded_String := Password'Class (This).get;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end get;
-
-   procedure isValid (This : in out Password) is
-      Java_Result : constant Boolean := Password'Class (This).isValid;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isValid;
-
-   procedure getValidationInfo (This : in out Password) is
-      Java_Result : constant Unbounded_String := Password'Class (This).getValidationInfo;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getValidationInfo;
 
    procedure toVector (This : in out Password; secret : Unbounded_String) is
       Java_Result : constant BasicArrayList_Access := Password'Class (This).toVector (secret);

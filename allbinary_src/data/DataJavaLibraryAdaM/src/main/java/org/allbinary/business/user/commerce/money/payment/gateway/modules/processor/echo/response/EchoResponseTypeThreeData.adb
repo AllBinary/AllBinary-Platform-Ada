@@ -30,7 +30,7 @@ package body org.allbinary.business.user.commerce.money.payment.gateway.modules.
    function Create return EchoResponseTypeThreeData_Access is
       This : constant EchoResponseTypeThreeData_Access := new EchoResponseTypeThreeData;
    begin
-      Initialize (This.all);
+      EchoResponseTypeThreeData_Package.Initialize (This.all);
       return This;
    end Create;
 

@@ -23,6 +23,8 @@ with AllBinary_Java; use AllBinary_Java;
 --  with java.util.HashMap_Package; use java.util.HashMap_Package;
 --  with javax.servlet.jsp.PageContext_Package; use javax.servlet.jsp.PageContext_Package;
 with org.allbinary.logic.visual.transform.info.TransformInfoFactoryInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoFactoryInterface_Package;
+with org.allbinary.logic.visual.transform.info.TransformInfoHttpStore_Package; use org.allbinary.logic.visual.transform.info.TransformInfoHttpStore_Package;
+with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
 
 package org.allbinary.logic.visual.transform.info.TransformInfoHttpStoreFactory_Package is
 
@@ -38,7 +40,6 @@ package org.allbinary.logic.visual.transform.info.TransformInfoHttpStoreFactory_
    procedure Initialize (This : in out TransformInfoHttpStoreFactory'Class);
    function Create return TransformInfoHttpStoreFactory_Access;
    function getInstance return TransformInfoHttpStoreFactory_Access;
-   procedure getInstance;
    function getInstance (This : in out TransformInfoHttpStoreFactory; databaseHashMap : HashMap_Access; propertiesHashMap : HashMap_Access; pageContext : PageContext_Access) return TransformInfoInterface_Access;
    procedure getInstance (This : in out TransformInfoHttpStoreFactory; databaseHashMap : HashMap_Access; propertiesHashMap : HashMap_Access; pageContext : PageContext_Access);
 

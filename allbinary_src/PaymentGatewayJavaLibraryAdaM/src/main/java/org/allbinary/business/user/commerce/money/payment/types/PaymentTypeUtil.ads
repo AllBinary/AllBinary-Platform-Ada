@@ -41,6 +41,7 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.w3c.dom.NodeList_Package; use org.w3c.dom.NodeList_Package;
+with org.allbinary.business.user.commerce.money.payment.types.PaymentType_Package; use org.allbinary.business.user.commerce.money.payment.types.PaymentType_Package;
 
 package org.allbinary.business.user.commerce.money.payment.types.PaymentTypeUtil_Package is
 
@@ -84,7 +85,6 @@ package org.allbinary.business.user.commerce.money.payment.types.PaymentTypeUtil
    procedure Initialize (This : in out PaymentTypeUtil'Class);
    function Create return PaymentTypeUtil_Access;
    function getInstance return PaymentTypeUtil_Access;
-   procedure getInstance;
    procedure add (This : in out PaymentTypeUtil; paymentType : PaymentType_Access);
    function get (This : in out PaymentTypeUtil; paymentTypeString : Unbounded_String) return PaymentType_Access;
    procedure get (This : in out PaymentTypeUtil; paymentTypeString : Unbounded_String);

@@ -16,6 +16,7 @@ with org.allbinary.graphics.font.FontDebugBase_Package; use org.allbinary.graphi
 with org.allbinary.image.opengles.OpenGLSurfaceChangedInterface_Package; use org.allbinary.image.opengles.OpenGLSurfaceChangedInterface_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.device.GraphicsInterface_Package; use org.allbinary.device.GraphicsInterface_Package;
+with org.allbinary.device.NullGL10_Package; use org.allbinary.device.NullGL10_Package;
 
 package org.allbinary.device.OpenGLESGraphics_Package is
 
@@ -42,7 +43,6 @@ package org.allbinary.device.OpenGLESGraphics_Package is
    procedure setOrthoginalMode (This : in out OpenGLESGraphics);
    procedure setCameraMode (This : in out OpenGLESGraphics);
    function getGl10 (This : in out OpenGLESGraphics) return GL10_Access;
-   procedure getGl10 (This : in out OpenGLESGraphics);
    procedure setFontDebug (This : in out OpenGLESGraphics; font : Font_Access; fontDebug : FontDebugBase_Access);
 
 end org.allbinary.device.OpenGLESGraphics_Package;

@@ -32,7 +32,7 @@ package body org.allbinary.animation.compound.SimultaneousCompoundRotationAnimat
    function Create (basicAnimationInterfaceFactoryInterfaceArray : AnimationInterfaceFactoryInterface_Access_Array_Access; animationBehaviorFactory : AnimationBehaviorFactory_Access) return SimultaneousCompoundRotationAnimationInterfaceFactory_Access is
       This : constant SimultaneousCompoundRotationAnimationInterfaceFactory_Access := new SimultaneousCompoundRotationAnimationInterfaceFactory;
    begin
-      Initialize (This.all, basicAnimationInterfaceFactoryInterfaceArray, animationBehaviorFactory);
+      SimultaneousCompoundRotationAnimationInterfaceFactory_Package.Initialize (This.all, basicAnimationInterfaceFactoryInterfaceArray, animationBehaviorFactory);
       return This;
    end Create;
 

@@ -34,7 +34,7 @@ package body org.allbinary.logic.communication.ftp.configuration.FtpConfiguratio
    function Create return FtpConfiguration_Access is
       This : constant FtpConfiguration_Access := new FtpConfiguration;
    begin
-      Initialize (This.all);
+      FtpConfiguration_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -51,7 +51,7 @@ package body org.allbinary.logic.communication.ftp.configuration.FtpConfiguratio
    function Create (hashMap : HashMap_Access) return FtpConfiguration_Access is
       This : constant FtpConfiguration_Access := new FtpConfiguration;
    begin
-      Initialize (This.all, hashMap);
+      FtpConfiguration_Package.Initialize (This.all, hashMap);
       return This;
    end Create;
 
@@ -94,34 +94,6 @@ package body org.allbinary.logic.communication.ftp.configuration.FtpConfiguratio
    begin
         This.ftpPassword := value;
    end setPassword;
-
-   procedure getServer (This : in out FtpConfiguration) is
-      Java_Result : constant Unbounded_String := FtpConfiguration'Class (This).getServer;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getServer;
-
-   procedure getPath (This : in out FtpConfiguration) is
-      Java_Result : constant Unbounded_String := FtpConfiguration'Class (This).getPath;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getPath;
-
-   procedure getUserName (This : in out FtpConfiguration) is
-      Java_Result : constant Unbounded_String := FtpConfiguration'Class (This).getUserName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getUserName;
-
-   procedure getPassword (This : in out FtpConfiguration) is
-      Java_Result : constant Unbounded_String := FtpConfiguration'Class (This).getPassword;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getPassword;
 
 end org.allbinary.logic.communication.ftp.configuration.FtpConfiguration_Package;
 

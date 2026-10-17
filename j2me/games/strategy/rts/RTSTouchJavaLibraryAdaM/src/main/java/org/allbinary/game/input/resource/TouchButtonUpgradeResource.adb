@@ -34,16 +34,9 @@ package body org.allbinary.game.input.resource.TouchButtonUpgradeResource_Packag
    function Create return TouchButtonUpgradeResource_Access is
       This : constant TouchButtonUpgradeResource_Access := new TouchButtonUpgradeResource;
    begin
-      Initialize (This.all);
+      TouchButtonUpgradeResource_Package.Initialize (This.all);
       return This;
    end Create;
-
-   procedure getInstance is
-      Java_Result : constant TouchButtonResource_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

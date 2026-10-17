@@ -28,7 +28,7 @@ package body org.allbinary.graphics.form.ItemIndexDx_Package is
    function Create return ItemIndexDx_Access is
       This : constant ItemIndexDx_Access := new ItemIndexDx;
    begin
-      Initialize (This.all);
+      ItemIndexDx_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -43,13 +43,6 @@ package body org.allbinary.graphics.form.ItemIndexDx_Package is
    begin
         return 0;
    end getDx;
-
-   procedure getInstance is
-      Java_Result : constant ItemIndexDx_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure getDx (This : in out ItemIndexDx; index : Integer; item : ABCustomItem_Access; dx : Integer; dy : Integer) is
       Java_Result : constant Integer := ItemIndexDx'Class (This).getDx (index, item, dx, dy);

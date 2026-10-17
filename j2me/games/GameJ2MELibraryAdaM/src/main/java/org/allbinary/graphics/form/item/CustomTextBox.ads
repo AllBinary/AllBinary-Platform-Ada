@@ -34,6 +34,7 @@ with org.allbinary.graphics.form.item.validation.TextItemVisitor_Package; use or
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.graphics.form.item.ABTextFieldItem_Package; use org.allbinary.graphics.form.item.ABTextFieldItem_Package;
 
 package org.allbinary.graphics.form.item.CustomTextBox_Package is
 
@@ -71,7 +72,6 @@ package org.allbinary.graphics.form.item.CustomTextBox_Package is
    procedure paint (This : in out CustomTextBox; graphics : Graphics_Access);
    procedure paintXY (This : in out CustomTextBox; graphics : Graphics_Access; x : Integer; y : Integer);
    function getTextFieldItem (This : in out CustomTextBox) return ABTextFieldItem_Access;
-   procedure getTextFieldItem (This : in out CustomTextBox);
 
 end org.allbinary.graphics.form.item.CustomTextBox_Package;
 

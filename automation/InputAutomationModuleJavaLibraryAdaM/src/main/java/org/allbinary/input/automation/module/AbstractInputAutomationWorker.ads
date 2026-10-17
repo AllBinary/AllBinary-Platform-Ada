@@ -28,6 +28,7 @@ with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.C
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.thread.RunnableInterface_Package; use org.allbinary.thread.RunnableInterface_Package;
 with org.allbinary.time.TimeDelayHelper_Package; use org.allbinary.time.TimeDelayHelper_Package;
+with org.allbinary.input.automation.module.InputAutomationActionInterface_Package; use org.allbinary.input.automation.module.InputAutomationActionInterface_Package;
 
 package org.allbinary.input.automation.module.AbstractInputAutomationWorker_Package is
 
@@ -61,26 +62,20 @@ package org.allbinary.input.automation.module.AbstractInputAutomationWorker_Pack
    function Create (inputAutomationActionInterface : InputAutomationActionInterface_Access) return AbstractInputAutomationWorker_Access;
    procedure setThread (This : in out AbstractInputAutomationWorker; thread : Thread_Access);
    function isRunning (This : in out AbstractInputAutomationWorker) return Boolean;
-   procedure isRunning (This : in out AbstractInputAutomationWorker);
    procedure setRunning (This : in out AbstractInputAutomationWorker; running : Boolean);
    function isAnyDataWorkerRunning (This : in out AbstractInputAutomationWorker) return Boolean;
-   procedure isAnyDataWorkerRunning (This : in out AbstractInputAutomationWorker);
    procedure startDataWorkers (This : in out AbstractInputAutomationWorker);
    procedure waitForDataWorkers (This : in out AbstractInputAutomationWorker);
    procedure stopDataWorkers (This : in out AbstractInputAutomationWorker);
    procedure process (This : in out AbstractInputAutomationWorker);
    procedure run (This : in out AbstractInputAutomationWorker);
    function getInputAutomationActionInterface (This : in out AbstractInputAutomationWorker) return InputAutomationActionInterface_Access;
-   procedure getInputAutomationActionInterface (This : in out AbstractInputAutomationWorker);
    procedure setInputAutomationActionInterface (This : in out AbstractInputAutomationWorker; inputAutomationActionInterface : InputAutomationActionInterface_Access);
    function getCaptureWorker (This : in out AbstractInputAutomationWorker) return CaptureWorkerInterface_Access;
-   procedure getCaptureWorker (This : in out AbstractInputAutomationWorker);
    procedure setCaptureWorker (This : in out AbstractInputAutomationWorker; captureWorkerInterface : CaptureWorkerInterface_Access);
    function getImageComparisonWorker (This : in out AbstractInputAutomationWorker) return ImageComparisonWorker_Access;
-   procedure getImageComparisonWorker (This : in out AbstractInputAutomationWorker);
    procedure setImageComparisonWorker (This : in out AbstractInputAutomationWorker; imageComparisonWorker : ImageComparisonWorker_Access);
    function getMotionRectanglesWorker (This : in out AbstractInputAutomationWorker) return MotionRectanglesWorker_Access;
-   procedure getMotionRectanglesWorker (This : in out AbstractInputAutomationWorker);
    procedure setMotionRectanglesWorker (This : in out AbstractInputAutomationWorker; motionRectanglesWorker : MotionRectanglesWorker_Access);
 
 end org.allbinary.input.automation.module.AbstractInputAutomationWorker_Package;

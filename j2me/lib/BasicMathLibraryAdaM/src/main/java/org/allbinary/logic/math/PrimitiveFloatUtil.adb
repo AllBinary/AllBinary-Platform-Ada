@@ -30,20 +30,13 @@ package body org.allbinary.logic.math.PrimitiveFloatUtil_Package is
    function Create return PrimitiveFloatUtil_Access is
       This : constant PrimitiveFloatUtil_Access := new PrimitiveFloatUtil;
    begin
-      Initialize (This.all);
+      PrimitiveFloatUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
    function getArrayInstance return Float_Array_Access is
    begin
         return new Float_Array'(0 .. (0) - 1 => 0.0);
-   end getArrayInstance;
-
-   procedure getArrayInstance is
-      Java_Result : constant Float_Array_Access := getArrayInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getArrayInstance;
 
 end org.allbinary.logic.math.PrimitiveFloatUtil_Package;

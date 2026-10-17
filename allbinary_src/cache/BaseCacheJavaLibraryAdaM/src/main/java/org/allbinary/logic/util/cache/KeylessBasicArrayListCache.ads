@@ -46,10 +46,8 @@ package org.allbinary.logic.util.cache.KeylessBasicArrayListCache_Package is
    procedure Initialize (This : in out KeylessBasicArrayListCache'Class);
    function Create return KeylessBasicArrayListCache_Access;
    function get (This : in out KeylessBasicArrayListCache) return BasicArrayList_Access;
-   procedure get (This : in out KeylessBasicArrayListCache);
    procedure clear (This : in out KeylessBasicArrayListCache);
    function log (This : in out KeylessBasicArrayListCache) return Unbounded_String;
-   procedure log (This : in out KeylessBasicArrayListCache);
 
 end org.allbinary.logic.util.cache.KeylessBasicArrayListCache_Package;
 

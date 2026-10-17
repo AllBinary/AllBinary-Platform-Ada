@@ -32,7 +32,7 @@ package body org.allbinary.graphics.form.PaintableForm_Package is
    function Create (title : Unbounded_String; items : ABCustomItem_Access_Array_Access; backgroundBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access) return PaintableForm_Access is
       This : constant PaintableForm_Access := new PaintableForm;
    begin
-      Initialize (This.all, title, items, backgroundBasicColor, foregroundBasicColor);
+      PaintableForm_Package.Initialize (This.all, title, items, backgroundBasicColor, foregroundBasicColor);
       return This;
    end Create;
 
@@ -50,20 +50,6 @@ package body org.allbinary.graphics.form.PaintableForm_Package is
    function getWidth (This : in out PaintableForm) return Integer is
    begin
         return This.rectangle.getWidth;
-   end getWidth;
-
-   procedure getNullPaintableForm is
-      Java_Result : constant PaintableForm_Access := getNullPaintableForm;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getNullPaintableForm;
-
-   procedure getWidth (This : in out PaintableForm) is
-      Java_Result : constant Integer := PaintableForm'Class (This).getWidth;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getWidth;
 
 begin

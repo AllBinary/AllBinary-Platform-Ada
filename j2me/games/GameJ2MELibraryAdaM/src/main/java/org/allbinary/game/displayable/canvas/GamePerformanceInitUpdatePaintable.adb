@@ -35,7 +35,7 @@ package body org.allbinary.game.displayable.canvas.GamePerformanceInitUpdatePain
    function Create return GamePerformanceInitUpdatePaintable_Access is
       This : constant GamePerformanceInitUpdatePaintable_Access := new GamePerformanceInitUpdatePaintable;
    begin
-      Initialize (This.all);
+      GamePerformanceInitUpdatePaintable_Package.Initialize (This.all);
       return This;
    end Create;
 

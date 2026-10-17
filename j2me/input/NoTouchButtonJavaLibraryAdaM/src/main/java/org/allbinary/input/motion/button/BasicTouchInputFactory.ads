@@ -28,6 +28,7 @@ with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.
 with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.input.motion.button.TouchButtonInput_Package; use org.allbinary.input.motion.button.TouchButtonInput_Package;
 
 package org.allbinary.input.motion.button.BasicTouchInputFactory_Package is
 
@@ -66,12 +67,10 @@ package org.allbinary.input.motion.button.BasicTouchInputFactory_Package is
    procedure Initialize (This : in out BasicTouchInputFactory'Class);
    function Create return BasicTouchInputFactory_Access;
    function getInstance return BasicTouchInputFactory_Access;
-   procedure getInstance;
    procedure init (This : in out BasicTouchInputFactory; inputToGameKeyMapping : InputToGameKeyMapping_Access);
    procedure updateAll (This : in out BasicTouchInputFactory; inputToGameKeyMapping : InputToGameKeyMapping_Access);
    procedure updateAllList (This : in out BasicTouchInputFactory; list : BasicArrayList_Access; inputToGameKeyMapping : InputToGameKeyMapping_Access);
    function getList (This : in out BasicTouchInputFactory) return BasicArrayList_Access;
-   procedure getList (This : in out BasicTouchInputFactory);
 
 end org.allbinary.input.motion.button.BasicTouchInputFactory_Package;
 

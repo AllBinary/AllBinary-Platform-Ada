@@ -38,9 +38,7 @@ package org.allbinary.logic.util.cache.ImageCacheable_Package is
    procedure Initialize (This : in out ImageCacheable'Class; name : Unbounded_String; anyType : Java_Object_Access);
    function Create (name : Unbounded_String; anyType : Java_Object_Access) return ImageCacheable_Access;
    function getKey (This : in out ImageCacheable) return Java_Object_Access;
-   procedure getKey (This : in out ImageCacheable);
    function toString (This : in out ImageCacheable) return Unbounded_String;
-   procedure toString (This : in out ImageCacheable);
 
 end org.allbinary.logic.util.cache.ImageCacheable_Package;
 

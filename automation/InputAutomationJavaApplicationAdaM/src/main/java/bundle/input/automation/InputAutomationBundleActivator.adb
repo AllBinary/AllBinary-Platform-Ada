@@ -30,7 +30,7 @@ package body bundle.input.automation.InputAutomationBundleActivator_Package is
    function Create return InputAutomationBundleActivator_Access is
       This : constant InputAutomationBundleActivator_Access := new InputAutomationBundleActivator;
    begin
-      Initialize (This.all);
+      InputAutomationBundleActivator_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -84,13 +84,6 @@ package body bundle.input.automation.InputAutomationBundleActivator_Package is
             This.logUtil.putF (To_Unbounded_String ("Nothing to stop"), This'Unchecked_Access, To_Unbounded_String ("stop"));
         end if;
    end stop;
-
-   procedure getBundleContext is
-      Java_Result : constant BundleContext_Access := getBundleContext;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getBundleContext;
 
 begin
    null;

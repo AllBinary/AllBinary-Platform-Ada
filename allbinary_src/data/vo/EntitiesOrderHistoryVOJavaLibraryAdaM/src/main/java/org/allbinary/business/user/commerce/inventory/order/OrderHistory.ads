@@ -20,7 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.util.Date_Package; use java.util.Date_Package;
+with java.util.Date_Package; use java.util.Date_Package;
 --  with java.util.HashMap_Package; use java.util.HashMap_Package;
 --  with java.util.Set_Package; use java.util.Set_Package;
 with org.allbinary.business.context.modules.storefront.StoreFrontData_Package; use org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
@@ -42,9 +42,12 @@ with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.allbinary.business.user.commerce.inventory.order.Order_Package; use org.allbinary.business.user.commerce.inventory.order.Order_Package;
 with org.allbinary.business.user.commerce.inventory.order.OrderHistoryInterface_Package; use org.allbinary.business.user.commerce.inventory.order.OrderHistoryInterface_Package;
+with org.allbinary.business.user.commerce.inventory.order.OrderData_Package; use org.allbinary.business.user.commerce.inventory.order.OrderData_Package;
+with org.allbinary.business.user.commerce.inventory.order.OrderHistoryData_Package; use org.allbinary.business.user.commerce.inventory.order.OrderHistoryData_Package;
 
 package org.allbinary.business.user.commerce.inventory.order.OrderHistory_Package is
 
+   package Date_Package renames Standard.java.util.Date_Package;
    package StoreFrontData_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
    package EntryData_Package renames Standard.org.allbinary.business.entry_Id.EntryData_Package;
    package UserData_Package renames Standard.org.allbinary.business.user.UserData_Package;
@@ -100,33 +103,19 @@ package org.allbinary.business.user.commerce.inventory.order.OrderHistory_Packag
    procedure setTaxes (This : in out OrderHistory; value : Money_Access);
    procedure setTotal (This : in out OrderHistory; value : Money_Access);
    function getUserName (This : in out OrderHistory) return Unbounded_String;
-   procedure getUserName (This : in out OrderHistory);
    function getShippingAddress (This : in out OrderHistory) return StreetAddress_Access;
-   procedure getShippingAddress (This : in out OrderHistory);
    function getBillingAddress (This : in out OrderHistory) return StreetAddress_Access;
-   procedure getBillingAddress (This : in out OrderHistory);
    function getPaymentInfo (This : in out OrderHistory) return Payment_Access;
-   procedure getPaymentInfo (This : in out OrderHistory);
    function getShipDate (This : in out OrderHistory) return Unbounded_String;
-   procedure getShipDate (This : in out OrderHistory);
    function getOrderDate (This : in out OrderHistory) return Unbounded_String;
-   procedure getOrderDate (This : in out OrderHistory);
    function getTransDate (This : in out OrderHistory) return Unbounded_String;
-   procedure getTransDate (This : in out OrderHistory);
    function getCancelDate (This : in out OrderHistory) return Unbounded_String;
-   procedure getCancelDate (This : in out OrderHistory);
    function getStatus (This : in out OrderHistory) return Unbounded_String;
-   procedure getStatus (This : in out OrderHistory);
    function getSubTotal (This : in out OrderHistory) return Money_Access;
-   procedure getSubTotal (This : in out OrderHistory);
    function getShippingCost (This : in out OrderHistory) return Money_Access;
-   procedure getShippingCost (This : in out OrderHistory);
    function getTaxes (This : in out OrderHistory) return Money_Access;
-   procedure getTaxes (This : in out OrderHistory);
    function getTotal (This : in out OrderHistory) return Money_Access;
-   procedure getTotal (This : in out OrderHistory);
    function toHashMap (This : in out OrderHistory) return HashMap_Access;
-   procedure toHashMap (This : in out OrderHistory);
    function toXmlNode (This : in out OrderHistory; document : Document_Access) return Node_Access;
    procedure toXmlNode (This : in out OrderHistory; document : Document_Access);
 

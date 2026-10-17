@@ -30,6 +30,8 @@ with org.allbinary.logic.java.anyType.InterfaceUtil_Package; use org.allbinary.l
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
+with org.allbinary.business.category.CategoryInterface_Package; use org.allbinary.business.category.CategoryInterface_Package;
+with org.allbinary.business.category.CategoryData_Package; use org.allbinary.business.category.CategoryData_Package;
 
 package org.allbinary.business.category.CategoryView_Package is
 
@@ -57,7 +59,6 @@ package org.allbinary.business.category.CategoryView_Package is
    procedure Initialize (This : in out CategoryView'Class; categoryInterface : CategoryInterface_Access);
    function Create (categoryInterface : CategoryInterface_Access) return CategoryView_Access;
    function getCategoryInterface (This : in out CategoryView) return CategoryInterface_Access;
-   procedure getCategoryInterface (This : in out CategoryView);
    function toXmlNode (This : in out CategoryView; document : Document_Access) return Node_Access;
    procedure toXmlNode (This : in out CategoryView; document : Document_Access);
 

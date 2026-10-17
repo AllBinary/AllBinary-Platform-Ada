@@ -23,6 +23,7 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.graphics.CellPosition_Package; use org.allbinary.graphics.CellPosition_Package;
 
 package org.allbinary.graphics.CellPositionFactory_Package is
 
@@ -47,16 +48,13 @@ package org.allbinary.graphics.CellPositionFactory_Package is
    procedure Initialize (This : in out CellPositionFactory'Class);
    function Create return CellPositionFactory_Access;
    function getInstance return CellPositionFactory_Access;
-   procedure getInstance;
    procedure init (This : in out CellPositionFactory; columns : Integer; rows : Integer);
    function getInstanceColRow (This : in out CellPositionFactory; i_column : Integer; i_row : Integer) return CellPosition_Access;
    procedure getInstanceColRow (This : in out CellPositionFactory; i_column : Integer; i_row : Integer);
    function createInstance (This : in out CellPositionFactory; i_column : Integer; i_row : Integer) return CellPosition_Access;
    procedure createInstance (This : in out CellPositionFactory; i_column : Integer; i_row : Integer);
    function getColumns (This : in out CellPositionFactory) return Integer;
-   procedure getColumns (This : in out CellPositionFactory);
    function getRows (This : in out CellPositionFactory) return Integer;
-   procedure getRows (This : in out CellPositionFactory);
 
 end org.allbinary.graphics.CellPositionFactory_Package;
 

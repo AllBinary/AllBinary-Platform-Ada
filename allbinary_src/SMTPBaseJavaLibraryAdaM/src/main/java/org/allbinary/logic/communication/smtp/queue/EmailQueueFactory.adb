@@ -30,20 +30,13 @@ package body org.allbinary.logic.communication.smtp.queue.EmailQueueFactory_Pack
    function Create return EmailQueueFactory_Access is
       This : constant EmailQueueFactory_Access := new EmailQueueFactory;
    begin
-      Initialize (This.all);
+      EmailQueueFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
    function getInstance return EmailQueueInterface_Access is
    begin
         return EmailQueueFactory_Package.emailQueueInterface;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant EmailQueueInterface_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

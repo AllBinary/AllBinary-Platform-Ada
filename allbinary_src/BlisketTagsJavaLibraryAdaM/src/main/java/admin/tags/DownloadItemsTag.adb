@@ -32,7 +32,7 @@ package body admin.tags.DownloadItemsTag_Package is
    function Create return DownloadItemsTag_Access is
       This : constant DownloadItemsTag_Access := new DownloadItemsTag;
    begin
-      Initialize (This.all);
+      DownloadItemsTag_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -61,13 +61,6 @@ package body admin.tags.DownloadItemsTag_Package is
             return SKIP_BODY;
                 end;
         end;
-   end doStartTag;
-
-   procedure doStartTag (This : in out DownloadItemsTag) is
-      Java_Result : constant Integer := DownloadItemsTag'Class (This).doStartTag;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end doStartTag;
 
 end admin.tags.DownloadItemsTag_Package;

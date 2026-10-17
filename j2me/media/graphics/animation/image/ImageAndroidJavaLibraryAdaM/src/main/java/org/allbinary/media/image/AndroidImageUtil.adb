@@ -28,7 +28,7 @@ package body org.allbinary.media.image.AndroidImageUtil_Package is
    function Create return AndroidImageUtil_Access is
       This : constant AndroidImageUtil_Access := new AndroidImageUtil;
    begin
-      Initialize (This.all);
+      AndroidImageUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -71,13 +71,6 @@ package body org.allbinary.media.image.AndroidImageUtil_Package is
         originalAndroidImage := AndroidImageInterface_Access (originalImage);
         canvas.drawBitmap (originalAndroidImage.getBitmap, 0.0, 0.0, paint);
    end rotate;
-
-   procedure getInstance is
-      Java_Result : constant AndroidImageUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

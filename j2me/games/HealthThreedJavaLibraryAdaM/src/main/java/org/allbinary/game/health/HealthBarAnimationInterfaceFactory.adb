@@ -30,7 +30,7 @@ package body org.allbinary.game.health.HealthBarAnimationInterfaceFactory_Packag
    function Create return HealthBarAnimationInterfaceFactory_Access is
       This : constant HealthBarAnimationInterfaceFactory_Access := new HealthBarAnimationInterfaceFactory;
    begin
-      Initialize (This.all);
+      HealthBarAnimationInterfaceFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

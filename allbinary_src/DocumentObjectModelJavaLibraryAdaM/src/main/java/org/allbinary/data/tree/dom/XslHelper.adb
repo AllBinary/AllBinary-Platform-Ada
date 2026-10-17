@@ -35,7 +35,7 @@ package body org.allbinary.data.tree.dom.XslHelper_Package is
    function Create return XslHelper_Access is
       This : constant XslHelper_Access := new XslHelper;
    begin
-      Initialize (This.all);
+      XslHelper_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -146,13 +146,6 @@ package body org.allbinary.data.tree.dom.XslHelper_Package is
                 end;
         end;
    end export;
-
-   procedure getInstance is
-      Java_Result : constant XslHelper_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure translate (This : in out XslHelper; xsltStreamSource : StreamSource_Access; xmlStreamSource : StreamSource_Access; streamResult : StreamResult_Access) is
       Java_Result : constant OutputStream_Access := XslHelper'Class (This).translate (xsltStreamSource, xmlStreamSource, streamResult);

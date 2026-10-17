@@ -29,7 +29,7 @@ package body org.allbinary.game.configuration.feature.GameFeature_Package is
    function Create (name : Unbounded_String) return GameFeature_Access is
       This : constant GameFeature_Access := new GameFeature;
    begin
-      Initialize (This.all, name);
+      GameFeature_Package.Initialize (This.all, name);
       return This;
    end Create;
 

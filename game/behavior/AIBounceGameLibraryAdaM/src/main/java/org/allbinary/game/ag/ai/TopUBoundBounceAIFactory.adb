@@ -28,7 +28,7 @@ package body org.allbinary.game.ag.ai.TopUBoundBounceAIFactory_Package is
    function Create return TopUBoundBounceAIFactory_Access is
       This : constant TopUBoundBounceAIFactory_Access := new TopUBoundBounceAIFactory;
    begin
-      Initialize (This.all);
+      TopUBoundBounceAIFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

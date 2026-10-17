@@ -25,6 +25,8 @@ with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArra
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.data.tables.TableMappingInterface_Package; use org.allbinary.data.tables.TableMappingInterface_Package;
 with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.logic.communication.ftp.configuration.FtpConfigurationInterface_Package; use org.allbinary.logic.communication.ftp.configuration.FtpConfigurationInterface_Package;
+with org.allbinary.logic.communication.ftp.configuration.FtpConfigurationData_Package; use org.allbinary.logic.communication.ftp.configuration.FtpConfigurationData_Package;
 
 package org.allbinary.logic.communication.ftp.configuration.FtpConfigurationMapping_Package is
 
@@ -45,11 +47,8 @@ package org.allbinary.logic.communication.ftp.configuration.FtpConfigurationMapp
    procedure Initialize (This : in out FtpConfigurationMapping'Class; ftpConfigurationInterface : FtpConfigurationInterface_Access);
    function Create (ftpConfigurationInterface : FtpConfigurationInterface_Access) return FtpConfigurationMapping_Access;
    function toHashMap (This : in out FtpConfigurationMapping) return HashMap_Access;
-   procedure toHashMap (This : in out FtpConfigurationMapping);
    function getKey (This : in out FtpConfigurationMapping) return Java_Object_Access;
-   procedure getKey (This : in out FtpConfigurationMapping);
    function toVector (This : in out FtpConfigurationMapping) return BasicArrayList_Access;
-   procedure toVector (This : in out FtpConfigurationMapping);
 
 end org.allbinary.logic.communication.ftp.configuration.FtpConfigurationMapping_Package;
 

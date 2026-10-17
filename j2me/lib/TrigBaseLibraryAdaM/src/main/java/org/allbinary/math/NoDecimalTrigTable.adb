@@ -1127,7 +1127,7 @@ package body org.allbinary.math.NoDecimalTrigTable_Package is
    function Create return NoDecimalTrigTable_Access is
       This : constant NoDecimalTrigTable_Access := new NoDecimalTrigTable;
    begin
-      Initialize (This.all);
+      NoDecimalTrigTable_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -1259,13 +1259,6 @@ package body org.allbinary.math.NoDecimalTrigTable_Package is
         angleOfTarget := This.antiTan (dx (0), dy (0));
         return angleOfTarget;
    end antiTanDebug;
-
-   procedure getInstance is
-      Java_Result : constant NoDecimalTrigTable_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure sin (This : in out NoDecimalTrigTable; angle : Integer) is
       Java_Result : constant Long_Long_Integer := NoDecimalTrigTable'Class (This).sin (angle);

@@ -31,7 +31,7 @@ package body org.allbinary.canvas.GameGlobalsFactory_Package is
    function Create return GameGlobalsFactory_Access is
       This : constant GameGlobalsFactory_Access := new GameGlobalsFactory;
    begin
-      Initialize (This.all);
+      GameGlobalsFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -39,13 +39,6 @@ package body org.allbinary.canvas.GameGlobalsFactory_Package is
    function getInstance return GameGlobalsFactory_Access is
    begin
         return GameGlobalsFactory_Package.instance;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant GameGlobalsFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

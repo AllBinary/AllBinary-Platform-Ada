@@ -31,7 +31,7 @@ package body org.allbinary.logic.system.hardware.components.linux.Ethernet_Packa
    function Create (data : Unbounded_String) return Ethernet_Access is
       This : constant Ethernet_Access := new Ethernet;
    begin
-      Initialize (This.all, data);
+      Ethernet_Package.Initialize (This.all, data);
       return This;
    end Create;
 
@@ -51,13 +51,6 @@ package body org.allbinary.logic.system.hardware.components.linux.Ethernet_Packa
    begin
       null;
    end compareTo;
-
-   procedure toString (This : in out Ethernet) is
-      Java_Result : constant Unbounded_String := Ethernet'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toString;
 
 end org.allbinary.logic.system.hardware.components.linux.Ethernet_Package;
 

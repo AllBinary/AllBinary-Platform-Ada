@@ -71,20 +71,15 @@ package org.allbinary.game.part.CountedLayerInterfaceFactoryPart_Package is
    function getInstance (This : in out CountedLayerInterfaceFactoryPart; hashtable : ABHashtable_Access; x : Integer; y : Integer; z : Integer) return AllBinaryLayer_Access;
    procedure getInstance (This : in out CountedLayerInterfaceFactoryPart; hashtable : ABHashtable_Access; x : Integer; y : Integer; z : Integer);
    function getTotal (This : in out CountedLayerInterfaceFactoryPart) return Integer;
-   procedure getTotal (This : in out CountedLayerInterfaceFactoryPart);
    procedure setTotal (This : in out CountedLayerInterfaceFactoryPart; total : Integer);
    procedure paint (This : in out CountedLayerInterfaceFactoryPart; graphics : Graphics_Access);
    procedure paintThreed (This : in out CountedLayerInterfaceFactoryPart; graphics : Graphics_Access);
    function getAnimationInterface (This : in out CountedLayerInterfaceFactoryPart) return Animation_Access;
-   procedure getAnimationInterface (This : in out CountedLayerInterfaceFactoryPart);
    procedure setAnimationInterface (This : in out CountedLayerInterfaceFactoryPart; animationInterface : Animation_Access);
    function getXOffset (This : in out CountedLayerInterfaceFactoryPart) return Integer;
-   procedure getXOffset (This : in out CountedLayerInterfaceFactoryPart);
    procedure setXOffset (This : in out CountedLayerInterfaceFactoryPart; totalStringWidth : Integer);
    function getTotalString (This : in out CountedLayerInterfaceFactoryPart) return Character_Array_Access;
-   procedure getTotalString (This : in out CountedLayerInterfaceFactoryPart);
    function getCountedPickedUpLayerInterfaceFactory (This : in out CountedLayerInterfaceFactoryPart) return CountedPickedUpLayerInterfaceFactory_Access;
-   procedure getCountedPickedUpLayerInterfaceFactory (This : in out CountedLayerInterfaceFactoryPart);
    procedure setCountedPickedUpLayerInterfaceFactory (This : in out CountedLayerInterfaceFactoryPart; countedPickedUpLayerInterfaceFactory : CountedPickedUpLayerInterfaceFactory_Access);
 
 end org.allbinary.game.part.CountedLayerInterfaceFactoryPart_Package;

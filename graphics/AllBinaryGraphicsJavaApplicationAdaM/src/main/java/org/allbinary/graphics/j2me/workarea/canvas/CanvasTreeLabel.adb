@@ -31,20 +31,13 @@ package body org.allbinary.graphics.j2me.workarea.canvas.CanvasTreeLabel_Package
    function Create (str : Unbounded_String) return CanvasTreeLabel_Access is
       This : constant CanvasTreeLabel_Access := new CanvasTreeLabel;
    begin
-      Initialize (This.all, str);
+      CanvasTreeLabel_Package.Initialize (This.all, str);
       return This;
    end Create;
 
    function toString (This : in out CanvasTreeLabel) return Unbounded_String is
    begin
         return This.label;
-   end toString;
-
-   procedure toString (This : in out CanvasTreeLabel) is
-      Java_Result : constant Unbounded_String := CanvasTreeLabel'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end toString;
 
 end org.allbinary.graphics.j2me.workarea.canvas.CanvasTreeLabel_Package;

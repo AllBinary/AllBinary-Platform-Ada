@@ -26,6 +26,7 @@ with org.allbinary.data.tree.dom.DomNodeInterface_Package; use org.allbinary.dat
 with org.allbinary.data.tree.dom.ModDomHelper_Package; use org.allbinary.data.tree.dom.ModDomHelper_Package;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
+with org.allbinary.business.time.modified.TimeLastModified_Package; use org.allbinary.business.time.modified.TimeLastModified_Package;
 
 package org.allbinary.business.time.modified.TimeLastModifiedView_Package is
 
@@ -50,7 +51,6 @@ package org.allbinary.business.time.modified.TimeLastModifiedView_Package is
    function toXmlNode (This : in out TimeLastModifiedView; document : Document_Access) return Node_Access;
    procedure toXmlNode (This : in out TimeLastModifiedView; document : Document_Access);
    function getTimeLastModified (This : in out TimeLastModifiedView) return TimeLastModified_Access;
-   procedure getTimeLastModified (This : in out TimeLastModifiedView);
    procedure setTimeLastModified (This : in out TimeLastModifiedView; timeLastModified : TimeLastModified_Access);
 
 end org.allbinary.business.time.modified.TimeLastModifiedView_Package;

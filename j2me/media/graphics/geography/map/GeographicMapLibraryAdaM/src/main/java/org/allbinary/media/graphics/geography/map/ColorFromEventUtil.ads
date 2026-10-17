@@ -23,6 +23,8 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package; use org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
 with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
+with org.allbinary.media.graphics.geography.map.GeographicMapCompositeInterface_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCompositeInterface_Package;
+with org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package; use org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
 
 package org.allbinary.media.graphics.geography.map.ColorFromEventUtil_Package is
 
@@ -44,7 +46,6 @@ package org.allbinary.media.graphics.geography.map.ColorFromEventUtil_Package is
    procedure Initialize (This : in out ColorFromEventUtil'Class);
    function Create return ColorFromEventUtil_Access;
    function getInstance return ColorFromEventUtil_Access;
-   procedure getInstance;
    function getForegroundColor (This : in out ColorFromEventUtil; gameCanvasInterface : AllBinaryGameCanvas_Access) return BasicColor_Access;
    procedure getForegroundColor (This : in out ColorFromEventUtil; gameCanvasInterface : AllBinaryGameCanvas_Access);
 

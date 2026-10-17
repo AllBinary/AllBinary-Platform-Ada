@@ -45,7 +45,6 @@ package admin.taghelpers.PaymentProcessHelper_Package is
    procedure Initialize (This : in out PaymentProcessHelper'Class; propertiesHashMap : HashMap_Access; pageContext : PageContext_Access);
    function Create (propertiesHashMap : HashMap_Access; pageContext : PageContext_Access) return PaymentProcessHelper_Access;
    function process (This : in out PaymentProcessHelper) return Unbounded_String;
-   procedure process (This : in out PaymentProcessHelper);
 
 end admin.taghelpers.PaymentProcessHelper_Package;
 

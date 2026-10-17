@@ -54,7 +54,6 @@ package views.business.context.modules.storefront.customizer.includes.globals.Gl
    function toXmlNode (This : in out GlobalsView; document : Document_Access) return Node_Access;
    procedure toXmlNode (This : in out GlobalsView; document : Document_Access);
    function view (This : in out GlobalsView) return Unbounded_String;
-   procedure view (This : in out GlobalsView);
 
 end views.business.context.modules.storefront.customizer.includes.globals.GlobalsView_Package;
 

@@ -29,7 +29,7 @@ package body org.allbinary.android.input.motion.NoMotionEventProcessor_Package i
    function Create return NoMotionEventProcessor_Access is
       This : constant NoMotionEventProcessor_Access := new NoMotionEventProcessor;
    begin
-      Initialize (This.all);
+      NoMotionEventProcessor_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -37,13 +37,6 @@ package body org.allbinary.android.input.motion.NoMotionEventProcessor_Package i
    function getInstance return MotionEventProcessor_Access is
    begin
         return NoMotionEventProcessor_Package.SINGLETON;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant MotionEventProcessor_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

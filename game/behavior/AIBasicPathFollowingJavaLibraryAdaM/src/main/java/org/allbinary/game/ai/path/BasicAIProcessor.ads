@@ -29,6 +29,7 @@ with org.allbinary.media.graphics.geography.map.GeographicMapCellHistory_Package
 with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
 with org.allbinary.media.graphics.geography.map.GeographicMapDirectionUtil_Package; use org.allbinary.media.graphics.geography.map.GeographicMapDirectionUtil_Package;
 with org.allbinary.media.graphics.geography.pathfinding.GeographicMapCellPathHistoryInfo_Package; use org.allbinary.media.graphics.geography.pathfinding.GeographicMapCellPathHistoryInfo_Package;
+with org.allbinary.game.ai.path.BasicDirectionAIHelper_Package; use org.allbinary.game.ai.path.BasicDirectionAIHelper_Package;
 
 package org.allbinary.game.ai.path.BasicAIProcessor_Package is
 
@@ -66,13 +67,10 @@ package org.allbinary.game.ai.path.BasicAIProcessor_Package is
    function processAI (This : in out BasicAIProcessor; myManager : AllBinaryLayerManager_Access; currentGeographicMapCellPosition : GeographicMapCellPosition_Access) return Integer;
    procedure processAI (This : in out BasicAIProcessor; myManager : AllBinaryLayerManager_Access; currentGeographicMapCellPosition : GeographicMapCellPosition_Access);
    function getName (This : in out BasicAIProcessor) return Unbounded_String;
-   procedure getName (This : in out BasicAIProcessor);
    procedure setName (This : in out BasicAIProcessor; name : Unbounded_String);
    function getGeographicMapCellPathHistoryInfo (This : in out BasicAIProcessor) return GeographicMapCellPathHistoryInfo_Access;
-   procedure getGeographicMapCellPathHistoryInfo (This : in out BasicAIProcessor);
    procedure setGeographicMapCellPathHistoryInfo (This : in out BasicAIProcessor; geographicMapCellPathHistoryInfo : GeographicMapCellPathHistoryInfo_Access);
    function getGeographicMapCellHistory (This : in out BasicAIProcessor) return GeographicMapCellHistory_Access;
-   procedure getGeographicMapCellHistory (This : in out BasicAIProcessor);
    procedure setGeographicMapCellHistory (This : in out BasicAIProcessor; geographicMapCellHistory : GeographicMapCellHistory_Access);
 
 end org.allbinary.game.ai.path.BasicAIProcessor_Package;

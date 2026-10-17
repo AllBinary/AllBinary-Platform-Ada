@@ -32,7 +32,7 @@ package body org.allbinary.layer.BasicLayerProcessor_Package is
    function Create return BasicLayerProcessor_Access is
       This : constant BasicLayerProcessor_Access := new BasicLayerProcessor;
    begin
-      Initialize (This.all);
+      BasicLayerProcessor_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -52,13 +52,6 @@ package body org.allbinary.layer.BasicLayerProcessor_Package is
    function getList (This : in out BasicLayerProcessor) return BasicArrayList_Access is
    begin
         return This.list;
-   end getList;
-
-   procedure getList (This : in out BasicLayerProcessor) is
-      Java_Result : constant BasicArrayList_Access := BasicLayerProcessor'Class (This).getList;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getList;
 
 begin

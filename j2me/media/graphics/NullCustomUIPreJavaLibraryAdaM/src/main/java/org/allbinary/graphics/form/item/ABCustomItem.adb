@@ -26,7 +26,7 @@ package body org.allbinary.graphics.form.item.ABCustomItem_Package is
    function Create (label : Unbounded_String; backgroundBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access) return ABCustomItem_Access is
       This : constant ABCustomItem_Access := new ABCustomItem;
    begin
-      Initialize (This.all, label, backgroundBasicColor, foregroundBasicColor);
+      ABCustomItem_Package.Initialize (This.all, label, backgroundBasicColor, foregroundBasicColor);
       return This;
    end Create;
 
@@ -94,55 +94,6 @@ package body org.allbinary.graphics.form.item.ABCustomItem_Package is
    begin
         null;
    end preMeasurement;
-
-   procedure getNullInstance is
-      Java_Result : constant ABCustomItem_Access := getNullInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getNullInstance;
-
-   procedure isFocusable (This : in out ABCustomItem) is
-      Java_Result : constant Boolean := ABCustomItem'Class (This).isFocusable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isFocusable;
-
-   procedure getLabel (This : in out ABCustomItem) is
-      Java_Result : constant Unbounded_String := ABCustomItem'Class (This).getLabel;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getLabel;
-
-   procedure getHeight (This : in out ABCustomItem) is
-      Java_Result : constant Integer := ABCustomItem'Class (This).getHeight;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getHeight;
-
-   procedure getValue (This : in out ABCustomItem) is
-      Java_Result : constant Float := ABCustomItem'Class (This).getValue;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getValue;
-
-   procedure getMinimumWidth (This : in out ABCustomItem) is
-      Java_Result : constant Integer := ABCustomItem'Class (This).getMinimumWidth;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getMinimumWidth;
-
-   procedure getMinimumHeight (This : in out ABCustomItem) is
-      Java_Result : constant Integer := ABCustomItem'Class (This).getMinimumHeight;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getMinimumHeight;
 
 begin
    null;

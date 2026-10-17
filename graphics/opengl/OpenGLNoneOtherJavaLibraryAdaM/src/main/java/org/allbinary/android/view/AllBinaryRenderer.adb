@@ -28,7 +28,7 @@ package body org.allbinary.android.view.AllBinaryRenderer_Package is
    function Create return AllBinaryRenderer_Access is
       This : constant AllBinaryRenderer_Access := new AllBinaryRenderer;
    begin
-      Initialize (This.all);
+      AllBinaryRenderer_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -47,13 +47,6 @@ package body org.allbinary.android.view.AllBinaryRenderer_Package is
    begin
         null;
    end clearRunnable;
-
-   procedure getInstance is
-      Java_Result : constant AllBinaryRenderer_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

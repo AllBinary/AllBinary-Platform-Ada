@@ -32,7 +32,7 @@ package body org.allbinary.game.ag.ai.NumberOnOwnGroupSequenceAI_Package is
    function Create (numberOnSameTeam : Integer_Array_Access; artificialIntelligenceInterface : ArtificialIntelligenceInterface_Access_Array_Access; ownerLayerInterface : AllBinaryLayer_Access; gameInput : GameInput_Access) return NumberOnOwnGroupSequenceAI_Access is
       This : constant NumberOnOwnGroupSequenceAI_Access := new NumberOnOwnGroupSequenceAI;
    begin
-      Initialize (This.all, numberOnSameTeam, artificialIntelligenceInterface, ownerLayerInterface, gameInput);
+      NumberOnOwnGroupSequenceAI_Package.Initialize (This.all, numberOnSameTeam, artificialIntelligenceInterface, ownerLayerInterface, gameInput);
       return This;
    end Create;
 

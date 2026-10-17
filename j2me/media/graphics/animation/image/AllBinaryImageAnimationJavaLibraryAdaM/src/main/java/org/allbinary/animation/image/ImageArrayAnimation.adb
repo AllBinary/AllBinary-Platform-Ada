@@ -35,7 +35,7 @@ package body org.allbinary.animation.image.ImageArrayAnimation_Package is
    function Create (imageArray : Image_Access_Array_Access; animationBehavior : AnimationBehavior_Access) return ImageArrayAnimation_Access is
       This : constant ImageArrayAnimation_Access := new ImageArrayAnimation;
    begin
-      Initialize (This.all, imageArray, animationBehavior);
+      ImageArrayAnimation_Package.Initialize (This.all, imageArray, animationBehavior);
       return This;
    end Create;
 
@@ -102,47 +102,12 @@ package body org.allbinary.animation.image.ImageArrayAnimation_Package is
         graphics.drawImage (This.imageArray (This.circularIndexUtil.getIndex), x, y, This.anchor);
    end paintXY;
 
-   procedure getAnimationSize (This : in out ImageArrayAnimation) is
-      Java_Result : constant Integer := ImageArrayAnimation'Class (This).getAnimationSize;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getAnimationSize;
-
-   procedure getFrame (This : in out ImageArrayAnimation) is
-      Java_Result : constant Integer := ImageArrayAnimation'Class (This).getFrame;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getFrame;
-
-   procedure getSize (This : in out ImageArrayAnimation) is
-      Java_Result : constant Integer := ImageArrayAnimation'Class (This).getSize;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSize;
-
-   procedure getSequence (This : in out ImageArrayAnimation) is
-      Java_Result : constant Integer_Array_Access := ImageArrayAnimation'Class (This).getSequence;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSequence;
-
    procedure getImage (This : in out ImageArrayAnimation; index : Integer) is
       Java_Result : constant Image_Access := ImageArrayAnimation'Class (This).getImage (index);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getImage;
-
-   procedure getImageArray (This : in out ImageArrayAnimation) is
-      Java_Result : constant Image_Access_Array_Access := ImageArrayAnimation'Class (This).getImageArray;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getImageArray;
 
 end org.allbinary.animation.image.ImageArrayAnimation_Package;
 

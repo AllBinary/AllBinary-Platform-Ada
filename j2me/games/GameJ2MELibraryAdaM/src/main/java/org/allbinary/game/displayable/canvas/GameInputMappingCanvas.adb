@@ -48,7 +48,7 @@ package body org.allbinary.game.displayable.canvas.GameInputMappingCanvas_Packag
    function Create (abeClientInformation : AbeClientInformationInterface_Access; commandListener : CommandListener_Access; allBinaryGameLayerManager : AllBinaryGameLayerManager_Access; helpPaintable : HelpPaintable_Access) return GameInputMappingCanvas_Access is
       This : constant GameInputMappingCanvas_Access := new GameInputMappingCanvas;
    begin
-      Initialize (This.all, abeClientInformation, commandListener, allBinaryGameLayerManager, helpPaintable);
+      GameInputMappingCanvas_Package.Initialize (This.all, abeClientInformation, commandListener, allBinaryGameLayerManager, helpPaintable);
       return This;
    end Create;
 

@@ -31,7 +31,7 @@ package body org.allbinary.graphics.opengles.shader.UniformLightPositionOpenGLPr
    function Create (shaderComposite : ShaderComposite_Access; handleIndex : Integer) return UniformLightPositionOpenGLProcessor_Access is
       This : constant UniformLightPositionOpenGLProcessor_Access := new UniformLightPositionOpenGLProcessor;
    begin
-      Initialize (This.all, shaderComposite, handleIndex);
+      UniformLightPositionOpenGLProcessor_Package.Initialize (This.all, shaderComposite, handleIndex);
       return This;
    end Create;
 

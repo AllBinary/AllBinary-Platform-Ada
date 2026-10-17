@@ -23,6 +23,8 @@ with AllBinary_Java; use AllBinary_Java;
 --  with java.awt.Graphics2D_Package; use java.awt.Graphics2D_Package;
 --  with java.awt.Image_Package; use java.awt.Image_Package;
 --  with java.awt.image.BufferedImage_Package; use java.awt.image.BufferedImage_Package;
+with org.allbinary.media.image.ImageUtil_Package; use org.allbinary.media.image.ImageUtil_Package;
+with org.allbinary.media.image.ImageJ2SEUtil_Package; use org.allbinary.media.image.ImageJ2SEUtil_Package;
 
 package org.allbinary.media.image.ImageJ2SERotationUtil_Package is
 
@@ -42,7 +44,6 @@ package org.allbinary.media.image.ImageJ2SERotationUtil_Package is
    procedure Initialize (This : in out ImageJ2SERotationUtil'Class);
    function Create return ImageJ2SERotationUtil_Access;
    function getInstance return ImageJ2SERotationUtil_Access;
-   procedure getInstance;
    function getRotatedImage (This : in out ImageJ2SERotationUtil; bufferedImage : Image_Access; totalAngle : Integer) return BufferedImage_Access;
    procedure getRotatedImage (This : in out ImageJ2SERotationUtil; bufferedImage : Image_Access; totalAngle : Integer);
    function getRotatedImageRadians (This : in out ImageJ2SERotationUtil; bufferedImage : Image_Access; radians : Long_Float) return BufferedImage_Access;

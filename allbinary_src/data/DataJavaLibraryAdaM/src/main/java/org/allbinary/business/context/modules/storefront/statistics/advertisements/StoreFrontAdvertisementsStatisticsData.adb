@@ -36,16 +36,9 @@ package body org.allbinary.business.context.modules.storefront.statistics.advert
    function Create return StoreFrontAdvertisementsStatisticsData_Access is
       This : constant StoreFrontAdvertisementsStatisticsData_Access := new StoreFrontAdvertisementsStatisticsData;
    begin
-      Initialize (This.all);
+      StoreFrontAdvertisementsStatisticsData_Package.Initialize (This.all);
       return This;
    end Create;
-
-   procedure getInstance is
-      Java_Result : constant StoreFrontAdvertisementsStatisticsData_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

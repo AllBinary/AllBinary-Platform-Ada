@@ -33,7 +33,7 @@ package body org.allbinary.logic.visual.transform.template.customizer.includes.g
    function Create (storeName : Unbounded_String) return GlobalsValidation_Access is
       This : constant GlobalsValidation_Access := new GlobalsValidation;
    begin
-      Initialize (This.all, storeName);
+      GlobalsValidation_Package.Initialize (This.all, storeName);
       return This;
    end Create;
 
@@ -48,7 +48,7 @@ package body org.allbinary.logic.visual.transform.template.customizer.includes.g
    function Create (document : Document_Access) return GlobalsValidation_Access is
       This : constant GlobalsValidation_Access := new GlobalsValidation;
    begin
-      Initialize (This.all, document);
+      GlobalsValidation_Package.Initialize (This.all, document);
       return This;
    end Create;
 
@@ -108,27 +108,6 @@ package body org.allbinary.logic.visual.transform.template.customizer.includes.g
         node.appendChild (StoreFrontView_Package.Create (This.storeFrontInterface).toXmlNode (document));
         return node;
    end toXmlNode;
-
-   procedure isValid (This : in out GlobalsValidation) is
-      Java_Result : constant Boolean := GlobalsValidation'Class (This).isValid;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isValid;
-
-   procedure validationInfo (This : in out GlobalsValidation) is
-      Java_Result : constant Unbounded_String := GlobalsValidation'Class (This).validationInfo;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end validationInfo;
-
-   procedure toValidationInfoDoc (This : in out GlobalsValidation) is
-      Java_Result : constant Document_Access := GlobalsValidation'Class (This).toValidationInfoDoc;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toValidationInfoDoc;
 
    procedure toValidationInfoNode (This : in out GlobalsValidation; document : Document_Access) is
       Java_Result : constant Node_Access := GlobalsValidation'Class (This).toValidationInfoNode (document);

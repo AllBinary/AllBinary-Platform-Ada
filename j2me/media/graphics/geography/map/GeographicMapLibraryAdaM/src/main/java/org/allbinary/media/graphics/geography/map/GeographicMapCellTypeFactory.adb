@@ -30,7 +30,7 @@ package body org.allbinary.media.graphics.geography.map.GeographicMapCellTypeFac
    function Create return GeographicMapCellTypeFactory_Access is
       This : constant GeographicMapCellTypeFactory_Access := new GeographicMapCellTypeFactory;
    begin
-      Initialize (This.all);
+      GeographicMapCellTypeFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -70,47 +70,12 @@ package body org.allbinary.media.graphics.geography.map.GeographicMapCellTypeFac
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end isPath;
 
-   procedure getInstance is
-      Java_Result : constant GeographicMapCellTypeFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
    procedure get (This : in out GeographicMapCellTypeFactory; type_Id : Integer) is
       Java_Result : constant GeographicMapCellType_Access := GeographicMapCellTypeFactory'Class (This).get (type_Id);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end get;
-
-   procedure getGeographicMapCellTypeArray (This : in out GeographicMapCellTypeFactory) is
-      Java_Result : constant GeographicMapCellType_Access_Array_Access := GeographicMapCellTypeFactory'Class (This).getGeographicMapCellTypeArray;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getGeographicMapCellTypeArray;
-
-   procedure getStartType (This : in out GeographicMapCellTypeFactory) is
-      Java_Result : constant Integer := GeographicMapCellTypeFactory'Class (This).getStartType;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getStartType;
-
-   procedure getEndType (This : in out GeographicMapCellTypeFactory) is
-      Java_Result : constant Integer := GeographicMapCellTypeFactory'Class (This).getEndType;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getEndType;
-
-   procedure getEmptyType (This : in out GeographicMapCellTypeFactory) is
-      Java_Result : constant Integer := GeographicMapCellTypeFactory'Class (This).getEmptyType;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getEmptyType;
 
    procedure isPath (This : in out GeographicMapCellTypeFactory; cellType : GeographicMapCellType_Access) is
       Java_Result : constant Boolean := GeographicMapCellTypeFactory'Class (This).isPath (cellType);

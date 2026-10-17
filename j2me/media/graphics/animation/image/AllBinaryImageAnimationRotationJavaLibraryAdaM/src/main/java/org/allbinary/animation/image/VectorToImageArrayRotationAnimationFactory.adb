@@ -33,7 +33,7 @@ package body org.allbinary.animation.image.VectorToImageArrayRotationAnimationFa
    function Create (vectorInfo : VectorInfo_Access; basicColor : BasicColor_Access; animationBehaviorFactory : AnimationBehaviorFactory_Access) return VectorToImageArrayRotationAnimationFactory_Access is
       This : constant VectorToImageArrayRotationAnimationFactory_Access := new VectorToImageArrayRotationAnimationFactory;
    begin
-      Initialize (This.all, vectorInfo, basicColor, animationBehaviorFactory);
+      VectorToImageArrayRotationAnimationFactory_Package.Initialize (This.all, vectorInfo, basicColor, animationBehaviorFactory);
       return This;
    end Create;
 
@@ -72,13 +72,6 @@ package body org.allbinary.animation.image.VectorToImageArrayRotationAnimationFa
    begin
       null;
    end getInstance;
-
-   procedure getAngleIncrement (This : in out VectorToImageArrayRotationAnimationFactory) is
-      Java_Result : constant Integer := VectorToImageArrayRotationAnimationFactory'Class (This).getAngleIncrement;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getAngleIncrement;
 
 end org.allbinary.animation.image.VectorToImageArrayRotationAnimationFactory_Package;
 

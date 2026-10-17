@@ -72,7 +72,7 @@ package body org.allbinary.game.input.MotionJ2MEDefaultGameInputMapping_Package 
    function Create return MotionJ2MEDefaultGameInputMapping_Access is
       This : constant MotionJ2MEDefaultGameInputMapping_Access := new MotionJ2MEDefaultGameInputMapping;
    begin
-      Initialize (This.all);
+      MotionJ2MEDefaultGameInputMapping_Package.Initialize (This.all);
       return This;
    end Create;
 

@@ -49,7 +49,6 @@ package views.business.context.modules.storefront.generator.PreviewGeneratorStor
    procedure Initialize (This : in out PreviewGeneratorStoreFrontContextView'Class; transformInfoInterface : TransformInfoInterface_Access);
    function Create (transformInfoInterface : TransformInfoInterface_Access) return PreviewGeneratorStoreFrontContextView_Access;
    function view (This : in out PreviewGeneratorStoreFrontContextView) return Unbounded_String;
-   procedure view (This : in out PreviewGeneratorStoreFrontContextView);
 
 end views.business.context.modules.storefront.generator.PreviewGeneratorStoreFrontContextView_Package;
 

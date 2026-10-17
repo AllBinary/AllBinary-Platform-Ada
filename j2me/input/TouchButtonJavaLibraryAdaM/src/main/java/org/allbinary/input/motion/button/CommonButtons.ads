@@ -45,7 +45,6 @@ package org.allbinary.input.motion.button.CommonButtons_Package is
    procedure Initialize (This : in out CommonButtons'Class);
    function Create return CommonButtons_Access;
    function getInstance return CommonButtons_Access;
-   procedure getInstance;
 
 end org.allbinary.input.motion.button.CommonButtons_Package;
 

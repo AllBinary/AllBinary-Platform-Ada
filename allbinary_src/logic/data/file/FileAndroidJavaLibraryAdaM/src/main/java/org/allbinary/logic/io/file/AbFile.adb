@@ -59,7 +59,7 @@ package body org.allbinary.logic.io.file.AbFile_Package is
    function Create (file : File_Access) return AbFile_Access is
       This : constant AbFile_Access := new AbFile;
    begin
-      Initialize (This.all, file);
+      AbFile_Package.Initialize (This.all, file);
       return This;
    end Create;
 
@@ -282,173 +282,12 @@ package body org.allbinary.logic.io.file.AbFile_Package is
       null;
    end createAbFileFromRawPath;
 
-   procedure getFile (This : in out AbFile) is
-      Java_Result : constant File_Access := AbFile'Class (This).getFile;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getFile;
-
-   procedure getName (This : in out AbFile) is
-      Java_Result : constant Unbounded_String := AbFile'Class (This).getName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getName;
-
-   procedure getParent (This : in out AbFile) is
-      Java_Result : constant Unbounded_String := AbFile'Class (This).getParent;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getParent;
-
-   procedure getParentFile (This : in out AbFile) is
-      Java_Result : constant File_Access := AbFile'Class (This).getParentFile;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getParentFile;
-
-   procedure getPath (This : in out AbFile) is
-      Java_Result : constant Unbounded_String := AbFile'Class (This).getPath;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getPath;
-
-   procedure isAbsolute (This : in out AbFile) is
-      Java_Result : constant Boolean := AbFile'Class (This).isAbsolute;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isAbsolute;
-
-   procedure getAbsolutePath (This : in out AbFile) is
-      Java_Result : constant Unbounded_String := AbFile'Class (This).getAbsolutePath;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getAbsolutePath;
-
-   procedure getAbsoluteFile (This : in out AbFile) is
-      Java_Result : constant File_Access := AbFile'Class (This).getAbsoluteFile;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getAbsoluteFile;
-
-   procedure getCanonicalPath (This : in out AbFile) is
-      Java_Result : constant Unbounded_String := AbFile'Class (This).getCanonicalPath;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getCanonicalPath;
-
-   procedure getCanonicalFile (This : in out AbFile) is
-      Java_Result : constant File_Access := AbFile'Class (This).getCanonicalFile;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getCanonicalFile;
-
-   procedure toURI (This : in out AbFile) is
-      Java_Result : constant URI_Access := AbFile'Class (This).toURI;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toURI;
-
-   procedure canRead (This : in out AbFile) is
-      Java_Result : constant Boolean := AbFile'Class (This).canRead;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end canRead;
-
-   procedure canWrite (This : in out AbFile) is
-      Java_Result : constant Boolean := AbFile'Class (This).canWrite;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end canWrite;
-
-   procedure exists (This : in out AbFile) is
-      Java_Result : constant Boolean := AbFile'Class (This).exists;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end exists;
-
-   procedure isDirectory (This : in out AbFile) is
-      Java_Result : constant Boolean := AbFile'Class (This).isDirectory;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isDirectory;
-
-   procedure isFile (This : in out AbFile) is
-      Java_Result : constant Boolean := AbFile'Class (This).isFile;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isFile;
-
-   procedure isHidden (This : in out AbFile) is
-      Java_Result : constant Boolean := AbFile'Class (This).isHidden;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isHidden;
-
-   procedure lastModified (This : in out AbFile) is
-      Java_Result : constant Long_Long_Integer := AbFile'Class (This).lastModified;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end lastModified;
-
-   procedure length (This : in out AbFile) is
-      Java_Result : constant Long_Long_Integer := AbFile'Class (This).length;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end length;
-
-   procedure createNewFile (This : in out AbFile) is
-      Java_Result : constant Boolean := AbFile'Class (This).createNewFile;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end createNewFile;
-
-   procedure delete (This : in out AbFile) is
-      Java_Result : constant Boolean := AbFile'Class (This).delete;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end delete;
-
-   procedure list (This : in out AbFile) is
-      Java_Result : constant Unbounded_String_Array_Access := AbFile'Class (This).list;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end list;
-
    procedure listWithFilter (This : in out AbFile; filter : FilenameFilter_Access) is
       Java_Result : constant Unbounded_String_Array_Access := AbFile'Class (This).listWithFilter (filter);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end listWithFilter;
-
-   procedure listFiles (This : in out AbFile) is
-      Java_Result : constant Java_Object_Access_Array_Access := AbFile'Class (This).listFiles;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end listFiles;
 
    procedure listFilesFileNameFilter (This : in out AbFile; filter : FilenameFilter_Access) is
       Java_Result : constant Java_Object_Access_Array_Access := AbFile'Class (This).listFilesFileNameFilter (filter);
@@ -464,20 +303,6 @@ package body org.allbinary.logic.io.file.AbFile_Package is
       null;
    end listFilesFileFilter;
 
-   procedure mkdir (This : in out AbFile) is
-      Java_Result : constant Boolean := AbFile'Class (This).mkdir;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end mkdir;
-
-   procedure mkdirs (This : in out AbFile) is
-      Java_Result : constant Boolean := AbFile'Class (This).mkdirs;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end mkdirs;
-
    procedure renameTo (This : in out AbFile; dest : AbFile_Access) is
       Java_Result : constant Boolean := AbFile'Class (This).renameTo (dest);
       pragma Unreferenced (Java_Result);
@@ -492,13 +317,6 @@ package body org.allbinary.logic.io.file.AbFile_Package is
       null;
    end setLastModified;
 
-   procedure setReadOnly (This : in out AbFile) is
-      Java_Result : constant Boolean := AbFile'Class (This).setReadOnly;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end setReadOnly;
-
    procedure compareTo (This : in out AbFile; pathname : File_Access) is
       Java_Result : constant Integer := AbFile'Class (This).compareTo (pathname);
       pragma Unreferenced (Java_Result);
@@ -512,20 +330,6 @@ package body org.allbinary.logic.io.file.AbFile_Package is
    begin
       null;
    end equals;
-
-   procedure hashCode (This : in out AbFile) is
-      Java_Result : constant Integer := AbFile'Class (This).hashCode;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end hashCode;
-
-   procedure toString (This : in out AbFile) is
-      Java_Result : constant Unbounded_String := AbFile'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toString;
 
 begin
    null;

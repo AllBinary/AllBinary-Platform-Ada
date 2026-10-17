@@ -31,7 +31,7 @@ package body org.allbinary.logic.control.workflow.StoreWorkFlowWrapper_Package i
    function Create (anyType : Java_Object_Access) return StoreWorkFlowWrapper_Access is
       This : constant StoreWorkFlowWrapper_Access := new StoreWorkFlowWrapper;
    begin
-      Initialize (This.all, anyType);
+      StoreWorkFlowWrapper_Package.Initialize (This.all, anyType);
       return This;
    end Create;
 
@@ -61,13 +61,6 @@ package body org.allbinary.logic.control.workflow.StoreWorkFlowWrapper_Package i
             Java_Throw (Java_New_Exception ("Exception", error));
                 end;
         end;
-   end getStoreName;
-
-   procedure getStoreName (This : in out StoreWorkFlowWrapper) is
-      Java_Result : constant Unbounded_String := StoreWorkFlowWrapper'Class (This).getStoreName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getStoreName;
 
 end org.allbinary.logic.control.workflow.StoreWorkFlowWrapper_Package;

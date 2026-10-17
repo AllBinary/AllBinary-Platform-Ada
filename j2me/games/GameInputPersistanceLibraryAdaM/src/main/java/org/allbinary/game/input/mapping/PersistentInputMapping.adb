@@ -45,7 +45,7 @@ package body org.allbinary.game.input.mapping.PersistentInputMapping_Package is
    function Create (name : Unbounded_String) return PersistentInputMapping_Access is
       This : constant PersistentInputMapping_Access := new PersistentInputMapping;
    begin
-      Initialize (This.all, name);
+      PersistentInputMapping_Package.Initialize (This.all, name);
       return This;
    end Create;
 
@@ -166,48 +166,6 @@ package body org.allbinary.game.input.mapping.PersistentInputMapping_Package is
    begin
         Java_Throw (Java_New_Exception ("Exception", This.commonStrings.NOT_IMPLEMENTED));
    end isSystemInput;
-
-   procedure getNullInstance is
-      Java_Result : constant PersistentInputMapping_Access := getNullInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getNullInstance;
-
-   procedure getTotalMapped (This : in out PersistentInputMapping) is
-      Java_Result : constant Integer := PersistentInputMapping'Class (This).getTotalMapped;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTotalMapped;
-
-   procedure isDefaultNew (This : in out PersistentInputMapping) is
-      Java_Result : constant Boolean := PersistentInputMapping'Class (This).isDefaultNew;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isDefaultNew;
-
-   procedure getDefault (This : in out PersistentInputMapping) is
-      Java_Result : constant InputToGameKeyMapping_Access := PersistentInputMapping'Class (This).getDefault;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getDefault;
-
-   procedure getInputMappingEventListenerInterface (This : in out PersistentInputMapping) is
-      Java_Result : constant InputMappingEventListenerInterface_Access := PersistentInputMapping'Class (This).getInputMappingEventListenerInterface;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInputMappingEventListenerInterface;
-
-   procedure getInputMapping (This : in out PersistentInputMapping) is
-      Java_Result : constant InputToGameKeyMapping_Access := PersistentInputMapping'Class (This).getInputMapping;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInputMapping;
 
    procedure isDelete (This : in out PersistentInputMapping; input : Input_Access) is
       Java_Result : constant Boolean := PersistentInputMapping'Class (This).isDelete (input);

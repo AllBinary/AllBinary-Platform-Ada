@@ -54,9 +54,7 @@ package org.allbinary.logic.string_Id.StringMaker_Package is
    function delete (This : in out StringMaker; start : Integer; end_Id : Integer) return StringMaker_Access;
    procedure delete (This : in out StringMaker; start : Integer; end_Id : Integer);
    function length (This : in out StringMaker) return Integer;
-   procedure length (This : in out StringMaker);
    function toString (This : in out StringMaker) return Unbounded_String;
-   procedure toString (This : in out StringMaker);
 
 end org.allbinary.logic.string_Id.StringMaker_Package;
 

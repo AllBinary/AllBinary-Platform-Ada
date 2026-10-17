@@ -16,7 +16,7 @@ package body org.allbinary.animation.PolygonRasterizer_Package is
    function Create return PolygonRasterizer_Access is
       This : constant PolygonRasterizer_Access := new PolygonRasterizer;
    begin
-      Initialize (This.all);
+      PolygonRasterizer_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -148,13 +148,6 @@ package body org.allbinary.animation.PolygonRasterizer_Package is
         svgPath := To_Unbounded_String ("M 32.139812,81.554575 14.450128,74.294372 V 50.000034 25.705697 l 17.73231,-7.268329 C 41.935209,14.439788 49.953112,11.168898 50,11.168723 c 0.04689,-1.74e-4 8.064791,3.270238 17.817562,7.267583 l 17.73231,7.267899 V 50 74.295795 l -17.73231,7.2679 c -9.752771,3.997344 -17.789855,7.264116 -17.860188,7.259492 -0.07033,-0.0046 -8.088235,-3.275499 -17.817562,-7.268612 z");
         PolygonRasterizer_Package.getInstance.getPixelBuffer (svgPath, pathX, pathY, pixelBuffer, width, height);
    end main;
-
-   procedure getInstance is
-      Java_Result : constant PolygonRasterizer_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure getPixelBuffer (This : in out PolygonRasterizer; svgPath : Unbounded_String; pathX : Integer_Array_Access; pathY : Integer_Array_Access; pixelBuffer : Integer_Array_Access; width : Integer; height : Integer) is
       Java_Result : constant Integer_Array_Access := PolygonRasterizer'Class (This).getPixelBuffer (svgPath, pathX, pathY, pixelBuffer, width, height);

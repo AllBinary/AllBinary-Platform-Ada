@@ -34,7 +34,7 @@ package body org.allbinary.logic.system.hardware.components.linux.Cpu_Package is
    function Create (filePath : Unbounded_String) return Cpu_Access is
       This : constant Cpu_Access := new Cpu;
    begin
-      Initialize (This.all, filePath);
+      Cpu_Package.Initialize (This.all, filePath);
       return This;
    end Create;
 
@@ -48,7 +48,7 @@ package body org.allbinary.logic.system.hardware.components.linux.Cpu_Package is
    function Create return Cpu_Access is
       This : constant Cpu_Access := new Cpu;
    begin
-      Initialize (This.all);
+      Cpu_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -73,7 +73,8 @@ package body org.allbinary.logic.system.hardware.components.linux.Cpu_Package is
    end init;
 
    --  throws Exception
-   procedure init (This : in out Cpu; lineNumberReader : LineNumberReader_Access; filePath : Unbounded_String) is
+   procedure init (This : in out Cpu; lineNumberReader_Param : LineNumberReader_Access; filePath : Unbounded_String) is
+      lineNumberReader : LineNumberReader_Access := lineNumberReader_Param;
       fileReader : FileReader_Access;
       fileVector : BasicArrayList_Access;
       file : AbFile_Access;
@@ -218,62 +219,6 @@ package body org.allbinary.logic.system.hardware.components.linux.Cpu_Package is
         return stringMaker.toString;
    end toString;
 
-   procedure getProcessor (This : in out Cpu) is
-      Java_Result : constant Unbounded_String := Cpu'Class (This).getProcessor;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getProcessor;
-
-   procedure getVendorId (This : in out Cpu) is
-      Java_Result : constant Unbounded_String := Cpu'Class (This).getVendorId;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getVendorId;
-
-   procedure getCpuFamily (This : in out Cpu) is
-      Java_Result : constant Unbounded_String := Cpu'Class (This).getCpuFamily;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getCpuFamily;
-
-   procedure getModel (This : in out Cpu) is
-      Java_Result : constant Unbounded_String := Cpu'Class (This).getModel;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getModel;
-
-   procedure getModelName (This : in out Cpu) is
-      Java_Result : constant Unbounded_String := Cpu'Class (This).getModelName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getModelName;
-
-   procedure getStepping (This : in out Cpu) is
-      Java_Result : constant Unbounded_String := Cpu'Class (This).getStepping;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getStepping;
-
-   procedure getCpuSpeed (This : in out Cpu) is
-      Java_Result : constant Unbounded_String := Cpu'Class (This).getCpuSpeed;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getCpuSpeed;
-
-   procedure getCacheSize (This : in out Cpu) is
-      Java_Result : constant Unbounded_String := Cpu'Class (This).getCacheSize;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getCacheSize;
-
    procedure compareTo (This : in out Cpu; cpuInterface : CpuInterface_Access) is
       Java_Result : constant Boolean := Cpu'Class (This).compareTo (cpuInterface);
       pragma Unreferenced (Java_Result);
@@ -287,13 +232,6 @@ package body org.allbinary.logic.system.hardware.components.linux.Cpu_Package is
    begin
       null;
    end compareTo;
-
-   procedure toString (This : in out Cpu) is
-      Java_Result : constant Unbounded_String := Cpu'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toString;
 
 end org.allbinary.logic.system.hardware.components.linux.Cpu_Package;
 

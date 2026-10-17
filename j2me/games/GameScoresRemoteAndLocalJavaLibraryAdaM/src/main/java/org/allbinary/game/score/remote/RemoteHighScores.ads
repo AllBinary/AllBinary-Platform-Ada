@@ -35,6 +35,9 @@ with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.C
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
 with org.allbinary.util.EnumerationUtil_Package; use org.allbinary.util.EnumerationUtil_Package;
+with org.allbinary.game.score.remote.RemoteHighScoresProcessorFactory_Package; use org.allbinary.game.score.remote.RemoteHighScoresProcessorFactory_Package;
+with org.allbinary.game.score.remote.RemoteHighScoresSubmissionProcessorFactory_Package; use org.allbinary.game.score.remote.RemoteHighScoresSubmissionProcessorFactory_Package;
+with org.allbinary.game.score.remote.RemoteHighScoresData_Package; use org.allbinary.game.score.remote.RemoteHighScoresData_Package;
 
 package org.allbinary.game.score.remote.RemoteHighScores_Package is
 
@@ -78,9 +81,7 @@ package org.allbinary.game.score.remote.RemoteHighScores_Package is
    procedure update (This : in out RemoteHighScores; hashtable : ABHashtable_Access);
    procedure setAscending (This : in out RemoteHighScores; ascending_Case : Boolean);
    function getAscending (This : in out RemoteHighScores) return Boolean;
-   procedure getAscending (This : in out RemoteHighScores);
    function getSoftwareInformation (This : in out RemoteHighScores) return SoftwareInformation_Access;
-   procedure getSoftwareInformation (This : in out RemoteHighScores);
 
 end org.allbinary.game.score.remote.RemoteHighScores_Package;
 

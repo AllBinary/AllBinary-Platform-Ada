@@ -20,6 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
+with org.allbinary.game.configuration.feature.TouchFeature_Package; use org.allbinary.game.configuration.feature.TouchFeature_Package;
 
 package org.allbinary.game.configuration.feature.TouchFeatureFactory_Package is
 
@@ -40,7 +41,6 @@ package org.allbinary.game.configuration.feature.TouchFeatureFactory_Package is
    procedure Initialize (This : in out TouchFeatureFactory'Class);
    function Create return TouchFeatureFactory_Access;
    function getInstance return TouchFeatureFactory_Access;
-   procedure getInstance;
 
 end org.allbinary.game.configuration.feature.TouchFeatureFactory_Package;
 

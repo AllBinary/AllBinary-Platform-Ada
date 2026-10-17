@@ -23,6 +23,7 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.android.AndroidInfoFactory_Package; use org.allbinary.android.AndroidInfoFactory_Package;
 with org.allbinary.android.input.motion.api1.GameInputMotionEventProcessorAPI1_Package; use org.allbinary.android.input.motion.api1.GameInputMotionEventProcessorAPI1_Package;
 with org.allbinary.android.input.motion.api5.GameInputMotionEventProcessorAPI5_Package; use org.allbinary.android.input.motion.api5.GameInputMotionEventProcessorAPI5_Package;
+with org.allbinary.android.input.motion.BaseGameInputMotionEventProcessor_Package; use org.allbinary.android.input.motion.BaseGameInputMotionEventProcessor_Package;
 
 package org.allbinary.android.input.motion.GameInputMotionEventProcessorFactory_Package is
 
@@ -40,7 +41,6 @@ package org.allbinary.android.input.motion.GameInputMotionEventProcessorFactory_
    procedure Initialize (This : in out GameInputMotionEventProcessorFactory'Class);
    function Create return GameInputMotionEventProcessorFactory_Access;
    function getInstance return BaseGameInputMotionEventProcessor_Access;
-   procedure getInstance;
 
 end org.allbinary.android.input.motion.GameInputMotionEventProcessorFactory_Package;
 

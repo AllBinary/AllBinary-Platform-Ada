@@ -41,10 +41,8 @@ package org.allbinary.input.automation.module.generic_Id.configuration.profile.S
    procedure Initialize (This : in out SavedCaptureGenericProfileDataWorkerType'Class; name : Unbounded_String; path : Unbounded_String; lastFrame : Integer);
    function Create (name : Unbounded_String; path : Unbounded_String; lastFrame : Integer) return SavedCaptureGenericProfileDataWorkerType_Access;
    function getPath (This : in out SavedCaptureGenericProfileDataWorkerType) return Unbounded_String;
-   procedure getPath (This : in out SavedCaptureGenericProfileDataWorkerType);
    procedure setPath (This : in out SavedCaptureGenericProfileDataWorkerType; path : Unbounded_String);
    function getLastFrame (This : in out SavedCaptureGenericProfileDataWorkerType) return Integer;
-   procedure getLastFrame (This : in out SavedCaptureGenericProfileDataWorkerType);
    procedure setLastFrame (This : in out SavedCaptureGenericProfileDataWorkerType; lastFrame : Integer);
 
 end org.allbinary.input.automation.module.generic_Id.configuration.profile.SavedCaptureGenericProfileDataWorkerType_Package;

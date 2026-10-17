@@ -28,7 +28,7 @@ package body org.allbinary.graphics.canvas.transition.progress.ProgressCanvasFac
    function Create return ProgressCanvasFactory_Access is
       This : constant ProgressCanvasFactory_Access := new ProgressCanvasFactory;
    begin
-      Initialize (This.all);
+      ProgressCanvasFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -44,20 +44,6 @@ package body org.allbinary.graphics.canvas.transition.progress.ProgressCanvasFac
    function getLazyInstance return PaintableInterface_Access is
    begin
         return NullPaintable_Package.getInstance;
-   end getLazyInstance;
-
-   procedure getInstance is
-      Java_Result : constant ProgressCanvas_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure getLazyInstance is
-      Java_Result : constant PaintableInterface_Access := getLazyInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getLazyInstance;
 
 begin

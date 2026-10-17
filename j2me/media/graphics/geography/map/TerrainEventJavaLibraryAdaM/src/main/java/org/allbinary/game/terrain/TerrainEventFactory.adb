@@ -30,20 +30,13 @@ package body org.allbinary.game.terrain.TerrainEventFactory_Package is
    function Create return TerrainEventFactory_Access is
       This : constant TerrainEventFactory_Access := new TerrainEventFactory;
    begin
-      Initialize (This.all);
+      TerrainEventFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
    function getInstance (This : in out TerrainEventFactory) return AllBinaryEventObject_Access is
    begin
         return TerrainEvent_Package.Create (NullUtil_Package.getInstance.NULL_OBJECT);
-   end getInstance;
-
-   procedure getInstance (This : in out TerrainEventFactory) is
-      Java_Result : constant AllBinaryEventObject_Access := TerrainEventFactory'Class (This).getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 end org.allbinary.game.terrain.TerrainEventFactory_Package;

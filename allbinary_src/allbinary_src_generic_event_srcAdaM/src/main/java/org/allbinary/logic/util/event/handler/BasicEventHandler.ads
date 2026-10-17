@@ -57,7 +57,6 @@ package org.allbinary.logic.util.event.handler.BasicEventHandler_Package is
    procedure Initialize (This : in out BasicEventHandler'Class);
    function Create return BasicEventHandler_Access;
    function toString (This : in out BasicEventHandler) return Unbounded_String;
-   procedure toString (This : in out BasicEventHandler);
    procedure removeAllListeners (This : in out BasicEventHandler);
    procedure addListenerSingleThreaded (This : in out BasicEventHandler; eventListenerInterface : EventListenerInterface_Access);
    procedure addListenerInterface (This : in out BasicEventHandler; eventListenerInterface : EventListenerInterface_Access);
@@ -66,7 +65,6 @@ package org.allbinary.logic.util.event.handler.BasicEventHandler_Package is
    procedure fireEvent (This : in out BasicEventHandler; eventObject : AllBinaryEventObject_Access);
    procedure process (This : in out BasicEventHandler; eventObject : AllBinaryEventObject_Access; eventListenerInterface : EventListenerInterface_Access);
    function getEventListenerInterfaceListP (This : in out BasicEventHandler) return BasicArrayList_Access;
-   procedure getEventListenerInterfaceListP (This : in out BasicEventHandler);
 
 end org.allbinary.logic.util.event.handler.BasicEventHandler_Package;
 

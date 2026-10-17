@@ -41,9 +41,7 @@ package org.allbinary.game.displayable.canvas.GameLimitedCommandTextItemArrayFac
    procedure Initialize (This : in out GameLimitedCommandTextItemArrayFactory'Class);
    function Create return GameLimitedCommandTextItemArrayFactory_Access;
    function getInstance return GameLimitedCommandTextItemArrayFactory_Access;
-   procedure getInstance;
    function getCommandTextItemArrayFactory (This : in out GameLimitedCommandTextItemArrayFactory) return CommandTextItemArrayFactory_Access;
-   procedure getCommandTextItemArrayFactory (This : in out GameLimitedCommandTextItemArrayFactory);
 
 end org.allbinary.game.displayable.canvas.GameLimitedCommandTextItemArrayFactory_Package;
 

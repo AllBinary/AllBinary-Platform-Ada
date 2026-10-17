@@ -45,7 +45,7 @@ package body org.allbinary.game.combat.damage.AnimationDamageFloaters_Package is
    function Create (layerInterface : AllBinaryLayer_Access; animationInterfaceArray : IndexedAnimation_Access_Array_Access; dx : Integer; dy : Integer) return AnimationDamageFloaters_Access is
       This : constant AnimationDamageFloaters_Access := new AnimationDamageFloaters;
    begin
-      Initialize (This.all, layerInterface, animationInterfaceArray, dx, dy);
+      AnimationDamageFloaters_Package.Initialize (This.all, layerInterface, animationInterfaceArray, dx, dy);
       return This;
    end Create;
 

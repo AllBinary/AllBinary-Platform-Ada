@@ -28,7 +28,7 @@ package body org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeC
    function Create return PathFindingNodeCostInfoFactoryBase_Access is
       This : constant PathFindingNodeCostInfoFactoryBase_Access := new PathFindingNodeCostInfoFactoryBase;
    begin
-      Initialize (This.all);
+      PathFindingNodeCostInfoFactoryBase_Package.Initialize (This.all);
       return This;
    end Create;
 

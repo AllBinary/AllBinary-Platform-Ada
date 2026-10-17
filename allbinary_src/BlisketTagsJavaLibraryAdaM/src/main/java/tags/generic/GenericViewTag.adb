@@ -36,7 +36,7 @@ package body tags.generic_Id.GenericViewTag_Package is
    function Create return GenericViewTag_Access is
       This : constant GenericViewTag_Access := new GenericViewTag;
    begin
-      Initialize (This.all);
+      GenericViewTag_Package.Initialize (This.all);
       return This;
    end Create;
 

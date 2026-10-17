@@ -33,20 +33,13 @@ package body org.allbinary.logic.visual.dhtml.html.head.meta.HtmlMetaData_Packag
    function Create return HtmlMetaData_Access is
       This : constant HtmlMetaData_Access := new HtmlMetaData;
    begin
-      Initialize (This.all);
+      HtmlMetaData_Package.Initialize (This.all);
       return This;
    end Create;
 
    function getInstance return HtmlMetaData_Access is
    begin
         return HtmlMetaData_Package.instance;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant HtmlMetaData_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

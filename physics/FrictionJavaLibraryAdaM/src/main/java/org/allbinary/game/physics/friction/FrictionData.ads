@@ -35,7 +35,6 @@ package org.allbinary.game.physics.friction.FrictionData_Package is
    procedure Initialize (This : in out FrictionData'Class);
    function Create return FrictionData_Access;
    function getFrictionDenominator return Integer;
-   procedure getFrictionDenominator;
 
 end org.allbinary.game.physics.friction.FrictionData_Package;
 

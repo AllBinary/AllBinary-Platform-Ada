@@ -31,7 +31,7 @@ package body org.allbinary.graphics.canvas.transition.progress.TitleProgressBarS
    function Create (midletActivity : Activity_Access; progressCanvas : ProgressCanvas_Access) return TitleProgressBarSetProgressRunnable_Access is
       This : constant TitleProgressBarSetProgressRunnable_Access := new TitleProgressBarSetProgressRunnable;
    begin
-      Initialize (This.all, midletActivity, progressCanvas);
+      TitleProgressBarSetProgressRunnable_Package.Initialize (This.all, midletActivity, progressCanvas);
       return This;
    end Create;
 

@@ -34,7 +34,7 @@ package body tags.TransformTag_Package is
    function Create return TransformTag_Access is
       This : constant TransformTag_Access := new TransformTag;
    begin
-      Initialize (This.all);
+      TransformTag_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -51,7 +51,7 @@ package body tags.TransformTag_Package is
    function Create (tagHelperFactoryInterface : TagHelperFactoryInterface_Access) return TransformTag_Access is
       This : constant TransformTag_Access := new TransformTag;
    begin
-      Initialize (This.all, tagHelperFactoryInterface);
+      TransformTag_Package.Initialize (This.all, tagHelperFactoryInterface);
       return This;
    end Create;
 
@@ -106,20 +106,6 @@ package body tags.TransformTag_Package is
             return SKIP_BODY;
                 end;
         end;
-   end doStartTag;
-
-   procedure view (This : in out TransformTag) is
-      Java_Result : constant Unbounded_String := TransformTag'Class (This).view;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end view;
-
-   procedure doStartTag (This : in out TransformTag) is
-      Java_Result : constant Integer := TransformTag'Class (This).doStartTag;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end doStartTag;
 
 end tags.TransformTag_Package;

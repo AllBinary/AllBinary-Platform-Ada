@@ -31,7 +31,7 @@ package body org.allbinary.business.context.modules.storefront.statistics.orders
    function Create (storeFrontOrdersHistoryStatisticsInterface : StoreFrontOrdersHistoryStatisticsInterface_Access) return StoreFrontOrdersHistoryStatisticsView_Access is
       This : constant StoreFrontOrdersHistoryStatisticsView_Access := new StoreFrontOrdersHistoryStatisticsView;
    begin
-      Initialize (This.all, storeFrontOrdersHistoryStatisticsInterface);
+      StoreFrontOrdersHistoryStatisticsView_Package.Initialize (This.all, storeFrontOrdersHistoryStatisticsInterface);
       return This;
    end Create;
 

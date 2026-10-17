@@ -29,7 +29,7 @@ package body org.allbinary.game.input.MotionLaptopGameInputMapping_Package is
    function Create return MotionLaptopGameInputMapping_Access is
       This : constant MotionLaptopGameInputMapping_Access := new MotionLaptopGameInputMapping;
    begin
-      Initialize (This.all);
+      MotionLaptopGameInputMapping_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -37,13 +37,6 @@ package body org.allbinary.game.input.MotionLaptopGameInputMapping_Package is
    function getDefault (This : in out MotionLaptopGameInputMapping) return InputToGameKeyMapping_Access is
    begin
         return MotionLaptopDefaultGameInputMapping_Package.Create.getInputMapping;
-   end getDefault;
-
-   procedure getDefault (This : in out MotionLaptopGameInputMapping) is
-      Java_Result : constant InputToGameKeyMapping_Access := MotionLaptopGameInputMapping'Class (This).getDefault;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getDefault;
 
 end org.allbinary.game.input.MotionLaptopGameInputMapping_Package;

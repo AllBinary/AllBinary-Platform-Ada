@@ -39,7 +39,6 @@ package org.allbinary.logic.system.security.licensing.StoreAppClientInformation_
    procedure Initialize (This : in out StoreAppClientInformation'Class; name : Unbounded_String; version : Unbounded_String; specialName : Unbounded_String; shortName : Unbounded_String; longArrayIdentifier : Long_Long_Integer_Array_Access);
    function Create (name : Unbounded_String; version : Unbounded_String; specialName : Unbounded_String; shortName : Unbounded_String; longArrayIdentifier : Long_Long_Integer_Array_Access) return StoreAppClientInformation_Access;
    function getLongArrayIdentifier (This : in out StoreAppClientInformation) return Long_Long_Integer_Array_Access;
-   procedure getLongArrayIdentifier (This : in out StoreAppClientInformation);
 
 end org.allbinary.logic.system.security.licensing.StoreAppClientInformation_Package;
 

@@ -29,7 +29,7 @@ package body org.allbinary.layer.SingleLayerLayerManager_Package is
    function Create return SingleLayerLayerManager_Access is
       This : constant SingleLayerLayerManager_Access := new SingleLayerLayerManager;
    begin
-      Initialize (This.all);
+      SingleLayerLayerManager_Package.Initialize (This.all);
       return This;
    end Create;
 

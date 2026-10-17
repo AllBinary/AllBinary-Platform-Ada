@@ -32,7 +32,7 @@ package body org.allbinary.logic.system.loader.SecuredNativeLibraryHelperWrapper
    function Create (securedNativeLibraryInterface : SecuredNativeLibraryInterface_Access) return SecuredNativeLibraryHelperWrapper_Access is
       This : constant SecuredNativeLibraryHelperWrapper_Access := new SecuredNativeLibraryHelperWrapper;
    begin
-      Initialize (This.all, securedNativeLibraryInterface);
+      SecuredNativeLibraryHelperWrapper_Package.Initialize (This.all, securedNativeLibraryInterface);
       return This;
    end Create;
 

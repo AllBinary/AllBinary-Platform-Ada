@@ -66,12 +66,9 @@ package org.allbinary.logic.visual.dhtml.html.select_Id.HtmlSelect_Package is
    procedure addOptions (This : in out HtmlSelect; fileName : Unbounded_String);
    procedure setSelected (This : in out HtmlSelect; selected : Unbounded_String);
    function isMultiple (This : in out HtmlSelect) return Boolean;
-   procedure isMultiple (This : in out HtmlSelect);
    procedure setMultiple (This : in out HtmlSelect; value : Boolean);
    function getOptions (This : in out HtmlSelect) return Unbounded_String;
-   procedure getOptions (This : in out HtmlSelect);
    function toString (This : in out HtmlSelect) return Unbounded_String;
-   procedure toString (This : in out HtmlSelect);
 
 end org.allbinary.logic.visual.dhtml.html.select_Id.HtmlSelect_Package;
 

@@ -20,6 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
+with org.allbinary.graphics.color.BasicColorUtil_Package; use org.allbinary.graphics.color.BasicColorUtil_Package;
 
 package org.allbinary.graphics.color.BasicColorUtilFactory_Package is
 
@@ -34,7 +35,6 @@ package org.allbinary.graphics.color.BasicColorUtilFactory_Package is
    procedure Initialize (This : in out BasicColorUtilFactory'Class);
    function Create return BasicColorUtilFactory_Access;
    function getInstance return BasicColorUtil_Access;
-   procedure getInstance;
 
 end org.allbinary.graphics.color.BasicColorUtilFactory_Package;
 

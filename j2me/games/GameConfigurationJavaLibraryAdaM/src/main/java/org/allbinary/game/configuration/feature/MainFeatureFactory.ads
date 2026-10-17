@@ -20,6 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
+with org.allbinary.game.configuration.feature.Feature_Package; use org.allbinary.game.configuration.feature.Feature_Package;
 
 package org.allbinary.game.configuration.feature.MainFeatureFactory_Package is
 
@@ -41,7 +42,6 @@ package org.allbinary.game.configuration.feature.MainFeatureFactory_Package is
    procedure Initialize (This : in out MainFeatureFactory'Class);
    function Create return MainFeatureFactory_Access;
    function getInstance return MainFeatureFactory_Access;
-   procedure getInstance;
 
 end org.allbinary.game.configuration.feature.MainFeatureFactory_Package;
 

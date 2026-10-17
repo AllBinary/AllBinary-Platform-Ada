@@ -33,6 +33,11 @@ with org.allbinary.math.RectangleCollisionPointUtil_Package; use org.allbinary.m
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.allbinary.graphics.j2me.workarea.tools.GraphicItemInterface_Package; use org.allbinary.graphics.j2me.workarea.tools.GraphicItemInterface_Package;
+with org.allbinary.graphics.j2me.workarea.tools.Color_Package; use org.allbinary.graphics.j2me.workarea.tools.Color_Package;
+with org.allbinary.graphics.j2me.workarea.tools.Points_Package; use org.allbinary.graphics.j2me.workarea.tools.Points_Package;
+with org.allbinary.graphics.j2me.workarea.tools.LinesGraphicItem_Package; use org.allbinary.graphics.j2me.workarea.tools.LinesGraphicItem_Package;
+with org.allbinary.graphics.j2me.workarea.tools.Graphics_Package; use org.allbinary.graphics.j2me.workarea.tools.Graphics_Package;
+with org.allbinary.graphics.j2me.workarea.tools.MouseStrings_Package; use org.allbinary.graphics.j2me.workarea.tools.MouseStrings_Package;
 
 package org.allbinary.graphics.j2me.workarea.tools.SelectionTool_Package is
 
@@ -68,14 +73,10 @@ package org.allbinary.graphics.j2me.workarea.tools.SelectionTool_Package is
    function Create (canvasJPanel : CanvasJPanel_Access) return SelectionTool_Access;
    procedure setColor (This : in out SelectionTool; color : Color_Access);
    function getTreeNode (This : in out SelectionTool) return MutableTreeNode_Access;
-   procedure getTreeNode (This : in out SelectionTool);
    function getPointsInterface (This : in out SelectionTool) return Points_Access;
-   procedure getPointsInterface (This : in out SelectionTool);
    procedure setPointsInterface (This : in out SelectionTool; points : Points_Access);
    function isValid (This : in out SelectionTool) return Boolean;
-   procedure isValid (This : in out SelectionTool);
    function isActive (This : in out SelectionTool) return Boolean;
-   procedure isActive (This : in out SelectionTool);
    procedure deactivate (This : in out SelectionTool);
    procedure activate (This : in out SelectionTool);
    procedure setFulcrumPoint (This : in out SelectionTool; point : GPoint_Access);
@@ -85,22 +86,16 @@ package org.allbinary.graphics.j2me.workarea.tools.SelectionTool_Package is
    procedure setAngle (This : in out SelectionTool; angle : Long_Float);
    procedure addAngle (This : in out SelectionTool; angle : Long_Float);
    function getAngle (This : in out SelectionTool) return Long_Float;
-   procedure getAngle (This : in out SelectionTool);
    procedure makeSelection (This : in out SelectionTool);
    function getXRect (This : in out SelectionTool) return Integer;
-   procedure getXRect (This : in out SelectionTool);
    function getYRect (This : in out SelectionTool) return Integer;
-   procedure getYRect (This : in out SelectionTool);
    procedure paint (This : in out SelectionTool; g : Graphics_Access; canvasAngle : Long_Float; dimension : IntegerDimension_Access; x : Integer; y : Integer);
    function toDom (This : in out SelectionTool; canvasDom : CanvasDom_Access) return Node_Access;
    procedure toDom (This : in out SelectionTool; canvasDom : CanvasDom_Access);
    function removePoint (This : in out SelectionTool) return GPoint_Access;
-   procedure removePoint (This : in out SelectionTool);
    procedure addPoint (This : in out SelectionTool; point : GPoint_Access);
    function getName (This : in out SelectionTool) return Unbounded_String;
-   procedure getName (This : in out SelectionTool);
    function getStaticName return Unbounded_String;
-   procedure getStaticName;
    procedure mouseClicked (This : in out SelectionTool; mouseEvent : MouseEvent_Access; xPixelsPerCell : Integer; yPixelsPerCell : Integer);
    procedure mouseMoved (This : in out SelectionTool; mouseEvent : MouseEvent_Access; xPixelsPerCell : Integer; yPixelsPerCell : Integer);
    procedure mouseEntered (This : in out SelectionTool; mouseEvent : MouseEvent_Access);
@@ -112,7 +107,6 @@ package org.allbinary.graphics.j2me.workarea.tools.SelectionTool_Package is
    procedure keyReleased (This : in out SelectionTool; keyEvent : KeyEvent_Access);
    procedure keyTyped (This : in out SelectionTool; keyEvent : KeyEvent_Access);
    function duplicate (This : in out SelectionTool) return GraphicItemInterface_Access;
-   procedure duplicate (This : in out SelectionTool);
 
 end org.allbinary.graphics.j2me.workarea.tools.SelectionTool_Package;
 

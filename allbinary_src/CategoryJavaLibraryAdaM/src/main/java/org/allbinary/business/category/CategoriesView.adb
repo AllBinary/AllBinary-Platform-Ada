@@ -31,7 +31,7 @@ package body org.allbinary.business.category.CategoriesView_Package is
    function Create (categoryInterface : CategoryInterface_Access) return CategoriesView_Access is
       This : constant CategoriesView_Access := new CategoriesView;
    begin
-      Initialize (This.all, categoryInterface);
+      CategoriesView_Package.Initialize (This.all, categoryInterface);
       return This;
    end Create;
 

@@ -28,7 +28,6 @@ package org.allbinary.graphics.form.ScreenInfo_Package is
    procedure Initialize (This : in out ScreenInfo'Class);
    function Create return ScreenInfo_Access;
    function getInstance return ScreenInfo_Access;
-   procedure getInstance;
 
 end org.allbinary.graphics.form.ScreenInfo_Package;
 

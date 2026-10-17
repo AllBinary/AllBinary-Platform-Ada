@@ -34,7 +34,7 @@ package body org.allbinary.thread.SecondaryThreadPool_Package is
    function Create (poolName : Unbounded_String; numThreads : Integer; priority : Integer) return SecondaryThreadPool_Access is
       This : constant SecondaryThreadPool_Access := new SecondaryThreadPool;
    begin
-      Initialize (This.all, poolName, numThreads, priority);
+      SecondaryThreadPool_Package.Initialize (This.all, poolName, numThreads, priority);
       return This;
    end Create;
 
@@ -53,13 +53,6 @@ package body org.allbinary.thread.SecondaryThreadPool_Package is
    begin
         This.logUtil.putF (StringMaker_Package.Create.append (This.threadPoolStrings.COMPLETE_TASK).append (StringUtil_Package.getInstance.toString (task_Id)).appendlong (Long_Long_Integer (Java_Current_Time_Millis)).toString, This'Unchecked_Access, This.commonStrings.RUN);
    end completedTask;
-
-   procedure getInstance is
-      Java_Result : constant ThreadPool_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

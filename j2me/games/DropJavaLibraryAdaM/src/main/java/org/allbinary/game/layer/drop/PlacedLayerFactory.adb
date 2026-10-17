@@ -20,7 +20,7 @@ package body org.allbinary.game.layer.drop.PlacedLayerFactory_Package is
    function Create return PlacedLayerFactory_Access is
       This : constant PlacedLayerFactory_Access := new PlacedLayerFactory;
    begin
-      Initialize (This.all);
+      PlacedLayerFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -48,27 +48,6 @@ package body org.allbinary.game.layer.drop.PlacedLayerFactory_Package is
    begin
         This.list.add (layerInterfaceFactoryInterface);
    end add;
-
-   procedure getInstance is
-      Java_Result : constant PlacedLayerFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure getSize (This : in out PlacedLayerFactory) is
-      Java_Result : constant Integer := PlacedLayerFactory'Class (This).getSize;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSize;
-
-   procedure getRandomInstance (This : in out PlacedLayerFactory) is
-      Java_Result : constant AllBinaryLayerFactoryInterface_Access := PlacedLayerFactory'Class (This).getRandomInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getRandomInstance;
 
 begin
    null;

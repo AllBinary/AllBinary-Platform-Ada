@@ -37,7 +37,7 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
    function Create (genericProfileActionJPanel : GenericProfileActionJPanel_Access; profileActionScriptConditionInterface : ProfileActionScriptConditionInterface_Access) return RemoveActionScriptItemJPanel_Access is
       This : constant RemoveActionScriptItemJPanel_Access := new RemoveActionScriptItemJPanel;
    begin
-      Initialize (This.all, genericProfileActionJPanel, profileActionScriptConditionInterface);
+      RemoveActionScriptItemJPanel_Package.Initialize (This.all, genericProfileActionJPanel, profileActionScriptConditionInterface);
       return This;
    end Create;
 

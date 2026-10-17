@@ -35,7 +35,7 @@ package body org.allbinary.animation.vector.RectangleFilledAnimation_Package is
    function Create (width : Integer; height : Integer; basicColor : BasicColor_Access) return RectangleFilledAnimation_Access is
       This : constant RectangleFilledAnimation_Access := new RectangleFilledAnimation;
    begin
-      Initialize (This.all, width, height, basicColor);
+      RectangleFilledAnimation_Package.Initialize (This.all, width, height, basicColor);
       return This;
    end Create;
 

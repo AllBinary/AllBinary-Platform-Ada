@@ -23,6 +23,7 @@ with AllBinary_Java; use AllBinary_Java;
 --  with java.awt.image.BufferedImage_Package; use java.awt.image.BufferedImage_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.util.cache.CacheableInterface_Package; use org.allbinary.logic.util.cache.CacheableInterface_Package;
+with org.allbinary.media.image.cache.BufferedImageInfo_Package; use org.allbinary.media.image.cache.BufferedImageInfo_Package;
 
 package org.allbinary.media.image.cache.BufferedImageCacheable_Package is
 
@@ -42,12 +43,9 @@ package org.allbinary.media.image.cache.BufferedImageCacheable_Package is
    procedure Initialize (This : in out BufferedImageCacheable'Class; key : BufferedImageInfo_Access);
    function Create (key : BufferedImageInfo_Access) return BufferedImageCacheable_Access;
    function getKey (This : in out BufferedImageCacheable) return Java_Object_Access;
-   procedure getKey (This : in out BufferedImageCacheable);
    function getBufferedImage (This : in out BufferedImageCacheable) return BufferedImage_Access;
-   procedure getBufferedImage (This : in out BufferedImageCacheable);
    procedure setBufferedImage (This : in out BufferedImageCacheable; bufferedImage : BufferedImage_Access);
    function toString (This : in out BufferedImageCacheable) return Unbounded_String;
-   procedure toString (This : in out BufferedImageCacheable);
 
 end org.allbinary.media.image.cache.BufferedImageCacheable_Package;
 

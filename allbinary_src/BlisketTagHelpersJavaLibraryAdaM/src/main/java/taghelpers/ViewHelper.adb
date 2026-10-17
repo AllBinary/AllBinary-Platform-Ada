@@ -35,7 +35,7 @@ package body taghelpers.ViewHelper_Package is
    function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return ViewHelper_Access is
       This : constant ViewHelper_Access := new ViewHelper;
    begin
-      Initialize (This.all, hashMap, pageContext);
+      ViewHelper_Package.Initialize (This.all, hashMap, pageContext);
       return This;
    end Create;
 
@@ -114,48 +114,6 @@ package body taghelpers.ViewHelper_Package is
    begin
         return;
    end setTransformDocumentInterface;
-
-   procedure getTypeId (This : in out ViewHelper) is
-      Java_Result : constant Integer := ViewHelper'Class (This).getTypeId;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTypeId;
-
-   procedure view (This : in out ViewHelper) is
-      Java_Result : constant Unbounded_String := ViewHelper'Class (This).view;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end view;
-
-   procedure toXmlDoc (This : in out ViewHelper) is
-      Java_Result : constant Document_Access := ViewHelper'Class (This).toXmlDoc;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toXmlDoc;
-
-   procedure getViewObject (This : in out ViewHelper) is
-      Java_Result : constant TransformInterface_Access := ViewHelper'Class (This).getViewObject;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getViewObject;
-
-   procedure getTransformInfoInterface (This : in out ViewHelper) is
-      Java_Result : constant TransformInfoInterface_Access := ViewHelper'Class (This).getTransformInfoInterface;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTransformInfoInterface;
-
-   procedure getTransformDocumentInterface (This : in out ViewHelper) is
-      Java_Result : constant TransformDocumentInterface_Access := ViewHelper'Class (This).getTransformDocumentInterface;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTransformDocumentInterface;
 
 end taghelpers.ViewHelper_Package;
 

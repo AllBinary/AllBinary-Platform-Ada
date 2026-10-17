@@ -38,7 +38,7 @@ package body org.allbinary.logic.visual.transform.template.customizer.widgets.lo
    function Create return LogoValidation_Access is
       This : constant LogoValidation_Access := new LogoValidation;
    begin
-      Initialize (This.all);
+      LogoValidation_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -55,7 +55,7 @@ package body org.allbinary.logic.visual.transform.template.customizer.widgets.lo
    function Create (node : Node_Access) return LogoValidation_Access is
       This : constant LogoValidation_Access := new LogoValidation;
    begin
-      Initialize (This.all, node);
+      LogoValidation_Package.Initialize (This.all, node);
       return This;
    end Create;
 
@@ -71,7 +71,7 @@ package body org.allbinary.logic.visual.transform.template.customizer.widgets.lo
    function Create (hashMap : HashMap_Access) return LogoValidation_Access is
       This : constant LogoValidation_Access := new LogoValidation;
    begin
-      Initialize (This.all, hashMap);
+      LogoValidation_Package.Initialize (This.all, hashMap);
       return This;
    end Create;
 
@@ -213,40 +213,12 @@ package body org.allbinary.logic.visual.transform.template.customizer.widgets.lo
         LogoImageFileUtil_Package.Create (This.logoAbPath, This.logoFile).saveFiles (This.logoFileItem);
    end processLogoFile;
 
-   procedure isValid (This : in out LogoValidation) is
-      Java_Result : constant Boolean := LogoValidation'Class (This).isValid;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isValid;
-
-   procedure validationInfo (This : in out LogoValidation) is
-      Java_Result : constant Unbounded_String := LogoValidation'Class (This).validationInfo;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end validationInfo;
-
-   procedure toValidationInfoDoc (This : in out LogoValidation) is
-      Java_Result : constant Document_Access := LogoValidation'Class (This).toValidationInfoDoc;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toValidationInfoDoc;
-
    procedure toValidationInfoNode (This : in out LogoValidation; document : Document_Access) is
       Java_Result : constant Node_Access := LogoValidation'Class (This).toValidationInfoNode (document);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end toValidationInfoNode;
-
-   procedure toHashMap (This : in out LogoValidation) is
-      Java_Result : constant HashMap_Access := LogoValidation'Class (This).toHashMap;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toHashMap;
 
    procedure toXmlNode (This : in out LogoValidation; document : Document_Access) is
       Java_Result : constant Node_Access := LogoValidation'Class (This).toXmlNode (document);

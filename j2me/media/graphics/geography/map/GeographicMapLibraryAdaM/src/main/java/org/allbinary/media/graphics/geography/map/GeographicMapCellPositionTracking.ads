@@ -22,6 +22,11 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.displayable.canvas.AllBinaryGameCanvasInterface_Package; use org.allbinary.game.displayable.canvas.AllBinaryGameCanvasInterface_Package;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
+with org.allbinary.media.graphics.geography.map.SimpleGeographicMapCellPositionFactory_Package; use org.allbinary.media.graphics.geography.map.SimpleGeographicMapCellPositionFactory_Package;
+with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
+with org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package;
+with org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package; use org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
+with org.allbinary.media.graphics.geography.map.GeographicMapCompositeInterface_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCompositeInterface_Package;
 
 package org.allbinary.media.graphics.geography.map.GeographicMapCellPositionTracking_Package is
 
@@ -47,11 +52,8 @@ package org.allbinary.media.graphics.geography.map.GeographicMapCellPositionTrac
    function updateStart (This : in out GeographicMapCellPositionTracking; gameCanvasInterface : AllBinaryGameCanvasInterface_Access; layer : AllBinaryLayer_Access) return Boolean;
    procedure updateStart (This : in out GeographicMapCellPositionTracking; gameCanvasInterface : AllBinaryGameCanvasInterface_Access; layer : AllBinaryLayer_Access);
    function updateEnd (This : in out GeographicMapCellPositionTracking) return Boolean;
-   procedure updateEnd (This : in out GeographicMapCellPositionTracking);
    function getPreviousGeographicMapCellPosition (This : in out GeographicMapCellPositionTracking) return GeographicMapCellPosition_Access;
-   procedure getPreviousGeographicMapCellPosition (This : in out GeographicMapCellPositionTracking);
    function getCurrentGeographicMapCellPosition (This : in out GeographicMapCellPositionTracking) return GeographicMapCellPosition_Access;
-   procedure getCurrentGeographicMapCellPosition (This : in out GeographicMapCellPositionTracking);
 
 end org.allbinary.media.graphics.geography.map.GeographicMapCellPositionTracking_Package;
 

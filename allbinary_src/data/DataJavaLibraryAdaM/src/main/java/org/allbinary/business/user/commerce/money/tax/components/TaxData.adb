@@ -30,7 +30,7 @@ package body org.allbinary.business.user.commerce.money.tax.components.TaxData_P
    function Create return TaxData_Access is
       This : constant TaxData_Access := new TaxData;
    begin
-      Initialize (This.all);
+      TaxData_Package.Initialize (This.all);
       return This;
    end Create;
 

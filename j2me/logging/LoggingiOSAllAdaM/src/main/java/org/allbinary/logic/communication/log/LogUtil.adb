@@ -36,7 +36,7 @@ package body org.allbinary.logic.communication.log.LogUtil_Package is
    function Create return LogUtil_Access is
       This : constant LogUtil_Access := new LogUtil;
    begin
-      Initialize (This.all);
+      LogUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -66,7 +66,8 @@ package body org.allbinary.logic.communication.log.LogUtil_Package is
         Ada.Text_IO.Put_Line (Java_Image (message));
    end putF;
 
-   procedure putFS (This : in out LogUtil; specialMessage : Unbounded_String; className : Unbounded_String; functionName : Unbounded_String) is
+   procedure putFS (This : in out LogUtil; specialMessage : Unbounded_String; className_Param : Unbounded_String; functionName : Unbounded_String) is
+      className : Unbounded_String := className_Param;
       message : Unbounded_String;
    begin
         className := Java_New_String (StringMaker_Package.Create.append (className).append (CommonSeps_Package.getInstance.COLON).append (Integer_Package.toHexString (TsUtil_Package.getInstance.hashCode (This.anyType))).toString);
@@ -87,13 +88,6 @@ package body org.allbinary.logic.communication.log.LogUtil_Package is
         Ada.Text_IO.Put (Java_Image (LogUtil_Package.LOG_SUCCESS));
         Ada.Text_IO.Put_Line (Java_Image (message));
    end put;
-
-   procedure getInstance is
-      Java_Result : constant LogUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

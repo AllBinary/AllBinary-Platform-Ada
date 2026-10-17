@@ -34,7 +34,7 @@ package body org.allbinary.layer.AllBinaryLayerManager_Package is
    function Create return AllBinaryLayerManager_Access is
       This : constant AllBinaryLayerManager_Access := new AllBinaryLayerManager;
    begin
-      Initialize (This.all);
+      AllBinaryLayerManager_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -138,13 +138,6 @@ package body org.allbinary.layer.AllBinaryLayerManager_Package is
         end loop;
         LayerManager (This).cleanup;
    end cleanup;
-
-   procedure getLayerProcessorArray (This : in out AllBinaryLayerManager) is
-      Java_Result : constant LayerProcessor_Access_Array_Access := AllBinaryLayerManager'Class (This).getLayerProcessorArray;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getLayerProcessorArray;
 
 end org.allbinary.layer.AllBinaryLayerManager_Package;
 

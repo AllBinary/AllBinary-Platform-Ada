@@ -13,7 +13,7 @@
 --  Generated Code Do Not Modify
 
 
-package body org.allbinary.business.user.commerce.inventory.order_Case.OrderData_Package is
+package body org.allbinary.business.user.commerce.inventory.order.OrderData_Package is
 
    procedure Initialize_Fields (This : in out OrderData'Class) is
    begin
@@ -28,7 +28,7 @@ package body org.allbinary.business.user.commerce.inventory.order_Case.OrderData
    function Create return OrderData_Access is
       This : constant OrderData_Access := new OrderData;
    begin
-      Initialize (This.all);
+      OrderData_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -43,6 +43,6 @@ begin
    STORECOMMENT := To_Unbounded_String ("ORDER_STORE_COMMENT");
    STORECANCELCOMMENT := To_Unbounded_String ("ORDER_STORE_CANCEL_COMMENT");
 
-end org.allbinary.business.user.commerce.inventory.order_Case.OrderData_Package;
+end org.allbinary.business.user.commerce.inventory.order.OrderData_Package;
 
 

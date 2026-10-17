@@ -39,19 +39,12 @@ package admin.taghelpers.Table_Package is
    procedure Initialize (This : in out Table'Class);
    function Create return Table_Access;
    function drop (This : in out Table) return Unbounded_String;
-   procedure drop (This : in out Table);
    function create (This : in out Table) return Unbounded_String;
-   procedure create (This : in out Table);
    function restore (This : in out Table) return Unbounded_String;
-   procedure restore (This : in out Table);
    function backup (This : in out Table) return Unbounded_String;
-   procedure backup (This : in out Table);
    function insert (This : in out Table) return Unbounded_String;
-   procedure insert (This : in out Table);
    function delete (This : in out Table) return Unbounded_String;
-   procedure delete (This : in out Table);
    function update (This : in out Table) return Unbounded_String;
-   procedure update (This : in out Table);
 
 end admin.taghelpers.Table_Package;
 

@@ -31,7 +31,7 @@ package body org.allbinary.graphics.opengles.shader.UniformLightColorOpenGLProce
    function Create (shaderComposite : ShaderComposite_Access; handleIndex : Integer) return UniformLightColorOpenGLProcessor_Access is
       This : constant UniformLightColorOpenGLProcessor_Access := new UniformLightColorOpenGLProcessor;
    begin
-      Initialize (This.all, shaderComposite, handleIndex);
+      UniformLightColorOpenGLProcessor_Package.Initialize (This.all, shaderComposite, handleIndex);
       return This;
    end Create;
 

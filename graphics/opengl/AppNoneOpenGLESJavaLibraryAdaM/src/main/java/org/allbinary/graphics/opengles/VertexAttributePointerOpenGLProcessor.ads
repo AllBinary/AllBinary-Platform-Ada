@@ -38,7 +38,6 @@ package org.allbinary.graphics.opengles.VertexAttributePointerOpenGLProcessor_Pa
    procedure Initialize (This : in out VertexAttributePointerOpenGLProcessor'Class);
    function Create return VertexAttributePointerOpenGLProcessor_Access;
    function getInstance return VertexAttributePointerOpenGLProcessor_Access;
-   procedure getInstance;
    procedure process (This : in out VertexAttributePointerOpenGLProcessor; gl : GL10_Access; anyType : Java_Object_Access);
 
 end org.allbinary.graphics.opengles.VertexAttributePointerOpenGLProcessor_Package;

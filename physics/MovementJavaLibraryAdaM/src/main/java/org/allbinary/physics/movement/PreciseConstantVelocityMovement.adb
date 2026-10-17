@@ -22,7 +22,7 @@ package body org.allbinary.physics.movement.PreciseConstantVelocityMovement_Pack
    function Create (basicDecimal : BasicDecimal_Access; velocityProperties : BasicVelocityProperties_Access) return PreciseConstantVelocityMovement_Access is
       This : constant PreciseConstantVelocityMovement_Access := new PreciseConstantVelocityMovement;
    begin
-      Initialize (This.all, basicDecimal, velocityProperties);
+      PreciseConstantVelocityMovement_Package.Initialize (This.all, basicDecimal, velocityProperties);
       return This;
    end Create;
 

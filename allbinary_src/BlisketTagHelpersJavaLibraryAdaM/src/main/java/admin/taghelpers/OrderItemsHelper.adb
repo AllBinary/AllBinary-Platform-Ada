@@ -33,7 +33,7 @@ package body admin.taghelpers.OrderItemsHelper_Package is
    function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return OrderItemsHelper_Access is
       This : constant OrderItemsHelper_Access := new OrderItemsHelper;
    begin
-      Initialize (This.all, hashMap, pageContext);
+      OrderItemsHelper_Package.Initialize (This.all, hashMap, pageContext);
       return This;
    end Create;
 
@@ -135,34 +135,6 @@ package body admin.taghelpers.OrderItemsHelper_Package is
             return error;
                 end;
         end;
-   end backup;
-
-   procedure drop (This : in out OrderItemsHelper) is
-      Java_Result : constant Unbounded_String := OrderItemsHelper'Class (This).drop;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end drop;
-
-   procedure create (This : in out OrderItemsHelper) is
-      Java_Result : constant Unbounded_String := OrderItemsHelper'Class (This).create;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end create;
-
-   procedure restore (This : in out OrderItemsHelper) is
-      Java_Result : constant Unbounded_String := OrderItemsHelper'Class (This).restore;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end restore;
-
-   procedure backup (This : in out OrderItemsHelper) is
-      Java_Result : constant Unbounded_String := OrderItemsHelper'Class (This).backup;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end backup;
 
 end admin.taghelpers.OrderItemsHelper_Package;

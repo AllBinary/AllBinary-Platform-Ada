@@ -29,7 +29,7 @@ package body org.allbinary.game.input.InputProcessorFactory_Package is
    function Create return InputProcessorFactory_Access is
       This : constant InputProcessorFactory_Access := new InputProcessorFactory;
    begin
-      Initialize (This.all);
+      InputProcessorFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -42,20 +42,6 @@ package body org.allbinary.game.input.InputProcessorFactory_Package is
    function getInputProcessor (This : in out InputProcessorFactory) return InputProcessor_Access is
    begin
         return This.inputProcessor;
-   end getInputProcessor;
-
-   procedure getInstance is
-      Java_Result : constant InputProcessorFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure getInputProcessor (This : in out InputProcessorFactory) is
-      Java_Result : constant InputProcessor_Access := InputProcessorFactory'Class (This).getInputProcessor;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInputProcessor;
 
 begin

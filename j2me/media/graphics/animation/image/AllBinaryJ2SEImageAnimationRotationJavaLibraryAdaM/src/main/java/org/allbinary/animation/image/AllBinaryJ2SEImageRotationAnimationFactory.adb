@@ -46,7 +46,7 @@ package body org.allbinary.animation.image.AllBinaryJ2SEImageRotationAnimationFa
    function Create (image : Image_Access; width : Integer; height : Integer; angleIncrement : Short_Integer; animationBehaviorFactory : AnimationBehaviorFactory_Access; resizeCanvasForRotation : Boolean) return AllBinaryJ2SEImageRotationAnimationFactory_Access is
       This : constant AllBinaryJ2SEImageRotationAnimationFactory_Access := new AllBinaryJ2SEImageRotationAnimationFactory;
    begin
-      Initialize (This.all, image, width, height, angleIncrement, animationBehaviorFactory, resizeCanvasForRotation);
+      AllBinaryJ2SEImageRotationAnimationFactory_Package.Initialize (This.all, image, width, height, angleIncrement, animationBehaviorFactory, resizeCanvasForRotation);
       return This;
    end Create;
 
@@ -96,26 +96,12 @@ package body org.allbinary.animation.image.AllBinaryJ2SEImageRotationAnimationFa
       null;
    end createDXY;
 
-   procedure getCanvasImage (This : in out AllBinaryJ2SEImageRotationAnimationFactory) is
-      Java_Result : constant Image_Access := AllBinaryJ2SEImageRotationAnimationFactory'Class (This).getCanvasImage;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getCanvasImage;
-
    procedure getInstance (This : in out AllBinaryJ2SEImageRotationAnimationFactory; instanceId : Integer) is
       Java_Result : constant Animation_Access := AllBinaryJ2SEImageRotationAnimationFactory'Class (This).getInstance (instanceId);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInstance;
-
-   procedure getAngleIncrement (This : in out AllBinaryJ2SEImageRotationAnimationFactory) is
-      Java_Result : constant Short_Integer := AllBinaryJ2SEImageRotationAnimationFactory'Class (This).getAngleIncrement;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getAngleIncrement;
 
 end org.allbinary.animation.image.AllBinaryJ2SEImageRotationAnimationFactory_Package;
 

@@ -61,15 +61,10 @@ package admin.taghelpers.QuoteRequestHelper_Package is
    procedure Initialize (This : in out QuoteRequestHelper'Class; hashMap : HashMap_Access; pageContext : PageContext_Access);
    function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return QuoteRequestHelper_Access;
    function isValid (This : in out QuoteRequestHelper) return Boolean;
-   procedure isValid (This : in out QuoteRequestHelper);
    function validationInfo (This : in out QuoteRequestHelper) return Unbounded_String;
-   procedure validationInfo (This : in out QuoteRequestHelper);
    function insert (This : in out QuoteRequestHelper) return Unbounded_String;
-   procedure insert (This : in out QuoteRequestHelper);
    function update (This : in out QuoteRequestHelper) return Unbounded_String;
-   procedure update (This : in out QuoteRequestHelper);
    function delete (This : in out QuoteRequestHelper) return Unbounded_String;
-   procedure delete (This : in out QuoteRequestHelper);
 
 end admin.taghelpers.QuoteRequestHelper_Package;
 

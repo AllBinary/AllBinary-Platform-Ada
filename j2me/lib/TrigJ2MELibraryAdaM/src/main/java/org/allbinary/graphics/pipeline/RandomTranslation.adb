@@ -28,7 +28,7 @@ package body org.allbinary.graphics.pipeline.RandomTranslation_Package is
    function Create return RandomTranslation_Access is
       This : constant RandomTranslation_Access := new RandomTranslation;
    begin
-      Initialize (This.all);
+      RandomTranslation_Package.Initialize (This.all);
       return This;
    end Create;
 

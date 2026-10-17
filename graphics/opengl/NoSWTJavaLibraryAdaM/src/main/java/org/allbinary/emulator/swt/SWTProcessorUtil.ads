@@ -20,6 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
+with org.allbinary.emulator.swt.SWTProcessor_Package; use org.allbinary.emulator.swt.SWTProcessor_Package;
 
 package org.allbinary.emulator.swt.SWTProcessorUtil_Package is
 
@@ -37,7 +38,6 @@ package org.allbinary.emulator.swt.SWTProcessorUtil_Package is
    procedure Initialize (This : in out SWTProcessorUtil'Class);
    function Create return SWTProcessorUtil_Access;
    function getInstance return SWTProcessorUtil_Access;
-   procedure getInstance;
 
 end org.allbinary.emulator.swt.SWTProcessorUtil_Package;
 

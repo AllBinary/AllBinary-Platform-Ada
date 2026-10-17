@@ -31,7 +31,7 @@ package body org.allbinary.game.ag.layer.weapon.mine.MineLayerFactory_Package is
    function Create (viewPositionFactoryInterface : ViewPositionFactoryInterface_Access) return MineLayerFactory_Access is
       This : constant MineLayerFactory_Access := new MineLayerFactory;
    begin
-      Initialize (This.all, viewPositionFactoryInterface);
+      MineLayerFactory_Package.Initialize (This.all, viewPositionFactoryInterface);
       return This;
    end Create;
 
@@ -39,13 +39,6 @@ package body org.allbinary.game.ag.layer.weapon.mine.MineLayerFactory_Package is
    function getInstance (This : in out MineLayerFactory) return AllBinaryLayer_Access is
    begin
         return MineLayer_Package.Create (This.viewPositionFactoryInterface.getInstance);
-   end getInstance;
-
-   procedure getInstance (This : in out MineLayerFactory) is
-      Java_Result : constant AllBinaryLayer_Access := MineLayerFactory'Class (This).getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 end org.allbinary.game.ag.layer.weapon.mine.MineLayerFactory_Package;

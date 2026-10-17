@@ -41,7 +41,7 @@ package body org.allbinary.game.displayable.canvas.CommandFormInputProcessor_Pac
    function Create (gameKeyEventList : BasicArrayList_Access; playerInputId : Integer; gameCanvas : MyCanvas_Access; form : ScrollSelectionForm_Access) return CommandFormInputProcessor_Access is
       This : constant CommandFormInputProcessor_Access := new CommandFormInputProcessor;
    begin
-      Initialize (This.all, gameKeyEventList, playerInputId, gameCanvas, form);
+      CommandFormInputProcessor_Package.Initialize (This.all, gameKeyEventList, playerInputId, gameCanvas, form);
       return This;
    end Create;
 
@@ -189,34 +189,6 @@ package body org.allbinary.game.displayable.canvas.CommandFormInputProcessor_Pac
    begin
       null;
    end processInput;
-
-   procedure processCommand (This : in out CommandFormInputProcessor) is
-      Java_Result : constant Integer := CommandFormInputProcessor'Class (This).processCommand;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end processCommand;
-
-   procedure processInputList (This : in out CommandFormInputProcessor) is
-      Java_Result : constant Integer := CommandFormInputProcessor'Class (This).processInputList;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end processInputList;
-
-   procedure processMotionInputs (This : in out CommandFormInputProcessor) is
-      Java_Result : constant Integer := CommandFormInputProcessor'Class (This).processMotionInputs;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end processMotionInputs;
-
-   procedure toString (This : in out CommandFormInputProcessor) is
-      Java_Result : constant Unbounded_String := CommandFormInputProcessor'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toString;
 
 end org.allbinary.game.displayable.canvas.CommandFormInputProcessor_Package;
 

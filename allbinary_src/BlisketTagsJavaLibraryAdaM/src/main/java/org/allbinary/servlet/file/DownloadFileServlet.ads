@@ -77,7 +77,6 @@ package org.allbinary.servlet.file.DownloadFileServlet_Package is
    procedure doGet (This : in out DownloadFileServlet; request : HttpServletRequest_Access; response : HttpServletResponse_Access);
    procedure doPost (This : in out DownloadFileServlet; request : HttpServletRequest_Access; response : HttpServletResponse_Access);
    function getServletInfo (This : in out DownloadFileServlet) return Unbounded_String;
-   procedure getServletInfo (This : in out DownloadFileServlet);
 
 end org.allbinary.servlet.file.DownloadFileServlet_Package;
 

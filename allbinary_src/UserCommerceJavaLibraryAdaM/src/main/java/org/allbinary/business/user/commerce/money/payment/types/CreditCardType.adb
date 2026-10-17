@@ -31,20 +31,13 @@ package body org.allbinary.business.user.commerce.money.payment.types.CreditCard
    function Create (cardType : Unbounded_String) return CreditCardType_Access is
       This : constant CreditCardType_Access := new CreditCardType;
    begin
-      Initialize (This.all, cardType);
+      CreditCardType_Package.Initialize (This.all, cardType);
       return This;
    end Create;
 
    function toString (This : in out CreditCardType) return Unbounded_String is
    begin
         return This.name;
-   end toString;
-
-   procedure toString (This : in out CreditCardType) is
-      Java_Result : constant Unbounded_String := CreditCardType'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end toString;
 
 begin

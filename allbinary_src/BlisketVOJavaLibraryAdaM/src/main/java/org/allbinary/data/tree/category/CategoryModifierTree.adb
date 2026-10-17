@@ -36,7 +36,7 @@ package body org.allbinary.data.tree.category.CategoryModifierTree_Package is
    function Create (categoryFactoryInterface : CategoryFactoryInterface_Access) return CategoryModifierTree_Access is
       This : constant CategoryModifierTree_Access := new CategoryModifierTree;
    begin
-      Initialize (This.all, categoryFactoryInterface);
+      CategoryModifierTree_Package.Initialize (This.all, categoryFactoryInterface);
       return This;
    end Create;
 

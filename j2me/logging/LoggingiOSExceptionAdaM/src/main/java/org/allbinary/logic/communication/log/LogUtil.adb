@@ -37,7 +37,7 @@ package body org.allbinary.logic.communication.log.LogUtil_Package is
    function Create return LogUtil_Access is
       This : constant LogUtil_Access := new LogUtil;
    begin
-      Initialize (This.all);
+      LogUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -82,13 +82,6 @@ package body org.allbinary.logic.communication.log.LogUtil_Package is
         Ada.Text_IO.Put (Java_Image (This.LOG_SUCCESS));
         Ada.Text_IO.Put_Line (Java_Image (message));
    end put;
-
-   procedure getInstance is
-      Java_Result : constant LogUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

@@ -42,7 +42,6 @@ package org.allbinary.logic.system.hardware.components.linux.HardDriveController
    function compareTo (This : in out HardDriveController; componentInterface : HardwareComponentInterface_Access) return Boolean;
    procedure compareTo (This : in out HardDriveController; componentInterface : HardwareComponentInterface_Access);
    function toString (This : in out HardDriveController) return Unbounded_String;
-   procedure toString (This : in out HardDriveController);
 
 end org.allbinary.logic.system.hardware.components.linux.HardDriveController_Package;
 

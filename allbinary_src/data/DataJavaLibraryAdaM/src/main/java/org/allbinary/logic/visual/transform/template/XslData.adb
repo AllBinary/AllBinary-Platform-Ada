@@ -37,16 +37,9 @@ package body org.allbinary.logic.visual.transform.template.XslData_Package is
    function Create return XslData_Access is
       This : constant XslData_Access := new XslData;
    begin
-      Initialize (This.all);
+      XslData_Package.Initialize (This.all);
       return This;
    end Create;
-
-   procedure getInstance is
-      Java_Result : constant XslData_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

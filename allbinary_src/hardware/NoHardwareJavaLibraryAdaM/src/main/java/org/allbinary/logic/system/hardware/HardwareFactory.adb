@@ -36,7 +36,7 @@ package body org.allbinary.logic.system.hardware.HardwareFactory_Package is
    function Create return HardwareFactory_Access is
       This : constant HardwareFactory_Access := new HardwareFactory;
    begin
-      Initialize (This.all);
+      HardwareFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -53,13 +53,6 @@ package body org.allbinary.logic.system.hardware.HardwareFactory_Package is
             Java_Throw (e);
                 end;
         end;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant HardwareFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
    procedure getInstance (This : in out HardwareFactory; os : OperatingSystemInterface_Access) is

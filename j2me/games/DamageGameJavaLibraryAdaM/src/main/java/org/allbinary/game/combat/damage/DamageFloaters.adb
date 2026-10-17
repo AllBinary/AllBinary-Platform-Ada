@@ -29,7 +29,7 @@ package body org.allbinary.game.combat.damage.DamageFloaters_Package is
    function Create return DamageFloaters_Access is
       This : constant DamageFloaters_Access := new DamageFloaters;
    begin
-      Initialize (This.all);
+      DamageFloaters_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -43,13 +43,6 @@ package body org.allbinary.game.combat.damage.DamageFloaters_Package is
    begin
         null;
    end add;
-
-   procedure getInstance is
-      Java_Result : constant DamageFloaters_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

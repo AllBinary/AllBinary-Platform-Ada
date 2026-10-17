@@ -21,6 +21,8 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+with org.allbinary.game.layer.NullPathFindingLayer_Package; use org.allbinary.game.layer.NullPathFindingLayer_Package;
+with org.allbinary.game.layer.PathFindingLayerInterface_Package; use org.allbinary.game.layer.PathFindingLayerInterface_Package;
 
 package org.allbinary.game.layer.RTSLayerEvent_Package is
 
@@ -39,9 +41,7 @@ package org.allbinary.game.layer.RTSLayerEvent_Package is
    procedure Initialize (This : in out RTSLayerEvent'Class; rtsLayer : PathFindingLayerInterface_Access);
    function Create (rtsLayer : PathFindingLayerInterface_Access) return RTSLayerEvent_Access;
    function toString (This : in out RTSLayerEvent) return Unbounded_String;
-   procedure toString (This : in out RTSLayerEvent);
    function getRtsLayer (This : in out RTSLayerEvent) return PathFindingLayerInterface_Access;
-   procedure getRtsLayer (This : in out RTSLayerEvent);
    procedure setRtsLayer (This : in out RTSLayerEvent; rtsLayer : PathFindingLayerInterface_Access);
 
 end org.allbinary.game.layer.RTSLayerEvent_Package;

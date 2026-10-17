@@ -28,7 +28,7 @@ package body org.allbinary.business.user.commerce.inventory.item.custom.CustomIt
    function Create return CustomItemData_Access is
       This : constant CustomItemData_Access := new CustomItemData;
    begin
-      Initialize (This.all);
+      CustomItemData_Package.Initialize (This.all);
       return This;
    end Create;
 

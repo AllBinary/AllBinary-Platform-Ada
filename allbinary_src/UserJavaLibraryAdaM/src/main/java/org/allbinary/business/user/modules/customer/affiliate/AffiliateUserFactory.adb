@@ -30,7 +30,7 @@ package body org.allbinary.business.user.modules.customer.affiliate.AffiliateUse
    function Create return AffiliateUserFactory_Access is
       This : constant AffiliateUserFactory_Access := new AffiliateUserFactory;
    begin
-      Initialize (This.all);
+      AffiliateUserFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -44,13 +44,6 @@ package body org.allbinary.business.user.modules.customer.affiliate.AffiliateUse
    function getInstance (This : in out AffiliateUserFactory; hashMap : HashMap_Access) return UserInterface_Access is
    begin
         return AffiliateUser_Package.Create (hashMap);
-   end getInstance;
-
-   procedure getInstance (This : in out AffiliateUserFactory) is
-      Java_Result : constant UserInterface_Access := AffiliateUserFactory'Class (This).getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
    procedure getInstance (This : in out AffiliateUserFactory; hashMap : HashMap_Access) is

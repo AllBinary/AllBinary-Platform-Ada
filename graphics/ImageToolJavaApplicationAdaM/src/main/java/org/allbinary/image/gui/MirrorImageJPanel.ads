@@ -31,6 +31,7 @@ with org.allbinary.media.image.ImageStrings_Package; use org.allbinary.media.ima
 with org.allbinary.media.image.MirrorImageUtil_Package; use org.allbinary.media.image.MirrorImageUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.image.gui.JPanel_Package; use org.allbinary.image.gui.JPanel_Package;
+with org.allbinary.image.gui.Graphics_Package; use org.allbinary.image.gui.Graphics_Package;
 
 package org.allbinary.image.gui.MirrorImageJPanel_Package is
 
@@ -72,7 +73,6 @@ package org.allbinary.image.gui.MirrorImageJPanel_Package is
    procedure generateJButtonActionPerformed (This : in out MirrorImageJPanel; evt : ActionEvent_Access);
    procedure renameJRadioButtonActionPerformed (This : in out MirrorImageJPanel; evt : ActionEvent_Access);
    function getImageProcessorInput (This : in out MirrorImageJPanel) return ImageProcessorInput_Access;
-   procedure getImageProcessorInput (This : in out MirrorImageJPanel);
    procedure setImageProcessorInput (This : in out MirrorImageJPanel; imageProcessorInput : ImageProcessorInput_Access);
 
 end org.allbinary.image.gui.MirrorImageJPanel_Package;

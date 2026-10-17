@@ -18,7 +18,7 @@ package body org.allbinary.time.TimeTypeUtil_Package is
    function Create return TimeTypeUtil_Access is
       This : constant TimeTypeUtil_Access := new TimeTypeUtil;
    begin
-      Initialize (This.all);
+      TimeTypeUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -65,34 +65,6 @@ package body org.allbinary.time.TimeTypeUtil_Package is
    function getNightOrDay (This : in out TimeTypeUtil; timeInMillis : Long_Long_Integer) return Unbounded_String is
    begin
         return (if This.isNight (timeInMillis) then This.NIGHT else This.DAY);
-   end getNightOrDay;
-
-   procedure getInstance is
-      Java_Result : constant TimeTypeUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure isNight (This : in out TimeTypeUtil) is
-      Java_Result : constant Boolean := TimeTypeUtil'Class (This).isNight;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isNight;
-
-   procedure getHourOfDay (This : in out TimeTypeUtil) is
-      Java_Result : constant Integer := TimeTypeUtil'Class (This).getHourOfDay;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getHourOfDay;
-
-   procedure getNightOrDay (This : in out TimeTypeUtil) is
-      Java_Result : constant Unbounded_String := TimeTypeUtil'Class (This).getNightOrDay;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getNightOrDay;
 
    procedure getHourOfDay (This : in out TimeTypeUtil; timeInMillis : Long_Long_Integer) is

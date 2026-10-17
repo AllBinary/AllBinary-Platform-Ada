@@ -20,6 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
+with org.allbinary.graphics.color.Color_Package; use org.allbinary.graphics.color.Color_Package;
 
 package org.allbinary.graphics.color.ColorUtil_Package is
 
@@ -35,7 +36,6 @@ package org.allbinary.graphics.color.ColorUtil_Package is
    procedure Initialize (This : in out ColorUtil'Class);
    function Create return ColorUtil_Access;
    function getInstance return ColorUtil_Access;
-   procedure getInstance;
    function isGreyishOrWhiteLike (This : in out ColorUtil; color : Color_Access) return Boolean;
    procedure isGreyishOrWhiteLike (This : in out ColorUtil; color : Color_Access);
    function isDark (This : in out ColorUtil; color : Color_Access) return Boolean;

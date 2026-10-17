@@ -34,7 +34,7 @@ package body views.admin.customizers.CustomizersView_Package is
    function Create (transformInfoInterface : TransformInfoInterface_Access) return CustomizersView_Access is
       This : constant CustomizersView_Access := new CustomizersView;
    begin
-      Initialize (This.all, transformInfoInterface);
+      CustomizersView_Package.Initialize (This.all, transformInfoInterface);
       return This;
    end Create;
 
@@ -108,13 +108,6 @@ package body views.admin.customizers.CustomizersView_Package is
    begin
       null;
    end toXmlNode;
-
-   procedure view (This : in out CustomizersView) is
-      Java_Result : constant Unbounded_String := CustomizersView'Class (This).view;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end view;
 
 end views.admin.customizers.CustomizersView_Package;
 

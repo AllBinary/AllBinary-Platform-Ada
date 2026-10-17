@@ -30,7 +30,7 @@ package body org.allbinary.logic.visual.transform.template.customizer.TransformT
    function Create return TransformTemplateCustomizersData_Access is
       This : constant TransformTemplateCustomizersData_Access := new TransformTemplateCustomizersData;
    begin
-      Initialize (This.all);
+      TransformTemplateCustomizersData_Package.Initialize (This.all);
       return This;
    end Create;
 

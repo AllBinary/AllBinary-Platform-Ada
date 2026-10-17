@@ -58,7 +58,7 @@ package body org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package is
    function Create (workAreaJTreeJPanel : WorkAreaJTreeJPanel_Access; dimension : Dimension_Access; x : Integer; y : Integer) return CanvasJPanel_Access is
       This : constant CanvasJPanel_Access := new CanvasJPanel;
    begin
-      Initialize (This.all, workAreaJTreeJPanel, dimension, x, y);
+      CanvasJPanel_Package.Initialize (This.all, workAreaJTreeJPanel, dimension, x, y);
       return This;
    end Create;
 
@@ -105,7 +105,7 @@ package body org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package is
    function Create (workAreaJTreeJPanel : WorkAreaJTreeJPanel_Access; dimension : Dimension_Access; canvasDom : CanvasDom_Access) return CanvasJPanel_Access is
       This : constant CanvasJPanel_Access := new CanvasJPanel;
    begin
-      Initialize (This.all, workAreaJTreeJPanel, dimension, canvasDom);
+      CanvasJPanel_Package.Initialize (This.all, workAreaJTreeJPanel, dimension, canvasDom);
       return This;
    end Create;
 
@@ -711,82 +711,12 @@ package body org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package is
         return This.grid;
    end getGrid;
 
-   procedure getTreeNode (This : in out CanvasJPanel) is
-      Java_Result : constant MutableTreeNode_Access := CanvasJPanel'Class (This).getTreeNode;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTreeNode;
-
-   procedure getAngle (This : in out CanvasJPanel) is
-      Java_Result : constant Long_Float := CanvasJPanel'Class (This).getAngle;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getAngle;
-
-   procedure getGraphicItemHashMap (This : in out CanvasJPanel) is
-      Java_Result : constant HashMap_Access := CanvasJPanel'Class (This).getGraphicItemHashMap;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getGraphicItemHashMap;
-
-   procedure getXPixelsPerWorkAreaPixel (This : in out CanvasJPanel) is
-      Java_Result : constant Integer := CanvasJPanel'Class (This).getXPixelsPerWorkAreaPixel;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getXPixelsPerWorkAreaPixel;
-
-   procedure getYPixelsPerWorkAreaPixel (This : in out CanvasJPanel) is
-      Java_Result : constant Integer := CanvasJPanel'Class (This).getYPixelsPerWorkAreaPixel;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getYPixelsPerWorkAreaPixel;
-
-   procedure getSelectedTool (This : in out CanvasJPanel) is
-      Java_Result : constant GraphicItemInterface_Access := CanvasJPanel'Class (This).getSelectedTool;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSelectedTool;
-
-   procedure toDom (This : in out CanvasJPanel) is
-      Java_Result : constant Node_Access := CanvasJPanel'Class (This).toDom;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toDom;
-
    procedure logMouseEvent (This : in out CanvasJPanel; mouseEvent : MouseEvent_Access) is
       Java_Result : constant Unbounded_String := CanvasJPanel'Class (This).logMouseEvent (mouseEvent);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end logMouseEvent;
-
-   procedure duplicate (This : in out CanvasJPanel) is
-      Java_Result : constant CanvasJPanel_Access := CanvasJPanel'Class (This).duplicate;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end duplicate;
-
-   procedure getCanvasDimension (This : in out CanvasJPanel) is
-      Java_Result : constant IntegerDimension_Access := CanvasJPanel'Class (This).getCanvasDimension;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getCanvasDimension;
-
-   procedure getGrid (This : in out CanvasJPanel) is
-      Java_Result : constant Grid_Access := CanvasJPanel'Class (This).getGrid;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getGrid;
 
 begin
    null;

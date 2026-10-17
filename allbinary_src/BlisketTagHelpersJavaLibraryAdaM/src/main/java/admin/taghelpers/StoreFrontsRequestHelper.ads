@@ -86,14 +86,10 @@ package admin.taghelpers.StoreFrontsRequestHelper_Package is
    function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return StoreFrontsRequestHelper_Access;
    procedure getFormData (This : in out StoreFrontsRequestHelper);
    function update (This : in out StoreFrontsRequestHelper) return Unbounded_String;
-   procedure update (This : in out StoreFrontsRequestHelper);
    procedure sendStoreCreatedEmails (This : in out StoreFrontsRequestHelper);
    function install (This : in out StoreFrontsRequestHelper) return Unbounded_String;
-   procedure install (This : in out StoreFrontsRequestHelper);
    function insert (This : in out StoreFrontsRequestHelper) return Unbounded_String;
-   procedure insert (This : in out StoreFrontsRequestHelper);
    function delete (This : in out StoreFrontsRequestHelper) return Unbounded_String;
-   procedure delete (This : in out StoreFrontsRequestHelper);
 
 end admin.taghelpers.StoreFrontsRequestHelper_Package;
 

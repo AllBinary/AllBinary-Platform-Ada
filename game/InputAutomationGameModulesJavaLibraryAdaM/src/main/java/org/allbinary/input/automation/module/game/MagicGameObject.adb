@@ -31,7 +31,7 @@ package body org.allbinary.input.automation.module.game.MagicGameObject_Package 
    function Create (bufferedImage : BufferedImage_Access_Array_Access; minX : Integer; maxX : Integer; y : Integer) return MagicGameObject_Access is
       This : constant MagicGameObject_Access := new MagicGameObject;
    begin
-      Initialize (This.all, bufferedImage, minX, maxX, y);
+      MagicGameObject_Package.Initialize (This.all, bufferedImage, minX, maxX, y);
       return This;
    end Create;
 
@@ -43,13 +43,6 @@ package body org.allbinary.input.automation.module.game.MagicGameObject_Package 
         stringBuffer.append (This.MP_LABEL);
         stringBuffer.append (MeteredGameObject (This).toString);
         return stringBuffer.toString;
-   end toString;
-
-   procedure toString (This : in out MagicGameObject) is
-      Java_Result : constant Unbounded_String := MagicGameObject'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end toString;
 
 end org.allbinary.input.automation.module.game.MagicGameObject_Package;

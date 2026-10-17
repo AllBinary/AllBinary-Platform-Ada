@@ -23,6 +23,7 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.game.input.Input_Package; use org.allbinary.game.input.Input_Package;
+with org.allbinary.game.input.InputFactory_Package; use org.allbinary.game.input.InputFactory_Package;
 
 package org.allbinary.game.input.J2MEGameKey_Package is
 
@@ -39,7 +40,6 @@ package org.allbinary.game.input.J2MEGameKey_Package is
    procedure Initialize (This : in out J2MEGameKey'Class; key : Integer; keyName : Unbounded_String);
    function Create (key : Integer; keyName : Unbounded_String) return J2MEGameKey_Access;
    function toString (This : in out J2MEGameKey) return Unbounded_String;
-   procedure toString (This : in out J2MEGameKey);
    function getString (keyCode : Integer) return Unbounded_String;
    procedure getString (keyCode : Integer);
 

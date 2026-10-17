@@ -29,7 +29,7 @@ package body org.allbinary.game.score.LastFetchHighScoresFactory_Package is
    function Create return LastFetchHighScoresFactory_Access is
       This : constant LastFetchHighScoresFactory_Access := new LastFetchHighScoresFactory;
    begin
-      Initialize (This.all);
+      LastFetchHighScoresFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -40,13 +40,6 @@ package body org.allbinary.game.score.LastFetchHighScoresFactory_Package is
             LastFetchHighScoresFactory_Package.instance := LastFetchHighScoresFactory_Package.Create;
         end if;
         return LastFetchHighScoresFactory_Access (LastFetchHighScoresFactory_Package.instance);
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant LastFetchHighScoresFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

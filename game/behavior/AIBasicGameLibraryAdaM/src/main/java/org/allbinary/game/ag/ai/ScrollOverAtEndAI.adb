@@ -29,7 +29,7 @@ package body org.allbinary.game.ag.ai.ScrollOverAtEndAI_Package is
    function Create (ownerLayerInterface : AllBinaryLayer_Access; gameInput : GameInput_Access) return ScrollOverAtEndAI_Access is
       This : constant ScrollOverAtEndAI_Access := new ScrollOverAtEndAI;
    begin
-      Initialize (This.all, ownerLayerInterface, gameInput);
+      ScrollOverAtEndAI_Package.Initialize (This.all, ownerLayerInterface, gameInput);
       return This;
    end Create;
 

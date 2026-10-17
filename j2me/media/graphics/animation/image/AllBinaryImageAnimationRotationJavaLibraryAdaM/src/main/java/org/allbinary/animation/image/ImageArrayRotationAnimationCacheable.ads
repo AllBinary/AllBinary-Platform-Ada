@@ -25,6 +25,7 @@ with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Pack
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.logic.util.cache.CacheableInterface_Package; use org.allbinary.logic.util.cache.CacheableInterface_Package;
 with org.allbinary.animation.image.AdjustedImageArrayRotationAnimation_Package; use org.allbinary.animation.image.AdjustedImageArrayRotationAnimation_Package;
+with org.allbinary.animation.image.ImageArrayRotationAnimationInfo_Package; use org.allbinary.animation.image.ImageArrayRotationAnimationInfo_Package;
 
 package org.allbinary.animation.image.ImageArrayRotationAnimationCacheable_Package is
 
@@ -43,9 +44,7 @@ package org.allbinary.animation.image.ImageArrayRotationAnimationCacheable_Packa
    procedure Initialize (This : in out ImageArrayRotationAnimationCacheable'Class; anyType : Java_Object_Access; animationBehavior : AnimationBehavior_Access);
    function Create (anyType : Java_Object_Access; animationBehavior : AnimationBehavior_Access) return ImageArrayRotationAnimationCacheable_Access;
    function getKey (This : in out ImageArrayRotationAnimationCacheable) return Java_Object_Access;
-   procedure getKey (This : in out ImageArrayRotationAnimationCacheable);
    function toString (This : in out ImageArrayRotationAnimationCacheable) return Unbounded_String;
-   procedure toString (This : in out ImageArrayRotationAnimationCacheable);
 
 end org.allbinary.animation.image.ImageArrayRotationAnimationCacheable_Package;
 

@@ -28,7 +28,7 @@ package body org.allbinary.game.combat.destroy.DestroyableBaseBehavior_Package i
    function Create return DestroyableBaseBehavior_Access is
       This : constant DestroyableBaseBehavior_Access := new DestroyableBaseBehavior;
    begin
-      Initialize (This.all);
+      DestroyableBaseBehavior_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -53,27 +53,6 @@ package body org.allbinary.game.combat.destroy.DestroyableBaseBehavior_Package i
    begin
         null;
    end setDestroyed;
-
-   procedure getInstance is
-      Java_Result : constant DestroyableBaseBehavior_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure getName (This : in out DestroyableBaseBehavior) is
-      Java_Result : constant Unbounded_String := DestroyableBaseBehavior'Class (This).getName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getName;
-
-   procedure isDestroyed (This : in out DestroyableBaseBehavior) is
-      Java_Result : constant Boolean := DestroyableBaseBehavior'Class (This).isDestroyed;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isDestroyed;
 
 begin
    null;

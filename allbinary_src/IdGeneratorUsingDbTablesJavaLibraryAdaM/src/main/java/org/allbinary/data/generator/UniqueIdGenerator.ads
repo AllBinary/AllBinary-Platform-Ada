@@ -57,7 +57,6 @@ package org.allbinary.data.generator.UniqueIdGenerator_Package is
    procedure initialize (This : in out UniqueIdGenerator; value : Integer);
    procedure setFile (This : in out UniqueIdGenerator; filePathName : Unbounded_String; name : Unbounded_String);
    function getNext (This : in out UniqueIdGenerator) return Unbounded_String;
-   procedure getNext (This : in out UniqueIdGenerator);
 
 end org.allbinary.data.generator.UniqueIdGenerator_Package;
 

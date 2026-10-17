@@ -20,6 +20,8 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
+with org.allbinary.thirdparty.store.NoThirdPartyStore_Package; use org.allbinary.thirdparty.store.NoThirdPartyStore_Package;
+with org.allbinary.thirdparty.store.ThirdPartyStore_Package; use org.allbinary.thirdparty.store.ThirdPartyStore_Package;
 
 package org.allbinary.thirdparty.store.ThirdPartyStoreFactory_Package is
 
@@ -35,7 +37,6 @@ package org.allbinary.thirdparty.store.ThirdPartyStoreFactory_Package is
    procedure Initialize (This : in out ThirdPartyStoreFactory'Class);
    function Create return ThirdPartyStoreFactory_Access;
    function getInstance return ThirdPartyStore_Access;
-   procedure getInstance;
 
 end org.allbinary.thirdparty.store.ThirdPartyStoreFactory_Package;
 

@@ -20,7 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.util.Calendar_Package; use java.util.Calendar_Package;
+with java.util.Calendar_Package; use java.util.Calendar_Package;
 --  with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
@@ -39,6 +39,7 @@ with admin.taghelpers.ModifyTable_Package; use admin.taghelpers.ModifyTable_Pack
 
 package admin.taghelpers.CustomItemsRequestHelper_Package is
 
+   package Calendar_Package renames Standard.java.util.Calendar_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
    package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    package DynamicObjectData_Package renames Standard.org.allbinary.business.DynamicObjectData_Package;
@@ -71,13 +72,9 @@ package admin.taghelpers.CustomItemsRequestHelper_Package is
    function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return CustomItemsRequestHelper_Access;
    procedure getFormData (This : in out CustomItemsRequestHelper);
    function getHashMap (This : in out CustomItemsRequestHelper) return HashMap_Access;
-   procedure getHashMap (This : in out CustomItemsRequestHelper);
    function insert (This : in out CustomItemsRequestHelper) return Unbounded_String;
-   procedure insert (This : in out CustomItemsRequestHelper);
    function delete (This : in out CustomItemsRequestHelper) return Unbounded_String;
-   procedure delete (This : in out CustomItemsRequestHelper);
    function update (This : in out CustomItemsRequestHelper) return Unbounded_String;
-   procedure update (This : in out CustomItemsRequestHelper);
 
 end admin.taghelpers.CustomItemsRequestHelper_Package;
 

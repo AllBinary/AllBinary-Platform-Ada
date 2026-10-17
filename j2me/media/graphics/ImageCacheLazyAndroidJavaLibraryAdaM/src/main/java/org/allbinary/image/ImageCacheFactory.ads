@@ -20,6 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
+with org.allbinary.image.ImageCache_Package; use org.allbinary.image.ImageCache_Package;
 
 package org.allbinary.image.ImageCacheFactory_Package is
 
@@ -35,7 +36,6 @@ package org.allbinary.image.ImageCacheFactory_Package is
    procedure Initialize (This : in out ImageCacheFactory'Class);
    function Create return ImageCacheFactory_Access;
    function getInstance return ImageCache_Access;
-   procedure getInstance;
    procedure init;
 
 end org.allbinary.image.ImageCacheFactory_Package;

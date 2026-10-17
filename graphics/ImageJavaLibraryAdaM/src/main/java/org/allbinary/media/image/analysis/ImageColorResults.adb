@@ -39,7 +39,7 @@ package body org.allbinary.media.image.analysis.ImageColorResults_Package is
    function Create return ImageColorResults_Access is
       This : constant ImageColorResults_Access := new ImageColorResults;
    begin
-      Initialize (This.all);
+      ImageColorResults_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -62,20 +62,6 @@ package body org.allbinary.media.image.analysis.ImageColorResults_Package is
    begin
         This.colorAverage := colorAverage;
    end setColorAverage;
-
-   procedure getColorRange (This : in out ImageColorResults) is
-      Java_Result : constant ColorRange_Access := ImageColorResults'Class (This).getColorRange;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getColorRange;
-
-   procedure getColorAverage (This : in out ImageColorResults) is
-      Java_Result : constant ColorAverage_Access := ImageColorResults'Class (This).getColorAverage;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getColorAverage;
 
 end org.allbinary.media.image.analysis.ImageColorResults_Package;
 

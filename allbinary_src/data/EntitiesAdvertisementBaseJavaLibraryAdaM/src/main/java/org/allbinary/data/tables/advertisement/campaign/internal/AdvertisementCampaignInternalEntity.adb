@@ -33,7 +33,7 @@ package body org.allbinary.data.tables.advertisement.campaign.internal.Advertise
    function Create return AdvertisementCampaignInternalEntity_Access is
       This : constant AdvertisementCampaignInternalEntity_Access := new AdvertisementCampaignInternalEntity;
    begin
-      Initialize (This.all);
+      AdvertisementCampaignInternalEntity_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -138,27 +138,6 @@ package body org.allbinary.data.tables.advertisement.campaign.internal.Advertise
    begin
       null;
    end get;
-
-   procedure createTableStatement (This : in out AdvertisementCampaignInternalEntity) is
-      Java_Result : constant Unbounded_String := AdvertisementCampaignInternalEntity'Class (This).createTableStatement;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end createTableStatement;
-
-   procedure createTable (This : in out AdvertisementCampaignInternalEntity) is
-      Java_Result : constant Unbounded_String := AdvertisementCampaignInternalEntity'Class (This).createTable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end createTable;
-
-   procedure dropTable (This : in out AdvertisementCampaignInternalEntity) is
-      Java_Result : constant Unbounded_String := AdvertisementCampaignInternalEntity'Class (This).dropTable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end dropTable;
 
 end org.allbinary.data.tables.advertisement.campaign.internal.AdvertisementCampaignInternalEntity_Package;
 

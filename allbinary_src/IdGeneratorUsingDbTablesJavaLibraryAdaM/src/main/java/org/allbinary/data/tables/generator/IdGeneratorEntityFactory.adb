@@ -30,7 +30,7 @@ package body org.allbinary.data.tables.generator.IdGeneratorEntityFactory_Packag
    function Create return IdGeneratorEntityFactory_Access is
       This : constant IdGeneratorEntityFactory_Access := new IdGeneratorEntityFactory;
    begin
-      Initialize (This.all);
+      IdGeneratorEntityFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -51,13 +51,6 @@ package body org.allbinary.data.tables.generator.IdGeneratorEntityFactory_Packag
             return null;
                 end;
         end;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant IdGeneratorEntityInterface_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 end org.allbinary.data.tables.generator.IdGeneratorEntityFactory_Package;

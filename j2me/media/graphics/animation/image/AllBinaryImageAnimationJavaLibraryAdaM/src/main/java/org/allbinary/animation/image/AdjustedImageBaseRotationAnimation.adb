@@ -33,7 +33,7 @@ package body org.allbinary.animation.image.AdjustedImageBaseRotationAnimation_Pa
    function Create (image : Image_Access; angleInfo : AngleInfo_Access; totalAngle : Short_Integer; dx : Integer; dy : Integer; animationBehavior : AnimationBehavior_Access) return AdjustedImageBaseRotationAnimation_Access is
       This : constant AdjustedImageBaseRotationAnimation_Access := new AdjustedImageBaseRotationAnimation;
    begin
-      Initialize (This.all, image, angleInfo, totalAngle, dx, dy, animationBehavior);
+      AdjustedImageBaseRotationAnimation_Package.Initialize (This.all, image, angleInfo, totalAngle, dx, dy, animationBehavior);
       return This;
    end Create;
 

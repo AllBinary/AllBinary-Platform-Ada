@@ -33,7 +33,7 @@ package body org.allbinary.business.user.commerce.shipping.modules.PickUpShippin
    function Create return PickUpShippingModule_Access is
       This : constant PickUpShippingModule_Access := new PickUpShippingModule;
    begin
-      Initialize (This.all);
+      PickUpShippingModule_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -58,20 +58,6 @@ package body org.allbinary.business.user.commerce.shipping.modules.PickUpShippin
    begin
       null;
    end getCost;
-
-   procedure getDescription (This : in out PickUpShippingModule) is
-      Java_Result : constant Unbounded_String := PickUpShippingModule'Class (This).getDescription;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getDescription;
-
-   procedure getName (This : in out PickUpShippingModule) is
-      Java_Result : constant Unbounded_String := PickUpShippingModule'Class (This).getName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getName;
 
 end org.allbinary.business.user.commerce.shipping.modules.PickUpShippingModule_Package;
 

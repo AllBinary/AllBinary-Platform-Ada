@@ -31,7 +31,7 @@ package body org.allbinary.business.init.InitException_Package is
    function Create return InitException_Access is
       This : constant InitException_Access := new InitException;
    begin
-      Initialize (This.all);
+      InitException_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -44,7 +44,7 @@ package body org.allbinary.business.init.InitException_Package is
    function Create (msg : Unbounded_String) return InitException_Access is
       This : constant InitException_Access := new InitException;
    begin
-      Initialize (This.all, msg);
+      InitException_Package.Initialize (This.all, msg);
       return This;
    end Create;
 

@@ -18,7 +18,7 @@ package body org.allbinary.logic.control.crypt.Encoder_Package is
    function Create return Encoder_Access is
       This : constant Encoder_Access := new Encoder;
    begin
-      Initialize (This.all);
+      Encoder_Package.Initialize (This.all);
       return This;
    end Create;
 

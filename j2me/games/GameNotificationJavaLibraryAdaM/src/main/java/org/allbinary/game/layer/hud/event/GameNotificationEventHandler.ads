@@ -25,6 +25,8 @@ with org.allbinary.logic.util.event.EventListenerInterface_Package; use org.allb
 with org.allbinary.logic.util.event.NullEventListener_Package; use org.allbinary.logic.util.event.NullEventListener_Package;
 with org.allbinary.logic.util.event.handler.BasicEventHandler_Package; use org.allbinary.logic.util.event.handler.BasicEventHandler_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.game.layer.hud.event.GameNotificationListenerInterface_Package; use org.allbinary.game.layer.hud.event.GameNotificationListenerInterface_Package;
+with org.allbinary.game.layer.hud.event.GameNotificationEvent_Package; use org.allbinary.game.layer.hud.event.GameNotificationEvent_Package;
 
 package org.allbinary.game.layer.hud.event.GameNotificationEventHandler_Package is
 
@@ -48,7 +50,6 @@ package org.allbinary.game.layer.hud.event.GameNotificationEventHandler_Package 
    function Create return GameNotificationEventHandler_Access;
    procedure removeAllListeners (This : in out GameNotificationEventHandler);
    function getInstance return GameNotificationEventHandler_Access;
-   procedure getInstance;
    procedure process (This : in out GameNotificationEventHandler; eventObject : AllBinaryEventObject_Access; eventListenerInterface : EventListenerInterface_Access);
 
 end org.allbinary.game.layer.hud.event.GameNotificationEventHandler_Package;

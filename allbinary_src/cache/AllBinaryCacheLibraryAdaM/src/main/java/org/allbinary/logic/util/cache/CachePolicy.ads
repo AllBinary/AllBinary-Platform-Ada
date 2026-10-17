@@ -38,13 +38,10 @@ package org.allbinary.logic.util.cache.CachePolicy_Package is
    procedure Initialize (This : in out CachePolicy'Class; name : Unbounded_String; maxTime : Long_Long_Integer; maxSize : Long_Long_Integer);
    function Create (name : Unbounded_String; maxTime : Long_Long_Integer; maxSize : Long_Long_Integer) return CachePolicy_Access;
    function getMaxTime (This : in out CachePolicy) return Long_Long_Integer;
-   procedure getMaxTime (This : in out CachePolicy);
    procedure setMaxTime (This : in out CachePolicy; maxTime : Long_Long_Integer);
    function getMaxSize (This : in out CachePolicy) return Long_Long_Integer;
-   procedure getMaxSize (This : in out CachePolicy);
    procedure setMaxSize (This : in out CachePolicy; maxSize : Long_Long_Integer);
    function getName (This : in out CachePolicy) return Unbounded_String;
-   procedure getName (This : in out CachePolicy);
 
 end org.allbinary.logic.util.cache.CachePolicy_Package;
 

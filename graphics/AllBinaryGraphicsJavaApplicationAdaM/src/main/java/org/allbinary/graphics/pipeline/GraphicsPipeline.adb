@@ -29,7 +29,7 @@ package body org.allbinary.graphics.pipeline.GraphicsPipeline_Package is
    function Create (points : BasicArrayList_Access) return GraphicsPipeline_Access is
       This : constant GraphicsPipeline_Access := new GraphicsPipeline;
    begin
-      Initialize (This.all, points);
+      GraphicsPipeline_Package.Initialize (This.all, points);
       return This;
    end Create;
 

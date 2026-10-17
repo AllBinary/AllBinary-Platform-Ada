@@ -33,7 +33,7 @@ package body org.allbinary.animation.image.AdjustedLeftToRightImageAnimation_Pac
    function Create (image : Image_Access; sequenceArray : Integer_Array_Access; dx : Integer; dy : Integer; animationBehavior : AnimationBehavior_Access) return AdjustedLeftToRightImageAnimation_Access is
       This : constant AdjustedLeftToRightImageAnimation_Access := new AdjustedLeftToRightImageAnimation;
    begin
-      Initialize (This.all, image, sequenceArray, dx, dy, animationBehavior);
+      AdjustedLeftToRightImageAnimation_Package.Initialize (This.all, image, sequenceArray, dx, dy, animationBehavior);
       return This;
    end Create;
 

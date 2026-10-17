@@ -54,7 +54,7 @@ package body taghelpers.InventoryHelper_Package is
    function Create (propertiesHashMap : HashMap_Access; pageContext : PageContext_Access) return InventoryHelper_Access is
       This : constant InventoryHelper_Access := new InventoryHelper;
    begin
-      Initialize (This.all, propertiesHashMap, pageContext);
+      InventoryHelper_Package.Initialize (This.all, propertiesHashMap, pageContext);
       return This;
    end Create;
 
@@ -120,20 +120,6 @@ package body taghelpers.InventoryHelper_Package is
             return error & To_Unbounded_String ("<br>") & To_Unbounded_String ("Exception: ") & Java_Image (e) & To_Unbounded_String ("<br>");
                 end;
         end;
-   end search;
-
-   procedure viewSummary (This : in out InventoryHelper) is
-      Java_Result : constant Unbounded_String := InventoryHelper'Class (This).viewSummary;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end viewSummary;
-
-   procedure search (This : in out InventoryHelper) is
-      Java_Result : constant Unbounded_String := InventoryHelper'Class (This).search;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end search;
 
 end taghelpers.InventoryHelper_Package;

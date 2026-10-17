@@ -33,7 +33,7 @@ package body org.allbinary.game.score.remote.RemoteHighScoresSubmissionProcessor
    function Create return RemoteHighScoresSubmissionProcessor_Access is
       This : constant RemoteHighScoresSubmissionProcessor_Access := new RemoteHighScoresSubmissionProcessor;
    begin
-      Initialize (This.all);
+      RemoteHighScoresSubmissionProcessor_Package.Initialize (This.all);
       return This;
    end Create;
 

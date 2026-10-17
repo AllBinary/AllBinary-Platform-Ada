@@ -40,7 +40,6 @@ package org.allbinary.game.ag.layer.pickup.points.PointsResources_Package is
    procedure Initialize (This : in out PointsResources'Class);
    function Create return PointsResources_Access;
    function getInstance return PointsResources_Access;
-   procedure getInstance;
 
 end org.allbinary.game.ag.layer.pickup.points.PointsResources_Package;
 

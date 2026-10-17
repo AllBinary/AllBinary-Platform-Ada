@@ -22,6 +22,7 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.data.tables.user.commerce.inventory.item.downloads.DownloadItemsEntity_Package; use org.allbinary.data.tables.user.commerce.inventory.item.downloads.DownloadItemsEntity_Package;
 
 package org.allbinary.data.tables.user.commerce.inventory.item.downloads.DownloadItemsEntityFactory_Package is
 
@@ -41,9 +42,7 @@ package org.allbinary.data.tables.user.commerce.inventory.item.downloads.Downloa
    procedure Initialize (This : in out DownloadItemsEntityFactory'Class);
    function Create return DownloadItemsEntityFactory_Access;
    function getInstance return DownloadItemsEntityFactory_Access;
-   procedure getInstance;
    function getDownloadItemsEntityInstance (This : in out DownloadItemsEntityFactory) return DownloadItemsEntity_Access;
-   procedure getDownloadItemsEntityInstance (This : in out DownloadItemsEntityFactory);
 
 end org.allbinary.data.tables.user.commerce.inventory.item.downloads.DownloadItemsEntityFactory_Package;
 

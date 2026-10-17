@@ -36,7 +36,7 @@ package body org.allbinary.logic.java.bool.BooleanUtil_Package is
    function Create return BooleanUtil_Access is
       This : constant BooleanUtil_Access := new BooleanUtil;
    begin
-      Initialize (This.all);
+      BooleanUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -86,13 +86,6 @@ package body org.allbinary.logic.java.bool.BooleanUtil_Package is
         end loop;
         return stringMaker.toString;
    end toStringFromBooleanArray;
-
-   procedure getInstance is
-      Java_Result : constant BooleanUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure getFromString (This : in out BooleanUtil; booleanString : Unbounded_String) is
       Java_Result : constant Boolean := BooleanUtil'Class (This).getFromString (booleanString);

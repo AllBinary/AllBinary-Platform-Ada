@@ -28,7 +28,7 @@ package body org.allbinary.AllBinaryAndroidGameInitializationUtil_Package is
    function Create return AllBinaryAndroidGameInitializationUtil_Access is
       This : constant AllBinaryAndroidGameInitializationUtil_Access := new AllBinaryAndroidGameInitializationUtil;
    begin
-      Initialize (This.all);
+      AllBinaryAndroidGameInitializationUtil_Package.Initialize (This.all);
       return This;
    end Create;
 

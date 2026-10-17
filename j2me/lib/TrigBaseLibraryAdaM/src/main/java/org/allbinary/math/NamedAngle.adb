@@ -32,7 +32,7 @@ package body org.allbinary.math.NamedAngle_Package is
    function Create (angle : Short_Integer; name : Unbounded_String) return NamedAngle_Access is
       This : constant NamedAngle_Access := new NamedAngle;
    begin
-      Initialize (This.all, angle, name);
+      NamedAngle_Package.Initialize (This.all, angle, name);
       return This;
    end Create;
 

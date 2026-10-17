@@ -45,7 +45,6 @@ package org.allbinary.business.entry_Id.EntryData_Package is
    procedure Initialize (This : in out EntryData'Class);
    function Create return EntryData_Access;
    function getInstance return EntryData_Access;
-   procedure getInstance;
 
 end org.allbinary.business.entry_Id.EntryData_Package;
 

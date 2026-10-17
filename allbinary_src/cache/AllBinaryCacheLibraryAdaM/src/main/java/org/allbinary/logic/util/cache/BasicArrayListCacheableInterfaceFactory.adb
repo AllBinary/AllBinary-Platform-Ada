@@ -28,7 +28,7 @@ package body org.allbinary.logic.util.cache.BasicArrayListCacheableInterfaceFact
    function Create return BasicArrayListCacheableInterfaceFactory_Access is
       This : constant BasicArrayListCacheableInterfaceFactory_Access := new BasicArrayListCacheableInterfaceFactory;
    begin
-      Initialize (This.all);
+      BasicArrayListCacheableInterfaceFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

@@ -59,16 +59,9 @@ package body org.allbinary.direction.DirectionFactory_Package is
    function Create return DirectionFactory_Access is
       This : constant DirectionFactory_Access := new DirectionFactory;
    begin
-      Initialize (This.all);
+      DirectionFactory_Package.Initialize (This.all);
       return This;
    end Create;
-
-   procedure getInstance is
-      Java_Result : constant DirectionFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

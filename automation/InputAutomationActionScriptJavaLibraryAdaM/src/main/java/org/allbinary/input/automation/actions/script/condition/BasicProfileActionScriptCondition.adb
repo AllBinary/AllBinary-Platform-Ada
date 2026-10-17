@@ -50,7 +50,7 @@ package body org.allbinary.input.automation.actions.script.condition.BasicProfil
    function Create (label : Unbounded_String; node : Node_Access) return BasicProfileActionScriptCondition_Access is
       This : constant BasicProfileActionScriptCondition_Access := new BasicProfileActionScriptCondition;
    begin
-      Initialize (This.all, label, node);
+      BasicProfileActionScriptCondition_Package.Initialize (This.all, label, node);
       return This;
    end Create;
 
@@ -82,7 +82,7 @@ package body org.allbinary.input.automation.actions.script.condition.BasicProfil
    function Create (label : Unbounded_String) return BasicProfileActionScriptCondition_Access is
       This : constant BasicProfileActionScriptCondition_Access := new BasicProfileActionScriptCondition;
    begin
-      Initialize (This.all, label);
+      BasicProfileActionScriptCondition_Package.Initialize (This.all, label);
       return This;
    end Create;
 
@@ -301,47 +301,12 @@ package body org.allbinary.input.automation.actions.script.condition.BasicProfil
         end loop;
    end process;
 
-   procedure getConditionJPopupMenu (This : in out BasicProfileActionScriptCondition) is
-      Java_Result : constant JMenu_Access := BasicProfileActionScriptCondition'Class (This).getConditionJPopupMenu;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getConditionJPopupMenu;
-
-   procedure getInputJPopupMenu (This : in out BasicProfileActionScriptCondition) is
-      Java_Result : constant JMenu_Access := BasicProfileActionScriptCondition'Class (This).getInputJPopupMenu;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInputJPopupMenu;
-
-   procedure getOutputJPopupMenu (This : in out BasicProfileActionScriptCondition) is
-      Java_Result : constant JMenu_Access := BasicProfileActionScriptCondition'Class (This).getOutputJPopupMenu;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getOutputJPopupMenu;
-
    procedure toXmlNode (This : in out BasicProfileActionScriptCondition; document : Document_Access) is
       Java_Result : constant Node_Access := BasicProfileActionScriptCondition'Class (This).toXmlNode (document);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end toXmlNode;
-
-   procedure getProfileActionConditionInterfaceVector (This : in out BasicProfileActionScriptCondition) is
-      Java_Result : constant BasicArrayList_Access := BasicProfileActionScriptCondition'Class (This).getProfileActionConditionInterfaceVector;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getProfileActionConditionInterfaceVector;
-
-   procedure getProfileActionProcessorInterfaceVector (This : in out BasicProfileActionScriptCondition) is
-      Java_Result : constant BasicArrayList_Access := BasicProfileActionScriptCondition'Class (This).getProfileActionProcessorInterfaceVector;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getProfileActionProcessorInterfaceVector;
 
    procedure shouldProcess (This : in out BasicProfileActionScriptCondition; frame : Long_Long_Integer) is
       Java_Result : constant Boolean := BasicProfileActionScriptCondition'Class (This).shouldProcess (frame);

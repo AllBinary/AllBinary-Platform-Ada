@@ -50,12 +50,9 @@ package org.allbinary.business.user.modules.configuration.UserConfiguration_Pack
    procedure Initialize (This : in out UserConfiguration'Class);
    function Create return UserConfiguration_Access;
    function getUserEmailConfigurationInterface (This : in out UserConfiguration) return UserEmailConfigurationInterface_Access;
-   procedure getUserEmailConfigurationInterface (This : in out UserConfiguration);
    procedure setUserEmailConfigurationInterface (This : in out UserConfiguration; userEmailConfigurationInterface : UserEmailConfigurationInterface_Access);
    function getTimeCreated (This : in out UserConfiguration) return TimeCreated_Access;
-   procedure getTimeCreated (This : in out UserConfiguration);
    function getTimeLastModified (This : in out UserConfiguration) return TimeLastModified_Access;
-   procedure getTimeLastModified (This : in out UserConfiguration);
    procedure setTimeCreated (This : in out UserConfiguration; timeCreated : TimeCreated_Access);
    procedure setTimeLastModified (This : in out UserConfiguration; timeLastModified : TimeLastModified_Access);
 

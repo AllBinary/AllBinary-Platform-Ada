@@ -61,10 +61,8 @@ package org.allbinary.graphics.paint.SimpleTextPaintable_Package is
    procedure paint (This : in out SimpleTextPaintable; graphics : Graphics_Access);
    procedure setBasicColorP (This : in out SimpleTextPaintable; basicColor : BasicColor_Access);
    function getBasicColorP (This : in out SimpleTextPaintable) return BasicColor_Access;
-   procedure getBasicColorP (This : in out SimpleTextPaintable);
    procedure setText (This : in out SimpleTextPaintable; text : Unbounded_String);
    function getText (This : in out SimpleTextPaintable) return Unbounded_String;
-   procedure getText (This : in out SimpleTextPaintable);
 
 end org.allbinary.graphics.paint.SimpleTextPaintable_Package;
 

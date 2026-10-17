@@ -32,7 +32,7 @@ package body org.allbinary.logic.control.contraints.size.TwoDimensionalConstrain
    function Create (node : Node_Access) return TwoDimensionalConstraint_Access is
       This : constant TwoDimensionalConstraint_Access := new TwoDimensionalConstraint;
    begin
-      Initialize (This.all, node);
+      TwoDimensionalConstraint_Package.Initialize (This.all, node);
       return This;
    end Create;
 
@@ -55,20 +55,6 @@ package body org.allbinary.logic.control.contraints.size.TwoDimensionalConstrain
    begin
         This.widthSizeConstraintInterface := widthSizeConstraintInterface;
    end setWidth;
-
-   procedure getHeight (This : in out TwoDimensionalConstraint) is
-      Java_Result : constant SizeConstraintInterface_Access := TwoDimensionalConstraint'Class (This).getHeight;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getHeight;
-
-   procedure getWidth (This : in out TwoDimensionalConstraint) is
-      Java_Result : constant SizeConstraintInterface_Access := TwoDimensionalConstraint'Class (This).getWidth;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getWidth;
 
 end org.allbinary.logic.control.contraints.size.TwoDimensionalConstraint_Package;
 

@@ -43,7 +43,7 @@ package body org.allbinary.game.input.event.GameKeyEventFactory_Package is
    function Create return GameKeyEventFactory_Access is
       This : constant GameKeyEventFactory_Access := new GameKeyEventFactory;
    begin
-      Initialize (This.all);
+      GameKeyEventFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -79,13 +79,6 @@ package body org.allbinary.game.input.event.GameKeyEventFactory_Package is
         gameKeyEvent := This.ARRAY_Id (anyType.getSourceId) (input.getId);
         return gameKeyEvent;
    end getInstanceForInput;
-
-   procedure getInstance is
-      Java_Result : constant GameKeyEventFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure getInstanceForKey (This : in out GameKeyEventFactory; anyType : GameKeyEventSourceInterface_Access; key : Integer) is
       Java_Result : constant GameKeyEvent_Access := GameKeyEventFactory'Class (This).getInstanceForKey (anyType, key);

@@ -86,7 +86,7 @@ package body org.allbinary.game.layer.unit.UnitLayer_Package is
    function Create (remoteInfo : RemoteInfo_Access; parentLayer : PathFindingLayerInterface_Access; advancedRTSProperties : AdvancedRTSProperties_Access; groupInterface : Group_Access_Array_Access; rootName : Unbounded_String; name : Unbounded_String; vehicleProperties : VehicleProperties_Access; healthInterface : Health_Access; maxResourceLoad : Integer; moveSoundInterface : Sound_Access; waypointLayerInterfaceFactoryInterface : LayerInterfaceFactoryInterface_Access; animationInterfaceFactoryInterface : AnimationInterfaceFactoryInterface_Access; emptyAnimationInterfaceFactoryInterface : AnimationInterfaceFactoryInterface_Access; baseAnimationInterfaceFactoryInterface : AnimationInterfaceFactoryInterface_Access; buildAnimationInterfaceFactoryInterface : AnimationInterfaceFactoryInterface_Access; verticleBuildAnimationInterfaceFactoryInterface : AnimationInterfaceFactoryInterface_Access; decalAnimationInterfaceFactoryInterface : AnimationInterfaceFactoryInterface_Access; resourceAnimationInterfaceFactoryInterface : AnimationInterfaceFactoryInterface_Access; proceduralAnimationInterfaceFactoryInterface : ProceduralAnimationInterfaceFactoryInterface_Access; rectangle : Rectangle_Access; direction : Direction_Access; x : Integer; y : Integer; z : Integer; viewPosition : ViewPositionBase_Access) return UnitLayer_Access is
       This : constant UnitLayer_Access := new UnitLayer;
    begin
-      Initialize (This.all, remoteInfo, parentLayer, advancedRTSProperties, groupInterface, rootName, name, vehicleProperties, healthInterface, maxResourceLoad, moveSoundInterface, waypointLayerInterfaceFactoryInterface, animationInterfaceFactoryInterface, emptyAnimationInterfaceFactoryInterface, baseAnimationInterfaceFactoryInterface, buildAnimationInterfaceFactoryInterface, verticleBuildAnimationInterfaceFactoryInterface, decalAnimationInterfaceFactoryInterface, resourceAnimationInterfaceFactoryInterface, proceduralAnimationInterfaceFactoryInterface, rectangle, direction, x, y, z, viewPosition);
+      UnitLayer_Package.Initialize (This.all, remoteInfo, parentLayer, advancedRTSProperties, groupInterface, rootName, name, vehicleProperties, healthInterface, maxResourceLoad, moveSoundInterface, waypointLayerInterfaceFactoryInterface, animationInterfaceFactoryInterface, emptyAnimationInterfaceFactoryInterface, baseAnimationInterfaceFactoryInterface, buildAnimationInterfaceFactoryInterface, verticleBuildAnimationInterfaceFactoryInterface, decalAnimationInterfaceFactoryInterface, resourceAnimationInterfaceFactoryInterface, proceduralAnimationInterfaceFactoryInterface, rectangle, direction, x, y, z, viewPosition);
       return This;
    end Create;
 
@@ -490,7 +490,8 @@ package body org.allbinary.game.layer.unit.UnitLayer_Package is
    end trackToDXY;
 
    --  throws Exception
-   function turnTo (This : in out UnitLayer; dx : Integer; dy : Integer; targetAngle : Integer) return Boolean is
+   function turnTo (This : in out UnitLayer; dx : Integer; dy : Integer; targetAngle_Param : Integer) return Boolean is
+      targetAngle : Integer := targetAngle_Param;
       waypointBehaviorBase : WaypointBehaviorBase_Access;
       nextUnvisitedPathGeographicMapCellPosition : GeographicMapCellPosition_Access;
       evading : Boolean;
@@ -875,33 +876,12 @@ package body org.allbinary.game.layer.unit.UnitLayer_Package is
         return UnitLayer_Package.partialPositionList;
    end getPartialpositionlist;
 
-   procedure getSensorGeographicMapCellPositionList (This : in out UnitLayer) is
-      Java_Result : constant BasicArrayList_Access := UnitLayer'Class (This).getSensorGeographicMapCellPositionList;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSensorGeographicMapCellPositionList;
-
-   procedure getCurrentGeographicMapCellPosition (This : in out UnitLayer) is
-      Java_Result : constant GeographicMapCellPosition_Access := UnitLayer'Class (This).getCurrentGeographicMapCellPosition;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getCurrentGeographicMapCellPosition;
-
-   procedure turnTo (This : in out UnitLayer; dx : Integer; dy : Integer; targetAngle : Integer) is
-      Java_Result : constant Boolean := UnitLayer'Class (This).turnTo (dx, dy, targetAngle);
+   procedure turnTo (This : in out UnitLayer; dx : Integer; dy : Integer; targetAngle_Param : Integer) is
+      Java_Result : constant Boolean := UnitLayer'Class (This).turnTo (dx, dy, targetAngle_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end turnTo;
-
-   procedure getVehicleProperties (This : in out UnitLayer) is
-      Java_Result : constant VehicleProperties_Access := UnitLayer'Class (This).getVehicleProperties;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getVehicleProperties;
 
    procedure getDamage (This : in out UnitLayer; damageType : Integer) is
       Java_Result : constant Integer := UnitLayer'Class (This).getDamage (damageType);
@@ -909,83 +889,6 @@ package body org.allbinary.game.layer.unit.UnitLayer_Package is
    begin
       null;
    end getDamage;
-
-   procedure getLoad (This : in out UnitLayer) is
-      Java_Result : constant Integer := UnitLayer'Class (This).getLoad;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getLoad;
-
-   procedure createHudPaintable (This : in out UnitLayer) is
-      Java_Result : constant SelectionHudPaintable_Access := UnitLayer'Class (This).createHudPaintable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end createHudPaintable;
-
-   procedure getHudPaintable (This : in out UnitLayer) is
-      Java_Result : constant SelectionHudPaintable_Access := UnitLayer'Class (This).getHudPaintable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getHudPaintable;
-
-   procedure getType (This : in out UnitLayer) is
-      Java_Result : constant Integer := UnitLayer'Class (This).getType;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getType;
-
-   procedure getStaticType is
-      Java_Result : constant Integer := getStaticType;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getStaticType;
-
-   procedure getUnitWaypointBehavior (This : in out UnitLayer) is
-      Java_Result : constant UnitWaypointBehavior_Access := UnitLayer'Class (This).getUnitWaypointBehavior;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getUnitWaypointBehavior;
-
-   procedure getTrackingEvent (This : in out UnitLayer) is
-      Java_Result : constant TrackingEvent_Access := UnitLayer'Class (This).getTrackingEvent;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTrackingEvent;
-
-   procedure getCaptionAnimationHelper (This : in out UnitLayer) is
-      Java_Result : constant CaptionAnimationHelperBase_Access := UnitLayer'Class (This).getCaptionAnimationHelper;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getCaptionAnimationHelper;
-
-   procedure isSelfUpgradeable (This : in out UnitLayer) is
-      Java_Result : constant Boolean := UnitLayer'Class (This).isSelfUpgradeable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isSelfUpgradeable;
-
-   procedure getMaxResourceLoad (This : in out UnitLayer) is
-      Java_Result : constant Short_Integer := UnitLayer'Class (This).getMaxResourceLoad;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getMaxResourceLoad;
-
-   procedure getPartialpositionlist is
-      Java_Result : constant BasicArrayList_Access := getPartialpositionlist;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getPartialpositionlist;
 
 begin
    null;

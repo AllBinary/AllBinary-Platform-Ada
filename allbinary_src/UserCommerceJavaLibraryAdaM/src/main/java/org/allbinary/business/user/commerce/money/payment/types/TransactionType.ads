@@ -38,7 +38,6 @@ package org.allbinary.business.user.commerce.money.payment.types.TransactionType
    function isEqual (This : in out TransactionType; transactionType : TransactionType_Access) return Boolean;
    procedure isEqual (This : in out TransactionType; transactionType : TransactionType_Access);
    function toString (This : in out TransactionType) return Unbounded_String;
-   procedure toString (This : in out TransactionType);
 
 end org.allbinary.business.user.commerce.money.payment.types.TransactionType_Package;
 

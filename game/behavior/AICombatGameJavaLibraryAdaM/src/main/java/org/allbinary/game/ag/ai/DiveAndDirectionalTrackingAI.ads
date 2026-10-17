@@ -123,16 +123,13 @@ package org.allbinary.game.ag.ai.DiveAndDirectionalTrackingAI_Package is
    procedure attack (This : in out DiveAndDirectionalTrackingAI);
    procedure drop (This : in out DiveAndDirectionalTrackingAI);
    function isBeyondTarget (This : in out DiveAndDirectionalTrackingAI) return Boolean;
-   procedure isBeyondTarget (This : in out DiveAndDirectionalTrackingAI);
    procedure onEvent (This : in out DiveAndDirectionalTrackingAI; eventObject : AllBinaryEventObject_Access);
    procedure onMovement (This : in out DiveAndDirectionalTrackingAI; trackingEvent : TrackingEvent_Access);
    procedure onDestroyed (This : in out DiveAndDirectionalTrackingAI; destroyedEvent : DestroyedEvent_Access);
    procedure setLastDirection (This : in out DiveAndDirectionalTrackingAI; lastDirection : Direction_Access);
    procedure setLastKey (This : in out DiveAndDirectionalTrackingAI; lastKey : Integer);
    function getLastDirection (This : in out DiveAndDirectionalTrackingAI) return Direction_Access;
-   procedure getLastDirection (This : in out DiveAndDirectionalTrackingAI);
    function toString (This : in out DiveAndDirectionalTrackingAI) return Unbounded_String;
-   procedure toString (This : in out DiveAndDirectionalTrackingAI);
 
 end org.allbinary.game.ag.ai.DiveAndDirectionalTrackingAI_Package;
 

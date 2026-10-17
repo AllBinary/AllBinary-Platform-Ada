@@ -48,7 +48,7 @@ package body org.allbinary.game.terrain.TerrainEventHandler_Package is
    function Create return TerrainEventHandler_Access is
       This : constant TerrainEventHandler_Access := new TerrainEventHandler;
    begin
-      Initialize (This.all);
+      TerrainEventHandler_Package.Initialize (This.all);
       return This;
    end Create;
 

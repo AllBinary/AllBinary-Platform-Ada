@@ -36,7 +36,7 @@ package body org.allbinary.physics.movement.XYOscillateVelocityMovement_Package 
    function Create (speedBasicDecimal : BasicDecimal_Access; oscillateMin : Integer; oscillateMax : Integer) return XYOscillateVelocityMovement_Access is
       This : constant XYOscillateVelocityMovement_Access := new XYOscillateVelocityMovement;
    begin
-      Initialize (This.all, speedBasicDecimal, oscillateMin, oscillateMax);
+      XYOscillateVelocityMovement_Package.Initialize (This.all, speedBasicDecimal, oscillateMin, oscillateMax);
       return This;
    end Create;
 

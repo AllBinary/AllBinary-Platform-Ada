@@ -31,7 +31,7 @@ package body org.allbinary.logic.system.security.licensing.AbeNoLicense_Package 
    function Create return AbeNoLicense_Access is
       This : constant AbeNoLicense_Access := new AbeNoLicense;
    begin
-      Initialize (This.all);
+      AbeNoLicense_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -75,61 +75,12 @@ package body org.allbinary.logic.system.security.licensing.AbeNoLicense_Package 
         return LicenseTypeFactory_Package.getInstance.UNKNOWN;
    end getLicenseType;
 
-   procedure getInstance is
-      Java_Result : constant AbeNoLicense_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure hasKey (This : in out AbeNoLicense) is
-      Java_Result : constant Boolean := AbeNoLicense'Class (This).hasKey;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end hasKey;
-
    procedure getKey (This : in out AbeNoLicense; keyName : Unbounded_String) is
       Java_Result : constant Unbounded_String := AbeNoLicense'Class (This).getKey (keyName);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getKey;
-
-   procedure getLicenseId (This : in out AbeNoLicense) is
-      Java_Result : constant Unbounded_String := AbeNoLicense'Class (This).getLicenseId;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getLicenseId;
-
-   procedure getSpecial (This : in out AbeNoLicense) is
-      Java_Result : constant Unbounded_String := AbeNoLicense'Class (This).getSpecial;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSpecial;
-
-   procedure getServers (This : in out AbeNoLicense) is
-      Java_Result : constant BasicArrayList_Access := AbeNoLicense'Class (This).getServers;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getServers;
-
-   procedure isValid (This : in out AbeNoLicense) is
-      Java_Result : constant Boolean := AbeNoLicense'Class (This).isValid;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isValid;
-
-   procedure getLicenseType (This : in out AbeNoLicense) is
-      Java_Result : constant LicenseType_Access := AbeNoLicense'Class (This).getLicenseType;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getLicenseType;
 
 begin
    null;

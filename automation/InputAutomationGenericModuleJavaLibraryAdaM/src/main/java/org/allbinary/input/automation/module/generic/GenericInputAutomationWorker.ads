@@ -37,6 +37,8 @@ with org.allbinary.media.image.comparison.ImageComparatorConstraintsInterface_Pa
 with org.allbinary.media.image.comparison.ImageComparisonWorker_Package; use org.allbinary.media.image.comparison.ImageComparisonWorker_Package;
 with org.allbinary.media.image.comparison.motion.MotionRectangleConstraintsInterface_Package; use org.allbinary.media.image.comparison.motion.MotionRectangleConstraintsInterface_Package;
 with org.allbinary.media.image.comparison.motion.MotionRectanglesWorker_Package; use org.allbinary.media.image.comparison.motion.MotionRectanglesWorker_Package;
+with org.allbinary.input.automation.module.generic_Id.GenericProfileCaptureWorkerFactory_Package; use org.allbinary.input.automation.module.generic_Id.GenericProfileCaptureWorkerFactory_Package;
+with org.allbinary.input.automation.module.generic_Id.CaptureWorkerUtil_Package; use org.allbinary.input.automation.module.generic_Id.CaptureWorkerUtil_Package;
 
 package org.allbinary.input.automation.module.generic_Id.GenericInputAutomationWorker_Package is
 
@@ -74,10 +76,8 @@ package org.allbinary.input.automation.module.generic_Id.GenericInputAutomationW
    procedure processDataWorkerResults (This : in out GenericInputAutomationWorker);
    procedure process (This : in out GenericInputAutomationWorker);
    function getGenericProfile (This : in out GenericInputAutomationWorker) return GenericProfile_Access;
-   procedure getGenericProfile (This : in out GenericInputAutomationWorker);
    procedure setGenericProfile (This : in out GenericInputAutomationWorker; genericProfile : GenericProfile_Access);
    function getFrame (This : in out GenericInputAutomationWorker) return Long_Long_Integer;
-   procedure getFrame (This : in out GenericInputAutomationWorker);
    procedure setFrame (This : in out GenericInputAutomationWorker; frame : Long_Long_Integer);
 
 end org.allbinary.input.automation.module.generic_Id.GenericInputAutomationWorker_Package;

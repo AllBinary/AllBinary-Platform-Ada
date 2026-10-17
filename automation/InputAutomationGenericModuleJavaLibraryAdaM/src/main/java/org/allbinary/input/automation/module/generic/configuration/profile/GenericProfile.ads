@@ -30,6 +30,9 @@ with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.lo
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.w3c.dom.NodeList_Package; use org.w3c.dom.NodeList_Package;
+with org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfileDataWorkerData_Package; use org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfileDataWorkerData_Package;
+with org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfileDataWorkerType_Package; use org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfileDataWorkerType_Package;
+with org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfileData_Package; use org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfileData_Package;
 
 package org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfile_Package is
 
@@ -59,16 +62,13 @@ package org.allbinary.input.automation.module.generic_Id.configuration.profile.G
    procedure Initialize (This : in out GenericProfile'Class; node : Node_Access);
    function Create (node : Node_Access) return GenericProfile_Access;
    function getGenericProfileDataWorkerTypeVector (This : in out GenericProfile) return BasicArrayList_Access;
-   procedure getGenericProfileDataWorkerTypeVector (This : in out GenericProfile);
    procedure add (This : in out GenericProfile; genericProfileDataWorkerType : GenericProfileDataWorkerType_Access);
    procedure remove (This : in out GenericProfile; genericProfileDataWorkerType : GenericProfileDataWorkerType_Access);
    function toXmlNode (This : in out GenericProfile; document : Document_Access) return Node_Access;
    procedure toXmlNode (This : in out GenericProfile; document : Document_Access);
    function getName (This : in out GenericProfile) return Unbounded_String;
-   procedure getName (This : in out GenericProfile);
    procedure setName (This : in out GenericProfile; name : Unbounded_String);
    function getGenericProfileActions (This : in out GenericProfile) return GenericProfileActions_Access;
-   procedure getGenericProfileActions (This : in out GenericProfile);
    procedure setGenericProfileActions (This : in out GenericProfile; genericProfileActions : GenericProfileActions_Access);
 
 end org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfile_Package;

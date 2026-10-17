@@ -19,6 +19,8 @@ with org.allbinary.logic.io.file.AbFile_Package; use org.allbinary.logic.io.file
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.media.image.ImageUtil_Package; use org.allbinary.media.image.ImageUtil_Package;
 with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
+with org.allbinary.logic.visual.media.ImageIOUtil_Package; use org.allbinary.logic.visual.media.ImageIOUtil_Package;
+with org.allbinary.logic.visual.media.MediaData_Package; use org.allbinary.logic.visual.media.MediaData_Package;
 
 package org.allbinary.logic.visual.media.MediaUtil_Package is
 
@@ -44,7 +46,6 @@ package org.allbinary.logic.visual.media.MediaUtil_Package is
    procedure Initialize (This : in out MediaUtil'Class);
    function Create return MediaUtil_Access;
    function getInstance return MediaUtil_Access;
-   procedure getInstance;
    procedure saveImageFile (This : in out MediaUtil; originalImageFile : AbFile_Access; newImageFileName : Unbounded_String; category : Unbounded_String; mediaData : MediaData_Access; newWidth : Integer; newHeight : Integer);
    function getImageBufferPropertyHashMap (bufferedImage : BufferedImage_Access) return HashMap_Access;
    procedure getImageBufferPropertyHashMap (bufferedImage : BufferedImage_Access);

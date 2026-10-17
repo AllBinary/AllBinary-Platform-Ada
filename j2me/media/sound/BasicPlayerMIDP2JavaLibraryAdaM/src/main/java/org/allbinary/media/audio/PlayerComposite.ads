@@ -31,6 +31,8 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 with org.allbinary.time.GameTickTimeDelayHelper_Package; use org.allbinary.time.GameTickTimeDelayHelper_Package;
 with org.allbinary.time.GameTickTimeDelayHelperFactory_Package; use org.allbinary.time.GameTickTimeDelayHelperFactory_Package;
 with org.allbinary.time.TimeDelayHelper_Package; use org.allbinary.time.TimeDelayHelper_Package;
+with org.allbinary.media.audio.TimeBaseInterface_Package; use org.allbinary.media.audio.TimeBaseInterface_Package;
+with org.allbinary.media.audio.Controllable2_Package; use org.allbinary.media.audio.Controllable2_Package;
 
 package org.allbinary.media.audio.PlayerComposite_Package is
 
@@ -60,18 +62,13 @@ package org.allbinary.media.audio.PlayerComposite_Package is
    procedure close (This : in out PlayerComposite);
    procedure deallocate (This : in out PlayerComposite);
    function getContentType (This : in out PlayerComposite) return Unbounded_String;
-   procedure getContentType (This : in out PlayerComposite);
    function getDuration (This : in out PlayerComposite) return Long_Long_Integer;
-   procedure getDuration (This : in out PlayerComposite);
    function getMediaTime (This : in out PlayerComposite) return Long_Long_Integer;
-   procedure getMediaTime (This : in out PlayerComposite);
    function getTimeBase (This : in out PlayerComposite) return TimeBase_Access;
-   procedure getTimeBase (This : in out PlayerComposite);
    procedure setTimeBase (This : in out PlayerComposite; timeBase : TimeBase_Access);
    procedure prefetch (This : in out PlayerComposite);
    procedure realize (This : in out PlayerComposite);
    function getState (This : in out PlayerComposite) return Integer;
-   procedure getState (This : in out PlayerComposite);
    procedure setLoopCount (This : in out PlayerComposite; count : Integer);
    function setMediaTime (This : in out PlayerComposite; now : Long_Long_Integer) return Long_Long_Integer;
    procedure setMediaTime (This : in out PlayerComposite; now : Long_Long_Integer);
@@ -80,10 +77,8 @@ package org.allbinary.media.audio.PlayerComposite_Package is
    function getControl (This : in out PlayerComposite; controlType : Unbounded_String) return Control_Access;
    procedure getControl (This : in out PlayerComposite; controlType : Unbounded_String);
    function getControls (This : in out PlayerComposite) return Control_Access_Array_Access;
-   procedure getControls (This : in out PlayerComposite);
    procedure setVolume (This : in out PlayerComposite; leftVolume : Integer; rightVolume : Integer);
    function getPlayerP (This : in out PlayerComposite) return Player_Access;
-   procedure getPlayerP (This : in out PlayerComposite);
 
 end org.allbinary.media.audio.PlayerComposite_Package;
 

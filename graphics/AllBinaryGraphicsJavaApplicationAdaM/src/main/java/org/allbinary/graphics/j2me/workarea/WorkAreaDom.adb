@@ -13,7 +13,7 @@
 --  Generated Code Do Not Modify
 
 
-package body org.allbinary.graphics.j2me.workarea_Case.WorkAreaDom_Package is
+package body org.allbinary.graphics.j2me.workarea.WorkAreaDom_Package is
 
    procedure Initialize_Fields (This : in out WorkAreaDom'Class) is
    begin
@@ -51,7 +51,7 @@ package body org.allbinary.graphics.j2me.workarea_Case.WorkAreaDom_Package is
    function Create (document : Document_Access) return WorkAreaDom_Access is
       This : constant WorkAreaDom_Access := new WorkAreaDom;
    begin
-      Initialize (This.all, document);
+      WorkAreaDom_Package.Initialize (This.all, document);
       return This;
    end Create;
 
@@ -65,26 +65,12 @@ package body org.allbinary.graphics.j2me.workarea_Case.WorkAreaDom_Package is
         return This.canvasNodeList;
    end getCanvasNodes;
 
-   procedure getName (This : in out WorkAreaDom) is
-      Java_Result : constant Unbounded_String := WorkAreaDom'Class (This).getName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getName;
-
-   procedure getCanvasNodes (This : in out WorkAreaDom) is
-      Java_Result : constant BasicArrayList_Access := WorkAreaDom'Class (This).getCanvasNodes;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getCanvasNodes;
-
 begin
    null;
    WORKAREA := To_Unbounded_String ("workArea");
    NAME := To_Unbounded_String ("name");
    FRAMES := To_Unbounded_String ("frames");
 
-end org.allbinary.graphics.j2me.workarea_Case.WorkAreaDom_Package;
+end org.allbinary.graphics.j2me.workarea.WorkAreaDom_Package;
 
 

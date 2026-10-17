@@ -36,7 +36,7 @@ package body workflows.template.data.Properties_Package is
    function Create return Properties_Access is
       This : constant Properties_Access := new Properties;
    begin
-      Initialize (This.all);
+      Properties_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -52,20 +52,6 @@ package body workflows.template.data.Properties_Package is
         end if;
         This.propertiesHashMap := StdUtil_Package.getInstance.createHashMap;
         return TagSupport_Package.EVAL_PAGE;
-   end doEndTag;
-
-   procedure getPropertiesHashMap (This : in out Properties) is
-      Java_Result : constant HashMap_Access := Properties'Class (This).getPropertiesHashMap;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getPropertiesHashMap;
-
-   procedure doEndTag (This : in out Properties) is
-      Java_Result : constant Integer := Properties'Class (This).doEndTag;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end doEndTag;
 
 end workflows.template.data.Properties_Package;

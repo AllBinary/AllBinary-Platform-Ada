@@ -28,6 +28,7 @@ with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary
 with org.eclipse.swt.graphics.GC_Package; use org.eclipse.swt.graphics.GC_Package;
 with org.microemu.device.swt.SwtImmutableImage_Package; use org.microemu.device.swt.SwtImmutableImage_Package;
 with org.microemu.device.swt.SwtMutableImage_Package; use org.microemu.device.swt.SwtMutableImage_Package;
+with org.allbinary.media.image.ImageSwtRotationUtil_Package; use org.allbinary.media.image.ImageSwtRotationUtil_Package;
 
 package org.allbinary.media.image.ImageRotationUtil_Package is
 
@@ -53,7 +54,6 @@ package org.allbinary.media.image.ImageRotationUtil_Package is
    procedure Initialize (This : in out ImageRotationUtil'Class);
    function Create return ImageRotationUtil_Access;
    function getInstance return ImageRotationUtil_Access;
-   procedure getInstance;
    procedure rotateImage (This : in out ImageRotationUtil; originalImage : Image_Access; image : Image_Access; totalAngle : Integer);
    function createRotatedImage (This : in out ImageRotationUtil; originalImage : Image_Access; rotationInDegrees : Integer) return Image_Access;
    procedure createRotatedImage (This : in out ImageRotationUtil; originalImage : Image_Access; rotationInDegrees : Integer);

@@ -70,7 +70,7 @@ package body org.allbinary.math.AngleFactory_Package is
    function Create return AngleFactory_Access is
       This : constant AngleFactory_Access := new AngleFactory;
    begin
-      Initialize (This.all);
+      AngleFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -113,13 +113,6 @@ package body org.allbinary.math.AngleFactory_Package is
         LogUtil_Package.getInstance.putF (stringMaker.toString, To_Unbounded_String ("main"), To_Unbounded_String ("main"));
    end main;
 
-   procedure getInstance is
-      Java_Result : constant AngleFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
    procedure getAt (This : in out AngleFactory; index : Integer) is
       Java_Result : constant Angle_Access := AngleFactory'Class (This).getAt (index);
       pragma Unreferenced (Java_Result);
@@ -133,13 +126,6 @@ package body org.allbinary.math.AngleFactory_Package is
    begin
       null;
    end getClosestDirection;
-
-   procedure getGeneralDirection (This : in out AngleFactory) is
-      Java_Result : constant Angle_Access := AngleFactory'Class (This).getGeneralDirection;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getGeneralDirection;
 
 begin
    null;

@@ -30,7 +30,7 @@ package body org.allbinary.game.collision.CollidableAlwaysPickupNeverCollideBeha
    function Create return CollidableAlwaysPickupNeverCollideBehaviorFactory_Access is
       This : constant CollidableAlwaysPickupNeverCollideBehaviorFactory_Access := new CollidableAlwaysPickupNeverCollideBehaviorFactory;
    begin
-      Initialize (This.all);
+      CollidableAlwaysPickupNeverCollideBehaviorFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -43,20 +43,6 @@ package body org.allbinary.game.collision.CollidableAlwaysPickupNeverCollideBeha
    function createBehavior (This : in out CollidableAlwaysPickupNeverCollideBehaviorFactory) return CollidableBaseBehavior_Access is
    begin
         return This.instance;
-   end createBehavior;
-
-   procedure getInstance is
-      Java_Result : constant CollidableAlwaysPickupNeverCollideBehaviorFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure createBehavior (This : in out CollidableAlwaysPickupNeverCollideBehaviorFactory) is
-      Java_Result : constant CollidableBaseBehavior_Access := CollidableAlwaysPickupNeverCollideBehaviorFactory'Class (This).createBehavior;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end createBehavior;
 
 begin

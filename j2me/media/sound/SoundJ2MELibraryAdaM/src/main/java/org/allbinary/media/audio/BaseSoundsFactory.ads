@@ -21,6 +21,7 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.media.audio.SoundsFactoryInterface_Package; use org.allbinary.media.audio.SoundsFactoryInterface_Package;
+with org.allbinary.media.audio.Sound_Package; use org.allbinary.media.audio.Sound_Package;
 
 package org.allbinary.media.audio.BaseSoundsFactory_Package is
 
@@ -38,10 +39,8 @@ package org.allbinary.media.audio.BaseSoundsFactory_Package is
    function Create return BaseSoundsFactory_Access;
    procedure init (This : in out BaseSoundsFactory);
    function getSoundInterfaceArray (This : in out BaseSoundsFactory) return Sound_Access_Array_Access;
-   procedure getSoundInterfaceArray (This : in out BaseSoundsFactory);
    procedure setInitialized (This : in out BaseSoundsFactory; initialized : Boolean);
    function isInitialized (This : in out BaseSoundsFactory) return Boolean;
-   procedure isInitialized (This : in out BaseSoundsFactory);
 
 end org.allbinary.media.audio.BaseSoundsFactory_Package;
 

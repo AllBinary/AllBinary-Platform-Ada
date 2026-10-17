@@ -29,7 +29,7 @@ package body org.allbinary.game.input.NormalJ2MEGameInputMapping_Package is
    function Create return NormalJ2MEGameInputMapping_Access is
       This : constant NormalJ2MEGameInputMapping_Access := new NormalJ2MEGameInputMapping;
    begin
-      Initialize (This.all);
+      NormalJ2MEGameInputMapping_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -37,13 +37,6 @@ package body org.allbinary.game.input.NormalJ2MEGameInputMapping_Package is
    function getDefault (This : in out NormalJ2MEGameInputMapping) return InputToGameKeyMapping_Access is
    begin
         return NormalJ2MEDefaultGameInputMapping_Package.Create.getInputMapping;
-   end getDefault;
-
-   procedure getDefault (This : in out NormalJ2MEGameInputMapping) is
-      Java_Result : constant InputToGameKeyMapping_Access := NormalJ2MEGameInputMapping'Class (This).getDefault;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getDefault;
 
 end org.allbinary.game.input.NormalJ2MEGameInputMapping_Package;

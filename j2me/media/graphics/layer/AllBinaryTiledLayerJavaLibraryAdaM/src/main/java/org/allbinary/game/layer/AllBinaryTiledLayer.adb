@@ -47,7 +47,7 @@ package body org.allbinary.game.layer.AllBinaryTiledLayer_Package is
    function Create (dataId : Integer; width : Integer; height : Integer; cellWidth : Integer; cellHeight : Integer) return AllBinaryTiledLayer_Access is
       This : constant AllBinaryTiledLayer_Access := new AllBinaryTiledLayer;
    begin
-      Initialize (This.all, dataId, width, height, cellWidth, cellHeight);
+      AllBinaryTiledLayer_Package.Initialize (This.all, dataId, width, height, cellWidth, cellHeight);
       return This;
    end Create;
 
@@ -194,103 +194,12 @@ package body org.allbinary.game.layer.AllBinaryTiledLayer_Package is
         return animationTileIndex;
    end getAnimatedTile;
 
-   procedure getName (This : in out AllBinaryTiledLayer) is
-      Java_Result : constant Unbounded_String := AllBinaryTiledLayer'Class (This).getName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getName;
-
-   procedure getX2 (This : in out AllBinaryTiledLayer) is
-      Java_Result : constant Integer := AllBinaryTiledLayer'Class (This).getX2;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getX2;
-
-   procedure getY2 (This : in out AllBinaryTiledLayer) is
-      Java_Result : constant Integer := AllBinaryTiledLayer'Class (This).getY2;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getY2;
-
-   procedure getZ2 (This : in out AllBinaryTiledLayer) is
-      Java_Result : constant Integer := AllBinaryTiledLayer'Class (This).getZ2;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getZ2;
-
-   procedure getCellWidth (This : in out AllBinaryTiledLayer) is
-      Java_Result : constant Integer := AllBinaryTiledLayer'Class (This).getCellWidth;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getCellWidth;
-
-   procedure getCellHeight (This : in out AllBinaryTiledLayer) is
-      Java_Result : constant Integer := AllBinaryTiledLayer'Class (This).getCellHeight;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getCellHeight;
-
    procedure getCell (This : in out AllBinaryTiledLayer; col : Integer; row : Integer) is
       Java_Result : constant Integer := AllBinaryTiledLayer'Class (This).getCell (col, row);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getCell;
-
-   procedure getColumns (This : in out AllBinaryTiledLayer) is
-      Java_Result : constant Integer := AllBinaryTiledLayer'Class (This).getColumns;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getColumns;
-
-   procedure getRows (This : in out AllBinaryTiledLayer) is
-      Java_Result : constant Integer := AllBinaryTiledLayer'Class (This).getRows;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getRows;
-
-   procedure getHalfWidth (This : in out AllBinaryTiledLayer) is
-      Java_Result : constant Integer := AllBinaryTiledLayer'Class (This).getHalfWidth;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getHalfWidth;
-
-   procedure getHalfHeight (This : in out AllBinaryTiledLayer) is
-      Java_Result : constant Integer := AllBinaryTiledLayer'Class (This).getHalfHeight;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getHalfHeight;
-
-   procedure getDataId (This : in out AllBinaryTiledLayer) is
-      Java_Result : constant Integer := AllBinaryTiledLayer'Class (This).getDataId;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getDataId;
-
-   procedure getHalfCellWidth (This : in out AllBinaryTiledLayer) is
-      Java_Result : constant Integer := AllBinaryTiledLayer'Class (This).getHalfCellWidth;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getHalfCellWidth;
-
-   procedure getHalfCellHeight (This : in out AllBinaryTiledLayer) is
-      Java_Result : constant Integer := AllBinaryTiledLayer'Class (This).getHalfCellHeight;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getHalfCellHeight;
 
    procedure isOnTileLayer (This : in out AllBinaryTiledLayer; column : Integer; row : Integer) is
       Java_Result : constant Boolean := AllBinaryTiledLayer'Class (This).isOnTileLayer (column, row);

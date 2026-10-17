@@ -36,7 +36,7 @@ package body org.allbinary.data.tables.user.commerce.inventory.item.downloads.Do
    function Create return DownloadItemsEntityFactory_Access is
       This : constant DownloadItemsEntityFactory_Access := new DownloadItemsEntityFactory;
    begin
-      Initialize (This.all);
+      DownloadItemsEntityFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -57,20 +57,6 @@ package body org.allbinary.data.tables.user.commerce.inventory.item.downloads.Do
             return null;
                 end;
         end;
-   end getDownloadItemsEntityInstance;
-
-   procedure getInstance is
-      Java_Result : constant DownloadItemsEntityFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure getDownloadItemsEntityInstance (This : in out DownloadItemsEntityFactory) is
-      Java_Result : constant DownloadItemsEntity_Access := DownloadItemsEntityFactory'Class (This).getDownloadItemsEntityInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getDownloadItemsEntityInstance;
 
 begin

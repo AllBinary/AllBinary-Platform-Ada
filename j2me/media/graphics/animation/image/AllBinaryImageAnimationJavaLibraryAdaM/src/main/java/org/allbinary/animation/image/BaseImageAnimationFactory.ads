@@ -31,6 +31,7 @@ with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.
 with org.allbinary.media.ScaleProperties_Package; use org.allbinary.media.ScaleProperties_Package;
 with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.animation.image.AnimationFactoryInitializationVisitor_Package; use org.allbinary.animation.image.AnimationFactoryInitializationVisitor_Package;
 
 package org.allbinary.animation.image.BaseImageAnimationFactory_Package is
 
@@ -66,16 +67,11 @@ package org.allbinary.animation.image.BaseImageAnimationFactory_Package is
    function getInstance (This : in out BaseImageAnimationFactory; instanceId : Integer) return Animation_Access;
    procedure getInstance (This : in out BaseImageAnimationFactory; instanceId : Integer);
    function getImage (This : in out BaseImageAnimationFactory) return Image_Access;
-   procedure getImage (This : in out BaseImageAnimationFactory);
    function getSequenceArray (This : in out BaseImageAnimationFactory) return Integer_Array_Access;
-   procedure getSequenceArray (This : in out BaseImageAnimationFactory);
    procedure setInitialScale (This : in out BaseImageAnimationFactory; scaleProperties : ScaleProperties_Access);
    function getAnimationFactoryInitializationVisitorP (This : in out BaseImageAnimationFactory) return AnimationFactoryInitializationVisitor_Access;
-   procedure getAnimationFactoryInitializationVisitorP (This : in out BaseImageAnimationFactory);
    function getScalePropertiesP (This : in out BaseImageAnimationFactory) return ScaleProperties_Access;
-   procedure getScalePropertiesP (This : in out BaseImageAnimationFactory);
    function toString (This : in out BaseImageAnimationFactory) return Unbounded_String;
-   procedure toString (This : in out BaseImageAnimationFactory);
 
 end org.allbinary.animation.image.BaseImageAnimationFactory_Package;
 

@@ -21,6 +21,8 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
+with org.allbinary.game.score.NoHighScoresFactory_Package; use org.allbinary.game.score.NoHighScoresFactory_Package;
+with org.allbinary.game.score.HighScores_Package; use org.allbinary.game.score.HighScores_Package;
 
 package org.allbinary.game.score.LastFetchHighScoresFactory_Package is
 
@@ -39,7 +41,6 @@ package org.allbinary.game.score.LastFetchHighScoresFactory_Package is
    procedure Initialize (This : in out LastFetchHighScoresFactory'Class);
    function Create return LastFetchHighScoresFactory_Access;
    function getInstance return LastFetchHighScoresFactory_Access;
-   procedure getInstance;
 
 end org.allbinary.game.score.LastFetchHighScoresFactory_Package;
 

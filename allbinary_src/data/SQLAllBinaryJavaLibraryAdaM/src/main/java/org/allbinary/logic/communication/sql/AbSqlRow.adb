@@ -45,7 +45,7 @@ package body org.allbinary.logic.communication.sql.AbSqlRow_Package is
    function Create (databaseConnectionInfoInterface : DbConnectionInfo_Access) return AbSqlRow_Access is
       This : constant AbSqlRow_Access := new AbSqlRow;
    begin
-      Initialize (This.all, databaseConnectionInfoInterface);
+      AbSqlRow_Package.Initialize (This.all, databaseConnectionInfoInterface);
       return This;
    end Create;
 
@@ -686,13 +686,6 @@ package body org.allbinary.logic.communication.sql.AbSqlRow_Package is
    begin
       null;
    end getRows;
-
-   procedure getAllRows (This : in out AbSqlRow) is
-      Java_Result : constant BasicArrayList_Access := AbSqlRow'Class (This).getAllRows;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getAllRows;
 
    procedure getRowsWhereBetween (This : in out AbSqlRow; whereKeyValuePairs : HashMap_Access; betweenColumn : Unbounded_String; smallest : Unbounded_String; largest : Unbounded_String) is
       Java_Result : constant BasicArrayList_Access := AbSqlRow'Class (This).getRowsWhereBetween (whereKeyValuePairs, betweenColumn, smallest, largest);

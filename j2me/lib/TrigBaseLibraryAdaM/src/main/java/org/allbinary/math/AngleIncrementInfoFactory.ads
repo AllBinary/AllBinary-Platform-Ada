@@ -20,6 +20,8 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
+with org.allbinary.math.AngleIncrementInfo_Package; use org.allbinary.math.AngleIncrementInfo_Package;
+with org.allbinary.math.AngleFactory_Package; use org.allbinary.math.AngleFactory_Package;
 
 package org.allbinary.math.AngleIncrementInfoFactory_Package is
 
@@ -37,7 +39,6 @@ package org.allbinary.math.AngleIncrementInfoFactory_Package is
    procedure Initialize (This : in out AngleIncrementInfoFactory'Class);
    function Create return AngleIncrementInfoFactory_Access;
    function getInstance return AngleIncrementInfoFactory_Access;
-   procedure getInstance;
    function getAt (This : in out AngleIncrementInfoFactory; angleIncrement : Short_Integer) return AngleIncrementInfo_Access;
    procedure getAt (This : in out AngleIncrementInfoFactory; angleIncrement : Short_Integer);
 

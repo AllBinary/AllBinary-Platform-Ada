@@ -49,7 +49,6 @@ package org.allbinary.logic.communication.log.LogFormatUtil_Package is
    procedure Initialize (This : in out LogFormatUtil'Class);
    function Create return LogFormatUtil_Access;
    function getInstance return LogFormatUtil_Access;
-   procedure getInstance;
    function get (This : in out LogFormatUtil; className : Unbounded_String; functionName : Unbounded_String; specialMessage : Unbounded_String; exception_Id : Java_Object_Access) return Unbounded_String;
    procedure get (This : in out LogFormatUtil; className : Unbounded_String; functionName : Unbounded_String; specialMessage : Unbounded_String; exception_Id : Java_Object_Access);
    function getS (This : in out LogFormatUtil; className : Unbounded_String; functionName : Unbounded_String; specialMessage : Unbounded_String) return Unbounded_String;

@@ -31,7 +31,7 @@ package body org.allbinary.graphics.j2me.StatusFactory_Package is
    function Create return StatusFactory_Access is
       This : constant StatusFactory_Access := new StatusFactory;
    begin
-      Initialize (This.all);
+      StatusFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -51,13 +51,6 @@ package body org.allbinary.graphics.j2me.StatusFactory_Package is
         This.setStatusNoLog (status);
         This.logUtil.putF (This.STATUS_LABEL & status, This'Unchecked_Access, This.SETSTATUS);
    end setStatus_Case;
-
-   procedure getInstance is
-      Java_Result : constant StatusFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

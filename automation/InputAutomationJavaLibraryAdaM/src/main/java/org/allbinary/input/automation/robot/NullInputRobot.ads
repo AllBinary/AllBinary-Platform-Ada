@@ -26,6 +26,9 @@ with org.allbinary.input.automation.AbstractInputRobot_Package; use org.allbinar
 with org.allbinary.input.automation.PointFactory_Package; use org.allbinary.input.automation.PointFactory_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.input.automation.robot.InputRobotInterface_Package; use org.allbinary.input.automation.robot.InputRobotInterface_Package;
+with org.allbinary.input.automation.robot.Point_Package; use org.allbinary.input.automation.robot.Point_Package;
+with org.allbinary.input.automation.robot.Rectangle_Package; use org.allbinary.input.automation.robot.Rectangle_Package;
+with org.allbinary.input.automation.robot.Color_Package; use org.allbinary.input.automation.robot.Color_Package;
 
 package org.allbinary.input.automation.robot.NullInputRobot_Package is
 
@@ -47,11 +50,8 @@ package org.allbinary.input.automation.robot.NullInputRobot_Package is
    procedure Initialize (This : in out NullInputRobot'Class);
    function Create return NullInputRobot_Access;
    function getName (This : in out NullInputRobot) return Unbounded_String;
-   procedure getName (This : in out NullInputRobot);
    function getHelpSet (This : in out NullInputRobot) return HelpSet_Access;
-   procedure getHelpSet (This : in out NullInputRobot);
    function getMousePoint (This : in out NullInputRobot) return Point_Access;
-   procedure getMousePoint (This : in out NullInputRobot);
    procedure keyPress (This : in out NullInputRobot; keycode : Integer);
    procedure keyRelease (This : in out NullInputRobot; keycode : Integer);
    procedure mouseMove (This : in out NullInputRobot; x : Integer; y : Integer);
@@ -61,16 +61,13 @@ package org.allbinary.input.automation.robot.NullInputRobot_Package is
    procedure createScreenCapture (This : in out NullInputRobot; screenRect : Rectangle_Access);
    procedure delay_Id (This : in out NullInputRobot; ms : Integer);
    function getAutoDelay (This : in out NullInputRobot) return Integer;
-   procedure getAutoDelay (This : in out NullInputRobot);
    function getPixelColor (This : in out NullInputRobot; x : Integer; y : Integer) return Color_Access;
    procedure getPixelColor (This : in out NullInputRobot; x : Integer; y : Integer);
    function isAutoWaitForIdle (This : in out NullInputRobot) return Boolean;
-   procedure isAutoWaitForIdle (This : in out NullInputRobot);
    procedure mouseWheel (This : in out NullInputRobot; wheelAmt : Integer);
    procedure setAutoDelay (This : in out NullInputRobot; ms : Integer);
    procedure setAutoWaitForIdle (This : in out NullInputRobot; isOn : Boolean);
    function toString (This : in out NullInputRobot) return Unbounded_String;
-   procedure toString (This : in out NullInputRobot);
    procedure waitForIdle (This : in out NullInputRobot);
 
 end org.allbinary.input.automation.robot.NullInputRobot_Package;

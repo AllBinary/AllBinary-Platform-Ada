@@ -31,7 +31,7 @@ package body org.allbinary.business.user.commerce.money.payment.types.TenderType
    function Create return TenderTypeFactory_Access is
       This : constant TenderTypeFactory_Access := new TenderTypeFactory;
    begin
-      Initialize (This.all);
+      TenderTypeFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -39,13 +39,6 @@ package body org.allbinary.business.user.commerce.money.payment.types.TenderType
    function getInstance return TenderTypeFactory_Access is
    begin
         return TenderTypeFactory_Package.instance;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant TenderTypeFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

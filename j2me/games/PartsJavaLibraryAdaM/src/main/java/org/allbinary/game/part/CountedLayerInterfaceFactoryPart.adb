@@ -39,7 +39,7 @@ package body org.allbinary.game.part.CountedLayerInterfaceFactoryPart_Package is
    function Create (total : Integer; countedPickedUpLayerInterfaceFactory : CountedPickedUpLayerInterfaceFactory_Access) return CountedLayerInterfaceFactoryPart_Access is
       This : constant CountedLayerInterfaceFactoryPart_Access := new CountedLayerInterfaceFactoryPart;
    begin
-      Initialize (This.all, total, countedPickedUpLayerInterfaceFactory);
+      CountedLayerInterfaceFactoryPart_Package.Initialize (This.all, total, countedPickedUpLayerInterfaceFactory);
       return This;
    end Create;
 
@@ -131,41 +131,6 @@ package body org.allbinary.game.part.CountedLayerInterfaceFactoryPart_Package is
    begin
       null;
    end getInstance;
-
-   procedure getTotal (This : in out CountedLayerInterfaceFactoryPart) is
-      Java_Result : constant Integer := CountedLayerInterfaceFactoryPart'Class (This).getTotal;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTotal;
-
-   procedure getAnimationInterface (This : in out CountedLayerInterfaceFactoryPart) is
-      Java_Result : constant Animation_Access := CountedLayerInterfaceFactoryPart'Class (This).getAnimationInterface;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getAnimationInterface;
-
-   procedure getXOffset (This : in out CountedLayerInterfaceFactoryPart) is
-      Java_Result : constant Integer := CountedLayerInterfaceFactoryPart'Class (This).getXOffset;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getXOffset;
-
-   procedure getTotalString (This : in out CountedLayerInterfaceFactoryPart) is
-      Java_Result : constant Character_Array_Access := CountedLayerInterfaceFactoryPart'Class (This).getTotalString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTotalString;
-
-   procedure getCountedPickedUpLayerInterfaceFactory (This : in out CountedLayerInterfaceFactoryPart) is
-      Java_Result : constant CountedPickedUpLayerInterfaceFactory_Access := CountedLayerInterfaceFactoryPart'Class (This).getCountedPickedUpLayerInterfaceFactory;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getCountedPickedUpLayerInterfaceFactory;
 
 begin
    null;

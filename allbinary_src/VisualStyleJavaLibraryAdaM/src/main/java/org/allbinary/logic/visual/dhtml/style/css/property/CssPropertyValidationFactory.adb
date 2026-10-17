@@ -30,7 +30,7 @@ package body org.allbinary.logic.visual.dhtml.style.css.property.CssPropertyVali
    function Create return CssPropertyValidationFactory_Access is
       This : constant CssPropertyValidationFactory_Access := new CssPropertyValidationFactory;
    begin
-      Initialize (This.all);
+      CssPropertyValidationFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

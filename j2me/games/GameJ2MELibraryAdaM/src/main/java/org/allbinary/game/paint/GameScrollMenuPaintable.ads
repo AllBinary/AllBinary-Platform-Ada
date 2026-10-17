@@ -30,6 +30,7 @@ with org.allbinary.graphics.form.item.ABTextItem_Package; use org.allbinary.grap
 with org.allbinary.graphics.paint.Paintable_Package; use org.allbinary.graphics.paint.Paintable_Package;
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbinary.logic.util.event.AllBinaryEventObject_Package;
 with org.allbinary.game.paint.BasicGameDemoPaintable_Package; use org.allbinary.game.paint.BasicGameDemoPaintable_Package;
+with org.allbinary.game.paint.MainGameDemoStatePaintable_Package; use org.allbinary.game.paint.MainGameDemoStatePaintable_Package;
 
 package org.allbinary.game.paint.GameScrollMenuPaintable_Package is
 

@@ -31,20 +31,13 @@ package body org.allbinary.business.user.commerce.money.payment.gateway.transact
    function Create (value : Unbounded_String) return PaymentTransactionKeys_Access is
       This : constant PaymentTransactionKeys_Access := new PaymentTransactionKeys;
    begin
-      Initialize (This.all, value);
+      PaymentTransactionKeys_Package.Initialize (This.all, value);
       return This;
    end Create;
 
    function toString (This : in out PaymentTransactionKeys) return Unbounded_String is
    begin
         return This.key;
-   end toString;
-
-   procedure toString (This : in out PaymentTransactionKeys) is
-      Java_Result : constant Unbounded_String := PaymentTransactionKeys'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end toString;
 
 end org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionKeys_Package;

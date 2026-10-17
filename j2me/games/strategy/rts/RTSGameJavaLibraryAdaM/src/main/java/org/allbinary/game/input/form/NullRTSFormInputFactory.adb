@@ -28,7 +28,7 @@ package body org.allbinary.game.input.form.NullRTSFormInputFactory_Package is
    function Create return NullRTSFormInputFactory_Access is
       This : constant NullRTSFormInputFactory_Access := new NullRTSFormInputFactory;
    begin
-      Initialize (This.all);
+      NullRTSFormInputFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -36,13 +36,6 @@ package body org.allbinary.game.input.form.NullRTSFormInputFactory_Package is
    function getInstance return RTSFormInput_Access is
    begin
         return NullRTSFormInputFactory_Package.SINGLETON;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant RTSFormInput_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

@@ -31,20 +31,13 @@ package body org.allbinary.game.combat.destroy.event.DestroyEventFactory_Package
    function Create (combatGameCanvas : AllBinaryGameCanvas_Access) return DestroyEventFactory_Access is
       This : constant DestroyEventFactory_Access := new DestroyEventFactory;
    begin
-      Initialize (This.all, combatGameCanvas);
+      DestroyEventFactory_Package.Initialize (This.all, combatGameCanvas);
       return This;
    end Create;
 
    function getInstance (This : in out DestroyEventFactory) return AllBinaryEventObject_Access is
    begin
         return DestroyedEvent_Package.Create (This.combatGameCanvas);
-   end getInstance;
-
-   procedure getInstance (This : in out DestroyEventFactory) is
-      Java_Result : constant AllBinaryEventObject_Access := DestroyEventFactory'Class (This).getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 end org.allbinary.game.combat.destroy.event.DestroyEventFactory_Package;

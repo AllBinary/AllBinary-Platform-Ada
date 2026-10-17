@@ -32,7 +32,7 @@ package body org.allbinary.game.layer.capital.HudCapital_Package is
    function Create (moneyGraphic : NumberStringHud_Access) return HudCapital_Access is
       This : constant HudCapital_Access := new HudCapital;
    begin
-      Initialize (This.all, moneyGraphic);
+      HudCapital_Package.Initialize (This.all, moneyGraphic);
       return This;
    end Create;
 
@@ -52,13 +52,6 @@ package body org.allbinary.game.layer.capital.HudCapital_Package is
         Capital (This).addMoney (points);
         This.capitalGraphic.add (points);
    end addMoney;
-
-   procedure getTotalMoney (This : in out HudCapital) is
-      Java_Result : constant Integer := HudCapital'Class (This).getTotalMoney;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTotalMoney;
 
 end org.allbinary.game.layer.capital.HudCapital_Package;
 

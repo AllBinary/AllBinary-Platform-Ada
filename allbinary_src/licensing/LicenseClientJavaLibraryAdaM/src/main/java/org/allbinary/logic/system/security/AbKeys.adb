@@ -36,7 +36,7 @@ package body org.allbinary.logic.system.security.AbKeys_Package is
    function Create return AbKeys_Access is
       This : constant AbKeys_Access := new AbKeys;
    begin
-      Initialize (This.all);
+      AbKeys_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -58,13 +58,6 @@ package body org.allbinary.logic.system.security.AbKeys_Package is
                 end;
         end;
    end getKey;
-
-   procedure getInstance is
-      Java_Result : constant AbKeys_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure getKey (This : in out AbKeys; abeClientInformation : AbeClientInformationInterface_Access; keyName : Unbounded_String) is
       Java_Result : constant Unbounded_String := AbKeys'Class (This).getKey (abeClientInformation, keyName);

@@ -40,7 +40,7 @@ package body org.allbinary.media.graphics.geography.map.GeographicMapCellPositio
    function Create (column : Integer; row : Integer; columns : Integer; rows : Integer; width : Integer; height : Integer) return GeographicMapCellPosition_Access is
       This : constant GeographicMapCellPosition_Access := new GeographicMapCellPosition;
    begin
-      Initialize (This.all, column, row, columns, rows, width, height);
+      GeographicMapCellPosition_Package.Initialize (This.all, column, row, columns, rows, width, height);
       return This;
    end Create;
 
@@ -58,20 +58,6 @@ package body org.allbinary.media.graphics.geography.map.GeographicMapCellPositio
    begin
         This.midPoint := midPoint;
    end setMidPoint;
-
-   procedure getPoint (This : in out GeographicMapCellPosition) is
-      Java_Result : constant GPoint_Access := GeographicMapCellPosition'Class (This).getPoint;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getPoint;
-
-   procedure getMidPoint (This : in out GeographicMapCellPosition) is
-      Java_Result : constant GPoint_Access := GeographicMapCellPosition'Class (This).getMidPoint;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getMidPoint;
 
 end org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
 

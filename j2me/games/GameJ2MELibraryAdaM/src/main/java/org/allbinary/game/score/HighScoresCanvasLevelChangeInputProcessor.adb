@@ -35,7 +35,7 @@ package body org.allbinary.game.score.HighScoresCanvasLevelChangeInputProcessor_
    function Create (highScoresCanvas : HighScoresCanvas_Access) return HighScoresCanvasLevelChangeInputProcessor_Access is
       This : constant HighScoresCanvasLevelChangeInputProcessor_Access := new HighScoresCanvasLevelChangeInputProcessor;
    begin
-      Initialize (This.all, highScoresCanvas);
+      HighScoresCanvasLevelChangeInputProcessor_Package.Initialize (This.all, highScoresCanvas);
       return This;
    end Create;
 

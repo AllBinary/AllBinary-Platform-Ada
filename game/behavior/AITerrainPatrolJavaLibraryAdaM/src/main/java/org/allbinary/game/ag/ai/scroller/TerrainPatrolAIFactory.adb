@@ -28,7 +28,7 @@ package body org.allbinary.game.ag.ai.scroller.TerrainPatrolAIFactory_Package is
    function Create return TerrainPatrolAIFactory_Access is
       This : constant TerrainPatrolAIFactory_Access := new TerrainPatrolAIFactory;
    begin
-      Initialize (This.all);
+      TerrainPatrolAIFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

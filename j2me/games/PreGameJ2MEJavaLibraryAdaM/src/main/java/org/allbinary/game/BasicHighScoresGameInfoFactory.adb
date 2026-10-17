@@ -30,7 +30,7 @@ package body org.allbinary.game.BasicHighScoresGameInfoFactory_Package is
    function Create return BasicHighScoresGameInfoFactory_Access is
       This : constant BasicHighScoresGameInfoFactory_Access := new BasicHighScoresGameInfoFactory;
    begin
-      Initialize (This.all);
+      BasicHighScoresGameInfoFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -38,13 +38,6 @@ package body org.allbinary.game.BasicHighScoresGameInfoFactory_Package is
    function getInstance return BasicHighScoresGameInfoFactory_Access is
    begin
         return BasicHighScoresGameInfoFactory_Package.SINGLETON;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant BasicHighScoresGameInfoFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

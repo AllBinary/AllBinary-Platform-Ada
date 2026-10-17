@@ -29,7 +29,7 @@ package body org.allbinary.image.opengles.OpenGLESGL10ImageFactory_Package is
    function Create return OpenGLESGL10ImageFactory_Access is
       This : constant OpenGLESGL10ImageFactory_Access := new OpenGLESGL10ImageFactory;
    begin
-      Initialize (This.all);
+      OpenGLESGL10ImageFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

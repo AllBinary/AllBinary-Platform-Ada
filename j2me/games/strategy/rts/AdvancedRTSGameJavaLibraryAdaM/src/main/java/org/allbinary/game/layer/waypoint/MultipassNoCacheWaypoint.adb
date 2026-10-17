@@ -33,7 +33,7 @@ package body org.allbinary.game.layer.waypoint.MultipassNoCacheWaypoint_Package 
    function Create (ownerLayer : PathFindingLayerInterface_Access; sound : Sound_Access) return MultipassNoCacheWaypoint_Access is
       This : constant MultipassNoCacheWaypoint_Access := new MultipassNoCacheWaypoint;
    begin
-      Initialize (This.all, ownerLayer, sound);
+      MultipassNoCacheWaypoint_Package.Initialize (This.all, ownerLayer, sound);
       return This;
    end Create;
 

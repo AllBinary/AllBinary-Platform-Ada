@@ -23,6 +23,8 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbinary.logic.util.event.AllBinaryEventObject_Package;
 with org.allbinary.logic.util.event.EventListenerInterface_Package; use org.allbinary.logic.util.event.EventListenerInterface_Package;
 with org.allbinary.logic.util.event.handler.BasicEventHandler_Package; use org.allbinary.logic.util.event.handler.BasicEventHandler_Package;
+with org.allbinary.graphics.displayable.event.DisplayChangeEventListener_Package; use org.allbinary.graphics.displayable.event.DisplayChangeEventListener_Package;
+with org.allbinary.graphics.displayable.event.DisplayChangeEvent_Package; use org.allbinary.graphics.displayable.event.DisplayChangeEvent_Package;
 
 package org.allbinary.graphics.displayable.event.LastDisplayChangeEventHandler_Package is
 
@@ -41,7 +43,6 @@ package org.allbinary.graphics.displayable.event.LastDisplayChangeEventHandler_P
    procedure Initialize (This : in out LastDisplayChangeEventHandler'Class);
    function Create return LastDisplayChangeEventHandler_Access;
    function getInstance return LastDisplayChangeEventHandler_Access;
-   procedure getInstance;
    procedure process (This : in out LastDisplayChangeEventHandler; eventObject : AllBinaryEventObject_Access; eventListenerInterface : EventListenerInterface_Access);
 
 end org.allbinary.graphics.displayable.event.LastDisplayChangeEventHandler_Package;

@@ -36,7 +36,7 @@ package body org.allbinary.logic.io.file.directory.SubDirectory_Package is
    function Create return SubDirectory_Access is
       This : constant SubDirectory_Access := new SubDirectory;
    begin
-      Initialize (This.all);
+      SubDirectory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -77,13 +77,6 @@ package body org.allbinary.logic.io.file.directory.SubDirectory_Package is
         end loop;
         return stringBuffer.toString;
    end toString;
-
-   procedure getInstance is
-      Java_Result : constant SubDirectory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure search (This : in out SubDirectory; fileFilter : FileFilter_Access; file : AbFile_Access) is
       Java_Result : constant BasicArrayList_Access := SubDirectory'Class (This).search (fileFilter, file);

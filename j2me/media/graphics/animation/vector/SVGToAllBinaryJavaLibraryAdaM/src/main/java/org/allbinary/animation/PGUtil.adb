@@ -16,7 +16,7 @@ package body org.allbinary.animation.PGUtil_Package is
    function Create return PGUtil_Access is
       This : constant PGUtil_Access := new PGUtil;
    begin
-      Initialize (This.all);
+      PGUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -57,13 +57,6 @@ package body org.allbinary.animation.PGUtil_Package is
             end if;
         end loop;
    end flattenCubicBezier;
-
-   procedure getInstance is
-      Java_Result : constant PGUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

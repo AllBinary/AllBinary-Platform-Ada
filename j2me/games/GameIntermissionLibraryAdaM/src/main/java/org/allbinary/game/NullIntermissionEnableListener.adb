@@ -35,7 +35,7 @@ package body org.allbinary.game.NullIntermissionEnableListener_Package is
    function Create return NullIntermissionEnableListener_Access is
       This : constant NullIntermissionEnableListener_Access := new NullIntermissionEnableListener;
    begin
-      Initialize (This.all);
+      NullIntermissionEnableListener_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -43,13 +43,6 @@ package body org.allbinary.game.NullIntermissionEnableListener_Package is
    begin
         null;
    end notifyIntermission;
-
-   procedure getInstance is
-      Java_Result : constant IntermissionEnableListenerInterface_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

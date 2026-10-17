@@ -21,13 +21,18 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.io.IOException_Package; use java.io.IOException_Package;
---  with java.util.Calendar_Package; use java.util.Calendar_Package;
+with java.util.Calendar_Package; use java.util.Calendar_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.system.security.licensing.client.AbeLicenseClient_Package; use org.allbinary.logic.system.security.licensing.client.AbeLicenseClient_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.logic.system.security.licensing.AbeLicenseInterface_Package; use org.allbinary.logic.system.security.licensing.AbeLicenseInterface_Package;
+with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package; use org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+with org.allbinary.logic.system.security.licensing.AbeNoLicense_Package; use org.allbinary.logic.system.security.licensing.AbeNoLicense_Package;
+with org.allbinary.logic.system.security.licensing.AbeClientInformationData_Package; use org.allbinary.logic.system.security.licensing.AbeClientInformationData_Package;
 
 package org.allbinary.logic.system.security.licensing.AbeLicenseInterfaceFactory_Package is
 
+   package Calendar_Package renames Standard.java.util.Calendar_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package AbeLicenseClient_Package renames Standard.org.allbinary.logic.system.security.licensing.client.AbeLicenseClient_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
@@ -50,16 +55,13 @@ package org.allbinary.logic.system.security.licensing.AbeLicenseInterfaceFactory
    procedure Initialize (This : in out AbeLicenseInterfaceFactory'Class);
    function Create return AbeLicenseInterfaceFactory_Access;
    function getInstance return AbeLicenseInterfaceFactory_Access;
-   procedure getInstance;
    function getLicenseInstance (This : in out AbeLicenseInterfaceFactory; abeClientInformation : AbeClientInformationInterface_Access) return AbeLicenseInterface_Access;
    procedure getLicenseInstance (This : in out AbeLicenseInterfaceFactory; abeClientInformation : AbeClientInformationInterface_Access);
    function get (This : in out AbeLicenseInterfaceFactory; abeClientInformation : AbeClientInformationInterface_Access) return AbeLicenseInterface_Access;
    procedure get (This : in out AbeLicenseInterfaceFactory; abeClientInformation : AbeClientInformationInterface_Access);
    function isTimeToGetKey (This : in out AbeLicenseInterfaceFactory) return Boolean;
-   procedure isTimeToGetKey (This : in out AbeLicenseInterfaceFactory);
    procedure setCheck (This : in out AbeLicenseInterfaceFactory; check : Boolean);
    function isCheck (This : in out AbeLicenseInterfaceFactory) return Boolean;
-   procedure isCheck (This : in out AbeLicenseInterfaceFactory);
 
 end org.allbinary.logic.system.security.licensing.AbeLicenseInterfaceFactory_Package;
 

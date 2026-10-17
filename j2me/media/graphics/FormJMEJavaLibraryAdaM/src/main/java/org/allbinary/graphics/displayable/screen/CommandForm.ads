@@ -35,6 +35,7 @@ with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.s
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.util.ABStack_Package; use org.allbinary.util.ABStack_Package;
+with org.allbinary.graphics.displayable.screen.ScreenRepaintProcessorFactory_Package; use org.allbinary.graphics.displayable.screen.ScreenRepaintProcessorFactory_Package;
 
 package org.allbinary.graphics.displayable.screen.CommandForm_Package is
 
@@ -66,13 +67,11 @@ package org.allbinary.graphics.displayable.screen.CommandForm_Package is
    procedure Initialize (This : in out CommandForm'Class; commandListener : CommandListener_Access; formTitle : Unbounded_String; backgrounBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access);
    function Create (commandListener : CommandListener_Access; formTitle : Unbounded_String; backgrounBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access) return CommandForm_Access;
    function getNullCommandForm return CommandForm_Access;
-   procedure getNullCommandForm;
    procedure initCommands (This : in out CommandForm; cmdListener : CommandListener_Access);
    procedure open (This : in out CommandForm);
    procedure close (This : in out CommandForm);
    procedure update (This : in out CommandForm);
    function getSourceId (This : in out CommandForm) return Integer;
-   procedure getSourceId (This : in out CommandForm);
    procedure addCommand (This : in out CommandForm; command : Command_Access);
    procedure removeAllCommands (This : in out CommandForm);
 

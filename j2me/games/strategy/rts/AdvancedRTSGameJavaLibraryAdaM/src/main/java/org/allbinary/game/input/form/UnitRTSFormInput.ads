@@ -48,6 +48,8 @@ with org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package; use 
 with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
 with org.allbinary.media.graphics.geography.map.GeographicMapCompositeInterface_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCompositeInterface_Package;
 with org.allbinary.game.input.form.RTSFormInput_Package; use org.allbinary.game.input.form.RTSFormInput_Package;
+with org.allbinary.game.input.form.AssignWaypointsUtil_Package; use org.allbinary.game.input.form.AssignWaypointsUtil_Package;
+with org.allbinary.game.input.form.PlayersSingletonFactory_Package; use org.allbinary.game.input.form.PlayersSingletonFactory_Package;
 
 package org.allbinary.game.input.form.UnitRTSFormInput_Package is
 

@@ -58,7 +58,6 @@ package org.allbinary.game.layer.weapon.CollidableWeaponBehavior_Package is
    procedure Initialize (This : in out CollidableWeaponBehavior'Class; collidable : Boolean);
    function Create (collidable : Boolean) return CollidableWeaponBehavior_Access;
    function getNullInstance return CollidableWeaponBehavior_Access;
-   procedure getNullInstance;
    procedure init (This : in out CollidableWeaponBehavior; sourceLayerInterface : AllBinaryLayer_Access);
    function isCollision (This : in out CollidableWeaponBehavior; ownerLayer : CollidableCompositeLayer_Access; collisionLayer : CollidableCompositeLayer_Access) return Boolean;
    procedure isCollision (This : in out CollidableWeaponBehavior; ownerLayer : CollidableCompositeLayer_Access; collisionLayer : CollidableCompositeLayer_Access);
@@ -69,7 +68,6 @@ package org.allbinary.game.layer.weapon.CollidableWeaponBehavior_Package is
    function getCollisionTypeWith (This : in out CollidableWeaponBehavior; layerInterface : AllBinaryLayer_Access) return CollisionType_Access;
    procedure getCollisionTypeWith (This : in out CollidableWeaponBehavior; layerInterface : AllBinaryLayer_Access);
    function isCollided (This : in out CollidableWeaponBehavior) return Boolean;
-   procedure isCollided (This : in out CollidableWeaponBehavior);
    procedure setCollided (This : in out CollidableWeaponBehavior; collided : Boolean);
 
 end org.allbinary.game.layer.weapon.CollidableWeaponBehavior_Package;

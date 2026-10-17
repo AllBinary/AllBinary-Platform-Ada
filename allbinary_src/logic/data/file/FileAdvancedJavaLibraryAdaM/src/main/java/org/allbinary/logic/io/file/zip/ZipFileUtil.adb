@@ -30,7 +30,7 @@ package body org.allbinary.logic.io.file.zip.ZipFileUtil_Package is
    function Create return ZipFileUtil_Access is
       This : constant ZipFileUtil_Access := new ZipFileUtil;
    begin
-      Initialize (This.all);
+      ZipFileUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -148,13 +148,6 @@ package body org.allbinary.logic.io.file.zip.ZipFileUtil_Package is
             StreamUtil_Package.getInstance.close (inputStream);
         end;
    end unzip;
-
-   procedure getInstance is
-      Java_Result : constant ZipFileUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

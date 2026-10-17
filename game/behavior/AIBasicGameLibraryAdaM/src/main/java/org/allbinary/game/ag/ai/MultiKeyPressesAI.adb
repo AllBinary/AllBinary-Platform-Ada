@@ -33,7 +33,7 @@ package body org.allbinary.game.ag.ai.MultiKeyPressesAI_Package is
    function Create (hashtable : ABHashtable_Access; ownerLayerInterface : AllBinaryLayer_Access; gameInput : GameInput_Access) return MultiKeyPressesAI_Access is
       This : constant MultiKeyPressesAI_Access := new MultiKeyPressesAI;
    begin
-      Initialize (This.all, hashtable, ownerLayerInterface, gameInput);
+      MultiKeyPressesAI_Package.Initialize (This.all, hashtable, ownerLayerInterface, gameInput);
       return This;
    end Create;
 

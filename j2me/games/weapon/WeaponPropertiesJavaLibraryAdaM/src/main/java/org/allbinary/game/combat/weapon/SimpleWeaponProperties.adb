@@ -31,7 +31,7 @@ package body org.allbinary.game.combat.weapon.SimpleWeaponProperties_Package is
    function Create return SimpleWeaponProperties_Access is
       This : constant SimpleWeaponProperties_Access := new SimpleWeaponProperties;
    begin
-      Initialize (This.all);
+      SimpleWeaponProperties_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -72,27 +72,6 @@ package body org.allbinary.game.combat.weapon.SimpleWeaponProperties_Package is
    begin
         This.range_Id := range_Id;
    end setRange;
-
-   procedure getDamage (This : in out SimpleWeaponProperties) is
-      Java_Result : constant Integer := SimpleWeaponProperties'Class (This).getDamage;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getDamage;
-
-   procedure getDissipation (This : in out SimpleWeaponProperties) is
-      Java_Result : constant Short_Integer := SimpleWeaponProperties'Class (This).getDissipation;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getDissipation;
-
-   procedure getRange (This : in out SimpleWeaponProperties) is
-      Java_Result : constant Integer := SimpleWeaponProperties'Class (This).getRange;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getRange;
 
 end org.allbinary.game.combat.weapon.SimpleWeaponProperties_Package;
 

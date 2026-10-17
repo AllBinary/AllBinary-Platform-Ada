@@ -30,7 +30,7 @@ package body org.allbinary.input.automation.module.game.GraphicsAnalysisUtil_Pac
    function Create return GraphicsAnalysisUtil_Access is
       This : constant GraphicsAnalysisUtil_Access := new GraphicsAnalysisUtil;
    begin
-      Initialize (This.all);
+      GraphicsAnalysisUtil_Package.Initialize (This.all);
       return This;
    end Create;
 

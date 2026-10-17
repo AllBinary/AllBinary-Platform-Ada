@@ -32,7 +32,7 @@ package body org.allbinary.business.category.properties.CategoryPropertiesFactor
    function Create (name : Unbounded_String) return CategoryPropertiesFactory_Access is
       This : constant CategoryPropertiesFactory_Access := new CategoryPropertiesFactory;
    begin
-      Initialize (This.all, name);
+      CategoryPropertiesFactory_Package.Initialize (This.all, name);
       return This;
    end Create;
 
@@ -46,7 +46,7 @@ package body org.allbinary.business.category.properties.CategoryPropertiesFactor
    function Create (node : Node_Access) return CategoryPropertiesFactory_Access is
       This : constant CategoryPropertiesFactory_Access := new CategoryPropertiesFactory;
    begin
-      Initialize (This.all, node);
+      CategoryPropertiesFactory_Package.Initialize (This.all, node);
       return This;
    end Create;
 
@@ -60,7 +60,7 @@ package body org.allbinary.business.category.properties.CategoryPropertiesFactor
    function Create (categoryPropertiesHashMap : HashMap_Access) return CategoryPropertiesFactory_Access is
       This : constant CategoryPropertiesFactory_Access := new CategoryPropertiesFactory;
    begin
-      Initialize (This.all, categoryPropertiesHashMap);
+      CategoryPropertiesFactory_Package.Initialize (This.all, categoryPropertiesHashMap);
       return This;
    end Create;
 
@@ -81,13 +81,6 @@ package body org.allbinary.business.category.properties.CategoryPropertiesFactor
             return null;
                 end;
         end;
-   end getInstance;
-
-   procedure getInstance (This : in out CategoryPropertiesFactory) is
-      Java_Result : constant CategoryPropertiesInterface_Access := CategoryPropertiesFactory'Class (This).getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 end org.allbinary.business.category.properties.CategoryPropertiesFactory_Package;

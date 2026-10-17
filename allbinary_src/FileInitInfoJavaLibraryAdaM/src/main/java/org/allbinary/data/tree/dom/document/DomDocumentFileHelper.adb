@@ -30,7 +30,7 @@ package body org.allbinary.data.tree.dom.document.DomDocumentFileHelper_Package 
    function Create return DomDocumentFileHelper_Access is
       This : constant DomDocumentFileHelper_Access := new DomDocumentFileHelper;
    begin
-      Initialize (This.all);
+      DomDocumentFileHelper_Package.Initialize (This.all);
       return This;
    end Create;
 

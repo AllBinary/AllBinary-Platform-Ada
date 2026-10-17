@@ -27,6 +27,11 @@ with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArra
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.util.BasicArrayListUtil_Package; use org.allbinary.util.BasicArrayListUtil_Package;
 with org.allbinary.input.motion.button.BaseTouchInput_Package; use org.allbinary.input.motion.button.BaseTouchInput_Package;
+with org.allbinary.input.motion.button.TouchButtonLocationHelper_Package; use org.allbinary.input.motion.button.TouchButtonLocationHelper_Package;
+with org.allbinary.input.motion.button.BasicTouchButtonCellPositionFactory_Package; use org.allbinary.input.motion.button.BasicTouchButtonCellPositionFactory_Package;
+with org.allbinary.input.motion.button.CommonButtons_Package; use org.allbinary.input.motion.button.CommonButtons_Package;
+with org.allbinary.input.motion.button.TouchButton_Package; use org.allbinary.input.motion.button.TouchButton_Package;
+with org.allbinary.input.motion.button.BasicTouchInputFactory_Package; use org.allbinary.input.motion.button.BasicTouchInputFactory_Package;
 
 package org.allbinary.input.motion.button.BasicNeededTouchButtonsBuilder_Package is
 
@@ -49,7 +54,6 @@ package org.allbinary.input.motion.button.BasicNeededTouchButtonsBuilder_Package
    procedure Initialize (This : in out BasicNeededTouchButtonsBuilder'Class);
    function Create return BasicNeededTouchButtonsBuilder_Access;
    function getList (This : in out BasicNeededTouchButtonsBuilder) return BasicArrayList_Access;
-   procedure getList (This : in out BasicNeededTouchButtonsBuilder);
 
 end org.allbinary.input.motion.button.BasicNeededTouchButtonsBuilder_Package;
 

@@ -34,7 +34,7 @@ package body org.allbinary.animation.VectorExplosionAnimationFactory_Package is
    function Create (basicColor : BasicColor_Access; animationBehaviorFactory : AnimationBehaviorFactory_Access) return VectorExplosionAnimationFactory_Access is
       This : constant VectorExplosionAnimationFactory_Access := new VectorExplosionAnimationFactory;
    begin
-      Initialize (This.all, basicColor, animationBehaviorFactory);
+      VectorExplosionAnimationFactory_Package.Initialize (This.all, basicColor, animationBehaviorFactory);
       return This;
    end Create;
 
@@ -68,13 +68,6 @@ package body org.allbinary.animation.VectorExplosionAnimationFactory_Package is
    begin
       null;
    end getInstanceAnimation;
-
-   procedure getBasicColorP (This : in out VectorExplosionAnimationFactory) is
-      Java_Result : constant BasicColor_Access := VectorExplosionAnimationFactory'Class (This).getBasicColorP;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getBasicColorP;
 
 end org.allbinary.animation.VectorExplosionAnimationFactory_Package;
 

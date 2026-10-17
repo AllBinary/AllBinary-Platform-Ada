@@ -15,6 +15,8 @@ with org.allbinary.logic.io.StreamUtil_Package; use org.allbinary.logic.io.Strea
 with org.allbinary.logic.io.file.AbFile_Package; use org.allbinary.logic.io.file.AbFile_Package;
 with org.allbinary.logic.io.file.AbFileNativeUtil_Package; use org.allbinary.logic.io.file.AbFileNativeUtil_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.apache.commons.fileupload.FileItemStream_Package; use org.apache.commons.fileupload.FileItemStream_Package;
+with org.apache.commons.fileupload.FileItem_Package; use org.apache.commons.fileupload.FileItem_Package;
 
 package org.apache.commons.fileupload.FileItemUtil_Package is
 
@@ -39,7 +41,6 @@ package org.apache.commons.fileupload.FileItemUtil_Package is
    procedure Initialize (This : in out FileItemUtil'Class);
    function Create return FileItemUtil_Access;
    function getInstance return FileItemUtil_Access;
-   procedure getInstance;
    function getString (This : in out FileItemUtil; byteArray : Short_Short_Integer_Array_Access) return Unbounded_String;
    procedure getString (This : in out FileItemUtil; byteArray : Short_Short_Integer_Array_Access);
    function getString (This : in out FileItemUtil; fileItem : FileItemStream_Access) return Unbounded_String;

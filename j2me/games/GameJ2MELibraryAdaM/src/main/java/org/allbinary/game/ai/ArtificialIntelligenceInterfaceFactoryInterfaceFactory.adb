@@ -29,7 +29,7 @@ package body org.allbinary.game.ai.ArtificialIntelligenceInterfaceFactoryInterfa
    function Create return ArtificialIntelligenceInterfaceFactoryInterfaceFactory_Access is
       This : constant ArtificialIntelligenceInterfaceFactoryInterfaceFactory_Access := new ArtificialIntelligenceInterfaceFactoryInterfaceFactory;
    begin
-      Initialize (This.all);
+      ArtificialIntelligenceInterfaceFactoryInterfaceFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -59,13 +59,6 @@ package body org.allbinary.game.ai.ArtificialIntelligenceInterfaceFactoryInterfa
    begin
         This.list.add (artificialIntelligenceInterfaceFactoryInterface);
    end add;
-
-   procedure getInstance is
-      Java_Result : constant ArtificialIntelligenceInterfaceFactoryInterfaceFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure getInstanceFromCollection (This : in out ArtificialIntelligenceInterfaceFactoryInterfaceFactory; hashtable : ABHashtable_Access) is
       Java_Result : constant ArtificialIntelligenceInterfaceFactoryInterface_Access := ArtificialIntelligenceInterfaceFactoryInterfaceFactory'Class (This).getInstanceFromCollection (hashtable);

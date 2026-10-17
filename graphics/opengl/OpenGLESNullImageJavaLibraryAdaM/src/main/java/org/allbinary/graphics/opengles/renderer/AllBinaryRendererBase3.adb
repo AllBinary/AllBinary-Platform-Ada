@@ -29,7 +29,7 @@ package body org.allbinary.graphics.opengles.renderer.AllBinaryRendererBase3_Pac
    function Create return AllBinaryRendererBase3_Access is
       This : constant AllBinaryRendererBase3_Access := new AllBinaryRendererBase3;
    begin
-      Initialize (This.all);
+      AllBinaryRendererBase3_Package.Initialize (This.all);
       return This;
    end Create;
 

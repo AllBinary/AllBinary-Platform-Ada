@@ -35,7 +35,7 @@ package body org.allbinary.animation.text.CustomTextBoxIndexedAnimationFactory_P
    function Create (fontSize : Integer; maxLength : Integer) return CustomTextBoxIndexedAnimationFactory_Access is
       This : constant CustomTextBoxIndexedAnimationFactory_Access := new CustomTextBoxIndexedAnimationFactory;
    begin
-      Initialize (This.all, fontSize, maxLength);
+      CustomTextBoxIndexedAnimationFactory_Package.Initialize (This.all, fontSize, maxLength);
       return This;
    end Create;
 

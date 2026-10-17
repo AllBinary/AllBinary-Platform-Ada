@@ -31,7 +31,7 @@ package body org.allbinary.animation.SingletonAnimationInterfaceFactory_Package 
    function Create (animationInterface : Animation_Access) return SingletonAnimationInterfaceFactory_Access is
       This : constant SingletonAnimationInterfaceFactory_Access := new SingletonAnimationInterfaceFactory;
    begin
-      Initialize (This.all, animationInterface);
+      SingletonAnimationInterfaceFactory_Package.Initialize (This.all, animationInterface);
       return This;
    end Create;
 

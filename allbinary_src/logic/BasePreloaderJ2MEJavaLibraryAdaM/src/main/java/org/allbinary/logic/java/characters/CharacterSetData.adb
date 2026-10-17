@@ -41,16 +41,9 @@ package body org.allbinary.logic.java.characters.CharacterSetData_Package is
    function Create return CharacterSetData_Access is
       This : constant CharacterSetData_Access := new CharacterSetData;
    begin
-      Initialize (This.all);
+      CharacterSetData_Package.Initialize (This.all);
       return This;
    end Create;
-
-   procedure getInstance is
-      Java_Result : constant CharacterSetData_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

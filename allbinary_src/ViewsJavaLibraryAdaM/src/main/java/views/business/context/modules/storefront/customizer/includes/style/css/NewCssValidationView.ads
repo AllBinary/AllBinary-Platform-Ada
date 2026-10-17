@@ -55,17 +55,12 @@ package views.business.context.modules.storefront.customizer.includes.style.css.
    procedure Initialize (This : in out NewCssValidationView'Class; transformInfoInterface : TransformInfoInterface_Access);
    function Create (transformInfoInterface : TransformInfoInterface_Access) return NewCssValidationView_Access;
    function toXmlDoc (This : in out NewCssValidationView) return Document_Access;
-   procedure toXmlDoc (This : in out NewCssValidationView);
    function isValid (This : in out NewCssValidationView) return Boolean;
-   procedure isValid (This : in out NewCssValidationView);
    function validationInfo (This : in out NewCssValidationView) return Unbounded_String;
-   procedure validationInfo (This : in out NewCssValidationView);
    function toValidationInfoDoc (This : in out NewCssValidationView) return Document_Access;
-   procedure toValidationInfoDoc (This : in out NewCssValidationView);
    function toValidationInfoNode (This : in out NewCssValidationView; document : Document_Access) return Node_Access;
    procedure toValidationInfoNode (This : in out NewCssValidationView; document : Document_Access);
    function view (This : in out NewCssValidationView) return Unbounded_String;
-   procedure view (This : in out NewCssValidationView);
 
 end views.business.context.modules.storefront.customizer.includes.style.css.NewCssValidationView_Package;
 

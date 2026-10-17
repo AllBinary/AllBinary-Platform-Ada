@@ -25,6 +25,8 @@ with org.allbinary.game.state.GameState_Package; use org.allbinary.game.state.Ga
 with org.allbinary.logic.communication.log.ForcedLogUtil_Package; use org.allbinary.logic.communication.log.ForcedLogUtil_Package;
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbinary.logic.util.event.AllBinaryEventObject_Package;
 with org.allbinary.logic.util.event.EventStrings_Package; use org.allbinary.logic.util.event.EventStrings_Package;
+with org.allbinary.business.advertisement.AdConfiguration_Package; use org.allbinary.business.advertisement.AdConfiguration_Package;
+with org.allbinary.business.advertisement.Advertisements_Package; use org.allbinary.business.advertisement.Advertisements_Package;
 
 package org.allbinary.business.advertisement.GameAdStateBase_Package is
 
@@ -53,7 +55,6 @@ package org.allbinary.business.advertisement.GameAdStateBase_Package is
    function isShowingAtLocation (This : in out GameAdStateBase; location : Integer) return Boolean;
    procedure isShowingAtLocation (This : in out GameAdStateBase; location : Integer);
    function isShowingAt (This : in out GameAdStateBase) return Boolean;
-   procedure isShowingAt (This : in out GameAdStateBase);
    procedure show (This : in out GameAdStateBase);
    procedure hide (This : in out GameAdStateBase);
    procedure onEvent (This : in out GameAdStateBase; eventObject : AllBinaryEventObject_Access);
@@ -64,18 +65,12 @@ package org.allbinary.business.advertisement.GameAdStateBase_Package is
    procedure notPlayingAdState (This : in out GameAdStateBase);
    procedure setGameIsReady (This : in out GameAdStateBase; gameIsReady : Boolean);
    function isGameIsReady (This : in out GameAdStateBase) return Boolean;
-   procedure isGameIsReady (This : in out GameAdStateBase);
    function getAdvertisements (This : in out GameAdStateBase) return Advertisements_Access;
-   procedure getAdvertisements (This : in out GameAdStateBase);
    function getAdConfiguration (This : in out GameAdStateBase) return AdConfiguration_Access;
-   procedure getAdConfiguration (This : in out GameAdStateBase);
    function isOkayToShowPageAd (This : in out GameAdStateBase) return Boolean;
-   procedure isOkayToShowPageAd (This : in out GameAdStateBase);
    procedure setOkayToShowAds (This : in out GameAdStateBase; okayToShowAds : Boolean);
    function isOkayToShowAds (This : in out GameAdStateBase) return Boolean;
-   procedure isOkayToShowAds (This : in out GameAdStateBase);
    function isEnabled (This : in out GameAdStateBase) return Boolean;
-   procedure isEnabled (This : in out GameAdStateBase);
 
 end org.allbinary.business.advertisement.GameAdStateBase_Package;
 

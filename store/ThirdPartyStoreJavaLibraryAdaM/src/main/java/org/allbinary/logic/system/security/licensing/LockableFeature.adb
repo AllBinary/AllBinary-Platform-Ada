@@ -31,20 +31,13 @@ package body org.allbinary.logic.system.security.licensing.LockableFeature_Packa
    function Create (name : Unbounded_String) return LockableFeature_Access is
       This : constant LockableFeature_Access := new LockableFeature;
    begin
-      Initialize (This.all, name);
+      LockableFeature_Package.Initialize (This.all, name);
       return This;
    end Create;
 
    function getName (This : in out LockableFeature) return Unbounded_String is
    begin
         return This.name;
-   end getName;
-
-   procedure getName (This : in out LockableFeature) is
-      Java_Result : constant Unbounded_String := LockableFeature'Class (This).getName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getName;
 
 end org.allbinary.logic.system.security.licensing.LockableFeature_Package;

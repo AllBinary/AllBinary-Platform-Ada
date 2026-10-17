@@ -22,6 +22,7 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
 with org.allbinary.graphics.paint.Paintable_Package; use org.allbinary.graphics.paint.Paintable_Package;
+with org.allbinary.graphics.form.PaintableForm_Package; use org.allbinary.graphics.form.PaintableForm_Package;
 
 package org.allbinary.graphics.form.FormPaintable_Package is
 
@@ -40,7 +41,6 @@ package org.allbinary.graphics.form.FormPaintable_Package is
    function Create (form : PaintableForm_Access) return FormPaintable_Access;
    procedure paint (This : in out FormPaintable; graphics : Graphics_Access);
    function getForm (This : in out FormPaintable) return PaintableForm_Access;
-   procedure getForm (This : in out FormPaintable);
 
 end org.allbinary.graphics.form.FormPaintable_Package;
 

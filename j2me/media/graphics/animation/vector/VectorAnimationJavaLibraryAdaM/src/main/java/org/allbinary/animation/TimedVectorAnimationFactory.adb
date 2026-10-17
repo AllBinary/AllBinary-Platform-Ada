@@ -28,7 +28,7 @@ package body org.allbinary.animation.TimedVectorAnimationFactory_Package is
    function Create return TimedVectorAnimationFactory_Access is
       This : constant TimedVectorAnimationFactory_Access := new TimedVectorAnimationFactory;
    begin
-      Initialize (This.all);
+      TimedVectorAnimationFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

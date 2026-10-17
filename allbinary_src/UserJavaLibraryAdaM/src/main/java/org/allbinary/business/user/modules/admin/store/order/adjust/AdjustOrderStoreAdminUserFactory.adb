@@ -30,7 +30,7 @@ package body org.allbinary.business.user.modules.admin.store.order.adjust.Adjust
    function Create return AdjustOrderStoreAdminUserFactory_Access is
       This : constant AdjustOrderStoreAdminUserFactory_Access := new AdjustOrderStoreAdminUserFactory;
    begin
-      Initialize (This.all);
+      AdjustOrderStoreAdminUserFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -44,13 +44,6 @@ package body org.allbinary.business.user.modules.admin.store.order.adjust.Adjust
    function getInstance (This : in out AdjustOrderStoreAdminUserFactory; hashMap : HashMap_Access) return UserInterface_Access is
    begin
         return AdjustOrderStoreAdminUser_Package.Create (hashMap);
-   end getInstance;
-
-   procedure getInstance (This : in out AdjustOrderStoreAdminUserFactory) is
-      Java_Result : constant UserInterface_Access := AdjustOrderStoreAdminUserFactory'Class (This).getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
    procedure getInstance (This : in out AdjustOrderStoreAdminUserFactory; hashMap : HashMap_Access) is

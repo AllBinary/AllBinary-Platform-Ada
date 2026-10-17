@@ -31,7 +31,7 @@ package body org.allbinary.debug.AndroidDebug_Package is
    function Create return AndroidDebug_Access is
       This : constant AndroidDebug_Access := new AndroidDebug;
    begin
-      Initialize (This.all);
+      AndroidDebug_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -73,27 +73,6 @@ package body org.allbinary.debug.AndroidDebug_Package is
    function isRunning (This : in out AndroidDebug) return Boolean is
    begin
         return This.running;
-   end isRunning;
-
-   procedure getMaxTime (This : in out AndroidDebug) is
-      Java_Result : constant Long_Long_Integer := AndroidDebug'Class (This).getMaxTime;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getMaxTime;
-
-   procedure getStartTime (This : in out AndroidDebug) is
-      Java_Result : constant Long_Long_Integer := AndroidDebug'Class (This).getStartTime;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getStartTime;
-
-   procedure isRunning (This : in out AndroidDebug) is
-      Java_Result : constant Boolean := AndroidDebug'Class (This).isRunning;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end isRunning;
 
 end org.allbinary.debug.AndroidDebug_Package;

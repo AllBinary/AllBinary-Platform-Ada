@@ -28,7 +28,7 @@ package body org.allbinary.graphics.ResizableEmptyListener_Package is
    function Create return ResizableEmptyListener_Access is
       This : constant ResizableEmptyListener_Access := new ResizableEmptyListener;
    begin
-      Initialize (This.all);
+      ResizableEmptyListener_Package.Initialize (This.all);
       return This;
    end Create;
 

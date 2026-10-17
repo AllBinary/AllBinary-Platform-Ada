@@ -30,7 +30,7 @@ package body admin.taghelpers.CustomLoaderHelperFactory_Package is
    function Create return CustomLoaderHelperFactory_Access is
       This : constant CustomLoaderHelperFactory_Access := new CustomLoaderHelperFactory;
    begin
-      Initialize (This.all);
+      CustomLoaderHelperFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

@@ -50,9 +50,7 @@ package org.allbinary.business.advertisement.campaign.AdvertisementCampaigns_Pac
    function get (This : in out AdvertisementCampaigns; index : Integer) return AdvertisementInterface_Access;
    procedure get (This : in out AdvertisementCampaigns; index : Integer);
    function size (This : in out AdvertisementCampaigns) return Integer;
-   procedure size (This : in out AdvertisementCampaigns);
    function isEnabled (This : in out AdvertisementCampaigns) return Boolean;
-   procedure isEnabled (This : in out AdvertisementCampaigns);
    function search (This : in out AdvertisementCampaigns; advertisementSearchInterface : AdvertisementSearchInterface_Access) return AdvertisementsInterface_Access;
    procedure search (This : in out AdvertisementCampaigns; advertisementSearchInterface : AdvertisementSearchInterface_Access);
 

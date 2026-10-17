@@ -32,7 +32,7 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
    function Create (name : Unbounded_String) return GenericProfileDataWorkerType_Access is
       This : constant GenericProfileDataWorkerType_Access := new GenericProfileDataWorkerType;
    begin
-      Initialize (This.all, name);
+      GenericProfileDataWorkerType_Package.Initialize (This.all, name);
       return This;
    end Create;
 
@@ -66,26 +66,12 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
         return GenericProfileDataWorkerType_Access (GenericProfileDataWorkerType_Package.hashMap.get (name));
    end getInstance;
 
-   procedure getName (This : in out GenericProfileDataWorkerType) is
-      Java_Result : constant Unbounded_String := GenericProfileDataWorkerType'Class (This).getName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getName;
-
    procedure toXmlNode (This : in out GenericProfileDataWorkerType; document : Document_Access) is
       Java_Result : constant Node_Access := GenericProfileDataWorkerType'Class (This).toXmlNode (document);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end toXmlNode;
-
-   procedure toString (This : in out GenericProfileDataWorkerType) is
-      Java_Result : constant Unbounded_String := GenericProfileDataWorkerType'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toString;
 
    procedure getInstance (node : Node_Access) is
       Java_Result : constant GenericProfileDataWorkerType_Access := getInstance (node);

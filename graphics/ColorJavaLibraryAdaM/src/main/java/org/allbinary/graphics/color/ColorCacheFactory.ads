@@ -26,6 +26,7 @@ with org.allbinary.logic.util.cache.AutomaticCacheInterfaceFactory_Package; use 
 with org.allbinary.logic.util.cache.CachePolicyFactory_Package; use org.allbinary.logic.util.cache.CachePolicyFactory_Package;
 with org.allbinary.logic.util.cache.CacheTypeFactory_Package; use org.allbinary.logic.util.cache.CacheTypeFactory_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.graphics.color.ColorCacheableFactory_Package; use org.allbinary.graphics.color.ColorCacheableFactory_Package;
 
 package org.allbinary.graphics.color.ColorCacheFactory_Package is
 
@@ -47,7 +48,6 @@ package org.allbinary.graphics.color.ColorCacheFactory_Package is
    procedure Initialize (This : in out ColorCacheFactory'Class);
    function Create return ColorCacheFactory_Access;
    function getInstance return AutomaticCacheInterface_Access;
-   procedure getInstance;
 
 end org.allbinary.graphics.color.ColorCacheFactory_Package;
 

@@ -41,11 +41,8 @@ package org.allbinary.business.advertisement.thumbnail.AdvertisementThumbnail_Pa
    procedure Initialize (This : in out AdvertisementThumbnail'Class);
    function Create return AdvertisementThumbnail_Access;
    function getFileName (This : in out AdvertisementThumbnail) return Unbounded_String;
-   procedure getFileName (This : in out AdvertisementThumbnail);
    function getUrl (This : in out AdvertisementThumbnail) return Unbounded_String;
-   procedure getUrl (This : in out AdvertisementThumbnail);
    function getTwoDimensionalConstraint (This : in out AdvertisementThumbnail) return TwoDimensionalConstraintInterface_Access;
-   procedure getTwoDimensionalConstraint (This : in out AdvertisementThumbnail);
 
 end org.allbinary.business.advertisement.thumbnail.AdvertisementThumbnail_Package;
 

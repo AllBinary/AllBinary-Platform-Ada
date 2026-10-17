@@ -13,7 +13,7 @@
 --  Generated Code Do Not Modify
 
 
-package body org.allbinary.game.score_Case.remote.RemoteHighScoresData_Package is
+package body org.allbinary.game.score.remote.RemoteHighScoresData_Package is
 
    procedure Initialize_Fields (This : in out RemoteHighScoresData'Class) is
    begin
@@ -34,7 +34,7 @@ package body org.allbinary.game.score_Case.remote.RemoteHighScoresData_Package i
    function Create return RemoteHighScoresData_Access is
       This : constant RemoteHighScoresData_Access := new RemoteHighScoresData;
    begin
-      Initialize (This.all);
+      RemoteHighScoresData_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -44,17 +44,10 @@ package body org.allbinary.game.score_Case.remote.RemoteHighScoresData_Package i
         return RemoteHighScoresData_Package.SINGLETON;
    end getInstance;
 
-   procedure getInstance is
-      Java_Result : constant RemoteHighScoresData_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
 begin
    null;
    SINGLETON := RemoteHighScoresData_Package.Create;
 
-end org.allbinary.game.score_Case.remote.RemoteHighScoresData_Package;
+end org.allbinary.game.score.remote.RemoteHighScoresData_Package;
 
 

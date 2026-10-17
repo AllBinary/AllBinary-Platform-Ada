@@ -31,7 +31,7 @@ package body org.allbinary.graphics.color.ColorChangeEvent_Package is
    function Create (anyType : Java_Object_Access) return ColorChangeEvent_Access is
       This : constant ColorChangeEvent_Access := new ColorChangeEvent;
    begin
-      Initialize (This.all, anyType);
+      ColorChangeEvent_Package.Initialize (This.all, anyType);
       return This;
    end Create;
 
@@ -43,13 +43,6 @@ package body org.allbinary.graphics.color.ColorChangeEvent_Package is
    function getBasicColorP (This : in out ColorChangeEvent) return BasicColor_Access is
    begin
         return This.basicColor;
-   end getBasicColorP;
-
-   procedure getBasicColorP (This : in out ColorChangeEvent) is
-      Java_Result : constant BasicColor_Access := ColorChangeEvent'Class (This).getBasicColorP;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getBasicColorP;
 
 end org.allbinary.graphics.color.ColorChangeEvent_Package;

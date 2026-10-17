@@ -31,17 +31,12 @@ package org.allbinary.game.input.analog.AnalogLocationInput_Package is
    procedure Initialize (This : in out AnalogLocationInput'Class; playerId : Integer);
    function Create (playerId : Integer) return AnalogLocationInput_Access;
    function getPlayerId (This : in out AnalogLocationInput) return Integer;
-   procedure getPlayerId (This : in out AnalogLocationInput);
    function getCustomGPoint (This : in out AnalogLocationInput) return CustomGPoint_Access;
-   procedure getCustomGPoint (This : in out AnalogLocationInput);
    function getRz (This : in out AnalogLocationInput) return Integer;
-   procedure getRz (This : in out AnalogLocationInput);
    procedure setRz (This : in out AnalogLocationInput; rz : Integer);
    function getRightTrigger (This : in out AnalogLocationInput) return Integer;
-   procedure getRightTrigger (This : in out AnalogLocationInput);
    procedure setRightTrigger (This : in out AnalogLocationInput; rightTrigger : Integer);
    function getLeftTrigger (This : in out AnalogLocationInput) return Integer;
-   procedure getLeftTrigger (This : in out AnalogLocationInput);
    procedure setLeftTrigger (This : in out AnalogLocationInput; leftTrigger : Integer);
 
 end org.allbinary.game.input.analog.AnalogLocationInput_Package;

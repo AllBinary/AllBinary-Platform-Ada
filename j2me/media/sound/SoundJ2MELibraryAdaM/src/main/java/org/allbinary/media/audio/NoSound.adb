@@ -35,16 +35,9 @@ package body org.allbinary.media.audio.NoSound_Package is
    function Create return NoSound_Access is
       This : constant NoSound_Access := new NoSound;
    begin
-      Initialize (This.all);
+      NoSound_Package.Initialize (This.all);
       return This;
    end Create;
-
-   procedure getInstance is
-      Java_Result : constant NoSound_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

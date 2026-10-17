@@ -30,7 +30,7 @@ package body org.allbinary.game.layer.weapon.DamageWeaponLayer_Package is
    function Create (name : Unbounded_String; remoteInfo : RemoteInfo_Access; movement : Movement_Access; animationInterface : Animation_Access; destroyedAnimationInterface : Animation_Access; rectangle : Rectangle_Access; viewPosition : ViewPositionBase_Access; username : Unbounded_String; actorSessionId : Integer; id : Integer; multiPlayerType : Integer) return DamageWeaponLayer_Access is
       This : constant DamageWeaponLayer_Access := new DamageWeaponLayer;
    begin
-      Initialize (This.all, name, remoteInfo, movement, animationInterface, destroyedAnimationInterface, rectangle, viewPosition, username, actorSessionId, id, multiPlayerType);
+      DamageWeaponLayer_Package.Initialize (This.all, name, remoteInfo, movement, animationInterface, destroyedAnimationInterface, rectangle, viewPosition, username, actorSessionId, id, multiPlayerType);
       return This;
    end Create;
 

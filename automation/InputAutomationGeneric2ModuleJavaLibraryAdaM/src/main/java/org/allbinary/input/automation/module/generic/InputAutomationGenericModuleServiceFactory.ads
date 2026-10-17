@@ -23,6 +23,7 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.input.automation.module.InputAutomationModuleFactoryInterface_Package; use org.allbinary.input.automation.module.InputAutomationModuleFactoryInterface_Package;
 with org.allbinary.input.automation.module.osgi.InputAutomationModuleServiceFactory_Package; use org.allbinary.input.automation.module.osgi.InputAutomationModuleServiceFactory_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.input.automation.module.generic_Id.GenericModuleFactory_Package; use org.allbinary.input.automation.module.generic_Id.GenericModuleFactory_Package;
 
 package org.allbinary.input.automation.module.generic_Id.InputAutomationGenericModuleServiceFactory_Package is
 
@@ -43,7 +44,6 @@ package org.allbinary.input.automation.module.generic_Id.InputAutomationGenericM
    procedure Initialize (This : in out InputAutomationGenericModuleServiceFactory'Class);
    function Create return InputAutomationGenericModuleServiceFactory_Access;
    function getInstance return InputAutomationGenericModuleServiceFactory_Access;
-   procedure getInstance;
 
 end org.allbinary.input.automation.module.generic_Id.InputAutomationGenericModuleServiceFactory_Package;
 

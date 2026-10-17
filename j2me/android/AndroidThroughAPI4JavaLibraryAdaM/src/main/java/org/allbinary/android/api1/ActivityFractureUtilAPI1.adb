@@ -29,7 +29,7 @@ package body org.allbinary.android.api1.ActivityFractureUtilAPI1_Package is
    function Create return ActivityFractureUtilAPI1_Access is
       This : constant ActivityFractureUtilAPI1_Access := new ActivityFractureUtilAPI1;
    begin
-      Initialize (This.all);
+      ActivityFractureUtilAPI1_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -49,13 +49,6 @@ package body org.allbinary.android.api1.ActivityFractureUtilAPI1_Package is
    begin
         activity.getWindow.setFlags (WindowManager_Package.LayoutParams.FLAG_FULLSCREEN, WindowManager_Package.LayoutParams.FLAG_FULLSCREEN);
    end setFullScreen;
-
-   procedure getInstance is
-      Java_Result : constant ActivityFractureUtilAPI1_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

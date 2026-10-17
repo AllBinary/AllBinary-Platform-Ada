@@ -37,7 +37,6 @@ package org.allbinary.business.init.db.DbInitInfo_Package is
    procedure Initialize (This : in out DbInitInfo'Class; initFileName : Unbounded_String; read : Boolean);
    function Create (initFileName : Unbounded_String; read : Boolean) return DbInitInfo_Access;
    function getUrl (This : in out DbInitInfo) return Unbounded_String;
-   procedure getUrl (This : in out DbInitInfo);
    procedure write (This : in out DbInitInfo);
    procedure load (This : in out DbInitInfo);
    procedure setHasRead (This : in out DbInitInfo; value : Boolean);

@@ -49,7 +49,6 @@ package org.allbinary.media.graphics.geography.map.GeographicMapEventHandler_Pac
    procedure Initialize (This : in out GeographicMapEventHandler'Class);
    function Create return GeographicMapEventHandler_Access;
    function getInstance return GeographicMapEventHandler_Access;
-   procedure getInstance;
    procedure addListener (This : in out GeographicMapEventHandler; gameLayer : AllBinaryGameLayer_Access);
    procedure removeAllListeners (This : in out GeographicMapEventHandler);
    procedure removeListener (This : in out GeographicMapEventHandler; eventListenerInterface : EventListenerInterface_Access);

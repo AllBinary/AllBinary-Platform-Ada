@@ -34,7 +34,7 @@ package body admin.tags.OrderItemsTag_Package is
    function Create return OrderItemsTag_Access is
       This : constant OrderItemsTag_Access := new OrderItemsTag;
    begin
-      Initialize (This.all);
+      OrderItemsTag_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -102,20 +102,6 @@ package body admin.tags.OrderItemsTag_Package is
             return SKIP_BODY;
                 end;
         end;
-   end doStartTag;
-
-   procedure setOrderStatus (This : in out OrderItemsTag) is
-      Java_Result : constant Unbounded_String := OrderItemsTag'Class (This).setOrderStatus;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end setOrderStatus;
-
-   procedure doStartTag (This : in out OrderItemsTag) is
-      Java_Result : constant Integer := OrderItemsTag'Class (This).doStartTag;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end doStartTag;
 
 end admin.tags.OrderItemsTag_Package;

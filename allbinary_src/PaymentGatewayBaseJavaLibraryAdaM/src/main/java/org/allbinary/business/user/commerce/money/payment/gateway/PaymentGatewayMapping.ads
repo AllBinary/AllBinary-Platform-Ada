@@ -24,6 +24,7 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.data.tables.TableMappingInterface_Package; use org.allbinary.data.tables.TableMappingInterface_Package;
+with org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayInterface_Package; use org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayInterface_Package;
 
 package org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayMapping_Package is
 
@@ -43,11 +44,8 @@ package org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewa
    procedure Initialize (This : in out PaymentGatewayMapping'Class; paymentGatewayInterface : PaymentGatewayInterface_Access);
    function Create (paymentGatewayInterface : PaymentGatewayInterface_Access) return PaymentGatewayMapping_Access;
    function toHashMap (This : in out PaymentGatewayMapping) return HashMap_Access;
-   procedure toHashMap (This : in out PaymentGatewayMapping);
    function toVector (This : in out PaymentGatewayMapping) return BasicArrayList_Access;
-   procedure toVector (This : in out PaymentGatewayMapping);
    function getKey (This : in out PaymentGatewayMapping) return Java_Object_Access;
-   procedure getKey (This : in out PaymentGatewayMapping);
 
 end org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayMapping_Package;
 

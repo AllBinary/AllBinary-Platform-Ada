@@ -31,7 +31,7 @@ package body org.allbinary.image.ImageTool_Package is
    function Create return ImageTool_Access is
       This : constant ImageTool_Access := new ImageTool;
    begin
-      Initialize (This.all);
+      ImageTool_Package.Initialize (This.all);
       return This;
    end Create;
 

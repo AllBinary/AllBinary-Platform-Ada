@@ -31,7 +31,7 @@ package body org.allbinary.graphics.paint.StatePaintable_Package is
    function Create return StatePaintable_Access is
       This : constant StatePaintable_Access := new StatePaintable;
    begin
-      Initialize (This.all);
+      StatePaintable_Package.Initialize (This.all);
       return This;
    end Create;
 

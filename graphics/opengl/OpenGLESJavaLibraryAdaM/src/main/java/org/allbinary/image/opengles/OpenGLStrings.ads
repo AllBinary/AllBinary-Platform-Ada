@@ -26,7 +26,6 @@ package org.allbinary.image.opengles.OpenGLStrings_Package is
    procedure Initialize (This : in out OpenGLStrings'Class);
    function Create return OpenGLStrings_Access;
    function getInstance return OpenGLStrings_Access;
-   procedure getInstance;
 
 end org.allbinary.image.opengles.OpenGLStrings_Package;
 

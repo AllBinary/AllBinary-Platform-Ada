@@ -34,7 +34,7 @@ package body org.allbinary.business.user.commerce.money.payment.types.BasicPayme
    function Create (paymentMethod : Unbounded_String) return BasicPaymentType_Access is
       This : constant BasicPaymentType_Access := new BasicPaymentType;
    begin
-      Initialize (This.all, paymentMethod);
+      BasicPaymentType_Package.Initialize (This.all, paymentMethod);
       return This;
    end Create;
 
@@ -50,7 +50,7 @@ package body org.allbinary.business.user.commerce.money.payment.types.BasicPayme
    function Create (paymentMethod : Unbounded_String; paymentGatewayInterfaceFactoryInterface : PaymentGatewayInterfaceFactoryInterface_Access; paymentGatewayDomNodeFactoryInterface : PaymentGatewayDomNodeFactoryInterface_Access) return BasicPaymentType_Access is
       This : constant BasicPaymentType_Access := new BasicPaymentType;
    begin
-      Initialize (This.all, paymentMethod, paymentGatewayInterfaceFactoryInterface, paymentGatewayDomNodeFactoryInterface);
+      BasicPaymentType_Package.Initialize (This.all, paymentMethod, paymentGatewayInterfaceFactoryInterface, paymentGatewayDomNodeFactoryInterface);
       return This;
    end Create;
 
@@ -124,62 +124,6 @@ package body org.allbinary.business.user.commerce.money.payment.types.BasicPayme
    function toString (This : in out BasicPaymentType) return Unbounded_String is
    begin
         return This.name;
-   end toString;
-
-   procedure getName (This : in out BasicPaymentType) is
-      Java_Result : constant Unbounded_String := BasicPaymentType'Class (This).getName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getName;
-
-   procedure getValue (This : in out BasicPaymentType) is
-      Java_Result : constant Unbounded_String := BasicPaymentType'Class (This).getValue;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getValue;
-
-   procedure getPaymentGatewayInterfaceFactoryInterface (This : in out BasicPaymentType) is
-      Java_Result : constant PaymentGatewayInterfaceFactoryInterface_Access := BasicPaymentType'Class (This).getPaymentGatewayInterfaceFactoryInterface;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getPaymentGatewayInterfaceFactoryInterface;
-
-   procedure getPaymentGatewayDomNodeFactoryInterface (This : in out BasicPaymentType) is
-      Java_Result : constant PaymentGatewayDomNodeFactoryInterface_Access := BasicPaymentType'Class (This).getPaymentGatewayDomNodeFactoryInterface;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getPaymentGatewayDomNodeFactoryInterface;
-
-   procedure getKey (This : in out BasicPaymentType) is
-      Java_Result : constant Java_Object_Access := BasicPaymentType'Class (This).getKey;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getKey;
-
-   procedure toVector (This : in out BasicPaymentType) is
-      Java_Result : constant BasicArrayList_Access := BasicPaymentType'Class (This).toVector;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toVector;
-
-   procedure toHashMap (This : in out BasicPaymentType) is
-      Java_Result : constant HashMap_Access := BasicPaymentType'Class (This).toHashMap;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toHashMap;
-
-   procedure toString (This : in out BasicPaymentType) is
-      Java_Result : constant Unbounded_String := BasicPaymentType'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end toString;
 
 end org.allbinary.business.user.commerce.money.payment.types.BasicPaymentType_Package;

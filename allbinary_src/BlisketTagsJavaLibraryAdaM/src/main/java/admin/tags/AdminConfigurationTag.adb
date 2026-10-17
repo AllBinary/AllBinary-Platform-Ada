@@ -32,7 +32,7 @@ package body admin.tags.AdminConfigurationTag_Package is
    function Create return AdminConfigurationTag_Access is
       This : constant AdminConfigurationTag_Access := new AdminConfigurationTag;
    begin
-      Initialize (This.all);
+      AdminConfigurationTag_Package.Initialize (This.all);
       return This;
    end Create;
 

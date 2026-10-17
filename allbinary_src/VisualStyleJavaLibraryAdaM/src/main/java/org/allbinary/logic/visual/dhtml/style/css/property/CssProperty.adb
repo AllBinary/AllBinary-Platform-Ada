@@ -34,7 +34,7 @@ package body org.allbinary.logic.visual.dhtml.style.css.property.CssProperty_Pac
    function Create (name : Unbounded_String) return CssProperty_Access is
       This : constant CssProperty_Access := new CssProperty;
    begin
-      Initialize (This.all, name);
+      CssProperty_Package.Initialize (This.all, name);
       return This;
    end Create;
 
@@ -56,7 +56,7 @@ package body org.allbinary.logic.visual.dhtml.style.css.property.CssProperty_Pac
    function Create (node : Node_Access) return CssProperty_Access is
       This : constant CssProperty_Access := new CssProperty;
    begin
-      Initialize (This.all, node);
+      CssProperty_Package.Initialize (This.all, node);
       return This;
    end Create;
 
@@ -86,20 +86,6 @@ package body org.allbinary.logic.visual.dhtml.style.css.property.CssProperty_Pac
         node.appendChild (This.cssPropertyValues.toXmlNode (document));
         return node;
    end toXmlNode;
-
-   procedure getName (This : in out CssProperty) is
-      Java_Result : constant Unbounded_String := CssProperty'Class (This).getName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getName;
-
-   procedure toHashMap (This : in out CssProperty) is
-      Java_Result : constant HashMap_Access := CssProperty'Class (This).toHashMap;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toHashMap;
 
    procedure toXmlNode (This : in out CssProperty; document : Document_Access) is
       Java_Result : constant Node_Access := CssProperty'Class (This).toXmlNode (document);

@@ -30,7 +30,7 @@ package body org.allbinary.android.input.motion.MotionEventProcessor_Package is
    function Create return MotionEventProcessor_Access is
       This : constant MotionEventProcessor_Access := new MotionEventProcessor;
    begin
-      Initialize (This.all);
+      MotionEventProcessor_Package.Initialize (This.all);
       return This;
    end Create;
 

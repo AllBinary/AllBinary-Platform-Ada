@@ -60,11 +60,8 @@ package org.allbinary.logic.visual.transform.template.customizer.includes.style.
    function Create return GenericCssStyleValidation_Access;
    procedure getFormData (This : in out GenericCssStyleValidation; hashMap : HashMap_Access);
    function isValid (This : in out GenericCssStyleValidation) return Boolean;
-   procedure isValid (This : in out GenericCssStyleValidation);
    function validationInfo (This : in out GenericCssStyleValidation) return Unbounded_String;
-   procedure validationInfo (This : in out GenericCssStyleValidation);
    function toValidationInfoDoc (This : in out GenericCssStyleValidation) return Document_Access;
-   procedure toValidationInfoDoc (This : in out GenericCssStyleValidation);
    function toValidationInfoNode (This : in out GenericCssStyleValidation; document : Document_Access) return Node_Access;
    procedure toValidationInfoNode (This : in out GenericCssStyleValidation; document : Document_Access);
    function toXmlNode (This : in out GenericCssStyleValidation; document : Document_Access) return Node_Access;

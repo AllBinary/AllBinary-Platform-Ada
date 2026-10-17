@@ -28,7 +28,7 @@ package body org.allbinary.android.view.BaseViewWrapper_Package is
    function Create return BaseViewWrapper_Access is
       This : constant BaseViewWrapper_Access := new BaseViewWrapper;
    begin
-      Initialize (This.all);
+      BaseViewWrapper_Package.Initialize (This.all);
       return This;
    end Create;
 

@@ -40,7 +40,6 @@ package org.allbinary.game.input.GameKey_Package is
    procedure Initialize (This : in out GameKey'Class; key : Integer; name : Unbounded_String);
    function Create (key : Integer; name : Unbounded_String) return GameKey_Access;
    function toString (This : in out GameKey) return Unbounded_String;
-   procedure toString (This : in out GameKey);
 
 end org.allbinary.game.input.GameKey_Package;
 

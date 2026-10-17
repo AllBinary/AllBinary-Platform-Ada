@@ -29,7 +29,7 @@ package body org.allbinary.business.user.modules.admin.store.customer.CustomerSt
    function Create return CustomerStoreAdminUser_Access is
       This : constant CustomerStoreAdminUser_Access := new CustomerStoreAdminUser;
    begin
-      Initialize (This.all);
+      CustomerStoreAdminUser_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -42,7 +42,7 @@ package body org.allbinary.business.user.modules.admin.store.customer.CustomerSt
    function Create (userHashMap : HashMap_Access) return CustomerStoreAdminUser_Access is
       This : constant CustomerStoreAdminUser_Access := new CustomerStoreAdminUser;
    begin
-      Initialize (This.all, userHashMap);
+      CustomerStoreAdminUser_Package.Initialize (This.all, userHashMap);
       return This;
    end Create;
 

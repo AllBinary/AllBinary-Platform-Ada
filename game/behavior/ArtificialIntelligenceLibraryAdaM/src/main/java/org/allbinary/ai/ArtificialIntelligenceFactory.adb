@@ -28,7 +28,7 @@ package body org.allbinary.ai.ArtificialIntelligenceFactory_Package is
    function Create return ArtificialIntelligenceFactory_Access is
       This : constant ArtificialIntelligenceFactory_Access := new ArtificialIntelligenceFactory;
    begin
-      Initialize (This.all);
+      ArtificialIntelligenceFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

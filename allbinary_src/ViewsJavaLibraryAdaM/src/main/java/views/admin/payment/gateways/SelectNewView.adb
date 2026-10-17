@@ -31,7 +31,7 @@ package body views.admin.payment.gateways.SelectNewView_Package is
    function Create (transformInfoInterface : TransformInfoInterface_Access) return SelectNewView_Access is
       This : constant SelectNewView_Access := new SelectNewView;
    begin
-      Initialize (This.all, transformInfoInterface);
+      SelectNewView_Package.Initialize (This.all, transformInfoInterface);
       return This;
    end Create;
 
@@ -57,13 +57,6 @@ package body views.admin.payment.gateways.SelectNewView_Package is
             Java_Throw (e);
                 end;
         end;
-   end view;
-
-   procedure view (This : in out SelectNewView) is
-      Java_Result : constant Unbounded_String := SelectNewView'Class (This).view;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end view;
 
 end views.admin.payment.gateways.SelectNewView_Package;

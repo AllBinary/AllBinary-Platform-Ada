@@ -20,6 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
+with org.allbinary.logic.util.cache.CacheType_Package; use org.allbinary.logic.util.cache.CacheType_Package;
 
 package org.allbinary.logic.util.cache.PoolType_Package is
 
@@ -36,9 +37,7 @@ package org.allbinary.logic.util.cache.PoolType_Package is
    procedure Initialize (This : in out PoolType'Class; cacheType : CacheType_Access);
    function Create (cacheType : CacheType_Access) return PoolType_Access;
    function getCacheType (This : in out PoolType) return CacheType_Access;
-   procedure getCacheType (This : in out PoolType);
    function toString (This : in out PoolType) return Unbounded_String;
-   procedure toString (This : in out PoolType);
 
 end org.allbinary.logic.util.cache.PoolType_Package;
 

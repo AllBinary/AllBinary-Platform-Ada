@@ -36,7 +36,7 @@ package body org.allbinary.data.tables.user.commerce.money.payment.transaction.T
    function Create return TransactionResultEntityFactory_Access is
       This : constant TransactionResultEntityFactory_Access := new TransactionResultEntityFactory;
    begin
-      Initialize (This.all);
+      TransactionResultEntityFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -57,20 +57,6 @@ package body org.allbinary.data.tables.user.commerce.money.payment.transaction.T
             return null;
                 end;
         end;
-   end getTransactionResultEntityInstance;
-
-   procedure getInstance is
-      Java_Result : constant TransactionResultEntityFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure getTransactionResultEntityInstance (This : in out TransactionResultEntityFactory) is
-      Java_Result : constant TransactionResultEntity_Access := TransactionResultEntityFactory'Class (This).getTransactionResultEntityInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getTransactionResultEntityInstance;
 
 begin

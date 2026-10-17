@@ -33,7 +33,7 @@ package body org.allbinary.game.displayable.screen.LicenseRegistrationTextBox_Pa
    function Create (cmdListener : CommandListener_Access; backgrounBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access) return LicenseRegistrationTextBox_Access is
       This : constant LicenseRegistrationTextBox_Access := new LicenseRegistrationTextBox;
    begin
-      Initialize (This.all, cmdListener, backgrounBasicColor, foregroundBasicColor);
+      LicenseRegistrationTextBox_Package.Initialize (This.all, cmdListener, backgrounBasicColor, foregroundBasicColor);
       return This;
    end Create;
 

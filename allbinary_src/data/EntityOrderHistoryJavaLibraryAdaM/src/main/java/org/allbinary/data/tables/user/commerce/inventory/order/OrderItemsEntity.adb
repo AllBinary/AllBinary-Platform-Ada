@@ -34,7 +34,7 @@ package body org.allbinary.data.tables.user.commerce.inventory.order.OrderItemsE
    function Create return OrderItemsEntity_Access is
       This : constant OrderItemsEntity_Access := new OrderItemsEntity;
    begin
-      Initialize (This.all);
+      OrderItemsEntity_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -352,27 +352,6 @@ package body org.allbinary.data.tables.user.commerce.inventory.order.OrderItemsE
    begin
       null;
    end getBasketReview;
-
-   procedure createTableStatement (This : in out OrderItemsEntity) is
-      Java_Result : constant Unbounded_String := OrderItemsEntity'Class (This).createTableStatement;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end createTableStatement;
-
-   procedure createTable (This : in out OrderItemsEntity) is
-      Java_Result : constant Unbounded_String := OrderItemsEntity'Class (This).createTable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end createTable;
-
-   procedure dropTable (This : in out OrderItemsEntity) is
-      Java_Result : constant Unbounded_String := OrderItemsEntity'Class (This).dropTable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end dropTable;
 
 end org.allbinary.data.tables.user.commerce.inventory.order.OrderItemsEntity_Package;
 

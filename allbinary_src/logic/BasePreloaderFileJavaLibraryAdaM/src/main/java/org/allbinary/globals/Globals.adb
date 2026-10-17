@@ -36,7 +36,7 @@ package body org.allbinary.globals.Globals_Package is
    function Create return Globals_Access is
       This : constant Globals_Access := new Globals;
    begin
-      Initialize (This.all);
+      Globals_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -73,13 +73,6 @@ package body org.allbinary.globals.Globals_Package is
         stringBuffer.append (URLGLOBALS.getWebappPath);
         This.logUtil.putF (stringBuffer.toString, This'Unchecked_Access, commonStrings.INIT);
    end init;
-
-   procedure getInstance is
-      Java_Result : constant Globals_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

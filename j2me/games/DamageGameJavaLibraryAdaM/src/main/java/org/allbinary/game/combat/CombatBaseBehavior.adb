@@ -34,7 +34,7 @@ package body org.allbinary.game.combat.CombatBaseBehavior_Package is
    function Create (damageableBaseBehavior : DamageableBaseBehavior_Access; destroyableBaseBehavior : DestroyableBaseBehavior_Access) return CombatBaseBehavior_Access is
       This : constant CombatBaseBehavior_Access := new CombatBaseBehavior;
    begin
-      Initialize (This.all, damageableBaseBehavior, destroyableBaseBehavior);
+      CombatBaseBehavior_Package.Initialize (This.all, damageableBaseBehavior, destroyableBaseBehavior);
       return This;
    end Create;
 
@@ -57,27 +57,6 @@ package body org.allbinary.game.combat.CombatBaseBehavior_Package is
    begin
         This.readyForExplosion := readyForExplosion;
    end setReadyForExplosion;
-
-   procedure getDamageableBaseBehavior (This : in out CombatBaseBehavior) is
-      Java_Result : constant DamageableBaseBehavior_Access := CombatBaseBehavior'Class (This).getDamageableBaseBehavior;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getDamageableBaseBehavior;
-
-   procedure getDestroyableBaseBehavior (This : in out CombatBaseBehavior) is
-      Java_Result : constant DestroyableBaseBehavior_Access := CombatBaseBehavior'Class (This).getDestroyableBaseBehavior;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getDestroyableBaseBehavior;
-
-   procedure isReadyForExplosion (This : in out CombatBaseBehavior) is
-      Java_Result : constant Boolean := CombatBaseBehavior'Class (This).isReadyForExplosion;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isReadyForExplosion;
 
 begin
    null;

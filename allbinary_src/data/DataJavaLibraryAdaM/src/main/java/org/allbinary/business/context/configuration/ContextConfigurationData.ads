@@ -41,7 +41,6 @@ package org.allbinary.business.context.configuration.ContextConfigurationData_Pa
    procedure Initialize (This : in out ContextConfigurationData'Class);
    function Create return ContextConfigurationData_Access;
    function getInstance return ContextConfigurationData_Access;
-   procedure getInstance;
 
 end org.allbinary.business.context.configuration.ContextConfigurationData_Package;
 

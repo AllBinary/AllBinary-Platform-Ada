@@ -37,7 +37,7 @@ package body org.allbinary.media.graphics.geography.map.racetrack.drop.RaceTrack
    function Create return RaceTrackDropCellPositionGenerator_Access is
       This : constant RaceTrackDropCellPositionGenerator_Access := new RaceTrackDropCellPositionGenerator;
    begin
-      Initialize (This.all);
+      RaceTrackDropCellPositionGenerator_Package.Initialize (This.all);
       return This;
    end Create;
 

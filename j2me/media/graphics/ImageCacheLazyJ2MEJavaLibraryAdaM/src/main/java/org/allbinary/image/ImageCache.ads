@@ -48,6 +48,7 @@ with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArra
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.logic.ABSystemWrapper_Package; use org.allbinary.logic.ABSystemWrapper_Package;
 with org.allbinary.image.ImageCacheBase_Package; use org.allbinary.image.ImageCacheBase_Package;
+with org.allbinary.image.ImageFactory_Package; use org.allbinary.image.ImageFactory_Package;
 
 package org.allbinary.image.ImageCache_Package is
 
@@ -139,7 +140,6 @@ package org.allbinary.image.ImageCache_Package is
    procedure runTask (This : in out ImageCache);
    procedure initProgress (This : in out ImageCache);
    function isLazy (This : in out ImageCache) return Boolean;
-   procedure isLazy (This : in out ImageCache);
 
 end org.allbinary.image.ImageCache_Package;
 
@@ -179,6 +179,7 @@ with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArra
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.logic.ABSystemWrapper_Package; use org.allbinary.logic.ABSystemWrapper_Package;
 with org.allbinary.image.ImageCacheBase_Package; use org.allbinary.image.ImageCacheBase_Package;
+with org.allbinary.image.ImageFactory_Package; use org.allbinary.image.ImageFactory_Package;
 
 package org.allbinary.image.NotHTMLProcessor_Package is
 
@@ -256,6 +257,7 @@ with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArra
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.logic.ABSystemWrapper_Package; use org.allbinary.logic.ABSystemWrapper_Package;
 with org.allbinary.image.ImageCacheBase_Package; use org.allbinary.image.ImageCacheBase_Package;
+with org.allbinary.image.ImageFactory_Package; use org.allbinary.image.ImageFactory_Package;
 
 package org.allbinary.image.NotHTMLEndProcessor_Package is
 
@@ -333,6 +335,7 @@ with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArra
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.logic.ABSystemWrapper_Package; use org.allbinary.logic.ABSystemWrapper_Package;
 with org.allbinary.image.ImageCacheBase_Package; use org.allbinary.image.ImageCacheBase_Package;
+with org.allbinary.image.ImageFactory_Package; use org.allbinary.image.ImageFactory_Package;
 
 package org.allbinary.image.HTMLEndProcessor_Package is
 
@@ -410,6 +413,7 @@ with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArra
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.logic.ABSystemWrapper_Package; use org.allbinary.logic.ABSystemWrapper_Package;
 with org.allbinary.image.ImageCacheBase_Package; use org.allbinary.image.ImageCacheBase_Package;
+with org.allbinary.image.ImageFactory_Package; use org.allbinary.image.ImageFactory_Package;
 
 package org.allbinary.image.FirstProcessor_Package is
 

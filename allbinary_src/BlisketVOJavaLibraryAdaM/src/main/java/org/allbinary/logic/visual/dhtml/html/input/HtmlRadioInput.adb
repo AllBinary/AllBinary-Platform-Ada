@@ -31,7 +31,7 @@ package body org.allbinary.logic.visual.dhtml.html.input.HtmlRadioInput_Package 
    function Create (before : Unbounded_String; name : Unbounded_String; value : Unbounded_String; after : Unbounded_String) return HtmlRadioInput_Access is
       This : constant HtmlRadioInput_Access := new HtmlRadioInput;
    begin
-      Initialize (This.all, before, name, value, after);
+      HtmlRadioInput_Package.Initialize (This.all, before, name, value, after);
       return This;
    end Create;
 

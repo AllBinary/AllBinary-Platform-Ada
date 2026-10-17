@@ -21,13 +21,14 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.awt.Rectangle_Package; use java.awt.Rectangle_Package;
---  with java.util.Vector_Package; use java.util.Vector_Package;
+with java.util.Vector_Package; use java.util.Vector_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.media.image.comparison.motion.Cloneable_Package; use org.allbinary.media.image.comparison.motion.Cloneable_Package;
 
 package org.allbinary.media.image.comparison.motion.MotionRectangle_Package is
 
+   package Vector_Package renames Standard.java.util.Vector_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
    package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
 
@@ -44,13 +45,10 @@ package org.allbinary.media.image.comparison.motion.MotionRectangle_Package is
    procedure Initialize (This : in out MotionRectangle'Class; rectangle : Rectangle_Access);
    function Create (rectangle : Rectangle_Access) return MotionRectangle_Access;
    function getRectangle (This : in out MotionRectangle) return Rectangle_Access;
-   procedure getRectangle (This : in out MotionRectangle);
    procedure setRectangle (This : in out MotionRectangle; rectangle : Rectangle_Access);
    function getPixelDeltaVector (This : in out MotionRectangle) return BasicArrayList_Access;
-   procedure getPixelDeltaVector (This : in out MotionRectangle);
    procedure setPixelDeltaVector (This : in out MotionRectangle; pixelDeltaVector : BasicArrayList_Access);
    function clone (This : in out MotionRectangle) return Java_Object_Access;
-   procedure clone (This : in out MotionRectangle);
 
 end org.allbinary.media.image.comparison.motion.MotionRectangle_Package;
 

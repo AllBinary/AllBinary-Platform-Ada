@@ -36,7 +36,7 @@ package body org.allbinary.math.PositionStrings_Package is
    function Create return PositionStrings_Access is
       This : constant PositionStrings_Access := new PositionStrings;
    begin
-      Initialize (This.all);
+      PositionStrings_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -44,13 +44,6 @@ package body org.allbinary.math.PositionStrings_Package is
    function getInstance return PositionStrings_Access is
    begin
         return PositionStrings_Package.instance;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant PositionStrings_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

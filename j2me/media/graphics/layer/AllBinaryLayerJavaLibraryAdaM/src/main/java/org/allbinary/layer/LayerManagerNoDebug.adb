@@ -29,7 +29,7 @@ package body org.allbinary.layer.LayerManagerNoDebug_Package is
    function Create return LayerManagerNoDebug_Access is
       This : constant LayerManagerNoDebug_Access := new LayerManagerNoDebug;
    begin
-      Initialize (This.all);
+      LayerManagerNoDebug_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -37,13 +37,6 @@ package body org.allbinary.layer.LayerManagerNoDebug_Package is
    function getInstance return LayerManagerNoDebug_Access is
    begin
         return LayerManagerNoDebug_Package.instance;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant LayerManagerNoDebug_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

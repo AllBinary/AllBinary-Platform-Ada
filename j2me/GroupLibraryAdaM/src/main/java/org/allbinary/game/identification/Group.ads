@@ -23,6 +23,7 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.game.identification.GroupInterface_Package; use org.allbinary.game.identification.GroupInterface_Package;
+with org.allbinary.game.identification.GroupCommonFactory_Package; use org.allbinary.game.identification.GroupCommonFactory_Package;
 
 package org.allbinary.game.identification.Group_Package is
 
@@ -43,12 +44,9 @@ package org.allbinary.game.identification.Group_Package is
    procedure Initialize (This : in out Group'Class; teamName : Unbounded_String; teamId : Short_Integer);
    function Create (teamName : Unbounded_String; teamId : Short_Integer) return Group_Access;
    function getGroupName (This : in out Group) return Unbounded_String;
-   procedure getGroupName (This : in out Group);
    procedure setName (This : in out Group; name : Unbounded_String);
    function getGroupId (This : in out Group) return Short_Integer;
-   procedure getGroupId (This : in out Group);
    function toString (This : in out Group) return Unbounded_String;
-   procedure toString (This : in out Group);
 
 end org.allbinary.game.identification.Group_Package;
 

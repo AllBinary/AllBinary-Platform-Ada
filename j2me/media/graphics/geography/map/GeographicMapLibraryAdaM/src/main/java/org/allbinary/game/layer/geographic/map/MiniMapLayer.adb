@@ -44,7 +44,7 @@ package body org.allbinary.game.layer.geographic.map.MiniMapLayer_Package is
    function Create (geographicMapInterface : BasicGeographicMap_Access; viewPosition : ViewPositionBase_Access) return MiniMapLayer_Access is
       This : constant MiniMapLayer_Access := new MiniMapLayer;
    begin
-      Initialize (This.all, geographicMapInterface, viewPosition);
+      MiniMapLayer_Package.Initialize (This.all, geographicMapInterface, viewPosition);
       return This;
    end Create;
 

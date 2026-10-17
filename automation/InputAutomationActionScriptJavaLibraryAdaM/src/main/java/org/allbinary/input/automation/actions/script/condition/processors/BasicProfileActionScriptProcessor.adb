@@ -29,7 +29,7 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
    function Create (label : Unbounded_String; node : Node_Access) return BasicProfileActionScriptProcessor_Access is
       This : constant BasicProfileActionScriptProcessor_Access := new BasicProfileActionScriptProcessor;
    begin
-      Initialize (This.all, label, node);
+      BasicProfileActionScriptProcessor_Package.Initialize (This.all, label, node);
       return This;
    end Create;
 
@@ -42,7 +42,7 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
    function Create (label : Unbounded_String) return BasicProfileActionScriptProcessor_Access is
       This : constant BasicProfileActionScriptProcessor_Access := new BasicProfileActionScriptProcessor;
    begin
-      Initialize (This.all, label);
+      BasicProfileActionScriptProcessor_Package.Initialize (This.all, label);
       return This;
    end Create;
 

@@ -30,7 +30,7 @@ package body org.allbinary.logic.java.number.LongData_Package is
    function Create return LongData_Access is
       This : constant LongData_Access := new LongData;
    begin
-      Initialize (This.all);
+      LongData_Package.Initialize (This.all);
       return This;
    end Create;
 

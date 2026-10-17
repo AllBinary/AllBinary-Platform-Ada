@@ -78,7 +78,6 @@ package taghelpers.OrderHistoryHelper_Package is
    function Create (propertiesHashMap : HashMap_Access; pageContext : PageContext_Access) return OrderHistoryHelper_Access;
    procedure getFormData (This : in out OrderHistoryHelper);
    function setOrderStatus (This : in out OrderHistoryHelper) return Unbounded_String;
-   procedure setOrderStatus (This : in out OrderHistoryHelper);
 
 end taghelpers.OrderHistoryHelper_Package;
 

@@ -31,6 +31,8 @@ with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.C
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.time.TimeDelayHelper_Package; use org.allbinary.time.TimeDelayHelper_Package;
 with org.allbinary.input.media.image.capture.CapturedImageWorkerResultsListener_Package; use org.allbinary.input.media.image.capture.CapturedImageWorkerResultsListener_Package;
+with org.allbinary.input.media.image.capture.CapturedImageWorkerResultsEvent_Package; use org.allbinary.input.media.image.capture.CapturedImageWorkerResultsEvent_Package;
+with org.allbinary.input.media.image.capture.CapturedImageInputOutput_Package; use org.allbinary.input.media.image.capture.CapturedImageInputOutput_Package;
 
 package org.allbinary.input.media.image.capture.SaveCapturedImageWorker_Package is
 
@@ -59,7 +61,6 @@ package org.allbinary.input.media.image.capture.SaveCapturedImageWorker_Package 
    procedure Initialize (This : in out SaveCapturedImageWorker'Class);
    function Create return SaveCapturedImageWorker_Access;
    function isRunning (This : in out SaveCapturedImageWorker) return Boolean;
-   procedure isRunning (This : in out SaveCapturedImageWorker);
    procedure setRunning (This : in out SaveCapturedImageWorker; running : Boolean);
    procedure onCaptureEvent (This : in out SaveCapturedImageWorker; capturedImageEvent : CapturedImageWorkerResultsEvent_Access);
    procedure onEvent (This : in out SaveCapturedImageWorker; allBinaryEventObject : AllBinaryEventObject_Access);

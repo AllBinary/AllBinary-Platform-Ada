@@ -28,6 +28,7 @@ with org.allbinary.game.tick.TickableInterface_Package; use org.allbinary.game.t
 with org.allbinary.media.AllBinaryNoVibration_Package; use org.allbinary.media.AllBinaryNoVibration_Package;
 with org.allbinary.media.AllBinaryVibration_Package; use org.allbinary.media.AllBinaryVibration_Package;
 with org.allbinary.media.AllBinaryVibrationME_Package; use org.allbinary.media.AllBinaryVibrationME_Package;
+with org.allbinary.game.layer.WaypointBehaviorBase_Package; use org.allbinary.game.layer.WaypointBehaviorBase_Package;
 
 package org.allbinary.game.layer.AdvancedRTSProperties_Package is
 
@@ -55,9 +56,7 @@ package org.allbinary.game.layer.AdvancedRTSProperties_Package is
    procedure Initialize (This : in out AdvancedRTSProperties'Class; shakeListener : ShakeAnimationListener_Access; vibration : AllBinaryVibrationME_Access; duration : Integer; waypointBehaviorBase : TickableInterface_Access);
    function Create (shakeListener : ShakeAnimationListener_Access; vibration : AllBinaryVibrationME_Access; duration : Integer; waypointBehaviorBase : TickableInterface_Access) return AdvancedRTSProperties_Access;
    function createPropertiesSimulated return AdvancedRTSProperties_Access;
-   procedure createPropertiesSimulated;
    function createProperties return AdvancedRTSProperties_Access;
-   procedure createProperties;
 
 end org.allbinary.game.layer.AdvancedRTSProperties_Package;
 

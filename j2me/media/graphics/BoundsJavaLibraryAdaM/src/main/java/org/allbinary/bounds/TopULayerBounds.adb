@@ -29,7 +29,7 @@ package body org.allbinary.bounds.TopULayerBounds_Package is
    function Create (rectangle : Rectangle_Access) return TopULayerBounds_Access is
       This : constant TopULayerBounds_Access := new TopULayerBounds;
    begin
-      Initialize (This.all, rectangle);
+      TopULayerBounds_Package.Initialize (This.all, rectangle);
       return This;
    end Create;
 

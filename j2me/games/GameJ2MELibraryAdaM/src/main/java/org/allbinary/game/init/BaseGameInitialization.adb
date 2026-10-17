@@ -40,7 +40,7 @@ package body org.allbinary.game.init.BaseGameInitialization_Package is
    function Create (resourceInitializationArray : ResourceInitialization_Access_Array_Access; portion : Integer) return BaseGameInitialization_Access is
       This : constant BaseGameInitialization_Access := new BaseGameInitialization;
    begin
-      Initialize (This.all, resourceInitializationArray, portion);
+      BaseGameInitialization_Package.Initialize (This.all, resourceInitializationArray, portion);
       return This;
    end Create;
 
@@ -158,34 +158,6 @@ package body org.allbinary.game.init.BaseGameInitialization_Package is
    function isInitialized (This : in out BaseGameInitialization) return Boolean is
    begin
         return This.initialized;
-   end isInitialized;
-
-   procedure resourceAnimationChange (This : in out BaseGameInitialization) is
-      Java_Result : constant Boolean := BaseGameInitialization'Class (This).resourceAnimationChange;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end resourceAnimationChange;
-
-   procedure isGameInitialized (This : in out BaseGameInitialization) is
-      Java_Result : constant Boolean := BaseGameInitialization'Class (This).isGameInitialized;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isGameInitialized;
-
-   procedure getPortion (This : in out BaseGameInitialization) is
-      Java_Result : constant Integer := BaseGameInitialization'Class (This).getPortion;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getPortion;
-
-   procedure isInitialized (This : in out BaseGameInitialization) is
-      Java_Result : constant Boolean := BaseGameInitialization'Class (This).isInitialized;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end isInitialized;
 
 begin

@@ -31,7 +31,7 @@ package body views.business.context.modules.storefront.customizer.includes.meta.
    function Create (transformInfoInterface : TransformInfoInterface_Access) return NewMetaValidationView_Access is
       This : constant NewMetaValidationView_Access := new NewMetaValidationView;
    begin
-      Initialize (This.all, transformInfoInterface);
+      NewMetaValidationView_Package.Initialize (This.all, transformInfoInterface);
       return This;
    end Create;
 
@@ -96,47 +96,12 @@ package body views.business.context.modules.storefront.customizer.includes.meta.
         return This.views.ValidationOnlyTempUtil.getInstance.view (This'Unchecked_Access);
    end view;
 
-   procedure toXmlDoc (This : in out NewMetaValidationView) is
-      Java_Result : constant Document_Access := NewMetaValidationView'Class (This).toXmlDoc;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toXmlDoc;
-
-   procedure isValid (This : in out NewMetaValidationView) is
-      Java_Result : constant Boolean := NewMetaValidationView'Class (This).isValid;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isValid;
-
-   procedure validationInfo (This : in out NewMetaValidationView) is
-      Java_Result : constant Unbounded_String := NewMetaValidationView'Class (This).validationInfo;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end validationInfo;
-
-   procedure toValidationInfoDoc (This : in out NewMetaValidationView) is
-      Java_Result : constant Document_Access := NewMetaValidationView'Class (This).toValidationInfoDoc;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toValidationInfoDoc;
-
    procedure toValidationInfoNode (This : in out NewMetaValidationView; document : Document_Access) is
       Java_Result : constant Node_Access := NewMetaValidationView'Class (This).toValidationInfoNode (document);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end toValidationInfoNode;
-
-   procedure view (This : in out NewMetaValidationView) is
-      Java_Result : constant Unbounded_String := NewMetaValidationView'Class (This).view;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end view;
 
 end views.business.context.modules.storefront.customizer.includes.meta.NewMetaValidationView_Package;
 

@@ -36,6 +36,10 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.image.opengles.OpenGLSurfaceChangedInterface_Package; use org.allbinary.image.opengles.OpenGLSurfaceChangedInterface_Package;
+with org.allbinary.image.opengles.OpenGLESImageProcessor_Package; use org.allbinary.image.opengles.OpenGLESImageProcessor_Package;
+with org.allbinary.image.opengles.OpenGLESImageTranslate_Package; use org.allbinary.image.opengles.OpenGLESImageTranslate_Package;
+with org.allbinary.image.opengles.OpenGLESImageProperties_Package; use org.allbinary.image.opengles.OpenGLESImageProperties_Package;
+with org.allbinary.image.opengles.OpenGLImageCacheFactory_Package; use org.allbinary.image.opengles.OpenGLImageCacheFactory_Package;
 
 package org.allbinary.image.opengles.OpenGLESImage_Package is
 
@@ -70,18 +74,14 @@ package org.allbinary.image.opengles.OpenGLESImage_Package is
    procedure Initialize (This : in out OpenGLESImage'Class; image : Image_Access; bitmapFactory : PlatformBitmapBaseFactory_Access; textureFactory : PlatformTextureBaseFactory_Access);
    function Create (image : Image_Access; bitmapFactory : PlatformBitmapBaseFactory_Access; textureFactory : PlatformTextureBaseFactory_Access) return OpenGLESImage_Access;
    function getHeight (This : in out OpenGLESImage) return Integer;
-   procedure getHeight (This : in out OpenGLESImage);
    function getWidth (This : in out OpenGLESImage) return Integer;
-   procedure getWidth (This : in out OpenGLESImage);
    procedure set (This : in out OpenGLESImage; gl : GL_Access);
    function initTexture (This : in out OpenGLESImage; gl : GL10_Access) return Boolean;
    procedure initTexture (This : in out OpenGLESImage; gl : GL10_Access);
    procedure drawRegion (This : in out OpenGLESImage; gl : GL10_Access; viewHeight : Integer; x_src : Float; y_src : Float; width : Float; height : Float; x : Integer; y : Integer; z : Integer);
    procedure draw (This : in out OpenGLESImage; gl : GL10_Access; x : Integer; y : Integer; z : Integer);
    function getType (This : in out OpenGLESImage) return Integer;
-   procedure getType (This : in out OpenGLESImage);
    function toString (This : in out OpenGLESImage) return Unbounded_String;
-   procedure toString (This : in out OpenGLESImage);
 
 end org.allbinary.image.opengles.OpenGLESImage_Package;
 

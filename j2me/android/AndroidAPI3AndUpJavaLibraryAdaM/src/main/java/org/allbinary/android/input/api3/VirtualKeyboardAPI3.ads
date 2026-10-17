@@ -28,6 +28,8 @@ with org.allbinary.input.event.VirtualKeyboardEventListenerInterface_Package; us
 with org.allbinary.logic.communication.log.ForcedLogUtil_Package; use org.allbinary.logic.communication.log.ForcedLogUtil_Package;
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbinary.logic.util.event.AllBinaryEventObject_Package;
 with org.allbinary.logic.util.event.EventStrings_Package; use org.allbinary.logic.util.event.EventStrings_Package;
+with org.allbinary.android.input.api3.ShowVirtualKeyboardRunnable_Package; use org.allbinary.android.input.api3.ShowVirtualKeyboardRunnable_Package;
+with org.allbinary.android.input.api3.HideVirtualKeyboardRunnable_Package; use org.allbinary.android.input.api3.HideVirtualKeyboardRunnable_Package;
 
 package org.allbinary.android.input.api3.VirtualKeyboardAPI3_Package is
 

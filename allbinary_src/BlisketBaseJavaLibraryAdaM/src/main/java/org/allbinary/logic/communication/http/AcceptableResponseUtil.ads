@@ -24,6 +24,7 @@ with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArra
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.TsUtil_Package; use org.allbinary.TsUtil_Package;
 with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.logic.communication.http.AcceptableResponseFactory_Package; use org.allbinary.logic.communication.http.AcceptableResponseFactory_Package;
 
 package org.allbinary.logic.communication.http.AcceptableResponseUtil_Package is
 
@@ -46,13 +47,11 @@ package org.allbinary.logic.communication.http.AcceptableResponseUtil_Package is
    procedure Initialize (This : in out AcceptableResponseUtil'Class);
    function Create return AcceptableResponseUtil_Access;
    function getInstance return AcceptableResponseUtil_Access;
-   procedure getInstance;
    function get (This : in out AcceptableResponseUtil; index : Integer) return Unbounded_String;
    procedure get (This : in out AcceptableResponseUtil; index : Integer);
    function getTagName (This : in out AcceptableResponseUtil; index : Integer) return Unbounded_String;
    procedure getTagName (This : in out AcceptableResponseUtil; index : Integer);
    function size (This : in out AcceptableResponseUtil) return Integer;
-   procedure size (This : in out AcceptableResponseUtil);
 
 end org.allbinary.logic.communication.http.AcceptableResponseUtil_Package;
 

@@ -36,9 +36,7 @@ package org.allbinary.input.motion.button.TouchScreenType_Package is
    procedure Initialize (This : in out TouchScreenType'Class; name : Unbounded_String);
    function Create (name : Unbounded_String) return TouchScreenType_Access;
    function getName (This : in out TouchScreenType) return Unbounded_String;
-   procedure getName (This : in out TouchScreenType);
    function toString (This : in out TouchScreenType) return Unbounded_String;
-   procedure toString (This : in out TouchScreenType);
 
 end org.allbinary.input.motion.button.TouchScreenType_Package;
 

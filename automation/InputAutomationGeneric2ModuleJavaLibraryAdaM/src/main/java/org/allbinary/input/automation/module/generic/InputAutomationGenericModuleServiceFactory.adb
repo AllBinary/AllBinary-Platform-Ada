@@ -44,20 +44,13 @@ package body org.allbinary.input.automation.module.generic_Id.InputAutomationGen
    function Create return InputAutomationGenericModuleServiceFactory_Access is
       This : constant InputAutomationGenericModuleServiceFactory_Access := new InputAutomationGenericModuleServiceFactory;
    begin
-      Initialize (This.all);
+      InputAutomationGenericModuleServiceFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
    function getInstance return InputAutomationGenericModuleServiceFactory_Access is
    begin
         return InputAutomationGenericModuleServiceFactory_Package.inputAutomationGenericModuleServiceFactory;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant InputAutomationGenericModuleServiceFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

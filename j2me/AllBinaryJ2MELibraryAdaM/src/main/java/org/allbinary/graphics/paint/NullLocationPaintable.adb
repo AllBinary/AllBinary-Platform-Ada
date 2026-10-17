@@ -29,7 +29,7 @@ package body org.allbinary.graphics.paint.NullLocationPaintable_Package is
    function Create return NullLocationPaintable_Access is
       This : constant NullLocationPaintable_Access := new NullLocationPaintable;
    begin
-      Initialize (This.all);
+      NullLocationPaintable_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -37,13 +37,6 @@ package body org.allbinary.graphics.paint.NullLocationPaintable_Package is
    function getInstance return NullLocationPaintable_Access is
    begin
         return NullLocationPaintable_Package.instanceC;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant NullLocationPaintable_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

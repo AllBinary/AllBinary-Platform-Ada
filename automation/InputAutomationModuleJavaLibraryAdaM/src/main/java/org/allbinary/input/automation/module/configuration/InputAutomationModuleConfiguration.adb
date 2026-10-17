@@ -35,7 +35,7 @@ package body org.allbinary.input.automation.module.configuration.InputAutomation
    function Create return InputAutomationModuleConfiguration_Access is
       This : constant InputAutomationModuleConfiguration_Access := new InputAutomationModuleConfiguration;
    begin
-      Initialize (This.all);
+      InputAutomationModuleConfiguration_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -49,7 +49,7 @@ package body org.allbinary.input.automation.module.configuration.InputAutomation
    function Create (abeClientInformation : AbeClientInformationInterface_Access; node : Node_Access) return InputAutomationModuleConfiguration_Access is
       This : constant InputAutomationModuleConfiguration_Access := new InputAutomationModuleConfiguration;
    begin
-      Initialize (This.all, abeClientInformation, node);
+      InputAutomationModuleConfiguration_Package.Initialize (This.all, abeClientInformation, node);
       return This;
    end Create;
 
@@ -65,7 +65,7 @@ package body org.allbinary.input.automation.module.configuration.InputAutomation
    function Create (abeClientInformation : AbeClientInformationInterface_Access; name : Unbounded_String; className : Unbounded_String) return InputAutomationModuleConfiguration_Access is
       This : constant InputAutomationModuleConfiguration_Access := new InputAutomationModuleConfiguration;
    begin
-      Initialize (This.all, abeClientInformation, name, className);
+      InputAutomationModuleConfiguration_Package.Initialize (This.all, abeClientInformation, name, className);
       return This;
    end Create;
 
@@ -80,7 +80,7 @@ package body org.allbinary.input.automation.module.configuration.InputAutomation
    function Create (inputAutomationModuleInterface : InputAutomationModuleFactoryInterface_Access) return InputAutomationModuleConfiguration_Access is
       This : constant InputAutomationModuleConfiguration_Access := new InputAutomationModuleConfiguration;
    begin
-      Initialize (This.all, inputAutomationModuleInterface);
+      InputAutomationModuleConfiguration_Package.Initialize (This.all, inputAutomationModuleInterface);
       return This;
    end Create;
 
@@ -171,27 +171,6 @@ package body org.allbinary.input.automation.module.configuration.InputAutomation
    begin
       null;
    end toDomNode;
-
-   procedure getName (This : in out InputAutomationModuleConfiguration) is
-      Java_Result : constant Unbounded_String := InputAutomationModuleConfiguration'Class (This).getName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getName;
-
-   procedure getClassName (This : in out InputAutomationModuleConfiguration) is
-      Java_Result : constant Unbounded_String := InputAutomationModuleConfiguration'Class (This).getClassName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getClassName;
-
-   procedure getInputAutomationModuleInterface (This : in out InputAutomationModuleConfiguration) is
-      Java_Result : constant InputAutomationModuleFactoryInterface_Access := InputAutomationModuleConfiguration'Class (This).getInputAutomationModuleInterface;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInputAutomationModuleInterface;
 
 end org.allbinary.input.automation.module.configuration.InputAutomationModuleConfiguration_Package;
 

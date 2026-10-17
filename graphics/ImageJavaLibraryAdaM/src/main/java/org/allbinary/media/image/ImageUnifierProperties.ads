@@ -20,6 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
+with org.allbinary.media.image.ImageUnifierCell_Package; use org.allbinary.media.image.ImageUnifierCell_Package;
 
 package org.allbinary.media.image.ImageUnifierProperties_Package is
 
@@ -38,17 +39,12 @@ package org.allbinary.media.image.ImageUnifierProperties_Package is
    procedure Initialize (This : in out ImageUnifierProperties'Class);
    function Create return ImageUnifierProperties_Access;
    function getWidth (This : in out ImageUnifierProperties) return Integer;
-   procedure getWidth (This : in out ImageUnifierProperties);
    function getHeight (This : in out ImageUnifierProperties) return Integer;
-   procedure getHeight (This : in out ImageUnifierProperties);
    function getRows (This : in out ImageUnifierProperties) return Integer;
-   procedure getRows (This : in out ImageUnifierProperties);
    procedure setRows (This : in out ImageUnifierProperties; rows : Integer);
    function getColumns (This : in out ImageUnifierProperties) return Integer;
-   procedure getColumns (This : in out ImageUnifierProperties);
    procedure setColumns (This : in out ImageUnifierProperties; columns : Integer);
    function getImageUnifierCell (This : in out ImageUnifierProperties) return ImageUnifierCell_Access;
-   procedure getImageUnifierCell (This : in out ImageUnifierProperties);
    procedure setImageUnifierCell (This : in out ImageUnifierProperties; imageUnifierCell : ImageUnifierCell_Access);
 
 end org.allbinary.media.image.ImageUnifierProperties_Package;

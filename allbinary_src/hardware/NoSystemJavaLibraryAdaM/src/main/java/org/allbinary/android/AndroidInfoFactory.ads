@@ -37,9 +37,7 @@ package org.allbinary.android.AndroidInfoFactory_Package is
    procedure Initialize (This : in out AndroidInfoFactory'Class);
    function Create return AndroidInfoFactory_Access;
    function getInstance return AndroidInfoFactory_Access;
-   procedure getInstance;
    function getVersion (This : in out AndroidInfoFactory) return Integer;
-   procedure getVersion (This : in out AndroidInfoFactory);
 
 end org.allbinary.android.AndroidInfoFactory_Package;
 

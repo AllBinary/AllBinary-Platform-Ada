@@ -27,6 +27,8 @@ with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArr
 with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.media.image.comparison.motion.MotionRectangles_Package; use org.allbinary.media.image.comparison.motion.MotionRectangles_Package;
+with org.allbinary.media.image.comparison.motion.MotionRectangleConstraintsInterface_Package; use org.allbinary.media.image.comparison.motion.MotionRectangleConstraintsInterface_Package;
+with org.allbinary.media.image.comparison.motion.MotionRectangle_Package; use org.allbinary.media.image.comparison.motion.MotionRectangle_Package;
 
 package org.allbinary.media.image.comparison.motion.ConstrainedMotionRectangles_Package is
 
@@ -50,7 +52,6 @@ package org.allbinary.media.image.comparison.motion.ConstrainedMotionRectangles_
    function Create (motionRectangleConstraintsInterface : MotionRectangleConstraintsInterface_Access; motionRectangles : MotionRectangles_Access) return ConstrainedMotionRectangles_Access;
    procedure applyMotionRectangleConstraints (This : in out ConstrainedMotionRectangles; motionRectangles : MotionRectangles_Access);
    function getMotionRectangleConstraintsInterface (This : in out ConstrainedMotionRectangles) return MotionRectangleConstraintsInterface_Access;
-   procedure getMotionRectangleConstraintsInterface (This : in out ConstrainedMotionRectangles);
    procedure setMotionRectangleConstraintsInterface (This : in out ConstrainedMotionRectangles; motionRectangleConstraintsInterface : MotionRectangleConstraintsInterface_Access);
 
 end org.allbinary.media.image.comparison.motion.ConstrainedMotionRectangles_Package;

@@ -48,13 +48,9 @@ package admin.taghelpers.CategoryHelper_Package is
    procedure Initialize (This : in out CategoryHelper'Class; hashMap : HashMap_Access; pageContext : PageContext_Access);
    function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return CategoryHelper_Access;
    function drop (This : in out CategoryHelper) return Unbounded_String;
-   procedure drop (This : in out CategoryHelper);
    function create (This : in out CategoryHelper) return Unbounded_String;
-   procedure create (This : in out CategoryHelper);
    function restore (This : in out CategoryHelper) return Unbounded_String;
-   procedure restore (This : in out CategoryHelper);
    function backup (This : in out CategoryHelper) return Unbounded_String;
-   procedure backup (This : in out CategoryHelper);
 
 end admin.taghelpers.CategoryHelper_Package;
 

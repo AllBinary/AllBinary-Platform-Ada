@@ -30,7 +30,7 @@ package body org.allbinary.logic.java.anyType.ParamsUtil_Package is
    function Create return ParamsUtil_Access is
       This : constant ParamsUtil_Access := new ParamsUtil;
    begin
-      Initialize (This.all);
+      ParamsUtil_Package.Initialize (This.all);
       return This;
    end Create;
 

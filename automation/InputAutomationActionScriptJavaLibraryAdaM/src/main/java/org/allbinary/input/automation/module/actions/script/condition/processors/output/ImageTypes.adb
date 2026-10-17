@@ -31,7 +31,7 @@ package body org.allbinary.input.automation.module.actions.script.condition.proc
    function Create return ImageTypes_Access is
       This : constant ImageTypes_Access := new ImageTypes;
    begin
-      Initialize (This.all);
+      ImageTypes_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -58,7 +58,7 @@ package body org.allbinary.input.automation.module.actions.script.condition.proc
    function Create (node : Node_Access) return ImageTypes_Access is
       This : constant ImageTypes_Access := new ImageTypes;
    begin
-      Initialize (This.all, node);
+      ImageTypes_Package.Initialize (This.all, node);
       return This;
    end Create;
 
@@ -122,26 +122,12 @@ package body org.allbinary.input.automation.module.actions.script.condition.proc
       null;
    end valueOf;
 
-   procedure getVector (This : in out ImageTypes) is
-      Java_Result : constant BasicArrayList_Access := ImageTypes'Class (This).getVector;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getVector;
-
    procedure toXmlNode (This : in out ImageTypes; document : Document_Access) is
       Java_Result : constant Node_Access := ImageTypes'Class (This).toXmlNode (document);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end toXmlNode;
-
-   procedure toString (This : in out ImageTypes) is
-      Java_Result : constant Unbounded_String := ImageTypes'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toString;
 
 end org.allbinary.input.automation.module.actions.script.condition.processors.output.ImageTypes_Package;
 

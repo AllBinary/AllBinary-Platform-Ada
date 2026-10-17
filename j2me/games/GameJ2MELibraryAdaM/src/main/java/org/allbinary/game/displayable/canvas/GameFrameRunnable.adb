@@ -35,7 +35,7 @@ package body org.allbinary.game.displayable.canvas.GameFrameRunnable_Package is
    function Create (allBinaryGameCanvas : AllBinaryGameCanvas_Access) return GameFrameRunnable_Access is
       This : constant GameFrameRunnable_Access := new GameFrameRunnable;
    begin
-      Initialize (This.all, allBinaryGameCanvas);
+      GameFrameRunnable_Package.Initialize (This.all, allBinaryGameCanvas);
       return This;
    end Create;
 

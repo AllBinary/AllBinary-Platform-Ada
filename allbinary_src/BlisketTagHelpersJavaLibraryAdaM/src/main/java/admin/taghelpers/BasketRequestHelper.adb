@@ -52,7 +52,7 @@ package body admin.taghelpers.BasketRequestHelper_Package is
    function Create (propertiesHashMap : HashMap_Access; pageContext : PageContext_Access) return BasketRequestHelper_Access is
       This : constant BasketRequestHelper_Access := new BasketRequestHelper;
    begin
-      Initialize (This.all, propertiesHashMap, pageContext);
+      BasketRequestHelper_Package.Initialize (This.all, propertiesHashMap, pageContext);
       return This;
    end Create;
 
@@ -138,27 +138,6 @@ package body admin.taghelpers.BasketRequestHelper_Package is
             return False;
                 end;
         end;
-   end adjustBasket;
-
-   procedure addItemToBasket (This : in out BasketRequestHelper) is
-      Java_Result : constant Boolean := BasketRequestHelper'Class (This).addItemToBasket;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end addItemToBasket;
-
-   procedure removeItemFromBasket (This : in out BasketRequestHelper) is
-      Java_Result : constant Boolean := BasketRequestHelper'Class (This).removeItemFromBasket;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end removeItemFromBasket;
-
-   procedure adjustBasket (This : in out BasketRequestHelper) is
-      Java_Result : constant Boolean := BasketRequestHelper'Class (This).adjustBasket;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end adjustBasket;
 
 end admin.taghelpers.BasketRequestHelper_Package;

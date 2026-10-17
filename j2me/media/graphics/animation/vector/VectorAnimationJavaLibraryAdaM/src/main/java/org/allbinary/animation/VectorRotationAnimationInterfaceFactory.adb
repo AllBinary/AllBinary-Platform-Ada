@@ -35,7 +35,7 @@ package body org.allbinary.animation.VectorRotationAnimationInterfaceFactory_Pac
    function Create (currentPoints : Integer_Array_Access_Array_Access_Array_Access; basicColor : BasicColor_Access; animationBehaviorFactory : AnimationBehaviorFactory_Access) return VectorRotationAnimationInterfaceFactory_Access is
       This : constant VectorRotationAnimationInterfaceFactory_Access := new VectorRotationAnimationInterfaceFactory;
    begin
-      Initialize (This.all, currentPoints, basicColor, animationBehaviorFactory);
+      VectorRotationAnimationInterfaceFactory_Package.Initialize (This.all, currentPoints, basicColor, animationBehaviorFactory);
       return This;
    end Create;
 
@@ -66,13 +66,6 @@ package body org.allbinary.animation.VectorRotationAnimationInterfaceFactory_Pac
    begin
       null;
    end getInstance;
-
-   procedure getBasicColorP (This : in out VectorRotationAnimationInterfaceFactory) is
-      Java_Result : constant BasicColor_Access := VectorRotationAnimationInterfaceFactory'Class (This).getBasicColorP;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getBasicColorP;
 
 end org.allbinary.animation.VectorRotationAnimationInterfaceFactory_Package;
 

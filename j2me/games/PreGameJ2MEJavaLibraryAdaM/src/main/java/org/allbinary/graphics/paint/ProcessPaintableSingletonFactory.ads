@@ -20,6 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
+with org.allbinary.graphics.paint.ProcessPaintable_Package; use org.allbinary.graphics.paint.ProcessPaintable_Package;
 
 package org.allbinary.graphics.paint.ProcessPaintableSingletonFactory_Package is
 
@@ -35,7 +36,6 @@ package org.allbinary.graphics.paint.ProcessPaintableSingletonFactory_Package is
    procedure Initialize (This : in out ProcessPaintableSingletonFactory'Class);
    function Create return ProcessPaintableSingletonFactory_Access;
    function getInstance return ProcessPaintable_Access;
-   procedure getInstance;
 
 end org.allbinary.graphics.paint.ProcessPaintableSingletonFactory_Package;
 

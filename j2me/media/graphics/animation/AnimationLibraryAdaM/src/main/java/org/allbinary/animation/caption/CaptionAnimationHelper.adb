@@ -35,7 +35,7 @@ package body org.allbinary.animation.caption.CaptionAnimationHelper_Package is
    function Create (captionAnimation : Animation_Access; captionDx : Integer; captionDy : Integer; dx : Integer; dy : Integer) return CaptionAnimationHelper_Access is
       This : constant CaptionAnimationHelper_Access := new CaptionAnimationHelper;
    begin
-      Initialize (This.all, captionAnimation, captionDx, captionDy, dx, dy);
+      CaptionAnimationHelper_Package.Initialize (This.all, captionAnimation, captionDx, captionDy, dx, dy);
       return This;
    end Create;
 
@@ -67,13 +67,6 @@ package body org.allbinary.animation.caption.CaptionAnimationHelper_Package is
    begin
         This.animation.paintXY (graphics, x, y);
    end paintXY;
-
-   procedure isShowing (This : in out CaptionAnimationHelper) is
-      Java_Result : constant Boolean := CaptionAnimationHelper'Class (This).isShowing;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isShowing;
 
 end org.allbinary.animation.caption.CaptionAnimationHelper_Package;
 

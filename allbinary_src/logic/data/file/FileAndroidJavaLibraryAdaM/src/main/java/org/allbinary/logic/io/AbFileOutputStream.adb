@@ -56,7 +56,7 @@ package body org.allbinary.logic.io.AbFileOutputStream_Package is
    function Create (fileOutputStream : FileOutputStream_Access) return AbFileOutputStream_Access is
       This : constant AbFileOutputStream_Access := new AbFileOutputStream;
    begin
-      Initialize (This.all, fileOutputStream);
+      AbFileOutputStream_Package.Initialize (This.all, fileOutputStream);
       return This;
    end Create;
 
@@ -116,13 +116,6 @@ package body org.allbinary.logic.io.AbFileOutputStream_Package is
    begin
       null;
    end createFromFilePathAppend;
-
-   procedure getChannel (This : in out AbFileOutputStream) is
-      Java_Result : constant FileChannel_Access := AbFileOutputStream'Class (This).getChannel;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getChannel;
 
 end org.allbinary.logic.io.AbFileOutputStream_Package;
 

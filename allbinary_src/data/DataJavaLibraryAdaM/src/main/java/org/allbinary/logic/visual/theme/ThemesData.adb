@@ -36,16 +36,9 @@ package body org.allbinary.logic.visual.theme.ThemesData_Package is
    function Create return ThemesData_Access is
       This : constant ThemesData_Access := new ThemesData;
    begin
-      Initialize (This.all);
+      ThemesData_Package.Initialize (This.all);
       return This;
    end Create;
-
-   procedure getInstance is
-      Java_Result : constant ThemesData_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

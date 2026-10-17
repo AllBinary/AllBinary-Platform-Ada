@@ -26,7 +26,7 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.io.AbDataOutputStream_Package; use org.allbinary.logic.io.AbDataOutputStream_Package;
 with org.allbinary.logic.io.FileStreamFactory_Package; use org.allbinary.logic.io.FileStreamFactory_Package;
 with org.allbinary.logic.io.StreamUtil_Package; use org.allbinary.logic.io.StreamUtil_Package;
-with org.allbinary.logic.io.file_Case.FileFactory_Package; use org.allbinary.logic.io.file_Case.FileFactory_Package;
+with org.allbinary.logic.io.file.FileFactory_Package; use org.allbinary.logic.io.file.FileFactory_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
@@ -38,7 +38,7 @@ package org.allbinary.logic.system.security.licensing.registration.RegistrationC
    package AbDataOutputStream_Package renames Standard.org.allbinary.logic.io.AbDataOutputStream_Package;
    package FileStreamFactory_Package renames Standard.org.allbinary.logic.io.FileStreamFactory_Package;
    package StreamUtil_Package renames Standard.org.allbinary.logic.io.StreamUtil_Package;
-   package FileFactory_Package renames Standard.org.allbinary.logic.io.file_Case.FileFactory_Package;
+   package FileFactory_Package renames Standard.org.allbinary.logic.io.file.FileFactory_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
@@ -61,14 +61,11 @@ package org.allbinary.logic.system.security.licensing.registration.RegistrationC
    procedure Initialize (This : in out RegistrationConfiguration'Class);
    function Create return RegistrationConfiguration_Access;
    function getInstance return RegistrationConfiguration_Access;
-   procedure getInstance;
    procedure read (This : in out RegistrationConfiguration);
    procedure write (This : in out RegistrationConfiguration);
    function toString (This : in out RegistrationConfiguration) return Unbounded_String;
-   procedure toString (This : in out RegistrationConfiguration);
    procedure setRegistrationCode (This : in out RegistrationConfiguration; registrationCode : Unbounded_String);
    function getRegistrationCode (This : in out RegistrationConfiguration) return Unbounded_String;
-   procedure getRegistrationCode (This : in out RegistrationConfiguration);
 
 end org.allbinary.logic.system.security.licensing.registration.RegistrationConfiguration_Package;
 

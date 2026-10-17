@@ -54,7 +54,6 @@ package org.allbinary.logic.system.hardware.components.linux.CpuInfo_Package is
    procedure Initialize (This : in out CpuInfo'Class; name : Unbounded_String);
    function Create (name : Unbounded_String) return CpuInfo_Access;
    function toString (This : in out CpuInfo) return Unbounded_String;
-   procedure toString (This : in out CpuInfo);
 
 end org.allbinary.logic.system.hardware.components.linux.CpuInfo_Package;
 

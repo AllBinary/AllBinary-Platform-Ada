@@ -33,7 +33,7 @@ package body org.allbinary.business.user.commerce.shipping.modules.BasicWeightSh
    function Create return BasicWeightShippingModule_Access is
       This : constant BasicWeightShippingModule_Access := new BasicWeightShippingModule;
    begin
-      Initialize (This.all);
+      BasicWeightShippingModule_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -65,20 +65,6 @@ package body org.allbinary.business.user.commerce.shipping.modules.BasicWeightSh
    begin
       null;
    end getCost;
-
-   procedure getDescription (This : in out BasicWeightShippingModule) is
-      Java_Result : constant Unbounded_String := BasicWeightShippingModule'Class (This).getDescription;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getDescription;
-
-   procedure getName (This : in out BasicWeightShippingModule) is
-      Java_Result : constant Unbounded_String := BasicWeightShippingModule'Class (This).getName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getName;
 
 end org.allbinary.business.user.commerce.shipping.modules.BasicWeightShippingModule_Package;
 

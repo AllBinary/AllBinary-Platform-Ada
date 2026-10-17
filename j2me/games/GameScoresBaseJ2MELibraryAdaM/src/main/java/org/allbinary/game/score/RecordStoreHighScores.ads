@@ -46,6 +46,8 @@ with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.game.score.HighScores_Package; use org.allbinary.game.score.HighScores_Package;
+with org.allbinary.game.score.HighScore_Package; use org.allbinary.game.score.HighScore_Package;
+with org.allbinary.game.score.ScoreComparator_Package; use org.allbinary.game.score.ScoreComparator_Package;
 
 package org.allbinary.game.score.RecordStoreHighScores_Package is
 
@@ -94,11 +96,9 @@ package org.allbinary.game.score.RecordStoreHighScores_Package is
    procedure removeLowestHighScore (This : in out RecordStoreHighScores);
    procedure load (This : in out RecordStoreHighScores);
    function isTooManyHighScores (This : in out RecordStoreHighScores) return Boolean;
-   procedure isTooManyHighScores (This : in out RecordStoreHighScores);
    function isBestScore (This : in out RecordStoreHighScores; newHighScore : HighScore_Access) return Boolean;
    procedure isBestScore (This : in out RecordStoreHighScores; newHighScore : HighScore_Access);
    function toString (This : in out RecordStoreHighScores) return Unbounded_String;
-   procedure toString (This : in out RecordStoreHighScores);
 
 end org.allbinary.game.score.RecordStoreHighScores_Package;
 

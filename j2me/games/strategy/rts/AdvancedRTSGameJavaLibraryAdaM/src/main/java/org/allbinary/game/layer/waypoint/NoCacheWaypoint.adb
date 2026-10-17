@@ -32,7 +32,7 @@ package body org.allbinary.game.layer.waypoint.NoCacheWaypoint_Package is
    function Create (ownerLayer : PathFindingLayerInterface_Access; sound : Sound_Access) return NoCacheWaypoint_Access is
       This : constant NoCacheWaypoint_Access := new NoCacheWaypoint;
    begin
-      Initialize (This.all, ownerLayer, sound);
+      NoCacheWaypoint_Package.Initialize (This.all, ownerLayer, sound);
       return This;
    end Create;
 

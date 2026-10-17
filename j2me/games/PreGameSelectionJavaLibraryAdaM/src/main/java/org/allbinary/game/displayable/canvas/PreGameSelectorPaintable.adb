@@ -38,7 +38,7 @@ package body org.allbinary.game.displayable.canvas.PreGameSelectorPaintable_Pack
    function Create (title : Unbounded_String; preGameScrollSelectionForm : PreGameScrollSelectionForm_Access) return PreGameSelectorPaintable_Access is
       This : constant PreGameSelectorPaintable_Access := new PreGameSelectorPaintable;
    begin
-      Initialize (This.all, title, preGameScrollSelectionForm);
+      PreGameSelectorPaintable_Package.Initialize (This.all, title, preGameScrollSelectionForm);
       return This;
    end Create;
 
@@ -59,13 +59,6 @@ package body org.allbinary.game.displayable.canvas.PreGameSelectorPaintable_Pack
    function getPreGameSelectionForm (This : in out PreGameSelectorPaintable) return PreGameScrollSelectionForm_Access is
    begin
         return This.preGameScrollSelectionForm;
-   end getPreGameSelectionForm;
-
-   procedure getPreGameSelectionForm (This : in out PreGameSelectorPaintable) is
-      Java_Result : constant PreGameScrollSelectionForm_Access := PreGameSelectorPaintable'Class (This).getPreGameSelectionForm;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getPreGameSelectionForm;
 
 end org.allbinary.game.displayable.canvas.PreGameSelectorPaintable_Package;

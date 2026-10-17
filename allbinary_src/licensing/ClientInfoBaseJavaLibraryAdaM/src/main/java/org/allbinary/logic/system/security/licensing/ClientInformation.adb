@@ -43,7 +43,7 @@ package body org.allbinary.logic.system.security.licensing.ClientInformation_Pac
    function Create (name : Unbounded_String; version : Unbounded_String; specialName : Unbounded_String; shortName : Unbounded_String) return ClientInformation_Access is
       This : constant ClientInformation_Access := new ClientInformation;
    begin
-      Initialize (This.all, name, version, specialName, shortName);
+      ClientInformation_Package.Initialize (This.all, name, version, specialName, shortName);
       return This;
    end Create;
 
@@ -180,68 +180,12 @@ package body org.allbinary.logic.system.security.licensing.ClientInformation_Pac
         return This.shortName;
    end toShortString;
 
-   procedure getOperatingSystemInterface (This : in out ClientInformation) is
-      Java_Result : constant GenericOperatingSystem_Access := ClientInformation'Class (This).getOperatingSystemInterface;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getOperatingSystemInterface;
-
-   procedure getName (This : in out ClientInformation) is
-      Java_Result : constant Unbounded_String := ClientInformation'Class (This).getName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getName;
-
-   procedure getSpecialName (This : in out ClientInformation) is
-      Java_Result : constant Unbounded_String := ClientInformation'Class (This).getSpecialName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSpecialName;
-
-   procedure getVersion (This : in out ClientInformation) is
-      Java_Result : constant Unbounded_String := ClientInformation'Class (This).getVersion;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getVersion;
-
-   procedure getLicenseId (This : in out ClientInformation) is
-      Java_Result : constant Unbounded_String := ClientInformation'Class (This).getLicenseId;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getLicenseId;
-
-   procedure getLicenseServers (This : in out ClientInformation) is
-      Java_Result : constant BasicArrayList_Access := ClientInformation'Class (This).getLicenseServers;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getLicenseServers;
-
    procedure getLicenseServer (This : in out ClientInformation; index : Integer) is
       Java_Result : constant Unbounded_String := ClientInformation'Class (This).getLicenseServer (index);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getLicenseServer;
-
-   procedure getNumberOfLicenseServers (This : in out ClientInformation) is
-      Java_Result : constant Integer := ClientInformation'Class (This).getNumberOfLicenseServers;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getNumberOfLicenseServers;
-
-   procedure toHashtable (This : in out ClientInformation) is
-      Java_Result : constant ABHashtable_Access := ClientInformation'Class (This).toHashtable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toHashtable;
 
    procedure isSameId (This : in out ClientInformation; alicenseId : Unbounded_String) is
       Java_Result : constant Boolean := ClientInformation'Class (This).isSameId (alicenseId);
@@ -256,20 +200,6 @@ package body org.allbinary.logic.system.security.licensing.ClientInformation_Pac
    begin
       null;
    end isLargerOrDifferentServerList;
-
-   procedure isHardSale (This : in out ClientInformation) is
-      Java_Result : constant Boolean := ClientInformation'Class (This).isHardSale;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isHardSale;
-
-   procedure toShortString (This : in out ClientInformation) is
-      Java_Result : constant Unbounded_String := ClientInformation'Class (This).toShortString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toShortString;
 
 end org.allbinary.logic.system.security.licensing.ClientInformation_Package;
 

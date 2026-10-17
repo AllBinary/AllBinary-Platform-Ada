@@ -87,7 +87,6 @@ package org.allbinary.device.NullGL10_Package is
    procedure glGenTextures (This : in out NullGL10; n : Integer; textures : Integer_Array_Access; offset : Integer);
    procedure glGenTextures (This : in out NullGL10; n : Integer; textures : IntBuffer_Access);
    function glGetError (This : in out NullGL10) return Integer;
-   procedure glGetError (This : in out NullGL10);
    procedure glGetIntegerv (This : in out NullGL10; pname : Integer; params : Integer_Array_Access; offset : Integer);
    procedure glGetIntegerv (This : in out NullGL10; pname : Integer; params : IntBuffer_Access);
    function glGetString (This : in out NullGL10; name : Integer) return Unbounded_String;

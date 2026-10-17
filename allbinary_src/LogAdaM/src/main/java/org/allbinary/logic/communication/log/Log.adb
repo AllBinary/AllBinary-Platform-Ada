@@ -38,7 +38,7 @@ package body org.allbinary.logic.communication.log.Log_Package is
    function Create (specialMessage : Unbounded_String; anyType : Java_Object_Access; functionName : Unbounded_String; exception_Id : Java_Object_Access) return Log_Access is
       This : constant Log_Access := new Log;
    begin
-      Initialize (This.all, specialMessage, anyType, functionName, exception_Id);
+      Log_Package.Initialize (This.all, specialMessage, anyType, functionName, exception_Id);
       return This;
    end Create;
 
@@ -72,41 +72,6 @@ package body org.allbinary.logic.communication.log.Log_Package is
             className := clazz.getName;
         end if;
         return This.logFormatUtil.get (className, This.functionName, This.specialMessage, This.exception_Id);
-   end toString;
-
-   procedure getSpecialMessage (This : in out Log) is
-      Java_Result : constant Unbounded_String := Log'Class (This).getSpecialMessage;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSpecialMessage;
-
-   procedure getObject (This : in out Log) is
-      Java_Result : constant Java_Object_Access := Log'Class (This).getObject;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getObject;
-
-   procedure getFunctionName (This : in out Log) is
-      Java_Result : constant Unbounded_String := Log'Class (This).getFunctionName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getFunctionName;
-
-   procedure getThrowable (This : in out Log) is
-      Java_Result : constant Java_Object_Access := Log'Class (This).getThrowable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getThrowable;
-
-   procedure toString (This : in out Log) is
-      Java_Result : constant Unbounded_String := Log'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end toString;
 
 end org.allbinary.logic.communication.log.Log_Package;

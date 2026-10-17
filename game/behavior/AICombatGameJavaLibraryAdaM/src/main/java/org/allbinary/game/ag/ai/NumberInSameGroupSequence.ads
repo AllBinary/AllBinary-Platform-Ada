@@ -48,7 +48,6 @@ package org.allbinary.game.ag.ai.NumberInSameGroupSequence_Package is
    procedure Initialize (This : in out NumberInSameGroupSequence'Class);
    function Create return NumberInSameGroupSequence_Access;
    function getInstance return NumberInSameGroupSequence_Access;
-   procedure getInstance;
 
 end org.allbinary.game.ag.ai.NumberInSameGroupSequence_Package;
 

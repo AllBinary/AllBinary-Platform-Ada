@@ -40,7 +40,7 @@ package body org.allbinary.animation.resource.BaseResourceAnimationInterfaceFact
    function Create (name : Unbounded_String; hashtable : ABHashtable_Access; rectangleHashtable : ABHashtable_Access; rectangleArrayHashtable : ABHashtable_Access) return BaseResourceAnimationInterfaceFactoryInterfaceFactory_Access is
       This : constant BaseResourceAnimationInterfaceFactoryInterfaceFactory_Access := new BaseResourceAnimationInterfaceFactoryInterfaceFactory;
    begin
-      Initialize (This.all, name, hashtable, rectangleHashtable, rectangleArrayHashtable);
+      BaseResourceAnimationInterfaceFactoryInterfaceFactory_Package.Initialize (This.all, name, hashtable, rectangleHashtable, rectangleArrayHashtable);
       return This;
    end Create;
 
@@ -159,13 +159,6 @@ package body org.allbinary.animation.resource.BaseResourceAnimationInterfaceFact
         return This.initialized;
    end isInitialized;
 
-   procedure getName (This : in out BaseResourceAnimationInterfaceFactoryInterfaceFactory) is
-      Java_Result : constant Unbounded_String := BaseResourceAnimationInterfaceFactoryInterfaceFactory'Class (This).getName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getName;
-
    procedure getBasicAnimationInterfaceFactoryInstance (This : in out BaseResourceAnimationInterfaceFactoryInterfaceFactory; resource : Unbounded_String) is
       Java_Result : constant BasicAnimationInterfaceFactoryInterface_Access := BaseResourceAnimationInterfaceFactoryInterfaceFactory'Class (This).getBasicAnimationInterfaceFactoryInstance (resource);
       pragma Unreferenced (Java_Result);
@@ -187,54 +180,12 @@ package body org.allbinary.animation.resource.BaseResourceAnimationInterfaceFact
       null;
    end getRectangleArrayOfArrays;
 
-   procedure isFeature (This : in out BaseResourceAnimationInterfaceFactoryInterfaceFactory) is
-      Java_Result : constant Boolean := BaseResourceAnimationInterfaceFactoryInterfaceFactory'Class (This).isFeature;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isFeature;
-
    procedure isLoadingLevel (This : in out BaseResourceAnimationInterfaceFactoryInterfaceFactory; level : Integer) is
       Java_Result : constant Boolean := BaseResourceAnimationInterfaceFactoryInterfaceFactory'Class (This).isLoadingLevel (level);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isLoadingLevel;
-
-   procedure toString (This : in out BaseResourceAnimationInterfaceFactoryInterfaceFactory) is
-      Java_Result : constant Unbounded_String := BaseResourceAnimationInterfaceFactoryInterfaceFactory'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toString;
-
-   procedure getHashtable (This : in out BaseResourceAnimationInterfaceFactoryInterfaceFactory) is
-      Java_Result : constant ABHashtable_Access := BaseResourceAnimationInterfaceFactoryInterfaceFactory'Class (This).getHashtable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getHashtable;
-
-   procedure getRectangleHashtable (This : in out BaseResourceAnimationInterfaceFactoryInterfaceFactory) is
-      Java_Result : constant ABHashtable_Access := BaseResourceAnimationInterfaceFactoryInterfaceFactory'Class (This).getRectangleHashtable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getRectangleHashtable;
-
-   procedure getRectangleArrayOfArraysHashtable (This : in out BaseResourceAnimationInterfaceFactoryInterfaceFactory) is
-      Java_Result : constant ABHashtable_Access := BaseResourceAnimationInterfaceFactoryInterfaceFactory'Class (This).getRectangleArrayOfArraysHashtable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getRectangleArrayOfArraysHashtable;
-
-   procedure isInitialized (This : in out BaseResourceAnimationInterfaceFactoryInterfaceFactory) is
-      Java_Result : constant Boolean := BaseResourceAnimationInterfaceFactoryInterfaceFactory'Class (This).isInitialized;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isInitialized;
 
 end org.allbinary.animation.resource.BaseResourceAnimationInterfaceFactoryInterfaceFactory_Package;
 

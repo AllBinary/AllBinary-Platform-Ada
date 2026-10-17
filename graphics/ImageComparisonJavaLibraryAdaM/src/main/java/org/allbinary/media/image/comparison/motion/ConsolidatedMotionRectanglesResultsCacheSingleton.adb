@@ -56,20 +56,13 @@ package body org.allbinary.media.image.comparison.motion.ConsolidatedMotionRecta
    function Create return ConsolidatedMotionRectanglesResultsCacheSingleton_Access is
       This : constant ConsolidatedMotionRectanglesResultsCacheSingleton_Access := new ConsolidatedMotionRectanglesResultsCacheSingleton;
    begin
-      Initialize (This.all);
+      ConsolidatedMotionRectanglesResultsCacheSingleton_Package.Initialize (This.all);
       return This;
    end Create;
 
    function getInstance return CacheInterface_Access is
    begin
         return ConsolidatedMotionRectanglesResultsCacheSingleton_Package.cacheInterface;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant CacheInterface_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

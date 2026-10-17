@@ -21,6 +21,7 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.media.audio.CompositeSound_Package; use org.allbinary.media.audio.CompositeSound_Package;
+with org.allbinary.media.audio.Sound_Package; use org.allbinary.media.audio.Sound_Package;
 
 package org.allbinary.media.audio.GameBeginSound_Package is
 
@@ -36,7 +37,6 @@ package org.allbinary.media.audio.GameBeginSound_Package is
    procedure Initialize (This : in out GameBeginSound'Class);
    function Create return GameBeginSound_Access;
    function getInstance return Sound_Access;
-   procedure getInstance;
 
 end org.allbinary.media.audio.GameBeginSound_Package;
 

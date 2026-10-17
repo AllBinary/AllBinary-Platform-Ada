@@ -37,10 +37,8 @@ package org.allbinary.media.image.ImageUnifierCell_Package is
    procedure Initialize (This : in out ImageUnifierCell'Class; width : Integer; height : Integer);
    function Create (width : Integer; height : Integer) return ImageUnifierCell_Access;
    function getWidth (This : in out ImageUnifierCell) return Integer;
-   procedure getWidth (This : in out ImageUnifierCell);
    procedure setWidth (This : in out ImageUnifierCell; width : Integer);
    function getHeight (This : in out ImageUnifierCell) return Integer;
-   procedure getHeight (This : in out ImageUnifierCell);
    procedure setHeight (This : in out ImageUnifierCell; height : Integer);
 
 end org.allbinary.media.image.ImageUnifierCell_Package;

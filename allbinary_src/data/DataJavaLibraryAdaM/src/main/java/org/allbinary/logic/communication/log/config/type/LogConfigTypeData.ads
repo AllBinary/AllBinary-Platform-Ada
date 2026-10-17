@@ -38,7 +38,6 @@ package org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeData_P
    procedure Initialize (This : in out LogConfigTypeData'Class);
    function Create return LogConfigTypeData_Access;
    function getInstance return LogConfigTypeData_Access;
-   procedure getInstance;
 
 end org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeData_Package;
 

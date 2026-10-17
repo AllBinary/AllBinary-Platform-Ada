@@ -32,6 +32,7 @@ with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbin
 with org.allbinary.media.audio.Sound_Package; use org.allbinary.media.audio.Sound_Package;
 with org.allbinary.game.layer.NullPathFindingLayer_Package; use org.allbinary.game.layer.NullPathFindingLayer_Package;
 with org.allbinary.game.layer.RTSPlayerLayerInterface_Package; use org.allbinary.game.layer.RTSPlayerLayerInterface_Package;
+with org.allbinary.game.layer.PlayerOwnedRTSLayers_Package; use org.allbinary.game.layer.PlayerOwnedRTSLayers_Package;
 
 package org.allbinary.game.layer.NullRTSLayer_Package is
 
@@ -57,30 +58,21 @@ package org.allbinary.game.layer.NullRTSLayer_Package is
    procedure Initialize (This : in out NullRTSLayer'Class);
    function Create return NullRTSLayer_Access;
    function getName (This : in out NullRTSLayer) return Unbounded_String;
-   procedure getName (This : in out NullRTSLayer);
    procedure processInput (This : in out NullRTSLayer; layerManager : AllBinaryLayerManager_Access);
    procedure initInputProcessors (This : in out NullRTSLayer);
    function getGameNotificationHud (This : in out NullRTSLayer) return GameNotificationHud_Access;
-   procedure getGameNotificationHud (This : in out NullRTSLayer);
    function getCurrentScrollSelectionForm (This : in out NullRTSLayer) return ScrollSelectionForm_Access;
-   procedure getCurrentScrollSelectionForm (This : in out NullRTSLayer);
    procedure setCurrentScrollSelectionForm (This : in out NullRTSLayer; currentScrollSelectionForm : ScrollSelectionForm_Access);
    function getBuildingScrollSelectionForm (This : in out NullRTSLayer) return ScrollSelectionForm_Access;
-   procedure getBuildingScrollSelectionForm (This : in out NullRTSLayer);
    function getPlayerGameInput (This : in out NullRTSLayer) return PlayerGameInput_Access;
-   procedure getPlayerGameInput (This : in out NullRTSLayer);
    procedure onEvent (This : in out NullRTSLayer; eventObject : AllBinaryEventObject_Access);
    procedure onDestroyed (This : in out NullRTSLayer; destroyedEvent : DestroyedEvent_Access);
    procedure processTick (This : in out NullRTSLayer; allBinaryLayerManager : AllBinaryLayerManager_Access);
    function getCapital (This : in out NullRTSLayer) return Capital_Access;
-   procedure getCapital (This : in out NullRTSLayer);
    function getRTSFormInput (This : in out NullRTSLayer) return RTSFormInput_Access;
-   procedure getRTSFormInput (This : in out NullRTSLayer);
    procedure add (This : in out NullRTSLayer; sound : Sound_Access);
    function getPlayerOwnedRTSLayers (This : in out NullRTSLayer) return PlayerOwnedRTSLayers_Access;
-   procedure getPlayerOwnedRTSLayers (This : in out NullRTSLayer);
    function implmentsArtificialIntelligenceCompositeInterface (This : in out NullRTSLayer) return Boolean;
-   procedure implmentsArtificialIntelligenceCompositeInterface (This : in out NullRTSLayer);
 
 end org.allbinary.game.layer.NullRTSLayer_Package;
 

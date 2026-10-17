@@ -54,7 +54,6 @@ package views.admin.workflow.WorkFlowView_Package is
    procedure toXmlNode (This : in out WorkFlowView; document : Document_Access);
    procedure addDomNodeInterfaces (This : in out WorkFlowView);
    function view (This : in out WorkFlowView) return Unbounded_String;
-   procedure view (This : in out WorkFlowView);
 
 end views.admin.workflow.WorkFlowView_Package;
 

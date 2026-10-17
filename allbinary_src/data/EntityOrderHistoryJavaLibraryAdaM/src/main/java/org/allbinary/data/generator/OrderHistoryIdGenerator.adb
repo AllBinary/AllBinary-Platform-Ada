@@ -38,7 +38,7 @@ package body org.allbinary.data.generator.OrderHistoryIdGenerator_Package is
    function Create return OrderHistoryIdGenerator_Access is
       This : constant OrderHistoryIdGenerator_Access := new OrderHistoryIdGenerator;
    begin
-      Initialize (This.all);
+      OrderHistoryIdGenerator_Package.Initialize (This.all);
       return This;
    end Create;
 

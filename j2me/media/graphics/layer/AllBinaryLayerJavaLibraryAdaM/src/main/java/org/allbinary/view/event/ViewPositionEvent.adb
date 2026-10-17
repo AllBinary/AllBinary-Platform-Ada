@@ -29,7 +29,7 @@ package body org.allbinary.view.event.ViewPositionEvent_Package is
    function Create (anyType : Java_Object_Access) return ViewPositionEvent_Access is
       This : constant ViewPositionEvent_Access := new ViewPositionEvent;
    begin
-      Initialize (This.all, anyType);
+      ViewPositionEvent_Package.Initialize (This.all, anyType);
       return This;
    end Create;
 

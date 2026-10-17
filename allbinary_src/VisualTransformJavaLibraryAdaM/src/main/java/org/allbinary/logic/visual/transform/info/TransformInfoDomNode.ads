@@ -28,6 +28,9 @@ with org.w3c.dom.Attr_Package; use org.w3c.dom.Attr_Package;
 with org.w3c.dom.NamedNodeMap_Package; use org.w3c.dom.NamedNodeMap_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.w3c.dom.NodeList_Package; use org.w3c.dom.NodeList_Package;
+with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
+with org.allbinary.logic.visual.transform.info.TransformInfoData_Package; use org.allbinary.logic.visual.transform.info.TransformInfoData_Package;
+with org.allbinary.logic.visual.transform.info.TransformInfo_Package; use org.allbinary.logic.visual.transform.info.TransformInfo_Package;
 
 package org.allbinary.logic.visual.transform.info.TransformInfoDomNode_Package is
 
@@ -54,11 +57,8 @@ package org.allbinary.logic.visual.transform.info.TransformInfoDomNode_Package i
    procedure Initialize (This : in out TransformInfoDomNode'Class; node : Node_Access);
    function Create (node : Node_Access) return TransformInfoDomNode_Access;
    function getTransformInfoInterface (This : in out TransformInfoDomNode) return TransformInfoInterface_Access;
-   procedure getTransformInfoInterface (This : in out TransformInfoDomNode);
    function getMappedName (This : in out TransformInfoDomNode) return Unbounded_String;
-   procedure getMappedName (This : in out TransformInfoDomNode);
    function getReplaceKey (This : in out TransformInfoDomNode) return Unbounded_String;
-   procedure getReplaceKey (This : in out TransformInfoDomNode);
 
 end org.allbinary.logic.visual.transform.info.TransformInfoDomNode_Package;
 

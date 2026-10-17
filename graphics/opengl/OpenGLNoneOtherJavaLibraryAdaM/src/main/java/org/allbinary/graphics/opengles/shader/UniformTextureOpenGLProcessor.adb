@@ -31,7 +31,7 @@ package body org.allbinary.graphics.opengles.shader.UniformTextureOpenGLProcesso
    function Create (shaderComposite : ShaderComposite_Access; handleIndex : Integer) return UniformTextureOpenGLProcessor_Access is
       This : constant UniformTextureOpenGLProcessor_Access := new UniformTextureOpenGLProcessor;
    begin
-      Initialize (This.all, shaderComposite, handleIndex);
+      UniformTextureOpenGLProcessor_Package.Initialize (This.all, shaderComposite, handleIndex);
       return This;
    end Create;
 

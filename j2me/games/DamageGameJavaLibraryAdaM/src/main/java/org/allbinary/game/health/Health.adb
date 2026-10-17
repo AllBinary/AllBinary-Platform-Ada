@@ -34,7 +34,7 @@ package body org.allbinary.game.health.Health_Package is
    function Create (maxHealth : Integer) return Health_Access is
       This : constant Health_Access := new Health;
    begin
-      Initialize (This.all, maxHealth);
+      Health_Package.Initialize (This.all, maxHealth);
       return This;
    end Create;
 
@@ -132,41 +132,6 @@ package body org.allbinary.game.health.Health_Package is
         stringBuffer.append (Health_Package.MAX_HEALTH_LABEL);
         stringBuffer.appendint (This.maxHealth);
         return stringBuffer.toString;
-   end toString;
-
-   procedure isDamaged (This : in out Health) is
-      Java_Result : constant Boolean := Health'Class (This).isDamaged;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isDamaged;
-
-   procedure isAlive (This : in out Health) is
-      Java_Result : constant Boolean := Health'Class (This).isAlive;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isAlive;
-
-   procedure getMaxHealth (This : in out Health) is
-      Java_Result : constant Integer := Health'Class (This).getMaxHealth;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getMaxHealth;
-
-   procedure getHealth (This : in out Health) is
-      Java_Result : constant Integer := Health'Class (This).getHealth;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getHealth;
-
-   procedure toString (This : in out Health) is
-      Java_Result : constant Unbounded_String := Health'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end toString;
 
 begin

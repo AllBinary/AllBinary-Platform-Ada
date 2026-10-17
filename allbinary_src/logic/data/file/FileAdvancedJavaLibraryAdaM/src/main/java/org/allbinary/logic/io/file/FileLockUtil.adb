@@ -36,7 +36,7 @@ package body org.allbinary.logic.io.file.FileLockUtil_Package is
    function Create return FileLockUtil_Access is
       This : constant FileLockUtil_Access := new FileLockUtil;
    begin
-      Initialize (This.all);
+      FileLockUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -148,13 +148,6 @@ package body org.allbinary.logic.io.file.FileLockUtil_Package is
             fileChannel.close;
         end;
    end getLock;
-
-   procedure getInstance is
-      Java_Result : constant FileLockUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure getAll (This : in out FileLockUtil; vector : BasicArrayList_Access; isReturnOnFailure : Boolean) is
       Java_Result : constant BasicArrayList_Access := FileLockUtil'Class (This).getAll (vector, isReturnOnFailure);

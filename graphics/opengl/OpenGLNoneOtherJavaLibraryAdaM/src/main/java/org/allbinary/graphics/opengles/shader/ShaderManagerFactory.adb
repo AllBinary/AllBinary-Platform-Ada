@@ -28,7 +28,7 @@ package body org.allbinary.graphics.opengles.shader.ShaderManagerFactory_Package
    function Create return ShaderManagerFactory_Access is
       This : constant ShaderManagerFactory_Access := new ShaderManagerFactory;
    begin
-      Initialize (This.all);
+      ShaderManagerFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -41,20 +41,6 @@ package body org.allbinary.graphics.opengles.shader.ShaderManagerFactory_Package
    function create (This : in out ShaderManagerFactory) return ShaderManager_Access is
    begin
         return ShaderManager_Package.getInstance;
-   end create;
-
-   procedure getInstance is
-      Java_Result : constant ShaderManagerFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure create (This : in out ShaderManagerFactory) is
-      Java_Result : constant ShaderManager_Access := ShaderManagerFactory'Class (This).create;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end create;
 
 begin

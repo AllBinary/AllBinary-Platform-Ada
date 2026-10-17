@@ -34,7 +34,7 @@ package body org.allbinary.animation.image.BottomToTopImageAnimation_Package is
    function Create (image : Image_Access; animationBehavior : AnimationBehavior_Access) return BottomToTopImageAnimation_Access is
       This : constant BottomToTopImageAnimation_Access := new BottomToTopImageAnimation;
    begin
-      Initialize (This.all, image, animationBehavior);
+      BottomToTopImageAnimation_Package.Initialize (This.all, image, animationBehavior);
       return This;
    end Create;
 

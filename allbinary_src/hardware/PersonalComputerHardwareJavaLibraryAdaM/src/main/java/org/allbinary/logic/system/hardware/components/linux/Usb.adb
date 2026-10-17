@@ -31,7 +31,7 @@ package body org.allbinary.logic.system.hardware.components.linux.Usb_Package is
    function Create (data : Unbounded_String) return Usb_Access is
       This : constant Usb_Access := new Usb;
    begin
-      Initialize (This.all, data);
+      Usb_Package.Initialize (This.all, data);
       return This;
    end Create;
 
@@ -51,13 +51,6 @@ package body org.allbinary.logic.system.hardware.components.linux.Usb_Package is
    begin
       null;
    end compareTo;
-
-   procedure toString (This : in out Usb) is
-      Java_Result : constant Unbounded_String := Usb'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toString;
 
 end org.allbinary.logic.system.hardware.components.linux.Usb_Package;
 

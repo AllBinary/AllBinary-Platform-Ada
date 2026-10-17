@@ -47,7 +47,7 @@ package body org.allbinary.graphics.canvas.transition.progress.AndroidBasicTitle
    function Create (title : Unbounded_String; backgroundBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access) return AndroidBasicTitleProgressBar_Access is
       This : constant AndroidBasicTitleProgressBar_Access := new AndroidBasicTitleProgressBar;
    begin
-      Initialize (This.all, title, backgroundBasicColor, foregroundBasicColor);
+      AndroidBasicTitleProgressBar_Package.Initialize (This.all, title, backgroundBasicColor, foregroundBasicColor);
       return This;
    end Create;
 
@@ -384,26 +384,12 @@ package body org.allbinary.graphics.canvas.transition.progress.AndroidBasicTitle
         return This.portion;
    end getPortion;
 
-   procedure isInitialized (This : in out AndroidBasicTitleProgressBar) is
-      Java_Result : constant Boolean := AndroidBasicTitleProgressBar'Class (This).isInitialized;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isInitialized;
-
    procedure getImage (This : in out AndroidBasicTitleProgressBar; index : Integer) is
       Java_Result : constant Image_Access := AndroidBasicTitleProgressBar'Class (This).getImage (index);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getImage;
-
-   procedure getPortion (This : in out AndroidBasicTitleProgressBar) is
-      Java_Result : constant Integer := AndroidBasicTitleProgressBar'Class (This).getPortion;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getPortion;
 
 begin
    null;

@@ -32,7 +32,7 @@ package body admin.taghelpers.BillingAddressHelperFactory_Package is
    function Create return BillingAddressHelperFactory_Access is
       This : constant BillingAddressHelperFactory_Access := new BillingAddressHelperFactory;
    begin
-      Initialize (This.all);
+      BillingAddressHelperFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

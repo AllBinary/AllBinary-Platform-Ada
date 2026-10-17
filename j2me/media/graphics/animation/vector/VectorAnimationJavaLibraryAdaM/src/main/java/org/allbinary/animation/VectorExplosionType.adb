@@ -28,7 +28,7 @@ package body org.allbinary.animation.VectorExplosionType_Package is
    function Create return VectorExplosionType_Access is
       This : constant VectorExplosionType_Access := new VectorExplosionType;
    begin
-      Initialize (This.all);
+      VectorExplosionType_Package.Initialize (This.all);
       return This;
    end Create;
 

@@ -29,6 +29,7 @@ with org.apache.commons.lang3.StringUtils_Package; use org.apache.commons.lang3.
 with org.w3c.dom.Attr_Package; use org.w3c.dom.Attr_Package;
 with org.w3c.dom.NamedNodeMap_Package; use org.w3c.dom.NamedNodeMap_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
+with org.allbinary.business.category.CategoryData_Package; use org.allbinary.business.category.CategoryData_Package;
 
 package org.allbinary.business.category.CategoryUtil_Package is
 

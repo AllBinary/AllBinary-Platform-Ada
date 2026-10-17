@@ -36,7 +36,7 @@ package body org.allbinary.game.input.J2MEGameKey_Package is
    function Create (key : Integer; keyName : Unbounded_String) return J2MEGameKey_Access is
       This : constant J2MEGameKey_Access := new J2MEGameKey;
    begin
-      Initialize (This.all, key, keyName);
+      J2MEGameKey_Package.Initialize (This.all, key, keyName);
       return This;
    end Create;
 
@@ -55,13 +55,6 @@ package body org.allbinary.game.input.J2MEGameKey_Package is
             return StringUtil_Package.getInstance.EMPTY_STRING;
         end if;
    end getString;
-
-   procedure toString (This : in out J2MEGameKey) is
-      Java_Result : constant Unbounded_String := J2MEGameKey'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toString;
 
    procedure getString (keyCode : Integer) is
       Java_Result : constant Unbounded_String := getString (keyCode);

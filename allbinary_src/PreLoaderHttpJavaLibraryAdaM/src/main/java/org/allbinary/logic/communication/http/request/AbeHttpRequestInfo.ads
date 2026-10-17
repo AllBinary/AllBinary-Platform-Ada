@@ -29,6 +29,7 @@ with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Packag
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.communication.http.request.AbeHttpRequestInfoData_Package; use org.allbinary.logic.communication.http.request.AbeHttpRequestInfoData_Package;
 
 package org.allbinary.logic.communication.http.request.AbeHttpRequestInfo_Package is
 
@@ -59,11 +60,8 @@ package org.allbinary.logic.communication.http.request.AbeHttpRequestInfo_Packag
    procedure Initialize (This : in out AbeHttpRequestInfo'Class; hashMap : HashMap_Access);
    function Create (hashMap : HashMap_Access) return AbeHttpRequestInfo_Access;
    function toHashMap (This : in out AbeHttpRequestInfo) return HashMap_Access;
-   procedure toHashMap (This : in out AbeHttpRequestInfo);
    function toVector (This : in out AbeHttpRequestInfo) return BasicArrayList_Access;
-   procedure toVector (This : in out AbeHttpRequestInfo);
    function toString (This : in out AbeHttpRequestInfo) return Unbounded_String;
-   procedure toString (This : in out AbeHttpRequestInfo);
 
 end org.allbinary.logic.communication.http.request.AbeHttpRequestInfo_Package;
 

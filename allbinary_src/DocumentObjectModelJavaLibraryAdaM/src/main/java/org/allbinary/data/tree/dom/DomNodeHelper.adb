@@ -30,7 +30,7 @@ package body org.allbinary.data.tree.dom.DomNodeHelper_Package is
    function Create return DomNodeHelper_Access is
       This : constant DomNodeHelper_Access := new DomNodeHelper;
    begin
-      Initialize (This.all);
+      DomNodeHelper_Package.Initialize (This.all);
       return This;
    end Create;
 

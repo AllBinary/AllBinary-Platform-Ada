@@ -52,7 +52,7 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
    function Create (genericProfileActionJPanel : GenericProfileActionJPanel_Access; node : Node_Access) return GenericProfileActionScript_Access is
       This : constant GenericProfileActionScript_Access := new GenericProfileActionScript;
    begin
-      Initialize (This.all, genericProfileActionJPanel, node);
+      GenericProfileActionScript_Package.Initialize (This.all, genericProfileActionJPanel, node);
       return This;
    end Create;
 
@@ -68,7 +68,7 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
    function Create (genericProfileActionJPanel : GenericProfileActionJPanel_Access) return GenericProfileActionScript_Access is
       This : constant GenericProfileActionScript_Access := new GenericProfileActionScript;
    begin
-      Initialize (This.all, genericProfileActionJPanel);
+      GenericProfileActionScript_Package.Initialize (This.all, genericProfileActionJPanel);
       return This;
    end Create;
 
@@ -121,20 +121,6 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
         end loop;
         return node;
    end toXmlNode;
-
-   procedure toHashMap (This : in out GenericProfileActionScript) is
-      Java_Result : constant HashMap_Access := GenericProfileActionScript'Class (This).toHashMap;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toHashMap;
-
-   procedure getProfileActionConditionInterfaceVector (This : in out GenericProfileActionScript) is
-      Java_Result : constant BasicArrayList_Access := GenericProfileActionScript'Class (This).getProfileActionConditionInterfaceVector;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getProfileActionConditionInterfaceVector;
 
    procedure toXmlNode (This : in out GenericProfileActionScript; document : Document_Access) is
       Java_Result : constant Node_Access := GenericProfileActionScript'Class (This).toXmlNode (document);

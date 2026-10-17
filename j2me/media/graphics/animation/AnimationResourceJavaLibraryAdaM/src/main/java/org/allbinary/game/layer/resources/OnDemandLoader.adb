@@ -35,7 +35,7 @@ package body org.allbinary.game.layer.resources.OnDemandLoader_Package is
    function Create (onDemandResourcesFactory : OnDemandResourcesFactory_Access; gameLayerPlacementInterfaceBasicArrayListFactoryInterfaceFactory : GameLayerPlacementInterfaceBasicArrayListFactoryInterfaceFactory_Access; resourceAnimationInterfaceFactoryInterfaceFactory : BaseResourceAnimationInterfaceFactoryInterfaceFactory_Access) return OnDemandLoader_Access is
       This : constant OnDemandLoader_Access := new OnDemandLoader;
    begin
-      Initialize (This.all, onDemandResourcesFactory, gameLayerPlacementInterfaceBasicArrayListFactoryInterfaceFactory, resourceAnimationInterfaceFactoryInterfaceFactory);
+      OnDemandLoader_Package.Initialize (This.all, onDemandResourcesFactory, gameLayerPlacementInterfaceBasicArrayListFactoryInterfaceFactory, resourceAnimationInterfaceFactoryInterfaceFactory);
       return This;
    end Create;
 

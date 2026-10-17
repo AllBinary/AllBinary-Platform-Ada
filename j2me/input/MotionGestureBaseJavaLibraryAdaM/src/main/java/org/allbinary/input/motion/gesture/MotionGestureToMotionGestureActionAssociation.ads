@@ -41,10 +41,8 @@ package org.allbinary.input.motion.gesture.MotionGestureToMotionGestureActionAss
    procedure Initialize (This : in out MotionGestureToMotionGestureActionAssociation'Class; list : BasicArrayList_Access; commandAction : CompleteMotionGestureInputEvent_Access);
    function Create (list : BasicArrayList_Access; commandAction : CompleteMotionGestureInputEvent_Access) return MotionGestureToMotionGestureActionAssociation_Access;
    function getMotionGesture (This : in out MotionGestureToMotionGestureActionAssociation) return BasicArrayList_Access;
-   procedure getMotionGesture (This : in out MotionGestureToMotionGestureActionAssociation);
    procedure setMotionGestures (This : in out MotionGestureToMotionGestureActionAssociation; list : BasicArrayList_Access);
    function getCommandAction (This : in out MotionGestureToMotionGestureActionAssociation) return CompleteMotionGestureInputEvent_Access;
-   procedure getCommandAction (This : in out MotionGestureToMotionGestureActionAssociation);
    procedure setMotionGestureAction (This : in out MotionGestureToMotionGestureActionAssociation; commandAction : CompleteMotionGestureInputEvent_Access);
    function isMotionGestureArrayEquals (This : in out MotionGestureToMotionGestureActionAssociation; aList : BasicArrayList_Access) return Boolean;
    procedure isMotionGestureArrayEquals (This : in out MotionGestureToMotionGestureActionAssociation; aList : BasicArrayList_Access);

@@ -37,16 +37,9 @@ package body org.allbinary.business.error.ErrorData_Package is
    function Create return ErrorData_Access is
       This : constant ErrorData_Access := new ErrorData;
    begin
-      Initialize (This.all);
+      ErrorData_Package.Initialize (This.all);
       return This;
    end Create;
-
-   procedure getInstance is
-      Java_Result : constant ErrorData_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

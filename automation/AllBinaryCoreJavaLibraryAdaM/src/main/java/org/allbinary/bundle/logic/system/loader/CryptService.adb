@@ -34,7 +34,7 @@ package body org.allbinary.bundle.logic.system.loader.CryptService_Package is
    function Create return CryptService_Access is
       This : constant CryptService_Access := new CryptService;
    begin
-      Initialize (This.all);
+      CryptService_Package.Initialize (This.all);
       return This;
    end Create;
 

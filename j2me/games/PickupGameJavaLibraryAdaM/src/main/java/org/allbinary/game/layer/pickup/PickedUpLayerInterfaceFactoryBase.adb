@@ -28,7 +28,7 @@ package body org.allbinary.game.layer.pickup.PickedUpLayerInterfaceFactoryBase_P
    function Create return PickedUpLayerInterfaceFactoryBase_Access is
       This : constant PickedUpLayerInterfaceFactoryBase_Access := new PickedUpLayerInterfaceFactoryBase;
    begin
-      Initialize (This.all);
+      PickedUpLayerInterfaceFactoryBase_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -46,27 +46,6 @@ package body org.allbinary.game.layer.pickup.PickedUpLayerInterfaceFactoryBase_P
    function getPickedUpLayerType (This : in out PickedUpLayerInterfaceFactoryBase) return PickedUpLayerType_Access is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
-   end getPickedUpLayerType;
-
-   procedure getIconLayer (This : in out PickedUpLayerInterfaceFactoryBase) is
-      Java_Result : constant AllBinaryLayer_Access := PickedUpLayerInterfaceFactoryBase'Class (This).getIconLayer;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getIconLayer;
-
-   procedure getAnimationInterface (This : in out PickedUpLayerInterfaceFactoryBase) is
-      Java_Result : constant Animation_Access := PickedUpLayerInterfaceFactoryBase'Class (This).getAnimationInterface;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getAnimationInterface;
-
-   procedure getPickedUpLayerType (This : in out PickedUpLayerInterfaceFactoryBase) is
-      Java_Result : constant PickedUpLayerType_Access := PickedUpLayerInterfaceFactoryBase'Class (This).getPickedUpLayerType;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getPickedUpLayerType;
 
 begin

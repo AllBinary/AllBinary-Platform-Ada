@@ -33,7 +33,7 @@ package body org.allbinary.graphics.j2me.workarea.tools.ToolFactory_Package is
    function Create return ToolFactory_Access is
       This : constant ToolFactory_Access := new ToolFactory;
    begin
-      Initialize (This.all);
+      ToolFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -68,20 +68,6 @@ package body org.allbinary.graphics.j2me.workarea.tools.ToolFactory_Package is
         else
             return null;
         end if;
-   end getSelectedToolFactory;
-
-   procedure getInstance is
-      Java_Result : constant ToolFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure getSelectedToolFactory (This : in out ToolFactory) is
-      Java_Result : constant GraphicsItemInterfaceFactoryInterface_Access := ToolFactory'Class (This).getSelectedToolFactory;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getSelectedToolFactory;
 
 begin

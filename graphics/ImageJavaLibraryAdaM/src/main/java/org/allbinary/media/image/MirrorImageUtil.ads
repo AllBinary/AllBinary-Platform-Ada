@@ -24,6 +24,8 @@ with AllBinary_Java; use AllBinary_Java;
 --  with java.awt.image.AffineTransformOp_Package; use java.awt.image.AffineTransformOp_Package;
 --  with java.awt.image.BufferedImage_Package; use java.awt.image.BufferedImage_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.media.image.ImageUtil_Package; use org.allbinary.media.image.ImageUtil_Package;
+with org.allbinary.media.image.Graphics2D_Package; use org.allbinary.media.image.Graphics2D_Package;
 
 package org.allbinary.media.image.MirrorImageUtil_Package is
 
@@ -43,9 +45,8 @@ package org.allbinary.media.image.MirrorImageUtil_Package is
    procedure Initialize (This : in out MirrorImageUtil'Class);
    function Create return MirrorImageUtil_Access;
    function getInstance return MirrorImageUtil_Access;
-   procedure getInstance;
-   function getImage (This : in out MirrorImageUtil; bufferedImage : BufferedImage_Access; verticle : Boolean; horizontal : Boolean) return BufferedImage_Access;
-   procedure getImage (This : in out MirrorImageUtil; bufferedImage : BufferedImage_Access; verticle : Boolean; horizontal : Boolean);
+   function getImage (This : in out MirrorImageUtil; bufferedImage_Param : BufferedImage_Access; verticle : Boolean; horizontal : Boolean) return BufferedImage_Access;
+   procedure getImage (This : in out MirrorImageUtil; bufferedImage_Param : BufferedImage_Access; verticle : Boolean; horizontal : Boolean);
    function getImages (This : in out MirrorImageUtil; bufferedImage : BufferedImage_Access; verticle : Boolean; horizontal : Boolean) return BufferedImage_Access_Array_Access;
    procedure getImages (This : in out MirrorImageUtil; bufferedImage : BufferedImage_Access; verticle : Boolean; horizontal : Boolean);
 

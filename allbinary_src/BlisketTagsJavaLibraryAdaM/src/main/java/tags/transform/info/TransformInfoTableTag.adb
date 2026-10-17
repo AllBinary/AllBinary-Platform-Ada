@@ -31,7 +31,7 @@ package body tags.transform.info.TransformInfoTableTag_Package is
    function Create return TransformInfoTableTag_Access is
       This : constant TransformInfoTableTag_Access := new TransformInfoTableTag;
    begin
-      Initialize (This.all);
+      TransformInfoTableTag_Package.Initialize (This.all);
       return This;
    end Create;
 

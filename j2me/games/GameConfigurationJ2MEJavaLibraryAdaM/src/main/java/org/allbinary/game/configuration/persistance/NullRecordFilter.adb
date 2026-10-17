@@ -28,7 +28,7 @@ package body org.allbinary.game.configuration.persistance.NullRecordFilter_Packa
    function Create return NullRecordFilter_Access is
       This : constant NullRecordFilter_Access := new NullRecordFilter;
    begin
-      Initialize (This.all);
+      NullRecordFilter_Package.Initialize (This.all);
       return This;
    end Create;
 

@@ -46,7 +46,6 @@ package org.allbinary.logic.io.StreamUtil_Package is
    procedure Initialize (This : in out StreamUtil'Class);
    function Create return StreamUtil_Access;
    function getInstance return StreamUtil_Access;
-   procedure getInstance;
    function get (This : in out StreamUtil; inputStream : InputStream_Access; outputStream : OutputStream_Access; buffer : Short_Short_Integer_Array_Access) return OutputStream_Access;
    procedure get (This : in out StreamUtil; inputStream : InputStream_Access; outputStream : OutputStream_Access; buffer : Short_Short_Integer_Array_Access);
    function getByteArray (This : in out StreamUtil; inputStream : InputStream_Access; outputStream2 : ByteArrayOutputStream_Access; byteArray : Short_Short_Integer_Array_Access) return Short_Short_Integer_Array_Access;

@@ -37,16 +37,9 @@ package body org.allbinary.logic.visual.dhtml.style.css.property.CssPropertyData
    function Create return CssPropertyData_Access is
       This : constant CssPropertyData_Access := new CssPropertyData;
    begin
-      Initialize (This.all);
+      CssPropertyData_Package.Initialize (This.all);
       return This;
    end Create;
-
-   procedure getInstance is
-      Java_Result : constant CssPropertyData_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

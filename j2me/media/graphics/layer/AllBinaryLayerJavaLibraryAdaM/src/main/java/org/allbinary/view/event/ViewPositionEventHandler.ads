@@ -27,6 +27,8 @@ with org.allbinary.logic.util.event.EventStrings_Package; use org.allbinary.logi
 with org.allbinary.logic.util.event.handler.BasicEventHandler_Package; use org.allbinary.logic.util.event.handler.BasicEventHandler_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.view.event.ViewPositionEvent_Package; use org.allbinary.view.event.ViewPositionEvent_Package;
+with org.allbinary.view.event.ViewPositionEventListenerInterface_Package; use org.allbinary.view.event.ViewPositionEventListenerInterface_Package;
 
 package org.allbinary.view.event.ViewPositionEventHandler_Package is
 
@@ -51,7 +53,6 @@ package org.allbinary.view.event.ViewPositionEventHandler_Package is
    procedure Initialize (This : in out ViewPositionEventHandler'Class);
    function Create return ViewPositionEventHandler_Access;
    function getInstance return ViewPositionEventHandler_Access;
-   procedure getInstance;
    procedure addListener (This : in out ViewPositionEventHandler; layerInterface : AllBinaryLayer_Access);
    procedure removeAllListeners (This : in out ViewPositionEventHandler);
    procedure removeListener (This : in out ViewPositionEventHandler; eventListenerInterface : EventListenerInterface_Access);

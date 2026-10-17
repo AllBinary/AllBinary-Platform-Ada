@@ -33,7 +33,7 @@ package body org.allbinary.game.input.event.GameKeyEventHandler_Package is
    function Create return GameKeyEventHandler_Access is
       This : constant GameKeyEventHandler_Access := new GameKeyEventHandler;
    begin
-      Initialize (This.all);
+      GameKeyEventHandler_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -73,13 +73,6 @@ package body org.allbinary.game.input.event.GameKeyEventHandler_Package is
         This.upGameKeyEventHandler.removeListenerSingleThreaded (eventListenerInterface);
         This.downGameKeyEventHandler.removeListenerSingleThreaded (eventListenerInterface);
    end removeListener;
-
-   procedure getInstance is
-      Java_Result : constant GameKeyEventHandler_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

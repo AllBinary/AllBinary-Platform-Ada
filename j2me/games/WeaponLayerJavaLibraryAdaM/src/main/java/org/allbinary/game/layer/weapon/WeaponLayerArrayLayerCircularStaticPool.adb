@@ -31,7 +31,7 @@ package body org.allbinary.game.layer.weapon.WeaponLayerArrayLayerCircularStatic
    function Create return WeaponLayerArrayLayerCircularStaticPool_Access is
       This : constant WeaponLayerArrayLayerCircularStaticPool_Access := new WeaponLayerArrayLayerCircularStaticPool;
    begin
-      Initialize (This.all);
+      WeaponLayerArrayLayerCircularStaticPool_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -68,13 +68,6 @@ package body org.allbinary.game.layer.weapon.WeaponLayerArrayLayerCircularStatic
         This.circularIndexUtil.next;
         return weaponLayerArray;
    end getInstanceArray;
-
-   procedure getInstance is
-      Java_Result : constant WeaponLayerArrayLayerCircularStaticPool_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure getInstanceArray (This : in out WeaponLayerArrayLayerCircularStaticPool; size : Integer) is
       Java_Result : constant WeaponLayer_Access_Array_Access := WeaponLayerArrayLayerCircularStaticPool'Class (This).getInstanceArray (size);

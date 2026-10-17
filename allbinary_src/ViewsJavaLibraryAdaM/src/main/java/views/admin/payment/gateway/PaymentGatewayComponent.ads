@@ -54,7 +54,6 @@ package views.admin.payment.gateway.PaymentGatewayComponent_Package is
    function Create (transformInfoInterface : TransformInfoInterface_Access; paymentGatewayInterface : PaymentGatewayInterface_Access) return PaymentGatewayComponent_Access;
    procedure addDomNodeInterfaces (This : in out PaymentGatewayComponent);
    function view (This : in out PaymentGatewayComponent) return Unbounded_String;
-   procedure view (This : in out PaymentGatewayComponent);
 
 end views.admin.payment.gateway.PaymentGatewayComponent_Package;
 

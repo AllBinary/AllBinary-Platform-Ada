@@ -38,7 +38,6 @@ package org.allbinary.DisposalUtil_Package is
    procedure Initialize (This : in out DisposalUtil'Class);
    function Create return DisposalUtil_Access;
    function getInstance return DisposalUtil_Access;
-   procedure getInstance;
    procedure disposeImage (This : in out DisposalUtil; image : Image_Access);
    procedure disposeResource (This : in out DisposalUtil; resource : Resource_Access);
 

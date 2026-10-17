@@ -25,6 +25,9 @@ with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArr
 with org.allbinary.util.BasicArrayListUtil_Package; use org.allbinary.util.BasicArrayListUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.input.motion.button.TouchButtonsListBuilder_Package; use org.allbinary.input.motion.button.TouchButtonsListBuilder_Package;
+with org.allbinary.input.motion.button.BasicTouchButtonsBuilder_Package; use org.allbinary.input.motion.button.BasicTouchButtonsBuilder_Package;
+with org.allbinary.input.motion.button.BuildingScrollTouchButtonsBuilder_Package; use org.allbinary.input.motion.button.BuildingScrollTouchButtonsBuilder_Package;
+with org.allbinary.input.motion.button.UpgradeDowngradeTouchButtonsBuilder_Package; use org.allbinary.input.motion.button.UpgradeDowngradeTouchButtonsBuilder_Package;
 
 package org.allbinary.input.motion.button.EndLevelTouchButtonsBuilder_Package is
 
@@ -45,7 +48,6 @@ package org.allbinary.input.motion.button.EndLevelTouchButtonsBuilder_Package is
    procedure Initialize (This : in out EndLevelTouchButtonsBuilder'Class);
    function Create return EndLevelTouchButtonsBuilder_Access;
    function getList (This : in out EndLevelTouchButtonsBuilder) return BasicArrayList_Access;
-   procedure getList (This : in out EndLevelTouchButtonsBuilder);
 
 end org.allbinary.input.motion.button.EndLevelTouchButtonsBuilder_Package;
 

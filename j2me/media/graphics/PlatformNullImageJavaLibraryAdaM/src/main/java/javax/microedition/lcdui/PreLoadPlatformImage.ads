@@ -36,7 +36,6 @@ package javax.microedition.lcdui.PreLoadPlatformImage_Package is
    procedure Initialize (This : in out PreLoadPlatformImage'Class);
    function Create return PreLoadPlatformImage_Access;
    function getInstance return PreLoadPlatformImage_Access;
-   procedure getInstance;
 
 end javax.microedition.lcdui.PreLoadPlatformImage_Package;
 

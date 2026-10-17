@@ -30,7 +30,7 @@ package body org.allbinary.logic.system.hardware.components.linux.MachineAccessC
    function Create return MachineAccessControlAddress_Access is
       This : constant MachineAccessControlAddress_Access := new MachineAccessControlAddress;
    begin
-      Initialize (This.all);
+      MachineAccessControlAddress_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -50,13 +50,6 @@ package body org.allbinary.logic.system.hardware.components.linux.MachineAccessC
    begin
       null;
    end compareTo;
-
-   procedure toString (This : in out MachineAccessControlAddress) is
-      Java_Result : constant Unbounded_String := MachineAccessControlAddress'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toString;
 
 end org.allbinary.logic.system.hardware.components.linux.MachineAccessControlAddress_Package;
 

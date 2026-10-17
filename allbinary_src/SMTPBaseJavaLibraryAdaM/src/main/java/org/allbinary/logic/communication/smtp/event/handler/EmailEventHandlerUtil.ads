@@ -33,6 +33,7 @@ with org.allbinary.logic.communication.smtp.event.UserEmailEventNameData_Package
 with org.allbinary.logic.communication.smtp.event.modules.log.LogUserEmailEventListenerModule_Package; use org.allbinary.logic.communication.smtp.event.modules.log.LogUserEmailEventListenerModule_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package; use org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+with org.allbinary.logic.communication.smtp.event.handler.UserEmailEventHandler_Package; use org.allbinary.logic.communication.smtp.event.handler.UserEmailEventHandler_Package;
 
 package org.allbinary.logic.communication.smtp.event.handler.EmailEventHandlerUtil_Package is
 
@@ -63,7 +64,6 @@ package org.allbinary.logic.communication.smtp.event.handler.EmailEventHandlerUt
    procedure Initialize (This : in out EmailEventHandlerUtil'Class);
    function Create return EmailEventHandlerUtil_Access;
    function getInstance return EmailEventHandlerUtil_Access;
-   procedure getInstance;
    function getEventHandler (This : in out EmailEventHandlerUtil; abeClientInformation : AbeClientInformationInterface_Access; userEmailEventNameData : UserEmailEventNameData_Access; userVector : BasicArrayList_Access) return UserEmailEventHandler_Access;
    procedure getEventHandler (This : in out EmailEventHandlerUtil; abeClientInformation : AbeClientInformationInterface_Access; userEmailEventNameData : UserEmailEventNameData_Access; userVector : BasicArrayList_Access);
    function getUserEmailEventListenerVector (abeClientInformation : AbeClientInformationInterface_Access; userEmailEventNameData : UserEmailEventNameData_Access; userInterface : UserInterface_Access) return BasicArrayList_Access;

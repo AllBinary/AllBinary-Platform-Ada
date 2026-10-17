@@ -23,6 +23,7 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
 with org.allbinary.media.graphics.geography.pathfinding.Comparable_Package; use org.allbinary.media.graphics.geography.pathfinding.Comparable_Package;
+with org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfoData_Package; use org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfoData_Package;
 
 package org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfo_Package is
 
@@ -51,7 +52,6 @@ package org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostIn
    function compareTo (This : in out PathFindingNodeCostInfo; pathFindingNodeCostInfo : PathFindingNodeCostInfo_Access) return Integer;
    procedure compareTo (This : in out PathFindingNodeCostInfo; pathFindingNodeCostInfo : PathFindingNodeCostInfo_Access);
    function toString (This : in out PathFindingNodeCostInfo) return Unbounded_String;
-   procedure toString (This : in out PathFindingNodeCostInfo);
 
 end org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfo_Package;
 

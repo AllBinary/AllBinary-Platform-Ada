@@ -41,16 +41,9 @@ package body org.allbinary.audio.AudioContentTypeDataFactory_Package is
    function Create return AudioContentTypeDataFactory_Access is
       This : constant AudioContentTypeDataFactory_Access := new AudioContentTypeDataFactory;
    begin
-      Initialize (This.all);
+      AudioContentTypeDataFactory_Package.Initialize (This.all);
       return This;
    end Create;
-
-   procedure getInstance is
-      Java_Result : constant AudioContentTypeDataFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

@@ -30,7 +30,7 @@ package body admin.taghelpers.QuoteHelperFactory_Package is
    function Create return QuoteHelperFactory_Access is
       This : constant QuoteHelperFactory_Access := new QuoteHelperFactory;
    begin
-      Initialize (This.all);
+      QuoteHelperFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

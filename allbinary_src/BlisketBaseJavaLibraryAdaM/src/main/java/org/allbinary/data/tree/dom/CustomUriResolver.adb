@@ -35,7 +35,7 @@ package body org.allbinary.data.tree.dom.CustomUriResolver_Package is
    function Create (path : Unbounded_String; basicURIResolver : BasicUriResolver_Access) return CustomUriResolver_Access is
       This : constant CustomUriResolver_Access := new CustomUriResolver;
    begin
-      Initialize (This.all, path, basicURIResolver);
+      CustomUriResolver_Package.Initialize (This.all, path, basicURIResolver);
       return This;
    end Create;
 
@@ -86,13 +86,6 @@ package body org.allbinary.data.tree.dom.CustomUriResolver_Package is
    begin
       null;
    end resolve;
-
-   procedure toString (This : in out CustomUriResolver) is
-      Java_Result : constant Unbounded_String := CustomUriResolver'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toString;
 
 end org.allbinary.data.tree.dom.CustomUriResolver_Package;
 

@@ -51,7 +51,6 @@ package org.allbinary.android.api5.ActivityFractureUtilAPI5_Package is
    procedure Initialize (This : in out ActivityFractureUtilAPI5'Class);
    function Create return ActivityFractureUtilAPI5_Access;
    function getInstance return ActivityFractureUtilAPI5_Access;
-   procedure getInstance;
    procedure process (This : in out ActivityFractureUtilAPI5; activity : Activity_Access);
    function isTouch (This : in out ActivityFractureUtilAPI5; activity : Activity_Access) return Boolean;
    procedure isTouch (This : in out ActivityFractureUtilAPI5; activity : Activity_Access);

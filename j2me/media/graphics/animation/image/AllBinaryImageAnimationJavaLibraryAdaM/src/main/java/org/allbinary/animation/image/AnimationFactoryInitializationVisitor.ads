@@ -50,7 +50,6 @@ package org.allbinary.animation.image.AnimationFactoryInitializationVisitor_Pack
    function Create return AnimationFactoryInitializationVisitor_Access;
    procedure visit (This : in out AnimationFactoryInitializationVisitor);
    function toString (This : in out AnimationFactoryInitializationVisitor) return Unbounded_String;
-   procedure toString (This : in out AnimationFactoryInitializationVisitor);
 
 end org.allbinary.animation.image.AnimationFactoryInitializationVisitor_Package;
 

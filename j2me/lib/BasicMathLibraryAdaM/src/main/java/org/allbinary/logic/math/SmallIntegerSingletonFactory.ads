@@ -51,11 +51,8 @@ package org.allbinary.logic.math.SmallIntegerSingletonFactory_Package is
    procedure Initialize (This : in out SmallIntegerSingletonFactory'Class);
    function Create return SmallIntegerSingletonFactory_Access;
    function getInstance return SmallIntegerSingletonFactory_Access;
-   procedure getInstance;
    function getMin (This : in out SmallIntegerSingletonFactory) return Integer;
-   procedure getMin (This : in out SmallIntegerSingletonFactory);
    function getMinAllowed (This : in out SmallIntegerSingletonFactory) return Integer;
-   procedure getMinAllowed (This : in out SmallIntegerSingletonFactory);
    procedure initWithRange (This : in out SmallIntegerSingletonFactory; value : Integer; negativeValue : Integer);
    procedure init (This : in out SmallIntegerSingletonFactory);
    function getAt (This : in out SmallIntegerSingletonFactory; index : Integer) return Integer;

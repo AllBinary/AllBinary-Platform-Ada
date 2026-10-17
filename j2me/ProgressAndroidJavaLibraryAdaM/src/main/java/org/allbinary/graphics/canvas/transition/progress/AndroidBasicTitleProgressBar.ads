@@ -25,8 +25,8 @@ with AllBinary_Java; use AllBinary_Java;
 --  with javax.microedition.lcdui.NullImage_Package; use javax.microedition.lcdui.NullImage_Package;
 with android.app.Activity_Package; use android.app.Activity_Package;
 with org.allbinary.AndroidUtil_Package; use org.allbinary.AndroidUtil_Package;
-with org.allbinary.image_Case.GameFeatureImageCacheFactory_Package; use org.allbinary.image_Case.GameFeatureImageCacheFactory_Package;
-with org.allbinary.image_Case.PreResourceImageUtil_Package; use org.allbinary.image_Case.PreResourceImageUtil_Package;
+with org.allbinary.image.GameFeatureImageCacheFactory_Package; use org.allbinary.image.GameFeatureImageCacheFactory_Package;
+with org.allbinary.image.PreResourceImageUtil_Package; use org.allbinary.image.PreResourceImageUtil_Package;
 with org.allbinary.logic.communication.log.ForcedLogUtil_Package; use org.allbinary.logic.communication.log.ForcedLogUtil_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package; use org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Animation_Package;
@@ -38,23 +38,27 @@ with org.allbinary.graphics.displayable.DisplayInfoSingleton_Package; use org.al
 with org.allbinary.graphics.displayable.event.DisplayChangeEvent_Package; use org.allbinary.graphics.displayable.event.DisplayChangeEvent_Package;
 with org.allbinary.graphics.displayable.event.DisplayChangeEventHandler_Package; use org.allbinary.graphics.displayable.event.DisplayChangeEventHandler_Package;
 with org.allbinary.graphics.displayable.event.DisplayChangeEventListener_Package; use org.allbinary.graphics.displayable.event.DisplayChangeEventListener_Package;
-with org.allbinary.image_Case.ImageCacheFactory_Package; use org.allbinary.image_Case.ImageCacheFactory_Package;
-with org.allbinary.media.image_Case.ImageScaleUtil_Package; use org.allbinary.media.image_Case.ImageScaleUtil_Package;
+with org.allbinary.image.ImageCacheFactory_Package; use org.allbinary.image.ImageCacheFactory_Package;
+with org.allbinary.media.image.ImageScaleUtil_Package; use org.allbinary.media.image.ImageScaleUtil_Package;
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbinary.logic.util.event.AllBinaryEventObject_Package;
 with org.allbinary.animation.AnimationBehavior_Package; use org.allbinary.animation.AnimationBehavior_Package;
-with org.allbinary.animation.image_Case.ImageAnimation_Package; use org.allbinary.animation.image_Case.ImageAnimation_Package;
-with org.allbinary.data.resource_Case.ResourceUtil_Package; use org.allbinary.data.resource_Case.ResourceUtil_Package;
+with org.allbinary.animation.image.ImageAnimation_Package; use org.allbinary.animation.image.ImageAnimation_Package;
+with org.allbinary.data.resource.ResourceUtil_Package; use org.allbinary.data.resource.ResourceUtil_Package;
 with org.allbinary.logic.util.event.EventStrings_Package; use org.allbinary.logic.util.event.EventStrings_Package;
 with org.allbinary.thread.ARunnable_Package; use org.allbinary.thread.ARunnable_Package;
 with org.allbinary.thread.NullRunnable_Package; use org.allbinary.thread.NullRunnable_Package;
 with org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package; use org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package;
+with org.allbinary.graphics.canvas.transition.progress.ShowTitleProgressBarRunnable_Package; use org.allbinary.graphics.canvas.transition.progress.ShowTitleProgressBarRunnable_Package;
+with org.allbinary.graphics.canvas.transition.progress.DismissTitleProgressBarRunnable_Package; use org.allbinary.graphics.canvas.transition.progress.DismissTitleProgressBarRunnable_Package;
+with org.allbinary.graphics.canvas.transition.progress.TitleProgressBarSetProgressRunnable_Package; use org.allbinary.graphics.canvas.transition.progress.TitleProgressBarSetProgressRunnable_Package;
+with org.allbinary.graphics.canvas.transition.progress.TitleProgressBarPortionSetProgressRunnable_Package; use org.allbinary.graphics.canvas.transition.progress.TitleProgressBarPortionSetProgressRunnable_Package;
 
 package org.allbinary.graphics.canvas.transition.progress.AndroidBasicTitleProgressBar_Package is
 
    package Activity_Package renames Standard.android.app.Activity_Package;
    package AndroidUtil_Package renames Standard.org.allbinary.AndroidUtil_Package;
-   package GameFeatureImageCacheFactory_Package renames Standard.org.allbinary.image_Case.GameFeatureImageCacheFactory_Package;
-   package PreResourceImageUtil_Package renames Standard.org.allbinary.image_Case.PreResourceImageUtil_Package;
+   package GameFeatureImageCacheFactory_Package renames Standard.org.allbinary.image.GameFeatureImageCacheFactory_Package;
+   package PreResourceImageUtil_Package renames Standard.org.allbinary.image.PreResourceImageUtil_Package;
    package ForcedLogUtil_Package renames Standard.org.allbinary.logic.communication.log.ForcedLogUtil_Package;
    package ExceptionUtil_Package renames Standard.org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
    package Animation_Package renames Standard.org.allbinary.animation.Animation_Package;
@@ -66,12 +70,12 @@ package org.allbinary.graphics.canvas.transition.progress.AndroidBasicTitleProgr
    package DisplayChangeEvent_Package renames Standard.org.allbinary.graphics.displayable.event.DisplayChangeEvent_Package;
    package DisplayChangeEventHandler_Package renames Standard.org.allbinary.graphics.displayable.event.DisplayChangeEventHandler_Package;
    package DisplayChangeEventListener_Package renames Standard.org.allbinary.graphics.displayable.event.DisplayChangeEventListener_Package;
-   package ImageCacheFactory_Package renames Standard.org.allbinary.image_Case.ImageCacheFactory_Package;
-   package ImageScaleUtil_Package renames Standard.org.allbinary.media.image_Case.ImageScaleUtil_Package;
+   package ImageCacheFactory_Package renames Standard.org.allbinary.image.ImageCacheFactory_Package;
+   package ImageScaleUtil_Package renames Standard.org.allbinary.media.image.ImageScaleUtil_Package;
    package AllBinaryEventObject_Package renames Standard.org.allbinary.logic.util.event.AllBinaryEventObject_Package;
    package AnimationBehavior_Package renames Standard.org.allbinary.animation.AnimationBehavior_Package;
-   package ImageAnimation_Package renames Standard.org.allbinary.animation.image_Case.ImageAnimation_Package;
-   package ResourceUtil_Package renames Standard.org.allbinary.data.resource_Case.ResourceUtil_Package;
+   package ImageAnimation_Package renames Standard.org.allbinary.animation.image.ImageAnimation_Package;
+   package ResourceUtil_Package renames Standard.org.allbinary.data.resource.ResourceUtil_Package;
    package EventStrings_Package renames Standard.org.allbinary.logic.util.event.EventStrings_Package;
    package ARunnable_Package renames Standard.org.allbinary.thread.ARunnable_Package;
    package NullRunnable_Package renames Standard.org.allbinary.thread.NullRunnable_Package;
@@ -104,7 +108,6 @@ package org.allbinary.graphics.canvas.transition.progress.AndroidBasicTitleProgr
    procedure onDisplayChangeEvent (This : in out AndroidBasicTitleProgressBar; displayChangeEvent : DisplayChangeEvent_Access);
    procedure loadProgressImages (This : in out AndroidBasicTitleProgressBar);
    function isInitialized (This : in out AndroidBasicTitleProgressBar) return Boolean;
-   procedure isInitialized (This : in out AndroidBasicTitleProgressBar);
    procedure start (This : in out AndroidBasicTitleProgressBar);
    procedure end_Id (This : in out AndroidBasicTitleProgressBar);
    procedure addEarlyPortion (This : in out AndroidBasicTitleProgressBar; value : Integer; text : Unbounded_String; index : Integer);
@@ -122,7 +125,6 @@ package org.allbinary.graphics.canvas.transition.progress.AndroidBasicTitleProgr
    procedure setBackground (This : in out AndroidBasicTitleProgressBar; background : Boolean);
    procedure setPortion (This : in out AndroidBasicTitleProgressBar; portion : Integer);
    function getPortion (This : in out AndroidBasicTitleProgressBar) return Integer;
-   procedure getPortion (This : in out AndroidBasicTitleProgressBar);
 
 end org.allbinary.graphics.canvas.transition.progress.AndroidBasicTitleProgressBar_Package;
 

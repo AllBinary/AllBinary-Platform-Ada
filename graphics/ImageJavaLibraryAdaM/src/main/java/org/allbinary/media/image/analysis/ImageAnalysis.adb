@@ -36,7 +36,7 @@ package body org.allbinary.media.image.analysis.ImageAnalysis_Package is
    function Create return ImageAnalysis_Access is
       This : constant ImageAnalysis_Access := new ImageAnalysis;
    begin
-      Initialize (This.all);
+      ImageAnalysis_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -124,13 +124,6 @@ package body org.allbinary.media.image.analysis.ImageAnalysis_Package is
             imageColorResults.getColorRange.setMaxBlue (color.getBlue);
         end if;
    end processImageColorResults;
-
-   procedure getInstance is
-      Java_Result : constant ImageAnalysis_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure process (This : in out ImageAnalysis; bufferedImageArray : BufferedImage_Access_Array_Access; colorRangeInterface : ColorRangeInterface_Access) is
       Java_Result : constant ImageAnalysisResults_Access_Array_Access := ImageAnalysis'Class (This).process (bufferedImageArray, colorRangeInterface);

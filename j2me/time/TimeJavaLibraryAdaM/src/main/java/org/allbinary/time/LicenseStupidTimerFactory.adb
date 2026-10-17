@@ -28,7 +28,7 @@ package body org.allbinary.time.LicenseStupidTimerFactory_Package is
    function Create return LicenseStupidTimerFactory_Access is
       This : constant LicenseStupidTimerFactory_Access := new LicenseStupidTimerFactory;
    begin
-      Initialize (This.all);
+      LicenseStupidTimerFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -36,13 +36,6 @@ package body org.allbinary.time.LicenseStupidTimerFactory_Package is
    function getInstance return StupidTimer_Access is
    begin
         return LicenseStupidTimerFactory_Package.instance;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant StupidTimer_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

@@ -27,6 +27,8 @@ with org.allbinary.game.layer.PathFindingLayerInterface_Package; use org.allbina
 with org.allbinary.graphics.Rectangle_Package; use org.allbinary.graphics.Rectangle_Package;
 with org.allbinary.game.multiplayer.layer.RemoteInfo_Package; use org.allbinary.game.multiplayer.layer.RemoteInfo_Package;
 with org.allbinary.game.layer.waypoint.WaypointLayer_Package; use org.allbinary.game.layer.waypoint.WaypointLayer_Package;
+with org.allbinary.game.layer.waypoint.WaypointInfoHudPaintableSingleton_Package; use org.allbinary.game.layer.waypoint.WaypointInfoHudPaintableSingleton_Package;
+with org.allbinary.game.layer.waypoint.WaypointInfoHudPaintable_Package; use org.allbinary.game.layer.waypoint.WaypointInfoHudPaintable_Package;
 
 package org.allbinary.game.layer.waypoint.VisualWaypointLayer_Package is
 
@@ -48,9 +50,7 @@ package org.allbinary.game.layer.waypoint.VisualWaypointLayer_Package is
    procedure Initialize (This : in out VisualWaypointLayer'Class; remoteInfo : RemoteInfo_Access; parentLayer : PathFindingLayerInterface_Access; groupInterface : Group_Access_Array_Access; rootName : Unbounded_String; name : Unbounded_String; animationInterfaceFactoryInterface : AnimationInterfaceFactoryInterface_Access; proceduralAnimationInterfaceFactoryInterface : ProceduralAnimationInterfaceFactoryInterface_Access; rectangle : Rectangle_Access; x : Integer; y : Integer);
    function Create (remoteInfo : RemoteInfo_Access; parentLayer : PathFindingLayerInterface_Access; groupInterface : Group_Access_Array_Access; rootName : Unbounded_String; name : Unbounded_String; animationInterfaceFactoryInterface : AnimationInterfaceFactoryInterface_Access; proceduralAnimationInterfaceFactoryInterface : ProceduralAnimationInterfaceFactoryInterface_Access; rectangle : Rectangle_Access; x : Integer; y : Integer) return VisualWaypointLayer_Access;
    function createHudPaintable (This : in out VisualWaypointLayer) return SelectionHudPaintable_Access;
-   procedure createHudPaintable (This : in out VisualWaypointLayer);
    function getHudPaintable (This : in out VisualWaypointLayer) return SelectionHudPaintable_Access;
-   procedure getHudPaintable (This : in out VisualWaypointLayer);
 
 end org.allbinary.game.layer.waypoint.VisualWaypointLayer_Package;
 

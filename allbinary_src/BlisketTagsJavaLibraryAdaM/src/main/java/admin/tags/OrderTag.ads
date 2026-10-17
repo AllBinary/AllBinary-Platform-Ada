@@ -61,11 +61,8 @@ package admin.tags.OrderTag_Package is
    procedure setCommand (This : in out OrderTag; command : Unbounded_String);
    procedure setStoreName (This : in out OrderTag; value : Unbounded_String);
    function process (This : in out OrderTag) return Unbounded_String;
-   procedure process (This : in out OrderTag);
    function setPaymentGateway (This : in out OrderTag) return Boolean;
-   procedure setPaymentGateway (This : in out OrderTag);
    function doStartTag (This : in out OrderTag) return Integer;
-   procedure doStartTag (This : in out OrderTag);
 
 end admin.tags.OrderTag_Package;
 

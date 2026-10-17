@@ -81,7 +81,7 @@ package body org.allbinary.animation.image.AllBinaryAndroidImageRotationAnimatio
    function Create (image : Image_Access; width : Integer; height : Integer; angleIncrement : Short_Integer; animationBehaviorFactory : AnimationBehaviorFactory_Access; resizeCanvasForRotation : Boolean) return AllBinaryAndroidImageRotationAnimationFactory_Access is
       This : constant AllBinaryAndroidImageRotationAnimationFactory_Access := new AllBinaryAndroidImageRotationAnimationFactory;
    begin
-      Initialize (This.all, image, width, height, angleIncrement, animationBehaviorFactory, resizeCanvasForRotation);
+      AllBinaryAndroidImageRotationAnimationFactory_Package.Initialize (This.all, image, width, height, angleIncrement, animationBehaviorFactory, resizeCanvasForRotation);
       return This;
    end Create;
 
@@ -148,13 +148,6 @@ package body org.allbinary.animation.image.AllBinaryAndroidImageRotationAnimatio
    begin
       null;
    end createFactoryADXY;
-
-   procedure getCanvasImage (This : in out AllBinaryAndroidImageRotationAnimationFactory) is
-      Java_Result : constant Image_Access := AllBinaryAndroidImageRotationAnimationFactory'Class (This).getCanvasImage;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getCanvasImage;
 
    procedure getInstance (This : in out AllBinaryAndroidImageRotationAnimationFactory; instanceId : Integer) is
       Java_Result : constant Animation_Access := AllBinaryAndroidImageRotationAnimationFactory'Class (This).getInstance (instanceId);

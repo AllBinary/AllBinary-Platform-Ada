@@ -30,7 +30,7 @@ package body org.allbinary.input.KeyUtil_Package is
    function Create return KeyUtil_Access is
       This : constant KeyUtil_Access := new KeyUtil;
    begin
-      Initialize (This.all);
+      KeyUtil_Package.Initialize (This.all);
       return This;
    end Create;
 

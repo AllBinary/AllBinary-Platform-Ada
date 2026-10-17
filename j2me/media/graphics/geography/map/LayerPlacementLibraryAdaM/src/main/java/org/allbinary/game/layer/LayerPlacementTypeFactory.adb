@@ -33,7 +33,7 @@ package body org.allbinary.game.layer.LayerPlacementTypeFactory_Package is
    function Create return LayerPlacementTypeFactory_Access is
       This : constant LayerPlacementTypeFactory_Access := new LayerPlacementTypeFactory;
    begin
-      Initialize (This.all);
+      LayerPlacementTypeFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -41,13 +41,6 @@ package body org.allbinary.game.layer.LayerPlacementTypeFactory_Package is
    function getInstance return LayerPlacementTypeFactory_Access is
    begin
         return LayerPlacementTypeFactory_Package.instance;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant LayerPlacementTypeFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

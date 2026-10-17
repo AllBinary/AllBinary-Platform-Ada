@@ -26,6 +26,8 @@ with admin.taghelpers.DownloadItemsHelperFactory_Package; use admin.taghelpers.D
 with admin.taghelpers.DownloadItemsRequestHelperFactory_Package; use admin.taghelpers.DownloadItemsRequestHelperFactory_Package;
 with org.allbinary.logic.communication.http.request.AbResponseHandler_Package; use org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
 with admin.tags.TableTag_Package; use admin.tags.TableTag_Package;
+with admin.tags.ParentInventoryTagHelper_Package; use admin.tags.ParentInventoryTagHelper_Package;
+with admin.tags.AbTagData_Package; use admin.tags.AbTagData_Package;
 
 package admin.tags.DownloadItemsTag_Package is
 
@@ -43,7 +45,6 @@ package admin.tags.DownloadItemsTag_Package is
    procedure Initialize (This : in out DownloadItemsTag'Class);
    function Create return DownloadItemsTag_Access;
    function doStartTag (This : in out DownloadItemsTag) return Integer;
-   procedure doStartTag (This : in out DownloadItemsTag);
 
 end admin.tags.DownloadItemsTag_Package;
 

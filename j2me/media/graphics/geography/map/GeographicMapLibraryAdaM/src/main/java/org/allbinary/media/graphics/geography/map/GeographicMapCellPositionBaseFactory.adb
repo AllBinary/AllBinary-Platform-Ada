@@ -28,7 +28,7 @@ package body org.allbinary.media.graphics.geography.map.GeographicMapCellPositio
    function Create return GeographicMapCellPositionBaseFactory_Access is
       This : constant GeographicMapCellPositionBaseFactory_Access := new GeographicMapCellPositionBaseFactory;
    begin
-      Initialize (This.all);
+      GeographicMapCellPositionBaseFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

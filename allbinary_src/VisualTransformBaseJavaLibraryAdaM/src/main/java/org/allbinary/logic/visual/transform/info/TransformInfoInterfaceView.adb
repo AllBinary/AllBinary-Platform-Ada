@@ -31,7 +31,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoInterfaceVie
    function Create (transformInfoInterface : TransformInfoInterface_Access) return TransformInfoInterfaceView_Access is
       This : constant TransformInfoInterfaceView_Access := new TransformInfoInterfaceView;
    begin
-      Initialize (This.all, transformInfoInterface);
+      TransformInfoInterfaceView_Package.Initialize (This.all, transformInfoInterface);
       return This;
    end Create;
 

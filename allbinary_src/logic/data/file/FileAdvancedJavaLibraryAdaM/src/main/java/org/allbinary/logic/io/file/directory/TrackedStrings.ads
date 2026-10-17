@@ -47,7 +47,6 @@ package org.allbinary.logic.io.file.directory.TrackedStrings_Package is
    procedure Initialize (This : in out TrackedStrings'Class);
    function Create return TrackedStrings_Access;
    function getInstance return TrackedStrings_Access;
-   procedure getInstance;
 
 end org.allbinary.logic.io.file.directory.TrackedStrings_Package;
 

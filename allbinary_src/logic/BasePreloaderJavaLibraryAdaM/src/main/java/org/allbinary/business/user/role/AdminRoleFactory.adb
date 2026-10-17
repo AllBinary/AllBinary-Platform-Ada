@@ -82,7 +82,7 @@ package body org.allbinary.business.user.role.AdminRoleFactory_Package is
    function Create return AdminRoleFactory_Access is
       This : constant AdminRoleFactory_Access := new AdminRoleFactory;
    begin
-      Initialize (This.all);
+      AdminRoleFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -139,90 +139,6 @@ package body org.allbinary.business.user.role.AdminRoleFactory_Package is
    function getOrderManagementRoles (This : in out AdminRoleFactory) return BasicArrayList_Access is
    begin
         return This.orderManagementRoles;
-   end getOrderManagementRoles;
-
-   procedure getInstance is
-      Java_Result : constant AdminRoleFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure getProductManagementRoles (This : in out AdminRoleFactory) is
-      Java_Result : constant BasicArrayList_Access := AdminRoleFactory'Class (This).getProductManagementRoles;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getProductManagementRoles;
-
-   procedure getAdminRoles (This : in out AdminRoleFactory) is
-      Java_Result : constant BasicArrayList_Access := AdminRoleFactory'Class (This).getAdminRoles;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getAdminRoles;
-
-   procedure getStoreAdminRoles (This : in out AdminRoleFactory) is
-      Java_Result : constant BasicArrayList_Access := AdminRoleFactory'Class (This).getStoreAdminRoles;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getStoreAdminRoles;
-
-   procedure getStoreManagementRoles (This : in out AdminRoleFactory) is
-      Java_Result : constant BasicArrayList_Access := AdminRoleFactory'Class (This).getStoreManagementRoles;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getStoreManagementRoles;
-
-   procedure getReviewManagementRoles (This : in out AdminRoleFactory) is
-      Java_Result : constant BasicArrayList_Access := AdminRoleFactory'Class (This).getReviewManagementRoles;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getReviewManagementRoles;
-
-   procedure getCustomerManagementRoles (This : in out AdminRoleFactory) is
-      Java_Result : constant BasicArrayList_Access := AdminRoleFactory'Class (This).getCustomerManagementRoles;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getCustomerManagementRoles;
-
-   procedure getWorkflowManagementRoles (This : in out AdminRoleFactory) is
-      Java_Result : constant BasicArrayList_Access := AdminRoleFactory'Class (This).getWorkflowManagementRoles;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getWorkflowManagementRoles;
-
-   procedure getWebManagementRoles (This : in out AdminRoleFactory) is
-      Java_Result : constant BasicArrayList_Access := AdminRoleFactory'Class (This).getWebManagementRoles;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getWebManagementRoles;
-
-   procedure getShippingManagementRoles (This : in out AdminRoleFactory) is
-      Java_Result : constant BasicArrayList_Access := AdminRoleFactory'Class (This).getShippingManagementRoles;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getShippingManagementRoles;
-
-   procedure getAdjusterManagementRoles (This : in out AdminRoleFactory) is
-      Java_Result : constant BasicArrayList_Access := AdminRoleFactory'Class (This).getAdjusterManagementRoles;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getAdjusterManagementRoles;
-
-   procedure getOrderManagementRoles (This : in out AdminRoleFactory) is
-      Java_Result : constant BasicArrayList_Access := AdminRoleFactory'Class (This).getOrderManagementRoles;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getOrderManagementRoles;
 
 begin

@@ -49,9 +49,7 @@ package org.allbinary.business.user.commerce.shipping.modules.BasicWeightShippin
    function getCost (This : in out BasicWeightShippingModule; order : OrderInterface_Access) return Money_Access;
    procedure getCost (This : in out BasicWeightShippingModule; order : OrderInterface_Access);
    function getDescription (This : in out BasicWeightShippingModule) return Unbounded_String;
-   procedure getDescription (This : in out BasicWeightShippingModule);
    function getName (This : in out BasicWeightShippingModule) return Unbounded_String;
-   procedure getName (This : in out BasicWeightShippingModule);
 
 end org.allbinary.business.user.commerce.shipping.modules.BasicWeightShippingModule_Package;
 

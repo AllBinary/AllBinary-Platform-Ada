@@ -104,16 +104,9 @@ package body org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeF
    function Create return LogConfigTypeFactory_Access is
       This : constant LogConfigTypeFactory_Access := new LogConfigTypeFactory;
    begin
-      Initialize (This.all);
+      LogConfigTypeFactory_Package.Initialize (This.all);
       return This;
    end Create;
-
-   procedure getInstance is
-      Java_Result : constant LogConfigTypeFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

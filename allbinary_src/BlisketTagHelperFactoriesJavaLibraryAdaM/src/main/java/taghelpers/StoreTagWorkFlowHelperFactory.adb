@@ -32,7 +32,7 @@ package body taghelpers.StoreTagWorkFlowHelperFactory_Package is
    function Create return StoreTagWorkFlowHelperFactory_Access is
       This : constant StoreTagWorkFlowHelperFactory_Access := new StoreTagWorkFlowHelperFactory;
    begin
-      Initialize (This.all);
+      StoreTagWorkFlowHelperFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

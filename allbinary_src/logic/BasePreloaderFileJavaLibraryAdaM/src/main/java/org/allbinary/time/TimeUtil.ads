@@ -20,10 +20,11 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.util.Calendar_Package; use java.util.Calendar_Package;
+with java.util.Calendar_Package; use java.util.Calendar_Package;
 
 package org.allbinary.time.TimeUtil_Package is
 
+   package Calendar_Package renames Standard.java.util.Calendar_Package;
 
    type TimeUtil is tagged;
    type TimeUtil_Access is access all TimeUtil'Class;
@@ -37,7 +38,6 @@ package org.allbinary.time.TimeUtil_Package is
    procedure Initialize (This : in out TimeUtil'Class);
    function Create return TimeUtil_Access;
    function getInstance return TimeUtil_Access;
-   procedure getInstance;
    procedure setCalendar (This : in out TimeUtil; calendar : Calendar_Access; yearString : Unbounded_String; monthString : Unbounded_String; dayString : Unbounded_String; hourString : Unbounded_String);
    procedure setCalendar (This : in out TimeUtil; calendar : Calendar_Access; yearString : Unbounded_String; monthString : Unbounded_String; dayString : Unbounded_String; hourString : Unbounded_String; minuteString : Unbounded_String; secondString : Unbounded_String);
    procedure setExpirationCalendar (This : in out TimeUtil; calendar : Calendar_Access; yearsString : Unbounded_String; monthsString : Unbounded_String; daysString : Unbounded_String; hoursString : Unbounded_String; minutesString : Unbounded_String; secondsString : Unbounded_String);

@@ -56,7 +56,6 @@ package org.allbinary.game.ag.layer.hud.basic.life.LivesHudWidget_Package is
    procedure paint (This : in out LivesHudWidget; graphics : Graphics_Access);
    procedure paintThreed (This : in out LivesHudWidget; graphics : Graphics_Access);
    function getLifeInterface (This : in out LivesHudWidget) return Life_Access;
-   procedure getLifeInterface (This : in out LivesHudWidget);
 
 end org.allbinary.game.ag.layer.hud.basic.life.LivesHudWidget_Package;
 

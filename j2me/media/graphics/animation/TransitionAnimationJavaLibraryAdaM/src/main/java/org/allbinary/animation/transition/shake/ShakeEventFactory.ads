@@ -20,6 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
+with org.allbinary.animation.transition.shake.ShakeEvent_Package; use org.allbinary.animation.transition.shake.ShakeEvent_Package;
 
 package org.allbinary.animation.transition.shake.ShakeEventFactory_Package is
 
@@ -40,7 +41,6 @@ package org.allbinary.animation.transition.shake.ShakeEventFactory_Package is
    procedure Initialize (This : in out ShakeEventFactory'Class);
    function Create return ShakeEventFactory_Access;
    function getInstance return ShakeEventFactory_Access;
-   procedure getInstance;
    procedure init (This : in out ShakeEventFactory);
 
 end org.allbinary.animation.transition.shake.ShakeEventFactory_Package;

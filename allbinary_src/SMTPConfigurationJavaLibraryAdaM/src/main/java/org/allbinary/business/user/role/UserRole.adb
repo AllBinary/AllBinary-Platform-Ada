@@ -33,7 +33,7 @@ package body org.allbinary.business.user.role.UserRole_Package is
    function Create (aBasicUserRole : BasicUserRole_Access; aUserFactoryInterface : UserFactoryInterface_Access) return UserRole_Access is
       This : constant UserRole_Access := new UserRole;
    begin
-      Initialize (This.all, aBasicUserRole, aUserFactoryInterface);
+      UserRole_Package.Initialize (This.all, aBasicUserRole, aUserFactoryInterface);
       return This;
    end Create;
 
@@ -61,41 +61,6 @@ package body org.allbinary.business.user.role.UserRole_Package is
    function getSessionInactivityTimeout (This : in out UserRole) return Long_Long_Integer is
    begin
         return This.basicUserRole.getSessionInactivityTimeout;
-   end getSessionInactivityTimeout;
-
-   procedure toString (This : in out UserRole) is
-      Java_Result : constant Unbounded_String := UserRole'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toString;
-
-   procedure getBasicUserRole (This : in out UserRole) is
-      Java_Result : constant BasicUserRole_Access := UserRole'Class (This).getBasicUserRole;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getBasicUserRole;
-
-   procedure getUserFactory (This : in out UserRole) is
-      Java_Result : constant UserFactoryInterface_Access := UserRole'Class (This).getUserFactory;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getUserFactory;
-
-   procedure getSessionTimeout (This : in out UserRole) is
-      Java_Result : constant Long_Long_Integer := UserRole'Class (This).getSessionTimeout;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSessionTimeout;
-
-   procedure getSessionInactivityTimeout (This : in out UserRole) is
-      Java_Result : constant Long_Long_Integer := UserRole'Class (This).getSessionInactivityTimeout;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getSessionInactivityTimeout;
 
 end org.allbinary.business.user.role.UserRole_Package;

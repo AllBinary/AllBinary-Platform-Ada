@@ -22,6 +22,7 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.data.tables.user.commerce.money.payment.PaymentEntity_Package; use org.allbinary.data.tables.user.commerce.money.payment.PaymentEntity_Package;
 
 package org.allbinary.data.tables.user.commerce.money.payment.PaymentEntityFactory_Package is
 
@@ -41,9 +42,7 @@ package org.allbinary.data.tables.user.commerce.money.payment.PaymentEntityFacto
    procedure Initialize (This : in out PaymentEntityFactory'Class);
    function Create return PaymentEntityFactory_Access;
    function getInstance return PaymentEntityFactory_Access;
-   procedure getInstance;
    function getPaymentEntityInstance (This : in out PaymentEntityFactory) return PaymentEntity_Access;
-   procedure getPaymentEntityInstance (This : in out PaymentEntityFactory);
 
 end org.allbinary.data.tables.user.commerce.money.payment.PaymentEntityFactory_Package;
 

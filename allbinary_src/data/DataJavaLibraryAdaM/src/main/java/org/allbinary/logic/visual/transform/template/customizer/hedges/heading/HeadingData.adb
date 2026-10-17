@@ -30,7 +30,7 @@ package body org.allbinary.logic.visual.transform.template.customizer.hedges.hea
    function Create return HeadingData_Access is
       This : constant HeadingData_Access := new HeadingData;
    begin
-      Initialize (This.all);
+      HeadingData_Package.Initialize (This.all);
       return This;
    end Create;
 

@@ -22,6 +22,7 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.graphics.displayable.DisplayInfoSingleton_Package; use org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.graphics.form.FormType_Package; use org.allbinary.graphics.form.FormType_Package;
 
 package org.allbinary.graphics.form.FormTypeFactory_Package is
 
@@ -45,9 +46,7 @@ package org.allbinary.graphics.form.FormTypeFactory_Package is
    procedure Initialize (This : in out FormTypeFactory'Class);
    function Create return FormTypeFactory_Access;
    function getInstance return FormTypeFactory_Access;
-   procedure getInstance;
    function getFormType (This : in out FormTypeFactory) return FormType_Access;
-   procedure getFormType (This : in out FormTypeFactory);
 
 end org.allbinary.graphics.form.FormTypeFactory_Package;
 

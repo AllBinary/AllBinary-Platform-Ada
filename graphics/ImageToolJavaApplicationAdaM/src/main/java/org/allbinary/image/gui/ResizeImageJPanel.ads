@@ -71,7 +71,6 @@ package org.allbinary.image.gui.ResizeImageJPanel_Package is
    procedure updateFor16Above (This : in out ResizeImageJPanel);
    procedure updateFor16Below (This : in out ResizeImageJPanel);
    function getImageProcessorInput (This : in out ResizeImageJPanel) return ImageProcessorInput_Access;
-   procedure getImageProcessorInput (This : in out ResizeImageJPanel);
    procedure setImageProcessorInput (This : in out ResizeImageJPanel; imageProcessorInput : ImageProcessorInput_Access);
    procedure initComponents (This : in out ResizeImageJPanel);
    procedure aboveJButtonActionPerformed (This : in out ResizeImageJPanel; evt : ActionEvent_Access);

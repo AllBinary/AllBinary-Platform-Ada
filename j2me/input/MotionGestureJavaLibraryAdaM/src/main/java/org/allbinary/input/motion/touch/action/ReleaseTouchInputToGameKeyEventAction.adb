@@ -52,7 +52,7 @@ package body org.allbinary.input.motion.touch.action.ReleaseTouchInputToGameKeyE
    function Create return ReleaseTouchInputToGameKeyEventAction_Access is
       This : constant ReleaseTouchInputToGameKeyEventAction_Access := new ReleaseTouchInputToGameKeyEventAction;
    begin
-      Initialize (This.all);
+      ReleaseTouchInputToGameKeyEventAction_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -60,13 +60,6 @@ package body org.allbinary.input.motion.touch.action.ReleaseTouchInputToGameKeyE
    begin
         null;
    end update;
-
-   procedure getInstance is
-      Java_Result : constant GameKeyCompleteMotionGestureInputEvent_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

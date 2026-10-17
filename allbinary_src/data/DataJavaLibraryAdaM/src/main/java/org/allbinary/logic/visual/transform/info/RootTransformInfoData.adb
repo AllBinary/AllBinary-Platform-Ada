@@ -30,7 +30,7 @@ package body org.allbinary.logic.visual.transform.info.RootTransformInfoData_Pac
    function Create return RootTransformInfoData_Access is
       This : constant RootTransformInfoData_Access := new RootTransformInfoData;
    begin
-      Initialize (This.all);
+      RootTransformInfoData_Package.Initialize (This.all);
       return This;
    end Create;
 

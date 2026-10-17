@@ -31,7 +31,7 @@ package body org.allbinary.business.time.Time_Package is
    function Create (time : Unbounded_String) return Time_Access is
       This : constant Time_Access := new Time;
    begin
-      Initialize (This.all, time);
+      Time_Package.Initialize (This.all, time);
       return This;
    end Create;
 
@@ -45,7 +45,7 @@ package body org.allbinary.business.time.Time_Package is
    function Create (time : Long_Long_Integer) return Time_Access is
       This : constant Time_Access := new Time;
    begin
-      Initialize (This.all, time);
+      Time_Package.Initialize (This.all, time);
       return This;
    end Create;
 
@@ -62,27 +62,6 @@ package body org.allbinary.business.time.Time_Package is
    function toString (This : in out Time) return Unbounded_String is
    begin
         return This.getLong.toString;
-   end toString;
-
-   procedure getLong (This : in out Time) is
-      Java_Result : constant Long_Long_Integer := Time'Class (This).getLong;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getLong;
-
-   procedure getlong (This : in out Time) is
-      Java_Result : constant Long_Long_Integer := Time'Class (This).getlong;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getlong;
-
-   procedure toString (This : in out Time) is
-      Java_Result : constant Unbounded_String := Time'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end toString;
 
 end org.allbinary.business.time.Time_Package;

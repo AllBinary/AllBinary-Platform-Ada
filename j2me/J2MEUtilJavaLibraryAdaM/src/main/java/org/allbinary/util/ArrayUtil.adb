@@ -17,7 +17,7 @@ package body org.allbinary.util.ArrayUtil_Package is
    function Create return ArrayUtil_Access is
       This : constant ArrayUtil_Access := new ArrayUtil;
    begin
-      Initialize (This.all);
+      ArrayUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -194,13 +194,6 @@ package body org.allbinary.util.ArrayUtil_Package is
         end loop;
         return stringBuffer.toString;
    end toStringFromByteArray;
-
-   procedure getInstance is
-      Java_Result : constant ArrayUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure copyOf (This : in out ArrayUtil; original : Java_Object_Access_Array_Access; newLength : Integer) is
       Java_Result : constant Java_Object_Access_Array_Access := ArrayUtil'Class (This).copyOf (original, newLength);

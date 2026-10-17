@@ -29,7 +29,7 @@ package body org.allbinary.game.midlet.SpecialDemoGameMidlet_Package is
    function Create (clientInformationFactory : ClientInformationFactory_Access; licenseLoadingType : LicenseLoadingType_Access; demoSetupFactory : LicensedDemoSetupFactory_Access; licenseCheckRunnableFactory : LicenseCheckRunnableFactory_Access) return SpecialDemoGameMidlet_Access is
       This : constant SpecialDemoGameMidlet_Access := new SpecialDemoGameMidlet;
    begin
-      Initialize (This.all, clientInformationFactory, licenseLoadingType, demoSetupFactory, licenseCheckRunnableFactory);
+      SpecialDemoGameMidlet_Package.Initialize (This.all, clientInformationFactory, licenseLoadingType, demoSetupFactory, licenseCheckRunnableFactory);
       return This;
    end Create;
 

@@ -31,6 +31,8 @@ with org.allbinary.game.score.ScoreableInterface_Package; use org.allbinary.game
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
 with org.allbinary.logic.math.SmallIntegerSingletonFactory_Package; use org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
 with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
+with org.allbinary.game.ag.layer.weapon.mine.MineLayerCircularStaticPool_Package; use org.allbinary.game.ag.layer.weapon.mine.MineLayerCircularStaticPool_Package;
+with org.allbinary.game.ag.layer.weapon.mine.MineWeaponResources_Package; use org.allbinary.game.ag.layer.weapon.mine.MineWeaponResources_Package;
 
 package org.allbinary.game.ag.layer.weapon.mine.MineCountedPickedUpLayerInterfaceFactory_Package is
 
@@ -62,9 +64,7 @@ package org.allbinary.game.ag.layer.weapon.mine.MineCountedPickedUpLayerInterfac
    function Create return MineCountedPickedUpLayerInterfaceFactory_Access;
    procedure init;
    function getInstance return PickedUpLayerInterfaceFactoryInterface_Access;
-   procedure getInstance;
    function getTotal (This : in out MineCountedPickedUpLayerInterfaceFactory) return Integer;
-   procedure getTotal (This : in out MineCountedPickedUpLayerInterfaceFactory);
    function getNextInstance (This : in out MineCountedPickedUpLayerInterfaceFactory; hashtable : ABHashtable_Access; x : Integer; y : Integer; z : Integer) return AllBinaryLayer_Access;
    procedure getNextInstance (This : in out MineCountedPickedUpLayerInterfaceFactory; hashtable : ABHashtable_Access; x : Integer; y : Integer; z : Integer);
 

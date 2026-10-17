@@ -44,7 +44,7 @@ package body org.allbinary.animation.image.AllBinaryHTMLImageRotationAnimation_P
    function Create (originalImage : Image_Access; image : Image_Access; angleInfo : AngleInfo_Access; totalAngle : Short_Integer; animationBehavior : AnimationBehavior_Access) return AllBinaryHTMLImageRotationAnimation_Access is
       This : constant AllBinaryHTMLImageRotationAnimation_Access := new AllBinaryHTMLImageRotationAnimation;
    begin
-      Initialize (This.all, originalImage, image, angleInfo, totalAngle, animationBehavior);
+      AllBinaryHTMLImageRotationAnimation_Package.Initialize (This.all, originalImage, image, angleInfo, totalAngle, animationBehavior);
       return This;
    end Create;
 

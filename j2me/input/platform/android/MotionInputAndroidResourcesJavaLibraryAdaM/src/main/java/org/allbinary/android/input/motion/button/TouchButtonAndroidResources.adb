@@ -29,7 +29,7 @@ package body org.allbinary.android.input.motion.button.TouchButtonAndroidResourc
    function Create return TouchButtonAndroidResources_Access is
       This : constant TouchButtonAndroidResources_Access := new TouchButtonAndroidResources;
    begin
-      Initialize (This.all);
+      TouchButtonAndroidResources_Package.Initialize (This.all);
       return This;
    end Create;
 

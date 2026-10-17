@@ -30,7 +30,7 @@ package body org.allbinary.business.user.group.GroupData_Package is
    function Create return GroupData_Access is
       This : constant GroupData_Access := new GroupData;
    begin
-      Initialize (This.all);
+      GroupData_Package.Initialize (This.all);
       return This;
    end Create;
 

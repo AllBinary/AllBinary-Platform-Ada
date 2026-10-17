@@ -16,7 +16,7 @@ package body org.allbinary.graphics.form.item.ABImageStringItem_Package is
    function Create return ABImageStringItem_Access is
       This : constant ABImageStringItem_Access := new ABImageStringItem;
    begin
-      Initialize (This.all);
+      ABImageStringItem_Package.Initialize (This.all);
       return This;
    end Create;
 

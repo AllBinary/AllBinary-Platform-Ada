@@ -48,7 +48,7 @@ package body org.allbinary.opengles.JOGL10_Package is
    function Create (gl : GL_Access; gl2 : GL2_Access) return JOGL10_Access is
       This : constant JOGL10_Access := new JOGL10;
    begin
-      Initialize (This.all, gl, gl2);
+      JOGL10_Package.Initialize (This.all, gl, gl2);
       return This;
    end Create;
 
@@ -526,20 +526,6 @@ package body org.allbinary.opengles.JOGL10_Package is
    begin
         This.gl10.glPolygonMode (i, i1);
    end glPolygonMode;
-
-   procedure getJOGLGL (This : in out JOGL10) is
-      Java_Result : constant GL2_Access := JOGL10'Class (This).getJOGLGL;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getJOGLGL;
-
-   procedure glGetError (This : in out JOGL10) is
-      Java_Result : constant Integer := JOGL10'Class (This).glGetError;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end glGetError;
 
    procedure glGetString (This : in out JOGL10; name : Integer) is
       Java_Result : constant Unbounded_String := JOGL10'Class (This).glGetString (name);

@@ -35,7 +35,7 @@ package body org.allbinary.media.image.cache.BufferedImageInfo_Package is
    function Create (width : Integer; height : Integer; type_Id : Integer) return BufferedImageInfo_Access is
       This : constant BufferedImageInfo_Access := new BufferedImageInfo;
    begin
-      Initialize (This.all, width, height, type_Id);
+      BufferedImageInfo_Package.Initialize (This.all, width, height, type_Id);
       return This;
    end Create;
 
@@ -83,34 +83,6 @@ package body org.allbinary.media.image.cache.BufferedImageInfo_Package is
         stringBuffer.append (To_Unbounded_String (" Type: "));
         stringBuffer.appendint (This.getType);
         return stringBuffer.toString;
-   end toString;
-
-   procedure getWidth (This : in out BufferedImageInfo) is
-      Java_Result : constant Integer := BufferedImageInfo'Class (This).getWidth;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getWidth;
-
-   procedure getHeight (This : in out BufferedImageInfo) is
-      Java_Result : constant Integer := BufferedImageInfo'Class (This).getHeight;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getHeight;
-
-   procedure getType (This : in out BufferedImageInfo) is
-      Java_Result : constant Integer := BufferedImageInfo'Class (This).getType;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getType;
-
-   procedure toString (This : in out BufferedImageInfo) is
-      Java_Result : constant Unbounded_String := BufferedImageInfo'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end toString;
 
 end org.allbinary.media.image.cache.BufferedImageInfo_Package;

@@ -31,7 +31,7 @@ package body org.allbinary.business.context.configuration.ContextConfigurationTa
    function Create (contextConfigurationInterface : ContextConfigurationInterface_Access) return ContextConfigurationTableMapping_Access is
       This : constant ContextConfigurationTableMapping_Access := new ContextConfigurationTableMapping;
    begin
-      Initialize (This.all, contextConfigurationInterface);
+      ContextConfigurationTableMapping_Package.Initialize (This.all, contextConfigurationInterface);
       return This;
    end Create;
 
@@ -54,27 +54,6 @@ package body org.allbinary.business.context.configuration.ContextConfigurationTa
    begin
         vector := BasicArrayListD_Package.Create;
         return vector;
-   end toVector;
-
-   procedure toHashMap (This : in out ContextConfigurationTableMapping) is
-      Java_Result : constant HashMap_Access := ContextConfigurationTableMapping'Class (This).toHashMap;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toHashMap;
-
-   procedure getKey (This : in out ContextConfigurationTableMapping) is
-      Java_Result : constant Java_Object_Access := ContextConfigurationTableMapping'Class (This).getKey;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getKey;
-
-   procedure toVector (This : in out ContextConfigurationTableMapping) is
-      Java_Result : constant BasicArrayList_Access := ContextConfigurationTableMapping'Class (This).toVector;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end toVector;
 
 end org.allbinary.business.context.configuration.ContextConfigurationTableMapping_Package;

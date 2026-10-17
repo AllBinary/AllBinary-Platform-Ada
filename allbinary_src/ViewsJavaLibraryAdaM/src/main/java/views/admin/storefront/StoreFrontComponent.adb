@@ -36,7 +36,7 @@ package body views.admin.storefront.StoreFrontComponent_Package is
    function Create (transformInfoInterface : TransformInfoInterface_Access) return StoreFrontComponent_Access is
       This : constant StoreFrontComponent_Access := new StoreFrontComponent;
    begin
-      Initialize (This.all, transformInfoInterface);
+      StoreFrontComponent_Package.Initialize (This.all, transformInfoInterface);
       return This;
    end Create;
 
@@ -56,13 +56,6 @@ package body views.admin.storefront.StoreFrontComponent_Package is
             Java_Throw (e);
                 end;
         end;
-   end view;
-
-   procedure view (This : in out StoreFrontComponent) is
-      Java_Result : constant Unbounded_String := StoreFrontComponent'Class (This).view;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end view;
 
 end views.admin.storefront.StoreFrontComponent_Package;

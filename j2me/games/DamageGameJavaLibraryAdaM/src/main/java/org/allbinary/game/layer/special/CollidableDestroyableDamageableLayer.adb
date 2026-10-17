@@ -55,7 +55,7 @@ package body org.allbinary.game.layer.special.CollidableDestroyableDamageableLay
    function Create (groupInterface : Group_Access_Array_Access; name : Unbounded_String; layerInfo : Rectangle_Access; viewPosition : ViewPositionBase_Access) return CollidableDestroyableDamageableLayer_Access is
       This : constant CollidableDestroyableDamageableLayer_Access := new CollidableDestroyableDamageableLayer;
    begin
-      Initialize (This.all, groupInterface, name, layerInfo, viewPosition);
+      CollidableDestroyableDamageableLayer_Package.Initialize (This.all, groupInterface, name, layerInfo, viewPosition);
       return This;
    end Create;
 
@@ -329,89 +329,12 @@ package body org.allbinary.game.layer.special.CollidableDestroyableDamageableLay
         return stringBuffer.toString;
    end toString;
 
-   procedure getNullInstance is
-      Java_Result : constant CollidableDestroyableDamageableLayer_Access := getNullInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getNullInstance;
-
    procedure getDamage (This : in out CollidableDestroyableDamageableLayer; damageType : Integer) is
       Java_Result : constant Integer := CollidableDestroyableDamageableLayer'Class (This).getDamage (damageType);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getDamage;
-
-   procedure isDestroyed (This : in out CollidableDestroyableDamageableLayer) is
-      Java_Result : constant Boolean := CollidableDestroyableDamageableLayer'Class (This).isDestroyed;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isDestroyed;
-
-   procedure getGroupInterface (This : in out CollidableDestroyableDamageableLayer) is
-      Java_Result : constant Group_Access_Array_Access := CollidableDestroyableDamageableLayer'Class (This).getGroupInterface;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getGroupInterface;
-
-   procedure isReadyForExplosion (This : in out CollidableDestroyableDamageableLayer) is
-      Java_Result : constant Boolean := CollidableDestroyableDamageableLayer'Class (This).isReadyForExplosion;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isReadyForExplosion;
-
-   procedure getInitWidth (This : in out CollidableDestroyableDamageableLayer) is
-      Java_Result : constant Integer := CollidableDestroyableDamageableLayer'Class (This).getInitWidth;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInitWidth;
-
-   procedure getInitHeight (This : in out CollidableDestroyableDamageableLayer) is
-      Java_Result : constant Integer := CollidableDestroyableDamageableLayer'Class (This).getInitHeight;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInitHeight;
-
-   procedure getInitX (This : in out CollidableDestroyableDamageableLayer) is
-      Java_Result : constant Integer := CollidableDestroyableDamageableLayer'Class (This).getInitX;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInitX;
-
-   procedure getInitY (This : in out CollidableDestroyableDamageableLayer) is
-      Java_Result : constant Integer := CollidableDestroyableDamageableLayer'Class (This).getInitY;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInitY;
-
-   procedure getPickupBehavior (This : in out CollidableDestroyableDamageableLayer) is
-      Java_Result : constant PickupBehavior_Access := CollidableDestroyableDamageableLayer'Class (This).getPickupBehavior;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getPickupBehavior;
-
-   procedure getPartInterfaceArray (This : in out CollidableDestroyableDamageableLayer) is
-      Java_Result : constant PartInterface_Access_Array_Access := CollidableDestroyableDamageableLayer'Class (This).getPartInterfaceArray;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getPartInterfaceArray;
-
-   procedure toString (This : in out CollidableDestroyableDamageableLayer) is
-      Java_Result : constant Unbounded_String := CollidableDestroyableDamageableLayer'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toString;
 
 begin
    null;

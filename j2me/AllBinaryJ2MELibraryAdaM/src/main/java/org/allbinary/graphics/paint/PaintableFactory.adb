@@ -28,7 +28,7 @@ package body org.allbinary.graphics.paint.PaintableFactory_Package is
    function Create return PaintableFactory_Access is
       This : constant PaintableFactory_Access := new PaintableFactory;
    begin
-      Initialize (This.all);
+      PaintableFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -36,13 +36,6 @@ package body org.allbinary.graphics.paint.PaintableFactory_Package is
    function getInstance (This : in out PaintableFactory) return Paintable_Access is
    begin
         return NullPaintable_Package.getInstance;
-   end getInstance;
-
-   procedure getInstance (This : in out PaintableFactory) is
-      Java_Result : constant Paintable_Access := PaintableFactory'Class (This).getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 end org.allbinary.graphics.paint.PaintableFactory_Package;

@@ -24,6 +24,7 @@ with org.allbinary.game.input.motion.action.NoCompleteMotionGestureInputEventLis
 with org.allbinary.input.AllBinarySensor_Package; use org.allbinary.input.AllBinarySensor_Package;
 with org.allbinary.input.NoAllBinarySensor_Package; use org.allbinary.input.NoAllBinarySensor_Package;
 with org.allbinary.input.accelerometer.AccelerometerSensorFactory_Package; use org.allbinary.input.accelerometer.AccelerometerSensorFactory_Package;
+with org.allbinary.input.gyro.GyroSensorFactory_Package; use org.allbinary.input.gyro.GyroSensorFactory_Package;
 
 package org.allbinary.input.gyro.SensorGameUpdateProcessor_Package is
 
@@ -45,11 +46,9 @@ package org.allbinary.input.gyro.SensorGameUpdateProcessor_Package is
    function Create return SensorGameUpdateProcessor_Access;
    procedure setInputSensor (This : in out SensorGameUpdateProcessor; inputSensor : AllBinarySensor_Access);
    function getInputSensor (This : in out SensorGameUpdateProcessor) return AllBinarySensor_Access;
-   procedure getInputSensor (This : in out SensorGameUpdateProcessor);
    procedure process (This : in out SensorGameUpdateProcessor; anyType : Java_Object_Access);
    procedure sendNotifications (This : in out SensorGameUpdateProcessor; anyType : Java_Object_Access);
    function isAnySensor (This : in out SensorGameUpdateProcessor) return Boolean;
-   procedure isAnySensor (This : in out SensorGameUpdateProcessor);
    procedure setNoSensors (This : in out SensorGameUpdateProcessor);
 
 end org.allbinary.input.gyro.SensorGameUpdateProcessor_Package;

@@ -25,6 +25,7 @@ with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Pack
 with org.allbinary.util.CircularIndexUtil_Package; use org.allbinary.util.CircularIndexUtil_Package;
 with jsinterop.annotations.JsMethod_Package; use jsinterop.annotations.JsMethod_Package;
 with jsinterop.annotations.JsProperty_Package; use jsinterop.annotations.JsProperty_Package;
+with org.allbinary.logic.util.cache.AllBinaryObjectFactoryInterface_Package; use org.allbinary.logic.util.cache.AllBinaryObjectFactoryInterface_Package;
 
 package org.allbinary.logic.util.cache.BaseCircularPool_Package is
 
@@ -47,7 +48,6 @@ package org.allbinary.logic.util.cache.BaseCircularPool_Package is
    procedure Initialize (This : in out BaseCircularPool'Class);
    function Create return BaseCircularPool_Access;
    function getNextInstance (This : in out BaseCircularPool) return Java_Object_Access;
-   procedure getNextInstance (This : in out BaseCircularPool);
    procedure init (This : in out BaseCircularPool; allBinaryObjectFactoryInterface : AllBinaryObjectFactoryInterface_Access);
    function getInstance (This : in out BaseCircularPool; index : Integer) return Java_Object_Access;
    procedure getInstance (This : in out BaseCircularPool; index : Integer);

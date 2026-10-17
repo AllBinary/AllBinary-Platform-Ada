@@ -34,7 +34,7 @@ package body org.allbinary.game.tracking.TrackingEvent_Package is
    function Create (allBinaryLayerInterface : Java_Object_Access) return TrackingEvent_Access is
       This : constant TrackingEvent_Access := new TrackingEvent;
    begin
-      Initialize (This.all, allBinaryLayerInterface);
+      TrackingEvent_Package.Initialize (This.all, allBinaryLayerInterface);
       return This;
    end Create;
 
@@ -66,20 +66,6 @@ package body org.allbinary.game.tracking.TrackingEvent_Package is
         stringBuffer.append (To_Unbounded_String ("LayerInterface: "));
         stringBuffer.append (This.layerInterface.toString);
         return stringBuffer.toString;
-   end toString;
-
-   procedure getLayerInterface (This : in out TrackingEvent) is
-      Java_Result : constant AllBinaryLayer_Access := TrackingEvent'Class (This).getLayerInterface;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getLayerInterface;
-
-   procedure toString (This : in out TrackingEvent) is
-      Java_Result : constant Unbounded_String := TrackingEvent'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end toString;
 
 end org.allbinary.game.tracking.TrackingEvent_Package;

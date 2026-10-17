@@ -36,7 +36,7 @@ package body org.allbinary.data.tables.user.address.billing.BillingAddressesEnti
    function Create return BillingAddressesEntityFactory_Access is
       This : constant BillingAddressesEntityFactory_Access := new BillingAddressesEntityFactory;
    begin
-      Initialize (This.all);
+      BillingAddressesEntityFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -57,13 +57,6 @@ package body org.allbinary.data.tables.user.address.billing.BillingAddressesEnti
             return null;
                 end;
         end;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant BillingAddressesEntityFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
    procedure getInstance (This : in out BillingAddressesEntityFactory; userName : Unbounded_String) is

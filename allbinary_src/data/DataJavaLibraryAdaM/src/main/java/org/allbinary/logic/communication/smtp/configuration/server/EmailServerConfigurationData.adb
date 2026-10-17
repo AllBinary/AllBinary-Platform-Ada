@@ -13,7 +13,7 @@
 --  Generated Code Do Not Modify
 
 
-package body org.allbinary.logic.communication.smtp.configuration.server_Case.EmailServerConfigurationData_Package is
+package body org.allbinary.logic.communication.smtp.configuration.server.EmailServerConfigurationData_Package is
 
    procedure Initialize_Fields (This : in out EmailServerConfigurationData'Class) is
    begin
@@ -30,7 +30,7 @@ package body org.allbinary.logic.communication.smtp.configuration.server_Case.Em
    function Create return EmailServerConfigurationData_Access is
       This : constant EmailServerConfigurationData_Access := new EmailServerConfigurationData;
    begin
-      Initialize (This.all);
+      EmailServerConfigurationData_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -41,6 +41,6 @@ begin
    ACCOUNT := To_Unbounded_String ("EMAIL_SERVER_CONFIGURATION_ACCOUNT");
    PASSWORD := To_Unbounded_String ("EMAIL_SERVER_CONFIGURATION_PASSWORD");
 
-end org.allbinary.logic.communication.smtp.configuration.server_Case.EmailServerConfigurationData_Package;
+end org.allbinary.logic.communication.smtp.configuration.server.EmailServerConfigurationData_Package;
 
 

@@ -50,7 +50,7 @@ package body org.allbinary.image.gui.CreateIconImagesJPanel_Package is
    function Create (imageProcessorInput : ImageProcessorInput_Access) return CreateIconImagesJPanel_Access is
       This : constant CreateIconImagesJPanel_Access := new CreateIconImagesJPanel;
    begin
-      Initialize (This.all, imageProcessorInput);
+      CreateIconImagesJPanel_Package.Initialize (This.all, imageProcessorInput);
       return This;
    end Create;
 
@@ -159,13 +159,6 @@ package body org.allbinary.image.gui.CreateIconImagesJPanel_Package is
    begin
         This.process;
    end aboveJButtonActionPerformed;
-
-   procedure getImageProcessorInput (This : in out CreateIconImagesJPanel) is
-      Java_Result : constant ImageProcessorInput_Access := CreateIconImagesJPanel'Class (This).getImageProcessorInput;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getImageProcessorInput;
 
 end org.allbinary.image.gui.CreateIconImagesJPanel_Package;
 

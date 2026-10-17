@@ -28,7 +28,6 @@ package org.allbinary.graphics.font.FontDebugBase_Package is
    procedure Initialize (This : in out FontDebugBase'Class);
    function Create return FontDebugBase_Access;
    function getInstance return FontDebugBase_Access;
-   procedure getInstance;
    procedure debugMetrics (This : in out FontDebugBase; currentFont : Font_Access; convertedTextSize : Float; displayMetrics : Java_Object_Access; stringBuffer : StringMaker_Access);
    procedure debugDpi (This : in out FontDebugBase; densityDpi : Integer; stringBuffer : StringMaker_Access);
    procedure debugDimension (This : in out FontDebugBase; currentFont : Font_Access; convertedTextSize : Float; longestDimensionTotalPixels : Integer; stringBuffer : StringMaker_Access);

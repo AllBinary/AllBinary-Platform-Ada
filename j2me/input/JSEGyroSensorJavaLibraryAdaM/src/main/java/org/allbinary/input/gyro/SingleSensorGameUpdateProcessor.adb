@@ -31,7 +31,7 @@ package body org.allbinary.input.gyro.SingleSensorGameUpdateProcessor_Package is
    function Create return SingleSensorGameUpdateProcessor_Access is
       This : constant SingleSensorGameUpdateProcessor_Access := new SingleSensorGameUpdateProcessor;
    begin
-      Initialize (This.all);
+      SingleSensorGameUpdateProcessor_Package.Initialize (This.all);
       return This;
    end Create;
 

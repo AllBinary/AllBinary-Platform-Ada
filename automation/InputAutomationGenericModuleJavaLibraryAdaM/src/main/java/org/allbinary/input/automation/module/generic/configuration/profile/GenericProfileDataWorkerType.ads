@@ -28,6 +28,8 @@ with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Packag
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfileDataWorkerTypeInterface_Package; use org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfileDataWorkerTypeInterface_Package;
+with org.allbinary.input.automation.module.generic_Id.configuration.profile.SavedCaptureGenericProfileDataWorkerType_Package; use org.allbinary.input.automation.module.generic_Id.configuration.profile.SavedCaptureGenericProfileDataWorkerType_Package;
+with org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfileDataWorkerData_Package; use org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfileDataWorkerData_Package;
 
 package org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfileDataWorkerType_Package is
 
@@ -55,12 +57,10 @@ package org.allbinary.input.automation.module.generic_Id.configuration.profile.G
    procedure Initialize (This : in out GenericProfileDataWorkerType'Class; name : Unbounded_String);
    function Create (name : Unbounded_String) return GenericProfileDataWorkerType_Access;
    function getName (This : in out GenericProfileDataWorkerType) return Unbounded_String;
-   procedure getName (This : in out GenericProfileDataWorkerType);
    procedure setName (This : in out GenericProfileDataWorkerType; name : Unbounded_String);
    function toXmlNode (This : in out GenericProfileDataWorkerType; document : Document_Access) return Node_Access;
    procedure toXmlNode (This : in out GenericProfileDataWorkerType; document : Document_Access);
    function toString (This : in out GenericProfileDataWorkerType) return Unbounded_String;
-   procedure toString (This : in out GenericProfileDataWorkerType);
    function getInstance (node : Node_Access) return GenericProfileDataWorkerType_Access;
    procedure getInstance (node : Node_Access);
 

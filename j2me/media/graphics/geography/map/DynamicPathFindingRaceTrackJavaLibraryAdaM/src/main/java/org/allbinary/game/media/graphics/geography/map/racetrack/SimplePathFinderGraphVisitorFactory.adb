@@ -36,7 +36,7 @@ package body org.allbinary.game.media.graphics.geography.map.racetrack.SimplePat
    function Create (edgeMinimum : Integer; minPathWeight : Integer; maxPathWeight : Integer) return SimplePathFinderGraphVisitorFactory_Access is
       This : constant SimplePathFinderGraphVisitorFactory_Access := new SimplePathFinderGraphVisitorFactory;
    begin
-      Initialize (This.all, edgeMinimum, minPathWeight, maxPathWeight);
+      SimplePathFinderGraphVisitorFactory_Package.Initialize (This.all, edgeMinimum, minPathWeight, maxPathWeight);
       return This;
    end Create;
 

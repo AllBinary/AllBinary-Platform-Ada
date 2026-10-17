@@ -39,7 +39,7 @@ package body org.allbinary.android.input.motion.AnalogControllerConfigurationFac
    function Create return AnalogControllerConfigurationFactory_Access is
       This : constant AnalogControllerConfigurationFactory_Access := new AnalogControllerConfigurationFactory;
    begin
-      Initialize (This.all);
+      AnalogControllerConfigurationFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -54,20 +54,6 @@ package body org.allbinary.android.input.motion.AnalogControllerConfigurationFac
         This.available := available;
         AnalogControllerConfigurationEventHandler_Package.getInstance.fireEvent (This.analogControllerConfigurationEvent);
    end setAvailable;
-
-   procedure getInstance is
-      Java_Result : constant AnalogControllerConfigurationFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure isAvailable (This : in out AnalogControllerConfigurationFactory) is
-      Java_Result : constant Boolean := AnalogControllerConfigurationFactory'Class (This).isAvailable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isAvailable;
 
 begin
    null;

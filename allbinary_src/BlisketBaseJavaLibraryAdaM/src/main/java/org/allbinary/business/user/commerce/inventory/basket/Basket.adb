@@ -31,7 +31,7 @@ package body org.allbinary.business.user.commerce.inventory.basket.Basket_Packag
    function Create return Basket_Access is
       This : constant Basket_Access := new Basket;
    begin
-      Initialize (This.all);
+      Basket_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -151,47 +151,12 @@ package body org.allbinary.business.user.commerce.inventory.basket.Basket_Packag
         return subTotal;
    end getSubTotal;
 
-   procedure getTotalWeight (This : in out Basket) is
-      Java_Result : constant Unbounded_String := Basket'Class (This).getTotalWeight;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTotalWeight;
-
-   procedure getNumberOfItems (This : in out Basket) is
-      Java_Result : constant Integer := Basket'Class (This).getNumberOfItems;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getNumberOfItems;
-
-   procedure getIds (This : in out Basket) is
-      Java_Result : constant Set_Access := Basket'Class (This).getIds;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getIds;
-
-   procedure getItems (This : in out Basket) is
-      Java_Result : constant HashMap_Access := Basket'Class (This).getItems;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getItems;
-
    procedure getNumberOf (This : in out Basket; product : Unbounded_String) is
       Java_Result : constant Integer := Basket'Class (This).getNumberOf (product);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getNumberOf;
-
-   procedure getSubTotal (This : in out Basket) is
-      Java_Result : constant Money_Access := Basket'Class (This).getSubTotal;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSubTotal;
 
 end org.allbinary.business.user.commerce.inventory.basket.Basket_Package;
 

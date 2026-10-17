@@ -39,7 +39,6 @@ package org.allbinary.ag.weapon.media.audio.ExplosionBasicSound_Package is
    procedure Initialize (This : in out ExplosionBasicSound'Class);
    function Create return ExplosionBasicSound_Access;
    function getInstance return Sound_Access;
-   procedure getInstance;
 
 end org.allbinary.ag.weapon.media.audio.ExplosionBasicSound_Package;
 

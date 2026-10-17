@@ -41,7 +41,6 @@ package org.allbinary.graphics.displayable.screen.FullScreenPaintableFactory_Pac
    procedure Initialize (This : in out FullScreenPaintableFactory'Class);
    function Create return FullScreenPaintableFactory_Access;
    function getInstance return FullScreenPaintableFactory_Access;
-   procedure getInstance;
 
 end org.allbinary.graphics.displayable.screen.FullScreenPaintableFactory_Package;
 

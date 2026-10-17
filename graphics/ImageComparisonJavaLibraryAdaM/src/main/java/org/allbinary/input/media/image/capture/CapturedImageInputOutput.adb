@@ -29,7 +29,7 @@ package body org.allbinary.input.media.image.capture.CapturedImageInputOutput_Pa
    function Create return CapturedImageInputOutput_Access is
       This : constant CapturedImageInputOutput_Access := new CapturedImageInputOutput;
    begin
-      Initialize (This.all);
+      CapturedImageInputOutput_Package.Initialize (This.all);
       return This;
    end Create;
 

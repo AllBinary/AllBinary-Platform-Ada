@@ -17,7 +17,7 @@ package body org.allbinary.graphics.opengles.OpenGLProcessor_Package is
    function Create return OpenGLProcessor_Access is
       This : constant OpenGLProcessor_Access := new OpenGLProcessor;
    begin
-      Initialize (This.all);
+      OpenGLProcessor_Package.Initialize (This.all);
       return This;
    end Create;
 

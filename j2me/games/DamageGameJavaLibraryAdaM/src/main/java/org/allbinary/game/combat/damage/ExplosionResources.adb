@@ -39,16 +39,9 @@ package body org.allbinary.game.combat.damage.ExplosionResources_Package is
    function Create return ExplosionResources_Access is
       This : constant ExplosionResources_Access := new ExplosionResources;
    begin
-      Initialize (This.all);
+      ExplosionResources_Package.Initialize (This.all);
       return This;
    end Create;
-
-   procedure getInstance is
-      Java_Result : constant ExplosionResources_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

@@ -41,7 +41,7 @@ package body org.allbinary.media.image.analysis.ColorRange_Package is
    function Create return ColorRange_Access is
       This : constant ColorRange_Access := new ColorRange;
    begin
-      Initialize (This.all);
+      ColorRange_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -138,61 +138,12 @@ package body org.allbinary.media.image.analysis.ColorRange_Package is
         return stringBuffer.toString;
    end toString;
 
-   procedure getMinRed (This : in out ColorRange) is
-      Java_Result : constant Integer := ColorRange'Class (This).getMinRed;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getMinRed;
-
-   procedure getMaxRed (This : in out ColorRange) is
-      Java_Result : constant Integer := ColorRange'Class (This).getMaxRed;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getMaxRed;
-
-   procedure getMinGreen (This : in out ColorRange) is
-      Java_Result : constant Integer := ColorRange'Class (This).getMinGreen;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getMinGreen;
-
-   procedure getMaxGreen (This : in out ColorRange) is
-      Java_Result : constant Integer := ColorRange'Class (This).getMaxGreen;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getMaxGreen;
-
-   procedure getMinBlue (This : in out ColorRange) is
-      Java_Result : constant Integer := ColorRange'Class (This).getMinBlue;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getMinBlue;
-
-   procedure getMaxBlue (This : in out ColorRange) is
-      Java_Result : constant Integer := ColorRange'Class (This).getMaxBlue;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getMaxBlue;
-
    procedure isInRange (This : in out ColorRange; color : Color_Access) is
       Java_Result : constant Boolean := ColorRange'Class (This).isInRange (color);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isInRange;
-
-   procedure toString (This : in out ColorRange) is
-      Java_Result : constant Unbounded_String := ColorRange'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toString;
 
 end org.allbinary.media.image.analysis.ColorRange_Package;
 

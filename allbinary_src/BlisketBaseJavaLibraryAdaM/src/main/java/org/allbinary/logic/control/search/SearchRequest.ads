@@ -27,6 +27,8 @@ with org.allbinary.business.context.modules.storefront.StoreFrontInterface_Packa
 with org.allbinary.data.tree.dom.ModDomHelper_Package; use org.allbinary.data.tree.dom.ModDomHelper_Package;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
+with org.allbinary.logic.control.search.SearchParams_Package; use org.allbinary.logic.control.search.SearchParams_Package;
+with org.allbinary.logic.control.search.SearchData_Package; use org.allbinary.logic.control.search.SearchData_Package;
 
 package org.allbinary.logic.control.search.SearchRequest_Package is
 
@@ -57,15 +59,10 @@ package org.allbinary.logic.control.search.SearchRequest_Package is
    procedure setFileBaseName (This : in out SearchRequest; value : Unbounded_String);
    procedure setContentType (This : in out SearchRequest; value : Unbounded_String);
    function getStoreFront (This : in out SearchRequest) return StoreFrontInterface_Access;
-   procedure getStoreFront (This : in out SearchRequest);
    function getParams (This : in out SearchRequest) return SearchParams_Access;
-   procedure getParams (This : in out SearchRequest);
    function getXslFile (This : in out SearchRequest) return Unbounded_String;
-   procedure getXslFile (This : in out SearchRequest);
    function getFileBaseName (This : in out SearchRequest) return Unbounded_String;
-   procedure getFileBaseName (This : in out SearchRequest);
    function getContentType (This : in out SearchRequest) return Unbounded_String;
-   procedure getContentType (This : in out SearchRequest);
    function getFileBaseNameNode (This : in out SearchRequest; document : Document_Access) return Node_Access;
    procedure getFileBaseNameNode (This : in out SearchRequest; document : Document_Access);
 

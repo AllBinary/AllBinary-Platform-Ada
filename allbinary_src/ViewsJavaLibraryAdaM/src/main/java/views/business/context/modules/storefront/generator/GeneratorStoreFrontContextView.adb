@@ -34,7 +34,7 @@ package body views.business.context.modules.storefront.generator.GeneratorStoreF
    function Create (transformInfoInterface : TransformInfoInterface_Access) return GeneratorStoreFrontContextView_Access is
       This : constant GeneratorStoreFrontContextView_Access := new GeneratorStoreFrontContextView;
    begin
-      Initialize (This.all, transformInfoInterface);
+      GeneratorStoreFrontContextView_Package.Initialize (This.all, transformInfoInterface);
       return This;
    end Create;
 
@@ -70,13 +70,6 @@ package body views.business.context.modules.storefront.generator.GeneratorStoreF
 
    procedure view (This : in out GeneratorStoreFrontContextView; group : Unbounded_String) is
       Java_Result : constant Unbounded_String := GeneratorStoreFrontContextView'Class (This).view (group);
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end view;
-
-   procedure view (This : in out GeneratorStoreFrontContextView) is
-      Java_Result : constant Unbounded_String := GeneratorStoreFrontContextView'Class (This).view;
       pragma Unreferenced (Java_Result);
    begin
       null;

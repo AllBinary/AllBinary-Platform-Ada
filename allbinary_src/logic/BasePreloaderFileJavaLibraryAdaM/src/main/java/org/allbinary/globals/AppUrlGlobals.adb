@@ -30,7 +30,7 @@ package body org.allbinary.globals.AppUrlGlobals_Package is
    function Create return AppUrlGlobals_Access is
       This : constant AppUrlGlobals_Access := new AppUrlGlobals;
    begin
-      Initialize (This.all);
+      AppUrlGlobals_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -62,34 +62,6 @@ package body org.allbinary.globals.AppUrlGlobals_Package is
    function getMainPath (This : in out AppUrlGlobals) return Unbounded_String is
    begin
         return This.path;
-   end getMainPath;
-
-   procedure isTestingMode (This : in out AppUrlGlobals) is
-      Java_Result : constant Boolean := AppUrlGlobals'Class (This).isTestingMode;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isTestingMode;
-
-   procedure getWebappPath (This : in out AppUrlGlobals) is
-      Java_Result : constant Unbounded_String := AppUrlGlobals'Class (This).getWebappPath;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getWebappPath;
-
-   procedure getTestHtmlPath (This : in out AppUrlGlobals) is
-      Java_Result : constant Unbounded_String := AppUrlGlobals'Class (This).getTestHtmlPath;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTestHtmlPath;
-
-   procedure getMainPath (This : in out AppUrlGlobals) is
-      Java_Result : constant Unbounded_String := AppUrlGlobals'Class (This).getMainPath;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getMainPath;
 
 begin

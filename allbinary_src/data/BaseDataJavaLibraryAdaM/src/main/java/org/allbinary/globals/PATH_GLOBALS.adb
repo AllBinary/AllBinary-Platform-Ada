@@ -66,16 +66,9 @@ package body org.allbinary.globals.PATH_GLOBALS_Package is
    function Create return PATH_GLOBALS_Access is
       This : constant PATH_GLOBALS_Access := new PATH_GLOBALS;
    begin
-      Initialize (This.all);
+      PATH_GLOBALS_Package.Initialize (This.all);
       return This;
    end Create;
-
-   procedure getInstance is
-      Java_Result : constant PATH_GLOBALS_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

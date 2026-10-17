@@ -36,10 +36,8 @@ package org.allbinary.logic.system.security.licensing.LicenseUtil_Package is
    procedure Initialize (This : in out LicenseUtil'Class);
    function Create return LicenseUtil_Access;
    function getInstance return LicenseUtil_Access;
-   procedure getInstance;
    procedure init (This : in out LicenseUtil);
    function isRunning (This : in out LicenseUtil) return Boolean;
-   procedure isRunning (This : in out LicenseUtil);
    procedure setRunning (This : in out LicenseUtil; running : Boolean);
    function shouldWait (This : in out LicenseUtil; commandListener : CommandListener_Access) return Boolean;
    procedure shouldWait (This : in out LicenseUtil; commandListener : CommandListener_Access);

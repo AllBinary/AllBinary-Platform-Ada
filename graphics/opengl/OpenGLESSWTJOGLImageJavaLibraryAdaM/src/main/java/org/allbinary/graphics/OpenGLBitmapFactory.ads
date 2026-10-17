@@ -14,6 +14,7 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.image.ImageFactory_Package; use org.allbinary.image.ImageFactory_Package;
 with org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package; use org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package;
 with org.allbinary.platform.graphics.PlatformBitmapBase_Package; use org.allbinary.platform.graphics.PlatformBitmapBase_Package;
+with org.allbinary.graphics.OpenGLBitmap_Package; use org.allbinary.graphics.OpenGLBitmap_Package;
 
 package org.allbinary.graphics.OpenGLBitmapFactory_Package is
 
@@ -34,7 +35,6 @@ package org.allbinary.graphics.OpenGLBitmapFactory_Package is
    procedure Initialize (This : in out OpenGLBitmapFactory'Class);
    function Create return OpenGLBitmapFactory_Access;
    function getInstance return OpenGLBitmapFactory_Access;
-   procedure getInstance;
    function createBitmap (This : in out OpenGLBitmapFactory; width : Integer; height : Integer; config : Config_Access) return OpenGLBitmap_Access;
    procedure createBitmap (This : in out OpenGLBitmapFactory; width : Integer; height : Integer; config : Config_Access);
    function decodeStream (This : in out OpenGLBitmapFactory; inputStream : InputStream_Access) return OpenGLBitmap_Access;
@@ -58,6 +58,7 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.image.ImageFactory_Package; use org.allbinary.image.ImageFactory_Package;
 with org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package; use org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package;
 with org.allbinary.platform.graphics.PlatformBitmapBase_Package; use org.allbinary.platform.graphics.PlatformBitmapBase_Package;
+with org.allbinary.graphics.OpenGLBitmap_Package; use org.allbinary.graphics.OpenGLBitmap_Package;
 
 package org.allbinary.graphics.Config_Package is
 

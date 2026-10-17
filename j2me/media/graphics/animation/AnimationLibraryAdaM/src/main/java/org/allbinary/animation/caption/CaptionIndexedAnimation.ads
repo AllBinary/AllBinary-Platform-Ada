@@ -64,16 +64,12 @@ package org.allbinary.animation.caption.CaptionIndexedAnimation_Package is
    function Create (animationInterface : Animation_Access; movieIndexedAnimationInterface : IndexedAnimation_Access; player : Player_Access; captionDx : Integer; captionDy : Integer; dx : Integer; dy : Integer; time : Integer; animationBehavior : AnimationBehavior_Access) return CaptionIndexedAnimation_Access;
    procedure nextFrame (This : in out CaptionIndexedAnimation);
    function isLastFrame (This : in out CaptionIndexedAnimation) return Boolean;
-   procedure isLastFrame (This : in out CaptionIndexedAnimation);
    procedure previousFrame (This : in out CaptionIndexedAnimation);
    procedure setFrame (This : in out CaptionIndexedAnimation; index : Integer);
    function getFrame (This : in out CaptionIndexedAnimation) return Integer;
-   procedure getFrame (This : in out CaptionIndexedAnimation);
    function getSize (This : in out CaptionIndexedAnimation) return Integer;
-   procedure getSize (This : in out CaptionIndexedAnimation);
    procedure setSequence (This : in out CaptionIndexedAnimation; sequence : Integer_Array_Access);
    function getSequence (This : in out CaptionIndexedAnimation) return Integer_Array_Access;
-   procedure getSequence (This : in out CaptionIndexedAnimation);
    procedure paintXY (This : in out CaptionIndexedAnimation; graphics : Graphics_Access; x : Integer; y : Integer);
    procedure paintThreedXYZ (This : in out CaptionIndexedAnimation; graphics : Graphics_Access; x : Integer; y : Integer; z : Integer);
 

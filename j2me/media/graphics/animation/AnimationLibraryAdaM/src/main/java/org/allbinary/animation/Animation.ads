@@ -56,27 +56,20 @@ package org.allbinary.animation.Animation_Package is
    procedure paintXY (This : in out Animation; graphics : Graphics_Access; x : Integer; y : Integer);
    procedure paintThreedXYZ (This : in out Animation; graphics : Graphics_Access; x : Integer; y : Integer; z : Integer);
    function isThreed (This : in out Animation) return Boolean;
-   procedure isThreed (This : in out Animation);
    function getBasicColorP (This : in out Animation) return BasicColor_Access;
-   procedure getBasicColorP (This : in out Animation);
    procedure setBasicColorP (This : in out Animation; basicColor : BasicColor_Access);
    procedure setBackgroundBasicColorP (This : in out Animation; basicColor : BasicColor_Access);
    function getChangeBasicColor (This : in out Animation) return BasicColor_Access;
-   procedure getChangeBasicColor (This : in out Animation);
    procedure changeBasicColor (This : in out Animation; basicColor : BasicColor_Access);
    function getChangeColor (This : in out Animation) return Integer;
-   procedure getChangeColor (This : in out Animation);
    function getColor (This : in out Animation) return Integer;
-   procedure getColor (This : in out Animation);
    procedure setScale (This : in out Animation; scaleX : Float; scaleY : Float);
    procedure setMaxScale (This : in out Animation; maxScaleX : Float; maxScaleY : Float);
    procedure set (This : in out Animation; gl : GL_Access);
    procedure setDx (This : in out Animation; dx : Integer);
    function getDx (This : in out Animation) return Integer;
-   procedure getDx (This : in out Animation);
    procedure setDy (This : in out Animation; dy : Integer);
    function getDy (This : in out Animation) return Integer;
-   procedure getDy (This : in out Animation);
 
 end org.allbinary.animation.Animation_Package;
 

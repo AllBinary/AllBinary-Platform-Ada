@@ -30,7 +30,7 @@ package body org.allbinary.logic.communication.http.request.MultipartRequestPara
    function Create return MultipartRequestParamsData_Access is
       This : constant MultipartRequestParamsData_Access := new MultipartRequestParamsData;
    begin
-      Initialize (This.all);
+      MultipartRequestParamsData_Package.Initialize (This.all);
       return This;
    end Create;
 

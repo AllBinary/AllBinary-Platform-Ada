@@ -20,7 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.util.Calendar_Package; use java.util.Calendar_Package;
+with java.util.Calendar_Package; use java.util.Calendar_Package;
 --  with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
@@ -39,6 +39,7 @@ with org.allbinary.data.tables.user.commerce.money.payment.transaction.Transacti
 
 package org.allbinary.data.tables.user.commerce.money.payment.transaction.TransactionResultEntity_Package is
 
+   package Calendar_Package renames Standard.java.util.Calendar_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
    package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    package EntryData_Package renames Standard.org.allbinary.business.entry_Id.EntryData_Package;
@@ -70,11 +71,8 @@ package org.allbinary.data.tables.user.commerce.money.payment.transaction.Transa
    function getTransactionResultInterface (This : in out TransactionResultEntity; orderNumber : Unbounded_String) return TransactionResultInterface_Access;
    procedure getTransactionResultInterface (This : in out TransactionResultEntity; orderNumber : Unbounded_String);
    function createTableStatement (This : in out TransactionResultEntity) return Unbounded_String;
-   procedure createTableStatement (This : in out TransactionResultEntity);
    function createTable (This : in out TransactionResultEntity) return Unbounded_String;
-   procedure createTable (This : in out TransactionResultEntity);
    function dropTable (This : in out TransactionResultEntity) return Unbounded_String;
-   procedure dropTable (This : in out TransactionResultEntity);
 
 end org.allbinary.data.tables.user.commerce.money.payment.transaction.TransactionResultEntity_Package;
 

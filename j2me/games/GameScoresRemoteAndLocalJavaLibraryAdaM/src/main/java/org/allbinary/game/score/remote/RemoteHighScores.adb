@@ -42,7 +42,7 @@ package body org.allbinary.game.score.remote.RemoteHighScores_Package is
    function Create (abeClientInformation : AbeClientInformationInterface_Access; softwareInformation : SoftwareInformation_Access; gameInfo : GameInfo_Access; heading : Unbounded_String; columnTwoHeading : Unbounded_String; ascending_Case : Boolean; preload : Boolean) return RemoteHighScores_Access is
       This : constant RemoteHighScores_Access := new RemoteHighScores;
    begin
-      Initialize (This.all, abeClientInformation, softwareInformation, gameInfo, heading, columnTwoHeading, ascending_Case, preload);
+      RemoteHighScores_Package.Initialize (This.all, abeClientInformation, softwareInformation, gameInfo, heading, columnTwoHeading, ascending_Case, preload);
       return This;
    end Create;
 
@@ -147,20 +147,6 @@ package body org.allbinary.game.score.remote.RemoteHighScores_Package is
    begin
       null;
    end getInstancePreload;
-
-   procedure getAscending (This : in out RemoteHighScores) is
-      Java_Result : constant Boolean := RemoteHighScores'Class (This).getAscending;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getAscending;
-
-   procedure getSoftwareInformation (This : in out RemoteHighScores) is
-      Java_Result : constant SoftwareInformation_Access := RemoteHighScores'Class (This).getSoftwareInformation;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSoftwareInformation;
 
 begin
    null;

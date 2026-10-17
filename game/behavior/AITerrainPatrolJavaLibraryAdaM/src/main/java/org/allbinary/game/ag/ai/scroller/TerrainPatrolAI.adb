@@ -35,7 +35,7 @@ package body org.allbinary.game.ag.ai.scroller.TerrainPatrolAI_Package is
    function Create (hashtable : ABHashtable_Access; ownerLayerInterface : AllBinaryLayer_Access; gameInput : GameInput_Access) return TerrainPatrolAI_Access is
       This : constant TerrainPatrolAI_Access := new TerrainPatrolAI;
    begin
-      Initialize (This.all, hashtable, ownerLayerInterface, gameInput);
+      TerrainPatrolAI_Package.Initialize (This.all, hashtable, ownerLayerInterface, gameInput);
       return This;
    end Create;
 

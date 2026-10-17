@@ -18,7 +18,7 @@ package body org.allbinary.logic.control.crypt.file.CryptFileWriter_Package is
    function Create (decryptedExtension : Unbounded_String; encryptedExtension : Unbounded_String) return CryptFileWriter_Access is
       This : constant CryptFileWriter_Access := new CryptFileWriter;
    begin
-      Initialize (This.all, decryptedExtension, encryptedExtension);
+      CryptFileWriter_Package.Initialize (This.all, decryptedExtension, encryptedExtension);
       return This;
    end Create;
 

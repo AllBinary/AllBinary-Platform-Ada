@@ -78,7 +78,6 @@ package org.allbinary.emulator.device.TrueTypeFontUtil_Package is
    procedure Initialize (This : in out TrueTypeFontUtil'Class);
    function Create return TrueTypeFontUtil_Access;
    function getInstance return TrueTypeFontUtil_Access;
-   procedure getInstance;
    function getFontBitmapGL (This : in out TrueTypeFontUtil; gl : GL10_Access; filename : Unbounded_String; cellSize : Integer; basicColor : BasicColor_Access) return Image_Access;
    procedure getFontBitmapGL (This : in out TrueTypeFontUtil; gl : GL10_Access; filename : Unbounded_String; cellSize : Integer; basicColor : BasicColor_Access);
    procedure saveFontAtlasAsFile (This : in out TrueTypeFontUtil);

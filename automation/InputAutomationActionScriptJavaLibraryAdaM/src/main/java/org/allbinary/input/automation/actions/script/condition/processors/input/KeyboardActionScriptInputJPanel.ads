@@ -29,6 +29,11 @@ with org.allbinary.logic.string_Id.StringValidationUtil_Package; use org.allbina
 with org.allbinary.string_Id.CommonPhoneStrings_Package; use org.allbinary.string_Id.CommonPhoneStrings_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.input.automation.actions.script.condition.processors.input.JPanel_Package; use org.allbinary.input.automation.actions.script.condition.processors.input.JPanel_Package;
+with org.allbinary.input.automation.actions.script.condition.processors.input.KeyboardActionScriptInputInterface_Package; use org.allbinary.input.automation.actions.script.condition.processors.input.KeyboardActionScriptInputInterface_Package;
+with org.allbinary.input.automation.actions.script.condition.processors.input.DefaultComboBoxModel_Package; use org.allbinary.input.automation.actions.script.condition.processors.input.DefaultComboBoxModel_Package;
+with org.allbinary.input.automation.actions.script.condition.processors.input.KeyNameDefaultComboBoxModelFactory_Package; use org.allbinary.input.automation.actions.script.condition.processors.input.KeyNameDefaultComboBoxModelFactory_Package;
+with org.allbinary.input.automation.actions.script.condition.processors.input.KeyCharDefaultComboBoxModelFactory_Package; use org.allbinary.input.automation.actions.script.condition.processors.input.KeyCharDefaultComboBoxModelFactory_Package;
+with org.allbinary.input.automation.actions.script.condition.processors.input.ComboBoxModel_Package; use org.allbinary.input.automation.actions.script.condition.processors.input.ComboBoxModel_Package;
 
 package org.allbinary.input.automation.actions.script.condition.processors.input.KeyboardActionScriptInputJPanel_Package is
 
@@ -79,11 +84,9 @@ package org.allbinary.input.automation.actions.script.condition.processors.input
    procedure set (This : in out KeyboardActionScriptInputJPanel);
    procedure updateInputType (This : in out KeyboardActionScriptInputJPanel);
    function getSelectedKey (This : in out KeyboardActionScriptInputJPanel) return Integer;
-   procedure getSelectedKey (This : in out KeyboardActionScriptInputJPanel);
    procedure updateKeys (This : in out KeyboardActionScriptInputJPanel);
    procedure update (This : in out KeyboardActionScriptInputJPanel);
    function getKeyActionJDialog (This : in out KeyboardActionScriptInputJPanel) return JDialog_Access;
-   procedure getKeyActionJDialog (This : in out KeyboardActionScriptInputJPanel);
    procedure setKeyActionJDialog (This : in out KeyboardActionScriptInputJPanel; keyActionJDialog : JDialog_Access);
    procedure initComponents (This : in out KeyboardActionScriptInputJPanel);
    procedure prependText (This : in out KeyboardActionScriptInputJPanel; integer_Id : Integer);

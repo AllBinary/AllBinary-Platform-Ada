@@ -33,7 +33,7 @@ package body org.allbinary.logic.system.security.licensing.registration.XmlRpcRe
    function Create (clientInfo : AbeClientInformationInterface_Access) return XmlRpcRemoteLicenseRegistrationClient_Access is
       This : constant XmlRpcRemoteLicenseRegistrationClient_Access := new XmlRpcRemoteLicenseRegistrationClient;
    begin
-      Initialize (This.all, clientInfo);
+      XmlRpcRemoteLicenseRegistrationClient_Package.Initialize (This.all, clientInfo);
       return This;
    end Create;
 

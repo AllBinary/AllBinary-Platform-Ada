@@ -45,7 +45,6 @@ package org.allbinary.game.identification.GroupCommonFactory_Package is
    procedure Initialize (This : in out GroupCommonFactory'Class);
    function Create return GroupCommonFactory_Access;
    function getInstance return GroupCommonFactory_Access;
-   procedure getInstance;
 
 end org.allbinary.game.identification.GroupCommonFactory_Package;
 

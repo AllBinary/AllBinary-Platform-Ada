@@ -33,6 +33,8 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.w3c.dom.NodeList_Package; use org.w3c.dom.NodeList_Package;
+with org.allbinary.logic.visual.dhtml.style.StylesData_Package; use org.allbinary.logic.visual.dhtml.style.StylesData_Package;
+with org.allbinary.logic.visual.dhtml.style.StyleData_Package; use org.allbinary.logic.visual.dhtml.style.StyleData_Package;
 
 package org.allbinary.logic.visual.dhtml.style.StylesValidationFactory_Package is
 
@@ -62,7 +64,6 @@ package org.allbinary.logic.visual.dhtml.style.StylesValidationFactory_Package i
    procedure Initialize (This : in out StylesValidationFactory'Class);
    function Create return StylesValidationFactory_Access;
    function getInstance return StylesValidationFactory_Access;
-   procedure getInstance;
    function getInstance (This : in out StylesValidationFactory; document : Document_Access) return BasicArrayList_Access;
    procedure getInstance (This : in out StylesValidationFactory; document : Document_Access);
    function getInstance (hashMap : HashMap_Access) return BasicArrayList_Access;

@@ -38,7 +38,7 @@ package body org.allbinary.graphics.j2me.workarea.tools.MouseStrings_Package is
    function Create return MouseStrings_Access is
       This : constant MouseStrings_Access := new MouseStrings;
    begin
-      Initialize (This.all);
+      MouseStrings_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -46,13 +46,6 @@ package body org.allbinary.graphics.j2me.workarea.tools.MouseStrings_Package is
    function getInstance return MouseStrings_Access is
    begin
         return MouseStrings_Package.instance;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant MouseStrings_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

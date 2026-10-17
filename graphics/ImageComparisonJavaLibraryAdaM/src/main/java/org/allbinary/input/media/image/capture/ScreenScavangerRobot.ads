@@ -51,7 +51,6 @@ package org.allbinary.input.media.image.capture.ScreenScavangerRobot_Package is
    procedure Initialize (This : in out ScreenScavangerRobot'Class);
    function Create return ScreenScavangerRobot_Access;
    function getScreenAsBufferedImages (This : in out ScreenScavangerRobot) return BufferedImage_Access_Array_Access;
-   procedure getScreenAsBufferedImages (This : in out ScreenScavangerRobot);
 
 end org.allbinary.input.media.image.capture.ScreenScavangerRobot_Package;
 

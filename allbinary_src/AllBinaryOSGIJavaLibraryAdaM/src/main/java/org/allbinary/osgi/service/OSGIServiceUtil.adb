@@ -36,7 +36,7 @@ package body org.allbinary.osgi.service.OSGIServiceUtil_Package is
    function Create return OSGIServiceUtil_Access is
       This : constant OSGIServiceUtil_Access := new OSGIServiceUtil;
    begin
-      Initialize (This.all);
+      OSGIServiceUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -65,13 +65,6 @@ package body org.allbinary.osgi.service.OSGIServiceUtil_Package is
         end if;
         return vector;
    end getServicesObjectVector;
-
-   procedure getInstance is
-      Java_Result : constant OSGIServiceUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure getServicesObjectVector (This : in out OSGIServiceUtil; bundleContext : BundleContext_Access; serviceReferences : ServiceReference_Access_Array_Access) is
       Java_Result : constant BasicArrayList_Access := OSGIServiceUtil'Class (This).getServicesObjectVector (bundleContext, serviceReferences);

@@ -31,6 +31,7 @@ with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArra
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.allbinary.data.tree.dom.DomNodeInterface_Package; use org.allbinary.data.tree.dom.DomNodeInterface_Package;
+with org.allbinary.data.tree.dom.FileDomDataModel_Package; use org.allbinary.data.tree.dom.FileDomDataModel_Package;
 
 package org.allbinary.data.tree.dom.DirectoryDataModel_Package is
 
@@ -59,18 +60,13 @@ package org.allbinary.data.tree.dom.DirectoryDataModel_Package is
    procedure Initialize (This : in out DirectoryDataModel'Class; file : AbFile_Access);
    function Create (file : AbFile_Access) return DirectoryDataModel_Access;
    function getTypeId (This : in out DirectoryDataModel) return Integer;
-   procedure getTypeId (This : in out DirectoryDataModel);
    function getTransformInfoInterface (This : in out DirectoryDataModel) return TransformInfoInterface_Access;
-   procedure getTransformInfoInterface (This : in out DirectoryDataModel);
    procedure setTransformDocumentInterface (This : in out DirectoryDataModel; transformDocumentInterface : TransformDocumentInterface_Access);
    function getTransformDocumentInterface (This : in out DirectoryDataModel) return TransformDocumentInterface_Access;
-   procedure getTransformDocumentInterface (This : in out DirectoryDataModel);
    function toXmlNode (This : in out DirectoryDataModel; document : Document_Access) return Node_Access;
    procedure toXmlNode (This : in out DirectoryDataModel; document : Document_Access);
    function toXmlDoc (This : in out DirectoryDataModel) return Document_Access;
-   procedure toXmlDoc (This : in out DirectoryDataModel);
    function view (This : in out DirectoryDataModel) return Unbounded_String;
-   procedure view (This : in out DirectoryDataModel);
 
 end org.allbinary.data.tree.dom.DirectoryDataModel_Package;
 

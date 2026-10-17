@@ -35,7 +35,7 @@ package body org.allbinary.input.media.image.capture.SaveCapturedImageWorker_Pac
    function Create return SaveCapturedImageWorker_Access is
       This : constant SaveCapturedImageWorker_Access := new SaveCapturedImageWorker;
    begin
-      Initialize (This.all);
+      SaveCapturedImageWorker_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -86,13 +86,6 @@ package body org.allbinary.input.media.image.capture.SaveCapturedImageWorker_Pac
                 end;
         end;
    end run;
-
-   procedure isRunning (This : in out SaveCapturedImageWorker) is
-      Java_Result : constant Boolean := SaveCapturedImageWorker'Class (This).isRunning;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isRunning;
 
 end org.allbinary.input.media.image.capture.SaveCapturedImageWorker_Package;
 

@@ -48,7 +48,7 @@ package body org.allbinary.game.paint.PressStartMenuPaintable_Package is
    function Create return PressStartMenuPaintable_Access is
       This : constant PressStartMenuPaintable_Access := new PressStartMenuPaintable;
    begin
-      Initialize (This.all);
+      PressStartMenuPaintable_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -84,13 +84,6 @@ package body org.allbinary.game.paint.PressStartMenuPaintable_Package is
    function isFlash (This : in out PressStartMenuPaintable) return Boolean is
    begin
         return This.flash;
-   end isFlash;
-
-   procedure isFlash (This : in out PressStartMenuPaintable) is
-      Java_Result : constant Boolean := PressStartMenuPaintable'Class (This).isFlash;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end isFlash;
 
 end org.allbinary.game.paint.PressStartMenuPaintable_Package;

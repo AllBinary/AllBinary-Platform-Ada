@@ -38,7 +38,6 @@ package org.allbinary.logic.visual.transform.info.template.TransformInfoTemplate
    procedure Initialize (This : in out TransformInfoTemplateData'Class);
    function Create return TransformInfoTemplateData_Access;
    function getInstance return TransformInfoTemplateData_Access;
-   procedure getInstance;
 
 end org.allbinary.logic.visual.transform.info.template.TransformInfoTemplateData_Package;
 

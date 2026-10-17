@@ -28,6 +28,8 @@ with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics
 with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.media.ScaleProperties_Package; use org.allbinary.media.ScaleProperties_Package;
+with org.allbinary.animation.text.CustomTextAnimation_Package; use org.allbinary.animation.text.CustomTextAnimation_Package;
+with org.allbinary.animation.text.AdjustCustomTextAnimation_Package; use org.allbinary.animation.text.AdjustCustomTextAnimation_Package;
 
 package org.allbinary.animation.text.CustomTextAnimationFactory_Package is
 
@@ -64,9 +66,7 @@ package org.allbinary.animation.text.CustomTextAnimationFactory_Package is
    procedure getInstance (This : in out CustomTextAnimationFactory; instanceId : Integer);
    procedure setInitialScale (This : in out CustomTextAnimationFactory; scaleProperties : ScaleProperties_Access);
    function getWidth (This : in out CustomTextAnimationFactory) return Integer;
-   procedure getWidth (This : in out CustomTextAnimationFactory);
    function getHeight (This : in out CustomTextAnimationFactory) return Integer;
-   procedure getHeight (This : in out CustomTextAnimationFactory);
 
 end org.allbinary.animation.text.CustomTextAnimationFactory_Package;
 

@@ -24,11 +24,8 @@ package org.allbinary.logic.visual.media.MediaIOUtil_Package is
    procedure Initialize (This : in out MediaIOUtil'Class);
    function Create return MediaIOUtil_Access;
    function getInstance return MediaIOUtil_Access;
-   procedure getInstance;
    function getReaderFormatNames (This : in out MediaIOUtil) return Unbounded_String_Array_Access;
-   procedure getReaderFormatNames (This : in out MediaIOUtil);
    function getWriterFormatNames (This : in out MediaIOUtil) return Unbounded_String_Array_Access;
-   procedure getWriterFormatNames (This : in out MediaIOUtil);
 
 end org.allbinary.logic.visual.media.MediaIOUtil_Package;
 

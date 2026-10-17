@@ -63,11 +63,12 @@ package body org.allbinary.emulator.device.TrueTypeFontUtilBase_Package is
    function Create (scale : Integer) return TrueTypeFontUtilBase_Access is
       This : constant TrueTypeFontUtilBase_Access := new TrueTypeFontUtilBase;
    begin
-      Initialize (This.all, scale);
+      TrueTypeFontUtilBase_Package.Initialize (This.all, scale);
       return This;
    end Create;
 
-   function getAsTextureSize (This : in out TrueTypeFontUtilBase; textureSize : Integer) return Integer is
+   function getAsTextureSize (This : in out TrueTypeFontUtilBase; textureSize_Param : Integer) return Integer is
+      textureSize : Integer := textureSize_Param;
    begin
         if (textureSize) <= (64) then
             textureSize := 64;
@@ -83,7 +84,8 @@ package body org.allbinary.emulator.device.TrueTypeFontUtilBase_Package is
         return textureSize;
    end getAsTextureSize;
 
-   function getCellSize (This : in out TrueTypeFontUtilBase; cellSize : Integer) return Integer is
+   function getCellSize (This : in out TrueTypeFontUtilBase; cellSize_Param : Integer) return Integer is
+      cellSize : Integer := cellSize_Param;
    begin
         if (cellSize) <= (16) then
             cellSize := 16;
@@ -104,26 +106,19 @@ package body org.allbinary.emulator.device.TrueTypeFontUtilBase_Package is
         return ((((This.scale) - (1))) * (This.cellSize));
    end getYOffset;
 
-   procedure getAsTextureSize (This : in out TrueTypeFontUtilBase; textureSize : Integer) is
-      Java_Result : constant Integer := TrueTypeFontUtilBase'Class (This).getAsTextureSize (textureSize);
+   procedure getAsTextureSize (This : in out TrueTypeFontUtilBase; textureSize_Param : Integer) is
+      Java_Result : constant Integer := TrueTypeFontUtilBase'Class (This).getAsTextureSize (textureSize_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getAsTextureSize;
 
-   procedure getCellSize (This : in out TrueTypeFontUtilBase; cellSize : Integer) is
-      Java_Result : constant Integer := TrueTypeFontUtilBase'Class (This).getCellSize (cellSize);
+   procedure getCellSize (This : in out TrueTypeFontUtilBase; cellSize_Param : Integer) is
+      Java_Result : constant Integer := TrueTypeFontUtilBase'Class (This).getCellSize (cellSize_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getCellSize;
-
-   procedure getYOffset (This : in out TrueTypeFontUtilBase) is
-      Java_Result : constant Integer := TrueTypeFontUtilBase'Class (This).getYOffset;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getYOffset;
 
 end org.allbinary.emulator.device.TrueTypeFontUtilBase_Package;
 

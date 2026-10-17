@@ -41,7 +41,7 @@ package body org.allbinary.input.automation.module.game.skill.GameSkill_Package 
    function Create (gameSkillType : GameSkillType_Access; extra : Unbounded_String; time : Integer) return GameSkill_Access is
       This : constant GameSkill_Access := new GameSkill;
    begin
-      Initialize (This.all, gameSkillType, extra, time);
+      GameSkill_Package.Initialize (This.all, gameSkillType, extra, time);
       return This;
    end Create;
 
@@ -107,47 +107,12 @@ package body org.allbinary.input.automation.module.game.skill.GameSkill_Package 
         return stringBuffer.toString;
    end toString;
 
-   procedure getGameSkillType (This : in out GameSkill) is
-      Java_Result : constant GameSkillType_Access := GameSkill'Class (This).getGameSkillType;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getGameSkillType;
-
-   procedure getExtra (This : in out GameSkill) is
-      Java_Result : constant Unbounded_String := GameSkill'Class (This).getExtra;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getExtra;
-
-   procedure getTime (This : in out GameSkill) is
-      Java_Result : constant Integer := GameSkill'Class (This).getTime;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTime;
-
-   procedure getProperties (This : in out GameSkill) is
-      Java_Result : constant BasicArrayList_Access := GameSkill'Class (This).getProperties;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getProperties;
-
    procedure getInstance (gameSkillType : GameSkillType_Access; extra : Unbounded_String) is
       Java_Result : constant GameSkill_Access := getInstance (gameSkillType, extra);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInstance;
-
-   procedure toString (This : in out GameSkill) is
-      Java_Result : constant Unbounded_String := GameSkill'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toString;
 
 begin
    null;

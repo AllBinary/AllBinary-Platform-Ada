@@ -25,6 +25,7 @@ with android.os.Vibrator_Package; use android.os.Vibrator_Package;
 with org.allbinary.data.resource.ResourceUtil_Package; use org.allbinary.data.resource.ResourceUtil_Package;
 with org.allbinary.game.configuration.GameConfigurationCentral_Package; use org.allbinary.game.configuration.GameConfigurationCentral_Package;
 with org.allbinary.media.AllBinaryVibrationME_Package; use org.allbinary.media.AllBinaryVibrationME_Package;
+with org.allbinary.media.AllBinaryNoVibration_Package; use org.allbinary.media.AllBinaryNoVibration_Package;
 
 package org.allbinary.media.AllBinaryVibration_Package is
 
@@ -46,7 +47,6 @@ package org.allbinary.media.AllBinaryVibration_Package is
    procedure Initialize (This : in out AllBinaryVibration'Class);
    function Create return AllBinaryVibration_Access;
    function getInstance return AllBinaryVibrationME_Access;
-   procedure getInstance;
    procedure init;
    procedure vibrate (This : in out AllBinaryVibration; duration : Integer; type_Id : Integer; volume : Integer);
 

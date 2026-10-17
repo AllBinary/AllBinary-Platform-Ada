@@ -35,7 +35,7 @@ package body org.allbinary.game.ag.ai.LurchRotationAI_Package is
    function Create (ownerLayerInterface : AllBinaryLayer_Access; gameInput : GameInput_Access) return LurchRotationAI_Access is
       This : constant LurchRotationAI_Access := new LurchRotationAI;
    begin
-      Initialize (This.all, ownerLayerInterface, gameInput);
+      LurchRotationAI_Package.Initialize (This.all, ownerLayerInterface, gameInput);
       return This;
    end Create;
 

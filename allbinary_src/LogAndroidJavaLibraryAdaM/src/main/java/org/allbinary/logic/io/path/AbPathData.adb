@@ -38,7 +38,7 @@ package body org.allbinary.logic.io.path.AbPathData_Package is
    function Create return AbPathData_Access is
       This : constant AbPathData_Access := new AbPathData;
    begin
-      Initialize (This.all);
+      AbPathData_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -119,13 +119,6 @@ package body org.allbinary.logic.io.path.AbPathData_Package is
             return pathWithoutName;
         end if;
    end removeNameFromPath;
-
-   procedure getInstance is
-      Java_Result : constant AbPathData_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure getExtensionIndex (This : in out AbPathData; filePath : Unbounded_String) is
       Java_Result : constant Integer := AbPathData'Class (This).getExtensionIndex (filePath);

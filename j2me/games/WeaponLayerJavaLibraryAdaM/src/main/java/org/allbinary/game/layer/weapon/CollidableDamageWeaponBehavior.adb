@@ -35,7 +35,7 @@ package body org.allbinary.game.layer.weapon.CollidableDamageWeaponBehavior_Pack
    function Create (collidable : Boolean) return CollidableDamageWeaponBehavior_Access is
       This : constant CollidableDamageWeaponBehavior_Access := new CollidableDamageWeaponBehavior;
    begin
-      Initialize (This.all, collidable);
+      CollidableDamageWeaponBehavior_Package.Initialize (This.all, collidable);
       return This;
    end Create;
 
@@ -118,13 +118,6 @@ package body org.allbinary.game.layer.weapon.CollidableDamageWeaponBehavior_Pack
    begin
       null;
    end getCollisionTypeWith;
-
-   procedure isCollided (This : in out CollidableDamageWeaponBehavior) is
-      Java_Result : constant Boolean := CollidableDamageWeaponBehavior'Class (This).isCollided;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isCollided;
 
 end org.allbinary.game.layer.weapon.CollidableDamageWeaponBehavior_Package;
 

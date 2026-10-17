@@ -29,6 +29,7 @@ with org.allbinary.business.user.commerce.inventory.item.ItemView_Package; use o
 with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
+with org.allbinary.business.user.commerce.inventory.basket.BasketData_Package; use org.allbinary.business.user.commerce.inventory.basket.BasketData_Package;
 
 package org.allbinary.business.user.commerce.inventory.basket.BasketReview_Package is
 
@@ -52,18 +53,13 @@ package org.allbinary.business.user.commerce.inventory.basket.BasketReview_Packa
    procedure Initialize (This : in out BasketReview'Class);
    function Create return BasketReview_Access;
    function isValid (This : in out BasketReview) return Boolean;
-   procedure isValid (This : in out BasketReview);
    procedure addItem (This : in out BasketReview; item : Item_Access);
    function getItems (This : in out BasketReview) return BasicArrayList_Access;
-   procedure getItems (This : in out BasketReview);
    procedure removeItem (This : in out BasketReview; id : Unbounded_String);
    procedure adjustItem (This : in out BasketReview; id : Unbounded_String; num : Unbounded_String);
    function getTotalWeight (This : in out BasketReview) return Unbounded_String;
-   procedure getTotalWeight (This : in out BasketReview);
    function getNumberOfItems (This : in out BasketReview) return Integer;
-   procedure getNumberOfItems (This : in out BasketReview);
    function getIds (This : in out BasketReview) return Set_Access;
-   procedure getIds (This : in out BasketReview);
    function getNumberOf (This : in out BasketReview; id : Unbounded_String) return Integer;
    procedure getNumberOf (This : in out BasketReview; id : Unbounded_String);
    function toXmlNode (This : in out BasketReview; document : Document_Access) return Node_Access;

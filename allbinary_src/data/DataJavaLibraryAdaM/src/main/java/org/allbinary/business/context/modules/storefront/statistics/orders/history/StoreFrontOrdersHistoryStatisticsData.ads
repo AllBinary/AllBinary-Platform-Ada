@@ -42,7 +42,6 @@ package org.allbinary.business.context.modules.storefront.statistics.orders.hist
    procedure Initialize (This : in out StoreFrontOrdersHistoryStatisticsData'Class);
    function Create return StoreFrontOrdersHistoryStatisticsData_Access;
    function getInstance return StoreFrontOrdersHistoryStatisticsData_Access;
-   procedure getInstance;
 
 end org.allbinary.business.context.modules.storefront.statistics.orders.history.StoreFrontOrdersHistoryStatisticsData_Package;
 

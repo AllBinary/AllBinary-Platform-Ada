@@ -29,7 +29,7 @@ package body org.allbinary.resources.KeyValueFactory_Package is
    function Create return KeyValueFactory_Access is
       This : constant KeyValueFactory_Access := new KeyValueFactory;
    begin
-      Initialize (This.all);
+      KeyValueFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -48,13 +48,6 @@ package body org.allbinary.resources.KeyValueFactory_Package is
         end if;
         return value;
    end get;
-
-   procedure getInstance is
-      Java_Result : constant KeyValueFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure get (This : in out KeyValueFactory; key : Unbounded_String) is
       Java_Result : constant Unbounded_String := KeyValueFactory'Class (This).get (key);

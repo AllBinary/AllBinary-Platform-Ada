@@ -31,7 +31,7 @@ package body views.admin.payment.gateway.GatewayView_Package is
    function Create (transformInfoInterface : TransformInfoInterface_Access) return GatewayView_Access is
       This : constant GatewayView_Access := new GatewayView;
    begin
-      Initialize (This.all, transformInfoInterface);
+      GatewayView_Package.Initialize (This.all, transformInfoInterface);
       return This;
    end Create;
 
@@ -61,13 +61,6 @@ package body views.admin.payment.gateway.GatewayView_Package is
             Java_Throw (e);
                 end;
         end;
-   end view;
-
-   procedure view (This : in out GatewayView) is
-      Java_Result : constant Unbounded_String := GatewayView'Class (This).view;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end view;
 
 end views.admin.payment.gateway.GatewayView_Package;

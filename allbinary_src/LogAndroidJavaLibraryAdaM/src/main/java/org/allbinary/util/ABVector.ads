@@ -20,10 +20,11 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.util.Vector_Package; use java.util.Vector_Package;
+with java.util.Vector_Package; use java.util.Vector_Package;
 
 package org.allbinary.util.ABVector_Package is
 
+   package Vector_Package renames Standard.java.util.Vector_Package;
 
    type ABVector is tagged;
    type ABVector_Access is access all ABVector'Class;

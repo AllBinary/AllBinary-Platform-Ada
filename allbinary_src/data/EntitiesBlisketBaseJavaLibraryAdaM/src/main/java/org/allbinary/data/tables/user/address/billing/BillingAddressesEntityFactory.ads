@@ -23,6 +23,7 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.data.tables.user.address.StreetAddressesEntity_Package; use org.allbinary.data.tables.user.address.StreetAddressesEntity_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.data.tables.user.address.billing.BillingAddressesEntity_Package; use org.allbinary.data.tables.user.address.billing.BillingAddressesEntity_Package;
 
 package org.allbinary.data.tables.user.address.billing.BillingAddressesEntityFactory_Package is
 
@@ -43,7 +44,6 @@ package org.allbinary.data.tables.user.address.billing.BillingAddressesEntityFac
    procedure Initialize (This : in out BillingAddressesEntityFactory'Class);
    function Create return BillingAddressesEntityFactory_Access;
    function getInstance return BillingAddressesEntityFactory_Access;
-   procedure getInstance;
    function getInstance (This : in out BillingAddressesEntityFactory; userName : Unbounded_String) return StreetAddressesEntity_Access;
    procedure getInstance (This : in out BillingAddressesEntityFactory; userName : Unbounded_String);
 

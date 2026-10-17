@@ -31,7 +31,7 @@ package body views.business.context.modules.storefront.customizer.includes.style
    function Create (transformInfoInterface : TransformInfoInterface_Access) return InsertCssValidationView_Access is
       This : constant InsertCssValidationView_Access := new InsertCssValidationView;
    begin
-      Initialize (This.all, transformInfoInterface);
+      InsertCssValidationView_Package.Initialize (This.all, transformInfoInterface);
       return This;
    end Create;
 
@@ -113,47 +113,12 @@ package body views.business.context.modules.storefront.customizer.includes.style
         end;
    end view;
 
-   procedure toXmlDoc (This : in out InsertCssValidationView) is
-      Java_Result : constant Document_Access := InsertCssValidationView'Class (This).toXmlDoc;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toXmlDoc;
-
-   procedure isValid (This : in out InsertCssValidationView) is
-      Java_Result : constant Boolean := InsertCssValidationView'Class (This).isValid;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isValid;
-
-   procedure validationInfo (This : in out InsertCssValidationView) is
-      Java_Result : constant Unbounded_String := InsertCssValidationView'Class (This).validationInfo;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end validationInfo;
-
-   procedure toValidationInfoDoc (This : in out InsertCssValidationView) is
-      Java_Result : constant Document_Access := InsertCssValidationView'Class (This).toValidationInfoDoc;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toValidationInfoDoc;
-
    procedure toValidationInfoNode (This : in out InsertCssValidationView; document : Document_Access) is
       Java_Result : constant Node_Access := InsertCssValidationView'Class (This).toValidationInfoNode (document);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end toValidationInfoNode;
-
-   procedure view (This : in out InsertCssValidationView) is
-      Java_Result : constant Unbounded_String := InsertCssValidationView'Class (This).view;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end view;
 
 end views.business.context.modules.storefront.customizer.includes.style.css.InsertCssValidationView_Package;
 

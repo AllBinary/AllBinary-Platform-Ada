@@ -31,7 +31,7 @@ package body org.allbinary.input.magnetic.field.AllBinaryMagneticFieldSensor_Pac
    function Create return AllBinaryMagneticFieldSensor_Access is
       This : constant AllBinaryMagneticFieldSensor_Access := new AllBinaryMagneticFieldSensor;
    begin
-      Initialize (This.all);
+      AllBinaryMagneticFieldSensor_Package.Initialize (This.all);
       return This;
    end Create;
 

@@ -36,7 +36,6 @@ package org.allbinary.game.NullIntermissionEnableListener_Package is
    procedure Initialize (This : in out NullIntermissionEnableListener'Class);
    function Create return NullIntermissionEnableListener_Access;
    function getInstance return IntermissionEnableListenerInterface_Access;
-   procedure getInstance;
    procedure notifyIntermission (This : in out NullIntermissionEnableListener; enable : Boolean);
 
 end org.allbinary.game.NullIntermissionEnableListener_Package;

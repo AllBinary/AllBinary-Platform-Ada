@@ -30,6 +30,7 @@ with org.allbinary.data.tables.user.commerce.inventory.order.OrderHistoryEntityF
 with org.allbinary.data.tables.user.commerce.inventory.order.OrderHistoryEntityInterface_Package; use org.allbinary.data.tables.user.commerce.inventory.order.OrderHistoryEntityInterface_Package;
 with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.business.context.modules.storefront.statistics.orders.history.StoreFrontOrdersHistoryStatisticsInterface_Package; use org.allbinary.business.context.modules.storefront.statistics.orders.history.StoreFrontOrdersHistoryStatisticsInterface_Package;
+with org.allbinary.business.context.modules.storefront.statistics.orders.history.StoreFrontOrdersHistoryStatisticsData_Package; use org.allbinary.business.context.modules.storefront.statistics.orders.history.StoreFrontOrdersHistoryStatisticsData_Package;
 
 package org.allbinary.business.context.modules.storefront.statistics.orders.history.StoreFrontOrdersHistoryStatistics_Package is
 
@@ -58,21 +59,13 @@ package org.allbinary.business.context.modules.storefront.statistics.orders.hist
    procedure Initialize (This : in out StoreFrontOrdersHistoryStatistics'Class; storeFrontInterface : StoreFrontInterface_Access);
    function Create (storeFrontInterface : StoreFrontInterface_Access) return StoreFrontOrdersHistoryStatistics_Access;
    function getNumberOfOrders (This : in out StoreFrontOrdersHistoryStatistics) return Long_Long_Integer;
-   procedure getNumberOfOrders (This : in out StoreFrontOrdersHistoryStatistics);
    function getSubTotal (This : in out StoreFrontOrdersHistoryStatistics) return Money_Access;
-   procedure getSubTotal (This : in out StoreFrontOrdersHistoryStatistics);
    function getShippingCost (This : in out StoreFrontOrdersHistoryStatistics) return Money_Access;
-   procedure getShippingCost (This : in out StoreFrontOrdersHistoryStatistics);
    function getTaxes (This : in out StoreFrontOrdersHistoryStatistics) return Money_Access;
-   procedure getTaxes (This : in out StoreFrontOrdersHistoryStatistics);
    function getTotal (This : in out StoreFrontOrdersHistoryStatistics) return Money_Access;
-   procedure getTotal (This : in out StoreFrontOrdersHistoryStatistics);
    function toHashMap (This : in out StoreFrontOrdersHistoryStatistics) return HashMap_Access;
-   procedure toHashMap (This : in out StoreFrontOrdersHistoryStatistics);
    function toVector (This : in out StoreFrontOrdersHistoryStatistics) return BasicArrayList_Access;
-   procedure toVector (This : in out StoreFrontOrdersHistoryStatistics);
    function getKey (This : in out StoreFrontOrdersHistoryStatistics) return Java_Object_Access;
-   procedure getKey (This : in out StoreFrontOrdersHistoryStatistics);
 
 end org.allbinary.business.context.modules.storefront.statistics.orders.history.StoreFrontOrdersHistoryStatistics_Package;
 

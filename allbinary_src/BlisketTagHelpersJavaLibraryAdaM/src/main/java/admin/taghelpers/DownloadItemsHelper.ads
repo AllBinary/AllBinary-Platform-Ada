@@ -48,13 +48,9 @@ package admin.taghelpers.DownloadItemsHelper_Package is
    procedure Initialize (This : in out DownloadItemsHelper'Class; hashMap : HashMap_Access; pageContext : PageContext_Access);
    function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return DownloadItemsHelper_Access;
    function create (This : in out DownloadItemsHelper) return Unbounded_String;
-   procedure create (This : in out DownloadItemsHelper);
    function drop (This : in out DownloadItemsHelper) return Unbounded_String;
-   procedure drop (This : in out DownloadItemsHelper);
    function restore (This : in out DownloadItemsHelper) return Unbounded_String;
-   procedure restore (This : in out DownloadItemsHelper);
    function backup (This : in out DownloadItemsHelper) return Unbounded_String;
-   procedure backup (This : in out DownloadItemsHelper);
 
 end admin.taghelpers.DownloadItemsHelper_Package;
 

@@ -50,7 +50,7 @@ package body org.allbinary.game.paint.AboutPaintable_Package is
    function Create (info : Unbounded_String_Array_Access; developers : Unbounded_String_Array_Access) return AboutPaintable_Access is
       This : constant AboutPaintable_Access := new AboutPaintable;
    begin
-      Initialize (This.all, info, developers);
+      AboutPaintable_Package.Initialize (This.all, info, developers);
       return This;
    end Create;
 
@@ -104,13 +104,6 @@ package body org.allbinary.game.paint.AboutPaintable_Package is
    begin
       null;
    end getInstance;
-
-   procedure getPaintableArrayInstance (This : in out AboutPaintable) is
-      Java_Result : constant Paintable_Access_Array_Access := AboutPaintable'Class (This).getPaintableArrayInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getPaintableArrayInstance;
 
 end org.allbinary.game.paint.AboutPaintable_Package;
 

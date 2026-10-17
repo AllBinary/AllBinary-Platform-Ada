@@ -62,9 +62,7 @@ package org.allbinary.data.tables.generator.IdGeneratorEntity_Package is
    procedure update (This : in out IdGeneratorEntity; name_Case : Unbounded_String; value_Case : Long_Long_Integer);
    procedure update (This : in out IdGeneratorEntity; hashMap : HashMap_Access);
    function createTable (This : in out IdGeneratorEntity) return Unbounded_String;
-   procedure createTable (This : in out IdGeneratorEntity);
    function dropTable (This : in out IdGeneratorEntity) return Unbounded_String;
-   procedure dropTable (This : in out IdGeneratorEntity);
 
 end org.allbinary.data.tables.generator.IdGeneratorEntity_Package;
 

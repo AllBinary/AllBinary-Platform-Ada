@@ -8,11 +8,15 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.util.Stack_Package; use java.util.Stack_Package;
+with java.util.Stack_Package; use java.util.Stack_Package;
 with javax.microedition.lcdui.Canvas_Package; use javax.microedition.lcdui.Canvas_Package;
+with javax.microedition.lcdui.Command_Package; use javax.microedition.lcdui.Command_Package;
+with javax.microedition.lcdui.CommandListener_Package; use javax.microedition.lcdui.CommandListener_Package;
+with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
 
 package javax.microedition.lcdui.NullCanvas_Package is
 
+   package Stack_Package renames Standard.java.util.Stack_Package;
 
    type NullCanvas is tagged;
    type NullCanvas_Access is access all NullCanvas'Class;
@@ -27,7 +31,6 @@ package javax.microedition.lcdui.NullCanvas_Package is
    procedure setFullScreenMode (This : in out NullCanvas; mode : Boolean);
    procedure sizeChanged (This : in out NullCanvas; w : Integer; h : Integer);
    function getCommandStack (This : in out NullCanvas) return Stack_Access;
-   procedure getCommandStack (This : in out NullCanvas);
    function isCommand (This : in out NullCanvas; command : Command_Access) return Boolean;
    procedure isCommand (This : in out NullCanvas; command : Command_Access);
    procedure addCommand (This : in out NullCanvas; command : Command_Access);
@@ -35,9 +38,7 @@ package javax.microedition.lcdui.NullCanvas_Package is
    procedure removeAllCommands (This : in out NullCanvas);
    procedure setCommandListener (This : in out NullCanvas; l : CommandListener_Access);
    function getCustomCommandListener (This : in out NullCanvas) return CommandListener_Access;
-   procedure getCustomCommandListener (This : in out NullCanvas);
    function isPaused (This : in out NullCanvas) return Boolean;
-   procedure isPaused (This : in out NullCanvas);
    procedure removePauseCommand (This : in out NullCanvas);
    procedure pause (This : in out NullCanvas);
    procedure unPause (This : in out NullCanvas);

@@ -57,16 +57,9 @@ package body org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package is
    function Create return OpenGLFeatureFactory_Access is
       This : constant OpenGLFeatureFactory_Access := new OpenGLFeatureFactory;
    begin
-      Initialize (This.all);
+      OpenGLFeatureFactory_Package.Initialize (This.all);
       return This;
    end Create;
-
-   procedure getInstance is
-      Java_Result : constant OpenGLFeatureFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

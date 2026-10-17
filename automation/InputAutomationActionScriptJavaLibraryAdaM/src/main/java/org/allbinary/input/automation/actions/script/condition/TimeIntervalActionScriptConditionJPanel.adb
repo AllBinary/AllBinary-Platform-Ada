@@ -44,7 +44,7 @@ package body org.allbinary.input.automation.actions.script.condition.TimeInterva
    function Create (timeIntervalActionScriptConditionInterface : TimeIntervalActionScriptConditionInterface_Access) return TimeIntervalActionScriptConditionJPanel_Access is
       This : constant TimeIntervalActionScriptConditionJPanel_Access := new TimeIntervalActionScriptConditionJPanel;
    begin
-      Initialize (This.all, timeIntervalActionScriptConditionInterface);
+      TimeIntervalActionScriptConditionJPanel_Package.Initialize (This.all, timeIntervalActionScriptConditionInterface);
       return This;
    end Create;
 
@@ -132,20 +132,6 @@ package body org.allbinary.input.automation.actions.script.condition.TimeInterva
    begin
         This.getTimeIntervalActionJDialog.setVisible (True);
    end timeIntervalActionJButtonActionPerformed;
-
-   procedure getTimeIntervalJTextField (This : in out TimeIntervalActionScriptConditionJPanel) is
-      Java_Result : constant JTextField_Access := TimeIntervalActionScriptConditionJPanel'Class (This).getTimeIntervalJTextField;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTimeIntervalJTextField;
-
-   procedure getTimeIntervalActionJDialog (This : in out TimeIntervalActionScriptConditionJPanel) is
-      Java_Result : constant JDialog_Access := TimeIntervalActionScriptConditionJPanel'Class (This).getTimeIntervalActionJDialog;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTimeIntervalActionJDialog;
 
 end org.allbinary.input.automation.actions.script.condition.TimeIntervalActionScriptConditionJPanel_Package;
 

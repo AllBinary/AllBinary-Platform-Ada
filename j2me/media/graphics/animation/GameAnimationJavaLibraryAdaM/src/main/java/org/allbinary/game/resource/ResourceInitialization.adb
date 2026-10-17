@@ -29,7 +29,7 @@ package body org.allbinary.game.resource.ResourceInitialization_Package is
    function Create return ResourceInitialization_Access is
       This : constant ResourceInitialization_Access := new ResourceInitialization;
    begin
-      Initialize (This.all);
+      ResourceInitialization_Package.Initialize (This.all);
       return This;
    end Create;
 

@@ -31,7 +31,7 @@ package body views.admin.storefront.EditValidationStoreFrontView_Package is
    function Create (transformInfoInterface : TransformInfoInterface_Access) return EditValidationStoreFrontView_Access is
       This : constant EditValidationStoreFrontView_Access := new EditValidationStoreFrontView;
    begin
-      Initialize (This.all, transformInfoInterface);
+      EditValidationStoreFrontView_Package.Initialize (This.all, transformInfoInterface);
       return This;
    end Create;
 
@@ -95,27 +95,6 @@ package body views.admin.storefront.EditValidationStoreFrontView_Package is
    begin
         return null;
    end toValidationInfoNode;
-
-   procedure isValid (This : in out EditValidationStoreFrontView) is
-      Java_Result : constant Boolean := EditValidationStoreFrontView'Class (This).isValid;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isValid;
-
-   procedure validationInfo (This : in out EditValidationStoreFrontView) is
-      Java_Result : constant Unbounded_String := EditValidationStoreFrontView'Class (This).validationInfo;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end validationInfo;
-
-   procedure toValidationInfoDoc (This : in out EditValidationStoreFrontView) is
-      Java_Result : constant Document_Access := EditValidationStoreFrontView'Class (This).toValidationInfoDoc;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toValidationInfoDoc;
 
    procedure toValidationInfoNode (This : in out EditValidationStoreFrontView; document : Document_Access) is
       Java_Result : constant Node_Access := EditValidationStoreFrontView'Class (This).toValidationInfoNode (document);

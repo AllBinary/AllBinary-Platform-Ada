@@ -43,11 +43,8 @@ package org.allbinary.logic.io.BufferedLineReader_Package is
    function Create (file : AbFile_Access) return BufferedLineReader_Access;
    procedure readUpToLines (This : in out BufferedLineReader; readAheadIndex : Long_Long_Integer);
    function readLine (This : in out BufferedLineReader) return Unbounded_String;
-   procedure readLine (This : in out BufferedLineReader);
    function getSize (This : in out BufferedLineReader) return Long_Long_Integer;
-   procedure getSize (This : in out BufferedLineReader);
    function getCurrent (This : in out BufferedLineReader) return Integer;
-   procedure getCurrent (This : in out BufferedLineReader);
 
 end org.allbinary.logic.io.BufferedLineReader_Package;
 

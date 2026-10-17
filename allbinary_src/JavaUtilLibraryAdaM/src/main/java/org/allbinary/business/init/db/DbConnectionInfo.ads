@@ -55,24 +55,15 @@ package org.allbinary.business.init.db.DbConnectionInfo_Package is
    function Create return DbConnectionInfo_Access;
    procedure updateUrl (This : in out DbConnectionInfo);
    function getUrl (This : in out DbConnectionInfo) return Unbounded_String;
-   procedure getUrl (This : in out DbConnectionInfo);
    function getJdbcDriver (This : in out DbConnectionInfo) return Unbounded_String;
-   procedure getJdbcDriver (This : in out DbConnectionInfo);
    function getName (This : in out DbConnectionInfo) return Unbounded_String;
-   procedure getName (This : in out DbConnectionInfo);
    function getUserName (This : in out DbConnectionInfo) return Unbounded_String;
-   procedure getUserName (This : in out DbConnectionInfo);
    function getPassword (This : in out DbConnectionInfo) return Unbounded_String;
-   procedure getPassword (This : in out DbConnectionInfo);
    procedure updateHost (This : in out DbConnectionInfo);
    function getHost (This : in out DbConnectionInfo) return Unbounded_String;
-   procedure getHost (This : in out DbConnectionInfo);
    function getSchema (This : in out DbConnectionInfo) return Unbounded_String;
-   procedure getSchema (This : in out DbConnectionInfo);
    function getServer (This : in out DbConnectionInfo) return Unbounded_String;
-   procedure getServer (This : in out DbConnectionInfo);
    function getPort (This : in out DbConnectionInfo) return Unbounded_String;
-   procedure getPort (This : in out DbConnectionInfo);
    procedure setJdbcDriver (This : in out DbConnectionInfo; value : Unbounded_String);
    procedure setName (This : in out DbConnectionInfo; value : Unbounded_String);
    procedure setUserName (This : in out DbConnectionInfo; value : Unbounded_String);
@@ -81,9 +72,7 @@ package org.allbinary.business.init.db.DbConnectionInfo_Package is
    procedure setServer (This : in out DbConnectionInfo; value : Unbounded_String);
    procedure setPort (This : in out DbConnectionInfo; value : Unbounded_String);
    function getUserNameKey (This : in out DbConnectionInfo) return Unbounded_String;
-   procedure getUserNameKey (This : in out DbConnectionInfo);
    function getPasswordKey (This : in out DbConnectionInfo) return Unbounded_String;
-   procedure getPasswordKey (This : in out DbConnectionInfo);
 
 end org.allbinary.business.init.db.DbConnectionInfo_Package;
 

@@ -90,7 +90,7 @@ package body org.allbinary.business.installer.Initializer_Package is
    function Create (map : Map_Access) return Initializer_Access is
       This : constant Initializer_Access := new Initializer;
    begin
-      Initialize (This.all, map);
+      Initializer_Package.Initialize (This.all, map);
       return This;
    end Create;
 
@@ -104,7 +104,7 @@ package body org.allbinary.business.installer.Initializer_Package is
    function Create (initHashMap : HashMap_Access) return Initializer_Access is
       This : constant Initializer_Access := new Initializer;
    begin
-      Initialize (This.all, initHashMap);
+      Initializer_Package.Initialize (This.all, initHashMap);
       return This;
    end Create;
 
@@ -421,33 +421,12 @@ package body org.allbinary.business.installer.Initializer_Package is
       null;
    end isJdbcDriverValid;
 
-   procedure isValid (This : in out Initializer) is
-      Java_Result : constant Boolean := Initializer'Class (This).isValid;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isValid;
-
    procedure getJdbcDriverValidationInfo (This : in out Initializer; jdbcDriver : Unbounded_String) is
       Java_Result : constant Unbounded_String := Initializer'Class (This).getJdbcDriverValidationInfo (jdbcDriver);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getJdbcDriverValidationInfo;
-
-   procedure getJdbcDriverSolutionInfo (This : in out Initializer) is
-      Java_Result : constant Unbounded_String := Initializer'Class (This).getJdbcDriverSolutionInfo;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getJdbcDriverSolutionInfo;
-
-   procedure getInvalidInfo (This : in out Initializer) is
-      Java_Result : constant Unbounded_String := Initializer'Class (This).getInvalidInfo;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInvalidInfo;
 
 begin
    null;

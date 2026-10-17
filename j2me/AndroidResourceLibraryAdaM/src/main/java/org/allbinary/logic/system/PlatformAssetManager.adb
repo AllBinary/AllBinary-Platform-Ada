@@ -28,7 +28,7 @@ package body org.allbinary.logic.system.PlatformAssetManager_Package is
    function Create return PlatformAssetManager_Access is
       This : constant PlatformAssetManager_Access := new PlatformAssetManager;
    begin
-      Initialize (This.all);
+      PlatformAssetManager_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -47,13 +47,6 @@ package body org.allbinary.logic.system.PlatformAssetManager_Package is
         inputStream := resourceUtil.getResourceAsStream (resource);
         return inputStream;
    end getResourceAsStream;
-
-   procedure getInstance is
-      Java_Result : constant PlatformAssetManager_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure getResourceAsStream (This : in out PlatformAssetManager; resource : Unbounded_String) is
       Java_Result : constant InputStream_Access := PlatformAssetManager'Class (This).getResourceAsStream (resource);

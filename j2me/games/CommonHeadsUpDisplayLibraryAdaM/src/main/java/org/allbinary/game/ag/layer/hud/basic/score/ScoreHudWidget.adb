@@ -36,7 +36,7 @@ package body org.allbinary.game.ag.layer.hud.basic.score.ScoreHudWidget_Package 
    function Create (maxscore : Integer; location : Integer; direction : Integer; bufferZone : Integer; basicColor : BasicColor_Access) return ScoreHudWidget_Access is
       This : constant ScoreHudWidget_Access := new ScoreHudWidget;
    begin
-      Initialize (This.all, maxscore, location, direction, bufferZone, basicColor);
+      ScoreHudWidget_Package.Initialize (This.all, maxscore, location, direction, bufferZone, basicColor);
       return This;
    end Create;
 

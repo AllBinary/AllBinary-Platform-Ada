@@ -26,8 +26,9 @@ with org.allbinary.game.input.GameInput_Package; use org.allbinary.game.input.Ga
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
 with org.allbinary.layer.AllBinaryLayerManager_Package; use org.allbinary.layer.AllBinaryLayerManager_Package;
 with org.allbinary.logic.math.SmallIntegerSingletonFactory_Package; use org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
-with org.allbinary.time_Case.GameTickTimeDelayHelperFactory_Package; use org.allbinary.time_Case.GameTickTimeDelayHelperFactory_Package;
-with org.allbinary.time_Case.TimeDelayHelper_Package; use org.allbinary.time_Case.TimeDelayHelper_Package;
+with org.allbinary.time.GameTickTimeDelayHelperFactory_Package; use org.allbinary.time.GameTickTimeDelayHelperFactory_Package;
+with org.allbinary.time.TimeDelayHelper_Package; use org.allbinary.time.TimeDelayHelper_Package;
+with org.allbinary.game.ag.ai.scroller.TimeFiredInterface_Package; use org.allbinary.game.ag.ai.scroller.TimeFiredInterface_Package;
 
 package org.allbinary.game.ag.ai.scroller.TimedFireAI_Package is
 
@@ -36,8 +37,8 @@ package org.allbinary.game.ag.ai.scroller.TimedFireAI_Package is
    package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
    package AllBinaryLayerManager_Package renames Standard.org.allbinary.layer.AllBinaryLayerManager_Package;
    package SmallIntegerSingletonFactory_Package renames Standard.org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
-   package GameTickTimeDelayHelperFactory_Package renames Standard.org.allbinary.time_Case.GameTickTimeDelayHelperFactory_Package;
-   package TimeDelayHelper_Package renames Standard.org.allbinary.time_Case.TimeDelayHelper_Package;
+   package GameTickTimeDelayHelperFactory_Package renames Standard.org.allbinary.time.GameTickTimeDelayHelperFactory_Package;
+   package TimeDelayHelper_Package renames Standard.org.allbinary.time.TimeDelayHelper_Package;
 
    type TimedFireAI is tagged;
    type TimedFireAI_Access is access all TimedFireAI'Class;

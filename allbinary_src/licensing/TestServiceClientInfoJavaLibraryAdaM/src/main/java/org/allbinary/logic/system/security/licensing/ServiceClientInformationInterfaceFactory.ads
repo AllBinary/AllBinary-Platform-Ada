@@ -20,6 +20,8 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
+with org.allbinary.logic.system.security.licensing.TestClientInformation_Package; use org.allbinary.logic.system.security.licensing.TestClientInformation_Package;
+with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package; use org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
 
 package org.allbinary.logic.system.security.licensing.ServiceClientInformationInterfaceFactory_Package is
 
@@ -35,7 +37,6 @@ package org.allbinary.logic.system.security.licensing.ServiceClientInformationIn
    procedure Initialize (This : in out ServiceClientInformationInterfaceFactory'Class);
    function Create return ServiceClientInformationInterfaceFactory_Access;
    function getInstance return AbeClientInformationInterface_Access;
-   procedure getInstance;
 
 end org.allbinary.logic.system.security.licensing.ServiceClientInformationInterfaceFactory_Package;
 

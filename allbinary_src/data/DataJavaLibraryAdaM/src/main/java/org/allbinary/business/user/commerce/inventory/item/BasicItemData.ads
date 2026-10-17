@@ -21,7 +21,7 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 
-package org.allbinary.business.user.commerce.inventory.item_Case.BasicItemData_Package is
+package org.allbinary.business.user.commerce.inventory.item.BasicItemData_Package is
 
 
    type BasicItemData is tagged;
@@ -65,8 +65,7 @@ package org.allbinary.business.user.commerce.inventory.item_Case.BasicItemData_P
    procedure Initialize (This : in out BasicItemData'Class);
    function Create return BasicItemData_Access;
    function getInstance return BasicItemData_Access;
-   procedure getInstance;
 
-end org.allbinary.business.user.commerce.inventory.item_Case.BasicItemData_Package;
+end org.allbinary.business.user.commerce.inventory.item.BasicItemData_Package;
 
 

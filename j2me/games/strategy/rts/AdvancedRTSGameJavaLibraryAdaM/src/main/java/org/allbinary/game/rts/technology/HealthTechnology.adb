@@ -32,7 +32,7 @@ package body org.allbinary.game.rts.technology.HealthTechnology_Package is
    function Create (maxLevel : Integer) return HealthTechnology_Access is
       This : constant HealthTechnology_Access := new HealthTechnology;
    begin
-      Initialize (This.all, maxLevel);
+      HealthTechnology_Package.Initialize (This.all, maxLevel);
       return This;
    end Create;
 
@@ -101,76 +101,6 @@ package body org.allbinary.game.rts.technology.HealthTechnology_Package is
    function isSelfUpgradeable (This : in out HealthTechnology) return Boolean is
    begin
         return False;
-   end isSelfUpgradeable;
-
-   procedure isCompleted (This : in out HealthTechnology) is
-      Java_Result : constant Boolean := HealthTechnology'Class (This).isCompleted;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isCompleted;
-
-   procedure getPercentComplete (This : in out HealthTechnology) is
-      Java_Result : constant Integer := HealthTechnology'Class (This).getPercentComplete;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getPercentComplete;
-
-   procedure getLevel (This : in out HealthTechnology) is
-      Java_Result : constant Integer := HealthTechnology'Class (This).getLevel;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getLevel;
-
-   procedure getMaxLevel (This : in out HealthTechnology) is
-      Java_Result : constant Integer := HealthTechnology'Class (This).getMaxLevel;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getMaxLevel;
-
-   procedure getCost (This : in out HealthTechnology) is
-      Java_Result : constant Integer := HealthTechnology'Class (This).getCost;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getCost;
-
-   procedure getDowngradeCost (This : in out HealthTechnology) is
-      Java_Result : constant Integer := HealthTechnology'Class (This).getDowngradeCost;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getDowngradeCost;
-
-   procedure isDowngradeable (This : in out HealthTechnology) is
-      Java_Result : constant Boolean := HealthTechnology'Class (This).isDowngradeable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isDowngradeable;
-
-   procedure getUpgradeCost (This : in out HealthTechnology) is
-      Java_Result : constant Integer := HealthTechnology'Class (This).getUpgradeCost;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getUpgradeCost;
-
-   procedure isUpgradeable (This : in out HealthTechnology) is
-      Java_Result : constant Boolean := HealthTechnology'Class (This).isUpgradeable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isUpgradeable;
-
-   procedure isSelfUpgradeable (This : in out HealthTechnology) is
-      Java_Result : constant Boolean := HealthTechnology'Class (This).isSelfUpgradeable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end isSelfUpgradeable;
 
 end org.allbinary.game.rts.technology.HealthTechnology_Package;

@@ -41,7 +41,6 @@ package org.allbinary.graphics.opengles.renderer.RendererStrings_Package is
    procedure Initialize (This : in out RendererStrings'Class);
    function Create return RendererStrings_Access;
    function getInstance return RendererStrings_Access;
-   procedure getInstance;
 
 end org.allbinary.graphics.opengles.renderer.RendererStrings_Package;
 

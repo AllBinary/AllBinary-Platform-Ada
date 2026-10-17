@@ -32,7 +32,7 @@ package body org.allbinary.midlet.MidletExitProcessor_Package is
    function Create (midlet : MIDlet_Access) return MidletExitProcessor_Access is
       This : constant MidletExitProcessor_Access := new MidletExitProcessor;
    begin
-      Initialize (This.all, midlet);
+      MidletExitProcessor_Package.Initialize (This.all, midlet);
       return This;
    end Create;
 

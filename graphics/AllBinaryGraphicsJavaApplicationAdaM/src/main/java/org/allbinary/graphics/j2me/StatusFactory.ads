@@ -21,6 +21,7 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.graphics.j2me.MyFrame_Package; use org.allbinary.graphics.j2me.MyFrame_Package;
 
 package org.allbinary.graphics.j2me.StatusFactory_Package is
 
@@ -41,7 +42,6 @@ package org.allbinary.graphics.j2me.StatusFactory_Package is
    procedure Initialize (This : in out StatusFactory'Class);
    function Create return StatusFactory_Access;
    function getInstance return StatusFactory_Access;
-   procedure getInstance;
    procedure setStatusNoLog (This : in out StatusFactory; status : Unbounded_String);
    procedure setStatus_Case (This : in out StatusFactory; status : Unbounded_String);
 

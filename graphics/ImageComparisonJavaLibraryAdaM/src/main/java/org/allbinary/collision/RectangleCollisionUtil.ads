@@ -21,6 +21,7 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.graphics.GPoint_Package; use org.allbinary.graphics.GPoint_Package;
+with org.allbinary.collision.Rectangle_Package; use org.allbinary.collision.Rectangle_Package;
 
 package org.allbinary.collision.RectangleCollisionUtil_Package is
 

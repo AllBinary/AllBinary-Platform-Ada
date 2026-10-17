@@ -40,12 +40,9 @@ package org.allbinary.game.combat.weapon.SimpleWeaponProperties_Package is
    procedure set (This : in out SimpleWeaponProperties; simpleWeaponProperties : SimpleWeaponProperties_Access);
    procedure setDamage (This : in out SimpleWeaponProperties; damage : Integer);
    function getDamage (This : in out SimpleWeaponProperties) return Integer;
-   procedure getDamage (This : in out SimpleWeaponProperties);
    procedure setDissipation (This : in out SimpleWeaponProperties; dissipation : Short_Integer);
    function getDissipation (This : in out SimpleWeaponProperties) return Short_Integer;
-   procedure getDissipation (This : in out SimpleWeaponProperties);
    function getRange (This : in out SimpleWeaponProperties) return Integer;
-   procedure getRange (This : in out SimpleWeaponProperties);
    procedure setRange (This : in out SimpleWeaponProperties; range_Id : Integer);
 
 end org.allbinary.game.combat.weapon.SimpleWeaponProperties_Package;

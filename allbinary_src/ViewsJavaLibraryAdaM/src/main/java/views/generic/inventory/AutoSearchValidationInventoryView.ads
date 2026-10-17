@@ -41,13 +41,10 @@ package views.generic_Id.inventory.AutoSearchValidationInventoryView_Package is
    procedure Initialize (This : in out AutoSearchValidationInventoryView'Class; searchRequest : SearchRequest_Access);
    function Create (searchRequest : SearchRequest_Access) return AutoSearchValidationInventoryView_Access;
    function isValid (This : in out AutoSearchValidationInventoryView) return Boolean;
-   procedure isValid (This : in out AutoSearchValidationInventoryView);
    function toValidationInfoDoc (This : in out AutoSearchValidationInventoryView) return Document_Access;
-   procedure toValidationInfoDoc (This : in out AutoSearchValidationInventoryView);
    function toValidationInfoNode (This : in out AutoSearchValidationInventoryView; document : Document_Access) return Node_Access;
    procedure toValidationInfoNode (This : in out AutoSearchValidationInventoryView; document : Document_Access);
    function validationInfo (This : in out AutoSearchValidationInventoryView) return Unbounded_String;
-   procedure validationInfo (This : in out AutoSearchValidationInventoryView);
 
 end views.generic_Id.inventory.AutoSearchValidationInventoryView_Package;
 

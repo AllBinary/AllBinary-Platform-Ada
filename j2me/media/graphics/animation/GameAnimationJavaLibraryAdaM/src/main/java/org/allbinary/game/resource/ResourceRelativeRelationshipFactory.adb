@@ -31,7 +31,7 @@ package body org.allbinary.game.resource.ResourceRelativeRelationshipFactory_Pac
    function Create return ResourceRelativeRelationshipFactory_Access is
       This : constant ResourceRelativeRelationshipFactory_Access := new ResourceRelativeRelationshipFactory;
    begin
-      Initialize (This.all);
+      ResourceRelativeRelationshipFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -98,20 +98,6 @@ package body org.allbinary.game.resource.ResourceRelativeRelationshipFactory_Pac
    begin
       null;
    end isLoadingLevel;
-
-   procedure isFeature (This : in out ResourceRelativeRelationshipFactory) is
-      Java_Result : constant Boolean := ResourceRelativeRelationshipFactory'Class (This).isFeature;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isFeature;
-
-   procedure isInitialized (This : in out ResourceRelativeRelationshipFactory) is
-      Java_Result : constant Boolean := ResourceRelativeRelationshipFactory'Class (This).isInitialized;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isInitialized;
 
 end org.allbinary.game.resource.ResourceRelativeRelationshipFactory_Package;
 

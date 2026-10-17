@@ -34,7 +34,7 @@ package body admin.tags.ShippingAddressTag_Package is
    function Create return ShippingAddressTag_Access is
       This : constant ShippingAddressTag_Access := new ShippingAddressTag;
    begin
-      Initialize (This.all);
+      ShippingAddressTag_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -117,27 +117,6 @@ package body admin.tags.ShippingAddressTag_Package is
             return SKIP_BODY;
                 end;
         end;
-   end doStartTag;
-
-   procedure set (This : in out ShippingAddressTag) is
-      Java_Result : constant Unbounded_String := ShippingAddressTag'Class (This).set;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end set;
-
-   procedure setToBillingAddress (This : in out ShippingAddressTag) is
-      Java_Result : constant Unbounded_String := ShippingAddressTag'Class (This).setToBillingAddress;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end setToBillingAddress;
-
-   procedure doStartTag (This : in out ShippingAddressTag) is
-      Java_Result : constant Integer := ShippingAddressTag'Class (This).doStartTag;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end doStartTag;
 
 end admin.tags.ShippingAddressTag_Package;

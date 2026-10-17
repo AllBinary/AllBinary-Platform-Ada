@@ -37,7 +37,7 @@ package body org.allbinary.view.event.ViewPositionEventHandler_Package is
    function Create return ViewPositionEventHandler_Access is
       This : constant ViewPositionEventHandler_Access := new ViewPositionEventHandler;
    begin
-      Initialize (This.all);
+      ViewPositionEventHandler_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -89,13 +89,6 @@ package body org.allbinary.view.event.ViewPositionEventHandler_Package is
         viewPositionEventListenerInterface := (ViewPositionEventListenerInterface_Access (eventListenerInterface));
         viewPositionEventListenerInterface.onChangeEvent (ViewPositionEvent_Access (eventObject));
    end process;
-
-   procedure getInstance is
-      Java_Result : constant ViewPositionEventHandler_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

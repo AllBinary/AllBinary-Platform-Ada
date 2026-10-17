@@ -31,7 +31,7 @@ package body org.allbinary.animation.FeaturedAnimationInterfaceFactoryInterfaceF
    function Create return FeaturedAnimationInterfaceFactoryInterfaceFactory_Access is
       This : constant FeaturedAnimationInterfaceFactoryInterfaceFactory_Access := new FeaturedAnimationInterfaceFactoryInterfaceFactory;
    begin
-      Initialize (This.all);
+      FeaturedAnimationInterfaceFactoryInterfaceFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -158,13 +158,6 @@ package body org.allbinary.animation.FeaturedAnimationInterfaceFactoryInterfaceF
             Java_Throw (Java_New_Exception ("Exception", stringBuffer.append (To_Unbounded_String ("No feature resource type available for Resource: ")).append (resource).append (To_Unbounded_String (" Resource Factories Available: ")).append (result).toString));
         end if;
    end getBasicAnimationInterfaceFactoryInstance;
-
-   procedure getInstance is
-      Java_Result : constant FeaturedAnimationInterfaceFactoryInterfaceFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure getRectangle (This : in out FeaturedAnimationInterfaceFactoryInterfaceFactory; resource : Unbounded_String) is
       Java_Result : constant Rectangle_Access := FeaturedAnimationInterfaceFactoryInterfaceFactory'Class (This).getRectangle (resource);

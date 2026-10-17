@@ -43,7 +43,6 @@ package org.allbinary.input.motion.button.NoButtonsBuilder_Package is
    procedure Initialize (This : in out NoButtonsBuilder'Class);
    function Create return NoButtonsBuilder_Access;
    function getList (This : in out NoButtonsBuilder) return BasicArrayList_Access;
-   procedure getList (This : in out NoButtonsBuilder);
 
 end org.allbinary.input.motion.button.NoButtonsBuilder_Package;
 

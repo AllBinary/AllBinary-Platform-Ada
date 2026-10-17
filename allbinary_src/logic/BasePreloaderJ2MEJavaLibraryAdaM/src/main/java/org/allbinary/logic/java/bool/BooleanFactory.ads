@@ -42,7 +42,6 @@ package org.allbinary.logic.java.bool.BooleanFactory_Package is
    procedure Initialize (This : in out BooleanFactory'Class);
    function Create return BooleanFactory_Access;
    function getInstance return BooleanFactory_Access;
-   procedure getInstance;
    function toStringb (This : in out BooleanFactory; bool : Boolean) return Unbounded_String;
    procedure toStringb (This : in out BooleanFactory; bool : Boolean);
 

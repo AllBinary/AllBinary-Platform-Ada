@@ -34,7 +34,7 @@ package body org.allbinary.game.configuration.GameConfigurationUtil_Package is
    function Create return GameConfigurationUtil_Access is
       This : constant GameConfigurationUtil_Access := new GameConfigurationUtil;
    begin
-      Initialize (This.all);
+      GameConfigurationUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -148,20 +148,6 @@ package body org.allbinary.game.configuration.GameConfigurationUtil_Package is
    function getCompetitionValue (This : in out GameConfigurationUtil) return Integer is
    begin
         return This.COMPETITION_VALUE;
-   end getCompetitionValue;
-
-   procedure getInstance is
-      Java_Result : constant GameConfigurationUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure getCompetitionValue (This : in out GameConfigurationUtil) is
-      Java_Result : constant Integer := GameConfigurationUtil'Class (This).getCompetitionValue;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getCompetitionValue;
 
 begin

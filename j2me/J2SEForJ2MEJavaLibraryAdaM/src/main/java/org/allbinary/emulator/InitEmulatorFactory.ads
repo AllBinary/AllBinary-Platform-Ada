@@ -37,10 +37,8 @@ package org.allbinary.emulator.InitEmulatorFactory_Package is
    procedure Initialize (This : in out InitEmulatorFactory'Class);
    function Create return InitEmulatorFactory_Access;
    function getInstance return InitEmulatorFactory_Access;
-   procedure getInstance;
    procedure setInitEmulator (This : in out InitEmulatorFactory; initEmulator : Boolean);
    function isInitEmulator (This : in out InitEmulatorFactory) return Boolean;
-   procedure isInitEmulator (This : in out InitEmulatorFactory);
 
 end org.allbinary.emulator.InitEmulatorFactory_Package;
 

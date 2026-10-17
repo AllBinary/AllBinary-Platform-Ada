@@ -49,7 +49,7 @@ package body org.allbinary.graphics.opengles.shader.CompositeShaderUpdater_Packa
    function Create (uniformBlockArray : Unbounded_String_Array_Access; uniformArray : Unbounded_String_Array_Access; attributeArray : Unbounded_String_Array_Access; attributeHandleArray : Integer_Array_Access) return CompositeShaderUpdater_Access is
       This : constant CompositeShaderUpdater_Access := new CompositeShaderUpdater;
    begin
-      Initialize (This.all, uniformBlockArray, uniformArray, attributeArray, attributeHandleArray);
+      CompositeShaderUpdater_Package.Initialize (This.all, uniformBlockArray, uniformArray, attributeArray, attributeHandleArray);
       return This;
    end Create;
 
@@ -62,13 +62,6 @@ package body org.allbinary.graphics.opengles.shader.CompositeShaderUpdater_Packa
    begin
         null;
    end onSurfaceDestroyed;
-
-   procedure getInstance is
-      Java_Result : constant CompositeShaderUpdater_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

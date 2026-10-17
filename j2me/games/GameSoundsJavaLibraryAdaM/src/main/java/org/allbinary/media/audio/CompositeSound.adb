@@ -29,7 +29,7 @@ package body org.allbinary.media.audio.CompositeSound_Package is
    function Create (resource : Unbounded_String) return CompositeSound_Access is
       This : constant CompositeSound_Access := new CompositeSound;
    begin
-      Initialize (This.all, resource);
+      CompositeSound_Package.Initialize (This.all, resource);
       return This;
    end Create;
 

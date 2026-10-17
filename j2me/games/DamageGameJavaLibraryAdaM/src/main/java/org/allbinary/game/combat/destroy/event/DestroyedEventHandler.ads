@@ -27,6 +27,8 @@ with org.allbinary.logic.util.event.EventStrings_Package; use org.allbinary.logi
 with org.allbinary.logic.util.event.handler.BasicEventHandler_Package; use org.allbinary.logic.util.event.handler.BasicEventHandler_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.game.combat.destroy.event.DestroyedEvent_Package; use org.allbinary.game.combat.destroy.event.DestroyedEvent_Package;
+with org.allbinary.game.combat.destroy.event.DestroyedEventListenerInterface_Package; use org.allbinary.game.combat.destroy.event.DestroyedEventListenerInterface_Package;
 
 package org.allbinary.game.combat.destroy.event.DestroyedEventHandler_Package is
 
@@ -51,7 +53,6 @@ package org.allbinary.game.combat.destroy.event.DestroyedEventHandler_Package is
    procedure Initialize (This : in out DestroyedEventHandler'Class);
    function Create return DestroyedEventHandler_Access;
    function getInstance return DestroyedEventHandler_Access;
-   procedure getInstance;
    procedure addListener (This : in out DestroyedEventHandler; collidableDestroyableDamageableLayer : CollidableDestroyableDamageableLayer_Access);
    procedure removeAllListeners (This : in out DestroyedEventHandler);
    procedure removeListener (This : in out DestroyedEventHandler; eventListenerInterface : EventListenerInterface_Access);

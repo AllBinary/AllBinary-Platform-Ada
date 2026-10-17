@@ -28,6 +28,8 @@ with org.allbinary.logic.io.path.AbPath_Package; use org.allbinary.logic.io.path
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.allbinary.business.category.CategoryFactoryInterface_Package; use org.allbinary.business.category.CategoryFactoryInterface_Package;
+with org.allbinary.business.category.CategoryInterface_Package; use org.allbinary.business.category.CategoryInterface_Package;
+with org.allbinary.business.category.Category_Package; use org.allbinary.business.category.Category_Package;
 
 package org.allbinary.business.category.CategoryAbstractFactory_Package is
 
@@ -51,7 +53,6 @@ package org.allbinary.business.category.CategoryAbstractFactory_Package is
    procedure Initialize (This : in out CategoryAbstractFactory'Class);
    function Create return CategoryAbstractFactory_Access;
    function getRootInstance (This : in out CategoryAbstractFactory) return CategoryInterface_Access;
-   procedure getRootInstance (This : in out CategoryAbstractFactory);
    function getRootInstance (This : in out CategoryAbstractFactory; categoryAbPath : AbPath_Access) return CategoryInterface_Access;
    procedure getRootInstance (This : in out CategoryAbstractFactory; categoryAbPath : AbPath_Access);
    function getRootInstanceFromNode (This : in out CategoryAbstractFactory; node : Node_Access) return CategoryInterface_Access;

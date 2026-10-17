@@ -17,7 +17,7 @@ package body org.allbinary.graphics.font.FontDebugBase_Package is
    function Create return FontDebugBase_Access is
       This : constant FontDebugBase_Access := new FontDebugBase;
    begin
-      Initialize (This.all);
+      FontDebugBase_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -41,13 +41,6 @@ package body org.allbinary.graphics.font.FontDebugBase_Package is
    begin
         null;
    end debugDimension;
-
-   procedure getInstance is
-      Java_Result : constant FontDebugBase_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

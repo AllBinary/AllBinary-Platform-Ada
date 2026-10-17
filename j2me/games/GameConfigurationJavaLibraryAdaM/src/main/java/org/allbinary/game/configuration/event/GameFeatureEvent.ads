@@ -38,9 +38,7 @@ package org.allbinary.game.configuration.event.GameFeatureEvent_Package is
    procedure Initialize (This : in out GameFeatureEvent'Class; anyType : Java_Object_Access; whatChanged : Unbounded_String);
    function Create (anyType : Java_Object_Access; whatChanged : Unbounded_String) return GameFeatureEvent_Access;
    function getWhatChanged (This : in out GameFeatureEvent) return Unbounded_String;
-   procedure getWhatChanged (This : in out GameFeatureEvent);
    function getGameOption (This : in out GameFeatureEvent) return Java_Object_Access;
-   procedure getGameOption (This : in out GameFeatureEvent);
 
 end org.allbinary.game.configuration.event.GameFeatureEvent_Package;
 

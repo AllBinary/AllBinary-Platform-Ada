@@ -36,7 +36,6 @@ package org.allbinary.game.state.GameState_Package is
    procedure Initialize (This : in out GameState'Class; name : Unbounded_String; state : Integer);
    function Create (name : Unbounded_String; state : Integer) return GameState_Access;
    function toString (This : in out GameState) return Unbounded_String;
-   procedure toString (This : in out GameState);
 
 end org.allbinary.game.state.GameState_Package;
 

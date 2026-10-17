@@ -34,20 +34,13 @@ package body org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeogr
    function Create (name : Unbounded_String; type_Id : Integer; travelCost : Integer; reset : Integer) return RaceTrackGeographicMapCellType_Access is
       This : constant RaceTrackGeographicMapCellType_Access := new RaceTrackGeographicMapCellType;
    begin
-      Initialize (This.all, name, type_Id, travelCost, reset);
+      RaceTrackGeographicMapCellType_Package.Initialize (This.all, name, type_Id, travelCost, reset);
       return This;
    end Create;
 
    function getTravelCost (This : in out RaceTrackGeographicMapCellType) return Integer is
    begin
         return This.travelCost;
-   end getTravelCost;
-
-   procedure getTravelCost (This : in out RaceTrackGeographicMapCellType) is
-      Java_Result : constant Integer := RaceTrackGeographicMapCellType'Class (This).getTravelCost;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getTravelCost;
 
 end org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellType_Package;

@@ -31,7 +31,7 @@ package body org.allbinary.logic.system.hardware.components.android.UnknownHardw
    function Create (data : Unbounded_String) return UnknownHardware_Access is
       This : constant UnknownHardware_Access := new UnknownHardware;
    begin
-      Initialize (This.all, data);
+      UnknownHardware_Package.Initialize (This.all, data);
       return This;
    end Create;
 
@@ -51,13 +51,6 @@ package body org.allbinary.logic.system.hardware.components.android.UnknownHardw
    begin
       null;
    end compareTo;
-
-   procedure toString (This : in out UnknownHardware) is
-      Java_Result : constant Unbounded_String := UnknownHardware'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toString;
 
 end org.allbinary.logic.system.hardware.components.android.UnknownHardware_Package;
 

@@ -46,7 +46,7 @@ package body org.allbinary.graphics.displayable.MyCanvas_Package is
    function Create (name : Unbounded_String; childNameList : BasicArrayList_Access) return MyCanvas_Access is
       This : constant MyCanvas_Access := new MyCanvas;
    begin
-      Initialize (This.all, name, childNameList);
+      MyCanvas_Package.Initialize (This.all, name, childNameList);
       return This;
    end Create;
 
@@ -198,33 +198,12 @@ package body org.allbinary.graphics.displayable.MyCanvas_Package is
         null;
    end nextSong;
 
-   procedure getCommandStack (This : in out MyCanvas) is
-      Java_Result : constant ABStack_Access := MyCanvas'Class (This).getCommandStack;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getCommandStack;
-
    procedure isCommand (This : in out MyCanvas; command : Command_Access) is
       Java_Result : constant Boolean := MyCanvas'Class (This).isCommand (command);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isCommand;
-
-   procedure getCustomCommandListener (This : in out MyCanvas) is
-      Java_Result : constant CommandListener_Access := MyCanvas'Class (This).getCustomCommandListener;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getCustomCommandListener;
-
-   procedure isPaused (This : in out MyCanvas) is
-      Java_Result : constant Boolean := MyCanvas'Class (This).isPaused;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isPaused;
 
    procedure hasChild (This : in out MyCanvas; displayable : MyCanvas_Access) is
       Java_Result : constant Boolean := MyCanvas'Class (This).hasChild (displayable);

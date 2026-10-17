@@ -64,13 +64,9 @@ package org.allbinary.logic.io.file.SimpleFileUtil_Package is
    procedure Initialize (This : in out SimpleFileUtil'Class);
    function Create return SimpleFileUtil_Access;
    function getInstance return SimpleFileUtil_Access;
-   procedure getInstance;
    function nullOutputStream return OutputStream_Access;
-   procedure nullOutputStream;
    function nullWriter return Writer_Access;
-   procedure nullWriter;
    function nullReader return Reader_Access;
-   procedure nullReader;
    function loadFileAsList (This : in out SimpleFileUtil; inputStream : InputStream_Access; max : Integer; byteArray1 : Short_Short_Integer_Array_Access) return BasicArrayList_Access;
    procedure loadFileAsList (This : in out SimpleFileUtil; inputStream : InputStream_Access; max : Integer; byteArray1 : Short_Short_Integer_Array_Access);
    function loadFileAsListReturnLine (This : in out SimpleFileUtil; inputStream : InputStream_Access; max : Integer; byteArray1 : Short_Short_Integer_Array_Access; includeReturnLine : Integer) return BasicArrayList_Access;

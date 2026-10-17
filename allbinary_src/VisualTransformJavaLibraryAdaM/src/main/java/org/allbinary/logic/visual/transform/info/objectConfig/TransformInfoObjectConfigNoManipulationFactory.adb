@@ -36,7 +36,7 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.TransformInf
    function Create return TransformInfoObjectConfigNoManipulationFactory_Access is
       This : constant TransformInfoObjectConfigNoManipulationFactory_Access := new TransformInfoObjectConfigNoManipulationFactory;
    begin
-      Initialize (This.all);
+      TransformInfoObjectConfigNoManipulationFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -62,13 +62,6 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.TransformInf
             Java_Throw (e);
                 end;
         end;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant TransformInfoObjectConfigNoManipulationFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
    procedure getInstance (This : in out TransformInfoObjectConfigNoManipulationFactory; transformInfoInterface : TransformInfoInterface_Access; objectConfigFileAbPath : AbPath_Access) is

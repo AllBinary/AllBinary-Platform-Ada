@@ -32,7 +32,7 @@ package body org.allbinary.data.tables.user.address.billing.BillingAddressesEnti
    function Create (userName : Unbounded_String) return BillingAddressesEntity_Access is
       This : constant BillingAddressesEntity_Access := new BillingAddressesEntity;
    begin
-      Initialize (This.all, userName);
+      BillingAddressesEntity_Package.Initialize (This.all, userName);
       return This;
    end Create;
 

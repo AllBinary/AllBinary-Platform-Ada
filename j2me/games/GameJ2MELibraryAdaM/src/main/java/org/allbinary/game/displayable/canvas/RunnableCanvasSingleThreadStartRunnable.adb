@@ -33,7 +33,7 @@ package body org.allbinary.game.displayable.canvas.RunnableCanvasSingleThreadSta
    function Create (demoCanvas : RunnableCanvas_Access) return RunnableCanvasSingleThreadStartRunnable_Access is
       This : constant RunnableCanvasSingleThreadStartRunnable_Access := new RunnableCanvasSingleThreadStartRunnable;
    begin
-      Initialize (This.all, demoCanvas);
+      RunnableCanvasSingleThreadStartRunnable_Package.Initialize (This.all, demoCanvas);
       return This;
    end Create;
 

@@ -21,6 +21,9 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.io.file.AbFile_Package; use org.allbinary.logic.io.file.AbFile_Package;
+with org.allbinary.logic.io.AbFileOutputStream_Package; use org.allbinary.logic.io.AbFileOutputStream_Package;
+with org.allbinary.logic.io.AbDataOutputStream_Package; use org.allbinary.logic.io.AbDataOutputStream_Package;
+with org.allbinary.logic.io.FileStreamFactory_Package; use org.allbinary.logic.io.FileStreamFactory_Package;
 
 package org.allbinary.logic.io.DataOutputStreamFactory_Package is
 
@@ -37,7 +40,6 @@ package org.allbinary.logic.io.DataOutputStreamFactory_Package is
    procedure Initialize (This : in out DataOutputStreamFactory'Class);
    function Create return DataOutputStreamFactory_Access;
    function getInstance return DataOutputStreamFactory_Access;
-   procedure getInstance;
    function getInstanceForAbFile (This : in out DataOutputStreamFactory; file : AbFile_Access) return AbDataOutputStream_Access;
    procedure getInstanceForAbFile (This : in out DataOutputStreamFactory; file : AbFile_Access);
    function getInstance (This : in out DataOutputStreamFactory; filePath : Unbounded_String; fileName : Unbounded_String) return AbDataOutputStream_Access;

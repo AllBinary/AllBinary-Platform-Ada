@@ -35,7 +35,7 @@ package body org.allbinary.game.layer.PlayerGameInputGameLayer_Package is
    function Create (playerInputId : Integer) return PlayerGameInputGameLayer_Access is
       This : constant PlayerGameInputGameLayer_Access := new PlayerGameInputGameLayer;
    begin
-      Initialize (This.all, playerInputId);
+      PlayerGameInputGameLayer_Package.Initialize (This.all, playerInputId);
       return This;
    end Create;
 
@@ -59,13 +59,6 @@ package body org.allbinary.game.layer.PlayerGameInputGameLayer_Package is
    begin
         null;
    end paint;
-
-   procedure getPlayerGameInput (This : in out PlayerGameInputGameLayer) is
-      Java_Result : constant PlayerGameInput_Access := PlayerGameInputGameLayer'Class (This).getPlayerGameInput;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getPlayerGameInput;
 
 end org.allbinary.game.layer.PlayerGameInputGameLayer_Package;
 

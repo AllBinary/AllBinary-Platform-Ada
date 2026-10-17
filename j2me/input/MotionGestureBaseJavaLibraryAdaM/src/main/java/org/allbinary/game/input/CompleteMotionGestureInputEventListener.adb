@@ -16,7 +16,7 @@ package body org.allbinary.game.input.CompleteMotionGestureInputEventListener_Pa
    function Create return CompleteMotionGestureInputEventListener_Access is
       This : constant CompleteMotionGestureInputEventListener_Access := new CompleteMotionGestureInputEventListener;
    begin
-      Initialize (This.all);
+      CompleteMotionGestureInputEventListener_Package.Initialize (This.all);
       return This;
    end Create;
 

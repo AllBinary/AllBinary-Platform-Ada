@@ -48,6 +48,13 @@ with org.allbinary.media.audio.ErrorSound_Package; use org.allbinary.media.audio
 with org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package; use org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
 with org.allbinary.media.graphics.geography.map.GeographicMapCompositeInterface_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCompositeInterface_Package;
 with org.allbinary.game.input.PlayerGameInput_Package; use org.allbinary.game.input.PlayerGameInput_Package;
+with org.allbinary.game.input.GameInputProcessor_Package; use org.allbinary.game.input.GameInputProcessor_Package;
+with org.allbinary.game.input.InputFactory_Package; use org.allbinary.game.input.InputFactory_Package;
+with org.allbinary.game.input.SelectRTSLayerVisitorFactoryInterface_Package; use org.allbinary.game.input.SelectRTSLayerVisitorFactoryInterface_Package;
+with org.allbinary.game.input.RTSPlayerGameInput_Package; use org.allbinary.game.input.RTSPlayerGameInput_Package;
+with org.allbinary.game.input.SelectedRTSLayersPlayerUpgradeGameInputProcessor_Package; use org.allbinary.game.input.SelectedRTSLayersPlayerUpgradeGameInputProcessor_Package;
+with org.allbinary.game.input.SelectedRTSLayersPlayerDowngradeGameInputProcessor_Package; use org.allbinary.game.input.SelectedRTSLayersPlayerDowngradeGameInputProcessor_Package;
+with org.allbinary.game.input.GameInputProcessorUtil_Package; use org.allbinary.game.input.GameInputProcessorUtil_Package;
 
 package org.allbinary.game.input.SelectedRTSLayersPlayerGameInput_Package is
 
@@ -108,20 +115,15 @@ package org.allbinary.game.input.SelectedRTSLayersPlayerGameInput_Package is
    procedure processInputKey (This : in out SelectedRTSLayersPlayerGameInput; key : Integer);
    procedure processInput (This : in out SelectedRTSLayersPlayerGameInput; layerManager : AllBinaryLayerManager_Access);
    function getSelectedBasicArrayList (This : in out SelectedRTSLayersPlayerGameInput) return BasicArrayList_Access;
-   procedure getSelectedBasicArrayList (This : in out SelectedRTSLayersPlayerGameInput);
    procedure addSelectedRTSLayer (This : in out SelectedRTSLayersPlayerGameInput; selectedLayer : RTSLayer_Access);
    procedure setSelectedRTSLayer (This : in out SelectedRTSLayersPlayerGameInput; selectedLayer : CollidableDestroyableDamageableLayer_Access);
    function getLastSelectedRtsLayer (This : in out SelectedRTSLayersPlayerGameInput) return CollidableDestroyableDamageableLayer_Access;
-   procedure getLastSelectedRtsLayer (This : in out SelectedRTSLayersPlayerGameInput);
    procedure selectAllPreselected (This : in out SelectedRTSLayersPlayerGameInput);
    procedure deselectAllPreselected (This : in out SelectedRTSLayersPlayerGameInput);
    procedure deselectAll (This : in out SelectedRTSLayersPlayerGameInput);
    function isAnyRTSLayerSelected (This : in out SelectedRTSLayersPlayerGameInput) return Boolean;
-   procedure isAnyRTSLayerSelected (This : in out SelectedRTSLayersPlayerGameInput);
    function getPaintSelectedRTSLayersList (This : in out SelectedRTSLayersPlayerGameInput) return BasicArrayList_Access;
-   procedure getPaintSelectedRTSLayersList (This : in out SelectedRTSLayersPlayerGameInput);
    function getPreSelectedRTSLayersList (This : in out SelectedRTSLayersPlayerGameInput) return BasicArrayList_Access;
-   procedure getPreSelectedRTSLayersList (This : in out SelectedRTSLayersPlayerGameInput);
 
 end org.allbinary.game.input.SelectedRTSLayersPlayerGameInput_Package;
 

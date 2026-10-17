@@ -35,7 +35,7 @@ package body admin.tags.BasketTag_Package is
    function Create return BasketTag_Access is
       This : constant BasketTag_Access := new BasketTag;
    begin
-      Initialize (This.all);
+      BasketTag_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -169,41 +169,6 @@ package body admin.tags.BasketTag_Package is
             return SKIP_BODY;
                 end;
         end;
-   end doStartTag;
-
-   procedure isBasketEmpty (This : in out BasketTag) is
-      Java_Result : constant Boolean := BasketTag'Class (This).isBasketEmpty;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isBasketEmpty;
-
-   procedure addItemToBasket (This : in out BasketTag) is
-      Java_Result : constant Boolean := BasketTag'Class (This).addItemToBasket;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end addItemToBasket;
-
-   procedure removeItemFromBasket (This : in out BasketTag) is
-      Java_Result : constant Boolean := BasketTag'Class (This).removeItemFromBasket;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end removeItemFromBasket;
-
-   procedure adjustBasket (This : in out BasketTag) is
-      Java_Result : constant Boolean := BasketTag'Class (This).adjustBasket;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end adjustBasket;
-
-   procedure doStartTag (This : in out BasketTag) is
-      Java_Result : constant Integer := BasketTag'Class (This).doStartTag;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end doStartTag;
 
 end admin.tags.BasketTag_Package;

@@ -32,7 +32,7 @@ package body org.allbinary.input.automation.robot.osgi.InputAutomationRobotOSGIS
    function Create return InputAutomationRobotOSGIServiceVisitor_Access is
       This : constant InputAutomationRobotOSGIServiceVisitor_Access := new InputAutomationRobotOSGIServiceVisitor;
    begin
-      Initialize (This.all);
+      InputAutomationRobotOSGIServiceVisitor_Package.Initialize (This.all);
       return This;
    end Create;
 

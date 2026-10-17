@@ -35,7 +35,7 @@ package body org.allbinary.game.layer.hud.basic.LapWidget_Package is
    function Create (location : Integer; direction : Integer; basicColor : BasicColor_Access) return LapWidget_Access is
       This : constant LapWidget_Access := new LapWidget;
    begin
-      Initialize (This.all, location, direction, basicColor);
+      LapWidget_Package.Initialize (This.all, location, direction, basicColor);
       return This;
    end Create;
 

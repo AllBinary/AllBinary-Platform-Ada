@@ -37,7 +37,6 @@ package org.allbinary.logic.io.OutputTypeData_Package is
    procedure Initialize (This : in out OutputTypeData'Class);
    function Create return OutputTypeData_Access;
    function getInstance return OutputTypeData_Access;
-   procedure getInstance;
 
 end org.allbinary.logic.io.OutputTypeData_Package;
 

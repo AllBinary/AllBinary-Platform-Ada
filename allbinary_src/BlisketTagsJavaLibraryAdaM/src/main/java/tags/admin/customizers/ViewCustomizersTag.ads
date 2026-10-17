@@ -39,7 +39,6 @@ package tags.admin.customizers.ViewCustomizersTag_Package is
    procedure Initialize (This : in out ViewCustomizersTag'Class);
    function Create return ViewCustomizersTag_Access;
    function doStartTag (This : in out ViewCustomizersTag) return Integer;
-   procedure doStartTag (This : in out ViewCustomizersTag);
 
 end tags.admin.customizers.ViewCustomizersTag_Package;
 

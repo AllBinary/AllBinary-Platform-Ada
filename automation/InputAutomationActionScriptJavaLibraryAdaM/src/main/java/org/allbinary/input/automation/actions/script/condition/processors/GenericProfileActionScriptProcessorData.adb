@@ -30,7 +30,7 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
    function Create return GenericProfileActionScriptProcessorData_Access is
       This : constant GenericProfileActionScriptProcessorData_Access := new GenericProfileActionScriptProcessorData;
    begin
-      Initialize (This.all);
+      GenericProfileActionScriptProcessorData_Package.Initialize (This.all);
       return This;
    end Create;
 

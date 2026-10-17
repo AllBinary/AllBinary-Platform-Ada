@@ -63,7 +63,7 @@ package body org.allbinary.image.gui.ImageUnifierJPanel_Package is
    function Create (imageProcessorInput : ImageProcessorInput_Access) return ImageUnifierJPanel_Access is
       This : constant ImageUnifierJPanel_Access := new ImageUnifierJPanel;
    begin
-      Initialize (This.all, imageProcessorInput);
+      ImageUnifierJPanel_Package.Initialize (This.all, imageProcessorInput);
       return This;
    end Create;
 
@@ -492,13 +492,6 @@ package body org.allbinary.image.gui.ImageUnifierJPanel_Package is
         This.imageProcessorInput := imageProcessorInput;
         This.init;
    end setImageProcessorInput;
-
-   procedure getImageProcessorInput (This : in out ImageUnifierJPanel) is
-      Java_Result : constant ImageProcessorInput_Access := ImageUnifierJPanel'Class (This).getImageProcessorInput;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getImageProcessorInput;
 
 end org.allbinary.image.gui.ImageUnifierJPanel_Package;
 

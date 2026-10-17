@@ -43,6 +43,8 @@ with org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectC
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.w3c.dom.NodeList_Package; use org.w3c.dom.NodeList_Package;
+with org.allbinary.business.user.commerce.shipping.ShippingMethodsData_Package; use org.allbinary.business.user.commerce.shipping.ShippingMethodsData_Package;
+with org.allbinary.business.user.commerce.shipping.ShippingMethodData_Package; use org.allbinary.business.user.commerce.shipping.ShippingMethodData_Package;
 
 package org.allbinary.business.user.commerce.shipping.ShippingMethodsFactory_Package is
 
@@ -86,9 +88,7 @@ package org.allbinary.business.user.commerce.shipping.ShippingMethodsFactory_Pac
    procedure Initialize (This : in out ShippingMethodsFactory'Class; abeClientInformation : AbeClientInformationInterface_Access; storeFrontInterface : StoreFrontInterface_Access);
    function Create (abeClientInformation : AbeClientInformationInterface_Access; storeFrontInterface : StoreFrontInterface_Access) return ShippingMethodsFactory_Access;
    function getInstance (This : in out ShippingMethodsFactory) return BasicArrayList_Access;
-   procedure getInstance (This : in out ShippingMethodsFactory);
    function getDefaultInstance (This : in out ShippingMethodsFactory) return ShippingInterface_Access;
-   procedure getDefaultInstance (This : in out ShippingMethodsFactory);
 
 end org.allbinary.business.user.commerce.shipping.ShippingMethodsFactory_Package;
 

@@ -30,7 +30,7 @@ package body admin.taghelpers.SpecialItemsHelperFactory_Package is
    function Create return SpecialItemsHelperFactory_Access is
       This : constant SpecialItemsHelperFactory_Access := new SpecialItemsHelperFactory;
    begin
-      Initialize (This.all);
+      SpecialItemsHelperFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

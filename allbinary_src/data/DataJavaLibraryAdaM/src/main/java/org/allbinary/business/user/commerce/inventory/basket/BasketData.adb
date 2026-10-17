@@ -13,7 +13,7 @@
 --  Generated Code Do Not Modify
 
 
-package body org.allbinary.business.user.commerce.inventory.basket_Case.BasketData_Package is
+package body org.allbinary.business.user.commerce.inventory.basket.BasketData_Package is
 
    procedure Initialize_Fields (This : in out BasketData'Class) is
    begin
@@ -30,7 +30,7 @@ package body org.allbinary.business.user.commerce.inventory.basket_Case.BasketDa
    function Create return BasketData_Access is
       This : constant BasketData_Access := new BasketData;
    begin
-      Initialize (This.all);
+      BasketData_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -48,6 +48,6 @@ begin
    DELETE := To_Unbounded_String ("BASKET_DELETE");
    ADJUST := To_Unbounded_String ("BASKET_ADJUST");
 
-end org.allbinary.business.user.commerce.inventory.basket_Case.BasketData_Package;
+end org.allbinary.business.user.commerce.inventory.basket.BasketData_Package;
 
 

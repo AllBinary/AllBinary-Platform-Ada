@@ -48,7 +48,7 @@ package body org.allbinary.animation.vector.AdjustedCircleAnimation_Package is
    function Create (width : Integer; height : Integer; basicColor : BasicColor_Access) return AdjustedCircleAnimation_Access is
       This : constant AdjustedCircleAnimation_Access := new AdjustedCircleAnimation;
    begin
-      Initialize (This.all, width, height, basicColor);
+      AdjustedCircleAnimation_Package.Initialize (This.all, width, height, basicColor);
       return This;
    end Create;
 

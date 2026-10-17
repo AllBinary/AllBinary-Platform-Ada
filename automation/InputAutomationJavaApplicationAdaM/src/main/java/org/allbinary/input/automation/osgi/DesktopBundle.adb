@@ -50,7 +50,7 @@ package body org.allbinary.input.automation.osgi.DesktopBundle_Package is
    function Create return DesktopBundle_Access is
       This : constant DesktopBundle_Access := new DesktopBundle;
    begin
-      Initialize (This.all);
+      DesktopBundle_Package.Initialize (This.all);
       return This;
    end Create;
 

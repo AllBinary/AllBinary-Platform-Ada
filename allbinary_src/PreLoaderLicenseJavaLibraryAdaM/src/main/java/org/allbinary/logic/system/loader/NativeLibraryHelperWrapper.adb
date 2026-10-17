@@ -33,7 +33,7 @@ package body org.allbinary.logic.system.loader.NativeLibraryHelperWrapper_Packag
    function Create (libraryName : Unbounded_String) return NativeLibraryHelperWrapper_Access is
       This : constant NativeLibraryHelperWrapper_Access := new NativeLibraryHelperWrapper;
    begin
-      Initialize (This.all, libraryName);
+      NativeLibraryHelperWrapper_Package.Initialize (This.all, libraryName);
       return This;
    end Create;
 
@@ -81,20 +81,6 @@ package body org.allbinary.logic.system.loader.NativeLibraryHelperWrapper_Packag
    begin
         This.libraryName := libraryName;
    end setLibraryName;
-
-   procedure toString (This : in out NativeLibraryHelperWrapper) is
-      Java_Result : constant Unbounded_String := NativeLibraryHelperWrapper'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toString;
-
-   procedure getLibraryName (This : in out NativeLibraryHelperWrapper) is
-      Java_Result : constant Unbounded_String := NativeLibraryHelperWrapper'Class (This).getLibraryName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getLibraryName;
 
 end org.allbinary.logic.system.loader.NativeLibraryHelperWrapper_Package;
 

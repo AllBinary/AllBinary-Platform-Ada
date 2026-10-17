@@ -55,10 +55,8 @@ package org.allbinary.input.AllBinarySensorManager_Package is
    procedure Initialize (This : in out AllBinarySensorManager'Class);
    function Create return AllBinarySensorManager_Access;
    function getInstance return AllBinarySensorManager_Access;
-   procedure getInstance;
    procedure init (This : in out AllBinarySensorManager);
    function getSensorNamesList (This : in out AllBinarySensorManager) return BasicArrayList_Access;
-   procedure getSensorNamesList (This : in out AllBinarySensorManager);
    procedure shutdown (This : in out AllBinarySensorManager);
 
 end org.allbinary.input.AllBinarySensorManager_Package;

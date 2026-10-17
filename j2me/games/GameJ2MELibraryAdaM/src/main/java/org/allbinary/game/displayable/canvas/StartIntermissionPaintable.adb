@@ -54,7 +54,7 @@ package body org.allbinary.game.displayable.canvas.StartIntermissionPaintable_Pa
    function Create (gameCanvas : AllBinaryGameCanvas_Access; stringArray : Unbounded_String_Array_Access; basicColor : BasicColor_Access; font : Font_Access) return StartIntermissionPaintable_Access is
       This : constant StartIntermissionPaintable_Access := new StartIntermissionPaintable;
    begin
-      Initialize (This.all, gameCanvas, stringArray, basicColor, font);
+      StartIntermissionPaintable_Package.Initialize (This.all, gameCanvas, stringArray, basicColor, font);
       return This;
    end Create;
 
@@ -108,13 +108,6 @@ package body org.allbinary.game.displayable.canvas.StartIntermissionPaintable_Pa
    function getBasicColorP (This : in out StartIntermissionPaintable) return BasicColor_Access is
    begin
         return This.basicColor;
-   end getBasicColorP;
-
-   procedure getBasicColorP (This : in out StartIntermissionPaintable) is
-      Java_Result : constant BasicColor_Access := StartIntermissionPaintable'Class (This).getBasicColorP;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getBasicColorP;
 
 end org.allbinary.game.displayable.canvas.StartIntermissionPaintable_Package;

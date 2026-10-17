@@ -39,7 +39,6 @@ package org.allbinary.business.time.TimeData_Package is
    procedure Initialize (This : in out TimeData'Class);
    function Create return TimeData_Access;
    function getInstance return TimeData_Access;
-   procedure getInstance;
 
 end org.allbinary.business.time.TimeData_Package;
 

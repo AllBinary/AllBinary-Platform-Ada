@@ -34,7 +34,7 @@ package body tags.ModifyTag_Package is
    function Create (tagHelperFactoryInterface : TagHelperFactoryInterface_Access) return ModifyTag_Access is
       This : constant ModifyTag_Access := new ModifyTag;
    begin
-      Initialize (This.all, tagHelperFactoryInterface);
+      ModifyTag_Package.Initialize (This.all, tagHelperFactoryInterface);
       return This;
    end Create;
 
@@ -166,34 +166,6 @@ package body tags.ModifyTag_Package is
             return SKIP_BODY;
                 end;
         end;
-   end doStartTag;
-
-   procedure insert (This : in out ModifyTag) is
-      Java_Result : constant Unbounded_String := ModifyTag'Class (This).insert;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end insert;
-
-   procedure delete (This : in out ModifyTag) is
-      Java_Result : constant Unbounded_String := ModifyTag'Class (This).delete;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end delete;
-
-   procedure update (This : in out ModifyTag) is
-      Java_Result : constant Unbounded_String := ModifyTag'Class (This).update;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end update;
-
-   procedure doStartTag (This : in out ModifyTag) is
-      Java_Result : constant Integer := ModifyTag'Class (This).doStartTag;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end doStartTag;
 
 end tags.ModifyTag_Package;

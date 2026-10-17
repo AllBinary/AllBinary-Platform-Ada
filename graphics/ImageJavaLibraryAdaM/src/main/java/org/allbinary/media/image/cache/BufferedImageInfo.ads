@@ -42,16 +42,12 @@ package org.allbinary.media.image.cache.BufferedImageInfo_Package is
    procedure Initialize (This : in out BufferedImageInfo'Class; width : Integer; height : Integer; type_Id : Integer);
    function Create (width : Integer; height : Integer; type_Id : Integer) return BufferedImageInfo_Access;
    function getWidth (This : in out BufferedImageInfo) return Integer;
-   procedure getWidth (This : in out BufferedImageInfo);
    procedure setWidth (This : in out BufferedImageInfo; width : Integer);
    function getHeight (This : in out BufferedImageInfo) return Integer;
-   procedure getHeight (This : in out BufferedImageInfo);
    procedure setHeight (This : in out BufferedImageInfo; height : Integer);
    function getType (This : in out BufferedImageInfo) return Integer;
-   procedure getType (This : in out BufferedImageInfo);
    procedure setType (This : in out BufferedImageInfo; type_Id : Integer);
    function toString (This : in out BufferedImageInfo) return Unbounded_String;
-   procedure toString (This : in out BufferedImageInfo);
 
 end org.allbinary.media.image.cache.BufferedImageInfo_Package;
 

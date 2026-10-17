@@ -29,7 +29,7 @@ package body org.allbinary.game.ag.ai.ScrollOverXImmediateYStopAI_Package is
    function Create (ownerLayerInterface : AllBinaryLayer_Access; gameInput : GameInput_Access) return ScrollOverXImmediateYStopAI_Access is
       This : constant ScrollOverXImmediateYStopAI_Access := new ScrollOverXImmediateYStopAI;
    begin
-      Initialize (This.all, ownerLayerInterface, gameInput);
+      ScrollOverXImmediateYStopAI_Package.Initialize (This.all, ownerLayerInterface, gameInput);
       return This;
    end Create;
 

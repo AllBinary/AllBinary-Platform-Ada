@@ -52,7 +52,6 @@ package taghelpers.StoreTagWorkFlowHelper_Package is
    procedure Initialize (This : in out StoreTagWorkFlowHelper'Class; hashMap : HashMap_Access; pageContext : PageContext_Access);
    function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return StoreTagWorkFlowHelper_Access;
    function process (This : in out StoreTagWorkFlowHelper) return Integer;
-   procedure process (This : in out StoreTagWorkFlowHelper);
 
 end taghelpers.StoreTagWorkFlowHelper_Package;
 

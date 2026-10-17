@@ -28,7 +28,7 @@ package body org.allbinary.game.ag.ai.UpDownVectorAIFactory_Package is
    function Create return UpDownVectorAIFactory_Access is
       This : constant UpDownVectorAIFactory_Access := new UpDownVectorAIFactory;
    begin
-      Initialize (This.all);
+      UpDownVectorAIFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

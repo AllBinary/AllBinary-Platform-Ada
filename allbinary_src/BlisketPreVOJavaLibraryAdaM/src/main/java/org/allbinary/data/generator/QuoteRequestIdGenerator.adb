@@ -38,7 +38,7 @@ package body org.allbinary.data.generator.QuoteRequestIdGenerator_Package is
    function Create return QuoteRequestIdGenerator_Access is
       This : constant QuoteRequestIdGenerator_Access := new QuoteRequestIdGenerator;
    begin
-      Initialize (This.all);
+      QuoteRequestIdGenerator_Package.Initialize (This.all);
       return This;
    end Create;
 

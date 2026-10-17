@@ -53,7 +53,7 @@ package body org.allbinary.logic.system.security.licensing.LicenseClientAndServe
    function Create (options : Unbounded_String_Array_Access) return LicenseClientAndServerTest_Access is
       This : constant LicenseClientAndServerTest_Access := new LicenseClientAndServerTest;
    begin
-      Initialize (This.all, options);
+      LicenseClientAndServerTest_Package.Initialize (This.all, options);
       return This;
    end Create;
 

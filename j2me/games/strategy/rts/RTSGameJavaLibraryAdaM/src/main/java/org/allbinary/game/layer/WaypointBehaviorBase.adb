@@ -34,7 +34,7 @@ package body org.allbinary.game.layer.WaypointBehaviorBase_Package is
    function Create return WaypointBehaviorBase_Access is
       This : constant WaypointBehaviorBase_Access := new WaypointBehaviorBase;
    begin
-      Initialize (This.all);
+      WaypointBehaviorBase_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -163,124 +163,12 @@ package body org.allbinary.game.layer.WaypointBehaviorBase_Package is
         null;
    end updatePathOnTargetMove;
 
-   procedure getName (This : in out WaypointBehaviorBase) is
-      Java_Result : constant Unbounded_String := WaypointBehaviorBase'Class (This).getName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getName;
-
-   procedure isRunning (This : in out WaypointBehaviorBase) is
-      Java_Result : constant Boolean := WaypointBehaviorBase'Class (This).isRunning;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isRunning;
-
-   procedure getOwnedWaypointList (This : in out WaypointBehaviorBase) is
-      Java_Result : constant BasicArrayList_Access := WaypointBehaviorBase'Class (This).getOwnedWaypointList;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getOwnedWaypointList;
-
-   procedure getWaypoint (This : in out WaypointBehaviorBase) is
-      Java_Result : constant WaypointBase_Access := WaypointBehaviorBase'Class (This).getWaypoint;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getWaypoint;
-
-   procedure getSteeringVisitorList (This : in out WaypointBehaviorBase) is
-      Java_Result : constant BasicArrayList_Access := WaypointBehaviorBase'Class (This).getSteeringVisitorList;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSteeringVisitorList;
-
-   procedure getMovementLogicAsString (This : in out WaypointBehaviorBase) is
-      Java_Result : constant Unbounded_String := WaypointBehaviorBase'Class (This).getMovementLogicAsString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getMovementLogicAsString;
-
-   procedure isWaypointListEmptyOrOnlyTargets (This : in out WaypointBehaviorBase) is
-      Java_Result : constant Boolean := WaypointBehaviorBase'Class (This).isWaypointListEmptyOrOnlyTargets;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isWaypointListEmptyOrOnlyTargets;
-
    procedure isInSensorRange (This : in out WaypointBehaviorBase; layerInterface : CollidableDestroyableDamageableLayer_Access; targetDistance : Integer) is
       Java_Result : constant Boolean := WaypointBehaviorBase'Class (This).isInSensorRange (layerInterface, targetDistance);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isInSensorRange;
-
-   procedure getCurrentTargetLayerInterface (This : in out WaypointBehaviorBase) is
-      Java_Result : constant CollidableDestroyableDamageableLayer_Access := WaypointBehaviorBase'Class (This).getCurrentTargetLayerInterface;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getCurrentTargetLayerInterface;
-
-   procedure getCurrentTargetingStateString (This : in out WaypointBehaviorBase) is
-      Java_Result : constant Unbounded_String := WaypointBehaviorBase'Class (This).getCurrentTargetingStateString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getCurrentTargetingStateString;
-
-   procedure isTrackingWaypoint (This : in out WaypointBehaviorBase) is
-      Java_Result : constant Boolean := WaypointBehaviorBase'Class (This).isTrackingWaypoint;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isTrackingWaypoint;
-
-   procedure getCurrentPathGeographicMapCellPosition (This : in out WaypointBehaviorBase) is
-      Java_Result : constant GeographicMapCellPosition_Access := WaypointBehaviorBase'Class (This).getCurrentPathGeographicMapCellPosition;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getCurrentPathGeographicMapCellPosition;
-
-   procedure getCurrentGeographicMapCellHistory (This : in out WaypointBehaviorBase) is
-      Java_Result : constant GeographicMapCellHistory_Access := WaypointBehaviorBase'Class (This).getCurrentGeographicMapCellHistory;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getCurrentGeographicMapCellHistory;
-
-   procedure isWaypointOverridesAttacking (This : in out WaypointBehaviorBase) is
-      Java_Result : constant Boolean := WaypointBehaviorBase'Class (This).isWaypointOverridesAttacking;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isWaypointOverridesAttacking;
-
-   procedure getNextUnvisitedPathGeographicMapCellPosition (This : in out WaypointBehaviorBase) is
-      Java_Result : constant GeographicMapCellPosition_Access := WaypointBehaviorBase'Class (This).getNextUnvisitedPathGeographicMapCellPosition;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getNextUnvisitedPathGeographicMapCellPosition;
-
-   procedure needToMove (This : in out WaypointBehaviorBase) is
-      Java_Result : constant Boolean := WaypointBehaviorBase'Class (This).needToMove;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end needToMove;
-
-   procedure getWaypointPathsList (This : in out WaypointBehaviorBase) is
-      Java_Result : constant BasicArrayList_Access := WaypointBehaviorBase'Class (This).getWaypointPathsList;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getWaypointPathsList;
 
 end org.allbinary.game.layer.WaypointBehaviorBase_Package;
 

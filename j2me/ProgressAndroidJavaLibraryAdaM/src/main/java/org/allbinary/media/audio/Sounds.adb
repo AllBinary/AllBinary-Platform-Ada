@@ -34,7 +34,7 @@ package body org.allbinary.media.audio.Sounds_Package is
    function Create (soundsFactoryInterface : SoundsFactoryInterface_Access) return Sounds_Access is
       This : constant Sounds_Access := new Sounds;
    begin
-      Initialize (This.all, soundsFactoryInterface);
+      Sounds_Package.Initialize (This.all, soundsFactoryInterface);
       return This;
    end Create;
 

@@ -20,6 +20,8 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
+with org.allbinary.graphics.opengles.NullOpenGLProcessorFactory_Package; use org.allbinary.graphics.opengles.NullOpenGLProcessorFactory_Package;
+with org.allbinary.graphics.opengles.OpenGLProcessor_Package; use org.allbinary.graphics.opengles.OpenGLProcessor_Package;
 
 package org.allbinary.graphics.opengles.OrthogonalLightingOpenGLProcessorFactory_Package is
 
@@ -38,7 +40,6 @@ package org.allbinary.graphics.opengles.OrthogonalLightingOpenGLProcessorFactory
    procedure Initialize (This : in out OrthogonalLightingOpenGLProcessorFactory'Class);
    function Create return OrthogonalLightingOpenGLProcessorFactory_Access;
    function getInstance return OrthogonalLightingOpenGLProcessorFactory_Access;
-   procedure getInstance;
 
 end org.allbinary.graphics.opengles.OrthogonalLightingOpenGLProcessorFactory_Package;
 

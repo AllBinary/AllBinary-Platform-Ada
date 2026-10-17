@@ -48,7 +48,6 @@ package org.allbinary.graphics.j2me.workarea.tools.MouseStrings_Package is
    procedure Initialize (This : in out MouseStrings'Class);
    function Create return MouseStrings_Access;
    function getInstance return MouseStrings_Access;
-   procedure getInstance;
 
 end org.allbinary.graphics.j2me.workarea.tools.MouseStrings_Package;
 

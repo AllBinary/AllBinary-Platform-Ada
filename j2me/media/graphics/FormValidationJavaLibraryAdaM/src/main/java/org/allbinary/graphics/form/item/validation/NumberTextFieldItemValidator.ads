@@ -57,9 +57,7 @@ package org.allbinary.graphics.form.item.validation.NumberTextFieldItemValidator
    function toNumberVector (This : in out NumberTextFieldItemValidator; value : Integer) return BasicArrayList_Access;
    procedure toNumberVector (This : in out NumberTextFieldItemValidator; value : Integer);
    function isValid (This : in out NumberTextFieldItemValidator) return Boolean;
-   procedure isValid (This : in out NumberTextFieldItemValidator);
    function toList (This : in out NumberTextFieldItemValidator) return BasicArrayList_Access;
-   procedure toList (This : in out NumberTextFieldItemValidator);
 
 end org.allbinary.graphics.form.item.validation.NumberTextFieldItemValidator_Package;
 

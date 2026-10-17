@@ -41,16 +41,9 @@ package body org.allbinary.game.input.AndroidAPI9KeyFactory_Package is
    function Create return AndroidAPI9KeyFactory_Access is
       This : constant AndroidAPI9KeyFactory_Access := new AndroidAPI9KeyFactory;
    begin
-      Initialize (This.all);
+      AndroidAPI9KeyFactory_Package.Initialize (This.all);
       return This;
    end Create;
-
-   procedure getInstance is
-      Java_Result : constant AndroidAPI9KeyFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

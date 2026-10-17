@@ -30,7 +30,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoHttpFactory_
    function Create return TransformInfoHttpFactory_Access is
       This : constant TransformInfoHttpFactory_Access := new TransformInfoHttpFactory;
    begin
-      Initialize (This.all);
+      TransformInfoHttpFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

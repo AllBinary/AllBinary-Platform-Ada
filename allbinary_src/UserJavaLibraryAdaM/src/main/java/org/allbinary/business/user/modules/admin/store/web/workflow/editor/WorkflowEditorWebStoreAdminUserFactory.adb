@@ -30,7 +30,7 @@ package body org.allbinary.business.user.modules.admin.store.web.workflow.editor
    function Create return WorkflowEditorWebStoreAdminUserFactory_Access is
       This : constant WorkflowEditorWebStoreAdminUserFactory_Access := new WorkflowEditorWebStoreAdminUserFactory;
    begin
-      Initialize (This.all);
+      WorkflowEditorWebStoreAdminUserFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -44,13 +44,6 @@ package body org.allbinary.business.user.modules.admin.store.web.workflow.editor
    function getInstance (This : in out WorkflowEditorWebStoreAdminUserFactory; hashMap : HashMap_Access) return UserInterface_Access is
    begin
         return WorkflowEditorWebStoreAdminUser_Package.Create (hashMap);
-   end getInstance;
-
-   procedure getInstance (This : in out WorkflowEditorWebStoreAdminUserFactory) is
-      Java_Result : constant UserInterface_Access := WorkflowEditorWebStoreAdminUserFactory'Class (This).getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
    procedure getInstance (This : in out WorkflowEditorWebStoreAdminUserFactory; hashMap : HashMap_Access) is

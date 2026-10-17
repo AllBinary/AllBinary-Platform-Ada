@@ -34,7 +34,7 @@ package body org.allbinary.animation.image.sprite.AllBinaryAdjustedSpriteRotatio
    function Create (sprite : Sprite_Access; image : Image_Access; dx : Integer; dy : Integer; animationBehavior : AnimationBehavior_Access) return AllBinaryAdjustedSpriteRotationAnimation_Access is
       This : constant AllBinaryAdjustedSpriteRotationAnimation_Access := new AllBinaryAdjustedSpriteRotationAnimation;
    begin
-      Initialize (This.all, sprite, image, dx, dy, animationBehavior);
+      AllBinaryAdjustedSpriteRotationAnimation_Package.Initialize (This.all, sprite, image, dx, dy, animationBehavior);
       return This;
    end Create;
 

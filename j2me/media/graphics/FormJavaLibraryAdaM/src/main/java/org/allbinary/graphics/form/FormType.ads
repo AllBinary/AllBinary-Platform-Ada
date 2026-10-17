@@ -36,7 +36,6 @@ package org.allbinary.graphics.form.FormType_Package is
    procedure Initialize (This : in out FormType'Class; name : Unbounded_String);
    function Create (name : Unbounded_String) return FormType_Access;
    function toString (This : in out FormType) return Unbounded_String;
-   procedure toString (This : in out FormType);
 
 end org.allbinary.graphics.form.FormType_Package;
 

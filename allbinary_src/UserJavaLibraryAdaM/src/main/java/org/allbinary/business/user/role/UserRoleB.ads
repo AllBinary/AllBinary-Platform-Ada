@@ -26,6 +26,8 @@ with org.allbinary.business.user.UserFactoryInterface_Package; use org.allbinary
 with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.logic.string_Id.StringValidationUtil_Package; use org.allbinary.logic.string_Id.StringValidationUtil_Package;
 with org.allbinary.business.user.role.UserRole_Package; use org.allbinary.business.user.role.UserRole_Package;
+with org.allbinary.business.user.role.BasicUserRole_Package; use org.allbinary.business.user.role.BasicUserRole_Package;
+with org.allbinary.business.user.role.UserRoleFactory_Package; use org.allbinary.business.user.role.UserRoleFactory_Package;
 
 package org.allbinary.business.user.role.UserRoleB_Package is
 
@@ -48,7 +50,6 @@ package org.allbinary.business.user.role.UserRoleB_Package is
    function getRole (role : Unbounded_String) return UserRole_Access;
    procedure getRole (role : Unbounded_String);
    function getAll return BasicArrayList_Access;
-   procedure getAll;
 
 end org.allbinary.business.user.role.UserRoleB_Package;
 

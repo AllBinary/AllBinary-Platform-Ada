@@ -33,7 +33,7 @@ package body views.admin.workflow.AddValidationView_Package is
    function Create (transformInfoInterface : TransformInfoInterface_Access) return AddValidationView_Access is
       This : constant AddValidationView_Access := new AddValidationView;
    begin
-      Initialize (This.all, transformInfoInterface);
+      AddValidationView_Package.Initialize (This.all, transformInfoInterface);
       return This;
    end Create;
 
@@ -88,27 +88,6 @@ package body views.admin.workflow.AddValidationView_Package is
    begin
         return null;
    end toValidationInfoNode;
-
-   procedure isValid (This : in out AddValidationView) is
-      Java_Result : constant Boolean := AddValidationView'Class (This).isValid;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isValid;
-
-   procedure validationInfo (This : in out AddValidationView) is
-      Java_Result : constant Unbounded_String := AddValidationView'Class (This).validationInfo;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end validationInfo;
-
-   procedure toValidationInfoDoc (This : in out AddValidationView) is
-      Java_Result : constant Document_Access := AddValidationView'Class (This).toValidationInfoDoc;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toValidationInfoDoc;
 
    procedure toValidationInfoNode (This : in out AddValidationView; document : Document_Access) is
       Java_Result : constant Node_Access := AddValidationView'Class (This).toValidationInfoNode (document);

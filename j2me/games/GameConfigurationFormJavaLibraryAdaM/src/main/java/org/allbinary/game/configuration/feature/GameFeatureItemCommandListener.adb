@@ -32,7 +32,7 @@ package body org.allbinary.game.configuration.feature.GameFeatureItemCommandList
    function Create (gameOptionsForm : GameOptionsForm_Access) return GameFeatureItemCommandListener_Access is
       This : constant GameFeatureItemCommandListener_Access := new GameFeatureItemCommandListener;
    begin
-      Initialize (This.all, gameOptionsForm);
+      GameFeatureItemCommandListener_Package.Initialize (This.all, gameOptionsForm);
       return This;
    end Create;
 

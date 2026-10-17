@@ -40,7 +40,6 @@ package org.allbinary.game.configuration.persistance.GamePersistanceStrings_Pack
    procedure Initialize (This : in out GamePersistanceStrings'Class);
    function Create return GamePersistanceStrings_Access;
    function getInstance return GamePersistanceStrings_Access;
-   procedure getInstance;
 
 end org.allbinary.game.configuration.persistance.GamePersistanceStrings_Package;
 

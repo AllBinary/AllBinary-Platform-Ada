@@ -47,7 +47,7 @@ package body org.allbinary.input.motion.button.TouchScreenFactory_Package is
    function Create return TouchScreenFactory_Access is
       This : constant TouchScreenFactory_Access := new TouchScreenFactory;
    begin
-      Initialize (This.all);
+      TouchScreenFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -109,48 +109,6 @@ package body org.allbinary.input.motion.button.TouchScreenFactory_Package is
         stringBuffer.append (To_Unbounded_String (" TouchScreenType: "));
         stringBuffer.append (StringUtil_Package.getInstance.toString (This.getTouchScreenType));
         return stringBuffer.toString;
-   end toString;
-
-   procedure getInstance is
-      Java_Result : constant TouchScreenFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure isMultiTouch (This : in out TouchScreenFactory) is
-      Java_Result : constant Boolean := TouchScreenFactory'Class (This).isMultiTouch;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isMultiTouch;
-
-   procedure isTouch (This : in out TouchScreenFactory) is
-      Java_Result : constant Boolean := TouchScreenFactory'Class (This).isTouch;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isTouch;
-
-   procedure isMultiTouchDistinct (This : in out TouchScreenFactory) is
-      Java_Result : constant Boolean := TouchScreenFactory'Class (This).isMultiTouchDistinct;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isMultiTouchDistinct;
-
-   procedure getTouchScreenType (This : in out TouchScreenFactory) is
-      Java_Result : constant TouchScreenType_Access := TouchScreenFactory'Class (This).getTouchScreenType;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTouchScreenType;
-
-   procedure toString (This : in out TouchScreenFactory) is
-      Java_Result : constant Unbounded_String := TouchScreenFactory'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end toString;
 
 begin

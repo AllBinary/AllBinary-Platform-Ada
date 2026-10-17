@@ -60,13 +60,10 @@ package org.allbinary.game.layer.resources.GameGraphicsResourceUtil_Package is
    procedure Initialize (This : in out GameGraphicsResourceUtil'Class);
    function Create return GameGraphicsResourceUtil_Access;
    function getInstance return GameGraphicsResourceUtil_Access;
-   procedure getInstance;
    function getString (This : in out GameGraphicsResourceUtil) return Unbounded_String;
-   procedure getString (This : in out GameGraphicsResourceUtil);
    function getStringForFeature (This : in out GameGraphicsResourceUtil; graphicsFeature : GraphicsFeature_Access) return Unbounded_String;
    procedure getStringForFeature (This : in out GameGraphicsResourceUtil; graphicsFeature : GraphicsFeature_Access);
    function getName (This : in out GameGraphicsResourceUtil) return Unbounded_String;
-   procedure getName (This : in out GameGraphicsResourceUtil);
 
 end org.allbinary.game.layer.resources.GameGraphicsResourceUtil_Package;
 

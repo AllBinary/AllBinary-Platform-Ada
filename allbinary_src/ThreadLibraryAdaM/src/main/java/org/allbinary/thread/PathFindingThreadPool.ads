@@ -21,6 +21,7 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.thread.ThreadPool_Package; use org.allbinary.thread.ThreadPool_Package;
+with org.allbinary.thread.PriorityRunnable_Package; use org.allbinary.thread.PriorityRunnable_Package;
 
 package org.allbinary.thread.PathFindingThreadPool_Package is
 
@@ -36,7 +37,6 @@ package org.allbinary.thread.PathFindingThreadPool_Package is
    procedure Initialize (This : in out PathFindingThreadPool'Class; poolName : Unbounded_String; numThreads : Integer; priority : Integer);
    function Create (poolName : Unbounded_String; numThreads : Integer; priority : Integer) return PathFindingThreadPool_Access;
    function getInstance return ThreadPool_Access;
-   procedure getInstance;
    procedure runTaskWithPriority (This : in out PathFindingThreadPool; task_Id : PriorityRunnable_Access);
    procedure runTask (This : in out PathFindingThreadPool; task_Id : Runnable_Access);
    procedure startTask (This : in out PathFindingThreadPool; task_Id : Runnable_Access);

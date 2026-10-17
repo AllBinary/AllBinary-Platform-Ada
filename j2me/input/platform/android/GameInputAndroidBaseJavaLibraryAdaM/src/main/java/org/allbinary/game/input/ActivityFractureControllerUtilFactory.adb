@@ -16,7 +16,7 @@ package body org.allbinary.game.input.ActivityFractureControllerUtilFactory_Pack
    function Create return ActivityFractureControllerUtilFactory_Access is
       This : constant ActivityFractureControllerUtilFactory_Access := new ActivityFractureControllerUtilFactory;
    begin
-      Initialize (This.all);
+      ActivityFractureControllerUtilFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -32,13 +32,6 @@ package body org.allbinary.game.input.ActivityFractureControllerUtilFactory_Pack
         else
             return AndroidAPI12KeyFactory_Package.getAPI12Instance;
         end if;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant AndroidKeyFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 end org.allbinary.game.input.ActivityFractureControllerUtilFactory_Package;

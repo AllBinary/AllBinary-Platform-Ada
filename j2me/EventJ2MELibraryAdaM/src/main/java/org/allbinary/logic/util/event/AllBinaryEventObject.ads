@@ -47,7 +47,6 @@ package org.allbinary.logic.util.event.AllBinaryEventObject_Package is
    procedure Initialize (This : in out AllBinaryEventObject'Class; anyType : Java_Object_Access);
    function Create (anyType : Java_Object_Access) return AllBinaryEventObject_Access;
    function getSource (This : in out AllBinaryEventObject) return Java_Object_Access;
-   procedure getSource (This : in out AllBinaryEventObject);
    procedure setSource (This : in out AllBinaryEventObject; source : Java_Object_Access);
 
 end org.allbinary.logic.util.event.AllBinaryEventObject_Package;

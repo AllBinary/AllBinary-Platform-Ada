@@ -22,6 +22,7 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.allbinary.logic.control.contraints.size.TwoDimensionalConstraintInterface_Package; use org.allbinary.logic.control.contraints.size.TwoDimensionalConstraintInterface_Package;
+with org.allbinary.logic.control.contraints.size.SizeConstraintInterface_Package; use org.allbinary.logic.control.contraints.size.SizeConstraintInterface_Package;
 
 package org.allbinary.logic.control.contraints.size.TwoDimensionalConstraint_Package is
 
@@ -40,9 +41,7 @@ package org.allbinary.logic.control.contraints.size.TwoDimensionalConstraint_Pac
    procedure Initialize (This : in out TwoDimensionalConstraint'Class; node : Node_Access);
    function Create (node : Node_Access) return TwoDimensionalConstraint_Access;
    function getHeight (This : in out TwoDimensionalConstraint) return SizeConstraintInterface_Access;
-   procedure getHeight (This : in out TwoDimensionalConstraint);
    function getWidth (This : in out TwoDimensionalConstraint) return SizeConstraintInterface_Access;
-   procedure getWidth (This : in out TwoDimensionalConstraint);
    procedure setHeight (This : in out TwoDimensionalConstraint; heightSizeConstraintInterface : SizeConstraintInterface_Access);
    procedure setWidth (This : in out TwoDimensionalConstraint; widthSizeConstraintInterface : SizeConstraintInterface_Access);
 

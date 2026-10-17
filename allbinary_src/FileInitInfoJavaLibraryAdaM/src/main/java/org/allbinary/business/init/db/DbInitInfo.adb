@@ -43,7 +43,7 @@ package body org.allbinary.business.init.db.DbInitInfo_Package is
    function Create (initFileName : Unbounded_String; read : Boolean) return DbInitInfo_Access is
       This : constant DbInitInfo_Access := new DbInitInfo;
    begin
-      Initialize (This.all, initFileName, read);
+      DbInitInfo_Package.Initialize (This.all, initFileName, read);
       return This;
    end Create;
 
@@ -235,55 +235,6 @@ package body org.allbinary.business.init.db.DbInitInfo_Package is
    begin
         This.updateIfNeeded;
         return DbConnectionInfo (This).getPort;
-   end getPort;
-
-   procedure getUrl (This : in out DbInitInfo) is
-      Java_Result : constant Unbounded_String := DbInitInfo'Class (This).getUrl;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getUrl;
-
-   procedure getName (This : in out DbInitInfo) is
-      Java_Result : constant Unbounded_String := DbInitInfo'Class (This).getName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getName;
-
-   procedure getUserName (This : in out DbInitInfo) is
-      Java_Result : constant Unbounded_String := DbInitInfo'Class (This).getUserName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getUserName;
-
-   procedure getPassword (This : in out DbInitInfo) is
-      Java_Result : constant Unbounded_String := DbInitInfo'Class (This).getPassword;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getPassword;
-
-   procedure getSchema (This : in out DbInitInfo) is
-      Java_Result : constant Unbounded_String := DbInitInfo'Class (This).getSchema;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSchema;
-
-   procedure getServer (This : in out DbInitInfo) is
-      Java_Result : constant Unbounded_String := DbInitInfo'Class (This).getServer;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getServer;
-
-   procedure getPort (This : in out DbInitInfo) is
-      Java_Result : constant Unbounded_String := DbInitInfo'Class (This).getPort;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getPort;
 
 end org.allbinary.business.init.db.DbInitInfo_Package;

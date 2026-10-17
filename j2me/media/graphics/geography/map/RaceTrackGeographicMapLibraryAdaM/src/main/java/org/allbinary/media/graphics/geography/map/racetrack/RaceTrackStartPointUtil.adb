@@ -28,7 +28,7 @@ package body org.allbinary.media.graphics.geography.map.racetrack.RaceTrackStart
    function Create return RaceTrackStartPointUtil_Access is
       This : constant RaceTrackStartPointUtil_Access := new RaceTrackStartPointUtil;
    begin
-      Initialize (This.all);
+      RaceTrackStartPointUtil_Package.Initialize (This.all);
       return This;
    end Create;
 

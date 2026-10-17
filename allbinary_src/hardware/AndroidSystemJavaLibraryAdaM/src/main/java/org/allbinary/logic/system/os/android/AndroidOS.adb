@@ -104,7 +104,7 @@ package body org.allbinary.logic.system.os.android.AndroidOS_Package is
    function Create return AndroidOS_Access is
       This : constant AndroidOS_Access := new AndroidOS;
    begin
-      Initialize (This.all);
+      AndroidOS_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -137,34 +137,6 @@ package body org.allbinary.logic.system.os.android.AndroidOS_Package is
         osBuffer.append (To_Unbounded_String ("Other System Info: " & ASCII.LF & ""));
         osBuffer.append (This.stringBuffer.toString);
         return osBuffer.toString;
-   end toString;
-
-   procedure isOverScan (This : in out AndroidOS) is
-      Java_Result : constant Boolean := AndroidOS'Class (This).isOverScan;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isOverScan;
-
-   procedure getOverScanXPercent (This : in out AndroidOS) is
-      Java_Result : constant Integer := AndroidOS'Class (This).getOverScanXPercent;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getOverScanXPercent;
-
-   procedure getOverScanYPercent (This : in out AndroidOS) is
-      Java_Result : constant Integer := AndroidOS'Class (This).getOverScanYPercent;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getOverScanYPercent;
-
-   procedure toString (This : in out AndroidOS) is
-      Java_Result : constant Unbounded_String := AndroidOS'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end toString;
 
 end org.allbinary.logic.system.os.android.AndroidOS_Package;

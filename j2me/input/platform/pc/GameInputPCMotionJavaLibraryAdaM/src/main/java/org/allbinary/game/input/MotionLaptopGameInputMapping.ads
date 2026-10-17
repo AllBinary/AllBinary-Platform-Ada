@@ -22,6 +22,7 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.input.mapping.InputToGameKeyMapping_Package; use org.allbinary.game.input.mapping.InputToGameKeyMapping_Package;
 with org.allbinary.game.input.PCGameInputMapping_Package; use org.allbinary.game.input.PCGameInputMapping_Package;
+with org.allbinary.game.input.MotionLaptopDefaultGameInputMapping_Package; use org.allbinary.game.input.MotionLaptopDefaultGameInputMapping_Package;
 
 package org.allbinary.game.input.MotionLaptopGameInputMapping_Package is
 
@@ -37,7 +38,6 @@ package org.allbinary.game.input.MotionLaptopGameInputMapping_Package is
    procedure Initialize (This : in out MotionLaptopGameInputMapping'Class);
    function Create return MotionLaptopGameInputMapping_Access;
    function getDefault (This : in out MotionLaptopGameInputMapping) return InputToGameKeyMapping_Access;
-   procedure getDefault (This : in out MotionLaptopGameInputMapping);
 
 end org.allbinary.game.input.MotionLaptopGameInputMapping_Package;
 

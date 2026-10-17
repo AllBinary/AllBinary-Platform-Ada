@@ -20,6 +20,8 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
+with org.allbinary.animation.transition.shake.NoShakeAnimationListener_Package; use org.allbinary.animation.transition.shake.NoShakeAnimationListener_Package;
+with org.allbinary.animation.transition.shake.ShakeAnimationListener_Package; use org.allbinary.animation.transition.shake.ShakeAnimationListener_Package;
 
 package org.allbinary.animation.transition.shake.ShakeAnimationListenerFactory_Package is
 
@@ -34,7 +36,6 @@ package org.allbinary.animation.transition.shake.ShakeAnimationListenerFactory_P
    procedure Initialize (This : in out ShakeAnimationListenerFactory'Class);
    function Create return ShakeAnimationListenerFactory_Access;
    function getInstance return ShakeAnimationListener_Access;
-   procedure getInstance;
 
 end org.allbinary.animation.transition.shake.ShakeAnimationListenerFactory_Package;
 

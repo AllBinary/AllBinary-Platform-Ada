@@ -36,7 +36,7 @@ package body org.allbinary.emulator.swt.SWTRunnableProcessor_Package is
    function Create return SWTRunnableProcessor_Access is
       This : constant SWTRunnableProcessor_Access := new SWTRunnableProcessor;
    begin
-      Initialize (This.all);
+      SWTRunnableProcessor_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -44,13 +44,6 @@ package body org.allbinary.emulator.swt.SWTRunnableProcessor_Package is
    begin
         This.runnable.run;
    end process;
-
-   procedure getInstance is
-      Java_Result : constant SWTRunnableProcessor_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

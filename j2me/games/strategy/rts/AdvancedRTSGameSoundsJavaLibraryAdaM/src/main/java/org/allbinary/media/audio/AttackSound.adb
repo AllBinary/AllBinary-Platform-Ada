@@ -28,20 +28,13 @@ package body org.allbinary.media.audio.AttackSound_Package is
    function Create return AttackSound_Access is
       This : constant AttackSound_Access := new AttackSound;
    begin
-      Initialize (This.all);
+      AttackSound_Package.Initialize (This.all);
       return This;
    end Create;
 
    function getInstance return Sound_Access is
    begin
         return AttackSound_Package.soundInterface;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant Sound_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

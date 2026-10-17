@@ -25,7 +25,7 @@ package body org.platform.opengl.OpenGLTextureFactory_Package is
    function Create return OpenGLTextureFactory_Access is
       This : constant OpenGLTextureFactory_Access := new OpenGLTextureFactory;
    begin
-      Initialize (This.all);
+      OpenGLTextureFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -33,13 +33,6 @@ package body org.platform.opengl.OpenGLTextureFactory_Package is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end load;
-
-   procedure getInstance is
-      Java_Result : constant OpenGLTextureFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

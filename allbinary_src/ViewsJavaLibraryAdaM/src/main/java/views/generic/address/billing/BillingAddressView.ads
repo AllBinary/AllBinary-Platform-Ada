@@ -57,12 +57,10 @@ package views.generic_Id.address.billing.BillingAddressView_Package is
    procedure Initialize (This : in out BillingAddressView'Class; transformInfoInterface : TransformInfoInterface_Access);
    function Create (transformInfoInterface : TransformInfoInterface_Access) return BillingAddressView_Access;
    function getRequest (This : in out BillingAddressView) return HttpServletRequest_Access;
-   procedure getRequest (This : in out BillingAddressView);
    function toXmlNode (This : in out BillingAddressView; document : Document_Access) return Node_Access;
    procedure toXmlNode (This : in out BillingAddressView; document : Document_Access);
    procedure addDomNodeInterfaces (This : in out BillingAddressView);
    function view (This : in out BillingAddressView) return Unbounded_String;
-   procedure view (This : in out BillingAddressView);
 
 end views.generic_Id.address.billing.BillingAddressView_Package;
 

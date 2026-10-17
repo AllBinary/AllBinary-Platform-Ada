@@ -30,7 +30,7 @@ package body org.allbinary.input.motion.button.BasicTouchButtonsBuilder_Package 
    function Create return BasicTouchButtonsBuilder_Access is
       This : constant BasicTouchButtonsBuilder_Access := new BasicTouchButtonsBuilder;
    begin
-      Initialize (This.all);
+      BasicTouchButtonsBuilder_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -56,20 +56,6 @@ package body org.allbinary.input.motion.button.BasicTouchButtonsBuilder_Package 
             return BasicArrayListUtil_Package.getInstance.getImmutableInstance;
                 end;
         end;
-   end getList;
-
-   procedure getInstance is
-      Java_Result : constant BaseTouchInput_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure getList (This : in out BasicTouchButtonsBuilder) is
-      Java_Result : constant BasicArrayList_Access := BasicTouchButtonsBuilder'Class (This).getList;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getList;
 
 begin

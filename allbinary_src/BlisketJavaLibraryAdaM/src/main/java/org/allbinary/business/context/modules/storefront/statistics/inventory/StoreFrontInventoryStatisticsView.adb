@@ -31,7 +31,7 @@ package body org.allbinary.business.context.modules.storefront.statistics.invent
    function Create (storeFrontInventoryStatisticsInterface : StoreFrontInventoryStatisticsInterface_Access) return StoreFrontInventoryStatisticsView_Access is
       This : constant StoreFrontInventoryStatisticsView_Access := new StoreFrontInventoryStatisticsView;
    begin
-      Initialize (This.all, storeFrontInventoryStatisticsInterface);
+      StoreFrontInventoryStatisticsView_Package.Initialize (This.all, storeFrontInventoryStatisticsInterface);
       return This;
    end Create;
 

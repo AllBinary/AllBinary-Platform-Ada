@@ -33,7 +33,7 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.GenericStore
    function Create (abeClientInformation : AbeClientInformationInterface_Access; transformInfoInterface : TransformInfoInterface_Access) return GenericStoreTransformInfoObjectConfig_Access is
       This : constant GenericStoreTransformInfoObjectConfig_Access := new GenericStoreTransformInfoObjectConfig;
    begin
-      Initialize (This.all, abeClientInformation, transformInfoInterface);
+      GenericStoreTransformInfoObjectConfig_Package.Initialize (This.all, abeClientInformation, transformInfoInterface);
       return This;
    end Create;
 
@@ -49,7 +49,7 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.GenericStore
    function Create (abeClientInformation : AbeClientInformationInterface_Access; transformInfoInterface : TransformInfoInterface_Access; document : Document_Access) return GenericStoreTransformInfoObjectConfig_Access is
       This : constant GenericStoreTransformInfoObjectConfig_Access := new GenericStoreTransformInfoObjectConfig;
    begin
-      Initialize (This.all, abeClientInformation, transformInfoInterface, document);
+      GenericStoreTransformInfoObjectConfig_Package.Initialize (This.all, abeClientInformation, transformInfoInterface, document);
       return This;
    end Create;
 
@@ -65,7 +65,7 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.GenericStore
    function Create (abeClientInformation : AbeClientInformationInterface_Access; transformInfoInterface : TransformInfoInterface_Access; name : Unbounded_String; type_Id : Unbounded_String) return GenericStoreTransformInfoObjectConfig_Access is
       This : constant GenericStoreTransformInfoObjectConfig_Access := new GenericStoreTransformInfoObjectConfig;
    begin
-      Initialize (This.all, abeClientInformation, transformInfoInterface, name, type_Id);
+      GenericStoreTransformInfoObjectConfig_Package.Initialize (This.all, abeClientInformation, transformInfoInterface, name, type_Id);
       return This;
    end Create;
 

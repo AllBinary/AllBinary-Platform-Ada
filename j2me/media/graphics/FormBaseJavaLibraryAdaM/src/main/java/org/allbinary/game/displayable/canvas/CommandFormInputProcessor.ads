@@ -43,6 +43,7 @@ with org.allbinary.thread.PrimaryThreadPool_Package; use org.allbinary.thread.Pr
 with org.allbinary.time.TimeDelayHelper_Package; use org.allbinary.time.TimeDelayHelper_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.game.displayable.canvas.BasicMenuInputProcessor_Package; use org.allbinary.game.displayable.canvas.BasicMenuInputProcessor_Package;
+with org.allbinary.game.displayable.canvas.CommandRunnable_Package; use org.allbinary.game.displayable.canvas.CommandRunnable_Package;
 
 package org.allbinary.game.displayable.canvas.CommandFormInputProcessor_Package is
 
@@ -90,14 +91,10 @@ package org.allbinary.game.displayable.canvas.CommandFormInputProcessor_Package 
    function processInput (This : in out CommandFormInputProcessor; key : Integer) return Integer;
    procedure processInput (This : in out CommandFormInputProcessor; key : Integer);
    function processCommand (This : in out CommandFormInputProcessor) return Integer;
-   procedure processCommand (This : in out CommandFormInputProcessor);
    function processInputList (This : in out CommandFormInputProcessor) return Integer;
-   procedure processInputList (This : in out CommandFormInputProcessor);
    function processMotionInputs (This : in out CommandFormInputProcessor) return Integer;
-   procedure processMotionInputs (This : in out CommandFormInputProcessor);
    procedure processMotionInput (This : in out CommandFormInputProcessor; motionGestureEvent : MotionGestureEvent_Access);
    function toString (This : in out CommandFormInputProcessor) return Unbounded_String;
-   procedure toString (This : in out CommandFormInputProcessor);
 
 end org.allbinary.game.displayable.canvas.CommandFormInputProcessor_Package;
 

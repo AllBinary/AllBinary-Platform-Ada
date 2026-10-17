@@ -49,7 +49,7 @@ package body org.allbinary.media.image.ImageUtil_Package is
    function Create return ImageUtil_Access is
       This : constant ImageUtil_Access := new ImageUtil;
    begin
-      Initialize (This.all);
+      ImageUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -223,13 +223,6 @@ package body org.allbinary.media.image.ImageUtil_Package is
         stringBuffer.appendint (Integer (imageData.type_Id));
         return stringBuffer.toString;
    end toString;
-
-   procedure getInstance is
-      Java_Result : constant ImageUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure create (This : in out ImageUtil; width : Integer; height : Integer) is
       Java_Result : constant Image_Access := ImageUtil'Class (This).create (width, height);

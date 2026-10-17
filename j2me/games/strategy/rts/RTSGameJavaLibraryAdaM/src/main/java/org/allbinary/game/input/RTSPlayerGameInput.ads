@@ -53,6 +53,16 @@ with org.allbinary.media.graphics.geography.map.GeographicMapCompositeInterface_
 with org.allbinary.media.graphics.geography.map.SimpleGeographicMapCellPositionFactory_Package; use org.allbinary.media.graphics.geography.map.SimpleGeographicMapCellPositionFactory_Package;
 with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
 with org.allbinary.game.input.PlayerGameInput_Package; use org.allbinary.game.input.PlayerGameInput_Package;
+with org.allbinary.game.input.GameInputProcessor_Package; use org.allbinary.game.input.GameInputProcessor_Package;
+with org.allbinary.game.input.InputFactory_Package; use org.allbinary.game.input.InputFactory_Package;
+with org.allbinary.game.input.ScrollMapPlayerGameInput_Package; use org.allbinary.game.input.ScrollMapPlayerGameInput_Package;
+with org.allbinary.game.input.SelectedRTSLayersPlayerGameInput_Package; use org.allbinary.game.input.SelectedRTSLayersPlayerGameInput_Package;
+with org.allbinary.game.input.LayerPositionFinderInterface_Package; use org.allbinary.game.input.LayerPositionFinderInterface_Package;
+with org.allbinary.game.input.SelectRTSLayerVisitorFactoryInterface_Package; use org.allbinary.game.input.SelectRTSLayerVisitorFactoryInterface_Package;
+with org.allbinary.game.input.RTSPlayerLeftGameInputProcessor_Package; use org.allbinary.game.input.RTSPlayerLeftGameInputProcessor_Package;
+with org.allbinary.game.input.RTSPlayerRightGameInputProcessor_Package; use org.allbinary.game.input.RTSPlayerRightGameInputProcessor_Package;
+with org.allbinary.game.input.RTSPlayerFireGameInputProcessor_Package; use org.allbinary.game.input.RTSPlayerFireGameInputProcessor_Package;
+with org.allbinary.game.input.GameInputProcessorUtil_Package; use org.allbinary.game.input.GameInputProcessorUtil_Package;
 
 package org.allbinary.game.input.RTSPlayerGameInput_Package is
 
@@ -121,22 +131,14 @@ package org.allbinary.game.input.RTSPlayerGameInput_Package is
    procedure paint (This : in out RTSPlayerGameInput; graphics : Graphics_Access);
    procedure updatePaintable (This : in out RTSPlayerGameInput);
    function getSelectedBuildingPlayerGameInput (This : in out RTSPlayerGameInput) return SelectedRTSLayersPlayerGameInput_Access;
-   procedure getSelectedBuildingPlayerGameInput (This : in out RTSPlayerGameInput);
    function getSelectedRtsFormInput (This : in out RTSPlayerGameInput) return RTSFormInput_Access;
-   procedure getSelectedRtsFormInput (This : in out RTSPlayerGameInput);
    procedure setSelectedRtsFormInput (This : in out RTSPlayerGameInput; selectedRtsFormInput : RTSFormInput_Access);
    function getRtsPlayerLayerInterface (This : in out RTSPlayerGameInput) return RTSPlayerLayerInterface_Access;
-   procedure getRtsPlayerLayerInterface (This : in out RTSPlayerGameInput);
    function getRTSLayerInfoPaintable (This : in out RTSPlayerGameInput) return RTSLayerInfoPaintable_Access;
-   procedure getRTSLayerInfoPaintable (This : in out RTSPlayerGameInput);
    function getMotionGestureInputList (This : in out RTSPlayerGameInput) return BasicArrayList_Access;
-   procedure getMotionGestureInputList (This : in out RTSPlayerGameInput);
    function getGameCanvas (This : in out RTSPlayerGameInput) return AllBinaryGameCanvas_Access;
-   procedure getGameCanvas (This : in out RTSPlayerGameInput);
    function isIsSingleKeyProcessing (This : in out RTSPlayerGameInput) return Boolean;
-   procedure isIsSingleKeyProcessing (This : in out RTSPlayerGameInput);
    function getScrollPlayerGameInput (This : in out RTSPlayerGameInput) return ScrollMapPlayerGameInput_Access;
-   procedure getScrollPlayerGameInput (This : in out RTSPlayerGameInput);
 
 end org.allbinary.game.input.RTSPlayerGameInput_Package;
 

@@ -23,6 +23,7 @@ with org.allbinary.game.layer.RTSLayerEvent_Package; use org.allbinary.game.laye
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbinary.logic.util.event.AllBinaryEventObject_Package;
 with org.allbinary.logic.util.event.EventListenerInterface_Package; use org.allbinary.logic.util.event.EventListenerInterface_Package;
 with org.allbinary.logic.util.event.handler.BasicEventHandler_Package; use org.allbinary.logic.util.event.handler.BasicEventHandler_Package;
+with org.allbinary.game.layer.building.event.BuildingEventListenerInterface_Package; use org.allbinary.game.layer.building.event.BuildingEventListenerInterface_Package;
 
 package org.allbinary.game.layer.building.event.LocalPlayerBuildingEventHandler_Package is
 
@@ -42,7 +43,6 @@ package org.allbinary.game.layer.building.event.LocalPlayerBuildingEventHandler_
    procedure Initialize (This : in out LocalPlayerBuildingEventHandler'Class);
    function Create return LocalPlayerBuildingEventHandler_Access;
    function getInstance return LocalPlayerBuildingEventHandler_Access;
-   procedure getInstance;
    procedure process (This : in out LocalPlayerBuildingEventHandler; eventObject : AllBinaryEventObject_Access; eventListenerInterface : EventListenerInterface_Access);
 
 end org.allbinary.game.layer.building.event.LocalPlayerBuildingEventHandler_Package;

@@ -39,7 +39,7 @@ package body org.allbinary.logic.communication.smtp.configuration.server.EmailSe
    function Create return EmailServerConfiguration_Access is
       This : constant EmailServerConfiguration_Access := new EmailServerConfiguration;
    begin
-      Initialize (This.all);
+      EmailServerConfiguration_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -61,7 +61,7 @@ package body org.allbinary.logic.communication.smtp.configuration.server.EmailSe
    function Create (hashMap : HashMap_Access) return EmailServerConfiguration_Access is
       This : constant EmailServerConfiguration_Access := new EmailServerConfiguration;
    begin
-      Initialize (This.all, hashMap);
+      EmailServerConfiguration_Package.Initialize (This.all, hashMap);
       return This;
    end Create;
 
@@ -83,7 +83,7 @@ package body org.allbinary.logic.communication.smtp.configuration.server.EmailSe
    function Create (account : Unbounded_String; password : Unbounded_String; server : Unbounded_String) return EmailServerConfiguration_Access is
       This : constant EmailServerConfiguration_Access := new EmailServerConfiguration;
    begin
-      Initialize (This.all, account, password, server);
+      EmailServerConfiguration_Package.Initialize (This.all, account, password, server);
       return This;
    end Create;
 
@@ -127,34 +127,6 @@ package body org.allbinary.logic.communication.smtp.configuration.server.EmailSe
    function toString (This : in out EmailServerConfiguration) return Unbounded_String is
    begin
         return To_Unbounded_String ("Email Server Configuration:" & ASCII.LF & "") & To_Unbounded_String ("Smtp Server: " & ASCII.LF & "") & Java_Image (This.getSmtpServer) & To_Unbounded_String ("" & ASCII.LF & "Account Name: ") & Java_Image (This.getAccountName) & To_Unbounded_String ("" & ASCII.LF & "Password: ") & Java_Image (This.getPassword);
-   end toString;
-
-   procedure getSmtpServer (This : in out EmailServerConfiguration) is
-      Java_Result : constant Unbounded_String := EmailServerConfiguration'Class (This).getSmtpServer;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSmtpServer;
-
-   procedure getAccountName (This : in out EmailServerConfiguration) is
-      Java_Result : constant Unbounded_String := EmailServerConfiguration'Class (This).getAccountName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getAccountName;
-
-   procedure getPassword (This : in out EmailServerConfiguration) is
-      Java_Result : constant Unbounded_String := EmailServerConfiguration'Class (This).getPassword;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getPassword;
-
-   procedure toString (This : in out EmailServerConfiguration) is
-      Java_Result : constant Unbounded_String := EmailServerConfiguration'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end toString;
 
 end org.allbinary.logic.communication.smtp.configuration.server.EmailServerConfiguration_Package;

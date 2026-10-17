@@ -42,15 +42,11 @@ package org.allbinary.media.image.analysis.ColorAverage_Package is
    procedure Initialize (This : in out ColorAverage'Class);
    function Create return ColorAverage_Access;
    function toString (This : in out ColorAverage) return Unbounded_String;
-   procedure toString (This : in out ColorAverage);
    function getAvgRed (This : in out ColorAverage) return Float;
-   procedure getAvgRed (This : in out ColorAverage);
    procedure setAvgRed (This : in out ColorAverage; avgRed : Float);
    function getAvgGreen (This : in out ColorAverage) return Float;
-   procedure getAvgGreen (This : in out ColorAverage);
    procedure setAvgGreen (This : in out ColorAverage; avgGreen : Float);
    function getAvgBlue (This : in out ColorAverage) return Float;
-   procedure getAvgBlue (This : in out ColorAverage);
    procedure setAvgBlue (This : in out ColorAverage; avgBlue : Float);
 
 end org.allbinary.media.image.analysis.ColorAverage_Package;

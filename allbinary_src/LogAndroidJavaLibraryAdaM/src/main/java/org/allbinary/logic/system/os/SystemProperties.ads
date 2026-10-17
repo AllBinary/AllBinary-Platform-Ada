@@ -39,15 +39,10 @@ package org.allbinary.logic.system.os.SystemProperties_Package is
    procedure Initialize (This : in out SystemProperties'Class);
    function Create return SystemProperties_Access;
    function getInstance return SystemProperties_Access;
-   procedure getInstance;
    function getName (This : in out SystemProperties) return Unbounded_String;
-   procedure getName (This : in out SystemProperties);
    function getArch (This : in out SystemProperties) return Unbounded_String;
-   procedure getArch (This : in out SystemProperties);
    function getVersion (This : in out SystemProperties) return Unbounded_String;
-   procedure getVersion (This : in out SystemProperties);
    function getUserHomePath (This : in out SystemProperties) return Unbounded_String;
-   procedure getUserHomePath (This : in out SystemProperties);
 
 end org.allbinary.logic.system.os.SystemProperties_Package;
 

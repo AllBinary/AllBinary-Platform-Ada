@@ -41,7 +41,7 @@ package body views.compound.CompoundTransform_Package is
    function Create (transformInfoInterface : TransformInfoInterface_Access) return CompoundTransform_Access is
       This : constant CompoundTransform_Access := new CompoundTransform;
    begin
-      Initialize (This.all, transformInfoInterface);
+      CompoundTransform_Package.Initialize (This.all, transformInfoInterface);
       return This;
    end Create;
 

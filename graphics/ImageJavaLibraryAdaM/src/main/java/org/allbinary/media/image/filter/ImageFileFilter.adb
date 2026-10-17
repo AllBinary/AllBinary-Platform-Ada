@@ -29,7 +29,7 @@ package body org.allbinary.media.image.filter.ImageFileFilter_Package is
    function Create return ImageFileFilter_Access is
       This : constant ImageFileFilter_Access := new ImageFileFilter;
    begin
-      Initialize (This.all);
+      ImageFileFilter_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -64,13 +64,6 @@ package body org.allbinary.media.image.filter.ImageFileFilter_Package is
    begin
       null;
    end accept_Id;
-
-   procedure getDescription (This : in out ImageFileFilter) is
-      Java_Result : constant Unbounded_String := ImageFileFilter'Class (This).getDescription;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getDescription;
 
 end org.allbinary.media.image.filter.ImageFileFilter_Package;
 

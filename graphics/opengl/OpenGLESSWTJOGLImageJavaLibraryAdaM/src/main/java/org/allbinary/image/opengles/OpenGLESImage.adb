@@ -41,7 +41,7 @@ package body org.allbinary.image.opengles.OpenGLESImage_Package is
    function Create (image : Image_Access; bitmapFactory : PlatformBitmapBaseFactory_Access; textureFactory : PlatformTextureBaseFactory_Access) return OpenGLESImage_Access is
       This : constant OpenGLESImage_Access := new OpenGLESImage;
    begin
-      Initialize (This.all, image, bitmapFactory, textureFactory);
+      OpenGLESImage_Package.Initialize (This.all, image, bitmapFactory, textureFactory);
       return This;
    end Create;
 
@@ -105,40 +105,12 @@ package body org.allbinary.image.opengles.OpenGLESImage_Package is
         return StringMaker_Package.Create.append (This.getName).append (Image (This).toString).append (graphicsStrings.OPACITY).appendfloat (Float (This.openGLESImageProperties.alphaf)).toString;
    end toString;
 
-   procedure getHeight (This : in out OpenGLESImage) is
-      Java_Result : constant Integer := OpenGLESImage'Class (This).getHeight;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getHeight;
-
-   procedure getWidth (This : in out OpenGLESImage) is
-      Java_Result : constant Integer := OpenGLESImage'Class (This).getWidth;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getWidth;
-
    procedure initTexture (This : in out OpenGLESImage; gl : GL10_Access) is
       Java_Result : constant Boolean := OpenGLESImage'Class (This).initTexture (gl);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end initTexture;
-
-   procedure getType (This : in out OpenGLESImage) is
-      Java_Result : constant Integer := OpenGLESImage'Class (This).getType;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getType;
-
-   procedure toString (This : in out OpenGLESImage) is
-      Java_Result : constant Unbounded_String := OpenGLESImage'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toString;
 
 begin
    null;

@@ -31,7 +31,7 @@ package body org.allbinary.game.layer.drop.DropLayerProcessor_Package is
    function Create return DropLayerProcessor_Access is
       This : constant DropLayerProcessor_Access := new DropLayerProcessor;
    begin
-      Initialize (This.all);
+      DropLayerProcessor_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -60,13 +60,6 @@ package body org.allbinary.game.layer.drop.DropLayerProcessor_Package is
         end loop;
         list.clear;
    end process;
-
-   procedure getInstance is
-      Java_Result : constant BasicLayerProcessor_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

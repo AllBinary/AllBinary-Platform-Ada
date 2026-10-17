@@ -41,7 +41,6 @@ package tags.admin.inventory.InventoryTag_Package is
    procedure Initialize (This : in out InventoryTag'Class);
    function Create return InventoryTag_Access;
    function doStartTag (This : in out InventoryTag) return Integer;
-   procedure doStartTag (This : in out InventoryTag);
 
 end tags.admin.inventory.InventoryTag_Package;
 

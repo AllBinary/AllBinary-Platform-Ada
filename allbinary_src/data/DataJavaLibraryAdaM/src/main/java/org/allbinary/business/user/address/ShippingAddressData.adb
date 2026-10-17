@@ -13,7 +13,7 @@
 --  Generated Code Do Not Modify
 
 
-package body org.allbinary.business.user.address_Case.ShippingAddressData_Package is
+package body org.allbinary.business.user.address.ShippingAddressData_Package is
 
    procedure Initialize_Fields (This : in out ShippingAddressData'Class) is
    begin
@@ -30,7 +30,7 @@ package body org.allbinary.business.user.address_Case.ShippingAddressData_Packag
    function Create return ShippingAddressData_Access is
       This : constant ShippingAddressData_Access := new ShippingAddressData;
    begin
-      Initialize (This.all);
+      ShippingAddressData_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -52,6 +52,6 @@ begin
    COUNTRY := To_Unbounded_String ("SHIPPINGADDRESS_COUNTRY");
    TAX := To_Unbounded_String ("SHIPPINGADDRESS_TAX");
 
-end org.allbinary.business.user.address_Case.ShippingAddressData_Package;
+end org.allbinary.business.user.address.ShippingAddressData_Package;
 
 

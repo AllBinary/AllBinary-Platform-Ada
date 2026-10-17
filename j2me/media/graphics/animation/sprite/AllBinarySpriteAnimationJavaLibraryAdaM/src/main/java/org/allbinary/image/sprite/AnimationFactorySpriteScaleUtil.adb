@@ -33,7 +33,7 @@ package body org.allbinary.image.sprite.AnimationFactorySpriteScaleUtil_Package 
    function Create return AnimationFactorySpriteScaleUtil_Access is
       This : constant AnimationFactorySpriteScaleUtil_Access := new AnimationFactorySpriteScaleUtil;
    begin
-      Initialize (This.all);
+      AnimationFactorySpriteScaleUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -92,13 +92,6 @@ package body org.allbinary.image.sprite.AnimationFactorySpriteScaleUtil_Package 
         end if;
         return sprite;
    end createImage;
-
-   procedure getInstance is
-      Java_Result : constant AnimationFactorySpriteScaleUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure createImage (This : in out AnimationFactorySpriteScaleUtil; image : Image_Access; width : Integer; height : Integer; scaleWidth : Integer; scaleHeight : Integer) is
       Java_Result : constant Sprite_Access := AnimationFactorySpriteScaleUtil'Class (This).createImage (image, width, height, scaleWidth, scaleHeight);

@@ -36,7 +36,7 @@ package body org.allbinary.logic.visual.dhtml.html.input.HtmlValueInput_Package 
    function Create (before : Unbounded_String; type_Id : Unbounded_String; name : Unbounded_String; value_Case : Unbounded_String; after : Unbounded_String) return HtmlValueInput_Access is
       This : constant HtmlValueInput_Access := new HtmlValueInput;
    begin
-      Initialize (This.all, before, type_Id, name, value_Case, after);
+      HtmlValueInput_Package.Initialize (This.all, before, type_Id, name, value_Case, after);
       return This;
    end Create;
 

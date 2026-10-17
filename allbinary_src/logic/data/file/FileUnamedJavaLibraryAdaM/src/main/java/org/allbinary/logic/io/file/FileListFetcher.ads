@@ -27,6 +27,7 @@ with org.allbinary.logic.io.file.directory.SubDirectory_Package; use org.allbina
 with org.allbinary.logic.io.file.filter.VisitorFileFilter_Package; use org.allbinary.logic.io.file.filter.VisitorFileFilter_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.logic.io.file.AbFile_Package; use org.allbinary.logic.io.file.AbFile_Package;
 
 package org.allbinary.logic.io.file.FileListFetcher_Package is
 
@@ -51,7 +52,6 @@ package org.allbinary.logic.io.file.FileListFetcher_Package is
    procedure Initialize (This : in out FileListFetcher'Class);
    function Create return FileListFetcher_Access;
    function getInstance return FileListFetcher_Access;
-   procedure getInstance;
    function getFiles (This : in out FileListFetcher; path : Unbounded_String) return BasicArrayList_Access;
    procedure getFiles (This : in out FileListFetcher; path : Unbounded_String);
    function getFiles (This : in out FileListFetcher; path : Unbounded_String; includeExtensions : Unbounded_String_Array_Access) return BasicArrayList_Access;

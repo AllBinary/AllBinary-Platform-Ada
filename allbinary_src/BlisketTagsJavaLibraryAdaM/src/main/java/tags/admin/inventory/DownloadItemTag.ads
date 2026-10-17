@@ -41,7 +41,6 @@ package tags.admin.inventory.DownloadItemTag_Package is
    procedure Initialize (This : in out DownloadItemTag'Class);
    function Create return DownloadItemTag_Access;
    function doStartTag (This : in out DownloadItemTag) return Integer;
-   procedure doStartTag (This : in out DownloadItemTag);
 
 end tags.admin.inventory.DownloadItemTag_Package;
 

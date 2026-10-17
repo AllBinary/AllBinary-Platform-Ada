@@ -29,7 +29,7 @@ package body org.allbinary.business.time.created.TimeCreated_Package is
    function Create (time : Unbounded_String) return TimeCreated_Access is
       This : constant TimeCreated_Access := new TimeCreated;
    begin
-      Initialize (This.all, time);
+      TimeCreated_Package.Initialize (This.all, time);
       return This;
    end Create;
 
@@ -42,7 +42,7 @@ package body org.allbinary.business.time.created.TimeCreated_Package is
    function Create (time : Long_Long_Integer) return TimeCreated_Access is
       This : constant TimeCreated_Access := new TimeCreated;
    begin
-      Initialize (This.all, time);
+      TimeCreated_Package.Initialize (This.all, time);
       return This;
    end Create;
 

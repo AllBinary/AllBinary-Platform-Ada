@@ -30,7 +30,7 @@ package body org.allbinary.logic.io.file.directory.DirectoryFileVisitor_Package 
    function Create return DirectoryFileVisitor_Access is
       This : constant DirectoryFileVisitor_Access := new DirectoryFileVisitor;
    begin
-      Initialize (This.all);
+      DirectoryFileVisitor_Package.Initialize (This.all);
       return This;
    end Create;
 

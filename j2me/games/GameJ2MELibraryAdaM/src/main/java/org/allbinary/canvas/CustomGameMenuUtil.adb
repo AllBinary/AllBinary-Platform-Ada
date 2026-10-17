@@ -28,7 +28,7 @@ package body org.allbinary.canvas.CustomGameMenuUtil_Package is
    function Create return CustomGameMenuUtil_Access is
       This : constant CustomGameMenuUtil_Access := new CustomGameMenuUtil;
    begin
-      Initialize (This.all);
+      CustomGameMenuUtil_Package.Initialize (This.all);
       return This;
    end Create;
 

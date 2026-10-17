@@ -80,7 +80,6 @@ package org.allbinary.game.input.form.BuildingAdvancedRTSFormInput_Package is
    function Create (groupInterface : Group_Access_Array_Access; isUnitProducer : Boolean) return BuildingAdvancedRTSFormInput_Access;
    procedure setAllBinaryGameLayerManager (This : in out BuildingAdvancedRTSFormInput; allBinaryGameLayerManager : AllBinaryGameLayerManager_Access);
    function isPositionBlocked (This : in out BuildingAdvancedRTSFormInput) return Boolean;
-   procedure isPositionBlocked (This : in out BuildingAdvancedRTSFormInput);
    function isBuildAttemptValid (This : in out BuildingAdvancedRTSFormInput; rtsPlayerLayerInterface : RTSPlayerLayerInterface_Access; layerInterface : RTSLayer_Access) return Boolean;
    procedure isBuildAttemptValid (This : in out BuildingAdvancedRTSFormInput; rtsPlayerLayerInterface : RTSPlayerLayerInterface_Access; layerInterface : RTSLayer_Access);
    procedure add (This : in out BuildingAdvancedRTSFormInput; rtsPlayerLayerInterface : RTSPlayerLayerInterface_Access; layerManager : AllBinaryLayerManager_Access; layerInterface : RTSLayer_Access);

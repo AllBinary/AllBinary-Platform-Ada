@@ -29,7 +29,7 @@ package body org.allbinary.media.audio.MediaPlayerUtil_Package is
    function Create return MediaPlayerUtil_Access is
       This : constant MediaPlayerUtil_Access := new MediaPlayerUtil;
    begin
-      Initialize (This.all);
+      MediaPlayerUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -54,13 +54,6 @@ package body org.allbinary.media.audio.MediaPlayerUtil_Package is
             index := index + 1;
         end loop;
    end waitForMediaPlayer;
-
-   procedure getInstance is
-      Java_Result : constant MediaPlayerUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

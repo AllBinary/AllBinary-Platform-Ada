@@ -25,6 +25,7 @@ with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Anim
 with org.allbinary.animation.AnimationBehaviorFactory_Package; use org.allbinary.animation.AnimationBehaviorFactory_Package;
 with org.allbinary.logic.math.PrimitiveIntUtil_Package; use org.allbinary.logic.math.PrimitiveIntUtil_Package;
 with org.allbinary.animation.image.BaseImageAnimationFactory_Package; use org.allbinary.animation.image.BaseImageAnimationFactory_Package;
+with org.allbinary.animation.image.BottomToTopImageAnimation_Package; use org.allbinary.animation.image.BottomToTopImageAnimation_Package;
 
 package org.allbinary.animation.image.BottomToTopImageAnimationFactory_Package is
 

@@ -31,7 +31,7 @@ package body org.allbinary.data.tree.dom.FileTableMapping_Package is
    function Create (file : AbFile_Access) return FileTableMapping_Access is
       This : constant FileTableMapping_Access := new FileTableMapping;
    begin
-      Initialize (This.all, file);
+      FileTableMapping_Package.Initialize (This.all, file);
       return This;
    end Create;
 
@@ -78,27 +78,6 @@ package body org.allbinary.data.tree.dom.FileTableMapping_Package is
         filePropertyHashMap.put (fileData.PARENT, This.file.getParent);
         filePropertyHashMap.put (fileData.PATH, This.file.getPath);
         return filePropertyHashMap;
-   end toHashMap;
-
-   procedure getKey (This : in out FileTableMapping) is
-      Java_Result : constant Java_Object_Access := FileTableMapping'Class (This).getKey;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getKey;
-
-   procedure toVector (This : in out FileTableMapping) is
-      Java_Result : constant BasicArrayList_Access := FileTableMapping'Class (This).toVector;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toVector;
-
-   procedure toHashMap (This : in out FileTableMapping) is
-      Java_Result : constant HashMap_Access := FileTableMapping'Class (This).toHashMap;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end toHashMap;
 
 end org.allbinary.data.tree.dom.FileTableMapping_Package;

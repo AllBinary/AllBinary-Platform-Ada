@@ -30,11 +30,12 @@ package body org.allbinary.logic.io.file.FilePathUtil_Package is
    function Create return FilePathUtil_Access is
       This : constant FilePathUtil_Access := new FilePathUtil;
    begin
-      Initialize (This.all);
+      FilePathUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
-   function adjust (path : Unbounded_String) return Unbounded_String is
+   function adjust (path_Param : Unbounded_String) return Unbounded_String is
+      path : Unbounded_String := path_Param;
       abPathData : AbPathData_Access;
       stringValidationUtil : StringValidationUtil_Access;
       filePathData : FilePathData_Access;
@@ -49,8 +50,8 @@ package body org.allbinary.logic.io.file.FilePathUtil_Package is
         return path;
    end adjust;
 
-   procedure adjust (path : Unbounded_String) is
-      Java_Result : constant Unbounded_String := adjust (path);
+   procedure adjust (path_Param : Unbounded_String) is
+      Java_Result : constant Unbounded_String := adjust (path_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

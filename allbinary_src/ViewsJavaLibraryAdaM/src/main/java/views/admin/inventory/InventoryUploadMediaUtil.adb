@@ -44,7 +44,7 @@ package body views.admin.inventory.InventoryUploadMediaUtil_Package is
    function Create (storeFrontInterface : StoreFrontInterface_Access; itemInterface : ItemInterface_Access) return InventoryUploadMediaUtil_Access is
       This : constant InventoryUploadMediaUtil_Access := new InventoryUploadMediaUtil;
    begin
-      Initialize (This.all, storeFrontInterface, itemInterface);
+      InventoryUploadMediaUtil_Package.Initialize (This.all, storeFrontInterface, itemInterface);
       return This;
    end Create;
 

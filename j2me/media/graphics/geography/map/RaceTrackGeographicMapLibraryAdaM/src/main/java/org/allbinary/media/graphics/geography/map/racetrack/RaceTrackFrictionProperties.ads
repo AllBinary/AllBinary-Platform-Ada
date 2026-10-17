@@ -39,9 +39,7 @@ package org.allbinary.media.graphics.geography.map.racetrack.RaceTrackFrictionPr
    procedure Initialize (This : in out RaceTrackFrictionProperties'Class; roadFriction : Integer; groundFriction : Integer);
    function Create (roadFriction : Integer; groundFriction : Integer) return RaceTrackFrictionProperties_Access;
    function getRoadFrictionNominator (This : in out RaceTrackFrictionProperties) return Integer;
-   procedure getRoadFrictionNominator (This : in out RaceTrackFrictionProperties);
    function getGroundFrictionNominator (This : in out RaceTrackFrictionProperties) return Integer;
-   procedure getGroundFrictionNominator (This : in out RaceTrackFrictionProperties);
 
 end org.allbinary.media.graphics.geography.map.racetrack.RaceTrackFrictionProperties_Package;
 

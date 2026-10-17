@@ -29,7 +29,7 @@ package body org.allbinary.android.api16.ActivityFractureUtilAPI16_Package is
    function Create return ActivityFractureUtilAPI16_Access is
       This : constant ActivityFractureUtilAPI16_Access := new ActivityFractureUtilAPI16;
    begin
-      Initialize (This.all);
+      ActivityFractureUtilAPI16_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -47,13 +47,6 @@ package body org.allbinary.android.api16.ActivityFractureUtilAPI16_Package is
         visibility := Java_Or (View_Package.SYSTEM_UI_FLAG_HIDE_NAVIGATION, View_Package.SYSTEM_UI_FLAG_FULLSCREEN);
         decorView.setSystemUiVisibility (visibility);
    end setFullScreen;
-
-   procedure getInstance is
-      Java_Result : constant ActivityFractureUtilAPI16_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

@@ -40,7 +40,7 @@ package body org.allbinary.graphics.GPoint_Package is
    function Create (x : Integer; y : Integer; z : Integer) return GPoint_Access is
       This : constant GPoint_Access := new GPoint;
    begin
-      Initialize (This.all, x, y, z);
+      GPoint_Package.Initialize (This.all, x, y, z);
       return This;
    end Create;
 
@@ -103,55 +103,6 @@ package body org.allbinary.graphics.GPoint_Package is
    begin
       null;
    end getInstance;
-
-   procedure getX (This : in out GPoint) is
-      Java_Result : constant Integer := GPoint'Class (This).getX;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getX;
-
-   procedure getY (This : in out GPoint) is
-      Java_Result : constant Integer := GPoint'Class (This).getY;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getY;
-
-   procedure getZ (This : in out GPoint) is
-      Java_Result : constant Integer := GPoint'Class (This).getZ;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getZ;
-
-   procedure getRawX (This : in out GPoint) is
-      Java_Result : constant Integer := GPoint'Class (This).getRawX;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getRawX;
-
-   procedure getRawY (This : in out GPoint) is
-      Java_Result : constant Integer := GPoint'Class (This).getRawY;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getRawY;
-
-   procedure getRawZ (This : in out GPoint) is
-      Java_Result : constant Integer := GPoint'Class (This).getRawZ;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getRawZ;
-
-   procedure toString (This : in out GPoint) is
-      Java_Result : constant Unbounded_String := GPoint'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toString;
 
    procedure toStringStatic (x : Integer; y : Integer; z : Integer) is
       Java_Result : constant Unbounded_String := toStringStatic (x, y, z);

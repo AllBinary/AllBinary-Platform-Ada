@@ -31,7 +31,7 @@ package body org.allbinary.logic.system.os.NoOperatingSystem_Package is
    function Create return NoOperatingSystem_Access is
       This : constant NoOperatingSystem_Access := new NoOperatingSystem;
    begin
-      Initialize (This.all);
+      NoOperatingSystem_Package.Initialize (This.all);
       return This;
    end Create;
 

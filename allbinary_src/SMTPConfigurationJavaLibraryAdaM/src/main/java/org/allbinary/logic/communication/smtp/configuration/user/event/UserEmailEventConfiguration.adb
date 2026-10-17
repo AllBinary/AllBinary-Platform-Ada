@@ -37,7 +37,7 @@ package body org.allbinary.logic.communication.smtp.configuration.user.event.Use
    function Create return UserEmailEventConfiguration_Access is
       This : constant UserEmailEventConfiguration_Access := new UserEmailEventConfiguration;
    begin
-      Initialize (This.all);
+      UserEmailEventConfiguration_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -55,7 +55,7 @@ package body org.allbinary.logic.communication.smtp.configuration.user.event.Use
    function Create (hashMap : HashMap_Access) return UserEmailEventConfiguration_Access is
       This : constant UserEmailEventConfiguration_Access := new UserEmailEventConfiguration;
    begin
-      Initialize (This.all, hashMap);
+      UserEmailEventConfiguration_Package.Initialize (This.all, hashMap);
       return This;
    end Create;
 
@@ -82,27 +82,6 @@ package body org.allbinary.logic.communication.smtp.configuration.user.event.Use
    function log (This : in out UserEmailEventConfiguration) return Unbounded_String is
    begin
         return To_Unbounded_String ("" & ASCII.LF & "User Email Event Log Info:") & To_Unbounded_String ("" & ASCII.LF & "Name: ") & This.getName & To_Unbounded_String ("" & ASCII.LF & "EventListenerClassPath: ") & Java_Image (This.getEventListenerClassPath);
-   end log;
-
-   procedure getName (This : in out UserEmailEventConfiguration) is
-      Java_Result : constant Unbounded_String := UserEmailEventConfiguration'Class (This).getName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getName;
-
-   procedure getEventListenerClassPath (This : in out UserEmailEventConfiguration) is
-      Java_Result : constant Unbounded_String := UserEmailEventConfiguration'Class (This).getEventListenerClassPath;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getEventListenerClassPath;
-
-   procedure log (This : in out UserEmailEventConfiguration) is
-      Java_Result : constant Unbounded_String := UserEmailEventConfiguration'Class (This).log;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end log;
 
 end org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventConfiguration_Package;

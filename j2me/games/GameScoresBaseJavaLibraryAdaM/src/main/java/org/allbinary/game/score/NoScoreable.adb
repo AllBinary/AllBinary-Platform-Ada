@@ -34,7 +34,7 @@ package body org.allbinary.game.score.NoScoreable_Package is
    function Create return NoScoreable_Access is
       This : constant NoScoreable_Access := new NoScoreable;
    begin
-      Initialize (This.all);
+      NoScoreable_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -47,13 +47,6 @@ package body org.allbinary.game.score.NoScoreable_Package is
    begin
         null;
    end removePoints;
-
-   procedure getInstance is
-      Java_Result : constant NoScoreable_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

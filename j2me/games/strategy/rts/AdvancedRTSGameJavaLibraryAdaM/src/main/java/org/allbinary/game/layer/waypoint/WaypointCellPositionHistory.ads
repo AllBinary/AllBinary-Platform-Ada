@@ -46,7 +46,6 @@ package org.allbinary.game.layer.waypoint.WaypointCellPositionHistory_Package is
    procedure Initialize (This : in out WaypointCellPositionHistory'Class);
    function Create return WaypointCellPositionHistory_Access;
    function getInstance return WaypointCellPositionHistory_Access;
-   procedure getInstance;
    procedure add (This : in out WaypointCellPositionHistory; cellPosition : CellPosition_Access; layerInterface : AllBinaryLayer_Access);
    procedure addList (This : in out WaypointCellPositionHistory; list : BasicArrayList_Access; layerInterface : AllBinaryLayer_Access);
    procedure remove (This : in out WaypointCellPositionHistory; cellPosition : CellPosition_Access);

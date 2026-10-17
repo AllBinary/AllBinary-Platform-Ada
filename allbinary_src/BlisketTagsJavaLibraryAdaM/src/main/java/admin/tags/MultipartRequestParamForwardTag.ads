@@ -31,6 +31,8 @@ with org.allbinary.logic.communication.http.request.AbResponseHandler_Package; u
 with org.allbinary.logic.system.security.licensing.LicensingException_Package; use org.allbinary.logic.system.security.licensing.LicensingException_Package;
 with tags.CustomTagSupport_Package; use tags.CustomTagSupport_Package;
 with tags.HelperTag_Package; use tags.HelperTag_Package;
+with admin.tags.ParentInventoryTagHelper_Package; use admin.tags.ParentInventoryTagHelper_Package;
+with admin.tags.AbTagData_Package; use admin.tags.AbTagData_Package;
 
 package admin.tags.MultipartRequestParamForwardTag_Package is
 
@@ -60,7 +62,6 @@ package admin.tags.MultipartRequestParamForwardTag_Package is
    procedure setCommand (This : in out MultipartRequestParamForwardTag; command : Unbounded_String);
    procedure setParamVector (This : in out MultipartRequestParamForwardTag; paramVector : BasicArrayList_Access);
    function doStartTag (This : in out MultipartRequestParamForwardTag) return Integer;
-   procedure doStartTag (This : in out MultipartRequestParamForwardTag);
 
 end admin.tags.MultipartRequestParamForwardTag_Package;
 

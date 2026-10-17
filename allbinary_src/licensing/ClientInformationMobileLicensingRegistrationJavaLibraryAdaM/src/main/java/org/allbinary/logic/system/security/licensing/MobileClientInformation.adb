@@ -43,7 +43,7 @@ package body org.allbinary.logic.system.security.licensing.MobileClientInformati
    function Create (name : Unbounded_String; version : Unbounded_String; specialName : Unbounded_String; shortName : Unbounded_String) return MobileClientInformation_Access is
       This : constant MobileClientInformation_Access := new MobileClientInformation;
    begin
-      Initialize (This.all, name, version, specialName, shortName);
+      MobileClientInformation_Package.Initialize (This.all, name, version, specialName, shortName);
       return This;
    end Create;
 
@@ -55,13 +55,6 @@ package body org.allbinary.logic.system.security.licensing.MobileClientInformati
         registrationConfiguration := RegistrationConfiguration_Package.getInstance;
         hashtable.put (registrationConfiguration.NAME, registrationConfiguration.getRegistrationCode);
         return hashtable;
-   end toHashtable;
-
-   procedure toHashtable (This : in out MobileClientInformation) is
-      Java_Result : constant ABHashtable_Access := MobileClientInformation'Class (This).toHashtable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end toHashtable;
 
 begin

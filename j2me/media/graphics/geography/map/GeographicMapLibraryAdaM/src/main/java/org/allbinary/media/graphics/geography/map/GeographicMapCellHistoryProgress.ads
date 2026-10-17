@@ -22,6 +22,7 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellHistoryProgressBase_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellHistoryProgressBase_Package;
+with org.allbinary.media.graphics.geography.map.GeographicMapCellHistory_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellHistory_Package;
 
 package org.allbinary.media.graphics.geography.map.GeographicMapCellHistoryProgress_Package is
 
@@ -41,7 +42,6 @@ package org.allbinary.media.graphics.geography.map.GeographicMapCellHistoryProgr
    function Create (geographicMapCellHistoryArray : GeographicMapCellHistory_Access_Array_Access) return GeographicMapCellHistoryProgress_Access;
    procedure init (This : in out GeographicMapCellHistoryProgress);
    function isAnyProgress (This : in out GeographicMapCellHistoryProgress) return Boolean;
-   procedure isAnyProgress (This : in out GeographicMapCellHistoryProgress);
 
 end org.allbinary.media.graphics.geography.map.GeographicMapCellHistoryProgress_Package;
 

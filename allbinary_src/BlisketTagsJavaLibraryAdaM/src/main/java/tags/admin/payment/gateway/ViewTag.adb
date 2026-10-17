@@ -31,7 +31,7 @@ package body tags.admin.payment.gateway.ViewTag_Package is
    function Create return ViewTag_Access is
       This : constant ViewTag_Access := new ViewTag;
    begin
-      Initialize (This.all);
+      ViewTag_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -58,13 +58,6 @@ package body tags.admin.payment.gateway.ViewTag_Package is
             return SKIP_BODY;
                 end;
         end;
-   end doStartTag;
-
-   procedure doStartTag (This : in out ViewTag) is
-      Java_Result : constant Integer := ViewTag'Class (This).doStartTag;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end doStartTag;
 
 end tags.admin.payment.gateway.ViewTag_Package;

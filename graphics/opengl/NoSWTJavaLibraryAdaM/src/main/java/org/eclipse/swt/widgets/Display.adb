@@ -28,7 +28,7 @@ package body org.eclipse.swt.widgets.Display_Package is
    function Create return Display_Access is
       This : constant Display_Access := new Display;
    begin
-      Initialize (This.all);
+      Display_Package.Initialize (This.all);
       return This;
    end Create;
 

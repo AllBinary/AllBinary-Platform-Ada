@@ -44,7 +44,7 @@ package body org.allbinary.input.automation.module.TestInputAutomationWorker_Pac
    function Create return TestInputAutomationWorker_Access is
       This : constant TestInputAutomationWorker_Access := new TestInputAutomationWorker;
    begin
-      Initialize (This.all);
+      TestInputAutomationWorker_Package.Initialize (This.all);
       return This;
    end Create;
 

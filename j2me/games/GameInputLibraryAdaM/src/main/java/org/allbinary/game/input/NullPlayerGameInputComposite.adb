@@ -28,7 +28,7 @@ package body org.allbinary.game.input.NullPlayerGameInputComposite_Package is
    function Create return NullPlayerGameInputComposite_Access is
       This : constant NullPlayerGameInputComposite_Access := new NullPlayerGameInputComposite;
    begin
-      Initialize (This.all);
+      NullPlayerGameInputComposite_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -52,20 +52,6 @@ package body org.allbinary.game.input.NullPlayerGameInputComposite_Package is
    function getPlayerGameInput (This : in out NullPlayerGameInputComposite) return PlayerGameInput_Access is
    begin
         return NoPlayerGameInput_Package.getInstance;
-   end getPlayerGameInput;
-
-   procedure getName (This : in out NullPlayerGameInputComposite) is
-      Java_Result : constant Unbounded_String := NullPlayerGameInputComposite'Class (This).getName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getName;
-
-   procedure getPlayerGameInput (This : in out NullPlayerGameInputComposite) is
-      Java_Result : constant PlayerGameInput_Access := NullPlayerGameInputComposite'Class (This).getPlayerGameInput;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getPlayerGameInput;
 
 begin

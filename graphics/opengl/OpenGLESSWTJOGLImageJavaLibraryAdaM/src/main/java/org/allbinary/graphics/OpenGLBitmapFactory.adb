@@ -18,7 +18,7 @@ package body org.allbinary.graphics.OpenGLBitmapFactory_Package is
    function Create return OpenGLBitmapFactory_Access is
       This : constant OpenGLBitmapFactory_Access := new OpenGLBitmapFactory;
    begin
-      Initialize (This.all);
+      OpenGLBitmapFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -43,13 +43,6 @@ package body org.allbinary.graphics.OpenGLBitmapFactory_Package is
    begin
         return OpenGLBitmap_Package.Create (image);
    end createBitmap;
-
-   procedure getInstance is
-      Java_Result : constant OpenGLBitmapFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure createBitmap (This : in out OpenGLBitmapFactory; width : Integer; height : Integer; config : Config_Access) is
       Java_Result : constant OpenGLBitmap_Access := OpenGLBitmapFactory'Class (This).createBitmap (width, height, config);
@@ -97,7 +90,7 @@ package body org.allbinary.graphics.Config_Package is
    function Create (bitmapConfig : Java_Object_Access) return Config_Access is
       This : constant Config_Access := new Config;
    begin
-      Initialize (This.all, bitmapConfig);
+      Config_Package.Initialize (This.all, bitmapConfig);
       return This;
    end Create;
 

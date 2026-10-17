@@ -58,7 +58,7 @@ package body org.allbinary.business.init.InitInfoEntity_Package is
    function Create return InitInfoEntity_Access is
       This : constant InitInfoEntity_Access := new InitInfoEntity;
    begin
-      Initialize (This.all);
+      InitInfoEntity_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -160,27 +160,6 @@ package body org.allbinary.business.init.InitInfoEntity_Package is
             stringBuffer.append (AbPathData_Package.getInstance.EXTENSION_SEP);
             return stringBuffer.toString;
         end if;
-   end createTable;
-
-   procedure get (This : in out InitInfoEntity) is
-      Java_Result : constant Boolean := InitInfoEntity'Class (This).get;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end get;
-
-   procedure is_Id (This : in out InitInfoEntity) is
-      Java_Result : constant Boolean := InitInfoEntity'Class (This).is_Id;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end is_Id;
-
-   procedure createTable (This : in out InitInfoEntity) is
-      Java_Result : constant Unbounded_String := InitInfoEntity'Class (This).createTable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end createTable;
 
 end org.allbinary.business.init.InitInfoEntity_Package;

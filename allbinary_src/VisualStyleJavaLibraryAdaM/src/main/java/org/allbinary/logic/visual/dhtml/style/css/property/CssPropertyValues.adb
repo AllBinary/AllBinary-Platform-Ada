@@ -32,7 +32,7 @@ package body org.allbinary.logic.visual.dhtml.style.css.property.CssPropertyValu
    function Create return CssPropertyValues_Access is
       This : constant CssPropertyValues_Access := new CssPropertyValues;
    begin
-      Initialize (This.all);
+      CssPropertyValues_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -80,7 +80,7 @@ package body org.allbinary.logic.visual.dhtml.style.css.property.CssPropertyValu
    function Create (node : Node_Access) return CssPropertyValues_Access is
       This : constant CssPropertyValues_Access := new CssPropertyValues;
    begin
-      Initialize (This.all, node);
+      CssPropertyValues_Package.Initialize (This.all, node);
       return This;
    end Create;
 
@@ -123,13 +123,6 @@ package body org.allbinary.logic.visual.dhtml.style.css.property.CssPropertyValu
         end if;
         return ModDomHelper_Package.createNameValueIndexNodes (document, CssPropertyData_Package.getInstance.VALUES, CssPropertyValueData_Package.getInstance.NAME, This.propertyValueVector);
    end toXmlNode;
-
-   procedure toHashMap (This : in out CssPropertyValues) is
-      Java_Result : constant HashMap_Access := CssPropertyValues'Class (This).toHashMap;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toHashMap;
 
    procedure toXmlNode (This : in out CssPropertyValues; document : Document_Access) is
       Java_Result : constant Node_Access := CssPropertyValues'Class (This).toXmlNode (document);

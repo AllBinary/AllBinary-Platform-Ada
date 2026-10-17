@@ -31,20 +31,13 @@ package body org.allbinary.business.advertisement.search.category.BasicAdvertise
    function Create (categoryId : Unbounded_String) return BasicAdvertisementCategory_Access is
       This : constant BasicAdvertisementCategory_Access := new BasicAdvertisementCategory;
    begin
-      Initialize (This.all, categoryId);
+      BasicAdvertisementCategory_Package.Initialize (This.all, categoryId);
       return This;
    end Create;
 
    function toString (This : in out BasicAdvertisementCategory) return Unbounded_String is
    begin
         return This.categoryId;
-   end toString;
-
-   procedure toString (This : in out BasicAdvertisementCategory) is
-      Java_Result : constant Unbounded_String := BasicAdvertisementCategory'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end toString;
 
 end org.allbinary.business.advertisement.search.category.BasicAdvertisementCategory_Package;

@@ -30,7 +30,7 @@ package body org.allbinary.logic.communication.http.AcceptableResponseUtil_Packa
    function Create return AcceptableResponseUtil_Access is
       This : constant AcceptableResponseUtil_Access := new AcceptableResponseUtil;
    begin
-      Initialize (This.all);
+      AcceptableResponseUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -61,13 +61,6 @@ package body org.allbinary.logic.communication.http.AcceptableResponseUtil_Packa
         return This.candidateVector.size;
    end size;
 
-   procedure getInstance is
-      Java_Result : constant AcceptableResponseUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
    procedure get (This : in out AcceptableResponseUtil; index : Integer) is
       Java_Result : constant Unbounded_String := AcceptableResponseUtil'Class (This).get (index);
       pragma Unreferenced (Java_Result);
@@ -81,13 +74,6 @@ package body org.allbinary.logic.communication.http.AcceptableResponseUtil_Packa
    begin
       null;
    end getTagName;
-
-   procedure size (This : in out AcceptableResponseUtil) is
-      Java_Result : constant Integer := AcceptableResponseUtil'Class (This).size;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end size;
 
 begin
    null;

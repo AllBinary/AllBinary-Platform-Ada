@@ -31,7 +31,7 @@ package body org.allbinary.input.accelerometer.NoAccelerometerSensor_Package is
    function Create return NoAccelerometerSensor_Access is
       This : constant NoAccelerometerSensor_Access := new NoAccelerometerSensor;
    begin
-      Initialize (This.all);
+      NoAccelerometerSensor_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -45,13 +45,6 @@ package body org.allbinary.input.accelerometer.NoAccelerometerSensor_Package is
    begin
         null;
    end onSensorChange;
-
-   procedure getOrientation (This : in out NoAccelerometerSensor) is
-      Java_Result : constant Orientation_Access := NoAccelerometerSensor'Class (This).getOrientation;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getOrientation;
 
 end org.allbinary.input.accelerometer.NoAccelerometerSensor_Package;
 

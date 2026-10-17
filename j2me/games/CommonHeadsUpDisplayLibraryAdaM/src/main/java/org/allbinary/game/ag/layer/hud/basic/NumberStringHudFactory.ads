@@ -26,6 +26,7 @@ with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Pack
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.game.ag.layer.hud.basic.NumberStringHud_Package; use org.allbinary.game.ag.layer.hud.basic.NumberStringHud_Package;
 
 package org.allbinary.game.ag.layer.hud.basic.NumberStringHudFactory_Package is
 
@@ -49,9 +50,7 @@ package org.allbinary.game.ag.layer.hud.basic.NumberStringHudFactory_Package is
    procedure Initialize (This : in out NumberStringHudFactory'Class);
    function Create return NumberStringHudFactory_Access;
    function getInstance return NumberStringHudFactory_Access;
-   procedure getInstance;
    function createHud (This : in out NumberStringHudFactory) return NumberStringHud_Access;
-   procedure createHud (This : in out NumberStringHudFactory);
 
 end org.allbinary.game.ag.layer.hud.basic.NumberStringHudFactory_Package;
 

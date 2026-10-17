@@ -22,6 +22,8 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.media.ScaleProperties_Package; use org.allbinary.media.ScaleProperties_Package;
 with org.allbinary.animation.AnimationInterfaceFactoryInterface_Package; use org.allbinary.animation.AnimationInterfaceFactoryInterface_Package;
+with org.allbinary.animation.NullAnimationFactory_Package; use org.allbinary.animation.NullAnimationFactory_Package;
+with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Animation_Package;
 
 package org.allbinary.animation.AnimationInterfaceFactoryInterfaceComposite_Package is
 
@@ -41,7 +43,6 @@ package org.allbinary.animation.AnimationInterfaceFactoryInterfaceComposite_Pack
    function getInstance (This : in out AnimationInterfaceFactoryInterfaceComposite; instanceId : Integer) return Animation_Access;
    procedure getInstance (This : in out AnimationInterfaceFactoryInterfaceComposite; instanceId : Integer);
    function getAnimationInterfaceFactoryInterfaceArray (This : in out AnimationInterfaceFactoryInterfaceComposite) return AnimationInterfaceFactoryInterface_Access_Array_Access;
-   procedure getAnimationInterfaceFactoryInterfaceArray (This : in out AnimationInterfaceFactoryInterfaceComposite);
    procedure setInitialScale (This : in out AnimationInterfaceFactoryInterfaceComposite; scaleProperties : ScaleProperties_Access);
 
 end org.allbinary.animation.AnimationInterfaceFactoryInterfaceComposite_Package;

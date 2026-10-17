@@ -16,7 +16,7 @@ package body org.allbinary.KotlinUtil_Package is
    function Create return KotlinUtil_Access is
       This : constant KotlinUtil_Access := new KotlinUtil;
    begin
-      Initialize (This.all);
+      KotlinUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -29,20 +29,6 @@ package body org.allbinary.KotlinUtil_Package is
    function getShortName return Unbounded_String is
    begin
         return StringUtil_Package.getInstance.EMPTY_STRING;
-   end getShortName;
-
-   procedure isKotlin is
-      Java_Result : constant Boolean := isKotlin;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isKotlin;
-
-   procedure getShortName is
-      Java_Result : constant Unbounded_String := getShortName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getShortName;
 
 end org.allbinary.KotlinUtil_Package;

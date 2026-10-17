@@ -36,7 +36,7 @@ package body org.allbinary.game.layer.waypoint.FlagGameResources_Package is
    function Create return FlagGameResources_Access is
       This : constant FlagGameResources_Access := new FlagGameResources;
    begin
-      Initialize (This.all);
+      FlagGameResources_Package.Initialize (This.all);
       return This;
    end Create;
 

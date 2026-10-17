@@ -31,7 +31,7 @@ package body org.allbinary.game.configuration.persistance.KeyValuePersistance_Pa
    function Create (recordId : Unbounded_String) return KeyValuePersistance_Access is
       This : constant KeyValuePersistance_Access := new KeyValuePersistance;
    begin
-      Initialize (This.all, recordId);
+      KeyValuePersistance_Package.Initialize (This.all, recordId);
       return This;
    end Create;
 

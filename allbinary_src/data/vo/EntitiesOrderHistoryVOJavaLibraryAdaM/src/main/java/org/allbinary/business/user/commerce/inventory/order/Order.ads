@@ -36,6 +36,8 @@ with org.allbinary.logic.string_Id.StringValidationUtil_Package; use org.allbina
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.allbinary.business.user.commerce.inventory.order.OrderInterface_Package; use org.allbinary.business.user.commerce.inventory.order.OrderInterface_Package;
+with org.allbinary.business.user.commerce.inventory.order.OrderHistoryData_Package; use org.allbinary.business.user.commerce.inventory.order.OrderHistoryData_Package;
+with org.allbinary.business.user.commerce.inventory.order.OrderData_Package; use org.allbinary.business.user.commerce.inventory.order.OrderData_Package;
 
 package org.allbinary.business.user.commerce.inventory.order.Order_Package is
 
@@ -73,11 +75,8 @@ package org.allbinary.business.user.commerce.inventory.order.Order_Package is
    procedure Initialize (This : in out Order'Class; basket : BasketInterface_Access);
    function Create (basket : BasketInterface_Access) return Order_Access;
    function isIdValid (This : in out Order) return Boolean;
-   procedure isIdValid (This : in out Order);
    function isValid (This : in out Order) return Boolean;
-   procedure isValid (This : in out Order);
    function getIdValidationInfo (This : in out Order) return Unbounded_String;
-   procedure getIdValidationInfo (This : in out Order);
    procedure setShippingMethod (This : in out Order; shippingType : Unbounded_String);
    procedure setPaymentMethod (This : in out Order; value : Unbounded_String);
    procedure setSpecial (This : in out Order; special : Unbounded_String);
@@ -88,25 +87,15 @@ package org.allbinary.business.user.commerce.inventory.order.Order_Package is
    procedure setStoreComments (This : in out Order; value : Unbounded_String);
    procedure setStoreCancelComments (This : in out Order; value : Unbounded_String);
    function getBasket (This : in out Order) return BasketInterface_Access;
-   procedure getBasket (This : in out Order);
    function getShippingMethod (This : in out Order) return Unbounded_String;
-   procedure getShippingMethod (This : in out Order);
    function getPaymentMethod (This : in out Order) return Unbounded_String;
-   procedure getPaymentMethod (This : in out Order);
    function getSpecial (This : in out Order) return Unbounded_String;
-   procedure getSpecial (This : in out Order);
    function getId (This : in out Order) return Unbounded_String;
-   procedure getId (This : in out Order);
    function getStoreName (This : in out Order) return Unbounded_String;
-   procedure getStoreName (This : in out Order);
    function getUserComments (This : in out Order) return Unbounded_String;
-   procedure getUserComments (This : in out Order);
    function getUserCancelComments (This : in out Order) return Unbounded_String;
-   procedure getUserCancelComments (This : in out Order);
    function getStoreComments (This : in out Order) return Unbounded_String;
-   procedure getStoreComments (This : in out Order);
    function getStoreCancelComments (This : in out Order) return Unbounded_String;
-   procedure getStoreCancelComments (This : in out Order);
    function reviewOrder (This : in out Order; paymentMethod : Unbounded_String) return Unbounded_String;
    procedure reviewOrder (This : in out Order; paymentMethod : Unbounded_String);
    function viewOrder (This : in out Order; paymentMethod : Unbounded_String) return Unbounded_String;
@@ -114,7 +103,6 @@ package org.allbinary.business.user.commerce.inventory.order.Order_Package is
    function emailOrder (This : in out Order; userName : Unbounded_String; paymentMethod : Unbounded_String; storeFrontInterface : StoreFrontInterface_Access) return Unbounded_String;
    procedure emailOrder (This : in out Order; userName : Unbounded_String; paymentMethod : Unbounded_String; storeFrontInterface : StoreFrontInterface_Access);
    function toHashMapOrder (This : in out Order) return HashMap_Access;
-   procedure toHashMapOrder (This : in out Order);
    function toXmlNode (This : in out Order; document : Document_Access) return Node_Access;
    procedure toXmlNode (This : in out Order; document : Document_Access);
 

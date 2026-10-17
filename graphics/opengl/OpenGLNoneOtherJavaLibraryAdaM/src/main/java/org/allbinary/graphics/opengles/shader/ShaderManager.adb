@@ -40,7 +40,7 @@ package body org.allbinary.graphics.opengles.shader.ShaderManager_Package is
    function Create (GL_VERTEX_SHADER : Integer; GL_FRAGMENT_SHADER : Integer) return ShaderManager_Access is
       This : constant ShaderManager_Access := new ShaderManager;
    begin
-      Initialize (This.all, GL_VERTEX_SHADER, GL_FRAGMENT_SHADER);
+      ShaderManager_Package.Initialize (This.all, GL_VERTEX_SHADER, GL_FRAGMENT_SHADER);
       return This;
    end Create;
 
@@ -53,13 +53,6 @@ package body org.allbinary.graphics.opengles.shader.ShaderManager_Package is
    begin
         return -(1);
    end loadShader;
-
-   procedure getInstance is
-      Java_Result : constant ShaderManager_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure load (This : in out ShaderManager; gl : GL10_Access; resource : Unbounded_String; shaderAsStringArray : Unbounded_String_Array_Access; shaderType : Integer) is
       Java_Result : constant Integer := ShaderManager'Class (This).load (gl, resource, shaderAsStringArray, shaderType);

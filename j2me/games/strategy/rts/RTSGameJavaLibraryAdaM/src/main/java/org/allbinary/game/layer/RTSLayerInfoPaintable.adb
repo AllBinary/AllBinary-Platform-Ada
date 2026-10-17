@@ -32,7 +32,7 @@ package body org.allbinary.game.layer.RTSLayerInfoPaintable_Package is
    function Create return RTSLayerInfoPaintable_Access is
       This : constant RTSLayerInfoPaintable_Access := new RTSLayerInfoPaintable;
    begin
-      Initialize (This.all);
+      RTSLayerInfoPaintable_Package.Initialize (This.all);
       return This;
    end Create;
 

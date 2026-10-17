@@ -28,6 +28,9 @@ with org.allbinary.logic.communication.smtp.configuration.server.EmailServerConf
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.w3c.dom.NodeList_Package; use org.w3c.dom.NodeList_Package;
+with org.allbinary.business.context.configuration.ContextConfigurationInterface_Package; use org.allbinary.business.context.configuration.ContextConfigurationInterface_Package;
+with org.allbinary.business.context.configuration.ContextConfiguration_Package; use org.allbinary.business.context.configuration.ContextConfiguration_Package;
+with org.allbinary.business.context.configuration.ContextConfigurationData_Package; use org.allbinary.business.context.configuration.ContextConfigurationData_Package;
 
 package org.allbinary.business.context.configuration.ContextConfigurationView_Package is
 
@@ -52,7 +55,6 @@ package org.allbinary.business.context.configuration.ContextConfigurationView_Pa
    procedure Initialize (This : in out ContextConfigurationView'Class; node : Node_Access);
    function Create (node : Node_Access) return ContextConfigurationView_Access;
    function getContextConfigurationInterface (This : in out ContextConfigurationView) return ContextConfigurationInterface_Access;
-   procedure getContextConfigurationInterface (This : in out ContextConfigurationView);
    function toXmlNode (This : in out ContextConfigurationView; document : Document_Access) return Node_Access;
    procedure toXmlNode (This : in out ContextConfigurationView; document : Document_Access);
 

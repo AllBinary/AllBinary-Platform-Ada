@@ -41,7 +41,7 @@ package body org.allbinary.animation.image.AllBinaryHTMLImageRotationAnimationFa
    function Create (image : Image_Access; width : Integer; height : Integer; angleIncrement : Short_Integer; animationBehaviorFactory : AnimationBehaviorFactory_Access) return AllBinaryHTMLImageRotationAnimationFactory_Access is
       This : constant AllBinaryHTMLImageRotationAnimationFactory_Access := new AllBinaryHTMLImageRotationAnimationFactory;
    begin
-      Initialize (This.all, image, width, height, angleIncrement, animationBehaviorFactory);
+      AllBinaryHTMLImageRotationAnimationFactory_Package.Initialize (This.all, image, width, height, angleIncrement, animationBehaviorFactory);
       return This;
    end Create;
 
@@ -86,13 +86,6 @@ package body org.allbinary.animation.image.AllBinaryHTMLImageRotationAnimationFa
    begin
       null;
    end getInstance;
-
-   procedure getAngleIncrement (This : in out AllBinaryHTMLImageRotationAnimationFactory) is
-      Java_Result : constant Short_Integer := AllBinaryHTMLImageRotationAnimationFactory'Class (This).getAngleIncrement;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getAngleIncrement;
 
 end org.allbinary.animation.image.AllBinaryHTMLImageRotationAnimationFactory_Package;
 

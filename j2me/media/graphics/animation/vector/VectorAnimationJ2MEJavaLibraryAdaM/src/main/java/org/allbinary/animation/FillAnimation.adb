@@ -24,7 +24,7 @@ package body org.allbinary.animation.FillAnimation_Package is
    function Create (pixelBuffer : Integer_Array_Access; width : Integer; height : Integer; animationBehavior : AnimationBehavior_Access) return FillAnimation_Access is
       This : constant FillAnimation_Access := new FillAnimation;
    begin
-      Initialize (This.all, pixelBuffer, width, height, animationBehavior);
+      FillAnimation_Package.Initialize (This.all, pixelBuffer, width, height, animationBehavior);
       return This;
    end Create;
 

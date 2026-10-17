@@ -30,7 +30,7 @@ package body org.allbinary.graphics.pipeline.RandomRotationFactory_Package is
    function Create return RandomRotationFactory_Access is
       This : constant RandomRotationFactory_Access := new RandomRotationFactory;
    begin
-      Initialize (This.all);
+      RandomRotationFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -54,13 +54,6 @@ package body org.allbinary.graphics.pipeline.RandomRotationFactory_Package is
    begin
         return This.myRandomFactory.getNextInt ((howMuch) * (10));
    end getNextRandomAngle;
-
-   procedure getInstance is
-      Java_Result : constant RandomRotationFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure getInstanceList (This : in out RandomRotationFactory; vector : BasicArrayList_Access; howMuch : Integer) is
       Java_Result : constant BasicArrayList_Access := RandomRotationFactory'Class (This).getInstanceList (vector, howMuch);

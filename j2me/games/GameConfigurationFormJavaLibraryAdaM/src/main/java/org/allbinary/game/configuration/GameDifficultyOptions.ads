@@ -66,9 +66,7 @@ package org.allbinary.game.configuration.GameDifficultyOptions_Package is
    procedure getChoiceGroup (This : in out GameDifficultyOptions; list : BasicArrayList_Access; name : Unbounded_String; option : Integer);
    procedure setSelectedId (This : in out GameDifficultyOptions; id : Integer);
    function getSelectedId (This : in out GameDifficultyOptions) return Integer;
-   procedure getSelectedId (This : in out GameDifficultyOptions);
    function getSelectedText (This : in out GameDifficultyOptions) return Integer;
-   procedure getSelectedText (This : in out GameDifficultyOptions);
 
 end org.allbinary.game.configuration.GameDifficultyOptions_Package;
 

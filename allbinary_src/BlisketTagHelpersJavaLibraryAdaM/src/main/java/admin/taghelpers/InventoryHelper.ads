@@ -48,13 +48,9 @@ package admin.taghelpers.InventoryHelper_Package is
    procedure Initialize (This : in out InventoryHelper'Class; hashMap : HashMap_Access; pageContext : PageContext_Access);
    function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return InventoryHelper_Access;
    function drop (This : in out InventoryHelper) return Unbounded_String;
-   procedure drop (This : in out InventoryHelper);
    function create (This : in out InventoryHelper) return Unbounded_String;
-   procedure create (This : in out InventoryHelper);
    function restore (This : in out InventoryHelper) return Unbounded_String;
-   procedure restore (This : in out InventoryHelper);
    function backup (This : in out InventoryHelper) return Unbounded_String;
-   procedure backup (This : in out InventoryHelper);
 
 end admin.taghelpers.InventoryHelper_Package;
 

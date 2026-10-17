@@ -30,7 +30,7 @@ package body org.allbinary.logic.control.sort.StringComparator_Package is
    function Create return StringComparator_Access is
       This : constant StringComparator_Access := new StringComparator;
    begin
-      Initialize (This.all);
+      StringComparator_Package.Initialize (This.all);
       return This;
    end Create;
 

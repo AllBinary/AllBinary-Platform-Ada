@@ -28,20 +28,13 @@ package body org.allbinary.media.audio.WorkSound_Package is
    function Create return WorkSound_Access is
       This : constant WorkSound_Access := new WorkSound;
    begin
-      Initialize (This.all);
+      WorkSound_Package.Initialize (This.all);
       return This;
    end Create;
 
    function getInstance return Sound_Access is
    begin
         return WorkSound_Package.soundInterface;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant Sound_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

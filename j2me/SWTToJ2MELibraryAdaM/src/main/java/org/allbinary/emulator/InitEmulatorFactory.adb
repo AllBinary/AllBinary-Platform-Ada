@@ -29,7 +29,7 @@ package body org.allbinary.emulator.InitEmulatorFactory_Package is
    function Create return InitEmulatorFactory_Access is
       This : constant InitEmulatorFactory_Access := new InitEmulatorFactory;
    begin
-      Initialize (This.all);
+      InitEmulatorFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -47,20 +47,6 @@ package body org.allbinary.emulator.InitEmulatorFactory_Package is
    function isInitEmulator (This : in out InitEmulatorFactory) return Boolean is
    begin
         return This.initEmulator;
-   end isInitEmulator;
-
-   procedure getInstance is
-      Java_Result : constant InitEmulatorFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure isInitEmulator (This : in out InitEmulatorFactory) is
-      Java_Result : constant Boolean := InitEmulatorFactory'Class (This).isInitEmulator;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end isInitEmulator;
 
 begin

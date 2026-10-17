@@ -29,7 +29,7 @@ package body org.allbinary.business.user.modules.customer.wholesale.WholesaleUse
    function Create return WholesaleUser_Access is
       This : constant WholesaleUser_Access := new WholesaleUser;
    begin
-      Initialize (This.all);
+      WholesaleUser_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -42,7 +42,7 @@ package body org.allbinary.business.user.modules.customer.wholesale.WholesaleUse
    function Create (userHashMap : HashMap_Access) return WholesaleUser_Access is
       This : constant WholesaleUser_Access := new WholesaleUser;
    begin
-      Initialize (This.all, userHashMap);
+      WholesaleUser_Package.Initialize (This.all, userHashMap);
       return This;
    end Create;
 

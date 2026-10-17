@@ -33,7 +33,7 @@ package body org.allbinary.game.paint.ColorFillBasePaintable_Package is
    function Create (basicColor : BasicColor_Access) return ColorFillBasePaintable_Access is
       This : constant ColorFillBasePaintable_Access := new ColorFillBasePaintable;
    begin
-      Initialize (This.all, basicColor);
+      ColorFillBasePaintable_Package.Initialize (This.all, basicColor);
       return This;
    end Create;
 
@@ -62,20 +62,6 @@ package body org.allbinary.game.paint.ColorFillBasePaintable_Package is
    begin
         null;
    end paint;
-
-   procedure getBasicColorP (This : in out ColorFillBasePaintable) is
-      Java_Result : constant BasicColor_Access := ColorFillBasePaintable'Class (This).getBasicColorP;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getBasicColorP;
-
-   procedure getColor (This : in out ColorFillBasePaintable) is
-      Java_Result : constant Integer := ColorFillBasePaintable'Class (This).getColor;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getColor;
 
 end org.allbinary.game.paint.ColorFillBasePaintable_Package;
 

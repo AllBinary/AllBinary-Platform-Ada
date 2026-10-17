@@ -31,7 +31,7 @@ package body org.allbinary.logic.system.hardware.components.linux.Monitor_Packag
    function Create (data : Unbounded_String) return Monitor_Access is
       This : constant Monitor_Access := new Monitor;
    begin
-      Initialize (This.all, data);
+      Monitor_Package.Initialize (This.all, data);
       return This;
    end Create;
 
@@ -51,13 +51,6 @@ package body org.allbinary.logic.system.hardware.components.linux.Monitor_Packag
    begin
       null;
    end compareTo;
-
-   procedure toString (This : in out Monitor) is
-      Java_Result : constant Unbounded_String := Monitor'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toString;
 
 end org.allbinary.logic.system.hardware.components.linux.Monitor_Package;
 

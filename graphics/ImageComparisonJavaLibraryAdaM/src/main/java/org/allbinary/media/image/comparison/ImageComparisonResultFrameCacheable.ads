@@ -22,6 +22,7 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.util.cache.CacheableInterface_Package; use org.allbinary.logic.util.cache.CacheableInterface_Package;
+with org.allbinary.media.image.comparison.ImageComparisonResult_Package; use org.allbinary.media.image.comparison.ImageComparisonResult_Package;
 
 package org.allbinary.media.image.comparison.ImageComparisonResultFrameCacheable_Package is
 
@@ -41,15 +42,11 @@ package org.allbinary.media.image.comparison.ImageComparisonResultFrameCacheable
    procedure Initialize (This : in out ImageComparisonResultFrameCacheable'Class; imageComparisonResult : ImageComparisonResult_Access; frame : Long_Long_Integer);
    function Create (imageComparisonResult : ImageComparisonResult_Access; frame : Long_Long_Integer) return ImageComparisonResultFrameCacheable_Access;
    function getKey (This : in out ImageComparisonResultFrameCacheable) return Java_Object_Access;
-   procedure getKey (This : in out ImageComparisonResultFrameCacheable);
    function getFrame (This : in out ImageComparisonResultFrameCacheable) return Long_Long_Integer;
-   procedure getFrame (This : in out ImageComparisonResultFrameCacheable);
    procedure setFrame (This : in out ImageComparisonResultFrameCacheable; frame : Long_Long_Integer);
    function getImageComparisonResult (This : in out ImageComparisonResultFrameCacheable) return ImageComparisonResult_Access;
-   procedure getImageComparisonResult (This : in out ImageComparisonResultFrameCacheable);
    procedure setImageComparisonResult (This : in out ImageComparisonResultFrameCacheable; imageComparisonResult : ImageComparisonResult_Access);
    function toString (This : in out ImageComparisonResultFrameCacheable) return Unbounded_String;
-   procedure toString (This : in out ImageComparisonResultFrameCacheable);
 
 end org.allbinary.media.image.comparison.ImageComparisonResultFrameCacheable_Package;
 

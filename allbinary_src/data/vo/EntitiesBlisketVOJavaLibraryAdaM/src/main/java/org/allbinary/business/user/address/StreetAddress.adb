@@ -39,7 +39,7 @@ package body org.allbinary.business.user.address.StreetAddress_Package is
    function Create return StreetAddress_Access is
       This : constant StreetAddress_Access := new StreetAddress;
    begin
-      Initialize (This.all);
+      StreetAddress_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -71,7 +71,7 @@ package body org.allbinary.business.user.address.StreetAddress_Package is
    function Create (node : Node_Access) return StreetAddress_Access is
       This : constant StreetAddress_Access := new StreetAddress;
    begin
-      Initialize (This.all, node);
+      StreetAddress_Package.Initialize (This.all, node);
       return This;
    end Create;
 
@@ -93,7 +93,7 @@ package body org.allbinary.business.user.address.StreetAddress_Package is
    function Create (streetAddress : StreetAddress_Access) return StreetAddress_Access is
       This : constant StreetAddress_Access := new StreetAddress;
    begin
-      Initialize (This.all, streetAddress);
+      StreetAddress_Package.Initialize (This.all, streetAddress);
       return This;
    end Create;
 
@@ -114,7 +114,7 @@ package body org.allbinary.business.user.address.StreetAddress_Package is
    function Create (request : HttpServletRequest_Access) return StreetAddress_Access is
       This : constant StreetAddress_Access := new StreetAddress;
    begin
-      Initialize (This.all, request);
+      StreetAddress_Package.Initialize (This.all, request);
       return This;
    end Create;
 
@@ -134,7 +134,7 @@ package body org.allbinary.business.user.address.StreetAddress_Package is
    function Create (name : Unbounded_String; street : Unbounded_String; city : Unbounded_String; state : Unbounded_String; code : Unbounded_String; country : Unbounded_String) return StreetAddress_Access is
       This : constant StreetAddress_Access := new StreetAddress;
    begin
-      Initialize (This.all, name, street, city, state, code, country);
+      StreetAddress_Package.Initialize (This.all, name, street, city, state, code, country);
       return This;
    end Create;
 
@@ -162,7 +162,7 @@ package body org.allbinary.business.user.address.StreetAddress_Package is
    function Create (address : HashMap_Access) return StreetAddress_Access is
       This : constant StreetAddress_Access := new StreetAddress;
    begin
-      Initialize (This.all, address);
+      StreetAddress_Package.Initialize (This.all, address);
       return This;
    end Create;
 
@@ -369,103 +369,12 @@ package body org.allbinary.business.user.address.StreetAddress_Package is
         return node;
    end toXmlNode;
 
-   procedure getName (This : in out StreetAddress) is
-      Java_Result : constant Unbounded_String := StreetAddress'Class (This).getName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getName;
-
-   procedure getStreet (This : in out StreetAddress) is
-      Java_Result : constant Unbounded_String := StreetAddress'Class (This).getStreet;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getStreet;
-
-   procedure getCity (This : in out StreetAddress) is
-      Java_Result : constant Unbounded_String := StreetAddress'Class (This).getCity;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getCity;
-
-   procedure getState (This : in out StreetAddress) is
-      Java_Result : constant Unbounded_String := StreetAddress'Class (This).getState;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getState;
-
-   procedure getCode (This : in out StreetAddress) is
-      Java_Result : constant Unbounded_String := StreetAddress'Class (This).getCode;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getCode;
-
-   procedure getCountry (This : in out StreetAddress) is
-      Java_Result : constant Unbounded_String := StreetAddress'Class (This).getCountry;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getCountry;
-
-   procedure getId (This : in out StreetAddress) is
-      Java_Result : constant Unbounded_String := StreetAddress'Class (This).getId;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getId;
-
-   procedure isDefault (This : in out StreetAddress) is
-      Java_Result : constant Boolean := StreetAddress'Class (This).isDefault;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isDefault;
-
-   procedure isEmpty (This : in out StreetAddress) is
-      Java_Result : constant Boolean := StreetAddress'Class (This).isEmpty;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isEmpty;
-
-   procedure isValid (This : in out StreetAddress) is
-      Java_Result : constant Boolean := StreetAddress'Class (This).isValid;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isValid;
-
-   procedure validationInfo (This : in out StreetAddress) is
-      Java_Result : constant Unbounded_String := StreetAddress'Class (This).validationInfo;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end validationInfo;
-
-   procedure toValidationInfoDoc (This : in out StreetAddress) is
-      Java_Result : constant Document_Access := StreetAddress'Class (This).toValidationInfoDoc;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toValidationInfoDoc;
-
    procedure toValidationInfoNode (This : in out StreetAddress; document : Document_Access) is
       Java_Result : constant Node_Access := StreetAddress'Class (This).toValidationInfoNode (document);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end toValidationInfoNode;
-
-   procedure toHashMap (This : in out StreetAddress) is
-      Java_Result : constant HashMap_Access := StreetAddress'Class (This).toHashMap;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toHashMap;
 
    procedure toXmlNode (This : in out StreetAddress; document : Document_Access) is
       Java_Result : constant Node_Access := StreetAddress'Class (This).toXmlNode (document);

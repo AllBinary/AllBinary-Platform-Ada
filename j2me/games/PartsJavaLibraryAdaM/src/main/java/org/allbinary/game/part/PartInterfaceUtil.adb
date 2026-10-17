@@ -28,7 +28,7 @@ package body org.allbinary.game.part.PartInterfaceUtil_Package is
    function Create return PartInterfaceUtil_Access is
       This : constant PartInterfaceUtil_Access := new PartInterfaceUtil;
    begin
-      Initialize (This.all);
+      PartInterfaceUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -36,13 +36,6 @@ package body org.allbinary.game.part.PartInterfaceUtil_Package is
    function getZeroArray return PartInterface_Access_Array_Access is
    begin
         return PartInterfaceUtil_Package.SINGLETON;
-   end getZeroArray;
-
-   procedure getZeroArray is
-      Java_Result : constant PartInterface_Access_Array_Access := getZeroArray;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getZeroArray;
 
 begin

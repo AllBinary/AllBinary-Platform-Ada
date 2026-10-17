@@ -44,9 +44,7 @@ package org.allbinary.business.user.commerce.shipping.modules.UspsShippingModule
    function getCost (This : in out UspsShippingModule; order : OrderInterface_Access) return Money_Access;
    procedure getCost (This : in out UspsShippingModule; order : OrderInterface_Access);
    function getDescription (This : in out UspsShippingModule) return Unbounded_String;
-   procedure getDescription (This : in out UspsShippingModule);
    function getName (This : in out UspsShippingModule) return Unbounded_String;
-   procedure getName (This : in out UspsShippingModule);
 
 end org.allbinary.business.user.commerce.shipping.modules.UspsShippingModule_Package;
 

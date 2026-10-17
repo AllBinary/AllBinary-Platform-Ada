@@ -65,17 +65,12 @@ package org.allbinary.business.category.store.theme.StoreThemeCategory_Package i
    procedure Initialize (This : in out StoreThemeCategory'Class; transformInfoInterface : TransformInfoInterface_Access; categoryPropertiesFactoryInterface : CategoryPropertiesFactoryInterface_Access; level : Integer);
    function Create (transformInfoInterface : TransformInfoInterface_Access; categoryPropertiesFactoryInterface : CategoryPropertiesFactoryInterface_Access; level : Integer) return StoreThemeCategory_Access;
    function getTransformInfoInterface (This : in out StoreThemeCategory) return TransformInfoInterface_Access;
-   procedure getTransformInfoInterface (This : in out StoreThemeCategory);
    procedure addThemes (This : in out StoreThemeCategory; node : Node_Access);
    procedure addTheme (This : in out StoreThemeCategory; themeValidation : ThemeValidation_Access);
    function getThemes (This : in out StoreThemeCategory) return BasicArrayList_Access;
-   procedure getThemes (This : in out StoreThemeCategory);
    function isValid (This : in out StoreThemeCategory) return Boolean;
-   procedure isValid (This : in out StoreThemeCategory);
    function toHashMap (This : in out StoreThemeCategory) return HashMap_Access;
-   procedure toHashMap (This : in out StoreThemeCategory);
    function toVector (This : in out StoreThemeCategory) return BasicArrayList_Access;
-   procedure toVector (This : in out StoreThemeCategory);
 
 end org.allbinary.business.category.store.theme.StoreThemeCategory_Package;
 

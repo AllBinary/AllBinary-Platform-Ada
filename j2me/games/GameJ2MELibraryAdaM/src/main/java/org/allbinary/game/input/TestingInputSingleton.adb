@@ -38,7 +38,7 @@ package body org.allbinary.game.input.TestingInputSingleton_Package is
    function Create return TestingInputSingleton_Access is
       This : constant TestingInputSingleton_Access := new TestingInputSingleton;
    begin
-      Initialize (This.all);
+      TestingInputSingleton_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -135,20 +135,6 @@ package body org.allbinary.game.input.TestingInputSingleton_Package is
    function implmentsGameInputInterface (This : in out TestingInputSingleton) return Boolean is
    begin
         return True;
-   end implmentsGameInputInterface;
-
-   procedure getInstance is
-      Java_Result : constant TestingInputSingleton_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure implmentsGameInputInterface (This : in out TestingInputSingleton) is
-      Java_Result : constant Boolean := TestingInputSingleton'Class (This).implmentsGameInputInterface;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end implmentsGameInputInterface;
 
 begin

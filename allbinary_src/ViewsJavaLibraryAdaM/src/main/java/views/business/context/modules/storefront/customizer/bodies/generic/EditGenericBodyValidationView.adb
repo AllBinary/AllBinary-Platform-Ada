@@ -31,7 +31,7 @@ package body views.business.context.modules.storefront.customizer.bodies.generic
    function Create (transformInfoInterface : TransformInfoInterface_Access) return EditGenericBodyValidationView_Access is
       This : constant EditGenericBodyValidationView_Access := new EditGenericBodyValidationView;
    begin
-      Initialize (This.all, transformInfoInterface);
+      EditGenericBodyValidationView_Package.Initialize (This.all, transformInfoInterface);
       return This;
    end Create;
 
@@ -86,27 +86,6 @@ package body views.business.context.modules.storefront.customizer.bodies.generic
    begin
         return null;
    end toValidationInfoNode;
-
-   procedure isValid (This : in out EditGenericBodyValidationView) is
-      Java_Result : constant Boolean := EditGenericBodyValidationView'Class (This).isValid;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isValid;
-
-   procedure validationInfo (This : in out EditGenericBodyValidationView) is
-      Java_Result : constant Unbounded_String := EditGenericBodyValidationView'Class (This).validationInfo;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end validationInfo;
-
-   procedure toValidationInfoDoc (This : in out EditGenericBodyValidationView) is
-      Java_Result : constant Document_Access := EditGenericBodyValidationView'Class (This).toValidationInfoDoc;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toValidationInfoDoc;
 
    procedure toValidationInfoNode (This : in out EditGenericBodyValidationView; document : Document_Access) is
       Java_Result : constant Node_Access := EditGenericBodyValidationView'Class (This).toValidationInfoNode (document);

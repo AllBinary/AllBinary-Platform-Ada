@@ -29,7 +29,7 @@ package body org.allbinary.layer.SingleLayerLayerProcessor_Package is
    function Create return SingleLayerLayerProcessor_Access is
       This : constant SingleLayerLayerProcessor_Access := new SingleLayerLayerProcessor;
    begin
-      Initialize (This.all);
+      SingleLayerLayerProcessor_Package.Initialize (This.all);
       return This;
    end Create;
 

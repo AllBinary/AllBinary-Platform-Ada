@@ -26,7 +26,7 @@ with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.w3c.dom.NodeList_Package; use org.w3c.dom.NodeList_Package;
 
-package org.allbinary.graphics.j2me.workarea_Case.WorkAreaDom_Package is
+package org.allbinary.graphics.j2me.workarea.WorkAreaDom_Package is
 
    package DomHelper_Package renames Standard.org.allbinary.dom.DomHelper_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
@@ -50,10 +50,8 @@ package org.allbinary.graphics.j2me.workarea_Case.WorkAreaDom_Package is
    procedure Initialize (This : in out WorkAreaDom'Class; document : Document_Access);
    function Create (document : Document_Access) return WorkAreaDom_Access;
    function getName (This : in out WorkAreaDom) return Unbounded_String;
-   procedure getName (This : in out WorkAreaDom);
    function getCanvasNodes (This : in out WorkAreaDom) return BasicArrayList_Access;
-   procedure getCanvasNodes (This : in out WorkAreaDom);
 
-end org.allbinary.graphics.j2me.workarea_Case.WorkAreaDom_Package;
+end org.allbinary.graphics.j2me.workarea.WorkAreaDom_Package;
 
 

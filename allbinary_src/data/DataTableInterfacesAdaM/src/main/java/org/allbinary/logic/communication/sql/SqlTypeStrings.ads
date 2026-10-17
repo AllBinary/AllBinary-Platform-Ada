@@ -59,7 +59,6 @@ package org.allbinary.logic.communication.sql.SqlTypeStrings_Package is
    procedure Initialize (This : in out SqlTypeStrings'Class);
    function Create return SqlTypeStrings_Access;
    function getInstance return SqlTypeStrings_Access;
-   procedure getInstance;
 
 end org.allbinary.logic.communication.sql.SqlTypeStrings_Package;
 

@@ -37,7 +37,7 @@ package body org.allbinary.input.gyro.AllBinaryOrientationSensor_Package is
    function Create return AllBinaryOrientationSensor_Access is
       This : constant AllBinaryOrientationSensor_Access := new AllBinaryOrientationSensor;
    begin
-      Initialize (This.all);
+      AllBinaryOrientationSensor_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -45,13 +45,6 @@ package body org.allbinary.input.gyro.AllBinaryOrientationSensor_Package is
    function getOrientation (This : in out AllBinaryOrientationSensor) return Orientation_Access is
    begin
         Java_Throw (Java_New_Exception ("Exception", This.commonStrings.NOT_IMPLEMENTED));
-   end getOrientation;
-
-   procedure getOrientation (This : in out AllBinaryOrientationSensor) is
-      Java_Result : constant Orientation_Access := AllBinaryOrientationSensor'Class (This).getOrientation;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getOrientation;
 
 begin

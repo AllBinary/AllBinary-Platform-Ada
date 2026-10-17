@@ -57,15 +57,11 @@ package views.generic_Id.user.AddValidationUserView_Package is
    procedure Initialize (This : in out AddValidationUserView'Class; transformInfoInterface : TransformInfoInterface_Access);
    function Create (transformInfoInterface : TransformInfoInterface_Access) return AddValidationUserView_Access;
    function isValid (This : in out AddValidationUserView) return Boolean;
-   procedure isValid (This : in out AddValidationUserView);
    function validationInfo (This : in out AddValidationUserView) return Unbounded_String;
-   procedure validationInfo (This : in out AddValidationUserView);
    function toValidationInfoDoc (This : in out AddValidationUserView) return Document_Access;
-   procedure toValidationInfoDoc (This : in out AddValidationUserView);
    function toValidationInfoNode (This : in out AddValidationUserView; document : Document_Access) return Node_Access;
    procedure toValidationInfoNode (This : in out AddValidationUserView; document : Document_Access);
    function view (This : in out AddValidationUserView) return Unbounded_String;
-   procedure view (This : in out AddValidationUserView);
 
 end views.generic_Id.user.AddValidationUserView_Package;
 

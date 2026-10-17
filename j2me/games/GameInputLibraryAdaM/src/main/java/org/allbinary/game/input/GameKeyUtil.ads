@@ -38,7 +38,6 @@ package org.allbinary.game.input.GameKeyUtil_Package is
    function isDirectionKey (This : in out GameKeyUtil; key : Integer) return Boolean;
    procedure isDirectionKey (This : in out GameKeyUtil; key : Integer);
    function getInstance return GameKeyUtil_Access;
-   procedure getInstance;
 
 end org.allbinary.game.input.GameKeyUtil_Package;
 

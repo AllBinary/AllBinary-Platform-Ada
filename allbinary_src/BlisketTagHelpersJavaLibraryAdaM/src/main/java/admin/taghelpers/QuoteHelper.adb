@@ -44,7 +44,7 @@ package body admin.taghelpers.QuoteHelper_Package is
    function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return QuoteHelper_Access is
       This : constant QuoteHelper_Access := new QuoteHelper;
    begin
-      Initialize (This.all, hashMap, pageContext);
+      QuoteHelper_Package.Initialize (This.all, hashMap, pageContext);
       return This;
    end Create;
 
@@ -246,41 +246,6 @@ package body admin.taghelpers.QuoteHelper_Package is
             return error;
                 end;
         end;
-   end backup;
-
-   procedure email (This : in out QuoteHelper) is
-      Java_Result : constant Unbounded_String := QuoteHelper'Class (This).email;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end email;
-
-   procedure drop (This : in out QuoteHelper) is
-      Java_Result : constant Unbounded_String := QuoteHelper'Class (This).drop;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end drop;
-
-   procedure create (This : in out QuoteHelper) is
-      Java_Result : constant Unbounded_String := QuoteHelper'Class (This).create;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end create;
-
-   procedure restore (This : in out QuoteHelper) is
-      Java_Result : constant Unbounded_String := QuoteHelper'Class (This).restore;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end restore;
-
-   procedure backup (This : in out QuoteHelper) is
-      Java_Result : constant Unbounded_String := QuoteHelper'Class (This).backup;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end backup;
 
 end admin.taghelpers.QuoteHelper_Package;

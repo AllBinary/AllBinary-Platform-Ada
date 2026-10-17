@@ -58,11 +58,8 @@ package admin.tags.StoreFrontTag_Package is
    procedure setCommand (This : in out StoreFrontTag; command : Unbounded_String);
    procedure setStoreName (This : in out StoreFrontTag; value : Unbounded_String);
    function getCurrentLocation (This : in out StoreFrontTag) return Unbounded_String;
-   procedure getCurrentLocation (This : in out StoreFrontTag);
    function getCurrentHomeLocation (This : in out StoreFrontTag) return Unbounded_String;
-   procedure getCurrentHomeLocation (This : in out StoreFrontTag);
    function doStartTag (This : in out StoreFrontTag) return Integer;
-   procedure doStartTag (This : in out StoreFrontTag);
 
 end admin.tags.StoreFrontTag_Package;
 

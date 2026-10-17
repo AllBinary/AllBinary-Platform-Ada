@@ -30,7 +30,7 @@ package body org.allbinary.business.user.NewUserFactory_Package is
    function Create return NewUserFactory_Access is
       This : constant NewUserFactory_Access := new NewUserFactory;
    begin
-      Initialize (This.all);
+      NewUserFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -68,13 +68,6 @@ package body org.allbinary.business.user.NewUserFactory_Package is
         else
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Null HashMap")));
         end if;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant UserInterface_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
    procedure getInstance (transformInfoInterface : TransformInfoInterface_Access) is

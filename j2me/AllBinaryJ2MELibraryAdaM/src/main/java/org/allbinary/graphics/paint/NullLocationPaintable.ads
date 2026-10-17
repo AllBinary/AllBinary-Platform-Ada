@@ -36,7 +36,6 @@ package org.allbinary.graphics.paint.NullLocationPaintable_Package is
    procedure Initialize (This : in out NullLocationPaintable'Class);
    function Create return NullLocationPaintable_Access;
    function getInstance return NullLocationPaintable_Access;
-   procedure getInstance;
 
 end org.allbinary.graphics.paint.NullLocationPaintable_Package;
 

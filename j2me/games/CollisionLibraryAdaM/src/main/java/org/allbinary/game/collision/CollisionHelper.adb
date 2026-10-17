@@ -31,7 +31,7 @@ package body org.allbinary.game.collision.CollisionHelper_Package is
    function Create (sourceLayerInterface : AllBinaryLayer_Access) return CollisionHelper_Access is
       This : constant CollisionHelper_Access := new CollisionHelper;
    begin
-      Initialize (This.all, sourceLayerInterface);
+      CollisionHelper_Package.Initialize (This.all, sourceLayerInterface);
       return This;
    end Create;
 
@@ -56,13 +56,6 @@ package body org.allbinary.game.collision.CollisionHelper_Package is
    begin
       null;
    end isCollidable;
-
-   procedure getOwnerLayerInterface (This : in out CollisionHelper) is
-      Java_Result : constant AllBinaryLayer_Access := CollisionHelper'Class (This).getOwnerLayerInterface;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getOwnerLayerInterface;
 
 end org.allbinary.game.collision.CollisionHelper_Package;
 

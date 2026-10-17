@@ -29,7 +29,7 @@ package body org.allbinary.animation.ColorLessVectorAnimation_Package is
    function Create (currentPoints : Integer_Array_Access_Array_Access_Array_Access; animationBehavior : AnimationBehavior_Access) return ColorLessVectorAnimation_Access is
       This : constant ColorLessVectorAnimation_Access := new ColorLessVectorAnimation;
    begin
-      Initialize (This.all, currentPoints, animationBehavior);
+      ColorLessVectorAnimation_Package.Initialize (This.all, currentPoints, animationBehavior);
       return This;
    end Create;
 

@@ -29,7 +29,7 @@ package body admin.taghelpers.BasicTable_Package is
    function Create return BasicTable_Access is
       This : constant BasicTable_Access := new BasicTable;
    begin
-      Initialize (This.all);
+      BasicTable_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -56,34 +56,6 @@ package body admin.taghelpers.BasicTable_Package is
    function backup (This : in out BasicTable) return Unbounded_String is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
-   end backup;
-
-   procedure drop (This : in out BasicTable) is
-      Java_Result : constant Unbounded_String := BasicTable'Class (This).drop;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end drop;
-
-   procedure create (This : in out BasicTable) is
-      Java_Result : constant Unbounded_String := BasicTable'Class (This).create;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end create;
-
-   procedure restore (This : in out BasicTable) is
-      Java_Result : constant Unbounded_String := BasicTable'Class (This).restore;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end restore;
-
-   procedure backup (This : in out BasicTable) is
-      Java_Result : constant Unbounded_String := BasicTable'Class (This).backup;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end backup;
 
 end admin.taghelpers.BasicTable_Package;

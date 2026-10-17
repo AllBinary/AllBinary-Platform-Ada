@@ -49,11 +49,8 @@ package views.admin.workflow.WorkflowsValidationView_Package is
    procedure Initialize (This : in out WorkflowsValidationView'Class; transformInfoInterface : TransformInfoInterface_Access);
    function Create (transformInfoInterface : TransformInfoInterface_Access) return WorkflowsValidationView_Access;
    function isValid (This : in out WorkflowsValidationView) return Boolean;
-   procedure isValid (This : in out WorkflowsValidationView);
    function validationInfo (This : in out WorkflowsValidationView) return Unbounded_String;
-   procedure validationInfo (This : in out WorkflowsValidationView);
    function toValidationInfoDoc (This : in out WorkflowsValidationView) return Document_Access;
-   procedure toValidationInfoDoc (This : in out WorkflowsValidationView);
    function toValidationInfoNode (This : in out WorkflowsValidationView; document : Document_Access) return Node_Access;
    procedure toValidationInfoNode (This : in out WorkflowsValidationView; document : Document_Access);
 

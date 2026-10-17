@@ -36,7 +36,6 @@ package org.allbinary.game.layer.capital.Capital_Package is
    procedure Initialize (This : in out Capital'Class);
    function Create return Capital_Access;
    function getTotalMoney (This : in out Capital) return Integer;
-   procedure getTotalMoney (This : in out Capital);
    procedure removeMoney (This : in out Capital; points : Integer);
    procedure addMoney (This : in out Capital; points : Integer);
 

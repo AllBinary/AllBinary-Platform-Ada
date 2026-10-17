@@ -36,7 +36,7 @@ package body org.allbinary.input.motion.button.TouchButtonsMappingPaintable_Pack
    function Create (basicColor : BasicColor_Access) return TouchButtonsMappingPaintable_Access is
       This : constant TouchButtonsMappingPaintable_Access := new TouchButtonsMappingPaintable;
    begin
-      Initialize (This.all, basicColor);
+      TouchButtonsMappingPaintable_Package.Initialize (This.all, basicColor);
       return This;
    end Create;
 
@@ -93,13 +93,6 @@ package body org.allbinary.input.motion.button.TouchButtonsMappingPaintable_Pack
             end loop;
         end loop;
    end paint;
-
-   procedure createPaintableTable (This : in out TouchButtonsMappingPaintable) is
-      Java_Result : constant Paintable_Access_Array_Access_Array_Access := TouchButtonsMappingPaintable'Class (This).createPaintableTable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end createPaintableTable;
 
 end org.allbinary.input.motion.button.TouchButtonsMappingPaintable_Package;
 

@@ -37,9 +37,7 @@ package org.allbinary.logic.communication.log.config.type_Id.LogConfigType_Packa
    procedure Initialize (This : in out LogConfigType'Class; name : Unbounded_String; description : Unbounded_String);
    function Create (name : Unbounded_String; description : Unbounded_String) return LogConfigType_Access;
    function getName (This : in out LogConfigType) return Unbounded_String;
-   procedure getName (This : in out LogConfigType);
    function getDescription (This : in out LogConfigType) return Unbounded_String;
-   procedure getDescription (This : in out LogConfigType);
    procedure setName (This : in out LogConfigType; value : Unbounded_String);
    procedure setDescription (This : in out LogConfigType; value : Unbounded_String);
 

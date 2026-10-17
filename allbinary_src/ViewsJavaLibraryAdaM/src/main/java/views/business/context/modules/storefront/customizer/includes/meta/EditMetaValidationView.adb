@@ -31,7 +31,7 @@ package body views.business.context.modules.storefront.customizer.includes.meta.
    function Create (transformInfoInterface : TransformInfoInterface_Access) return EditMetaValidationView_Access is
       This : constant EditMetaValidationView_Access := new EditMetaValidationView;
    begin
-      Initialize (This.all, transformInfoInterface);
+      EditMetaValidationView_Package.Initialize (This.all, transformInfoInterface);
       return This;
    end Create;
 
@@ -82,27 +82,6 @@ package body views.business.context.modules.storefront.customizer.includes.meta.
    begin
         return null;
    end toValidationInfoNode;
-
-   procedure isValid (This : in out EditMetaValidationView) is
-      Java_Result : constant Boolean := EditMetaValidationView'Class (This).isValid;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isValid;
-
-   procedure validationInfo (This : in out EditMetaValidationView) is
-      Java_Result : constant Unbounded_String := EditMetaValidationView'Class (This).validationInfo;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end validationInfo;
-
-   procedure toValidationInfoDoc (This : in out EditMetaValidationView) is
-      Java_Result : constant Document_Access := EditMetaValidationView'Class (This).toValidationInfoDoc;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toValidationInfoDoc;
 
    procedure toValidationInfoNode (This : in out EditMetaValidationView; document : Document_Access) is
       Java_Result : constant Node_Access := EditMetaValidationView'Class (This).toValidationInfoNode (document);

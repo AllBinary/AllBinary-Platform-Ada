@@ -47,7 +47,7 @@ package body admin.taghelpers.PermissionItemsRequestHelper_Package is
    function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return PermissionItemsRequestHelper_Access is
       This : constant PermissionItemsRequestHelper_Access := new PermissionItemsRequestHelper;
    begin
-      Initialize (This.all, hashMap, pageContext);
+      PermissionItemsRequestHelper_Package.Initialize (This.all, hashMap, pageContext);
       return This;
    end Create;
 
@@ -182,34 +182,6 @@ package body admin.taghelpers.PermissionItemsRequestHelper_Package is
             return error;
                 end;
         end;
-   end update;
-
-   procedure getHashMap (This : in out PermissionItemsRequestHelper) is
-      Java_Result : constant HashMap_Access := PermissionItemsRequestHelper'Class (This).getHashMap;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getHashMap;
-
-   procedure insert (This : in out PermissionItemsRequestHelper) is
-      Java_Result : constant Unbounded_String := PermissionItemsRequestHelper'Class (This).insert;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end insert;
-
-   procedure delete (This : in out PermissionItemsRequestHelper) is
-      Java_Result : constant Unbounded_String := PermissionItemsRequestHelper'Class (This).delete;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end delete;
-
-   procedure update (This : in out PermissionItemsRequestHelper) is
-      Java_Result : constant Unbounded_String := PermissionItemsRequestHelper'Class (This).update;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end update;
 
 end admin.taghelpers.PermissionItemsRequestHelper_Package;

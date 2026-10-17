@@ -29,7 +29,7 @@ package body org.allbinary.logic.util.cache.BaseBasicArrayListCache_Package is
    function Create return BaseBasicArrayListCache_Access is
       This : constant BaseBasicArrayListCache_Access := new BaseBasicArrayListCache;
    begin
-      Initialize (This.all);
+      BaseBasicArrayListCache_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -41,13 +41,6 @@ package body org.allbinary.logic.util.cache.BaseBasicArrayListCache_Package is
         stringBuffer.append (To_Unbounded_String ("S: "));
         stringBuffer.appendint (This.list.size);
         return stringBuffer.toString;
-   end log;
-
-   procedure log (This : in out BaseBasicArrayListCache) is
-      Java_Result : constant Unbounded_String := BaseBasicArrayListCache'Class (This).log;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end log;
 
 end org.allbinary.logic.util.cache.BaseBasicArrayListCache_Package;

@@ -36,7 +36,7 @@ package body org.allbinary.graphics.opengles.vbo.VertexAttributePointerVBOOpenGL
    function Create return VertexAttributePointerVBOOpenGLProcessor_Access is
       This : constant VertexAttributePointerVBOOpenGLProcessor_Access := new VertexAttributePointerVBOOpenGLProcessor;
    begin
-      Initialize (This.all);
+      VertexAttributePointerVBOOpenGLProcessor_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -44,13 +44,6 @@ package body org.allbinary.graphics.opengles.vbo.VertexAttributePointerVBOOpenGL
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end process;
-
-   procedure getInstance is
-      Java_Result : constant VertexAttributePointerVBOOpenGLProcessor_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

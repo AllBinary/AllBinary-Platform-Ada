@@ -22,6 +22,8 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.data.tables.advertisement.sales.AffiliateSalesEntity_Package; use org.allbinary.data.tables.advertisement.sales.AffiliateSalesEntity_Package;
+with org.allbinary.data.tables.advertisement.sales.AffiliateSalesEntityInterface_Package; use org.allbinary.data.tables.advertisement.sales.AffiliateSalesEntityInterface_Package;
 
 package org.allbinary.data.tables.advertisement.sales.AffiliateSalesEntityFactory_Package is
 
@@ -39,7 +41,6 @@ package org.allbinary.data.tables.advertisement.sales.AffiliateSalesEntityFactor
    procedure Initialize (This : in out AffiliateSalesEntityFactory'Class);
    function Create return AffiliateSalesEntityFactory_Access;
    function getInstance return AffiliateSalesEntityInterface_Access;
-   procedure getInstance;
 
 end org.allbinary.data.tables.advertisement.sales.AffiliateSalesEntityFactory_Package;
 

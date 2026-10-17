@@ -30,7 +30,7 @@ package body org.allbinary.graphics.draw.DrawStringUtil_Package is
    function Create return DrawStringUtil_Access is
       This : constant DrawStringUtil_Access := new DrawStringUtil;
    begin
-      Initialize (This.all);
+      DrawStringUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -100,13 +100,6 @@ package body org.allbinary.graphics.draw.DrawStringUtil_Package is
             end if;
         end loop;
    end drawCenterStrings;
-
-   procedure getInstance is
-      Java_Result : constant DrawStringUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

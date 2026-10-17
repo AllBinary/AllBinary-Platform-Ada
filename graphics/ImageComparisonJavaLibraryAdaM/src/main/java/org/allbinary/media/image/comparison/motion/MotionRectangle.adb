@@ -33,7 +33,7 @@ package body org.allbinary.media.image.comparison.motion.MotionRectangle_Package
    function Create (rectangle : Rectangle_Access) return MotionRectangle_Access is
       This : constant MotionRectangle_Access := new MotionRectangle;
    begin
-      Initialize (This.all, rectangle);
+      MotionRectangle_Package.Initialize (This.all, rectangle);
       return This;
    end Create;
 
@@ -63,27 +63,6 @@ package body org.allbinary.media.image.comparison.motion.MotionRectangle_Package
         motionRectangle := MotionRectangle_Package.Create (Rectangle_Access (This.getRectangle.clone));
         motionRectangle.setPixelDeltaVector (BasicArrayList_Access (This.getPixelDeltaVector.clone));
         return motionRectangle;
-   end clone;
-
-   procedure getRectangle (This : in out MotionRectangle) is
-      Java_Result : constant Rectangle_Access := MotionRectangle'Class (This).getRectangle;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getRectangle;
-
-   procedure getPixelDeltaVector (This : in out MotionRectangle) is
-      Java_Result : constant BasicArrayList_Access := MotionRectangle'Class (This).getPixelDeltaVector;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getPixelDeltaVector;
-
-   procedure clone (This : in out MotionRectangle) is
-      Java_Result : constant Java_Object_Access := MotionRectangle'Class (This).clone;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end clone;
 
 end org.allbinary.media.image.comparison.motion.MotionRectangle_Package;

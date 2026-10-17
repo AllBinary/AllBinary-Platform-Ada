@@ -38,7 +38,6 @@ package org.allbinary.input.gyro.OrientationData_Package is
    procedure Initialize (This : in out OrientationData'Class);
    function Create return OrientationData_Access;
    function getInstance return OrientationData_Access;
-   procedure getInstance;
 
 end org.allbinary.input.gyro.OrientationData_Package;
 

@@ -29,7 +29,7 @@ package body org.allbinary.thread.NullABRunnable_Package is
    function Create return NullABRunnable_Access is
       This : constant NullABRunnable_Access := new NullABRunnable;
    begin
-      Initialize (This.all);
+      NullABRunnable_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -42,20 +42,6 @@ package body org.allbinary.thread.NullABRunnable_Package is
    function isRunning (This : in out NullABRunnable) return Boolean is
    begin
         return False;
-   end isRunning;
-
-   procedure getInstance is
-      Java_Result : constant NullABRunnable_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure isRunning (This : in out NullABRunnable) is
-      Java_Result : constant Boolean := NullABRunnable'Class (This).isRunning;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end isRunning;
 
 begin

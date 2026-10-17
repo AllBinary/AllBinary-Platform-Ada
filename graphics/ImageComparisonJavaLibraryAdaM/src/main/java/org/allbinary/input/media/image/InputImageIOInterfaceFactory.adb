@@ -30,7 +30,7 @@ package body org.allbinary.input.media.image.InputImageIOInterfaceFactory_Packag
    function Create return InputImageIOInterfaceFactory_Access is
       This : constant InputImageIOInterfaceFactory_Access := new InputImageIOInterfaceFactory;
    begin
-      Initialize (This.all);
+      InputImageIOInterfaceFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

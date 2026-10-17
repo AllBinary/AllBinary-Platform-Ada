@@ -25,6 +25,7 @@ with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.g
 with org.allbinary.graphics.displayable.DisplayInfoSingleton_Package; use org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
 with org.allbinary.graphics.draw.CanvasDrawLineString_Package; use org.allbinary.graphics.draw.CanvasDrawLineString_Package;
 with org.allbinary.graphics.paint.InitUpdatePaintable_Package; use org.allbinary.graphics.paint.InitUpdatePaintable_Package;
+with org.allbinary.game.displayable.canvas.PreGameScrollSelectionForm_Package; use org.allbinary.game.displayable.canvas.PreGameScrollSelectionForm_Package;
 
 package org.allbinary.game.displayable.canvas.PreGameSelectorPaintable_Package is
 
@@ -49,7 +50,6 @@ package org.allbinary.game.displayable.canvas.PreGameSelectorPaintable_Package i
    procedure update (This : in out PreGameSelectorPaintable);
    procedure paint (This : in out PreGameSelectorPaintable; graphics : Graphics_Access);
    function getPreGameSelectionForm (This : in out PreGameSelectorPaintable) return PreGameScrollSelectionForm_Access;
-   procedure getPreGameSelectionForm (This : in out PreGameSelectorPaintable);
 
 end org.allbinary.game.displayable.canvas.PreGameSelectorPaintable_Package;
 

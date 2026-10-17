@@ -37,7 +37,6 @@ package org.allbinary.android.input.motion.api1.GameInputMotionInfoAPI1_Package 
    procedure Initialize (This : in out GameInputMotionInfoAPI1'Class);
    function Create return GameInputMotionInfoAPI1_Access;
    function getInstance return GameInputMotionInfoAPI1_Access;
-   procedure getInstance;
 
 end org.allbinary.android.input.motion.api1.GameInputMotionInfoAPI1_Package;
 

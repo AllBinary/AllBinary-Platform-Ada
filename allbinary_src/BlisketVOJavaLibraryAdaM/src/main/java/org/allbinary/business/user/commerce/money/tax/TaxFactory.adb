@@ -38,7 +38,7 @@ package body org.allbinary.business.user.commerce.money.tax.TaxFactory_Package i
    function Create return TaxFactory_Access is
       This : constant TaxFactory_Access := new TaxFactory;
    begin
-      Initialize (This.all);
+      TaxFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -90,13 +90,6 @@ package body org.allbinary.business.user.commerce.money.tax.TaxFactory_Package i
             end if;
         end loop;
         return TaxModuleInterface_Access (SimpleStateTaxModule_Package.Create);
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant TaxFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
    procedure getInstance (This : in out TaxFactory; abeClientInformation : AbeClientInformationInterface_Access; storeFrontInterface : StoreFrontInterface_Access) is

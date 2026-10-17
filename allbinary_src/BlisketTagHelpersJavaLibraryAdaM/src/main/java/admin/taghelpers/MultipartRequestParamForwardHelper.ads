@@ -32,6 +32,7 @@ with org.allbinary.logic.string_Id.StringValidationUtil_Package; use org.allbina
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with tags.HelperTag_Package; use tags.HelperTag_Package;
+with admin.taghelpers.InventoryItemViewParentTagHelper_Package; use admin.taghelpers.InventoryItemViewParentTagHelper_Package;
 
 package admin.taghelpers.MultipartRequestParamForwardHelper_Package is
 
@@ -64,9 +65,7 @@ package admin.taghelpers.MultipartRequestParamForwardHelper_Package is
    function Create (parentHelperTag : HelperTag_Access; page : Unbounded_String; command : Unbounded_String; paramVector : BasicArrayList_Access; pageContext : PageContext_Access) return MultipartRequestParamForwardHelper_Access;
    procedure forward (This : in out MultipartRequestParamForwardHelper);
    function getParams (This : in out MultipartRequestParamForwardHelper) return Unbounded_String;
-   procedure getParams (This : in out MultipartRequestParamForwardHelper);
    function shouldForward (This : in out MultipartRequestParamForwardHelper) return Boolean;
-   procedure shouldForward (This : in out MultipartRequestParamForwardHelper);
 
 end admin.taghelpers.MultipartRequestParamForwardHelper_Package;
 

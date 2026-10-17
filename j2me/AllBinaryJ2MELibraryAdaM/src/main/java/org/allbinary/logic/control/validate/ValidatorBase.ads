@@ -48,15 +48,10 @@ package org.allbinary.logic.control.validate.ValidatorBase_Package is
    procedure Initialize (This : in out ValidatorBase'Class);
    function Create return ValidatorBase_Access;
    function getInstance return ValidatorBase_Access;
-   procedure getInstance;
    function isValid (This : in out ValidatorBase) return Boolean;
-   procedure isValid (This : in out ValidatorBase);
    function validationInfo (This : in out ValidatorBase) return Unbounded_String;
-   procedure validationInfo (This : in out ValidatorBase);
    function toHashtable (This : in out ValidatorBase) return ABHashtable_Access;
-   procedure toHashtable (This : in out ValidatorBase);
    function toList (This : in out ValidatorBase) return BasicArrayList_Access;
-   procedure toList (This : in out ValidatorBase);
 
 end org.allbinary.logic.control.validate.ValidatorBase_Package;
 

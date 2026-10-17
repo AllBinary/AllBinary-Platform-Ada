@@ -26,6 +26,9 @@ with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.s
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with jsinterop.annotations.JsMethod_Package; use jsinterop.annotations.JsMethod_Package;
 with jsinterop.annotations.JsConstructor_Package; use jsinterop.annotations.JsConstructor_Package;
+with org.allbinary.math.AngleIncrementInfo_Package; use org.allbinary.math.AngleIncrementInfo_Package;
+with org.allbinary.math.AngleIncrementInfoFactory_Package; use org.allbinary.math.AngleIncrementInfoFactory_Package;
+with org.allbinary.math.FrameUtil_Package; use org.allbinary.math.FrameUtil_Package;
 
 package org.allbinary.math.AngleInfo_Package is
 
@@ -54,12 +57,9 @@ package org.allbinary.math.AngleInfo_Package is
    procedure getInstance (angleIncrement : Short_Integer);
    procedure adjustAngle (This : in out AngleInfo; frame : Integer);
    function getAngle (This : in out AngleInfo) return Short_Integer;
-   procedure getAngle (This : in out AngleInfo);
    procedure setAngle (This : in out AngleInfo; angle_Case : Short_Integer);
    function getAngleIncrementInfo (This : in out AngleInfo) return AngleIncrementInfo_Access;
-   procedure getAngleIncrementInfo (This : in out AngleInfo);
    function toString (This : in out AngleInfo) return Unbounded_String;
-   procedure toString (This : in out AngleInfo);
 
 end org.allbinary.math.AngleInfo_Package;
 

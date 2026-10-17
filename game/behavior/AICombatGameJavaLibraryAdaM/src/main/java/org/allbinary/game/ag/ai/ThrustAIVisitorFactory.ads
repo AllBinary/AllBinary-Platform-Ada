@@ -20,6 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
+with org.allbinary.game.ag.ai.ThrustAIVisitor_Package; use org.allbinary.game.ag.ai.ThrustAIVisitor_Package;
 
 package org.allbinary.game.ag.ai.ThrustAIVisitorFactory_Package is
 
@@ -35,7 +36,6 @@ package org.allbinary.game.ag.ai.ThrustAIVisitorFactory_Package is
    procedure Initialize (This : in out ThrustAIVisitorFactory'Class);
    function Create return ThrustAIVisitorFactory_Access;
    function getInstance return ThrustAIVisitor_Access;
-   procedure getInstance;
 
 end org.allbinary.game.ag.ai.ThrustAIVisitorFactory_Package;
 

@@ -29,7 +29,7 @@ package body org.allbinary.input.motion.CompleteMotionGestureInputToGameMotionGe
    function Create return CompleteMotionGestureInputToGameMotionGestureInput_Access is
       This : constant CompleteMotionGestureInputToGameMotionGestureInput_Access := new CompleteMotionGestureInputToGameMotionGestureInput;
    begin
-      Initialize (This.all);
+      CompleteMotionGestureInputToGameMotionGestureInput_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -86,13 +86,6 @@ package body org.allbinary.input.motion.CompleteMotionGestureInputToGameMotionGe
                 end;
         end;
    end init;
-
-   procedure getInstance is
-      Java_Result : constant CompleteMotionGestureInputToGameMotionGestureInput_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

@@ -41,7 +41,7 @@ package body org.allbinary.canvas.AndroidGameStatistics_Package is
    function Create return AndroidGameStatistics_Access is
       This : constant AndroidGameStatistics_Access := new AndroidGameStatistics;
    begin
-      Initialize (This.all);
+      AndroidGameStatistics_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -101,20 +101,6 @@ package body org.allbinary.canvas.AndroidGameStatistics_Package is
         else
             return This.NOT_Id;
         end if;
-   end toString;
-
-   procedure toStringArray (This : in out AndroidGameStatistics) is
-      Java_Result : constant Unbounded_String_Array_Access := AndroidGameStatistics'Class (This).toStringArray;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toStringArray;
-
-   procedure toString (This : in out AndroidGameStatistics) is
-      Java_Result : constant Unbounded_String := AndroidGameStatistics'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end toString;
 
 end org.allbinary.canvas.AndroidGameStatistics_Package;

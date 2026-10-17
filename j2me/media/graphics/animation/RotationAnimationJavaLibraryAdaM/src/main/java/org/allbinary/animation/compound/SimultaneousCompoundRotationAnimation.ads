@@ -55,18 +55,14 @@ package org.allbinary.animation.compound.SimultaneousCompoundRotationAnimation_P
    function Create (animationInterfaceArray : RotationAnimation_Access_Array_Access; animationBehavior : AnimationBehavior_Access) return SimultaneousCompoundRotationAnimation_Access;
    procedure setFrame (This : in out SimultaneousCompoundRotationAnimation; frameIndex : Integer);
    function getFrame (This : in out SimultaneousCompoundRotationAnimation) return Integer;
-   procedure getFrame (This : in out SimultaneousCompoundRotationAnimation);
    function getAnimationSize (This : in out SimultaneousCompoundRotationAnimation) return Integer;
-   procedure getAnimationSize (This : in out SimultaneousCompoundRotationAnimation);
    function getSize (This : in out SimultaneousCompoundRotationAnimation) return Integer;
-   procedure getSize (This : in out SimultaneousCompoundRotationAnimation);
    procedure previousFrame (This : in out SimultaneousCompoundRotationAnimation);
    procedure nextFrame (This : in out SimultaneousCompoundRotationAnimation);
    procedure previousRotation (This : in out SimultaneousCompoundRotationAnimation);
    procedure nextRotation (This : in out SimultaneousCompoundRotationAnimation);
    procedure setSequence (This : in out SimultaneousCompoundRotationAnimation; sequence : Integer_Array_Access);
    function getSequence (This : in out SimultaneousCompoundRotationAnimation) return Integer_Array_Access;
-   procedure getSequence (This : in out SimultaneousCompoundRotationAnimation);
    procedure paintXY (This : in out SimultaneousCompoundRotationAnimation; graphics : Graphics_Access; x : Integer; y : Integer);
    procedure paintThreedXYZ (This : in out SimultaneousCompoundRotationAnimation; graphics : Graphics_Access; x : Integer; y : Integer; z : Integer);
    procedure setFrameByDirection (This : in out SimultaneousCompoundRotationAnimation; direction : Direction_Access);
@@ -74,9 +70,7 @@ package org.allbinary.animation.compound.SimultaneousCompoundRotationAnimation_P
    procedure adjustFrameToAngle (This : in out SimultaneousCompoundRotationAnimation; newAngle : Angle_Access);
    procedure adjustFrame (This : in out SimultaneousCompoundRotationAnimation; angle : Short_Integer);
    function getAngleInfoP (This : in out SimultaneousCompoundRotationAnimation) return AngleInfo_Access;
-   procedure getAngleInfoP (This : in out SimultaneousCompoundRotationAnimation);
    function getAnimationInterfaceArray (This : in out SimultaneousCompoundRotationAnimation) return RotationAnimation_Access_Array_Access;
-   procedure getAnimationInterfaceArray (This : in out SimultaneousCompoundRotationAnimation);
    procedure setAnimationInterfaceArray (This : in out SimultaneousCompoundRotationAnimation; animationInterfaceArray : RotationAnimation_Access_Array_Access);
    procedure set (This : in out SimultaneousCompoundRotationAnimation; gl : GL_Access);
 

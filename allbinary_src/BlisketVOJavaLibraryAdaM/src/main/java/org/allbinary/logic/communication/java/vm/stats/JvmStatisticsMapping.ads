@@ -26,6 +26,7 @@ with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArr
 with org.allbinary.data.tables.TableMappingInterface_Package; use org.allbinary.data.tables.TableMappingInterface_Package;
 with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.logic.communication.java.vm.stats.JvmStatistics_Package; use org.allbinary.logic.communication.java.vm.stats.JvmStatistics_Package;
+with org.allbinary.logic.communication.java.vm.stats.JvmStatisticsData_Package; use org.allbinary.logic.communication.java.vm.stats.JvmStatisticsData_Package;
 
 package org.allbinary.logic.communication.java.vm.stats.JvmStatisticsMapping_Package is
 
@@ -44,11 +45,8 @@ package org.allbinary.logic.communication.java.vm.stats.JvmStatisticsMapping_Pac
    procedure Initialize (This : in out JvmStatisticsMapping'Class);
    function Create return JvmStatisticsMapping_Access;
    function toHashMap (This : in out JvmStatisticsMapping) return HashMap_Access;
-   procedure toHashMap (This : in out JvmStatisticsMapping);
    function getKey (This : in out JvmStatisticsMapping) return Java_Object_Access;
-   procedure getKey (This : in out JvmStatisticsMapping);
    function toVector (This : in out JvmStatisticsMapping) return BasicArrayList_Access;
-   procedure toVector (This : in out JvmStatisticsMapping);
 
 end org.allbinary.logic.communication.java.vm.stats.JvmStatisticsMapping_Package;
 

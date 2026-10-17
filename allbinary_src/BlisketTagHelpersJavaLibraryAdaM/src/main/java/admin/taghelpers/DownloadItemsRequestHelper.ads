@@ -32,6 +32,7 @@ with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.Com
 with tags.HelperTag_Package; use tags.HelperTag_Package;
 with views.admin.inventory.download.DownloadableInventoryItemView_Package; use views.admin.inventory.download.DownloadableInventoryItemView_Package;
 with admin.taghelpers.ModifyTable_Package; use admin.taghelpers.ModifyTable_Package;
+with admin.taghelpers.InventoryItemViewParentTagHelper_Package; use admin.taghelpers.InventoryItemViewParentTagHelper_Package;
 
 package admin.taghelpers.DownloadItemsRequestHelper_Package is
 
@@ -58,11 +59,8 @@ package admin.taghelpers.DownloadItemsRequestHelper_Package is
    procedure Initialize (This : in out DownloadItemsRequestHelper'Class; hashMap : HashMap_Access; pageContext : PageContext_Access);
    function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return DownloadItemsRequestHelper_Access;
    function insert (This : in out DownloadItemsRequestHelper) return Unbounded_String;
-   procedure insert (This : in out DownloadItemsRequestHelper);
    function delete (This : in out DownloadItemsRequestHelper) return Unbounded_String;
-   procedure delete (This : in out DownloadItemsRequestHelper);
    function update (This : in out DownloadItemsRequestHelper) return Unbounded_String;
-   procedure update (This : in out DownloadItemsRequestHelper);
 
 end admin.taghelpers.DownloadItemsRequestHelper_Package;
 

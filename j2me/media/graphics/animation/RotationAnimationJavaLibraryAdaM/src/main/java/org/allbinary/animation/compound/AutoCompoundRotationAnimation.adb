@@ -33,7 +33,7 @@ package body org.allbinary.animation.compound.AutoCompoundRotationAnimation_Pack
    function Create (animationInterfaceArray : RotationAnimation_Access_Array_Access; animationBehavior : AnimationBehavior_Access) return AutoCompoundRotationAnimation_Access is
       This : constant AutoCompoundRotationAnimation_Access := new AutoCompoundRotationAnimation;
    begin
-      Initialize (This.all, animationInterfaceArray, animationBehavior);
+      AutoCompoundRotationAnimation_Package.Initialize (This.all, animationInterfaceArray, animationBehavior);
       return This;
    end Create;
 
@@ -174,55 +174,6 @@ package body org.allbinary.animation.compound.AutoCompoundRotationAnimation_Pack
             This.animationInterfaceArray (index).set (gl);
         end loop;
    end set;
-
-   procedure getFrame (This : in out AutoCompoundRotationAnimation) is
-      Java_Result : constant Integer := AutoCompoundRotationAnimation'Class (This).getFrame;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getFrame;
-
-   procedure getAnimationSize (This : in out AutoCompoundRotationAnimation) is
-      Java_Result : constant Integer := AutoCompoundRotationAnimation'Class (This).getAnimationSize;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getAnimationSize;
-
-   procedure getSize (This : in out AutoCompoundRotationAnimation) is
-      Java_Result : constant Integer := AutoCompoundRotationAnimation'Class (This).getSize;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSize;
-
-   procedure getSequence (This : in out AutoCompoundRotationAnimation) is
-      Java_Result : constant Integer_Array_Access := AutoCompoundRotationAnimation'Class (This).getSequence;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSequence;
-
-   procedure getCurrentAnimation (This : in out AutoCompoundRotationAnimation) is
-      Java_Result : constant IndexedAnimation_Access := AutoCompoundRotationAnimation'Class (This).getCurrentAnimation;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getCurrentAnimation;
-
-   procedure getAngleInfoP (This : in out AutoCompoundRotationAnimation) is
-      Java_Result : constant AngleInfo_Access := AutoCompoundRotationAnimation'Class (This).getAngleInfoP;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getAngleInfoP;
-
-   procedure getAnimationInterfaceArray (This : in out AutoCompoundRotationAnimation) is
-      Java_Result : constant RotationAnimation_Access_Array_Access := AutoCompoundRotationAnimation'Class (This).getAnimationInterfaceArray;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getAnimationInterfaceArray;
 
 end org.allbinary.animation.compound.AutoCompoundRotationAnimation_Package;
 

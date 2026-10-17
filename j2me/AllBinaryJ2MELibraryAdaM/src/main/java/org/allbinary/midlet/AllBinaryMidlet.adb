@@ -47,7 +47,7 @@ package body org.allbinary.midlet.AllBinaryMidlet_Package is
    function Create return AllBinaryMidlet_Access is
       This : constant AllBinaryMidlet_Access := new AllBinaryMidlet;
    begin
-      Initialize (This.all);
+      AllBinaryMidlet_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -147,48 +147,6 @@ package body org.allbinary.midlet.AllBinaryMidlet_Package is
    begin
         null;
    end commandAction;
-
-   procedure getNullInstance is
-      Java_Result : constant AllBinaryMidlet_Access := getNullInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getNullInstance;
-
-   procedure getDisplay (This : in out AllBinaryMidlet) is
-      Java_Result : constant Display_Access := AllBinaryMidlet'Class (This).getDisplay;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getDisplay;
-
-   procedure getCurrentDisplayable (This : in out AllBinaryMidlet) is
-      Java_Result : constant Displayable_Access := AllBinaryMidlet'Class (This).getCurrentDisplayable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getCurrentDisplayable;
-
-   procedure isDestroyed (This : in out AllBinaryMidlet) is
-      Java_Result : constant Boolean := AllBinaryMidlet'Class (This).isDestroyed;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isDestroyed;
-
-   procedure getStartStateHashtable (This : in out AllBinaryMidlet) is
-      Java_Result : constant ABHashtable_Access := AllBinaryMidlet'Class (This).getStartStateHashtable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getStartStateHashtable;
-
-   procedure getCurrentStateHashtable (This : in out AllBinaryMidlet) is
-      Java_Result : constant ABHashtable_Access := AllBinaryMidlet'Class (This).getCurrentStateHashtable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getCurrentStateHashtable;
 
 begin
    null;

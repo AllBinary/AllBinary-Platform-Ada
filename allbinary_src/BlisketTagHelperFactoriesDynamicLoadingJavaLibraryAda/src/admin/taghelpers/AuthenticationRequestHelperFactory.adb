@@ -30,7 +30,7 @@ package body admin.taghelpers.AuthenticationRequestHelperFactory_Package is
    function Create return AuthenticationRequestHelperFactory_Access is
       This : constant AuthenticationRequestHelperFactory_Access := new AuthenticationRequestHelperFactory;
    begin
-      Initialize (This.all);
+      AuthenticationRequestHelperFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

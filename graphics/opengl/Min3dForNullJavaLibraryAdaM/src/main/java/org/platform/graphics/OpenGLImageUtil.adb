@@ -17,7 +17,7 @@ package body org.platform.graphics.OpenGLImageUtil_Package is
    function Create return OpenGLImageUtil_Access is
       This : constant OpenGLImageUtil_Access := new OpenGLImageUtil;
    begin
-      Initialize (This.all);
+      OpenGLImageUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -25,13 +25,6 @@ package body org.platform.graphics.OpenGLImageUtil_Package is
    function getInstance return OpenGLImageUtil_Access is
    begin
         return OpenGLImageUtil_Package.instance;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant OpenGLImageUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

@@ -36,9 +36,7 @@ package org.allbinary.thread.NullABRunnable_Package is
    procedure Initialize (This : in out NullABRunnable'Class);
    function Create return NullABRunnable_Access;
    function getInstance return NullABRunnable_Access;
-   procedure getInstance;
    function isRunning (This : in out NullABRunnable) return Boolean;
-   procedure isRunning (This : in out NullABRunnable);
 
 end org.allbinary.thread.NullABRunnable_Package;
 

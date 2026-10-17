@@ -28,7 +28,7 @@ package body org.allbinary.image.ImageFactory_Package is
    function Create return ImageFactory_Access is
       This : constant ImageFactory_Access := new ImageFactory;
    begin
-      Initialize (This.all);
+      ImageFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -63,13 +63,6 @@ package body org.allbinary.image.ImageFactory_Package is
    begin
         return Image_Package.createImage (inputStream);
    end createImageFromInputStream;
-
-   procedure getInstance is
-      Java_Result : constant ImageFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure createImageUrl (This : in out ImageFactory; url : Unbounded_String) is
       Java_Result : constant Image_Access := ImageFactory'Class (This).createImageUrl (url);

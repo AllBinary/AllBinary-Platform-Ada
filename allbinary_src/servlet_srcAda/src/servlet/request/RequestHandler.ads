@@ -25,6 +25,12 @@ with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.lo
 with org.allbinary.logic.control.workflow.WorkFlowInterface_Package; use org.allbinary.logic.control.workflow.WorkFlowInterface_Package;
 with org.allbinary.logic.control.workflow.RequestWorkFlowFactory_Package; use org.allbinary.logic.control.workflow.RequestWorkFlowFactory_Package;
 with servlet.request.HttpServlet_Package; use servlet.request.HttpServlet_Package;
+with servlet.request.ServletConfig_Package; use servlet.request.ServletConfig_Package;
+with servlet.request.PrintWriter_Package; use servlet.request.PrintWriter_Package;
+with servlet.request.ServletRequest_Package; use servlet.request.ServletRequest_Package;
+with servlet.request.ServletResponse_Package; use servlet.request.ServletResponse_Package;
+with servlet.request.HttpServletRequest_Package; use servlet.request.HttpServletRequest_Package;
+with servlet.request.HttpServletResponse_Package; use servlet.request.HttpServletResponse_Package;
 
 package servlet.request.RequestHandler_Package is
 
@@ -50,7 +56,6 @@ package servlet.request.RequestHandler_Package is
    procedure doGet (This : in out RequestHandler; request : HttpServletRequest_Access; response : HttpServletResponse_Access);
    procedure doPost (This : in out RequestHandler; request : HttpServletRequest_Access; response : HttpServletResponse_Access);
    function getServletInfo (This : in out RequestHandler) return Unbounded_String;
-   procedure getServletInfo (This : in out RequestHandler);
 
 end servlet.request.RequestHandler_Package;
 

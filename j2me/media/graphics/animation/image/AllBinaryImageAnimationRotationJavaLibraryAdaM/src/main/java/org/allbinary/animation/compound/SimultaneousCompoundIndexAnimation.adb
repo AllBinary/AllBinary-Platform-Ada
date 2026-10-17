@@ -32,7 +32,7 @@ package body org.allbinary.animation.compound.SimultaneousCompoundIndexAnimation
    function Create (animationInterfaceArray : IndexedAnimation_Access_Array_Access; animationBehavior : AnimationBehavior_Access) return SimultaneousCompoundIndexAnimation_Access is
       This : constant SimultaneousCompoundIndexAnimation_Access := new SimultaneousCompoundIndexAnimation;
    begin
-      Initialize (This.all, animationInterfaceArray, animationBehavior);
+      SimultaneousCompoundIndexAnimation_Package.Initialize (This.all, animationInterfaceArray, animationBehavior);
       return This;
    end Create;
 
@@ -127,41 +127,6 @@ package body org.allbinary.animation.compound.SimultaneousCompoundIndexAnimation
    begin
         This.animationInterfaceArray := animationInterfaceArray;
    end setAnimationInterfaceArray;
-
-   procedure getFrame (This : in out SimultaneousCompoundIndexAnimation) is
-      Java_Result : constant Integer := SimultaneousCompoundIndexAnimation'Class (This).getFrame;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getFrame;
-
-   procedure getAnimationSize (This : in out SimultaneousCompoundIndexAnimation) is
-      Java_Result : constant Integer := SimultaneousCompoundIndexAnimation'Class (This).getAnimationSize;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getAnimationSize;
-
-   procedure getSize (This : in out SimultaneousCompoundIndexAnimation) is
-      Java_Result : constant Integer := SimultaneousCompoundIndexAnimation'Class (This).getSize;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSize;
-
-   procedure getSequence (This : in out SimultaneousCompoundIndexAnimation) is
-      Java_Result : constant Integer_Array_Access := SimultaneousCompoundIndexAnimation'Class (This).getSequence;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSequence;
-
-   procedure getAnimationInterfaceArray (This : in out SimultaneousCompoundIndexAnimation) is
-      Java_Result : constant IndexedAnimation_Access_Array_Access := SimultaneousCompoundIndexAnimation'Class (This).getAnimationInterfaceArray;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getAnimationInterfaceArray;
 
 end org.allbinary.animation.compound.SimultaneousCompoundIndexAnimation_Package;
 

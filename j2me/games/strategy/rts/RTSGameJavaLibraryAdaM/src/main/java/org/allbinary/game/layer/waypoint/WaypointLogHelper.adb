@@ -28,7 +28,7 @@ package body org.allbinary.game.layer.waypoint.WaypointLogHelper_Package is
    function Create return WaypointLogHelper_Access is
       This : constant WaypointLogHelper_Access := new WaypointLogHelper;
    begin
-      Initialize (This.all);
+      WaypointLogHelper_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -92,13 +92,6 @@ package body org.allbinary.game.layer.waypoint.WaypointLogHelper_Package is
    begin
         null;
    end setNextUnvisitedPathGeographicMapCellPosition;
-
-   procedure getInstance is
-      Java_Result : constant WaypointLogHelper_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

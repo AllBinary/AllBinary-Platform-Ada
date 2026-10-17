@@ -37,7 +37,7 @@ package body org.allbinary.midlet.ExitRunnable_Package is
    function Create (midlet : AllBinaryMidlet_Access; processor : Processor_Access; isProgress : Boolean) return ExitRunnable_Access is
       This : constant ExitRunnable_Access := new ExitRunnable;
    begin
-      Initialize (This.all, midlet, processor, isProgress);
+      ExitRunnable_Package.Initialize (This.all, midlet, processor, isProgress);
       return This;
    end Create;
 

@@ -26,6 +26,10 @@ with org.allbinary.logic.control.crypt.file.CryptFileReader_Package; use org.all
 with org.allbinary.logic.io.path.AbPath_Package; use org.allbinary.logic.io.path.AbPath_Package;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
+with org.allbinary.business.context.configuration.ContextConfigurationData_Package; use org.allbinary.business.context.configuration.ContextConfigurationData_Package;
+with org.allbinary.business.context.configuration.ContextConfigurationView_Package; use org.allbinary.business.context.configuration.ContextConfigurationView_Package;
+with org.allbinary.business.context.configuration.ContextConfigurationInterface_Package; use org.allbinary.business.context.configuration.ContextConfigurationInterface_Package;
+with org.allbinary.business.context.configuration.ContextConfigurationPathUtil_Package; use org.allbinary.business.context.configuration.ContextConfigurationPathUtil_Package;
 
 package org.allbinary.business.context.configuration.ContextConfigurationInterfaceFactory_Package is
 
@@ -47,7 +51,6 @@ package org.allbinary.business.context.configuration.ContextConfigurationInterfa
    procedure Initialize (This : in out ContextConfigurationInterfaceFactory'Class);
    function Create return ContextConfigurationInterfaceFactory_Access;
    function getInstance return ContextConfigurationInterfaceFactory_Access;
-   procedure getInstance;
    function getInstance (This : in out ContextConfigurationInterfaceFactory; document : Document_Access) return ContextConfigurationInterface_Access;
    procedure getInstance (This : in out ContextConfigurationInterfaceFactory; document : Document_Access);
    function getInstance (This : in out ContextConfigurationInterfaceFactory; contextName : Unbounded_String) return ContextConfigurationInterface_Access;

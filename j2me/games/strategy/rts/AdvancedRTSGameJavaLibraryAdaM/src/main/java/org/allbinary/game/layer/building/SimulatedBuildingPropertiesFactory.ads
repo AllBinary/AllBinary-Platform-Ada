@@ -28,6 +28,7 @@ with org.allbinary.graphics.paint.Paintable_Package; use org.allbinary.graphics.
 with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
 with org.allbinary.game.layer.building.BuildingPropertiesFactory_Package; use org.allbinary.game.layer.building.BuildingPropertiesFactory_Package;
+with org.allbinary.game.layer.building.BuildingLayer_Package; use org.allbinary.game.layer.building.BuildingLayer_Package;
 
 package org.allbinary.game.layer.building.SimulatedBuildingPropertiesFactory_Package is
 
@@ -50,7 +51,6 @@ package org.allbinary.game.layer.building.SimulatedBuildingPropertiesFactory_Pac
    procedure Initialize (This : in out SimulatedBuildingPropertiesFactory'Class);
    function Create return SimulatedBuildingPropertiesFactory_Access;
    function getInstance return SimulatedBuildingPropertiesFactory_Access;
-   procedure getInstance;
    function getEfficiencyPerLevel (This : in out SimulatedBuildingPropertiesFactory; buildingLayer : BuildingLayer_Access) return Integer;
    procedure getEfficiencyPerLevel (This : in out SimulatedBuildingPropertiesFactory; buildingLayer : BuildingLayer_Access);
    function getDamageFloaters (This : in out SimulatedBuildingPropertiesFactory; buildingLayer : BuildingLayer_Access) return DamageFloaters_Access;
@@ -58,7 +58,6 @@ package org.allbinary.game.layer.building.SimulatedBuildingPropertiesFactory_Pac
    function getHealthBar (This : in out SimulatedBuildingPropertiesFactory; buildingLayer : BuildingLayer_Access) return Paintable_Access;
    procedure getHealthBar (This : in out SimulatedBuildingPropertiesFactory; buildingLayer : BuildingLayer_Access);
    function getHashtable (This : in out SimulatedBuildingPropertiesFactory) return ABHashtable_Access;
-   procedure getHashtable (This : in out SimulatedBuildingPropertiesFactory);
    function getTrackingEvent (This : in out SimulatedBuildingPropertiesFactory; buildingLayer : BuildingLayer_Access) return TrackingEvent_Access;
    procedure getTrackingEvent (This : in out SimulatedBuildingPropertiesFactory; buildingLayer : BuildingLayer_Access);
 

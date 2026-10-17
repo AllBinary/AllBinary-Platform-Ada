@@ -107,6 +107,12 @@ with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArra
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.game.displayable.canvas.GameCanvasRunnableInterface_Package; use org.allbinary.game.displayable.canvas.GameCanvasRunnableInterface_Package;
 with org.allbinary.game.displayable.canvas.MenuListener_Package; use org.allbinary.game.displayable.canvas.MenuListener_Package;
+with org.allbinary.game.displayable.canvas.FormUtil_Package; use org.allbinary.game.displayable.canvas.FormUtil_Package;
+with org.allbinary.game.displayable.canvas.NoMenuInputProcessor_Package; use org.allbinary.game.displayable.canvas.NoMenuInputProcessor_Package;
+with org.allbinary.game.displayable.canvas.BasicMenuInputProcessor_Package; use org.allbinary.game.displayable.canvas.BasicMenuInputProcessor_Package;
+with org.allbinary.game.displayable.canvas.NullWaitGameRunnable_Package; use org.allbinary.game.displayable.canvas.NullWaitGameRunnable_Package;
+with org.allbinary.game.displayable.canvas.GameRunnable_Package; use org.allbinary.game.displayable.canvas.GameRunnable_Package;
+with org.allbinary.game.displayable.canvas.GameInputMappingCanvas_Package; use org.allbinary.game.displayable.canvas.GameInputMappingCanvas_Package;
 
 package org.allbinary.game.displayable.canvas.StartCanvas_Package is
 
@@ -241,7 +247,6 @@ package org.allbinary.game.displayable.canvas.StartCanvas_Package is
    procedure onEvent (This : in out StartCanvas; eventObject : AllBinaryEventObject_Access);
    procedure onDisplayChangeEvent (This : in out StartCanvas; displayChangeEvent : DisplayChangeEvent_Access);
    function getCustomCommands (This : in out StartCanvas) return Java_Object_Access_Array_Access;
-   procedure getCustomCommands (This : in out StartCanvas);
    procedure initCommands (This : in out StartCanvas; cmdListener : CommandListener_Access);
    procedure initPostPaint (This : in out StartCanvas);
    procedure mediaInit (This : in out StartCanvas);
@@ -250,7 +255,6 @@ package org.allbinary.game.displayable.canvas.StartCanvas_Package is
    procedure open (This : in out StartCanvas);
    procedure close (This : in out StartCanvas);
    function getSourceId (This : in out StartCanvas) return Integer;
-   procedure getSourceId (This : in out StartCanvas);
    procedure keyPressed (This : in out StartCanvas; keyCode : Integer);
    procedure keyReleased (This : in out StartCanvas; keyCode : Integer);
    procedure keyRepeated (This : in out StartCanvas; keyCode : Integer);
@@ -262,14 +266,10 @@ package org.allbinary.game.displayable.canvas.StartCanvas_Package is
    procedure pause (This : in out StartCanvas);
    procedure unPause (This : in out StartCanvas);
    function isPausable (This : in out StartCanvas) return Boolean;
-   procedure isPausable (This : in out StartCanvas);
    function isGameOver (This : in out StartCanvas) return Boolean;
-   procedure isGameOver (This : in out StartCanvas);
    procedure setLoadStateHashtable (This : in out StartCanvas; hashtable : ABHashtable_Access);
    function getLoadStateHashtable (This : in out StartCanvas) return ABHashtable_Access;
-   procedure getLoadStateHashtable (This : in out StartCanvas);
    function getCurrentStateHashtable (This : in out StartCanvas) return ABHashtable_Access;
-   procedure getCurrentStateHashtable (This : in out StartCanvas);
    procedure setHighScoreSubmitted (This : in out StartCanvas; isNotUsed : Boolean);
    procedure paint (This : in out StartCanvas; graphics : Graphics_Access);
    procedure paintThreed (This : in out StartCanvas; graphics : Graphics_Access);
@@ -277,7 +277,6 @@ package org.allbinary.game.displayable.canvas.StartCanvas_Package is
    procedure demoStateChange (This : in out StartCanvas);
    procedure updateDemoState (This : in out StartCanvas);
    function getNextRandom (This : in out StartCanvas) return Integer;
-   procedure getNextRandom (This : in out StartCanvas);
    function createGameLayerManager (This : in out StartCanvas; randomValue : Integer) return AllBinaryGameLayerManager_Access;
    procedure createGameLayerManager (This : in out StartCanvas; randomValue : Integer);
    function createRunnable (This : in out StartCanvas; randomLevel : Integer) return GameCanvasRunnableInterface_Access;
@@ -293,47 +292,30 @@ package org.allbinary.game.displayable.canvas.StartCanvas_Package is
    procedure end_Id (This : in out StartCanvas);
    procedure setGameState (This : in out StartCanvas; gameState : GameState_Access);
    function getGameState (This : in out StartCanvas) return GameState_Access;
-   procedure getGameState (This : in out StartCanvas);
    function getState (This : in out StartCanvas) return Integer;
-   procedure getState (This : in out StartCanvas);
    procedure setState (This : in out StartCanvas; state : Integer);
    function isHighScoreSubmitted (This : in out StartCanvas) return Boolean;
-   procedure isHighScoreSubmitted (This : in out StartCanvas);
    function getRealHighScoresPaintable (This : in out StartCanvas) return HighScoresPaintable_Access;
-   procedure getRealHighScoresPaintable (This : in out StartCanvas);
    procedure setSpecialAnimationInterface (This : in out StartCanvas; specialAnimationInterface : SpecialAnimation_Access);
    function getSpecialAnimationInterface (This : in out StartCanvas) return SpecialAnimation_Access;
-   procedure getSpecialAnimationInterface (This : in out StartCanvas);
    procedure setPaintableInterface (This : in out StartCanvas; paintableInterface : PaintableInterface_Access);
    function getPaintableInterface (This : in out StartCanvas) return PaintableInterface_Access;
-   procedure getPaintableInterface (This : in out StartCanvas);
    procedure setDefaultPaintableInterface (This : in out StartCanvas; defaultPaintableInterface : Paintable_Access);
    function getDefaultPaintableInterface (This : in out StartCanvas) return Paintable_Access;
-   procedure getDefaultPaintableInterface (This : in out StartCanvas);
    function getHighScoresFactoryInterface (This : in out StartCanvas) return HighScoresFactoryInterface_Access;
-   procedure getHighScoresFactoryInterface (This : in out StartCanvas);
    procedure setMenuInputProcessor (This : in out StartCanvas; menuInputProcessor : BasicMenuInputProcessor_Access);
    function getMenuInputProcessor (This : in out StartCanvas) return BasicMenuInputProcessor_Access;
-   procedure getMenuInputProcessor (This : in out StartCanvas);
    function getMenuForm (This : in out StartCanvas) return ScrollSelectionForm_Access;
-   procedure getMenuForm (This : in out StartCanvas);
    procedure setMenuForm (This : in out StartCanvas; menuForm : ScrollSelectionForm_Access);
    function isInitialized (This : in out StartCanvas) return Boolean;
-   procedure isInitialized (This : in out StartCanvas);
    function getOverlayPaintable (This : in out StartCanvas) return Paintable_Access;
-   procedure getOverlayPaintable (This : in out StartCanvas);
    procedure setBasicGameDemoPaintable (This : in out StartCanvas; basicGameDemoPaintable : StatePaintable_Access);
    function getBasicGameDemoPaintable (This : in out StartCanvas) return StatePaintable_Access;
-   procedure getBasicGameDemoPaintable (This : in out StartCanvas);
    procedure setTempWait (This : in out StartCanvas; tempWait : Integer);
    function getTempWait (This : in out StartCanvas) return Integer;
-   procedure getTempWait (This : in out StartCanvas);
    function isSingleThread (This : in out StartCanvas) return Boolean;
-   procedure isSingleThread (This : in out StartCanvas);
    function isRunningInAnotherThread (This : in out StartCanvas) return Boolean;
-   procedure isRunningInAnotherThread (This : in out StartCanvas);
    function getGameInitializationInterfaceFactoryInterface (This : in out StartCanvas) return BasicBuildGameInitializerFactory_Access;
-   procedure getGameInitializationInterfaceFactoryInterface (This : in out StartCanvas);
 
 end org.allbinary.game.displayable.canvas.StartCanvas_Package;
 

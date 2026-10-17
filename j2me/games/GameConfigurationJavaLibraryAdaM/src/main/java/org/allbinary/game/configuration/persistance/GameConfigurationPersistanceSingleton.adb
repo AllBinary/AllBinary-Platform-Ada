@@ -34,16 +34,9 @@ package body org.allbinary.game.configuration.persistance.GameConfigurationPersi
    function Create return GameConfigurationPersistanceSingleton_Access is
       This : constant GameConfigurationPersistanceSingleton_Access := new GameConfigurationPersistanceSingleton;
    begin
-      Initialize (This.all);
+      GameConfigurationPersistanceSingleton_Package.Initialize (This.all);
       return This;
    end Create;
-
-   procedure getInstance is
-      Java_Result : constant GameConfigurationPersistanceSingleton_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

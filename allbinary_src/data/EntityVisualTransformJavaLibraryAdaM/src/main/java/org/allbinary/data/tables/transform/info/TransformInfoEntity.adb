@@ -40,7 +40,7 @@ package body org.allbinary.data.tables.transform.info.TransformInfoEntity_Packag
    function Create (transformInfoObjectConfigGeneratorFactoryInterface : TransformInfoObjectConfigGeneratorFactoryInterface_Access; transformInfoObjectConfigAndManipulatorFactoryInterface : TransformInfoObjectConfigAndManipulatorFactoryBase_Access; transformInfoFactoryInterface : TransformInfoFactoryInterface_Access) return TransformInfoEntity_Access is
       This : constant TransformInfoEntity_Access := new TransformInfoEntity;
    begin
-      Initialize (This.all, transformInfoObjectConfigGeneratorFactoryInterface, transformInfoObjectConfigAndManipulatorFactoryInterface, transformInfoFactoryInterface);
+      TransformInfoEntity_Package.Initialize (This.all, transformInfoObjectConfigGeneratorFactoryInterface, transformInfoObjectConfigAndManipulatorFactoryInterface, transformInfoFactoryInterface);
       return This;
    end Create;
 
@@ -222,27 +222,6 @@ package body org.allbinary.data.tables.transform.info.TransformInfoEntity_Packag
    begin
       null;
    end getNames;
-
-   procedure createTableStatement (This : in out TransformInfoEntity) is
-      Java_Result : constant Unbounded_String := TransformInfoEntity'Class (This).createTableStatement;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end createTableStatement;
-
-   procedure createTable (This : in out TransformInfoEntity) is
-      Java_Result : constant Unbounded_String := TransformInfoEntity'Class (This).createTable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end createTable;
-
-   procedure dropTable (This : in out TransformInfoEntity) is
-      Java_Result : constant Unbounded_String := TransformInfoEntity'Class (This).dropTable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end dropTable;
 
 end org.allbinary.data.tables.transform.info.TransformInfoEntity_Package;
 

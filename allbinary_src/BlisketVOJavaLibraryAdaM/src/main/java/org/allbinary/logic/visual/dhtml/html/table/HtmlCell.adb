@@ -46,7 +46,7 @@ package body org.allbinary.logic.visual.dhtml.html.table.HtmlCell_Package is
    function Create (before : Unbounded_String; width_Case : Unbounded_String; height_Case : Unbounded_String; after : Unbounded_String) return HtmlCell_Access is
       This : constant HtmlCell_Access := new HtmlCell;
    begin
-      Initialize (This.all, before, width_Case, height_Case, after);
+      HtmlCell_Package.Initialize (This.all, before, width_Case, height_Case, after);
       return This;
    end Create;
 
@@ -86,13 +86,6 @@ package body org.allbinary.logic.visual.dhtml.html.table.HtmlCell_Package is
         result := result & This.ENDTAG;
         result := result & This.after;
         return result;
-   end toString;
-
-   procedure toString (This : in out HtmlCell) is
-      Java_Result : constant Unbounded_String := HtmlCell'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end toString;
 
 end org.allbinary.logic.visual.dhtml.html.table.HtmlCell_Package;

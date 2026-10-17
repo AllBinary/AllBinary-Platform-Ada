@@ -29,7 +29,7 @@ package body org.allbinary.logic.io.file.visitor.IncludeFileExtensionsBooleanFil
    function Create (filterStringBasicArrayList : BasicArrayList_Access) return IncludeFileExtensionsBooleanFileVisitor_Access is
       This : constant IncludeFileExtensionsBooleanFileVisitor_Access := new IncludeFileExtensionsBooleanFileVisitor;
    begin
-      Initialize (This.all, filterStringBasicArrayList);
+      IncludeFileExtensionsBooleanFileVisitor_Package.Initialize (This.all, filterStringBasicArrayList);
       return This;
    end Create;
 

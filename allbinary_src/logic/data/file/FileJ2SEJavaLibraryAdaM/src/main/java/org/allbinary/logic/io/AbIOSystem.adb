@@ -29,7 +29,7 @@ package body org.allbinary.logic.io.AbIOSystem_Package is
    function Create return AbIOSystem_Access is
       This : constant AbIOSystem_Access := new AbIOSystem;
    begin
-      Initialize (This.all);
+      AbIOSystem_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -52,20 +52,6 @@ package body org.allbinary.logic.io.AbIOSystem_Package is
             return False;
         end if;
    end isType;
-
-   procedure getInstance is
-      Java_Result : constant AbIOSystem_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure getType (This : in out AbIOSystem) is
-      Java_Result : constant Unbounded_String := AbIOSystem'Class (This).getType;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getType;
 
    procedure isType (This : in out AbIOSystem; type_Id : Unbounded_String) is
       Java_Result : constant Boolean := AbIOSystem'Class (This).isType (type_Id);

@@ -43,9 +43,7 @@ package tags.PropertiesTag_Package is
    procedure Initialize (This : in out PropertiesTag'Class);
    function Create return PropertiesTag_Access;
    function getPropertiesHashMap (This : in out PropertiesTag) return HashMap_Access;
-   procedure getPropertiesHashMap (This : in out PropertiesTag);
    function doEndTag (This : in out PropertiesTag) return Integer;
-   procedure doEndTag (This : in out PropertiesTag);
 
 end tags.PropertiesTag_Package;
 

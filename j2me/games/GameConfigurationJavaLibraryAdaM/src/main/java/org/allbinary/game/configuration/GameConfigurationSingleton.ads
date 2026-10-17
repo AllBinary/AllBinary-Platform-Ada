@@ -24,6 +24,7 @@ with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Packag
 with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.game.configuration.GameConfiguration_Package; use org.allbinary.game.configuration.GameConfiguration_Package;
 
 package org.allbinary.game.configuration.GameConfigurationSingleton_Package is
 
@@ -46,14 +47,11 @@ package org.allbinary.game.configuration.GameConfigurationSingleton_Package is
    procedure Initialize (This : in out GameConfigurationSingleton'Class);
    function Create return GameConfigurationSingleton_Access;
    function getInstance return GameConfigurationSingleton_Access;
-   procedure getInstance;
    function getInstanceByName (This : in out GameConfigurationSingleton; name : Unbounded_String) return GameConfiguration_Access;
    procedure getInstanceByName (This : in out GameConfigurationSingleton; name : Unbounded_String);
    function getOptionsBasicArrayList (This : in out GameConfigurationSingleton) return BasicArrayList_Access;
-   procedure getOptionsBasicArrayList (This : in out GameConfigurationSingleton);
    procedure add (This : in out GameConfigurationSingleton; gameConfiguration : GameConfiguration_Access);
    function getHashtable (This : in out GameConfigurationSingleton) return ABHashtable_Access;
-   procedure getHashtable (This : in out GameConfigurationSingleton);
 
 end org.allbinary.game.configuration.GameConfigurationSingleton_Package;
 

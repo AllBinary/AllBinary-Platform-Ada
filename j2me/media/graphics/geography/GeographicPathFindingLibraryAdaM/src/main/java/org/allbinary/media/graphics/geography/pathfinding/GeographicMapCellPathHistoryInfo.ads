@@ -44,19 +44,14 @@ package org.allbinary.media.graphics.geography.pathfinding.GeographicMapCellPath
    procedure Initialize (This : in out GeographicMapCellPathHistoryInfo'Class);
    function Create return GeographicMapCellPathHistoryInfo_Access;
    function getPreviousGeographicMapCellPosition (This : in out GeographicMapCellPathHistoryInfo) return GeographicMapCellPosition_Access;
-   procedure getPreviousGeographicMapCellPosition (This : in out GeographicMapCellPathHistoryInfo);
    procedure setPreviousGeographicMapCellPosition (This : in out GeographicMapCellPathHistoryInfo; previousGeographicMapCellPosition : GeographicMapCellPosition_Access);
    function getPreviousOnPathGeographicMapCellPosition (This : in out GeographicMapCellPathHistoryInfo) return GeographicMapCellPosition_Access;
-   procedure getPreviousOnPathGeographicMapCellPosition (This : in out GeographicMapCellPathHistoryInfo);
    procedure setPreviousOnPathGeographicMapCellPosition (This : in out GeographicMapCellPathHistoryInfo; previousOnPathGeographicMapCellPosition : GeographicMapCellPosition_Access);
    function getNextUnvisitedOnPathGeographicMapCellPosition (This : in out GeographicMapCellPathHistoryInfo) return GeographicMapCellPosition_Access;
-   procedure getNextUnvisitedOnPathGeographicMapCellPosition (This : in out GeographicMapCellPathHistoryInfo);
    procedure setNextUnvisitedOnPathGeographicMapCellPosition (This : in out GeographicMapCellPathHistoryInfo; nextUnvisitedOnPathGeographicMapCellPosition : GeographicMapCellPosition_Access);
    function getNextOnPathGeographicMapCellPosition (This : in out GeographicMapCellPathHistoryInfo) return GeographicMapCellPosition_Access;
-   procedure getNextOnPathGeographicMapCellPosition (This : in out GeographicMapCellPathHistoryInfo);
    procedure setNextOnPathGeographicMapCellPosition (This : in out GeographicMapCellPathHistoryInfo; nextOnPathGeographicMapCellPosition : GeographicMapCellPosition_Access);
    function getNextChosenOnPathGeographicMapCellPosition (This : in out GeographicMapCellPathHistoryInfo) return GeographicMapCellPosition_Access;
-   procedure getNextChosenOnPathGeographicMapCellPosition (This : in out GeographicMapCellPathHistoryInfo);
    procedure setNextChosenOnPathGeographicMapCellPosition (This : in out GeographicMapCellPathHistoryInfo; nextChosenOnPathGeographicMapCellPosition : GeographicMapCellPosition_Access);
 
 end org.allbinary.media.graphics.geography.pathfinding.GeographicMapCellPathHistoryInfo_Package;

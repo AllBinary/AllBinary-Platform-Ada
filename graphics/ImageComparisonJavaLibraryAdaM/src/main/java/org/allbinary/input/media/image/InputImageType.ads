@@ -49,15 +49,11 @@ package org.allbinary.input.media.image.InputImageType_Package is
    procedure Initialize (This : in out InputImageType'Class; name : Unbounded_String; index : Integer);
    function Create (name : Unbounded_String; index : Integer) return InputImageType_Access;
    function toString (This : in out InputImageType) return Unbounded_String;
-   procedure toString (This : in out InputImageType);
    function getName (This : in out InputImageType) return Unbounded_String;
-   procedure getName (This : in out InputImageType);
    function getInstance (imageTypeString : Unbounded_String) return InputImageType_Access;
    procedure getInstance (imageTypeString : Unbounded_String);
    function getAllAsVector return BasicArrayList_Access;
-   procedure getAllAsVector;
    function getIndex (This : in out InputImageType) return Integer;
-   procedure getIndex (This : in out InputImageType);
 
 end org.allbinary.input.media.image.InputImageType_Package;
 

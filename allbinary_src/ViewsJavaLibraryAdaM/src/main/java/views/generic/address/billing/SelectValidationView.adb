@@ -29,7 +29,7 @@ package body views.generic_Id.address.billing.SelectValidationView_Package is
    function Create (transformInfoInterface : TransformInfoInterface_Access) return SelectValidationView_Access is
       This : constant SelectValidationView_Access := new SelectValidationView;
    begin
-      Initialize (This.all, transformInfoInterface);
+      SelectValidationView_Package.Initialize (This.all, transformInfoInterface);
       return This;
    end Create;
 
@@ -52,27 +52,6 @@ package body views.generic_Id.address.billing.SelectValidationView_Package is
    begin
         return null;
    end toValidationInfoNode;
-
-   procedure isValid (This : in out SelectValidationView) is
-      Java_Result : constant Boolean := SelectValidationView'Class (This).isValid;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isValid;
-
-   procedure validationInfo (This : in out SelectValidationView) is
-      Java_Result : constant Unbounded_String := SelectValidationView'Class (This).validationInfo;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end validationInfo;
-
-   procedure toValidationInfoDoc (This : in out SelectValidationView) is
-      Java_Result : constant Document_Access := SelectValidationView'Class (This).toValidationInfoDoc;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toValidationInfoDoc;
 
    procedure toValidationInfoNode (This : in out SelectValidationView; document : Document_Access) is
       Java_Result : constant Node_Access := SelectValidationView'Class (This).toValidationInfoNode (document);

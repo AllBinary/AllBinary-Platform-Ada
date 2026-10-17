@@ -31,7 +31,7 @@ package body org.allbinary.business.advertisement.campaign.AdvertisementCampaign
    function Create (hashMap : HashMap_Access) return AdvertisementCampaign_Access is
       This : constant AdvertisementCampaign_Access := new AdvertisementCampaign;
    begin
-      Initialize (This.all, hashMap);
+      AdvertisementCampaign_Package.Initialize (This.all, hashMap);
       return This;
    end Create;
 
@@ -59,20 +59,6 @@ package body org.allbinary.business.advertisement.campaign.AdvertisementCampaign
    begin
         return null;
    end search;
-
-   procedure getComponent (This : in out AdvertisementCampaign) is
-      Java_Result : constant Java_Object_Access := AdvertisementCampaign'Class (This).getComponent;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getComponent;
-
-   procedure getName (This : in out AdvertisementCampaign) is
-      Java_Result : constant Unbounded_String := AdvertisementCampaign'Class (This).getName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getName;
 
    procedure search (This : in out AdvertisementCampaign; advertisementSearchInterface : AdvertisementSearchInterface_Access) is
       Java_Result : constant AdvertisementsInterface_Access := AdvertisementCampaign'Class (This).search (advertisementSearchInterface);

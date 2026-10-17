@@ -36,7 +36,7 @@ package body org.allbinary.game.init.DefaultGameInitializationListener_Package i
    function Create return DefaultGameInitializationListener_Access is
       This : constant DefaultGameInitializationListener_Access := new DefaultGameInitializationListener;
    begin
-      Initialize (This.all);
+      DefaultGameInitializationListener_Package.Initialize (This.all);
       return This;
    end Create;
 

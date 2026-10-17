@@ -29,7 +29,7 @@ package body org.allbinary.media.AllBinaryNoVibration_Package is
    function Create return AllBinaryNoVibration_Access is
       This : constant AllBinaryNoVibration_Access := new AllBinaryNoVibration;
    begin
-      Initialize (This.all);
+      AllBinaryNoVibration_Package.Initialize (This.all);
       return This;
    end Create;
 

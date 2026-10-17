@@ -31,20 +31,13 @@ package body org.allbinary.logic.system.hardware.components.linux.CpuInfo_Packag
    function Create (name : Unbounded_String) return CpuInfo_Access is
       This : constant CpuInfo_Access := new CpuInfo;
    begin
-      Initialize (This.all, name);
+      CpuInfo_Package.Initialize (This.all, name);
       return This;
    end Create;
 
    function toString (This : in out CpuInfo) return Unbounded_String is
    begin
         return This.name;
-   end toString;
-
-   procedure toString (This : in out CpuInfo) is
-      Java_Result : constant Unbounded_String := CpuInfo'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end toString;
 
 begin

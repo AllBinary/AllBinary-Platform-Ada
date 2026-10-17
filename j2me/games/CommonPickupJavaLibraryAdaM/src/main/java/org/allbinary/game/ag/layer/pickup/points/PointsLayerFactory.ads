@@ -22,6 +22,7 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
 with org.allbinary.layer.AllBinaryLayerFactoryInterface_Package; use org.allbinary.layer.AllBinaryLayerFactoryInterface_Package;
+with org.allbinary.game.ag.layer.pickup.points.PointsLayer_Package; use org.allbinary.game.ag.layer.pickup.points.PointsLayer_Package;
 
 package org.allbinary.game.ag.layer.pickup.points.PointsLayerFactory_Package is
 
@@ -40,7 +41,6 @@ package org.allbinary.game.ag.layer.pickup.points.PointsLayerFactory_Package is
    procedure Initialize (This : in out PointsLayerFactory'Class; points : Integer);
    function Create (points : Integer) return PointsLayerFactory_Access;
    function getInstance (This : in out PointsLayerFactory) return AllBinaryLayer_Access;
-   procedure getInstance (This : in out PointsLayerFactory);
 
 end org.allbinary.game.ag.layer.pickup.points.PointsLayerFactory_Package;
 

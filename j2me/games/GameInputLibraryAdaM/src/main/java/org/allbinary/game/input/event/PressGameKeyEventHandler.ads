@@ -28,6 +28,8 @@ with org.allbinary.logic.util.event.EventStrings_Package; use org.allbinary.logi
 with org.allbinary.logic.util.event.handler.BasicEventHandler_Package; use org.allbinary.logic.util.event.handler.BasicEventHandler_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.game.input.event.GameKeyEvent_Package; use org.allbinary.game.input.event.GameKeyEvent_Package;
+with org.allbinary.game.input.event.PressGameKeyEventListenerInterface_Package; use org.allbinary.game.input.event.PressGameKeyEventListenerInterface_Package;
 
 package org.allbinary.game.input.event.PressGameKeyEventHandler_Package is
 
@@ -53,7 +55,6 @@ package org.allbinary.game.input.event.PressGameKeyEventHandler_Package is
    procedure Initialize (This : in out PressGameKeyEventHandler'Class);
    function Create return PressGameKeyEventHandler_Access;
    function getInstance return PressGameKeyEventHandler_Access;
-   procedure getInstance;
    procedure addListener (This : in out PressGameKeyEventHandler; playerGameInput : PlayerGameInput_Access);
    procedure removeAllListeners (This : in out PressGameKeyEventHandler);
    procedure removeListener (This : in out PressGameKeyEventHandler; eventListenerInterface : EventListenerInterface_Access);

@@ -57,7 +57,7 @@ package body org.allbinary.game.combat.weapon.WeaponProperties_Package is
    function Create (reloadTime : Long_Long_Integer; targetingTime : Long_Long_Integer; speed : Long_Long_Integer; damage_Case : Integer; dissipation : Short_Integer) return WeaponProperties_Access is
       This : constant WeaponProperties_Access := new WeaponProperties;
    begin
-      Initialize (This.all, reloadTime, targetingTime, speed, damage_Case, dissipation);
+      WeaponProperties_Package.Initialize (This.all, reloadTime, targetingTime, speed, damage_Case, dissipation);
       return This;
    end Create;
 
@@ -124,47 +124,12 @@ package body org.allbinary.game.combat.weapon.WeaponProperties_Package is
         return stringBuffer.toString;
    end toString;
 
-   procedure getReloadTime (This : in out WeaponProperties) is
-      Java_Result : constant Long_Long_Integer := WeaponProperties'Class (This).getReloadTime;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getReloadTime;
-
-   procedure getTargetingTime (This : in out WeaponProperties) is
-      Java_Result : constant Long_Long_Integer := WeaponProperties'Class (This).getTargetingTime;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTargetingTime;
-
-   procedure getSpeed (This : in out WeaponProperties) is
-      Java_Result : constant BasicDecimal_Access := WeaponProperties'Class (This).getSpeed;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSpeed;
-
    procedure getDamageI (This : in out WeaponProperties; range_Case_Id : Integer) is
       Java_Result : constant Integer := WeaponProperties'Class (This).getDamageI (range_Case_Id);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getDamageI;
-
-   procedure toStringArray (This : in out WeaponProperties) is
-      Java_Result : constant Unbounded_String_Array_Access := WeaponProperties'Class (This).toStringArray;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toStringArray;
-
-   procedure toString (This : in out WeaponProperties) is
-      Java_Result : constant Unbounded_String := WeaponProperties'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toString;
 
 begin
    null;

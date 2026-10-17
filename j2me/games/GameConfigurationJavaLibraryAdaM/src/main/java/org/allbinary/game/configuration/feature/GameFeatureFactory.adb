@@ -51,16 +51,9 @@ package body org.allbinary.game.configuration.feature.GameFeatureFactory_Package
    function Create return GameFeatureFactory_Access is
       This : constant GameFeatureFactory_Access := new GameFeatureFactory;
    begin
-      Initialize (This.all);
+      GameFeatureFactory_Package.Initialize (This.all);
       return This;
    end Create;
-
-   procedure getInstance is
-      Java_Result : constant GameFeatureFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

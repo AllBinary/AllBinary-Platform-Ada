@@ -21,6 +21,8 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.init.GameInitializationInterfaceFactoryInterface_Package; use org.allbinary.game.init.GameInitializationInterfaceFactoryInterface_Package;
+with org.allbinary.game.init.BaseGameInitialization_Package; use org.allbinary.game.init.BaseGameInitialization_Package;
+with org.allbinary.game.init.GameInitializationInterface_Package; use org.allbinary.game.init.GameInitializationInterface_Package;
 
 package org.allbinary.game.init.BasicBuildGameInitializerFactory_Package is
 
@@ -36,7 +38,6 @@ package org.allbinary.game.init.BasicBuildGameInitializerFactory_Package is
    procedure Initialize (This : in out BasicBuildGameInitializerFactory'Class);
    function Create return BasicBuildGameInitializerFactory_Access;
    function getInstance (This : in out BasicBuildGameInitializerFactory) return GameInitializationInterface_Access;
-   procedure getInstance (This : in out BasicBuildGameInitializerFactory);
 
 end org.allbinary.game.init.BasicBuildGameInitializerFactory_Package;
 

@@ -44,7 +44,6 @@ package views.generic_Id.inventory.InventorySearchLoopInfo_Package is
    procedure Initialize (This : in out InventorySearchLoopInfo'Class);
    function Create return InventorySearchLoopInfo_Access;
    function toString (This : in out InventorySearchLoopInfo) return Unbounded_String;
-   procedure toString (This : in out InventorySearchLoopInfo);
 
 end views.generic_Id.inventory.InventorySearchLoopInfo_Package;
 

@@ -28,7 +28,7 @@ package body org.allbinary.input.gyro.GyroSensorFactory_Package is
    function Create return GyroSensorFactory_Access is
       This : constant GyroSensorFactory_Access := new GyroSensorFactory;
    begin
-      Initialize (This.all);
+      GyroSensorFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -42,13 +42,6 @@ package body org.allbinary.input.gyro.GyroSensorFactory_Package is
    function getInstance return AllBinaryOrientationSensor_Access is
    begin
         return GyroSensorFactory_Package.allBinaryGyroSensor;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant AllBinaryOrientationSensor_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

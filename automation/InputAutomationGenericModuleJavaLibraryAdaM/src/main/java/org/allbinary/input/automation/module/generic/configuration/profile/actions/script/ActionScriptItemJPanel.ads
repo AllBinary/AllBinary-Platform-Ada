@@ -41,19 +41,14 @@ package org.allbinary.input.automation.module.generic_Id.configuration.profile.a
    procedure Initialize (This : in out ActionScriptItemJPanel'Class);
    function Create return ActionScriptItemJPanel_Access;
    function getNewActionScriptInputJPanel (This : in out ActionScriptItemJPanel) return JPanel_Access;
-   procedure getNewActionScriptInputJPanel (This : in out ActionScriptItemJPanel);
    procedure setNewActionScriptInputJPanel (This : in out ActionScriptItemJPanel; newActionScriptInputJPanel : JPanel_Access);
    function getRemoveJPanel (This : in out ActionScriptItemJPanel) return JPanel_Access;
-   procedure getRemoveJPanel (This : in out ActionScriptItemJPanel);
    procedure setRemoveJPanel (This : in out ActionScriptItemJPanel; removeJPanel : JPanel_Access);
    function getScriptItemJPanel (This : in out ActionScriptItemJPanel) return JPanel_Access;
-   procedure getScriptItemJPanel (This : in out ActionScriptItemJPanel);
    procedure setScriptItemJPanel (This : in out ActionScriptItemJPanel; scriptItemJPanel : JPanel_Access);
    function getNewActionScriptConditionJPanel (This : in out ActionScriptItemJPanel) return JPanel_Access;
-   procedure getNewActionScriptConditionJPanel (This : in out ActionScriptItemJPanel);
    procedure setNewActionScriptConditionJPanel (This : in out ActionScriptItemJPanel; newActionScriptConditionJPanel : JPanel_Access);
    function getChildActionScriptConditionJPanel (This : in out ActionScriptItemJPanel) return JPanel_Access;
-   procedure getChildActionScriptConditionJPanel (This : in out ActionScriptItemJPanel);
    procedure setChildActionScriptConditionJPanel (This : in out ActionScriptItemJPanel; childActionScriptConditionJPanel : JPanel_Access);
    procedure initComponents (This : in out ActionScriptItemJPanel);
 

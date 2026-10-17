@@ -44,16 +44,9 @@ package body org.allbinary.business.entry_Id.EntryData_Package is
    function Create return EntryData_Access is
       This : constant EntryData_Access := new EntryData;
    begin
-      Initialize (This.all);
+      EntryData_Package.Initialize (This.all);
       return This;
    end Create;
-
-   procedure getInstance is
-      Java_Result : constant EntryData_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

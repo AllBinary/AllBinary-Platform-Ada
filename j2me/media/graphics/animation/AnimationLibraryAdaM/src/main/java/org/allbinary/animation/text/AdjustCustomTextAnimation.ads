@@ -41,10 +41,8 @@ package org.allbinary.animation.text.AdjustCustomTextAnimation_Package is
    procedure Initialize (This : in out AdjustCustomTextAnimation'Class; text : Unbounded_String; fontSize : Integer; dx : Integer; dy : Integer; animationBehavior : AnimationBehavior_Access);
    function Create (text : Unbounded_String; fontSize : Integer; dx : Integer; dy : Integer; animationBehavior : AnimationBehavior_Access) return AdjustCustomTextAnimation_Access;
    function getDx (This : in out AdjustCustomTextAnimation) return Integer;
-   procedure getDx (This : in out AdjustCustomTextAnimation);
    procedure setDx (This : in out AdjustCustomTextAnimation; dx : Integer);
    function getDy (This : in out AdjustCustomTextAnimation) return Integer;
-   procedure getDy (This : in out AdjustCustomTextAnimation);
    procedure setDy (This : in out AdjustCustomTextAnimation; dy : Integer);
    procedure paintXY (This : in out AdjustCustomTextAnimation; graphics : Graphics_Access; x : Integer; y : Integer);
 

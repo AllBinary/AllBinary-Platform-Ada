@@ -36,7 +36,6 @@ package org.allbinary.input.NoAllBinarySensor_Package is
    procedure Initialize (This : in out NoAllBinarySensor'Class);
    function Create return NoAllBinarySensor_Access;
    function getInstance return NoAllBinarySensor_Access;
-   procedure getInstance;
 
 end org.allbinary.input.NoAllBinarySensor_Package;
 

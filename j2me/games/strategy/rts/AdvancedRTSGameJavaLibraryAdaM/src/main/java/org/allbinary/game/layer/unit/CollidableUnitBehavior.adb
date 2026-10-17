@@ -32,7 +32,7 @@ package body org.allbinary.game.layer.unit.CollidableUnitBehavior_Package is
    function Create (collidable : Boolean) return CollidableUnitBehavior_Access is
       This : constant CollidableUnitBehavior_Access := new CollidableUnitBehavior;
    begin
-      Initialize (This.all, collidable);
+      CollidableUnitBehavior_Package.Initialize (This.all, collidable);
       return This;
    end Create;
 
@@ -176,7 +176,7 @@ package body org.allbinary.game.layer.unit.SimpleSteeringVisitor_Package is
    function Create return SimpleSteeringVisitor_Access is
       This : constant SimpleSteeringVisitor_Access := new SimpleSteeringVisitor;
    begin
-      Initialize (This.all);
+      SimpleSteeringVisitor_Package.Initialize (This.all);
       return This;
    end Create;
 

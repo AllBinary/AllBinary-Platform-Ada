@@ -25,6 +25,8 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.communication.http.request.session.WeblisketSession_Package; use org.allbinary.logic.communication.http.request.session.WeblisketSession_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.logic.visual.transform.info.TransformInfoHttpInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoHttpInterface_Package;
+with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
 
 package org.allbinary.logic.visual.transform.info.TransformInfoHttpComposite_Package is
 
@@ -46,13 +48,9 @@ package org.allbinary.logic.visual.transform.info.TransformInfoHttpComposite_Pac
    procedure Initialize (This : in out TransformInfoHttpComposite'Class; transformInfoInterface : TransformInfoInterface_Access);
    function Create (transformInfoInterface : TransformInfoInterface_Access) return TransformInfoHttpComposite_Access;
    function getTransformInfoInterface (This : in out TransformInfoHttpComposite) return TransformInfoInterface_Access;
-   procedure getTransformInfoInterface (This : in out TransformInfoHttpComposite);
    function getWeblisketSession (This : in out TransformInfoHttpComposite) return WeblisketSession_Access;
-   procedure getWeblisketSession (This : in out TransformInfoHttpComposite);
    function getPageContext (This : in out TransformInfoHttpComposite) return PageContext_Access;
-   procedure getPageContext (This : in out TransformInfoHttpComposite);
    function getPropertiesHashMap (This : in out TransformInfoHttpComposite) return HashMap_Access;
-   procedure getPropertiesHashMap (This : in out TransformInfoHttpComposite);
 
 end org.allbinary.logic.visual.transform.info.TransformInfoHttpComposite_Package;
 

@@ -49,7 +49,6 @@ package org.allbinary.media.image.comparison.ImageComparisonResultCacheSingleton
    procedure Initialize (This : in out ImageComparisonResultCacheSingleton'Class);
    function Create return ImageComparisonResultCacheSingleton_Access;
    function getInstance return CacheInterface_Access;
-   procedure getInstance;
 
 end org.allbinary.media.image.comparison.ImageComparisonResultCacheSingleton_Package;
 

@@ -30,7 +30,7 @@ package body org.allbinary.logic.system.security.licensing.registration.LicenseR
    function Create return LicenseRegistrationUtil_Access is
       This : constant LicenseRegistrationUtil_Access := new LicenseRegistrationUtil;
    begin
-      Initialize (This.all);
+      LicenseRegistrationUtil_Package.Initialize (This.all);
       return This;
    end Create;
 

@@ -31,7 +31,7 @@ package body views.generic_Id.payment.PaymentView_Package is
    function Create (transformInfoInterface : TransformInfoInterface_Access) return PaymentView_Access is
       This : constant PaymentView_Access := new PaymentView;
    begin
-      Initialize (This.all, transformInfoInterface);
+      PaymentView_Package.Initialize (This.all, transformInfoInterface);
       return This;
    end Create;
 
@@ -97,13 +97,6 @@ package body views.generic_Id.payment.PaymentView_Package is
    begin
       null;
    end toXmlNode;
-
-   procedure view (This : in out PaymentView) is
-      Java_Result : constant Unbounded_String := PaymentView'Class (This).view;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end view;
 
 end views.generic_Id.payment.PaymentView_Package;
 

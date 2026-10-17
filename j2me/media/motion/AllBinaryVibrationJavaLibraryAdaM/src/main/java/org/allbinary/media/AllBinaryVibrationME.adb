@@ -28,7 +28,7 @@ package body org.allbinary.media.AllBinaryVibrationME_Package is
    function Create return AllBinaryVibrationME_Access is
       This : constant AllBinaryVibrationME_Access := new AllBinaryVibrationME;
    begin
-      Initialize (This.all);
+      AllBinaryVibrationME_Package.Initialize (This.all);
       return This;
    end Create;
 

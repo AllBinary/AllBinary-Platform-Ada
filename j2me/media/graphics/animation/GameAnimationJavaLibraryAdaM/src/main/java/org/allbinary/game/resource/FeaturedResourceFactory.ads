@@ -31,6 +31,7 @@ with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.Com
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.game.resource.ResourceLoadingLevelFactory_Package; use org.allbinary.game.resource.ResourceLoadingLevelFactory_Package;
 
 package org.allbinary.game.resource.FeaturedResourceFactory_Package is
 
@@ -72,7 +73,6 @@ package org.allbinary.game.resource.FeaturedResourceFactory_Package is
    procedure clear (This : in out FeaturedResourceFactory);
    procedure add (This : in out FeaturedResourceFactory; featureInterface : GameFeatureControlledInterface_Access);
    function getList (This : in out FeaturedResourceFactory) return BasicArrayList_Access;
-   procedure getList (This : in out FeaturedResourceFactory);
 
 end org.allbinary.game.resource.FeaturedResourceFactory_Package;
 

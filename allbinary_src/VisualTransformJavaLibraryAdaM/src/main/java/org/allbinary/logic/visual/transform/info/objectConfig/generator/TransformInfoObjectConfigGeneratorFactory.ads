@@ -25,6 +25,9 @@ with org.allbinary.logic.io.InputOutputTypeData_Package; use org.allbinary.logic
 with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.logic.visual.transform.info.objectConfig.generator.TransformInfoObjectConfigGeneratorFactoryInterface_Package; use org.allbinary.logic.visual.transform.info.objectConfig.generator.TransformInfoObjectConfigGeneratorFactoryInterface_Package;
+with org.allbinary.logic.visual.transform.info.objectConfig.generator.StoreFileGenerator_Package; use org.allbinary.logic.visual.transform.info.objectConfig.generator.StoreFileGenerator_Package;
+with org.allbinary.logic.visual.transform.info.objectConfig.generator.BasicGenerator_Package; use org.allbinary.logic.visual.transform.info.objectConfig.generator.BasicGenerator_Package;
+with org.allbinary.logic.visual.transform.info.objectConfig.generator.TransformInfoObjectConfigGenerator_Package; use org.allbinary.logic.visual.transform.info.objectConfig.generator.TransformInfoObjectConfigGenerator_Package;
 
 package org.allbinary.logic.visual.transform.info.objectConfig.generator.TransformInfoObjectConfigGeneratorFactory_Package is
 
@@ -46,7 +49,6 @@ package org.allbinary.logic.visual.transform.info.objectConfig.generator.Transfo
    procedure Initialize (This : in out TransformInfoObjectConfigGeneratorFactory'Class);
    function Create return TransformInfoObjectConfigGeneratorFactory_Access;
    function getInstance return TransformInfoObjectConfigGeneratorFactory_Access;
-   procedure getInstance;
    function getInstance (This : in out TransformInfoObjectConfigGeneratorFactory; transformInfoInterface : TransformInfoInterface_Access) return TransformInfoObjectConfigGenerator_Access;
    procedure getInstance (This : in out TransformInfoObjectConfigGeneratorFactory; transformInfoInterface : TransformInfoInterface_Access);
 

@@ -26,6 +26,7 @@ with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.lo
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.data.resource.ClassLoader_Package; use org.allbinary.data.resource.ClassLoader_Package;
 
 package org.allbinary.data.resource.ResourceUtil_Package is
 
@@ -49,7 +50,6 @@ package org.allbinary.data.resource.ResourceUtil_Package is
    procedure Initialize (This : in out ResourceUtil'Class);
    function Create return ResourceUtil_Access;
    function getInstance return ResourceUtil_Access;
-   procedure getInstance;
    procedure setLoadingPaths (This : in out ResourceUtil; path : Unbounded_String; ext : Unbounded_String);
    procedure setClassLoader (This : in out ResourceUtil; classLoader : ClassLoader_Access);
    function getResourceAsStream (This : in out ResourceUtil; resource : Unbounded_String) return InputStream_Access;

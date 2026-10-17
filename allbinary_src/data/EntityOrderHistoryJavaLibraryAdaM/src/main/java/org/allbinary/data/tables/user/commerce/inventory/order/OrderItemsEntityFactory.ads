@@ -22,6 +22,7 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.data.tables.user.commerce.inventory.order.OrderItemsEntity_Package; use org.allbinary.data.tables.user.commerce.inventory.order.OrderItemsEntity_Package;
 
 package org.allbinary.data.tables.user.commerce.inventory.order.OrderItemsEntityFactory_Package is
 
@@ -38,7 +39,6 @@ package org.allbinary.data.tables.user.commerce.inventory.order.OrderItemsEntity
    procedure Initialize (This : in out OrderItemsEntityFactory'Class);
    function Create return OrderItemsEntityFactory_Access;
    function getInstance return OrderItemsEntity_Access;
-   procedure getInstance;
 
 end org.allbinary.data.tables.user.commerce.inventory.order.OrderItemsEntityFactory_Package;
 

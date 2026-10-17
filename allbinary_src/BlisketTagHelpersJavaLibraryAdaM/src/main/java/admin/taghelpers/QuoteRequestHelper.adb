@@ -43,7 +43,7 @@ package body admin.taghelpers.QuoteRequestHelper_Package is
    function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return QuoteRequestHelper_Access is
       This : constant QuoteRequestHelper_Access := new QuoteRequestHelper;
    begin
-      Initialize (This.all, hashMap, pageContext);
+      QuoteRequestHelper_Package.Initialize (This.all, hashMap, pageContext);
       return This;
    end Create;
 
@@ -114,41 +114,6 @@ package body admin.taghelpers.QuoteRequestHelper_Package is
    function delete (This : in out QuoteRequestHelper) return Unbounded_String is
    begin
         return This.commonStrings.NOT_IMPLEMENTED;
-   end delete;
-
-   procedure isValid (This : in out QuoteRequestHelper) is
-      Java_Result : constant Boolean := QuoteRequestHelper'Class (This).isValid;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isValid;
-
-   procedure validationInfo (This : in out QuoteRequestHelper) is
-      Java_Result : constant Unbounded_String := QuoteRequestHelper'Class (This).validationInfo;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end validationInfo;
-
-   procedure insert (This : in out QuoteRequestHelper) is
-      Java_Result : constant Unbounded_String := QuoteRequestHelper'Class (This).insert;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end insert;
-
-   procedure update (This : in out QuoteRequestHelper) is
-      Java_Result : constant Unbounded_String := QuoteRequestHelper'Class (This).update;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end update;
-
-   procedure delete (This : in out QuoteRequestHelper) is
-      Java_Result : constant Unbounded_String := QuoteRequestHelper'Class (This).delete;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end delete;
 
 end admin.taghelpers.QuoteRequestHelper_Package;

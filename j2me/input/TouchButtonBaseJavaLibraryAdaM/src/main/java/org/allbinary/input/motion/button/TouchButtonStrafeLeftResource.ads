@@ -36,7 +36,6 @@ package org.allbinary.input.motion.button.TouchButtonStrafeLeftResource_Package 
    procedure Initialize (This : in out TouchButtonStrafeLeftResource'Class);
    function Create return TouchButtonStrafeLeftResource_Access;
    function getInstance return TouchButtonResource_Access;
-   procedure getInstance;
 
 end org.allbinary.input.motion.button.TouchButtonStrafeLeftResource_Package;
 

@@ -54,13 +54,9 @@ package tags.ValidationTransformTag_Package is
    procedure setXsl (This : in out ValidationTransformTag; value : Unbounded_String);
    procedure setLogic (This : in out ValidationTransformTag; logic : Boolean);
    function isValid (This : in out ValidationTransformTag) return Boolean;
-   procedure isValid (This : in out ValidationTransformTag);
    function validationInfo (This : in out ValidationTransformTag) return Unbounded_String;
-   procedure validationInfo (This : in out ValidationTransformTag);
    function doStartTag (This : in out ValidationTransformTag) return Integer;
-   procedure doStartTag (This : in out ValidationTransformTag);
    function doEndTag (This : in out ValidationTransformTag) return Integer;
-   procedure doEndTag (This : in out ValidationTransformTag);
 
 end tags.ValidationTransformTag_Package;
 

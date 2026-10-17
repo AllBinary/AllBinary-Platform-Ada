@@ -37,7 +37,6 @@ package org.allbinary.game.ag.layer.pickup.health.HealthResources_Package is
    procedure Initialize (This : in out HealthResources'Class);
    function Create return HealthResources_Access;
    function getInstance return HealthResources_Access;
-   procedure getInstance;
 
 end org.allbinary.game.ag.layer.pickup.health.HealthResources_Package;
 

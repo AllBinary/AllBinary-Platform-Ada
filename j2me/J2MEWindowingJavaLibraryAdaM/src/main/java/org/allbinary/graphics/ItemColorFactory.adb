@@ -31,7 +31,7 @@ package body org.allbinary.graphics.ItemColorFactory_Package is
    function Create return ItemColorFactory_Access is
       This : constant ItemColorFactory_Access := new ItemColorFactory;
    begin
-      Initialize (This.all);
+      ItemColorFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -39,13 +39,6 @@ package body org.allbinary.graphics.ItemColorFactory_Package is
    function getInstance return ItemColorFactory_Access is
    begin
         return ItemColorFactory_Package.instance;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant ItemColorFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

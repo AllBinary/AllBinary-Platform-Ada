@@ -26,6 +26,7 @@ with org.allbinary.logic.io.path.AbPathData_Package; use org.allbinary.logic.io.
 with org.allbinary.logic.math.MathData_Package; use org.allbinary.logic.math.MathData_Package;
 with org.allbinary.string_Id.CommonPhoneStrings_Package; use org.allbinary.string_Id.CommonPhoneStrings_Package;
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 
 package org.allbinary.logic.string_Id.SpecialCharacterUtil_Package is
 
@@ -45,7 +46,6 @@ package org.allbinary.logic.string_Id.SpecialCharacterUtil_Package is
    procedure Initialize (This : in out SpecialCharacterUtil'Class);
    function Create return SpecialCharacterUtil_Access;
    function getHashMap return HashMap_Access;
-   procedure getHashMap;
 
 end org.allbinary.logic.string_Id.SpecialCharacterUtil_Package;
 

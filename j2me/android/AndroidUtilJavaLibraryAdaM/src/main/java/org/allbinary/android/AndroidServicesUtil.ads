@@ -54,7 +54,6 @@ package org.allbinary.android.AndroidServicesUtil_Package is
    procedure Initialize (This : in out AndroidServicesUtil'Class);
    function Create return AndroidServicesUtil_Access;
    function getInstance return AndroidServicesUtil_Access;
-   procedure getInstance;
    function isServiceRunning (This : in out AndroidServicesUtil; name : Unbounded_String) return Boolean;
    procedure isServiceRunning (This : in out AndroidServicesUtil; name : Unbounded_String);
 

@@ -36,7 +36,7 @@ package body org.allbinary.logic.communication.sql.AbSqlColumn_Package is
    function Create (databaseConnectionInfoInterface : DbConnectionInfo_Access) return AbSqlColumn_Access is
       This : constant AbSqlColumn_Access := new AbSqlColumn;
    begin
-      Initialize (This.all, databaseConnectionInfoInterface);
+      AbSqlColumn_Package.Initialize (This.all, databaseConnectionInfoInterface);
       return This;
    end Create;
 

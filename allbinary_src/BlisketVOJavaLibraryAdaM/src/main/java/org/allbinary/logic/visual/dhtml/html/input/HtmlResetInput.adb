@@ -30,7 +30,7 @@ package body org.allbinary.logic.visual.dhtml.html.input.HtmlResetInput_Package 
    function Create return HtmlResetInput_Access is
       This : constant HtmlResetInput_Access := new HtmlResetInput;
    begin
-      Initialize (This.all);
+      HtmlResetInput_Package.Initialize (This.all);
       return This;
    end Create;
 

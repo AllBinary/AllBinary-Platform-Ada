@@ -31,7 +31,7 @@ package body tags.generic_Id.shipping.ShippingMethodsTag_Package is
    function Create return ShippingMethodsTag_Access is
       This : constant ShippingMethodsTag_Access := new ShippingMethodsTag;
    begin
-      Initialize (This.all);
+      ShippingMethodsTag_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -59,13 +59,6 @@ package body tags.generic_Id.shipping.ShippingMethodsTag_Package is
             return SKIP_BODY;
                 end;
         end;
-   end doStartTag;
-
-   procedure doStartTag (This : in out ShippingMethodsTag) is
-      Java_Result : constant Integer := ShippingMethodsTag'Class (This).doStartTag;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end doStartTag;
 
 end tags.generic_Id.shipping.ShippingMethodsTag_Package;

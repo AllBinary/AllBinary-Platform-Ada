@@ -43,7 +43,7 @@ package body org.allbinary.input.motion.button.TouchButtonsPaintableComposite_Pa
    function Create (inputMappingInterface : InputMappingInterface_Access; basicColor : BasicColor_Access) return TouchButtonsPaintableComposite_Access is
       This : constant TouchButtonsPaintableComposite_Access := new TouchButtonsPaintableComposite;
    begin
-      Initialize (This.all, inputMappingInterface, basicColor);
+      TouchButtonsPaintableComposite_Package.Initialize (This.all, inputMappingInterface, basicColor);
       return This;
    end Create;
 

@@ -34,7 +34,7 @@ package body org.allbinary.media.audio.SoundStrings_Package is
    function Create return SoundStrings_Access is
       This : constant SoundStrings_Access := new SoundStrings;
    begin
-      Initialize (This.all);
+      SoundStrings_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -42,13 +42,6 @@ package body org.allbinary.media.audio.SoundStrings_Package is
    function getInstance return SoundStrings_Access is
    begin
         return SoundStrings_Package.instance;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant SoundStrings_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

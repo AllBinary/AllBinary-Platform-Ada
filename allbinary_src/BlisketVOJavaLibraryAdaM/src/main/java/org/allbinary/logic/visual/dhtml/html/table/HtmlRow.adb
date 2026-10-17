@@ -40,7 +40,7 @@ package body org.allbinary.logic.visual.dhtml.html.table.HtmlRow_Package is
    function Create (before : Unbounded_String; after : Unbounded_String) return HtmlRow_Access is
       This : constant HtmlRow_Access := new HtmlRow;
    begin
-      Initialize (This.all, before, after);
+      HtmlRow_Package.Initialize (This.all, before, after);
       return This;
    end Create;
 
@@ -91,20 +91,6 @@ package body org.allbinary.logic.visual.dhtml.html.table.HtmlRow_Package is
         result := result & This.ENDTAG;
         result := result & This.after;
         return result;
-   end toString;
-
-   procedure getNumberOfColumns (This : in out HtmlRow) is
-      Java_Result : constant Integer := HtmlRow'Class (This).getNumberOfColumns;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getNumberOfColumns;
-
-   procedure toString (This : in out HtmlRow) is
-      Java_Result : constant Unbounded_String := HtmlRow'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end toString;
 
 end org.allbinary.logic.visual.dhtml.html.table.HtmlRow_Package;

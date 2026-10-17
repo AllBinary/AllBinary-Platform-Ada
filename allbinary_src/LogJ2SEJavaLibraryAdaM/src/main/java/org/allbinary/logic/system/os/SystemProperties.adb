@@ -39,63 +39,28 @@ package body org.allbinary.logic.system.os.SystemProperties_Package is
    function Create return SystemProperties_Access is
       This : constant SystemProperties_Access := new SystemProperties;
    begin
-      Initialize (This.all);
+      SystemProperties_Package.Initialize (This.all);
       return This;
    end Create;
 
    function getName (This : in out SystemProperties) return Unbounded_String is
    begin
-        return System_Package.getProperty (This.OS_NAME);
+        return Java_Get_Property (This.OS_NAME);
    end getName;
 
    function getArch (This : in out SystemProperties) return Unbounded_String is
    begin
-        return System_Package.getProperty (This.OS_ARCH);
+        return Java_Get_Property (This.OS_ARCH);
    end getArch;
 
    function getVersion (This : in out SystemProperties) return Unbounded_String is
    begin
-        return System_Package.getProperty (This.OS_VERSION);
+        return Java_Get_Property (This.OS_VERSION);
    end getVersion;
 
    function getUserHomePath (This : in out SystemProperties) return Unbounded_String is
    begin
-        return System_Package.getProperty (This.USER_HOME);
-   end getUserHomePath;
-
-   procedure getInstance is
-      Java_Result : constant SystemProperties_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure getName (This : in out SystemProperties) is
-      Java_Result : constant Unbounded_String := SystemProperties'Class (This).getName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getName;
-
-   procedure getArch (This : in out SystemProperties) is
-      Java_Result : constant Unbounded_String := SystemProperties'Class (This).getArch;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getArch;
-
-   procedure getVersion (This : in out SystemProperties) is
-      Java_Result : constant Unbounded_String := SystemProperties'Class (This).getVersion;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getVersion;
-
-   procedure getUserHomePath (This : in out SystemProperties) is
-      Java_Result : constant Unbounded_String := SystemProperties'Class (This).getUserHomePath;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
+        return Java_Get_Property (This.USER_HOME);
    end getUserHomePath;
 
 begin

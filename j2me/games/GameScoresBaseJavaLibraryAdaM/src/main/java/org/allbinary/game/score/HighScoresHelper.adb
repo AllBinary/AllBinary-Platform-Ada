@@ -31,7 +31,7 @@ package body org.allbinary.game.score.HighScoresHelper_Package is
    function Create return HighScoresHelper_Access is
       This : constant HighScoresHelper_Access := new HighScoresHelper;
    begin
-      Initialize (This.all);
+      HighScoresHelper_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -74,20 +74,6 @@ package body org.allbinary.game.score.HighScoresHelper_Package is
             end if;
         end loop;
         return anyScores;
-   end isAnyHighScores;
-
-   procedure getNextHighScores (This : in out HighScoresHelper) is
-      Java_Result : constant HighScores_Access := HighScoresHelper'Class (This).getNextHighScores;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getNextHighScores;
-
-   procedure isAnyHighScores (This : in out HighScoresHelper) is
-      Java_Result : constant Boolean := HighScoresHelper'Class (This).isAnyHighScores;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end isAnyHighScores;
 
 end org.allbinary.game.score.HighScoresHelper_Package;

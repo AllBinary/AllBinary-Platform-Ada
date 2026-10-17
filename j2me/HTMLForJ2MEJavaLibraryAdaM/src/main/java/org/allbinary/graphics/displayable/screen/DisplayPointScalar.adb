@@ -28,7 +28,7 @@ package body org.allbinary.graphics.displayable.screen.DisplayPointScalar_Packag
    function Create return DisplayPointScalar_Access is
       This : constant DisplayPointScalar_Access := new DisplayPointScalar;
    begin
-      Initialize (This.all);
+      DisplayPointScalar_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -42,13 +42,6 @@ package body org.allbinary.graphics.displayable.screen.DisplayPointScalar_Packag
    begin
         return point;
    end process;
-
-   procedure getInstance is
-      Java_Result : constant DisplayPointScalar_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure process (This : in out DisplayPointScalar; point : GPoint_Access) is
       Java_Result : constant GPoint_Access := DisplayPointScalar'Class (This).process (point);

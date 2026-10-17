@@ -30,7 +30,7 @@ package body admin.taghelpers.WorkFlowHelperFactory_Package is
    function Create return WorkFlowHelperFactory_Access is
       This : constant WorkFlowHelperFactory_Access := new WorkFlowHelperFactory;
    begin
-      Initialize (This.all);
+      WorkFlowHelperFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

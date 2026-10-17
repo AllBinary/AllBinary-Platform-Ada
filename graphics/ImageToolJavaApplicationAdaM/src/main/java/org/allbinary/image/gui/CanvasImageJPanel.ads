@@ -37,6 +37,7 @@ with org.allbinary.string_Id.CommonPhoneStrings_Package; use org.allbinary.strin
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.image.gui.JPanel_Package; use org.allbinary.image.gui.JPanel_Package;
+with org.allbinary.image.gui.Graphics_Package; use org.allbinary.image.gui.Graphics_Package;
 
 package org.allbinary.image.gui.CanvasImageJPanel_Package is
 
@@ -88,7 +89,6 @@ package org.allbinary.image.gui.CanvasImageJPanel_Package is
    procedure widthReductionTextFieldActionPerformed (This : in out CanvasImageJPanel; evt : ActionEvent_Access);
    procedure widthReductionTextField1ActionPerformed (This : in out CanvasImageJPanel; evt : ActionEvent_Access);
    function getImageProcessorInput (This : in out CanvasImageJPanel) return ImageProcessorInput_Access;
-   procedure getImageProcessorInput (This : in out CanvasImageJPanel);
    procedure setImageProcessorInput (This : in out CanvasImageJPanel; imageProcessorInput : ImageProcessorInput_Access);
    procedure visit (This : in out CanvasImageJPanel; generatedBufferedImage : BufferedImage_Access; name : Unbounded_String; index : Integer);
 

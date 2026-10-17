@@ -23,6 +23,8 @@ with AllBinary_Java; use AllBinary_Java;
 --  with java.lang.reflect.Constructor_Package; use java.lang.reflect.Constructor_Package;
 --  with java.lang.reflect.Method_Package; use java.lang.reflect.Method_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.logic.system.loader.ClassLoader_Package; use org.allbinary.logic.system.loader.ClassLoader_Package;
+with org.allbinary.logic.system.loader.NativeLibraryClassLoader_Package; use org.allbinary.logic.system.loader.NativeLibraryClassLoader_Package;
 
 package org.allbinary.logic.system.loader.NativeLibraryHelperWrapper_Package is
 
@@ -44,9 +46,7 @@ package org.allbinary.logic.system.loader.NativeLibraryHelperWrapper_Package is
    procedure load (This : in out NativeLibraryHelperWrapper);
    procedure unload (This : in out NativeLibraryHelperWrapper);
    function toString (This : in out NativeLibraryHelperWrapper) return Unbounded_String;
-   procedure toString (This : in out NativeLibraryHelperWrapper);
    function getLibraryName (This : in out NativeLibraryHelperWrapper) return Unbounded_String;
-   procedure getLibraryName (This : in out NativeLibraryHelperWrapper);
    procedure setLibraryName (This : in out NativeLibraryHelperWrapper; libraryName : Unbounded_String);
 
 end org.allbinary.logic.system.loader.NativeLibraryHelperWrapper_Package;

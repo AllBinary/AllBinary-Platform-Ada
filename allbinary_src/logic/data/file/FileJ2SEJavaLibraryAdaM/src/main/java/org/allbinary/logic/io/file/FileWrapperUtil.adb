@@ -28,7 +28,7 @@ package body org.allbinary.logic.io.file.FileWrapperUtil_Package is
    function Create return FileWrapperUtil_Access is
       This : constant FileWrapperUtil_Access := new FileWrapperUtil;
    begin
-      Initialize (This.all);
+      FileWrapperUtil_Package.Initialize (This.all);
       return This;
    end Create;
 

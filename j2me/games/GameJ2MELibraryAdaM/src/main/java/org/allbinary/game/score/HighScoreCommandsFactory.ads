@@ -22,6 +22,7 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with javax.microedition.lcdui.Command_Package; use javax.microedition.lcdui.Command_Package;
 with org.allbinary.game.score.HighScoreCommandsBaseFactory_Package; use org.allbinary.game.score.HighScoreCommandsBaseFactory_Package;
+with org.allbinary.game.score.HighScoreCommands_Package; use org.allbinary.game.score.HighScoreCommands_Package;
 
 package org.allbinary.game.score.HighScoreCommandsFactory_Package is
 
@@ -37,7 +38,6 @@ package org.allbinary.game.score.HighScoreCommandsFactory_Package is
    procedure Initialize (This : in out HighScoreCommandsFactory'Class);
    function Create return HighScoreCommandsFactory_Access;
    function getInstance return HighScoreCommandsFactory_Access;
-   procedure getInstance;
 
 end org.allbinary.game.score.HighScoreCommandsFactory_Package;
 

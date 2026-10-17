@@ -31,7 +31,7 @@ package body org.allbinary.logic.visual.dhtml.style.css.CssElementValidation_Pac
    function Create return CssElementValidation_Access is
       This : constant CssElementValidation_Access := new CssElementValidation;
    begin
-      Initialize (This.all);
+      CssElementValidation_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -45,7 +45,7 @@ package body org.allbinary.logic.visual.dhtml.style.css.CssElementValidation_Pac
    function Create (node : Node_Access) return CssElementValidation_Access is
       This : constant CssElementValidation_Access := new CssElementValidation;
    begin
-      Initialize (This.all, node);
+      CssElementValidation_Package.Initialize (This.all, node);
       return This;
    end Create;
 
@@ -104,27 +104,6 @@ package body org.allbinary.logic.visual.dhtml.style.css.CssElementValidation_Pac
    begin
         return null;
    end toValidationInfoNode;
-
-   procedure isValid (This : in out CssElementValidation) is
-      Java_Result : constant Boolean := CssElementValidation'Class (This).isValid;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isValid;
-
-   procedure validationInfo (This : in out CssElementValidation) is
-      Java_Result : constant Unbounded_String := CssElementValidation'Class (This).validationInfo;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end validationInfo;
-
-   procedure toValidationInfoDoc (This : in out CssElementValidation) is
-      Java_Result : constant Document_Access := CssElementValidation'Class (This).toValidationInfoDoc;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toValidationInfoDoc;
 
    procedure toValidationInfoNode (This : in out CssElementValidation; document : Document_Access) is
       Java_Result : constant Node_Access := CssElementValidation'Class (This).toValidationInfoNode (document);

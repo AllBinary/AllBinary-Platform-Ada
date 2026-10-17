@@ -44,7 +44,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfo_Package is
    function Create return TransformInfo_Access is
       This : constant TransformInfo_Access := new TransformInfo;
    begin
-      Initialize (This.all);
+      TransformInfo_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -58,7 +58,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfo_Package is
    function Create (name : Unbounded_String) return TransformInfo_Access is
       This : constant TransformInfo_Access := new TransformInfo;
    begin
-      Initialize (This.all, name);
+      TransformInfo_Package.Initialize (This.all, name);
       return This;
    end Create;
 
@@ -76,7 +76,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfo_Package is
    function Create (name : Unbounded_String; objectFileName : Unbounded_String; objectConfigFileName : Unbounded_String; templateFileName : Unbounded_String; dataFileName : Unbounded_String) return TransformInfo_Access is
       This : constant TransformInfo_Access := new TransformInfo;
    begin
-      Initialize (This.all, name, objectFileName, objectConfigFileName, templateFileName, dataFileName);
+      TransformInfo_Package.Initialize (This.all, name, objectFileName, objectConfigFileName, templateFileName, dataFileName);
       return This;
    end Create;
 
@@ -500,139 +500,6 @@ package body org.allbinary.logic.visual.transform.info.TransformInfo_Package is
    begin
         This.objectConfigInterface := objectConfigInterface;
    end setObjectConfigInterface;
-
-   procedure log (This : in out TransformInfo) is
-      Java_Result : constant Unbounded_String := TransformInfo'Class (This).log;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end log;
-
-   procedure getStoreName (This : in out TransformInfo) is
-      Java_Result : constant Unbounded_String := TransformInfo'Class (This).getStoreName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getStoreName;
-
-   procedure getName (This : in out TransformInfo) is
-      Java_Result : constant Unbounded_String := TransformInfo'Class (This).getName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getName;
-
-   procedure getObject (This : in out TransformInfo) is
-      Java_Result : constant Java_Object_Access := TransformInfo'Class (This).getObject;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getObject;
-
-   procedure getObjectFile (This : in out TransformInfo) is
-      Java_Result : constant Unbounded_String := TransformInfo'Class (This).getObjectFile;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getObjectFile;
-
-   procedure getTemplate (This : in out TransformInfo) is
-      Java_Result : constant Unbounded_String := TransformInfo'Class (This).getTemplate;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTemplate;
-
-   procedure getTemplateFile (This : in out TransformInfo) is
-      Java_Result : constant Unbounded_String := TransformInfo'Class (This).getTemplateFile;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTemplateFile;
-
-   procedure getTemplateFilePath (This : in out TransformInfo) is
-      Java_Result : constant AbPath_Access := TransformInfo'Class (This).getTemplateFilePath;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTemplateFilePath;
-
-   procedure getObjectConfigFilePath (This : in out TransformInfo) is
-      Java_Result : constant AbPath_Access := TransformInfo'Class (This).getObjectConfigFilePath;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getObjectConfigFilePath;
-
-   procedure getDataFilePath (This : in out TransformInfo) is
-      Java_Result : constant AbPath_Access := TransformInfo'Class (This).getDataFilePath;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getDataFilePath;
-
-   procedure getObjectConfigFile (This : in out TransformInfo) is
-      Java_Result : constant Unbounded_String := TransformInfo'Class (This).getObjectConfigFile;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getObjectConfigFile;
-
-   procedure getData (This : in out TransformInfo) is
-      Java_Result : constant Unbounded_String := TransformInfo'Class (This).getData;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getData;
-
-   procedure getDataDocument (This : in out TransformInfo) is
-      Java_Result : constant Document_Access := TransformInfo'Class (This).getDataDocument;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getDataDocument;
-
-   procedure getDataFile (This : in out TransformInfo) is
-      Java_Result : constant Unbounded_String := TransformInfo'Class (This).getDataFile;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getDataFile;
-
-   procedure toHashMap (This : in out TransformInfo) is
-      Java_Result : constant HashMap_Access := TransformInfo'Class (This).toHashMap;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toHashMap;
-
-   procedure toVector (This : in out TransformInfo) is
-      Java_Result : constant BasicArrayList_Access := TransformInfo'Class (This).toVector;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toVector;
-
-   procedure getKey (This : in out TransformInfo) is
-      Java_Result : constant Java_Object_Access := TransformInfo'Class (This).getKey;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getKey;
-
-   procedure isChild (This : in out TransformInfo) is
-      Java_Result : constant Boolean := TransformInfo'Class (This).isChild;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isChild;
-
-   procedure getObjectConfigInterface (This : in out TransformInfo) is
-      Java_Result : constant TransformInfoObjectConfigInterface_Access := TransformInfo'Class (This).getObjectConfigInterface;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getObjectConfigInterface;
 
 end org.allbinary.logic.visual.transform.info.TransformInfo_Package;
 

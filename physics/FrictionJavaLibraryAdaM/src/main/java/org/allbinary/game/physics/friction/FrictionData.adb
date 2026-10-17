@@ -30,20 +30,13 @@ package body org.allbinary.game.physics.friction.FrictionData_Package is
    function Create return FrictionData_Access is
       This : constant FrictionData_Access := new FrictionData;
    begin
-      Initialize (This.all);
+      FrictionData_Package.Initialize (This.all);
       return This;
    end Create;
 
    function getFrictionDenominator return Integer is
    begin
         return FrictionData_Package.FRICTION_DENOMINATOR;
-   end getFrictionDenominator;
-
-   procedure getFrictionDenominator is
-      Java_Result : constant Integer := getFrictionDenominator;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getFrictionDenominator;
 
 begin

@@ -49,7 +49,6 @@ package org.allbinary.input.motion.gesture.MirrorMotionGestureEventUtil_Package 
    function getNewX (This : in out MirrorMotionGestureEventUtil; x : Integer; halfWidth : Integer) return Integer;
    procedure getNewX (This : in out MirrorMotionGestureEventUtil; x : Integer; halfWidth : Integer);
    function getInstance return MirrorMotionGestureEventUtil_Access;
-   procedure getInstance;
 
 end org.allbinary.input.motion.gesture.MirrorMotionGestureEventUtil_Package;
 

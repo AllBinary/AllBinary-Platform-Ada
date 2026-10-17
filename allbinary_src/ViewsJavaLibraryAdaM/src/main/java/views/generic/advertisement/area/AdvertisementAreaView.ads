@@ -60,7 +60,6 @@ package views.generic_Id.advertisement.area.AdvertisementAreaView_Package is
    procedure toXmlNode (This : in out AdvertisementAreaView; document : Document_Access);
    procedure addDomNodeInterfaces (This : in out AdvertisementAreaView);
    function view (This : in out AdvertisementAreaView) return Unbounded_String;
-   procedure view (This : in out AdvertisementAreaView);
 
 end views.generic_Id.advertisement.area.AdvertisementAreaView_Package;
 

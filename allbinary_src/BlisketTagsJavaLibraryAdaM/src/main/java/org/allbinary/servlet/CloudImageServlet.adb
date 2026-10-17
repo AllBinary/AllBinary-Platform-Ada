@@ -31,7 +31,7 @@ package body org.allbinary.servlet.CloudImageServlet_Package is
    function Create return CloudImageServlet_Access is
       This : constant CloudImageServlet_Access := new CloudImageServlet;
    begin
-      Initialize (This.all);
+      CloudImageServlet_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -88,13 +88,6 @@ package body org.allbinary.servlet.CloudImageServlet_Package is
    function getServletInfo (This : in out CloudImageServlet) return Unbounded_String is
    begin
         return To_Unbounded_String ("Serves Up Cloud Image");
-   end getServletInfo;
-
-   procedure getServletInfo (This : in out CloudImageServlet) is
-      Java_Result : constant Unbounded_String := CloudImageServlet'Class (This).getServletInfo;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getServletInfo;
 
 end org.allbinary.servlet.CloudImageServlet_Package;

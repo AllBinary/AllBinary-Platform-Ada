@@ -29,7 +29,7 @@ package body org.allbinary.thread.ThreadFactoryUtil_Package is
    function Create return ThreadFactoryUtil_Access is
       This : constant ThreadFactoryUtil_Access := new ThreadFactoryUtil;
    begin
-      Initialize (This.all);
+      ThreadFactoryUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -77,13 +77,6 @@ package body org.allbinary.thread.ThreadFactoryUtil_Package is
    begin
         thread.start;
    end start;
-
-   procedure getInstance is
-      Java_Result : constant ThreadFactoryUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure getInstanceGameCanvasRunnable (This : in out ThreadFactoryUtil; runnable : GameCanvasRunnableInterface_Access) is
       Java_Result : constant Thread_Access := ThreadFactoryUtil'Class (This).getInstanceGameCanvasRunnable (runnable);

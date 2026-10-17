@@ -39,7 +39,7 @@ package body org.allbinary.graphics.color.SmallBasicColorCacheFactory_Package is
    function Create return SmallBasicColorCacheFactory_Access is
       This : constant SmallBasicColorCacheFactory_Access := new SmallBasicColorCacheFactory;
    begin
-      Initialize (This.all);
+      SmallBasicColorCacheFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -66,13 +66,6 @@ package body org.allbinary.graphics.color.SmallBasicColorCacheFactory_Package is
         This.add (basicColor);
         return basicColor;
    end getAndOrCreate;
-
-   procedure getInstance is
-      Java_Result : constant SmallBasicColorCacheFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure getAndOrCreate (This : in out SmallBasicColorCacheFactory; colorAsInt : Integer) is
       Java_Result : constant BasicColor_Access := SmallBasicColorCacheFactory'Class (This).getAndOrCreate (colorAsInt);

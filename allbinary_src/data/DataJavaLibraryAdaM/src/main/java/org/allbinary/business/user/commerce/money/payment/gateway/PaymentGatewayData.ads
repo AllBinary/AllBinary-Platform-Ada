@@ -68,7 +68,6 @@ package org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewa
    procedure Initialize (This : in out PaymentGatewayData'Class; value_Case : Unbounded_String);
    function Create (value_Case : Unbounded_String) return PaymentGatewayData_Access;
    function toString (This : in out PaymentGatewayData) return Unbounded_String;
-   procedure toString (This : in out PaymentGatewayData);
 
 end org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayData_Package;
 

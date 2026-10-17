@@ -29,7 +29,7 @@ package body org.allbinary.game.layer.building.SimulatedBuildingPropertiesFactor
    function Create return SimulatedBuildingPropertiesFactory_Access is
       This : constant SimulatedBuildingPropertiesFactory_Access := new SimulatedBuildingPropertiesFactory;
    begin
-      Initialize (This.all);
+      SimulatedBuildingPropertiesFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -68,13 +68,6 @@ package body org.allbinary.game.layer.building.SimulatedBuildingPropertiesFactor
         return TrackingEvent_Package.Create (TrackingEventHandler_Package.getInstance);
    end getTrackingEvent;
 
-   procedure getInstance is
-      Java_Result : constant SimulatedBuildingPropertiesFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
    procedure getEfficiencyPerLevel (This : in out SimulatedBuildingPropertiesFactory; buildingLayer : BuildingLayer_Access) is
       Java_Result : constant Integer := SimulatedBuildingPropertiesFactory'Class (This).getEfficiencyPerLevel (buildingLayer);
       pragma Unreferenced (Java_Result);
@@ -95,13 +88,6 @@ package body org.allbinary.game.layer.building.SimulatedBuildingPropertiesFactor
    begin
       null;
    end getHealthBar;
-
-   procedure getHashtable (This : in out SimulatedBuildingPropertiesFactory) is
-      Java_Result : constant ABHashtable_Access := SimulatedBuildingPropertiesFactory'Class (This).getHashtable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getHashtable;
 
    procedure getTrackingEvent (This : in out SimulatedBuildingPropertiesFactory; buildingLayer : BuildingLayer_Access) is
       Java_Result : constant TrackingEvent_Access := SimulatedBuildingPropertiesFactory'Class (This).getTrackingEvent (buildingLayer);

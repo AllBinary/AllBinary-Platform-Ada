@@ -34,20 +34,13 @@ package body org.allbinary.animation.IndexedAnimationBehaviorFactory_Package is
    function Create (loopTotal : Integer; frameDelayTime : Long_Long_Integer) return IndexedAnimationBehaviorFactory_Access is
       This : constant IndexedAnimationBehaviorFactory_Access := new IndexedAnimationBehaviorFactory;
    begin
-      Initialize (This.all, loopTotal, frameDelayTime);
+      IndexedAnimationBehaviorFactory_Package.Initialize (This.all, loopTotal, frameDelayTime);
       return This;
    end Create;
 
    function getOrCreateInstance (This : in out IndexedAnimationBehaviorFactory) return AnimationBehavior_Access is
    begin
         return IndexedAnimationBehavior_Package.Create (This.loopTotal, This.frameDelayTime);
-   end getOrCreateInstance;
-
-   procedure getOrCreateInstance (This : in out IndexedAnimationBehaviorFactory) is
-      Java_Result : constant AnimationBehavior_Access := IndexedAnimationBehaviorFactory'Class (This).getOrCreateInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getOrCreateInstance;
 
 end org.allbinary.animation.IndexedAnimationBehaviorFactory_Package;

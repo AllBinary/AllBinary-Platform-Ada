@@ -39,7 +39,6 @@ package org.allbinary.logic.visual.dhtml.html.head.meta.HtmlMetaAttributeData_Pa
    function equals (This : in out HtmlMetaAttributeData; htmlMetaAttributeData : HtmlMetaAttributeData_Access) return Boolean;
    procedure equals (This : in out HtmlMetaAttributeData; htmlMetaAttributeData : HtmlMetaAttributeData_Access);
    function toString (This : in out HtmlMetaAttributeData) return Unbounded_String;
-   procedure toString (This : in out HtmlMetaAttributeData);
 
 end org.allbinary.logic.visual.dhtml.html.head.meta.HtmlMetaAttributeData_Package;
 

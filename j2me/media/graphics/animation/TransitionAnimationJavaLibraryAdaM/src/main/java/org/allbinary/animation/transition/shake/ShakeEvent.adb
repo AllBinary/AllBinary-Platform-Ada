@@ -30,7 +30,7 @@ package body org.allbinary.animation.transition.shake.ShakeEvent_Package is
    function Create return ShakeEvent_Access is
       This : constant ShakeEvent_Access := new ShakeEvent;
    begin
-      Initialize (This.all);
+      ShakeEvent_Package.Initialize (This.all);
       return This;
    end Create;
 

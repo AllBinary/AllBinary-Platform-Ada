@@ -28,7 +28,7 @@ package body org.allbinary.graphics.color.BasicColorUtilFactory_Package is
    function Create return BasicColorUtilFactory_Access is
       This : constant BasicColorUtilFactory_Access := new BasicColorUtilFactory;
    begin
-      Initialize (This.all);
+      BasicColorUtilFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -36,13 +36,6 @@ package body org.allbinary.graphics.color.BasicColorUtilFactory_Package is
    function getInstance return BasicColorUtil_Access is
    begin
         return BasicColorUtil_Package.getInstance;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant BasicColorUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 end org.allbinary.graphics.color.BasicColorUtilFactory_Package;

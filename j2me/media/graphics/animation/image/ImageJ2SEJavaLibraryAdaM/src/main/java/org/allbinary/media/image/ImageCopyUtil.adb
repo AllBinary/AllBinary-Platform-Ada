@@ -39,7 +39,7 @@ package body org.allbinary.media.image.ImageCopyUtil_Package is
    function Create return ImageCopyUtil_Access is
       This : constant ImageCopyUtil_Access := new ImageCopyUtil;
    begin
-      Initialize (This.all);
+      ImageCopyUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -85,13 +85,6 @@ package body org.allbinary.media.image.ImageCopyUtil_Package is
         image := J2SEImmutableImage_Package.Create (bufferedImage);
         return image;
    end createImageScale;
-
-   procedure getInstance is
-      Java_Result : constant ImageCopyUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure createImageForRotation (This : in out ImageCopyUtil; originalImage : Image_Access) is
       Java_Result : constant Image_Access := ImageCopyUtil'Class (This).createImageForRotation (originalImage);

@@ -49,7 +49,7 @@ package body org.allbinary.business.user.role.BasicUserRoleFactory_Package is
    function Create return BasicUserRoleFactory_Access is
       This : constant BasicUserRoleFactory_Access := new BasicUserRoleFactory;
    begin
-      Initialize (This.all);
+      BasicUserRoleFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -57,13 +57,6 @@ package body org.allbinary.business.user.role.BasicUserRoleFactory_Package is
    function getInstance return BasicUserRoleFactory_Access is
    begin
         return BasicUserRoleFactory_Package.instance;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant BasicUserRoleFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

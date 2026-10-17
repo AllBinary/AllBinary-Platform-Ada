@@ -33,7 +33,7 @@ package body org.allbinary.game.Intermission_Package is
    function Create return Intermission_Access is
       This : constant Intermission_Access := new Intermission;
    begin
-      Initialize (This.all);
+      Intermission_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -59,20 +59,6 @@ package body org.allbinary.game.Intermission_Package is
    function isEnabled (This : in out Intermission) return Boolean is
    begin
         return This.enabled;
-   end isEnabled;
-
-   procedure getTimeDelayHelper (This : in out Intermission) is
-      Java_Result : constant TimeDelayHelper_Access := Intermission'Class (This).getTimeDelayHelper;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTimeDelayHelper;
-
-   procedure isEnabled (This : in out Intermission) is
-      Java_Result : constant Boolean := Intermission'Class (This).isEnabled;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end isEnabled;
 
 end org.allbinary.game.Intermission_Package;

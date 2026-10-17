@@ -31,7 +31,7 @@ package body org.allbinary.logic.visual.dhtml.html.HtmlTag_Package is
    function Create return HtmlTag_Access is
       This : constant HtmlTag_Access := new HtmlTag;
    begin
-      Initialize (This.all);
+      HtmlTag_Package.Initialize (This.all);
       return This;
    end Create;
 

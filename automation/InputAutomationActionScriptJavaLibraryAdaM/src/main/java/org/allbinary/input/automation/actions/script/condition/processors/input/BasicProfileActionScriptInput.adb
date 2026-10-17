@@ -48,7 +48,7 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
    function Create (label : Unbounded_String; node : Node_Access) return BasicProfileActionScriptInput_Access is
       This : constant BasicProfileActionScriptInput_Access := new BasicProfileActionScriptInput;
    begin
-      Initialize (This.all, label, node);
+      BasicProfileActionScriptInput_Package.Initialize (This.all, label, node);
       return This;
    end Create;
 
@@ -73,7 +73,7 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
    function Create (label : Unbounded_String) return BasicProfileActionScriptInput_Access is
       This : constant BasicProfileActionScriptInput_Access := new BasicProfileActionScriptInput;
    begin
-      Initialize (This.all, label);
+      BasicProfileActionScriptInput_Package.Initialize (This.all, label);
       return This;
    end Create;
 
@@ -131,40 +131,12 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
         return stringBuffer.toString;
    end toString;
 
-   procedure getTime (This : in out BasicProfileActionScriptInput) is
-      Java_Result : constant Integer := BasicProfileActionScriptInput'Class (This).getTime;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTime;
-
-   procedure BasicProfileActionScriptInput_toHashMap (This : in out BasicProfileActionScriptInput) is
-      Java_Result : constant HashMap_Access := BasicProfileActionScriptInput'Class (This).BasicProfileActionScriptInput_toHashMap;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end BasicProfileActionScriptInput_toHashMap;
-
    procedure toXmlNode (This : in out BasicProfileActionScriptInput; document : Document_Access) is
       Java_Result : constant Node_Access := BasicProfileActionScriptInput'Class (This).toXmlNode (document);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end toXmlNode;
-
-   procedure getInputRobotInterface (This : in out BasicProfileActionScriptInput) is
-      Java_Result : constant InputRobotInterface_Access := BasicProfileActionScriptInput'Class (This).getInputRobotInterface;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInputRobotInterface;
-
-   procedure toString (This : in out BasicProfileActionScriptInput) is
-      Java_Result : constant Unbounded_String := BasicProfileActionScriptInput'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toString;
 
 end org.allbinary.input.automation.actions.script.condition.processors.input.BasicProfileActionScriptInput_Package;
 

@@ -31,7 +31,7 @@ package body org.allbinary.game.ag.ai.sequence.SequenceAI_Package is
    function Create (artificialIntelligenceInterfaceArray : ArtificialIntelligenceInterface_Access_Array_Access; ownerLayerInterface : AllBinaryLayer_Access; gameInput : GameInput_Access) return SequenceAI_Access is
       This : constant SequenceAI_Access := new SequenceAI;
    begin
-      Initialize (This.all, artificialIntelligenceInterfaceArray, ownerLayerInterface, gameInput);
+      SequenceAI_Package.Initialize (This.all, artificialIntelligenceInterfaceArray, ownerLayerInterface, gameInput);
       return This;
    end Create;
 
@@ -81,34 +81,6 @@ package body org.allbinary.game.ag.ai.sequence.SequenceAI_Package is
         stringBuffer.append (To_Unbounded_String (" Selected AI: "));
         stringBuffer.append (StringUtil_Package.getInstance.toString (This.getSelectedArtificialIntelligenceInterface));
         return stringBuffer.toString;
-   end toString;
-
-   procedure getIndex (This : in out SequenceAI) is
-      Java_Result : constant Integer := SequenceAI'Class (This).getIndex;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getIndex;
-
-   procedure getSelectedArtificialIntelligenceInterface (This : in out SequenceAI) is
-      Java_Result : constant ArtificialIntelligenceInterface_Access := SequenceAI'Class (This).getSelectedArtificialIntelligenceInterface;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSelectedArtificialIntelligenceInterface;
-
-   procedure getName (This : in out SequenceAI) is
-      Java_Result : constant Unbounded_String := SequenceAI'Class (This).getName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getName;
-
-   procedure toString (This : in out SequenceAI) is
-      Java_Result : constant Unbounded_String := SequenceAI'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end toString;
 
 begin

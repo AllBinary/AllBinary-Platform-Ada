@@ -20,6 +20,10 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
+with org.allbinary.game.input.GameKeyFactory_Package; use org.allbinary.game.input.GameKeyFactory_Package;
+with org.allbinary.game.input.GameKey_Package; use org.allbinary.game.input.GameKey_Package;
+with org.allbinary.game.input.InputFactory_Package; use org.allbinary.game.input.InputFactory_Package;
+with org.allbinary.game.input.Input_Package; use org.allbinary.game.input.Input_Package;
 
 package org.allbinary.game.input.J2MEKeyFactory_Package is
 
@@ -37,7 +41,6 @@ package org.allbinary.game.input.J2MEKeyFactory_Package is
    procedure Initialize (This : in out J2MEKeyFactory'Class);
    function Create return J2MEKeyFactory_Access;
    function getInstance return J2MEKeyFactory_Access;
-   procedure getInstance;
    procedure init (This : in out J2MEKeyFactory);
    function isSubmission (This : in out J2MEKeyFactory; input : Input_Access) return Boolean;
    procedure isSubmission (This : in out J2MEKeyFactory; input : Input_Access);

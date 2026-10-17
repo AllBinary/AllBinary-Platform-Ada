@@ -49,7 +49,6 @@ package org.allbinary.game.health.HealthBarAnimation_Package is
    function Create (layerInterface : AllBinaryLayer_Access; location : Integer) return HealthBarAnimation_Access;
    procedure onHealthChange (This : in out HealthBarAnimation; newX2 : Integer);
    function getY (This : in out HealthBarAnimation) return Integer;
-   procedure getY (This : in out HealthBarAnimation);
 
 end org.allbinary.game.health.HealthBarAnimation_Package;
 

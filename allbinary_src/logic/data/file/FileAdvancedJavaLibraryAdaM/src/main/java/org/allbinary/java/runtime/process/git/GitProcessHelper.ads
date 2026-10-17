@@ -31,6 +31,8 @@ with org.allbinary.logic.io.file.AbFileNativeUtil_Package; use org.allbinary.log
 with org.allbinary.logic.io.file.directory.TrackedStrings_Package; use org.allbinary.logic.io.file.directory.TrackedStrings_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.java.runtime.process.git.ProcessBuilder_Package; use org.allbinary.java.runtime.process.git.ProcessBuilder_Package;
+with org.allbinary.java.runtime.process.git.Process_Package; use org.allbinary.java.runtime.process.git.Process_Package;
 
 package org.allbinary.java.runtime.process.git.GitProcessHelper_Package is
 
@@ -54,7 +56,6 @@ package org.allbinary.java.runtime.process.git.GitProcessHelper_Package is
    procedure Initialize (This : in out GitProcessHelper'Class);
    function Create return GitProcessHelper_Access;
    function getInstance return GitProcessHelper_Access;
-   procedure getInstance;
    function trackedFiles (This : in out GitProcessHelper; rootAsString : Unbounded_String; pathspec : Unbounded_String) return List_Access;
    procedure trackedFiles (This : in out GitProcessHelper; rootAsString : Unbounded_String; pathspec : Unbounded_String);
    function trackedFiles (This : in out GitProcessHelper; rootAsString : Unbounded_String; pathspec : Unbounded_String; suffix : Unbounded_String) return List_Access;

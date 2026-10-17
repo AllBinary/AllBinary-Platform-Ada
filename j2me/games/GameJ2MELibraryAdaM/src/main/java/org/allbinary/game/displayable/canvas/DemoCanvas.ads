@@ -122,6 +122,19 @@ with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArr
 with org.allbinary.game.displayable.canvas.GameCanvasRunnableInterface_Package; use org.allbinary.game.displayable.canvas.GameCanvasRunnableInterface_Package;
 with org.allbinary.game.displayable.canvas.MenuListener_Package; use org.allbinary.game.displayable.canvas.MenuListener_Package;
 with org.allbinary.game.displayable.canvas.DemoPaintableInterface_Package; use org.allbinary.game.displayable.canvas.DemoPaintableInterface_Package;
+with org.allbinary.game.displayable.canvas.FormUtil_Package; use org.allbinary.game.displayable.canvas.FormUtil_Package;
+with org.allbinary.game.displayable.canvas.NullGameCanvas_Package; use org.allbinary.game.displayable.canvas.NullGameCanvas_Package;
+with org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package; use org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package;
+with org.allbinary.game.displayable.canvas.NoMenuInputProcessor_Package; use org.allbinary.game.displayable.canvas.NoMenuInputProcessor_Package;
+with org.allbinary.game.displayable.canvas.BasicMenuInputProcessor_Package; use org.allbinary.game.displayable.canvas.BasicMenuInputProcessor_Package;
+with org.allbinary.game.displayable.canvas.DemoGameStartupRunnable_Package; use org.allbinary.game.displayable.canvas.DemoGameStartupRunnable_Package;
+with org.allbinary.game.displayable.canvas.NullWaitGameRunnable_Package; use org.allbinary.game.displayable.canvas.NullWaitGameRunnable_Package;
+with org.allbinary.game.displayable.canvas.GameRunnable_Package; use org.allbinary.game.displayable.canvas.GameRunnable_Package;
+with org.allbinary.game.displayable.canvas.GameInputMappingCanvas_Package; use org.allbinary.game.displayable.canvas.GameInputMappingCanvas_Package;
+with org.allbinary.game.displayable.canvas.DemoLimitedCommandTextItemArrayFactory_Package; use org.allbinary.game.displayable.canvas.DemoLimitedCommandTextItemArrayFactory_Package;
+with org.allbinary.game.displayable.canvas.CommandFormInputProcessor_Package; use org.allbinary.game.displayable.canvas.CommandFormInputProcessor_Package;
+with org.allbinary.game.displayable.canvas.DemoCanvasProgressUtil_Package; use org.allbinary.game.displayable.canvas.DemoCanvasProgressUtil_Package;
+with org.allbinary.game.displayable.canvas.DemoGameRunnable_Package; use org.allbinary.game.displayable.canvas.DemoGameRunnable_Package;
 
 package org.allbinary.game.displayable.canvas.DemoCanvas_Package is
 
@@ -277,7 +290,6 @@ package org.allbinary.game.displayable.canvas.DemoCanvas_Package is
    procedure onEvent (This : in out DemoCanvas; eventObject : AllBinaryEventObject_Access);
    procedure onDisplayChangeEvent (This : in out DemoCanvas; displayChangeEvent : DisplayChangeEvent_Access);
    function getCustomCommands (This : in out DemoCanvas) return Java_Object_Access_Array_Access;
-   procedure getCustomCommands (This : in out DemoCanvas);
    procedure initCommands (This : in out DemoCanvas; cmdListener : CommandListener_Access);
    procedure initPostPaint (This : in out DemoCanvas);
    procedure mediaInit (This : in out DemoCanvas);
@@ -286,7 +298,6 @@ package org.allbinary.game.displayable.canvas.DemoCanvas_Package is
    procedure open (This : in out DemoCanvas);
    procedure close (This : in out DemoCanvas);
    function getSourceId (This : in out DemoCanvas) return Integer;
-   procedure getSourceId (This : in out DemoCanvas);
    procedure keyPressed (This : in out DemoCanvas; keyCode : Integer);
    procedure keyReleased (This : in out DemoCanvas; keyCode : Integer);
    procedure keyRepeated (This : in out DemoCanvas; keyCode : Integer);
@@ -298,14 +309,10 @@ package org.allbinary.game.displayable.canvas.DemoCanvas_Package is
    procedure pause (This : in out DemoCanvas);
    procedure unPause (This : in out DemoCanvas);
    function isPausable (This : in out DemoCanvas) return Boolean;
-   procedure isPausable (This : in out DemoCanvas);
    function isGameOver (This : in out DemoCanvas) return Boolean;
-   procedure isGameOver (This : in out DemoCanvas);
    procedure setLoadStateHashtable (This : in out DemoCanvas; hashtable : ABHashtable_Access);
    function getLoadStateHashtable (This : in out DemoCanvas) return ABHashtable_Access;
-   procedure getLoadStateHashtable (This : in out DemoCanvas);
    function getCurrentStateHashtable (This : in out DemoCanvas) return ABHashtable_Access;
-   procedure getCurrentStateHashtable (This : in out DemoCanvas);
    procedure setHighScoreSubmitted (This : in out DemoCanvas; isNotUsed : Boolean);
    procedure paint (This : in out DemoCanvas; graphics : Graphics_Access);
    procedure paintThreed (This : in out DemoCanvas; graphics : Graphics_Access);
@@ -313,7 +320,6 @@ package org.allbinary.game.displayable.canvas.DemoCanvas_Package is
    procedure demoStateChange (This : in out DemoCanvas);
    procedure updateDemoState (This : in out DemoCanvas);
    function getNextRandom (This : in out DemoCanvas) return Integer;
-   procedure getNextRandom (This : in out DemoCanvas);
    function createGameLayerManager (This : in out DemoCanvas; randomValue : Integer) return AllBinaryGameLayerManager_Access;
    procedure createGameLayerManager (This : in out DemoCanvas; randomValue : Integer);
    function createRunnable (This : in out DemoCanvas; randomLevel : Integer) return GameCanvasRunnableInterface_Access;
@@ -326,7 +332,6 @@ package org.allbinary.game.displayable.canvas.DemoCanvas_Package is
    procedure stopGameDemo (This : in out DemoCanvas);
    procedure showGamePaintable (This : in out DemoCanvas);
    function isReadyForStateChange (This : in out DemoCanvas) return Boolean;
-   procedure isReadyForStateChange (This : in out DemoCanvas);
    procedure processGame (This : in out DemoCanvas);
    procedure run (This : in out DemoCanvas);
    procedure run3 (This : in out DemoCanvas);
@@ -334,53 +339,33 @@ package org.allbinary.game.displayable.canvas.DemoCanvas_Package is
    procedure end_Id (This : in out DemoCanvas);
    procedure setGameState (This : in out DemoCanvas; gameState : GameState_Access);
    function getGameState (This : in out DemoCanvas) return GameState_Access;
-   procedure getGameState (This : in out DemoCanvas);
    function getGameCanvasRunnableInterface (This : in out DemoCanvas) return AllBinaryGameCanvas_Access;
-   procedure getGameCanvasRunnableInterface (This : in out DemoCanvas);
    function isDemoLoading (This : in out DemoCanvas) return Boolean;
-   procedure isDemoLoading (This : in out DemoCanvas);
    function getState (This : in out DemoCanvas) return Integer;
-   procedure getState (This : in out DemoCanvas);
    procedure setState (This : in out DemoCanvas; state : Integer);
    function isHighScoreSubmitted (This : in out DemoCanvas) return Boolean;
-   procedure isHighScoreSubmitted (This : in out DemoCanvas);
    function getRealHighScoresPaintable (This : in out DemoCanvas) return HighScoresPaintable_Access;
-   procedure getRealHighScoresPaintable (This : in out DemoCanvas);
    procedure setSpecialAnimationInterface (This : in out DemoCanvas; specialAnimationInterface : SpecialAnimation_Access);
    function getSpecialAnimationInterface (This : in out DemoCanvas) return SpecialAnimation_Access;
-   procedure getSpecialAnimationInterface (This : in out DemoCanvas);
    procedure setPaintableInterface (This : in out DemoCanvas; paintableInterface : PaintableInterface_Access);
    function getPaintableInterface (This : in out DemoCanvas) return PaintableInterface_Access;
-   procedure getPaintableInterface (This : in out DemoCanvas);
    procedure setDefaultPaintableInterface (This : in out DemoCanvas; defaultPaintableInterface : Paintable_Access);
    function getDefaultPaintableInterface (This : in out DemoCanvas) return Paintable_Access;
-   procedure getDefaultPaintableInterface (This : in out DemoCanvas);
    function getHighScoresFactoryInterface (This : in out DemoCanvas) return HighScoresFactoryInterface_Access;
-   procedure getHighScoresFactoryInterface (This : in out DemoCanvas);
    procedure setMenuInputProcessor (This : in out DemoCanvas; menuInputProcessor : BasicMenuInputProcessor_Access);
    function getMenuInputProcessor (This : in out DemoCanvas) return BasicMenuInputProcessor_Access;
-   procedure getMenuInputProcessor (This : in out DemoCanvas);
    function getMenuForm (This : in out DemoCanvas) return ScrollSelectionForm_Access;
-   procedure getMenuForm (This : in out DemoCanvas);
    procedure setMenuForm (This : in out DemoCanvas; menuForm : ScrollSelectionForm_Access);
    function isInitialized (This : in out DemoCanvas) return Boolean;
-   procedure isInitialized (This : in out DemoCanvas);
    function getOverlayPaintable (This : in out DemoCanvas) return Paintable_Access;
-   procedure getOverlayPaintable (This : in out DemoCanvas);
    procedure setBasicGameDemoPaintable (This : in out DemoCanvas; basicGameDemoPaintable : StatePaintable_Access);
    function getBasicGameDemoPaintable (This : in out DemoCanvas) return StatePaintable_Access;
-   procedure getBasicGameDemoPaintable (This : in out DemoCanvas);
    procedure setTempWait (This : in out DemoCanvas; tempWait : Integer);
    function getTempWait (This : in out DemoCanvas) return Integer;
-   procedure getTempWait (This : in out DemoCanvas);
    function isSingleThread (This : in out DemoCanvas) return Boolean;
-   procedure isSingleThread (This : in out DemoCanvas);
    function isRunningInAnotherThread (This : in out DemoCanvas) return Boolean;
-   procedure isRunningInAnotherThread (This : in out DemoCanvas);
    function getGameInitializationInterfaceFactoryInterface (This : in out DemoCanvas) return BasicBuildGameInitializerFactory_Access;
-   procedure getGameInitializationInterfaceFactoryInterface (This : in out DemoCanvas);
    function getType (This : in out DemoCanvas) return Integer;
-   procedure getType (This : in out DemoCanvas);
 
 end org.allbinary.game.displayable.canvas.DemoCanvas_Package;
 

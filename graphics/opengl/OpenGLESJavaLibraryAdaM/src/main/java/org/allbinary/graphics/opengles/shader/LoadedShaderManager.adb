@@ -28,7 +28,7 @@ package body org.allbinary.graphics.opengles.shader.LoadedShaderManager_Package 
    function Create return LoadedShaderManager_Access is
       This : constant LoadedShaderManager_Access := new LoadedShaderManager;
    begin
-      Initialize (This.all);
+      LoadedShaderManager_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -36,13 +36,6 @@ package body org.allbinary.graphics.opengles.shader.LoadedShaderManager_Package 
    function getInstance return ShaderManager_Access is
    begin
         return LoadedShaderManager_Package.instance;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant ShaderManager_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

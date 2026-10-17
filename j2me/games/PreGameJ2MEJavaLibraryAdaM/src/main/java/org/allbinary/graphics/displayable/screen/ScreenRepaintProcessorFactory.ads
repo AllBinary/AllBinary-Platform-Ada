@@ -23,6 +23,7 @@ with AllBinary_Java; use AllBinary_Java;
 --  with javax.microedition.lcdui.Displayable_Package; use javax.microedition.lcdui.Displayable_Package;
 with org.allbinary.J2MEUtil_Package; use org.allbinary.J2MEUtil_Package;
 with org.allbinary.canvas.Processor_Package; use org.allbinary.canvas.Processor_Package;
+with org.allbinary.graphics.displayable.screen.ScreenRepaintProcessor_Package; use org.allbinary.graphics.displayable.screen.ScreenRepaintProcessor_Package;
 
 package org.allbinary.graphics.displayable.screen.ScreenRepaintProcessorFactory_Package is
 
@@ -40,7 +41,6 @@ package org.allbinary.graphics.displayable.screen.ScreenRepaintProcessorFactory_
    procedure Initialize (This : in out ScreenRepaintProcessorFactory'Class);
    function Create return ScreenRepaintProcessorFactory_Access;
    function getInstance return ScreenRepaintProcessorFactory_Access;
-   procedure getInstance;
    function create (This : in out ScreenRepaintProcessorFactory; displayable : Displayable_Access) return Processor_Access;
    procedure create (This : in out ScreenRepaintProcessorFactory; displayable : Displayable_Access);
 

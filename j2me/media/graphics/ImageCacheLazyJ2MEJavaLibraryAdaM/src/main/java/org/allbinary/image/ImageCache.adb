@@ -50,7 +50,7 @@ package body org.allbinary.image.ImageCache_Package is
    function Create return ImageCache_Access is
       This : constant ImageCache_Access := new ImageCache;
    begin
-      Initialize (This.all);
+      ImageCache_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -512,13 +512,6 @@ package body org.allbinary.image.ImageCache_Package is
       null;
    end getAssociated;
 
-   procedure isLazy (This : in out ImageCache) is
-      Java_Result : constant Boolean := ImageCache'Class (This).isLazy;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isLazy;
-
 begin
    null;
    NULL_IMAGE_CACHE := ImageCache_Package.Create;
@@ -542,7 +535,7 @@ package body org.allbinary.image.NotHTMLProcessor_Package is
    function Create return NotHTMLProcessor_Access is
       This : constant NotHTMLProcessor_Access := new NotHTMLProcessor;
    begin
-      Initialize (This.all);
+      NotHTMLProcessor_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -571,7 +564,7 @@ package body org.allbinary.image.NotHTMLEndProcessor_Package is
    function Create return NotHTMLEndProcessor_Access is
       This : constant NotHTMLEndProcessor_Access := new NotHTMLEndProcessor;
    begin
-      Initialize (This.all);
+      NotHTMLEndProcessor_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -602,7 +595,7 @@ package body org.allbinary.image.HTMLEndProcessor_Package is
    function Create return HTMLEndProcessor_Access is
       This : constant HTMLEndProcessor_Access := new HTMLEndProcessor;
    begin
-      Initialize (This.all);
+      HTMLEndProcessor_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -641,7 +634,7 @@ package body org.allbinary.image.FirstProcessor_Package is
    function Create return FirstProcessor_Access is
       This : constant FirstProcessor_Access := new FirstProcessor;
    begin
-      Initialize (This.all);
+      FirstProcessor_Package.Initialize (This.all);
       return This;
    end Create;
 

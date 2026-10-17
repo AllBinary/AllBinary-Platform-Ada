@@ -39,7 +39,6 @@ package tags.admin.payment.gateways.ViewExistingTag_Package is
    procedure Initialize (This : in out ViewExistingTag'Class);
    function Create return ViewExistingTag_Access;
    function doStartTag (This : in out ViewExistingTag) return Integer;
-   procedure doStartTag (This : in out ViewExistingTag);
 
 end tags.admin.payment.gateways.ViewExistingTag_Package;
 

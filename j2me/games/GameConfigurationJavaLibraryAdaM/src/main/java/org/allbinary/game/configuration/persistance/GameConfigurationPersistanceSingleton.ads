@@ -21,6 +21,7 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.configuration.persistance.KeyValuePersistance_Package; use org.allbinary.game.configuration.persistance.KeyValuePersistance_Package;
+with org.allbinary.game.configuration.persistance.GamePersistanceStrings_Package; use org.allbinary.game.configuration.persistance.GamePersistanceStrings_Package;
 
 package org.allbinary.game.configuration.persistance.GameConfigurationPersistanceSingleton_Package is
 
@@ -36,7 +37,6 @@ package org.allbinary.game.configuration.persistance.GameConfigurationPersistanc
    procedure Initialize (This : in out GameConfigurationPersistanceSingleton'Class);
    function Create return GameConfigurationPersistanceSingleton_Access;
    function getInstance return GameConfigurationPersistanceSingleton_Access;
-   procedure getInstance;
 
 end org.allbinary.game.configuration.persistance.GameConfigurationPersistanceSingleton_Package;
 

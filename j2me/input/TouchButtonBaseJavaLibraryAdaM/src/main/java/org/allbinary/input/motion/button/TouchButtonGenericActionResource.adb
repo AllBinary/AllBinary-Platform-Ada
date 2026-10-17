@@ -34,16 +34,9 @@ package body org.allbinary.input.motion.button.TouchButtonGenericActionResource_
    function Create return TouchButtonGenericActionResource_Access is
       This : constant TouchButtonGenericActionResource_Access := new TouchButtonGenericActionResource;
    begin
-      Initialize (This.all);
+      TouchButtonGenericActionResource_Package.Initialize (This.all);
       return This;
    end Create;
-
-   procedure getInstance is
-      Java_Result : constant TouchButtonResource_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

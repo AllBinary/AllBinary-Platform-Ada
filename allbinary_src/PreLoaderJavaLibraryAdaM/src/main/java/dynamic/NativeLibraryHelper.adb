@@ -31,7 +31,7 @@ package body dynamic.NativeLibraryHelper_Package is
    function Create (library : Unbounded_String) return NativeLibraryHelper_Access is
       This : constant NativeLibraryHelper_Access := new NativeLibraryHelper;
    begin
-      Initialize (This.all, library);
+      NativeLibraryHelper_Package.Initialize (This.all, library);
       return This;
    end Create;
 

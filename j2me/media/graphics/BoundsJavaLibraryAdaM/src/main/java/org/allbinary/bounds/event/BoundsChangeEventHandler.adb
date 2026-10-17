@@ -31,7 +31,7 @@ package body org.allbinary.bounds.event.BoundsChangeEventHandler_Package is
    function Create return BoundsChangeEventHandler_Access is
       This : constant BoundsChangeEventHandler_Access := new BoundsChangeEventHandler;
    begin
-      Initialize (This.all);
+      BoundsChangeEventHandler_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -47,13 +47,6 @@ package body org.allbinary.bounds.event.BoundsChangeEventHandler_Package is
         boundsChangeEventListener := BoundsChangeEventListener_Access (eventListenerInterface);
         boundsChangeEventListener.onBoundsChangeEvent (BoundsChangeEvent_Access (eventObject));
    end process;
-
-   procedure getInstance is
-      Java_Result : constant BasicEventHandler_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

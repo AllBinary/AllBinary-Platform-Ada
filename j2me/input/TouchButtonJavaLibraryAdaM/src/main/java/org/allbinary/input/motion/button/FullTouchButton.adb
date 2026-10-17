@@ -35,7 +35,7 @@ package body org.allbinary.input.motion.button.FullTouchButton_Package is
    function Create (touchButtonInput : TouchButtonInput_Access; animationInterface : Animation_Access; hintAnimationInterface : Animation_Access; rawRectangle : Rectangle_Access; cellPosition : CellPosition_Access; xBorder : Integer; yBorder : Integer) return FullTouchButton_Access is
       This : constant FullTouchButton_Access := new FullTouchButton;
    begin
-      Initialize (This.all, touchButtonInput, animationInterface, hintAnimationInterface, rawRectangle, cellPosition, xBorder, yBorder);
+      FullTouchButton_Package.Initialize (This.all, touchButtonInput, animationInterface, hintAnimationInterface, rawRectangle, cellPosition, xBorder, yBorder);
       return This;
    end Create;
 

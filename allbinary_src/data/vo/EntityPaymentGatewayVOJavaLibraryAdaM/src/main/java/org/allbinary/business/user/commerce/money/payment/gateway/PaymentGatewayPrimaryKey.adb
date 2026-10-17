@@ -33,7 +33,7 @@ package body org.allbinary.business.user.commerce.money.payment.gateway.PaymentG
    function Create (storeName : Unbounded_String; gatewayName : Unbounded_String) return PaymentGatewayPrimaryKey_Access is
       This : constant PaymentGatewayPrimaryKey_Access := new PaymentGatewayPrimaryKey;
    begin
-      Initialize (This.all, storeName, gatewayName);
+      PaymentGatewayPrimaryKey_Package.Initialize (This.all, storeName, gatewayName);
       return This;
    end Create;
 
@@ -70,27 +70,6 @@ package body org.allbinary.business.user.commerce.money.payment.gateway.PaymentG
         stringBuffer.append (To_Unbounded_String ("="));
         stringBuffer.append (This.getName);
         return stringBuffer.toString;
-   end toString;
-
-   procedure getStoreName (This : in out PaymentGatewayPrimaryKey) is
-      Java_Result : constant Unbounded_String := PaymentGatewayPrimaryKey'Class (This).getStoreName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getStoreName;
-
-   procedure getName (This : in out PaymentGatewayPrimaryKey) is
-      Java_Result : constant Unbounded_String := PaymentGatewayPrimaryKey'Class (This).getName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getName;
-
-   procedure toString (This : in out PaymentGatewayPrimaryKey) is
-      Java_Result : constant Unbounded_String := PaymentGatewayPrimaryKey'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end toString;
 
 end org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayPrimaryKey_Package;

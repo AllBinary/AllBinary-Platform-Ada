@@ -39,16 +39,9 @@ package body org.allbinary.logic.io.file.FilePathData_Package is
    function Create return FilePathData_Access is
       This : constant FilePathData_Access := new FilePathData;
    begin
-      Initialize (This.all);
+      FilePathData_Package.Initialize (This.all);
       return This;
    end Create;
-
-   procedure getInstance is
-      Java_Result : constant FilePathData_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

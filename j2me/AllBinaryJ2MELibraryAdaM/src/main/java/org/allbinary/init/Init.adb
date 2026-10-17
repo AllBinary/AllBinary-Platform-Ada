@@ -29,7 +29,7 @@ package body org.allbinary.init.Init_Package is
    function Create return Init_Access is
       This : constant Init_Access := new Init;
    begin
-      Initialize (This.all);
+      Init_Package.Initialize (This.all);
       return This;
    end Create;
 

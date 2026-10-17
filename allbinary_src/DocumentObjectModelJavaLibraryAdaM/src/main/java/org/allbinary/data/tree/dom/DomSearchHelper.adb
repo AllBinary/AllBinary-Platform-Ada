@@ -30,7 +30,7 @@ package body org.allbinary.data.tree.dom.DomSearchHelper_Package is
    function Create return DomSearchHelper_Access is
       This : constant DomSearchHelper_Access := new DomSearchHelper;
    begin
-      Initialize (This.all);
+      DomSearchHelper_Package.Initialize (This.all);
       return This;
    end Create;
 

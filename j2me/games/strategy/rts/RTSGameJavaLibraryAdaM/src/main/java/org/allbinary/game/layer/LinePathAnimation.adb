@@ -28,7 +28,7 @@ package body org.allbinary.game.layer.LinePathAnimation_Package is
    function Create return LinePathAnimation_Access is
       This : constant LinePathAnimation_Access := new LinePathAnimation;
    begin
-      Initialize (This.all);
+      LinePathAnimation_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -42,13 +42,6 @@ package body org.allbinary.game.layer.LinePathAnimation_Package is
    begin
         graphics.drawLine (nextPoint.getX, nextPoint.getY, point.getX, point.getY);
    end paint;
-
-   procedure getInstance is
-      Java_Result : constant LinePathAnimation_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

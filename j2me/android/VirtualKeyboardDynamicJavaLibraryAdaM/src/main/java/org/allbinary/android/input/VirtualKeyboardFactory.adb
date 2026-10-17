@@ -28,7 +28,7 @@ package body org.allbinary.android.input.VirtualKeyboardFactory_Package is
    function Create return VirtualKeyboardFactory_Access is
       This : constant VirtualKeyboardFactory_Access := new VirtualKeyboardFactory;
    begin
-      Initialize (This.all);
+      VirtualKeyboardFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -47,13 +47,6 @@ package body org.allbinary.android.input.VirtualKeyboardFactory_Package is
    function getInstance return VirtualKeyboard_Access is
    begin
         return VirtualKeyboardFactory_Package.virtualKeyboard;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant VirtualKeyboard_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

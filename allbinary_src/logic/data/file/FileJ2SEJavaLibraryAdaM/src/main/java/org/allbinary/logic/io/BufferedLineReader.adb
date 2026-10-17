@@ -31,7 +31,7 @@ package body org.allbinary.logic.io.BufferedLineReader_Package is
    function Create (file : AbFile_Access) return BufferedLineReader_Access is
       This : constant BufferedLineReader_Access := new BufferedLineReader;
    begin
-      Initialize (This.all, file);
+      BufferedLineReader_Package.Initialize (This.all, file);
       return This;
    end Create;
 
@@ -54,27 +54,6 @@ package body org.allbinary.logic.io.BufferedLineReader_Package is
    function getCurrent (This : in out BufferedLineReader) return Integer is
    begin
         return 0;
-   end getCurrent;
-
-   procedure readLine (This : in out BufferedLineReader) is
-      Java_Result : constant Unbounded_String := BufferedLineReader'Class (This).readLine;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end readLine;
-
-   procedure getSize (This : in out BufferedLineReader) is
-      Java_Result : constant Long_Long_Integer := BufferedLineReader'Class (This).getSize;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSize;
-
-   procedure getCurrent (This : in out BufferedLineReader) is
-      Java_Result : constant Integer := BufferedLineReader'Class (This).getCurrent;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getCurrent;
 
 end org.allbinary.logic.io.BufferedLineReader_Package;

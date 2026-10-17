@@ -44,15 +44,10 @@ package org.allbinary.direction.Direction_Package is
    function getInstance (direction : Integer) return Direction_Access;
    procedure getInstance (direction : Integer);
    function getValue (This : in out Direction) return Integer;
-   procedure getValue (This : in out Direction);
    function getFrameFactor (This : in out Direction) return Integer;
-   procedure getFrameFactor (This : in out Direction);
    function getOtherName (This : in out Direction) return Unbounded_String;
-   procedure getOtherName (This : in out Direction);
    function getName (This : in out Direction) return Unbounded_String;
-   procedure getName (This : in out Direction);
    function toString (This : in out Direction) return Unbounded_String;
-   procedure toString (This : in out Direction);
 
 end org.allbinary.direction.Direction_Package;
 

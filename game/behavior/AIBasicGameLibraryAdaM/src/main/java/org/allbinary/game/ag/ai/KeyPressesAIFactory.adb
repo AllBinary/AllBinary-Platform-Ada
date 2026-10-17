@@ -28,7 +28,7 @@ package body org.allbinary.game.ag.ai.KeyPressesAIFactory_Package is
    function Create return KeyPressesAIFactory_Access is
       This : constant KeyPressesAIFactory_Access := new KeyPressesAIFactory;
    begin
-      Initialize (This.all);
+      KeyPressesAIFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

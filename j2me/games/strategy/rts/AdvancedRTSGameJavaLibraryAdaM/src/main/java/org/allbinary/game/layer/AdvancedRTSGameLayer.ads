@@ -65,6 +65,13 @@ with org.allbinary.media.graphics.geography.map.GeographicMapDirectionUtil_Packa
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.view.ViewPositionBase_Package; use org.allbinary.view.ViewPositionBase_Package;
 with org.allbinary.game.layer.RTSLayer_Package; use org.allbinary.game.layer.RTSLayer_Package;
+with org.allbinary.game.layer.NullPathFindingLayer_Package; use org.allbinary.game.layer.NullPathFindingLayer_Package;
+with org.allbinary.game.layer.AdvancedRTSProperties_Package; use org.allbinary.game.layer.AdvancedRTSProperties_Package;
+with org.allbinary.game.layer.PathFindingLayerInterface_Package; use org.allbinary.game.layer.PathFindingLayerInterface_Package;
+with org.allbinary.game.layer.WaypointBehaviorBase_Package; use org.allbinary.game.layer.WaypointBehaviorBase_Package;
+with org.allbinary.game.layer.AdvancedRTSPlayerLayerInterface_Package; use org.allbinary.game.layer.AdvancedRTSPlayerLayerInterface_Package;
+with org.allbinary.game.layer.RTSPlayerLayerInterface_Package; use org.allbinary.game.layer.RTSPlayerLayerInterface_Package;
+with org.allbinary.game.layer.RTSLayerUtil_Package; use org.allbinary.game.layer.RTSLayerUtil_Package;
 
 package org.allbinary.game.layer.AdvancedRTSGameLayer_Package is
 
@@ -128,31 +135,22 @@ package org.allbinary.game.layer.AdvancedRTSGameLayer_Package is
    procedure Initialize (This : in out AdvancedRTSGameLayer'Class; remoteInfo : RemoteInfo_Access; parentLayer : PathFindingLayerInterface_Access; advancedRTSProperties : AdvancedRTSProperties_Access; groupInterface : Group_Access_Array_Access; rootName : Unbounded_String; name : Unbounded_String; healthInterface : Health_Access; rtsFormInput : RTSFormInput_Access; animationInterfaceFactoryInterface : AnimationInterfaceFactoryInterface_Access; emptyAnimationInterfaceFactoryInterface : AnimationInterfaceFactoryInterface_Access; baseAnimationInterfaceFactoryInterface : AnimationInterfaceFactoryInterface_Access; buildAnimationInterfaceFactoryInterface : AnimationInterfaceFactoryInterface_Access; verticleBuildAnimationInterfaceFactoryInterface : AnimationInterfaceFactoryInterface_Access; proceduralAnimationInterfaceFactoryInterface : ProceduralAnimationInterfaceFactoryInterface_Access; rectangle : Rectangle_Access; x : Integer; y : Integer; viewPosition : ViewPositionBase_Access);
    function Create (remoteInfo : RemoteInfo_Access; parentLayer : PathFindingLayerInterface_Access; advancedRTSProperties : AdvancedRTSProperties_Access; groupInterface : Group_Access_Array_Access; rootName : Unbounded_String; name : Unbounded_String; healthInterface : Health_Access; rtsFormInput : RTSFormInput_Access; animationInterfaceFactoryInterface : AnimationInterfaceFactoryInterface_Access; emptyAnimationInterfaceFactoryInterface : AnimationInterfaceFactoryInterface_Access; baseAnimationInterfaceFactoryInterface : AnimationInterfaceFactoryInterface_Access; buildAnimationInterfaceFactoryInterface : AnimationInterfaceFactoryInterface_Access; verticleBuildAnimationInterfaceFactoryInterface : AnimationInterfaceFactoryInterface_Access; proceduralAnimationInterfaceFactoryInterface : ProceduralAnimationInterfaceFactoryInterface_Access; rectangle : Rectangle_Access; x : Integer; y : Integer; viewPosition : ViewPositionBase_Access) return AdvancedRTSGameLayer_Access;
    function createSimulated return AdvancedRTSGameLayer_Access;
-   procedure createSimulated;
    procedure updateWaypointBehavior (This : in out AdvancedRTSGameLayer; geographicMapInterface : BasicGeographicMap_Access);
    procedure initVisibility (This : in out AdvancedRTSGameLayer; rtsPlayerLayerInterface : RTSPlayerLayerInterface_Access);
    procedure construct (This : in out AdvancedRTSGameLayer; rtsPlayerLayerInterface : RTSPlayerLayerInterface_Access);
    procedure setDestroyed (This : in out AdvancedRTSGameLayer; destroyed : Boolean);
    function getParentLayer (This : in out AdvancedRTSGameLayer) return PathFindingLayerInterface_Access;
-   procedure getParentLayer (This : in out AdvancedRTSGameLayer);
    procedure setParentLayer (This : in out AdvancedRTSGameLayer; parentLayer : PathFindingLayerInterface_Access);
    function getWaypointBehavior (This : in out AdvancedRTSGameLayer) return WaypointBehaviorBase_Access;
-   procedure getWaypointBehavior (This : in out AdvancedRTSGameLayer);
    procedure setWaypointBehavior (This : in out AdvancedRTSGameLayer; unitWaypointHelper : WaypointBehaviorBase_Access);
    function getWaypointLogHelper (This : in out AdvancedRTSGameLayer) return WaypointLogHelper_Access;
-   procedure getWaypointLogHelper (This : in out AdvancedRTSGameLayer);
    function getWaypoint2LogHelper (This : in out AdvancedRTSGameLayer) return Waypoint2LogHelper_Access;
-   procedure getWaypoint2LogHelper (This : in out AdvancedRTSGameLayer);
    function getWaypointRunnableLogHelper (This : in out AdvancedRTSGameLayer) return WaypointRunnableLogHelper_Access;
-   procedure getWaypointRunnableLogHelper (This : in out AdvancedRTSGameLayer);
    function shouldAddWaypointFromBuilding (This : in out AdvancedRTSGameLayer) return Boolean;
-   procedure shouldAddWaypointFromBuilding (This : in out AdvancedRTSGameLayer);
    function isWaypointListEmptyOrOnlyTargets (This : in out AdvancedRTSGameLayer) return Boolean;
-   procedure isWaypointListEmptyOrOnlyTargets (This : in out AdvancedRTSGameLayer);
    function buildingChase (This : in out AdvancedRTSGameLayer; allbinaryLayer : AllBinaryLayer_Access; cellPosition : GeographicMapCellPosition_Access) return Boolean;
    procedure buildingChase (This : in out AdvancedRTSGameLayer; allbinaryLayer : AllBinaryLayer_Access; cellPosition : GeographicMapCellPosition_Access);
    function getSurroundingGeographicMapCellPositionList (This : in out AdvancedRTSGameLayer) return BasicArrayList_Access;
-   procedure getSurroundingGeographicMapCellPositionList (This : in out AdvancedRTSGameLayer);
    procedure setSelected (This : in out AdvancedRTSGameLayer; selected : Boolean);
    procedure onDestroyed (This : in out AdvancedRTSGameLayer; destroyedEvent : DestroyedEvent_Access);
 

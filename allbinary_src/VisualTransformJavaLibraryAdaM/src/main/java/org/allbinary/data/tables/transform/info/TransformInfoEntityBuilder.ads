@@ -23,6 +23,8 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.visual.transform.info.TransformInfoHttpStoreFactory_Package; use org.allbinary.logic.visual.transform.info.TransformInfoHttpStoreFactory_Package;
 with org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfigAndManipulatorFactory_Package; use org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfigAndManipulatorFactory_Package;
 with org.allbinary.logic.visual.transform.info.objectConfig.generator.TransformInfoObjectConfigGeneratorFactory_Package; use org.allbinary.logic.visual.transform.info.objectConfig.generator.TransformInfoObjectConfigGeneratorFactory_Package;
+with org.allbinary.data.tables.transform.info.TransformInfoEntityFactory_Package; use org.allbinary.data.tables.transform.info.TransformInfoEntityFactory_Package;
+with org.allbinary.data.tables.transform.info.TransformInfoEntity_Package; use org.allbinary.data.tables.transform.info.TransformInfoEntity_Package;
 
 package org.allbinary.data.tables.transform.info.TransformInfoEntityBuilder_Package is
 
@@ -40,7 +42,6 @@ package org.allbinary.data.tables.transform.info.TransformInfoEntityBuilder_Pack
    procedure Initialize (This : in out TransformInfoEntityBuilder'Class);
    function Create return TransformInfoEntityBuilder_Access;
    function getInstance return TransformInfoEntity_Access;
-   procedure getInstance;
 
 end org.allbinary.data.tables.transform.info.TransformInfoEntityBuilder_Package;
 

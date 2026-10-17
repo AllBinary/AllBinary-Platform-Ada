@@ -32,7 +32,7 @@ package body tags.generic_Id.user.UsersTag_Package is
    function Create return UsersTag_Access is
       This : constant UsersTag_Access := new UsersTag;
    begin
-      Initialize (This.all);
+      UsersTag_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -66,13 +66,6 @@ package body tags.generic_Id.user.UsersTag_Package is
             return SKIP_BODY;
                 end;
         end;
-   end doStartTag;
-
-   procedure doStartTag (This : in out UsersTag) is
-      Java_Result : constant Integer := UsersTag'Class (This).doStartTag;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end doStartTag;
 
 end tags.generic_Id.user.UsersTag_Package;

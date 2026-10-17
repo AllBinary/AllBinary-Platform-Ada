@@ -60,12 +60,9 @@ package org.allbinary.data.tables.user.commerce.inventory.item.permissions.Permi
    procedure insert (This : in out PermissionItemsEntity; values : BasicArrayList_Access);
    procedure delete (This : in out PermissionItemsEntity; value : Unbounded_String);
    function createTableStatement (This : in out PermissionItemsEntity) return Unbounded_String;
-   procedure createTableStatement (This : in out PermissionItemsEntity);
    function createTable (This : in out PermissionItemsEntity) return Unbounded_String;
-   procedure createTable (This : in out PermissionItemsEntity);
    procedure update (This : in out PermissionItemsEntity; updatedValues : HashMap_Access);
    function dropTable (This : in out PermissionItemsEntity) return Unbounded_String;
-   procedure dropTable (This : in out PermissionItemsEntity);
 
 end org.allbinary.data.tables.user.commerce.inventory.item.permissions.PermissionItemsEntity_Package;
 

@@ -33,7 +33,7 @@ package body org.allbinary.media.image.cache.BufferedImageFrameCacheable_Package
    function Create (bufferedImage : BufferedImage_Access; frame : Long_Long_Integer) return BufferedImageFrameCacheable_Access is
       This : constant BufferedImageFrameCacheable_Access := new BufferedImageFrameCacheable;
    begin
-      Initialize (This.all, bufferedImage, frame);
+      BufferedImageFrameCacheable_Package.Initialize (This.all, bufferedImage, frame);
       return This;
    end Create;
 
@@ -70,34 +70,6 @@ package body org.allbinary.media.image.cache.BufferedImageFrameCacheable_Package
         stringBuffer.append (To_Unbounded_String (" Frame: "));
         stringBuffer.appendlong (This.getFrame);
         return stringBuffer.toString;
-   end toString;
-
-   procedure getKey (This : in out BufferedImageFrameCacheable) is
-      Java_Result : constant Java_Object_Access := BufferedImageFrameCacheable'Class (This).getKey;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getKey;
-
-   procedure getBufferedImage (This : in out BufferedImageFrameCacheable) is
-      Java_Result : constant BufferedImage_Access := BufferedImageFrameCacheable'Class (This).getBufferedImage;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getBufferedImage;
-
-   procedure getFrame (This : in out BufferedImageFrameCacheable) is
-      Java_Result : constant Long_Long_Integer := BufferedImageFrameCacheable'Class (This).getFrame;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getFrame;
-
-   procedure toString (This : in out BufferedImageFrameCacheable) is
-      Java_Result : constant Unbounded_String := BufferedImageFrameCacheable'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end toString;
 
 end org.allbinary.media.image.cache.BufferedImageFrameCacheable_Package;

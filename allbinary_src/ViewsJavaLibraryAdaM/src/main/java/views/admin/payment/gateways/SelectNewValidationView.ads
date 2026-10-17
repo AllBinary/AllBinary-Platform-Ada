@@ -25,6 +25,7 @@ with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package; u
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with views.business.context.modules.storefront.HttpStoreComponentView_Package; use views.business.context.modules.storefront.HttpStoreComponentView_Package;
+with views.admin.payment.gateways.SelectNewView_Package; use views.admin.payment.gateways.SelectNewView_Package;
 
 package views.admin.payment.gateways.SelectNewValidationView_Package is
 
@@ -44,19 +45,14 @@ package views.admin.payment.gateways.SelectNewValidationView_Package is
    procedure Initialize (This : in out SelectNewValidationView'Class; transformInfoInterface : TransformInfoInterface_Access);
    function Create (transformInfoInterface : TransformInfoInterface_Access) return SelectNewValidationView_Access;
    function isValid (This : in out SelectNewValidationView) return Boolean;
-   procedure isValid (This : in out SelectNewValidationView);
    function toValidationInfoDoc (This : in out SelectNewValidationView) return Document_Access;
-   procedure toValidationInfoDoc (This : in out SelectNewValidationView);
    function toValidationInfoNode (This : in out SelectNewValidationView; document : Document_Access) return Node_Access;
    procedure toValidationInfoNode (This : in out SelectNewValidationView; document : Document_Access);
    function validationInfo (This : in out SelectNewValidationView) return Unbounded_String;
-   procedure validationInfo (This : in out SelectNewValidationView);
    function toXmlDoc (This : in out SelectNewValidationView) return Document_Access;
-   procedure toXmlDoc (This : in out SelectNewValidationView);
    function toXmlNode (This : in out SelectNewValidationView; document : Document_Access) return Node_Access;
    procedure toXmlNode (This : in out SelectNewValidationView; document : Document_Access);
    function view (This : in out SelectNewValidationView) return Unbounded_String;
-   procedure view (This : in out SelectNewValidationView);
 
 end views.admin.payment.gateways.SelectNewValidationView_Package;
 

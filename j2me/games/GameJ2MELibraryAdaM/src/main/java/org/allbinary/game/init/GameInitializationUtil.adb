@@ -29,7 +29,7 @@ package body org.allbinary.game.init.GameInitializationUtil_Package is
    function Create return GameInitializationUtil_Access is
       This : constant GameInitializationUtil_Access := new GameInitializationUtil;
    begin
-      Initialize (This.all);
+      GameInitializationUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -76,13 +76,6 @@ package body org.allbinary.game.init.GameInitializationUtil_Package is
    function getInstance return GameInitializationUtil_Access is
    begin
         return GameInitializationUtil_Package.instance;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant GameInitializationUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

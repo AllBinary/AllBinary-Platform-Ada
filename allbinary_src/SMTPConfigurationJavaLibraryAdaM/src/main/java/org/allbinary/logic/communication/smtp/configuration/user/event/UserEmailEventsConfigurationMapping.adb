@@ -31,7 +31,7 @@ package body org.allbinary.logic.communication.smtp.configuration.user.event.Use
    function Create (userEmailEventsConfigurationInterface : UserEmailEventsConfigurationInterface_Access) return UserEmailEventsConfigurationMapping_Access is
       This : constant UserEmailEventsConfigurationMapping_Access := new UserEmailEventsConfigurationMapping;
    begin
-      Initialize (This.all, userEmailEventsConfigurationInterface);
+      UserEmailEventsConfigurationMapping_Package.Initialize (This.all, userEmailEventsConfigurationInterface);
       return This;
    end Create;
 
@@ -54,27 +54,6 @@ package body org.allbinary.logic.communication.smtp.configuration.user.event.Use
    begin
         vector := BasicArrayListD_Package.Create;
         return vector;
-   end toVector;
-
-   procedure toHashMap (This : in out UserEmailEventsConfigurationMapping) is
-      Java_Result : constant HashMap_Access := UserEmailEventsConfigurationMapping'Class (This).toHashMap;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toHashMap;
-
-   procedure getKey (This : in out UserEmailEventsConfigurationMapping) is
-      Java_Result : constant Java_Object_Access := UserEmailEventsConfigurationMapping'Class (This).getKey;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getKey;
-
-   procedure toVector (This : in out UserEmailEventsConfigurationMapping) is
-      Java_Result : constant BasicArrayList_Access := UserEmailEventsConfigurationMapping'Class (This).toVector;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end toVector;
 
 end org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventsConfigurationMapping_Package;

@@ -25,6 +25,8 @@ with org.allbinary.game.layer.CollidableCompositeLayer_Package; use org.allbinar
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
 with org.allbinary.layer.AllBinaryLayerManager_Package; use org.allbinary.layer.AllBinaryLayerManager_Package;
 with org.allbinary.layer.LayerProcessor_Package; use org.allbinary.layer.LayerProcessor_Package;
+with org.allbinary.game.collision.layer.CollidableInterfaceLayerManager_Package; use org.allbinary.game.collision.layer.CollidableInterfaceLayerManager_Package;
+with org.allbinary.game.collision.layer.AllBinaryCollisionManager_Package; use org.allbinary.game.collision.layer.AllBinaryCollisionManager_Package;
 
 package org.allbinary.game.collision.layer.CollidableInterfaceLayerProcessor_Package is
 

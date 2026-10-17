@@ -31,7 +31,7 @@ package body org.allbinary.game.behavior.topview.placement.PropsTileMapPlacement
    function Create return PropsTileMapPlacementVisitor_Access is
       This : constant PropsTileMapPlacementVisitor_Access := new PropsTileMapPlacementVisitor;
    begin
-      Initialize (This.all);
+      PropsTileMapPlacementVisitor_Package.Initialize (This.all);
       return This;
    end Create;
 

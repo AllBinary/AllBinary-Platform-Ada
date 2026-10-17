@@ -31,7 +31,7 @@ package body org.allbinary.game.score.Scoreable_Package is
    function Create (points : Integer) return Scoreable_Access is
       This : constant Scoreable_Access := new Scoreable;
    begin
-      Initialize (This.all, points);
+      Scoreable_Package.Initialize (This.all, points);
       return This;
    end Create;
 
@@ -53,13 +53,6 @@ package body org.allbinary.game.score.Scoreable_Package is
    function getPoints (This : in out Scoreable) return Integer is
    begin
         return This.points;
-   end getPoints;
-
-   procedure getPoints (This : in out Scoreable) is
-      Java_Result : constant Integer := Scoreable'Class (This).getPoints;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getPoints;
 
 begin

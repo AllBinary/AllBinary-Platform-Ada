@@ -38,7 +38,6 @@ package org.allbinary.logic.visual.dhtml.style.StyleData_Package is
    procedure Initialize (This : in out StyleData'Class);
    function Create return StyleData_Access;
    function getInstance return StyleData_Access;
-   procedure getInstance;
 
 end org.allbinary.logic.visual.dhtml.style.StyleData_Package;
 

@@ -54,9 +54,7 @@ package admin.tags.OrderHistoryTag_Package is
    function Create return OrderHistoryTag_Access;
    procedure setStatus (This : in out OrderHistoryTag; value : Unbounded_String);
    function setOrderStatus (This : in out OrderHistoryTag) return Unbounded_String;
-   procedure setOrderStatus (This : in out OrderHistoryTag);
    function doStartTag (This : in out OrderHistoryTag) return Integer;
-   procedure doStartTag (This : in out OrderHistoryTag);
 
 end admin.tags.OrderHistoryTag_Package;
 

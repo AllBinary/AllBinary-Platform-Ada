@@ -47,11 +47,8 @@ package admin.taghelpers.AdminConfigurationRequestHelper_Package is
    procedure Initialize (This : in out AdminConfigurationRequestHelper'Class; hashMap : HashMap_Access; pageContext : PageContext_Access);
    function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return AdminConfigurationRequestHelper_Access;
    function insert (This : in out AdminConfigurationRequestHelper) return Unbounded_String;
-   procedure insert (This : in out AdminConfigurationRequestHelper);
    function delete (This : in out AdminConfigurationRequestHelper) return Unbounded_String;
-   procedure delete (This : in out AdminConfigurationRequestHelper);
    function update (This : in out AdminConfigurationRequestHelper) return Unbounded_String;
-   procedure update (This : in out AdminConfigurationRequestHelper);
 
 end admin.taghelpers.AdminConfigurationRequestHelper_Package;
 

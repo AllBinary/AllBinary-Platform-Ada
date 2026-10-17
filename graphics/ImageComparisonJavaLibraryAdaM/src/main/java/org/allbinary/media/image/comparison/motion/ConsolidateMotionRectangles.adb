@@ -42,7 +42,7 @@ package body org.allbinary.media.image.comparison.motion.ConsolidateMotionRectan
    function Create (motionRectangles : MotionRectangles_Access) return ConsolidateMotionRectangles_Access is
       This : constant ConsolidateMotionRectangles_Access := new ConsolidateMotionRectangles;
    begin
-      Initialize (This.all, motionRectangles);
+      ConsolidateMotionRectangles_Package.Initialize (This.all, motionRectangles);
       return This;
    end Create;
 

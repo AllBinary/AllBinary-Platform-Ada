@@ -125,7 +125,7 @@ package body org.allbinary.media.graphics.geography.map.topview.BasicTopViewGeog
    function Create (tileTypeToTileIdsMap : ABHashtable_Access; maxTileId : Integer) return BasicTopViewGeographicMapCellTypeFactory_Access is
       This : constant BasicTopViewGeographicMapCellTypeFactory_Access := new BasicTopViewGeographicMapCellTypeFactory;
    begin
-      Initialize (This.all, tileTypeToTileIdsMap, maxTileId);
+      BasicTopViewGeographicMapCellTypeFactory_Package.Initialize (This.all, tileTypeToTileIdsMap, maxTileId);
       return This;
    end Create;
 
@@ -157,40 +157,12 @@ package body org.allbinary.media.graphics.geography.map.topview.BasicTopViewGeog
         return StringMaker_Package.Create.append (To_Unbounded_String ("key: WALL/BLOCK_CELL_TYPE: ")).append (This.BLOCK_CELL_TYPE.toString).append (To_Unbounded_String ("key: FLOOR_CELL_TYPE: ")).append (This.FLOOR_CELL_TYPE.toString).append (To_Unbounded_String ("key: OTHER_CELL_TYPE: ")).append (This.OTHER_CELL_TYPE.toString).append (To_Unbounded_String ("key: OFF_MAP_CELL_TYPE: ")).append (This.OFF_MAP_CELL_TYPE.toString).append (To_Unbounded_String ("key: DOOR_CELL_TYPE: ")).append (This.DOOR_CELL_TYPE.toString).append (To_Unbounded_String ("key: STAIRS_DOWN_CELL_TYPE: ")).append (This.STAIRS_DOWN_CELL_TYPE.toString).append (To_Unbounded_String ("key: STAIRS_UP_CELL_TYPE: ")).append (This.STAIRS_UP_CELL_TYPE.toString).toString;
    end toString;
 
-   procedure getStartType (This : in out BasicTopViewGeographicMapCellTypeFactory) is
-      Java_Result : constant Integer := BasicTopViewGeographicMapCellTypeFactory'Class (This).getStartType;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getStartType;
-
-   procedure getEndType (This : in out BasicTopViewGeographicMapCellTypeFactory) is
-      Java_Result : constant Integer := BasicTopViewGeographicMapCellTypeFactory'Class (This).getEndType;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getEndType;
-
-   procedure getEmptyType (This : in out BasicTopViewGeographicMapCellTypeFactory) is
-      Java_Result : constant Integer := BasicTopViewGeographicMapCellTypeFactory'Class (This).getEmptyType;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getEmptyType;
-
    procedure isPath (This : in out BasicTopViewGeographicMapCellTypeFactory; cellType : GeographicMapCellType_Access) is
       Java_Result : constant Boolean := BasicTopViewGeographicMapCellTypeFactory'Class (This).isPath (cellType);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isPath;
-
-   procedure toString (This : in out BasicTopViewGeographicMapCellTypeFactory) is
-      Java_Result : constant Unbounded_String := BasicTopViewGeographicMapCellTypeFactory'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toString;
 
 end org.allbinary.media.graphics.geography.map.topview.BasicTopViewGeographicMapCellTypeFactory_Package;
 

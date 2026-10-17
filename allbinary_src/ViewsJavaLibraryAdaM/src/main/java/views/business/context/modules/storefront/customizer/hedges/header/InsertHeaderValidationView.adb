@@ -40,7 +40,7 @@ package body views.business.context.modules.storefront.customizer.hedges.header.
    function Create (transformInfoInterface : TransformInfoInterface_Access) return InsertHeaderValidationView_Access is
       This : constant InsertHeaderValidationView_Access := new InsertHeaderValidationView;
    begin
-      Initialize (This.all, transformInfoInterface);
+      InsertHeaderValidationView_Package.Initialize (This.all, transformInfoInterface);
       return This;
    end Create;
 
@@ -104,34 +104,6 @@ package body views.business.context.modules.storefront.customizer.hedges.header.
    begin
         return null;
    end toValidationInfoNode;
-
-   procedure toXmlDoc (This : in out InsertHeaderValidationView) is
-      Java_Result : constant Document_Access := InsertHeaderValidationView'Class (This).toXmlDoc;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toXmlDoc;
-
-   procedure isValid (This : in out InsertHeaderValidationView) is
-      Java_Result : constant Boolean := InsertHeaderValidationView'Class (This).isValid;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isValid;
-
-   procedure validationInfo (This : in out InsertHeaderValidationView) is
-      Java_Result : constant Unbounded_String := InsertHeaderValidationView'Class (This).validationInfo;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end validationInfo;
-
-   procedure toValidationInfoDoc (This : in out InsertHeaderValidationView) is
-      Java_Result : constant Document_Access := InsertHeaderValidationView'Class (This).toValidationInfoDoc;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toValidationInfoDoc;
 
    procedure toValidationInfoNode (This : in out InsertHeaderValidationView; document : Document_Access) is
       Java_Result : constant Node_Access := InsertHeaderValidationView'Class (This).toValidationInfoNode (document);

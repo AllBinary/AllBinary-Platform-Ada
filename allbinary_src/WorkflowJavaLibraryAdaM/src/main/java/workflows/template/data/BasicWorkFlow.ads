@@ -60,13 +60,9 @@ package workflows.template.data.BasicWorkFlow_Package is
    procedure Initialize (This : in out BasicWorkFlow'Class; propertiesHashMap : HashMap_Access; pageContext : PageContext_Access);
    function Create (propertiesHashMap : HashMap_Access; pageContext : PageContext_Access) return BasicWorkFlow_Access;
    function getName (This : in out BasicWorkFlow) return Unbounded_String;
-   procedure getName (This : in out BasicWorkFlow);
    function getPropertiesHashMap (This : in out BasicWorkFlow) return HashMap_Access;
-   procedure getPropertiesHashMap (This : in out BasicWorkFlow);
    function getPageContext (This : in out BasicWorkFlow) return PageContext_Access;
-   procedure getPageContext (This : in out BasicWorkFlow);
    function process (This : in out BasicWorkFlow) return Integer;
-   procedure process (This : in out BasicWorkFlow);
 
 end workflows.template.data.BasicWorkFlow_Package;
 

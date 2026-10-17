@@ -37,9 +37,7 @@ package org.allbinary.graphics.opengles.shader.ModelViewProjection_Package is
    procedure Initialize (This : in out ModelViewProjection'Class);
    function Create return ModelViewProjection_Access;
    function getInstance return ModelViewProjection_Access;
-   procedure getInstance;
    function get (This : in out ModelViewProjection) return Float_Array_Access;
-   procedure get (This : in out ModelViewProjection);
 
 end org.allbinary.graphics.opengles.shader.ModelViewProjection_Package;
 

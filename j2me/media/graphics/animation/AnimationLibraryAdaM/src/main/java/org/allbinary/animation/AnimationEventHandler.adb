@@ -31,20 +31,13 @@ package body org.allbinary.animation.AnimationEventHandler_Package is
    function Create return AnimationEventHandler_Access is
       This : constant AnimationEventHandler_Access := new AnimationEventHandler;
    begin
-      Initialize (This.all);
+      AnimationEventHandler_Package.Initialize (This.all);
       return This;
    end Create;
 
    function getInstance return AnimationEventHandler_Access is
    begin
         return AnimationEventHandler_Package.eventHandler;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant AnimationEventHandler_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

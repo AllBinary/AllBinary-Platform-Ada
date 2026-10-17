@@ -31,7 +31,7 @@ package body org.allbinary.logic.visual.dhtml.style.css.property.font.FontFamily
    function Create return FontFamilyValidation_Access is
       This : constant FontFamilyValidation_Access := new FontFamilyValidation;
    begin
-      Initialize (This.all);
+      FontFamilyValidation_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -45,7 +45,7 @@ package body org.allbinary.logic.visual.dhtml.style.css.property.font.FontFamily
    function Create (node : Node_Access) return FontFamilyValidation_Access is
       This : constant FontFamilyValidation_Access := new FontFamilyValidation;
    begin
-      Initialize (This.all, node);
+      FontFamilyValidation_Package.Initialize (This.all, node);
       return This;
    end Create;
 
@@ -107,27 +107,6 @@ package body org.allbinary.logic.visual.dhtml.style.css.property.font.FontFamily
    begin
         return null;
    end toValidationInfoNode;
-
-   procedure isValid (This : in out FontFamilyValidation) is
-      Java_Result : constant Boolean := FontFamilyValidation'Class (This).isValid;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isValid;
-
-   procedure validationInfo (This : in out FontFamilyValidation) is
-      Java_Result : constant Unbounded_String := FontFamilyValidation'Class (This).validationInfo;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end validationInfo;
-
-   procedure toValidationInfoDoc (This : in out FontFamilyValidation) is
-      Java_Result : constant Document_Access := FontFamilyValidation'Class (This).toValidationInfoDoc;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toValidationInfoDoc;
 
    procedure toValidationInfoNode (This : in out FontFamilyValidation; document : Document_Access) is
       Java_Result : constant Node_Access := FontFamilyValidation'Class (This).toValidationInfoNode (document);

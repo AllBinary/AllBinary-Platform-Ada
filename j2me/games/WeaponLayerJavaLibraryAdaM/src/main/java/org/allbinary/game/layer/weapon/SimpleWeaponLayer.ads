@@ -29,6 +29,7 @@ with org.allbinary.graphics.Rectangle_Package; use org.allbinary.graphics.Rectan
 with org.allbinary.physics.movement.Movement_Package; use org.allbinary.physics.movement.Movement_Package;
 with org.allbinary.view.ViewPositionBase_Package; use org.allbinary.view.ViewPositionBase_Package;
 with org.allbinary.game.layer.weapon.WeaponLayer_Package; use org.allbinary.game.layer.weapon.WeaponLayer_Package;
+with org.allbinary.game.layer.weapon.CollidableWeaponBehavior_Package; use org.allbinary.game.layer.weapon.CollidableWeaponBehavior_Package;
 
 package org.allbinary.game.layer.weapon.SimpleWeaponLayer_Package is
 
@@ -51,7 +52,6 @@ package org.allbinary.game.layer.weapon.SimpleWeaponLayer_Package is
    procedure Initialize (This : in out SimpleWeaponLayer'Class; name : Unbounded_String; remoteInfo : RemoteInfo_Access; multiPlayerType : Integer; movement : Movement_Access; animationInterface : Animation_Access; destroyedAnimationInterface : Animation_Access; rectangle : Rectangle_Access; viewPosition : ViewPositionBase_Access);
    function Create (name : Unbounded_String; remoteInfo : RemoteInfo_Access; multiPlayerType : Integer; movement : Movement_Access; animationInterface : Animation_Access; destroyedAnimationInterface : Animation_Access; rectangle : Rectangle_Access; viewPosition : ViewPositionBase_Access) return SimpleWeaponLayer_Access;
    function createDestroyed return Animation_Access;
-   procedure createDestroyed;
 
 end org.allbinary.game.layer.weapon.SimpleWeaponLayer_Package;
 

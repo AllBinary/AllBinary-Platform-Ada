@@ -29,7 +29,7 @@ package body admin.taghelpers.Table_Package is
    function Create return Table_Access is
       This : constant Table_Access := new Table;
    begin
-      Initialize (This.all);
+      Table_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -74,55 +74,6 @@ package body admin.taghelpers.Table_Package is
    function update (This : in out Table) return Unbounded_String is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
-   end update;
-
-   procedure drop (This : in out Table) is
-      Java_Result : constant Unbounded_String := Table'Class (This).drop;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end drop;
-
-   procedure create (This : in out Table) is
-      Java_Result : constant Unbounded_String := Table'Class (This).create;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end create;
-
-   procedure restore (This : in out Table) is
-      Java_Result : constant Unbounded_String := Table'Class (This).restore;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end restore;
-
-   procedure backup (This : in out Table) is
-      Java_Result : constant Unbounded_String := Table'Class (This).backup;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end backup;
-
-   procedure insert (This : in out Table) is
-      Java_Result : constant Unbounded_String := Table'Class (This).insert;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end insert;
-
-   procedure delete (This : in out Table) is
-      Java_Result : constant Unbounded_String := Table'Class (This).delete;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end delete;
-
-   procedure update (This : in out Table) is
-      Java_Result : constant Unbounded_String := Table'Class (This).update;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end update;
 
 end admin.taghelpers.Table_Package;

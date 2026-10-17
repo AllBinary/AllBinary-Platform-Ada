@@ -38,7 +38,6 @@ package org.allbinary.media.audio.UpgradeSound_Package is
    procedure Initialize (This : in out UpgradeSound'Class);
    function Create return UpgradeSound_Access;
    function getInstance return Sound_Access;
-   procedure getInstance;
 
 end org.allbinary.media.audio.UpgradeSound_Package;
 

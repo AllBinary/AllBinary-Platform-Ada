@@ -43,7 +43,7 @@ package body org.allbinary.game.state.GameStateFactory_Package is
    function Create return GameStateFactory_Access is
       This : constant GameStateFactory_Access := new GameStateFactory;
    begin
-      Initialize (This.all);
+      GameStateFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -51,13 +51,6 @@ package body org.allbinary.game.state.GameStateFactory_Package is
    begin
         return GameState_Package.Create (name, Java_Post_Increment (This.index));
    end createGameState;
-
-   procedure getInstance is
-      Java_Result : constant GameStateFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure createGameState (This : in out GameStateFactory; name : Unbounded_String) is
       Java_Result : constant GameState_Access := GameStateFactory'Class (This).createGameState (name);

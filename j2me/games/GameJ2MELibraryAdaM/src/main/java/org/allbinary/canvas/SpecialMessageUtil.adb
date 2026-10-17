@@ -28,7 +28,7 @@ package body org.allbinary.canvas.SpecialMessageUtil_Package is
    function Create return SpecialMessageUtil_Access is
       This : constant SpecialMessageUtil_Access := new SpecialMessageUtil;
    begin
-      Initialize (This.all);
+      SpecialMessageUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -53,20 +53,6 @@ package body org.allbinary.canvas.SpecialMessageUtil_Package is
             stringBuffer.append (OpenGLFeatureFactory_Package.getInstance.OPENGL_MINIMUM.getName);
         end if;
         return stringBuffer.toString;
-   end get;
-
-   procedure getInstance is
-      Java_Result : constant SpecialMessageUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure get (This : in out SpecialMessageUtil) is
-      Java_Result : constant Unbounded_String := SpecialMessageUtil'Class (This).get;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end get;
 
 begin

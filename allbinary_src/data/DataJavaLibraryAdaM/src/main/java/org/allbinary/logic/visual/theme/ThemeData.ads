@@ -40,7 +40,6 @@ package org.allbinary.logic.visual.theme.ThemeData_Package is
    procedure Initialize (This : in out ThemeData'Class);
    function Create return ThemeData_Access;
    function getInstance return ThemeData_Access;
-   procedure getInstance;
 
 end org.allbinary.logic.visual.theme.ThemeData_Package;
 

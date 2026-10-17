@@ -21,7 +21,7 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 
-package org.allbinary.business.user.commerce.inventory.basket_Case.BasketData_Package is
+package org.allbinary.business.user.commerce.inventory.basket.BasketData_Package is
 
 
    type BasketData is tagged;
@@ -45,6 +45,6 @@ package org.allbinary.business.user.commerce.inventory.basket_Case.BasketData_Pa
    procedure Initialize (This : in out BasketData'Class);
    function Create return BasketData_Access;
 
-end org.allbinary.business.user.commerce.inventory.basket_Case.BasketData_Package;
+end org.allbinary.business.user.commerce.inventory.basket.BasketData_Package;
 
 

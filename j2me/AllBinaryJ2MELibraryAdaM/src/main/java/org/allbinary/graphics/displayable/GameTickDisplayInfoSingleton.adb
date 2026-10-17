@@ -33,7 +33,7 @@ package body org.allbinary.graphics.displayable.GameTickDisplayInfoSingleton_Pac
    function Create return GameTickDisplayInfoSingleton_Access is
       This : constant GameTickDisplayInfoSingleton_Access := new GameTickDisplayInfoSingleton;
    begin
-      Initialize (This.all);
+      GameTickDisplayInfoSingleton_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -69,41 +69,6 @@ package body org.allbinary.graphics.displayable.GameTickDisplayInfoSingleton_Pac
    function getLastHalfHeight (This : in out GameTickDisplayInfoSingleton) return Integer is
    begin
         return This.lastHalfHeight;
-   end getLastHalfHeight;
-
-   procedure getInstance is
-      Java_Result : constant GameTickDisplayInfoSingleton_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure getLastWidth (This : in out GameTickDisplayInfoSingleton) is
-      Java_Result : constant Integer := GameTickDisplayInfoSingleton'Class (This).getLastWidth;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getLastWidth;
-
-   procedure getLastHeight (This : in out GameTickDisplayInfoSingleton) is
-      Java_Result : constant Integer := GameTickDisplayInfoSingleton'Class (This).getLastHeight;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getLastHeight;
-
-   procedure getLastHalfWidth (This : in out GameTickDisplayInfoSingleton) is
-      Java_Result : constant Integer := GameTickDisplayInfoSingleton'Class (This).getLastHalfWidth;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getLastHalfWidth;
-
-   procedure getLastHalfHeight (This : in out GameTickDisplayInfoSingleton) is
-      Java_Result : constant Integer := GameTickDisplayInfoSingleton'Class (This).getLastHalfHeight;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getLastHalfHeight;
 
 begin

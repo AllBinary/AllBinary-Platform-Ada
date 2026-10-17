@@ -31,7 +31,7 @@ package body org.allbinary.game.layer.special.CollidableDestroyableDamageableBeh
    function Create (collidable : Boolean) return CollidableDestroyableDamageableBehavior_Access is
       This : constant CollidableDestroyableDamageableBehavior_Access := new CollidableDestroyableDamageableBehavior;
    begin
-      Initialize (This.all, collidable);
+      CollidableDestroyableDamageableBehavior_Package.Initialize (This.all, collidable);
       return This;
    end Create;
 

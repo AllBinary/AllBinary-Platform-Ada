@@ -34,7 +34,7 @@ package body org.allbinary.graphics.j2me.workarea.tools.PointsDomUtil_Package is
    function Create return PointsDomUtil_Access is
       This : constant PointsDomUtil_Access := new PointsDomUtil;
    begin
-      Initialize (This.all);
+      PointsDomUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -115,13 +115,6 @@ package body org.allbinary.graphics.j2me.workarea.tools.PointsDomUtil_Package is
         pointNode.appendChild (yNode);
         return pointNode;
    end getPointNode;
-
-   procedure getInstance is
-      Java_Result : constant PointsDomUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure toDom (This : in out PointsDomUtil; canvasDom : CanvasDom_Access; pointVector : BasicArrayList_Access) is
       Java_Result : constant Node_Access := PointsDomUtil'Class (This).toDom (canvasDom, pointVector);

@@ -33,7 +33,7 @@ package body org.allbinary.media.graphics.geography.pathfinding.GeographicMapCel
    function Create return GeographicMapCellPathHistoryInfo_Access is
       This : constant GeographicMapCellPathHistoryInfo_Access := new GeographicMapCellPathHistoryInfo;
    begin
-      Initialize (This.all);
+      GeographicMapCellPathHistoryInfo_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -87,41 +87,6 @@ package body org.allbinary.media.graphics.geography.pathfinding.GeographicMapCel
    begin
         This.nextChosenOnPathGeographicMapCellPosition := nextChosenOnPathGeographicMapCellPosition;
    end setNextChosenOnPathGeographicMapCellPosition;
-
-   procedure getPreviousGeographicMapCellPosition (This : in out GeographicMapCellPathHistoryInfo) is
-      Java_Result : constant GeographicMapCellPosition_Access := GeographicMapCellPathHistoryInfo'Class (This).getPreviousGeographicMapCellPosition;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getPreviousGeographicMapCellPosition;
-
-   procedure getPreviousOnPathGeographicMapCellPosition (This : in out GeographicMapCellPathHistoryInfo) is
-      Java_Result : constant GeographicMapCellPosition_Access := GeographicMapCellPathHistoryInfo'Class (This).getPreviousOnPathGeographicMapCellPosition;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getPreviousOnPathGeographicMapCellPosition;
-
-   procedure getNextUnvisitedOnPathGeographicMapCellPosition (This : in out GeographicMapCellPathHistoryInfo) is
-      Java_Result : constant GeographicMapCellPosition_Access := GeographicMapCellPathHistoryInfo'Class (This).getNextUnvisitedOnPathGeographicMapCellPosition;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getNextUnvisitedOnPathGeographicMapCellPosition;
-
-   procedure getNextOnPathGeographicMapCellPosition (This : in out GeographicMapCellPathHistoryInfo) is
-      Java_Result : constant GeographicMapCellPosition_Access := GeographicMapCellPathHistoryInfo'Class (This).getNextOnPathGeographicMapCellPosition;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getNextOnPathGeographicMapCellPosition;
-
-   procedure getNextChosenOnPathGeographicMapCellPosition (This : in out GeographicMapCellPathHistoryInfo) is
-      Java_Result : constant GeographicMapCellPosition_Access := GeographicMapCellPathHistoryInfo'Class (This).getNextChosenOnPathGeographicMapCellPosition;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getNextChosenOnPathGeographicMapCellPosition;
 
 end org.allbinary.media.graphics.geography.pathfinding.GeographicMapCellPathHistoryInfo_Package;
 

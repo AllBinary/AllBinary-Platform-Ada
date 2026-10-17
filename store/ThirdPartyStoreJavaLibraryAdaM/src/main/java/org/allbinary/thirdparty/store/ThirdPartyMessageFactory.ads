@@ -39,7 +39,6 @@ package org.allbinary.thirdparty.store.ThirdPartyMessageFactory_Package is
    procedure Initialize (This : in out ThirdPartyMessageFactory'Class);
    function Create return ThirdPartyMessageFactory_Access;
    function getInstance return ThirdPartyMessageFactory_Access;
-   procedure getInstance;
 
 end org.allbinary.thirdparty.store.ThirdPartyMessageFactory_Package;
 

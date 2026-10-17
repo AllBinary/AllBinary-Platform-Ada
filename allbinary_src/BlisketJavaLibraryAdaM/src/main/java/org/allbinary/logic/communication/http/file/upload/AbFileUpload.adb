@@ -29,7 +29,7 @@ package body org.allbinary.logic.communication.http.file.upload.AbFileUpload_Pac
    function Create (fileItemFactory : FileItemFactory_Access) return AbFileUpload_Access is
       This : constant AbFileUpload_Access := new AbFileUpload;
    begin
-      Initialize (This.all, fileItemFactory);
+      AbFileUpload_Package.Initialize (This.all, fileItemFactory);
       return This;
    end Create;
 

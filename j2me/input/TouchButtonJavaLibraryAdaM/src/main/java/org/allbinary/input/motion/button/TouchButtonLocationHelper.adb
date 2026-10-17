@@ -45,7 +45,7 @@ package body org.allbinary.input.motion.button.TouchButtonLocationHelper_Package
    function Create return TouchButtonLocationHelper_Access is
       This : constant TouchButtonLocationHelper_Access := new TouchButtonLocationHelper;
    begin
-      Initialize (This.all);
+      TouchButtonLocationHelper_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -96,55 +96,6 @@ package body org.allbinary.input.motion.button.TouchButtonLocationHelper_Package
         stringBuffer.append (To_Unbounded_String (" rowsRemainderHalf: "));
         stringBuffer.appendint (This.rowsRemainderHalf);
         return stringBuffer.toString;
-   end toString;
-
-   procedure getTotalColumns (This : in out TouchButtonLocationHelper) is
-      Java_Result : constant Integer := TouchButtonLocationHelper'Class (This).getTotalColumns;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTotalColumns;
-
-   procedure getTotalRows (This : in out TouchButtonLocationHelper) is
-      Java_Result : constant Integer := TouchButtonLocationHelper'Class (This).getTotalRows;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTotalRows;
-
-   procedure getColumnsRemainder (This : in out TouchButtonLocationHelper) is
-      Java_Result : constant Integer := TouchButtonLocationHelper'Class (This).getColumnsRemainder;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getColumnsRemainder;
-
-   procedure getRowsRemainder (This : in out TouchButtonLocationHelper) is
-      Java_Result : constant Integer := TouchButtonLocationHelper'Class (This).getRowsRemainder;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getRowsRemainder;
-
-   procedure getColumnsRemainderHalf (This : in out TouchButtonLocationHelper) is
-      Java_Result : constant Integer := TouchButtonLocationHelper'Class (This).getColumnsRemainderHalf;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getColumnsRemainderHalf;
-
-   procedure getRowsRemainderHalf (This : in out TouchButtonLocationHelper) is
-      Java_Result : constant Integer := TouchButtonLocationHelper'Class (This).getRowsRemainderHalf;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getRowsRemainderHalf;
-
-   procedure toString (This : in out TouchButtonLocationHelper) is
-      Java_Result : constant Unbounded_String := TouchButtonLocationHelper'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end toString;
 
 end org.allbinary.input.motion.button.TouchButtonLocationHelper_Package;

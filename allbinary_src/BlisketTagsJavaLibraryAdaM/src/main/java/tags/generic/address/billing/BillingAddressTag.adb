@@ -31,7 +31,7 @@ package body tags.generic_Id.address.billing.BillingAddressTag_Package is
    function Create return BillingAddressTag_Access is
       This : constant BillingAddressTag_Access := new BillingAddressTag;
    begin
-      Initialize (This.all);
+      BillingAddressTag_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -76,13 +76,6 @@ package body tags.generic_Id.address.billing.BillingAddressTag_Package is
             return SKIP_BODY;
                 end;
         end;
-   end doStartTag;
-
-   procedure doStartTag (This : in out BillingAddressTag) is
-      Java_Result : constant Integer := BillingAddressTag'Class (This).doStartTag;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end doStartTag;
 
 end tags.generic_Id.address.billing.BillingAddressTag_Package;

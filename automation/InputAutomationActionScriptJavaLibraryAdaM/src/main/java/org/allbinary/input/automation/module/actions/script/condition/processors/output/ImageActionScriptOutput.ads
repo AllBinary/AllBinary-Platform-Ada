@@ -32,6 +32,10 @@ with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.w3c.dom.NodeList_Package; use org.w3c.dom.NodeList_Package;
 with org.allbinary.input.automation.module.actions.script.condition.processors.output.BasicProfileActionScriptOutput_Package; use org.allbinary.input.automation.module.actions.script.condition.processors.output.BasicProfileActionScriptOutput_Package;
 with org.allbinary.input.automation.module.actions.script.condition.processors.output.ImageActionScriptOutputInterface_Package; use org.allbinary.input.automation.module.actions.script.condition.processors.output.ImageActionScriptOutputInterface_Package;
+with org.allbinary.input.automation.module.actions.script.condition.processors.output.ImageTypes_Package; use org.allbinary.input.automation.module.actions.script.condition.processors.output.ImageTypes_Package;
+with org.allbinary.input.automation.module.actions.script.condition.processors.output.ImageActionScriptOutputJPanel_Package; use org.allbinary.input.automation.module.actions.script.condition.processors.output.ImageActionScriptOutputJPanel_Package;
+with org.allbinary.input.automation.module.actions.script.condition.processors.output.ImageActionScriptOutputData_Package; use org.allbinary.input.automation.module.actions.script.condition.processors.output.ImageActionScriptOutputData_Package;
+with org.allbinary.input.automation.module.actions.script.condition.processors.output.ImageActionScriptOutputProcessor_Package; use org.allbinary.input.automation.module.actions.script.condition.processors.output.ImageActionScriptOutputProcessor_Package;
 
 package org.allbinary.input.automation.module.actions.script.condition.processors.output.ImageActionScriptOutput_Package is
 
@@ -62,24 +66,18 @@ package org.allbinary.input.automation.module.actions.script.condition.processor
    procedure Initialize (This : in out ImageActionScriptOutput'Class; node : Node_Access);
    function Create (node : Node_Access) return ImageActionScriptOutput_Access;
    function getActionScriptOutputJPanel (This : in out ImageActionScriptOutput) return ImageActionScriptOutputJPanel_Access;
-   procedure getActionScriptOutputJPanel (This : in out ImageActionScriptOutput);
    function toHashMap (This : in out ImageActionScriptOutput) return HashMap_Access;
-   procedure toHashMap (This : in out ImageActionScriptOutput);
    function toXmlNode (This : in out ImageActionScriptOutput; document : Document_Access) return Node_Access;
    procedure toXmlNode (This : in out ImageActionScriptOutput; document : Document_Access);
    procedure process (This : in out ImageActionScriptOutput; frame : Long_Long_Integer);
    procedure showDialog (This : in out ImageActionScriptOutput);
    function isSaved (This : in out ImageActionScriptOutput) return Boolean;
-   procedure isSaved (This : in out ImageActionScriptOutput);
    procedure setSaved (This : in out ImageActionScriptOutput; saved : Boolean);
    function isDisplay (This : in out ImageActionScriptOutput) return Boolean;
-   procedure isDisplay (This : in out ImageActionScriptOutput);
    procedure setDisplay (This : in out ImageActionScriptOutput; display : Boolean);
    function future_toString (This : in out ImageActionScriptOutput) return Unbounded_String;
-   procedure future_toString (This : in out ImageActionScriptOutput);
    procedure log (This : in out ImageActionScriptOutput);
    function getImageTypes (This : in out ImageActionScriptOutput) return ImageTypes_Access;
-   procedure getImageTypes (This : in out ImageActionScriptOutput);
    procedure setImageTypes (This : in out ImageActionScriptOutput; imageTypes : ImageTypes_Access);
 
 end org.allbinary.input.automation.module.actions.script.condition.processors.output.ImageActionScriptOutput_Package;

@@ -37,7 +37,7 @@ package body org.allbinary.game.ag.layer.pickup.health.HealPickedUpLayerInterfac
    function Create return HealPickedUpLayerInterfaceFactory_Access is
       This : constant HealPickedUpLayerInterfaceFactory_Access := new HealPickedUpLayerInterfaceFactory;
    begin
-      Initialize (This.all);
+      HealPickedUpLayerInterfaceFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -56,20 +56,6 @@ package body org.allbinary.game.ag.layer.pickup.health.HealPickedUpLayerInterfac
    begin
         This.pool.visit (sourceLayerInterface);
    end process;
-
-   procedure getTotal (This : in out HealPickedUpLayerInterfaceFactory) is
-      Java_Result : constant Integer := HealPickedUpLayerInterfaceFactory'Class (This).getTotal;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTotal;
-
-   procedure getInstance is
-      Java_Result : constant PickedUpLayerInterfaceFactoryInterface_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

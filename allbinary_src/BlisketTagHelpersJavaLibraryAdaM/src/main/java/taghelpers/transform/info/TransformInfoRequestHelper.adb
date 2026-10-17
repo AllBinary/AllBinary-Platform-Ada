@@ -33,7 +33,7 @@ package body taghelpers.transform.info.TransformInfoRequestHelper_Package is
    function Create (propertiesHashMap : HashMap_Access; pageContext : PageContext_Access) return TransformInfoRequestHelper_Access is
       This : constant TransformInfoRequestHelper_Access := new TransformInfoRequestHelper;
    begin
-      Initialize (This.all, propertiesHashMap, pageContext);
+      TransformInfoRequestHelper_Package.Initialize (This.all, propertiesHashMap, pageContext);
       return This;
    end Create;
 
@@ -114,27 +114,6 @@ package body taghelpers.transform.info.TransformInfoRequestHelper_Package is
             return error;
                 end;
         end;
-   end delete;
-
-   procedure update (This : in out TransformInfoRequestHelper) is
-      Java_Result : constant Unbounded_String := TransformInfoRequestHelper'Class (This).update;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end update;
-
-   procedure insert (This : in out TransformInfoRequestHelper) is
-      Java_Result : constant Unbounded_String := TransformInfoRequestHelper'Class (This).insert;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end insert;
-
-   procedure delete (This : in out TransformInfoRequestHelper) is
-      Java_Result : constant Unbounded_String := TransformInfoRequestHelper'Class (This).delete;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end delete;
 
 end taghelpers.transform.info.TransformInfoRequestHelper_Package;

@@ -62,7 +62,6 @@ package org.allbinary.data.tree.dom.document.XmlDocumentHelper_Package is
    procedure Initialize (This : in out XmlDocumentHelper'Class);
    function Create return XmlDocumentHelper_Access;
    function getInstance return XmlDocumentHelper_Access;
-   procedure getInstance;
    procedure init (This : in out XmlDocumentHelper; indent : Integer; ignoreDeclaration : Boolean);
    function format (This : in out XmlDocumentHelper; xmlString : Unbounded_String) return Unbounded_String;
    procedure format (This : in out XmlDocumentHelper; xmlString : Unbounded_String);

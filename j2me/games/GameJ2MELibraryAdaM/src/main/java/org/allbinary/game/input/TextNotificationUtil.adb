@@ -31,7 +31,7 @@ package body org.allbinary.game.input.TextNotificationUtil_Package is
    function Create return TextNotificationUtil_Access is
       This : constant TextNotificationUtil_Access := new TextNotificationUtil;
    begin
-      Initialize (This.all);
+      TextNotificationUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -69,13 +69,6 @@ package body org.allbinary.game.input.TextNotificationUtil_Package is
         gameNotificationEvent := GameNotificationEvent_Package.Create (This'Unchecked_Access, message, This.TWO, BasicColorFactory_Package.getInstance.RED, This.FALSE);
         This.gameNotificationEventHandler.fireEvent (gameNotificationEvent);
    end fire;
-
-   procedure getInstance is
-      Java_Result : constant TextNotificationUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

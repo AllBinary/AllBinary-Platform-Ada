@@ -30,7 +30,7 @@ package body org.allbinary.logic.visual.dhtml.html.HtmlButton_Package is
    function Create return HtmlButton_Access is
       This : constant HtmlButton_Access := new HtmlButton;
    begin
-      Initialize (This.all);
+      HtmlButton_Package.Initialize (This.all);
       return This;
    end Create;
 

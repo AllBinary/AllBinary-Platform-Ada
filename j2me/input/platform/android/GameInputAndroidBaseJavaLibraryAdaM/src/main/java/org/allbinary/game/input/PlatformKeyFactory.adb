@@ -17,7 +17,7 @@ package body org.allbinary.game.input.PlatformKeyFactory_Package is
    function Create return PlatformKeyFactory_Access is
       This : constant PlatformKeyFactory_Access := new PlatformKeyFactory;
    begin
-      Initialize (This.all);
+      PlatformKeyFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -74,13 +74,6 @@ package body org.allbinary.game.input.PlatformKeyFactory_Package is
    begin
         return This.androidKeyFactory.isEnter (input);
    end isEnter;
-
-   procedure getInstance is
-      Java_Result : constant PlatformKeyFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure getString (This : in out PlatformKeyFactory; keyCode : Integer) is
       Java_Result : constant Unbounded_String := PlatformKeyFactory'Class (This).getString (keyCode);

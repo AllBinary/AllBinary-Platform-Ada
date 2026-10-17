@@ -49,7 +49,6 @@ package org.allbinary.data.tree.dom.XslHelper_Package is
    procedure Initialize (This : in out XslHelper'Class);
    function Create return XslHelper_Access;
    function getInstance return XslHelper_Access;
-   procedure getInstance;
    function translate (This : in out XslHelper; xsltStreamSource : StreamSource_Access; xmlStreamSource : StreamSource_Access; streamResult : StreamResult_Access) return OutputStream_Access;
    procedure translate (This : in out XslHelper; xsltStreamSource : StreamSource_Access; xmlStreamSource : StreamSource_Access; streamResult : StreamResult_Access);
    function translate (This : in out XslHelper; resolver : URIResolver_Access; xsltStreamSource : StreamSource_Access; xmlStreamSource : StreamSource_Access; streamResult : StreamResult_Access) return OutputStream_Access;

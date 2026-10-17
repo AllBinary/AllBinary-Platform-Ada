@@ -29,7 +29,7 @@ package body org.allbinary.game.input.PCGameInputMapping_Package is
    function Create return PCGameInputMapping_Access is
       This : constant PCGameInputMapping_Access := new PCGameInputMapping;
    begin
-      Initialize (This.all);
+      PCGameInputMapping_Package.Initialize (This.all);
       return This;
    end Create;
 

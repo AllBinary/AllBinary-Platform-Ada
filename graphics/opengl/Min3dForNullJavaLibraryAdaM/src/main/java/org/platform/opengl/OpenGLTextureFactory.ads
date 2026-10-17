@@ -11,6 +11,7 @@ with AllBinary_Java; use AllBinary_Java;
 --  with javax.microedition.khronos.opengles.GL10_Package; use javax.microedition.khronos.opengles.GL10_Package;
 --  with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
 with org.allbinary.platform.opengles.PlatformTextureBaseFactory_Package; use org.allbinary.platform.opengles.PlatformTextureBaseFactory_Package;
+with org.platform.opengl.OpenGLGLUUtils_Package; use org.platform.opengl.OpenGLGLUUtils_Package;
 
 package org.platform.opengl.OpenGLTextureFactory_Package is
 
@@ -29,7 +30,6 @@ package org.platform.opengl.OpenGLTextureFactory_Package is
    procedure Initialize (This : in out OpenGLTextureFactory'Class);
    function Create return OpenGLTextureFactory_Access;
    function getInstance return OpenGLTextureFactory_Access;
-   procedure getInstance;
    procedure load (This : in out OpenGLTextureFactory; gl : GL10_Access; target : Integer; level : Integer; image : Image_Access; border : Integer; flip : Boolean);
 
 end org.platform.opengl.OpenGLTextureFactory_Package;

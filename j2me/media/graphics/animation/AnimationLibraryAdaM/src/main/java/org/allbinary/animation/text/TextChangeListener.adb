@@ -28,7 +28,7 @@ package body org.allbinary.animation.text.TextChangeListener_Package is
    function Create return TextChangeListener_Access is
       This : constant TextChangeListener_Access := new TextChangeListener;
    begin
-      Initialize (This.all);
+      TextChangeListener_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -42,13 +42,6 @@ package body org.allbinary.animation.text.TextChangeListener_Package is
    begin
         null;
    end onMeasure;
-
-   procedure getInstance is
-      Java_Result : constant TextChangeListener_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

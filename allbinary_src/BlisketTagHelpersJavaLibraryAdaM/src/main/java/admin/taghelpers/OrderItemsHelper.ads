@@ -48,13 +48,9 @@ package admin.taghelpers.OrderItemsHelper_Package is
    procedure Initialize (This : in out OrderItemsHelper'Class; hashMap : HashMap_Access; pageContext : PageContext_Access);
    function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return OrderItemsHelper_Access;
    function drop (This : in out OrderItemsHelper) return Unbounded_String;
-   procedure drop (This : in out OrderItemsHelper);
    function create (This : in out OrderItemsHelper) return Unbounded_String;
-   procedure create (This : in out OrderItemsHelper);
    function restore (This : in out OrderItemsHelper) return Unbounded_String;
-   procedure restore (This : in out OrderItemsHelper);
    function backup (This : in out OrderItemsHelper) return Unbounded_String;
-   procedure backup (This : in out OrderItemsHelper);
 
 end admin.taghelpers.OrderItemsHelper_Package;
 

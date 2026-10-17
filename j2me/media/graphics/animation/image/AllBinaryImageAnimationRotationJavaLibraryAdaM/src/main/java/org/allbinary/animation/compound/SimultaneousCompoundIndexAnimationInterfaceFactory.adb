@@ -33,7 +33,7 @@ package body org.allbinary.animation.compound.SimultaneousCompoundIndexAnimation
    function Create (basicAnimationInterfaceFactoryInterfaceArray : AnimationInterfaceFactoryInterface_Access_Array_Access; animationBehaviorFactory : AnimationBehaviorFactory_Access) return SimultaneousCompoundIndexAnimationInterfaceFactory_Access is
       This : constant SimultaneousCompoundIndexAnimationInterfaceFactory_Access := new SimultaneousCompoundIndexAnimationInterfaceFactory;
    begin
-      Initialize (This.all, basicAnimationInterfaceFactoryInterfaceArray, animationBehaviorFactory);
+      SimultaneousCompoundIndexAnimationInterfaceFactory_Package.Initialize (This.all, basicAnimationInterfaceFactoryInterfaceArray, animationBehaviorFactory);
       return This;
    end Create;
 
@@ -79,13 +79,6 @@ package body org.allbinary.animation.compound.SimultaneousCompoundIndexAnimation
    begin
       null;
    end getOrCreate;
-
-   procedure getBasicAnimationInterfaceFactoryInterfaceArray (This : in out SimultaneousCompoundIndexAnimationInterfaceFactory) is
-      Java_Result : constant AnimationInterfaceFactoryInterface_Access_Array_Access := SimultaneousCompoundIndexAnimationInterfaceFactory'Class (This).getBasicAnimationInterfaceFactoryInterfaceArray;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getBasicAnimationInterfaceFactoryInterfaceArray;
 
 end org.allbinary.animation.compound.SimultaneousCompoundIndexAnimationInterfaceFactory_Package;
 

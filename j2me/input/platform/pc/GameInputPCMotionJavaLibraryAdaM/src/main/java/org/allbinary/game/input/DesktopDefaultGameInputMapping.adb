@@ -99,7 +99,7 @@ package body org.allbinary.game.input.DesktopDefaultGameInputMapping_Package is
    function Create return DesktopDefaultGameInputMapping_Access is
       This : constant DesktopDefaultGameInputMapping_Access := new DesktopDefaultGameInputMapping;
    begin
-      Initialize (This.all);
+      DesktopDefaultGameInputMapping_Package.Initialize (This.all);
       return This;
    end Create;
 

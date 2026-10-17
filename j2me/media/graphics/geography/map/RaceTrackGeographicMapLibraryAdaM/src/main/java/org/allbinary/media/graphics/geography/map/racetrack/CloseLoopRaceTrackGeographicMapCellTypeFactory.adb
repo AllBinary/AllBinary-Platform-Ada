@@ -38,16 +38,9 @@ package body org.allbinary.media.graphics.geography.map.racetrack.CloseLoopRaceT
    function Create return CloseLoopRaceTrackGeographicMapCellTypeFactory_Access is
       This : constant CloseLoopRaceTrackGeographicMapCellTypeFactory_Access := new CloseLoopRaceTrackGeographicMapCellTypeFactory;
    begin
-      Initialize (This.all);
+      CloseLoopRaceTrackGeographicMapCellTypeFactory_Package.Initialize (This.all);
       return This;
    end Create;
-
-   procedure getInstance is
-      Java_Result : constant CloseLoopRaceTrackGeographicMapCellTypeFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

@@ -28,7 +28,7 @@ package body org.allbinary.midlet.MidletFactoryInterface_Package is
    function Create return MidletFactoryInterface_Access is
       This : constant MidletFactoryInterface_Access := new MidletFactoryInterface;
    begin
-      Initialize (This.all);
+      MidletFactoryInterface_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -36,13 +36,6 @@ package body org.allbinary.midlet.MidletFactoryInterface_Package is
    function getInstance (This : in out MidletFactoryInterface) return MIDlet_Access is
    begin
         return AllBinaryMidlet_Package.getNullInstance;
-   end getInstance;
-
-   procedure getInstance (This : in out MidletFactoryInterface) is
-      Java_Result : constant MIDlet_Access := MidletFactoryInterface'Class (This).getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 end org.allbinary.midlet.MidletFactoryInterface_Package;

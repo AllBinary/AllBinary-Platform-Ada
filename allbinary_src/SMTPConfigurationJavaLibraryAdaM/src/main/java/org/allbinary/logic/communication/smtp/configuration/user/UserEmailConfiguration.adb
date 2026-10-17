@@ -36,7 +36,7 @@ package body org.allbinary.logic.communication.smtp.configuration.user.UserEmail
    function Create return UserEmailConfiguration_Access is
       This : constant UserEmailConfiguration_Access := new UserEmailConfiguration;
    begin
-      Initialize (This.all);
+      UserEmailConfiguration_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -53,7 +53,7 @@ package body org.allbinary.logic.communication.smtp.configuration.user.UserEmail
    function Create (hashMap : HashMap_Access) return UserEmailConfiguration_Access is
       This : constant UserEmailConfiguration_Access := new UserEmailConfiguration;
    begin
-      Initialize (This.all, hashMap);
+      UserEmailConfiguration_Package.Initialize (This.all, hashMap);
       return This;
    end Create;
 
@@ -66,13 +66,6 @@ package body org.allbinary.logic.communication.smtp.configuration.user.UserEmail
    begin
         This.userEmailEventsConfigurationInterface := userEmailEventsConfigurationInterface;
    end setUserEmailEventsConfigurationInterface;
-
-   procedure getUserEmailEventsConfigurationInterface (This : in out UserEmailConfiguration) is
-      Java_Result : constant UserEmailEventsConfigurationInterface_Access := UserEmailConfiguration'Class (This).getUserEmailEventsConfigurationInterface;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getUserEmailEventsConfigurationInterface;
 
 end org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfiguration_Package;
 

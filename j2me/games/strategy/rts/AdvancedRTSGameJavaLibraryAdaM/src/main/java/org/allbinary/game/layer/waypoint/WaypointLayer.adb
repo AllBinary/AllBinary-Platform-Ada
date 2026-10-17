@@ -32,7 +32,7 @@ package body org.allbinary.game.layer.waypoint.WaypointLayer_Package is
    function Create (remoteInfo : RemoteInfo_Access; parentLayer : PathFindingLayerInterface_Access; groupInterface : Group_Access_Array_Access; rootName : Unbounded_String; name : Unbounded_String; animationInterfaceFactoryInterface : AnimationInterfaceFactoryInterface_Access; proceduralAnimationInterfaceFactoryInterface : ProceduralAnimationInterfaceFactoryInterface_Access; rectangle : Rectangle_Access; x : Integer; y : Integer) return WaypointLayer_Access is
       This : constant WaypointLayer_Access := new WaypointLayer;
    begin
-      Initialize (This.all, remoteInfo, parentLayer, groupInterface, rootName, name, animationInterfaceFactoryInterface, proceduralAnimationInterfaceFactoryInterface, rectangle, x, y);
+      WaypointLayer_Package.Initialize (This.all, remoteInfo, parentLayer, groupInterface, rootName, name, animationInterfaceFactoryInterface, proceduralAnimationInterfaceFactoryInterface, rectangle, x, y);
       return This;
    end Create;
 
@@ -104,27 +104,6 @@ package body org.allbinary.game.layer.waypoint.WaypointLayer_Package is
    begin
       null;
    end getDamage;
-
-   procedure getType (This : in out WaypointLayer) is
-      Java_Result : constant Integer := WaypointLayer'Class (This).getType;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getType;
-
-   procedure getStaticType is
-      Java_Result : constant Integer := getStaticType;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getStaticType;
-
-   procedure isSelfUpgradeable (This : in out WaypointLayer) is
-      Java_Result : constant Boolean := WaypointLayer'Class (This).isSelfUpgradeable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isSelfUpgradeable;
 
 end org.allbinary.game.layer.waypoint.WaypointLayer_Package;
 

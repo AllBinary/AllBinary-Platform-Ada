@@ -41,7 +41,7 @@ package body org.allbinary.animation.image.AllBinaryFlickerAndroidImageRotationA
    function Create (originalImage : Image_Access; image : Image_Access; angleInfo : AngleInfo_Access; totalAngle : Short_Integer; animationBehavior : AnimationBehavior_Access) return AllBinaryFlickerAndroidImageRotationAnimation_Access is
       This : constant AllBinaryFlickerAndroidImageRotationAnimation_Access := new AllBinaryFlickerAndroidImageRotationAnimation;
    begin
-      Initialize (This.all, originalImage, image, angleInfo, totalAngle, animationBehavior);
+      AllBinaryFlickerAndroidImageRotationAnimation_Package.Initialize (This.all, originalImage, image, angleInfo, totalAngle, animationBehavior);
       return This;
    end Create;
 

@@ -23,6 +23,9 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.game.layer.AllBinaryTiledLayer_Package; use org.allbinary.game.layer.AllBinaryTiledLayer_Package;
 with org.allbinary.util.BasicArrayListS_Package; use org.allbinary.util.BasicArrayListS_Package;
+with org.allbinary.media.graphics.geography.map.BasicGeographicMapCellPositionFactory_Package; use org.allbinary.media.graphics.geography.map.BasicGeographicMapCellPositionFactory_Package;
+with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
+with org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package; use org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
 
 package org.allbinary.media.graphics.geography.map.CellPositionsUtil_Package is
 
@@ -44,7 +47,6 @@ package org.allbinary.media.graphics.geography.map.CellPositionsUtil_Package is
    procedure Initialize (This : in out CellPositionsUtil'Class);
    function Create return CellPositionsUtil_Access;
    function getInstance return CellPositionsUtil_Access;
-   procedure getInstance;
    function getAll (This : in out CellPositionsUtil; geographicMapInterface : BasicGeographicMap_Access; topRightGeographicMapCellPosition : GeographicMapCellPosition_Access; columns : Integer; rows : Integer; reusableList : BasicArrayList_Access) return BasicArrayList_Access;
    procedure getAll (This : in out CellPositionsUtil; geographicMapInterface : BasicGeographicMap_Access; topRightGeographicMapCellPosition : GeographicMapCellPosition_Access; columns : Integer; rows : Integer; reusableList : BasicArrayList_Access);
    function getAllSurrounding (This : in out CellPositionsUtil; geographicMapInterface : BasicGeographicMap_Access; occupyList : BasicArrayList_Access; reusableList : BasicArrayList_Access) return BasicArrayList_Access;

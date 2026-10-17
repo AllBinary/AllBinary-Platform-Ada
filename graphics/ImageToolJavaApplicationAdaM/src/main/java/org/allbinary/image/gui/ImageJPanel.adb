@@ -38,7 +38,7 @@ package body org.allbinary.image.gui.ImageJPanel_Package is
    function Create (bufferedImage : BufferedImage_Access) return ImageJPanel_Access is
       This : constant ImageJPanel_Access := new ImageJPanel;
    begin
-      Initialize (This.all, bufferedImage);
+      ImageJPanel_Package.Initialize (This.all, bufferedImage);
       return This;
    end Create;
 

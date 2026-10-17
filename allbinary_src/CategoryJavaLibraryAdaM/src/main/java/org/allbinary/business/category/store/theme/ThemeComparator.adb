@@ -30,7 +30,7 @@ package body org.allbinary.business.category.store.theme.ThemeComparator_Package
    function Create return ThemeComparator_Access is
       This : constant ThemeComparator_Access := new ThemeComparator;
    begin
-      Initialize (This.all);
+      ThemeComparator_Package.Initialize (This.all);
       return This;
    end Create;
 

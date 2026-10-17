@@ -21,7 +21,7 @@ package body org.allbinary.graphics.form.ABCustomForm_Package is
    function Create (title : Unbounded_String; items : ABCustomItem_Access_Array_Access; backgroundBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access) return ABCustomForm_Access is
       This : constant ABCustomForm_Access := new ABCustomForm;
    begin
-      Initialize (This.all, title, items, backgroundBasicColor, foregroundBasicColor);
+      ABCustomForm_Package.Initialize (This.all, title, items, backgroundBasicColor, foregroundBasicColor);
       return This;
    end Create;
 
@@ -90,27 +90,6 @@ package body org.allbinary.graphics.form.ABCustomForm_Package is
         return StringUtil_Package.getInstance.EMPTY_STRING;
    end getTitle;
 
-   procedure getAllitems (This : in out ABCustomForm) is
-      Java_Result : constant ABCustomItem_Access_Array_Access := ABCustomForm'Class (This).getAllitems;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getAllitems;
-
-   procedure size (This : in out ABCustomForm) is
-      Java_Result : constant Integer := ABCustomForm'Class (This).size;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end size;
-
-   procedure getSelectedIndex (This : in out ABCustomForm) is
-      Java_Result : constant Integer := ABCustomForm'Class (This).getSelectedIndex;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSelectedIndex;
-
    procedure append (This : in out ABCustomForm; item : ABCustomItem_Access) is
       Java_Result : constant Integer := ABCustomForm'Class (This).append (item);
       pragma Unreferenced (Java_Result);
@@ -124,20 +103,6 @@ package body org.allbinary.graphics.form.ABCustomForm_Package is
    begin
       null;
    end get;
-
-   procedure getWidth (This : in out ABCustomForm) is
-      Java_Result : constant Integer := ABCustomForm'Class (This).getWidth;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getWidth;
-
-   procedure getTitle (This : in out ABCustomForm) is
-      Java_Result : constant Unbounded_String := ABCustomForm'Class (This).getTitle;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTitle;
 
 end org.allbinary.graphics.form.ABCustomForm_Package;
 

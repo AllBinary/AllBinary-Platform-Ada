@@ -29,7 +29,7 @@ package body org.allbinary.game.layer.LevelLayersFinder_Package is
    function Create return LevelLayersFinder_Access is
       This : constant LevelLayersFinder_Access := new LevelLayersFinder;
    begin
-      Initialize (This.all);
+      LevelLayersFinder_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -63,13 +63,6 @@ package body org.allbinary.game.layer.LevelLayersFinder_Package is
         end loop;
         return list;
    end get;
-
-   procedure getInstance is
-      Java_Result : constant LevelLayersFinder_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure get (This : in out LevelLayersFinder; hashtable : ABHashtable_Access) is
       Java_Result : constant BasicArrayList_Access := LevelLayersFinder'Class (This).get (hashtable);

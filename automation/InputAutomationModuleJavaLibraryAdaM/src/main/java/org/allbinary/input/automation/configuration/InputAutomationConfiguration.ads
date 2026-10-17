@@ -66,12 +66,9 @@ package org.allbinary.input.automation.configuration.InputAutomationConfiguratio
    procedure Initialize (This : in out InputAutomationConfiguration'Class);
    function Create return InputAutomationConfiguration_Access;
    function getFile return File_Access;
-   procedure getFile;
    function isInstalled (This : in out InputAutomationConfiguration) return Boolean;
-   procedure isInstalled (This : in out InputAutomationConfiguration);
    procedure setInstalled (This : in out InputAutomationConfiguration; installed : Boolean);
    function getInputAutomationModuleConfigurationList (This : in out InputAutomationConfiguration) return List_Access;
-   procedure getInputAutomationModuleConfigurationList (This : in out InputAutomationConfiguration);
    procedure save (This : in out InputAutomationConfiguration);
 
 end org.allbinary.input.automation.configuration.InputAutomationConfiguration_Package;

@@ -36,7 +36,7 @@ package body org.allbinary.input.motion.gesture.observer.GameMotionGestureListen
    function Create (signed : CompleteMotionGestureListenerInterface_Access) return GameMotionGestureListener_Access is
       This : constant GameMotionGestureListener_Access := new GameMotionGestureListener;
    begin
-      Initialize (This.all, signed);
+      GameMotionGestureListener_Package.Initialize (This.all, signed);
       return This;
    end Create;
 

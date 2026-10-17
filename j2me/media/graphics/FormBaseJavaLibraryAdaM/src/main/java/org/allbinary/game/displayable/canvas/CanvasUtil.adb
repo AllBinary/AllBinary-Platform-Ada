@@ -30,7 +30,7 @@ package body org.allbinary.game.displayable.canvas.CanvasUtil_Package is
    function Create return CanvasUtil_Access is
       This : constant CanvasUtil_Access := new CanvasUtil;
    begin
-      Initialize (This.all);
+      CanvasUtil_Package.Initialize (This.all);
       return This;
    end Create;
 

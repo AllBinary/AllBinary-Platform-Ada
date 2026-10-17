@@ -76,7 +76,7 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
    function Create (node : Node_Access) return KeyboardActionScriptInput_Access is
       This : constant KeyboardActionScriptInput_Access := new KeyboardActionScriptInput;
    begin
-      Initialize (This.all, node);
+      KeyboardActionScriptInput_Package.Initialize (This.all, node);
       return This;
    end Create;
 
@@ -96,7 +96,7 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
    function Create return KeyboardActionScriptInput_Access is
       This : constant KeyboardActionScriptInput_Access := new KeyboardActionScriptInput;
    begin
-      Initialize (This.all);
+      KeyboardActionScriptInput_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -275,48 +275,6 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
         return stringBuffer.toString;
    end toString;
 
-   procedure getDelayBetweenKeys (This : in out KeyboardActionScriptInput) is
-      Java_Result : constant Integer := KeyboardActionScriptInput'Class (This).getDelayBetweenKeys;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getDelayBetweenKeys;
-
-   procedure isPress (This : in out KeyboardActionScriptInput) is
-      Java_Result : constant Boolean := KeyboardActionScriptInput'Class (This).isPress;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isPress;
-
-   procedure isRelease (This : in out KeyboardActionScriptInput) is
-      Java_Result : constant Boolean := KeyboardActionScriptInput'Class (This).isRelease;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isRelease;
-
-   procedure isNormal (This : in out KeyboardActionScriptInput) is
-      Java_Result : constant Boolean := KeyboardActionScriptInput'Class (This).isNormal;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isNormal;
-
-   procedure getKeyArray (This : in out KeyboardActionScriptInput) is
-      Java_Result : constant Integer_Array_Access := KeyboardActionScriptInput'Class (This).getKeyArray;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getKeyArray;
-
-   procedure getText (This : in out KeyboardActionScriptInput) is
-      Java_Result : constant Unbounded_String := KeyboardActionScriptInput'Class (This).getText;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getText;
-
    procedure getText (integerArray : Integer_Array_Access) is
       Java_Result : constant Unbounded_String := getText (integerArray);
       pragma Unreferenced (Java_Result);
@@ -331,26 +289,12 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
       null;
    end integerArrayValue;
 
-   procedure toHashMap (This : in out KeyboardActionScriptInput) is
-      Java_Result : constant HashMap_Access := KeyboardActionScriptInput'Class (This).toHashMap;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toHashMap;
-
    procedure toXmlNode (This : in out KeyboardActionScriptInput; document : Document_Access) is
       Java_Result : constant Node_Access := KeyboardActionScriptInput'Class (This).toXmlNode (document);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end toXmlNode;
-
-   procedure toString (This : in out KeyboardActionScriptInput) is
-      Java_Result : constant Unbounded_String := KeyboardActionScriptInput'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toString;
 
 begin
    null;

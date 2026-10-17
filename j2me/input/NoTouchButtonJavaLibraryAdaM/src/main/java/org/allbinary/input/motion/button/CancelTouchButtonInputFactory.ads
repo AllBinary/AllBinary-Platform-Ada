@@ -22,6 +22,8 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.input.InputFactory_Package; use org.allbinary.game.input.InputFactory_Package;
 with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
+with org.allbinary.input.motion.button.TouchButtonInput_Package; use org.allbinary.input.motion.button.TouchButtonInput_Package;
+with org.allbinary.input.motion.button.BasicTouchInputFactory_Package; use org.allbinary.input.motion.button.BasicTouchInputFactory_Package;
 
 package org.allbinary.input.motion.button.CancelTouchButtonInputFactory_Package is
 
@@ -41,7 +43,6 @@ package org.allbinary.input.motion.button.CancelTouchButtonInputFactory_Package 
    procedure Initialize (This : in out CancelTouchButtonInputFactory'Class);
    function Create return CancelTouchButtonInputFactory_Access;
    function getInstance return CancelTouchButtonInputFactory_Access;
-   procedure getInstance;
    function getCancel (This : in out CancelTouchButtonInputFactory; touchButtonInput : TouchButtonInput_Access) return TouchButtonInput_Access;
    procedure getCancel (This : in out CancelTouchButtonInputFactory; touchButtonInput : TouchButtonInput_Access);
 

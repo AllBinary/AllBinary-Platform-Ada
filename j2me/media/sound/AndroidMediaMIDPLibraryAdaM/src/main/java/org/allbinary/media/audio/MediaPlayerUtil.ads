@@ -41,7 +41,6 @@ package org.allbinary.media.audio.MediaPlayerUtil_Package is
    procedure Initialize (This : in out MediaPlayerUtil'Class);
    function Create return MediaPlayerUtil_Access;
    function getInstance return MediaPlayerUtil_Access;
-   procedure getInstance;
    procedure waitForMediaPlayer (This : in out MediaPlayerUtil; mediaPlayer : MediaPlayer_Access);
 
 end org.allbinary.media.audio.MediaPlayerUtil_Package;

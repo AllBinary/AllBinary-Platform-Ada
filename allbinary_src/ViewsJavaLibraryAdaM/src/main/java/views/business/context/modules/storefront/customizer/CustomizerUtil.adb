@@ -36,7 +36,7 @@ package body views.business.context.modules.storefront.customizer.CustomizerUtil
    function Create return CustomizerUtil_Access is
       This : constant CustomizerUtil_Access := new CustomizerUtil;
    begin
-      Initialize (This.all);
+      CustomizerUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -207,13 +207,6 @@ package body views.business.context.modules.storefront.customizer.CustomizerUtil
         end loop;
         Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("No Components Specified in ObjectConfig")));
    end getViewDataForComponentsInObjectConfig;
-
-   procedure getInstance is
-      Java_Result : constant CustomizerUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure getTransformInfoInterfaceToCustomize (This : in out CustomizerUtil; customizerTransformInfoInterface : TransformInfoInterface_Access; transformInfoInterface : TransformInfoInterface_Access) is
       Java_Result : constant TransformInfoInterface_Access := CustomizerUtil'Class (This).getTransformInfoInterfaceToCustomize (customizerTransformInfoInterface, transformInfoInterface);

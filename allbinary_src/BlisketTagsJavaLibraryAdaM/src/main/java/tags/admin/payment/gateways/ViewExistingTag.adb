@@ -31,7 +31,7 @@ package body tags.admin.payment.gateways.ViewExistingTag_Package is
    function Create return ViewExistingTag_Access is
       This : constant ViewExistingTag_Access := new ViewExistingTag;
    begin
-      Initialize (This.all);
+      ViewExistingTag_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -58,13 +58,6 @@ package body tags.admin.payment.gateways.ViewExistingTag_Package is
             return SKIP_BODY;
                 end;
         end;
-   end doStartTag;
-
-   procedure doStartTag (This : in out ViewExistingTag) is
-      Java_Result : constant Integer := ViewExistingTag'Class (This).doStartTag;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end doStartTag;
 
 end tags.admin.payment.gateways.ViewExistingTag_Package;

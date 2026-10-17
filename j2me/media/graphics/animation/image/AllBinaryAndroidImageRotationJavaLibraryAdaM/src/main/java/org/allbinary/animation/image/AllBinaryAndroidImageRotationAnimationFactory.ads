@@ -31,6 +31,8 @@ with org.allbinary.media.image.ImageCopyUtil_Package; use org.allbinary.media.im
 with org.allbinary.math.AngleFactory_Package; use org.allbinary.math.AngleFactory_Package;
 with org.allbinary.math.AngleInfo_Package; use org.allbinary.math.AngleInfo_Package;
 with org.allbinary.animation.image.BaseImageAnimationFactory_Package; use org.allbinary.animation.image.BaseImageAnimationFactory_Package;
+with org.allbinary.animation.image.AllBinaryFlickerAndroidImageRotationAnimation_Package; use org.allbinary.animation.image.AllBinaryFlickerAndroidImageRotationAnimation_Package;
+with org.allbinary.animation.image.AllBinaryAdjustedAndroidImageRotationAnimation_Package; use org.allbinary.animation.image.AllBinaryAdjustedAndroidImageRotationAnimation_Package;
 
 package org.allbinary.animation.image.AllBinaryAndroidImageRotationAnimationFactory_Package is
 
@@ -68,7 +70,6 @@ package org.allbinary.animation.image.AllBinaryAndroidImageRotationAnimationFact
    procedure createFactoryADXY (image : Image_Access; width : Integer; height : Integer; dx : Integer; dy : Integer; angleIncrement : Short_Integer; animationBehaviorFactory : AnimationBehaviorFactory_Access; resizeCanvasForRotation : Boolean);
    procedure init (This : in out AllBinaryAndroidImageRotationAnimationFactory; dx : Integer; dy : Integer);
    function getCanvasImage (This : in out AllBinaryAndroidImageRotationAnimationFactory) return Image_Access;
-   procedure getCanvasImage (This : in out AllBinaryAndroidImageRotationAnimationFactory);
    function getInstance (This : in out AllBinaryAndroidImageRotationAnimationFactory; instanceId : Integer) return Animation_Access;
    procedure getInstance (This : in out AllBinaryAndroidImageRotationAnimationFactory; instanceId : Integer);
 

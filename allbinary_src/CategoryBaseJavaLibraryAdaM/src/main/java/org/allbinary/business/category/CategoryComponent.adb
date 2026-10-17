@@ -31,7 +31,7 @@ package body org.allbinary.business.category.CategoryComponent_Package is
    function Create (categoryInterface : CategoryInterface_Access) return CategoryComponent_Access is
       This : constant CategoryComponent_Access := new CategoryComponent;
    begin
-      Initialize (This.all, categoryInterface);
+      CategoryComponent_Package.Initialize (This.all, categoryInterface);
       return This;
    end Create;
 
@@ -69,41 +69,6 @@ package body org.allbinary.business.category.CategoryComponent_Package is
    function view (This : in out CategoryComponent) return Unbounded_String is
    begin
         return Null_Unbounded_String;
-   end view;
-
-   procedure getTypeId (This : in out CategoryComponent) is
-      Java_Result : constant Integer := CategoryComponent'Class (This).getTypeId;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTypeId;
-
-   procedure getTransformDocumentInterface (This : in out CategoryComponent) is
-      Java_Result : constant TransformDocumentInterface_Access := CategoryComponent'Class (This).getTransformDocumentInterface;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTransformDocumentInterface;
-
-   procedure getTransformInfoInterface (This : in out CategoryComponent) is
-      Java_Result : constant TransformInfoInterface_Access := CategoryComponent'Class (This).getTransformInfoInterface;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTransformInfoInterface;
-
-   procedure toXmlDoc (This : in out CategoryComponent) is
-      Java_Result : constant Document_Access := CategoryComponent'Class (This).toXmlDoc;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toXmlDoc;
-
-   procedure view (This : in out CategoryComponent) is
-      Java_Result : constant Unbounded_String := CategoryComponent'Class (This).view;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end view;
 
 end org.allbinary.business.category.CategoryComponent_Package;

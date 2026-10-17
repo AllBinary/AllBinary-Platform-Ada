@@ -24,6 +24,9 @@ with AllBinary_Java; use AllBinary_Java;
 --  with java.io.IOException_Package; use java.io.IOException_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.media.image.ImageJ2SERotationUtil_Package; use org.allbinary.media.image.ImageJ2SERotationUtil_Package;
+with org.allbinary.media.image.ImageProcessorInput_Package; use org.allbinary.media.image.ImageProcessorInput_Package;
+with org.allbinary.media.image.ImageProcessedVisitor_Package; use org.allbinary.media.image.ImageProcessedVisitor_Package;
 
 package org.allbinary.media.image.ImageArrayRotationUtil_Package is
 
@@ -45,7 +48,6 @@ package org.allbinary.media.image.ImageArrayRotationUtil_Package is
    procedure Initialize (This : in out ImageArrayRotationUtil'Class);
    function Create return ImageArrayRotationUtil_Access;
    function getInstance return ImageArrayRotationUtil_Access;
-   procedure getInstance;
    procedure process (This : in out ImageArrayRotationUtil; imageProcessorInput : ImageProcessorInput_Access; input : Unbounded_String; visitor : ImageProcessedVisitor_Access);
 
 end org.allbinary.media.image.ImageArrayRotationUtil_Package;

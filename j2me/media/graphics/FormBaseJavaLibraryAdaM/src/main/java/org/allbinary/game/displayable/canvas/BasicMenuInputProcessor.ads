@@ -54,9 +54,7 @@ package org.allbinary.game.displayable.canvas.BasicMenuInputProcessor_Package is
    procedure onScrolledMotionGestureEvent (This : in out BasicMenuInputProcessor; motionGestureEvent : MotionGestureEvent_Access);
    procedure setCanvas (This : in out BasicMenuInputProcessor; canvas : MyCanvas_Access);
    function getCanvas (This : in out BasicMenuInputProcessor) return MyCanvas_Access;
-   procedure getCanvas (This : in out BasicMenuInputProcessor);
    function processInputList (This : in out BasicMenuInputProcessor) return Integer;
-   procedure processInputList (This : in out BasicMenuInputProcessor);
 
 end org.allbinary.game.displayable.canvas.BasicMenuInputProcessor_Package;
 

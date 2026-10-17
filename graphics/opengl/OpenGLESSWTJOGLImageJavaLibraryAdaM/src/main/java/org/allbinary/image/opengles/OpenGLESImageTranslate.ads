@@ -21,6 +21,7 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with javax.microedition.khronos.opengles.GL10_Package; use javax.microedition.khronos.opengles.GL10_Package;
+with org.allbinary.image.opengles.OpenGLESImage_Package; use org.allbinary.image.opengles.OpenGLESImage_Package;
 
 package org.allbinary.image.opengles.OpenGLESImageTranslate_Package is
 
@@ -36,7 +37,6 @@ package org.allbinary.image.opengles.OpenGLESImageTranslate_Package is
    procedure Initialize (This : in out OpenGLESImageTranslate'Class);
    function Create return OpenGLESImageTranslate_Access;
    function getInstance return OpenGLESImageTranslate_Access;
-   procedure getInstance;
    procedure translate (This : in out OpenGLESImageTranslate; gl : GL10_Access; openGLESImage : OpenGLESImage_Access; x : Float; y : Float);
    procedure translate2 (This : in out OpenGLESImageTranslate; gl : GL10_Access; openGLESImage : OpenGLESImage_Access);
 

@@ -26,6 +26,7 @@ with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.allbinary.business.category.properties.CategoryPropertiesView_Package; use org.allbinary.business.category.properties.CategoryPropertiesView_Package;
+with org.allbinary.business.category.properties.CategoryPropertiesInterface_Package; use org.allbinary.business.category.properties.CategoryPropertiesInterface_Package;
 
 package org.allbinary.business.category.properties.CategoryPropertiesValidationView_Package is
 
@@ -47,11 +48,8 @@ package org.allbinary.business.category.properties.CategoryPropertiesValidationV
    procedure Initialize (This : in out CategoryPropertiesValidationView'Class; categoryPropertiesInterface : CategoryPropertiesInterface_Access);
    function Create (categoryPropertiesInterface : CategoryPropertiesInterface_Access) return CategoryPropertiesValidationView_Access;
    function isValid (This : in out CategoryPropertiesValidationView) return Boolean;
-   procedure isValid (This : in out CategoryPropertiesValidationView);
    function validationInfo (This : in out CategoryPropertiesValidationView) return Unbounded_String;
-   procedure validationInfo (This : in out CategoryPropertiesValidationView);
    function toValidationInfoDoc (This : in out CategoryPropertiesValidationView) return Document_Access;
-   procedure toValidationInfoDoc (This : in out CategoryPropertiesValidationView);
    function toValidationInfoNode (This : in out CategoryPropertiesValidationView; document : Document_Access) return Node_Access;
    procedure toValidationInfoNode (This : in out CategoryPropertiesValidationView; document : Document_Access);
 

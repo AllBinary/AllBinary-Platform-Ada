@@ -28,7 +28,7 @@ package body org.allbinary.PostGameCommandFactory_Package is
    function Create return PostGameCommandFactory_Access is
       This : constant PostGameCommandFactory_Access := new PostGameCommandFactory;
    begin
-      Initialize (This.all);
+      PostGameCommandFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -42,13 +42,6 @@ package body org.allbinary.PostGameCommandFactory_Package is
    begin
         null;
    end addCommands;
-
-   procedure getInstance is
-      Java_Result : constant PostGameCommandFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

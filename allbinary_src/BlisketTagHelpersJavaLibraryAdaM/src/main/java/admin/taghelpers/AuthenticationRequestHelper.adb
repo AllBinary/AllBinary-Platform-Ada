@@ -36,7 +36,7 @@ package body admin.taghelpers.AuthenticationRequestHelper_Package is
    function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return AuthenticationRequestHelper_Access is
       This : constant AuthenticationRequestHelper_Access := new AuthenticationRequestHelper;
    begin
-      Initialize (This.all, hashMap, pageContext);
+      AuthenticationRequestHelper_Package.Initialize (This.all, hashMap, pageContext);
       return This;
    end Create;
 
@@ -52,7 +52,7 @@ package body admin.taghelpers.AuthenticationRequestHelper_Package is
    function Create (hashMap : HashMap_Access; httpServletRequest : HttpServletRequest_Access) return AuthenticationRequestHelper_Access is
       This : constant AuthenticationRequestHelper_Access := new AuthenticationRequestHelper;
    begin
-      Initialize (This.all, hashMap, httpServletRequest);
+      AuthenticationRequestHelper_Package.Initialize (This.all, hashMap, httpServletRequest);
       return This;
    end Create;
 
@@ -231,27 +231,6 @@ package body admin.taghelpers.AuthenticationRequestHelper_Package is
                 end;
         end;
    end isRoleValid;
-
-   procedure generateNewPassword (This : in out AuthenticationRequestHelper) is
-      Java_Result : constant Unbounded_String := AuthenticationRequestHelper'Class (This).generateNewPassword;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end generateNewPassword;
-
-   procedure newPassword (This : in out AuthenticationRequestHelper) is
-      Java_Result : constant Boolean := AuthenticationRequestHelper'Class (This).newPassword;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end newPassword;
-
-   procedure changePassword (This : in out AuthenticationRequestHelper) is
-      Java_Result : constant Boolean := AuthenticationRequestHelper'Class (This).changePassword;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end changePassword;
 
    procedure isRoleValid (This : in out AuthenticationRequestHelper; userName : Unbounded_String; password : Unbounded_String; roles : BasicArrayList_Access) is
       Java_Result : constant Boolean := AuthenticationRequestHelper'Class (This).isRoleValid (userName, password, roles);

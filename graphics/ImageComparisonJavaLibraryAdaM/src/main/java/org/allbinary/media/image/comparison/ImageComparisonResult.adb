@@ -80,7 +80,7 @@ package body org.allbinary.media.image.comparison.ImageComparisonResult_Package 
    function Create (name : Unbounded_String; bufferedImage : BufferedImage_Access; bufferedImage2 : BufferedImage_Access; frameOne : Long_Long_Integer; frameTwo : Long_Long_Integer; tolerance : Integer) return ImageComparisonResult_Access is
       This : constant ImageComparisonResult_Access := new ImageComparisonResult;
    begin
-      Initialize (This.all, name, bufferedImage, bufferedImage2, frameOne, frameTwo, tolerance);
+      ImageComparisonResult_Package.Initialize (This.all, name, bufferedImage, bufferedImage2, frameOne, frameTwo, tolerance);
       return This;
    end Create;
 
@@ -130,55 +130,6 @@ package body org.allbinary.media.image.comparison.ImageComparisonResult_Package 
    function getFrameTwo (This : in out ImageComparisonResult) return Long_Long_Integer is
    begin
         return This.frameTwo;
-   end getFrameTwo;
-
-   procedure getMatchingPercent (This : in out ImageComparisonResult) is
-      Java_Result : constant Float := ImageComparisonResult'Class (This).getMatchingPercent;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getMatchingPercent;
-
-   procedure getNonMatchingPixelVector (This : in out ImageComparisonResult) is
-      Java_Result : constant BasicArrayList_Access := ImageComparisonResult'Class (This).getNonMatchingPixelVector;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getNonMatchingPixelVector;
-
-   procedure toString (This : in out ImageComparisonResult) is
-      Java_Result : constant Unbounded_String := ImageComparisonResult'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toString;
-
-   procedure getBufferedImages (This : in out ImageComparisonResult) is
-      Java_Result : constant BufferedImage_Access_Array_Access := ImageComparisonResult'Class (This).getBufferedImages;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getBufferedImages;
-
-   procedure getTolerance (This : in out ImageComparisonResult) is
-      Java_Result : constant Integer := ImageComparisonResult'Class (This).getTolerance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTolerance;
-
-   procedure getFrameOne (This : in out ImageComparisonResult) is
-      Java_Result : constant Long_Long_Integer := ImageComparisonResult'Class (This).getFrameOne;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getFrameOne;
-
-   procedure getFrameTwo (This : in out ImageComparisonResult) is
-      Java_Result : constant Long_Long_Integer := ImageComparisonResult'Class (This).getFrameTwo;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getFrameTwo;
 
 end org.allbinary.media.image.comparison.ImageComparisonResult_Package;

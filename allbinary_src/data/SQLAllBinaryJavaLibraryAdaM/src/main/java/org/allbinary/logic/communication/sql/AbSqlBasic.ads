@@ -32,6 +32,9 @@ with org.allbinary.logic.communication.sql.connection.pool.SqlConnectionPool_Pac
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.logic.communication.sql.SqlTypeStrings_Package; use org.allbinary.logic.communication.sql.SqlTypeStrings_Package;
+with org.allbinary.logic.communication.sql.SqlStrings_Package; use org.allbinary.logic.communication.sql.SqlStrings_Package;
+with org.allbinary.logic.communication.sql.ClassLoader_Package; use org.allbinary.logic.communication.sql.ClassLoader_Package;
 
 package org.allbinary.logic.communication.sql.AbSqlBasic_Package is
 
@@ -86,7 +89,6 @@ package org.allbinary.logic.communication.sql.AbSqlBasic_Package is
    procedure createConnection (This : in out AbSqlBasic);
    procedure initialize (This : in out AbSqlBasic);
    function getDatabaseConnectionInfoInterface (This : in out AbSqlBasic) return DatabaseConnectionInfoInterface_Access;
-   procedure getDatabaseConnectionInfoInterface (This : in out AbSqlBasic);
    procedure setDatabaseConnectionInfoInterface (This : in out AbSqlBasic; databaseConnectionInfoInterface : DbConnectionInfo_Access);
 
 end org.allbinary.logic.communication.sql.AbSqlBasic_Package;

@@ -30,7 +30,7 @@ package body org.allbinary.game.layer.waypoint.WaypointCellPositionHistory_Packa
    function Create return WaypointCellPositionHistory_Access is
       This : constant WaypointCellPositionHistory_Access := new WaypointCellPositionHistory;
    begin
-      Initialize (This.all);
+      WaypointCellPositionHistory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -109,13 +109,6 @@ package body org.allbinary.game.layer.waypoint.WaypointCellPositionHistory_Packa
             return AllBinaryLayer_Package.NULL_ALLBINARY_LAYER;
         end if;
    end getLayerInterface;
-
-   procedure getInstance is
-      Java_Result : constant WaypointCellPositionHistory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure isCellPositionWithDrop (This : in out WaypointCellPositionHistory; cellPosition : CellPosition_Access) is
       Java_Result : constant Boolean := WaypointCellPositionHistory'Class (This).isCellPositionWithDrop (cellPosition);

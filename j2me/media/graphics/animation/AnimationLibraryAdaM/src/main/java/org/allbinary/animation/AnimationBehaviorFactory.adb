@@ -28,7 +28,7 @@ package body org.allbinary.animation.AnimationBehaviorFactory_Package is
    function Create return AnimationBehaviorFactory_Access is
       This : constant AnimationBehaviorFactory_Access := new AnimationBehaviorFactory;
    begin
-      Initialize (This.all);
+      AnimationBehaviorFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -41,20 +41,6 @@ package body org.allbinary.animation.AnimationBehaviorFactory_Package is
    function getOrCreateInstance (This : in out AnimationBehaviorFactory) return AnimationBehavior_Access is
    begin
         return AnimationBehavior_Package.getInstance;
-   end getOrCreateInstance;
-
-   procedure getInstance is
-      Java_Result : constant AnimationBehaviorFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure getOrCreateInstance (This : in out AnimationBehaviorFactory) is
-      Java_Result : constant AnimationBehavior_Access := AnimationBehaviorFactory'Class (This).getOrCreateInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getOrCreateInstance;
 
 begin

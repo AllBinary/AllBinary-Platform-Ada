@@ -28,7 +28,7 @@ package body org.allbinary.game.view.StaticTileLayerViewPositionFactory_Package 
    function Create return StaticTileLayerViewPositionFactory_Access is
       This : constant StaticTileLayerViewPositionFactory_Access := new StaticTileLayerViewPositionFactory;
    begin
-      Initialize (This.all);
+      StaticTileLayerViewPositionFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -37,13 +37,6 @@ package body org.allbinary.game.view.StaticTileLayerViewPositionFactory_Package 
    function getInstance (This : in out StaticTileLayerViewPositionFactory) return ViewPositionBase_Access is
    begin
         return StaticTileLayerIntoPositionViewPosition_Package.Create;
-   end getInstance;
-
-   procedure getInstance (This : in out StaticTileLayerViewPositionFactory) is
-      Java_Result : constant ViewPositionBase_Access := StaticTileLayerViewPositionFactory'Class (This).getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 end org.allbinary.game.view.StaticTileLayerViewPositionFactory_Package;

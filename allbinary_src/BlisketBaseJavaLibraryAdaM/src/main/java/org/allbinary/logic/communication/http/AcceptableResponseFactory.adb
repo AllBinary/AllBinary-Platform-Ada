@@ -31,7 +31,7 @@ package body org.allbinary.logic.communication.http.AcceptableResponseFactory_Pa
    function Create return AcceptableResponseFactory_Access is
       This : constant AcceptableResponseFactory_Access := new AcceptableResponseFactory;
    begin
-      Initialize (This.all);
+      AcceptableResponseFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -39,13 +39,6 @@ package body org.allbinary.logic.communication.http.AcceptableResponseFactory_Pa
    function getInstance return AcceptableResponseFactory_Access is
    begin
         return AcceptableResponseFactory_Package.instance;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant AcceptableResponseFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

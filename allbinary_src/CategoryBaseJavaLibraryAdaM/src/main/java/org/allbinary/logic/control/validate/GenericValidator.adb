@@ -31,7 +31,7 @@ package body org.allbinary.logic.control.validate.GenericValidator_Package is
    function Create return GenericValidator_Access is
       This : constant GenericValidator_Access := new GenericValidator;
    begin
-      Initialize (This.all);
+      GenericValidator_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -44,13 +44,6 @@ package body org.allbinary.logic.control.validate.GenericValidator_Package is
    begin
         return null;
    end toValidationInfoNode;
-
-   procedure toValidationInfoDoc (This : in out GenericValidator) is
-      Java_Result : constant Document_Access := GenericValidator'Class (This).toValidationInfoDoc;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toValidationInfoDoc;
 
    procedure toValidationInfoNode (This : in out GenericValidator; document : Document_Access) is
       Java_Result : constant Node_Access := GenericValidator'Class (This).toValidationInfoNode (document);

@@ -13,7 +13,7 @@
 --  Generated Code Do Not Modify
 
 
-package body org.allbinary_Case.logic.communication.log.LogData_Package is
+package body org.allbinary.logic.communication.log.LogData_Package is
 
    procedure Initialize_Fields (This : in out LogData'Class) is
    begin
@@ -34,11 +34,11 @@ package body org.allbinary_Case.logic.communication.log.LogData_Package is
    function Create return LogData_Access is
       This : constant LogData_Access := new LogData;
    begin
-      Initialize (This.all);
+      LogData_Package.Initialize (This.all);
       return This;
    end Create;
 
 
-end org.allbinary_Case.logic.communication.log.LogData_Package;
+end org.allbinary.logic.communication.log.LogData_Package;
 
 

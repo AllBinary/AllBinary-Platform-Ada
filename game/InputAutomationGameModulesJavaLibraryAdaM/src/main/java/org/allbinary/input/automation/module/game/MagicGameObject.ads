@@ -43,7 +43,6 @@ package org.allbinary.input.automation.module.game.MagicGameObject_Package is
    procedure Initialize (This : in out MagicGameObject'Class; bufferedImage : BufferedImage_Access_Array_Access; minX : Integer; maxX : Integer; y : Integer);
    function Create (bufferedImage : BufferedImage_Access_Array_Access; minX : Integer; maxX : Integer; y : Integer) return MagicGameObject_Access;
    function toString (This : in out MagicGameObject) return Unbounded_String;
-   procedure toString (This : in out MagicGameObject);
 
 end org.allbinary.input.automation.module.game.MagicGameObject_Package;
 

@@ -25,6 +25,12 @@ with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.lo
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.media.image.ImageUtil_Package; use org.allbinary.media.image.ImageUtil_Package;
+with org.allbinary.media.image.ImageUnifierProperties_Package; use org.allbinary.media.image.ImageUnifierProperties_Package;
+with org.allbinary.media.image.ImageUnifierCell_Package; use org.allbinary.media.image.ImageUnifierCell_Package;
+with org.allbinary.media.image.ImageUnifierUtil_Package; use org.allbinary.media.image.ImageUnifierUtil_Package;
+with org.allbinary.media.image.ImageProcessorInput_Package; use org.allbinary.media.image.ImageProcessorInput_Package;
+with org.allbinary.media.image.ImageProcessedVisitor_Package; use org.allbinary.media.image.ImageProcessedVisitor_Package;
 
 package org.allbinary.media.image.SpriteSplitterUtil_Package is
 
@@ -54,7 +60,6 @@ package org.allbinary.media.image.SpriteSplitterUtil_Package is
    procedure Initialize (This : in out SpriteSplitterUtil'Class);
    function Create return SpriteSplitterUtil_Access;
    function getInstance return SpriteSplitterUtil_Access;
-   procedure getInstance;
    procedure process (This : in out SpriteSplitterUtil; imageProcessorInput : ImageProcessorInput_Access; totalFrames : Integer; totalAnimations : Integer; widthReduction : Integer; heightReduction : Integer; increaseWidth : Integer; increaseHeight : Integer; spriteType : Unbounded_String; visitor : ImageProcessedVisitor_Access);
 
 end org.allbinary.media.image.SpriteSplitterUtil_Package;

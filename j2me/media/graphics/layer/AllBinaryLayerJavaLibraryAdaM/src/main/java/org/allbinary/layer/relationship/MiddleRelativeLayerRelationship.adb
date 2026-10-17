@@ -29,7 +29,7 @@ package body org.allbinary.layer.relationship.MiddleRelativeLayerRelationship_Pa
    function Create (layer : AllBinaryLayer_Access) return MiddleRelativeLayerRelationship_Access is
       This : constant MiddleRelativeLayerRelationship_Access := new MiddleRelativeLayerRelationship;
    begin
-      Initialize (This.all, layer);
+      MiddleRelativeLayerRelationship_Package.Initialize (This.all, layer);
       return This;
    end Create;
 

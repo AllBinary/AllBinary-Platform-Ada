@@ -26,7 +26,7 @@ package body org.allbinary.layer.LayerManager_Package is
    function Create (layerManagerLogging : LayerManagerLoggingBase_Access) return LayerManager_Access is
       This : constant LayerManager_Access := new LayerManager;
    begin
-      Initialize (This.all, layerManagerLogging);
+      LayerManager_Package.Initialize (This.all, layerManagerLogging);
       return This;
    end Create;
 
@@ -150,13 +150,6 @@ package body org.allbinary.layer.LayerManager_Package is
    begin
       null;
    end getLayerAt;
-
-   procedure getSize (This : in out LayerManager) is
-      Java_Result : constant Integer := LayerManager'Class (This).getSize;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSize;
 
 end org.allbinary.layer.LayerManager_Package;
 

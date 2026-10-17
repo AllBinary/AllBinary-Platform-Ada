@@ -42,7 +42,7 @@ package body org.allbinary.business.user.commerce.inventory.order.Order_Package 
    function Create (basket : BasketInterface_Access) return Order_Access is
       This : constant Order_Access := new Order;
    begin
-      Initialize (This.all, basket);
+      Order_Package.Initialize (This.all, basket);
       return This;
    end Create;
 
@@ -61,7 +61,7 @@ package body org.allbinary.business.user.commerce.inventory.order.Order_Package 
    function Create (storeName : Unbounded_String; basket : BasketInterface_Access; id : Unbounded_String; shippingType : Unbounded_String; special : Unbounded_String; paymentMethod : Unbounded_String) return Order_Access is
       This : constant Order_Access := new Order;
    begin
-      Initialize (This.all, storeName, basket, id, shippingType, special, paymentMethod);
+      Order_Package.Initialize (This.all, storeName, basket, id, shippingType, special, paymentMethod);
       return This;
    end Create;
 
@@ -239,97 +239,6 @@ package body org.allbinary.business.user.commerce.inventory.order.Order_Package 
         return node;
    end toXmlNode;
 
-   procedure isIdValid (This : in out Order) is
-      Java_Result : constant Boolean := Order'Class (This).isIdValid;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isIdValid;
-
-   procedure isValid (This : in out Order) is
-      Java_Result : constant Boolean := Order'Class (This).isValid;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isValid;
-
-   procedure getIdValidationInfo (This : in out Order) is
-      Java_Result : constant Unbounded_String := Order'Class (This).getIdValidationInfo;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getIdValidationInfo;
-
-   procedure getBasket (This : in out Order) is
-      Java_Result : constant BasketInterface_Access := Order'Class (This).getBasket;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getBasket;
-
-   procedure getShippingMethod (This : in out Order) is
-      Java_Result : constant Unbounded_String := Order'Class (This).getShippingMethod;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getShippingMethod;
-
-   procedure getPaymentMethod (This : in out Order) is
-      Java_Result : constant Unbounded_String := Order'Class (This).getPaymentMethod;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getPaymentMethod;
-
-   procedure getSpecial (This : in out Order) is
-      Java_Result : constant Unbounded_String := Order'Class (This).getSpecial;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSpecial;
-
-   procedure getId (This : in out Order) is
-      Java_Result : constant Unbounded_String := Order'Class (This).getId;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getId;
-
-   procedure getStoreName (This : in out Order) is
-      Java_Result : constant Unbounded_String := Order'Class (This).getStoreName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getStoreName;
-
-   procedure getUserComments (This : in out Order) is
-      Java_Result : constant Unbounded_String := Order'Class (This).getUserComments;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getUserComments;
-
-   procedure getUserCancelComments (This : in out Order) is
-      Java_Result : constant Unbounded_String := Order'Class (This).getUserCancelComments;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getUserCancelComments;
-
-   procedure getStoreComments (This : in out Order) is
-      Java_Result : constant Unbounded_String := Order'Class (This).getStoreComments;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getStoreComments;
-
-   procedure getStoreCancelComments (This : in out Order) is
-      Java_Result : constant Unbounded_String := Order'Class (This).getStoreCancelComments;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getStoreCancelComments;
-
    procedure reviewOrder (This : in out Order; paymentMethod : Unbounded_String) is
       Java_Result : constant Unbounded_String := Order'Class (This).reviewOrder (paymentMethod);
       pragma Unreferenced (Java_Result);
@@ -350,13 +259,6 @@ package body org.allbinary.business.user.commerce.inventory.order.Order_Package 
    begin
       null;
    end emailOrder;
-
-   procedure toHashMapOrder (This : in out Order) is
-      Java_Result : constant HashMap_Access := Order'Class (This).toHashMapOrder;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toHashMapOrder;
 
    procedure toXmlNode (This : in out Order; document : Document_Access) is
       Java_Result : constant Node_Access := Order'Class (This).toXmlNode (document);

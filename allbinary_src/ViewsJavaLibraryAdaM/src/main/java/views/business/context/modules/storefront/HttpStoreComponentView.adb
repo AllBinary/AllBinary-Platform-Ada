@@ -36,7 +36,7 @@ package body views.business.context.modules.storefront.HttpStoreComponentView_Pa
    function Create (transformInfoInterface : TransformInfoInterface_Access) return HttpStoreComponentView_Access is
       This : constant HttpStoreComponentView_Access := new HttpStoreComponentView;
    begin
-      Initialize (This.all, transformInfoInterface);
+      HttpStoreComponentView_Package.Initialize (This.all, transformInfoInterface);
       return This;
    end Create;
 
@@ -64,13 +64,6 @@ package body views.business.context.modules.storefront.HttpStoreComponentView_Pa
             Java_Throw (e);
                 end;
         end;
-   end view;
-
-   procedure view (This : in out HttpStoreComponentView) is
-      Java_Result : constant Unbounded_String := HttpStoreComponentView'Class (This).view;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end view;
 
 end views.business.context.modules.storefront.HttpStoreComponentView_Package;

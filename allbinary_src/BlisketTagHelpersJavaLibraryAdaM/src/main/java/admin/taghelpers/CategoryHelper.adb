@@ -33,7 +33,7 @@ package body admin.taghelpers.CategoryHelper_Package is
    function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return CategoryHelper_Access is
       This : constant CategoryHelper_Access := new CategoryHelper;
    begin
-      Initialize (This.all, hashMap, pageContext);
+      CategoryHelper_Package.Initialize (This.all, hashMap, pageContext);
       return This;
    end Create;
 
@@ -135,34 +135,6 @@ package body admin.taghelpers.CategoryHelper_Package is
             return error;
                 end;
         end;
-   end backup;
-
-   procedure drop (This : in out CategoryHelper) is
-      Java_Result : constant Unbounded_String := CategoryHelper'Class (This).drop;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end drop;
-
-   procedure create (This : in out CategoryHelper) is
-      Java_Result : constant Unbounded_String := CategoryHelper'Class (This).create;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end create;
-
-   procedure restore (This : in out CategoryHelper) is
-      Java_Result : constant Unbounded_String := CategoryHelper'Class (This).restore;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end restore;
-
-   procedure backup (This : in out CategoryHelper) is
-      Java_Result : constant Unbounded_String := CategoryHelper'Class (This).backup;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end backup;
 
 end admin.taghelpers.CategoryHelper_Package;

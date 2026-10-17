@@ -32,7 +32,7 @@ package body org.allbinary.android.input.api3.HideVirtualKeyboardRunnable_Packag
    function Create (activity : Activity_Access) return HideVirtualKeyboardRunnable_Access is
       This : constant HideVirtualKeyboardRunnable_Access := new HideVirtualKeyboardRunnable;
    begin
-      Initialize (This.all, activity);
+      HideVirtualKeyboardRunnable_Package.Initialize (This.all, activity);
       return This;
    end Create;
 

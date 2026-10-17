@@ -28,7 +28,7 @@ package body org.allbinary.business.user.commerce.inventory.item.option.XmlOptio
    function Create return XmlOptionItemData_Access is
       This : constant XmlOptionItemData_Access := new XmlOptionItemData;
    begin
-      Initialize (This.all);
+      XmlOptionItemData_Package.Initialize (This.all);
       return This;
    end Create;
 

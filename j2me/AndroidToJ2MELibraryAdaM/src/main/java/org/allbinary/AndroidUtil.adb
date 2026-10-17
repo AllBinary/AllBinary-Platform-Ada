@@ -28,7 +28,7 @@ package body org.allbinary.AndroidUtil_Package is
    function Create return AndroidUtil_Access is
       This : constant AndroidUtil_Access := new AndroidUtil;
    begin
-      Initialize (This.all);
+      AndroidUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -44,20 +44,6 @@ package body org.allbinary.AndroidUtil_Package is
    function isAndroid return Boolean is
    begin
         return True;
-   end isAndroid;
-
-   procedure isMemoryRestrictive is
-      Java_Result : constant Boolean := isMemoryRestrictive;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isMemoryRestrictive;
-
-   procedure isAndroid is
-      Java_Result : constant Boolean := isAndroid;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end isAndroid;
 
 begin

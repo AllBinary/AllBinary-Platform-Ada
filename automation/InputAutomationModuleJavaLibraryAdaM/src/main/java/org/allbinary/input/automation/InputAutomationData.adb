@@ -30,7 +30,7 @@ package body org.allbinary.input.automation.InputAutomationData_Package is
    function Create return InputAutomationData_Access is
       This : constant InputAutomationData_Access := new InputAutomationData;
    begin
-      Initialize (This.all);
+      InputAutomationData_Package.Initialize (This.all);
       return This;
    end Create;
 

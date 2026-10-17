@@ -39,7 +39,7 @@ package body org.allbinary.game.layer.PathAnimation_Package is
    function Create (pathFindingLayer : PathFindingLayerInterface_Access; linePathAnimation : LinePathAnimation_Access) return PathAnimation_Access is
       This : constant PathAnimation_Access := new PathAnimation;
    begin
-      Initialize (This.all, pathFindingLayer, linePathAnimation);
+      PathAnimation_Package.Initialize (This.all, pathFindingLayer, linePathAnimation);
       return This;
    end Create;
 

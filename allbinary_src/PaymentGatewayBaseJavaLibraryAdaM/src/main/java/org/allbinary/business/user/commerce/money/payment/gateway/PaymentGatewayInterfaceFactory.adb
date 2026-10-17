@@ -31,7 +31,7 @@ package body org.allbinary.business.user.commerce.money.payment.gateway.PaymentG
    function Create return PaymentGatewayInterfaceFactory_Access is
       This : constant PaymentGatewayInterfaceFactory_Access := new PaymentGatewayInterfaceFactory;
    begin
-      Initialize (This.all);
+      PaymentGatewayInterfaceFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

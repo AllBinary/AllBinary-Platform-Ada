@@ -18,7 +18,7 @@ package body org.allbinary.logic.control.crypt.SuperCrypt_Package is
    function Create (key : Integer) return SuperCrypt_Access is
       This : constant SuperCrypt_Access := new SuperCrypt;
    begin
-      Initialize (This.all, key);
+      SuperCrypt_Package.Initialize (This.all, key);
       return This;
    end Create;
 

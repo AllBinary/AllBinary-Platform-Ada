@@ -30,6 +30,7 @@ with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.s
 with org.allbinary.time.GameTickTimeDelayHelperFactory_Package; use org.allbinary.time.GameTickTimeDelayHelperFactory_Package;
 with org.allbinary.time.TimeDelayHelper_Package; use org.allbinary.time.TimeDelayHelper_Package;
 with org.allbinary.animation.caption.CaptionAnimationHelperBase_Package; use org.allbinary.animation.caption.CaptionAnimationHelperBase_Package;
+with org.allbinary.animation.caption.CaptionAnimation_Package; use org.allbinary.animation.caption.CaptionAnimation_Package;
 
 package org.allbinary.animation.caption.CaptionAnimationHelper_Package is
 
@@ -57,7 +58,6 @@ package org.allbinary.animation.caption.CaptionAnimationHelper_Package is
    procedure Initialize (This : in out CaptionAnimationHelper'Class; captionAnimation : Animation_Access; captionDx : Integer; captionDy : Integer; dx : Integer; dy : Integer);
    function Create (captionAnimation : Animation_Access; captionDx : Integer; captionDy : Integer; dx : Integer; dy : Integer) return CaptionAnimationHelper_Access;
    function isShowing (This : in out CaptionAnimationHelper) return Boolean;
-   procedure isShowing (This : in out CaptionAnimationHelper);
    procedure tick (This : in out CaptionAnimationHelper);
    procedure update (This : in out CaptionAnimationHelper; message : Unbounded_String; basicColor : BasicColor_Access);
    procedure paintXY (This : in out CaptionAnimationHelper; graphics : Graphics_Access; x : Integer; y : Integer);

@@ -22,6 +22,8 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.layer.Layer_Package; use org.allbinary.layer.Layer_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
+with org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package; use org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
 
 package org.allbinary.media.graphics.geography.map.BasicGeographicMapUtil_Package is
 
@@ -41,7 +43,6 @@ package org.allbinary.media.graphics.geography.map.BasicGeographicMapUtil_Packag
    procedure Initialize (This : in out BasicGeographicMapUtil'Class);
    function Create return BasicGeographicMapUtil_Access;
    function getInstance return BasicGeographicMapUtil_Access;
-   procedure getInstance;
    function getBorderingRow (This : in out BasicGeographicMapUtil; direction : Integer; oldGeographicMapCellPosition : GeographicMapCellPosition_Access) return Integer;
    procedure getBorderingRow (This : in out BasicGeographicMapUtil; direction : Integer; oldGeographicMapCellPosition : GeographicMapCellPosition_Access);
    function getBorderingColumn (This : in out BasicGeographicMapUtil; direction : Integer; oldGeographicMapCellPosition : GeographicMapCellPosition_Access) return Integer;

@@ -46,7 +46,7 @@ package body admin.taghelpers.ShippingHelper_Package is
    function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return ShippingHelper_Access is
       This : constant ShippingHelper_Access := new ShippingHelper;
    begin
-      Initialize (This.all, hashMap, pageContext);
+      ShippingHelper_Package.Initialize (This.all, hashMap, pageContext);
       return This;
    end Create;
 
@@ -80,13 +80,6 @@ package body admin.taghelpers.ShippingHelper_Package is
             return error;
                 end;
         end;
-   end setShippingType;
-
-   procedure setShippingType (This : in out ShippingHelper) is
-      Java_Result : constant Unbounded_String := ShippingHelper'Class (This).setShippingType;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end setShippingType;
 
 end admin.taghelpers.ShippingHelper_Package;

@@ -65,16 +65,9 @@ package body org.allbinary.game.commands.GameCommandsFactory_Package is
    function Create return GameCommandsFactory_Access is
       This : constant GameCommandsFactory_Access := new GameCommandsFactory;
    begin
-      Initialize (This.all);
+      GameCommandsFactory_Package.Initialize (This.all);
       return This;
    end Create;
-
-   procedure getInstance is
-      Java_Result : constant GameCommandsFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

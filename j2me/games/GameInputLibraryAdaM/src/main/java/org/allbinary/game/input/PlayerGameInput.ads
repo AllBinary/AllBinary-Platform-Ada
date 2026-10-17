@@ -30,6 +30,7 @@ with org.allbinary.logic.util.event.EventStrings_Package; use org.allbinary.logi
 with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.game.input.GameInput_Package; use org.allbinary.game.input.GameInput_Package;
+with org.allbinary.game.input.GameInputStrings_Package; use org.allbinary.game.input.GameInputStrings_Package;
 
 package org.allbinary.game.input.PlayerGameInput_Package is
 
@@ -63,7 +64,6 @@ package org.allbinary.game.input.PlayerGameInput_Package is
    procedure onUpKeyEvent (This : in out PlayerGameInput; gameKeyEvent : Integer);
    procedure onEvent (This : in out PlayerGameInput; eventObject : AllBinaryEventObject_Access);
    function getPlayerInputId (This : in out PlayerGameInput) return Integer;
-   procedure getPlayerInputId (This : in out PlayerGameInput);
 
 end org.allbinary.game.input.PlayerGameInput_Package;
 

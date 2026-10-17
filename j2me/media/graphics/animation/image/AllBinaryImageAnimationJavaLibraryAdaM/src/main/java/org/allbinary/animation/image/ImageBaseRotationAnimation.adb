@@ -33,7 +33,7 @@ package body org.allbinary.animation.image.ImageBaseRotationAnimation_Package is
    function Create (image : Image_Access; angleInfo : AngleInfo_Access; totalAngle : Short_Integer; animationBehavior : AnimationBehavior_Access) return ImageBaseRotationAnimation_Access is
       This : constant ImageBaseRotationAnimation_Access := new ImageBaseRotationAnimation;
    begin
-      Initialize (This.all, image, angleInfo, totalAngle, animationBehavior);
+      ImageBaseRotationAnimation_Package.Initialize (This.all, image, angleInfo, totalAngle, animationBehavior);
       return This;
    end Create;
 
@@ -84,41 +84,6 @@ package body org.allbinary.animation.image.ImageBaseRotationAnimation_Package is
    begin
         DisposalUtil_Package.getInstance.disposeImage (This.image);
    end finalize;
-
-   procedure getAnimationSize (This : in out ImageBaseRotationAnimation) is
-      Java_Result : constant Integer := ImageBaseRotationAnimation'Class (This).getAnimationSize;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getAnimationSize;
-
-   procedure getSequence (This : in out ImageBaseRotationAnimation) is
-      Java_Result : constant Integer_Array_Access := ImageBaseRotationAnimation'Class (This).getSequence;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSequence;
-
-   procedure getImage (This : in out ImageBaseRotationAnimation) is
-      Java_Result : constant Image_Access := ImageBaseRotationAnimation'Class (This).getImage;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getImage;
-
-   procedure getWidth (This : in out ImageBaseRotationAnimation) is
-      Java_Result : constant Integer := ImageBaseRotationAnimation'Class (This).getWidth;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getWidth;
-
-   procedure getHeight (This : in out ImageBaseRotationAnimation) is
-      Java_Result : constant Integer := ImageBaseRotationAnimation'Class (This).getHeight;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getHeight;
 
 end org.allbinary.animation.image.ImageBaseRotationAnimation_Package;
 

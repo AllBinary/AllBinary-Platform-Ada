@@ -29,7 +29,7 @@ package body org.allbinary.game.collision.OptimizedAllBinaryCollisionLayerProces
    function Create return OptimizedAllBinaryCollisionLayerProcessorForCollidableLayer_Access is
       This : constant OptimizedAllBinaryCollisionLayerProcessorForCollidableLayer_Access := new OptimizedAllBinaryCollisionLayerProcessorForCollidableLayer;
    begin
-      Initialize (This.all);
+      OptimizedAllBinaryCollisionLayerProcessorForCollidableLayer_Package.Initialize (This.all);
       return This;
    end Create;
 

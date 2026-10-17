@@ -25,6 +25,7 @@ with org.allbinary.time.GameTickTimeDelayHelperFactory_Package; use org.allbinar
 with org.allbinary.time.TimeDelayHelper_Package; use org.allbinary.time.TimeDelayHelper_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListUtil_Package; use org.allbinary.util.BasicArrayListUtil_Package;
+with org.allbinary.media.audio.music.MusicStrings_Package; use org.allbinary.media.audio.music.MusicStrings_Package;
 
 package org.allbinary.media.audio.music.MusicManager_Package is
 
@@ -74,7 +75,7 @@ package org.allbinary.media.audio.music.MusicManager_Package is
 
    procedure Initialize (This : in out MusicManager'Class; musicServiceClass : Ada.Tags.Tag; songList : BasicArrayList_Access);
    function Create (musicServiceClass : Ada.Tags.Tag; songList : BasicArrayList_Access) return MusicManager_Access;
-   procedure nextSong (This : in out MusicManager; nextSongSound : Sound_Access; leftVolume : Integer; rightVolume : Integer);
+   procedure nextSong (This : in out MusicManager; nextSongSound_Param : Sound_Access; leftVolume : Integer; rightVolume : Integer);
    procedure reset (This : in out MusicManager);
    procedure process (This : in out MusicManager);
    procedure show (This : in out MusicManager);

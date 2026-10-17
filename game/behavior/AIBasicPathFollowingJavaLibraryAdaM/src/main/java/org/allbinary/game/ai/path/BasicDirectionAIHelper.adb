@@ -33,7 +33,7 @@ package body org.allbinary.game.ai.path.BasicDirectionAIHelper_Package is
    function Create (name : Unbounded_String; angleInfo : AngleInfo_Access) return BasicDirectionAIHelper_Access is
       This : constant BasicDirectionAIHelper_Access := new BasicDirectionAIHelper;
    begin
-      Initialize (This.all, name, angleInfo);
+      BasicDirectionAIHelper_Package.Initialize (This.all, name, angleInfo);
       return This;
    end Create;
 
@@ -124,20 +124,6 @@ package body org.allbinary.game.ai.path.BasicDirectionAIHelper_Package is
    begin
       null;
    end getAIKeyPressedFromDirection;
-
-   procedure getAngleInfoP (This : in out BasicDirectionAIHelper) is
-      Java_Result : constant AngleInfo_Access := BasicDirectionAIHelper'Class (This).getAngleInfoP;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getAngleInfoP;
-
-   procedure getName (This : in out BasicDirectionAIHelper) is
-      Java_Result : constant Unbounded_String := BasicDirectionAIHelper'Class (This).getName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getName;
 
 end org.allbinary.game.ai.path.BasicDirectionAIHelper_Package;
 

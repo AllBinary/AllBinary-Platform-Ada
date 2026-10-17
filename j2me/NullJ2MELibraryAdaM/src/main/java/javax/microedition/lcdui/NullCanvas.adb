@@ -19,7 +19,7 @@ package body javax.microedition.lcdui.NullCanvas_Package is
    function Create return NullCanvas_Access is
       This : constant NullCanvas_Access := new NullCanvas;
    begin
-      Initialize (This.all);
+      NullCanvas_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -124,33 +124,12 @@ package body javax.microedition.lcdui.NullCanvas_Package is
         null;
    end pointerReleased;
 
-   procedure getCommandStack (This : in out NullCanvas) is
-      Java_Result : constant Stack_Access := NullCanvas'Class (This).getCommandStack;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getCommandStack;
-
    procedure isCommand (This : in out NullCanvas; command : Command_Access) is
       Java_Result : constant Boolean := NullCanvas'Class (This).isCommand (command);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isCommand;
-
-   procedure getCustomCommandListener (This : in out NullCanvas) is
-      Java_Result : constant CommandListener_Access := NullCanvas'Class (This).getCustomCommandListener;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getCustomCommandListener;
-
-   procedure isPaused (This : in out NullCanvas) is
-      Java_Result : constant Boolean := NullCanvas'Class (This).isPaused;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isPaused;
 
 begin
    null;

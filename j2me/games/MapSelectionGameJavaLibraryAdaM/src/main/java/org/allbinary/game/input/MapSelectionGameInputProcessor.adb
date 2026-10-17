@@ -72,7 +72,7 @@ package body org.allbinary.game.input.MapSelectionGameInputProcessor_Package is
    function Create (gameCanvas : AllBinaryGameCanvas_Access; raceTrackGeographicMapInterfaceFactoryInterface : MultiLevelRaceTrackGeographicMapInterfaceFactoryInterface_Access; mapSelectorPaintable : PreGameSelectorPaintable_Access; lockedIndex : Integer) return MapSelectionGameInputProcessor_Access is
       This : constant MapSelectionGameInputProcessor_Access := new MapSelectionGameInputProcessor;
    begin
-      Initialize (This.all, gameCanvas, raceTrackGeographicMapInterfaceFactoryInterface, mapSelectorPaintable, lockedIndex);
+      MapSelectionGameInputProcessor_Package.Initialize (This.all, gameCanvas, raceTrackGeographicMapInterfaceFactoryInterface, mapSelectorPaintable, lockedIndex);
       return This;
    end Create;
 
@@ -135,20 +135,6 @@ package body org.allbinary.game.input.MapSelectionGameInputProcessor_Package is
    function getPlayerGameInput (This : in out MapSelectionGameInputProcessor) return PlayerGameInput_Access is
    begin
         return This.playerGameInput;
-   end getPlayerGameInput;
-
-   procedure getName (This : in out MapSelectionGameInputProcessor) is
-      Java_Result : constant Unbounded_String := MapSelectionGameInputProcessor'Class (This).getName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getName;
-
-   procedure getPlayerGameInput (This : in out MapSelectionGameInputProcessor) is
-      Java_Result : constant PlayerGameInput_Access := MapSelectionGameInputProcessor'Class (This).getPlayerGameInput;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getPlayerGameInput;
 
 end org.allbinary.game.input.MapSelectionGameInputProcessor_Package;

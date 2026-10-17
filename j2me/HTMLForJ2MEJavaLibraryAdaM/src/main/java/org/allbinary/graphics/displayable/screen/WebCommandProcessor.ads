@@ -28,6 +28,7 @@ with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.lo
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with playn.core.PlayN_Package; use playn.core.PlayN_Package;
+with org.allbinary.graphics.displayable.screen.AboutCommandProcessor_Package; use org.allbinary.graphics.displayable.screen.AboutCommandProcessor_Package;
 
 package org.allbinary.graphics.displayable.screen.WebCommandProcessor_Package is
 
@@ -52,7 +53,6 @@ package org.allbinary.graphics.displayable.screen.WebCommandProcessor_Package is
    procedure Initialize (This : in out WebCommandProcessor'Class);
    function Create return WebCommandProcessor_Access;
    function getInstance return WebCommandProcessor_Access;
-   procedure getInstance;
    procedure process (This : in out WebCommandProcessor; midletCommandListener : CommandListener_Access; command : Command_Access; canvas : Canvas_Access);
 
 end org.allbinary.graphics.displayable.screen.WebCommandProcessor_Package;

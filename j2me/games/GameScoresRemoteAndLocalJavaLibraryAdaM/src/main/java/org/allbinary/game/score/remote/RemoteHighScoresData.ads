@@ -21,7 +21,7 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 
-package org.allbinary.game.score_Case.remote.RemoteHighScoresData_Package is
+package org.allbinary.game.score.remote.RemoteHighScoresData_Package is
 
 
    type RemoteHighScoresData is tagged;
@@ -42,8 +42,7 @@ package org.allbinary.game.score_Case.remote.RemoteHighScoresData_Package is
    procedure Initialize (This : in out RemoteHighScoresData'Class);
    function Create return RemoteHighScoresData_Access;
    function getInstance return RemoteHighScoresData_Access;
-   procedure getInstance;
 
-end org.allbinary.game.score_Case.remote.RemoteHighScoresData_Package;
+end org.allbinary.game.score.remote.RemoteHighScoresData_Package;
 
 

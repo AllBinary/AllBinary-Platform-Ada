@@ -32,7 +32,7 @@ package body org.allbinary.business.user.modules.customer.subscriber.SubscriberU
    function Create return SubscriberUser_Access is
       This : constant SubscriberUser_Access := new SubscriberUser;
    begin
-      Initialize (This.all);
+      SubscriberUser_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -47,7 +47,7 @@ package body org.allbinary.business.user.modules.customer.subscriber.SubscriberU
    function Create (userHashMap : HashMap_Access) return SubscriberUser_Access is
       This : constant SubscriberUser_Access := new SubscriberUser;
    begin
-      Initialize (This.all, userHashMap);
+      SubscriberUser_Package.Initialize (This.all, userHashMap);
       return This;
    end Create;
 
@@ -65,13 +65,6 @@ package body org.allbinary.business.user.modules.customer.subscriber.SubscriberU
    function isSessionValid (This : in out SubscriberUser) return Boolean is
    begin
         return This.subscription.isSubscribed;
-   end isSessionValid;
-
-   procedure isSessionValid (This : in out SubscriberUser) is
-      Java_Result : constant Boolean := SubscriberUser'Class (This).isSessionValid;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end isSessionValid;
 
 end org.allbinary.business.user.modules.customer.subscriber.SubscriberUser_Package;

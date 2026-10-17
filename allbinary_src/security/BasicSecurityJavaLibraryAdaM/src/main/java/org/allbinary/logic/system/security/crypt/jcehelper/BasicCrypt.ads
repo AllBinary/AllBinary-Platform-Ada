@@ -52,8 +52,8 @@ package org.allbinary.logic.system.security.crypt.jcehelper.BasicCrypt_Package i
    procedure encrypt (This : in out BasicCrypt; array_Id : Short_Short_Integer_Array_Access);
    function decrypt (This : in out BasicCrypt; array_Id : Short_Short_Integer_Array_Access) return Short_Short_Integer_Array_Access;
    procedure decrypt (This : in out BasicCrypt; array_Id : Short_Short_Integer_Array_Access);
-   function mutilate (This : in out BasicCrypt; array_Id : Short_Short_Integer_Array_Access) return Short_Short_Integer_Array_Access;
-   procedure mutilate (This : in out BasicCrypt; array_Id : Short_Short_Integer_Array_Access);
+   function mutilate (This : in out BasicCrypt; array_Id_Param : Short_Short_Integer_Array_Access) return Short_Short_Integer_Array_Access;
+   procedure mutilate (This : in out BasicCrypt; array_Id_Param : Short_Short_Integer_Array_Access);
 
 end org.allbinary.logic.system.security.crypt.jcehelper.BasicCrypt_Package;
 

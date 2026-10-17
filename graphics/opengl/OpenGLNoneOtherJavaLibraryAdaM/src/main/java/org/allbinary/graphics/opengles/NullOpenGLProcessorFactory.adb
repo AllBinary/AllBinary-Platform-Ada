@@ -16,7 +16,7 @@ package body org.allbinary.graphics.opengles.NullOpenGLProcessorFactory_Package 
    function Create return NullOpenGLProcessorFactory_Access is
       This : constant NullOpenGLProcessorFactory_Access := new NullOpenGLProcessorFactory;
    begin
-      Initialize (This.all);
+      NullOpenGLProcessorFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -24,13 +24,6 @@ package body org.allbinary.graphics.opengles.NullOpenGLProcessorFactory_Package 
    function getInstance return OpenGLProcessor_Access is
    begin
         return NullOpenGLProcessorFactory_Package.instance;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant OpenGLProcessor_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

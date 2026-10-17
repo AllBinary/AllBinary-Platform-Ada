@@ -22,6 +22,7 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.logic.communication.ftp.configuration.FtpConfigurationInterface_Package; use org.allbinary.logic.communication.ftp.configuration.FtpConfigurationInterface_Package;
+with org.allbinary.logic.communication.ftp.configuration.FtpConfigurationData_Package; use org.allbinary.logic.communication.ftp.configuration.FtpConfigurationData_Package;
 
 package org.allbinary.logic.communication.ftp.configuration.FtpConfiguration_Package is
 
@@ -41,13 +42,9 @@ package org.allbinary.logic.communication.ftp.configuration.FtpConfiguration_Pac
    procedure Initialize (This : in out FtpConfiguration'Class);
    function Create return FtpConfiguration_Access;
    function getServer (This : in out FtpConfiguration) return Unbounded_String;
-   procedure getServer (This : in out FtpConfiguration);
    function getPath (This : in out FtpConfiguration) return Unbounded_String;
-   procedure getPath (This : in out FtpConfiguration);
    function getUserName (This : in out FtpConfiguration) return Unbounded_String;
-   procedure getUserName (This : in out FtpConfiguration);
    function getPassword (This : in out FtpConfiguration) return Unbounded_String;
-   procedure getPassword (This : in out FtpConfiguration);
    procedure setServer (This : in out FtpConfiguration; value : Unbounded_String);
    procedure setPath (This : in out FtpConfiguration; value : Unbounded_String);
    procedure setUserName (This : in out FtpConfiguration; value : Unbounded_String);

@@ -26,6 +26,8 @@ with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.
 with org.allbinary.string_Id.CommonPhoneStrings_Package; use org.allbinary.string_Id.CommonPhoneStrings_Package;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
+with org.allbinary.logic.visual.dhtml.style.color.ColorData_Package; use org.allbinary.logic.visual.dhtml.style.color.ColorData_Package;
+with org.allbinary.logic.visual.dhtml.style.color.ColorsData_Package; use org.allbinary.logic.visual.dhtml.style.color.ColorsData_Package;
 
 package org.allbinary.logic.visual.dhtml.style.color.ColorsView_Package is
 

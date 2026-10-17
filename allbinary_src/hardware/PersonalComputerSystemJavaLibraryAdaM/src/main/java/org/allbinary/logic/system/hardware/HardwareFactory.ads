@@ -24,6 +24,7 @@ with org.allbinary.logic.system.os.GenericOperatingSystem_Package; use org.allbi
 with org.allbinary.logic.system.os.OperatingSystems_Package; use org.allbinary.logic.system.os.OperatingSystems_Package;
 with org.allbinary.logic.system.hardware.linux.LinuxHardware_Package; use org.allbinary.logic.system.hardware.linux.LinuxHardware_Package;
 with org.allbinary.logic.system.hardware.windows.WindowsHardware_Package; use org.allbinary.logic.system.hardware.windows.WindowsHardware_Package;
+with org.allbinary.logic.system.hardware.HardwareInterface_Package; use org.allbinary.logic.system.hardware.HardwareInterface_Package;
 
 package org.allbinary.logic.system.hardware.HardwareFactory_Package is
 
@@ -43,7 +44,6 @@ package org.allbinary.logic.system.hardware.HardwareFactory_Package is
    procedure Initialize (This : in out HardwareFactory'Class);
    function Create return HardwareFactory_Access;
    function getInstance return HardwareFactory_Access;
-   procedure getInstance;
    function getInstance (os : GenericOperatingSystem_Access) return HardwareInterface_Access;
    procedure getInstance (os : GenericOperatingSystem_Access);
 

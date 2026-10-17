@@ -41,7 +41,6 @@ package tags.admin.storefront.StoreFrontTag_Package is
    procedure Initialize (This : in out StoreFrontTag'Class);
    function Create return StoreFrontTag_Access;
    function doStartTag (This : in out StoreFrontTag) return Integer;
-   procedure doStartTag (This : in out StoreFrontTag);
 
 end tags.admin.storefront.StoreFrontTag_Package;
 

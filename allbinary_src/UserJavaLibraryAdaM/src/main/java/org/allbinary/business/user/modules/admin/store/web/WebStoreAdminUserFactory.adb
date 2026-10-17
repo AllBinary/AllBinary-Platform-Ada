@@ -30,7 +30,7 @@ package body org.allbinary.business.user.modules.admin.store.web.WebStoreAdminUs
    function Create return WebStoreAdminUserFactory_Access is
       This : constant WebStoreAdminUserFactory_Access := new WebStoreAdminUserFactory;
    begin
-      Initialize (This.all);
+      WebStoreAdminUserFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -44,13 +44,6 @@ package body org.allbinary.business.user.modules.admin.store.web.WebStoreAdminUs
    function getInstance (This : in out WebStoreAdminUserFactory; hashMap : HashMap_Access) return UserInterface_Access is
    begin
         return WebStoreAdminUser_Package.Create (hashMap);
-   end getInstance;
-
-   procedure getInstance (This : in out WebStoreAdminUserFactory) is
-      Java_Result : constant UserInterface_Access := WebStoreAdminUserFactory'Class (This).getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
    procedure getInstance (This : in out WebStoreAdminUserFactory; hashMap : HashMap_Access) is

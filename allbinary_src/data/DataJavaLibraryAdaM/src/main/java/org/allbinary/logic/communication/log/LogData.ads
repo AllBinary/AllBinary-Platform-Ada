@@ -20,11 +20,11 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary_Case.logic.io.path.AbPathData_Package; use org.allbinary_Case.logic.io.path.AbPathData_Package;
+with org.allbinary.logic.io.path.AbPathData_Package; use org.allbinary.logic.io.path.AbPathData_Package;
 
-package org.allbinary_Case.logic.communication.log.LogData_Package is
+package org.allbinary.logic.communication.log.LogData_Package is
 
-   package AbPathData_Package renames Standard.org.allbinary_Case.logic.io.path.AbPathData_Package;
+   package AbPathData_Package renames Standard.org.allbinary.logic.io.path.AbPathData_Package;
 
    type LogData is tagged;
    type LogData_Access is access all LogData'Class;
@@ -43,6 +43,6 @@ package org.allbinary_Case.logic.communication.log.LogData_Package is
    procedure Initialize (This : in out LogData'Class);
    function Create return LogData_Access;
 
-end org.allbinary_Case.logic.communication.log.LogData_Package;
+end org.allbinary.logic.communication.log.LogData_Package;
 
 

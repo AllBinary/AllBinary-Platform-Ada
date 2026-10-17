@@ -20,6 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
+with org.allbinary.graphics.j2me.workarea.tools.PointsInterface_Package; use org.allbinary.graphics.j2me.workarea.tools.PointsInterface_Package;
 
 package org.allbinary.graphics.j2me.workarea.tools.PointsCompositeInterface_Package is
 

@@ -24,6 +24,9 @@ with org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package; use 
 with org.allbinary.media.graphics.geography.map.GeographicMapCellHistory_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellHistory_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.media.graphics.geography.pathfinding.PathGeneratorInterface_Package; use org.allbinary.media.graphics.geography.pathfinding.PathGeneratorInterface_Package;
+with org.allbinary.media.graphics.geography.pathfinding.PathFindingInfo_Package; use org.allbinary.media.graphics.geography.pathfinding.PathFindingInfo_Package;
+with org.allbinary.media.graphics.geography.pathfinding.GeographicPathFinderBase_Package; use org.allbinary.media.graphics.geography.pathfinding.GeographicPathFinderBase_Package;
+with org.allbinary.media.graphics.geography.pathfinding.MultipassState_Package; use org.allbinary.media.graphics.geography.pathfinding.MultipassState_Package;
 
 package org.allbinary.media.graphics.geography.pathfinding.PathGenerator_Package is
 
@@ -42,7 +45,6 @@ package org.allbinary.media.graphics.geography.pathfinding.PathGenerator_Package
    procedure Initialize (This : in out PathGenerator'Class);
    function Create return PathGenerator_Access;
    function getInstance return PathGenerator_Access;
-   procedure getInstance;
    procedure init (This : in out PathGenerator; geographicMapInterface : Java_Object_Access; totalPaths : Integer);
    function getInstanceNoCache (This : in out PathGenerator; geographicMapInterface : BasicGeographicMap_Access; pathFindingInfo : PathFindingInfo_Access; totalPaths : Integer) return BasicArrayList_Access;
    procedure getInstanceNoCache (This : in out PathGenerator; geographicMapInterface : BasicGeographicMap_Access; pathFindingInfo : PathFindingInfo_Access; totalPaths : Integer);

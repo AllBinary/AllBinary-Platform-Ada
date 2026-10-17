@@ -26,6 +26,7 @@ with org.allbinary.logic.visual.transform.data.TransformDocumentInterface_Packag
 with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.allbinary.business.category.CategoryView_Package; use org.allbinary.business.category.CategoryView_Package;
+with org.allbinary.business.category.CategoryInterface_Package; use org.allbinary.business.category.CategoryInterface_Package;
 
 package org.allbinary.business.category.CategoryComponent_Package is
 
@@ -47,16 +48,11 @@ package org.allbinary.business.category.CategoryComponent_Package is
    procedure Initialize (This : in out CategoryComponent'Class; categoryInterface : CategoryInterface_Access);
    function Create (categoryInterface : CategoryInterface_Access) return CategoryComponent_Access;
    function getTypeId (This : in out CategoryComponent) return Integer;
-   procedure getTypeId (This : in out CategoryComponent);
    function getTransformDocumentInterface (This : in out CategoryComponent) return TransformDocumentInterface_Access;
-   procedure getTransformDocumentInterface (This : in out CategoryComponent);
    function getTransformInfoInterface (This : in out CategoryComponent) return TransformInfoInterface_Access;
-   procedure getTransformInfoInterface (This : in out CategoryComponent);
    procedure setTransformDocumentInterface (This : in out CategoryComponent; viewDocumentInterface : TransformDocumentInterface_Access);
    function toXmlDoc (This : in out CategoryComponent) return Document_Access;
-   procedure toXmlDoc (This : in out CategoryComponent);
    function view (This : in out CategoryComponent) return Unbounded_String;
-   procedure view (This : in out CategoryComponent);
 
 end org.allbinary.business.category.CategoryComponent_Package;
 

@@ -34,7 +34,7 @@ package body org.allbinary.game.displayable.canvas.PreGameLockablePaintable_Pack
    function Create (paintableForm : ScrollCurrentSelectionForm_Access; lockedIndex : Integer) return PreGameLockablePaintable_Access is
       This : constant PreGameLockablePaintable_Access := new PreGameLockablePaintable;
    begin
-      Initialize (This.all, paintableForm, lockedIndex);
+      PreGameLockablePaintable_Package.Initialize (This.all, paintableForm, lockedIndex);
       return This;
    end Create;
 
@@ -48,13 +48,6 @@ package body org.allbinary.game.displayable.canvas.PreGameLockablePaintable_Pack
    function getPaintableForm (This : in out PreGameLockablePaintable) return ScrollCurrentSelectionForm_Access is
    begin
         return This.paintableForm;
-   end getPaintableForm;
-
-   procedure getPaintableForm (This : in out PreGameLockablePaintable) is
-      Java_Result : constant ScrollCurrentSelectionForm_Access := PreGameLockablePaintable'Class (This).getPaintableForm;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getPaintableForm;
 
 end org.allbinary.game.displayable.canvas.PreGameLockablePaintable_Package;

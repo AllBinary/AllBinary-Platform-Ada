@@ -37,7 +37,7 @@ package body org.allbinary.logic.string_Id.regex.replace.Replace_Package is
    function Create (key : Unbounded_String; value : Unbounded_String) return Replace_Access is
       This : constant Replace_Access := new Replace;
    begin
-      Initialize (This.all, key, value);
+      Replace_Package.Initialize (This.all, key, value);
       return This;
    end Create;
 
@@ -52,7 +52,7 @@ package body org.allbinary.logic.string_Id.regex.replace.Replace_Package is
    function Create (keys : Unbounded_String_Array_Access; values : Unbounded_String_Array_Access) return Replace_Access is
       This : constant Replace_Access := new Replace;
    begin
-      Initialize (This.all, keys, values);
+      Replace_Package.Initialize (This.all, keys, values);
       return This;
    end Create;
 
@@ -66,7 +66,7 @@ package body org.allbinary.logic.string_Id.regex.replace.Replace_Package is
    function Create (hashMap : HashMap_Access) return Replace_Access is
       This : constant Replace_Access := new Replace;
    begin
-      Initialize (This.all, hashMap);
+      Replace_Package.Initialize (This.all, hashMap);
       return This;
    end Create;
 
@@ -75,7 +75,8 @@ package body org.allbinary.logic.string_Id.regex.replace.Replace_Package is
         return This.upTo (replace, Integer_Package.MIN_VALUE);
    end all_Case_Id;
 
-   function upTo (This : in out Replace; replace : Unbounded_String; total : Integer) return Unbounded_String is
+   function upTo (This : in out Replace; replace_Param : Unbounded_String; total : Integer) return Unbounded_String is
+      replace : Unbounded_String := replace_Param;
       newStringBuffer : StringMaker_Access;
       totalNumberOfReplaces : Integer;
       keys : Unbounded_String_Array_Access;
@@ -152,7 +153,8 @@ package body org.allbinary.logic.string_Id.regex.replace.Replace_Package is
         return replace;
    end upTo;
 
-   function line (This : in out Replace; replace : Unbounded_String) return Unbounded_String is
+   function line (This : in out Replace; replace_Param : Unbounded_String) return Unbounded_String is
+      replace : Unbounded_String := replace_Param;
       newStringBuffer : StringMaker_Access;
       totalNumberOfReplaces : Integer;
       key : Unbounded_String;
@@ -235,15 +237,15 @@ package body org.allbinary.logic.string_Id.regex.replace.Replace_Package is
       null;
    end all_Case_Id;
 
-   procedure upTo (This : in out Replace; replace : Unbounded_String; total : Integer) is
-      Java_Result : constant Unbounded_String := Replace'Class (This).upTo (replace, total);
+   procedure upTo (This : in out Replace; replace_Param : Unbounded_String; total : Integer) is
+      Java_Result : constant Unbounded_String := Replace'Class (This).upTo (replace_Param, total);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end upTo;
 
-   procedure line (This : in out Replace; replace : Unbounded_String) is
-      Java_Result : constant Unbounded_String := Replace'Class (This).line (replace);
+   procedure line (This : in out Replace; replace_Param : Unbounded_String) is
+      Java_Result : constant Unbounded_String := Replace'Class (This).line (replace_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

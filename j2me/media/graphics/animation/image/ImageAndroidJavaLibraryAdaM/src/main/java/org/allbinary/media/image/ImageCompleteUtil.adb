@@ -28,7 +28,7 @@ package body org.allbinary.media.image.ImageCompleteUtil_Package is
    function Create return ImageCompleteUtil_Access is
       This : constant ImageCompleteUtil_Access := new ImageCompleteUtil;
    begin
-      Initialize (This.all);
+      ImageCompleteUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -43,13 +43,6 @@ package body org.allbinary.media.image.ImageCompleteUtil_Package is
    begin
         null;
    end waitForImage;
-
-   procedure getInstance is
-      Java_Result : constant ImageCompleteUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

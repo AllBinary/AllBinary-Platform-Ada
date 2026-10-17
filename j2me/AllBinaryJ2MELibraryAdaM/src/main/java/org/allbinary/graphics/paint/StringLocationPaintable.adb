@@ -32,7 +32,7 @@ package body org.allbinary.graphics.paint.StringLocationPaintable_Package is
    function Create (value : Unbounded_String) return StringLocationPaintable_Access is
       This : constant StringLocationPaintable_Access := new StringLocationPaintable;
    begin
-      Initialize (This.all, value);
+      StringLocationPaintable_Package.Initialize (This.all, value);
       return This;
    end Create;
 

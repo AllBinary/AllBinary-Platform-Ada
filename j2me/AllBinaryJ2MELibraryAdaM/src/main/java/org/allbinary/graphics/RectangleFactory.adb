@@ -28,7 +28,7 @@ package body org.allbinary.graphics.RectangleFactory_Package is
    function Create return RectangleFactory_Access is
       This : constant RectangleFactory_Access := new RectangleFactory;
    begin
-      Initialize (This.all);
+      RectangleFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

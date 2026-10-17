@@ -28,6 +28,7 @@ with org.allbinary.logic.string_Id.tokens.Tokenizer_Package; use org.allbinary.l
 with org.allbinary.logic.visual.dhtml.html.name.HtmlNameMathData_Package; use org.allbinary.logic.visual.dhtml.html.name.HtmlNameMathData_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.logic.communication.http.request.NameSpaceRequestParamData_Package; use org.allbinary.logic.communication.http.request.NameSpaceRequestParamData_Package;
 
 package org.allbinary.logic.communication.http.request.NameSpaceRequestParam_Package is
 
@@ -54,11 +55,9 @@ package org.allbinary.logic.communication.http.request.NameSpaceRequestParam_Pac
    procedure Initialize (This : in out NameSpaceRequestParam'Class; nameSpace : Unbounded_String; value : Unbounded_String);
    function Create (nameSpace : Unbounded_String; value : Unbounded_String) return NameSpaceRequestParam_Access;
    function getPackages (This : in out NameSpaceRequestParam) return BasicArrayList_Access;
-   procedure getPackages (This : in out NameSpaceRequestParam);
    function getPackageProperties (This : in out NameSpaceRequestParam; packageIndex : Integer) return HashMap_Access;
    procedure getPackageProperties (This : in out NameSpaceRequestParam; packageIndex : Integer);
    function getValue (This : in out NameSpaceRequestParam) return Unbounded_String;
-   procedure getValue (This : in out NameSpaceRequestParam);
    function generatePackagePropertiesHashMap (This : in out NameSpaceRequestParam; properties : Unbounded_String) return HashMap_Access;
    procedure generatePackagePropertiesHashMap (This : in out NameSpaceRequestParam; properties : Unbounded_String);
 

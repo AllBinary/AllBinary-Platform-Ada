@@ -25,6 +25,8 @@ with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArr
 with org.allbinary.util.BasicArrayListUtil_Package; use org.allbinary.util.BasicArrayListUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.input.motion.button.BaseTouchInput_Package; use org.allbinary.input.motion.button.BaseTouchInput_Package;
+with org.allbinary.input.motion.button.BasicTouchButtonsBuilder_Package; use org.allbinary.input.motion.button.BasicTouchButtonsBuilder_Package;
+with org.allbinary.input.motion.button.BuildingScrollTouchButtonsBuilder_Package; use org.allbinary.input.motion.button.BuildingScrollTouchButtonsBuilder_Package;
 
 package org.allbinary.input.motion.button.NoBuildingSelectedTouchButtonsBuilder_Package is
 
@@ -45,7 +47,6 @@ package org.allbinary.input.motion.button.NoBuildingSelectedTouchButtonsBuilder_
    procedure Initialize (This : in out NoBuildingSelectedTouchButtonsBuilder'Class);
    function Create return NoBuildingSelectedTouchButtonsBuilder_Access;
    function getList (This : in out NoBuildingSelectedTouchButtonsBuilder) return BasicArrayList_Access;
-   procedure getList (This : in out NoBuildingSelectedTouchButtonsBuilder);
 
 end org.allbinary.input.motion.button.NoBuildingSelectedTouchButtonsBuilder_Package;
 

@@ -37,7 +37,7 @@ package body org.allbinary.game.ag.ai.tactical.BasicRandomAI_Package is
    function Create (ownerLayerInterface : AllBinaryLayer_Access; gameInput : GameInput_Access; inputProbability : InputProbability_Access; visitor : Visitor_Access) return BasicRandomAI_Access is
       This : constant BasicRandomAI_Access := new BasicRandomAI;
    begin
-      Initialize (This.all, ownerLayerInterface, gameInput, inputProbability, visitor);
+      BasicRandomAI_Package.Initialize (This.all, ownerLayerInterface, gameInput, inputProbability, visitor);
       return This;
    end Create;
 

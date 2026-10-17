@@ -58,9 +58,7 @@ package org.allbinary.dom.DomHelper_Package is
    procedure Initialize (This : in out DomHelper'Class);
    function Create return DomHelper_Access;
    function getInstance return DomHelper_Access;
-   procedure getInstance;
    function createDocument (This : in out DomHelper) return Document_Access;
-   procedure createDocument (This : in out DomHelper);
    function createDocument (This : in out DomHelper; xmlFile : File_Access) return Document_Access;
    procedure createDocument (This : in out DomHelper; xmlFile : File_Access);
    function toString (This : in out DomHelper; document : Document_Access) return Unbounded_String;

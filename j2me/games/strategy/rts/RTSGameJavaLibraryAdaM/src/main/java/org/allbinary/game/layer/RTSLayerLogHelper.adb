@@ -28,7 +28,7 @@ package body org.allbinary.game.layer.RTSLayerLogHelper_Package is
    function Create return RTSLayerLogHelper_Access is
       This : constant RTSLayerLogHelper_Access := new RTSLayerLogHelper;
    begin
-      Initialize (This.all);
+      RTSLayerLogHelper_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -117,13 +117,6 @@ package body org.allbinary.game.layer.RTSLayerLogHelper_Package is
    begin
         null;
    end notOnPath;
-
-   procedure getInstance is
-      Java_Result : constant RTSLayerLogHelper_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

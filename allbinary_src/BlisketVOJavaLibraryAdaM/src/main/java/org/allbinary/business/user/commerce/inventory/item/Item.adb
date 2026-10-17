@@ -38,7 +38,7 @@ package body org.allbinary.business.user.commerce.inventory.item.Item_Package is
    function Create (itemHashMap : HashMap_Access) return Item_Access is
       This : constant Item_Access := new Item;
    begin
-      Initialize (This.all, itemHashMap);
+      Item_Package.Initialize (This.all, itemHashMap);
       return This;
    end Create;
 
@@ -59,7 +59,7 @@ package body org.allbinary.business.user.commerce.inventory.item.Item_Package is
    function Create return Item_Access is
       This : constant Item_Access := new Item;
    begin
-      Initialize (This.all);
+      Item_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -150,55 +150,6 @@ package body org.allbinary.business.user.commerce.inventory.item.Item_Package is
         hashMap.put (OrderHistoryData_Package.SHIPPEDDATE, This.shippedDate);
         hashMap.put (EntryData_Package.getInstance.SPECIAL, This.special);
         return hashMap;
-   end toHashMap;
-
-   procedure getGroup (This : in out Item) is
-      Java_Result : constant Unbounded_String := Item'Class (This).getGroup;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getGroup;
-
-   procedure getTax (This : in out Item) is
-      Java_Result : constant Unbounded_String := Item'Class (This).getTax;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getTax;
-
-   procedure getShippingType (This : in out Item) is
-      Java_Result : constant Unbounded_String := Item'Class (This).getShippingType;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getShippingType;
-
-   procedure getShippingCost (This : in out Item) is
-      Java_Result : constant Unbounded_String := Item'Class (This).getShippingCost;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getShippingCost;
-
-   procedure getShippingAddress (This : in out Item) is
-      Java_Result : constant StreetAddress_Access := Item'Class (This).getShippingAddress;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getShippingAddress;
-
-   procedure getSpecial (This : in out Item) is
-      Java_Result : constant Unbounded_String := Item'Class (This).getSpecial;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSpecial;
-
-   procedure toHashMap (This : in out Item) is
-      Java_Result : constant HashMap_Access := Item'Class (This).toHashMap;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end toHashMap;
 
 end org.allbinary.business.user.commerce.inventory.item.Item_Package;

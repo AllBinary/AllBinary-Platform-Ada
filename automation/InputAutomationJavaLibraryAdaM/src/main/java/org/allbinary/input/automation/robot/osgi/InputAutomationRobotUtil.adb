@@ -30,7 +30,7 @@ package body org.allbinary.input.automation.robot.osgi.InputAutomationRobotUtil_
    function Create return InputAutomationRobotUtil_Access is
       This : constant InputAutomationRobotUtil_Access := new InputAutomationRobotUtil;
    begin
-      Initialize (This.all);
+      InputAutomationRobotUtil_Package.Initialize (This.all);
       return This;
    end Create;
 

@@ -29,7 +29,7 @@ package body org.allbinary.animation.image.ChangeColorProcessor_Package is
    function Create return ChangeColorProcessor_Access is
       This : constant ChangeColorProcessor_Access := new ChangeColorProcessor;
    begin
-      Initialize (This.all);
+      ChangeColorProcessor_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -43,13 +43,6 @@ package body org.allbinary.animation.image.ChangeColorProcessor_Package is
    begin
         imageModifierUtil.changeColor (originalImage, imageToShow, index, basicColor);
    end updateColor;
-
-   procedure getInstance is
-      Java_Result : constant ChangeColorProcessor_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

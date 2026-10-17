@@ -32,7 +32,7 @@ package body org.allbinary.media.audio.Sound_Package is
    function Create (resource : Unbounded_String) return Sound_Access is
       This : constant Sound_Access := new Sound;
    begin
-      Initialize (This.all, resource);
+      Sound_Package.Initialize (This.all, resource);
       return This;
    end Create;
 
@@ -77,27 +77,6 @@ package body org.allbinary.media.audio.Sound_Package is
                 end;
         end;
    end run;
-
-   procedure getResource (This : in out Sound) is
-      Java_Result : constant Unbounded_String := Sound'Class (This).getResource;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getResource;
-
-   procedure getPlayerP (This : in out Sound) is
-      Java_Result : constant Player_Access := Sound'Class (This).getPlayerP;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getPlayerP;
-
-   procedure getDuration (This : in out Sound) is
-      Java_Result : constant Integer := Sound'Class (This).getDuration;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getDuration;
 
 end org.allbinary.media.audio.Sound_Package;
 

@@ -32,7 +32,7 @@ package body org.allbinary.logic.io.BufferedWriterUtil_Package is
    function Create return BufferedWriterUtil_Access is
       This : constant BufferedWriterUtil_Access := new BufferedWriterUtil;
    begin
-      Initialize (This.all);
+      BufferedWriterUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -105,13 +105,6 @@ package body org.allbinary.logic.io.BufferedWriterUtil_Package is
         fileOut.newLine;
         fileOut.flush;
    end write;
-
-   procedure getInstance is
-      Java_Result : constant BufferedWriterUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

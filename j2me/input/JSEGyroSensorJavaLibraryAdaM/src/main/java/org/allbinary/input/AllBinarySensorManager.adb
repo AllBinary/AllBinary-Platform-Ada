@@ -41,7 +41,7 @@ package body org.allbinary.input.AllBinarySensorManager_Package is
    function Create return AllBinarySensorManager_Access is
       This : constant AllBinarySensorManager_Access := new AllBinarySensorManager;
    begin
-      Initialize (This.all);
+      AllBinarySensorManager_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -59,20 +59,6 @@ package body org.allbinary.input.AllBinarySensorManager_Package is
    begin
         null;
    end shutdown;
-
-   procedure getInstance is
-      Java_Result : constant AllBinarySensorManager_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure getSensorNamesList (This : in out AllBinarySensorManager) is
-      Java_Result : constant BasicArrayList_Access := AllBinarySensorManager'Class (This).getSensorNamesList;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSensorNamesList;
 
 begin
    null;

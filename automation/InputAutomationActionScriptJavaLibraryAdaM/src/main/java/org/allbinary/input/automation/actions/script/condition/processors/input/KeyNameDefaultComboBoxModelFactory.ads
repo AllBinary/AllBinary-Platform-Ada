@@ -22,6 +22,7 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.awt.event.KeyEvent_Package; use java.awt.event.KeyEvent_Package;
 with org.allbinary.input.KeySingletonFactory_Package; use org.allbinary.input.KeySingletonFactory_Package;
+with org.allbinary.input.automation.actions.script.condition.processors.input.DefaultComboBoxModel_Package; use org.allbinary.input.automation.actions.script.condition.processors.input.DefaultComboBoxModel_Package;
 
 package org.allbinary.input.automation.actions.script.condition.processors.input.KeyNameDefaultComboBoxModelFactory_Package is
 
@@ -37,7 +38,6 @@ package org.allbinary.input.automation.actions.script.condition.processors.input
    procedure Initialize (This : in out KeyNameDefaultComboBoxModelFactory'Class);
    function Create return KeyNameDefaultComboBoxModelFactory_Access;
    function getInstance return DefaultComboBoxModel_Access;
-   procedure getInstance;
 
 end org.allbinary.input.automation.actions.script.condition.processors.input.KeyNameDefaultComboBoxModelFactory_Package;
 

@@ -50,7 +50,6 @@ package org.allbinary.logic.io.file.directory.Directory_Package is
    procedure Initialize (This : in out Directory'Class);
    function Create return Directory_Access;
    function getInstance return Directory_Access;
-   procedure getInstance;
    function create (This : in out Directory; directoryAbPath : AbPath_Access) return Boolean;
    procedure create (This : in out Directory; directoryAbPath : AbPath_Access);
    procedure remove (This : in out Directory; existingDirectoryAbPath : AbPath_Access);

@@ -31,7 +31,7 @@ package body org.allbinary.business.user.commerce.money.payment.types.CheckType_
    function Create return CheckType_Access is
       This : constant CheckType_Access := new CheckType;
    begin
-      Initialize (This.all);
+      CheckType_Package.Initialize (This.all);
       return This;
    end Create;
 

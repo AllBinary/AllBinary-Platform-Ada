@@ -47,7 +47,7 @@ package body org.allbinary.game.ag.ai.HorizontaRotationManeuverAI_Package is
    function Create (ownerLayerInterface : AllBinaryLayer_Access; gameInput : GameInput_Access) return HorizontaRotationManeuverAI_Access is
       This : constant HorizontaRotationManeuverAI_Access := new HorizontaRotationManeuverAI;
    begin
-      Initialize (This.all, ownerLayerInterface, gameInput);
+      HorizontaRotationManeuverAI_Package.Initialize (This.all, ownerLayerInterface, gameInput);
       return This;
    end Create;
 
@@ -147,13 +147,6 @@ package body org.allbinary.game.ag.ai.HorizontaRotationManeuverAI_Package is
    function getId (This : in out HorizontaRotationManeuverAI) return Integer is
    begin
         return ArtificialIntelligence_Package.AI_ID;
-   end getId;
-
-   procedure getId (This : in out HorizontaRotationManeuverAI) is
-      Java_Result : constant Integer := HorizontaRotationManeuverAI'Class (This).getId;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getId;
 
 end org.allbinary.game.ag.ai.HorizontaRotationManeuverAI_Package;

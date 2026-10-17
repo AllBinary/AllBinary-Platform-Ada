@@ -31,7 +31,7 @@ package body org.allbinary.animation.transition.RunAtEndAnimationListener_Packag
    function Create (runnable : Runnable_Access) return RunAtEndAnimationListener_Access is
       This : constant RunAtEndAnimationListener_Access := new RunAtEndAnimationListener;
    begin
-      Initialize (This.all, runnable);
+      RunAtEndAnimationListener_Package.Initialize (This.all, runnable);
       return This;
    end Create;
 

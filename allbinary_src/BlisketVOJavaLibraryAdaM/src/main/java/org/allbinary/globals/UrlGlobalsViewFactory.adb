@@ -30,7 +30,7 @@ package body org.allbinary.globals.UrlGlobalsViewFactory_Package is
    function Create return UrlGlobalsViewFactory_Access is
       This : constant UrlGlobalsViewFactory_Access := new UrlGlobalsViewFactory;
    begin
-      Initialize (This.all);
+      UrlGlobalsViewFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -53,13 +53,6 @@ package body org.allbinary.globals.UrlGlobalsViewFactory_Package is
             return null;
                 end;
         end;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant DomNodeInterface_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 end org.allbinary.globals.UrlGlobalsViewFactory_Package;

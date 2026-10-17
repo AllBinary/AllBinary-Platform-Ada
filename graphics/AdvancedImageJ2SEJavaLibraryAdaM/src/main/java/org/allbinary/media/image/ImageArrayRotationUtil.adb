@@ -31,7 +31,7 @@ package body org.allbinary.media.image.ImageArrayRotationUtil_Package is
    function Create return ImageArrayRotationUtil_Access is
       This : constant ImageArrayRotationUtil_Access := new ImageArrayRotationUtil;
    begin
-      Initialize (This.all);
+      ImageArrayRotationUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -64,13 +64,6 @@ package body org.allbinary.media.image.ImageArrayRotationUtil_Package is
             visitor.visit (generatedBufferedImage, input, index);
         end loop;
    end process;
-
-   procedure getInstance is
-      Java_Result : constant ImageArrayRotationUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

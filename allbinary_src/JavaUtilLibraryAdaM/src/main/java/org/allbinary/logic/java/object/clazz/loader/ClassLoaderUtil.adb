@@ -30,7 +30,7 @@ package body org.allbinary.logic.java.anyType.clazz.loader.ClassLoaderUtil_Packa
    function Create return ClassLoaderUtil_Access is
       This : constant ClassLoaderUtil_Access := new ClassLoaderUtil;
    begin
-      Initialize (This.all);
+      ClassLoaderUtil_Package.Initialize (This.all);
       return This;
    end Create;
 

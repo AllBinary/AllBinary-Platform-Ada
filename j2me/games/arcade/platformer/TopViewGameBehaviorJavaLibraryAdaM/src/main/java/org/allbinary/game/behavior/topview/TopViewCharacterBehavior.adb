@@ -28,7 +28,7 @@ package body org.allbinary.game.behavior.topview.TopViewCharacterBehavior_Packag
    function Create return TopViewCharacterBehavior_Access is
       This : constant TopViewCharacterBehavior_Access := new TopViewCharacterBehavior;
    begin
-      Initialize (This.all);
+      TopViewCharacterBehavior_Package.Initialize (This.all);
       return This;
    end Create;
 

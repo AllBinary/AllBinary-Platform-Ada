@@ -28,7 +28,7 @@ package body org.allbinary.business.user.modules.admin.configuration.AdminConfig
    function Create return AdminConfigurationData_Access is
       This : constant AdminConfigurationData_Access := new AdminConfigurationData;
    begin
-      Initialize (This.all);
+      AdminConfigurationData_Package.Initialize (This.all);
       return This;
    end Create;
 

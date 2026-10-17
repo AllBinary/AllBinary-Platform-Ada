@@ -21,6 +21,8 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.animation.AnimationBehaviorFactory_Package; use org.allbinary.animation.AnimationBehaviorFactory_Package;
+with org.allbinary.animation.IndexedAnimationBehavior_Package; use org.allbinary.animation.IndexedAnimationBehavior_Package;
+with org.allbinary.animation.AnimationBehavior_Package; use org.allbinary.animation.AnimationBehavior_Package;
 
 package org.allbinary.animation.IndexedAnimationBehaviorFactory_Package is
 
@@ -38,7 +40,6 @@ package org.allbinary.animation.IndexedAnimationBehaviorFactory_Package is
    procedure Initialize (This : in out IndexedAnimationBehaviorFactory'Class; loopTotal : Integer; frameDelayTime : Long_Long_Integer);
    function Create (loopTotal : Integer; frameDelayTime : Long_Long_Integer) return IndexedAnimationBehaviorFactory_Access;
    function getOrCreateInstance (This : in out IndexedAnimationBehaviorFactory) return AnimationBehavior_Access;
-   procedure getOrCreateInstance (This : in out IndexedAnimationBehaviorFactory);
 
 end org.allbinary.animation.IndexedAnimationBehaviorFactory_Package;
 

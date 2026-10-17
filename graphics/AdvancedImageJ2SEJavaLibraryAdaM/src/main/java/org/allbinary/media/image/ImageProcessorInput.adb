@@ -34,7 +34,7 @@ package body org.allbinary.media.image.ImageProcessorInput_Package is
    function Create (files : File_Access_Array_Access; bufferedImageArray : BufferedImage_Access_Array_Access) return ImageProcessorInput_Access is
       This : constant ImageProcessorInput_Access := new ImageProcessorInput;
    begin
-      Initialize (This.all, files, bufferedImageArray);
+      ImageProcessorInput_Package.Initialize (This.all, files, bufferedImageArray);
       return This;
    end Create;
 
@@ -46,20 +46,6 @@ package body org.allbinary.media.image.ImageProcessorInput_Package is
    function getFiles (This : in out ImageProcessorInput) return File_Access_Array_Access is
    begin
         return This.files;
-   end getFiles;
-
-   procedure getBufferedImageArray (This : in out ImageProcessorInput) is
-      Java_Result : constant BufferedImage_Access_Array_Access := ImageProcessorInput'Class (This).getBufferedImageArray;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getBufferedImageArray;
-
-   procedure getFiles (This : in out ImageProcessorInput) is
-      Java_Result : constant File_Access_Array_Access := ImageProcessorInput'Class (This).getFiles;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getFiles;
 
 end org.allbinary.media.image.ImageProcessorInput_Package;

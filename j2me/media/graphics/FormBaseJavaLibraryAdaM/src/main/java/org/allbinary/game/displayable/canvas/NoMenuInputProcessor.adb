@@ -34,7 +34,7 @@ package body org.allbinary.game.displayable.canvas.NoMenuInputProcessor_Package 
    function Create return NoMenuInputProcessor_Access is
       This : constant NoMenuInputProcessor_Access := new NoMenuInputProcessor;
    begin
-      Initialize (This.all);
+      NoMenuInputProcessor_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -52,13 +52,6 @@ package body org.allbinary.game.displayable.canvas.NoMenuInputProcessor_Package 
    begin
         null;
    end onMotionGestureEvent;
-
-   procedure getInstance is
-      Java_Result : constant NoMenuInputProcessor_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

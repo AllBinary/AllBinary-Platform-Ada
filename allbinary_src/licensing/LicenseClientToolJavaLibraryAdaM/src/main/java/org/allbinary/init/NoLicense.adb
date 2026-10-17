@@ -30,7 +30,7 @@ package body org.allbinary.init.NoLicense_Package is
    function Create return NoLicense_Access is
       This : constant NoLicense_Access := new NoLicense;
    begin
-      Initialize (This.all);
+      NoLicense_Package.Initialize (This.all);
       return This;
    end Create;
 

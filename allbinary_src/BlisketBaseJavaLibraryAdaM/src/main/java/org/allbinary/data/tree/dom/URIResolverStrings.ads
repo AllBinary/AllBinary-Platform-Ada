@@ -44,7 +44,6 @@ package org.allbinary.data.tree.dom.URIResolverStrings_Package is
    procedure Initialize (This : in out URIResolverStrings'Class);
    function Create return URIResolverStrings_Access;
    function getInstance return URIResolverStrings_Access;
-   procedure getInstance;
 
 end org.allbinary.data.tree.dom.URIResolverStrings_Package;
 

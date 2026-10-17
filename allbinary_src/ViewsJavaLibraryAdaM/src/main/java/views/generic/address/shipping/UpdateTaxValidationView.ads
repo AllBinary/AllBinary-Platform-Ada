@@ -59,11 +59,8 @@ package views.generic_Id.address.shipping.UpdateTaxValidationView_Package is
    procedure Initialize (This : in out UpdateTaxValidationView'Class; transformInfoInterface : TransformInfoInterface_Access);
    function Create (transformInfoInterface : TransformInfoInterface_Access) return UpdateTaxValidationView_Access;
    function isValid (This : in out UpdateTaxValidationView) return Boolean;
-   procedure isValid (This : in out UpdateTaxValidationView);
    function validationInfo (This : in out UpdateTaxValidationView) return Unbounded_String;
-   procedure validationInfo (This : in out UpdateTaxValidationView);
    function toValidationInfoDoc (This : in out UpdateTaxValidationView) return Document_Access;
-   procedure toValidationInfoDoc (This : in out UpdateTaxValidationView);
    function toValidationInfoNode (This : in out UpdateTaxValidationView; document : Document_Access) return Node_Access;
    procedure toValidationInfoNode (This : in out UpdateTaxValidationView; document : Document_Access);
 

@@ -27,6 +27,8 @@ with org.allbinary.logic.communication.smtp.info.EmailInfo_Package; use org.allb
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.allbinary.logic.communication.smtp.EmailInterface_Package; use org.allbinary.logic.communication.smtp.EmailInterface_Package;
+with org.allbinary.logic.communication.smtp.AbEmail_Package; use org.allbinary.logic.communication.smtp.AbEmail_Package;
+with org.allbinary.logic.communication.smtp.Email_Package; use org.allbinary.logic.communication.smtp.Email_Package;
 
 package org.allbinary.logic.communication.smtp.BasicEmail_Package is
 
@@ -47,19 +49,13 @@ package org.allbinary.logic.communication.smtp.BasicEmail_Package is
    procedure Initialize (This : in out BasicEmail'Class; emailInfo : EmailInfo_Access; to : Unbounded_String);
    function Create (emailInfo : EmailInfo_Access; to : Unbounded_String) return BasicEmail_Access;
    function getEmail (This : in out BasicEmail) return Email_Access;
-   procedure getEmail (This : in out BasicEmail);
    function getMimeMessage (This : in out BasicEmail) return MimeMessage_Access;
-   procedure getMimeMessage (This : in out BasicEmail);
    function getDebugInfo (This : in out BasicEmail) return Unbounded_String;
-   procedure getDebugInfo (This : in out BasicEmail);
    function log (This : in out BasicEmail) return Unbounded_String;
-   procedure log (This : in out BasicEmail);
    function toHashMap (This : in out BasicEmail) return HashMap_Access;
-   procedure toHashMap (This : in out BasicEmail);
    function toXmlNode (This : in out BasicEmail; document : Document_Access) return Node_Access;
    procedure toXmlNode (This : in out BasicEmail; document : Document_Access);
    function toXmlDoc (This : in out BasicEmail) return Document_Access;
-   procedure toXmlDoc (This : in out BasicEmail);
 
 end org.allbinary.logic.communication.smtp.BasicEmail_Package;
 

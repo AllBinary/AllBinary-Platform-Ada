@@ -54,7 +54,7 @@ package body org.allbinary.animation.image.sprite.SpriteIndexedAnimationFactory_
    function Create (image : Image_Access; basicColorArray : BasicColor_Access_Array_Access; sequenceArray : Integer_Array_Access; width : Integer; height : Integer; dx : Integer; dy : Integer; animationBehaviorFactory : AnimationBehaviorFactory_Access) return SpriteIndexedAnimationFactory_Access is
       This : constant SpriteIndexedAnimationFactory_Access := new SpriteIndexedAnimationFactory;
    begin
-      Initialize (This.all, image, basicColorArray, sequenceArray, width, height, dx, dy, animationBehaviorFactory);
+      SpriteIndexedAnimationFactory_Package.Initialize (This.all, image, basicColorArray, sequenceArray, width, height, dx, dy, animationBehaviorFactory);
       return This;
    end Create;
 

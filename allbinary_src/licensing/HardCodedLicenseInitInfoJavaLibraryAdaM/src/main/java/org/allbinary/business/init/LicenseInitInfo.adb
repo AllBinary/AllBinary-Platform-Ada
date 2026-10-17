@@ -32,7 +32,7 @@ package body org.allbinary.business.init.LicenseInitInfo_Package is
    function Create return LicenseInitInfo_Access is
       This : constant LicenseInitInfo_Access := new LicenseInitInfo;
    begin
-      Initialize (This.all);
+      LicenseInitInfo_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -83,33 +83,12 @@ package body org.allbinary.business.init.LicenseInitInfo_Package is
         end if;
    end setServerList;
 
-   procedure getLicenseId (This : in out LicenseInitInfo) is
-      Java_Result : constant Unbounded_String := LicenseInitInfo'Class (This).getLicenseId;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getLicenseId;
-
    procedure getServer (This : in out LicenseInitInfo; index : Integer) is
       Java_Result : constant Unbounded_String := LicenseInitInfo'Class (This).getServer (index);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getServer;
-
-   procedure getNumberOfServers (This : in out LicenseInitInfo) is
-      Java_Result : constant Integer := LicenseInitInfo'Class (This).getNumberOfServers;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getNumberOfServers;
-
-   procedure getServerList (This : in out LicenseInitInfo) is
-      Java_Result : constant BasicArrayList_Access := LicenseInitInfo'Class (This).getServerList;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getServerList;
 
 end org.allbinary.business.init.LicenseInitInfo_Package;
 

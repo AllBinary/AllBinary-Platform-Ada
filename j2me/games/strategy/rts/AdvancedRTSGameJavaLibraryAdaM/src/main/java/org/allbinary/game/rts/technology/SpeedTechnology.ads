@@ -21,6 +21,7 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.layer.RTSInterface_Package; use org.allbinary.game.layer.RTSInterface_Package;
+with org.allbinary.game.rts.technology.UnitTechnologySingletonFactory_Package; use org.allbinary.game.rts.technology.UnitTechnologySingletonFactory_Package;
 
 package org.allbinary.game.rts.technology.SpeedTechnology_Package is
 
@@ -39,27 +40,17 @@ package org.allbinary.game.rts.technology.SpeedTechnology_Package is
    procedure Initialize (This : in out SpeedTechnology'Class; maxLevel : Integer);
    function Create (maxLevel : Integer) return SpeedTechnology_Access;
    function isCompleted (This : in out SpeedTechnology) return Boolean;
-   procedure isCompleted (This : in out SpeedTechnology);
    function getPercentComplete (This : in out SpeedTechnology) return Integer;
-   procedure getPercentComplete (This : in out SpeedTechnology);
    function getLevel (This : in out SpeedTechnology) return Integer;
-   procedure getLevel (This : in out SpeedTechnology);
    function getMaxLevel (This : in out SpeedTechnology) return Integer;
-   procedure getMaxLevel (This : in out SpeedTechnology);
    function getCost (This : in out SpeedTechnology) return Integer;
-   procedure getCost (This : in out SpeedTechnology);
    procedure downgrade (This : in out SpeedTechnology);
    function getDowngradeCost (This : in out SpeedTechnology) return Integer;
-   procedure getDowngradeCost (This : in out SpeedTechnology);
    function isDowngradeable (This : in out SpeedTechnology) return Boolean;
-   procedure isDowngradeable (This : in out SpeedTechnology);
    function getUpgradeCost (This : in out SpeedTechnology) return Integer;
-   procedure getUpgradeCost (This : in out SpeedTechnology);
    function isUpgradeable (This : in out SpeedTechnology) return Boolean;
-   procedure isUpgradeable (This : in out SpeedTechnology);
    procedure upgrade (This : in out SpeedTechnology);
    function isSelfUpgradeable (This : in out SpeedTechnology) return Boolean;
-   procedure isSelfUpgradeable (This : in out SpeedTechnology);
 
 end org.allbinary.game.rts.technology.SpeedTechnology_Package;
 

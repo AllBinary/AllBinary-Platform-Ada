@@ -31,7 +31,7 @@ package body org.allbinary.business.category.properties.CategoryPropertiesValida
    function Create (categoryPropertiesInterface : CategoryPropertiesInterface_Access) return CategoryPropertiesValidationView_Access is
       This : constant CategoryPropertiesValidationView_Access := new CategoryPropertiesValidationView;
    begin
-      Initialize (This.all, categoryPropertiesInterface);
+      CategoryPropertiesValidationView_Package.Initialize (This.all, categoryPropertiesInterface);
       return This;
    end Create;
 
@@ -73,27 +73,6 @@ package body org.allbinary.business.category.properties.CategoryPropertiesValida
    begin
         return null;
    end toValidationInfoNode;
-
-   procedure isValid (This : in out CategoryPropertiesValidationView) is
-      Java_Result : constant Boolean := CategoryPropertiesValidationView'Class (This).isValid;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isValid;
-
-   procedure validationInfo (This : in out CategoryPropertiesValidationView) is
-      Java_Result : constant Unbounded_String := CategoryPropertiesValidationView'Class (This).validationInfo;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end validationInfo;
-
-   procedure toValidationInfoDoc (This : in out CategoryPropertiesValidationView) is
-      Java_Result : constant Document_Access := CategoryPropertiesValidationView'Class (This).toValidationInfoDoc;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toValidationInfoDoc;
 
    procedure toValidationInfoNode (This : in out CategoryPropertiesValidationView; document : Document_Access) is
       Java_Result : constant Node_Access := CategoryPropertiesValidationView'Class (This).toValidationInfoNode (document);

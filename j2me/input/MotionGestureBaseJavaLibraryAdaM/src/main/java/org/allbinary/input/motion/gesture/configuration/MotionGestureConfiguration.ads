@@ -59,27 +59,19 @@ package org.allbinary.input.motion.gesture.configuration.MotionGestureConfigurat
    procedure addMotionGestureAction (This : in out MotionGestureConfiguration; list : BasicArrayList_Access; commandAction : CompleteMotionGestureInputEvent_Access);
    procedure clearMotionGestureAction (This : in out MotionGestureConfiguration);
    function getAssociateCommandActionsList (This : in out MotionGestureConfiguration) return BasicArrayList_Access;
-   procedure getAssociateCommandActionsList (This : in out MotionGestureConfiguration);
    function isDiagonalMotionGestureAllowed (This : in out MotionGestureConfiguration) return Boolean;
-   procedure isDiagonalMotionGestureAllowed (This : in out MotionGestureConfiguration);
    function isExecutingActionsAllowed (This : in out MotionGestureConfiguration) return Boolean;
-   procedure isExecutingActionsAllowed (This : in out MotionGestureConfiguration);
    procedure setExecutingActionsAllowed (This : in out MotionGestureConfiguration; executingActionAllowed : Boolean);
    procedure setDiagonalMotionGestureAllowed (This : in out MotionGestureConfiguration; diagonalMotionGestureAllowed : Boolean);
    function getDiagonalTolerance (This : in out MotionGestureConfiguration) return Integer;
-   procedure getDiagonalTolerance (This : in out MotionGestureConfiguration);
    procedure setDiagonalTolerance (This : in out MotionGestureConfiguration; diagonalTolerance : Integer);
    function getMinimumMotionGesture (This : in out MotionGestureConfiguration) return Integer;
-   procedure getMinimumMotionGesture (This : in out MotionGestureConfiguration);
    procedure setMinimumMotionGesture (This : in out MotionGestureConfiguration; minimumMotionGesture : Integer);
    function getButton (This : in out MotionGestureConfiguration) return Unbounded_String;
-   procedure getButton (This : in out MotionGestureConfiguration);
    procedure setButton (This : in out MotionGestureConfiguration; button : Unbounded_String);
    function getColor (This : in out MotionGestureConfiguration) return BasicColor_Access;
-   procedure getColor (This : in out MotionGestureConfiguration);
    procedure setColor (This : in out MotionGestureConfiguration; color : BasicColor_Access);
    function getMouseButtonMask (This : in out MotionGestureConfiguration) return Integer;
-   procedure getMouseButtonMask (This : in out MotionGestureConfiguration);
    procedure setMouseButtonMask (This : in out MotionGestureConfiguration; mouseButtonMask : Integer);
 
 end org.allbinary.input.motion.gesture.configuration.MotionGestureConfiguration_Package;

@@ -29,7 +29,7 @@ package body org.allbinary.game.layer.waypoint.CollidableWaypointBehavior_Packag
    function Create (collidable : Boolean) return CollidableWaypointBehavior_Access is
       This : constant CollidableWaypointBehavior_Access := new CollidableWaypointBehavior;
    begin
-      Initialize (This.all, collidable);
+      CollidableWaypointBehavior_Package.Initialize (This.all, collidable);
       return This;
    end Create;
 

@@ -46,10 +46,8 @@ package org.allbinary.game.displayable.canvas.EndGameInfo_Package is
    function Create return EndGameInfo_Access;
    procedure update (This : in out EndGameInfo; gameInfo : GameInfo_Access; myCanvas : MyCanvas_Access);
    function getGameOverStr (This : in out EndGameInfo) return Unbounded_String;
-   procedure getGameOverStr (This : in out EndGameInfo);
    procedure setGameOverStr (This : in out EndGameInfo; gameOverStr : Unbounded_String);
    function getWinStr (This : in out EndGameInfo) return Unbounded_String;
-   procedure getWinStr (This : in out EndGameInfo);
    procedure setWinStr (This : in out EndGameInfo; winStr : Unbounded_String);
 
 end org.allbinary.game.displayable.canvas.EndGameInfo_Package;

@@ -20,6 +20,8 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
+with org.allbinary.game.configuration.GameConfigurationCentral_Package; use org.allbinary.game.configuration.GameConfigurationCentral_Package;
+with org.allbinary.game.configuration.GameConfiguration_Package; use org.allbinary.game.configuration.GameConfiguration_Package;
 
 package org.allbinary.game.configuration.GameSpeed_Package is
 
@@ -35,11 +37,8 @@ package org.allbinary.game.configuration.GameSpeed_Package is
    procedure Initialize (This : in out GameSpeed'Class);
    function Create return GameSpeed_Access;
    function getSpeed (This : in out GameSpeed) return Integer;
-   procedure getSpeed (This : in out GameSpeed);
    function getDelay (This : in out GameSpeed) return Integer;
-   procedure getDelay (This : in out GameSpeed);
    function getInstance return GameSpeed_Access;
-   procedure getInstance;
 
 end org.allbinary.game.configuration.GameSpeed_Package;
 

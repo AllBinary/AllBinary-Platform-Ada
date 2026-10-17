@@ -31,7 +31,7 @@ package body org.allbinary.logic.StdUtil_Package is
    function Create return StdUtil_Access is
       This : constant StdUtil_Access := new StdUtil;
    begin
-      Initialize (This.all);
+      StdUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -59,41 +59,6 @@ package body org.allbinary.logic.StdUtil_Package is
    function createHashMap (This : in out StdUtil) return ABHashMap_Access is
    begin
         return ABHashMap_Package.Create;
-   end createHashMap;
-
-   procedure getInstance is
-      Java_Result : constant StdUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure createStack (This : in out StdUtil) is
-      Java_Result : constant ABStack_Access := StdUtil'Class (This).createStack;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end createStack;
-
-   procedure createVector (This : in out StdUtil) is
-      Java_Result : constant ABVector_Access := StdUtil'Class (This).createVector;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end createVector;
-
-   procedure createHashtable (This : in out StdUtil) is
-      Java_Result : constant ABHashtable_Access := StdUtil'Class (This).createHashtable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end createHashtable;
-
-   procedure createHashMap (This : in out StdUtil) is
-      Java_Result : constant ABHashMap_Access := StdUtil'Class (This).createHashMap;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end createHashMap;
 
 begin

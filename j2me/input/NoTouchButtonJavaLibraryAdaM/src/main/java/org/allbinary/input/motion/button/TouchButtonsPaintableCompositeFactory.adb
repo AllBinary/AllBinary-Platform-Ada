@@ -28,7 +28,7 @@ package body org.allbinary.input.motion.button.TouchButtonsPaintableCompositeFac
    function Create return TouchButtonsPaintableCompositeFactory_Access is
       This : constant TouchButtonsPaintableCompositeFactory_Access := new TouchButtonsPaintableCompositeFactory;
    begin
-      Initialize (This.all);
+      TouchButtonsPaintableCompositeFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

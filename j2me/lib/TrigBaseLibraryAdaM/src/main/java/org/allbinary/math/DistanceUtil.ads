@@ -39,7 +39,6 @@ package org.allbinary.math.DistanceUtil_Package is
    procedure Initialize (This : in out DistanceUtil'Class);
    function Create return DistanceUtil_Access;
    function getInstance return DistanceUtil_Access;
-   procedure getInstance;
    function getDistance (This : in out DistanceUtil; x1 : Integer; y1 : Integer; x2 : Integer; y2 : Integer) return Integer;
    procedure getDistance (This : in out DistanceUtil; x1 : Integer; y1 : Integer; x2 : Integer; y2 : Integer);
 

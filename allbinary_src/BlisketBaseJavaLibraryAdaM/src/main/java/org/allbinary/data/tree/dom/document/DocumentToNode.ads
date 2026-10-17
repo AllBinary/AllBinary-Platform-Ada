@@ -43,8 +43,8 @@ package org.allbinary.data.tree.dom.document.DocumentToNode_Package is
 
    procedure Initialize (This : in out DocumentToNode'Class);
    function Create return DocumentToNode_Access;
-   function convertDocumentToNodeString (documentString : Unbounded_String) return Unbounded_String;
-   procedure convertDocumentToNodeString (documentString : Unbounded_String);
+   function convertDocumentToNodeString (documentString_Param : Unbounded_String) return Unbounded_String;
+   procedure convertDocumentToNodeString (documentString_Param : Unbounded_String);
    function removeXmlDefinitionFromDocumentString (documentString : Unbounded_String) return Unbounded_String;
    procedure removeXmlDefinitionFromDocumentString (documentString : Unbounded_String);
    function remove (documentString : Unbounded_String; start : Unbounded_String; end_Id : Unbounded_String) return Unbounded_String;

@@ -39,7 +39,6 @@ package tags.admin.payment.gateway.ViewTag_Package is
    procedure Initialize (This : in out ViewTag'Class);
    function Create return ViewTag_Access;
    function doStartTag (This : in out ViewTag) return Integer;
-   procedure doStartTag (This : in out ViewTag);
 
 end tags.admin.payment.gateway.ViewTag_Package;
 

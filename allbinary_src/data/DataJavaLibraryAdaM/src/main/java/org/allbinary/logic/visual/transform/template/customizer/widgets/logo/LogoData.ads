@@ -40,7 +40,6 @@ package org.allbinary.logic.visual.transform.template.customizer.widgets.logo.Lo
    procedure Initialize (This : in out LogoData'Class);
    function Create return LogoData_Access;
    function getInstance return LogoData_Access;
-   procedure getInstance;
 
 end org.allbinary.logic.visual.transform.template.customizer.widgets.logo.LogoData_Package;
 

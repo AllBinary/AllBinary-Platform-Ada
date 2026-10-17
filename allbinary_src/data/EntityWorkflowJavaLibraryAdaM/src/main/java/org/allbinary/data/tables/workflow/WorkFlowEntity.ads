@@ -81,11 +81,8 @@ package org.allbinary.data.tables.workflow.WorkFlowEntity_Package is
    procedure get (This : in out WorkFlowEntity; storeName : Unbounded_String);
    procedure update (This : in out WorkFlowEntity; updatedValues : HashMap_Access);
    function createTableStatement (This : in out WorkFlowEntity) return Unbounded_String;
-   procedure createTableStatement (This : in out WorkFlowEntity);
    function createTable (This : in out WorkFlowEntity) return Unbounded_String;
-   procedure createTable (This : in out WorkFlowEntity);
    function dropTable (This : in out WorkFlowEntity) return Unbounded_String;
-   procedure dropTable (This : in out WorkFlowEntity);
 
 end org.allbinary.data.tables.workflow.WorkFlowEntity_Package;
 

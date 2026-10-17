@@ -37,7 +37,7 @@ package body org.allbinary.game.midlet.CreateGameRunnable_Package is
    function Create (demoGameMidlet : DemoGameMidlet_Access; hashtable : ABHashtable_Access) return CreateGameRunnable_Access is
       This : constant CreateGameRunnable_Access := new CreateGameRunnable;
    begin
-      Initialize (This.all, demoGameMidlet, hashtable);
+      CreateGameRunnable_Package.Initialize (This.all, demoGameMidlet, hashtable);
       return This;
    end Create;
 

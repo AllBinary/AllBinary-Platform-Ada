@@ -20,6 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
+with org.allbinary.graphics.form.ScrollSelectionForm_Package; use org.allbinary.graphics.form.ScrollSelectionForm_Package;
 
 package org.allbinary.graphics.form.ScrollSelectionFormNoneFactory_Package is
 
@@ -34,7 +35,6 @@ package org.allbinary.graphics.form.ScrollSelectionFormNoneFactory_Package is
    procedure Initialize (This : in out ScrollSelectionFormNoneFactory'Class);
    function Create return ScrollSelectionFormNoneFactory_Access;
    function getInstance return ScrollSelectionForm_Access;
-   procedure getInstance;
 
 end org.allbinary.graphics.form.ScrollSelectionFormNoneFactory_Package;
 

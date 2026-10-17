@@ -29,7 +29,7 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.TransformInf
    function Create return TransformInfoObjectConfigAndManipulatorFactoryBase_Access is
       This : constant TransformInfoObjectConfigAndManipulatorFactoryBase_Access := new TransformInfoObjectConfigAndManipulatorFactoryBase;
    begin
-      Initialize (This.all);
+      TransformInfoObjectConfigAndManipulatorFactoryBase_Package.Initialize (This.all);
       return This;
    end Create;
 

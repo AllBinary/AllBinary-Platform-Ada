@@ -41,22 +41,16 @@ package org.allbinary.game.rts.technology.UnitTechnologySingletonFactory_Package
    procedure Initialize (This : in out UnitTechnologySingletonFactory'Class);
    function Create return UnitTechnologySingletonFactory_Access;
    function getInstance return UnitTechnologySingletonFactory_Access;
-   procedure getInstance;
    procedure init (This : in out UnitTechnologySingletonFactory);
    function getDamage (This : in out UnitTechnologySingletonFactory) return Integer;
-   procedure getDamage (This : in out UnitTechnologySingletonFactory);
    procedure setDamage (This : in out UnitTechnologySingletonFactory; damage : Integer);
    function getHealth (This : in out UnitTechnologySingletonFactory) return Integer;
-   procedure getHealth (This : in out UnitTechnologySingletonFactory);
    procedure setHealth (This : in out UnitTechnologySingletonFactory; health : Integer);
    function getReload (This : in out UnitTechnologySingletonFactory) return Integer;
-   procedure getReload (This : in out UnitTechnologySingletonFactory);
    procedure setReload (This : in out UnitTechnologySingletonFactory; reload : Integer);
    function getRepair (This : in out UnitTechnologySingletonFactory) return Integer;
-   procedure getRepair (This : in out UnitTechnologySingletonFactory);
    procedure setRepair (This : in out UnitTechnologySingletonFactory; repair : Integer);
    function getSpeed (This : in out UnitTechnologySingletonFactory) return Integer;
-   procedure getSpeed (This : in out UnitTechnologySingletonFactory);
    procedure setSpeed (This : in out UnitTechnologySingletonFactory; speed : Integer);
 
 end org.allbinary.game.rts.technology.UnitTechnologySingletonFactory_Package;

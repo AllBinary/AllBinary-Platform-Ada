@@ -30,7 +30,7 @@ package body org.allbinary.input.TouchJ2ME_Package is
    function Create return TouchJ2ME_Access is
       This : constant TouchJ2ME_Access := new TouchJ2ME;
    begin
-      Initialize (This.all);
+      TouchJ2ME_Package.Initialize (This.all);
       return This;
    end Create;
 

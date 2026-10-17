@@ -30,7 +30,7 @@ package body org.allbinary.logic.visual.transform.StoreTransformer_Package is
    function Create (abeClientInformation : AbeClientInformationInterface_Access; transformInfoInterface : TransformInfoInterface_Access) return StoreTransformer_Access is
       This : constant StoreTransformer_Access := new StoreTransformer;
    begin
-      Initialize (This.all, abeClientInformation, transformInfoInterface);
+      StoreTransformer_Package.Initialize (This.all, abeClientInformation, transformInfoInterface);
       return This;
    end Create;
 

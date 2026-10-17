@@ -29,7 +29,7 @@ package body org.allbinary.game.behavior.topview.placement.AllAnimationsEverywhe
    function Create return AllAnimationsEverywhereTileMapPlacementVisitor_Access is
       This : constant AllAnimationsEverywhereTileMapPlacementVisitor_Access := new AllAnimationsEverywhereTileMapPlacementVisitor;
    begin
-      Initialize (This.all);
+      AllAnimationsEverywhereTileMapPlacementVisitor_Package.Initialize (This.all);
       return This;
    end Create;
 

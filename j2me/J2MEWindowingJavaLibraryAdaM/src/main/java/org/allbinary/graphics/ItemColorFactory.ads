@@ -39,7 +39,6 @@ package org.allbinary.graphics.ItemColorFactory_Package is
    procedure Initialize (This : in out ItemColorFactory'Class);
    function Create return ItemColorFactory_Access;
    function getInstance return ItemColorFactory_Access;
-   procedure getInstance;
 
 end org.allbinary.graphics.ItemColorFactory_Package;
 

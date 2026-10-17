@@ -44,7 +44,7 @@ package body org.allbinary.game.input.mapping.InputToGameKeyMapping_Package is
    function Create return InputToGameKeyMapping_Access is
       This : constant InputToGameKeyMapping_Access := new InputToGameKeyMapping;
    begin
-      Initialize (This.all);
+      InputToGameKeyMapping_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -219,20 +219,6 @@ package body org.allbinary.game.input.mapping.InputToGameKeyMapping_Package is
             return This.gameKeyFactory.NONE;
         end if;
    end getInstance;
-
-   procedure getNullInstance is
-      Java_Result : constant InputToGameKeyMapping_Access := getNullInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getNullInstance;
-
-   procedure getMaxMappable (This : in out InputToGameKeyMapping) is
-      Java_Result : constant Integer := InputToGameKeyMapping'Class (This).getMaxMappable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getMaxMappable;
 
    procedure getReverseInstance (This : in out InputToGameKeyMapping; id : Integer) is
       Java_Result : constant BasicArrayList_Access := InputToGameKeyMapping'Class (This).getReverseInstance (id);

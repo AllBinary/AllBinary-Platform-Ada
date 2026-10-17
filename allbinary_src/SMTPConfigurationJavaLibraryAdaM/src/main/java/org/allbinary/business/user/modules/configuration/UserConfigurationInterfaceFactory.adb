@@ -30,7 +30,7 @@ package body org.allbinary.business.user.modules.configuration.UserConfiguration
    function Create return UserConfigurationInterfaceFactory_Access is
       This : constant UserConfigurationInterfaceFactory_Access := new UserConfigurationInterfaceFactory;
    begin
-      Initialize (This.all);
+      UserConfigurationInterfaceFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -69,13 +69,6 @@ package body org.allbinary.business.user.modules.configuration.UserConfiguration
 
    procedure getInstance (userRole : UserRole_Access) is
       Java_Result : constant UserConfigurationInterface_Access := getInstance (userRole);
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant UserConfigurationInterface_Access := getInstance;
       pragma Unreferenced (Java_Result);
    begin
       null;

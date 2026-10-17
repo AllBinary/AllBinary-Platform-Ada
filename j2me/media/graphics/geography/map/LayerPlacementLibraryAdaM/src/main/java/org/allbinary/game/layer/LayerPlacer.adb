@@ -34,7 +34,7 @@ package body org.allbinary.game.layer.LayerPlacer_Package is
    function Create (layerInterfaceVisitor : LayerInterfaceVisitor_Access; dimension : GPoint_Access) return LayerPlacer_Access is
       This : constant LayerPlacer_Access := new LayerPlacer;
    begin
-      Initialize (This.all, layerInterfaceVisitor, dimension);
+      LayerPlacer_Package.Initialize (This.all, layerInterfaceVisitor, dimension);
       return This;
    end Create;
 

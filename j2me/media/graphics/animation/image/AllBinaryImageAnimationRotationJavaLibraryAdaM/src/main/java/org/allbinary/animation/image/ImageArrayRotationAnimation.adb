@@ -40,7 +40,7 @@ package body org.allbinary.animation.image.ImageArrayRotationAnimation_Package i
    function Create (imageArray : Image_Access_Array_Access; angleInfo : AngleInfo_Access; totalAngle : Integer; animationBehavior : AnimationBehavior_Access) return ImageArrayRotationAnimation_Access is
       This : constant ImageArrayRotationAnimation_Access := new ImageArrayRotationAnimation;
    begin
-      Initialize (This.all, imageArray, angleInfo, totalAngle, animationBehavior);
+      ImageArrayRotationAnimation_Package.Initialize (This.all, imageArray, angleInfo, totalAngle, animationBehavior);
       return This;
    end Create;
 

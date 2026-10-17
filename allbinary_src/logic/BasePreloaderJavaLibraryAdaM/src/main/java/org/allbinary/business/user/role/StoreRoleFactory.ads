@@ -22,6 +22,7 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.business.user.role.BasicUserRoleFactory_Package; use org.allbinary.business.user.role.BasicUserRoleFactory_Package;
 
 package org.allbinary.business.user.role.StoreRoleFactory_Package is
 
@@ -43,13 +44,9 @@ package org.allbinary.business.user.role.StoreRoleFactory_Package is
    procedure Initialize (This : in out StoreRoleFactory'Class);
    function Create return StoreRoleFactory_Access;
    function getInstance return StoreRoleFactory_Access;
-   procedure getInstance;
    function getRoles (This : in out StoreRoleFactory) return BasicArrayList_Access;
-   procedure getRoles (This : in out StoreRoleFactory);
    function getSubscriberRoles (This : in out StoreRoleFactory) return BasicArrayList_Access;
-   procedure getSubscriberRoles (This : in out StoreRoleFactory);
    function getWholesaleRoles (This : in out StoreRoleFactory) return BasicArrayList_Access;
-   procedure getWholesaleRoles (This : in out StoreRoleFactory);
 
 end org.allbinary.business.user.role.StoreRoleFactory_Package;
 

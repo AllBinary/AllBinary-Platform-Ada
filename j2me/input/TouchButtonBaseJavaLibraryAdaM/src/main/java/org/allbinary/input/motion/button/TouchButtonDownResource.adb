@@ -34,16 +34,9 @@ package body org.allbinary.input.motion.button.TouchButtonDownResource_Package i
    function Create return TouchButtonDownResource_Access is
       This : constant TouchButtonDownResource_Access := new TouchButtonDownResource;
    begin
-      Initialize (This.all);
+      TouchButtonDownResource_Package.Initialize (This.all);
       return This;
    end Create;
-
-   procedure getInstance is
-      Java_Result : constant TouchButtonResource_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

@@ -53,17 +53,12 @@ package views.business.context.modules.storefront.customizer.includes.meta.NewMe
    procedure Initialize (This : in out NewMetaValidationView'Class; transformInfoInterface : TransformInfoInterface_Access);
    function Create (transformInfoInterface : TransformInfoInterface_Access) return NewMetaValidationView_Access;
    function toXmlDoc (This : in out NewMetaValidationView) return Document_Access;
-   procedure toXmlDoc (This : in out NewMetaValidationView);
    function isValid (This : in out NewMetaValidationView) return Boolean;
-   procedure isValid (This : in out NewMetaValidationView);
    function validationInfo (This : in out NewMetaValidationView) return Unbounded_String;
-   procedure validationInfo (This : in out NewMetaValidationView);
    function toValidationInfoDoc (This : in out NewMetaValidationView) return Document_Access;
-   procedure toValidationInfoDoc (This : in out NewMetaValidationView);
    function toValidationInfoNode (This : in out NewMetaValidationView; document : Document_Access) return Node_Access;
    procedure toValidationInfoNode (This : in out NewMetaValidationView; document : Document_Access);
    function view (This : in out NewMetaValidationView) return Unbounded_String;
-   procedure view (This : in out NewMetaValidationView);
 
 end views.business.context.modules.storefront.customizer.includes.meta.NewMetaValidationView_Package;
 

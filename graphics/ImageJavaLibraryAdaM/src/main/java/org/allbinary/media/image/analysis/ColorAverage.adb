@@ -35,7 +35,7 @@ package body org.allbinary.media.image.analysis.ColorAverage_Package is
    function Create return ColorAverage_Access is
       This : constant ColorAverage_Access := new ColorAverage;
    begin
-      Initialize (This.all);
+      ColorAverage_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -84,34 +84,6 @@ package body org.allbinary.media.image.analysis.ColorAverage_Package is
    begin
         This.avgBlue := avgBlue;
    end setAvgBlue;
-
-   procedure toString (This : in out ColorAverage) is
-      Java_Result : constant Unbounded_String := ColorAverage'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toString;
-
-   procedure getAvgRed (This : in out ColorAverage) is
-      Java_Result : constant Float := ColorAverage'Class (This).getAvgRed;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getAvgRed;
-
-   procedure getAvgGreen (This : in out ColorAverage) is
-      Java_Result : constant Float := ColorAverage'Class (This).getAvgGreen;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getAvgGreen;
-
-   procedure getAvgBlue (This : in out ColorAverage) is
-      Java_Result : constant Float := ColorAverage'Class (This).getAvgBlue;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getAvgBlue;
 
 end org.allbinary.media.image.analysis.ColorAverage_Package;
 

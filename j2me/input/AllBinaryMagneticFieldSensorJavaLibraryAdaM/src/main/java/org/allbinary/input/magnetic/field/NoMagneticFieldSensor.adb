@@ -29,7 +29,7 @@ package body org.allbinary.input.magnetic.field.NoMagneticFieldSensor_Package is
    function Create return NoMagneticFieldSensor_Access is
       This : constant NoMagneticFieldSensor_Access := new NoMagneticFieldSensor;
    begin
-      Initialize (This.all);
+      NoMagneticFieldSensor_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -44,13 +44,6 @@ package body org.allbinary.input.magnetic.field.NoMagneticFieldSensor_Package is
    begin
         null;
    end onSensorChange;
-
-   procedure getOrientation (This : in out NoMagneticFieldSensor) is
-      Java_Result : constant Orientation_Access := NoMagneticFieldSensor'Class (This).getOrientation;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getOrientation;
 
 end org.allbinary.input.magnetic.field.NoMagneticFieldSensor_Package;
 

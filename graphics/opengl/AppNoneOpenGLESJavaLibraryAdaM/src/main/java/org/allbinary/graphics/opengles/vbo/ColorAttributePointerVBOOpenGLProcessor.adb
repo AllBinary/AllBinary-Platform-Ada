@@ -36,7 +36,7 @@ package body org.allbinary.graphics.opengles.vbo.ColorAttributePointerVBOOpenGLP
    function Create return ColorAttributePointerVBOOpenGLProcessor_Access is
       This : constant ColorAttributePointerVBOOpenGLProcessor_Access := new ColorAttributePointerVBOOpenGLProcessor;
    begin
-      Initialize (This.all);
+      ColorAttributePointerVBOOpenGLProcessor_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -44,13 +44,6 @@ package body org.allbinary.graphics.opengles.vbo.ColorAttributePointerVBOOpenGLP
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end process;
-
-   procedure getInstance is
-      Java_Result : constant ColorAttributePointerVBOOpenGLProcessor_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

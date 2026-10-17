@@ -35,6 +35,7 @@ with org.allbinary.media.ScaleProperties_Package; use org.allbinary.media.ScaleP
 with org.allbinary.media.image.ImageToRotationImageArrayUtil_Package; use org.allbinary.media.image.ImageToRotationImageArrayUtil_Package;
 with org.allbinary.vector.VectorInfo_Package; use org.allbinary.vector.VectorInfo_Package;
 with org.allbinary.animation.image.BaseImageAnimationFactory_Package; use org.allbinary.animation.image.BaseImageAnimationFactory_Package;
+with org.allbinary.animation.image.AdjustedImageArrayRotationAnimation_Package; use org.allbinary.animation.image.AdjustedImageArrayRotationAnimation_Package;
 
 package org.allbinary.animation.image.VectorToImageArrayRotationAnimationFactory_Package is
 
@@ -67,7 +68,6 @@ package org.allbinary.animation.image.VectorToImageArrayRotationAnimationFactory
    function getInstance (This : in out VectorToImageArrayRotationAnimationFactory; instanceId : Integer) return Animation_Access;
    procedure getInstance (This : in out VectorToImageArrayRotationAnimationFactory; instanceId : Integer);
    function getAngleIncrement (This : in out VectorToImageArrayRotationAnimationFactory) return Integer;
-   procedure getAngleIncrement (This : in out VectorToImageArrayRotationAnimationFactory);
    procedure setInitialScale (This : in out VectorToImageArrayRotationAnimationFactory; scaleProperties : ScaleProperties_Access);
 
 end org.allbinary.animation.image.VectorToImageArrayRotationAnimationFactory_Package;

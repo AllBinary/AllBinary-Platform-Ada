@@ -43,7 +43,6 @@ package org.allbinary.logic.util.queue.BasicQueue_Package is
    procedure offer (This : in out BasicQueue; anyType : Java_Object_Access);
    procedure remove (This : in out BasicQueue; anyType : Java_Object_Access);
    function removeLast (This : in out BasicQueue) return Java_Object_Access;
-   procedure removeLast (This : in out BasicQueue);
 
 end org.allbinary.logic.util.queue.BasicQueue_Package;
 

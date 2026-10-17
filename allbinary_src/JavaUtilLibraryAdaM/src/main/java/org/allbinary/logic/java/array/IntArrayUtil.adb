@@ -30,7 +30,7 @@ package body org.allbinary.logic.java.array_Id.IntArrayUtil_Package is
    function Create return IntArrayUtil_Access is
       This : constant IntArrayUtil_Access := new IntArrayUtil;
    begin
-      Initialize (This.all);
+      IntArrayUtil_Package.Initialize (This.all);
       return This;
    end Create;
 

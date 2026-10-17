@@ -30,7 +30,7 @@ package body org.allbinary.game.input.PlatformFormInputMappingFactory_Package is
    function Create return PlatformFormInputMappingFactory_Access is
       This : constant PlatformFormInputMappingFactory_Access := new PlatformFormInputMappingFactory;
    begin
-      Initialize (This.all);
+      PlatformFormInputMappingFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -77,20 +77,6 @@ package body org.allbinary.game.input.PlatformFormInputMappingFactory_Package is
                 end;
         end;
         return This.inputToGameKeyMapping;
-   end getOrCreate;
-
-   procedure getInstance is
-      Java_Result : constant PlatformFormInputMappingFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure getOrCreate (This : in out PlatformFormInputMappingFactory) is
-      Java_Result : constant InputToGameKeyMapping_Access := PlatformFormInputMappingFactory'Class (This).getOrCreate;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getOrCreate;
 
 begin

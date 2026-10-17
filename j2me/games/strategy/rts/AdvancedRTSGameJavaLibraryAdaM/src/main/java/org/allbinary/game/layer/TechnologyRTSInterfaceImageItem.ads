@@ -31,6 +31,7 @@ with org.allbinary.graphics.font.MyFontProcessor_Package; use org.allbinary.grap
 with org.allbinary.graphics.font.UpdateMyFontInterface_Package; use org.allbinary.graphics.font.UpdateMyFontInterface_Package;
 with org.allbinary.graphics.font.UpdateMyFontProcessor_Package; use org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
 with org.allbinary.logic.math.PrimitiveLongUtil_Package; use org.allbinary.logic.math.PrimitiveLongUtil_Package;
+with org.allbinary.game.layer.RTSInterface_Package; use org.allbinary.game.layer.RTSInterface_Package;
 
 package org.allbinary.game.layer.TechnologyRTSInterfaceImageItem_Package is
 
@@ -69,7 +70,6 @@ package org.allbinary.game.layer.TechnologyRTSInterfaceImageItem_Package is
    function Create (label : Unbounded_String; img : Image_Access; layout : Integer; altText : Unbounded_String; basicColor : BasicColor_Access; rtsInterface : RTSInterface_Access) return TechnologyRTSInterfaceImageItem_Access;
    procedure updateMeasurement (This : in out TechnologyRTSInterfaceImageItem; graphics : Graphics_Access);
    function getRtsInterface (This : in out TechnologyRTSInterfaceImageItem) return RTSInterface_Access;
-   procedure getRtsInterface (This : in out TechnologyRTSInterfaceImageItem);
    procedure update (This : in out TechnologyRTSInterfaceImageItem);
    procedure paintXY (This : in out TechnologyRTSInterfaceImageItem; graphics : Graphics_Access; x : Integer; y : Integer);
 

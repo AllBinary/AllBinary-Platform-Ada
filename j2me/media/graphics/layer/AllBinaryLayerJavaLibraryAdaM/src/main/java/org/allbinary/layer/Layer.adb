@@ -38,7 +38,7 @@ package body org.allbinary.layer.Layer_Package is
    function Create (width : Integer; height : Integer) return Layer_Access is
       This : constant Layer_Access := new Layer;
    begin
-      Initialize (This.all, width, height);
+      Layer_Package.Initialize (This.all, width, height);
       return This;
    end Create;
 
@@ -131,55 +131,6 @@ package body org.allbinary.layer.Layer_Package is
    begin
         null;
    end toStringAppend;
-
-   procedure getXP (This : in out Layer) is
-      Java_Result : constant Integer := Layer'Class (This).getXP;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getXP;
-
-   procedure getYP (This : in out Layer) is
-      Java_Result : constant Integer := Layer'Class (This).getYP;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getYP;
-
-   procedure getZP (This : in out Layer) is
-      Java_Result : constant Integer := Layer'Class (This).getZP;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getZP;
-
-   procedure getWidth (This : in out Layer) is
-      Java_Result : constant Integer := Layer'Class (This).getWidth;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getWidth;
-
-   procedure getHeight (This : in out Layer) is
-      Java_Result : constant Integer := Layer'Class (This).getHeight;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getHeight;
-
-   procedure getDepth (This : in out Layer) is
-      Java_Result : constant Long_Long_Integer := Layer'Class (This).getDepth;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getDepth;
-
-   procedure isVisible (This : in out Layer) is
-      Java_Result : constant Boolean := Layer'Class (This).isVisible;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isVisible;
 
 begin
    null;

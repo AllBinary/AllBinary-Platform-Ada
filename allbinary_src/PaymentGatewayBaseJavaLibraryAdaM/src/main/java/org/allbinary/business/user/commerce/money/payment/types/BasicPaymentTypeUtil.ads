@@ -23,6 +23,7 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.business.user.commerce.money.payment.types.BasicPaymentType_Package; use org.allbinary.business.user.commerce.money.payment.types.BasicPaymentType_Package;
 
 package org.allbinary.business.user.commerce.money.payment.types.BasicPaymentTypeUtil_Package is
 
@@ -43,7 +44,6 @@ package org.allbinary.business.user.commerce.money.payment.types.BasicPaymentTyp
    procedure Initialize (This : in out BasicPaymentTypeUtil'Class);
    function Create return BasicPaymentTypeUtil_Access;
    function getInstance return BasicPaymentTypeUtil_Access;
-   procedure getInstance;
    procedure add (This : in out BasicPaymentTypeUtil; paymentType : BasicPaymentType_Access);
    function get (This : in out BasicPaymentTypeUtil; paymentTypeString : Unbounded_String) return BasicPaymentType_Access;
    procedure get (This : in out BasicPaymentTypeUtil; paymentTypeString : Unbounded_String);

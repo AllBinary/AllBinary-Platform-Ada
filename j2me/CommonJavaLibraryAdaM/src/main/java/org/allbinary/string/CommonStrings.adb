@@ -80,7 +80,7 @@ package body org.allbinary.string_Id.CommonStrings_Package is
    function Create return CommonStrings_Access is
       This : constant CommonStrings_Access := new CommonStrings;
    begin
-      Initialize (This.all);
+      CommonStrings_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -88,13 +88,6 @@ package body org.allbinary.string_Id.CommonStrings_Package is
    function getInstance return CommonStrings_Access is
    begin
         return CommonStrings_Package.instance;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant CommonStrings_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

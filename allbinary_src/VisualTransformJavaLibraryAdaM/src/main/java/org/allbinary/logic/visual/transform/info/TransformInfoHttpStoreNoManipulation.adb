@@ -29,7 +29,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoHttpStoreNoM
    function Create (propertiesHashMap : HashMap_Access; pageContext : PageContext_Access) return TransformInfoHttpStoreNoManipulation_Access is
       This : constant TransformInfoHttpStoreNoManipulation_Access := new TransformInfoHttpStoreNoManipulation;
    begin
-      Initialize (This.all, propertiesHashMap, pageContext);
+      TransformInfoHttpStoreNoManipulation_Package.Initialize (This.all, propertiesHashMap, pageContext);
       return This;
    end Create;
 

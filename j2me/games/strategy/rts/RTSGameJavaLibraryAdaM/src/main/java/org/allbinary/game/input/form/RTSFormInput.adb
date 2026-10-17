@@ -49,7 +49,7 @@ package body org.allbinary.game.input.form.RTSFormInput_Package is
    function Create (groupInterfaceArray : Group_Access_Array_Access) return RTSFormInput_Access is
       This : constant RTSFormInput_Access := new RTSFormInput;
    begin
-      Initialize (This.all, groupInterfaceArray);
+      RTSFormInput_Package.Initialize (This.all, groupInterfaceArray);
       return This;
    end Create;
 
@@ -221,41 +221,6 @@ package body org.allbinary.game.input.form.RTSFormInput_Package is
    begin
       null;
    end getInstance;
-
-   procedure getSelectedGeographicCellPosition (This : in out RTSFormInput) is
-      Java_Result : constant GeographicMapCellPosition_Access := RTSFormInput'Class (This).getSelectedGeographicCellPosition;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSelectedGeographicCellPosition;
-
-   procedure isStickyItemSelected (This : in out RTSFormInput) is
-      Java_Result : constant Boolean := RTSFormInput'Class (This).isStickyItemSelected;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isStickyItemSelected;
-
-   procedure getSelectedStickyItem (This : in out RTSFormInput) is
-      Java_Result : constant ABCustomItem_Access := RTSFormInput'Class (This).getSelectedStickyItem;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSelectedStickyItem;
-
-   procedure getSelectedStickyItemIndex (This : in out RTSFormInput) is
-      Java_Result : constant Integer := RTSFormInput'Class (This).getSelectedStickyItemIndex;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getSelectedStickyItemIndex;
-
-   procedure getHashtable (This : in out RTSFormInput) is
-      Java_Result : constant ABHashtable_Access := RTSFormInput'Class (This).getHashtable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getHashtable;
 
 end org.allbinary.game.input.form.RTSFormInput_Package;
 

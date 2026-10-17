@@ -28,7 +28,7 @@ package body org.allbinary.game.layer.waypoint.VisualWaypointLayer_Package is
    function Create (remoteInfo : RemoteInfo_Access; parentLayer : PathFindingLayerInterface_Access; groupInterface : Group_Access_Array_Access; rootName : Unbounded_String; name : Unbounded_String; animationInterfaceFactoryInterface : AnimationInterfaceFactoryInterface_Access; proceduralAnimationInterfaceFactoryInterface : ProceduralAnimationInterfaceFactoryInterface_Access; rectangle : Rectangle_Access; x : Integer; y : Integer) return VisualWaypointLayer_Access is
       This : constant VisualWaypointLayer_Access := new VisualWaypointLayer;
    begin
-      Initialize (This.all, remoteInfo, parentLayer, groupInterface, rootName, name, animationInterfaceFactoryInterface, proceduralAnimationInterfaceFactoryInterface, rectangle, x, y);
+      VisualWaypointLayer_Package.Initialize (This.all, remoteInfo, parentLayer, groupInterface, rootName, name, animationInterfaceFactoryInterface, proceduralAnimationInterfaceFactoryInterface, rectangle, x, y);
       return This;
    end Create;
 
@@ -46,20 +46,6 @@ package body org.allbinary.game.layer.waypoint.VisualWaypointLayer_Package is
    begin
         rtsLayerHudPaintable := WaypointInfoHudPaintableSingleton_Package.getInstance;
         return rtsLayerHudPaintable;
-   end getHudPaintable;
-
-   procedure createHudPaintable (This : in out VisualWaypointLayer) is
-      Java_Result : constant SelectionHudPaintable_Access := VisualWaypointLayer'Class (This).createHudPaintable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end createHudPaintable;
-
-   procedure getHudPaintable (This : in out VisualWaypointLayer) is
-      Java_Result : constant SelectionHudPaintable_Access := VisualWaypointLayer'Class (This).getHudPaintable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getHudPaintable;
 
 end org.allbinary.game.layer.waypoint.VisualWaypointLayer_Package;

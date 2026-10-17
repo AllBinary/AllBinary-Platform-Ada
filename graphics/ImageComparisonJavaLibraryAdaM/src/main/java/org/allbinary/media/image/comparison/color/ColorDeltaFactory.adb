@@ -56,7 +56,7 @@ package body org.allbinary.media.image.comparison.color.ColorDeltaFactory_Packag
    function Create return ColorDeltaFactory_Access is
       This : constant ColorDeltaFactory_Access := new ColorDeltaFactory;
    begin
-      Initialize (This.all);
+      ColorDeltaFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

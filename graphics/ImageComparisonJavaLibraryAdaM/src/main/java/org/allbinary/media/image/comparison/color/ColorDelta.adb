@@ -35,7 +35,7 @@ package body org.allbinary.media.image.comparison.color.ColorDelta_Package is
    function Create (rgb1 : Integer; rgb2 : Integer) return ColorDelta_Access is
       This : constant ColorDelta_Access := new ColorDelta;
    begin
-      Initialize (This.all, rgb1, rgb2);
+      ColorDelta_Package.Initialize (This.all, rgb1, rgb2);
       return This;
    end Create;
 
@@ -74,40 +74,12 @@ package body org.allbinary.media.image.comparison.color.ColorDelta_Package is
         return StringMaker_Package.Create.append (To_Unbounded_String ("ColorDelta: ")).append (StringUtil_Package.getInstance.toString (This.getKey)).append (To_Unbounded_String (" RGB1: ")).appendint (This.getRgb1).append (To_Unbounded_String (" RGB2: ")).appendint (This.getRgb2).toString;
    end toString;
 
-   procedure getKey (This : in out ColorDelta) is
-      Java_Result : constant Java_Object_Access := ColorDelta'Class (This).getKey;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getKey;
-
    procedure getKey (rgb1 : Integer; rgb2 : Integer) is
       Java_Result : constant Java_Object_Access := getKey (rgb1, rgb2);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getKey;
-
-   procedure getRgb1 (This : in out ColorDelta) is
-      Java_Result : constant Integer := ColorDelta'Class (This).getRgb1;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getRgb1;
-
-   procedure getRgb2 (This : in out ColorDelta) is
-      Java_Result : constant Integer := ColorDelta'Class (This).getRgb2;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getRgb2;
-
-   procedure toString (This : in out ColorDelta) is
-      Java_Result : constant Unbounded_String := ColorDelta'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toString;
 
 end org.allbinary.media.image.comparison.color.ColorDelta_Package;
 

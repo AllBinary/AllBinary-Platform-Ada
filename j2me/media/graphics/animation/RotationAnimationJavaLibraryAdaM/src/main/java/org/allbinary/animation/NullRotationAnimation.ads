@@ -12,6 +12,7 @@ with org.allbinary.math.AngleFactory_Package; use org.allbinary.math.AngleFactor
 with org.allbinary.math.AngleInfo_Package; use org.allbinary.math.AngleInfo_Package;
 with org.allbinary.util.CircularIndexUtil_Package; use org.allbinary.util.CircularIndexUtil_Package;
 with org.allbinary.animation.RotationAnimation_Package; use org.allbinary.animation.RotationAnimation_Package;
+with org.allbinary.animation.AnimationBehavior_Package; use org.allbinary.animation.AnimationBehavior_Package;
 
 package org.allbinary.animation.NullRotationAnimation_Package is
 
@@ -33,7 +34,6 @@ package org.allbinary.animation.NullRotationAnimation_Package is
    function createQuarter (animationBehavior : AnimationBehavior_Access) return NullRotationAnimation_Access;
    procedure createQuarter (animationBehavior : AnimationBehavior_Access);
    function getAnimationSize (This : in out NullRotationAnimation) return Integer;
-   procedure getAnimationSize (This : in out NullRotationAnimation);
 
 end org.allbinary.animation.NullRotationAnimation_Package;
 

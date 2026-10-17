@@ -29,7 +29,7 @@ package body org.allbinary.game.collision.CollidableAlwaysPickupNeverCollideBeha
    function Create return CollidableAlwaysPickupNeverCollideBehavior_Access is
       This : constant CollidableAlwaysPickupNeverCollideBehavior_Access := new CollidableAlwaysPickupNeverCollideBehavior;
    begin
-      Initialize (This.all);
+      CollidableAlwaysPickupNeverCollideBehavior_Package.Initialize (This.all);
       return This;
    end Create;
 

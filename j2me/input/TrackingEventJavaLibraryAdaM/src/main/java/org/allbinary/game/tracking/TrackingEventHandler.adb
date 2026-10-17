@@ -36,7 +36,7 @@ package body org.allbinary.game.tracking.TrackingEventHandler_Package is
    function Create return TrackingEventHandler_Access is
       This : constant TrackingEventHandler_Access := new TrackingEventHandler;
    begin
-      Initialize (This.all);
+      TrackingEventHandler_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -47,13 +47,6 @@ package body org.allbinary.game.tracking.TrackingEventHandler_Package is
         trackingEventListenerInterface := TrackingEventListenerInterface_Access (eventListenerInterface);
         trackingEventListenerInterface.onMovement (TrackingEvent_Access (eventObject));
    end process;
-
-   procedure getInstance is
-      Java_Result : constant TrackingEventHandler_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

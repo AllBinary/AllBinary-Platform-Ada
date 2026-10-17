@@ -31,7 +31,7 @@ package body org.allbinary.game.layer.resources.OnDemandResources_Package is
    function Create return OnDemandResources_Access is
       This : constant OnDemandResources_Access := new OnDemandResources;
    begin
-      Initialize (This.all);
+      OnDemandResources_Package.Initialize (This.all);
       return This;
    end Create;
 

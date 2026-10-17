@@ -29,7 +29,7 @@ package body org.allbinary.graphics.form.item.SelectableTextItem_Package is
    function Create (label : Unbounded_String; layout : Integer; altText : Unbounded_String; backgroundBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access) return SelectableTextItem_Access is
       This : constant SelectableTextItem_Access := new SelectableTextItem;
    begin
-      Initialize (This.all, label, layout, altText, backgroundBasicColor, foregroundBasicColor);
+      SelectableTextItem_Package.Initialize (This.all, label, layout, altText, backgroundBasicColor, foregroundBasicColor);
       return This;
    end Create;
 
@@ -48,13 +48,6 @@ package body org.allbinary.graphics.form.item.SelectableTextItem_Package is
         end if;
         graphics.drawString (This.getLabel, (x) + (2), y, 0);
    end paintXY;
-
-   procedure isFocusable (This : in out SelectableTextItem) is
-      Java_Result : constant Boolean := SelectableTextItem'Class (This).isFocusable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isFocusable;
 
 end org.allbinary.graphics.form.item.SelectableTextItem_Package;
 

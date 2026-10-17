@@ -62,7 +62,6 @@ package org.allbinary.logic.visual.dhtml.html.HtmlForm_Package is
    procedure addInput (This : in out HtmlForm; htmlInput : HtmlInput_Access);
    procedure addTable (This : in out HtmlForm; htmlTable : HtmlTable_Access);
    function toString (This : in out HtmlForm) return Unbounded_String;
-   procedure toString (This : in out HtmlForm);
 
 end org.allbinary.logic.visual.dhtml.html.HtmlForm_Package;
 

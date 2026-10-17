@@ -43,7 +43,7 @@ package body org.allbinary.logic.math.Orientation_Package is
    function Create (yaw : Integer; pitch : Integer; roll : Integer) return Orientation_Access is
       This : constant Orientation_Access := new Orientation;
    begin
-      Initialize (This.all, yaw, pitch, roll);
+      Orientation_Package.Initialize (This.all, yaw, pitch, roll);
       return This;
    end Create;
 
@@ -66,13 +66,6 @@ package body org.allbinary.logic.math.Orientation_Package is
    begin
       null;
    end getInstance;
-
-   procedure toString (This : in out Orientation) is
-      Java_Result : constant Unbounded_String := Orientation'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toString;
 
 begin
    null;

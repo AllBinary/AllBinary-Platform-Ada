@@ -21,6 +21,9 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.media.audio.BaseSoundsFactory_Package; use org.allbinary.media.audio.BaseSoundsFactory_Package;
+with org.allbinary.media.audio.Sound_Package; use org.allbinary.media.audio.Sound_Package;
+with org.allbinary.media.audio.SelectSound_Package; use org.allbinary.media.audio.SelectSound_Package;
+with org.allbinary.media.audio.ErrorSound_Package; use org.allbinary.media.audio.ErrorSound_Package;
 
 package org.allbinary.media.audio.EarlySoundsFactory_Package is
 
@@ -36,9 +39,7 @@ package org.allbinary.media.audio.EarlySoundsFactory_Package is
    procedure Initialize (This : in out EarlySoundsFactory'Class);
    function Create return EarlySoundsFactory_Access;
    function getSoundInterfaceArray (This : in out EarlySoundsFactory) return Sound_Access_Array_Access;
-   procedure getSoundInterfaceArray (This : in out EarlySoundsFactory);
    function getInstance return EarlySoundsFactory_Access;
-   procedure getInstance;
 
 end org.allbinary.media.audio.EarlySoundsFactory_Package;
 

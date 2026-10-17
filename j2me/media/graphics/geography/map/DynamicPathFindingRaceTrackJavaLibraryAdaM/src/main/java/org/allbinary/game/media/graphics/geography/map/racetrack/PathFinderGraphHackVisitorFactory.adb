@@ -36,7 +36,7 @@ package body org.allbinary.game.media.graphics.geography.map.racetrack.PathFinde
    function Create (edgeMinimum : Integer; minPathWeight : Integer; maxPathWeight : Integer) return PathFinderGraphHackVisitorFactory_Access is
       This : constant PathFinderGraphHackVisitorFactory_Access := new PathFinderGraphHackVisitorFactory;
    begin
-      Initialize (This.all, edgeMinimum, minPathWeight, maxPathWeight);
+      PathFinderGraphHackVisitorFactory_Package.Initialize (This.all, edgeMinimum, minPathWeight, maxPathWeight);
       return This;
    end Create;
 

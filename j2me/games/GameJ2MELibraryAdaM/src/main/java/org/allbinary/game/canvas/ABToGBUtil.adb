@@ -30,7 +30,7 @@ package body org.allbinary.game.canvas.ABToGBUtil_Package is
    function Create return ABToGBUtil_Access is
       This : constant ABToGBUtil_Access := new ABToGBUtil;
    begin
-      Initialize (This.all);
+      ABToGBUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -38,13 +38,6 @@ package body org.allbinary.game.canvas.ABToGBUtil_Package is
    function getInstance return ABToGBUtil_Access is
    begin
         return ABToGBUtil_Package.instance;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant ABToGBUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

@@ -59,9 +59,7 @@ package org.allbinary.game.input.GameInput_Package is
    procedure removeNonAIInputGameKeyEvents (This : in out GameInput);
    procedure update (This : in out GameInput);
    function getRemovalGameKeyEventList (This : in out GameInput) return BasicArrayList_Access;
-   procedure getRemovalGameKeyEventList (This : in out GameInput);
    function getGameKeyEventList (This : in out GameInput) return BasicArrayList_Access;
-   procedure getGameKeyEventList (This : in out GameInput);
 
 end org.allbinary.game.input.GameInput_Package;
 

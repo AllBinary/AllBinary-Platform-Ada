@@ -228,7 +228,6 @@ package org.allbinary.game.input.ABKeyEventWrapper_Package is
    procedure Initialize (This : in out ABKeyEventWrapper'Class);
    function Create return ABKeyEventWrapper_Access;
    function getInstance return ABKeyEventWrapper_Access;
-   procedure getInstance;
 
 end org.allbinary.game.input.ABKeyEventWrapper_Package;
 

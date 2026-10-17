@@ -21,6 +21,7 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.identification.BasicGroupFactory_Package; use org.allbinary.game.identification.BasicGroupFactory_Package;
+with org.allbinary.game.input.form.RTSFormInput_Package; use org.allbinary.game.input.form.RTSFormInput_Package;
 
 package org.allbinary.game.input.form.NullRTSFormInputFactory_Package is
 
@@ -37,7 +38,6 @@ package org.allbinary.game.input.form.NullRTSFormInputFactory_Package is
    procedure Initialize (This : in out NullRTSFormInputFactory'Class);
    function Create return NullRTSFormInputFactory_Access;
    function getInstance return RTSFormInput_Access;
-   procedure getInstance;
 
 end org.allbinary.game.input.form.NullRTSFormInputFactory_Package;
 

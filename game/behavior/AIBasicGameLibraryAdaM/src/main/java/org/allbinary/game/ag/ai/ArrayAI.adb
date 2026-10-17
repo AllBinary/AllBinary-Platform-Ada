@@ -32,7 +32,7 @@ package body org.allbinary.game.ag.ai.ArrayAI_Package is
    function Create (artificialIntelligenceInterface : ArtificialIntelligenceInterface_Access_Array_Access; ownerLayerInterface : AllBinaryLayer_Access; gameInput : GameInput_Access) return ArrayAI_Access is
       This : constant ArrayAI_Access := new ArrayAI;
    begin
-      Initialize (This.all, artificialIntelligenceInterface, ownerLayerInterface, gameInput);
+      ArrayAI_Package.Initialize (This.all, artificialIntelligenceInterface, ownerLayerInterface, gameInput);
       return This;
    end Create;
 
@@ -50,13 +50,6 @@ package body org.allbinary.game.ag.ai.ArrayAI_Package is
    function getArtificialIntelligenceInterface (This : in out ArrayAI) return ArtificialIntelligenceInterface_Access_Array_Access is
    begin
         return This.artificialIntelligenceInterfaceArray;
-   end getArtificialIntelligenceInterface;
-
-   procedure getArtificialIntelligenceInterface (This : in out ArrayAI) is
-      Java_Result : constant ArtificialIntelligenceInterface_Access_Array_Access := ArrayAI'Class (This).getArtificialIntelligenceInterface;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getArtificialIntelligenceInterface;
 
 end org.allbinary.game.ag.ai.ArrayAI_Package;

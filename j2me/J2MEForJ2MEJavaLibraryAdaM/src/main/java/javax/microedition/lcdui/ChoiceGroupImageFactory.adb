@@ -41,7 +41,7 @@ package body javax.microedition.lcdui.ChoiceGroupImageFactory_Package is
    function Create return ChoiceGroupImageFactory_Access is
       This : constant ChoiceGroupImageFactory_Access := new ChoiceGroupImageFactory;
    begin
-      Initialize (This.all);
+      ChoiceGroupImageFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -67,20 +67,6 @@ package body javax.microedition.lcdui.ChoiceGroupImageFactory_Package is
         This.imgRadioOn := imageArray (3);
         This.imageArray (3) := This.imgRadioOn;
    end init;
-
-   procedure getInstance is
-      Java_Result : constant ChoiceGroupImageFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure getImageArray (This : in out ChoiceGroupImageFactory) is
-      Java_Result : constant Image_Access_Array_Access := ChoiceGroupImageFactory'Class (This).getImageArray;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getImageArray;
 
 begin
    null;

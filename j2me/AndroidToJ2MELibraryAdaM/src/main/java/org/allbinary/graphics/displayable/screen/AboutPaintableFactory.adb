@@ -29,7 +29,7 @@ package body org.allbinary.graphics.displayable.screen.AboutPaintableFactory_Pac
    function Create return AboutPaintableFactory_Access is
       This : constant AboutPaintableFactory_Access := new AboutPaintableFactory;
    begin
-      Initialize (This.all);
+      AboutPaintableFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -37,13 +37,6 @@ package body org.allbinary.graphics.displayable.screen.AboutPaintableFactory_Pac
    function getInstance return AboutPaintableFactory_Access is
    begin
         return AboutPaintableFactory_Package.instance;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant AboutPaintableFactory_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

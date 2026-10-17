@@ -30,7 +30,7 @@ package body org.allbinary.media.graphics.geography.map.ColorFromEventUtil_Packa
    function Create return ColorFromEventUtil_Access is
       This : constant ColorFromEventUtil_Access := new ColorFromEventUtil;
    begin
-      Initialize (This.all);
+      ColorFromEventUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -55,13 +55,6 @@ package body org.allbinary.media.graphics.geography.map.ColorFromEventUtil_Packa
         end if;
         return color;
    end getForegroundColor;
-
-   procedure getInstance is
-      Java_Result : constant ColorFromEventUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure getForegroundColor (This : in out ColorFromEventUtil; gameCanvasInterface : AllBinaryGameCanvas_Access) is
       Java_Result : constant BasicColor_Access := ColorFromEventUtil'Class (This).getForegroundColor (gameCanvasInterface);

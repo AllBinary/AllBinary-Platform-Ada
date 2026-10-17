@@ -37,16 +37,9 @@ package body org.allbinary.input.motion.trackball.action.RightTrackballInputToGa
    function Create return RightTrackballInputToGameKeyEventAction_Access is
       This : constant RightTrackballInputToGameKeyEventAction_Access := new RightTrackballInputToGameKeyEventAction;
    begin
-      Initialize (This.all);
+      RightTrackballInputToGameKeyEventAction_Package.Initialize (This.all);
       return This;
    end Create;
-
-   procedure getInstance is
-      Java_Result : constant GameKeyCompleteMotionGestureInputEvent_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

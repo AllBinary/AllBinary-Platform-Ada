@@ -28,7 +28,7 @@ package body org.allbinary.logic.system.security.licensing.LockedUtil_Package is
    function Create return LockedUtil_Access is
       This : constant LockedUtil_Access := new LockedUtil;
    begin
-      Initialize (This.all);
+      LockedUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -47,20 +47,6 @@ package body org.allbinary.logic.system.security.licensing.LockedUtil_Package is
    begin
         return True;
    end isLockedFeature;
-
-   procedure getInstance is
-      Java_Result : constant LockedUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure isLocked (This : in out LockedUtil) is
-      Java_Result : constant Boolean := LockedUtil'Class (This).isLocked;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isLocked;
 
    procedure isLockedFeature (This : in out LockedUtil; lockableFeatrue : LockableFeature_Access) is
       Java_Result : constant Boolean := LockedUtil'Class (This).isLockedFeature (lockableFeatrue);

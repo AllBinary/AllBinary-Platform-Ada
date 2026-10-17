@@ -31,7 +31,7 @@ package body org.allbinary.graphics.form.item.validation.TextItemVisitor_Package
    function Create return TextItemVisitor_Access is
       This : constant TextItemVisitor_Access := new TextItemVisitor;
    begin
-      Initialize (This.all);
+      TextItemVisitor_Package.Initialize (This.all);
       return This;
    end Create;
 

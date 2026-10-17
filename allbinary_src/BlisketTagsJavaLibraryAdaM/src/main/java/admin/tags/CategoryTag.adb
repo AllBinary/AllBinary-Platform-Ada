@@ -34,7 +34,7 @@ package body admin.tags.CategoryTag_Package is
    function Create return CategoryTag_Access is
       This : constant CategoryTag_Access := new CategoryTag;
    begin
-      Initialize (This.all);
+      CategoryTag_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -124,27 +124,6 @@ package body admin.tags.CategoryTag_Package is
             return SKIP_BODY;
                 end;
         end;
-   end doStartTag;
-
-   procedure viewCategory (This : in out CategoryTag) is
-      Java_Result : constant Unbounded_String := CategoryTag'Class (This).viewCategory;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end viewCategory;
-
-   procedure viewCategories (This : in out CategoryTag) is
-      Java_Result : constant Unbounded_String := CategoryTag'Class (This).viewCategories;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end viewCategories;
-
-   procedure doStartTag (This : in out CategoryTag) is
-      Java_Result : constant Integer := CategoryTag'Class (This).doStartTag;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end doStartTag;
 
 end admin.tags.CategoryTag_Package;

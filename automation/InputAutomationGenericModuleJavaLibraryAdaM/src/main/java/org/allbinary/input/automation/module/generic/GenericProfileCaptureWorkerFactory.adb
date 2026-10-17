@@ -30,7 +30,7 @@ package body org.allbinary.input.automation.module.generic_Id.GenericProfileCapt
    function Create return GenericProfileCaptureWorkerFactory_Access is
       This : constant GenericProfileCaptureWorkerFactory_Access := new GenericProfileCaptureWorkerFactory;
    begin
-      Initialize (This.all);
+      GenericProfileCaptureWorkerFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

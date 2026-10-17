@@ -29,7 +29,7 @@ package body org.allbinary.game.resource.FeatureResourceInitializationUtil_Packa
    function Create return FeatureResourceInitializationUtil_Access is
       This : constant FeatureResourceInitializationUtil_Access := new FeatureResourceInitializationUtil;
    begin
-      Initialize (This.all);
+      FeatureResourceInitializationUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -50,13 +50,6 @@ package body org.allbinary.game.resource.FeatureResourceInitializationUtil_Packa
         featuredResourceFactory.init (level);
         FeaturedResourceRelativeRelationshipFactory_Package.getInstance.init (level);
    end init;
-
-   procedure getInstance is
-      Java_Result : constant FeatureResourceInitializationUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

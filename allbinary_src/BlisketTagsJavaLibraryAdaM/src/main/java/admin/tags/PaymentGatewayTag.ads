@@ -47,9 +47,7 @@ package admin.tags.PaymentGatewayTag_Package is
    procedure Initialize (This : in out PaymentGatewayTag'Class);
    function Create return PaymentGatewayTag_Access;
    function process (This : in out PaymentGatewayTag) return Unbounded_String;
-   procedure process (This : in out PaymentGatewayTag);
    function doStartTag (This : in out PaymentGatewayTag) return Integer;
-   procedure doStartTag (This : in out PaymentGatewayTag);
 
 end admin.tags.PaymentGatewayTag_Package;
 

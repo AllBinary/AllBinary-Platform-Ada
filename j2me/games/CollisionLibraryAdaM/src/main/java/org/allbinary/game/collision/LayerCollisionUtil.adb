@@ -44,7 +44,7 @@ package body org.allbinary.game.collision.LayerCollisionUtil_Package is
    function Create return LayerCollisionUtil_Access is
       This : constant LayerCollisionUtil_Access := new LayerCollisionUtil;
    begin
-      Initialize (This.all);
+      LayerCollisionUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -52,13 +52,6 @@ package body org.allbinary.game.collision.LayerCollisionUtil_Package is
    begin
         return This.collisionProcessor.isCollision (myLayer, myLayer2);
    end isCollision;
-
-   procedure getInstance is
-      Java_Result : constant LayerCollisionUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure isCollision (This : in out LayerCollisionUtil; myLayer : AllBinaryLayer_Access; myLayer2 : AllBinaryLayer_Access) is
       Java_Result : constant Boolean := LayerCollisionUtil'Class (This).isCollision (myLayer, myLayer2);

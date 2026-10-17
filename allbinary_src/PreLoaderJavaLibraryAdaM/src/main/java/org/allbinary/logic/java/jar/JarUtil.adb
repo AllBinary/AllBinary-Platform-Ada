@@ -31,7 +31,7 @@ package body org.allbinary.logic.java.jar.JarUtil_Package is
    function Create (jarURL : URL_Access) return JarUtil_Access is
       This : constant JarUtil_Access := new JarUtil;
    begin
-      Initialize (This.all, jarURL);
+      JarUtil_Package.Initialize (This.all, jarURL);
       return This;
    end Create;
 

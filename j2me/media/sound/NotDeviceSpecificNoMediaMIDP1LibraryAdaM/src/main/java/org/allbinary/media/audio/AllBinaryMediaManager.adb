@@ -30,7 +30,7 @@ package body org.allbinary.media.audio.AllBinaryMediaManager_Package is
    function Create return AllBinaryMediaManager_Access is
       This : constant AllBinaryMediaManager_Access := new AllBinaryMediaManager;
    begin
-      Initialize (This.all);
+      AllBinaryMediaManager_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -103,20 +103,6 @@ package body org.allbinary.media.audio.AllBinaryMediaManager_Package is
    begin
         return StringUtil_Package.getInstance.getArrayInstance;
    end getSupportedProtocols;
-
-   procedure isMuted is
-      Java_Result : constant Boolean := isMuted;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isMuted;
-
-   procedure update is
-      Java_Result : constant Boolean := update;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end update;
 
    procedure createPlayerFromInputStream (stream : InputStream_Access; type_Id : Unbounded_String) is
       Java_Result : constant Player_Access := createPlayerFromInputStream (stream, type_Id);

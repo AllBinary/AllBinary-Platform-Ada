@@ -46,9 +46,7 @@ package org.allbinary.media.graphics.geography.pathfinding.PathCacheFactory_Pack
    procedure Initialize (This : in out PathCacheFactory'Class);
    function Create return PathCacheFactory_Access;
    function getInstance return PathCacheFactory_Access;
-   procedure getInstance;
    function getSize (This : in out PathCacheFactory) return Integer;
-   procedure getSize (This : in out PathCacheFactory);
    procedure add (This : in out PathCacheFactory; pathId : Integer; list : BasicArrayList_Access);
    procedure remove (This : in out PathCacheFactory; pathId : Integer);
    procedure removeAll (This : in out PathCacheFactory);

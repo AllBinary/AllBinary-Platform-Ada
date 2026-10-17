@@ -28,7 +28,7 @@ package body org.allbinary.android.ActivityFractureUtil_Package is
    function Create return ActivityFractureUtil_Access is
       This : constant ActivityFractureUtil_Access := new ActivityFractureUtil;
    begin
-      Initialize (This.all);
+      ActivityFractureUtil_Package.Initialize (This.all);
       return This;
    end Create;
 

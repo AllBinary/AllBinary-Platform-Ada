@@ -39,6 +39,11 @@ with org.allbinary.string_Id.CommonPhoneStrings_Package; use org.allbinary.strin
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.image.gui.JPanel_Package; use org.allbinary.image.gui.JPanel_Package;
+with org.allbinary.image.gui.ImageIconUnique_Package; use org.allbinary.image.gui.ImageIconUnique_Package;
+with org.allbinary.image.gui.DefaultListModel_Package; use org.allbinary.image.gui.DefaultListModel_Package;
+with org.allbinary.image.gui.ImageIcon_Package; use org.allbinary.image.gui.ImageIcon_Package;
+with org.allbinary.image.gui.Icon_Package; use org.allbinary.image.gui.Icon_Package;
+with org.allbinary.image.gui.JLabel_Package; use org.allbinary.image.gui.JLabel_Package;
 
 package org.allbinary.image.gui.ImageUnifierJPanel_Package is
 
@@ -120,7 +125,6 @@ package org.allbinary.image.gui.ImageUnifierJPanel_Package is
    procedure upJButtonActionPerformed (This : in out ImageUnifierJPanel; evt : ActionEvent_Access);
    procedure jButtonOrderActionPerformed (This : in out ImageUnifierJPanel; evt : ActionEvent_Access);
    function getImageProcessorInput (This : in out ImageUnifierJPanel) return ImageProcessorInput_Access;
-   procedure getImageProcessorInput (This : in out ImageUnifierJPanel);
    procedure setImageProcessorInput (This : in out ImageUnifierJPanel; imageProcessorInput : ImageProcessorInput_Access);
 
 end org.allbinary.image.gui.ImageUnifierJPanel_Package;

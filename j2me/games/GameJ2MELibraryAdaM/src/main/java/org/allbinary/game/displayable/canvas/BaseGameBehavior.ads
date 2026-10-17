@@ -27,6 +27,7 @@ with org.allbinary.graphics.opengles.CurrentDisplayableFactory_Package; use org.
 with org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package; use org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package;
 with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package; use org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
 with org.allbinary.game.displayable.canvas.DemoGameBehavior_Package; use org.allbinary.game.displayable.canvas.DemoGameBehavior_Package;
+with org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package; use org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package;
 
 package org.allbinary.game.displayable.canvas.BaseGameBehavior_Package is
 
@@ -48,7 +49,6 @@ package org.allbinary.game.displayable.canvas.BaseGameBehavior_Package is
    procedure Initialize (This : in out BaseGameBehavior'Class);
    function Create return BaseGameBehavior_Access;
    function getInstance return DemoGameBehavior_Access;
-   procedure getInstance;
    procedure init (This : in out BaseGameBehavior);
    procedure pause (This : in out BaseGameBehavior; allBinaryGameCanvas : AllBinaryGameCanvas_Access);
    procedure unPause (This : in out BaseGameBehavior; allBinaryGameCanvas : AllBinaryGameCanvas_Access);

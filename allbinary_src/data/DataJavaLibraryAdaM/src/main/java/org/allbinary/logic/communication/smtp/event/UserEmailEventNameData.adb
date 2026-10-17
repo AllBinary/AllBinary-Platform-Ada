@@ -34,7 +34,7 @@ package body org.allbinary.logic.communication.smtp.event.UserEmailEventNameData
    function Create (eventHandlerName : Unbounded_String) return UserEmailEventNameData_Access is
       This : constant UserEmailEventNameData_Access := new UserEmailEventNameData;
    begin
-      Initialize (This.all, eventHandlerName);
+      UserEmailEventNameData_Package.Initialize (This.all, eventHandlerName);
       return This;
    end Create;
 
@@ -79,13 +79,6 @@ package body org.allbinary.logic.communication.smtp.event.UserEmailEventNameData
    begin
       null;
    end getInstance;
-
-   procedure toString (This : in out UserEmailEventNameData) is
-      Java_Result : constant Unbounded_String := UserEmailEventNameData'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toString;
 
 begin
    null;

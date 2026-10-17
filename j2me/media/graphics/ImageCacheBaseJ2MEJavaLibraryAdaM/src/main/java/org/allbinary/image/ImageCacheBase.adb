@@ -46,7 +46,7 @@ package body org.allbinary.image.ImageCacheBase_Package is
    function Create return ImageCacheBase_Access is
       This : constant ImageCacheBase_Access := new ImageCacheBase;
    begin
-      Initialize (This.all);
+      ImageCacheBase_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -212,20 +212,6 @@ package body org.allbinary.image.ImageCacheBase_Package is
    begin
       null;
    end createImageFromInputStream;
-
-   procedure toString (This : in out ImageCacheBase) is
-      Java_Result : constant Unbounded_String := ImageCacheBase'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toString;
-
-   procedure getHashtableP (This : in out ImageCacheBase) is
-      Java_Result : constant ABHashtable_Access := ImageCacheBase'Class (This).getHashtableP;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getHashtableP;
 
 end org.allbinary.image.ImageCacheBase_Package;
 

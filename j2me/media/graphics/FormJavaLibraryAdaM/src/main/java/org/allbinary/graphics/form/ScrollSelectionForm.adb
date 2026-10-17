@@ -85,7 +85,7 @@ package body org.allbinary.graphics.form.ScrollSelectionForm_Package is
    function Create (title : Unbounded_String; items : ABCustomItem_Access_Array_Access; formPaintableFactory : ItemPaintableFactory_Access; border : Integer; adjustedExtraBorder : Integer; backgroundBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access) return ScrollSelectionForm_Access is
       This : constant ScrollSelectionForm_Access := new ScrollSelectionForm;
    begin
-      Initialize (This.all, title, items, formPaintableFactory, border, adjustedExtraBorder, backgroundBasicColor, foregroundBasicColor);
+      ScrollSelectionForm_Package.Initialize (This.all, title, items, formPaintableFactory, border, adjustedExtraBorder, backgroundBasicColor, foregroundBasicColor);
       return This;
    end Create;
 
@@ -353,20 +353,6 @@ package body org.allbinary.graphics.form.ScrollSelectionForm_Package is
       null;
    end createForm;
 
-   procedure getNullScrollSelectionForm is
-      Java_Result : constant ScrollSelectionForm_Access := getNullScrollSelectionForm;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getNullScrollSelectionForm;
-
-   procedure getNullScrollSelectionFormHorizontal is
-      Java_Result : constant ScrollSelectionForm_Access := getNullScrollSelectionFormHorizontal;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getNullScrollSelectionFormHorizontal;
-
    procedure paintItemHorizontal (This : in out ScrollSelectionForm; graphics : Graphics_Access; index : Integer; item : ABCustomItem_Access; x : Integer; y : Integer) is
       Java_Result : constant Integer := ScrollSelectionForm'Class (This).paintItemHorizontal (graphics, index, item, x, y);
       pragma Unreferenced (Java_Result);
@@ -430,13 +416,6 @@ package body org.allbinary.graphics.form.ScrollSelectionForm_Package is
       null;
    end getItemIndex;
 
-   procedure getStartIndex (This : in out ScrollSelectionForm) is
-      Java_Result : constant Integer := ScrollSelectionForm'Class (This).getStartIndex;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getStartIndex;
-
    procedure getSelectedIndexForPoint (This : in out ScrollSelectionForm; point : GPoint_Access) is
       Java_Result : constant Integer := ScrollSelectionForm'Class (This).getSelectedIndexForPoint (point);
       pragma Unreferenced (Java_Result);
@@ -479,27 +458,6 @@ package body org.allbinary.graphics.form.ScrollSelectionForm_Package is
       null;
    end getDiffX;
 
-   procedure getDx (This : in out ScrollSelectionForm) is
-      Java_Result : constant Integer := ScrollSelectionForm'Class (This).getDx;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getDx;
-
-   procedure getDy (This : in out ScrollSelectionForm) is
-      Java_Result : constant Integer := ScrollSelectionForm'Class (This).getDy;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getDy;
-
-   procedure getButtonBasicColor (This : in out ScrollSelectionForm) is
-      Java_Result : constant BasicColor_Access := ScrollSelectionForm'Class (This).getButtonBasicColor;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getButtonBasicColor;
-
 begin
    null;
    NULL_SCROLL_SELECTION_FORM := NullUtil_Package.getInstance.NULL_OBJECT;
@@ -530,7 +488,7 @@ package body org.allbinary.graphics.form.ScrollSelectionFormHorizontalPaintable_
    function Create (scrollSelectionForm : ScrollSelectionForm_Access) return ScrollSelectionFormHorizontalPaintable_Access is
       This : constant ScrollSelectionFormHorizontalPaintable_Access := new ScrollSelectionFormHorizontalPaintable;
    begin
-      Initialize (This.all, scrollSelectionForm);
+      ScrollSelectionFormHorizontalPaintable_Package.Initialize (This.all, scrollSelectionForm);
       return This;
    end Create;
     
@@ -569,7 +527,7 @@ package body org.allbinary.graphics.form.ScrollSelectionFormVerticalPaintable_Pa
    function Create (scrollSelectionForm : ScrollSelectionForm_Access) return ScrollSelectionFormVerticalPaintable_Access is
       This : constant ScrollSelectionFormVerticalPaintable_Access := new ScrollSelectionFormVerticalPaintable;
    begin
-      Initialize (This.all, scrollSelectionForm);
+      ScrollSelectionFormVerticalPaintable_Package.Initialize (This.all, scrollSelectionForm);
       return This;
    end Create;
     
@@ -608,7 +566,7 @@ package body org.allbinary.graphics.form.ScrollSelectionFormTempHorizontalPainta
    function Create (scrollSelectionForm : ScrollSelectionForm_Access) return ScrollSelectionFormTempHorizontalPaintable_Access is
       This : constant ScrollSelectionFormTempHorizontalPaintable_Access := new ScrollSelectionFormTempHorizontalPaintable;
    begin
-      Initialize (This.all, scrollSelectionForm);
+      ScrollSelectionFormTempHorizontalPaintable_Package.Initialize (This.all, scrollSelectionForm);
       return This;
    end Create;
     
@@ -647,7 +605,7 @@ package body org.allbinary.graphics.form.ScrollSelectionFormHorizontalDx_Package
    function Create (multipleScrollSelectionForm : ScrollSelectionForm_Access) return ScrollSelectionFormHorizontalDx_Access is
       This : constant ScrollSelectionFormHorizontalDx_Access := new ScrollSelectionFormHorizontalDx;
    begin
-      Initialize (This.all, multipleScrollSelectionForm);
+      ScrollSelectionFormHorizontalDx_Package.Initialize (This.all, multipleScrollSelectionForm);
       return This;
    end Create;
     
@@ -686,7 +644,7 @@ package body org.allbinary.graphics.form.ScrollSelectionFormVericalDx_Package is
    function Create (multipleScrollSelectionForm : ScrollSelectionForm_Access) return ScrollSelectionFormVericalDx_Access is
       This : constant ScrollSelectionFormVericalDx_Access := new ScrollSelectionFormVericalDx;
    begin
-      Initialize (This.all, multipleScrollSelectionForm);
+      ScrollSelectionFormVericalDx_Package.Initialize (This.all, multipleScrollSelectionForm);
       return This;
    end Create;
     
@@ -725,7 +683,7 @@ package body org.allbinary.graphics.form.ScrollSelectionFormTempHorizontalDx_Pac
    function Create (multipleScrollSelectionForm : ScrollSelectionForm_Access) return ScrollSelectionFormTempHorizontalDx_Access is
       This : constant ScrollSelectionFormTempHorizontalDx_Access := new ScrollSelectionFormTempHorizontalDx;
    begin
-      Initialize (This.all, multipleScrollSelectionForm);
+      ScrollSelectionFormTempHorizontalDx_Package.Initialize (This.all, multipleScrollSelectionForm);
       return This;
    end Create;
     

@@ -21,6 +21,7 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.layer.RTSInterface_Package; use org.allbinary.game.layer.RTSInterface_Package;
+with org.allbinary.game.rts.technology.UnitTechnologySingletonFactory_Package; use org.allbinary.game.rts.technology.UnitTechnologySingletonFactory_Package;
 
 package org.allbinary.game.rts.technology.DamageTechnology_Package is
 
@@ -39,27 +40,17 @@ package org.allbinary.game.rts.technology.DamageTechnology_Package is
    procedure Initialize (This : in out DamageTechnology'Class; maxLevel : Integer);
    function Create (maxLevel : Integer) return DamageTechnology_Access;
    function isCompleted (This : in out DamageTechnology) return Boolean;
-   procedure isCompleted (This : in out DamageTechnology);
    function getPercentComplete (This : in out DamageTechnology) return Integer;
-   procedure getPercentComplete (This : in out DamageTechnology);
    function getLevel (This : in out DamageTechnology) return Integer;
-   procedure getLevel (This : in out DamageTechnology);
    function getMaxLevel (This : in out DamageTechnology) return Integer;
-   procedure getMaxLevel (This : in out DamageTechnology);
    function getCost (This : in out DamageTechnology) return Integer;
-   procedure getCost (This : in out DamageTechnology);
    procedure downgrade (This : in out DamageTechnology);
    function getDowngradeCost (This : in out DamageTechnology) return Integer;
-   procedure getDowngradeCost (This : in out DamageTechnology);
    function isDowngradeable (This : in out DamageTechnology) return Boolean;
-   procedure isDowngradeable (This : in out DamageTechnology);
    function getUpgradeCost (This : in out DamageTechnology) return Integer;
-   procedure getUpgradeCost (This : in out DamageTechnology);
    function isUpgradeable (This : in out DamageTechnology) return Boolean;
-   procedure isUpgradeable (This : in out DamageTechnology);
    procedure upgrade (This : in out DamageTechnology);
    function isSelfUpgradeable (This : in out DamageTechnology) return Boolean;
-   procedure isSelfUpgradeable (This : in out DamageTechnology);
 
 end org.allbinary.game.rts.technology.DamageTechnology_Package;
 

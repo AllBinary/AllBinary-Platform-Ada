@@ -41,7 +41,7 @@ package body org.allbinary.game.configuration.GameConfiguration_Package is
    function Create (name : Unbounded_String; defaultValue : Integer; minValue : Integer; maxValue : Integer) return GameConfiguration_Access is
       This : constant GameConfiguration_Access := new GameConfiguration;
    begin
-      Initialize (This.all, name, defaultValue, minValue, maxValue);
+      GameConfiguration_Package.Initialize (This.all, name, defaultValue, minValue, maxValue);
       return This;
    end Create;
 
@@ -134,55 +134,6 @@ package body org.allbinary.game.configuration.GameConfiguration_Package is
    function isModifiable (This : in out GameConfiguration) return Boolean is
    begin
         return This.modifiable;
-   end isModifiable;
-
-   procedure getValue (This : in out GameConfiguration) is
-      Java_Result : constant Integer := GameConfiguration'Class (This).getValue;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getValue;
-
-   procedure getMaxValue (This : in out GameConfiguration) is
-      Java_Result : constant Integer := GameConfiguration'Class (This).getMaxValue;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getMaxValue;
-
-   procedure getMinValue (This : in out GameConfiguration) is
-      Java_Result : constant Integer := GameConfiguration'Class (This).getMinValue;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getMinValue;
-
-   procedure getName (This : in out GameConfiguration) is
-      Java_Result : constant Unbounded_String := GameConfiguration'Class (This).getName;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getName;
-
-   procedure getDefaultValue (This : in out GameConfiguration) is
-      Java_Result : constant Integer := GameConfiguration'Class (This).getDefaultValue;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getDefaultValue;
-
-   procedure toString (This : in out GameConfiguration) is
-      Java_Result : constant Unbounded_String := GameConfiguration'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toString;
-
-   procedure isModifiable (This : in out GameConfiguration) is
-      Java_Result : constant Boolean := GameConfiguration'Class (This).isModifiable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end isModifiable;
 
 begin

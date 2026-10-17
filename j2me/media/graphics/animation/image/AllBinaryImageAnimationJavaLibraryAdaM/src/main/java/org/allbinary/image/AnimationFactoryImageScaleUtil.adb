@@ -29,7 +29,7 @@ package body org.allbinary.image.AnimationFactoryImageScaleUtil_Package is
    function Create return AnimationFactoryImageScaleUtil_Access is
       This : constant AnimationFactoryImageScaleUtil_Access := new AnimationFactoryImageScaleUtil;
    begin
-      Initialize (This.all);
+      AnimationFactoryImageScaleUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -86,13 +86,6 @@ package body org.allbinary.image.AnimationFactoryImageScaleUtil_Package is
             null;
         end if;
    end processAdjust;
-
-   procedure getInstance is
-      Java_Result : constant AnimationFactoryImageScaleUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure createImage (This : in out AnimationFactoryImageScaleUtil; image : Image_Access; width : Integer; height : Integer; scaleWidth : Integer; scaleHeight : Integer) is
       Java_Result : constant Image_Access := AnimationFactoryImageScaleUtil'Class (This).createImage (image, width, height, scaleWidth, scaleHeight);

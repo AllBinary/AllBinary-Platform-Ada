@@ -58,9 +58,7 @@ package views.business.context.RootContextView_Package is
    procedure Initialize (This : in out RootContextView'Class; transformInfoInterface : TransformInfoInterface_Access);
    function Create (transformInfoInterface : TransformInfoInterface_Access) return RootContextView_Access;
    function view (This : in out RootContextView) return Unbounded_String;
-   procedure view (This : in out RootContextView);
    function getName (This : in out RootContextView) return Unbounded_String;
-   procedure getName (This : in out RootContextView);
 
 end views.business.context.RootContextView_Package;
 

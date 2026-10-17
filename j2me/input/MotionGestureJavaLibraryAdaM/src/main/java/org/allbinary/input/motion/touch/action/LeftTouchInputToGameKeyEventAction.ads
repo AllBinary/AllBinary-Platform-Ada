@@ -43,7 +43,6 @@ package org.allbinary.input.motion.touch.action.LeftTouchInputToGameKeyEventActi
    procedure Initialize (This : in out LeftTouchInputToGameKeyEventAction'Class);
    function Create return LeftTouchInputToGameKeyEventAction_Access;
    function getInstance return GameKeyCompleteMotionGestureInputEvent_Access;
-   procedure getInstance;
 
 end org.allbinary.input.motion.touch.action.LeftTouchInputToGameKeyEventAction_Package;
 

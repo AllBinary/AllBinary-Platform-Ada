@@ -31,7 +31,7 @@ package body org.allbinary.graphics.j2me.workarea.tools.Points_Package is
    function Create return Points_Access is
       This : constant Points_Access := new Points;
    begin
-      Initialize (This.all);
+      Points_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -62,27 +62,6 @@ package body org.allbinary.graphics.j2me.workarea.tools.Points_Package is
    function getSize (This : in out Points) return Integer is
    begin
         return This.pointVector.size;
-   end getSize;
-
-   procedure getPoints (This : in out Points) is
-      Java_Result : constant BasicArrayList_Access := Points'Class (This).getPoints;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getPoints;
-
-   procedure isValid (This : in out Points) is
-      Java_Result : constant Boolean := Points'Class (This).isValid;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isValid;
-
-   procedure getSize (This : in out Points) is
-      Java_Result : constant Integer := Points'Class (This).getSize;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getSize;
 
 end org.allbinary.graphics.j2me.workarea.tools.Points_Package;

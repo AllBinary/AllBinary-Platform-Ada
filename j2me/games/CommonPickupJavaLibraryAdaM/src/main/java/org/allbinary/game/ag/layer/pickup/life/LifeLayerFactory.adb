@@ -28,7 +28,7 @@ package body org.allbinary.game.ag.layer.pickup.life.LifeLayerFactory_Package is
    function Create return LifeLayerFactory_Access is
       This : constant LifeLayerFactory_Access := new LifeLayerFactory;
    begin
-      Initialize (This.all);
+      LifeLayerFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -37,13 +37,6 @@ package body org.allbinary.game.ag.layer.pickup.life.LifeLayerFactory_Package is
    function getInstance (This : in out LifeLayerFactory) return AllBinaryLayer_Access is
    begin
         return LifeLayer_Package.Create;
-   end getInstance;
-
-   procedure getInstance (This : in out LifeLayerFactory) is
-      Java_Result : constant AllBinaryLayer_Access := LifeLayerFactory'Class (This).getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 end org.allbinary.game.ag.layer.pickup.life.LifeLayerFactory_Package;

@@ -28,7 +28,7 @@ package body org.allbinary.graphics.opengles.OpenGLVUtilBase_Package is
    function Create return OpenGLVUtilBase_Access is
       This : constant OpenGLVUtilBase_Access := new OpenGLVUtilBase;
    begin
-      Initialize (This.all);
+      OpenGLVUtilBase_Package.Initialize (This.all);
       return This;
    end Create;
 

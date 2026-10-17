@@ -28,7 +28,7 @@ package body org.allbinary.thread.NullThread_Package is
    function Create return NullThread_Access is
       This : constant NullThread_Access := new NullThread;
    begin
-      Initialize (This.all);
+      NullThread_Package.Initialize (This.all);
       return This;
    end Create;
 

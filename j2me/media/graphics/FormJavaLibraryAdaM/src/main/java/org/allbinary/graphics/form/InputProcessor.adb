@@ -32,7 +32,7 @@ package body org.allbinary.graphics.form.InputProcessor_Package is
    function Create (playerGameInputCompositeInterface : PlayerGameInputCompositeInterface_Access) return InputProcessor_Access is
       This : constant InputProcessor_Access := new InputProcessor;
    begin
-      Initialize (This.all, playerGameInputCompositeInterface);
+      InputProcessor_Package.Initialize (This.all, playerGameInputCompositeInterface);
       return This;
    end Create;
 

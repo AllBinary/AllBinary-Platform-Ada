@@ -9,6 +9,10 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.android.AndroidInfoFactory_Package; use org.allbinary.android.AndroidInfoFactory_Package;
+with org.allbinary.game.input.AndroidAPI12KeyFactory_Package; use org.allbinary.game.input.AndroidAPI12KeyFactory_Package;
+with org.allbinary.game.input.AndroidAPI9KeyFactory_Package; use org.allbinary.game.input.AndroidAPI9KeyFactory_Package;
+with org.allbinary.game.input.AndroidAPI1KeyFactory_Package; use org.allbinary.game.input.AndroidAPI1KeyFactory_Package;
+with org.allbinary.game.input.AndroidKeyFactory_Package; use org.allbinary.game.input.AndroidKeyFactory_Package;
 
 package org.allbinary.game.input.ActivityFractureControllerUtilFactory_Package is
 
@@ -24,7 +28,6 @@ package org.allbinary.game.input.ActivityFractureControllerUtilFactory_Package i
    procedure Initialize (This : in out ActivityFractureControllerUtilFactory'Class);
    function Create return ActivityFractureControllerUtilFactory_Access;
    function getInstance return AndroidKeyFactory_Access;
-   procedure getInstance;
 
 end org.allbinary.game.input.ActivityFractureControllerUtilFactory_Package;
 

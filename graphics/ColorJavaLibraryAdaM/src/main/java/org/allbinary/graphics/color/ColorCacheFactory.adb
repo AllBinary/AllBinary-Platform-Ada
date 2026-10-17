@@ -53,20 +53,13 @@ package body org.allbinary.graphics.color.ColorCacheFactory_Package is
    function Create return ColorCacheFactory_Access is
       This : constant ColorCacheFactory_Access := new ColorCacheFactory;
    begin
-      Initialize (This.all);
+      ColorCacheFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
    function getInstance return AutomaticCacheInterface_Access is
    begin
         return ColorCacheFactory_Package.cacheInterface;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant AutomaticCacheInterface_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

@@ -32,7 +32,7 @@ package body org.allbinary.graphics.opengles.shader.Shader_Package is
    function Create return Shader_Access is
       This : constant Shader_Access := new Shader;
    begin
-      Initialize (This.all);
+      Shader_Package.Initialize (This.all);
       return This;
    end Create;
 

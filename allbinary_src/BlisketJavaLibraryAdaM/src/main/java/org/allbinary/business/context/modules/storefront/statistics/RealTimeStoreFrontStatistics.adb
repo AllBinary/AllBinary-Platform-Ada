@@ -37,7 +37,7 @@ package body org.allbinary.business.context.modules.storefront.statistics.RealTi
    function Create (storeFrontInterface : StoreFrontInterface_Access) return RealTimeStoreFrontStatistics_Access is
       This : constant RealTimeStoreFrontStatistics_Access := new RealTimeStoreFrontStatistics;
    begin
-      Initialize (This.all, storeFrontInterface);
+      RealTimeStoreFrontStatistics_Package.Initialize (This.all, storeFrontInterface);
       return This;
    end Create;
 
@@ -59,34 +59,6 @@ package body org.allbinary.business.context.modules.storefront.statistics.RealTi
    function getOrders (This : in out RealTimeStoreFrontStatistics) return StoreFrontOrdersHistoryStatisticsInterface_Access is
    begin
         return This.storeFrontOrderHistoryStatisticsInterface;
-   end getOrders;
-
-   procedure getAdvertisements (This : in out RealTimeStoreFrontStatistics) is
-      Java_Result : constant StoreFrontAdvertisementsStatisticsInterface_Access := RealTimeStoreFrontStatistics'Class (This).getAdvertisements;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getAdvertisements;
-
-   procedure getUsers (This : in out RealTimeStoreFrontStatistics) is
-      Java_Result : constant StoreFrontUsersStatisticsInterface_Access := RealTimeStoreFrontStatistics'Class (This).getUsers;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getUsers;
-
-   procedure getInventory (This : in out RealTimeStoreFrontStatistics) is
-      Java_Result : constant StoreFrontInventoryStatisticsInterface_Access := RealTimeStoreFrontStatistics'Class (This).getInventory;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInventory;
-
-   procedure getOrders (This : in out RealTimeStoreFrontStatistics) is
-      Java_Result : constant StoreFrontOrdersHistoryStatisticsInterface_Access := RealTimeStoreFrontStatistics'Class (This).getOrders;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getOrders;
 
 end org.allbinary.business.context.modules.storefront.statistics.RealTimeStoreFrontStatistics_Package;

@@ -31,20 +31,13 @@ package body org.allbinary.math.Angle_Package is
    function Create (angle : Short_Integer) return Angle_Access is
       This : constant Angle_Access := new Angle;
    begin
-      Initialize (This.all, angle);
+      Angle_Package.Initialize (This.all, angle);
       return This;
    end Create;
 
    function getValue (This : in out Angle) return Short_Integer is
    begin
         return This.value;
-   end getValue;
-
-   procedure getValue (This : in out Angle) is
-      Java_Result : constant Short_Integer := Angle'Class (This).getValue;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getValue;
 
 end org.allbinary.math.Angle_Package;

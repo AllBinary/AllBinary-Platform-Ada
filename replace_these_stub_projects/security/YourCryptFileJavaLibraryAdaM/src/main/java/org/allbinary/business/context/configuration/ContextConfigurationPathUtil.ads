@@ -30,7 +30,6 @@ package org.allbinary.business.context.configuration.ContextConfigurationPathUti
    function getAbPath (contextName : Unbounded_String) return AbPath_Access;
    procedure getAbPath (contextName : Unbounded_String);
    function getPath return Unbounded_String;
-   procedure getPath;
    function getFileName (contextName : Unbounded_String) return Unbounded_String;
    procedure getFileName (contextName : Unbounded_String);
 

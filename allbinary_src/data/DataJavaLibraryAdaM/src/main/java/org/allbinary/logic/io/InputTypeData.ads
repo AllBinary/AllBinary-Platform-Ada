@@ -37,7 +37,6 @@ package org.allbinary.logic.io.InputTypeData_Package is
    procedure Initialize (This : in out InputTypeData'Class);
    function Create return InputTypeData_Access;
    function getInstance return InputTypeData_Access;
-   procedure getInstance;
 
 end org.allbinary.logic.io.InputTypeData_Package;
 

@@ -29,7 +29,7 @@ package body org.allbinary.business.init.db.StaticPagesDbInitInfo_Package is
    function Create return StaticPagesDbInitInfo_Access is
       This : constant StaticPagesDbInitInfo_Access := new StaticPagesDbInitInfo;
    begin
-      Initialize (This.all);
+      StaticPagesDbInitInfo_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -42,7 +42,7 @@ package body org.allbinary.business.init.db.StaticPagesDbInitInfo_Package is
    function Create (read : Boolean) return StaticPagesDbInitInfo_Access is
       This : constant StaticPagesDbInitInfo_Access := new StaticPagesDbInitInfo;
    begin
-      Initialize (This.all, read);
+      StaticPagesDbInitInfo_Package.Initialize (This.all, read);
       return This;
    end Create;
 

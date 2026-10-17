@@ -28,7 +28,7 @@ package body org.allbinary.graphics.opengles.OpenGLUtil_Package is
    function Create return OpenGLUtil_Access is
       This : constant OpenGLUtil_Access := new OpenGLUtil;
    begin
-      Initialize (This.all);
+      OpenGLUtil_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -145,13 +145,6 @@ package body org.allbinary.graphics.opengles.OpenGLUtil_Package is
             (OpenGLESImage_Access (image)).set (gl);
         end loop;
    end set;
-
-   procedure getInstance is
-      Java_Result : constant OpenGLUtil_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
    procedure addImage (This : in out OpenGLUtil; image : Image_Access) is
       Java_Result : constant Image_Access := OpenGLUtil'Class (This).addImage (image);

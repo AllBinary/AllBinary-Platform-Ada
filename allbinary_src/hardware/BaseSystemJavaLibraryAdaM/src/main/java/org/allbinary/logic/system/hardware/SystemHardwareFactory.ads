@@ -25,6 +25,9 @@ with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.logic.system.os.GenericOperatingSystem_Package; use org.allbinary.logic.system.os.GenericOperatingSystem_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.logic.system.hardware.NoHardware_Package; use org.allbinary.logic.system.hardware.NoHardware_Package;
+with org.allbinary.logic.system.hardware.HardwareInterface_Package; use org.allbinary.logic.system.hardware.HardwareInterface_Package;
+with org.allbinary.logic.system.hardware.HardwareFactory_Package; use org.allbinary.logic.system.hardware.HardwareFactory_Package;
 
 package org.allbinary.logic.system.hardware.SystemHardwareFactory_Package is
 
@@ -49,11 +52,9 @@ package org.allbinary.logic.system.hardware.SystemHardwareFactory_Package is
    procedure Initialize (This : in out SystemHardwareFactory'Class);
    function Create return SystemHardwareFactory_Access;
    function getInstance return SystemHardwareFactory_Access;
-   procedure getInstance;
    function getInstance (This : in out SystemHardwareFactory; operatingSystemInterface : GenericOperatingSystem_Access) return HardwareInterface_Access;
    procedure getInstance (This : in out SystemHardwareFactory; operatingSystemInterface : GenericOperatingSystem_Access);
    function static_toString return Unbounded_String;
-   procedure static_toString;
 
 end org.allbinary.logic.system.hardware.SystemHardwareFactory_Package;
 

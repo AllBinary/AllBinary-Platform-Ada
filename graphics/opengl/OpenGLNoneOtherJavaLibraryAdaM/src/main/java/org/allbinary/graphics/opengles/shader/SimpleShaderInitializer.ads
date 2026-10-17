@@ -36,7 +36,6 @@ package org.allbinary.graphics.opengles.shader.SimpleShaderInitializer_Package i
    procedure Initialize (This : in out SimpleShaderInitializer'Class);
    function Create return SimpleShaderInitializer_Access;
    function getInstance return SimpleShaderInitializer_Access;
-   procedure getInstance;
 
 end org.allbinary.graphics.opengles.shader.SimpleShaderInitializer_Package;
 

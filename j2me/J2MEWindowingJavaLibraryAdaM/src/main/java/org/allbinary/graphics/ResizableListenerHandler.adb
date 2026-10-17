@@ -28,7 +28,7 @@ package body org.allbinary.graphics.ResizableListenerHandler_Package is
    function Create return ResizableListenerHandler_Access is
       This : constant ResizableListenerHandler_Access := new ResizableListenerHandler;
    begin
-      Initialize (This.all);
+      ResizableListenerHandler_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -53,13 +53,6 @@ package body org.allbinary.graphics.ResizableListenerHandler_Package is
    begin
         null;
    end fireEvent;
-
-   procedure getInstance is
-      Java_Result : constant ResizableListenerHandler_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

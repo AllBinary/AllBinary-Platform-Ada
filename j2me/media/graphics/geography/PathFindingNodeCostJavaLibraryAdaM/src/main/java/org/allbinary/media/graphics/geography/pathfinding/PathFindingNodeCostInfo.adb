@@ -36,7 +36,7 @@ package body org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeC
    function Create (costFromStart : Long_Long_Integer; costToGoal : Long_Long_Integer) return PathFindingNodeCostInfo_Access is
       This : constant PathFindingNodeCostInfo_Access := new PathFindingNodeCostInfo;
    begin
-      Initialize (This.all, costFromStart, costToGoal);
+      PathFindingNodeCostInfo_Package.Initialize (This.all, costFromStart, costToGoal);
       return This;
    end Create;
 
@@ -95,13 +95,6 @@ package body org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeC
    begin
       null;
    end compareTo;
-
-   procedure toString (This : in out PathFindingNodeCostInfo) is
-      Java_Result : constant Unbounded_String := PathFindingNodeCostInfo'Class (This).toString;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toString;
 
 end org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfo_Package;
 

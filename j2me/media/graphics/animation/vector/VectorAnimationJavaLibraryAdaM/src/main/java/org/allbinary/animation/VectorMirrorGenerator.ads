@@ -27,6 +27,7 @@ with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.lo
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListS_Package; use org.allbinary.util.BasicArrayListS_Package;
+with org.allbinary.animation.VectorAnimationUtil_Package; use org.allbinary.animation.VectorAnimationUtil_Package;
 
 package org.allbinary.animation.VectorMirrorGenerator_Package is
 
@@ -52,7 +53,6 @@ package org.allbinary.animation.VectorMirrorGenerator_Package is
    procedure Initialize (This : in out VectorMirrorGenerator'Class);
    function Create return VectorMirrorGenerator_Access;
    function getInstance return VectorMirrorGenerator_Access;
-   procedure getInstance;
    function getInstance (This : in out VectorMirrorGenerator; points : Integer_Array_Access_Array_Access_Array_Access; width : Integer) return Integer_Array_Access_Array_Access_Array_Access;
    procedure getInstance (This : in out VectorMirrorGenerator; points : Integer_Array_Access_Array_Access_Array_Access; width : Integer);
    function getInstance (This : in out VectorMirrorGenerator; pointBasicArrayList : BasicArrayList_Access; width : Integer) return BasicArrayList_Access;

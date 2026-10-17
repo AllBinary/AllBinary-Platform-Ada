@@ -33,6 +33,7 @@ with org.allbinary.logic.visual.transform.info.TransformInfoHttpInterface_Packag
 with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
 with org.allbinary.logic.visual.transform.info.TransformInfoObjectFactory_Package; use org.allbinary.logic.visual.transform.info.TransformInfoObjectFactory_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.logic.visual.transform.TransformInterface_Package; use org.allbinary.logic.visual.transform.TransformInterface_Package;
 
 package org.allbinary.logic.visual.transform.TransformFactory_Package is
 
@@ -62,7 +63,6 @@ package org.allbinary.logic.visual.transform.TransformFactory_Package is
    procedure Initialize (This : in out TransformFactory'Class);
    function Create return TransformFactory_Access;
    function getInstance return TransformFactory_Access;
-   procedure getInstance;
    function getInstance (This : in out TransformFactory; abeClientInformation : AbeClientInformationInterface_Access; viewName : Unbounded_String; ownerTransformInfoInterface : TransformInfoInterface_Access) return TransformInterface_Access;
    procedure getInstance (This : in out TransformFactory; abeClientInformation : AbeClientInformationInterface_Access; viewName : Unbounded_String; ownerTransformInfoInterface : TransformInfoInterface_Access);
    function getInstance (This : in out TransformFactory; abeClientInformation : AbeClientInformationInterface_Access; propertiesHashMap : HashMap_Access; pageContext : PageContext_Access) return TransformInterface_Access;

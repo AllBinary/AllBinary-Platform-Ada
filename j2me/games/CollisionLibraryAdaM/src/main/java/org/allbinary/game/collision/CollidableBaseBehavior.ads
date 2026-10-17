@@ -28,6 +28,10 @@ with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.
 with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.game.collision.CollidableInterface_Package; use org.allbinary.game.collision.CollidableInterface_Package;
+with org.allbinary.game.collision.LayerCollisionUtil_Package; use org.allbinary.game.collision.LayerCollisionUtil_Package;
+with org.allbinary.game.collision.CollidableInterfaceCompositeInterface_Package; use org.allbinary.game.collision.CollidableInterfaceCompositeInterface_Package;
+with org.allbinary.game.collision.CollisionTypeFactory_Package; use org.allbinary.game.collision.CollisionTypeFactory_Package;
+with org.allbinary.game.collision.CollisionType_Package; use org.allbinary.game.collision.CollisionType_Package;
 
 package org.allbinary.game.collision.CollidableBaseBehavior_Package is
 
@@ -54,7 +58,6 @@ package org.allbinary.game.collision.CollidableBaseBehavior_Package is
    function Create (collidable : Boolean) return CollidableBaseBehavior_Access;
    procedure update (This : in out CollidableBaseBehavior);
    function getName (This : in out CollidableBaseBehavior) return Unbounded_String;
-   procedure getName (This : in out CollidableBaseBehavior);
    procedure setCollidable (This : in out CollidableBaseBehavior; collidable : Boolean);
    function isCollidable (This : in out CollidableBaseBehavior; ownerLayer : CollidableCompositeLayer_Access) return Boolean;
    procedure isCollidable (This : in out CollidableBaseBehavior; ownerLayer : CollidableCompositeLayer_Access);

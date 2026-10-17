@@ -55,9 +55,7 @@ package admin.taghelpers.StoreFrontHelper_Package is
    procedure Initialize (This : in out StoreFrontHelper'Class; hashMap : HashMap_Access; pageContext : PageContext_Access);
    function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return StoreFrontHelper_Access;
    function getCurrentLocation (This : in out StoreFrontHelper) return Unbounded_String;
-   procedure getCurrentLocation (This : in out StoreFrontHelper);
    function getCurrentHomeLocation (This : in out StoreFrontHelper) return Unbounded_String;
-   procedure getCurrentHomeLocation (This : in out StoreFrontHelper);
 
 end admin.taghelpers.StoreFrontHelper_Package;
 

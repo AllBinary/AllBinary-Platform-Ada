@@ -25,6 +25,7 @@ with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArr
 with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.logic.visual.dhtml.html.HtmlTag_Package; use org.allbinary.logic.visual.dhtml.html.HtmlTag_Package;
+with org.allbinary.logic.visual.dhtml.html.table.HtmlCell_Package; use org.allbinary.logic.visual.dhtml.html.table.HtmlCell_Package;
 
 package org.allbinary.logic.visual.dhtml.html.table.HtmlRow_Package is
 
@@ -53,9 +54,7 @@ package org.allbinary.logic.visual.dhtml.html.table.HtmlRow_Package is
    function Create (before : Unbounded_String; after : Unbounded_String) return HtmlRow_Access;
    procedure addCell (This : in out HtmlRow; htmlCell : HtmlCell_Access);
    function getNumberOfColumns (This : in out HtmlRow) return Integer;
-   procedure getNumberOfColumns (This : in out HtmlRow);
    function toString (This : in out HtmlRow) return Unbounded_String;
-   procedure toString (This : in out HtmlRow);
 
 end org.allbinary.logic.visual.dhtml.html.table.HtmlRow_Package;
 

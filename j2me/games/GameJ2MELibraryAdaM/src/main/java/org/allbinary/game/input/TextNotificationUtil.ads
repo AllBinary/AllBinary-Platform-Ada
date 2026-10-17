@@ -55,7 +55,6 @@ package org.allbinary.game.input.TextNotificationUtil_Package is
    procedure Initialize (This : in out TextNotificationUtil'Class);
    function Create return TextNotificationUtil_Access;
    function getInstance return TextNotificationUtil_Access;
-   procedure getInstance;
    procedure fireError (This : in out TextNotificationUtil; message : Unbounded_String);
    procedure fireNew (This : in out TextNotificationUtil; message : Unbounded_String);
    procedure fireSuccess (This : in out TextNotificationUtil; message : Unbounded_String);

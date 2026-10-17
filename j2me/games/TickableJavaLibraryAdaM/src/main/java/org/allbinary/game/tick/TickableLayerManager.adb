@@ -29,7 +29,7 @@ package body org.allbinary.game.tick.TickableLayerManager_Package is
    function Create return TickableLayerManager_Access is
       This : constant TickableLayerManager_Access := new TickableLayerManager;
    begin
-      Initialize (This.all);
+      TickableLayerManager_Package.Initialize (This.all);
       return This;
    end Create;
 

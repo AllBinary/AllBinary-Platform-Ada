@@ -24,6 +24,8 @@ with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBina
 with org.allbinary.math.LayerDistanceUtil_Package; use org.allbinary.math.LayerDistanceUtil_Package;
 with org.allbinary.thread.PriorityRunnable_Package; use org.allbinary.thread.PriorityRunnable_Package;
 with org.allbinary.thread.RunnableInterface_Package; use org.allbinary.thread.RunnableInterface_Package;
+with org.allbinary.game.layer.NullPathFindingLayer_Package; use org.allbinary.game.layer.NullPathFindingLayer_Package;
+with org.allbinary.game.layer.PathFindingLayerInterface_Package; use org.allbinary.game.layer.PathFindingLayerInterface_Package;
 
 package org.allbinary.game.layer.WaypointPathRunnableBase_Package is
 
@@ -48,18 +50,14 @@ package org.allbinary.game.layer.WaypointPathRunnableBase_Package is
    procedure Initialize (This : in out WaypointPathRunnableBase'Class);
    function Create return WaypointPathRunnableBase_Access;
    function isRunning (This : in out WaypointPathRunnableBase) return Boolean;
-   procedure isRunning (This : in out WaypointPathRunnableBase);
    procedure setRunning (This : in out WaypointPathRunnableBase; isRunning : Boolean);
    procedure setThread (This : in out WaypointPathRunnableBase; thread : Thread_Access);
    procedure setTargetLayer (This : in out WaypointPathRunnableBase; waypointLayer : PathFindingLayerInterface_Access);
    procedure setPriority (This : in out WaypointPathRunnableBase);
    function getTargetLayer (This : in out WaypointPathRunnableBase) return PathFindingLayerInterface_Access;
-   procedure getTargetLayer (This : in out WaypointPathRunnableBase);
    procedure setUnitLayer (This : in out WaypointPathRunnableBase; unitLayer : PathFindingLayerInterface_Access);
    function getPriority (This : in out WaypointPathRunnableBase) return Integer;
-   procedure getPriority (This : in out WaypointPathRunnableBase);
    function isDone (This : in out WaypointPathRunnableBase) return Boolean;
-   procedure isDone (This : in out WaypointPathRunnableBase);
    procedure run (This : in out WaypointPathRunnableBase);
    procedure reset (This : in out WaypointPathRunnableBase);
 

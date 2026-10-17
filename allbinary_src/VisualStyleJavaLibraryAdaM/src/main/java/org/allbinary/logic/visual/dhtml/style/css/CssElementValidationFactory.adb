@@ -30,7 +30,7 @@ package body org.allbinary.logic.visual.dhtml.style.css.CssElementValidationFact
    function Create return CssElementValidationFactory_Access is
       This : constant CssElementValidationFactory_Access := new CssElementValidationFactory;
    begin
-      Initialize (This.all);
+      CssElementValidationFactory_Package.Initialize (This.all);
       return This;
    end Create;
 

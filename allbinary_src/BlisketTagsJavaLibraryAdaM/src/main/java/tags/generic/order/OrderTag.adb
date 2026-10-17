@@ -31,7 +31,7 @@ package body tags.generic_Id.order.OrderTag_Package is
    function Create return OrderTag_Access is
       This : constant OrderTag_Access := new OrderTag;
    begin
-      Initialize (This.all);
+      OrderTag_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -59,13 +59,6 @@ package body tags.generic_Id.order.OrderTag_Package is
             return SKIP_BODY;
                 end;
         end;
-   end doStartTag;
-
-   procedure doStartTag (This : in out OrderTag) is
-      Java_Result : constant Integer := OrderTag'Class (This).doStartTag;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end doStartTag;
 
 end tags.generic_Id.order.OrderTag_Package;

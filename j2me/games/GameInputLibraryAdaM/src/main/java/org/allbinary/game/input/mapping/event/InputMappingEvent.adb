@@ -31,7 +31,7 @@ package body org.allbinary.game.input.mapping.event.InputMappingEvent_Package is
    function Create (anyType : Java_Object_Access) return InputMappingEvent_Access is
       This : constant InputMappingEvent_Access := new InputMappingEvent;
    begin
-      Initialize (This.all, anyType);
+      InputMappingEvent_Package.Initialize (This.all, anyType);
       return This;
    end Create;
 
@@ -43,13 +43,6 @@ package body org.allbinary.game.input.mapping.event.InputMappingEvent_Package is
    function getInputToGameKeyMapping (This : in out InputMappingEvent) return InputToGameKeyMapping_Access is
    begin
         return This.inputToGameKeyMapping;
-   end getInputToGameKeyMapping;
-
-   procedure getInputToGameKeyMapping (This : in out InputMappingEvent) is
-      Java_Result : constant InputToGameKeyMapping_Access := InputMappingEvent'Class (This).getInputToGameKeyMapping;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInputToGameKeyMapping;
 
 end org.allbinary.game.input.mapping.event.InputMappingEvent_Package;

@@ -42,7 +42,6 @@ package org.allbinary.media.audio.SoundStrings_Package is
    procedure Initialize (This : in out SoundStrings'Class);
    function Create return SoundStrings_Access;
    function getInstance return SoundStrings_Access;
-   procedure getInstance;
 
 end org.allbinary.media.audio.SoundStrings_Package;
 

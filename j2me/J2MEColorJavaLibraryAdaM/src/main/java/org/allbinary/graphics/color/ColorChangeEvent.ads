@@ -21,6 +21,8 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
+with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
 
 package org.allbinary.graphics.color.ColorChangeEvent_Package is
 
@@ -39,7 +41,6 @@ package org.allbinary.graphics.color.ColorChangeEvent_Package is
    function Create (anyType : Java_Object_Access) return ColorChangeEvent_Access;
    procedure setBasicColorP (This : in out ColorChangeEvent; basicColor : BasicColor_Access);
    function getBasicColorP (This : in out ColorChangeEvent) return BasicColor_Access;
-   procedure getBasicColorP (This : in out ColorChangeEvent);
 
 end org.allbinary.graphics.color.ColorChangeEvent_Package;
 

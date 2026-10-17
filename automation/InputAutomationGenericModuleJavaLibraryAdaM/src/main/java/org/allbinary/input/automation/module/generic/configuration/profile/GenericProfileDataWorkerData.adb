@@ -30,7 +30,7 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
    function Create return GenericProfileDataWorkerData_Access is
       This : constant GenericProfileDataWorkerData_Access := new GenericProfileDataWorkerData;
    begin
-      Initialize (This.all);
+      GenericProfileDataWorkerData_Package.Initialize (This.all);
       return This;
    end Create;
 

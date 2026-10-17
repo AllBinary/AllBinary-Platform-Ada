@@ -32,7 +32,7 @@ package body org.allbinary.game.layer.waypoint.WaypointSelectedLogHelper_Package
    function Create return WaypointSelectedLogHelper_Access is
       This : constant WaypointSelectedLogHelper_Access := new WaypointSelectedLogHelper;
    begin
-      Initialize (This.all);
+      WaypointSelectedLogHelper_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -150,13 +150,6 @@ package body org.allbinary.game.layer.waypoint.WaypointSelectedLogHelper_Package
             This.logUtil.putF (StringMaker_Package.Create.append (associatedAdvancedRTSGameLayer.getName).append (To_Unbounded_String (" nextUnvisitedPathGeographicMapCellPosition: ")).append (This.stringUtil.toString (nextUnvisitedPathGeographicMapCellPosition)).toString, This'Unchecked_Access, To_Unbounded_String ("setNextUnvisitedPathGeographicMapCellPosition"));
         end if;
    end setNextUnvisitedPathGeographicMapCellPosition;
-
-   procedure getInstance is
-      Java_Result : constant WaypointSelectedLogHelper_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

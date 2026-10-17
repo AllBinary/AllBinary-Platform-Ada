@@ -56,7 +56,7 @@ package body org.allbinary.media.graphics.geography.map.platform.BasicPlatormGeo
    function Create (types : BasicArrayList_Access) return BasicPlatormGeographicMapCellType_Access is
       This : constant BasicPlatormGeographicMapCellType_Access := new BasicPlatormGeographicMapCellType;
    begin
-      Initialize (This.all, types);
+      BasicPlatormGeographicMapCellType_Package.Initialize (This.all, types);
       return This;
    end Create;
 

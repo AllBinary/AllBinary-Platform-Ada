@@ -47,7 +47,6 @@ package org.allbinary.game.layer.item.LayerInterfaceFactoryImageItem_Package is
    procedure Initialize (This : in out LayerInterfaceFactoryImageItem'Class; label : Unbounded_String; img : Image_Access; layout : Integer; altText : Unbounded_String; basicColor : BasicColor_Access; animationArray : Animation_Access_Array_Access; layerInterfaceFactoryInterface : LayerInterfaceFactoryInterface_Access);
    function Create (label : Unbounded_String; img : Image_Access; layout : Integer; altText : Unbounded_String; basicColor : BasicColor_Access; animationArray : Animation_Access_Array_Access; layerInterfaceFactoryInterface : LayerInterfaceFactoryInterface_Access) return LayerInterfaceFactoryImageItem_Access;
    function getLayerInterfaceFactoryInterface (This : in out LayerInterfaceFactoryImageItem) return LayerInterfaceFactoryInterface_Access;
-   procedure getLayerInterfaceFactoryInterface (This : in out LayerInterfaceFactoryImageItem);
    procedure paintXY (This : in out LayerInterfaceFactoryImageItem; graphics : Graphics_Access; x : Integer; y : Integer);
 
 end org.allbinary.game.layer.item.LayerInterfaceFactoryImageItem_Package;

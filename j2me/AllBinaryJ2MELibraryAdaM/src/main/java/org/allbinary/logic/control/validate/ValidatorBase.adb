@@ -35,7 +35,7 @@ package body org.allbinary.logic.control.validate.ValidatorBase_Package is
    function Create return ValidatorBase_Access is
       This : constant ValidatorBase_Access := new ValidatorBase;
    begin
-      Initialize (This.all);
+      ValidatorBase_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -57,41 +57,6 @@ package body org.allbinary.logic.control.validate.ValidatorBase_Package is
    function toList (This : in out ValidatorBase) return BasicArrayList_Access is
    begin
         return BasicArrayListUtil_Package.getInstance.getImmutableInstance;
-   end toList;
-
-   procedure getInstance is
-      Java_Result : constant ValidatorBase_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure isValid (This : in out ValidatorBase) is
-      Java_Result : constant Boolean := ValidatorBase'Class (This).isValid;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isValid;
-
-   procedure validationInfo (This : in out ValidatorBase) is
-      Java_Result : constant Unbounded_String := ValidatorBase'Class (This).validationInfo;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end validationInfo;
-
-   procedure toHashtable (This : in out ValidatorBase) is
-      Java_Result : constant ABHashtable_Access := ValidatorBase'Class (This).toHashtable;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end toHashtable;
-
-   procedure toList (This : in out ValidatorBase) is
-      Java_Result : constant BasicArrayList_Access := ValidatorBase'Class (This).toList;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end toList;
 
 begin

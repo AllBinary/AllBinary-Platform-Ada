@@ -29,7 +29,7 @@ package body org.allbinary.game.displayable.canvas.InGameMenuBehavior_Package is
    function Create return InGameMenuBehavior_Access is
       This : constant InGameMenuBehavior_Access := new InGameMenuBehavior;
    begin
-      Initialize (This.all);
+      InGameMenuBehavior_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -72,13 +72,6 @@ package body org.allbinary.game.displayable.canvas.InGameMenuBehavior_Package is
    begin
         allBinaryGameCanvas.closeMenu2;
    end closeMenu;
-
-   procedure getInstance is
-      Java_Result : constant InGameMenuBehavior_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
 
 begin
    null;

@@ -43,7 +43,7 @@ package body org.allbinary.media.graphics.geography.map.BasicGeographicMapCellPo
    function Create (geographicMapInterface : BasicGeographicMap_Access) return BasicGeographicMapCellPositionFactory_Access is
       This : constant BasicGeographicMapCellPositionFactory_Access := new BasicGeographicMapCellPositionFactory;
    begin
-      Initialize (This.all, geographicMapInterface);
+      BasicGeographicMapCellPositionFactory_Package.Initialize (This.all, geographicMapInterface);
       return This;
    end Create;
 
@@ -156,20 +156,6 @@ package body org.allbinary.media.graphics.geography.map.BasicGeographicMapCellPo
    begin
       null;
    end createInstance;
-
-   procedure getColumns (This : in out BasicGeographicMapCellPositionFactory) is
-      Java_Result : constant Integer := BasicGeographicMapCellPositionFactory'Class (This).getColumns;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getColumns;
-
-   procedure getRows (This : in out BasicGeographicMapCellPositionFactory) is
-      Java_Result : constant Integer := BasicGeographicMapCellPositionFactory'Class (This).getRows;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getRows;
 
 end org.allbinary.media.graphics.geography.map.BasicGeographicMapCellPositionFactory_Package;
 

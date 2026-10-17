@@ -29,7 +29,7 @@ package body org.allbinary.game.displayable.canvas.NullWaitGameRunnable_Package 
    function Create return NullWaitGameRunnable_Access is
       This : constant NullWaitGameRunnable_Access := new NullWaitGameRunnable;
    begin
-      Initialize (This.all);
+      NullWaitGameRunnable_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -37,13 +37,6 @@ package body org.allbinary.game.displayable.canvas.NullWaitGameRunnable_Package 
    function getInstance return GameRunnable_Access is
    begin
         return NullWaitGameRunnable_Package.instance;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant GameRunnable_Access := getInstance;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
    end getInstance;
 
 begin

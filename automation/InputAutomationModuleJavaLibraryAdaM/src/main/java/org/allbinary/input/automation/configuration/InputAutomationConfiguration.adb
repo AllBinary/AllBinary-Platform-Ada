@@ -33,7 +33,7 @@ package body org.allbinary.input.automation.configuration.InputAutomationConfigu
    function Create return InputAutomationConfiguration_Access is
       This : constant InputAutomationConfiguration_Access := new InputAutomationConfiguration;
    begin
-      Initialize (This.all);
+      InputAutomationConfiguration_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -74,27 +74,6 @@ package body org.allbinary.input.automation.configuration.InputAutomationConfigu
         marshaller.marshal (This'Unchecked_Access, document);
         DomDocumentFileHelper_Package.save (FileWrapperUtil_Package.wrapFile (file), document);
    end save;
-
-   procedure getFile is
-      Java_Result : constant File_Access := getFile;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getFile;
-
-   procedure isInstalled (This : in out InputAutomationConfiguration) is
-      Java_Result : constant Boolean := InputAutomationConfiguration'Class (This).isInstalled;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end isInstalled;
-
-   procedure getInputAutomationModuleConfigurationList (This : in out InputAutomationConfiguration) is
-      Java_Result : constant List_Access := InputAutomationConfiguration'Class (This).getInputAutomationModuleConfigurationList;
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInputAutomationModuleConfigurationList;
 
 begin
    null;

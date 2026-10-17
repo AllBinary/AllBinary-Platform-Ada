@@ -27,6 +27,7 @@ with org.allbinary.logic.java.bool.BooleanUtil_Package; use org.allbinary.logic.
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
+with org.allbinary.logic.communication.log.config.LogConfigData_Package; use org.allbinary.logic.communication.log.config.LogConfigData_Package;
 
 package org.allbinary.logic.communication.log.config.LogConfig_Package is
 
@@ -54,21 +55,16 @@ package org.allbinary.logic.communication.log.config.LogConfig_Package is
    procedure Initialize (This : in out LogConfig'Class; aName : Unbounded_String; aDescription : Unbounded_String; aPath : Unbounded_String; aFileName : Unbounded_String);
    function Create (aName : Unbounded_String; aDescription : Unbounded_String; aPath : Unbounded_String; aFileName : Unbounded_String) return LogConfig_Access;
    function getName (This : in out LogConfig) return Unbounded_String;
-   procedure getName (This : in out LogConfig);
    function isEnabled (This : in out LogConfig) return Boolean;
-   procedure isEnabled (This : in out LogConfig);
    procedure enable (This : in out LogConfig);
    procedure disable (This : in out LogConfig);
    function getDescription (This : in out LogConfig) return Unbounded_String;
-   procedure getDescription (This : in out LogConfig);
    function getFileName (This : in out LogConfig) return Unbounded_String;
-   procedure getFileName (This : in out LogConfig);
    procedure setName (This : in out LogConfig; value : Unbounded_String);
    procedure setDescription (This : in out LogConfig; value : Unbounded_String);
    procedure setPath (This : in out LogConfig; value : Unbounded_String);
    procedure setFileName (This : in out LogConfig; value : Unbounded_String);
    function getTypeVector (This : in out LogConfig) return BasicArrayList_Access;
-   procedure getTypeVector (This : in out LogConfig);
 
 end org.allbinary.logic.communication.log.config.LogConfig_Package;
 

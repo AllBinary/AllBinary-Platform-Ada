@@ -28,7 +28,7 @@ package body org.allbinary.game.ag.ai.NullAIFactory_Package is
    function Create return NullAIFactory_Access is
       This : constant NullAIFactory_Access := new NullAIFactory;
    begin
-      Initialize (This.all);
+      NullAIFactory_Package.Initialize (This.all);
       return This;
    end Create;
 
@@ -45,13 +45,6 @@ package body org.allbinary.game.ag.ai.NullAIFactory_Package is
 
    procedure getInstance (This : in out NullAIFactory; hashtable : ABHashtable_Access; ownerLayerInterface : AllBinaryLayer_Access; gameInput : GameInput_Access) is
       Java_Result : constant ArtificialIntelligenceInterface_Access := NullAIFactory'Class (This).getInstance (hashtable, ownerLayerInterface, gameInput);
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getInstance;
-
-   procedure getInstance is
-      Java_Result : constant ArtificialIntelligenceInterface_Access := getInstance;
       pragma Unreferenced (Java_Result);
    begin
       null;

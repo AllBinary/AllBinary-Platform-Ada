@@ -21,6 +21,8 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.collision.CollidableBaseBehaviorFactory_Package; use org.allbinary.game.collision.CollidableBaseBehaviorFactory_Package;
+with org.allbinary.game.collision.CollidableAlwaysPickupNeverCollideBehavior_Package; use org.allbinary.game.collision.CollidableAlwaysPickupNeverCollideBehavior_Package;
+with org.allbinary.game.collision.CollidableBaseBehavior_Package; use org.allbinary.game.collision.CollidableBaseBehavior_Package;
 
 package org.allbinary.game.collision.CollidableAlwaysPickupNeverCollideBehaviorFactory_Package is
 
@@ -38,9 +40,7 @@ package org.allbinary.game.collision.CollidableAlwaysPickupNeverCollideBehaviorF
    procedure Initialize (This : in out CollidableAlwaysPickupNeverCollideBehaviorFactory'Class);
    function Create return CollidableAlwaysPickupNeverCollideBehaviorFactory_Access;
    function getInstance return CollidableAlwaysPickupNeverCollideBehaviorFactory_Access;
-   procedure getInstance;
    function createBehavior (This : in out CollidableAlwaysPickupNeverCollideBehaviorFactory) return CollidableBaseBehavior_Access;
-   procedure createBehavior (This : in out CollidableAlwaysPickupNeverCollideBehaviorFactory);
 
 end org.allbinary.game.collision.CollidableAlwaysPickupNeverCollideBehaviorFactory_Package;
 

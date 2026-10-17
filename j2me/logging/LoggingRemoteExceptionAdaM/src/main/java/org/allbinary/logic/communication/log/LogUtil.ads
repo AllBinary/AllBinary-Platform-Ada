@@ -29,6 +29,9 @@ with org.allbinary.canvas.SpecialMessageUtil_Package; use org.allbinary.canvas.S
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.time.TimeDelayHelper_Package; use org.allbinary.time.TimeDelayHelper_Package;
 with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
+with org.allbinary.logic.communication.log.Log_Package; use org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package; use org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.communication.log.XmlRpcRemoteLogClient_Package; use org.allbinary.logic.communication.log.XmlRpcRemoteLogClient_Package;
 
 package org.allbinary.logic.communication.log.LogUtil_Package is
 
@@ -58,7 +61,6 @@ package org.allbinary.logic.communication.log.LogUtil_Package is
    procedure Initialize (This : in out LogUtil'Class);
    function Create return LogUtil_Access;
    function getInstance return LogUtil_Access;
-   procedure getInstance;
    procedure putL (This : in out LogUtil; log : Log_Access);
    procedure putF (This : in out LogUtil; specialMessage : Unbounded_String; anyType : Java_Object_Access; functionName : Unbounded_String);
    procedure putF (This : in out LogUtil; specialMessage : Unbounded_String; className : Unbounded_String; functionName : Unbounded_String);

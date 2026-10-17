@@ -21,7 +21,7 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 
-package org.allbinary.business.user.address_Case.BillingAddressData_Package is
+package org.allbinary.business.user.address.BillingAddressData_Package is
 
 
    type BillingAddressData is tagged;
@@ -51,6 +51,6 @@ package org.allbinary.business.user.address_Case.BillingAddressData_Package is
    procedure Initialize (This : in out BillingAddressData'Class);
    function Create return BillingAddressData_Access;
 
-end org.allbinary.business.user.address_Case.BillingAddressData_Package;
+end org.allbinary.business.user.address.BillingAddressData_Package;
 
 

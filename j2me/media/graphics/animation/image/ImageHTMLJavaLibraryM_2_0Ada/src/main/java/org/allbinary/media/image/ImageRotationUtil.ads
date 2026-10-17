@@ -27,6 +27,7 @@ with playn.core.Canvas_Package; use playn.core.Canvas_Package;
 with playn.core.CoreImage_Package; use playn.core.CoreImage_Package;
 with playn.core.ImageImpl_Package; use playn.core.ImageImpl_Package;
 with playn.html.HTMLPlaynUtil_Package; use playn.html.HTMLPlaynUtil_Package;
+with org.allbinary.media.image.ImageCreationUtil_Package; use org.allbinary.media.image.ImageCreationUtil_Package;
 
 package org.allbinary.media.image.ImageRotationUtil_Package is
 
@@ -50,7 +51,6 @@ package org.allbinary.media.image.ImageRotationUtil_Package is
    procedure Initialize (This : in out ImageRotationUtil'Class);
    function Create return ImageRotationUtil_Access;
    function getInstance return ImageRotationUtil_Access;
-   procedure getInstance;
    function rotateImage (This : in out ImageRotationUtil; originalImage : Image_Access; image : Image_Access; totalAngle : Integer) return Image_Access;
    procedure rotateImage (This : in out ImageRotationUtil; originalImage : Image_Access; image : Image_Access; totalAngle : Integer);
    function rotateImageCanvasSurfaceClear (This : in out ImageRotationUtil; originalImage : Image_Access; image : Image_Access; canvasSurface : Canvas_Access; totalAngle : Integer) return Image_Access;
